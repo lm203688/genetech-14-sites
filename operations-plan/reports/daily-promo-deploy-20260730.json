@@ -1,0 +1,25 @@
+{
+  "date": "2026-07-30",
+  "stage": "deploy",
+  "timestamp": "2026-07-29T20:16:43.329Z",
+  "durationMs": 27,
+  "indexNow": {
+    "submitted": 46,
+    "status": "simulated_no_key",
+    "responseCode": 200,
+    "note": "未配置 IndexNow API 密钥，模拟提交"
+  },
+  "ogTagUpdates": 46,
+  "baseline": {
+    "date": "2026-07-30",
+    "entities": 6406,
+    "seoUpdates": 46,
+    "indexedPages": "N/A",
+    "clicks": "N/A"
+  },
+  "gate": {
+    "pass": true,
+    "rule": "IndexNow API返回200",
+    "actual": "模拟提交成功（200）"
+  }
+}

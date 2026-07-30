@@ -1,0 +1,199 @@
+{
+  "signals": {
+    "dataAccumulation": 24,
+    "socialTrends": [
+      {
+        "topic": "MCP Protocol Extensions 2026",
+        "heat": 0.9
+      },
+      {
+        "topic": "AI Agent Security",
+        "heat": 0.85
+      },
+      {
+        "topic": "RAG Optimization Techniques",
+        "heat": 0.8
+      },
+      {
+        "topic": "Multi-Agent Orchestration",
+        "heat": 0.75
+      },
+      {
+        "topic": "LLM Fine-tuning Best Practices",
+        "heat": 0.7
+      }
+    ],
+    "competitorUpdates": [
+      {
+        "site": "HuggingFace Blog",
+        "update": "New model collections released",
+        "date": "2026-07-28"
+      },
+      {
+        "site": "arXiv Daily",
+        "update": "High-volume paper submissions in AI",
+        "date": "2026-07-28"
+      },
+      {
+        "site": "GitHub Trending",
+        "update": "MCP server repos trending",
+        "date": "2026-07-28"
+      }
+    ],
+    "siteAnalytics": {
+      "totalEntities": 3809,
+      "newToday": 24,
+      "sitesWithUpdates": 6
+    }
+  },
+  "signalTypes": 3,
+  "newContentFromDataLoop": [
+    {
+      "id": "arxiv-2607.22535v1",
+      "title": "Robot-Factored World Models via Robot Rendering",
+      "site": "genetech-tools",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22531v1",
+      "title": "Twins: Learn to Predict Unified Representations with Focal Loss",
+      "site": "genetech-tools",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22529v1",
+      "title": "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
+      "site": "agent-ecosystem",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22525v1",
+      "title": "Explainable Reinforcement Learning for assisting Air Traffic Controllers",
+      "site": "agent-ecosystem",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22520v1",
+      "title": "The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents",
+      "site": "agent-ecosystem",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22518v1",
+      "title": "PinEqualizer: Full Funnel Content Exploration and Debiasing System at Pinterest",
+      "site": "genetech-tools",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22516v1",
+      "title": "Quantum Spectral Model: Data Reuploading with Input-Conditioned Frequency Support",
+      "site": "genetech-tools",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22514v1",
+      "title": "Dysphagia Risk Stratification in Head and Neck Cancer via Two-Stage PRO-Clinical Stacking",
+      "site": "life-science",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22511v1",
+      "title": "CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference",
+      "site": "agent-ecosystem",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22508v1",
+      "title": "Interpretable EEG biomarkers with bag-of-waves: Spatial and temporal waveform dictionaries for low-data regimes",
+      "site": "brain-science",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22494v1",
+      "title": "CARA: Concept-Aware Risk Attention for Interpretable Collision Anticipation",
+      "site": "brain-science",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22491v1",
+      "title": "Susceptible Reservoir Architectures for Regime-Conditional Volatility Forecasting",
+      "site": "robot-parts",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22489v1",
+      "title": "\\k{appa}-LoRA: Condition Numbers Reveal Which LoRA Matrices Worth Updating",
+      "site": "brain-science",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22486v1",
+      "title": "Optimal Transport Image Representation and Deep Covariance Alignment (CORAL) for Control Valve Stiction Detection",
+      "site": "genetech-tools",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22474v1",
+      "title": "Beyond Negative-Ridge Endpoints: Mixed-Sign Spectral Regularization via Negative-Shifted Gradient Descent",
+      "site": "genetech-tools",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22471v1",
+      "title": "MineValiCoder: Reliable Code Generation with Test Case Quality Mining and Bipartite Graph-Based Mutual Validation",
+      "site": "genetech-tools",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22468v1",
+      "title": "Learning to Prepare Molecular Ground States with Transformer Models",
+      "site": "agent-ecosystem",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22467v1",
+      "title": "Complexity Bounds and Approaches to Learning Projected Gradient Descent Solver Iterates",
+      "site": "genetech-tools",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22465v1",
+      "title": "TRACE-ROUTER: Task-Consistent and Adaptive Online Routing for Agentic AI",
+      "site": "agent-ecosystem",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22463v1",
+      "title": "Beyond Perspectives: A Trio-Ethnography of Interpretation Evolution in LLM-Supported Programming Education",
+      "site": "genetech-tools",
+      "confidence": 0.85
+    },
+    {
+      "id": "arxiv-2607.22458v1",
+      "title": "Phylogenetic signal in marine mammal and bird vocalizations captured by audio foundation models: the limited benefit of domain-specific pretraining",
+      "site": "genetech-tools",
+      "confidence": 0.85
+    },
+    {
+      "id": "pubmed-42506531",
+      "title": "Machine Learning-Driven Advances in Perovskite Materials and Solar Cells.",
+      "site": "new-energy",
+      "confidence": 0.75
+    },
+    {
+      "id": "pubmed-42506786",
+      "title": "Automated Processes and Artificial Intelligence in Generating Candidates for Oncology Drug Repurposing: Three-Year Scoping Review of Data.",
+      "site": "genetech-tools",
+      "confidence": 0.75
+    },
+    {
+      "id": "pubmed-42507229",
+      "title": "Recent progress in clinical and molecular biological research in rectal serrated lesions.",
+      "site": "life-science",
+      "confidence": 0.75
+    }
+  ],
+  "gate_pass": true,
+  "gate_message": "采集信号3类 ≥ 3，通过",
+  "timestamp": "2026-07-27T21:28:24.869Z"
+}

@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-30",
+  "stage": "analyze",
+  "timestamp": "2026-07-29T20:16:43.091Z",
+  "durationMs": 0,
+  "suggestions": [
+    {
+      "id": "sug-1",
+      "type": "content-promotion",
+      "priority": "high",
+      "title": "推广今日新增 46 个实体",
+      "description": "新实体涵盖多个领域，适合在各平台同步推广",
+      "targetSites": [
+        "agent-ecosystem"
+      ]
+    },
+    {
+      "id": "sug-2",
+      "type": "topic-riding",
+      "priority": "high",
+      "title": "借势热点: AI Agent 自主决策",
+      "description": "当前社交媒体上\"AI Agent 自主决策\"话题热度高，建议关联推广相关实体",
+      "targetSites": [
+        "agent-ecosystem"
+      ]
+    },
+    {
+      "id": "sug-3",
+      "type": "topic-riding",
+      "priority": "high",
+      "title": "借势热点: MCP 协议生态",
+      "description": "当前社交媒体上\"MCP 协议生态\"话题热度高，建议关联推广相关实体",
+      "targetSites": [
+        "agent-ecosystem"
+      ]
+    },
+    {
+      "id": "sug-4",
+      "type": "topic-riding",
+      "priority": "high",
+      "title": "借势热点: RAG 检索增强",
+      "description": "当前社交媒体上\"RAG 检索增强\"话题热度高，建议关联推广相关实体",
+      "targetSites": [
+        "agent-ecosystem"
+      ]
+    },
+    {
+      "id": "sug-5",
+      "type": "content-gap",
+      "priority": "medium",
+      "title": "填补内容空白: 量子计算应用案例",
+      "description": "竞品缺少\"量子计算应用案例\"相关内容，建议优先补充",
+      "targetSites": [
+        "agent-ecosystem"
+      ]
+    },
+    {
+      "id": "sug-6",
+      "type": "content-gap",
+      "priority": "medium",
+      "title": "填补内容空白: 深海探测AI技术",
+      "description": "竞品缺少\"深海探测AI技术\"相关内容，建议优先补充",
+      "targetSites": [
+        "agent-ecosystem"
+      ]
+    },
+    {
+      "id": "sug-7",
+      "type": "seo-optimization",
+      "priority": "medium",
+      "title": "优化长尾关键词覆盖",
+      "description": "当前索引量 6406，建议优化长尾关键词以提升点击率",
+      "targetSites": [
+        "agent-ecosystem",
+        "alien-minerals",
+        "biocomputing",
+        "bionic-ai",
+        "brain-science",
+        "deep-sea-tech",
+        "exo-science",
+        "genetech-tools",
+        "life-science",
+        "new-energy",
+        "nuclear-energy",
+        "quantum-computing",
+        "robot-parts",
+        "tcm-tools"
+      ]
+    },
+    {
+      "id": "sug-8",
+      "type": "timing",
+      "priority": "low",
+      "title": "最佳发布时间窗口: 09:00-11:00, 14:00-16:00",
+      "description": "基于用户活跃度分析，这两个时段发布可获得更高曝光",
+      "targetSites": []
+    }
+  ],
+  "channelAnalysis": {
+    "seo": {
+      "share": "60%",
+      "trend": "up",
+      "note": "主要流量来源"
+    },
+    "social": {
+      "share": "25%",
+      "trend": "up",
+      "note": "社媒引流增长"
+    },
+    "direct": {
+      "share": "15%",
+      "trend": "stable",
+      "note": "直接访问稳定"
+    }
+  },
+  "bestTimeWindows": [
+    "09:00-11:00",
+    "14:00-16:00"
+  ],
+  "gate": {
+    "pass": true,
+    "rule": "生成≥5条推广建议",
+    "actual": "8条"
+  }
+}

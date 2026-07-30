@@ -1,0 +1,28 @@
+{
+  "allPassed": true,
+  "issues": [],
+  "baselineComparison": {
+    "current": {
+      "date": "2026-07-28",
+      "entities": 3809,
+      "seoUpdates": 17
+    },
+    "previous": {
+      "date": "2026-07-27",
+      "note": "首次执行，无前日对比数据"
+    },
+    "trend": "initial_benchmark"
+  },
+  "rollbackStage": null,
+  "sitemapVerified": {
+    "exists": true,
+    "urlCount": 14
+  },
+  "structuredDataVerified": {
+    "validCount": 14,
+    "totalSites": 14
+  },
+  "gate_pass": true,
+  "gate_message": "基线数据已记录，所有验证通过",
+  "timestamp": "2026-07-27T21:28:24.916Z"
+}

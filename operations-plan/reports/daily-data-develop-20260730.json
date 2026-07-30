@@ -1,0 +1,270 @@
+{
+  "date": "2026-07-30",
+  "stage": "develop",
+  "timestamp": "2026-07-29T20:16:42.833Z",
+  "durationMs": 68,
+  "modifiedFiles": [
+    "agent-ecosystem\\website\\api\\entities.json",
+    "alien-minerals\\website\\api\\entities.json",
+    "robot-parts\\website\\api\\entities.json"
+  ],
+  "newEntities": [
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.26057v1",
+      "name": "Pass the Baton: Trajectory-Relayed On-Policy Distillation"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.26042v1",
+      "name": "VetClaw: An Edge-Cloud Multimodal Agentic System for Veterinary Disease Screening"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.26041v1",
+      "name": "Desktop-Delta Bench: Do Computer-Use Models Understand Desktop GUI Transitions?"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.26023v1",
+      "name": "CHARM: A Multimodal Graph Foundation Model with Hierarchical Context Modeling for Zero-Shot Transfer"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.26017v1",
+      "name": "UniMem: Complementary Episodic-to-Parametric Memory for Boundary-Agnostic Task Streams"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.26016v1",
+      "name": "MDTransformer: A Hardware-Software Co-Design of Mode-Division Photonic Transformer Accelerator with Inverse-Designed Coherent Crossbar"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.26015v1",
+      "name": "Instruction-Tuned Models Locally Reuse Human Syntax More Than Humans Do"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25995v1",
+      "name": "Does Runtime Topology Context Improve LLM-Generated Kubernetes Security Patches?"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25993v1",
+      "name": "Beyond Zooming: Learning Multi-Tool Visual Reasoning for Ultra-High-Resolution Remote Sensing"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25992v1",
+      "name": "MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25984v1",
+      "name": "Schrödinger's Cat: Probabilistic Representation and Prediction of Potential Scene Kinematics"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25962v1",
+      "name": "LaP-Forensics: Latent-Pixel Consistency Guided Multimodal Reasoning for Deepfake Detection"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25961v1",
+      "name": "Knowledge-Guided Multimodal Reasoning over Interacting Streams for Video-Level Ambivalence and Hesitancy Recognition"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25959v1",
+      "name": "Detecting Knowledge Inconsistencies Across Text, Tables, and Knowledge Graphs"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25956v1",
+      "name": "Large Language Model for Operations Research Formulation Selection in Multi-Warehouse Inventory Allocation"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25948v1",
+      "name": "MODUS: Decoder-Only Any-to-Any Modeling of Diverse Modalities"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25947v1",
+      "name": "A Cost-Effective Multimodal LLM Reasoning Framework for Question Answering over Irregular Clinical Time Series"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25933v1",
+      "name": "Evaluating Multi-Turn Multimodal Diagnostic Reasoning on Challenging Real-World Clinical Cases"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25921v1",
+      "name": "Evaluating VLMs for Autonomous Agent-Driven Geometry Clipping Detection in Video Game QA"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25915v1",
+      "name": "Penelope: Localized Latent Recurrence for Efficient Structured Reasoning"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25914v1",
+      "name": "Toward Standardized Cross-Vendor Agent Tool Trust Management in Autonomous Networks"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25912v1",
+      "name": "SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25907v1",
+      "name": "Minimizing Targeted Activations: Input-Only Suppression of Evaluation-Awareness Latents in Large Language Models"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25904v1",
+      "name": "Interactive Reward Agent: GUI Task Evaluation via Environment-State Verification"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25891v1",
+      "name": "Messier: A High-Resolution Corpus for Cross-Benchmark Agent Evaluation"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25890v1",
+      "name": "Distributing Security Controls Through Harness Engineering"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25886v1",
+      "name": "RSIBench-Data: Benchmarking Data-Centric Research for Recursive Self-Improvement"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25881v1",
+      "name": "AI's Capability in Assisting Scientific Research in Physics, Astrophysics, and Cosmology II: Project Planning and Proposal Evaluation"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25877v1",
+      "name": "Runtime Uncertainty Monitoring for LLM-Based Multi-Agent Systems Using Bayesian Networks"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25873v1",
+      "name": "How Do LLMs Read Bug Reports? An Empirical Study of Attention in LLMs for Automated Program Repair"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25865v1",
+      "name": "OmniQEC: discovering practical quantum error-correcting codes by an AI scientist"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25864v1",
+      "name": "DRIFT: Direct-Recursive Intervention-Conditioned Forecasting of ICU Physiological Trajectories"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25853v1",
+      "name": "HiSkill: Empowering LLM Agents with Hierarchical Skill Graphs"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25852v1",
+      "name": "AngelSpec: Towards Real-World High Performance Inference with Speculative Decoding"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25834v1",
+      "name": "Lowering the implementation barrier of neutral-atom quantum computing with agentic workflows"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25820v1",
+      "name": "Food Image Segmentation with LLM-Derived Ingredient Labels and Multimodal Fusion"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25818v1",
+      "name": "SepPrune:A Separator-based Pruning Framework for Efficient Multimodal Large Language Models"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25816v1",
+      "name": "Speculate While You Reason: Teaching Agents to Predict Their Next Tool Call via Joint Agent-Speculator RL"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25814v1",
+      "name": "Evaluation of Adversarial Robustness in Arabic Language Models"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25794v1",
+      "name": "Fine-Grained Food Image Understanding via Target-Aware Data Alignment"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25791v1",
+      "name": "FLASH: Efficient Impact Fall Detection with Unified Hypergraph State-Space Model"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.25789v1",
+      "name": "Towards Faithful Sentimental Image Captioning via Evidence-Aware Multi-Agent Reasoning"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42525421",
+      "name": "LLMs as Clinical Instruments-Toward Verifiable Reasoning."
+    },
+    {
+      "site": "alien-minerals",
+      "id": "arxiv-2607.25926v1",
+      "name": "Face De-Identification: A Domain-Centric Survey from Capture to Processing"
+    },
+    {
+      "site": "robot-parts",
+      "id": "arxiv-2607.25985v1",
+      "name": "Physics-Aware End-to-End Deep Reinforcement Learning for Quadcopter Control with Actuator Dynamics"
+    },
+    {
+      "site": "robot-parts",
+      "id": "arxiv-2607.25895v1",
+      "name": "HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone"
+    }
+  ],
+  "newEntitiesCount": 46,
+  "siteChanges": {
+    "agent-ecosystem": {
+      "added": 43,
+      "updated": 0,
+      "total": 648
+    },
+    "alien-minerals": {
+      "added": 1,
+      "updated": 0,
+      "total": 382
+    },
+    "robot-parts": {
+      "added": 2,
+      "updated": 0,
+      "total": 369
+    }
+  },
+  "jsonValidation": {
+    "pass": true,
+    "errors": []
+  },
+  "gate": {
+    "pass": true,
+    "rule": "JSON格式校验通过",
+    "actual": "全部通过"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "date": "2026-07-29",
+  "stage": "analyze",
+  "timestamp": "2026-07-28T21:48:23.845Z",
+  "recommendations": [
+    {
+      "priority": "high",
+      "type": "new_content_promotion",
+      "site": "agent-ecosystem",
+      "message": "agent-ecosystem 新增 71 个实体，建议优先推广并更新SEO标签",
+      "action": "update_sitemap_and_seo"
+    },
+    {
+      "priority": "high",
+      "type": "new_content_promotion",
+      "site": "brain-science",
+      "message": "brain-science 新增 56 个实体，建议优先推广并更新SEO标签",
+      "action": "update_sitemap_and_seo"
+    },
+    {
+      "priority": "high",
+      "type": "new_content_promotion",
+      "site": "deep-sea-tech",
+      "message": "deep-sea-tech 新增 50 个实体，建议优先推广并更新SEO标签",
+      "action": "update_sitemap_and_seo"
+    },
+    {
+      "priority": "high",
+      "type": "seo_optimization",
+      "message": "建议更新所有有新增内容的站点的 sitemap.xml 并提交 IndexNow",
+      "action": "submit_indexnow"
+    },
+    {
+      "priority": "medium",
+      "type": "social_media",
+      "message": "生成社交媒体文案，推广今日新增的高质量论文和模型",
+      "action": "generate_social_content"
+    },
+    {
+      "priority": "medium",
+      "type": "cross_linking",
+      "message": "在相关站点之间添加交叉链接，提升SEO权重",
+      "action": "add_cross_links"
+    },
+    {
+      "priority": "medium",
+      "type": "structured_data",
+      "message": "更新新增实体的 Schema.org JSON-LD 结构化数据",
+      "action": "update_jsonld"
+    }
+  ],
+  "recommendationCount": 7,
+  "topSites": [
+    [
+      "agent-ecosystem",
+      {
+        "added": 71,
+        "updated": 0,
+        "total": 605
+      }
+    ],
+    [
+      "brain-science",
+      {
+        "added": 56,
+        "updated": 0,
+        "total": 460
+      }
+    ],
+    [
+      "deep-sea-tech",
+      {
+        "added": 50,
+        "updated": 0,
+        "total": 480
+      }
+    ],
+    [
+      "genetech-tools",
+      {
+        "added": 40,
+        "updated": 0,
+        "total": 731
+      }
+    ],
+    [
+      "life-science",
+      {
+        "added": 25,
+        "updated": 0,
+        "total": 612
+      }
+    ],
+    [
+      "robot-parts",
+      {
+        "added": 20,
+        "updated": 0,
+        "total": 367
+      }
+    ],
+    [
+      "nuclear-energy",
+      {
+        "added": 16,
+        "updated": 0,
+        "total": 415
+      }
+    ],
+    [
+      "new-energy",
+      {
+        "added": 10,
+        "updated": 0,
+        "total": 611
+      }
+    ],
+    [
+      "quantum-computing",
+      {
+        "added": 5,
+        "updated": 0,
+        "total": 451
+      }
+    ],
+    [
+      "alien-minerals",
+      {
+        "added": 2,
+        "updated": 0,
+        "total": 381
+      }
+    ]
+  ],
+  "gate": {
+    "pass": true,
+    "rule": "生成≥5条推广建议",
+    "actual": "7条"
+  }
+}

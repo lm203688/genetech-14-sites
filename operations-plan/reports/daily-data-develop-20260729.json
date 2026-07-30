@@ -1,0 +1,332 @@
+{
+  "date": "2026-07-29",
+  "stage": "develop",
+  "timestamp": "2026-07-28T21:48:23.675Z",
+  "durationMs": 60,
+  "modifiedFiles": [
+    "agent-ecosystem\\website\\api\\entities.json",
+    "alien-minerals\\website\\api\\entities.json",
+    "brain-science\\website\\api\\entities.json",
+    "deep-sea-tech\\website\\api\\entities.json",
+    "genetech-tools\\website\\api\\entities.json",
+    "life-science\\website\\api\\entities.json",
+    "new-energy\\website\\api\\entities.json",
+    "nuclear-energy\\website\\api\\entities.json",
+    "quantum-computing\\website\\api\\entities.json",
+    "robot-parts\\website\\api\\entities.json"
+  ],
+  "newEntities": [
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24743v1",
+      "name": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24730v1",
+      "name": "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24720v1",
+      "name": "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24692v1",
+      "name": "Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24663v1",
+      "name": "A corrective agentic hybrid RAG and an operations-grounded evaluation for a scientific facility"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24625v1",
+      "name": "Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24604v1",
+      "name": "Looping Is Not Reliability: State-Bound Evidence and Typed Revision Contracts for Agentic Code Repair"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24601v1",
+      "name": "Evaluating the Impact of Explainable AI on Trust in AI-Assisted Code Review"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24588v1",
+      "name": "SIREN: Towards End-to-End Extreme-Weather Early Warning with Experience-Grounded LLM Agents"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24586v1",
+      "name": "D-Score: A Spectral Hidden-State Signal for Hallucination Detection in Large Language Models"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24653v1",
+      "name": "Kimi K3: Open Frontier Intelligence"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24593v1",
+      "name": "PIVOT: Efficient Query-Group Indexing for Token-Level Sparse Attention"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24492v1",
+      "name": "SINT-Flow: Schema Integration using Large Language Model Workflows"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24484v1",
+      "name": "What do Reward Models Memorize?"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24430v1",
+      "name": "Let Me Look at You: Advanced Facial Expression Modeling for Conversational Speech Synthesis"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24744v1",
+      "name": "Data Pyramid for Embodied Manipulation"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24729v1",
+      "name": "MicroZoom: Structure-Preserving Detail Synthesis at Extreme Scale"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24582v1",
+      "name": "CADER: Confidence-Aware Dynamic Evidence Reasoning for Long-Video Understanding"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24672v1",
+      "name": "Explainable Reinforcement Learning via Physics-Aware Policy Distillation"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24622v1",
+      "name": "A Model for Imbalanced Label Aggregation: A Focus on Minority-Class Detection"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24577v1",
+      "name": "Evaluating Fuzz Testing for Reinforcement Learning Agents"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24569v1",
+      "name": "The balance between compactness and forecast accuracy of data-driven latent-space reduced-order models in controlled wake flows"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24482v1",
+      "name": "Distributed Coordination for Resilient Multi-UAV Remote Sensing: A Photovoltaic Inspection Case Study"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24369v1",
+      "name": "Model Predictive Planner for UAV Navigation in Non-Convex Air Corridors"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24320v1",
+      "name": "Continual-RL for Generalization in Autonomous Racing on the RoboRacer Platform"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24313v1",
+      "name": "Energy Constrained Hierarchical Underwater Monitoring via Local Multi-Agent RAG"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24292v1",
+      "name": "Learning Adaptive Multi-Task Guidance, Navigation, and Control via Hypernetworks"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24267v1",
+      "name": "FeelWorld: Visuo-Tactile World Model for Hierarchical Contact Prediction and Planning"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24233v1",
+      "name": "Quality-Adaptive Multi-UAV 3D Reconstruction with Sparse Workload Redistribution"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.24206v1",
+      "name": "Surgical Re-enactment for Operating Room Workflow Datasets"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42517501",
+      "name": "From Detection to Differentiation: The Evolving Role of Artificial Intelligence-Enabled ECG in Heart Failure Care."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42517500",
+      "name": "ECG-Based Artificial Intelligence for Classifying Left Ventricular Dysfunction and Heart Failure With Preserved Ejection Fraction."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-NousResearch-hermes-agent",
+      "name": "hermes-agent"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-shareAI-lab-learn-claude-code",
+      "name": "learn-claude-code"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-santifer-career-ops",
+      "name": "career-ops"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-Panniantong-Agent-Reach",
+      "name": "Agent-Reach"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-ZhuLinsen-daily_stock_analysis",
+      "name": "daily_stock_analysis"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-CherryHQ-cherry-studio",
+      "name": "cherry-studio"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-HKUDS-nanobot",
+      "name": "nanobot"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-zhayujie-CowAgent",
+      "name": "CowAgent"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-hugohe3-ppt-master",
+      "name": "ppt-master"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-CopilotKit-CopilotKit",
+      "name": "CopilotKit"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-iOfficeAI-AionUi",
+      "name": "AionUi"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-googleworkspace-cli",
+      "name": "cli"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-HKUDS-Vibe-Trading",
+      "name": "Vibe-Trading"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-affaan-m-ECC",
+      "name": "ECC"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-n8n-io-n8n",
+      "name": "n8n"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-Snailclimb-JavaGuide",
+      "name": "JavaGuide"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-langgenius-dify",
+      "name": "dify"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "gh-open-webui-open-webui",
+      "name": "open-webui"
+    }
+  ],
+  "newEntitiesCount": 295,
+  "siteChanges": {
+    "agent-ecosystem": {
+      "added": 71,
+      "updated": 0,
+      "total": 605
+    },
+    "alien-minerals": {
+      "added": 2,
+      "updated": 0,
+      "total": 381
+    },
+    "brain-science": {
+      "added": 56,
+      "updated": 0,
+      "total": 460
+    },
+    "deep-sea-tech": {
+      "added": 50,
+      "updated": 0,
+      "total": 480
+    },
+    "genetech-tools": {
+      "added": 40,
+      "updated": 0,
+      "total": 731
+    },
+    "life-science": {
+      "added": 25,
+      "updated": 0,
+      "total": 612
+    },
+    "new-energy": {
+      "added": 10,
+      "updated": 0,
+      "total": 611
+    },
+    "nuclear-energy": {
+      "added": 16,
+      "updated": 0,
+      "total": 415
+    },
+    "quantum-computing": {
+      "added": 5,
+      "updated": 0,
+      "total": 451
+    },
+    "robot-parts": {
+      "added": 20,
+      "updated": 0,
+      "total": 367
+    }
+  },
+  "jsonValidation": {
+    "pass": true,
+    "errors": []
+  },
+  "gate": {
+    "pass": true,
+    "rule": "JSON格式校验通过",
+    "actual": "全部通过"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "date": "2026-07-28",
+  "generatedAt": "2026-07-27T21:28:24.918Z",
+  "duration": "23.8s",
+  "dataAccumulation": {
+    "newEntities": 24,
+    "updatedEntities": 0,
+    "siteDistribution": {
+      "genetech-tools": 11,
+      "agent-ecosystem": 6,
+      "life-science": 2,
+      "brain-science": 3,
+      "robot-parts": 1,
+      "new-energy": 1
+    },
+    "totalEntities": 3809,
+    "collectSources": 3,
+    "dedupRate": "N/A",
+    "validRate": "60.0%"
+  },
+  "promotionGrowth": {
+    "seoUpdates": 17,
+    "socialContentCount": 3,
+    "sitemapUrls": 14,
+    "indexNowStatus": "simulated_no_key",
+    "baselineRecorded": {
+      "current": {
+        "date": "2026-07-28",
+        "entities": 3809,
+        "seoUpdates": 17
+      },
+      "previous": {
+        "date": "2026-07-27",
+        "note": "首次执行，无前日对比数据"
+      },
+      "trend": "initial_benchmark"
+    }
+  },
+  "anomalies": [
+    {
+      "loop": 1,
+      "stage": "analyze",
+      "message": "有效率60.0% < 80%，不通过"
+    }
+  ],
+  "crossLoopSignals": [
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.22535v1",
+      "title": "Robot-Factored World Models via Robot Rendering",
+      "site": "genetech-tools",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.22531v1",
+      "title": "Twins: Learn to Predict Unified Representations with Focal Loss",
+      "site": "genetech-tools",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.22529v1",
+      "title": "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.22525v1",
+      "title": "Explainable Reinforcement Learning for assisting Air Traffic Controllers",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.22520v1",
+      "title": "The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents",
+      "site": "agent-ecosystem",
+      "consumed": true
+    }
+  ],
+  "nextDayTodos": [
+    "处理1项门禁不通过的问题",
+    "配置IndexNow API密钥以启用自动索引提交",
+    "配置GitHub Token以提升API采集限额"
+  ],
+  "allGateResults": [
+    {
+      "loop": 1,
+      "stage": "collect",
+      "pass": true,
+      "message": "采集成功源3个 ≥ 3，通过"
+    },
+    {
+      "loop": 1,
+      "stage": "analyze",
+      "pass": false,
+      "message": "有效率60.0% < 80%，不通过"
+    },
+    {
+      "loop": 1,
+      "stage": "decide",
+      "pass": true,
+      "message": "决策覆盖率100%，通过"
+    },
+    {
+      "loop": 1,
+      "stage": "develop",
+      "pass": true,
+      "message": "JSON格式校验全部通过"
+    },
+    {
+      "loop": 1,
+      "stage": "test",
+      "pass": true,
+      "message": "计数一致性100%，通过"
+    },
+    {
+      "loop": 1,
+      "stage": "deploy",
+      "pass": true,
+      "message": "部署完成"
+    },
+    {
+      "loop": 1,
+      "stage": "verify",
+      "pass": true,
+      "message": "部署效果达标"
+    },
+    {
+      "loop": 2,
+      "stage": "collect",
+      "pass": true,
+      "message": "采集信号3类 ≥ 3，通过"
+    },
+    {
+      "loop": 2,
+      "stage": "analyze",
+      "pass": true,
+      "message": "生成13条建议 ≥ 5，通过"
+    },
+    {
+      "loop": 2,
+      "stage": "decide",
+      "pass": true,
+      "message": "决策100%覆盖高优先级建议，通过"
+    },
+    {
+      "loop": 2,
+      "stage": "develop",
+      "pass": true,
+      "message": "SEO标签格式校验通过"
+    },
+    {
+      "loop": 2,
+      "stage": "test",
+      "pass": true,
+      "message": "结构化数据校验100%通过"
+    },
+    {
+      "loop": 2,
+      "stage": "deploy",
+      "pass": true,
+      "message": "推广部署完成"
+    },
+    {
+      "loop": 2,
+      "stage": "verify",
+      "pass": true,
+      "message": "基线数据已记录，所有验证通过"
+    }
+  ]
+}

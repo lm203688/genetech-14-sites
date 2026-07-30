@@ -1,0 +1,70 @@
+{
+  "date": "2026-07-29",
+  "stage": "decide",
+  "timestamp": "2026-07-28T21:48:23.846Z",
+  "decisions": [
+    {
+      "id": "promo-20260729-1",
+      "priority": "high",
+      "type": "new_content_promotion",
+      "action": "update_sitemap_and_seo",
+      "site": "agent-ecosystem",
+      "status": "approved"
+    },
+    {
+      "id": "promo-20260729-2",
+      "priority": "high",
+      "type": "new_content_promotion",
+      "action": "update_sitemap_and_seo",
+      "site": "brain-science",
+      "status": "approved"
+    },
+    {
+      "id": "promo-20260729-3",
+      "priority": "high",
+      "type": "new_content_promotion",
+      "action": "update_sitemap_and_seo",
+      "site": "deep-sea-tech",
+      "status": "approved"
+    },
+    {
+      "id": "promo-20260729-4",
+      "priority": "high",
+      "type": "seo_optimization",
+      "action": "submit_indexnow",
+      "site": "all",
+      "status": "approved"
+    },
+    {
+      "id": "promo-20260729-5",
+      "priority": "medium",
+      "type": "social_media",
+      "action": "generate_social_content",
+      "site": "all",
+      "status": "approved"
+    },
+    {
+      "id": "promo-20260729-6",
+      "priority": "medium",
+      "type": "cross_linking",
+      "action": "add_cross_links",
+      "site": "all",
+      "status": "approved"
+    },
+    {
+      "id": "promo-20260729-7",
+      "priority": "medium",
+      "type": "structured_data",
+      "action": "update_jsonld",
+      "site": "all",
+      "status": "approved"
+    }
+  ],
+  "decisionCount": 7,
+  "highPriorityCovered": true,
+  "gate": {
+    "pass": true,
+    "rule": "决策项100%覆盖高优先级建议",
+    "actual": "100%"
+  }
+}

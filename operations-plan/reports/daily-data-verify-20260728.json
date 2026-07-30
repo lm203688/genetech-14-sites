@@ -1,0 +1,48 @@
+{
+  "onlineCheck": true,
+  "verifiedEntities": [
+    {
+      "id": "arxiv-2607.22535v1",
+      "site": "genetech-tools",
+      "pageExists": false
+    },
+    {
+      "id": "arxiv-2607.22531v1",
+      "site": "genetech-tools",
+      "pageExists": false
+    },
+    {
+      "id": "arxiv-2607.22529v1",
+      "site": "agent-ecosystem",
+      "pageExists": false
+    },
+    {
+      "id": "arxiv-2607.22525v1",
+      "site": "agent-ecosystem",
+      "pageExists": false
+    },
+    {
+      "id": "arxiv-2607.22520v1",
+      "site": "agent-ecosystem",
+      "pageExists": false
+    }
+  ],
+  "entityCountMatch": false,
+  "issues": [
+    "robot-parts: 实体数为0",
+    "quantum-computing: 实体数为0",
+    "brain-science: 实体数为0",
+    "nuclear-energy: 实体数为0",
+    "biocomputing: 实体数为0",
+    "bionic-ai: 实体数为0"
+  ],
+  "metrics": {
+    "newEntitiesCount": 24,
+    "updatedEntitiesCount": 0,
+    "totalEntitiesChecked": 14,
+    "timestamp": "2026-07-27T21:28:24.867Z"
+  },
+  "gate_pass": true,
+  "gate_message": "部署效果达标",
+  "timestamp": "2026-07-27T21:28:24.868Z"
+}

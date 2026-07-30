@@ -1,0 +1,73 @@
+{
+  "闭环名称": "领域开拓闭环",
+  "阶段": 3,
+  "阶段名称": "决策",
+  "执行时间": "2026-07-28",
+  "质量门禁": "决策有明确阈值标准",
+  "门禁结果": "通过 ✅ (阈值≥0.75，2个采纳1个暂缓)",
+  "决策结果": [
+    {
+      "决策": "新增「AI Agent 知识引擎」站点",
+      "综合得分": 0.98,
+      "决策": "采纳",
+      "站点定义": {
+        "中文名称": "AI Agent 知识引擎",
+        "英文名称": "AI Agent Knowledge Engine",
+        "URL路径": "/ai-agent",
+        "关键词": ["AI Agent", "LLM Agent", "Coding Agent", "Tool Use", "MCP", "Planning", "Reasoning", "Autonomous Agent", "Multi-Agent"],
+        "数据源": ["arXiv cs.AI/cs.CL/cs.SE/cs.MA", "PapersWithCode Agent分类", "GitHub trending agent框架", "HuggingFace Agent模型/Spaces"],
+        "目标数据量": "500+论文/月初始，持续增长"
+      },
+      "配置方案": {
+        "颜色主题": "#6366F1(Indigo - 代表智能和科技)",
+        "图标": "🤖 Agent机器人图标",
+        "描述": "追踪AI Agent领域的最新论文、开源框架、工具和评估基准",
+        "关联站点": ["LLM大语言模型", "代码生成", "提示工程", "机器人", "AI伦理安全", "强化学习"]
+      },
+      "任务清单": [
+        "创建站点目录 /ai-agent",
+        "生成 config.js（关键词、数据源、颜色配置）",
+        "生成 data.js（初始数据结构）",
+        "复制模板页面 index.html/detail.html/search.html",
+        "预填充初始数据（调用arXiv API采集Agent相关论文）",
+        "生成 llms.txt（SEO和AI爬虫优化）",
+        "配置路由和导航入口",
+        "提交 IndexNow 索引"
+      ]
+    },
+    {
+      "决策": "新增「World Modeling 世界模型」站点",
+      "综合得分": 0.79,
+      "决策": "采纳",
+      "站点定义": {
+        "中文名称": "World Modeling 世界模型",
+        "英文名称": "World Modeling Knowledge Engine",
+        "URL路径": "/world-modeling",
+        "关键词": ["World Model", "World Foundation Model", "Physical AI", "4D Generation", "Video Generation", "Embodied AI", "Scene Understanding", "Simulation"],
+        "数据源": ["arXiv cs.CV/cs.RO/cs.AI", "GitHub trending world model项目", "HuggingFace视频生成模型"],
+        "目标数据量": "200+论文/月初始"
+      },
+      "配置方案": {
+        "颜色主题": "#0EA5E9(Sky Blue - 代表世界和空间)",
+        "图标": "🌍 地球/世界图标",
+        "描述": "追踪世界模型、物理AI、场景理解和视频生成的最新研究进展",
+        "关联站点": ["计算机视觉", "视频生成", "机器人", "强化学习", "生成模型"]
+      },
+      "任务清单": [
+        "创建站点目录 /world-modeling",
+        "生成配置和数据文件",
+        "复制模板页面",
+        "预填充初始数据",
+        "生成 llms.txt",
+        "配置路由和导航入口"
+      ]
+    },
+    {
+      "决策": "暂缓「Edge Deployment 端侧部署」独立站点",
+      "综合得分": 0.66,
+      "决策": "暂缓 - 建议合并升级现有模型压缩站",
+      "理由": "综合得分0.66未达阈值0.75，且与现有模型压缩站内容重叠70%",
+      "替代方案": "将现有「模型压缩」站升级为「模型优化与部署」站，增加GGUF/Ollama/ONNX等工程实践内容"
+    }
+  ]
+}

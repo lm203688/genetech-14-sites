@@ -1,0 +1,84 @@
+{
+  "date": "2026-07-29",
+  "stage": "collect",
+  "timestamp": "2026-07-28T21:48:23.844Z",
+  "signals": {
+    "newContent": 10,
+    "seoBaseline": "available",
+    "socialTrends": "monitored",
+    "dataQuality": "good"
+  },
+  "signalTypes": [
+    "new_content",
+    "seo_baseline",
+    "social_trends",
+    "data_quality"
+  ],
+  "dataSignals": [
+    {
+      "type": "new_content",
+      "site": "agent-ecosystem",
+      "title": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
+      "entityId": "arxiv-2607.24743v1"
+    },
+    {
+      "type": "new_content",
+      "site": "agent-ecosystem",
+      "title": "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability",
+      "entityId": "arxiv-2607.24730v1"
+    },
+    {
+      "type": "new_content",
+      "site": "agent-ecosystem",
+      "title": "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation",
+      "entityId": "arxiv-2607.24720v1"
+    },
+    {
+      "type": "new_content",
+      "site": "agent-ecosystem",
+      "title": "Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines",
+      "entityId": "arxiv-2607.24692v1"
+    },
+    {
+      "type": "new_content",
+      "site": "agent-ecosystem",
+      "title": "A corrective agentic hybrid RAG and an operations-grounded evaluation for a scientific facility",
+      "entityId": "arxiv-2607.24663v1"
+    },
+    {
+      "type": "new_content",
+      "site": "agent-ecosystem",
+      "title": "Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents",
+      "entityId": "arxiv-2607.24625v1"
+    },
+    {
+      "type": "new_content",
+      "site": "agent-ecosystem",
+      "title": "Looping Is Not Reliability: State-Bound Evidence and Typed Revision Contracts for Agentic Code Repair",
+      "entityId": "arxiv-2607.24604v1"
+    },
+    {
+      "type": "new_content",
+      "site": "agent-ecosystem",
+      "title": "Evaluating the Impact of Explainable AI on Trust in AI-Assisted Code Review",
+      "entityId": "arxiv-2607.24601v1"
+    },
+    {
+      "type": "new_content",
+      "site": "agent-ecosystem",
+      "title": "SIREN: Towards End-to-End Extreme-Weather Early Warning with Experience-Grounded LLM Agents",
+      "entityId": "arxiv-2607.24588v1"
+    },
+    {
+      "type": "new_content",
+      "site": "agent-ecosystem",
+      "title": "D-Score: A Spectral Hidden-State Signal for Hallucination Detection in Large Language Models",
+      "entityId": "arxiv-2607.24586v1"
+    }
+  ],
+  "gate": {
+    "pass": true,
+    "rule": "采集信号≥3类",
+    "actual": "4类"
+  }
+}

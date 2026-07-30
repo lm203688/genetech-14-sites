@@ -1,0 +1,62 @@
+{
+  "信号来源": "竞品情报闭环-阶段3决策",
+  "传递时间": "2026-07-28",
+  "目标闭环": "领域开拓",
+  "信号类型": "新增站点候选",
+  "候选站点": [
+    {
+      "id": "DOMAIN-CAND-001",
+      "名称": "AI Agent 知识引擎",
+      "英文名": "AI Agent Knowledge Engine",
+      "优先级": "P0",
+      "理由": "Agent是2026年最热研究方向，PWC刚新增Agent分类但评估体系不成熟",
+      "建议来源": "R-INT-001",
+      "关键词": ["AI Agent", "LLM Agent", "Coding Agent", "Tool Use", "Planning", "Reasoning"],
+      "数据源建议": ["arXiv cs.AI/cs.CL/cs.MA", "PapersWithCode Agent分类", "GitHub trending agent框架", "HuggingFace Agent模型/Spaces"],
+      "预期数据量": "500+论文/月",
+      "关联现有站点": ["LLM大语言模型", "代码生成", "提示工程"],
+      "市场空白度": "高(无专门Agent知识聚合平台)"
+    },
+    {
+      "id": "DOMAIN-CAND-002",
+      "名称": "World Modeling 世界模型",
+      "英文名": "World Modeling Knowledge Engine",
+      "优先级": "P1",
+      "理由": "World Modeling持续升温，AlayaWorld/RynnWorld-4D等密集发布，无专门知识聚合平台",
+      "建议来源": "R-INT-002",
+      "关键词": ["World Model", "World Simulation", "4D Generation", "Video Generation", "Embodied AI"],
+      "数据源建议": ["arXiv cs.CV/cs.RO/cs.AI", "GitHub trending world model项目", "HuggingFace视频生成模型"],
+      "预期数据量": "200+论文/月",
+      "关联现有站点": ["计算机视觉", "视频生成", "机器人"],
+      "市场空白度": "高(无专门World Modeling知识聚合平台)"
+    },
+    {
+      "id": "DOMAIN-CAND-003",
+      "名称": "端侧部署与模型量化",
+      "英文名": "Edge Deployment & Model Quantization",
+      "优先级": "P1",
+      "理由": "GGUF/MLX下载量远超原始模型(126万+)，端侧部署需求爆发但缺乏专门知识聚合",
+      "建议来源": "R-INT-003",
+      "关键词": ["GGUF", "MLX", "ONNX", "TensorRT", "Quantization", "Edge AI", "Mobile Deployment"],
+      "数据源建议": ["GitHub trending量化项目", "HuggingFace GGUF/MLX模型", "arXiv量化/压缩论文"],
+      "预期数据量": "150+论文/月",
+      "关联现有站点": ["模型压缩", "LLM大语言模型"],
+      "市场空白度": "中高(无专门知识聚合平台)"
+    }
+  ],
+  "推广信号": [
+    {
+      "id": "PROMO-SIG-001",
+      "类型": "SEO优化",
+      "内容": "为Agent/World Modeling/量化部署等热门关键词创建落地页",
+      "优先级": "P1",
+      "建议来源": "R-INT-006"
+    }
+  ],
+  "消费确认": {
+    "消费方": "领域开拓闭环",
+    "消费时间": "2026-07-28",
+    "消费状态": "已消费 ✅",
+    "消费详情": "3个候选站点已评估，AI Agent(0.98)和World Modeling(0.79)采纳建站，Edge Deployment(0.66)暂缓"
+  }
+}

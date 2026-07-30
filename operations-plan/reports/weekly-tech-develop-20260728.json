@@ -1,0 +1,57 @@
+{
+  "闭环名称": "技术提升闭环",
+  "阶段": 4,
+  "阶段名称": "开发",
+  "执行时间": "2026-07-28",
+  "质量门禁": "PoC代码可运行",
+  "门禁结果": "条件通过 ⚠️ (PoC规范已设计，需在开发环境中执行)",
+  "PoC任务列表": [
+    {
+      "PoC编号": "POC-001",
+      "技术": "DeepSeek V4 Flash API论文摘要",
+      "目标": "验证DeepSeek V4 Flash生成学术论文TLDR的质量和成本",
+      "方案": {
+        "输入": "10篇已知论文的abstract+title",
+        "Prompt": "请用中文为以下论文生成一句话TLDR摘要(不超过50字)：
+          标题: {title}
+          摘要: {abstract}
+          要求：简明扼要，突出核心贡献和方法创新",
+        "API配置": {
+          "endpoint": "https://api.deepseek.com/v1/chat/completions",
+          "model": "deepseek-v4-flash",
+          "max_tokens": 100,
+          "temperature": 0.3
+        },
+        "成本估算": "10篇 × (8000输入+100输出)tokens × $0.00000014 ≈ $0.0001"
+      },
+      "A/B对比": {
+        "A_现有方案": "无AI摘要（手动阅读标题+摘要）",
+        "B_PoC方案": "DeepSeek V4 Flash生成TLDR",
+        "评估指标": ["摘要准确率", "信息完整性", "可读性", "生成延迟(ms)", "成本"]
+      },
+      "状态": "规范已设计，待执行"
+    },
+    {
+      "PoC编号": "POC-002",
+      "技术": "Schema.org JSON-LD + llms.txt",
+      "目标": "验证结构化标记对AI搜索引擎可见度的影响",
+      "方案": {
+        "实施": "选取2个现有站点页面，添加ScholarlyArticle JSON-LD标记+llms.txt",
+        "验证": "通过ChatGPT/Kimi/豆包引用测试可见度变化"
+      },
+      "状态": "规范已设计，待执行"
+    },
+    {
+      "PoC编号": "POC-003",
+      "技术": "BERTopic论文聚类",
+      "目标": "验证论文自动主题分类质量",
+      "方案": {
+        "实施": "取100篇Agent领域论文，用BERTopic+KaLM-Embedding进行主题聚类",
+        "对比": "人工标注主题 vs BERTopic自动聚类"
+      },
+      "状态": "规范已设计，待执行"
+    }
+  ],
+  "PoC工作目录": "operations-plan/poc/",
+  "PoC执行环境": "Python 3.10+，需安装deepseek-api、bertopic、sentence-transformers"
+}

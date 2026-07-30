@@ -1,0 +1,530 @@
+# GeneTech 14站知识引擎 — GitHub Actions 自动化运营配置
+# 文件位置: .github/workflows/ops.yml
+#
+# 功能说明:
+#   本 Workflow 将 5 个运营闭环 pipeline 自动化部署到 GitHub Actions 云端环境，
+#   实现无服务器定时运营。支持 schedule 自动触发、workflow_dispatch 手动触发、
+#   以及各 pipeline 的独立触发。
+#
+# 触发方式:
+#   1. 定时自动触发（按各 pipeline 的频率设定）
+#   2. 手动触发: GitHub 仓库页面 -> Actions -> 选择 workflow -> Run workflow
+#   3. push 到 main 分支时验证脚本语法
+#
+# 环境要求:
+#   - Ubuntu Latest
+#   - Node.js 20
+#   - 需要配置以下 Secrets:
+#       GITHUB_TOKEN        (默认提供，用于 GitHub API 访问)
+#       INDEXNOW_KEY        (可选，用于 IndexNow SEO 提交)
+#       INDEXNOW_KEY_LOCATION (可选)
+#       SITE_BASE_URL       (可选，默认 https://genetech.example)
+
+name: GeneTech Operations Automation
+
+on:
+  # 手动触发，支持选择运行哪个 pipeline
+  workflow_dispatch:
+    inputs:
+      pipeline:
+        description: '选择要运行的 Pipeline'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - data-accumulation
+          - domain-expansion
+          - tech-adoption
+          - promotion
+          - intelligence
+      dry_run:
+        description: '是否以 Dry-Run 模式运行（不写入实际数据）'
+        required: false
+        default: false
+        type: boolean
+
+  # 定时触发：与 scheduler.js 中的时间表对应，使用 UTC 时间
+  schedule:
+    # 闭环一：数据积累流水线 — 每日 02:00 UTC+8 = 前日 18:00 UTC
+    - cron: '0 18 * * *'
+    # 闭环二：领域开拓机制 — 每周一 06:00 UTC+8 = 周日 22:00 UTC
+    - cron: '0 22 * * 0'
+    # 闭环三：技术采纳闭环 — 每周三 04:00 UTC+8 = 周二 20:00 UTC
+    - cron: '0 20 * * 2'
+    # 闭环四：推广技术应用 — 每日 08:00, 18:00 UTC+8 = 00:00, 10:00 UTC
+    - cron: '0 0,10 * * *'
+    # 闭环五：竞品情报收集 — 每周五 05:00 UTC+8 = 周四 21:00 UTC
+    - cron: '0 21 * * 4'
+
+  # push 到 main 分支时进行验证
+  push:
+    branches: [main, master]
+    paths:
+      - 'operations-plan/**'
+      - 'sites/**'
+      - '.github/workflows/ops.yml'
+
+# 权限配置
+permissions:
+  contents: write
+  actions: read
+  issues: write
+
+# 并发控制：同一 pipeline 同时只能有一个实例在运行
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.inputs.pipeline || 'scheduled' }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: '20'
+  SCRIPTS_DIR: 'operations-plan'
+  REPORTS_DIR: 'reports'
+  LOGS_DIR: 'logs'
+  STATE_DIR: 'state'
+
+jobs:
+  # ==================== 前置准备 ====================
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run_data: ${{ steps.decide.outputs.should_run_data }}
+      should_run_domain: ${{ steps.decide.outputs.should_run_domain }}
+      should_run_tech: ${{ steps.decide.outputs.should_run_tech }}
+      should_run_promo: ${{ steps.decide.outputs.should_run_promo }}
+      should_run_intel: ${{ steps.decide.outputs.should_run_intel }}
+      dry_run: ${{ steps.decide.outputs.dry_run }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Cache state and reports
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.STATE_DIR }}
+            ${{ env.REPORTS_DIR }}
+            ${{ env.LOGS_DIR }}
+          key: genetech-ops-state-${{ github.run_id }}
+          restore-keys: |
+            genetech-ops-state-
+
+      - name: Decide which pipelines to run
+        id: decide
+        run: |
+          PIPELINE="${{ github.event.inputs.pipeline || 'all' }}"
+          DRY_RUN="${{ github.event.inputs.dry_run || 'false' }}"
+
+          # 默认全部不运行
+          echo "should_run_data=false" >> $GITHUB_OUTPUT
+          echo "should_run_domain=false" >> $GITHUB_OUTPUT
+          echo "should_run_tech=false" >> $GITHUB_OUTPUT
+          echo "should_run_promo=false" >> $GITHUB_OUTPUT
+          echo "should_run_intel=false" >> $GITHUB_OUTPUT
+          echo "dry_run=$DRY_RUN" >> $GITHUB_OUTPUT
+
+          # 根据 cron 或手动输入决定
+          if [[ "$PIPELINE" == "all" ]]; then
+            # 定时触发时，根据当前 UTC 时间判断
+            HOUR=$(date -u +%H)
+            DOW=$(date -u +%w)  # 0=Sunday
+
+            # 数据积累: 18:00 UTC (02:00 UTC+8)
+            if [[ "$HOUR" == "18" ]]; then
+              echo "should_run_data=true" >> $GITHUB_OUTPUT
+            fi
+            # 领域开拓: 22:00 UTC Sunday (06:00 UTC+8 Monday)
+            if [[ "$HOUR" == "22" && "$DOW" == "0" ]]; then
+              echo "should_run_domain=true" >> $GITHUB_OUTPUT
+            fi
+            # 技术采纳: 20:00 UTC Tuesday (04:00 UTC+8 Wednesday)
+            if [[ "$HOUR" == "20" && "$DOW" == "2" ]]; then
+              echo "should_run_tech=true" >> $GITHUB_OUTPUT
+            fi
+            # 推广: 00:00, 10:00 UTC (08:00, 18:00 UTC+8)
+            if [[ "$HOUR" == "00" || "$HOUR" == "10" ]]; then
+              echo "should_run_promo=true" >> $GITHUB_OUTPUT
+            fi
+            # 情报: 21:00 UTC Thursday (05:00 UTC+8 Friday)
+            if [[ "$HOUR" == "21" && "$DOW" == "4" ]]; then
+              echo "should_run_intel=true" >> $GITHUB_OUTPUT
+            fi
+
+            # workflow_dispatch 的 all 也全部运行
+            if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+              echo "should_run_data=true" >> $GITHUB_OUTPUT
+              echo "should_run_domain=true" >> $GITHUB_OUTPUT
+              echo "should_run_tech=true" >> $GITHUB_OUTPUT
+              echo "should_run_promo=true" >> $GITHUB_OUTPUT
+              echo "should_run_intel=true" >> $GITHUB_OUTPUT
+            fi
+          else
+            # 单独指定 pipeline
+            case "$PIPELINE" in
+              data-accumulation) echo "should_run_data=true" >> $GITHUB_OUTPUT ;;
+              domain-expansion) echo "should_run_domain=true" >> $GITHUB_OUTPUT ;;
+              tech-adoption) echo "should_run_tech=true" >> $GITHUB_OUTPUT ;;
+              promotion) echo "should_run_promo=true" >> $GITHUB_OUTPUT ;;
+              intelligence) echo "should_run_intel=true" >> $GITHUB_OUTPUT ;;
+            esac
+          fi
+
+          echo "[Decide] Pipeline=$PIPELINE, Dry-Run=$DRY_RUN"
+          cat $GITHUB_OUTPUT
+
+  # ==================== 闭环一：数据积累流水线 ====================
+  data-accumulation:
+    runs-on: ubuntu-latest
+    needs: prepare
+    if: needs.prepare.outputs.should_run_data == 'true'
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Restore cached state
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.STATE_DIR }}
+            ${{ env.REPORTS_DIR }}
+            ${{ env.LOGS_DIR }}
+          key: genetech-ops-state-${{ github.run_id }}
+          restore-keys: |
+            genetech-ops-state-
+
+      - name: Run Data Accumulation Pipeline
+        run: |
+          if [[ "${{ needs.prepare.outputs.dry_run }}" == "true" ]]; then
+            node ${{ env.SCRIPTS_DIR }}/pipeline-data-accumulation.js --dry-run
+          else
+            node ${{ env.SCRIPTS_DIR }}/pipeline-data-accumulation.js
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload reports and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-accumulation-reports
+          path: |
+            ${{ env.REPORTS_DIR }}/
+            ${{ env.LOGS_DIR }}/
+            ${{ env.STATE_DIR }}/
+          retention-days: 30
+
+      - name: Commit data updates
+        if: needs.prepare.outputs.dry_run != 'true'
+        run: |
+          git config --local user.email "ops-bot@genetech.example"
+          git config --local user.name "GeneTech Ops Bot"
+          git add sites/ reports/ logs/ state/ data/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "[Bot] Data accumulation update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            git push
+          fi
+        continue-on-error: true
+
+  # ==================== 闭环二：领域开拓机制 ====================
+  domain-expansion:
+    runs-on: ubuntu-latest
+    needs: prepare
+    if: needs.prepare.outputs.should_run_domain == 'true'
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Restore cached state
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.STATE_DIR }}
+            ${{ env.REPORTS_DIR }}
+            ${{ env.LOGS_DIR }}
+          key: genetech-ops-state-${{ github.run_id }}
+          restore-keys: |
+            genetech-ops-state-
+
+      - name: Run Domain Expansion Pipeline
+        run: |
+          if [[ "${{ needs.prepare.outputs.dry_run }}" == "true" ]]; then
+            node ${{ env.SCRIPTS_DIR }}/pipeline-domain-expansion.js --dry-run
+          else
+            node ${{ env.SCRIPTS_DIR }}/pipeline-domain-expansion.js
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload reports and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: domain-expansion-reports
+          path: |
+            ${{ env.REPORTS_DIR }}/
+            ${{ env.LOGS_DIR }}/
+            ${{ env.STATE_DIR }}/
+          retention-days: 30
+
+      - name: Commit new site scaffolds
+        if: needs.prepare.outputs.dry_run != 'true'
+        run: |
+          git config --local user.email "ops-bot@genetech.example"
+          git config --local user.name "GeneTech Ops Bot"
+          git add sites/ reports/ logs/ state/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "[Bot] Domain expansion update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            git push
+          fi
+        continue-on-error: true
+
+  # ==================== 闭环三：技术采纳闭环 ====================
+  tech-adoption:
+    runs-on: ubuntu-latest
+    needs: prepare
+    if: needs.prepare.outputs.should_run_tech == 'true'
+    timeout-minutes: 40
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Restore cached state
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.STATE_DIR }}
+            ${{ env.REPORTS_DIR }}
+            ${{ env.LOGS_DIR }}
+            poc/
+          key: genetech-ops-state-${{ github.run_id }}
+          restore-keys: |
+            genetech-ops-state-
+
+      - name: Run Tech Adoption Pipeline
+        run: |
+          if [[ "${{ needs.prepare.outputs.dry_run }}" == "true" ]]; then
+            node ${{ env.SCRIPTS_DIR }}/pipeline-tech-adoption.js --dry-run
+          else
+            node ${{ env.SCRIPTS_DIR }}/pipeline-tech-adoption.js
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload reports, logs and PoC
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tech-adoption-reports
+          path: |
+            ${{ env.REPORTS_DIR }}/
+            ${{ env.LOGS_DIR }}/
+            ${{ env.STATE_DIR }}/
+            poc/
+          retention-days: 30
+
+      - name: Create issue for adopted technologies
+        if: needs.prepare.outputs.dry_run != 'true'
+        run: |
+          # 如果有新技术被采纳，创建 GitHub Issue 提醒人工审核
+          if [ -f "${{ env.STATE_DIR }}/adopted-technologies.json" ]; then
+            COUNT=$(node -e "const a=require('./${{ env.STATE_DIR }}/adopted-technologies.json'); console.log(a.filter(x=>!x.appliedToProduction).length)")
+            if [ "$COUNT" -gt 0 ]; then
+              gh issue create \
+                --title "[Tech Adoption] $COUNT 项新技术待审核集成" \
+                --body "pipeline-tech-adoption 检测到 $COUNT 项新技术通过 PoC 测试，已生成 patch，请人工审核后集成到生产 pipeline。" \
+                --label "automation,tech-adoption"
+            fi
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
+  # ==================== 闭环四：推广技术应用 ====================
+  promotion:
+    runs-on: ubuntu-latest
+    needs: prepare
+    if: needs.prepare.outputs.should_run_promo == 'true'
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Restore cached state
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.STATE_DIR }}
+            ${{ env.REPORTS_DIR }}
+            ${{ env.LOGS_DIR }}
+            promotion-assets/
+          key: genetech-ops-state-${{ github.run_id }}
+          restore-keys: |
+            genetech-ops-state-
+
+      - name: Run Promotion Pipeline
+        run: |
+          if [[ "${{ needs.prepare.outputs.dry_run }}" == "true" ]]; then
+            node ${{ env.SCRIPTS_DIR }}/pipeline-promotion.js --dry-run
+          else
+            node ${{ env.SCRIPTS_DIR }}/pipeline-promotion.js
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          INDEXNOW_KEY_LOCATION: ${{ secrets.INDEXNOW_KEY_LOCATION }}
+          SITE_BASE_URL: ${{ secrets.SITE_BASE_URL || 'https://genetech.example' }}
+
+      - name: Upload reports and promotion assets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: promotion-reports
+          path: |
+            ${{ env.REPORTS_DIR }}/
+            ${{ env.LOGS_DIR }}/
+            ${{ env.STATE_DIR }}/
+            promotion-assets/
+          retention-days: 30
+
+      - name: Commit SEO updates
+        if: needs.prepare.outputs.dry_run != 'true'
+        run: |
+          git config --local user.email "ops-bot@genetech.example"
+          git config --local user.name "GeneTech Ops Bot"
+          git add sites/*/structured-data.json sitemap.xml promotion-assets/ reports/ logs/ state/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "[Bot] Promotion & SEO update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            git push
+          fi
+        continue-on-error: true
+
+  # ==================== 闭环五：竞品情报收集 ====================
+  intelligence:
+    runs-on: ubuntu-latest
+    needs: prepare
+    if: needs.prepare.outputs.should_run_intel == 'true'
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Restore cached state
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.STATE_DIR }}
+            ${{ env.REPORTS_DIR }}
+            ${{ env.LOGS_DIR }}
+          key: genetech-ops-state-${{ github.run_id }}
+          restore-keys: |
+            genetech-ops-state-
+
+      - name: Run Intelligence Pipeline
+        run: |
+          if [[ "${{ needs.prepare.outputs.dry_run }}" == "true" ]]; then
+            node ${{ env.SCRIPTS_DIR }}/pipeline-intelligence.js --dry-run
+          else
+            node ${{ env.SCRIPTS_DIR }}/pipeline-intelligence.js
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload reports and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: intelligence-reports
+          path: |
+            ${{ env.REPORTS_DIR }}/
+            ${{ env.LOGS_DIR }}/
+            ${{ env.STATE_DIR }}/
+          retention-days: 30
+
+      - name: Commit intelligence reports
+        if: needs.prepare.outputs.dry_run != 'true'
+        run: |
+          git config --local user.email "ops-bot@genetech.example"
+          git config --local user.name "GeneTech Ops Bot"
+          git add reports/ logs/ state/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "[Bot] Intelligence update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            git push
+          fi
+        continue-on-error: true
+
+  # ==================== 失败通知 ====================
+  notify-on-failure:
+    runs-on: ubuntu-latest
+    needs: [data-accumulation, domain-expansion, tech-adoption, promotion, intelligence]
+    if: failure() && github.event_name != 'pull_request'
+    steps:
+      - name: Create failure issue
+        run: |
+          gh issue create \
+            --title "[Ops Alert] Pipeline 执行失败 ${{ github.run_id }}" \
+            --body "运营自动化 pipeline 执行失败，请检查 Actions 日志。\n\n- Run ID: ${{ github.run_id }}\n- Event: ${{ github.event_name }}\n- Ref: ${{ github.ref }}\n\n查看日志: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --label "ops-alert,failure"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
+  # ==================== 成功汇总（可选） ====================
+  summary:
+    runs-on: ubuntu-latest
+    needs: [data-accumulation, domain-expansion, tech-adoption, promotion, intelligence]
+    if: always() && github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Operations Summary
+        run: |
+          echo "=== GeneTech Operations Summary ==="
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Trigger: ${{ github.event_name }}"
+          echo ""
+          echo "Pipeline Status:"
+          echo "  Data Accumulation: ${{ needs.data-accumulation.result || 'skipped' }}"
+          echo "  Domain Expansion: ${{ needs.domain-expansion.result || 'skipped' }}"
+          echo "  Tech Adoption: ${{ needs.tech-adoption.result || 'skipped' }}"
+          echo "  Promotion: ${{ needs.promotion.result || 'skipped' }}"
+          echo "  Intelligence: ${{ needs.intelligence.result || 'skipped' }}"

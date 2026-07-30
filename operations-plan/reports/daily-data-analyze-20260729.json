@@ -1,0 +1,90 @@
+{
+  "date": "2026-07-29",
+  "stage": "analyze",
+  "timestamp": "2026-07-28T21:48:23.118Z",
+  "durationMs": 48,
+  "rawCount": 210,
+  "dedupedCount": 178,
+  "cleanedCount": 178,
+  "classifiedCount": 178,
+  "unclassifiedCount": 0,
+  "dedupRate": "15.2%",
+  "validRate": "100.0%",
+  "siteDistribution": {
+    "agent-ecosystem": {
+      "new": 71,
+      "updated": 0,
+      "total": 0
+    },
+    "alien-minerals": {
+      "new": 2,
+      "updated": 0,
+      "total": 0
+    },
+    "biocomputing": {
+      "new": 0,
+      "updated": 0,
+      "total": 0
+    },
+    "bionic-ai": {
+      "new": 0,
+      "updated": 0,
+      "total": 0
+    },
+    "brain-science": {
+      "new": 56,
+      "updated": 0,
+      "total": 0
+    },
+    "deep-sea-tech": {
+      "new": 50,
+      "updated": 0,
+      "total": 0
+    },
+    "exo-science": {
+      "new": 0,
+      "updated": 0,
+      "total": 0
+    },
+    "genetech-tools": {
+      "new": 40,
+      "updated": 0,
+      "total": 0
+    },
+    "life-science": {
+      "new": 25,
+      "updated": 0,
+      "total": 0
+    },
+    "new-energy": {
+      "new": 10,
+      "updated": 0,
+      "total": 0
+    },
+    "nuclear-energy": {
+      "new": 16,
+      "updated": 0,
+      "total": 0
+    },
+    "quantum-computing": {
+      "new": 5,
+      "updated": 0,
+      "total": 0
+    },
+    "robot-parts": {
+      "new": 20,
+      "updated": 0,
+      "total": 0
+    },
+    "tcm-tools": {
+      "new": 0,
+      "updated": 0,
+      "total": 0
+    }
+  },
+  "gate": {
+    "pass": true,
+    "rule": "数据有效率≥80%",
+    "actual": "100.0%"
+  }
+}

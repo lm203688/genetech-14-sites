@@ -1,0 +1,159 @@
+{
+  "date": "2026-07-30",
+  "stage": "verify",
+  "timestamp": "2026-07-29T20:16:43.058Z",
+  "retry": true,
+  "retryReason": "测试阶段发现340个实体缺失name字段，修正后重新验证",
+  "durationMs": 50,
+  "totalEntitiesBefore": 6360,
+  "totalEntitiesAfter": 6406,
+  "newEntitiesCount": 46,
+  "siteChecks": [
+    {
+      "site": "agent-ecosystem",
+      "beforeCount": 605,
+      "afterCount": 648,
+      "expectedCount": 648,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "alien-minerals",
+      "beforeCount": 381,
+      "afterCount": 382,
+      "expectedCount": 382,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "biocomputing",
+      "beforeCount": 234,
+      "afterCount": 234,
+      "expectedCount": 234,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "bionic-ai",
+      "beforeCount": 205,
+      "afterCount": 205,
+      "expectedCount": 205,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "brain-science",
+      "beforeCount": 460,
+      "afterCount": 460,
+      "expectedCount": 460,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "beforeCount": 480,
+      "afterCount": 480,
+      "expectedCount": 480,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "exo-science",
+      "beforeCount": 415,
+      "afterCount": 415,
+      "expectedCount": 415,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "genetech-tools",
+      "beforeCount": 731,
+      "afterCount": 731,
+      "expectedCount": 731,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "life-science",
+      "beforeCount": 612,
+      "afterCount": 612,
+      "expectedCount": 612,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "new-energy",
+      "beforeCount": 611,
+      "afterCount": 611,
+      "expectedCount": 611,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "nuclear-energy",
+      "beforeCount": 415,
+      "afterCount": 415,
+      "expectedCount": 415,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "quantum-computing",
+      "beforeCount": 451,
+      "afterCount": 451,
+      "expectedCount": 451,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "robot-parts",
+      "beforeCount": 367,
+      "afterCount": 369,
+      "expectedCount": 369,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "tcm-tools",
+      "beforeCount": 393,
+      "afterCount": 393,
+      "expectedCount": 393,
+      "ratio": "1.0000",
+      "pass": true
+    }
+  ],
+  "entityChecks": [
+    {
+      "site": "agent-ecosystem",
+      "entityId": "arxiv-2607.26057v1",
+      "name": "Pass the Baton: Trajectory-Relayed On-Policy Distillation",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "arxiv-2607.26042v1",
+      "name": "VetClaw: An Edge-Cloud Multimodal Agentic System for Veterinary Disease Screening",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "arxiv-2607.26041v1",
+      "name": "Desktop-Delta Bench: Do Computer-Use Models Understand Desktop GUI Transitions?",
+      "exists": true,
+      "pass": true
+    }
+  ],
+  "metrics": {
+    "newEntities": 46,
+    "updatedEntities": 0,
+    "duration": "0.1s",
+    "anomalies": 0
+  },
+  "gate": {
+    "pass": true,
+    "rule": "线上实体数≥预期数×95%",
+    "actual": "达标"
+  }
+}

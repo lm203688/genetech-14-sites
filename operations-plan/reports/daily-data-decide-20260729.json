@@ -1,0 +1,674 @@
+{
+  "date": "2026-07-29",
+  "stage": "decide",
+  "timestamp": "2026-07-28T21:48:23.614Z",
+  "durationMs": 495,
+  "highConfidenceCount": 178,
+  "addCount": 295,
+  "modifyCount": 0,
+  "removeCount": 0,
+  "decisionList": [
+    {
+      "id": "arxiv-2607.24743v1",
+      "site": "agent-ecosystem",
+      "title": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV",
+        "fusion"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24743v1",
+      "site": "deep-sea-tech",
+      "title": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV",
+        "fusion"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24743v1",
+      "site": "new-energy",
+      "title": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV",
+        "fusion"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24743v1",
+      "site": "nuclear-energy",
+      "title": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV",
+        "fusion"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24731v1",
+      "site": "new-energy",
+      "title": "Rethinking Classifier-Free Guidance in On-Policy Diffusion Distillation",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "fusion"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24731v1",
+      "site": "nuclear-energy",
+      "title": "Rethinking Classifier-Free Guidance in On-Policy Diffusion Distillation",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "fusion"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24730v1",
+      "site": "agent-ecosystem",
+      "title": "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "workflow",
+        "ROV",
+        "medical AI"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24730v1",
+      "site": "deep-sea-tech",
+      "title": "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "workflow",
+        "ROV",
+        "medical AI"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24730v1",
+      "site": "genetech-tools",
+      "title": "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "workflow",
+        "ROV",
+        "medical AI"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24720v1",
+      "site": "agent-ecosystem",
+      "title": "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "learning",
+        "ROV",
+        "world model"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24720v1",
+      "site": "brain-science",
+      "title": "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "learning",
+        "ROV",
+        "world model"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24720v1",
+      "site": "deep-sea-tech",
+      "title": "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "learning",
+        "ROV",
+        "world model"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24720v1",
+      "site": "genetech-tools",
+      "title": "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "learning",
+        "ROV",
+        "world model"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24717v1",
+      "site": "brain-science",
+      "title": "DataOrchestra: Learning to Orchestrate Per-Example Curation of Pretraining Data",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "learning"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24714v1",
+      "site": "nuclear-energy",
+      "title": "Efficient LLM-Generated Shuttling Compilers for Complex Trapped-Ion Architectures",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "ITER",
+        "quantum"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24714v1",
+      "site": "quantum-computing",
+      "title": "Efficient LLM-Generated Shuttling Compilers for Complex Trapped-Ion Architectures",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "ITER",
+        "quantum"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24707v1",
+      "site": "deep-sea-tech",
+      "title": "ERUnderstand: Evaluating Vision-Language Models on Structured ER Diagrams",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24692v1",
+      "site": "agent-ecosystem",
+      "title": "Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24683v1",
+      "site": "brain-science",
+      "title": "Co-Learning for Missing Arbitrary Modalities in Multi-modal Classification",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "learning",
+        "fusion",
+        "sensor"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24683v1",
+      "site": "new-energy",
+      "title": "Co-Learning for Missing Arbitrary Modalities in Multi-modal Classification",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "learning",
+        "fusion",
+        "sensor"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24683v1",
+      "site": "nuclear-energy",
+      "title": "Co-Learning for Missing Arbitrary Modalities in Multi-modal Classification",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "learning",
+        "fusion",
+        "sensor"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24683v1",
+      "site": "robot-parts",
+      "title": "Co-Learning for Missing Arbitrary Modalities in Multi-modal Classification",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "learning",
+        "fusion",
+        "sensor"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24667v1",
+      "site": "brain-science",
+      "title": "Eviction as Estimation: A Fixed-Lag Smoothing View of Test-Time Memory, and When Measuring Beats Accumulating",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "memory"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24663v1",
+      "site": "agent-ecosystem",
+      "title": "A corrective agentic hybrid RAG and an operations-grounded evaluation for a scientific facility",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV",
+        "fusion"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24663v1",
+      "site": "deep-sea-tech",
+      "title": "A corrective agentic hybrid RAG and an operations-grounded evaluation for a scientific facility",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV",
+        "fusion"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24663v1",
+      "site": "new-energy",
+      "title": "A corrective agentic hybrid RAG and an operations-grounded evaluation for a scientific facility",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV",
+        "fusion"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24663v1",
+      "site": "nuclear-energy",
+      "title": "A corrective agentic hybrid RAG and an operations-grounded evaluation for a scientific facility",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV",
+        "fusion"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24649v1",
+      "site": "deep-sea-tech",
+      "title": "Reason-Mediated Behavioral Models for Auditing LLM Social Simulators",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24647v1",
+      "site": "deep-sea-tech",
+      "title": "Efficiency Matters in Autonomous Research",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24645v1",
+      "site": "deep-sea-tech",
+      "title": "Sparse Autoencoders Encode Both Concepts and Functions: The Downstream Geometry of Feature Effects",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24625v1",
+      "site": "agent-ecosystem",
+      "title": "Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24625v1",
+      "site": "deep-sea-tech",
+      "title": "Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24604v1",
+      "site": "agent-ecosystem",
+      "title": "Looping Is Not Reliability: State-Bound Evidence and Typed Revision Contracts for Agentic Code Repair",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV",
+        "ITER"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24604v1",
+      "site": "deep-sea-tech",
+      "title": "Looping Is Not Reliability: State-Bound Evidence and Typed Revision Contracts for Agentic Code Repair",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV",
+        "ITER"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24604v1",
+      "site": "nuclear-energy",
+      "title": "Looping Is Not Reliability: State-Bound Evidence and Typed Revision Contracts for Agentic Code Repair",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "ROV",
+        "ITER"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24601v1",
+      "site": "agent-ecosystem",
+      "title": "Evaluating the Impact of Explainable AI on Trust in AI-Assisted Code Review",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24589v1",
+      "site": "deep-sea-tech",
+      "title": "Artificial Intelligence and Innovation Ecosystem: Evolutionary Developments, Challenges, and Future Directions",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "ROV",
+        "mining"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24589v1",
+      "site": "alien-minerals",
+      "title": "Artificial Intelligence and Innovation Ecosystem: Evolutionary Developments, Challenges, and Future Directions",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "ROV",
+        "mining"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24588v1",
+      "site": "agent-ecosystem",
+      "title": "SIREN: Towards End-to-End Extreme-Weather Early Warning with Experience-Grounded LLM Agents",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24586v1",
+      "site": "agent-ecosystem",
+      "title": "D-Score: A Spectral Hidden-State Signal for Hallucination Detection in Large Language Models",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24688v1",
+      "site": "brain-science",
+      "title": "Beyond Scale and Generation: Understanding Language Model-based Entity Matching",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "learning",
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24688v1",
+      "site": "deep-sea-tech",
+      "title": "Beyond Scale and Generation: Understanding Language Model-based Entity Matching",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "learning",
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24688v1",
+      "site": "quantum-computing",
+      "title": "Beyond Scale and Generation: Understanding Language Model-based Entity Matching",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "learning",
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24653v1",
+      "site": "agent-ecosystem",
+      "title": "Kimi K3: Open Frontier Intelligence",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "memory",
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24653v1",
+      "site": "brain-science",
+      "title": "Kimi K3: Open Frontier Intelligence",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "memory",
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24653v1",
+      "site": "deep-sea-tech",
+      "title": "Kimi K3: Open Frontier Intelligence",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "agent",
+        "memory",
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24651v1",
+      "site": "deep-sea-tech",
+      "title": "Evidence Attribution in Visual Document Understanding without Coordinates or Region Labels",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24593v1",
+      "site": "agent-ecosystem",
+      "title": "PIVOT: Efficient Query-Group Indexing for Token-Level Sparse Attention",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24585v1",
+      "site": "deep-sea-tech",
+      "title": "From Data to Device: ELMOD An Efficient German-First 2.7B Language Model for Mobile Inference",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "ROV"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "arxiv-2607.24542v1",
+      "site": "brain-science",
+      "title": "From transcription to semantic corpus analysis: unsupervised learning of sentence representations for ancient languages",
+      "source": "arxiv",
+      "confidence": 0.9,
+      "action": "add",
+      "hotTags": [
+        "learning",
+        "ITER"
+      ],
+      "priority": "high"
+    }
+  ],
+  "coverage": "100%",
+  "gate": {
+    "pass": true,
+    "rule": "决策数据100%覆盖分析结果",
+    "actual": "100%"
+  }
+}

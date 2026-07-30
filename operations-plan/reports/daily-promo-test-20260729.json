@@ -1,0 +1,504 @@
+{
+  "date": "2026-07-29",
+  "stage": "test",
+  "timestamp": "2026-07-28T21:49:41.011Z",
+  "retry": true,
+  "retryReason": "补充2个缺失的schema.json后重新测试",
+  "seoValidation": [
+    {
+      "site": "agent-ecosystem",
+      "entityId": "gh-run-llama-llama_index",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "gh-browser-use-browser-use",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "gh-rasbt-LLMs-from-scratch",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "gh-harry0703-MoneyPrinterTurbo",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "gh-TauricResearch-TradingAgents",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "brain-science",
+      "entityId": "gh-HKUDS-nanobot",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "brain-science",
+      "entityId": "gh-zhayujie-CowAgent",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "brain-science",
+      "entityId": "gh-affaan-m-ECC",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "brain-science",
+      "entityId": "gh-mem0ai-mem0",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "brain-science",
+      "entityId": "gh-huggingface-transformers",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "entityId": "arxiv-2607.24267v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "entityId": "arxiv-2607.24233v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "entityId": "arxiv-2607.24206v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "entityId": "pmid-42517890",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "entityId": "gh-Significant-Gravitas-AutoGPT",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "genetech-tools",
+      "entityId": "gh-D4Vinci-Scrapling",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "genetech-tools",
+      "entityId": "gh-datawhalechina-hello-agents",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "genetech-tools",
+      "entityId": "gh-ollama-ollama",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "genetech-tools",
+      "entityId": "gh-f-prompts.chat",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "genetech-tools",
+      "entityId": "gh-firecrawl-firecrawl",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "life-science",
+      "entityId": "pmid-42517115",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "life-science",
+      "entityId": "pmid-42517111",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "life-science",
+      "entityId": "pmid-42517086",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "life-science",
+      "entityId": "pmid-42517025",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "life-science",
+      "entityId": "pmid-42516939",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "robot-parts",
+      "entityId": "arxiv-2607.24249v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "robot-parts",
+      "entityId": "arxiv-2607.24233v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "robot-parts",
+      "entityId": "arxiv-2607.24207v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "robot-parts",
+      "entityId": "arxiv-2607.24206v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "robot-parts",
+      "entityId": "arxiv-2607.24190v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "nuclear-energy",
+      "entityId": "arxiv-2607.24296v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "nuclear-energy",
+      "entityId": "arxiv-2607.24249v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "nuclear-energy",
+      "entityId": "arxiv-2607.24233v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "nuclear-energy",
+      "entityId": "arxiv-2607.24206v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "nuclear-energy",
+      "entityId": "pmid-42517890",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "new-energy",
+      "entityId": "arxiv-2607.24482v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "new-energy",
+      "entityId": "arxiv-2607.24296v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "new-energy",
+      "entityId": "arxiv-2607.24249v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "new-energy",
+      "entityId": "pmid-42517890",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "new-energy",
+      "entityId": "pmid-42517435",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "quantum-computing",
+      "entityId": "arxiv-2607.24714v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "quantum-computing",
+      "entityId": "arxiv-2607.24688v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "quantum-computing",
+      "entityId": "arxiv-2607.24721v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "quantum-computing",
+      "entityId": "arxiv-2607.24591v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "quantum-computing",
+      "entityId": "arxiv-2607.24686v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "alien-minerals",
+      "entityId": "arxiv-2607.24589v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    },
+    {
+      "site": "alien-minerals",
+      "entityId": "arxiv-2607.24744v1",
+      "titleValid": true,
+      "descriptionValid": true,
+      "pass": true
+    }
+  ],
+  "schemaValidation": [
+    {
+      "site": "agent-ecosystem",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "alien-minerals",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "biocomputing",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "bionic-ai",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "brain-science",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "exo-science",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "genetech-tools",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "life-science",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "new-energy",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "nuclear-energy",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "quantum-computing",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "robot-parts",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "tcm-tools",
+      "exists": true,
+      "pass": true
+    }
+  ],
+  "sitemapValidation": [
+    {
+      "site": "agent-ecosystem",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "alien-minerals",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "biocomputing",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "bionic-ai",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "brain-science",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "exo-science",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "genetech-tools",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "life-science",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "new-energy",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "nuclear-energy",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "quantum-computing",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "robot-parts",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    },
+    {
+      "site": "tcm-tools",
+      "exists": true,
+      "valid": true,
+      "pass": true
+    }
+  ],
+  "allSchemaValid": true,
+  "allSitemapValid": true,
+  "allSeoValidated": true,
+  "gate": {
+    "pass": true,
+    "rule": "结构化数据校验100%通过",
+    "actual": "100%"
+  }
+}

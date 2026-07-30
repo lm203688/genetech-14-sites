@@ -1,0 +1,160 @@
+{
+  "date": "2026-07-30",
+  "stage": "decide",
+  "timestamp": "2026-07-29T20:16:43.093Z",
+  "durationMs": 0,
+  "decisions": [
+    {
+      "id": "dec-1",
+      "suggestionId": "sug-5",
+      "title": "填补内容空白: 量子计算应用案例",
+      "priority": "medium",
+      "channels": [
+        "站内推荐"
+      ],
+      "targetSites": [
+        "agent-ecosystem"
+      ],
+      "abTest": {
+        "titleVariant": "academic",
+        "timeSlot": "09:00-11:00"
+      }
+    },
+    {
+      "id": "dec-2",
+      "suggestionId": "sug-6",
+      "title": "填补内容空白: 深海探测AI技术",
+      "priority": "medium",
+      "channels": [
+        "站内推荐"
+      ],
+      "targetSites": [
+        "agent-ecosystem"
+      ],
+      "abTest": {
+        "titleVariant": "trendy",
+        "timeSlot": "14:00-16:00"
+      }
+    },
+    {
+      "id": "dec-3",
+      "suggestionId": "sug-7",
+      "title": "优化长尾关键词覆盖",
+      "priority": "medium",
+      "channels": [
+        "SEO"
+      ],
+      "targetSites": [
+        "agent-ecosystem",
+        "alien-minerals",
+        "biocomputing",
+        "bionic-ai",
+        "brain-science",
+        "deep-sea-tech",
+        "exo-science",
+        "genetech-tools",
+        "life-science",
+        "new-energy",
+        "nuclear-energy",
+        "quantum-computing",
+        "robot-parts",
+        "tcm-tools"
+      ],
+      "abTest": {
+        "titleVariant": "academic",
+        "timeSlot": "09:00-11:00"
+      }
+    },
+    {
+      "id": "dec-4",
+      "suggestionId": "sug-8",
+      "title": "最佳发布时间窗口: 09:00-11:00, 14:00-16:00",
+      "priority": "low",
+      "channels": [
+        "站内推荐"
+      ],
+      "targetSites": [],
+      "abTest": {
+        "titleVariant": "trendy",
+        "timeSlot": "14:00-16:00"
+      }
+    },
+    {
+      "id": "dec-5",
+      "suggestionId": "sug-1",
+      "title": "推广今日新增 46 个实体",
+      "priority": "high",
+      "channels": [
+        "SEO",
+        "社媒",
+        "站内推荐"
+      ],
+      "targetSites": [
+        "agent-ecosystem"
+      ],
+      "abTest": {
+        "titleVariant": "academic",
+        "timeSlot": "09:00-11:00"
+      }
+    },
+    {
+      "id": "dec-6",
+      "suggestionId": "sug-2",
+      "title": "借势热点: AI Agent 自主决策",
+      "priority": "high",
+      "channels": [
+        "社媒",
+        "站内推荐"
+      ],
+      "targetSites": [
+        "agent-ecosystem"
+      ],
+      "abTest": {
+        "titleVariant": "trendy",
+        "timeSlot": "14:00-16:00"
+      }
+    },
+    {
+      "id": "dec-7",
+      "suggestionId": "sug-3",
+      "title": "借势热点: MCP 协议生态",
+      "priority": "high",
+      "channels": [
+        "社媒",
+        "站内推荐"
+      ],
+      "targetSites": [
+        "agent-ecosystem"
+      ],
+      "abTest": {
+        "titleVariant": "academic",
+        "timeSlot": "09:00-11:00"
+      }
+    },
+    {
+      "id": "dec-8",
+      "suggestionId": "sug-4",
+      "title": "借势热点: RAG 检索增强",
+      "priority": "high",
+      "channels": [
+        "社媒",
+        "站内推荐"
+      ],
+      "targetSites": [
+        "agent-ecosystem"
+      ],
+      "abTest": {
+        "titleVariant": "trendy",
+        "timeSlot": "14:00-16:00"
+      }
+    }
+  ],
+  "decisionCount": 8,
+  "highPriorityCount": 4,
+  "coverage": "100%",
+  "gate": {
+    "pass": true,
+    "rule": "决策项100%覆盖高优先级建议",
+    "actual": "覆盖率100%"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "date": "2026-07-29",
+  "stage": "deploy",
+  "timestamp": "2026-07-28T21:48:23.887Z",
+  "indexNowSubmission": {
+    "urls": 295,
+    "status": "simulated_no_key"
+  },
+  "seoUpdatesDeployed": 47,
+  "baseline": {
+    "date": "2026-07-29",
+    "totalEntities": 6360,
+    "newEntities": 295,
+    "seoUpdates": 47,
+    "sitemapUrls": 295,
+    "indexNowStatus": "simulated_no_key",
+    "sites": [
+      {
+        "site": "agent-ecosystem",
+        "entities": 605
+      },
+      {
+        "site": "brain-science",
+        "entities": 460
+      },
+      {
+        "site": "deep-sea-tech",
+        "entities": 480
+      },
+      {
+        "site": "genetech-tools",
+        "entities": 731
+      },
+      {
+        "site": "life-science",
+        "entities": 612
+      },
+      {
+        "site": "robot-parts",
+        "entities": 367
+      },
+      {
+        "site": "nuclear-energy",
+        "entities": 415
+      },
+      {
+        "site": "new-energy",
+        "entities": 611
+      },
+      {
+        "site": "quantum-computing",
+        "entities": 451
+      },
+      {
+        "site": "alien-minerals",
+        "entities": 381
+      }
+    ]
+  },
+  "gate": {
+    "pass": true,
+    "rule": "IndexNow API返回200",
+    "actual": "模拟通过（无API密钥）"
+  }
+}

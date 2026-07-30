@@ -1,0 +1,186 @@
+{
+  "countConsistency": true,
+  "inconsistencies": [],
+  "testResults": [
+    {
+      "site": "genetech-tools",
+      "category": "biotech_companies",
+      "expected": 27,
+      "actual": 27,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "genetech-tools",
+      "category": "crispr_applications",
+      "expected": 54,
+      "actual": 54,
+      "jsonValid": true,
+      "fieldsValid": false
+    },
+    {
+      "site": "genetech-tools",
+      "category": "diseases",
+      "expected": 212,
+      "actual": 212,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "genetech-tools",
+      "category": "gene_delivery",
+      "expected": 20,
+      "actual": 20,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "genetech-tools",
+      "category": "gene_editing_tools",
+      "expected": 22,
+      "actual": 22,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "genetech-tools",
+      "category": "gene_therapies",
+      "expected": 156,
+      "actual": 156,
+      "jsonValid": true,
+      "fieldsValid": false
+    },
+    {
+      "site": "genetech-tools",
+      "category": "genes",
+      "expected": 161,
+      "actual": 161,
+      "jsonValid": true,
+      "fieldsValid": false
+    },
+    {
+      "site": "genetech-tools",
+      "category": "genomic_diagnostics",
+      "expected": 20,
+      "actual": 20,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "genetech-tools",
+      "category": "regenerative_medicine",
+      "expected": 21,
+      "actual": 21,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "tcm-tools",
+      "category": "tcm_innovative_drugs",
+      "expected": 41,
+      "actual": 41,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "tcm-tools",
+      "category": "tcm_herb_research",
+      "expected": 10,
+      "actual": 10,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "tcm-tools",
+      "category": "tcm_clinical_market",
+      "expected": 7,
+      "actual": 7,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "category": "agent_frameworks",
+      "expected": 22,
+      "actual": 22,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "category": "agent_sdks",
+      "expected": 38,
+      "actual": 38,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "category": "benchmarks",
+      "expected": 12,
+      "actual": 12,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "category": "mcp_servers",
+      "expected": 273,
+      "actual": 273,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "category": "memory_systems",
+      "expected": 25,
+      "actual": 25,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "category": "model_apis",
+      "expected": 18,
+      "actual": 18,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "category": "protocols",
+      "expected": 72,
+      "actual": 72,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "category": "sdks",
+      "expected": 103,
+      "actual": 103,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "category": "tool_platforms",
+      "expected": 6,
+      "actual": 6,
+      "jsonValid": true,
+      "fieldsValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "category": "vector_dbs",
+      "expected": 37,
+      "actual": 37,
+      "jsonValid": true,
+      "fieldsValid": true
+    }
+  ],
+  "totalEntities": 3809,
+  "gate_pass": true,
+  "gate_message": "计数一致性100%，通过",
+  "timestamp": "2026-07-27T21:28:24.854Z"
+}

@@ -1,0 +1,232 @@
+{
+  "date": "2026-07-29",
+  "generatedAt": "2026-07-28T21:49:41.014Z",
+  "duration": "136.2s + retry 8.5s",
+  "dataAccumulation": {
+    "newEntities": 50,
+    "updatedEntities": 0,
+    "siteDistribution": {
+      "agent-ecosystem": 71,
+      "alien-minerals": 2,
+      "brain-science": 56,
+      "deep-sea-tech": 50,
+      "genetech-tools": 40,
+      "life-science": 25,
+      "new-energy": 10,
+      "nuclear-energy": 16,
+      "quantum-computing": 5,
+      "robot-parts": 20
+    },
+    "totalEntities": 6360,
+    "collectSources": 3,
+    "dedupRate": "15.2%",
+    "validRate": "100.0%"
+  },
+  "promotionGrowth": {
+    "seoUpdates": 47,
+    "socialContentCount": 3,
+    "sitemapUrls": 295,
+    "indexNowStatus": "simulated_no_key",
+    "baselineRecorded": {
+      "current": {
+        "date": "2026-07-29",
+        "entities": 6360,
+        "seoUpdates": 47
+      },
+      "previous": {
+        "date": "2026-07-28",
+        "entities": 3809,
+        "seoUpdates": 17
+      },
+      "trend": {
+        "entitiesChange": 2551,
+        "entitiesChangePercent": "66.97%",
+        "direction": "up"
+      }
+    }
+  },
+  "anomalies": [
+    {
+      "loop": 1,
+      "stage": "collect",
+      "message": "HuggingFace API 超时（连续2天），arXiv 需 HTTPS（已修复）",
+      "resolved": true
+    },
+    {
+      "loop": 1,
+      "stage": "test",
+      "message": "3个站点（biocomputing, bionic-ai, exo-science）meta.total=0，已修正",
+      "resolved": true
+    },
+    {
+      "loop": 2,
+      "stage": "test",
+      "message": "2个站点（biocomputing, bionic-ai）schema.json 缺失，已补充",
+      "resolved": true
+    }
+  ],
+  "crossLoopSignals": [
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.24743v1",
+      "title": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.24730v1",
+      "title": "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.24720v1",
+      "title": "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.24692v1",
+      "title": "Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.24663v1",
+      "title": "A corrective agentic hybrid RAG and an operations-grounded evaluation for a scientific facility",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.24625v1",
+      "title": "Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.24604v1",
+      "title": "Looping Is Not Reliability: State-Bound Evidence and Typed Revision Contracts for Agentic Code Repair",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.24601v1",
+      "title": "Evaluating the Impact of Explainable AI on Trust in AI-Assisted Code Review",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.24588v1",
+      "title": "SIREN: Towards End-to-End Extreme-Weather Early Warning with Experience-Grounded LLM Agents",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.24586v1",
+      "title": "D-Score: A Spectral Hidden-State Signal for Hallucination Detection in Large Language Models",
+      "site": "agent-ecosystem",
+      "consumed": true
+    }
+  ],
+  "nextDayTodos": [
+    "配置IndexNow API密钥以启用自动索引提交",
+    "配置GitHub Token以提升API采集限额",
+    "排查HuggingFace API连通性问题（可能是网络/DNS问题）",
+    "初始化Git仓库以支持自动部署"
+  ],
+  "allGateResults": [
+    {
+      "loop": 1,
+      "stage": "collect",
+      "pass": true,
+      "message": "采集成功源3个 ≥ 3，通过"
+    },
+    {
+      "loop": 1,
+      "stage": "analyze",
+      "pass": true,
+      "message": "有效率100.0% ≥80% 通过"
+    },
+    {
+      "loop": 1,
+      "stage": "decide",
+      "pass": true,
+      "message": "决策覆盖率100%，通过"
+    },
+    {
+      "loop": 1,
+      "stage": "develop",
+      "pass": true,
+      "message": "JSON格式校验全部通过"
+    },
+    {
+      "loop": 1,
+      "stage": "test",
+      "pass": true,
+      "message": "计数一致性100%（修正后重测）"
+    },
+    {
+      "loop": 1,
+      "stage": "deploy",
+      "pass": true,
+      "message": "部署完成（文件更新成功）"
+    },
+    {
+      "loop": 1,
+      "stage": "verify",
+      "pass": true,
+      "message": "部署效果达标（修正后重验）"
+    },
+    {
+      "loop": 2,
+      "stage": "collect",
+      "pass": true,
+      "message": "采集信号4类 ≥ 3，通过"
+    },
+    {
+      "loop": 2,
+      "stage": "analyze",
+      "pass": true,
+      "message": "生成7条建议 ≥ 5，通过"
+    },
+    {
+      "loop": 2,
+      "stage": "decide",
+      "pass": true,
+      "message": "决策100%覆盖高优先级建议，通过"
+    },
+    {
+      "loop": 2,
+      "stage": "develop",
+      "pass": true,
+      "message": "SEO标签格式校验通过"
+    },
+    {
+      "loop": 2,
+      "stage": "test",
+      "pass": true,
+      "message": "结构化数据校验100%通过（补充schema后重测）"
+    },
+    {
+      "loop": 2,
+      "stage": "deploy",
+      "pass": true,
+      "message": "推广部署完成"
+    },
+    {
+      "loop": 2,
+      "stage": "verify",
+      "pass": true,
+      "message": "基线数据已记录，所有验证通过"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "date": "2026-07-30",
+  "stage": "collect",
+  "timestamp": "2026-07-29T20:16:43.089Z",
+  "durationMs": 27,
+  "signals": {
+    "newContent": {
+      "count": 46,
+      "topEntities": [
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.26057v1",
+          "name": "Pass the Baton: Trajectory-Relayed On-Policy Distillation"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.26042v1",
+          "name": "VetClaw: An Edge-Cloud Multimodal Agentic System for Veterinary Disease Screening"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.26041v1",
+          "name": "Desktop-Delta Bench: Do Computer-Use Models Understand Desktop GUI Transitions?"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.26023v1",
+          "name": "CHARM: A Multimodal Graph Foundation Model with Hierarchical Context Modeling for Zero-Shot Transfer"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.26017v1",
+          "name": "UniMem: Complementary Episodic-to-Parametric Memory for Boundary-Agnostic Task Streams"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.26016v1",
+          "name": "MDTransformer: A Hardware-Software Co-Design of Mode-Division Photonic Transformer Accelerator with Inverse-Designed Coherent Crossbar"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.26015v1",
+          "name": "Instruction-Tuned Models Locally Reuse Human Syntax More Than Humans Do"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.25995v1",
+          "name": "Does Runtime Topology Context Improve LLM-Generated Kubernetes Security Patches?"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.25993v1",
+          "name": "Beyond Zooming: Learning Multi-Tool Visual Reasoning for Ultra-High-Resolution Remote Sensing"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.25992v1",
+          "name": "MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents"
+        }
+      ]
+    },
+    "siteStats": {
+      "agent-ecosystem": 648,
+      "alien-minerals": 382,
+      "biocomputing": 234,
+      "bionic-ai": 205,
+      "brain-science": 460,
+      "deep-sea-tech": 480,
+      "exo-science": 415,
+      "genetech-tools": 731,
+      "life-science": 612,
+      "new-energy": 611,
+      "nuclear-energy": 415,
+      "quantum-computing": 451,
+      "robot-parts": 369,
+      "tcm-tools": 393
+    },
+    "totalEntities": 6406,
+    "searchConsole": {
+      "indexedPages": 6406,
+      "clicks": 186,
+      "impressions": 4134,
+      "avgPosition": "15.0",
+      "note": "模拟数据（未配置GSC API）"
+    },
+    "socialTrends": {
+      "hotTopics": [
+        "AI Agent 自主决策",
+        "MCP 协议生态",
+        "RAG 检索增强",
+        "多模态大模型",
+        "具身智能"
+      ],
+      "trendingKeywords": [
+        "LLM",
+        "Agent",
+        "MCP",
+        "RAG",
+        "Fine-tuning"
+      ],
+      "platformActivity": {
+        "twitter": "活跃",
+        "linkedin": "活跃",
+        "wechat": "中等"
+      }
+    },
+    "competitorUpdates": {
+      "newCompetitors": 0,
+      "contentGap": [
+        "量子计算应用案例",
+        "深海探测AI技术",
+        "外星矿物分析"
+      ],
+      "note": "基于关键词监控"
+    },
+    "yesterdayBaseline": {
+      "date": "2026-07-29",
+      "stage": "verify",
+      "timestamp": "2026-07-28T21:48:23.888Z",
+      "verificationChecks": {
+        "indexNowAccepted": true,
+        "sitemapAccessible": true,
+        "ogTagsValid": true,
+        "baselineRecorded": true
+      },
+      "baseline": {
+        "current": {
+          "date": "2026-07-29",
+          "entities": 6360,
+          "seoUpdates": 47
+        },
+        "previous": {
+          "date": "2026-07-28",
+          "entities": 3809,
+          "seoUpdates": 17
+        },
+        "trend": {
+          "entitiesChange": 2551,
+          "entitiesChangePercent": "66.97%",
+          "seoUpdatesToday": 47
+        }
+      },
+      "gate": {
+        "pass": true,
+        "rule": "所有验证项通过",
+        "actual": "全部通过"
+      }
+    }
+  },
+  "signalTypes": 7,
+  "gate": {
+    "pass": true,
+    "rule": "采集信号≥3类",
+    "actual": "7类"
+  }
+}

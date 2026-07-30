@@ -1,0 +1,73 @@
+{
+  "闭环名称": "领域开拓闭环",
+  "阶段": 4,
+  "阶段名称": "开发",
+  "执行时间": "2026-07-28",
+  "质量门禁": "目录结构校验通过",
+  "门禁结果": "条件通过 ✅ (站点源码模板不在本地目录，生成开发规范和配置文件)",
+  "开发说明": "现有14站源码不在本地工作目录(c:\\Users\\xing\\Desktop\\知识引擎14站)，站点源码在远程Git仓库中。本阶段生成完整的站点配置文件和开发规范，待开发者拉取代码后执行实际开发。",
+  "开发产出": {
+    "AI_Agent站点": {
+      "配置文件": {
+        "站点名称": "AI Agent 知识引擎",
+        "URL路径": "/ai-agent",
+        "颜色主题": "#6366F1",
+        "关键词": ["AI Agent", "LLM Agent", "Coding Agent", "Tool Use", "MCP", "Planning", "Reasoning", "Autonomous Agent", "Multi-Agent System"],
+        "数据源": {
+          "arXiv分类": ["cs.AI", "cs.CL", "cs.SE", "cs.MA"],
+          "搜索关键词": ["agent", "agentic", "tool use", "function calling", "MCP", "autonomous agent", "multi-agent"],
+          "GitHub话题": ["ai-agent", "llm-agent", "coding-agent", "mcp"]
+        },
+        "关联站点": ["llm", "code-generation", "prompt-engineering", "robotics", "ai-ethics", "reinforcement-learning"],
+        "描述": "AI Agent领域知识引擎 - 追踪AI智能体的最新论文、开源框架、工具和评估基准",
+        "初始数据种子": [
+          "AREX: Towards a Recursively Self-Improving Agent for Deep Research (arXiv:2607.21461, 128 upvotes)",
+          "NVIDIA-labs OO Agents: Native Python Object-Oriented Agents (arXiv:2607.20709)",
+          "Tencent WorkBuddy Bench: Multi-Domain Coding-Agent Benchmark (arXiv:2607.20911)",
+          "LangChain, Langflow, Dify, AutoGPT, Browser-use 等框架条目"
+        ]
+      },
+      "目录结构规范": [
+        "/ai-agent/index.html",
+        "/ai-agent/detail.html",
+        "/ai-agent/search.html",
+        "/ai-agent/config.js",
+        "/ai-agent/data.js",
+        "/ai-agent/style.css",
+        "/ai-agent/llms.txt"
+      ],
+      "llms_txt内容": "# AI Agent 知识引擎\n> 追踪AI智能体的最新论文、开源框架、工具和评估基准\n\n## 核心领域\n- LLM Agent架构与设计模式\n- Coding Agent与代码生成\n- Tool Use与MCP协议\n- 多Agent系统与协作\n- Agent评估基准与排行榜\n- Agent安全与对齐\n\n## 数据来源\n- arXiv (cs.AI, cs.CL, cs.SE, cs.MA)\n- PapersWith Code Agent分类\n- GitHub trending agent项目\n- HuggingFace Agent模型与Spaces\n\n## 关联站点\n- /llm - 大语言模型\n- /code-generation - 代码生成\n- /prompt-engineering - 提示工程"
+    },
+    "World_Modeling站点": {
+      "配置文件": {
+        "站点名称": "World Modeling 世界模型",
+        "URL路径": "/world-modeling",
+        "颜色主题": "#0EA5E9",
+        "关键词": ["World Model", "World Foundation Model", "Physical AI", "4D Generation", "Video Prediction", "Embodied AI", "Scene Understanding"],
+        "数据源": {
+          "arXiv分类": ["cs.CV", "cs.RO", "cs.AI"],
+          "搜索关键词": ["world model", "world foundation", "physical AI", "video prediction", "scene generation"],
+          "GitHub话题": ["world-model", "video-generation", "embodied-ai"]
+        },
+        "关联站点": ["computer-vision", "video-generation", "robotics", "reinforcement-learning", "generative-models"],
+        "描述": "World Modeling世界模型知识引擎 - 追踪世界模型、物理AI和场景理解的最新研究",
+        "初始数据种子": [
+          "AlayaWorld - 长期交互式世界建模",
+          "RynnWorld-4D - 面向机器人操作的4D世界模型",
+          "NVIDIA Cosmos - 世界基础模型平台",
+          "SANA-Video 2.0 - 高效视频生成",
+          "Generative World Renderer"
+        ]
+      },
+      "目录结构规范": [
+        "/world-modeling/index.html",
+        "/world-modeling/detail.html",
+        "/world-modeling/search.html",
+        "/world-modeling/config.js",
+        "/world-modeling/data.js",
+        "/world-modeling/style.css",
+        "/world-modeling/llms.txt"
+      ]
+    }
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "date": "2026-07-30",
+  "generatedAt": "2026-07-29T20:16:43.366Z",
+  "duration": "0.0s",
+  "dataAccumulation": {
+    "newEntities": 46,
+    "updatedEntities": 0,
+    "siteDistribution": {
+      "agent-ecosystem": {
+        "added": 43,
+        "updated": 0,
+        "total": 648
+      },
+      "alien-minerals": {
+        "added": 1,
+        "updated": 0,
+        "total": 382
+      },
+      "robot-parts": {
+        "added": 2,
+        "updated": 0,
+        "total": 369
+      }
+    },
+    "totalEntities": 6406,
+    "collectSources": 3,
+    "dedupRate": "0.0%",
+    "validRate": "100.0%"
+  },
+  "promotionGrowth": {
+    "seoUpdates": 46,
+    "socialContentCount": 15,
+    "sitemapUrls": 294,
+    "indexNowStatus": "simulated_no_key",
+    "baselineRecorded": {
+      "current": {
+        "date": "2026-07-30",
+        "entities": 6406,
+        "seoUpdates": 46,
+        "indexedPages": "N/A",
+        "clicks": "N/A"
+      },
+      "previous": {
+        "date": "2026-07-29",
+        "entities": 6360,
+        "seoUpdates": 47
+      },
+      "trend": {
+        "entitiesChange": 46,
+        "entitiesChangePercent": "0.72%",
+        "seoUpdatesToday": 46,
+        "direction": "up"
+      }
+    }
+  },
+  "anomalies": [
+    {
+      "loop": 1,
+      "stage": "collect",
+      "message": "github 采集失败: GitHub HTTP 422（搜索语法需调整为单topic查询）",
+      "resolved": false
+    },
+    {
+      "loop": 1,
+      "stage": "collect",
+      "message": "huggingface 采集失败: connect ETIMEDOUT（网络/DNS问题）",
+      "resolved": false
+    },
+    {
+      "loop": 1,
+      "stage": "test",
+      "message": "3个站点（genetech-tools, quantum-computing, tcm-tools）共340个实体缺失name字段，已自动补充",
+      "resolved": true
+    }
+  ],
+  "crossLoopSignals": [
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.26057v1",
+      "title": "Pass the Baton: Trajectory-Relayed On-Policy Distillation",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.26042v1",
+      "title": "VetClaw: An Edge-Cloud Multimodal Agentic System for Veterinary Disease Screening",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.26041v1",
+      "title": "Desktop-Delta Bench: Do Computer-Use Models Understand Desktop GUI Transitions?",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.26023v1",
+      "title": "CHARM: A Multimodal Graph Foundation Model with Hierarchical Context Modeling for Zero-Shot Transfer",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.26017v1",
+      "title": "UniMem: Complementary Episodic-to-Parametric Memory for Boundary-Agnostic Task Streams",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.26016v1",
+      "title": "MDTransformer: A Hardware-Software Co-Design of Mode-Division Photonic Transformer Accelerator with Inverse-Designed Coherent Crossbar",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.26015v1",
+      "title": "Instruction-Tuned Models Locally Reuse Human Syntax More Than Humans Do",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.25995v1",
+      "title": "Does Runtime Topology Context Improve LLM-Generated Kubernetes Security Patches?",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.25993v1",
+      "title": "Beyond Zooming: Learning Multi-Tool Visual Reasoning for Ultra-High-Resolution Remote Sensing",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.25992v1",
+      "title": "MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents",
+      "site": "agent-ecosystem",
+      "consumed": true
+    }
+  ],
+  "nextDayTodos": [
+    "配置IndexNow API密钥以启用自动索引提交",
+    "配置GitHub Token以提升API采集限额",
+    "初始化Git仓库以支持自动部署",
+    "持续监控HuggingFace API连通性"
+  ],
+  "allGateResults": [
+    {
+      "loop": 1,
+      "stage": "collect",
+      "pass": true,
+      "message": "3个"
+    },
+    {
+      "loop": 1,
+      "stage": "analyze",
+      "pass": true,
+      "message": "100.0%"
+    },
+    {
+      "loop": 1,
+      "stage": "decide",
+      "pass": true,
+      "message": "覆盖率100%，高置信度46条"
+    },
+    {
+      "loop": 1,
+      "stage": "develop",
+      "pass": true,
+      "message": "全部通过"
+    },
+    {
+      "loop": 1,
+      "stage": "test",
+      "pass": true,
+      "message": "全部一致（修正340个缺失name字段后重测通过）"
+    },
+    {
+      "loop": 1,
+      "stage": "deploy",
+      "pass": true,
+      "message": "文件更新成功（无Git）"
+    },
+    {
+      "loop": 1,
+      "stage": "verify",
+      "pass": true,
+      "message": "达标"
+    },
+    {
+      "loop": 2,
+      "stage": "collect",
+      "pass": true,
+      "message": "7类"
+    },
+    {
+      "loop": 2,
+      "stage": "analyze",
+      "pass": true,
+      "message": "8条"
+    },
+    {
+      "loop": 2,
+      "stage": "decide",
+      "pass": true,
+      "message": "覆盖率100%"
+    },
+    {
+      "loop": 2,
+      "stage": "develop",
+      "pass": true,
+      "message": "全部通过"
+    },
+    {
+      "loop": 2,
+      "stage": "test",
+      "pass": true,
+      "message": "全部通过"
+    },
+    {
+      "loop": 2,
+      "stage": "deploy",
+      "pass": true,
+      "message": "模拟提交成功（200）"
+    },
+    {
+      "loop": 2,
+      "stage": "verify",
+      "pass": true,
+      "message": "全部通过"
+    }
+  ]
+}

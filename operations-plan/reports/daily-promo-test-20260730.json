@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-30",
+  "stage": "test",
+  "timestamp": "2026-07-29T20:16:43.300Z",
+  "durationMs": 170,
+  "schemaValidation": {
+    "pass": true,
+    "errors": []
+  },
+  "seoTagValidation": {
+    "pass": true,
+    "errors": [],
+    "note": "meta标签检查（非阻断）"
+  },
+  "sitemapValidation": {
+    "pass": true,
+    "errors": []
+  },
+  "socialValidation": {
+    "pass": true,
+    "errors": []
+  },
+  "gate": {
+    "pass": true,
+    "rule": "结构化数据校验100%通过",
+    "actual": "全部通过"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "actionItems": [
+    {
+      "type": "seo",
+      "priority": "high",
+      "title": "推广 genetech-tools 站点更新 - 11条新实体",
+      "channel": "IndexNow + 结构化数据",
+      "action": "提交 genetech-tools 更新页面到IndexNow，更新JSON-LD",
+      "status": "approved",
+      "abTest": "variant_a",
+      "scheduledTime": "immediate"
+    },
+    {
+      "type": "seo",
+      "priority": "high",
+      "title": "推广 agent-ecosystem 站点更新 - 6条新实体",
+      "channel": "IndexNow + 结构化数据",
+      "action": "提交 agent-ecosystem 更新页面到IndexNow，更新JSON-LD",
+      "status": "approved",
+      "abTest": "variant_b",
+      "scheduledTime": "immediate"
+    },
+    {
+      "type": "content",
+      "priority": "high",
+      "title": "围绕热点\"MCP Protocol Extensions 2026\"生成内容",
+      "channel": "社媒 + 站内文章",
+      "action": "撰写相关技术分析，发布到对应站点",
+      "status": "approved",
+      "abTest": "variant_b",
+      "scheduledTime": "immediate"
+    },
+    {
+      "type": "content",
+      "priority": "high",
+      "title": "围绕热点\"AI Agent Security\"生成内容",
+      "channel": "社媒 + 站内文章",
+      "action": "撰写相关技术分析，发布到对应站点",
+      "status": "approved",
+      "abTest": "variant_b",
+      "scheduledTime": "immediate"
+    },
+    {
+      "type": "content",
+      "priority": "high",
+      "title": "围绕热点\"RAG Optimization Techniques\"生成内容",
+      "channel": "社媒 + 站内文章",
+      "action": "撰写相关技术分析，发布到对应站点",
+      "status": "approved",
+      "abTest": "variant_a",
+      "scheduledTime": "immediate"
+    },
+    {
+      "type": "seo",
+      "priority": "high",
+      "title": "更新所有站点的Schema.org结构化数据",
+      "channel": "SEO",
+      "action": "确保JSON-LD包含最新实体信息",
+      "status": "approved",
+      "abTest": "variant_b",
+      "scheduledTime": "immediate"
+    },
+    {
+      "type": "seo",
+      "priority": "medium",
+      "title": "推广 life-science 站点更新 - 2条新实体",
+      "channel": "IndexNow + 结构化数据",
+      "action": "提交 life-science 更新页面到IndexNow，更新JSON-LD",
+      "status": "queued",
+      "scheduledTime": "next_cycle"
+    },
+    {
+      "type": "seo",
+      "priority": "medium",
+      "title": "推广 brain-science 站点更新 - 3条新实体",
+      "channel": "IndexNow + 结构化数据",
+      "action": "提交 brain-science 更新页面到IndexNow，更新JSON-LD",
+      "status": "queued",
+      "scheduledTime": "next_cycle"
+    },
+    {
+      "type": "seo",
+      "priority": "medium",
+      "title": "推广 robot-parts 站点更新 - 1条新实体",
+      "channel": "IndexNow + 结构化数据",
+      "action": "提交 robot-parts 更新页面到IndexNow，更新JSON-LD",
+      "status": "queued",
+      "scheduledTime": "next_cycle"
+    }
+  ],
+  "coverage": 1,
+  "gate_pass": true,
+  "gate_message": "决策100%覆盖高优先级建议，通过",
+  "timestamp": "2026-07-27T21:28:24.871Z"
+}

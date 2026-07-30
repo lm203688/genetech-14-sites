@@ -1,0 +1,489 @@
+{
+  "date": "2026-07-29",
+  "stage": "develop",
+  "timestamp": "2026-07-28T21:48:23.865Z",
+  "seoUpdates": [
+    {
+      "site": "agent-ecosystem",
+      "entityId": "gh-run-llama-llama_index",
+      "seoTitle": "llama_index",
+      "seoDescription": "LlamaIndex is the leading document agent and OCR platform",
+      "titleLength": 11,
+      "descriptionLength": 57,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "gh-browser-use-browser-use",
+      "seoTitle": "browser-use",
+      "seoDescription": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+      "titleLength": 11,
+      "descriptionLength": 75,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "gh-rasbt-LLMs-from-scratch",
+      "seoTitle": "LLMs-from-scratch",
+      "seoDescription": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+      "titleLength": 17,
+      "descriptionLength": 66,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "gh-harry0703-MoneyPrinterTurbo",
+      "seoTitle": "MoneyPrinterTurbo",
+      "seoDescription": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
+      "titleLength": 17,
+      "descriptionLength": 114,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "gh-TauricResearch-TradingAgents",
+      "seoTitle": "TradingAgents",
+      "seoDescription": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "titleLength": 13,
+      "descriptionLength": 59,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "brain-science",
+      "entityId": "gh-HKUDS-nanobot",
+      "seoTitle": "nanobot",
+      "seoDescription": "Ultra-lightweight, open-source, self-hosted personal AI agent framework in Python with WebUI, tools, memory, MCP, multi-agent workflows, automation, and chat ap",
+      "titleLength": 7,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "brain-science",
+      "entityId": "gh-zhayujie-CowAgent",
+      "seoTitle": "CowAgent",
+      "seoDescription": "Open-source super AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-model, multi-channel. Lightwei",
+      "titleLength": 8,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "brain-science",
+      "entityId": "gh-affaan-m-ECC",
+      "seoTitle": "ECC",
+      "seoDescription": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor ",
+      "titleLength": 3,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "brain-science",
+      "entityId": "gh-mem0ai-mem0",
+      "seoTitle": "mem0",
+      "seoDescription": "Universal memory layer for AI Agents",
+      "titleLength": 4,
+      "descriptionLength": 36,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "brain-science",
+      "entityId": "gh-huggingface-transformers",
+      "seoTitle": "transformers",
+      "seoDescription": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference a",
+      "titleLength": 12,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "entityId": "arxiv-2607.24267v1",
+      "seoTitle": "FeelWorld: Visuo-Tactile World Model for Hierarchical Contac",
+      "seoDescription": "Humans plan physical interactions by imagining the possible outcomes of candidate actions. However, existing visual world models primarily capture appearance dy",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "entityId": "arxiv-2607.24233v1",
+      "seoTitle": "Quality-Adaptive Multi-UAV 3D Reconstruction with Sparse Wor",
+      "seoDescription": "3D reconstruction of unknown environments is a key application in robotics but is severely limited by the computational and energy capabilities of current aeria",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "entityId": "arxiv-2607.24206v1",
+      "seoTitle": "Surgical Re-enactment for Operating Room Workflow Datasets",
+      "seoDescription": "The introduction of new technologies, such as surgical robots, is driving the vision of a connected, smart operating room (OR). However, realizing this vision r",
+      "titleLength": 58,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "entityId": "pmid-42517890",
+      "seoTitle": "Hidden risk in normal myocardial perfusion scans: AI-detecte",
+      "seoDescription": "Hidden risk in normal myocardial perfusion scans: AI-detected proximal coronary calcium on CT attenuation maps improves prognosis.",
+      "titleLength": 60,
+      "descriptionLength": 130,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "entityId": "gh-Significant-Gravitas-AutoGPT",
+      "seoTitle": "AutoGPT",
+      "seoDescription": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+      "titleLength": 7,
+      "descriptionLength": 152,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "genetech-tools",
+      "entityId": "gh-D4Vinci-Scrapling",
+      "seoTitle": "Scrapling",
+      "seoDescription": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl!",
+      "titleLength": 9,
+      "descriptionLength": 107,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "genetech-tools",
+      "entityId": "gh-datawhalechina-hello-agents",
+      "seoTitle": "hello-agents",
+      "seoDescription": "📚 《从零开始构建智能体》——从零开始的智能体原理与实践教程",
+      "titleLength": 12,
+      "descriptionLength": 31,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "genetech-tools",
+      "entityId": "gh-ollama-ollama",
+      "seoTitle": "ollama",
+      "seoDescription": "Get up and running with Kimi-K2.6, GLM-5.2, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "titleLength": 6,
+      "descriptionLength": 101,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "genetech-tools",
+      "entityId": "gh-f-prompts.chat",
+      "seoTitle": "prompts.chat",
+      "seoDescription": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete pr",
+      "titleLength": 12,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "genetech-tools",
+      "entityId": "gh-firecrawl-firecrawl",
+      "seoTitle": "firecrawl",
+      "seoDescription": "The API to search, scrape, and interact with the web at scale. 🔥",
+      "titleLength": 9,
+      "descriptionLength": 65,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "life-science",
+      "entityId": "pmid-42517115",
+      "seoTitle": "Artificial intelligence, autism care, and health equity: a p",
+      "seoDescription": "Artificial intelligence, autism care, and health equity: a public health narrative review.",
+      "titleLength": 60,
+      "descriptionLength": 90,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "life-science",
+      "entityId": "pmid-42517111",
+      "seoTitle": "Beyond explainability: toward trustworthy governance of gene",
+      "seoDescription": "Beyond explainability: toward trustworthy governance of generative AI in digital public health surveillance.",
+      "titleLength": 60,
+      "descriptionLength": 108,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "life-science",
+      "entityId": "pmid-42517086",
+      "seoTitle": "Berberine-induced ferroptosis as a novel anti-cancer strateg",
+      "seoDescription": "Berberine-induced ferroptosis as a novel anti-cancer strategy: Molecular, epigenetic and translational perspectives.",
+      "titleLength": 60,
+      "descriptionLength": 116,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "life-science",
+      "entityId": "pmid-42517025",
+      "seoTitle": "Advancing Tumor Treatment Through Artificial Intelligence an",
+      "seoDescription": "Advancing Tumor Treatment Through Artificial Intelligence and Mathematical Modeling: A Comprehensive Review.",
+      "titleLength": 60,
+      "descriptionLength": 108,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "life-science",
+      "entityId": "pmid-42516939",
+      "seoTitle": "From Raw Hospital Records to an AI-Ready Surveillance Datase",
+      "seoDescription": "From Raw Hospital Records to an AI-Ready Surveillance Dataset: A FAIR-Compliant Data Pipeline for Healthcare-Associated Infection Research in a Chinese District",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "robot-parts",
+      "entityId": "arxiv-2607.24249v1",
+      "seoTitle": "SILICA: Repurposing Diffusion Priors for Joint Glass Segment",
+      "seoDescription": "Standard depth sensors systematically fail on transparent surfaces, creating corrupted 3D maps and severe navigation hazards. While specialized hardware sensors",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "robot-parts",
+      "entityId": "arxiv-2607.24233v1",
+      "seoTitle": "Quality-Adaptive Multi-UAV 3D Reconstruction with Sparse Wor",
+      "seoDescription": "3D reconstruction of unknown environments is a key application in robotics but is severely limited by the computational and energy capabilities of current aeria",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "robot-parts",
+      "entityId": "arxiv-2607.24207v1",
+      "seoTitle": "FloAff-Kitchen: Bridging Navigation and Manipulation via Can",
+      "seoDescription": "Mobile manipulation requires robots to identify Floor Affordance (FloAff) that maximizes downstream manipulation success rather than merely ensuring navigation ",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "robot-parts",
+      "entityId": "arxiv-2607.24206v1",
+      "seoTitle": "Surgical Re-enactment for Operating Room Workflow Datasets",
+      "seoDescription": "The introduction of new technologies, such as surgical robots, is driving the vision of a connected, smart operating room (OR). However, realizing this vision r",
+      "titleLength": 58,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "robot-parts",
+      "entityId": "arxiv-2607.24190v1",
+      "seoTitle": "Not Forgotten: Implementation and Evaluation of a Personaliz",
+      "seoDescription": "Social robots that rely on large language models for conversation are unable to retain information across sessions. This absence of memory violates social expec",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "nuclear-energy",
+      "entityId": "arxiv-2607.24296v1",
+      "seoTitle": "PAC-DP: PAC-Bayesian Diffusion Policy Learning",
+      "seoDescription": "Diffusion Policies (DPs) are able to perform complex manipulation tasks. However, DPs are typically trained by minimizing a denoising objective, which provides ",
+      "titleLength": 46,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "nuclear-energy",
+      "entityId": "arxiv-2607.24249v1",
+      "seoTitle": "SILICA: Repurposing Diffusion Priors for Joint Glass Segment",
+      "seoDescription": "Standard depth sensors systematically fail on transparent surfaces, creating corrupted 3D maps and severe navigation hazards. While specialized hardware sensors",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "nuclear-energy",
+      "entityId": "arxiv-2607.24233v1",
+      "seoTitle": "Quality-Adaptive Multi-UAV 3D Reconstruction with Sparse Wor",
+      "seoDescription": "3D reconstruction of unknown environments is a key application in robotics but is severely limited by the computational and energy capabilities of current aeria",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "nuclear-energy",
+      "entityId": "arxiv-2607.24206v1",
+      "seoTitle": "Surgical Re-enactment for Operating Room Workflow Datasets",
+      "seoDescription": "The introduction of new technologies, such as surgical robots, is driving the vision of a connected, smart operating room (OR). However, realizing this vision r",
+      "titleLength": 58,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "nuclear-energy",
+      "entityId": "pmid-42517890",
+      "seoTitle": "Hidden risk in normal myocardial perfusion scans: AI-detecte",
+      "seoDescription": "Hidden risk in normal myocardial perfusion scans: AI-detected proximal coronary calcium on CT attenuation maps improves prognosis.",
+      "titleLength": 60,
+      "descriptionLength": 130,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "new-energy",
+      "entityId": "arxiv-2607.24482v1",
+      "seoTitle": "Distributed Coordination for Resilient Multi-UAV Remote Sens",
+      "seoDescription": "Deploying multiple UAVs for remote sensing enables proportional reductions in mission time, but realizing these benefits requires the fleet to coordinate at run",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "new-energy",
+      "entityId": "arxiv-2607.24296v1",
+      "seoTitle": "PAC-DP: PAC-Bayesian Diffusion Policy Learning",
+      "seoDescription": "Diffusion Policies (DPs) are able to perform complex manipulation tasks. However, DPs are typically trained by minimizing a denoising objective, which provides ",
+      "titleLength": 46,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "new-energy",
+      "entityId": "arxiv-2607.24249v1",
+      "seoTitle": "SILICA: Repurposing Diffusion Priors for Joint Glass Segment",
+      "seoDescription": "Standard depth sensors systematically fail on transparent surfaces, creating corrupted 3D maps and severe navigation hazards. While specialized hardware sensors",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "new-energy",
+      "entityId": "pmid-42517890",
+      "seoTitle": "Hidden risk in normal myocardial perfusion scans: AI-detecte",
+      "seoDescription": "Hidden risk in normal myocardial perfusion scans: AI-detected proximal coronary calcium on CT attenuation maps improves prognosis.",
+      "titleLength": 60,
+      "descriptionLength": 130,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "new-energy",
+      "entityId": "pmid-42517435",
+      "seoTitle": "Green Solvent Systems for Cellulose Dissolution and Regenera",
+      "seoDescription": "Green Solvent Systems for Cellulose Dissolution and Regeneration: Hydrogen-Bond Engineering Toward Sustainable Functional Materials.",
+      "titleLength": 60,
+      "descriptionLength": 132,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "quantum-computing",
+      "entityId": "arxiv-2607.24714v1",
+      "seoTitle": "Efficient LLM-Generated Shuttling Compilers for Complex Trap",
+      "seoDescription": "Trapped-ion quantum computers rely on shuttling compilers, which cast an input algorithm into a sequence of ion-qubit movements within a given architecture. We ",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "quantum-computing",
+      "entityId": "arxiv-2607.24688v1",
+      "seoTitle": "Beyond Scale and Generation: Understanding Language Model-ba",
+      "seoDescription": "Entity matching identifies records that refer to the same real-world entity. Language models can be adapted to this task through bi-encoder, cross-encoder, and ",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "quantum-computing",
+      "entityId": "arxiv-2607.24721v1",
+      "seoTitle": "DreamStyle3D: Efficient 3D Stylized Asset Generation via Dua",
+      "seoDescription": "With the growth of gaming, animation, and virtual reality industries, the demand for efficient generation of stylized 3D assets is rapidly increasing. However, ",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "quantum-computing",
+      "entityId": "arxiv-2607.24591v1",
+      "seoTitle": "CameraAnything: Refilming Videos with Arbitrary Camera Contr",
+      "seoDescription": "We introduce CameraAnything, the first unified framework for camera controlled video editing that enables joint control of both intrinsic and extrinsic camera p",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "quantum-computing",
+      "entityId": "arxiv-2607.24686v1",
+      "seoTitle": "Stacking the Deck: Tunable Trainability in Stacked LCUs",
+      "seoDescription": "Variational quantum circuits have been central to many proposed near-term applications of quantum computing, but a growing body of evidence suggests that traina",
+      "titleLength": 55,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "alien-minerals",
+      "entityId": "arxiv-2607.24589v1",
+      "seoTitle": "Artificial Intelligence and Innovation Ecosystem: Evolutiona",
+      "seoDescription": "The development of the Innovative Ecosystem (IE) presents a new paradigm for economic integration, collaborative advancement, and shared achievements. The rise ",
+      "titleLength": 60,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    },
+    {
+      "site": "alien-minerals",
+      "entityId": "arxiv-2607.24744v1",
+      "seoTitle": "Data Pyramid for Embodied Manipulation",
+      "seoDescription": "Multimodal foundation models learned to see and to speak by consuming the whole internet. Embodied agents admit no such shortcut, since they require data that c",
+      "titleLength": 38,
+      "descriptionLength": 160,
+      "titleValid": true,
+      "descriptionValid": true
+    }
+  ],
+  "seoUpdatesCount": 47,
+  "socialContent": {
+    "twitter": "🧬 GeneTech 知识引擎每日更新 (2026-07-29)\n\n新增 295 个实体：\n• ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding\n• KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability\n• The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation\n\n#AI #GenAI #KnowledgeEngine",
+    "linkedin": "GeneTech 知识引擎每日更新 - 2026-07-29\n\n今日新增 295 个高质量实体，涵盖以下站点：\n1. ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding (agent-ecosystem)\n2. KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability (agent-ecosystem)\n3. The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation (agent-ecosystem)\n4. Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines (agent-ecosystem)\n5. A corrective agentic hybrid RAG and an operations-grounded evaluation for a scientific facility (agent-ecosystem)\n\n持续追踪AI、生命科学、量子计算等前沿领域。",
+    "wechat": "GeneTech知识引擎 | 每日更新 2026-07-29\n\n今日新增 295 个实体\n\n精选推荐：\n📌 ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding\n📌 KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability\n📌 The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation\n\n访问 genetech14.com 获取更多内容"
+  },
+  "sitemapUpdateNeeded": 10,
+  "gate": {
+    "pass": true,
+    "rule": "SEO标题≤60字、描述≤160字",
+    "actual": "全部合规"
+  }
+}

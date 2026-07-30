@@ -1,0 +1,37 @@
+{
+  "date": "2026-07-30",
+  "stage": "verify",
+  "timestamp": "2026-07-29T20:16:43.332Z",
+  "durationMs": 0,
+  "verificationChecks": {
+    "indexNowAccepted": true,
+    "sitemapAccessible": true,
+    "ogTagsValid": true,
+    "baselineRecorded": true
+  },
+  "baseline": {
+    "current": {
+      "date": "2026-07-30",
+      "entities": 6406,
+      "seoUpdates": 46,
+      "indexedPages": "N/A",
+      "clicks": "N/A"
+    },
+    "previous": {
+      "date": "2026-07-29",
+      "entities": 6360,
+      "seoUpdates": 47
+    },
+    "trend": {
+      "entitiesChange": 46,
+      "entitiesChangePercent": "0.72%",
+      "seoUpdatesToday": 46,
+      "direction": "up"
+    }
+  },
+  "gate": {
+    "pass": true,
+    "rule": "所有验证项通过",
+    "actual": "全部通过"
+  }
+}

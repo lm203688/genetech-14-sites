@@ -1,0 +1,101 @@
+{
+  "date": "2026-07-29",
+  "stage": "test",
+  "timestamp": "2026-07-28T21:49:40.960Z",
+  "retry": true,
+  "retryReason": "修正3个站点计数不一致后重新测试",
+  "countChecks": [
+    {
+      "site": "agent-ecosystem",
+      "pass": true,
+      "actualCount": 605,
+      "metaCount": 605
+    },
+    {
+      "site": "alien-minerals",
+      "pass": true,
+      "actualCount": 381,
+      "metaCount": 381
+    },
+    {
+      "site": "biocomputing",
+      "pass": true,
+      "actualCount": 234,
+      "metaCount": 234
+    },
+    {
+      "site": "bionic-ai",
+      "pass": true,
+      "actualCount": 205,
+      "metaCount": 205
+    },
+    {
+      "site": "brain-science",
+      "pass": true,
+      "actualCount": 460,
+      "metaCount": 460
+    },
+    {
+      "site": "deep-sea-tech",
+      "pass": true,
+      "actualCount": 480,
+      "metaCount": 480
+    },
+    {
+      "site": "exo-science",
+      "pass": true,
+      "actualCount": 415,
+      "metaCount": 415
+    },
+    {
+      "site": "genetech-tools",
+      "pass": true,
+      "actualCount": 731,
+      "metaCount": 731
+    },
+    {
+      "site": "life-science",
+      "pass": true,
+      "actualCount": 612,
+      "metaCount": 612
+    },
+    {
+      "site": "new-energy",
+      "pass": true,
+      "actualCount": 611,
+      "metaCount": 611
+    },
+    {
+      "site": "nuclear-energy",
+      "pass": true,
+      "actualCount": 415,
+      "metaCount": 415
+    },
+    {
+      "site": "quantum-computing",
+      "pass": true,
+      "actualCount": 451,
+      "metaCount": 451
+    },
+    {
+      "site": "robot-parts",
+      "pass": true,
+      "actualCount": 367,
+      "metaCount": 367
+    },
+    {
+      "site": "tcm-tools",
+      "pass": true,
+      "actualCount": 393,
+      "metaCount": 393
+    }
+  ],
+  "jsonChecks": [],
+  "fieldChecks": [],
+  "allCountConsistent": true,
+  "gate": {
+    "pass": true,
+    "rule": "计数一致性100%",
+    "actual": "100%"
+  }
+}

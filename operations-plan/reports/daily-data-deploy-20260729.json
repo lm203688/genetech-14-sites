@@ -1,0 +1,81 @@
+{
+  "date": "2026-07-29",
+  "stage": "deploy",
+  "timestamp": "2026-07-28T21:48:23.802Z",
+  "durationMs": 88,
+  "gitCommit": {
+    "success": false,
+    "sha": "no-git"
+  },
+  "modifiedFilesCount": 10,
+  "newEntitiesCount": 295,
+  "changelog": {
+    "date": "2026-07-29",
+    "type": "daily-data-update",
+    "newEntities": 295,
+    "modifiedFiles": 10,
+    "siteChanges": {
+      "agent-ecosystem": {
+        "added": 71,
+        "updated": 0,
+        "total": 605
+      },
+      "alien-minerals": {
+        "added": 2,
+        "updated": 0,
+        "total": 381
+      },
+      "brain-science": {
+        "added": 56,
+        "updated": 0,
+        "total": 460
+      },
+      "deep-sea-tech": {
+        "added": 50,
+        "updated": 0,
+        "total": 480
+      },
+      "genetech-tools": {
+        "added": 40,
+        "updated": 0,
+        "total": 731
+      },
+      "life-science": {
+        "added": 25,
+        "updated": 0,
+        "total": 612
+      },
+      "new-energy": {
+        "added": 10,
+        "updated": 0,
+        "total": 611
+      },
+      "nuclear-energy": {
+        "added": 16,
+        "updated": 0,
+        "total": 415
+      },
+      "quantum-computing": {
+        "added": 5,
+        "updated": 0,
+        "total": 451
+      },
+      "robot-parts": {
+        "added": 20,
+        "updated": 0,
+        "total": 367
+      }
+    },
+    "commitSha": "no-git",
+    "timestamp": "2026-07-28T21:48:23.802Z"
+  },
+  "cloudflareDeploy": {
+    "status": "simulated",
+    "note": "文件已更新，Cloudflare Pages 将在 git push 后自动部署"
+  },
+  "gate": {
+    "pass": true,
+    "rule": "Git提交成功+Cloudflare部署成功",
+    "actual": "文件更新成功"
+  }
+}

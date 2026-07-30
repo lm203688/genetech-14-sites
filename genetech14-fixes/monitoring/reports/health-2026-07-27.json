@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-07-27T05:24:09.559Z",
+  "overallStatus": "warn",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "warnings": 1,
+    "failures": 0,
+    "uptime": "N/A"
+  },
+  "sites": [],
+  "api": [],
+  "dataIntegrity": [
+    {
+      "check": "entities-dir",
+      "status": "warn",
+      "message": "entities 目录不存在"
+    }
+  ],
+  "security": []
+}

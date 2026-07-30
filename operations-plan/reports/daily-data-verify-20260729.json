@@ -1,0 +1,158 @@
+{
+  "date": "2026-07-29",
+  "stage": "verify",
+  "timestamp": "2026-07-28T21:49:40.988Z",
+  "retry": true,
+  "retryReason": "修正计数一致性后重新验证",
+  "totalEntitiesBefore": 6310,
+  "totalEntitiesAfter": 6360,
+  "newEntitiesCount": 50,
+  "siteChecks": [
+    {
+      "site": "agent-ecosystem",
+      "beforeCount": 534,
+      "afterCount": 605,
+      "expectedCount": 605,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "alien-minerals",
+      "beforeCount": 379,
+      "afterCount": 381,
+      "expectedCount": 381,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "biocomputing",
+      "beforeCount": 234,
+      "afterCount": 234,
+      "expectedCount": 234,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "bionic-ai",
+      "beforeCount": 205,
+      "afterCount": 205,
+      "expectedCount": 205,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "brain-science",
+      "beforeCount": 404,
+      "afterCount": 460,
+      "expectedCount": 460,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "beforeCount": 430,
+      "afterCount": 480,
+      "expectedCount": 480,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "exo-science",
+      "beforeCount": 415,
+      "afterCount": 415,
+      "expectedCount": 415,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "genetech-tools",
+      "beforeCount": 691,
+      "afterCount": 731,
+      "expectedCount": 731,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "life-science",
+      "beforeCount": 587,
+      "afterCount": 612,
+      "expectedCount": 612,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "new-energy",
+      "beforeCount": 601,
+      "afterCount": 611,
+      "expectedCount": 611,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "nuclear-energy",
+      "beforeCount": 399,
+      "afterCount": 415,
+      "expectedCount": 415,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "quantum-computing",
+      "beforeCount": 446,
+      "afterCount": 451,
+      "expectedCount": 451,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "robot-parts",
+      "beforeCount": 347,
+      "afterCount": 367,
+      "expectedCount": 367,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "tcm-tools",
+      "beforeCount": 393,
+      "afterCount": 393,
+      "expectedCount": 393,
+      "ratio": "1.0000",
+      "pass": true
+    }
+  ],
+  "entityChecks": [
+    {
+      "site": "agent-ecosystem",
+      "entityId": "arxiv-2607.24743v1",
+      "name": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "arxiv-2607.24730v1",
+      "name": "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "arxiv-2607.24720v1",
+      "name": "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation",
+      "exists": true,
+      "pass": true
+    }
+  ],
+  "metrics": {
+    "newEntities": 50,
+    "updatedEntities": 0,
+    "duration": "N/A (retry)",
+    "anomalies": 0
+  },
+  "gate": {
+    "pass": true,
+    "rule": "线上实体数≥预期数×95%",
+    "actual": "达标"
+  }
+}
