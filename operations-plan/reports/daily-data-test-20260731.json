@@ -1,0 +1,170 @@
+{
+  "date": "2026-07-31",
+  "stage": "test",
+  "timestamp": "2026-07-30T21:20:41.494Z",
+  "durationMs": 0,
+  "testResults": [
+    {
+      "site": "agent-ecosystem",
+      "actualCount": 812,
+      "metaCount": 812,
+      "totalCount": 812,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "biocomputing",
+      "actualCount": 236,
+      "metaCount": 236,
+      "totalCount": 236,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "bionic-ai",
+      "actualCount": 206,
+      "metaCount": 206,
+      "totalCount": 206,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "brain-science",
+      "actualCount": 468,
+      "metaCount": 468,
+      "totalCount": 468,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "deep-sea-tech",
+      "actualCount": 482,
+      "metaCount": 482,
+      "totalCount": 482,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "exo-science",
+      "actualCount": 419,
+      "metaCount": 419,
+      "totalCount": 419,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "genetech-tools",
+      "actualCount": 783,
+      "metaCount": 783,
+      "totalCount": 783,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "life-science",
+      "actualCount": 625,
+      "metaCount": 625,
+      "totalCount": 625,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "new-energy",
+      "actualCount": 615,
+      "metaCount": 615,
+      "totalCount": 615,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "nuclear-energy",
+      "actualCount": 425,
+      "metaCount": 425,
+      "totalCount": 425,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "robot-parts",
+      "actualCount": 378,
+      "metaCount": 378,
+      "totalCount": 378,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "alien-minerals",
+      "actualCount": 382,
+      "metaCount": 382,
+      "totalCount": 382,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "quantum-computing",
+      "actualCount": 451,
+      "metaCount": 451,
+      "totalCount": 451,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "site": "tcm-tools",
+      "actualCount": 393,
+      "metaCount": 393,
+      "totalCount": 393,
+      "countPass": true,
+      "fieldsPass": true,
+      "jsonPass": true,
+      "pass": true,
+      "errors": []
+    }
+  ],
+  "totalSites": 14,
+  "passedSites": 14,
+  "failedSites": [],
+  "gate": {
+    "pass": true,
+    "rule": "计数一致性100%",
+    "actual": "全部一致"
+  }
+}

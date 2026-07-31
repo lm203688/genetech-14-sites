@@ -1,0 +1,128 @@
+{
+  "date": "2026-07-31",
+  "stage": "collect",
+  "timestamp": "2026-07-30T21:20:41.502Z",
+  "durationMs": 6,
+  "signals": {
+    "newContent": {
+      "count": 269,
+      "topEntities": [
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.27191v1",
+          "name": "Can AI agents conduct open-ended AI research? Early evidence from two case studies"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.27189v1",
+          "name": "APEX-Accounting"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.27177v1",
+          "name": "Partner Capability Estimation for Task-Agnostic Adaptation in Ad-Hoc Teamwork"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.27155v1",
+          "name": "OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.27154v1",
+          "name": "Anatomy Contextualized Adaption of CT Foundation Models"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.27143v1",
+          "name": "Cost-Sensitive Conformal Prediction and Human-in-the-Loop Abstention for Imbalanced High-Stakes Decision Support: A Multi-Domain Benchmark"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.27134v1",
+          "name": "Linguistic Monoculture in LLM-Assisted Language Use"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.27130v1",
+          "name": "AgentMap: Joint Equivalence and Subsumption Discovery for Ontology Matching"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.27084v1",
+          "name": "SciFigQual-Bench: A Benchmark for Scientific Figure Quality Assessment with Full-Manuscript Context"
+        },
+        {
+          "site": "agent-ecosystem",
+          "id": "arxiv-2607.27083v1",
+          "name": "Scores Are Not Decisions: Cost-Aware Stopping for Tool Acquisition in LLM Agents"
+        }
+      ]
+    },
+    "siteStats": {
+      "agent-ecosystem": 812,
+      "alien-minerals": 382,
+      "biocomputing": 236,
+      "bionic-ai": 206,
+      "brain-science": 468,
+      "deep-sea-tech": 482,
+      "exo-science": 419,
+      "genetech-tools": 783,
+      "life-science": 625,
+      "new-energy": 615,
+      "nuclear-energy": 425,
+      "quantum-computing": 451,
+      "robot-parts": 378,
+      "tcm-tools": 393
+    },
+    "totalEntities": 6675,
+    "searchConsole": {
+      "indexedPages": 6675,
+      "clicks": 186,
+      "impressions": 4226,
+      "avgPosition": "15.0",
+      "note": "模拟数据（未配置GSC API）"
+    },
+    "socialTrends": {
+      "hotTopics": [
+        "agent",
+        "LLM",
+        "RAG",
+        "transformer",
+        "robot"
+      ],
+      "trendingKeywords": [
+        "LLM",
+        "Agent",
+        "MCP",
+        "RAG",
+        "Fine-tuning"
+      ],
+      "platformActivity": {
+        "twitter": "活跃",
+        "linkedin": "活跃",
+        "wechat": "中等"
+      }
+    },
+    "competitorUpdates": {
+      "newCompetitors": 0,
+      "contentGap": [
+        "量子计算应用案例",
+        "深海探测AI技术",
+        "外星矿物分析"
+      ],
+      "note": "基于关键词监控"
+    },
+    "yesterdayBaseline": {
+      "date": "2026-07-30",
+      "entities": 6406,
+      "seoUpdates": 46
+    }
+  },
+  "signalTypes": 7,
+  "gate": {
+    "pass": true,
+    "rule": "采集信号≥3类",
+    "actual": "7类"
+  }
+}

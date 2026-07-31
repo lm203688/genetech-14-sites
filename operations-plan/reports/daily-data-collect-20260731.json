@@ -1,0 +1,36 @@
+{
+  "date": "2026-07-31",
+  "stage": "collect",
+  "timestamp": "2026-07-30T21:20:41.435Z",
+  "durationMs": 140304,
+  "sources": {
+    "arxiv": {
+      "count": 60,
+      "status": "success"
+    },
+    "pubmed": {
+      "count": 50,
+      "status": "success"
+    },
+    "openalex": {
+      "count": 20,
+      "status": "success"
+    },
+    "github": {
+      "count": 80,
+      "status": "success"
+    },
+    "huggingface": {
+      "count": 40,
+      "status": "success"
+    }
+  },
+  "successSources": 5,
+  "failedSources": [],
+  "totalRawItems": 250,
+  "gate": {
+    "pass": true,
+    "rule": "采集成功源≥3个",
+    "actual": "5个"
+  }
+}

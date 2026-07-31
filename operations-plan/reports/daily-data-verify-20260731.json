@@ -1,0 +1,157 @@
+{
+  "date": "2026-07-31",
+  "stage": "verify",
+  "timestamp": "2026-07-30T21:20:41.495Z",
+  "durationMs": 0,
+  "totalEntitiesBefore": 6406,
+  "totalEntitiesAfter": 6675,
+  "newEntitiesCount": 269,
+  "siteChecks": [
+    {
+      "site": "agent-ecosystem",
+      "beforeCount": 648,
+      "afterCount": 812,
+      "expectedCount": 812,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "biocomputing",
+      "beforeCount": 234,
+      "afterCount": 236,
+      "expectedCount": 236,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "bionic-ai",
+      "beforeCount": 205,
+      "afterCount": 206,
+      "expectedCount": 206,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "brain-science",
+      "beforeCount": 460,
+      "afterCount": 468,
+      "expectedCount": 468,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "beforeCount": 480,
+      "afterCount": 482,
+      "expectedCount": 482,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "exo-science",
+      "beforeCount": 415,
+      "afterCount": 419,
+      "expectedCount": 419,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "genetech-tools",
+      "beforeCount": 731,
+      "afterCount": 783,
+      "expectedCount": 783,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "life-science",
+      "beforeCount": 612,
+      "afterCount": 625,
+      "expectedCount": 625,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "new-energy",
+      "beforeCount": 611,
+      "afterCount": 615,
+      "expectedCount": 615,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "nuclear-energy",
+      "beforeCount": 415,
+      "afterCount": 425,
+      "expectedCount": 425,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "robot-parts",
+      "beforeCount": 369,
+      "afterCount": 378,
+      "expectedCount": 378,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "alien-minerals",
+      "beforeCount": 382,
+      "afterCount": 382,
+      "expectedCount": 382,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "quantum-computing",
+      "beforeCount": 451,
+      "afterCount": 451,
+      "expectedCount": 451,
+      "ratio": "1.0000",
+      "pass": true
+    },
+    {
+      "site": "tcm-tools",
+      "beforeCount": 393,
+      "afterCount": 393,
+      "expectedCount": 393,
+      "ratio": "1.0000",
+      "pass": true
+    }
+  ],
+  "entityChecks": [
+    {
+      "site": "agent-ecosystem",
+      "entityId": "arxiv-2607.27191v1",
+      "name": "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "arxiv-2607.27189v1",
+      "name": "APEX-Accounting",
+      "exists": true,
+      "pass": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "entityId": "arxiv-2607.27177v1",
+      "name": "Partner Capability Estimation for Task-Agnostic Adaptation in Ad-Hoc Teamwork",
+      "exists": true,
+      "pass": true
+    }
+  ],
+  "metrics": {
+    "newEntities": 269,
+    "updatedEntities": 0,
+    "duration": "0.0s",
+    "anomalies": 0
+  },
+  "gate": {
+    "pass": true,
+    "rule": "线上实体数≥预期数×95%",
+    "actual": "达标"
+  }
+}

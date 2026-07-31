@@ -1,0 +1,261 @@
+{
+  "date": "2026-07-31",
+  "generatedAt": "2026-07-30T21:20:41.509Z",
+  "duration": "140.4s",
+  "dataAccumulation": {
+    "newEntities": 269,
+    "updatedEntities": 0,
+    "siteDistribution": {
+      "agent-ecosystem": {
+        "added": 164,
+        "updated": 0,
+        "total": 812
+      },
+      "biocomputing": {
+        "added": 2,
+        "updated": 0,
+        "total": 236
+      },
+      "bionic-ai": {
+        "added": 1,
+        "updated": 0,
+        "total": 206
+      },
+      "brain-science": {
+        "added": 8,
+        "updated": 0,
+        "total": 468
+      },
+      "deep-sea-tech": {
+        "added": 2,
+        "updated": 0,
+        "total": 482
+      },
+      "exo-science": {
+        "added": 4,
+        "updated": 0,
+        "total": 419
+      },
+      "genetech-tools": {
+        "added": 52,
+        "updated": 0,
+        "total": 783
+      },
+      "life-science": {
+        "added": 13,
+        "updated": 0,
+        "total": 625
+      },
+      "new-energy": {
+        "added": 4,
+        "updated": 0,
+        "total": 615
+      },
+      "nuclear-energy": {
+        "added": 10,
+        "updated": 0,
+        "total": 425
+      },
+      "robot-parts": {
+        "added": 9,
+        "updated": 0,
+        "total": 378
+      }
+    },
+    "totalEntities": 6675,
+    "collectSources": 5,
+    "dedupRate": "7.2%",
+    "validRate": "100.0%"
+  },
+  "promotionGrowth": {
+    "seoUpdates": 269,
+    "socialContentCount": 8,
+    "sitemapUrls": 6675,
+    "indexNowStatus": "simulated_no_key",
+    "baselineRecorded": {
+      "current": {
+        "date": "2026-07-31",
+        "entities": 6675,
+        "seoUpdates": 269,
+        "indexedPages": 6675,
+        "clicks": 186
+      },
+      "previous": {
+        "date": "2026-07-30",
+        "entities": 6406,
+        "seoUpdates": 46
+      },
+      "trend": {
+        "entitiesChange": 269,
+        "entitiesChangePercent": "4.20%",
+        "seoUpdatesToday": 269,
+        "direction": "up"
+      }
+    }
+  },
+  "anomalies": [],
+  "crossLoopSignals": [
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.27191v1",
+      "title": "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.27189v1",
+      "title": "APEX-Accounting",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.27177v1",
+      "title": "Partner Capability Estimation for Task-Agnostic Adaptation in Ad-Hoc Teamwork",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.27155v1",
+      "title": "OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.27154v1",
+      "title": "Anatomy Contextualized Adaption of CT Foundation Models",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.27143v1",
+      "title": "Cost-Sensitive Conformal Prediction and Human-in-the-Loop Abstention for Imbalanced High-Stakes Decision Support: A Multi-Domain Benchmark",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.27134v1",
+      "title": "Linguistic Monoculture in LLM-Assisted Language Use",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.27130v1",
+      "title": "AgentMap: Joint Equivalence and Subsumption Discovery for Ontology Matching",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.27084v1",
+      "title": "SciFigQual-Bench: A Benchmark for Scientific Figure Quality Assessment with Full-Manuscript Context",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.27083v1",
+      "title": "Scores Are Not Decisions: Cost-Aware Stopping for Tool Acquisition in LLM Agents",
+      "site": "agent-ecosystem",
+      "consumed": true
+    }
+  ],
+  "nextDayTodos": [
+    "配置IndexNow API密钥以启用自动索引提交",
+    "配置GitHub Token以提升API采集限额",
+    "初始化Git仓库以支持自动部署",
+    "持续监控HuggingFace API连通性"
+  ],
+  "allGateResults": [
+    {
+      "loop": 1,
+      "stage": "collect",
+      "pass": true,
+      "message": "5个"
+    },
+    {
+      "loop": 1,
+      "stage": "analyze",
+      "pass": true,
+      "message": "100.0%"
+    },
+    {
+      "loop": 1,
+      "stage": "decide",
+      "pass": true,
+      "message": "覆盖率100%，高置信度232条"
+    },
+    {
+      "loop": 1,
+      "stage": "develop",
+      "pass": true,
+      "message": "全部通过"
+    },
+    {
+      "loop": 1,
+      "stage": "test",
+      "pass": true,
+      "message": "全部一致"
+    },
+    {
+      "loop": 1,
+      "stage": "deploy",
+      "pass": true,
+      "message": "文件更新成功（无Git）"
+    },
+    {
+      "loop": 1,
+      "stage": "verify",
+      "pass": true,
+      "message": "达标"
+    },
+    {
+      "loop": 2,
+      "stage": "collect",
+      "pass": true,
+      "message": "7类"
+    },
+    {
+      "loop": 2,
+      "stage": "analyze",
+      "pass": true,
+      "message": "8条"
+    },
+    {
+      "loop": 2,
+      "stage": "decide",
+      "pass": true,
+      "message": "覆盖率100%"
+    },
+    {
+      "loop": 2,
+      "stage": "develop",
+      "pass": true,
+      "message": "全部通过"
+    },
+    {
+      "loop": 2,
+      "stage": "test",
+      "pass": true,
+      "message": "全部通过"
+    },
+    {
+      "loop": 2,
+      "stage": "deploy",
+      "pass": true,
+      "message": "模拟提交成功（200）"
+    },
+    {
+      "loop": 2,
+      "stage": "verify",
+      "pass": true,
+      "message": "全部通过"
+    }
+  ]
+}

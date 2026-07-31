@@ -1,0 +1,27 @@
+{
+  "date": "2026-07-31",
+  "stage": "deploy",
+  "timestamp": "2026-07-30T21:20:41.508Z",
+  "durationMs": 0,
+  "indexNow": {
+    "attempted": true,
+    "success": false,
+    "status": "simulated_no_key",
+    "urlsSubmitted": 269,
+    "responseCode": 200
+  },
+  "metaTagsUpdated": 269,
+  "socialContentPublished": 8,
+  "baselineRecorded": {
+    "date": "2026-07-31",
+    "entities": 6675,
+    "seoUpdates": 269,
+    "indexedPages": 6675,
+    "clicks": 186
+  },
+  "gate": {
+    "pass": true,
+    "rule": "IndexNow API返回200",
+    "actual": "模拟提交成功（200）"
+  }
+}

@@ -1,0 +1,1630 @@
+{
+  "date": "2026-07-31",
+  "stage": "test",
+  "timestamp": "2026-07-30T21:20:41.507Z",
+  "durationMs": 0,
+  "schemaValidation": [
+    {
+      "entityId": "arxiv-2607.27191v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27189v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27177v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27155v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27154v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27143v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27134v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27130v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27084v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27083v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27081v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27080v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27069v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27056v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26947v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26935v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26914v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26908v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27203v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27196v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27188v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27146v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27140v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27132v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27126v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27092v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27042v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530970",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530939",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530935",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530923",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530917",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530912",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530899",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530842",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530833",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530822",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530821",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530797",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530789",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530761",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530739",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530710",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530698",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530683",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530672",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530585",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530496",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530475",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530464",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530427",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530406",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530375",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530347",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530320",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530294",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530203",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530130",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530058",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530023",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42529985",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42529887",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42529883",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42529780",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7137578291",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7166029900",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7166095570",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7165701127",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7164977240",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7120352027",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7118420454",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7112546092",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7113345739",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7166337875",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7166358488",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7163691118",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7171002878",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "NousResearch/hermes-agent",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "thedaviddias/Front-End-Checklist",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "shareAI-lab/learn-claude-code",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Panniantong/Agent-Reach",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "santifer/career-ops",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "ZhuLinsen/daily_stock_analysis",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "CherryHQ/cherry-studio",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "HKUDS/nanobot",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "zhayujie/CowAgent",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "siyuan-note/siyuan",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "hugohe3/ppt-master",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "CopilotKit/CopilotKit",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "iOfficeAI/AionUi",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Gitlawb/openclaude",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "googleworkspace/cli",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "HKUDS/Vibe-Trading",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "esengine/DeepSeek-Reasonix",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "jackwener/OpenCLI",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "bojieli/ai-agent-book",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "activepieces/activepieces",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "affaan-m/ECC",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "n8n-io/n8n",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Snailclimb/JavaGuide",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "langgenius/dify",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "open-webui/open-webui",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "farion1231/cc-switch",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Graphify-Labs/graphify",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "punkpeye/awesome-mcp-servers",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "lobehub/lobehub",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "netdata/netdata",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "koala73/worldmonitor",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "D4Vinci/Scrapling",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "ComposioHQ/awesome-claude-skills",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "headroomlabs-ai/headroom",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "sansan0/TrendRadar",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "upstash/context7",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "MemPalace/mempalace",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "aaif-goose/goose",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "mudler/LocalAI",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "langchain-ai/langchain",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Shubhamsaboo/awesome-llm-apps",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "thedotmack/claude-mem",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "PaddlePaddle/PaddleOCR",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "infiniflow/ragflow",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "dair-ai/Prompt-Engineering-Guide",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "datawhalechina/hello-agents",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Mintplex-Labs/anything-llm",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "mem0ai/mem0",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pathwaycom/llm-app",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "FlowiseAI/Flowise",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "run-llama/llama_index",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "jeecgboot/JeecgBoot",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "milvus-io/milvus",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "QuivrHQ/quivr",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "langchain-ai/langgraph",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Significant-Gravitas/AutoGPT",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "ollama/ollama",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "f/prompts.chat",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "huggingface/transformers",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "firecrawl/firecrawl",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "browser-use/browser-use",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "harry0703/MoneyPrinterTurbo",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "rasbt/LLMs-from-scratch",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "TauricResearch/TradingAgents",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "JuliusBrussee/caveman",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "DietrichGebert/ponytail",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "vllm-project/vllm",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "OpenHands/OpenHands",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "mlabonne/llm-course",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "dphn/dolphin-2.9.1-yi-1.5-34b",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "BAAI/bge-reranker-v2-m3",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "ProsusAI/finbert",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "BAAI/bge-reranker-base",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "meta-llama/Prompt-Guard-86M",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "daekeun-ml/koelectra-small-v3-nsmc",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "trl-internal-testing/tiny-Qwen2ForSequenceClassification-2.5",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "finiteautomata/bertweet-base-sentiment-analysis",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "TrustSafeAI/RADAR-Vicuna-7B",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "cardiffnlp/twitter-xlm-roberta-base-sentiment",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "SamLowe/roberta-base-go_emotions",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "lxyuan/distilbert-base-multilingual-cased-sentiments-student",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "yiyanghkust/finbert-tone",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pysentimiento/robertuito-sentiment-analysis",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "nlptown/bert-base-multilingual-uncased-sentiment",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "ElKulako/cryptobert",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530799",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42529886",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42529882",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27179v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27056v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26946v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27076v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27062v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530713",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42529882",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "dphn/dolphin-2.9.1-yi-1.5-34b",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26946v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27152v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27073v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27169v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27132v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "iOfficeAI/AionUi",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27191v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27172v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27138v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27109v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27084v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27083v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27066v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27065v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27056v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27054v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27023v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26935v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26933v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26914v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27196v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27146v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27132v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27106v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27105v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27077v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27036v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27031v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27030v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530226",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530160",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7116362194",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "CopilotKit/CopilotKit",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "infiniflow/ragflow",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "harry0703/MoneyPrinterTurbo",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Qwen/Qwen3-0.6B",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "facebook/opt-125m",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Qwen/Qwen3-8B",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Qwen/Qwen2.5-1.5B-Instruct",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "openai-community/gpt2",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Qwen/Qwen2.5-7B-Instruct",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "meta-llama/Llama-3.2-1B-Instruct",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Qwen/Qwen3-32B",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "deepseek-ai/DeepSeek-R1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "openai/gpt-oss-20b",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "meta-llama/Llama-3.1-8B-Instruct",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Qwen/Qwen3-1.7B",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Qwen/Qwen2.5-3B-Instruct",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "farbodtavakkoli/OTel-LLM-E4B-IT",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Qwen/Qwen2.5-0.5B-Instruct",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "hmellor/tiny-random-LlamaForCausalLM",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "dphn/dolphin-2.9.1-yi-1.5-34b",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "livekit/turn-detector",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "papluca/xlm-roberta-base-language-detection",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "boboliu/Qwen3-Reranker-4B-W4A16-G128",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27078v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530806",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530614",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530595",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530243",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530089",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42530084",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42529886",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "pmid-42529797",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7163092171",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7128551175",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7167304894",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7161357999",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27152v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27090v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27076v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27036v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27084v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27066v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27054v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26935v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27169v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27106v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27036v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27027v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7165079981",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7161357999",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27138v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26985v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26935v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.26914v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27169v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27036v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "arxiv-2607.27017v1",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7116362194",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    },
+    {
+      "entityId": "oa-W7154471983",
+      "schemaValid": true,
+      "titleValid": true,
+      "descValid": true
+    }
+  ],
+  "sitemapValid": true,
+  "socialLinksValid": true,
+  "allPassed": true,
+  "gate": {
+    "pass": true,
+    "rule": "结构化数据校验100%通过",
+    "actual": "全部通过"
+  }
+}

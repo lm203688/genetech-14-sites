@@ -1,0 +1,338 @@
+{
+  "date": "2026-07-31",
+  "stage": "develop",
+  "timestamp": "2026-07-30T21:20:41.493Z",
+  "durationMs": 0,
+  "modifiedFiles": [
+    "agent-ecosystem\\website\\api\\entities.json",
+    "biocomputing\\website\\api\\entities.json",
+    "bionic-ai\\website\\api\\entities.json",
+    "brain-science\\website\\api\\entities.json",
+    "deep-sea-tech\\website\\api\\entities.json",
+    "exo-science\\website\\api\\entities.json",
+    "genetech-tools\\website\\api\\entities.json",
+    "life-science\\website\\api\\entities.json",
+    "new-energy\\website\\api\\entities.json",
+    "nuclear-energy\\website\\api\\entities.json",
+    "robot-parts\\website\\api\\entities.json"
+  ],
+  "newEntities": [
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27191v1",
+      "name": "Can AI agents conduct open-ended AI research? Early evidence from two case studies"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27189v1",
+      "name": "APEX-Accounting"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27177v1",
+      "name": "Partner Capability Estimation for Task-Agnostic Adaptation in Ad-Hoc Teamwork"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27155v1",
+      "name": "OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27154v1",
+      "name": "Anatomy Contextualized Adaption of CT Foundation Models"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27143v1",
+      "name": "Cost-Sensitive Conformal Prediction and Human-in-the-Loop Abstention for Imbalanced High-Stakes Decision Support: A Multi-Domain Benchmark"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27134v1",
+      "name": "Linguistic Monoculture in LLM-Assisted Language Use"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27130v1",
+      "name": "AgentMap: Joint Equivalence and Subsumption Discovery for Ontology Matching"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27084v1",
+      "name": "SciFigQual-Bench: A Benchmark for Scientific Figure Quality Assessment with Full-Manuscript Context"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27083v1",
+      "name": "Scores Are Not Decisions: Cost-Aware Stopping for Tool Acquisition in LLM Agents"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27081v1",
+      "name": "On-Policy Distillation for LLM Safety: A Routing Approach to Template-Robust Realignment"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27080v1",
+      "name": "MemSecBench: Tracking Agent Memory Poisoning from Persistence to Consequence and Repair"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27069v1",
+      "name": "Visual Credit Audit for Multimodal Spatial Reasoning"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27056v1",
+      "name": "Setoka: A Benchmark for Hierarchical User Understanding in Personalized Agents over Heterogeneous Data"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.26947v1",
+      "name": "Progressive Multimodal Alignment for Continual Instruction Tuning"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.26935v1",
+      "name": "What Does It Take to Detect an AI Agent? Minimal Feature Sets for Behavioral Detection under Browser Automation"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.26914v1",
+      "name": "BioVLN: A Simulation Platform for Visual Language Navigation in Biomedical Laboratories"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.26908v1",
+      "name": "Actions Have Consequences: Detecting Outcome Performativity using Intervention Testing"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27203v1",
+      "name": "Do You Really Need to Pretrain Q-Functions for Online RL Fine-Tuning?"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27196v1",
+      "name": "From Classification to Regression: Using a Fruitfly to Solve Equations"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27188v1",
+      "name": "Inverse Learning of Latent Risk-Neutral Densities from Irregular Option Quotes"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27146v1",
+      "name": "MindForge: Teaching Small Language Models Whole-Life-Cycle Software Engineering via Source-Free Program Synthesis"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27140v1",
+      "name": "Investigating reservoir computing for branch predictionin pipelined processors using emerging CMOS memristor devices"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27132v1",
+      "name": "Minimal Markovization via Stable Quotients in Holonomy-Cover Decision Processes"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27126v1",
+      "name": "Voronoi Histograms for Adaptive Vectorization of Expected Persistence Diagrams"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27092v1",
+      "name": "Sky sphere representation in language models"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.27042v1",
+      "name": "GPTQ-2D: Cubic-Time Two-Sided Adaptive Rounding"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530970",
+      "name": "Measuring Consistency Between Large Language Models' Responses to Preventive Care Queries and Official US Preventive Services Task Force (USPSTF) Recommendations: Systematic Test Involving All USPSTF Preventive Care Topics via Simulated User Prompts."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530939",
+      "name": "On-demand microfluidic encapsulation of Caenorhabditis elegans in hydrogel for long-term observation via AI detection."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530935",
+      "name": "Interpretable Machine Learning for Population-Level Tooth Loss Prediction."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530923",
+      "name": "Changes in Clinician Time Expenditure and Visit Quantity With Artificial Intelligence-Powered Scribes."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530917",
+      "name": "Changes in Clinician Time Expenditure and Visit Quantity With Artificial Intelligence-Powered Scribes."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530912",
+      "name": "Visual detection technologies for mycotoxins in food products: recent advances, current challenges, and future perspectives."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530899",
+      "name": "Changes in Clinician Time Expenditure and Visit Quantity With Artificial Intelligence-Powered Scribes-Reply."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530842",
+      "name": "ASO Author Reflections: Artificial Intelligence in the Scientific Merit Review Process."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530833",
+      "name": "Comments on \"Advancing air pollution forecasting: a review of physical, statistical, and machine learning methods\"."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530822",
+      "name": "External validation of machine learning models predicting global longitudinal strain from conventional echocardiography in patients with cancer."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530821",
+      "name": "Benchmarking 54 large language model configurations for CAD-RADS scoring: open-weight models approach human-level agreement."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530797",
+      "name": "A synergistic deep learning and machine learning framework for screening heterocyclic compounds against ALDH1A1."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530789",
+      "name": "Predictors of atrial fibrillation recurrence after catheter ablation: a systematic review."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530761",
+      "name": "Application of a novel age estimation model based on permanent maxillary canine morphometric features in a Japanese population."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530739",
+      "name": "Quorum-sensing, microbiome interactions, and emerging artificial intelligence-assisted anti-virulence strategies in Salmonella Typhi: a critical review of translational opportunities and challenges."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530710",
+      "name": "How microplastics influence health risk pathways in urban water systems? integrated binary classification, machine learning and structural equation modeling approach."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530698",
+      "name": "Emerging biomarkers in breast fibroadenoma: implications for differential diagnosis, malignant transformation, and precision medicine."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530683",
+      "name": "Innovative approaches to therapeutic target discovery amid the global challenge of antimicrobial resistance."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530672",
+      "name": "Development and external validation of a machine learning model for predicting postoperative hydrocephalus in 1,073 posterior fossa tumor patients."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530585",
+      "name": "Estimating healthy life years without activity limitations using medical claims data in Japan."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530496",
+      "name": "Algorithmic Inequity in Aging: How AI-Driven Healthcare Decision Tools Amplify Socioeconomic Disparities in Health Outcomes Among Older Adults."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530475",
+      "name": "Large Language Models for Individualized Psychoeducational Tools for Psychosis: A Cross-Sectional Study."
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "pmid-42530464",
+      "name": "Impact of a medication history software on a pharmacy-driven admission medication history and reconciliation program."
+    }
+  ],
+  "newEntitiesCount": 269,
+  "siteChanges": {
+    "agent-ecosystem": {
+      "added": 164,
+      "updated": 0,
+      "total": 812
+    },
+    "biocomputing": {
+      "added": 2,
+      "updated": 0,
+      "total": 236
+    },
+    "bionic-ai": {
+      "added": 1,
+      "updated": 0,
+      "total": 206
+    },
+    "brain-science": {
+      "added": 8,
+      "updated": 0,
+      "total": 468
+    },
+    "deep-sea-tech": {
+      "added": 2,
+      "updated": 0,
+      "total": 482
+    },
+    "exo-science": {
+      "added": 4,
+      "updated": 0,
+      "total": 419
+    },
+    "genetech-tools": {
+      "added": 52,
+      "updated": 0,
+      "total": 783
+    },
+    "life-science": {
+      "added": 13,
+      "updated": 0,
+      "total": 625
+    },
+    "new-energy": {
+      "added": 4,
+      "updated": 0,
+      "total": 615
+    },
+    "nuclear-energy": {
+      "added": 10,
+      "updated": 0,
+      "total": 425
+    },
+    "robot-parts": {
+      "added": 9,
+      "updated": 0,
+      "total": 378
+    }
+  },
+  "jsonValidation": {
+    "pass": true,
+    "errors": []
+  },
+  "gate": {
+    "pass": true,
+    "rule": "JSON格式校验通过",
+    "actual": "全部通过"
+  }
+}

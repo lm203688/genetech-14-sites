@@ -1,0 +1,84 @@
+{
+  "date": "2026-07-31",
+  "stage": "analyze",
+  "timestamp": "2026-07-30T21:20:41.503Z",
+  "durationMs": 0,
+  "recommendations": [
+    {
+      "title": "重点推广 agent-ecosystem 站点新增内容",
+      "channel": "SEO优化",
+      "priority": "high",
+      "content": "agent-ecosystem 新增 164 条高质量实体，建议更新首页推荐位和站点描述"
+    },
+    {
+      "title": "发布 AI Agent 生态最新研究动态",
+      "channel": "社媒发布",
+      "priority": "high",
+      "content": "基于今日采集的 arXiv 论文，整理 Agent/MCP/RAG 领域最新进展，发布 Twitter/LinkedIn 长文"
+    },
+    {
+      "title": "优化长尾关键词覆盖",
+      "channel": "SEO优化",
+      "priority": "normal",
+      "content": "当前索引量 6675，建议针对量子计算、深海技术等垂直领域优化长尾关键词"
+    },
+    {
+      "title": "更新 sitemap.xml 并提交 IndexNow",
+      "channel": "SEO优化",
+      "priority": "normal",
+      "content": "新增 269 个实体页面需提交搜索引擎索引"
+    },
+    {
+      "title": "创建每周研究摘要内容",
+      "channel": "站内推荐",
+      "priority": "normal",
+      "content": "将本周新增论文按主题归类，生成可读性强的摘要页面，提升用户停留时间"
+    },
+    {
+      "title": "A/B测试推广标题效果",
+      "channel": "SEO优化",
+      "priority": "low",
+      "content": "对高流量页面的标题进行A/B测试，对比技术导向vs应用导向的点击率差异"
+    },
+    {
+      "title": "监控竞品内容更新频率",
+      "channel": "站内推荐",
+      "priority": "low",
+      "content": "持续跟踪 Papers With Code、HuggingFace Papers 等平台的内容更新节奏"
+    },
+    {
+      "title": "优化移动端页面加载速度",
+      "channel": "SEO优化",
+      "priority": "low",
+      "content": "检查各站移动端 Core Web Vitals 指标，优化图片加载和JS执行"
+    }
+  ],
+  "recommendationCount": 8,
+  "channelAnalysis": {
+    "seo": {
+      "share": "45%",
+      "trend": "up",
+      "note": "有机搜索为主要流量来源"
+    },
+    "social": {
+      "share": "30%",
+      "trend": "stable",
+      "note": "Twitter/LinkedIn活跃"
+    },
+    "direct": {
+      "share": "25%",
+      "trend": "up",
+      "note": "直接访问增长"
+    }
+  },
+  "bestPostingTimes": [
+    "09:00-11:00",
+    "14:00-16:00",
+    "20:00-22:00"
+  ],
+  "gate": {
+    "pass": true,
+    "rule": "生成≥5条推广建议",
+    "actual": "8条"
+  }
+}

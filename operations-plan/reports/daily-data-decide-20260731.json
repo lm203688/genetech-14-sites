@@ -1,0 +1,2853 @@
+{
+  "date": "2026-07-31",
+  "stage": "decide",
+  "timestamp": "2026-07-30T21:20:41.491Z",
+  "durationMs": 25,
+  "decisionList": {
+    "add": [
+      {
+        "id": "arxiv-2607.27191v1",
+        "name": "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools"
+        ],
+        "confidence": 0.76,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27189v1",
+        "name": "APEX-Accounting",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.79,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27179v1",
+        "name": "The Social Cost of an AI Teammate: How an Artificial Teammate Reshapes Human-Human Communication in Small-Team Decision-Making",
+        "source": "arxiv",
+        "sites": [
+          "brain-science"
+        ],
+        "confidence": 0.99,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27177v1",
+        "name": "Partner Capability Estimation for Task-Agnostic Adaptation in Ad-Hoc Teamwork",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.96,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27172v1",
+        "name": "Improving Item Discoverability in e-Commerce Search via Related Intent Generation",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.72,
+        "hotTags": [
+          "LLM",
+          "RAG"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27155v1",
+        "name": "OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.87,
+        "hotTags": [
+          "agent",
+          "LLM",
+          "RAG"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27154v1",
+        "name": "Anatomy Contextualized Adaption of CT Foundation Models",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.91,
+        "hotTags": [
+          "transformer"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27143v1",
+        "name": "Cost-Sensitive Conformal Prediction and Human-in-the-Loop Abstention for Imbalanced High-Stakes Decision Support: A Multi-Domain Benchmark",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.85,
+        "hotTags": [
+          "RAG"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27138v1",
+        "name": "DLAM: Distributional Latent Actions with Temporal Constraints",
+        "source": "arxiv",
+        "sites": [
+          "robot-parts",
+          "genetech-tools"
+        ],
+        "confidence": 0.8,
+        "hotTags": [
+          "robot"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27134v1",
+        "name": "Linguistic Monoculture in LLM-Assisted Language Use",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.79,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27130v1",
+        "name": "AgentMap: Joint Equivalence and Subsumption Discovery for Ontology Matching",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.87,
+        "hotTags": [
+          "agent",
+          "LLM"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27109v1",
+        "name": "MMAC: A Massive Multi-dimensional Benchmark for Audio Captioning",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.77,
+        "hotTags": [
+          "LLM",
+          "RAG"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27084v1",
+        "name": "SciFigQual-Bench: A Benchmark for Scientific Figure Quality Assessment with Full-Manuscript Context",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools",
+          "nuclear-energy"
+        ],
+        "confidence": 0.92,
+        "hotTags": [
+          "agent",
+          "RAG"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27083v1",
+        "name": "Scores Are Not Decisions: Cost-Aware Stopping for Tool Acquisition in LLM Agents",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools"
+        ],
+        "confidence": 0.96,
+        "hotTags": [
+          "agent",
+          "LLM",
+          "fine-tuning"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27081v1",
+        "name": "On-Policy Distillation for LLM Safety: A Routing Approach to Template-Robust Realignment",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.99,
+        "hotTags": [
+          "LLM",
+          "fine-tuning"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27080v1",
+        "name": "MemSecBench: Tracking Agent Memory Poisoning from Persistence to Consequence and Repair",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.75,
+        "hotTags": [
+          "agent",
+          "LLM"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27073v1",
+        "name": "Parameter-Free Dynamic Regret for Online Convex Optimization under Heavy-Tailed Noise",
+        "source": "arxiv",
+        "sites": [
+          "exo-science"
+        ],
+        "confidence": 0.84,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27069v1",
+        "name": "Visual Credit Audit for Multimodal Spatial Reasoning",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.98,
+        "hotTags": [
+          "LLM",
+          "multimodal"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27066v1",
+        "name": "SciFigAlign: Scoring Scientific Figures by Fine-tuned Alignment of Visuals with Manuscript Evidence",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools",
+          "nuclear-energy"
+        ],
+        "confidence": 0.99,
+        "hotTags": [
+          "LLM",
+          "RAG",
+          "multimodal"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27065v1",
+        "name": "ScratchSim: A Procedural Synthetic Data Pipeline for Surface Scratch Detection",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.98,
+        "hotTags": [
+          "fine-tuning",
+          "transformer"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27056v1",
+        "name": "Setoka: A Benchmark for Hierarchical User Understanding in Personalized Agents over Heterogeneous Data",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "brain-science",
+          "genetech-tools"
+        ],
+        "confidence": 0.84,
+        "hotTags": [
+          "agent",
+          "RAG"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27054v1",
+        "name": "CoCaRS: Correlation Calibration-Based Redundancy Suppression for Heterogeneous Knowledge Distillation",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools",
+          "nuclear-energy"
+        ],
+        "confidence": 0.8,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27023v1",
+        "name": "BayesAME: Bayesian Active Model Evaluation",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.98,
+        "hotTags": [
+          "RAG"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.26985v1",
+        "name": "SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception",
+        "source": "arxiv",
+        "sites": [
+          "robot-parts"
+        ],
+        "confidence": 1,
+        "hotTags": [
+          "robot"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.26947v1",
+        "name": "Progressive Multimodal Alignment for Continual Instruction Tuning",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.99,
+        "hotTags": [
+          "LLM",
+          "multimodal"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.26946v1",
+        "name": "Belief-Guided Decision Making with Uncertainty Gating in the Game of Go",
+        "source": "arxiv",
+        "sites": [
+          "brain-science",
+          "deep-sea-tech"
+        ],
+        "confidence": 0.85,
+        "hotTags": [
+          "neural",
+          "transformer"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.26935v1",
+        "name": "What Does It Take to Detect an AI Agent? Minimal Feature Sets for Behavioral Detection under Browser Automation",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "robot-parts",
+          "genetech-tools",
+          "nuclear-energy"
+        ],
+        "confidence": 0.98,
+        "hotTags": [
+          "agent",
+          "transformer"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.26933v1",
+        "name": "Defending Against Backdoor Attacks via Alignment Checking in Model-Contrastive Federated Learning",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.78,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.26914v1",
+        "name": "BioVLN: A Simulation Platform for Visual Language Navigation in Biomedical Laboratories",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "robot-parts",
+          "genetech-tools"
+        ],
+        "confidence": 0.85,
+        "hotTags": [
+          "agent",
+          "robot"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.26908v1",
+        "name": "Actions Have Consequences: Detecting Outcome Performativity using Intervention Testing",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.87,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27203v1",
+        "name": "Do You Really Need to Pretrain Q-Functions for Online RL Fine-Tuning?",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "RAG",
+          "fine-tuning"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27196v1",
+        "name": "From Classification to Regression: Using a Fruitfly to Solve Equations",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools"
+        ],
+        "confidence": 0.84,
+        "hotTags": [
+          "RAG"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27188v1",
+        "name": "Inverse Learning of Latent Risk-Neutral Densities from Irregular Option Quotes",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.76,
+        "hotTags": [
+          "transformer"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27169v1",
+        "name": "When Do Learned Diffusion Proposals Help Constraint Solving? A Controlled Study on Continuous Algebraic Systems",
+        "source": "arxiv",
+        "sites": [
+          "robot-parts",
+          "nuclear-energy",
+          "exo-science"
+        ],
+        "confidence": 0.95,
+        "hotTags": [
+          "robot",
+          "neural"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27152v1",
+        "name": "Skillful forecasting of offshore winds from satellite scatterometer constellations",
+        "source": "arxiv",
+        "sites": [
+          "new-energy",
+          "deep-sea-tech"
+        ],
+        "confidence": 0.98,
+        "hotTags": [
+          "RAG"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27146v1",
+        "name": "MindForge: Teaching Small Language Models Whole-Life-Cycle Software Engineering via Source-Free Program Synthesis",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools"
+        ],
+        "confidence": 0.88,
+        "hotTags": [
+          "agent",
+          "RAG",
+          "fine-tuning"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27140v1",
+        "name": "Investigating reservoir computing for branch predictionin pipelined processors using emerging CMOS memristor devices",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.85,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27132v1",
+        "name": "Minimal Markovization via Stable Quotients in Holonomy-Cover Decision Processes",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools",
+          "exo-science"
+        ],
+        "confidence": 0.82,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27126v1",
+        "name": "Voronoi Histograms for Adaptive Vectorization of Expected Persistence Diagrams",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.84,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27106v1",
+        "name": "Hierarchical Spatio-Temporal Transformer for Coherent Emergency Department Forecasting",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools",
+          "nuclear-energy"
+        ],
+        "confidence": 0.71,
+        "hotTags": [
+          "RAG",
+          "transformer"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27105v1",
+        "name": "Detecting seizure onset and offset times using human intelligence: A critical-transitions-based approach",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.99,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27092v1",
+        "name": "Sky sphere representation in language models",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.75,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27090v1",
+        "name": "InferScale: GPU-Native KV Injection for Personalized LLM Serving",
+        "source": "arxiv",
+        "sites": [
+          "new-energy"
+        ],
+        "confidence": 0.99,
+        "hotTags": [
+          "LLM",
+          "fine-tuning"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27078v1",
+        "name": "Field Codes for Distributed Coupling Samplers and Certified Empirical Transport",
+        "source": "arxiv",
+        "sites": [
+          "life-science"
+        ],
+        "confidence": 0.85,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27077v1",
+        "name": "Equilibrium Training of Energy-Based Models with Parallel Trajectory Tempering",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.88,
+        "hotTags": [
+          "multimodal"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27076v1",
+        "name": "Single-Beat Cuffless Blood Pressure Estimation Using Ear-PPG and ECG with a Lightweight Hybrid Learning Framework",
+        "source": "arxiv",
+        "sites": [
+          "brain-science",
+          "new-energy"
+        ],
+        "confidence": 0.87,
+        "hotTags": [
+          "neural"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27062v1",
+        "name": "PIKS: Universal Physics-Informed Kernel Methods",
+        "source": "arxiv",
+        "sites": [
+          "brain-science"
+        ],
+        "confidence": 0.94,
+        "hotTags": [
+          "neural"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27042v1",
+        "name": "GPTQ-2D: Cubic-Time Two-Sided Adaptive Rounding",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.78,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27036v1",
+        "name": "Mitigating Compounding Error via Video Representation Regularization",
+        "source": "arxiv",
+        "sites": [
+          "robot-parts",
+          "genetech-tools",
+          "new-energy",
+          "nuclear-energy"
+        ],
+        "confidence": 0.95,
+        "hotTags": [
+          "robot"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27031v1",
+        "name": "Lottery Tickets Are Not Deployment Tickets",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.88,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27030v1",
+        "name": "HoF-Bench: Rediscovering Real AI-Discovered CVEs Without Frontier Models",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.94,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.27027v1",
+        "name": "TreeCCA: Canonical Correlation Analysis via Gradient-Boosted Trees",
+        "source": "arxiv",
+        "sites": [
+          "nuclear-energy"
+        ],
+        "confidence": 0.75,
+        "hotTags": [
+          "neural"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "arxiv-2607.27017v1",
+        "name": "What Can Latent World Models Know? Physical Parameter Identifiability in Multimodal Predictive Representations",
+        "source": "arxiv",
+        "sites": [
+          "robot-parts"
+        ],
+        "confidence": 0.83,
+        "hotTags": [
+          "RAG",
+          "multimodal",
+          "robot"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530970",
+        "name": "Measuring Consistency Between Large Language Models' Responses to Preventive Care Queries and Official US Preventive Services Task Force (USPSTF) Recommendations: Systematic Test Involving All USPSTF Preventive Care Topics via Simulated User Prompts.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.73,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530939",
+        "name": "On-demand microfluidic encapsulation of Caenorhabditis elegans in hydrogel for long-term observation via AI detection.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.85,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530935",
+        "name": "Interpretable Machine Learning for Population-Level Tooth Loss Prediction.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.76,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530923",
+        "name": "Changes in Clinician Time Expenditure and Visit Quantity With Artificial Intelligence-Powered Scribes.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.89,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530917",
+        "name": "Changes in Clinician Time Expenditure and Visit Quantity With Artificial Intelligence-Powered Scribes.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.92,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530912",
+        "name": "Visual detection technologies for mycotoxins in food products: recent advances, current challenges, and future perspectives.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.77,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530899",
+        "name": "Changes in Clinician Time Expenditure and Visit Quantity With Artificial Intelligence-Powered Scribes-Reply.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.84,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530842",
+        "name": "ASO Author Reflections: Artificial Intelligence in the Scientific Merit Review Process.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.8,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530833",
+        "name": "Comments on \"Advancing air pollution forecasting: a review of physical, statistical, and machine learning methods\".",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.98,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530822",
+        "name": "External validation of machine learning models predicting global longitudinal strain from conventional echocardiography in patients with cancer.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.89,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530821",
+        "name": "Benchmarking 54 large language model configurations for CAD-RADS scoring: open-weight models approach human-level agreement.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.97,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530806",
+        "name": "Three-class obstructive sleep apnea severity assessment: a parallel AHI and ODI explainable artificial intelligence framework using craniofacial-enriched clinical data.",
+        "source": "pubmed",
+        "sites": [
+          "life-science"
+        ],
+        "confidence": 0.84,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530799",
+        "name": "Integrated network toxicology and bioinformatics approaches explore potential mechanisms linking organophosphate flame retardant exposure to rheumatoid arthritis.",
+        "source": "pubmed",
+        "sites": [
+          "biocomputing"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530797",
+        "name": "A synergistic deep learning and machine learning framework for screening heterocyclic compounds against ALDH1A1.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.93,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530789",
+        "name": "Predictors of atrial fibrillation recurrence after catheter ablation: a systematic review.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.86,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530761",
+        "name": "Application of a novel age estimation model based on permanent maxillary canine morphometric features in a Japanese population.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.75,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530739",
+        "name": "Quorum-sensing, microbiome interactions, and emerging artificial intelligence-assisted anti-virulence strategies in Salmonella Typhi: a critical review of translational opportunities and challenges.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.78,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530713",
+        "name": "Integrative Analysis Reveals Interactions Between Gut Microbiota-Derived Metabolites and the Brain in Parkinson's Disease.",
+        "source": "pubmed",
+        "sites": [
+          "brain-science"
+        ],
+        "confidence": 0.96,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530710",
+        "name": "How microplastics influence health risk pathways in urban water systems? integrated binary classification, machine learning and structural equation modeling approach.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.7,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530698",
+        "name": "Emerging biomarkers in breast fibroadenoma: implications for differential diagnosis, malignant transformation, and precision medicine.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.97,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530683",
+        "name": "Innovative approaches to therapeutic target discovery amid the global challenge of antimicrobial resistance.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.85,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530672",
+        "name": "Development and external validation of a machine learning model for predicting postoperative hydrocephalus in 1,073 posterior fossa tumor patients.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530614",
+        "name": "[Use of artificial intelligence in clinical practice and hospitals].",
+        "source": "pubmed",
+        "sites": [
+          "life-science"
+        ],
+        "confidence": 0.81,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530595",
+        "name": "Three-class radiomic differentiation of hepatocellular carcinoma, intrahepatic cholangiocarcinoma, and combined hepatocellular-cholangiocarcinoma on multiphasic contrast-enhanced CT.",
+        "source": "pubmed",
+        "sites": [
+          "life-science"
+        ],
+        "confidence": 0.8,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530585",
+        "name": "Estimating healthy life years without activity limitations using medical claims data in Japan.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.96,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530496",
+        "name": "Algorithmic Inequity in Aging: How AI-Driven Healthcare Decision Tools Amplify Socioeconomic Disparities in Health Outcomes Among Older Adults.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.8,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530475",
+        "name": "Large Language Models for Individualized Psychoeducational Tools for Psychosis: A Cross-Sectional Study.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.7,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530464",
+        "name": "Impact of a medication history software on a pharmacy-driven admission medication history and reconciliation program.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.87,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530427",
+        "name": "Bridging the Gap: Translated Medical Education to Support Cystic Fibrosis Centers From Non-English Speaking Countries.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.94,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530406",
+        "name": "Educational Artificial Intelligence Software to Support Assessment of Atopic Dermatitis Severity.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.89,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530375",
+        "name": "Epigallocatechin gallate inhibits high-fat/choline diet-induced trimethylamine production via regulation of intestinal Serratia and Lactobacillus communities.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.84,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530347",
+        "name": "Imminent opioid overdose risk prediction using classical and machine learning survival models following first recorded opioid-related diagnosis: a prospective cohort study from the All of Us research program.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.81,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530320",
+        "name": "Partnering with AI to create joy-centered personalized learning in a post-pandemic world.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.99,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530294",
+        "name": "Can Artificial intelligence meaningfully shorten drug discovery timelines? Current evidence, roadblocks and future directions.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.8,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530243",
+        "name": "Neutrophil Extracellular Traps in Aortic and Cerebrovascular Diseases: Biomarkers, Immunomodulation, and Device-Related Strategies.",
+        "source": "pubmed",
+        "sites": [
+          "life-science"
+        ],
+        "confidence": 0.77,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530226",
+        "name": "Recommendations for Training Faculty in Generative AI Use: Crafting Higher-Order Application Exercises in Team-Based Learning.",
+        "source": "pubmed",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.96,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530203",
+        "name": "Wellens' Sign and Syndrome Detected With the Home Use of a Novel 12-Lead Electrocardiogram.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.83,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42530160",
+        "name": "Educators' Perspectives on Generative AI Use in Nursing Education: Friend or Foe?",
+        "source": "pubmed",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.87,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530130",
+        "name": "AI-Enabled Modeling for Alzheimer's Disease Risk Prediction and Validation.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.88,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530089",
+        "name": "Development and Validation of an Interpretable Machine Learning-Based Clinical Prediction Model for Short-Term Mortality in Intracerebral Hemorrhage With Thrombocytopenia: A Multicenter Study.",
+        "source": "pubmed",
+        "sites": [
+          "life-science"
+        ],
+        "confidence": 0.85,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530084",
+        "name": "A Clinically Aligned Two-Stage Machine Learning Framework for Predicting Hungry Bone Syndrome After Parathyroidectomy.",
+        "source": "pubmed",
+        "sites": [
+          "life-science"
+        ],
+        "confidence": 0.95,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530058",
+        "name": "Explainable artificial intelligence in tricuspid regurgitation: decoding prognosis or encoding measurement?",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.95,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42530023",
+        "name": "Multiomics Profiling Identifies Blood-Based Diagnostic Markers for Sepsis.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.73,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42529985",
+        "name": "Chemogenomic sets: valuable tools for early-stage drug discovery.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.71,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42529887",
+        "name": "Selenocystine-based fluorescence assay combined with structural prediction for functional analysis of cystine transporter variants in cystinuria.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.96,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42529886",
+        "name": "Machine learning-driven evaluation of protein kinase D3 as a co-diagnostic biomarker in hepatocellular carcinoma.",
+        "source": "pubmed",
+        "sites": [
+          "biocomputing",
+          "life-science"
+        ],
+        "confidence": 0.91,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42529883",
+        "name": "Advances in biomarkers for Parkinson's disease: from molecular pathology to precision diagnostics.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.82,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42529882",
+        "name": "Blood‒brain barrier permeability assessment: from biomimetic models to multimodal imaging.",
+        "source": "pubmed",
+        "sites": [
+          "brain-science",
+          "bionic-ai"
+        ],
+        "confidence": 0.96,
+        "hotTags": [
+          "multimodal"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42529797",
+        "name": "Automated readings of imaging reports by natural language processing (NLP) supplemented by clinical data predict disease course in children and adults with Crohn's disease: report from the epi-IIRN.",
+        "source": "pubmed",
+        "sites": [
+          "life-science"
+        ],
+        "confidence": 0.71,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42529780",
+        "name": "Structural analysis of lanthanide-DOTAM coordination complexes and use of machine learning to rationally design materials with molecular recognition for selective rare earth recovery.",
+        "source": "pubmed",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.8,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "oa-W7137578291",
+        "name": "Management of healthcare risk waste and non-hazardous healthcare waste: the case of a public hospital in western France",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.82,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "oa-W7166029900",
+        "name": "Artificial Intelligence in Plant Sciences",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.96,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "oa-W7166095570",
+        "name": "Artificial Intelligence in Plant Sciences",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.75,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "oa-W7165701127",
+        "name": "Specialeafhandling: Scaling AI in Organisations: An Empirical Study of Organisational Conditions Differentiating Enterprise Adoption from the Pilot Trap",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.99,
+        "hotTags": [
+          "RAG"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "oa-W7165079981",
+        "name": "Assessing the Role of Digital Transformation in Strengthening Customer Engagement: A Case Study of bKash",
+        "source": "openalex",
+        "sites": [
+          "nuclear-energy"
+        ],
+        "confidence": 0.92,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "oa-W7116362194",
+        "name": "MODELING HOSPITALITY AND TOURISM STRATEGIES",
+        "source": "openalex",
+        "sites": [
+          "robot-parts",
+          "genetech-tools"
+        ],
+        "confidence": 0.92,
+        "hotTags": [
+          "robot"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "oa-W7163092171",
+        "name": "Artificial Intelligence–Enabled mHealth Technologies for Rehabilitation in Patients with Cancer: A Scoping Review",
+        "source": "openalex",
+        "sites": [
+          "life-science"
+        ],
+        "confidence": 0.98,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "oa-W7128551175",
+        "name": "Development of an Advanced Artificial Intelligence-based Model (Deep Business Analytics) for Managing and Improving Control and Decision Making in Modern Organisations: Application in a Hospital Clinical Laboratory",
+        "source": "openalex",
+        "sites": [
+          "life-science"
+        ],
+        "confidence": 0.85,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "oa-W7167304894",
+        "name": "Advocating the potential of AI for syndrome discovery: a scoping review",
+        "source": "openalex",
+        "sites": [
+          "life-science"
+        ],
+        "confidence": 0.73,
+        "hotTags": [
+          "RAG"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "oa-W7164977240",
+        "name": "DESIGNING AND EXPERIMENTING AS THE NEW WAY OF LEARNING – EDUCATIONAL INNOVATION FOR MORE RELEVANCE IN THE AGE OF AI",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.73,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "oa-W7120352027",
+        "name": "Avaliação tomográfica do seio frontal no dimorfismo sexual",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.98,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "oa-W7161357999",
+        "name": "L’innovation locale et sa contribution au développement durable : pour une taxonomie du système local de transition",
+        "source": "openalex",
+        "sites": [
+          "life-science",
+          "nuclear-energy"
+        ],
+        "confidence": 0.86,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "oa-W7118420454",
+        "name": "Combating foreign bribery and corruption : an integrated corporate governance, sustainability, and artificial intelligence approach",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.73,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "oa-W7154471983",
+        "name": "Places and Non-Places for Language",
+        "source": "openalex",
+        "sites": [
+          "robot-parts"
+        ],
+        "confidence": 0.95,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "oa-W7112546092",
+        "name": "On the Analysis of Potential Games: From Constraints, Price of Anarchy and Reinforcement Learning to Contrastive Learning",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.83,
+        "hotTags": [
+          "agent",
+          "RAG"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "oa-W7113345739",
+        "name": "Progress of major emitters towards climate targets: 2025 Update",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.83,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "oa-W7166337875",
+        "name": "Bridging the Gap - AI Access in the Caribbean as a Telecom Infrastructure.pdf",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.96,
+        "hotTags": [
+          "RAG"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "oa-W7166358488",
+        "name": "Bridging the Gap - AI Access in the Caribbean as a Telecom Infrastructure.pdf",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.98,
+        "hotTags": [
+          "RAG"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "oa-W7163691118",
+        "name": "The Decolonial Intelligence Algorithmic (DIA) Framework: Seventeenth Edition",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.74,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "oa-W7171002878",
+        "name": "41st Annual AAAI Conference on Artificial Intelligence (Event)",
+        "source": "openalex",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.87,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "NousResearch/hermes-agent",
+        "name": "hermes-agent",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.71,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "thedaviddias/Front-End-Checklist",
+        "name": "Front-End-Checklist",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.86,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "shareAI-lab/learn-claude-code",
+        "name": "learn-claude-code",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.8,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "Panniantong/Agent-Reach",
+        "name": "Agent-Reach",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.77,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "santifer/career-ops",
+        "name": "career-ops",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.88,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "ZhuLinsen/daily_stock_analysis",
+        "name": "daily_stock_analysis",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.72,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "CherryHQ/cherry-studio",
+        "name": "cherry-studio",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.89,
+        "hotTags": [
+          "agent",
+          "LLM"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "HKUDS/nanobot",
+        "name": "nanobot",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.73,
+        "hotTags": [
+          "agent",
+          "MCP"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "zhayujie/CowAgent",
+        "name": "CowAgent",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.88,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "siyuan-note/siyuan",
+        "name": "siyuan",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.76,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "hugohe3/ppt-master",
+        "name": "ppt-master",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.71,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "CopilotKit/CopilotKit",
+        "name": "CopilotKit",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools"
+        ],
+        "confidence": 0.79,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "iOfficeAI/AionUi",
+        "name": "AionUi",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem",
+          "exo-science"
+        ],
+        "confidence": 0.95,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "Gitlawb/openclaude",
+        "name": "openclaude",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.75,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "googleworkspace/cli",
+        "name": "cli",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.75,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "HKUDS/Vibe-Trading",
+        "name": "Vibe-Trading",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.87,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "esengine/DeepSeek-Reasonix",
+        "name": "DeepSeek-Reasonix",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.87,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "jackwener/OpenCLI",
+        "name": "OpenCLI",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.85,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "bojieli/ai-agent-book",
+        "name": "ai-agent-book",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.87,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "activepieces/activepieces",
+        "name": "activepieces",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.92,
+        "hotTags": [
+          "agent",
+          "MCP"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "affaan-m/ECC",
+        "name": "ECC",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.89,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "n8n-io/n8n",
+        "name": "n8n",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.93,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "Snailclimb/JavaGuide",
+        "name": "JavaGuide",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.76,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "langgenius/dify",
+        "name": "dify",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.87,
+        "hotTags": [
+          "agent",
+          "RAG"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "open-webui/open-webui",
+        "name": "open-webui",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.97,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "farion1231/cc-switch",
+        "name": "cc-switch",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.75,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "Graphify-Labs/graphify",
+        "name": "graphify",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.74,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "punkpeye/awesome-mcp-servers",
+        "name": "awesome-mcp-servers",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.94,
+        "hotTags": [
+          "MCP"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "lobehub/lobehub",
+        "name": "lobehub",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.72,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "netdata/netdata",
+        "name": "netdata",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.7,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "koala73/worldmonitor",
+        "name": "worldmonitor",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.89,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "D4Vinci/Scrapling",
+        "name": "Scrapling",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.78,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "ComposioHQ/awesome-claude-skills",
+        "name": "awesome-claude-skills",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.76,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "headroomlabs-ai/headroom",
+        "name": "headroom",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.92,
+        "hotTags": [
+          "agent",
+          "LLM",
+          "RAG",
+          "MCP"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "sansan0/TrendRadar",
+        "name": "TrendRadar",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.92,
+        "hotTags": [
+          "MCP"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "upstash/context7",
+        "name": "context7",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.87,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "MemPalace/mempalace",
+        "name": "mempalace",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.77,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "aaif-goose/goose",
+        "name": "goose",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.94,
+        "hotTags": [
+          "agent",
+          "LLM"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "mudler/LocalAI",
+        "name": "LocalAI",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.84,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "langchain-ai/langchain",
+        "name": "langchain",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.7,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "Shubhamsaboo/awesome-llm-apps",
+        "name": "awesome-llm-apps",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.84,
+        "hotTags": [
+          "agent",
+          "LLM",
+          "RAG"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "thedotmack/claude-mem",
+        "name": "claude-mem",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.93,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "PaddlePaddle/PaddleOCR",
+        "name": "PaddleOCR",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.98,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "infiniflow/ragflow",
+        "name": "ragflow",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools"
+        ],
+        "confidence": 0.86,
+        "hotTags": [
+          "agent",
+          "LLM",
+          "RAG"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "dair-ai/Prompt-Engineering-Guide",
+        "name": "Prompt-Engineering-Guide",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "agent",
+          "RAG"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "datawhalechina/hello-agents",
+        "name": "hello-agents",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.8,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "Mintplex-Labs/anything-llm",
+        "name": "anything-llm",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.89,
+        "hotTags": [
+          "agent",
+          "LLM"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "mem0ai/mem0",
+        "name": "mem0",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.81,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "pathwaycom/llm-app",
+        "name": "llm-app",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.74,
+        "hotTags": [
+          "LLM",
+          "RAG"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "FlowiseAI/Flowise",
+        "name": "Flowise",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.92,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "run-llama/llama_index",
+        "name": "llama_index",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.74,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "jeecgboot/JeecgBoot",
+        "name": "JeecgBoot",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.84,
+        "hotTags": [
+          "MCP"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "milvus-io/milvus",
+        "name": "milvus",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.86,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "QuivrHQ/quivr",
+        "name": "quivr",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.83,
+        "hotTags": [
+          "LLM",
+          "RAG"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "langchain-ai/langgraph",
+        "name": "langgraph",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.76,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "Significant-Gravitas/AutoGPT",
+        "name": "AutoGPT",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.81,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "ollama/ollama",
+        "name": "ollama",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.95,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "f/prompts.chat",
+        "name": "prompts.chat",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.88,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "huggingface/transformers",
+        "name": "transformers",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.77,
+        "hotTags": [
+          "multimodal",
+          "transformer"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "firecrawl/firecrawl",
+        "name": "firecrawl",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.75,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "browser-use/browser-use",
+        "name": "browser-use",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.91,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "harry0703/MoneyPrinterTurbo",
+        "name": "MoneyPrinterTurbo",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools"
+        ],
+        "confidence": 0.83,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "rasbt/LLMs-from-scratch",
+        "name": "LLMs-from-scratch",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.82,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "TauricResearch/TradingAgents",
+        "name": "TradingAgents",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.73,
+        "hotTags": [
+          "agent",
+          "LLM"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "JuliusBrussee/caveman",
+        "name": "caveman",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.94,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "DietrichGebert/ponytail",
+        "name": "ponytail",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.93,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "vllm-project/vllm",
+        "name": "vllm",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.8,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "OpenHands/OpenHands",
+        "name": "OpenHands",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.86,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "mlabonne/llm-course",
+        "name": "llm-course",
+        "source": "github",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.99,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "name": "Qwen/Qwen3-0.6B",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.92,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "facebook/opt-125m",
+        "name": "facebook/opt-125m",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.76,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "name": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.88,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "Qwen/Qwen3-8B",
+        "name": "Qwen/Qwen3-8B",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.97,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "name": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.89,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "openai-community/gpt2",
+        "name": "openai-community/gpt2",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.81,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "name": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.96,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "meta-llama/Llama-3.2-1B-Instruct",
+        "name": "meta-llama/Llama-3.2-1B-Instruct",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.75,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+        "name": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.74,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "Qwen/Qwen3-32B",
+        "name": "Qwen/Qwen3-32B",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.83,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "deepseek-ai/DeepSeek-R1",
+        "name": "deepseek-ai/DeepSeek-R1",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.95,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "openai/gpt-oss-20b",
+        "name": "openai/gpt-oss-20b",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.87,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "meta-llama/Llama-3.1-8B-Instruct",
+        "name": "meta-llama/Llama-3.1-8B-Instruct",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.86,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "Qwen/Qwen3-1.7B",
+        "name": "Qwen/Qwen3-1.7B",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.87,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "Qwen/Qwen2.5-3B-Instruct",
+        "name": "Qwen/Qwen2.5-3B-Instruct",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.83,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "farbodtavakkoli/OTel-LLM-E4B-IT",
+        "name": "farbodtavakkoli/OTel-LLM-E4B-IT",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.73,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "Qwen/Qwen2.5-0.5B-Instruct",
+        "name": "Qwen/Qwen2.5-0.5B-Instruct",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.75,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "hmellor/tiny-random-LlamaForCausalLM",
+        "name": "hmellor/tiny-random-LlamaForCausalLM",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.97,
+        "hotTags": [
+          "LLM"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "dphn/dolphin-2.9.1-yi-1.5-34b",
+        "name": "dphn/dolphin-2.9.1-yi-1.5-34b",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem",
+          "brain-science",
+          "genetech-tools"
+        ],
+        "confidence": 0.7,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+        "name": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.87,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "BAAI/bge-reranker-v2-m3",
+        "name": "BAAI/bge-reranker-v2-m3",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.76,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "ProsusAI/finbert",
+        "name": "ProsusAI/finbert",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.74,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "BAAI/bge-reranker-base",
+        "name": "BAAI/bge-reranker-base",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.8,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "meta-llama/Prompt-Guard-86M",
+        "name": "meta-llama/Prompt-Guard-86M",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.78,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+        "name": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.85,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "daekeun-ml/koelectra-small-v3-nsmc",
+        "name": "daekeun-ml/koelectra-small-v3-nsmc",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.96,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "name": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.97,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "trl-internal-testing/tiny-Qwen2ForSequenceClassification-2.5",
+        "name": "trl-internal-testing/tiny-Qwen2ForSequenceClassification-2.5",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.99,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "finiteautomata/bertweet-base-sentiment-analysis",
+        "name": "finiteautomata/bertweet-base-sentiment-analysis",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.77,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "TrustSafeAI/RADAR-Vicuna-7B",
+        "name": "TrustSafeAI/RADAR-Vicuna-7B",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.92,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "cardiffnlp/twitter-xlm-roberta-base-sentiment",
+        "name": "cardiffnlp/twitter-xlm-roberta-base-sentiment",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.82,
+        "hotTags": [],
+        "priority": "normal"
+      },
+      {
+        "id": "SamLowe/roberta-base-go_emotions",
+        "name": "SamLowe/roberta-base-go_emotions",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.98,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "lxyuan/distilbert-base-multilingual-cased-sentiments-student",
+        "name": "lxyuan/distilbert-base-multilingual-cased-sentiments-student",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.87,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "yiyanghkust/finbert-tone",
+        "name": "yiyanghkust/finbert-tone",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.95,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pysentimiento/robertuito-sentiment-analysis",
+        "name": "pysentimiento/robertuito-sentiment-analysis",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 1,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "nlptown/bert-base-multilingual-uncased-sentiment",
+        "name": "nlptown/bert-base-multilingual-uncased-sentiment",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.98,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "livekit/turn-detector",
+        "name": "livekit/turn-detector",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.99,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "papluca/xlm-roberta-base-language-detection",
+        "name": "papluca/xlm-roberta-base-language-detection",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.91,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "ElKulako/cryptobert",
+        "name": "ElKulako/cryptobert",
+        "source": "huggingface",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.89,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "boboliu/Qwen3-Reranker-4B-W4A16-G128",
+        "name": "boboliu/Qwen3-Reranker-4B-W4A16-G128",
+        "source": "huggingface",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.95,
+        "hotTags": [],
+        "priority": "high"
+      }
+    ],
+    "modify": [],
+    "delete": []
+  },
+  "addCount": 232,
+  "modifyCount": 0,
+  "deleteCount": 0,
+  "highConfidenceCount": 232,
+  "coverageRate": "100%",
+  "gate": {
+    "pass": true,
+    "rule": "决策数据100%覆盖分析结果",
+    "actual": "覆盖率100%，高置信度232条"
+  }
+}
