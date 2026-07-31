@@ -41,3 +41,7 @@ temp/
 
 # Command center reports (generated daily)
 command-center/status-*.json
+
+# GitHub config (contains no token but exclude for safety)
+.env.github
+.env.*.github
