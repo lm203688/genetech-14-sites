@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>支付成功 - __SITE_NAME__</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 540px;
+      width: 90%;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .success-icon {
+      width: 80px; height: 80px;
+      background: #4caf50;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      color: #fff;
+    }
+    .card h1 { font-size: 1.7em; margin-bottom: 8px; }
+    .card .subtitle { color: #666; margin-bottom: 28px; }
+
+    /* Steps */
+    .steps-container {
+      text-align: left;
+      margin: 24px 0;
+    }
+    .step {
+      padding: 16px;
+      border-radius: 12px;
+      background: #f8f9fa;
+      margin-bottom: 12px;
+    }
+    .step.active { border-left: 4px solid #667eea; background: #eef2ff; }
+    .step.done { border-left: 4px solid #4caf50; background: #e8f5e9; }
+    .step-label {
+      font-size: 0.8em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .step-label.done { color: #2e7d32; }
+    .step-label.active { color: #667eea; }
+    .step-label.pending { color: #999; }
+    .step-content { font-size: 0.95em; color: #555; }
+
+    /* License Display */
+    .license-box {
+      background: #1a1a2e;
+      color: #4fc3f7;
+      padding: 16px 20px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 1.05em;
+      word-break: break-all;
+      margin: 16px 0;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .license-box:hover { background: #16213e; }
+    .license-box:after {
+      content: '点击复制';
+      position: absolute;
+      top: 6px; right: 12px;
+      font-size: 0.7em;
+      color: #888;
+      font-family: sans-serif;
+    }
+    .license-box.copied:after { content: '已复制!'; color: #4caf50; }
+
+    /* Activation Form */
+    .activation-form { text-align: left; margin: 20px 0; }
+    .activation-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.92em;
+    }
+    .activation-form input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: monospace;
+      margin-bottom: 12px;
+    }
+    .activation-form input:focus { outline: none; border-color: #667eea; }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.05em;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.1s;
+      text-align: center;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: #667eea; color: #fff; width: 100%; }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-secondary { background: #e0e0e0; color: #555; }
+    .btn-link { background: none; color: #667eea; padding: 8px; font-size: 0.95em; }
+
+    /* Result */
+    .result-box {
+      padding: 16px;
+      border-radius: 10px;
+      margin: 16px 0;
+      display: none;
+    }
+    .result-box.show { display: block; }
+    .result-box.success { background: #e8f5e9; border: 1px solid #a5d6a7; }
+    .result-box.error { background: #fff3f3; border: 1px solid #ffcdd2; }
+    .result-box .balance { font-size: 1.8em; font-weight: 700; color: #667eea; }
+
+    .spinner {
+      display: inline-block;
+      width: 16px; height: 16px;
+      border: 2px solid #ccc;
+      border-top-color: #667eea;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .links { margin-top: 24px; }
+    .links a { margin: 0 8px; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 0.85em;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="success-icon">&#10003;</div>
+    <h1>支付成功！</h1>
+    <p class="subtitle">感谢您的购买，请完成以下步骤激活您的积分</p>
+
+    <!-- 步骤指示 -->
+    <div class="steps-container">
+      <div class="step done" id="step1">
+        <div class="step-label done">步骤 1 - 已完成</div>
+        <div class="step-content">支付已完成，感谢您的信任</div>
+      </div>
+      <div class="step active" id="step2">
+        <div class="step-label active">步骤 2 - 进行中</div>
+        <div class="step-content">获取或输入您的 License Key</div>
+      </div>
+      <div class="step" id="step3">
+        <div class="step-label pending">步骤 3 - 待完成</div>
+        <div class="step-content">输入 API Key 兑换积分</div>
+      </div>
+    </div>
+
+    <!-- License Key 显示（从 URL 参数读取） -->
+    <div id="licenseSection">
+      <div class="activation-form">
+        <label>您的 License Key</label>
+        <div class="license-box" id="licenseKeyDisplay" onclick="copyLicense()">
+          （等待加载...）
+        </div>
+        <p style="font-size:0.88em; color:#888; margin-bottom:12px;">
+          如果上方未自动显示，请从您的支付确认邮件中复制 License Key 并粘贴到下方
+        </p>
+        <input type="text" id="licenseKeyInput" placeholder="或手动输入 License Key" />
+      </div>
+    </div>
+
+    <!-- API Key 输入 -->
+    <div class="activation-form">
+      <label>您的 API Key（gtk_ 开头）</label>
+      <input type="text" id="apiKeyInput" placeholder="输入您注册时获得的 API Key" />
+      <button class="btn btn-primary" id="activateBtn" onclick="activateLicense()">
+        激活积分
+      </button>
+    </div>
+
+    <!-- 结果 -->
+    <div id="resultBox" class="result-box"></div>
+
+    <!-- 链接 -->
+    <div class="links" id="linksSection" style="display:none;">
+      <a href="/credits.html" class="btn btn-secondary">查看余额</a>
+      <a href="/" class="btn btn-secondary">返回首页</a>
+    </div>
+  </div>
+
+  <footer>__SITE_NAME__ | 支付由 Creem 安全处理</footer>
+
+  <script>
+    // === 从 URL 参数读取 License Key ===
+    // Creem 支付完成后会跳转到此页面，URL 可能包含 license_key 或 checkout_id 参数
+    (function init() {
+      var params = new URLSearchParams(window.location.search);
+      var licenseKey = params.get('license_key') || params.get('license') || params.get('key') || '';
+
+      // 也检查 hash 参数
+      if (!licenseKey) {
+        var hashParams = new URLSearchParams(window.location.hash.slice(1));
+        licenseKey = hashParams.get('license_key') || hashParams.get('license') || '';
+      }
+
+      if (licenseKey) {
+        document.getElementById('licenseKeyDisplay').textContent = licenseKey;
+        document.getElementById('licenseKeyInput').value = licenseKey;
+      } else {
+        document.getElementById('licenseKeyDisplay').textContent = '请手动输入 License Key';
+        document.getElementById('licenseKeyDisplay').style.opacity = '0.5';
+      }
+    })();
+
+    // === 复制 License Key ===
+    function copyLicense() {
+      var text = document.getElementById('licenseKeyDisplay').textContent;
+      if (text === '请手动输入 License Key' || text === '（等待加载...）') return;
+      navigator.clipboard.writeText(text).then(function() {
+        var el = document.getElementById('licenseKeyDisplay');
+        el.classList.add('copied');
+        setTimeout(function() { el.classList.remove('copied'); }, 1500);
+      });
+    }
+
+    // === 激活 License ===
+    async function activateLicense() {
+      var apiKey = document.getElementById('apiKeyInput').value.trim();
+      var licenseKey = document.getElementById('licenseKeyInput').value.trim() ||
+                       document.getElementById('licenseKeyDisplay').textContent.trim();
+
+      var resultBox = document.getElementById('resultBox');
+      var btn = document.getElementById('activateBtn');
+
+      if (!apiKey || !licenseKey || licenseKey === '请手动输入 License Key' || licenseKey === '（等待加载...）') {
+        resultBox.className = 'result-box show error';
+        resultBox.innerHTML = '请填写 API Key 和 License Key';
+        return;
+      }
+
+      // 显示加载状态
+      btn.innerHTML = '<span class="spinner"></span>激活中...';
+      btn.disabled = true;
+      resultBox.className = 'result-box show';
+      resultBox.style.background = '#f8f9fa';
+      resultBox.style.border = '1px solid #e0e0e0';
+      resultBox.innerHTML = '正在激活...';
+
+      try {
+        var res = await fetch('/api/credits/balance', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-API-Key': apiKey },
+          body: JSON.stringify({ license_key: licenseKey })
+        });
+        var data = await res.json();
+
+        btn.innerHTML = '激活积分';
+        btn.disabled = false;
+
+        if (data.success) {
+          // 更新步骤状态
+          document.getElementById('step2').className = 'step done';
+          document.getElementById('step2').querySelector('.step-label').className = 'step-label done';
+          document.getElementById('step3').className = 'step done';
+          document.getElementById('step3').querySelector('.step-label').className = 'step-label done';
+          document.getElementById('step3').querySelector('.step-label').textContent = '步骤 3 - 已完成';
+
+          // 显示成功结果
+          resultBox.className = 'result-box show success';
+          var creditText = data.credits_added === 'unlimited' ? '无限积分' : data.credits_added + ' 积分';
+          var balanceText = data.new_balance === 'unlimited' ? '无限' : data.new_balance;
+
+          resultBox.innerHTML =
+            '<strong style="font-size:1.15em;color:#2e7d32;">激活成功！</strong><br>' +
+            '<div style="margin-top:8px;">产品：<strong>' + data.product + '</strong></div>' +
+            '<div>已添加：' + creditText + '</div>' +
+            '<div class="balance">' + balanceText + '</div>' +
+            '<div style="font-size:0.88em;color:#888;">当前积分余额（套餐：' + data.tier.toUpperCase() + '）</div>';
+
+          // 显示链接
+          document.getElementById('linksSection').style.display = 'block';
+          btn.style.display = 'none';
+        } else {
+          resultBox.className = 'result-box show error';
+          resultBox.innerHTML = data.message || '激活失败，请检查输入后重试';
+        }
+      } catch (e) {
+        btn.innerHTML = '激活积分';
+        btn.disabled = false;
+        resultBox.className = 'result-box show error';
+        resultBox.innerHTML = '网络错误：' + e.message + '<br>请稍后重试或联系支持';
+      }
+    }
+  </script>
+</body>
+</html>

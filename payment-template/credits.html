@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>积分购买 - __SITE_NAME__</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 20px; }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 40px 20px 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+    }
+    header h1 { font-size: 2em; margin-bottom: 8px; }
+    header p { opacity: 0.9; font-size: 1.05em; }
+
+    /* Balance Check Section */
+    .balance-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .balance-section h2 { font-size: 1.25em; margin-bottom: 16px; color: #333; }
+    .balance-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; }
+    .balance-row input {
+      flex: 1; min-width: 200px;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: monospace;
+    }
+    .balance-row input:focus { outline: none; border-color: #667eea; }
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: #667eea; color: #fff; }
+    .btn-primary:hover { opacity: 0.9; }
+    .balance-result {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 8px;
+      background: #f8f9fa;
+      display: none;
+    }
+    .balance-result.show { display: block; }
+    .balance-result.error { background: #fff3f3; border: 1px solid #ffcdd2; }
+    .balance-amount { font-size: 2em; font-weight: 700; color: #667eea; }
+    .balance-tier {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    .tier-free { background: #e3f2fd; color: #1565c0; }
+    .tier-pro { background: #fff3e0; color: #e65100; }
+    .tier-lifetime { background: #fce4ec; color: #c62828; }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .pricing-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      text-align: center;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+    .pricing-card.featured {
+      border: 2px solid #667eea;
+      transform: scale(1.03);
+    }
+    .pricing-card.featured:hover { transform: scale(1.03) translateY(-4px); }
+    .badge {
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: #667eea;
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .plan-name { font-size: 1.3em; font-weight: 700; margin-bottom: 8px; }
+    .plan-price { font-size: 2.8em; font-weight: 800; color: #1a1a2e; margin: 8px 0; }
+    .plan-price .currency { font-size: 0.5em; vertical-align: top; }
+    .plan-credits { font-size: 1.05em; color: #667eea; font-weight: 600; margin-bottom: 20px; }
+    .plan-features { list-style: none; text-align: left; margin-bottom: 24px; flex-grow: 1; }
+    .plan-features li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.95em;
+      color: #555;
+    }
+    .plan-features li:before { content: "\2713"; color: #4caf50; font-weight: 700; margin-right: 8px; }
+    .btn-buy {
+      width: 100%;
+      padding: 14px;
+      font-size: 1.05em;
+      border-radius: 10px;
+    }
+    .btn-starter { background: #43a047; color: #fff; }
+    .btn-pro { background: #667eea; color: #fff; }
+    .btn-lifetime { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: #fff; }
+
+    /* License Redeem */
+    .redeem-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      border-left: 4px solid #667eea;
+    }
+    .redeem-section h2 { font-size: 1.25em; margin-bottom: 8px; }
+    .redeem-section p.desc { color: #666; margin-bottom: 16px; font-size: 0.95em; }
+
+    /* Register Section */
+    .register-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      border-left: 4px solid #43a047;
+    }
+    .register-result {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 8px;
+      background: #e8f5e9;
+      border: 1px solid #a5d6a7;
+      display: none;
+    }
+    .register-result.show { display: block; }
+    .register-result .api-key-box {
+      background: #1a1a2e;
+      color: #4fc3f7;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 1em;
+      word-break: break-all;
+      margin: 12px 0;
+      cursor: pointer;
+    }
+    .warning { color: #e65100; font-weight: 600; font-size: 0.9em; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #888;
+      font-size: 0.9em;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: none; }
+      .pricing-card.featured:hover { transform: translateY(-4px); }
+      .plan-price { font-size: 2.2em; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>__SITE_NAME__</h1>
+    <p>购买积分，解锁完整 API 数据访问</p>
+  </header>
+
+  <div class="container">
+    <!-- 查询余额 -->
+    <div class="balance-section">
+      <h2>查询我的积分余额</h2>
+      <p style="color:#666; margin-bottom:12px; font-size:0.95em;">已有 API Key？输入后查看当前余额与套餐。</p>
+      <div class="balance-row">
+        <input type="text" id="apiKeyInput" placeholder="输入您的 API Key（gtk_ 开头）" />
+        <button class="btn btn-primary" onclick="checkBalance()">查询余额</button>
+      </div>
+      <div id="balanceResult" class="balance-result"></div>
+    </div>
+
+    <!-- 定价方案 -->
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <div class="pricing-card">
+        <div class="plan-name">Starter 入门包</div>
+        <div class="plan-price"><span class="currency">$</span>9</div>
+        <div class="plan-credits">100 积分</div>
+        <ul class="plan-features">
+          <li>100 次 API 调用</li>
+          <li>完整数据字段访问</li>
+          <li>30 次/小时 速率限制</li>
+          <li>邮件支持</li>
+        </ul>
+        <a href="https://checkout.creem.io/checkout/__PRODUCT_STARTER__"
+           class="btn btn-buy btn-starter"
+           target="_blank" rel="noopener">购买 Starter</a>
+      </div>
+
+      <!-- Pro (Featured) -->
+      <div class="pricing-card featured">
+        <span class="badge">最受欢迎</span>
+        <div class="plan-name">Pro 专业包</div>
+        <div class="plan-price"><span class="currency">$</span>29</div>
+        <div class="plan-credits">500 积分</div>
+        <ul class="plan-features">
+          <li>500 次 API 调用</li>
+          <li>完整数据字段访问</li>
+          <li>60 次/小时 速率限制</li>
+          <li>优先邮件支持</li>
+          <li>批量查询支持</li>
+        </ul>
+        <a href="https://checkout.creem.io/checkout/__PRODUCT_PRO__"
+           class="btn btn-buy btn-pro"
+           target="_blank" rel="noopener">购买 Pro</a>
+      </div>
+
+      <!-- Lifetime -->
+      <div class="pricing-card">
+        <div class="plan-name">Lifetime 终身包</div>
+        <div class="plan-price"><span class="currency">$</span>99</div>
+        <div class="plan-credits">无限积分</div>
+        <ul class="plan-features">
+          <li>无限次 API 调用</li>
+          <li>完整数据字段访问</li>
+          <li>120 次/小时 速率限制</li>
+          <li>专属支持渠道</li>
+          <li>新功能优先体验</li>
+        </ul>
+        <a href="https://checkout.creem.io/checkout/__PRODUCT_LIFETIME__"
+           class="btn btn-buy btn-lifetime"
+           target="_blank" rel="noopener">购买 Lifetime</a>
+      </div>
+    </div>
+
+    <!-- License 兑换 -->
+    <div class="redeem-section">
+      <h2>兑换 License Key</h2>
+      <p class="desc">支付完成后，您将收到一个 License Key。在此输入您的 API Key 和 License Key 完成积分兑换。</p>
+      <div class="balance-row" style="margin-bottom:12px;">
+        <input type="text" id="redeemApiKey" placeholder="您的 API Key（gtk_ 开头）" />
+      </div>
+      <div class="balance-row">
+        <input type="text" id="redeemLicense" placeholder="License Key" />
+        <button class="btn btn-primary" onclick="redeemLicense()">兑换积分</button>
+      </div>
+      <div id="redeemResult" class="balance-result"></div>
+    </div>
+
+    <!-- 免费注册 -->
+    <div class="register-section">
+      <h2>免费注册，获取 100 积分</h2>
+      <p style="color:#666; margin-bottom:12px; font-size:0.95em;">新用户注册即可获得 100 免费积分，立即开始使用 API。</p>
+      <div class="balance-row">
+        <input type="email" id="emailInput" placeholder="输入您的邮箱地址" />
+        <button class="btn btn-primary" onclick="registerUser()">注册获取 API Key</button>
+      </div>
+      <div id="registerResult" class="register-result"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>__SITE_NAME__ | 支付由 Creem 安全处理 | 如有疑问请联系支持</p>
+  </footer>
+
+  <script>
+    // === 查询余额 ===
+    async function checkBalance() {
+      const apiKey = document.getElementById('apiKeyInput').value.trim();
+      const result = document.getElementById('balanceResult');
+      if (!apiKey) {
+        result.className = 'balance-result show error';
+        result.innerHTML = '请输入 API Key';
+        return;
+      }
+      result.className = 'balance-result show';
+      result.innerHTML = '查询中...';
+      try {
+        const res = await fetch('/api/credits/balance', {
+          headers: { 'X-API-Key': apiKey }
+        });
+        const data = await res.json();
+        if (data.success) {
+          const tierClass = 'tier-' + data.tier;
+          const balanceText = data.is_unlimited ? '无限' : data.balance;
+          result.className = 'balance-result show';
+          result.innerHTML =
+            '<div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;">' +
+              '<span class="balance-amount">' + balanceText + '</span>' +
+              '<span style="color:#666;">积分</span>' +
+              '<span class="balance-tier ' + tierClass + '">' + data.tier.toUpperCase() + '</span>' +
+            '</div>' +
+            '<p style="color:#888;margin-top:8px;">速率限制：' + data.rate_limit + ' | 更新时间：' + new Date(data.updated).toLocaleString('zh-CN') + '</p>';
+        } else {
+          result.className = 'balance-result show error';
+          result.innerHTML = data.message || '查询失败';
+        }
+      } catch (e) {
+        result.className = 'balance-result show error';
+        result.innerHTML = '网络错误：' + e.message;
+      }
+    }
+
+    // === 兑换 License ===
+    async function redeemLicense() {
+      const apiKey = document.getElementById('redeemApiKey').value.trim();
+      const licenseKey = document.getElementById('redeemLicense').value.trim();
+      const result = document.getElementById('redeemResult');
+      if (!apiKey || !licenseKey) {
+        result.className = 'balance-result show error';
+        result.innerHTML = '请填写 API Key 和 License Key';
+        return;
+      }
+      result.className = 'balance-result show';
+      result.innerHTML = '兑换中...';
+      try {
+        const res = await fetch('/api/credits/balance', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-API-Key': apiKey },
+          body: JSON.stringify({ license_key: licenseKey })
+        });
+        const data = await res.json();
+        if (data.success) {
+          result.className = 'balance-result show';
+          result.style.background = '#e8f5e9';
+          result.style.border = '1px solid #a5d6a7';
+          const creditText = data.credits_added === 'unlimited' ? '无限积分' : data.credits_added + ' 积分';
+          const balanceText = data.new_balance === 'unlimited' ? '无限' : data.new_balance;
+          result.innerHTML =
+            '<strong style="color:#2e7d32;">兑换成功！</strong><br>' +
+            '产品：' + data.product + '<br>' +
+            '已添加：' + creditText + '<br>' +
+            '当前余额：' + balanceText + ' 积分<br>' +
+            '套餐：' + data.tier.toUpperCase();
+        } else {
+          result.className = 'balance-result show error';
+          result.innerHTML = data.message || '兑换失败';
+        }
+      } catch (e) {
+        result.className = 'balance-result show error';
+        result.innerHTML = '网络错误：' + e.message;
+      }
+    }
+
+    // === 注册 ===
+    async function registerUser() {
+      const email = document.getElementById('emailInput').value.trim();
+      const result = document.getElementById('registerResult');
+      if (!email) {
+        result.className = 'register-result show';
+        result.style.background = '#fff3f3';
+        result.style.border = '1px solid #ffcdd2';
+        result.innerHTML = '请输入邮箱地址';
+        return;
+      }
+      result.className = 'register-result show';
+      result.style.background = '#f8f9fa';
+      result.style.border = '1px solid #e0e0e0';
+      result.innerHTML = '注册中...';
+      try {
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email })
+        });
+        const data = await res.json();
+        if (data.success) {
+          result.style.background = '#e8f5e9';
+          result.style.border = '1px solid #a5d6a7';
+          result.innerHTML =
+            '<strong style="color:#2e7d32;">' + data.message + '</strong>' +
+            '<p class="warning">' + data.important + '</p>' +
+            '<div class="api-key-box" onclick="copyToClipboard(this)" title="点击复制">' + data.api_key + '</div>' +
+            '<p style="color:#666;font-size:0.9em;">免费积分：' + data.free_credits + ' | 速率限制：' + data.rate_limit + '</p>' +
+            '<p style="margin-top:8px;"><a href="' + data.credits_url + '" style="color:#667eea;">前往积分页面购买更多</a></p>';
+        } else {
+          result.style.background = '#fff3f3';
+          result.style.border = '1px solid #ffcdd2';
+          result.innerHTML = data.message || '注册失败';
+        }
+      } catch (e) {
+        result.style.background = '#fff3f3';
+        result.style.border = '1px solid #ffcdd2';
+        result.innerHTML = '网络错误：' + e.message;
+      }
+    }
+
+    // === 复制到剪贴板 ===
+    function copyToClipboard(el) {
+      navigator.clipboard.writeText(el.innerText).then(function() {
+        var orig = el.style.background;
+        el.style.background = '#2e7d32';
+        setTimeout(function() { el.style.background = orig; }, 500);
+      });
+    }
+  </script>
+</body>
+</html>

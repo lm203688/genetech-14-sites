@@ -1,0 +1,36 @@
+# Cloudflare Pages 配置 — 通用支付模板
+# 部署前请用 deploy.js 替换所有 __PLACEHOLDER__ 占位符
+
+name = "__SITE_NAME__"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "."
+
+# === KV 命名空间绑定 ===
+# 部署前需在 Cloudflare Dashboard 创建对应 KV namespace，
+# 然后将下方 id 替换为实际 namespace ID。
+
+[[kv_namespaces]]
+binding = "API_KEYS"
+id = "__KV_API_KEYS_ID__"
+
+[[kv_namespaces]]
+binding = "USER_CREDITS"
+id = "__KV_USER_CREDITS_ID__"
+
+[[kv_namespaces]]
+binding = "USER_CREDIT_HISTORY"
+id = "__KV_HISTORY_ID__"
+
+# === 环境变量（非敏感） ===
+# 敏感变量（如 CREEM_WEBHOOK_SECRET）请勿写在此文件中，
+# 应通过 Cloudflare Dashboard > Settings > Variables and Secrets 配置为 Secret。
+
+[vars]
+SITE_NAME = "__SITE_NAME__"
+SITE_DOMAIN = "__SITE_DOMAIN__"
+
+# === 注意事项 ===
+# 1. CREEM_WEBHOOK_SECRET 必须作为 Secret 配置（不在本文件中）
+# 2. 本文件使用 pages_build_output_dir = "." 表示当前目录为站点根目录
+# 3. functions/ 目录下的文件将自动映射为 Pages Functions 路由
+# 4. 部署命令：npx wrangler pages deploy . --project-name __SITE_NAME__

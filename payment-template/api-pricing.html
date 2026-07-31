@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API 定价 - __SITE_NAME__</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 20px; }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 40px 20px 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+    }
+    header h1 { font-size: 2em; margin-bottom: 8px; }
+    header p { opacity: 0.9; font-size: 1.05em; }
+
+    /* Tier Cards */
+    .tiers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .tier-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .tier-card.pro { border-top: 4px solid #667eea; }
+    .tier-card.free { border-top: 4px solid #43a047; }
+    .tier-card h2 { font-size: 1.5em; margin-bottom: 4px; }
+    .tier-card .price { font-size: 2.5em; font-weight: 800; margin: 12px 0; }
+    .tier-card .price small { font-size: 0.4em; color: #888; font-weight: 400; }
+    .tier-card ul { list-style: none; margin-top: 16px; }
+    .tier-card ul li {
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.95em;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .tier-card ul li:before {
+      content: "\2713";
+      color: #4caf50;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .tier-card ul li.no:before {
+      content: "\2717";
+      color: #f44336;
+    }
+    .cta {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.05em;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta:hover { opacity: 0.9; }
+    .cta-free { background: #e8f5e9; color: #2e7d32; border: 2px solid #a5d6a7; }
+    .cta-pro { background: #667eea; color: #fff; }
+
+    /* Comparison Table */
+    .comparison {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      margin: 24px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      overflow-x: auto;
+    }
+    .comparison h2 { font-size: 1.4em; margin-bottom: 20px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 500px;
+    }
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.95em;
+    }
+    th {
+      background: #f8f9fa;
+      font-weight: 600;
+      color: #555;
+      white-space: nowrap;
+    }
+    th:first-child { width: 35%; }
+    .yes { color: #4caf50; font-weight: 700; }
+    .no { color: #f44336; }
+    .partial { color: #ff9800; font-weight: 600; }
+
+    /* Rate Limits Info */
+    .rate-limits {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      margin: 24px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-left: 4px solid #ff9800;
+    }
+    .rate-limits h2 { font-size: 1.4em; margin-bottom: 16px; }
+    .rate-limits .limit-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .rate-limits .limit-item:last-child { border-bottom: none; }
+    .limit-label { font-weight: 500; }
+    .limit-value {
+      font-family: monospace;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 6px;
+      background: #f0f2f5;
+    }
+
+    /* How it works */
+    .how-it-works {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      margin: 24px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .how-it-works h2 { font-size: 1.4em; margin-bottom: 16px; }
+    .steps { counter-reset: step; }
+    .step {
+      padding: 12px 0 12px 48px;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .step:last-child { border-bottom: none; }
+    .step:before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0; top: 10px;
+      width: 32px; height: 32px;
+      background: #667eea;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9em;
+    }
+    .step strong { display: block; margin-bottom: 2px; }
+    .step p { color: #666; font-size: 0.92em; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #888;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      .tiers { grid-template-columns: 1fr; }
+      .tier-card .price { font-size: 2em; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>__SITE_NAME__ API 定价</h1>
+    <p>灵活的 API 访问方案，从免费到专业，按需选择</p>
+  </header>
+
+  <div class="container">
+    <!-- 套餐卡片 -->
+    <div class="tiers">
+      <!-- Free -->
+      <div class="tier-card free">
+        <h2>免费版</h2>
+        <div class="price">$0<small> /永久</small></div>
+        <ul>
+          <li>30 次/小时 速率限制</li>
+          <li>每日 100 次免费配额</li>
+          <li class="partial">有限数据字段（基础信息）</li>
+          <li class="no">无批量查询</li>
+          <li>注册即送 100 积分</li>
+        </ul>
+        <a href="/credits.html" class="cta cta-free">免费注册</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="tier-card pro">
+        <h2>专业版</h2>
+        <div class="price">$9<small> 起</small></div>
+        <ul>
+          <li>60 次/小时 速率限制（Pro 套餐）</li>
+          <li>120 次/小时（Lifetime 套餐）</li>
+          <li class="yes">完整数据字段访问</li>
+          <li class="yes">支持批量查询</li>
+          <li>优先技术支持</li>
+        </ul>
+        <a href="/credits.html" class="cta cta-pro">立即升级</a>
+      </div>
+    </div>
+
+    <!-- 功能对比表 -->
+    <div class="comparison">
+      <h2>功能对比</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>功能</th>
+            <th>免费版</th>
+            <th>专业版</th>
+            <th>终身版</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>速率限制</td>
+            <td>30 次/小时</td>
+            <td>60 次/小时</td>
+            <td>120 次/小时</td>
+          </tr>
+          <tr>
+            <td>每日配额</td>
+            <td>100 次/天</td>
+            <td>500 次</td>
+            <td class="yes">无限</td>
+          </tr>
+          <tr>
+            <td>基础字段（名称、ID）</td>
+            <td class="yes">包含</td>
+            <td class="yes">包含</td>
+            <td class="yes">包含</td>
+          </tr>
+          <tr>
+            <td>描述字段</td>
+            <td class="yes">包含</td>
+            <td class="yes">包含</td>
+            <td class="yes">包含</td>
+          </tr>
+          <tr>
+            <td>完整数据字段</td>
+            <td class="no">仅前 10 条摘要</td>
+            <td class="yes">完整访问</td>
+            <td class="yes">完整访问</td>
+          </tr>
+          <tr>
+            <td>批量查询</td>
+            <td class="no">不支持</td>
+            <td class="yes">支持</td>
+            <td class="yes">支持</td>
+          </tr>
+          <tr>
+            <td>列表完整返回</td>
+            <td class="no">截断（前 10 条）</td>
+            <td class="yes">完整列表</td>
+            <td class="yes">完整列表</td>
+          </tr>
+          <tr>
+            <td>技术支持</td>
+            <td>社区支持</td>
+            <td>优先邮件</td>
+            <td class="yes">专属渠道</td>
+          </tr>
+          <tr>
+            <td>价格</td>
+            <td>免费</td>
+            <td>$9 - $29</td>
+            <td>$99</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 速率限制说明 -->
+    <div class="rate-limits">
+      <h2>速率限制说明</h2>
+      <div class="limit-item">
+        <span class="limit-label">免费版（匿名 / Free Tier）</span>
+        <span class="limit-value">30 requests/hour</span>
+      </div>
+      <div class="limit-item">
+        <span class="limit-label">专业版（Pro Tier）</span>
+        <span class="limit-value">60 requests/hour</span>
+      </div>
+      <div class="limit-item">
+        <span class="limit-label">终身版（Lifetime Tier）</span>
+        <span class="limit-value">120 requests/hour</span>
+      </div>
+      <p style="margin-top:16px; color:#888; font-size:0.9em;">
+        速率限制基于滑动窗口计算。超出限制时，API 将返回 HTTP 429 状态码。
+        每日配额在 UTC 00:00 重置。
+      </p>
+    </div>
+
+    <!-- 使用流程 -->
+    <div class="how-it-works">
+      <h2>如何开始</h2>
+      <div class="steps">
+        <div class="step">
+          <strong>注册获取 API Key</strong>
+          <p>在积分页面输入邮箱，免费注册即可获得 100 积分和 API Key。</p>
+        </div>
+        <div class="step">
+          <strong>调用 API</strong>
+          <p>在请求头中添加 <code>X-API-Key: gtk_xxxx</code>，即可访问所有 API 端点。</p>
+        </div>
+        <div class="step">
+          <strong>购买积分（可选）</strong>
+          <p>免费积分用完后，可购买 Starter、Pro 或 Lifetime 套餐获取更多调用次数。</p>
+        </div>
+        <div class="step">
+          <strong>兑换 License Key</strong>
+          <p>支付完成后收到 License Key，在积分页面输入 API Key 和 License Key 完成兑换。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>__SITE_NAME__ | API 由 Cloudflare Pages Functions 驱动</p>
+  </footer>
+</body>
+</html>
