@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeneTech 统一许可证管理后台</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --card-2: #273449;
+      --border: #334155;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --primary: #6366f1;
+      --primary-2: #818cf8;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --cyan: #06b6d4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 60px; }
+
+    header { margin-bottom: 28px; }
+    header h1 {
+      font-size: 26px; font-weight: 700; letter-spacing: .5px;
+      background: linear-gradient(90deg, var(--primary-2), var(--cyan));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    header p { color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+    /* 配置栏 */
+    .config-bar {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px 20px; margin-bottom: 24px;
+      display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end;
+    }
+    .field label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    .field input {
+      width: 100%; background: var(--card-2); border: 1px solid var(--border);
+      color: var(--text); border-radius: 8px; padding: 10px 12px; font-size: 14px;
+      outline: none; transition: border-color .15s;
+    }
+    .field input:focus { border-color: var(--primary); }
+    .btn {
+      background: var(--primary); color: #fff; border: none; border-radius: 8px;
+      padding: 10px 22px; font-size: 14px; font-weight: 600; cursor: pointer;
+      transition: background .15s, transform .05s; white-space: nowrap;
+    }
+    .btn:hover { background: var(--primary-2); }
+    .btn:active { transform: scale(.98); }
+    .btn.ghost { background: var(--card-2); border: 1px solid var(--border); }
+    .btn.ghost:hover { background: var(--border); }
+
+    /* 状态提示 */
+    .status-msg {
+      font-size: 13px; padding: 10px 14px; border-radius: 8px; margin-bottom: 18px;
+      display: none;
+    }
+    .status-msg.show { display: block; }
+    .status-msg.err { background: rgba(239,68,68,.12); border: 1px solid rgba(239,68,68,.4); color: #fca5a5; }
+    .status-msg.ok { background: rgba(34,197,94,.12); border: 1px solid rgba(34,197,94,.4); color: #86efac; }
+
+    /* 概览卡片 */
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 20px; position: relative; overflow: hidden;
+    }
+    .stat-card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--primary);
+    }
+    .stat-card.green::before { background: var(--green); }
+    .stat-card.amber::before { background: var(--amber); }
+    .stat-card.red::before { background: var(--red); }
+    .stat-card .label { font-size: 13px; color: var(--muted); }
+    .stat-card .value { font-size: 34px; font-weight: 700; margin-top: 6px; }
+    .stat-card .sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    /* 两栏布局 */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .panel {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 20px;
+    }
+    .panel h2 { font-size: 16px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .panel h2 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); }
+
+    /* 套餐分布条 */
+    .plan-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .plan-row .name { width: 70px; font-size: 14px; }
+    .plan-row .bar { flex: 1; height: 22px; background: var(--card-2); border-radius: 6px; overflow: hidden; position: relative; }
+    .plan-row .bar > span { display: block; height: 100%; border-radius: 6px; transition: width .5s; }
+    .plan-row .count { width: 50px; text-align: right; font-size: 14px; font-weight: 600; }
+    .bar-starter { background: var(--cyan); }
+    .bar-pro { background: var(--primary); }
+    .bar-lifetime { background: var(--amber); }
+
+    /* 站点激活列表 */
+    .site-list { display: flex; flex-direction: column; gap: 8px; max-height: 320px; overflow-y: auto; }
+    .site-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 14px; background: var(--card-2); border-radius: 8px; font-size: 14px;
+    }
+    .site-item .badge {
+      background: var(--primary); color: #fff; border-radius: 20px;
+      padding: 2px 12px; font-size: 12px; font-weight: 600;
+    }
+    .empty { color: var(--muted); font-size: 14px; text-align: center; padding: 30px 0; }
+
+    /* 最近活动表 */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .4px; }
+    tr:hover td { background: var(--card-2); }
+    .tag { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+    .tag-create { background: rgba(99,102,241,.18); color: var(--primary-2); }
+    .tag-activate { background: rgba(34,197,94,.18); color: #86efac; }
+    .tag-revoke { background: rgba(239,68,68,.18); color: #fca5a5; }
+
+    .footer { margin-top: 30px; color: var(--muted); font-size: 12px; text-align: center; }
+    .hidden { display: none !important; }
+
+    @media (max-width: 860px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: 1fr; }
+      .config-bar { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>GeneTech 统一许可证管理后台</h1>
+      <p>14 站知识引擎 · 一次购买，全站通用 · GLK_ 统一许可证系统</p>
+    </header>
+
+    <!-- 配置栏 -->
+    <div class="config-bar">
+      <div class="field">
+        <label>中央 Worker URL</label>
+        <input id="workerUrl" type="text" placeholder="https://unified-license.xxx.workers.dev" />
+      </div>
+      <div class="field">
+        <label>管理员密钥 (ADMIN_SECRET)</label>
+        <input id="adminSecret" type="password" placeholder="输入管理员密钥" />
+      </div>
+      <button class="btn" id="loadBtn">加载数据</button>
+    </div>
+
+    <div class="status-msg" id="statusMsg"></div>
+
+    <!-- 概览 -->
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card">
+        <div class="label">已发行许可证总数</div>
+        <div class="value" id="totalLicenses">—</div>
+        <div class="sub">全部历史发行量</div>
+      </div>
+      <div class="stat-card green">
+        <div class="label">当前有效许可证</div>
+        <div class="value" id="activeLicenses">—</div>
+        <div class="sub">未被吊销 / 未过期</div>
+      </div>
+      <div class="stat-card amber">
+        <div class="label">已激活站点次数</div>
+        <div class="value" id="totalActivations">—</div>
+        <div class="sub">14 站累计激活</div>
+      </div>
+      <div class="stat-card red">
+        <div class="label">已吊销许可证</div>
+        <div class="value" id="revokedLicenses">—</div>
+        <div class="sub">订阅取消 / 退款</div>
+      </div>
+    </div>
+
+    <!-- 两栏：套餐分布 + 站点激活 -->
+    <div class="two-col">
+      <div class="panel">
+        <h2><span class="dot"></span>各套餐有效许可证分布</h2>
+        <div id="planDist">
+          <div class="plan-row">
+            <div class="name">入门版</div>
+            <div class="bar"><span class="bar-starter" style="width:0%"></span></div>
+            <div class="count">0</div>
+          </div>
+          <div class="plan-row">
+            <div class="name">专业版</div>
+            <div class="bar"><span class="bar-pro" style="width:0%"></span></div>
+            <div class="count">0</div>
+          </div>
+          <div class="plan-row">
+            <div class="name">终身版</div>
+            <div class="bar"><span class="bar-lifetime" style="width:0%"></span></div>
+            <div class="count">0</div>
+          </div>
+        </div>
+        <div style="margin-top:18px; padding-top:16px; border-top:1px solid var(--border); font-size:13px; color:var(--muted);">
+          <div>入门版：100 积分 / 站 · 30 天有效</div>
+          <div>专业版：500 积分 / 站 · 365 天有效</div>
+          <div>终身版：无限积分 · 终身有效</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2><span class="dot"></span>各站点激活次数</h2>
+        <div class="site-list" id="siteList">
+          <div class="empty">暂无数据，请点击「加载数据」</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 最近活动 -->
+    <div class="panel">
+      <h2><span class="dot"></span>最近激活 / 创建记录</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>操作</th>
+              <th>许可证</th>
+              <th>套餐</th>
+              <th>站点</th>
+              <th>来源 / 原因</th>
+            </tr>
+          </thead>
+          <tbody id="recentBody">
+            <tr><td colspan="6" class="empty">暂无记录</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      GeneTech 14站知识引擎 · 统一许可证系统 · 数据来自中央 Worker KV（可能有数秒最终一致延迟）
+    </div>
+  </div>
+
+  <script>
+    // === 本地存储记忆配置 ===
+    const $ = (id) => document.getElementById(id);
+    const workerUrlInput = $('workerUrl');
+    const adminSecretInput = $('adminSecret');
+
+    // 恢复上次输入
+    workerUrlInput.value = localStorage.getItem('glk_worker_url') || '';
+    adminSecretInput.value = localStorage.getItem('glk_admin_secret') || '';
+
+    function showMsg(text, type) {
+      const el = $('statusMsg');
+      el.textContent = text;
+      el.className = 'status-msg show ' + type;
+      if (type === 'ok') setTimeout(() => { el.className = 'status-msg'; }, 4000);
+    }
+
+    const PLAN_LABELS = { starter: '入门版', pro: '专业版', lifetime: '终身版' };
+    const ACTION_LABELS = { create: '创建', activate: '激活', revoke: '吊销' };
+
+    function fmtTime(iso) {
+      if (!iso) return '—';
+      try {
+        const d = new Date(iso);
+        return d.toLocaleString('zh-CN', { hour12: false });
+      } catch { return iso; }
+    }
+
+    // === 加载数据 ===
+    async function loadData() {
+      const base = workerUrlInput.value.trim().replace(/\/+$/, '');
+      const secret = adminSecretInput.value.trim();
+      if (!base || !secret) {
+        showMsg('请填写中央 Worker URL 与管理员密钥', 'err');
+        return;
+      }
+      localStorage.setItem('glk_worker_url', base);
+      localStorage.setItem('glk_admin_secret', secret);
+
+      $('loadBtn').disabled = true;
+      $('loadBtn').textContent = '加载中…';
+      showMsg('正在请求中央 Worker…', 'ok');
+
+      try {
+        const resp = await fetch(base + '/api/admin/stats', {
+          headers: { 'X-Admin-Secret': secret },
+        });
+        if (resp.status === 403) {
+          showMsg('管理员密钥无效 (403)', 'err'); return;
+        }
+        if (!resp.ok) {
+          showMsg('请求失败：HTTP ' + resp.status, 'err'); return;
+        }
+        const data = await resp.json();
+        if (!data.success) {
+          showMsg('返回异常：' + (data.error || '未知错误'), 'err'); return;
+        }
+        renderStats(data);
+        showMsg('数据加载成功', 'ok');
+      } catch (err) {
+        showMsg('网络错误：' + err.message, 'err');
+      } finally {
+        $('loadBtn').disabled = false;
+        $('loadBtn').textContent = '加载数据';
+      }
+    }
+
+    function renderStats(data) {
+      const s = data.stats || {};
+      $('totalLicenses').textContent = s.total_licenses || 0;
+      $('activeLicenses').textContent = s.active_licenses || 0;
+      $('revokedLicenses').textContent = s.revoked || 0;
+
+      // 激活总次数 = 各站点激活数之和
+      const bySite = s.by_site || {};
+      const totalAct = Object.values(bySite).reduce((a, b) => a + b, 0);
+      $('totalActivations').textContent = totalAct;
+
+      // 套餐分布条
+      const byPlan = s.by_plan || { starter: 0, pro: 0, lifetime: 0 };
+      const planMax = Math.max(1, byPlan.starter || 0, byPlan.pro || 0, byPlan.lifetime || 0);
+      const rows = $('planDist').querySelectorAll('.plan-row');
+      const keys = ['starter', 'pro', 'lifetime'];
+      rows.forEach((row, i) => {
+        const k = keys[i];
+        const cnt = byPlan[k] || 0;
+        row.querySelector('.count').textContent = cnt;
+        row.querySelector('.bar span').style.width = ((cnt / planMax) * 100) + '%';
+      });
+
+      // 站点激活列表
+      const siteList = $('siteList');
+      const siteEntries = Object.entries(bySite).sort((a, b) => b[1] - a[1]);
+      if (siteEntries.length === 0) {
+        siteList.innerHTML = '<div class="empty">暂无站点激活记录</div>';
+      } else {
+        siteList.innerHTML = siteEntries.map(([name, count]) =>
+          `<div class="site-item"><span>${escapeHtml(name)}</span><span class="badge">${count} 次</span></div>`
+        ).join('');
+      }
+
+      // 最近活动表
+      const tbody = $('recentBody');
+      const recent = data.recent || [];
+      if (recent.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="empty">暂无记录</td></tr>';
+      } else {
+        tbody.innerHTML = recent.map((r) => {
+          const action = ACTION_LABELS[r.action] || r.action || '—';
+          const tagCls = 'tag-' + (r.action || '');
+          return `<tr>
+            <td>${fmtTime(r.timestamp)}</td>
+            <td><span class="tag ${tagCls}">${action}</span></td>
+            <td><code>${escapeHtml(r.key || '—')}</code></td>
+            <td>${PLAN_LABELS[r.plan] || r.plan || '—'}</td>
+            <td>${escapeHtml(r.site || '—')}</td>
+            <td>${escapeHtml(r.source || r.reason || '—')}</td>
+          </tr>`;
+        }).join('');
+      }
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    $('loadBtn').addEventListener('click', loadData);
+    adminSecretInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') loadData(); });
+  </script>
+</body>
+</html>

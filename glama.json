@@ -1,0 +1,187 @@
+{
+  "$schema": "https://glama.ai/mcp/servers/schema.json",
+  "name": "AIShield Security Scanner",
+  "displayName": "AIShield — MCP & AI Agent Security Scanner",
+  "description": "OWASP MCP Top 10 aligned security scanner for MCP servers and AI tools. 82+ detection rules across 10 risk categories with 5-dimension scoring. Detects tool poisoning, prompt injection, rug pulls, supply chain risks, and sensitive data leakage. Provides pre-install guardrails and real-time prompt safety checks (Chinese + English).",
+  "shortDescription": "OWASP MCP Top 10 security scanner — tool poisoning, prompt injection & supply chain detection.",
+  "version": "4.1.0",
+  "license": "MIT",
+  "homepage": "https://aishield.tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lm203688/aishield"
+  },
+  "documentation": "https://aishield.tools/docs",
+  "bugs": {
+    "url": "https://github.com/lm203688/aishield/issues"
+  },
+  "author": {
+    "name": "AIShield Team",
+    "url": "https://aishield.tools",
+    "email": "security@aishield.tools"
+  },
+  "categories": [
+    "Security",
+    "Developer Tools"
+  ],
+  "tags": [
+    "security",
+    "mcp",
+    "owasp",
+    "scanner",
+    "tool-poisoning",
+    "prompt-injection",
+    "supply-chain",
+    "ai-safety",
+    "agent-security",
+    "rug-pull"
+  ],
+  "capabilities": {
+    "tools": [
+      {
+        "name": "aishield_scan",
+        "description": "Full security scan of an MCP Server / AI tool from its GitHub repo URL. Aligned with OWASP MCP Top 10 (2025 v0.1), 82+ rules across 10 risk categories. Returns an overall score, 5-dimension breakdown (security 40% / permissions 20% / data handling 20% / supply chain 10% / reliability 10%), risk level, OWASP compliance matrix, findings, and remediation recommendations."
+      },
+      {
+        "name": "aishield_guardrail",
+        "description": "Pre-install guardrail. Call before installing any third-party MCP/AI tool to get a pass / warn / block verdict plus score and OWASP compliance matrix. Recommended for automatic invocation before every MCP server install."
+      },
+      {
+        "name": "aishield_prompt_check",
+        "description": "Prompt injection / jailbreak / data-exfiltration detection for user input. Supports Chinese and English. Covers jailbreak instructions, identity switching, system-prompt extraction, data exfiltration, role-play injection, zero-width characters, and Unicode encoding tricks."
+      },
+      {
+        "name": "aishield_banned_words",
+        "description": "Chinese banned / sensitive word detection across 6 major platforms (WeChat, Douyin, Xiaohongshu, Bilibili, Zhihu, Weibo). Returns banned word list, applicable legal clauses, penalty amounts, and replacement suggestions."
+      },
+      {
+        "name": "aishield_rug_pull",
+        "description": "Rug-pull detection — compares recent commit diffs to detect removal of security code, newly added suspicious network requests, permission scope expansion, and large code deletions. Returns risk level (critical/high/medium/low/safe) and specific findings."
+      },
+      {
+        "name": "aishield_handshake",
+        "description": "MCP handshake & config verification. Extracts MCP config from README/package.json, analyzes npx auto-install risks, sensitive environment variables, remote URL safety, and tool-description length anomalies (>500 chars may hide hidden instructions). Attempts an actual handshake for HTTP-type MCP servers."
+      },
+      {
+        "name": "agent_register",
+        "description": "Register an AI agent with AIShield to obtain an API key for higher rate limits and tracked scan history. Returns an agent ID and API key for authenticated requests."
+      },
+      {
+        "name": "agent_quick_scan",
+        "description": "Fast lightweight security check of a tool's GitHub repo. Returns a quick pass/warn/block verdict and top findings without the full report — ideal for inline, real-time install decisions."
+      }
+    ]
+  },
+  "authentication": {
+    "type": "api_key",
+    "required": false,
+    "description": "Free tier works without authentication (rate-limited). For higher rate limits and scan history, set the AISHIELD_API_KEY environment variable (obtained via the agent_register tool or the AIShield dashboard). Requests send the key as a Bearer token in the Authorization header.",
+    "envVar": "AISHIELD_API_KEY",
+    "headerName": "Authorization",
+    "headerFormat": "Bearer ${AISHIELD_API_KEY}",
+    "setupUrl": "https://aishield.tools/api/v1/agent/setup"
+  },
+  "pricing": {
+    "model": "freemium",
+    "tiers": [
+      {
+        "name": "Free",
+        "price": 0,
+        "currency": "USD",
+        "description": "No API key required. Rate-limited scanning suitable for individual developers and evaluation.",
+        "limits": {
+          "scansPerDay": 50,
+          "rateLimit": "10 requests/minute",
+          "features": [
+            "All 8 tools available",
+            "OWASP MCP Top 10 coverage",
+            "Community support"
+          ]
+        }
+      },
+      {
+        "name": "Pro",
+        "price": 29,
+        "currency": "USD",
+        "period": "month",
+        "description": "For professional developers and small teams. Higher limits, scan history, and CI/CD integration.",
+        "limits": {
+          "scansPerDay": 1000,
+          "rateLimit": "60 requests/minute",
+          "features": [
+            "Everything in Free",
+            "Scan history & trend reports",
+            "CI/CD badge & webhook integration",
+            "Email support"
+          ]
+        }
+      },
+      {
+        "name": "Enterprise",
+        "price": "custom",
+        "currency": "USD",
+        "description": "For organizations with custom compliance, SSO, and dedicated support needs.",
+        "limits": {
+          "scansPerDay": "unlimited",
+          "rateLimit": "custom",
+          "features": [
+            "Everything in Pro",
+            "SAML/SSO & RBAC",
+            "Dedicated support & SLA",
+            "On-premise / private cloud deployment",
+            "Custom rules & compliance reports (SOC2, ISO27001)"
+          ]
+        }
+      }
+    ]
+  },
+  "deployment": {
+    "npx": {
+      "command": "npx -y @aishield/mcp-server",
+      "transport": "stdio",
+      "env": {
+        "AISHIELD_API_URL": "https://api.aishield.tools",
+        "AISHIELD_API_KEY": "<optional, for higher rate limits>"
+      }
+    },
+    "docker": {
+      "image": "aishield/mcp-server:latest",
+      "command": "docker run --rm -i -e AISHIELD_API_KEY=$AISHIELD_API_KEY aishield/mcp-server:latest",
+      "transport": "stdio",
+      "dockerfile": "https://github.com/lm203688/aishield/blob/main/mcp-server/Dockerfile"
+    },
+    "http": {
+      "url": "https://aishield.tools/api/v1/mcp",
+      "transport": "streamable-http",
+      "description": "Hosted remote endpoint for clients that connect by URL (no local install required)."
+    },
+    "clientConfigs": {
+      "claudeDesktop": {
+        "mcpServers": {
+          "aishield": {
+            "command": "npx",
+            "args": ["-y", "@aishield/mcp-server"],
+            "env": {
+              "AISHIELD_API_KEY": "<your-api-key-or-omit>"
+            }
+          }
+        }
+      },
+      "cursor": {
+        "mcpServers": {
+          "aishield": {
+            "command": "npx",
+            "args": ["-y", "@aishield/mcp-server"]
+          }
+        }
+      }
+    }
+  },
+  "trust": {
+    "score": 85,
+    "standard": "OWASP MCP Top 10 (2025 v0.1)",
+    "compliance": ["SOC2-Type-II", "ISO27001"]
+  },
+  "isVerified": false,
+  "isOfficial": false
+}
