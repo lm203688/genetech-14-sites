@@ -205,12 +205,12 @@ jobs:
           restore-keys: |
             genetech-ops-state-
 
-      - name: Run Data Accumulation Pipeline
+      - name: Run Data Backfill Pipeline
         run: |
           if [[ "${{ needs.prepare.outputs.dry_run }}" == "true" ]]; then
-            node ${{ env.SCRIPTS_DIR }}/pipeline-data-accumulation.js --dry-run
+            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --dry-run
           else
-            node ${{ env.SCRIPTS_DIR }}/pipeline-data-accumulation.js
+            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -231,11 +231,11 @@ jobs:
         run: |
           git config --local user.email "ops-bot@genetech.example"
           git config --local user.name "GeneTech Ops Bot"
-          git add sites/ reports/ logs/ state/ data/ 2>/dev/null || true
+          git add sites/ reports/ logs/ state/ data/ '*/website/api' 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "[Bot] Data accumulation update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            git commit -m "[Bot] Data backfill update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
             git push
           fi
         continue-on-error: true

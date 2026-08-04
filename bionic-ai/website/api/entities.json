@@ -1,1 +1,751 @@
-[]
+[
+  {
+    "id": "oa:W2106006415",
+    "name": "Brain–computer interfaces for communication and control",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s1388-2457(02)00057-3",
+    "authors": [
+      "Jonathan R. Wolpaw",
+      "Niels Birbaumer",
+      "Dennis J. McFarland",
+      "Gert Pfurtscheller",
+      "Theresa M. Vaughan"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Human–computer interaction",
+      "Interface (matter)",
+      "Neuroscience"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2002-06-01",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2559463885",
+    "name": "EEGNet: a compact convolutional neural network for EEG-based brain–computer interfaces",
+    "source": "openalex",
+    "abstract": "OBJECTIVE: Brain-computer interfaces (BCI) enable direct communication with a computer, using neural activity as the control signal. This neural signal is generally chosen from a variety of well-studied electroencephalogram (EEG) signals. For a given BCI paradigm, feature extractors and classifiers are tailored to the distinct characteristics of its expected EEG control signal, limiting its application to that specific signal. Convolutional neural networks (CNNs), which have been used in computer vision and speech recognition to perform automatic feature extraction and classification, have successfully been applied to EEG-based BCIs; however, they have mainly been applied to single BCI paradigms and thus it remains unclear how these architectures generalize to other paradigms. Here, we ask if we can design a single CNN architecture to accurately classify EEG signals from different BCI paradigms, while simultaneously being as compact as possible. APPROACH: In this work we introduce EEGNet, a compact convolutional neural network for EEG-based BCIs. We introduce the use of depthwise and separable convolutions to construct an EEG-specific model which encapsulates well-known EEG feature extraction concepts for BCI. We compare EEGNet, both for within-subject and cross-subject classification, to current state-of-the-art approaches across four BCI paradigms: P300 visual-evoked potentials, error-related negativity responses (ERN), movement-related cortical potentials (MRCP), and sensory motor rhythms (SMR). MAIN RESULTS: We show that EEGNet generalizes across paradigms better than, and achieves comparably high performance to, the reference algorithms when only limited training data is available across all tested paradigms. In addition, we demonstrate three different approaches to visualize the contents of a trained EEGNet model to enable interpretation of the learned features. SIGNIFICANCE: Our results suggest that EEGNet is robust enough to learn a wide variety of interpretable features over a range of BCI tasks. Our models can be found at: https://github.com/vlawhern/arl-eegmodels.",
+    "url": "https://doi.org/10.1088/1741-2552/aace8c",
+    "authors": [
+      "Vernon J Lawhern",
+      "Amelia J Solon",
+      "Nicholas R Waytowich",
+      "Stephen M Gordon",
+      "Chou P Hung",
+      "Brent J Lance"
+    ],
+    "tags": [
+      "Computer science",
+      "Convolutional neural network",
+      "Variety (cybernetics)",
+      "Artificial intelligence",
+      "Range (aeronautics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2018-06-22",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2128909182",
+    "name": "Brain Computer Interfaces, a Review",
+    "source": "openalex",
+    "abstract": "A brain-computer interface (BCI) is a hardware and software communications system that permits cerebral activity alone to control computers or external devices. The immediate goal of BCI research is to provide communications capabilities to severely disabled people who are totally paralyzed or 'locked in' by neurological neuromuscular disorders, such as amyotrophic lateral sclerosis, brain stem stroke, or spinal cord injury. Here, we review the state-of-the-art of BCIs, looking at the different steps that form a standard BCI: signal acquisition, preprocessing or signal enhancement, feature extraction, classification and the control interface. We discuss their advantages, drawbacks, and latest advances, and we survey the numerous technologies reported in the scientific literature to design each step of a BCI. First, the review examines the neuroimaging modalities used in the signal acquisition step, each of which monitors a different functional brain activity such as electrical, magnetic or metabolic activity. Second, the review discusses different electrophysiological control signals that determine user intentions, which can be detected in brain activity. Third, the review includes some techniques used in the signal enhancement step to deal with the artifacts in the control signals and improve the performance. Fourth, the review studies some mathematic algorithms used in the feature extraction and classification steps which translate the information in the control signals into commands that operate a computer or other device. Finally, the review provides an overview of various BCI applications that control a range of devices.",
+    "url": "https://doi.org/10.3390/s120201211",
+    "authors": [
+      "Luis F. Nicolás-Alonso",
+      "J. Gil"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Interface (matter)",
+      "Modalities",
+      "Human–computer interaction"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2012-01-31",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2151669316",
+    "name": "BCI2000: A General-Purpose Brain-Computer Interface (BCI) System",
+    "source": "openalex",
+    "abstract": "Many laboratories have begun to develop brain-computer interface (BCI) systems that provide communication and control capabilities to people with severe motor disabilities. Further progress and realization of practical applications depends on systematic evaluations and comparisons of different brain signals, recording methods, processing algorithms, output formats, and operating protocols. However, the typical BCI system is designed specifically for one particular BCI method and is, therefore, not suited to the systematic studies that are essential for continued progress. In response to this problem, we have developed a documented general-purpose BCI research and development platform called BCI2000. BCI2000 can incorporate alone or in combination any brain signals, signal processing methods, output devices, and operating protocols. This report is intended to describe to investigators, biomedical engineers, and computer scientists the concepts that the BC12000 system is based upon and gives examples of successful BCI implementations using this system. To date, we have used BCI2000 to create BCI systems for a variety of brain signals, processing methods, and applications. The data show that these systems function well in online operation and that BCI2000 satisfies the stringent real-time requirements of BCI systems. By substantially reducing labor and cost, BCI2000 facilitates the implementation of different BCI systems and other psychophysiological experiments. It is available with full documentation and free of charge for research or educational purposes and is currently being used in a variety of studies by many research groups.",
+    "url": "https://doi.org/10.1109/tbme.2004.827072",
+    "authors": [
+      "Gerwin Schalk",
+      "Dennis J. McFarland",
+      "Thilo Hinterberger",
+      "Niels Birbaumer",
+      "Jonathan R. Wolpaw"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Interface (matter)",
+      "Variety (cybernetics)",
+      "Realization (probability)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2004-05-25",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2075647286",
+    "name": "A review of classification algorithms for EEG-based brain–computer interfaces",
+    "source": "openalex",
+    "abstract": "In this paper we review classification algorithms used to design brain-computer interface (BCI) systems based on electroencephalography (EEG). We briefly present the commonly employed algorithms and describe their critical properties. Based on the literature, we compare them in terms of performance and provide guidelines to choose the suitable classification algorithm(s) for a specific BCI.",
+    "url": "https://doi.org/10.1088/1741-2560/4/2/r01",
+    "authors": [
+      "Fabien Lotte",
+      "Marco Congedo",
+      "A. Lécuyer",
+      "F. Lamarche",
+      "Bruno Arnaldi"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Electroencephalography",
+      "Computer science",
+      "Interface (matter)",
+      "Algorithm"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2007-01-31",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2145302786",
+    "name": "Brain-computer interface technology: a review of the first international meeting",
+    "source": "openalex",
+    "abstract": "Over the past decade, many laboratories have begun to explore brain-computer interface (BCI) technology as a radically new communication option for those with neuromuscular impairments that prevent them from using conventional augmentative communication methods. BCI's provide these users with communication channels that do not depend on peripheral nerves and muscles. This article summarizes the first international meeting devoted to BCI research and development. Current BCI's use electroencephalographic (EEG) activity recorded at the scalp or single-unit activity recorded from within cortex to control cursor movement, select letters or icons, or operate a neuroprosthesis. The central element in each BCI is a translation algorithm that converts electrophysiological input from the user into output that controls external devices. BCI operation depends on effective interaction between two adaptive controllers, the user who encodes his or her commands in the electrophysiological input provided to the BCI, and the BCI which recognizes the commands contained in the input and expresses them in device control. Current BCI's have maximum information transfer rates of 5-25 b/min. Achievement of greater speed and accuracy depends on improvements in signal processing, translation algorithms, and user training. These improvements depend on increased interdisciplinary cooperation between neuroscientists, engineers, computer programmers, psychologists, and rehabilitation specialists, and on adoption and widespread application of objective methods for evaluating alternative methods. The practical use of BCI technology depends on the development of appropriate applications, identification of appropriate user groups, and careful attention to the needs and desires of individual users. BCI research and development will also benefit from greater emphasis on peer-reviewed publications, and from adoption of standard venues for presentations and discussion.",
+    "url": "https://doi.org/10.1109/tre.2000.847807",
+    "authors": [
+      "Jonathan R. Wolpaw",
+      "Niels Birbaumer",
+      "William Heetderks",
+      "Dennis J. McFarland",
+      "P. Hunter Peckham",
+      "Gerwin Schalk",
+      "Emanuel Donchin",
+      "Louis A. Quatrano",
+      "Charles J. Robinson",
+      "Theresa M. Vaughan"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Interface (matter)",
+      "Human–computer interaction",
+      "Neuroprosthetics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2000-06-01",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2794345050",
+    "name": "A review of classification algorithms for EEG-based brain–computer interfaces: a 10 year update",
+    "source": "openalex",
+    "abstract": "OBJECTIVE: Most current electroencephalography (EEG)-based brain-computer interfaces (BCIs) are based on machine learning algorithms. There is a large diversity of classifier types that are used in this field, as described in our 2007 review paper. Now, approximately ten years after this review publication, many new algorithms have been developed and tested to classify EEG signals in BCIs. The time is therefore ripe for an updated review of EEG classification algorithms for BCIs. APPROACH: We surveyed the BCI and machine learning literature from 2007 to 2017 to identify the new classification approaches that have been investigated to design BCIs. We synthesize these studies in order to present such algorithms, to report how they were used for BCIs, what were the outcomes, and to identify their pros and cons. MAIN RESULTS: We found that the recently designed classification algorithms for EEG-based BCIs can be divided into four main categories: adaptive classifiers, matrix and tensor classifiers, transfer learning and deep learning, plus a few other miscellaneous classifiers. Among these, adaptive classifiers were demonstrated to be generally superior to static ones, even with unsupervised adaptation. Transfer learning can also prove useful although the benefits of transfer learning remain unpredictable. Riemannian geometry-based methods have reached state-of-the-art performances on multiple BCI problems and deserve to be explored more thoroughly, along with tensor-based methods. Shrinkage linear discriminant analysis and random forests also appear particularly useful for small training samples settings. On the other hand, deep learning methods have not yet shown convincing improvement over state-of-the-art BCI methods. SIGNIFICANCE: This paper provides a comprehensive overview of the modern classification algorithms used in EEG-based BCIs, presents the principles of these methods and guidelines on when and how to use them. It also identifies a number of challenges to further advance EEG classification in BCI.",
+    "url": "https://doi.org/10.1088/1741-2552/aab2f2",
+    "authors": [
+      "Fabien Lotte",
+      "Laurent Bougrain",
+      "Andrzej Cichocki",
+      "Maureen Clerc",
+      "Marco Congedo",
+      "Alain Rakotomamonjy",
+      "Florian Yger"
+    ],
+    "tags": [
+      "Computer science",
+      "Electroencephalography",
+      "Brain–computer interface",
+      "Artificial intelligence",
+      "Algorithm"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2018-02-28",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2098644279",
+    "name": "Brain–computer interfaces in neurological rehabilitation",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s1474-4422(08)70223-0",
+    "authors": [
+      "Janis J. Daly",
+      "Jonathan R. Wolpaw"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Rehabilitation",
+      "Electroencephalography",
+      "Physical medicine and rehabilitation",
+      "Brain activity and meditation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2008-10-03",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2135825876",
+    "name": "A brain–computer interface using electrocorticographic signals in humans",
+    "source": "openalex",
+    "abstract": "Brain-computer interfaces (BCIs) enable users to control devices with electroencephalographic (EEG) activity from the scalp or with single-neuron activity from within the brain. Both methods have disadvantages: EEG has limited resolution and requires extensive training, while single-neuron recording entails significant clinical risks and has limited stability. We demonstrate here for the first time that electrocorticographic (ECoG) activity recorded from the surface of the brain can enable users to control a one-dimensional computer cursor rapidly and accurately. We first identified ECoG signals that were associated with different types of motor and speech imagery. Over brief training periods of 3-24 min, four patients then used these signals to master closed-loop control and to achieve success rates of 74-100% in a one-dimensional binary task. In additional open-loop experiments, we found that ECoG signals at frequencies up to 180 Hz encoded substantial information about the direction of two-dimensional joystick movements. Our results suggest that an ECoG-based BCI could provide for people with severe motor disabilities a non-muscular communication and control option that is more powerful than EEG-based BCIs and is potentially more stable and less traumatic than BCIs that use electrodes penetrating the brain.",
+    "url": "https://doi.org/10.1088/1741-2560/1/2/001",
+    "authors": [
+      "Eric C. Leuthardt",
+      "Gerwin Schalk",
+      "Jonathan R. Wolpaw",
+      "Jeffrey G. Ojemann",
+      "Daniel W. Moran"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Electroencephalography",
+      "Joystick",
+      "Electrocorticography"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2004-06-01",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2103494817",
+    "name": "Control of a two-dimensional movement signal by a noninvasive brain-computer interface in humans",
+    "source": "openalex",
+    "abstract": "Brain-computer interfaces (BCIs) can provide communication and control to people who are totally paralyzed. BCIs can use noninvasive or invasive methods for recording the brain signals that convey the user's commands. Whereas noninvasive BCIs are already in use for simple applications, it has been widely assumed that only invasive BCIs, which use electrodes implanted in the brain, can provide multidimensional movement control of a robotic arm or a neuroprosthesis. We now show that a noninvasive BCI that uses scalp-recorded electroencephalographic activity and an adaptive algorithm can provide humans, including people with spinal cord injuries, with multidimensional point-to-point movement control that falls within the range of that reported with invasive methods in monkeys. In movement time, precision, and accuracy, the results are comparable to those with invasive BCIs. The adaptive algorithm used in this noninvasive BCI identifies and focuses on the electroencephalographic features that the person is best able to control and encourages further improvement in that control. The results suggest that people with severe motor disabilities could use brain signals to operate a robotic arm or a neuroprosthesis without needing to have electrodes implanted in their brains.",
+    "url": "https://doi.org/10.1073/pnas.0403504101",
+    "authors": [
+      "Jonathan R. Wolpaw",
+      "Dennis J. McFarland"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Neuroprosthetics",
+      "Computer science",
+      "Interface (matter)",
+      "Motor control"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2004-12-07",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2509948470",
+    "name": "Brain–computer interfaces for communication and rehabilitation",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nrneurol.2016.113",
+    "authors": [
+      "Ujwal Chaudhary",
+      "Niels Birbaumer",
+      "Ander Ramos‐Murguialday"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Rehabilitation",
+      "Medicine",
+      "Physical medicine and rehabilitation",
+      "Amyotrophic lateral sclerosis"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2016-08-19",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2132360759",
+    "name": "Filter Bank Common Spatial Pattern (FBCSP) in Brain-Computer Interface",
+    "source": "openalex",
+    "abstract": "In motor imagery-based Brain Computer Interfaces (BCI), discriminative patterns can be extracted from the electroencephalogram (EEG) using the Common Spatial Pattern (CSP) algorithm. However, the performance of this spatial filter depends on the operational frequency band of the EEG. Thus, setting a broad frequency range, or manually selecting a subject-specific frequency range, are commonly used with the CSP algorithm. To address this problem, this paper proposes a novel Filter Bank Common Spatial Pattern (FBCSP) to perform autonomous selection of key temporal-spatial discriminative EEG characteristics. After the EEG measurements have been bandpass-filtered into multiple frequency bands, CSP features are extracted from each of these bands. A feature selection algorithm is then used to automatically select discriminative pairs of frequency bands and corresponding CSP features. A classification algorithm is subsequently used to classify the CSP features. A study is conducted to assess the performance of a selection of feature selection and classification algorithms for use with the FBCSP. Extensive experimental results are presented on a publicly available dataset as well as data collected from healthy subjects and unilaterally paralyzed stroke patients. The results show that FBCSP, using a particular combination feature selection and classification algorithm, yields relatively higher cross-validation accuracies compared to prevailing approaches.",
+    "url": "https://doi.org/10.1109/ijcnn.2008.4634130",
+    "authors": [
+      "Kai Keng Ang",
+      "Zheng Yang Chin",
+      "Haihong Zhang",
+      "Cuntai Guan"
+    ],
+    "tags": [
+      "Discriminative model",
+      "Computer science",
+      "Pattern recognition (psychology)",
+      "Brain–computer interface",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2008-06-01",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "doi:10.5772/intechopen.97558",
+    "name": "Brain Computer Interface Drone",
+    "source": "crossref",
+    "abstract": "<jats:p>Brain-Computer Interface has emerged from dazzling experiments of cognitive scientists and researchers who dig deep into the conscious of the human brain where neuroscience, signal processing, machine learning, physical sciences are blended together and neuroprosthesis, neuro spellers, bionic eyes, prosthetic arms, prosthetic legs are created which made the disabled to walk, a mute to express and talk, a blind to see the beautiful world, a deaf to hear, etc. My main aim is to analyze the frequency domain signal of the brain signals of 5 subjects at their respective mental states using an EEG and show how to control a DJI Tello drone using Insight EEG then present the results and interpretation of band power graph, FFT graph and time-domain signals graph of mental commands during the live control of the drone.</jats:p>",
+    "url": "https://doi.org/10.5772/intechopen.97558",
+    "authors": [
+      "Manupati Hari Hara Nithin Reddy"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-05-28T08:19:49Z",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "doi:10.1007/978-3-319-57132-4_6",
+    "name": "Brain-Computer Interface Controlling Cyborg: A Functional Brain-to-Brain Interface Between Human and Cockroach",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-319-57132-4_6",
+    "authors": [
+      "Guangye Li",
+      "Dingguo Zhang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2017-04-29T13:08:54Z",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "doi:10.1093/gmo/9781561592630.article.l2285347",
+    "name": "Brain-computer music interface",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1093/gmo/9781561592630.article.l2285347",
+    "authors": [
+      "Anne Beetem Acker"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2017-12-13T14:20:52Z",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "doi:10.5772/14294",
+    "name": "Applied Advanced Classifiers for Brain Computer Interface",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5772/14294",
+    "authors": [
+      "Jos Luis",
+      "Antonio Barrientos"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2012-03-29T08:24:04Z",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "doi:10.1201/9781003241386-9",
+    "name": "Brain Computer Interface Using P300",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1201/9781003241386-9",
+    "authors": [
+      "Narayan Panigrahi",
+      "Saraju P. Mohanty"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-05-27T14:39:05Z",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "doi:10.1142/9789819829309_0001",
+    "name": "Overview of Brain–Computer Interface Technology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1142/9789819829309_0001",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026-07-29T01:53:58Z",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "doi:10.1142/9789819829309_0008",
+    "name": "Brain–Computer Interface and Traffic Information Processing",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1142/9789819829309_0008",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026-07-29T01:53:58Z",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "doi:10.5772/14858",
+    "name": "P300-based Brain-Computer Interface Paradigm Design",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5772/14858",
+    "authors": [
+      "Reza Fazel-Rezai",
+      "Waqas Ahm"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2012-03-29T08:24:04Z",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "pmid:42548755",
+    "name": "Architecture-data matching for EEG-EMG decoding: compact deep models match classical spectral decoders on the WAY-EEG-GAL grasp-and-lift dataset.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548755/",
+    "authors": [
+      "Pinto Neto O"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "pmid:42548576",
+    "name": "EEGDecoder-x: an explainable deep learning framework for cross-subject EEG-based detection of Alzheimer's and Creutzfeldt-Jakob disease.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548576/",
+    "authors": [
+      "Suffian M",
+      "Mammone N",
+      "Ieracitano C",
+      "Tripodi GG",
+      "Pascarella A",
+      "Ferlazzo E",
+      "Morabito FC"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "pmid:42547559",
+    "name": "High-channel-count neural recording and stimulation platform with 5376 simultaneous recording channels.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42547559/",
+    "authors": [
+      "Fan Y",
+      "Ma Y",
+      "Zolotavin P",
+      "Topalli G",
+      "Wang W",
+      "Karlsson M",
+      "Karlsson M",
+      "Luan L",
+      "Xie C",
+      "Chi T"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026 Aug 3",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "pmid:42546762",
+    "name": "Integrated decoding of local and prospective spatial representations for future decision prediction.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42546762/",
+    "authors": [
+      "Wang X",
+      "Luo X",
+      "Wang Y",
+      "Deng X",
+      "Zheng C"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026 Aug 3",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "pmid:42546502",
+    "name": "Accurate prediction of gain- and loss-of-function missense variants in GABA(A) receptors.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42546502/",
+    "authors": [
+      "Boßelmann CM",
+      "Ortiz S",
+      "Dahl R",
+      "Liao VWY",
+      "El-Kamand S",
+      "Lin SXN",
+      "Hon Kan AS",
+      "Brünger T",
+      "Lal D",
+      "Lerche H",
+      "Kreuer J",
+      "Pfeifer N",
+      "Chebib M",
+      "Absalom NL",
+      "Ahring PK",
+      "Møller RS"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026 Aug 3",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "pmid:42538382",
+    "name": "3D-printed implantable bioelectronics enabled by anti-swelling and biphasic conductive hydrogels.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42538382/",
+    "authors": [
+      "Yao Y",
+      "Luo J",
+      "Hui Y",
+      "Lyu J",
+      "Ke Y",
+      "Shen W",
+      "Xu Y",
+      "Yu Y",
+      "Chen H",
+      "Chen J",
+      "Chen G",
+      "Sawan M",
+      "Tao L",
+      "Zhou N"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026 Jul 31",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "pmid:42537670",
+    "name": "Graph convolutional network-based harmonization of EEG for cross-dataset transfer in motor imagery in BCI.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42537670/",
+    "authors": [
+      "K M D",
+      "Parashiva PK",
+      "Vinod AP"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026 Jul 31",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "pmid:42537638",
+    "name": "HCN1 channels in GABAergic amygdalar neurons underpin male-biased aggressive behaviors.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42537638/",
+    "authors": [
+      "Li KY",
+      "Zhu Z",
+      "Miao L",
+      "Wang Q",
+      "Deng GC",
+      "Pan L",
+      "Wu J",
+      "Lou H",
+      "Zeng LH",
+      "Li S",
+      "Feng X",
+      "Liu Y",
+      "Yang H",
+      "Li XM",
+      "Duan S",
+      "Sun L",
+      "Yu YQ"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026 Jul 31",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2998390304",
+    "name": "An artificial spiking afferent nerve based on Mott memristors for neurorobotics",
+    "source": "openalex",
+    "abstract": "Abstract Neuromorphic computing based on spikes offers great potential in highly efficient computing paradigms. Recently, several hardware implementations of spiking neural networks based on traditional complementary metal-oxide semiconductor technology or memristors have been developed. However, an interface (called an afferent nerve in biology) with the environment, which converts the analog signal from sensors into spikes in spiking neural networks, is yet to be demonstrated. Here we propose and experimentally demonstrate an artificial spiking afferent nerve based on highly reliable NbO x Mott memristors for the first time. The spiking frequency of the afferent nerve is proportional to the stimuli intensity before encountering noxiously high stimuli, and then starts to reduce the spiking frequency at an inflection point. Using this afferent nerve, we further build a power-free spiking mechanoreceptor system with a passive piezoelectric device as the tactile sensor. The experimental results indicate that our afferent nerve is promising for constructing self-aware neurorobotics in the future.",
+    "url": "https://doi.org/10.1038/s41467-019-13827-6",
+    "authors": [
+      "Xumeng Zhang",
+      "Ye Zhuo",
+      "Qing Luo",
+      "Zuheng Wu",
+      "Rivu Midya",
+      "Zhongrui Wang",
+      "Wenhao Song",
+      "Rui Wang",
+      "Navnidhi K. Upadhyay",
+      "Yilin Fang",
+      "Fatemeh Kiani",
+      "Mingyi Rao",
+      "Yang Yang",
+      "Qiangfei Xia",
+      "Qi Liu",
+      "Ming Liu",
+      "J. Joshua Yang"
+    ],
+    "tags": [
+      "Neuromorphic engineering",
+      "Memristor",
+      "Computer science",
+      "Spiking neural network",
+      "Neuroscience"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-01-02",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "oa:W2581251857",
+    "name": "Connecting Artificial Brains to Robots in a Comprehensive Simulation Framework: The Neurorobotics Platform",
+    "source": "openalex",
+    "abstract": "Combined efforts in the fields of neuroscience, computer science and biology allowed to design biologically realistic models of the brain based on spiking neural networks. For a proper validation of these models, an embodiment in a dynamic and rich sensory environment, where the model is exposed to a realistic sensory-motor task, is needed. Due to the complexity of these brain models that, at the current stage, cannot deal with real-time constraints, it is not possible to embed them into a real world task. Rather, the embodiment has to be simulated as well. While adequate tools exist to simulate either complex neural networks or robots and their environments, there is so far no tool that allows to easily establish a communication between brain and body models. The Neurorobotics Platform is a new web-based environment that aims to filling this gap by offering scientists and technology developers a software infrastructure allowing them to connect brain models to detailed simulations of robot bodies and environments and to use the resulting neurorobotic systems for in-silico experimentation. In order to simplify the workflow and reduce the level of the required programming skills, the platform provides editors for the specification of experimental sequences and conditions, envi-ronments, robots, and brain-body connectors. In addition to that, a variety of existing robots and environments are provided. This work presents the architecture of the first release of the Neurorobotics Platform developed in subproject 10 “Neurorobotics” of the Human Brain Project (HBP). At the current state, the Neurorobotics Platform allows researchers to design and run basic experiments in neurorobotics using simulated robots and simulated environments linked to simplified versions of brain models. We illustrate the capabilities of the platform with three example experiments: a Braitenberg task implemented on a mobile robot, a sensory-motor learning task based on a robotic controller and a visual tracking embedding a retina model on the iCub humanoid robot. These use-cases allow to assess the applicability of the Neurorobotics Platform for robotic tasks as well as in neuroscientific experiments.",
+    "url": "https://doi.org/10.3389/fnbot.2017.00002",
+    "authors": [
+      "Egidio Falotico",
+      "Lorenzo Vannucci",
+      "Alessandro Ambrosano",
+      "Ugo Albanese",
+      "Stefan Ulbrich",
+      "J. Camilo Vasquez Tieck",
+      "Georg Hinkel",
+      "Jacques Kaiser",
+      "Igor Peric",
+      "Oliver Denninger",
+      "Nino Cauli",
+      "Murat Kırtay",
+      "Arne Roennau",
+      "Gudrun Klinker",
+      "Axel von Arnim",
+      "Luc Guyot",
+      "Daniel Peppicelli",
+      "Pablo Martínez‐Cañada",
+      "Eduardo Ros",
+      "Patrick Maier",
+      "Sandro Weber",
+      "Manuel Huber",
+      "David A. Plecher",
+      "Florian Röhrbein",
+      "Stefan Deser",
+      "Alina Roitberg",
+      "Patrick van der Smagt",
+      "Rüdiger Dillman",
+      "Paul Levi",
+      "Cecilia Laschi",
+      "Alois Knoll",
+      "Marc-Oliver Gewaltig"
+    ],
+    "tags": [
+      "Computer science",
+      "Robot",
+      "Artificial intelligence",
+      "Human–computer interaction"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2017-01-25",
+    "addedAt": "2026-08-04T10:39:37.682Z"
+  }
+]

@@ -1728,5 +1728,742 @@
     ],
     "publishedDate": "2026 Sep",
     "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "oa:W2102619694",
+    "name": "BEDTools: a flexible suite of utilities for comparing genomic features",
+    "source": "openalex",
+    "abstract": "MOTIVATION: Testing for correlations between different sets of genomic features is a fundamental task in genomics research. However, searching for overlaps between features with existing web-based methods is complicated by the massive datasets that are routinely produced with current sequencing technologies. Fast and flexible tools are therefore required to ask complex questions of these data in an efficient manner. RESULTS: This article introduces a new software suite for the comparison, manipulation and annotation of genomic features in Browser Extensible Data (BED) and General Feature Format (GFF) format. BEDTools also supports the comparison of sequence alignments in BAM format to both BED and GFF features. The tools are extremely efficient and allow the user to compare large datasets (e.g. next-generation sequencing data) with both public and custom genome annotation tracks. BEDTools can be combined with one another as well as with standard UNIX commands, thus facilitating routine genomics tasks as well as pipelines that can quickly answer intricate questions of large genomic datasets. AVAILABILITY AND IMPLEMENTATION: BEDTools was written in C++. Source code and a comprehensive user manual are freely available at http://code.google.com/p/bedtools CONTACT: aaronquinlan@gmail.com; imh4y@virginia.edu SUPPLEMENTARY INFORMATION: Supplementary data are available at Bioinformatics online.",
+    "url": "https://doi.org/10.1093/bioinformatics/btq033",
+    "authors": [
+      "Aaron R. Quinlan",
+      "Ira M. Hall"
+    ],
+    "tags": [
+      "Computer science",
+      "Suite",
+      "Annotation",
+      "Unix",
+      "Source code"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2010-01-28",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W2149441684",
+    "name": "The cBio Cancer Genomics Portal: An Open Platform for Exploring Multidimensional Cancer Genomics Data",
+    "source": "openalex",
+    "abstract": "The cBio Cancer Genomics Portal (http://cbioportal.org) is an open-access resource for interactive exploration of multidimensional cancer genomics data sets, currently providing access to data from more than 5,000 tumor samples from 20 cancer studies. The cBio Cancer Genomics Portal significantly lowers the barriers between complex genomic data and cancer researchers who want rapid, intuitive, and high-quality access to molecular profiles and clinical attributes from large-scale cancer genomics projects and empowers researchers to translate these rich data sets into biologic insights and clinical applications.",
+    "url": "https://doi.org/10.1158/2159-8290.cd-12-0095",
+    "authors": [
+      "Ethan Cerami",
+      "Jianjiong Gao",
+      "Uğur Doğrusöz",
+      "Benjamin Groß",
+      "S. Onur Sumer",
+      "Bülent Arman Aksoy",
+      "Anders Jacobsen",
+      "Caitlin J. Byrne",
+      "Michael Heuer",
+      "Erik Larsson",
+      "Yevgeniy Antipin",
+      "Boris Reva",
+      "Arthur P. Goldberg",
+      "Chris Sander",
+      "Nikolaus Schultz"
+    ],
+    "tags": [
+      "Genomics",
+      "Cancer",
+      "Computational biology",
+      "Biology",
+      "Bioinformatics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2012-05-01",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W2138207763",
+    "name": "featureCounts: an efficient general purpose program for assigning sequence reads to genomic features",
+    "source": "openalex",
+    "abstract": "MOTIVATION: Next-generation sequencing technologies generate millions of short sequence reads, which are usually aligned to a reference genome. In many applications, the key information required for downstream analysis is the number of reads mapping to each genomic feature, for example to each exon or each gene. The process of counting reads is called read summarization. Read summarization is required for a great variety of genomic analyses but has so far received relatively little attention in the literature. RESULTS: We present featureCounts, a read summarization program suitable for counting reads generated from either RNA or genomic DNA sequencing experiments. featureCounts implements highly efficient chromosome hashing and feature blocking techniques. It is considerably faster than existing methods (by an order of magnitude for gene-level summarization) and requires far less computer memory. It works with either single or paired-end reads and provides a wide range of options appropriate for different sequencing applications. AVAILABILITY AND IMPLEMENTATION: featureCounts is available under GNU General Public License as part of the Subread (http://subread.sourceforge.net) or Rsubread (http://www.bioconductor.org) software packages.",
+    "url": "https://doi.org/10.1093/bioinformatics/btt656",
+    "authors": [
+      "Yang Liao",
+      "Gordon K. Smyth",
+      "Wei Shi"
+    ],
+    "tags": [
+      "Automatic summarization",
+      "Computer science",
+      "Bioconductor",
+      "MIT License",
+      "Software"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2013-11-13",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W2021341670",
+    "name": "Integrative genomics viewer",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nbt.1754",
+    "authors": [
+      "James Robinson",
+      "Helga Thorvaldsdóttir",
+      "Wendy Winckler",
+      "Mitchell Guttman",
+      "Eric S. Lander",
+      "Gad Getz",
+      "Jill P. Mesirov"
+    ],
+    "tags": [
+      "Genomics",
+      "Computational biology",
+      "Profiling (computer programming)",
+      "Human genome",
+      "Genome"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2011-01-01",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W2158804744",
+    "name": "Circos: An information aesthetic for comparative genomics",
+    "source": "openalex",
+    "abstract": "We created a visualization tool called Circos to facilitate the identification and analysis of similarities and differences arising from comparisons of genomes. Our tool is effective in displaying variation in genome structure and, generally, any other kind of positional relationships between genomic intervals. Such data are routinely produced by sequence alignments, hybridization arrays, genome mapping, and genotyping studies. Circos uses a circular ideogram layout to facilitate the display of relationships between pairs of positions by the use of ribbons, which encode the position, size, and orientation of related genomic elements. Circos is capable of displaying data as scatter, line, and histogram plots, heat maps, tiles, connectors, and text. Bitmap or vector images can be created from GFF-style data inputs and hierarchical configuration files, which can be easily generated by automated tools, making Circos suitable for rapid deployment in data analysis and reporting pipelines.",
+    "url": "https://doi.org/10.1101/gr.092759.109",
+    "authors": [
+      "Martin Krzywinski",
+      "Jacqueline E. Schein",
+      "İnanç Birol",
+      "Joseph M. Connors",
+      "Randy D. Gascoyne",
+      "Doug Horsman",
+      "Steven J.M. Jones",
+      "Marco A. Marra"
+    ],
+    "tags": [
+      "Biology",
+      "Genome",
+      "Visualization",
+      "Computational biology",
+      "Comparative genomics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2009-06-18",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W2117131162",
+    "name": "Integrative Genomics Viewer (IGV): high-performance genomics data visualization and exploration",
+    "source": "openalex",
+    "abstract": "Data visualization is an essential component of genomic data analysis. However, the size and diversity of the data sets produced by today's sequencing and array-based profiling methods present major challenges to visualization tools. The Integrative Genomics Viewer (IGV) is a high-performance viewer that efficiently handles large heterogeneous data sets, while providing a smooth and intuitive user experience at all levels of genome resolution. A key characteristic of IGV is its focus on the integrative nature of genomic studies, with support for both array-based and next-generation sequencing data, and the integration of clinical and phenotypic data. Although IGV is often used to view genomic data from public sources, its primary emphasis is to support researchers who wish to visualize and explore their own data sets or those from colleagues. To that end, IGV supports flexible loading of local and remote data sets, and is optimized to provide high-performance data visualization and exploration on standard desktop systems. IGV is freely available for download from http://www.broadinstitute.org/igv, under a GNU LGPL open-source license.",
+    "url": "https://doi.org/10.1093/bib/bbs017",
+    "authors": [
+      "Helga Thorvaldsdóttir",
+      "James Robinson",
+      "Jill P. Mesirov"
+    ],
+    "tags": [
+      "Visualization",
+      "Computer science",
+      "Data visualization",
+      "Genomics",
+      "MIT License"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2012-04-19",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W2051978340",
+    "name": "Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/gim.2015.30",
+    "authors": [
+      "Sue Richards",
+      "Nazneen Aziz",
+      "Sherri J. Bale",
+      "David Bick",
+      "Soma Das",
+      "Julie M. Gastier‐Foster",
+      "Wayne W. Grody",
+      "Madhuri Hegde",
+      "Elaine Lyon",
+      "Elaine Spector",
+      "Karl V. Voelkerding",
+      "Heidi L. Rehm"
+    ],
+    "tags": [
+      "Medical genetics",
+      "Workgroup",
+      "Exome sequencing",
+      "Context (archaeology)",
+      "Exome"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2015-03-05",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W2114843025",
+    "name": "Integrative Analysis of Complex Cancer Genomics and Clinical Profiles Using the cBioPortal",
+    "source": "openalex",
+    "abstract": "The cBioPortal for Cancer Genomics (http://cbioportal.org) provides a Web resource for exploring, visualizing, and analyzing multidimensional cancer genomics data. The portal reduces molecular profiling data from cancer tissues and cell lines into readily understandable genetic, epigenetic, gene expression, and proteomic events. The query interface combined with customized data storage enables researchers to interactively explore genetic alterations across samples, genes, and pathways and, when available in the underlying data, to link these to clinical outcomes. The portal provides graphical summaries of gene-level data from multiple platforms, network visualization and analysis, survival analysis, patient-centric queries, and software programmatic access. The intuitive Web interface of the portal makes complex cancer genomics profiles accessible to researchers and clinicians without requiring bioinformatics expertise, thus facilitating biological discoveries. Here, we provide a practical guide to the analysis and visualization features of the cBioPortal for Cancer Genomics.",
+    "url": "https://doi.org/10.1126/scisignal.2004088",
+    "authors": [
+      "Jianjiong Gao",
+      "Bülent Arman Aksoy",
+      "Uğur Doğrusöz",
+      "Gideon Dresdner",
+      "Benjamin Groß",
+      "S. Onur Sumer",
+      "Yichao Sun",
+      "Anders Jacobsen",
+      "Rileen Sinha",
+      "Erik Larsson",
+      "Ethan Cerami",
+      "Chris Sander",
+      "Nikolaus Schultz"
+    ],
+    "tags": [
+      "Genomics",
+      "Visualization",
+      "Interface (matter)",
+      "Computer science",
+      "Computational biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2013-04-02",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W2576734941",
+    "name": "Genomic sequencing.",
+    "source": "openalex",
+    "abstract": "Unique DNA sequences can be determined directly from mouse genomic DNA. A denaturing gel separates by size mixtures of unlabeled DNA fragments from complete restriction and partial chemical cleavages of the entire genome. These lanes of DNA are transferred and UV-crosslinked to nylon membranes. Hybridization with a short 32P-labeled single-stranded probe produces the image of a DNA sequence \"ladder\" extending from the 3' or 5' end of one restriction site in the genome. Numerous different sequences can be obtained from a single membrane by reprobing. Each band in these sequences represents 3 fg of DNA complementary to the probe. Sequence data from mouse immunoglobulin heavy chain genes from several cell types are presented. The genomic sequencing procedures are applicable to the analysis of genetic polymorphisms, DNA methylation at deoxycytidines, and nucleic acid-protein interactions at single nucleotide resolution.",
+    "url": "https://doi.org/10.1073/pnas.81.7.1991",
+    "authors": [
+      "George M. Church",
+      "W Gilbert"
+    ],
+    "tags": [
+      "DNA nanoball sequencing",
+      "Sequencing by hybridization",
+      "DNA",
+      "Biology",
+      "Genome"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "1984-04-01",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W3005235420",
+    "name": "IQ-TREE 2: New Models and Efficient Methods for Phylogenetic Inference in the Genomic Era",
+    "source": "openalex",
+    "abstract": "IQ-TREE (http://www.iqtree.org, last accessed February 6, 2020) is a user-friendly and widely used software package for phylogenetic inference using maximum likelihood. Since the release of version 1 in 2014, we have continuously expanded IQ-TREE to integrate a plethora of new models of sequence evolution and efficient computational approaches of phylogenetic inference to deal with genomic data. Here, we describe notable features of IQ-TREE version 2 and highlight the key advantages over other software.",
+    "url": "https://doi.org/10.1093/molbev/msaa015",
+    "authors": [
+      "Bùi Quang Minh",
+      "Heiko A. Schmidt",
+      "Olga Chernomor",
+      "Dominik Schrempf",
+      "Michael D. Woodhams",
+      "Arndt von Haeseler",
+      "Robert Lanfear"
+    ],
+    "tags": [
+      "Phylogenetic tree",
+      "Inference",
+      "Biology",
+      "Tree (set theory)",
+      "Tree rearrangement"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2020-01-22",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W2164154943",
+    "name": "Blast2GO: a universal tool for annotation, visualization and analysis in functional genomics research",
+    "source": "openalex",
+    "abstract": "SUMMARY: We present here Blast2GO (B2G), a research tool designed with the main purpose of enabling Gene Ontology (GO) based data mining on sequence data for which no GO annotation is yet available. B2G joints in one application GO annotation based on similarity searches with statistical analysis and highlighted visualization on directed acyclic graphs. This tool offers a suitable platform for functional genomics research in non-model species. B2G is an intuitive and interactive desktop application that allows monitoring and comprehension of the whole annotation and analysis process. AVAILABILITY: Blast2GO is freely available via Java Web Start at http://www.blast2go.de. SUPPLEMENTARY MATERIAL: http://www.blast2go.de -> Evaluation.",
+    "url": "https://doi.org/10.1093/bioinformatics/bti610",
+    "authors": [
+      "Ana Conesa",
+      "Stefan Götz",
+      "Juan Miguel García-Gómez",
+      "Javier Terol",
+      "Manuel Talón",
+      "Montserrat Robles"
+    ],
+    "tags": [
+      "Annotation",
+      "Computer science",
+      "Visualization",
+      "Java",
+      "Process (computing)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2005-08-04",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W2406250479",
+    "name": "Complex heatmaps reveal patterns and correlations in multidimensional genomic data",
+    "source": "openalex",
+    "abstract": "UNLABELLED: Parallel heatmaps with carefully designed annotation graphics are powerful for efficient visualization of patterns and relationships among high dimensional genomic data. Here we present the ComplexHeatmap package that provides rich functionalities for customizing heatmaps, arranging multiple parallel heatmaps and including user-defined annotation graphics. We demonstrate the power of ComplexHeatmap to easily reveal patterns and correlations among multiple sources of information with four real-world datasets. AVAILABILITY AND IMPLEMENTATION: The ComplexHeatmap package and documentation are freely available from the Bioconductor project: http://www.bioconductor.org/packages/devel/bioc/html/ComplexHeatmap.html CONTACT: m.schlesner@dkfz.de SUPPLEMENTARY INFORMATION: Supplementary data are available at Bioinformatics online.",
+    "url": "https://doi.org/10.1093/bioinformatics/btw313",
+    "authors": [
+      "Zuguang Gu",
+      "Roland Eils",
+      "Matthias Schlesner"
+    ],
+    "tags": [
+      "Bioconductor",
+      "R package",
+      "Annotation",
+      "Computer science",
+      "Documentation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2016-05-20",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "doi:10.1093/hesc/9780198866893.003.0006",
+    "name": "Comparative Genomics",
+    "source": "crossref",
+    "abstract": "<p>This chapter examines the unity and diversity of life by analysing genomes, which define species, reveal evolutionary relationships, and demonstrate the role of horizontal gene transfer in reshaping the ‘tree of life’. It explains how genomes differ in size, organisation, and gene content across species, with gene duplication driving genome evolution and complexity. Comparative genomics identifies the small but impactful genetic differences between humans and our closest relatives, for example, chimpanzees, while also highlighting unique human genetic traits. The chapter explores what makes humans distinct by analysing genetic variation, comparing genomes with other organisms, and using model organisms to study human diseases. Finally, the chapter emphasises that while genomics offers deep insights into evolution and human identity, many biological traits arise from complex gene regulation and environmental interactions.</p>",
+    "url": "https://doi.org/10.1093/hesc/9780198866893.003.0006",
+    "authors": [
+      "Arthur M. Lesk"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2025-10-10T07:06:04Z",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "doi:10.1093/hesc/9780198754831.003.007",
+    "name": "Comparative Genomics",
+    "source": "crossref",
+    "abstract": "<p>This chapter analyses the three major divisions of living things (archaea, bacteria, and eukaryotes) based on the sequences of 16S rRNA genes. It notes the prevalence of historical gene transfer among prokaryotes. Historical gene transfer is not consistent with the hierarchical Linnaean classification scheme. The chapter discusses the general distribution of genome sizes and gene numbers while determining the characteristics of different types of genome organization in viruses, prokaryotes, and eukaryotes. The chapter notes the impact of gene duplication on genome evolution and considers the mechanism of genome change at the levels of individual bases, genes, chromosome segments, and whole genomes. It differentiates homologue, orthologue, and paralogue as well. The chapter also expounds on the human genome and the idea of a model organism in the study of human diseases.</p>",
+    "url": "https://doi.org/10.1093/hesc/9780198754831.003.007",
+    "authors": [
+      "Arthur M. Lesk"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2023-09-15T11:33:07Z",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "doi:10.1093/hesc/9780191991318.003.0002",
+    "name": "Genomics",
+    "source": "crossref",
+    "abstract": "<p>This chapter traces the development of genomics from early viral and bacterial sequencing to the complex structure of the human genome. It begins by outlining key breakthroughs in DNA sequencing, including Sanger's dideoxy method and the rise of next-generation sequencing, which enable rapid, large-scale analysis. The chapter explains genome assembly and annotation, introducing strategies like whole genome shotgun sequencing and defining metrics such as contiguous sequence (contig) and scaffold N50. It compares the human and chimpanzee genomes, revealing extensive synteny and insights into evolutionary divergence. Finally, the chapter explores the architecture of the human genome, examining gene-rich regions, alternative splicing, pseudogenes, transposons, CpG islands, and copy number variations, and shows how these features contribute to genome function, variation, and complexity.</p>",
+    "url": "https://doi.org/10.1093/hesc/9780191991318.003.0002",
+    "authors": [
+      "Jamil Momand",
+      "Eliot Bush"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2026-03-27T12:57:06Z",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "doi:10.1186/1479-7364-5-2-75",
+    "name": "Changes in Human Genomics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1186/1479-7364-5-2-75",
+    "authors": [
+      "Vasilis Vasiliou"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2012-07-16T12:15:28Z",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "doi:10.1093/actrade/9780198786207.003.0005",
+    "name": "5. Evolutionary genomics",
+    "source": "crossref",
+    "abstract": "<p>We are still learning how to make sense of what genome sequences have to tell us. ‘Evolutionary genomics’ first considers the ‘molecular clock’, a bedrock concept underlying modern comparative genomic research. Molecular clocks can be inferred using both protein (amino acid) and DNA (nucleotide) sequences. It then looks at our understanding of Y-chromosome and mitochondrial DNA evolution before discussing the difficulties of extracting ancient DNA from fossils. Among the most remarkable achievements of ancient DNA research has been the sequencing of nuclear genomes from Neanderthals and other now-extinct human relatives, aiding research into what makes us human. The question of how eukaryotic cells evolved from prokaryotes is also considered.</p>",
+    "url": "https://doi.org/10.1093/actrade/9780198786207.003.0005",
+    "authors": [
+      "John Archibald"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2018-03-22T11:03:14Z",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "doi:10.5402/genomics",
+    "name": "ISRN Genomics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5402/genomics",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2012-06-18T21:45:33Z",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "doi:10.1016/j.ygeno.2013.07.004",
+    "name": "Introduction to the Genomics special edition on clinical and translational genomics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.ygeno.2013.07.004",
+    "authors": [
+      "Nicholas F. Marko"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2013-07-26T03:41:14Z",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "doi:10.1093/oso/9780198567400.003.0009",
+    "name": "Functional Genomics",
+    "source": "crossref",
+    "abstract": "<p>The overarching purpose of this chapter is to introduce the reader to some of the essential elements of biology, genomics, and bioinformatics. It is by no means a comprehensive description of these fields, but rather the bare minimum that will be necessary to understand the remainder of the book. In the first section we introduce the primary biological molecules: nucleic acids and proteins. We discuss genetic information flow in living beings and how genetic material in DNA is translated into functional proteins. In the second section we present a short primer on probability theory; we review some of the basic concepts. In the third section we describe how biological sequences are obtained and the common strategies employed to analyze them. In the fourth section, we describe the methods used to collect high throughput gene expression data. We also review the popular methods used to analyze gene expression data. There are many other important areas of functional genomics that we do not address at all in this chapter. New experimental and analytical methods are constantly emerging. For the sake of brevity we focused our discussion on the areas that are most applicable to the remainder of the book. But, we note that many of the analytical methods presented here can be applied widely and without great difficulty to other data types than the ones they have been presented with. Here we present a focused review of molecular biology designed to give the reader a sufficient background to comprehend the remainder of the book. A thorough discussion is beyond the scope of this book and the interested reader is referred to other textbooks (Alberts, Bray et al. 1994; Stryer 1995; Nelson, Lehninger et al. 2000). The central dogma of molecular biology is a paradigm of information flow in living organisms (see Plate 2.1). Information is stored in the genomic deoxyriboculeic acid (DNA). DNA polymerase, a protein that synthesizes DNA, can replicate DNA so that it can be passed on to progeny after cell division.</p>",
+    "url": "https://doi.org/10.1093/oso/9780198567400.003.0009",
+    "authors": [
+      "Soumya Raychaudhuri"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2020-11-11T00:59:43Z",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "pmid:42549020",
+    "name": "PREP-aring is worth it: Success of the Case Western Reserve University post-baccalaureate research education program and its scholars.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42549020/",
+    "authors": [
+      "Crawford DC",
+      "Vazquez-Hidalgo E",
+      "Lou H"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "pmid:42549017",
+    "name": "Global genomic landscape of the Klebsiella oxytoca complex: diversity, resistome and plasmidome (1974-2025).",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42549017/",
+    "authors": [
+      "Zhu W",
+      "Chen X",
+      "Shen H",
+      "Yang C",
+      "Liu Q",
+      "Gu L"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2026 Oct",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "pmid:42549014",
+    "name": "Fungicide Drives De Novo Evolution of Multidrug Resistance in the Plant Growth Promoting Rhizobacterium, Pseudomonas fluorescens.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42549014/",
+    "authors": [
+      "Kelbrick M",
+      "Hall JPJ",
+      "O'Brien S"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2026 Aug",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "pmid:42549004",
+    "name": "The Causal Role of Gut Microbiota in Pulmonary Embolism and the Mediating Effects of Circulating Metabolites: A Mendelian Randomization Study.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42549004/",
+    "authors": [
+      "Gao Y",
+      "Jiang X",
+      "Lyu Y",
+      "Hu H",
+      "Wang S",
+      "Hu Y",
+      "Zhang H",
+      "Zhai Z",
+      "Song W",
+      "Yang P"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2026 Jul",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "pmid:42548940",
+    "name": "Library Concentration After Whole Genome Amplification Improves Interpretation of Spent Culture Medium-Based Noninvasive PGT-A in Vitrified-Warmed Human Blastocysts.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548940/",
+    "authors": [
+      "Oikawa S",
+      "Kobayashi T",
+      "Kishida T",
+      "Higuchi K",
+      "Sakakibara E",
+      "Inui Y",
+      "Ashikawa K",
+      "Kuramoto G",
+      "Yamasaki T",
+      "Tada S",
+      "Miyamura H",
+      "Nishio E",
+      "Nishizawa H",
+      "Hamatani T"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2026 Jan-Dec",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "pmid:42548926",
+    "name": "Within-Island Diversification Generates Lineage-Specific Climate Vulnerability: Insights From the Taiwan-Endemic Formosan Duke.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548926/",
+    "authors": [
+      "Shen ZY",
+      "Hsu YF",
+      "Yago M",
+      "Lu CC",
+      "Chen MY",
+      "Chen WY",
+      "Lin TH",
+      "Huang JP",
+      "Wu LW"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2026 Aug",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "pmid:42548909",
+    "name": "PTEN Loss in Triple-Negative Breast Cancer: Integrative Molecular and Clinicopathological Insights.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548909/",
+    "authors": [
+      "Kumar S",
+      "Thakur T",
+      "Chadda A",
+      "Irrinki S",
+      "Khare S",
+      "Bal A"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "pmid:42548903",
+    "name": "The plant microbiome: From ecological foundations to precision microbial engineering for sustainable agriculture.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548903/",
+    "authors": [
+      "Wei M",
+      "Lian T",
+      "Chen L",
+      "Wang L",
+      "Ye J",
+      "Yao X",
+      "Duan S",
+      "Lu Z",
+      "Tu J",
+      "Li H",
+      "Xu XY",
+      "Zhou J",
+      "He J",
+      "Zhu F",
+      "Bonfante P",
+      "Tran LP",
+      "Pang Z",
+      "Zhou X",
+      "Xu Z",
+      "Zhang L",
+      "Wang M",
+      "Wang X",
+      "Tian CF",
+      "Liu YX",
+      "Sun K",
+      "Wang E",
+      "Xie X"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2026 Aug 2",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W2556159813",
+    "name": "CRISPR gene-editing tested in a person for the first time",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nature.2016.20988",
+    "authors": [
+      "David Cyranoski"
+    ],
+    "tags": [
+      "CRISPR",
+      "SPARK (programming language)",
+      "China",
+      "Genome editing",
+      "Biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2016-11-15",
+    "addedAt": "2026-08-04T10:40:40.245Z"
+  },
+  {
+    "id": "oa:W3015140168",
+    "name": "Selective organ targeting (SORT) nanoparticles for tissue-specific mRNA delivery and CRISPR–Cas gene editing",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s41565-020-0669-6",
+    "authors": [
+      "Qiang Cheng",
+      "Tuo Wei",
+      "Lukas Farbiak",
+      "Lindsay T. Johnson",
+      "Sean A. Dilliard",
+      "Daniel J. Siegwart"
+    ],
+    "tags": [
+      "CRISPR",
+      "Cas9",
+      "Ribonucleoprotein",
+      "Genome editing",
+      "Messenger RNA"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "genetech-tools"
+    ],
+    "publishedDate": "2020-04-01",
+    "addedAt": "2026-08-04T10:40:40.245Z"
   }
 ]

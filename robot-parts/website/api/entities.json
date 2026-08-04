@@ -92,5 +92,678 @@
     ],
     "publishedDate": "2026-07-31T16:56:33Z",
     "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "oa:W2092685321",
+    "name": "Modeling and control of McKibben artificial muscle robot actuators",
+    "source": "openalex",
+    "abstract": "The McKibben artificial muscle is a pneumatic device characterized by its high level of functional analogy with human skeletal muscle. While maintaining a globally cylindrical shape, the McKibben muscle produces a contraction force decreasing with its contraction ratio, as does skeletal muscle. The maximum force-to-weight ratio can be surprisingly high for a limited radial dimension and for a conventional pressure range. A 50 g McKibben muscle can easily develop more than 1000 N under 5 bar pressure for an external radius varying from about 1.5 to 3 cm. Thus, robotics specialists are interested in this well-adapted artificial muscle for motorizing powerful yet compact robot arms. The basic McKibben muscle static modeling developed in the paper, which is based on the three main parameters (i.e., initial braid angle, initial muscle length, and initial muscle radius) and includes a three-parameter friction model of the thread against itself, has shown its efficiency in both isometric and isotonic contraction.",
+    "url": "https://doi.org/10.1109/37.833638",
+    "authors": [
+      "Bertrand Tondu",
+      "P. Lopez"
+    ],
+    "tags": [
+      "Artificial muscle",
+      "Isometric exercise",
+      "Actuator",
+      "Robotics",
+      "Muscle contraction"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2000-04-01",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W1984187759",
+    "name": "Pneumatic Networks for Soft Robotics that Actuate Rapidly",
+    "source": "openalex",
+    "abstract": "Soft robots actuated by inflation of a pneumatic network (a “pneu‐net”) of small channels in elastomeric materials are appealing for producing sophisticated motions with simple controls. Although current designs of pneu‐nets achieve motion with large amplitudes, they do so relatively slowly (over seconds). This paper describes a new design for pneu‐nets that reduces the amount of gas needed for inflation of the pneu‐net, and thus increases its speed of actuation. A simple actuator can bend from a linear to a quasi‐circular shape in 50 ms when pressurized at ΔP = 345 kPa. At high rates of pressurization, the path along which the actuator bends depends on this rate. When inflated fully, the chambers of this new design experience only one‐tenth the change in volume of that required for the previous design. This small change in volume requires comparably low levels of strain in the material at maximum amplitudes of actuation, and commensurately low rates of fatigue and failure. This actuator can operate over a million cycles without significant degradation of performance. This design for soft robotic actuators combines high rates of actuation with high reliability of the actuator, and opens new areas of application for them.",
+    "url": "https://doi.org/10.1002/adfm.201303288",
+    "authors": [
+      "Bobak Mosadegh",
+      "Panagiotis Polygerinos",
+      "Christoph Keplinger",
+      "Sophia Wennstedt",
+      "Robert F. Shepherd",
+      "Unmukt Gupta",
+      "Jongmin Shim",
+      "Katia Bertoldi",
+      "Conor J. Walsh",
+      "George M. Whitesides"
+    ],
+    "tags": [
+      "Cabin pressurization",
+      "Actuator",
+      "Soft robotics",
+      "Materials science",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-01-10",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W2564130887",
+    "name": "Soft Actuators for Small‐Scale Robotics",
+    "source": "openalex",
+    "abstract": "This review comprises a detailed survey of ongoing methodologies for soft actuators, highlighting approaches suitable for nanometer- to centimeter-scale robotic applications. Soft robots present a special design challenge in that their actuation and sensing mechanisms are often highly integrated with the robot body and overall functionality. When less than a centimeter, they belong to an even more special subcategory of robots or devices, in that they often lack on-board power, sensing, computation, and control. Soft, active materials are particularly well suited for this task, with a wide range of stimulants and a number of impressive examples, demonstrating large deformations, high motion complexities, and varied multifunctionality. Recent research includes both the development of new materials and composites, as well as novel implementations leveraging the unique properties of soft materials.",
+    "url": "https://doi.org/10.1002/adma.201603483",
+    "authors": [
+      "Lindsey Hines",
+      "Kirstin Petersen",
+      "Guo Zhan Lum",
+      "Metin Sitti"
+    ],
+    "tags": [
+      "Actuator",
+      "Soft robotics",
+      "Robot",
+      "Robotics",
+      "Soft materials"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2016-12-29",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W4391484310",
+    "name": "Multimodal Soft Robotic Actuation and Locomotion",
+    "source": "openalex",
+    "abstract": "Diverse and adaptable modes of complex motion observed at different scales in living creatures are challenging to reproduce in robotic systems. Achieving dexterous movement in conventional robots can be difficult due to the many limitations of applying rigid materials. Robots based on soft materials are inherently deformable, compliant, adaptable, and adjustable, making soft robotics conducive to creating machines with complicated actuation and motion gaits. This review examines the mechanisms and modalities of actuation deformation in materials that respond to various stimuli. Then, strategies based on composite materials are considered to build toward actuators that combine multiple actuation modes for sophisticated movements. Examples across literature illustrate the development of soft actuators as free-moving, entirely soft-bodied robots with multiple locomotion gaits via careful manipulation of external stimuli. The review further highlights how the application of soft functional materials into robots with rigid components further enhances their locomotive abilities. Finally, taking advantage of the shape-morphing properties of soft materials, reconfigurable soft robots have shown the capacity for adaptive gaits that enable transition across environments with different locomotive modes for optimal efficiency. Overall, soft materials enable varied multimodal motion in actuators and robots, positioning soft robotics to make real-world applications for intricate and challenging tasks.",
+    "url": "https://doi.org/10.1002/adma.202308829",
+    "authors": [
+      "Dickson R. Yao",
+      "In Ho Kim",
+      "Shukun Yin",
+      "Wei Gao"
+    ],
+    "tags": [
+      "Soft robotics",
+      "Robot",
+      "Morphing",
+      "Soft materials",
+      "Actuator"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2024-02-02",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W2040492255",
+    "name": "Ionic polymer–conductor composites as biomimetic sensors, robotic actuators and artificial muscles—a review",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0013-4686(03)00224-x",
+    "authors": [
+      "Mohsen Shahinpoor"
+    ],
+    "tags": [
+      "Artificial muscle",
+      "Actuator",
+      "Electroactive polymers",
+      "Conductor",
+      "Materials science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2003-06-01",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W2039446760",
+    "name": "Structural Kinematics of In-Parallel-Actuated Robot-Arms",
+    "source": "openalex",
+    "abstract": "An alternative is here put forward to counterbalance the present-day preoccupation with series-actuated robot-arms. A systematic study of robots and manipulators, now concentrating on “in-parallel” actuator-arrangements, reveals many geometries applicable either to entire robot-arms or to parts of otherwise series-actuated arms. No survey of this kind is possible without drawing heavily on the theory of screw systems. Having established a means of enumerating possible geometries, screw theory is again invoked to highlight, in broad terms, the patterns considered to be most promising. Criteria for avoiding undesirable robot-arm-configurations are touched upon, and certain aspects of the performance of in-parallel-actuated robot-arms are compared and contrasted with those of series-actuated arms. Within the bounds here set (thought to be realistic) the survey on its own is intended to be exhaustive, but many details remain to be investigated. This paper aims to do no more than edge open the door a little further towards in-parallel actuation in robot-arms; others may then consider that further study could be productive.",
+    "url": "https://doi.org/10.1115/1.3258540",
+    "authors": [
+      "K. H. Hunt"
+    ],
+    "tags": [
+      "Robot",
+      "Screw theory",
+      "Kinematics",
+      "Series (stratigraphy)",
+      "Actuator"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "1983-12-01",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W2584350454",
+    "name": "Hydraulic hydrogel actuators and robots optically and sonically camouflaged in water",
+    "source": "openalex",
+    "abstract": "Sea animals such as leptocephali develop tissues and organs composed of active transparent hydrogels to achieve agile motions and natural camouflage in water. Hydrogel-based actuators that can imitate the capabilities of leptocephali will enable new applications in diverse fields. However, existing hydrogel actuators, mostly osmotic-driven, are intrinsically low-speed and/or low-force; and their camouflage capabilities have not been explored. Here we show that hydraulic actuations of hydrogels with designed structures and properties can give soft actuators and robots that are high-speed, high-force, and optically and sonically camouflaged in water. The hydrogel actuators and robots can maintain their robustness and functionality over multiple cycles of actuations, owing to the anti-fatigue property of the hydrogel under moderate stresses. We further demonstrate that the agile and transparent hydrogel actuators and robots perform extraordinary functions including swimming, kicking rubber-balls and even catching a live fish in water.",
+    "url": "https://doi.org/10.1038/ncomms14230",
+    "authors": [
+      "Hyunwoo Yuk",
+      "Shaoting Lin",
+      "Chu Ma",
+      "Mahdi Takaffoli",
+      "Nicholas X. Fang",
+      "Xuanhe Zhao"
+    ],
+    "tags": [
+      "Self-healing hydrogels",
+      "Actuator",
+      "Camouflage",
+      "Robot",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-02-01",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W1608215728",
+    "name": "Autonomous Soft Robotic Fish Capable of Escape Maneuvers Using Fluidic Elastomer Actuators",
+    "source": "openalex",
+    "abstract": "In this work we describe an autonomous soft-bodied robot that is both self-contained and capable of rapid, continuum-body motion. We detail the design, modeling, fabrication, and control of the soft fish, focusing on enabling the robot to perform rapid escape responses. The robot employs a compliant body with embedded actuators emulating the slender anatomical form of a fish. In addition, the robot has a novel fluidic actuation system that drives body motion and has all the subsystems of a traditional robot onboard: power, actuation, processing, and control. At the core of the fish's soft body is an array of fluidic elastomer actuators. We design the fish to emulate escape responses in addition to forward swimming because such maneuvers require rapid body accelerations and continuum-body motion. These maneuvers showcase the performance capabilities of this self-contained robot. The kinematics and controllability of the robot during simulated escape response maneuvers are analyzed and compared with studies on biological fish. We show that during escape responses, the soft-bodied robot has similar input-output relationships to those observed in biological fish. The major implication of this work is that we show soft robots can be both self-contained and capable of rapid body motion.",
+    "url": "https://doi.org/10.1089/soro.2013.0009",
+    "authors": [
+      "Andrew D. Marchese",
+      "Çağdaş D. Önal",
+      "Daniela Rus"
+    ],
+    "tags": [
+      "Actuator",
+      "Robot",
+      "Soft robotics",
+      "Controllability",
+      "Biomimetics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-02-21",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W2155648876",
+    "name": "A swimming robot actuated by living muscle tissue",
+    "source": "openalex",
+    "abstract": "Abstract Biomechatronics is the integration of biological components with artificial devices, in which the biological component confers a significant functional capability to the system, and the artificial component provides specific cellular and tissue interfaces that promote the maintenance and functional adaptation of the biological component. Based upon functional performance, muscle is potentially an excellent mechanical actuator, but the larger challenge of developing muscle-actuated, biomechatronic devices poses many scientific and engineering challenges. As a demonstratory proof of concept, we designed, built, and characterized a swimming robot actuated by two explanted frog semitendinosus muscles and controlled by an embedded microcontroller. Using open loop stimulation protocols, the robot performed basic swimming maneuvers such as starting, stopping, turning (turning radius ~400 mm) and straight-line swimming (max speed >1/3 body lengths/second). A broad spectrum antibiotic/antimycotic ringer solution surrounded the muscle actuators for long term maintenance, ex vivo. The robot swam for a total of 4 hours over a 42 hour lifespan (10% duty cycle) before its velocity degraded below 75% of its maximum. The development of functional biomechatronic prototypes with integrated musculoskeletal tissues is the first critical step toward the long term objective of controllable, adaptive and robust biomechatronic robots and prostheses.",
+    "url": "https://doi.org/10.1186/1743-0003-1-6",
+    "authors": [
+      "Herr Hugh",
+      "Hugh Herr"
+    ],
+    "tags": [
+      "Actuator",
+      "Robot",
+      "Component (thermodynamics)",
+      "Computer science",
+      "Duty cycle"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2004-09-01",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W2610150749",
+    "name": "Feedback Control of Soft Robot Actuators via Commercial Flex Bend Sensors",
+    "source": "openalex",
+    "abstract": "Soft robotics is an emerging field that takes advantage of compliant materials and makes use of nonstandard actuators. Flexible fluid actuators (FFAs) use fluid pressure to produce high deformation of elastomeric-based structures. However, closed-loop control of such actuators is still very challenging due to the lack of robust, reliable, and inexpensive sensors that can be integrated onto highly deformable actuator structures, involving very low cost materials and manufacturing. This paper presents a systematic approach to implement the feedback control of FFA-based soft robotic bending modules by using commercial flex bend sensors. A flex bend sensor detects the module curvature in one direction, and its response is processed by an on board microcontroller and sent to the central control system. Such sensor integration enables the closed-loop control of modular robotic architectures, often used in soft robotics. Once integrated with the soft module, the sensor response was calibrated by the use of a ground truth electro-magnetic tracking system in order to characterize its behavior when combined with the relative FFA. A feedback control using a low-pass filter and a proportional-integral controller was designed and used to evaluate the dynamic response and the position accuracy of the integrated module. With such closed-loop control, the module tip is positioned with less than 1 mm accuracy, which can be considered a relevant result in the soft robotics field.",
+    "url": "https://doi.org/10.1109/tmech.2017.2699677",
+    "authors": [
+      "Giada Gerboni",
+      "Alessandro Diodato",
+      "Gastone Ciuti",
+      "Matteo Cianchetti",
+      "Arianna Menciassi"
+    ],
+    "tags": [
+      "Actuator",
+      "Soft robotics",
+      "Robotics",
+      "Modular design",
+      "FLEX"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-04-28",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W2142197234",
+    "name": "Noninvasive Brain-Actuated Control of a Mobile Robot by Human EEG",
+    "source": "openalex",
+    "abstract": "Brain activity recorded noninvasively is sufficient to control a mobile robot if advanced robotics is used in combination with asynchronous electroencephalogram (EEG) analysis and machine learning techniques. Until now brain-actuated control has mainly relied on implanted electrodes, since EEG-based systems have been considered too slow for controlling rapid and complex sequences of movements. We show that two human subjects successfully moved a robot between several rooms by mental control only, using an EEG-based brain-machine interface that recognized three mental states. Mental control was comparable to manual control on the same task with a performance ratio of 0.74.",
+    "url": "https://doi.org/10.1109/tbme.2004.827086",
+    "authors": [
+      "José del R. Millán",
+      "F. Renkens",
+      "J. Mouriño",
+      "Wulfram Gerstner"
+    ],
+    "tags": [
+      "Electroencephalography",
+      "Brain–computer interface",
+      "Artificial intelligence",
+      "Robotics",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2004-05-25",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W2770984632",
+    "name": "Biohybrid actuators for robotics: A review of devices actuated by living cells",
+    "source": "openalex",
+    "abstract": "Actuation is essential for artificial machines to interact with their surrounding environment and to accomplish the functions for which they are designed. Over the past few decades, there has been considerable progress in developing new actuation technologies. However, controlled motion still represents a considerable bottleneck for many applications and hampers the development of advanced robots, especially at small length scales. Nature has solved this problem using molecular motors that, through living cells, are assembled into multiscale ensembles with integrated control systems. These systems can scale force production from piconewtons up to kilonewtons. By leveraging the performance of living cells and tissues and directly interfacing them with artificial components, it should be possible to exploit the intricacy and metabolic efficiency of biological actuation within artificial machines. We provide a survey of important advances in this biohybrid actuation paradigm.",
+    "url": "https://doi.org/10.1126/scirobotics.aaq0495",
+    "authors": [
+      "Leonardo Ricotti",
+      "Barry A. Trimmer",
+      "Adam W. Feinberg",
+      "Ritu Raman",
+      "Kevin Kit Parker",
+      "Rashid Bashir",
+      "Metin Sitti",
+      "Sylvain Martel",
+      "Paolo Dario",
+      "Arianna Menciassi"
+    ],
+    "tags": [
+      "Interfacing",
+      "Bottleneck",
+      "Exploit",
+      "Computer science",
+      "Actuator"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-11-22",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "doi:10.3724/sp.j.1218.2010.00262",
+    "name": "An Autonomous Micro Robot Fish Based on IPMC Actuator",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3724/sp.j.1218.2010.00262",
+    "authors": [
+      "Yudong SU",
+      "Xiufen YE",
+      "Shuxiang GUO"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2010-09-16T08:20:35Z",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "doi:10.1117/12.3010069.c267a717-4250-ee11-a99c-005056914f1c",
+    "name": "",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1117/12.3010069.c267a717-4250-ee11-a99c-005056914f1c",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2024-05-09T15:45:46Z",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "doi:10.32657/10356/3445",
+    "name": "Adaptive control of robot manipulators with uncertain kinematics and actuator dynamics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.32657/10356/3445",
+    "authors": [
+      "Chao Liu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2019-10-02T22:50:21Z",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "doi:10.55776/p11235",
+    "name": "",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.55776/p11235",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2023-11-30T17:19:37Z",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "doi:10.58837/chula.the.2024.232",
+    "name": "Linear actuator using electromagnetic brake for damping modulation in physical human-robot interaction",
+    "source": "crossref",
+    "abstract": "<jats:p>Improving the transparency of high-transmission-ratio linear actuators is essential for enhancing the safety and performance of high-force robotic systems that engage in physical contact with humans in unstructured environments. However, achieving this goal presents significant challenges. A proposed solution for active body weight support systems involves a linear actuator design, combining a high-force unit with an agile, highly back-drivable unit, using an electrorheological-fluid brake. This dissertation introduces an approach that utilizes an electromagnetic (EM) brake with a reduced rotor inertia to address these challenges. The EM brake's increased torque capacity allows for integration with a low-gear-ratio linear transmission. The mini motor, with low inertia, drives the agile movement of the endpoint through a pulley-belt mechanism, enabling high transparency. The rotor of the EM brake is connected to the pulley, and damping is modulated under high driving forces by adjusting the brake torque in relation to the rotational speed of the pulley. When the brake is engaged, it locks the motion between the endpoint and the moving carrier, ensuring that the endpoint is fully controlled by the high-force unit's ball screw, known as the \"macro.\" A scaled prototype was developed to experimentally analyze the damping force generated by both the mini motor and the EM brake. This macro–mini linear actuator, which includes a built-in failsafe feature, can be applied in active body weight support systems that require significant antigravity forces.</jats:p>",
+    "url": "https://doi.org/10.58837/chula.the.2024.232",
+    "authors": [
+      "Zahid Ullah"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2025-03-26T10:10:50Z",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "doi:10.1117/12.2260415.5427376510001",
+    "name": "",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1117/12.2260415.5427376510001",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-05-26T19:34:25Z",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "doi:10.1108/ir.2003.04930cad.008",
+    "name": "Belt axis actuator makes design simple – TM Robotics launches high-speed, long-stroke actuator",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1108/ir.2003.04930cad.008",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-11-13T18:04:05Z",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "doi:10.1117/12.2558422.6151918649001",
+    "name": "",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1117/12.2558422.6151918649001",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2020-04-24T14:28:55Z",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "pmid:42541727",
+    "name": "Soft Skins With Reversible Thickness Morphing: Materials, Mechanisms, and Applications.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42541727/",
+    "authors": [
+      "Ozioko O",
+      "Akah C",
+      "Dahiya R"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026 Aug 1",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "pmid:42539853",
+    "name": "A magneto-elastic model for soft magnetic concentric tube robots.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42539853/",
+    "authors": [
+      "Lloyd P",
+      "Davy J",
+      "May YL",
+      "Schneider JE",
+      "Valdastri P"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "pmid:42538360",
+    "name": "Simulation study on prescribed-time stabilization of 5-DOF exoskeletons using a regularized super-twisting approach.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42538360/",
+    "authors": [
+      "Moradi E",
+      "Labbaf Khaniki MA",
+      "Amiri S"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026 Jul 30",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "pmid:42536812",
+    "name": "Bistable Networks Enable Complex Shape Changes.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42536812/",
+    "authors": [
+      "Thomas S",
+      "Lipton J"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026 Jul 31",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "pmid:42535301",
+    "name": "Electro-Ribbon Actuator-Driven, Responsive Skating Robot Inspired by Water Striders.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42535301/",
+    "authors": [
+      "Liu J",
+      "Zhao Y",
+      "Fu H",
+      "Liu Y",
+      "Zhou X"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026 Jul 31",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "pmid:42533006",
+    "name": "Non-elastic membrane dual-actuation liquid lens for continuous focus and zoom.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42533006/",
+    "authors": [
+      "Zhang J",
+      "Zhang WX",
+      "Shen H",
+      "Lu Y",
+      "Jin YX",
+      "Liu YZ",
+      "Chen GY",
+      "Wu H",
+      "Xue LW",
+      "Sun LN",
+      "Chen LG"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026 Jul 31",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "pmid:42531104",
+    "name": "Spatially Hierarchical Gradient Orientation of Liquid Crystal Gels for Antagonistic Cooperative Actuation.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42531104/",
+    "authors": [
+      "Chen H",
+      "Cai Y",
+      "Yao X",
+      "Guo P",
+      "Qin H",
+      "Cong HP"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026 Jul 30",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "pmid:42529842",
+    "name": "A bioinspired mechano-catalytic hydrogel leaf for self-adaptive water purification.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42529842/",
+    "authors": [
+      "Zuo L",
+      "Gui Y",
+      "Tang M",
+      "Zhang H",
+      "Liu Y",
+      "Huang Y",
+      "Li L",
+      "Xie J",
+      "Ding C",
+      "Li J"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026 Jul 30",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W2784648116",
+    "name": "Soft Robotic Grippers",
+    "source": "openalex",
+    "abstract": "Advances in soft robotics, materials science, and stretchable electronics have enabled rapid progress in soft grippers. Here, a critical overview of soft robotic grippers is presented, covering different material sets, physical principles, and device architectures. Soft gripping can be categorized into three technologies, enabling grasping by: a) actuation, b) controlled stiffness, and c) controlled adhesion. A comprehensive review of each type is presented. Compared to rigid grippers, end-effectors fabricated from flexible and soft components can often grasp or manipulate a larger variety of objects. Such grippers are an example of morphological computation, where control complexity is greatly reduced by material softness and mechanical compliance. Advanced materials and soft components, in particular silicone elastomers, shape memory materials, and active polymers and gels, are increasingly investigated for the design of lighter, simpler, and more universal grippers, using the inherent functionality of the materials. Embedding stretchable distributed sensors in or on soft grippers greatly enhances the ways in which the grippers interact with objects. Challenges for soft grippers include miniaturization, robustness, speed, integration of sensing, and control. Improved materials, processing methods, and sensing play an important role in future research.",
+    "url": "https://doi.org/10.1002/adma.201707035",
+    "authors": [
+      "Jun Shintake",
+      "Vito Cacucciolo",
+      "Dario Floreano",
+      "Herbert Shea"
+    ],
+    "tags": [
+      "Grippers",
+      "Soft robotics",
+      "Materials science",
+      "GRASP",
+      "Miniaturization"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2018-05-07",
+    "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "oa:W2007924815",
+    "name": "Universal robotic gripper based on the jamming of granular material",
+    "source": "openalex",
+    "abstract": "Gripping and holding of objects are key tasks for robotic manipulators. The development of universal grippers able to pick up unfamiliar objects of widely varying shape and surface properties remains, however, challenging. Most current designs are based on the multifingered hand, but this approach introduces hardware and software complexities. These include large numbers of controllable joints, the need for force sensing if objects are to be handled securely without crushing them, and the computational overhead to decide how much stress each finger should apply and where. Here we demonstrate a completely different approach to a universal gripper. Individual fingers are replaced by a single mass of granular material that, when pressed onto a target object, flows around it and conforms to its shape. Upon application of a vacuum the granular material contracts and hardens quickly to pinch and hold the object without requiring sensory feedback. We find that volume changes of less than 0.5% suffice to grip objects reliably and hold them with forces exceeding many times their weight. We show that the operating principle is the ability of granular materials to transition between an unjammed, deformable state and a jammed state with solid-like rigidity. We delineate three separate mechanisms, friction, suction, and interlocking, that contribute to the gripping force. Using a simple model we relate each of them to the mechanical strength of the jammed state. This advance opens up new possibilities for the design of simple, yet highly adaptive systems that excel at fast gripping of complex objects.",
+    "url": "https://doi.org/10.1073/pnas.1003250107",
+    "authors": [
+      "Eric Brown",
+      "Nicholas Rodenberg",
+      "John R. Amend",
+      "Annan Mozeika",
+      "E. Steltz",
+      "M. R. Zakin",
+      "Hod Lipson",
+      "Heinrich M. Jaeger"
+    ],
+    "tags": [
+      "Jamming",
+      "Grippers",
+      "Computer science",
+      "Rigidity (electromagnetism)",
+      "Overhead (engineering)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2010-10-25",
+    "addedAt": "2026-08-04T10:40:21.516Z"
   }
 ]

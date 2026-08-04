@@ -105,7 +105,7 @@
   },
   "deployment": {
     "npx": {
-      "command": "node mcp-server/src/index.mjs",
+      "command": "npx -y @genetech/data-mcp",
       "transport": "stdio",
       "env": {
         "GENETECH_DATA_DIR": "<path to repo root containing the site directories>",
@@ -118,8 +118,8 @@
       "claudeDesktop": {
         "mcpServers": {
           "genetech-data": {
-            "command": "node",
-            "args": ["/absolute/path/to/genetech-14-sites/mcp-server/src/index.mjs"],
+            "command": "npx",
+            "args": ["-y", "@genetech/data-mcp"],
             "env": {
               "GENETECH_DATA_DIR": "/absolute/path/to/genetech-14-sites"
             }
@@ -129,8 +129,8 @@
       "cursor": {
         "mcpServers": {
           "genetech-data": {
-            "command": "node",
-            "args": ["/absolute/path/to/genetech-14-sites/mcp-server/src/index.mjs"]
+            "command": "npx",
+            "args": ["-y", "@genetech/data-mcp"]
           }
         }
       }

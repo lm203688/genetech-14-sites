@@ -61,5 +61,732 @@
     ],
     "publishedDate": "2026 Aug 2",
     "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "oa:W2136482257",
+    "name": "Galaxy: a comprehensive approach for supporting accessible, reproducible, and transparent computational research in the life sciences",
+    "source": "openalex",
+    "abstract": "Increased reliance on computational approaches in the life sciences has revealed grave concerns about how accessible and reproducible computation-reliant results truly are. Galaxy http://usegalaxy.org, an open web-based platform for genomic research, addresses these problems. Galaxy automatically tracks and manages data provenance and provides support for capturing the context and intent of computational methods. Galaxy Pages are interactive, web-based documents that provide users with a medium to communicate a complete computational analysis.",
+    "url": "https://doi.org/10.1186/gb-2010-11-8-r86",
+    "authors": [
+      "Jeremy Goecks",
+      "Anton Nekrutenko",
+      "James Taylor",
+      "The Galaxy Team"
+    ],
+    "tags": [
+      "Human genetics",
+      "Biology",
+      "Genome Biology",
+      "Computational biology",
+      "Data science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2010-08-25",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W1964306176",
+    "name": "Animals in a bacterial world, a new imperative for the life sciences",
+    "source": "openalex",
+    "abstract": "In the last two decades, the widespread application of genetic and genomic approaches has revealed a bacterial world astonishing in its ubiquity and diversity. This review examines how a growing knowledge of the vast range of animal-bacterial interactions, whether in shared ecosystems or intimate symbioses, is fundamentally altering our understanding of animal biology. Specifically, we highlight recent technological and intellectual advances that have changed our thinking about five questions: how have bacteria facilitated the origin and evolution of animals; how do animals and bacteria affect each other's genomes; how does normal animal development depend on bacterial partners; how is homeostasis maintained between animals and their symbionts; and how can ecological approaches deepen our understanding of the multiple levels of animal-bacterial interaction. As answers to these fundamental questions emerge, all biologists will be challenged to broaden their appreciation of these interactions and to include investigations of the relationships between and among bacteria and their animal partners as we seek a better understanding of the natural world.",
+    "url": "https://doi.org/10.1073/pnas.1218525110",
+    "authors": [
+      "Margaret McFall‐Ngai",
+      "Michael G.‏ Hadfield",
+      "Thomas C. G. Bosch",
+      "Hannah V. Carey",
+      "Tomislav Domazet‐Lošo",
+      "Angela E. Douglas",
+      "Nicole Dubilier",
+      "Gérard Eberl",
+      "Tadashi Fukami",
+      "Scott F. Gilbert",
+      "Ute Hentschel",
+      "Nicole King",
+      "Staffan Kjelleberg",
+      "Andrew H. Knoll",
+      "Natacha Kremer",
+      "Sarkis K. Mazmanian",
+      "Jessica L. Metcalf",
+      "Kenneth H. Nealson",
+      "Naomi E. Pierce",
+      "John F. Rawls",
+      "Ann Reid",
+      "Edward G. Ruby",
+      "Mary E. Rumpho",
+      "Jon G. Sanders",
+      "Diethard Tautz",
+      "Jennifer J. Wernegreen"
+    ],
+    "tags": [
+      "Biology",
+      "Animal life",
+      "Diversity (politics)",
+      "Environmental ethics",
+      "Ecology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2013-02-07",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W4252181808",
+    "name": "Cellular and Molecular Life Sciences",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/18.1420-9071",
+    "authors": [],
+    "tags": [
+      "Computational biology",
+      "Biology",
+      "Evolutionary biology",
+      "Chemistry"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2013-05-25",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W2059327215",
+    "name": "MassBank: a public repository for sharing mass spectral data for life sciences",
+    "source": "openalex",
+    "abstract": "MassBank is the first public repository of mass spectra of small chemical compounds for life sciences (<3000 Da). The database contains 605 electron-ionization mass spectrometry (EI-MS), 137 fast atom bombardment MS and 9276 electrospray ionization (ESI)-MS(n) data of 2337 authentic compounds of metabolites, 11 545 EI-MS and 834 other-MS data of 10,286 volatile natural and synthetic compounds, and 3045 ESI-MS(2) data of 679 synthetic drugs contributed by 16 research groups (January 2010). ESI-MS(2) data were analyzed under nonstandardized, independent experimental conditions. MassBank is a distributed database. Each research group provides data from its own MassBank data servers distributed on the Internet. MassBank users can access either all of the MassBank data or a subset of the data by specifying one or more experimental conditions. In a spectral search to retrieve mass spectra similar to a query mass spectrum, the similarity score is calculated by a weighted cosine correlation in which weighting exponents on peak intensity and the mass-to-charge ratio are optimized to the ESI-MS(2) data. MassBank also provides a merged spectrum for each compound prepared by merging the analyzed ESI-MS(2) data on an identical compound under different collision-induced dissociation conditions. Data merging has significantly improved the precision of the identification of a chemical compound by 21-23% at a similarity score of 0.6. Thus, MassBank is useful for the identification of chemical compounds and the publication of experimental data.",
+    "url": "https://doi.org/10.1002/jms.1777",
+    "authors": [
+      "Hisayuki Horai",
+      "Masanori Arita",
+      "Shigehiko Kanaya",
+      "Yoshito Nihei",
+      "Tasuku Ikeda",
+      "Kazuhiro Suwa",
+      "Yuya Ojima",
+      "Kenichi Tanaka",
+      "Satoshi Tanaka",
+      "Ken Aoshima",
+      "Yoshiya Oda",
+      "Yuji Kakazu",
+      "Miyako Kusano",
+      "Takayuki Tohge",
+      "Fumio Matsuda",
+      "Yuji Sawada",
+      "Masami Yokota Hirai",
+      "Hiroki Nakanishi",
+      "Kazutaka Ikeda",
+      "Naoshige Akimoto",
+      "Takashi Maoka",
+      "Hiroki Takahashi",
+      "Takeshi Ara",
+      "Nozomu Sakurai",
+      "Hideyuki Suzuki",
+      "Daisuke Shibata",
+      "Steffen Neumann",
+      "Takashi Iida",
+      "Ken Tanaka",
+      "Kimito Funatsu",
+      "Fumito Matsuura",
+      "Tomoyoshi Soga",
+      "Ryo Taguchi",
+      "Kazuki Saito",
+      "Takaaki Nishi­oka"
+    ],
+    "tags": [
+      "Chemistry",
+      "Mass spectrometry",
+      "Mass spectrum",
+      "Electrospray ionization",
+      "Database"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2010-07-01",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W2150934173",
+    "name": "The Bioperl Toolkit: Perl Modules for the Life Sciences",
+    "source": "openalex",
+    "abstract": "The Bioperl project is an international open-source collaboration of biologists, bioinformaticians, and computer scientists that has evolved over the past 7 yr into the most comprehensive library of Perl modules available for managing and manipulating life-science information. Bioperl provides an easy-to-use, stable, and consistent programming interface for bioinformatics application programmers. The Bioperl modules have been successfully and repeatedly used to reduce otherwise complex tasks to only a few lines of code. The Bioperl object model has been proven to be flexible enough to support enterprise-level applications such as EnsEMBL, while maintaining an easy learning curve for novice Perl programmers. Bioperl is capable of executing analyses and processing results from programs such as BLAST, ClustalW, or the EMBOSS suite. Interoperation with modules written in Python and Java is supported through the evolving BioCORBA bridge. Bioperl provides access to data stores such as GenBank and SwissProt via a flexible series of sequence input/output modules, and to the emerging common sequence data storage format of the Open Bioinformatics Database Access project. This study describes the overall architecture of the toolkit, the problem domains that it addresses, and gives specific examples of how the toolkit can be used to solve common life-sciences problems. We conclude with a discussion of how the open-source nature of the project has contributed to the development effort. [Supplemental material is available online at www.genome.org . Bioperl is available as open-source software free of charge and is licensed under the Perl Artistic License ( http://www.perl.com/pub/a/language/misc/Artistic.html ). It is available for download at http://www.bioperl.org . Support inquiries should be addressed to bioperl-l@bioperl.org .]",
+    "url": "https://doi.org/10.1101/gr.361602",
+    "authors": [
+      "Jason Stajich",
+      "David E. Block",
+      "Kris Boulez",
+      "Steven E. Brenner",
+      "Stephen A. Chervitz",
+      "Chris Dagdigian",
+      "Georg Fuellen",
+      "James Gilbert",
+      "Ian Korf",
+      "Hilmar Lapp",
+      "Heikki Lehväslaiho",
+      "Chad Matsalla",
+      "Chris Mungall",
+      "Brian I. Osborne",
+      "Matthew Pocock",
+      "Peter Schattner",
+      "Martin Senger",
+      "Lincoln Stein",
+      "Elia Stupka",
+      "Mark D. Wilkinson",
+      "Ewan Birney"
+    ],
+    "tags": [
+      "Perl",
+      "Computer science",
+      "Python (programming language)",
+      "Scripting language",
+      "Interoperation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-10-01",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W2041465237",
+    "name": "The Scientific Use of Factor Analysis in Behavioral and Life Sciences",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-4684-2262-7",
+    "authors": [
+      "Raymond B. Cattell"
+    ],
+    "tags": [
+      "Behavioural sciences",
+      "Factor (programming language)",
+      "Psychology",
+      "Computer science",
+      "Psychotherapist"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1978-01-01",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W1645343793",
+    "name": "Network Dynamics and Field Evolution: The Growth of Interorganizational Collaboration in the Life Sciences",
+    "source": "openalex",
+    "abstract": "A recursive analysis of network and institutional evolution is offered to account for the decentralized structure of the commercial field of the life sciences. Four alternative logics of attachment - accumulative advantage, homophily, follow-the-trend, and multiconnectivity-are tested to explain the structure and dynamics of interorganizational collaboration in biotechnology. Using multiple novel methods, the authors demonstrate how different rules for affiliation shape network evolution. Commercialization strategies pursued by early corporate entrants are supplanted by universities, research institutes, venture capital, and small firms. As organizations increase their collaborative activities and diversify their ties to others, cohesive subnetworks form, characterized by multiple, independent pathways. These structural components, in turn, condition the choices and opportunities available to members of a field, thereby reinforcing an attachment logic based on differential connections to diverse partners. © 2005 by The University of Chicago. All rights reserved.",
+    "url": "https://doi.org/10.1086/421508",
+    "authors": [
+      "Walter W. Powell",
+      "Dougľas R. White",
+      "Kenneth W. Koput",
+      "Jason Owen‐Smith"
+    ],
+    "tags": [
+      "Homophily",
+      "Commercialization",
+      "Field (mathematics)",
+      "Dynamics (music)",
+      "Network dynamics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2005-01-01",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W2255543244",
+    "name": "Model Based Inference in the Life Sciences: A Primer on Evidence",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-0-387-74075-1",
+    "authors": [
+      "David R. Anderson"
+    ],
+    "tags": [
+      "Inference",
+      "Primer (cosmetics)",
+      "Computer science",
+      "Data science",
+      "Philosophy of science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2007-12-20",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W2500522403",
+    "name": "A practical guide to photoacoustic tomography in the life sciences",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nmeth.3925",
+    "authors": [
+      "Lihong V. Wang",
+      "Junjie Yao"
+    ],
+    "tags": [
+      "Photoacoustic imaging in biomedicine",
+      "Photoacoustic tomography",
+      "Optical imaging",
+      "Computer science",
+      "Preclinical imaging"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2016-07-28",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W2765745983",
+    "name": "Bioconda: sustainable and comprehensive software distribution for the life sciences",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s41592-018-0046-7",
+    "authors": [
+      "The Bioconda Team",
+      "Björn Grüning",
+      "Ryan Dale",
+      "Andreas Sjödin",
+      "Brad Chapman",
+      "Jillian Rowe",
+      "Christopher H. Tomkins-Tinch",
+      "Renan Valieris",
+      "Johannes Köster"
+    ],
+    "tags": [
+      "Computational biology",
+      "Software",
+      "Computer science",
+      "Distribution (mathematics)",
+      "Data science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2018-06-25",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W1905439276",
+    "name": "Encyclopedia of Life Sciences",
+    "source": "openalex",
+    "abstract": "The calcium ion (Ca&lt;sup&gt;2+&lt;/sup&gt;) is a versatile intracellular messenger. It provides dynamic regulation of vast array of cellular processes such as gene transcription, differentiation and contraction. Ca&lt;sup&gt;2+&lt;/sup&gt; signals range from microsecond, nanoscopic events to intercellular waves lasting for many seconds. This diversity of Ca&lt;sup&gt;2+&lt;/sup&gt; signals arises from the wide assortment of Ca&lt;sup&gt;2+&lt;/sup&gt; transport and Ca&lt;sup&gt;2+&lt;/sup&gt; buffering processes employed by cells. Additional diversity in Ca&lt;sup&gt;2+&lt;/sup&gt; signalling stems from the ability of cells to utilise different sources of Ca&lt;sup&gt;2+&lt;/sup&gt;. The cytosol is the principal Ca&lt;sup&gt;2+&lt;/sup&gt; signalling compartment. When Ca&lt;sup&gt;2+&lt;/sup&gt; ions enter the cytosol they interact with numerous Ca&lt;sup&gt;2+&lt;/sup&gt;-binding proteins, thereby leading to activation, or inhibition, of cellular processes. Specificity is achieved by regulating the spatial and kinetic properties of Ca&lt;sup&gt;2+&lt;/sup&gt; signal. In this way, many concurrent Ca&lt;sup&gt;2+&lt;/sup&gt;-sensitive cellular processes can be discretely regulated. A number of pathologies have been related to the breakdown of cellular Ca&lt;sup&gt;2+&lt;/sup&gt; homoeostasis or to aberrant Ca&lt;sup&gt;2+&lt;/sup&gt; signalling.",
+    "url": "https://doi.org/10.1002/9780470015902",
+    "authors": [
+      "Bootman, Martin",
+      "Lipp, Peter"
+    ],
+    "tags": [
+      "Encyclopedia",
+      "Library science",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2001-05-30",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W2128583282",
+    "name": "Multiphoton microscopy in life sciences",
+    "source": "openalex",
+    "abstract": "Near infrared (NIR) multiphoton microscopy is becoming a novel optical tool of choice for fluorescence imaging with high spatial and temporal resolution, diagnostics, photochemistry and nanoprocessing within living cells and tissues. Three-dimensional fluorescence imaging based on non-resonant two-photon or three-photon fluorophor excitation requires light intensities in the range of MW cm(-2) to GW cm(-2), which can be derived by diffraction limited focusing of continuous wave and pulsed NIR laser radiation. NIR lasers can be employed as the excitation source for multifluorophor multiphoton excitation and hence multicolour imaging. In combination with fluorescence in situ hybridization (FISH), this novel approach can be used for multi-gene detection (multiphoton multicolour FISH). Owing to the high NIR penetration depth, non-invasive optical biopsies can be obtained from patients and ex vivo tissue by morphological and functional fluorescence imaging of endogenous fluorophores such as NAD(P)H, flavin, lipofuscin, porphyrins, collagen and elastin. Recent botanical applications of multiphoton microscopy include depth-resolved imaging of pigments (chlorophyll) and green fluorescent proteins as well as non-invasive fluorophore loading into single living plant cells. Non-destructive fluorescence imaging with multiphoton microscopes is limited to an optical window. Above certain intensities, multiphoton laser microscopy leads to impaired cellular reproduction, formation of giant cells, oxidative stress and apoptosis-like cell death. Major intracellular targets of photodamage in animal cells are mitochondria as well as the Golgi apparatus. The damage is most likely based on a two-photon excitation process rather than a one-photon or three-photon event. Picosecond and femtosecond laser microscopes therefore provide approximately the same safe relative optical window for two-photon vital cell studies. In labelled cells, additional phototoxic effects may occur via photodynamic action. This has been demonstrated for aminolevulinic acid-induced protoporphyrin IX and other porphyrin sensitizers in cells. When the light intensity in NIR microscopes is increased to TW cm(-2) levels, highly localized optical breakdown and plasma formation do occur. These femtosecond NIR laser microscopes can also be used as novel ultraprecise nanosurgical tools with cut sizes between 100 nm and 300 nm. Using the versatile nanoscalpel, intracellular dissection of chromosomes within living cells can be performed without perturbing the outer cell membrane. Moreover, cells remain alive. Non-invasive NIR laser surgery within a living cell or within an organelle is therefore possible.",
+    "url": "https://doi.org/10.1046/j.1365-2818.2000.00738.x",
+    "authors": [
+      "Karsten König"
+    ],
+    "tags": [
+      "Two-photon excitation microscopy",
+      "Microscopy",
+      "Fluorophore",
+      "Fluorescence",
+      "Picosecond"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2000-11-01",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "doi:10.1016/0024-3205(65)90301-2",
+    "name": "Life Sciences",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0024-3205(65)90301-2",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2003-07-12T02:16:19Z",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "doi:10.1016/0024-3205(63)90145-0",
+    "name": "Life Sciences",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0024-3205(63)90145-0",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-12-14T17:38:53Z",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "doi:10.1016/0024-3205(65)90299-7",
+    "name": "Life Sciences",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0024-3205(65)90299-7",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-12-14T17:38:53Z",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "doi:10.1016/0024-3205(65)90300-0",
+    "name": "Limulus polyphemus. Life Sciences",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0024-3205(65)90300-0",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2003-07-12T02:16:19Z",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "doi:10.1016/0024-3205(63)90012-2",
+    "name": "Life sciences no. 12",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0024-3205(63)90012-2",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-12-14T12:38:53Z",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "doi:10.1016/j.lfs.2012.10.001",
+    "name": "Holiday message from Life Sciences",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.lfs.2012.10.001",
+    "authors": [
+      "Frank Porreca"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2012-10-09T21:17:24Z",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "doi:10.1016/0024-3205(75)90541-x",
+    "name": "Author and subject index to Life Sciences Volume 17",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0024-3205(75)90541-x",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-12-14T17:14:32Z",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "doi:10.1016/0024-3205(74)90447-0",
+    "name": "Author and subject index to life sciences volume 15",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0024-3205(74)90447-0",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-12-14T17:14:32Z",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "pmid:42549032",
+    "name": "Honokiol Inhibits Arsenic Trioxide-Induced Cardiomyopathy by Modulating Ferroptosis via SIRT3 Signaling Pathway.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42549032/",
+    "authors": [
+      "Wei QQ",
+      "Huang AL",
+      "Liu NY",
+      "Zhang YR",
+      "Yang F"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "pmid:42549021",
+    "name": "Optimizing Intermittent Catheterization Following Spinal Cord Injury: A Narrative Review Using the WHO Health System Building Blocks Framework.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42549021/",
+    "authors": [
+      "Abuzied Y",
+      "Mahmud A",
+      "Al-Amer R",
+      "Halain AA",
+      "Japar S"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "pmid:42548998",
+    "name": "Adverse perinatal events are associated with postpartum depression and anxiety in women veterans.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548998/",
+    "authors": [
+      "Thomas JL",
+      "Barbano AC",
+      "Fox AB",
+      "Stucchi S",
+      "Galovski TE",
+      "Nillni YI"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Sep",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "pmid:42548975",
+    "name": "Investigating the Relationship Between Personality Traits and Treatment Adherence With the Mediating Role of Coping Styles in Adults With Presbycusis: A Cross-Sectional Study.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548975/",
+    "authors": [
+      "Davari Z",
+      "Zamiran S",
+      "Ganji L",
+      "Amini M",
+      "Nasab SK",
+      "Pashmdarfard M"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "pmid:42548961",
+    "name": "Burden and Economic Impact of Antimicrobial Resistance in Acinetobacter baumannii in Iran: A 2000-2021 Analysis.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548961/",
+    "authors": [
+      "Golestani S",
+      "Golestani A",
+      "Akbarpour S",
+      "Salehi M",
+      "Seifi A",
+      "Mohammadi K",
+      "Shafaati M"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "pmid:42548958",
+    "name": "Proteolytic Activity of Commercial Thermophilic Starter Cultures and Changes in Protein Fractions and Free Amino Acids in Organic and Conventional Fermented Milk.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548958/",
+    "authors": [
+      "Steinweg S",
+      "Zagorska J",
+      "Majore K",
+      "Komasilovs V",
+      "Radenkovs V",
+      "Ciprovica I"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "pmid:42548956",
+    "name": "The 2026 EU-India free trade agreement: why it matters for global health and trade.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548956/",
+    "authors": [
+      "Berner-Rodoreda A",
+      "Parwani P",
+      "Rao C",
+      "André E",
+      "Fröschl G",
+      "Skordis J",
+      "Sharma S",
+      "Bassat Q",
+      "Atun R",
+      "Vainieri M",
+      "Farlow A",
+      "Tediosi F",
+      "Ravinetto R",
+      "Ismail KM",
+      "Renganathan E",
+      "de Ruijter A",
+      "Taylor T",
+      "Ooms G",
+      "Herrington E",
+      "Dabade G",
+      "Bärnighausen T",
+      "Perehudoff K"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "pmid:42548946",
+    "name": "Developing machine learning models to forecast mosquito abundance for climate change impacts and early warning system.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548946/",
+    "authors": [
+      "Jung S",
+      "Jeong H",
+      "Lee Y",
+      "Han S",
+      "Son S",
+      "Jeon BH",
+      "Chung H",
+      "Byun W",
+      "Kim DG",
+      "Lee S"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Dec",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W1978486653",
+    "name": "Systems Biology: A Brief Overview",
+    "source": "openalex",
+    "abstract": "To understand biology at the system level, we must examine the structure and dynamics of cellular and organismal function, rather than the characteristics of isolated parts of a cell or organism. Properties of systems, such as robustness, emerge as central issues, and understanding these properties may have an impact on the future of medicine. However, many breakthroughs in experimental devices, advanced software, and analytical methods are required before the achievements of systems biology can live up to their much-touted potential.",
+    "url": "https://doi.org/10.1126/science.1069492",
+    "authors": [
+      "Hiroaki Kitano"
+    ],
+    "tags": [
+      "Systems biology",
+      "Robustness (evolution)",
+      "Systems medicine",
+      "Organism",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-03-01",
+    "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "oa:W1599969036",
+    "name": "An Introduction to Systems Biology",
+    "source": "openalex",
+    "abstract": "Thorough and accessible, this book presents the design principles of biological systems, and highlights the recurring circuit elements that make up biological networks. It provides a simple mathematical framework which can be used to understand and even design biological circuits. The textavoids specialist terms, focusing instead on several well-st",
+    "url": "https://doi.org/10.1201/9781420011432",
+    "authors": [
+      "Uri Alon"
+    ],
+    "tags": [
+      "Computer science",
+      "Biology",
+      "Computational biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2006-07-07",
+    "addedAt": "2026-08-04T10:40:01.261Z"
   }
 ]

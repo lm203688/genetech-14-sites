@@ -272,5 +272,1027 @@
     ],
     "publishedDate": "2026-07-31T16:33:18Z",
     "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "oa:W2761986865",
+    "name": "Transiting Exoplanet Survey Satellite",
+    "source": "openalex",
+    "abstract": "The Transiting Exoplanet Survey Satellite (TESS) will search for planets transiting bright and nearby stars. TESS has been selected by NASA for launch in 2017 as an Astrophysics Explorer mission. The spacecraft will be placed into a highly elliptical 13.7-day orbit around the Earth. During its 2-year mission, TESS will employ four wide-field optical charge-coupled device cameras to monitor at least 200,000 main-sequence dwarf stars with IC≈4−13 for temporary drops in brightness caused by planetary transits. Each star will be observed for an interval ranging from 1 month to 1 year, depending mainly on the star’s ecliptic latitude. The longest observing intervals will be for stars near the ecliptic poles, which are the optimal locations for follow-up observations with the James Webb Space Telescope. Brightness measurements of preselected target stars will be recorded every 2 min, and full frame images will be recorded every 30 min. TESS stars will be 10 to 100 times brighter than those surveyed by the pioneering Kepler mission. This will make TESS planets easier to characterize with follow-up observations. TESS is expected to find more than a thousand planets smaller than Neptune, including dozens that are comparable in size to the Earth. Public data releases will occur every 4 months, inviting immediate community-wide efforts to study the new planets. The TESS legacy will be a catalog of the nearest and brightest stars hosting transiting planets, which will endure as highly favorable targets for detailed investigations.",
+    "url": "https://doi.org/10.1117/1.jatis.1.1.014003",
+    "authors": [
+      "G. Ricker",
+      "Joshua N. Winn",
+      "R. Vanderspek",
+      "David W. Latham",
+      "G. Á. Bakos",
+      "Jacob L. Bean",
+      "Zachory K. Berta-Thompson",
+      "Timothy M. Brown",
+      "Lars A. Buchhave",
+      "N. Butler",
+      "R. Paul Butler",
+      "W. J. Chaplin",
+      "David Charbonneau",
+      "J. Christensen‐Dalsgaard",
+      "Mark Clampin",
+      "Drake Deming",
+      "J. Doty",
+      "Nathan De Lee",
+      "Courtney D. Dressing",
+      "Edward W. Dunham",
+      "Michael Endl",
+      "François Fressin",
+      "Jian Ge",
+      "Thomas Henning",
+      "Matthew J. Holman",
+      "Andrew W. Howard",
+      "Shigeru Ida",
+      "Jon M. Jenkins",
+      "G. Jernigan",
+      "John Asher Johnson",
+      "Lisa Kaltenegger",
+      "N. Kawai",
+      "H. Kjeldsen",
+      "Gregory Laughlin",
+      "Alan M. Levine",
+      "D. N. C. Lin",
+      "Jack J. Lissauer",
+      "Phillip J. MacQueen",
+      "Geoffrey W. Marcy",
+      "P. R. McCullough",
+      "Timothy D. Morton",
+      "Norio Narita",
+      "Martin Paegert",
+      "Ε. Πάλλη",
+      "F. Pepe",
+      "Joshua Pepper",
+      "A. Quirrenbach",
+      "Stephen A. Rinehart",
+      "Dimitar Sasselov",
+      "Bun’ei Sato",
+      "Sara Seager",
+      "A. Sozzetti",
+      "Keivan G. Stassun",
+      "Peter Sullivan",
+      "Andrew Szentgyorgyi",
+      "Guillermo Torres",
+      "S. Udry",
+      "J. Villaseñor"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Planet",
+      "Physics",
+      "Astronomy",
+      "Stars"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2014-10-24",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W2089014417",
+    "name": "The NASA Exoplanet Archive: Data and Tools for Exoplanet Research",
+    "source": "openalex",
+    "abstract": "We describe the contents and functionality of the NASA Exoplanet Archive, a database and toolset funded by NASA to support astronomers in the exoplanet community. The current content of the database includes interactive tables containing properties of all published exoplanets, Kepler planet candidates, threshold-crossing events, data validation reports and target stellar parameters, light curves from the Kepler and CoRoT missions and from several ground-based surveys, and spectra and radial velocity measurements from the literature. Tools provided to work with these data include a transit ephemeris predictor, both for single planets and for observing locations, light curve viewing and normalization utilities, and a periodogram and phased light curve service. The archive can be accessed at http://exoplanetarchive.ipac.caltech.edu .",
+    "url": "https://doi.org/10.1086/672273",
+    "authors": [
+      "Rachel Akeson",
+      "X. Chen",
+      "David R. Ciardi",
+      "Megan Crane",
+      "John Good",
+      "M. Harbut",
+      "E. S. Jackson",
+      "Stephen R. Kane",
+      "A. C. Laity",
+      "Stephanie Leifer",
+      "Mary R. Lynn",
+      "D. L. McElroy",
+      "M. Papin",
+      "Peter Plavchan",
+      "Solange Ramírez",
+      "Raquel Oreiro Rey",
+      "Kaspar von Braun",
+      "M. Wittman",
+      "M. Abajian",
+      "B. Ali",
+      "Charles Beichman",
+      "A. Beekley",
+      "G. Bruce Berriman",
+      "S. J. Berukoff",
+      "G. Bryden",
+      "B. Chan",
+      "Steven L. Groom",
+      "Chun‐Sean Lau",
+      "A. N. Payne",
+      "Moira Regelson",
+      "M. Saucedo",
+      "M. Schmitz",
+      "J. Stauffer",
+      "P. Wyatt",
+      "A. Zhang"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Ephemeris",
+      "Kepler",
+      "Light curve",
+      "Planet"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2013-07-19",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W2109435540",
+    "name": "Catalog of Nearby Exoplanets",
+    "source": "openalex",
+    "abstract": "We present a catalog of nearby exoplanets. It contains the 172 known low-mass companions with orbits established through radial velocity and transit measurements around stars within 200 pc. We include five previously unpublished exoplanets orbiting the stars HD 11964, HD 66428, HD 99109, HD 107148, and HD 164922. We update orbits for 83 additional exoplanets, including many whose orbits have not been revised since their announcement, and include radial velocity time series from the Lick, Keck, and Anglo-Australian Observatory planet searches. Both these new and previously published velocities are more precise here due to improvements in our data reduction pipeline, which we applied to archival spectra. We present a brief summary of the global properties of the known exoplanets, including their distributions of orbital semimajor axis, minimum mass, and orbital eccentricity.",
+    "url": "https://doi.org/10.1086/504701",
+    "authors": [
+      "R. Paul Butler",
+      "Jason T. Wright",
+      "Geoffrey W. Marcy",
+      "Debra A. Fischer",
+      "Steven S. Vogt",
+      "C. G. Tinney",
+      "H. R. A. Jones",
+      "Brad Carter",
+      "John Asher Johnson",
+      "C. McCarthy",
+      "A. J. Penny"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Physics",
+      "Radial velocity",
+      "Stars",
+      "Observatory"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2006-07-20",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W2749229678",
+    "name": "Transiting Exoplanet Survey Satellite (TESS)",
+    "source": "openalex",
+    "abstract": "The Transiting Exoplanet Survey Satellite (TESS ) will search for planets transiting bright and nearby stars. TESS has been selected by NASA for launch in 2017 as an Astrophysics Explorer mission. The spacecraft will be placed into a highly elliptical 13.7-day orbit around the Earth. During its two-year mission, TESS will employ four wide-field optical CCD cameras to monitor at least 200,000 main-sequence dwarf stars with I<sub>C</sub> (approximately less than) 13 for temporary drops in brightness caused by planetary transits. Each star will be observed for an interval ranging from one month to one year, depending mainly on the star's ecliptic latitude. The longest observing intervals will be for stars near the ecliptic poles, which are the optimal locations for follow-up observations with the James Webb Space Telescope. Brightness measurements of preselected target stars will be recorded every 2 min, and full frame images will be recorded every 30 min. TESS stars will be 10-100 times brighter than those surveyed by the pioneering Kepler mission. This will make TESS planets easier to characterize with follow-up observations. TESS is expected to find more than a thousand planets smaller than Neptune, including dozens that are comparable in size to the Earth. Public data releases will occur every four months, inviting immediate community-wide efforts to study the new planets. The TESS legacy will be a catalog of the nearest and brightest stars hosting transiting planets, which will endure as highly favorable targets for detailed investigations.",
+    "url": "https://doi.org/10.1117/12.2063489",
+    "authors": [
+      "G. Ricker",
+      "Joshua N. Winn",
+      "R. Vanderspek",
+      "David W. Latham",
+      "G. Á. Bakos",
+      "Jacob L. Bean",
+      "Zachory K. Berta-Thompson",
+      "Timothy M. Brown",
+      "Lars A. Buchhave",
+      "N. Butler",
+      "R. Paul Butler",
+      "W. J. Chaplin",
+      "David Charbonneau",
+      "J. Christensen‐Dalsgaard",
+      "Mark Clampin",
+      "Drake Deming",
+      "J. Doty",
+      "Nathan De Lee",
+      "Courtney D. Dressing",
+      "Edward W. Dunham",
+      "Michael Endl",
+      "François Fressin",
+      "Jian Ge",
+      "Thomas Henning",
+      "Matthew J. Holman",
+      "Andrew W. Howard",
+      "Shigeru Ida",
+      "Jon Jenkins",
+      "G. Jernigan",
+      "John Asher Johnson",
+      "Lisa Kaltenegger",
+      "N. Kawai",
+      "H. Kjeldsen",
+      "Gregory Laughlin",
+      "Alan M. Levine",
+      "D. N. C. Lin",
+      "Jack J. Lissauer",
+      "Phillip J. MacQueen",
+      "Geoffrey W. Marcy",
+      "P. R. McCullough",
+      "Timothy D. Morton",
+      "Norio Narita",
+      "Martin Paegert",
+      "Ε. Πάλλη",
+      "F. Pepe",
+      "Joshua Pepper",
+      "A. Quirrenbach",
+      "Stephen A. Rinehart",
+      "Dimitar Sasselov",
+      "Bun’ei Sato",
+      "Sara Seager",
+      "A. Sozzetti",
+      "Keivan G. Stassun",
+      "Peter Sullivan",
+      "Andrew Szentgyorgyi",
+      "Guillermo Torres",
+      "S. Udry",
+      "J. Villaseñor"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Satellite",
+      "Astrobiology",
+      "Computer science",
+      "Astronomy"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2014-08-02",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W2049747765",
+    "name": "Mass‐Radius Relationships for Solid Exoplanets",
+    "source": "openalex",
+    "abstract": "We use new interior models of cold planets to investigate the mass-radius relationships of solid exoplanets, considering planets made primarily of iron, silicates, water, and carbon compounds. We find that the mass-radius relationships for cold terrestrial mass planets of all compositions we considered follow a generic functional form that is not a simple power law: log 10 R s = k 1 + log 10 ( M s ) - k 2 M for up to M p ≈ 20 M ⊕ , where M s and R s are scaled mass and radius values. This functional form arises because the common building blocks of solid planets all have equations of state that are well approximated by a modified polytrope of the form ρ = ρ 0 + cP n . We find that highly detailed planet interior models, including temperature structure and phase changes, are not necessary to derive solid exoplanet bulk composition from mass and radius measurements. For solid exoplanets with no substantial atmosphere we have also found the following: with 5% fractional uncertainty in planet mass and radius it is possible to distinguish among planets composed predominantly of iron or silicates or water ice but not more detailed compositions; with ~5% uncertainty water ice planets with ≳25% water by mass may be identified; the minimum plausible planet size for a given mass is that of a pure iron planet; and carbon planet mass-radius relationships overlap with those of silicate and water planets due to similar zero-pressure densities and equations of state. We propose a definition of \"super-Earths\" based on the clear distinction in radii between planets with significant gas envelopes and those without.",
+    "url": "https://doi.org/10.1086/521346",
+    "authors": [
+      "Sara Seager",
+      "Marc J. Kuchner",
+      "C. A. Hier‐Majumder",
+      "Burkhard Militzer"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Planet",
+      "RADIUS",
+      "Planetary mass",
+      "Polytrope"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2007-11-10",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W1563362314",
+    "name": "Clouds in the atmosphere of the super-Earth exoplanet GJ 1214b",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nature12888",
+    "authors": [
+      "Laura Kreidberg",
+      "Jacob L. Bean",
+      "Jean-Michel Désert",
+      "Björn Benneke",
+      "Drake Deming",
+      "Kevin B. Stevenson",
+      "Sara Seager",
+      "Zachory K. Berta-Thompson",
+      "Andreas Seifahrt",
+      "D. Homeier"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Planet",
+      "Atmosphere (unit)",
+      "Astrobiology",
+      "Physics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2013-12-23",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W1985051703",
+    "name": "Statistical Properties of Exoplanets",
+    "source": "openalex",
+    "abstract": "Since the detection a decade ago of the planetary companion of 51 Peg, more than 200 extrasolar planets have been unveiled, mostly by radial-velocity measurements but also in a few cases by photometric transit observations or in microlensing experiments. They present a wide variety of characteristics such as large masses with small orbital separations, high eccentricities, period resonances in multiplanet systems, etc. Meaningful features of the statistical distributions of orbital parameters for giant planets or of parent stellar properties have emerged. We discuss them in the context of the constraints they provide for planet-formation models, and in comparison to Neptune-mass planets in short-period orbits recently detected by radial-velocity surveys. Finally, the role of radial-velocity follow-up measurements of transit candidates is emphasized. Planetary physical parameters are determined, bringing important constraints for inner planet structure models.",
+    "url": "https://doi.org/10.1146/annurev.astro.45.051806.110529",
+    "authors": [
+      "S. Udry",
+      "N. C. Santos"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Physics",
+      "Planet",
+      "Radial velocity",
+      "Transit (satellite)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2007-06-25",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W3037016578",
+    "name": "Exoplanet Atmospheres",
+    "source": "openalex",
+    "abstract": "At the dawn of the first discovery of exoplanets orbiting Sun-like stars in the mid-1990s, few believed that observations of exoplanet atmospheres would ever be possible. After the 2002 Hubble Space Telescope detection of a transiting exoplanet atmosphere, many skeptics discounted it as a one-object, one-method success. Nevertheless, the field is now firmly established, with over two dozen exoplanet atmospheres observed today. Hot Jupiters are the type of exoplanet currently most amenable to study. Highlights include: detection of molecular spectral features, observation of day-night temperature gradients, and constraints on vertical atmospheric structure. Atmospheres of giant planets far from their host stars are also being studied with direct imaging. The ultimate exoplanet goal is to answer the enigmatic and ancient question, “Are we alone?” via detection of atmospheric biosignatures. Two exciting prospects are the immediate focus on transiting super Earths orbiting in the habitable zone of M-dwarfs, and ultimately the spaceborne direct imaging of true Earth analogs.",
+    "url": "https://doi.org/10.1146/annurev-astro-081309-130837",
+    "authors": [
+      "Sara Seager",
+      "Drake Deming"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Astrobiology",
+      "Physics",
+      "Planet",
+      "Astronomy"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2010-08-01",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W2204637572",
+    "name": "A continuum from clear to cloudy hot-Jupiter exoplanets without primordial water depletion",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nature16068",
+    "authors": [
+      "David K. Sing",
+      "Jonathan J. Fortney",
+      "Nikolay Nikolov",
+      "Hannah R. Wakeford",
+      "Tiffany Kataria",
+      "T. M. Evans",
+      "S. Aigrain",
+      "G. E. Ballester",
+      "Adam Burrows",
+      "Drake Deming",
+      "Jean-Michel Désert",
+      "Neale P. Gibson",
+      "Gregory W. Henry",
+      "Catherine Huitson",
+      "Heather A. Knutson",
+      "A. Lecavelier des Étangs",
+      "F. Pont",
+      "Adam P. Showman",
+      "A. Vidal‐Madjar",
+      "Michael H. Williamson",
+      "P. A. Wilson"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Physics",
+      "Planet",
+      "Hot Jupiter",
+      "Atmosphere (unit)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2015-12-14",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W2094683071",
+    "name": "An abundance of small exoplanets around stars with a wide range of metallicities",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nature11121",
+    "authors": [
+      "Lars A. Buchhave",
+      "David W. Latham",
+      "Anders Johansen",
+      "Martin Bizzarro",
+      "Guillermo Torres",
+      "Jason F. Rowe",
+      "Natalie M. Batalha",
+      "W. J. Borucki",
+      "Erik Brugamyer",
+      "Caroline Caldwell",
+      "Steve Bryson",
+      "David R. Ciardi",
+      "William D. Cochran",
+      "Michael Endl",
+      "Gilbert A. Esquerdo",
+      "Eric B. Ford",
+      "John C. Geary",
+      "Ronald L. Gilliland",
+      "Terese T. Hansen",
+      "Howard Isaacson",
+      "John B. Laird",
+      "P. W. Lucas",
+      "Geoffrey W. Marcy",
+      "Jon A. Morse",
+      "Paul Robertson",
+      "Avi Shporer",
+      "R. P. Stefanik",
+      "Martin Still",
+      "Samuel N. Quinn"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Physics",
+      "Metallicity",
+      "Planet",
+      "Terrestrial planet"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2012-06-01",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W2913113735",
+    "name": "SPHERE: the exoplanet imager for the Very Large Telescope",
+    "source": "openalex",
+    "abstract": "Observations of circumstellar environments that look for the direct signal of exoplanets and the scattered light from disks have significant instrumental implications. In the past 15 years, major developments in adaptive optics, coronagraphy, optical manufacturing, wavefront sensing, and data processing, together with a consistent global system analysis have brought about a new generation of high-contrast imagers and spectrographs on large ground-based telescopes with much better performance. One of the most productive imagers is the Spectro-Polarimetic High contrast imager for Exoplanets REsearch (SPHERE), which was designed and built for the ESO Very Large Telescope (VLT) in Chile. SPHERE includes an extreme adaptive optics system, a highly stable common path interface, several types of coronagraphs, and three science instruments. Two of them, the Integral Field Spectrograph (IFS) and the Infra-Red Dual-band Imager and Spectrograph (IRDIS), were designed to efficiently cover the near-infrared range in a single observation for an efficient search of young planets. The third instrument, ZIMPOL, was designed for visible polarimetric observation to look for the reflected light of exoplanets and the light scattered by debris disks. These three scientific instruments enable the study of circumstellar environments at unprecedented angular resolution, both in the visible and the near-infrared. In this work, we thoroughly present SPHERE and its on-sky performance after four years of operations at the VLT.",
+    "url": "https://doi.org/10.1051/0004-6361/201935251",
+    "authors": [
+      "J.-L. Beuzit",
+      "A. Vigan",
+      "D. Mouillet",
+      "K. Dohlen",
+      "R. Gratton",
+      "A. Boccaletti",
+      "J.-F. Sauvage",
+      "H. M. Schmid",
+      "M. Langlois",
+      "C. Petit",
+      "A. Baruffolo",
+      "M. Feldt",
+      "J. Milli",
+      "Z. Wahhaj",
+      "L. Abe",
+      "U. Anselmi",
+      "J. Antichi",
+      "R. Barette",
+      "J. Baudrand",
+      "P. Baudoz",
+      "A. Bazzon",
+      "P. Bernardi",
+      "P. Blanchard",
+      "R. Brast",
+      "P. Bruno",
+      "T. Buey",
+      "M. Carbillet",
+      "M. Carle",
+      "E. Cascone",
+      "F. Chapron",
+      "J. Charton",
+      "G. Chauvin",
+      "R. Claudi",
+      "A. Costille",
+      "V. De Caprio",
+      "J. de Boer",
+      "A. Delboulbé",
+      "S. Desidera",
+      "C. Dominik",
+      "M. Downing",
+      "O. Dupuis",
+      "C. Fabron",
+      "D. Fantinel",
+      "G. Farisato",
+      "P. Feautrier",
+      "E. Fedrigo",
+      "T. Fusco",
+      "P. Gigan",
+      "C. Ginski",
+      "J. Girard",
+      "E. Giro",
+      "D. Gisler",
+      "L. Gluck",
+      "C. Gry",
+      "T. Henning",
+      "N. Hubin",
+      "E. Hugot",
+      "S. Incorvaia",
+      "M. Jaquet",
+      "M. Kasper",
+      "E. Lagadec",
+      "A.-M. Lagrange",
+      "H. Le Coroller",
+      "D. Le Mignant",
+      "B. Le Ruyet",
+      "G. Lessio",
+      "J.-L. Lizon",
+      "M. Llored",
+      "L. Lundin",
+      "F. Madec",
+      "Y. Magnard",
+      "M. Marteaud",
+      "P. Martinez",
+      "D. Maurel",
+      "F. Ménard",
+      "D. Mesa",
+      "O. Möller-Nilsson",
+      "T. Moulin",
+      "C. Moutou",
+      "A. Origné",
+      "J. Parisot",
+      "A. Pavlov",
+      "D. Perret",
+      "J. Pragt",
+      "P. Puget",
+      "P. Rabou",
+      "J. Ramos",
+      "J.-M. Reess",
+      "F. Rigal",
+      "S. Rochat",
+      "R. Roelfsema",
+      "G. Rousset",
+      "A. Roux",
+      "M. Saisse",
+      "B. Salasnich",
+      "E. Santambrogio",
+      "S. Scuderi",
+      "D. Segransan",
+      "A. Sevin",
+      "R. Siebenmorgen"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Physics",
+      "Spectrograph",
+      "Integral field spectrograph",
+      "Telescope"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2019-09-25",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W2022234850",
+    "name": "Defining and cataloging exoplanets: the exoplanet.eu database",
+    "source": "openalex",
+    "abstract": "We describe an online database for extrasolar planetary-mass candidates, which is updated regularly as new data are available. We first discuss criteria for inclusion of objects in the catalog: “definition” of a planet and several aspects of the confidence level of planet candidates. We are led to point out the contradiction between the sharpness of criteria for belonging to a catalog and the fuzziness of the confidence level for an object to be a planet. We then describe the different tables of extrasolar planetary systems, including unconfirmed candidates (which will ultimately be confirmed, or not, by direct imaging). It also provides online tools: histograms of planet and host star data, cross-correlations between these parameters, and some Virtual Observatory services. Future evolutions of the database are presented.",
+    "url": "https://doi.org/10.1051/0004-6361/201116713",
+    "authors": [
+      "Jean Schneider",
+      "C. Dedieu",
+      "Pierre Le Sidaner",
+      "Renaud Savalle",
+      "I. Zolotukhin"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Planet",
+      "Computer science",
+      "Virtual observatory",
+      "Observatory"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2011-06-22",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "doi:10.1036/1097-8542.yb150517",
+    "name": "Exoplanet research",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1036/1097-8542.yb150517",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2015-07-10T19:02:00Z",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "doi:10.1007/978-94-024-0837-9_10",
+    "name": "Chemical modeling of exoplanet atmospheres",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-94-024-0837-9_10",
+    "authors": [
+      "O. Venot",
+      "M. Agúndez"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2016-12-11T09:43:18Z",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "doi:10.1093/oso/9780198799894.003.0004",
+    "name": "Exoplanet Systems and Their Stars",
+    "source": "crossref",
+    "abstract": "<p>This chapter highlights the amazing diversity of exoplanet worlds: planets can orbit neutron stars and giant stars, evaporate in the heat of their stars or have deep oceans, and may suffer from everlasting daysides and nightsides. A few enjoy two or more suns, and some bear a rough similarity to Earth with possible liquid water on their surface. The author describes how exoplanets reveal themselves through signatures in the light of their stars. The first exoplanets were found in unexpected places, but after determining where exoplanets could or could not be spotted with current detection methods, intrinsic statistical properties emerged. Some are in line with the Solar System, but many are not. What is clear is that exoplanets are more numerous than the stars in our Galaxy.</p>",
+    "url": "https://doi.org/10.1093/oso/9780198799894.003.0004",
+    "authors": [
+      "Karel Schrijver"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2018-07-19T22:04:32Z",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "doi:10.1007/978-94-024-0837-9_26",
+    "name": "Topical issue on EChO - the Exoplanet Characterisation Observatory",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-94-024-0837-9_26",
+    "authors": [
+      "Giovanna Tinetti",
+      "Pierre Drossart"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2016-12-11T09:43:18Z",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "doi:10.1093/oed/6975422619",
+    "name": "exoplanet, n.",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1093/oed/6975422619",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2023-07-21T06:48:31Z",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "doi:10.1142/9781800613140_0003",
+    "name": "Twenty-Five Years of Exoplanet Discoveries: The Exoplanet Hosts",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1142/9781800613140_0003",
+    "authors": [
+      "Bárbara Rojas-Ayala"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2023-04-13T06:26:25Z",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "doi:10.5194/epsc2026-215",
+    "name": "Clustering the Exoplanet Database; Unraveling Hidden Patterns in Exoplanet Populations using UnsupervisedMachine Learning Techniques",
+    "source": "crossref",
+    "abstract": "<jats:p>Advances in exoplanet detection methods have steadily increased the number of known planets. With more than 6000 confirmed by early 2026, exoplanet catalogs now enable increasingly powerful statistical studies of planetary populations. However, every detection technique — transits, radial velocity, microlensing, direct imaging — carries its own observational biases, and because the true underlying planetary population is unknown, these biases cannot themselves be fully characterized. Most demographic analyses have relied on classical statistical approaches, while data-driven, unsupervised machine-learning methods have been used less frequently for exploratory population studies. Here, we explore the Extrasolar Planets Encyclopaedia dataset using a range of unsupervised learning algorithms. We first select a subset of system features and complete missing entries by comparing several imputation strategies, ranging from simple statistical fillers to a feature-prediction model trained on the catalog itself. We then apply outlier-detection methods to identify objects with parameter combinations inconsistent with the bulk of the sample, and finally apply multiple clustering algorithms — in both an unweighted form and a weighted variant intended to mitigate selection effects — to search for latent structure. To assess how strongly observational selection shapes the results, we run this pipeline on four versions of the data: the full catalog as listed, a Kepler subset that has undergone careful bias mitigation, the full catalog with a deliberately bias correction applied to all entries, and a fully synthetic dataset constructed under known input distributions. The pipeline yields: (i) a feature-prediction engine that can infer previously missing system parameters with precision particularly high for stellar features, (ii) a set of catalog entries whose reported parameters may warrant re-examination, and (iii) clusters that reproduce known demographic patterns while also suggesting additional structure among small planets orbiting M-dwarf stars.</jats:p>",
+    "url": "https://doi.org/10.5194/epsc2026-215",
+    "authors": [
+      "Hendrik Schmerling",
+      "Rok Hribar",
+      "Sascha Grziwa",
+      "Martin Pätzold"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026-07-02T16:32:44Z",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "doi:10.1017/9781108304160.004",
+    "name": "Astrometry",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1017/9781108304160.004",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2018-08-28T07:09:34Z",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "pmid:42518726",
+    "name": "Secondary Ion-Ice Chemistry in UV-Irradiated Oxygen Ice: New Astrochemical Models Including Bulk Ionic Species.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42518726/",
+    "authors": [
+      "Darnell K",
+      "Lopez-Sanders D",
+      "Warren D",
+      "Carroll RA",
+      "Stanley E",
+      "Majumdar L",
+      "Caselli P",
+      "Arumainayagam CR",
+      "Shingledecker CN"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026 Jul 16",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "pmid:42487037",
+    "name": "Planetary-mass exosatellite detected around the substellar companion of a star.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42487037/",
+    "authors": [
+      "Hoy K",
+      "Zurlo A",
+      "Peña R PA",
+      "Köhler J",
+      "Desidera S",
+      "Gratton R",
+      "Lazzoni C",
+      "Petrus S",
+      "Rodler F",
+      "Smoker J",
+      "D'Orazi V",
+      "Carleo I",
+      "Giovannini I"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026 Jul",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "pmid:42477353",
+    "name": "B-type host stars revealed by exoplanets around massive secondary-clump giant stars.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42477353/",
+    "authors": [
+      "Lin WX",
+      "Qian SB",
+      "Sun QB",
+      "Zhu LY",
+      "Liao WP",
+      "Li T",
+      "Li FX",
+      "Liu L",
+      "Shi XD",
+      "Li L",
+      "Zhao E",
+      "Zhang H",
+      "Li P",
+      "Li J",
+      "Lian M"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026 Jul 20",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "pmid:42474329",
+    "name": "The EXoplanet Climate Infrared TElescope (EXCITE): A balloon-borne mission to measure spectroscopic phase curves of transiting hot Jupiters.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42474329/",
+    "authors": [
+      "Rehm TD",
+      "Altermatt C",
+      "Bernard L",
+      "Bocchieri A",
+      "Butler N",
+      "Carey O",
+      "Challener RC",
+      "Hartley J",
+      "Helson KR",
+      "Kelly DP",
+      "Klangboonkrong K",
+      "Korotkov AL",
+      "Lally M",
+      "Leong E",
+      "Lewis NK",
+      "Li S",
+      "Line M",
+      "Maher SF",
+      "McClelland R",
+      "Mugnai LV",
+      "Nagler PC",
+      "Netterfield CB",
+      "Parmentier V",
+      "Pascale E",
+      "Patience J",
+      "Romualdez LJ",
+      "Scowen PA",
+      "Tucker GS",
+      "Waldmann I"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026 Jul 1",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "pmid:42469464",
+    "name": "Found: a rocky exoplanet with an atmosphere - could it host life?",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42469464/",
+    "authors": [
+      "Shenai D"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026 Jul 17",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "pmid:42461987",
+    "name": "Helium escaping from the atmosphere of a nearby rocky exoplanet orbiting in a habitable zone.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42461987/",
+    "authors": [
+      "Cherubim C",
+      "Vissapragada S",
+      "Cunningham T",
+      "Meech AG",
+      "Charbonneau D",
+      "Wordsworth R",
+      "Householder A",
+      "Teske J",
+      "Dos Santos LA",
+      "Wallack NL",
+      "Misener W",
+      "Lin Z",
+      "McWilliam A",
+      "Zhang M",
+      "Dittmann JA",
+      "López-Morales M"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026 Jul 16",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "pmid:42461240",
+    "name": "Effect of Laboratory Reagents for Cleaning Modern Contamination on the δ(15)N Integrity of Nitrogen-Poor Samples.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42461240/",
+    "authors": [
+      "Bubphamanee K",
+      "Schauer A",
+      "Buick R"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026 Oct 15",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "pmid:42434139",
+    "name": "Evolution and Observable Properties of Rocky Planet Atmospheres.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42434139/",
+    "authors": [
+      "Steinmeyer ML",
+      "Noack L",
+      "Baumeister P",
+      "Hamano K",
+      "Way MJ",
+      "Breuer D",
+      "Seki K",
+      "Brachmann C",
+      "Gaillard F",
+      "Scherf M",
+      "Berdyugina SV",
+      "Demory BO"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W4237264137",
+    "name": "The NASA Astrobiology Roadmap",
+    "source": "openalex",
+    "abstract": "The NASA Astrobiology Roadmap provides guidance for research and technology development across the NASA enterprises that encompass the space, Earth, and biological sciences. The ongoing development of astrobiology roadmaps embodies the contributions of diverse scientists and technologists from government, universities, and private institutions. The Roadmap addresses three basic questions: how does life begin and evolve, does life exist elsewhere in the universe, and what is the future of life on Earth and beyond? Seven Science Goals outline the following key domains of investigation: understanding the nature and distribution of habitable environments in the universe, exploring for habitable environments and life in our own Solar System, understanding the emergence of life, determining how early life on Earth interacted and evolved with its changing environment, understanding the evolutionary mechanisms and environmental limits of life, determining the principles that will shape life in the future, and recognizing signatures of life on other worlds and on early Earth. For each of these goals, Science Objectives outline more specific high priority efforts for the next three to five years. These eighteen objectives are being integrated with NASA strategic planning. Astrobiology 8, 715–730.",
+    "url": "https://doi.org/10.1089/ast.2008.0819",
+    "authors": [
+      "David J. Des Marais",
+      "Joseph A. Nuth",
+      "L. J. Allamandola",
+      "Alan P. Boss",
+      "Jack D. Farmer",
+      "Tori M. Hoehler",
+      "B. M. Jakosky",
+      "Victoria Meadows",
+      "Andrew Pohorille",
+      "Bruce Runnegar",
+      "Alfred M. Spormann"
+    ],
+    "tags": [
+      "Astrobiology",
+      "Habitability",
+      "Extraterrestrial life",
+      "Space exploration",
+      "Earth science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2008-08-01",
+    "addedAt": "2026-08-04T10:40:47.717Z"
+  },
+  {
+    "id": "oa:W1982489795",
+    "name": "Encyclopedia of Astrobiology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-642-11274-4",
+    "authors": [
+      "Muriel Gargaud",
+      "Ricardo Amils",
+      "José Cernicharo Quintanilla",
+      "Henderson James (Jim) Cleaves",
+      "William M. Irvine",
+      "Daniele L. Pinti",
+      "Michel Viso"
+    ],
+    "tags": [
+      "Encyclopedia",
+      "Astrobiology",
+      "Computer science",
+      "Library science",
+      "Physics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2011-01-01",
+    "addedAt": "2026-08-04T10:40:47.717Z"
   }
 ]

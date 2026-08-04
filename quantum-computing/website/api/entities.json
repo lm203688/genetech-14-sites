@@ -1,1 +1,679 @@
-[]
+[
+  {
+    "id": "oa:W2781738013",
+    "name": "Quantum Computing in the NISQ era and beyond",
+    "source": "openalex",
+    "abstract": "Noisy Intermediate-Scale Quantum (NISQ) technology will be available in the near future. Quantum computers with 50-100 qubits may be able to perform tasks which surpass the capabilities of today's classical digital computers, but noise in quantum gates will limit the size of quantum circuits that can be executed reliably. NISQ devices will be useful tools for exploring many-body quantum physics, and may have other useful applications, but the 100-qubit quantum computer will not change the world right away - we should regard it as a significant step toward the more powerful quantum technologies of the future. Quantum technologists should continue to strive for more accurate quantum gates and, eventually, fully fault-tolerant quantum computing.",
+    "url": "https://doi.org/10.22331/q-2018-08-06-79",
+    "authors": [
+      "John Preskill"
+    ],
+    "tags": [
+      "Quantum computer",
+      "Computer science",
+      "Qubit",
+      "Quantum gate",
+      "Computer engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2018-08-06",
+    "addedAt": "2026-08-04T10:39:11.722Z"
+  },
+  {
+    "id": "oa:W1514675880",
+    "name": "Linear optical quantum computing with photonic qubits",
+    "source": "openalex",
+    "abstract": "Linear optics with photon counting is a prominent candidate for practical quantum computing. The protocol by Knill, Laflamme, and Milburn [2001, Nature (London) 409, 46] explicitly demonstrates that efficient scalable quantum computing with single photons, linear optical elements, and projective measurements is possible. Subsequently, several improvements on this protocol have started to bridge the gap between theoretical scalability and practical implementation. The original theory and its improvements are reviewed, and a few examples of experimental two-qubit gates are given. The use of realistic components, the errors they induce in the computation, and how these errors can be corrected is discussed.",
+    "url": "https://doi.org/10.1103/revmodphys.79.135",
+    "authors": [
+      "Pieter Kok",
+      "William J. Munro",
+      "Kae Nemoto",
+      "Timothy C. Ralph",
+      "Jonathan P. Dowling",
+      "G. J. Milburn"
+    ],
+    "tags": [
+      "Physics",
+      "Quantum computer",
+      "Qubit",
+      "Scalability",
+      "Quantum error correction"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2007-01-24",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W1823409394",
+    "name": "Quantum computing in molecular magnets",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/35071024",
+    "authors": [
+      "Michael N. Leuenberger",
+      "Daniel Loss"
+    ],
+    "tags": [
+      "Quantum entanglement",
+      "Quantum computer",
+      "Superposition principle",
+      "Computer science",
+      "Quantum"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2001-04-01",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W3037315640",
+    "name": "Quantum computing",
+    "source": "openalex",
+    "abstract": "The subject of quantum computing brings together ideas from classical information theory, computer science, and quantum physics. This review aims to summarize not just quantum computing, but the whole subject of quantum information theory. Information can be identified as the most general thing which must propagate from a cause to an effect. It therefore has a fundamentally important role in the science of physics. However, the mathematical treatment of information, especially information processing, is quite recent, dating from the mid-20th century. This has meant that the full significance of information as a basic concept in physics is only now being discovered. This is especially true in quantum mechanics. The theory of quantum information and computing puts this significance on a firm footing, and has led to some profound and exciting new insights into the natural world. Among these are the use of quantum states to permit the secure transmission of classical information (quantum cryptography), the use of quantum entanglement to permit reliable transmission of quantum states (teleportation), the possibility of preserving quantum coherence in the presence of irreversible noise processes (quantum error correction), and the use of controlled quantum evolution for efficient computation (quantum computation). The common theme of all these insights is the use of quantum entanglement as a computational resource. It turns out that information theory and quantum mechanics fit together very well. In order to explain their relationship, this review begins with an introduction to classical information theory and computer science, including Shannon's theorem, error correcting codes, Turing machines and computational complexity. The principles of quantum mechanics are then outlined, and the Einstein, Podolsky and Rosen (EPR) experiment described. The EPR-Bell correlations, and quantum entanglement in general, form the essential new ingredient which distinguishes quantum from classical information theory and, arguably, quantum from classical physics. Basic quantum information ideas are next outlined, including qubits and data compression, quantum gates, the `no cloning' property and teleportation. Quantum cryptography is briefly sketched. The universal quantum computer (QC) is described, based on the Church-Turing principle and a network model of computation. Algorithms for such a computer are discussed, especially those for finding the period of a function, and searching a random list. Such algorithms prove that a QC of sufficiently precise construction is not only fundamentally different from any computer which can only manipulate classical information, but can compute a small class of functions with greater efficiency. This implies that some important computational tasks are impossible for any device apart from a QC. To build a universal QC is well beyond the abilities of current technology. However, the principles of quantum information physics can be tested on smaller devices. The current experimental situation is reviewed, with emphasis on the linear ion trap, high- Q optical cavities, and nuclear magnetic resonance methods. These allow coherent control in a Hilbert space of eight dimensions (three qubits) and should be extendable up to a thousand or more dimensions (10 qubits). Among other things, these systems will allow the feasibility of quantum computing to be assessed. In fact such experiments are so difficult that it seemed likely until recently that a practically useful QC (requiring, say, 1000 qubits) was actually ruled out by considerations of experimental imprecision and the unavoidable coupling between any system and its environment. However, a further fundamental part of quantum information physics provides a solution to this impasse. This is quantum error correction (QEC). An introduction to QEC is provided. The evolution of the QC is restricted to a carefully chosen subspace of its Hilbert space. Errors are almost ce",
+    "url": "https://doi.org/10.1088/0034-4885/61/2/002",
+    "authors": [
+      "Andrew Steane"
+    ],
+    "tags": [
+      "Physics",
+      "Theoretical physics",
+      "Quantum mechanics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "1998-02-01",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W2906538035",
+    "name": "Quantum Chemistry in the Age of Quantum Computing",
+    "source": "openalex",
+    "abstract": "Practical challenges in simulating quantum systems on classical computers have been widely recognized in the quantum physics and quantum chemistry communities over the past century. Although many approximation methods have been introduced, the complexity of quantum mechanics remains hard to appease. The advent of quantum computation brings new pathways to navigate this challenging and complex landscape. By manipulating quantum states of matter and taking advantage of their unique features such as superposition and entanglement, quantum computers promise to efficiently deliver accurate results for many important problems in quantum chemistry, such as the electronic structure of molecules. In the past two decades, significant advances have been made in developing algorithms and physical hardware for quantum computing, heralding a revolution in simulation of quantum systems. This Review provides an overview of the algorithms and results that are relevant for quantum chemistry. The intended audience is both quantum chemists who seek to learn more about quantum computing and quantum computing researchers who would like to explore applications in quantum chemistry.",
+    "url": "https://doi.org/10.1021/acs.chemrev.8b00803",
+    "authors": [
+      "Yudong Cao",
+      "Jonathan Romero",
+      "Jonathan P. Olson",
+      "Matthias Degroote",
+      "Peter D. Johnson",
+      "Mária Kieferová",
+      "Ian D. Kivlichan",
+      "Tim Menke",
+      "Borja Peropadre",
+      "Nicolas P. D. Sawaya",
+      "Sukin Sim",
+      "Libor Veis",
+      "Alán Aspuru-Guzik"
+    ],
+    "tags": [
+      "Quantum computer",
+      "Quantum algorithm",
+      "Quantum technology",
+      "Open quantum system",
+      "Quantum"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2019-08-30",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W3099200606",
+    "name": "Quantum Chemistry in the Age of Quantum Computing",
+    "source": "openalex",
+    "abstract": "Practical challenges in simulating quantum systems on classical computers have been widely recognized in the quantum physics and quantum chemistry communities over the past century. Although many approximation methods have been introduced, the complexity of quantum mechanics remains hard to appease. The advent of quantum computation brings new pathways to navigate this challenging complexity landscape. By manipulating quantum states of matter and taking advantage of their unique features such as superposition and entanglement, quantum computers promise to efficiently deliver accurate results for many important problems in quantum chemistry such as the electronic structure of molecules. In the past two decades significant advances have been made in developing algorithms and physical hardware for quantum computing, heralding a revolution in simulation of quantum systems. This article is an overview of the algorithms and results that are relevant for quantum chemistry. The intended audience is both quantum chemists who seek to learn more about quantum computing, and quantum computing researchers who would like to explore applications in quantum chemistry.",
+    "url": "https://openalex.org/W3099200606",
+    "authors": [
+      "Cao, Y",
+      "Romero, J",
+      "Olson, JP",
+      "Degroote, M",
+      "Johnson, PD",
+      "Kieferová, M",
+      "Kivlichan, ID",
+      "Menke, T",
+      "Peropadre, B",
+      "Sawaya, NPD",
+      "Sim, S",
+      "Veis, L",
+      "Aspuru-Guzik, A"
+    ],
+    "tags": [
+      "Quantum computer",
+      "Quantum nanoscience",
+      "Quantum entanglement",
+      "Quantum chemistry",
+      "Quantum"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W2047131277",
+    "name": "Optical Quantum Computing",
+    "source": "openalex",
+    "abstract": "In 2001, all-optical quantum computing became feasible with the discovery that scalable quantum computing is possible using only single-photon sources, linear optical elements, and single-photon detectors. Although it was in principle scalable, the massive resource overhead made the scheme practically daunting. However, several simplifications were followed by proof-of-principle demonstrations, and recent approaches based on cluster states or error encoding have dramatically reduced this worrying resource overhead, making an all-optical architecture a serious contender for the ultimate goal of a large-scale quantum computer. Key challenges will be the realization of high-efficiency sources of indistinguishable single photons, low-loss, scalable optical circuits, high-efficiency single-photon detectors, and low-loss interfacing of these components.",
+    "url": "https://doi.org/10.1126/science.1142892",
+    "authors": [
+      "Jeremy L. O’Brien"
+    ],
+    "tags": [
+      "Interfacing",
+      "Scalability",
+      "Overhead (engineering)",
+      "Computer science",
+      "Quantum computer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2007-12-06",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W2006290558",
+    "name": "Strengths and Weaknesses of Quantum Computing",
+    "source": "openalex",
+    "abstract": "Recently a great deal of attention has been focused on quantum computation following a sequence of results [Bernstein and Vazirani, in Proc. 25th Annual ACM Symposium Theory Comput., 1993, pp. 11--20, SIAM J. Comput., 26 (1997), pp. 1277--1339], [Simon, in Proc. 35th Annual IEEE Symposium Foundations Comput. Sci., 1994, pp. 116--123, SIAM J. Comput., 26 (1997), pp. 1340--1349], [Shor, in Proc. 35th Annual IEEE Symposium Foundations Comput. Sci., 1994, pp. 124--134] suggesting that quantum computers are more powerful than classical probabilistic computers. Following Shor's result that factoring and the extraction of discrete logarithms are both solvable in quantum polynomial time, it is natural to ask whether all of $\\NP$ can be efficiently solved in quantum polynomial time. In this paper, we address this question by proving that relative to an oracle chosen uniformly at random with probability 1 the class $\\NP$ cannot be solved on a quantum Turing machine (QTM) in time $o(2^{n/2})$. We also show that relative to a permutation oracle chosen uniformly at random with probability 1 the class $\\NP \\cap \\coNP$ cannot be solved on a QTM in time $o(2^{n/3})$. The former bound is tight since recent work of Grover [in {\\it Proc.\\ $28$th Annual ACM Symposium Theory Comput.}, 1996] shows how to accept the class $\\NP$ relative to any oracle on a quantum computer in time $O(2^{n/2})$.",
+    "url": "https://doi.org/10.1137/s0097539796300933",
+    "authors": [
+      "Charles H. Bennett",
+      "Ethan Bernstein",
+      "Gilles Brassard",
+      "Umesh Vazirani"
+    ],
+    "tags": [
+      "Quantum algorithm",
+      "Turing machine",
+      "Quantum computer",
+      "Complexity class",
+      "Time complexity"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "1997-10-01",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W2042723520",
+    "name": "Experimental one-way quantum computing",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nature03347",
+    "authors": [
+      "Philip Walther",
+      "Katharina Resch",
+      "Terry Rudolph",
+      "Emmanuel Schenck",
+      "Harald Weinfurter",
+      "Vlatko Vedral",
+      "Markus Aspelmeyer",
+      "Anton Zeilinger"
+    ],
+    "tags": [
+      "Quantum computer",
+      "Computer science",
+      "Quantum",
+      "Physics",
+      "Quantum mechanics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2005-03-01",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W2032147770",
+    "name": "Quantum computing with realistically noisy devices",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nature03350",
+    "authors": [
+      "Emanuel Knill"
+    ],
+    "tags": [
+      "Quantum computer",
+      "Computer science",
+      "Quantum decoherence",
+      "Quantum error correction",
+      "Fault tolerance"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2005-03-01",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W2949253647",
+    "name": "Trapped-ion quantum computing: Progress and challenges",
+    "source": "openalex",
+    "abstract": "Trapped ions are among the most promising systems for practical quantum computing (QC). The basic requirements for universal QC have all been demonstrated with ions, and quantum algorithms using few-ion-qubit systems have been implemented. We review the state of the field, covering the basics of how trapped ions are used for QC and their strengths and limitations as qubits. In addition, we discuss what is being done, and what may be required, to increase the scale of trapped ion quantum computers while mitigating decoherence and control errors. Finally, we explore the outlook for trapped-ion QC. In particular, we discuss near-term applications, considerations impacting the design of future systems of trapped ions, and experiments and demonstrations that may further inform these considerations.",
+    "url": "https://doi.org/10.1063/1.5088164",
+    "authors": [
+      "Colin D. Bruzewicz",
+      "John Chiaverini",
+      "Robert McConnell",
+      "Jeremy M. Sage"
+    ],
+    "tags": [
+      "Quantum decoherence",
+      "Quantum",
+      "Quantum computer",
+      "Scale (ratio)",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2019-05-29",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W2125164517",
+    "name": "Quantum computing with trapped ions",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.physrep.2008.09.003",
+    "authors": [
+      "Hartmut Häffner",
+      "C. F. Roos",
+      "R. Blatt"
+    ],
+    "tags": [
+      "Physics",
+      "Quantum computer",
+      "Qubit",
+      "Quantum information",
+      "Quantum teleportation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2008-10-01",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "doi:10.1093/oso/9780198854227.003.0015",
+    "name": "Quantum Computing I",
+    "source": "crossref",
+    "abstract": "<p>A remarkable application of quantum mechanical concepts of coherent superposition and quantum entanglement is a quantum computer which can solve certain problems at speeds unbelievably faster than the conventional computer. In this chapter, the basic principles and the conditions for the implementation of the quantum computer are introduced and the limitations imposed by the probabilistic nature of quantum mechanics and the inevitable decoherence phenomenon are discussed. Next the basic building blocks, the quantum logic gates, are introduced. These include the Hadamard, the CNOT, and the quantum phase gates. After these preliminaries, the implementation of the Deutsch algorithm, quantum teleportation, and quantum dense coding in terms of the quantum logic gates are discussed. It is also shown how the Bell states can be produced and measured using a sequence of quantum logic gates.</p>",
+    "url": "https://doi.org/10.1093/oso/9780198854227.003.0015",
+    "authors": [
+      "M. Suhail Zubairy"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2020-06-18T04:27:27Z",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "doi:10.1093/oso/9780198854227.003.0016",
+    "name": "Quantum Computing II",
+    "source": "crossref",
+    "abstract": "<p>This chapter deals with some of the most prominent successes of quantum computing. The most well-known quantum computing algorithm, Shor’s algorithm for factoring a number in its prime factors, is discussed in details. The key to Shor’s algorithm is the quantum Fourier transform that is explained with the help of simple examples. The role of quantum entanglement is also discussed. The next important quantum computing algorithm is Grover’s algorithm that helps in searching an item in an unsorted database. This algorithm is motivated by first discussing a quantum shell game in which a pea hidden under one of the four shells is found in one measurement with certainty each time. This amazing result is then generalized to an arbitrary number of objects and Grover’s algorithm.</p>",
+    "url": "https://doi.org/10.1093/oso/9780198854227.003.0016",
+    "authors": [
+      "M. Suhail Zubairy"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2020-06-18T04:19:28Z",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "doi:10.1002/9781394185542.ch3",
+    "name": "Distributed Quantum Computing – Classical and Quantum",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/9781394185542.ch3",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2023-12-02T00:29:55Z",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "doi:10.58647/rexpo.25000079.v1",
+    "name": "Quantum Computing for Network Medicine-Based Epistatic Disease Mechanism Mining - Ready for Quantum Computing?",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.58647/rexpo.25000079.v1",
+    "authors": [
+      "Jan Baumbach"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2025-05-18T16:45:18Z",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "doi:10.1002/9781394185542.ch4",
+    "name": "Distributed Quantum Computing – Distributed Control of Quantum Gates",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/9781394185542.ch4",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2023-12-02T00:29:55Z",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "doi:10.1515/9783112224434-006",
+    "name": "1396 Quantum computing and quantum algorithms",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1515/9783112224434-006",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2026-05-29T21:34:20Z",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "doi:10.1017/cbo9780511979309.011",
+    "name": "Quantum computing",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1017/cbo9780511979309.011",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2013-04-23T15:07:26Z",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "doi:10.1201/9781420012293-23",
+    "name": "Quantum Computing with Quantum Dots",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1201/9781420012293-23",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2020-12-22T22:31:21Z",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "pmid:42547553",
+    "name": "Self-assembled contacts for high-yield molecular devices.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42547553/",
+    "authors": [
+      "Spector SO",
+      "Satterthwaite PF",
+      "Conte M",
+      "Hsieh T",
+      "Bobylev EO",
+      "Dunn K",
+      "Zhu W",
+      "Sim J",
+      "Johnson JA",
+      "Niroui F"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2026 Aug 3",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "pmid:42546756",
+    "name": "Magnetic field-free braiding and nontrivial fusion of Majorana bound states in a high-temperature planar Josephson junction.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42546756/",
+    "authors": [
+      "Sharma P",
+      "Mohanta N"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2026 Aug 3",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "pmid:42546276",
+    "name": "Projected-interacting full configuration interaction plus regularized perturbation theory: DFT-inspired wavefunction theory for huge active spaces.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42546276/",
+    "authors": [
+      "Janesko BG"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2026 Aug 7",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "pmid:42545125",
+    "name": "Barium magnesium alloy as source of atomic Ba for ion trapping.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42545125/",
+    "authors": [
+      "Gunnell J",
+      "Griffiths T",
+      "Blinov BB"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2026 Aug 1",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "pmid:42544139",
+    "name": "Equivariant Isomorphism of Quantum Lens Spaces of Low Dimension.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42544139/",
+    "authors": [
+      "Eilers S",
+      "Zegers SE"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "pmid:42544116",
+    "name": "Beyond quantum linear optics with adaptive boson sampling.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42544116/",
+    "authors": [
+      "Rodari G",
+      "Francalanci T",
+      "Caruccio E",
+      "Hoch F",
+      "Milani G",
+      "Carvacho G",
+      "Giordani T",
+      "Spagnolo N",
+      "Albiero R",
+      "Di Giano N",
+      "Corrielli G",
+      "Crespi A",
+      "Ceccarelli F",
+      "Bossi M",
+      "Rajan A",
+      "Osellame R",
+      "Chabaud U",
+      "Sciarrino F"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "pmid:42544104",
+    "name": "Tracking electrons at the space-time limit.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42544104/",
+    "authors": [
+      "Maier S",
+      "Spachtholz R",
+      "Glöckl K",
+      "Bustamante CM",
+      "Lingl S",
+      "Maczejka M",
+      "Schön J",
+      "Riedel A",
+      "Richter K",
+      "Giessibl FJ",
+      "Bonafé FP",
+      "Huber MA",
+      "Rubio A",
+      "Repp J",
+      "Huber R"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "pmid:42543020",
+    "name": "Design, synthesis, and biological evaluation of a dichloro-substituted schiff base as an α-amylase inhibitor: structural, computational, and molecular dynamics, in-silico approaches.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42543020/",
+    "authors": [
+      "Chakkarapani N",
+      "Velmurugan Y",
+      "Hemamalini M",
+      "Venkatachalam R"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2026 Aug 2",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W2060887031",
+    "name": "Mixed-state entanglement and quantum error correction",
+    "source": "openalex",
+    "abstract": "Entanglement purification protocols (EPPs) and quantum error-correcting codes (QECCs) provide two ways of protecting quantum states from interaction with the environment. In an EPP, perfectly entangled pure states are extracted, with some yield D, from a mixed state M shared by two parties; with a QECC, an arbitrary quantum state |\\ensuremath{\\xi}〉 can be transmitted at some rate Q through a noisy channel \\ensuremath{\\chi} without degradation. We prove that an EPP involving one-way classical communication and acting on mixed state M^(\\ensuremath{\\chi}) (obtained by sharing halves of Einstein-Podolsky-Rosen pairs through a channel \\ensuremath{\\chi}) yields a QECC on \\ensuremath{\\chi} with rate Q=D, and vice versa. We compare the amount of entanglement E(M) required to prepare a mixed state M by local actions with the amounts ${\\mathit{D}}_{1}$(M) and ${\\mathit{D}}_{2}$(M) that can be locally distilled from it by EPPs using one- and two-way classical communication, respectively, and give an exact expression for E(M) when M is Bell diagonal. While EPPs require classical communication, QECCs do not, and we prove Q is not increased by adding one-way classical communication. However, both D and Q can be increased by adding two-way communication. We show that certain noisy quantum channels, for example a 50% depolarizing channel, can be used for reliable transmission of quantum states if two-way communication is available, but cannot be used if only one-way communication is available. We exhibit a family of codes based on universal hashing able to achieve an asymptotic Q (or D) of 1-S for simple noise models, where S is the error entropy. We also obtain a specific, simple 5-bit single-error-correcting quantum block code. We prove that iff a QECC results in high fidelity for the case of no error then the QECC can be recast into a form where the encoder is the matrix inverse of the decoder. \\textcopyright{} 1996 The American Physical Society.",
+    "url": "https://doi.org/10.1103/physreva.54.3824",
+    "authors": [
+      "Charles H. Bennett",
+      "David P. DiVincenzo",
+      "John A. Smolin",
+      "William K. Wootters"
+    ],
+    "tags": [
+      "Quantum entanglement",
+      "Quantum information science",
+      "Quantum channel",
+      "Quantum capacity",
+      "Amplitude damping channel"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "1996-11-01",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  },
+  {
+    "id": "oa:W1984021697",
+    "name": "Quantum error correction for quantum memories",
+    "source": "openalex",
+    "abstract": "It may seem inevitable that highly entangled quantum states are susceptible to disturbance through interaction with a decohering environment. However, certain multiqubit entangled states are well protected from common forms of decoherence as the quantum information is hidden in inherently nonlocal degrees of freedom. This review shows that this robustness is enabled by specific measurements on subsets of qubits, implementing a quantum version of an error correction process. Beginning with the basics, the latest understanding of the relation between this form of error correction and the concept of two-dimensional topological order in many-body physics is reviewed.",
+    "url": "https://doi.org/10.1103/revmodphys.87.307",
+    "authors": [
+      "Barbara M. Terhal"
+    ],
+    "tags": [
+      "Quantum error correction",
+      "Quantum convolutional code",
+      "Quantum computer",
+      "Quantum information",
+      "Quantum network"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "quantum-computing"
+    ],
+    "publishedDate": "2015-04-07",
+    "addedAt": "2026-08-04T10:39:11.723Z"
+  }
+]

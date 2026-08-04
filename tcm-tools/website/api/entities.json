@@ -18,5 +18,757 @@
     ],
     "publishedDate": "2026 Jun",
     "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "oa:W2011550183",
+    "name": "Traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0140-6736(08)61354-9",
+    "authors": [
+      "Jin-Ling Tang",
+      "Baoyan Liu",
+      "Kan-Wen Ma"
+    ],
+    "tags": [
+      "Medicine",
+      "Acupuncture",
+      "Traditional Chinese medicine",
+      "Nausea",
+      "Moxibustion"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2008-10-18",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W978308701",
+    "name": "Traditional Chinese medicine network pharmacology: theory, methodology and application",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s1875-5364(13)60037-0",
+    "authors": [
+      "Shao Li",
+      "Bo Zhang"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Systems pharmacology",
+      "Drug discovery",
+      "Systems biology",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2013-03-01",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W2917075888",
+    "name": "Network Pharmacology Databases for Traditional Chinese Medicine: Review and Assessment",
+    "source": "openalex",
+    "abstract": "The research field of systems biology has greatly advanced and, as a result, the concept of network pharmacology has been developed. This advancement, in turn, has shifted the paradigm from a \"one-target, one-drug\" mode to a \"network-target, multiple-component-therapeutics\" mode. Network pharmacology is more effective for establishing a \"compound-protein/gene-disease\" network and revealing the regulation principles of small molecules in a high-throughput manner. This approach makes it very powerful for the analysis of drug combinations, especially Traditional Chinese Medicine (TCM) preparations. In this work, we first summarized the databases and tools currently used for TCM research. Second, we focused on several representative applications of network pharmacology for TCM research, including studies on TCM compatibility, TCM target prediction, and TCM network toxicology research. Third, we compared the general statistics of several current TCM databases and evaluated and compared the search results of these databases based on 10 famous herbs. In summary, network pharmacology is a rational approach for TCM studies, and with the development of TCM research, powerful and comprehensive TCM databases have emerged but need further improvements. Additionally, given that several diseases could be treated by TCMs, with the mediation of gut microbiota, future studies should focus on both the microbiome and TCMs to better understand and treat microbiome-related diseases.",
+    "url": "https://doi.org/10.3389/fphar.2019.00123",
+    "authors": [
+      "Runzhi Zhang",
+      "Xue Zhu",
+      "Hong Bai",
+      "Kang Ning"
+    ],
+    "tags": [
+      "Systems pharmacology",
+      "Traditional Chinese medicine",
+      "Computer science",
+      "Computational biology",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2019-02-21",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W2898468989",
+    "name": "ETCM: an encyclopaedia of traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "Traditional Chinese medicine (TCM) is not only an effective solution for primary health care, but also a great resource for drug innovation and discovery. To meet the increasing needs for TCM-related data resources, we developed ETCM, an Encyclopedia of Traditional Chinese Medicine. ETCM includes comprehensive and standardized information for the commonly used herbs and formulas of TCM, as well as their ingredients. The herb basic property and quality control standard, formula composition, ingredient drug-likeness, as well as many other information provided by ETCM can serve as a convenient resource for users to obtain thorough information about a herb or a formula. To facilitate functional and mechanistic studies of TCM, ETCM provides predicted target genes of TCM ingredients, herbs, and formulas, according to the chemical fingerprint similarity between TCM ingredients and known drugs. A systematic analysis function is also developed in ETCM, which allows users to explore the relationships or build networks among TCM herbs, formulas,ingredients, gene targets, and related pathways or diseases. ETCM is freely accessible at http://www.nrc.ac.cn:9090/ETCM/. We expect ETCM to develop into a major data warehouse for TCM and to promote TCM related researches and drug development in the future.",
+    "url": "https://doi.org/10.1093/nar/gky987",
+    "authors": [
+      "Haiyu Xu",
+      "Yanqiong Zhang",
+      "Zhenming Liu",
+      "Tong Chen",
+      "Chuan-Yu Lv",
+      "Shihuan Tang",
+      "Xiaobo Zhang",
+      "Wei Zhang",
+      "Zhiyong Li",
+      "Rongrong Zhou",
+      "Hongjun Yang",
+      "Xiu‐Jie Wang",
+      "Luqi Huang"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Encyclopedia",
+      "Resource (disambiguation)",
+      "Chinese herbs",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2018-10-20",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W2150124540",
+    "name": "Ayurveda and Traditional Chinese Medicine: A Comparative Overview",
+    "source": "openalex",
+    "abstract": "Ayurveda, the traditional Indian medicine (TIM) and traditional Chinese medicine (TCM) remain the most ancient yet living traditions. There has been increased global interest in traditional medicine. Efforts to monitor and regulate herbal drugs and traditional medicine are underway. China has been successful in promoting its therapies with more research and science-based approach, while Ayurveda still needs more extensive scientific research and evidence base. This review gives an overview of basic principles and commonalities of TIM and TCM and discusses key determinants of success, which these great traditions need to address to compete in global markets.",
+    "url": "https://doi.org/10.1093/ecam/neh140",
+    "authors": [
+      "Bhushan Patwardhan",
+      "Dnyaneshwar Warude",
+      "P. Pushpangadan",
+      "Narendra Bhatt"
+    ],
+    "tags": [
+      "Traditional medicine",
+      "Alternative medicine",
+      "Traditional Chinese medicine",
+      "Engineering ethics",
+      "China"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2005-01-01",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W1645427546",
+    "name": "The New Face of Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "Cross-sectional survey and Bayesian network model analysis of traditional Chinese medicine in Austria: investigating public awareness, usage determinants and perception of scientific support,",
+    "url": "https://doi.org/10.1126/science.299.5604.188",
+    "authors": [
+      "Dennis Normile"
+    ],
+    "tags": [
+      "Perception",
+      "Face (sociological concept)",
+      "Traditional Chinese medicine",
+      "Psychology",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2003-01-10",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W2624747153",
+    "name": "Traditional Chinese Medicine for Cardiovascular Disease",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.jacc.2017.04.041",
+    "authors": [
+      "Panpan Hao",
+      "Fan Jiang",
+      "Jing Cheng",
+      "Lianyue Ma",
+      "Yun Zhang",
+      "Yuxia Zhao"
+    ],
+    "tags": [
+      "Medicine",
+      "Disease",
+      "Intensive care medicine",
+      "Traditional Chinese medicine",
+      "Randomized controlled trial"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2017-06-01",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W2500727927",
+    "name": "Artemisinin—A Gift from Traditional Chinese Medicine to the World (Nobel Lecture)",
+    "source": "openalex",
+    "abstract": "Malaria has long been a devastating and life-threatening global epidemic disease in human history. Artemisinin, the active substance against malaria, was first isolated and tested in the 1970s in China. The important role played by traditional Chinese medicine in the discovery of artemisinin is described by Y. Tu in her Nobel Lecture.",
+    "url": "https://doi.org/10.1002/anie.201601967",
+    "authors": [
+      "Youyou Tu"
+    ],
+    "tags": [
+      "Artemisinin",
+      "Malaria",
+      "China",
+      "Traditional Chinese medicine",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2016-08-04",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W2324986020",
+    "name": "Traditional Chinese medicine network pharmacology: theory, methodology and application",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.3724/sp.j.1009.2013.00110",
+    "authors": [
+      "Shao Li",
+      "Bo Zhang"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Traditional medicine",
+      "Pharmacology",
+      "Medicine",
+      "Management science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-03-25",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W3170859950",
+    "name": "Journal of Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://openalex.org/W3170859950",
+    "authors": [
+      "Elsevier Sdol"
+    ],
+    "tags": [
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2009-01-01",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W3010497490",
+    "name": "Traditional Chinese medicine for COVID-19 treatment",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.phrs.2020.104743",
+    "authors": [
+      "Junling Ren",
+      "Ai-Hua Zhang",
+      "Xijun Wang"
+    ],
+    "tags": [
+      "Coronavirus disease 2019 (COVID-19)",
+      "2019-20 coronavirus outbreak",
+      "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+      "Medicine",
+      "Traditional Chinese medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2020-03-04",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W2279201083",
+    "name": "BATMAN-TCM: a Bioinformatics Analysis Tool for Molecular mechANism of Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "Traditional Chinese Medicine (TCM), with a history of thousands of years of clinical practice, is gaining more and more attention and application worldwide. And TCM-based new drug development, especially for the treatment of complex diseases is promising. However, owing to the TCM's diverse ingredients and their complex interaction with human body, it is still quite difficult to uncover its molecular mechanism, which greatly hinders the TCM modernization and internationalization. Here we developed the first online Bioinformatics Analysis Tool for Molecular mechANism of TCM (BATMAN-TCM). Its main functions include 1) TCM ingredients' target prediction; 2) functional analyses of targets including biological pathway, Gene Ontology functional term and disease enrichment analyses; 3) the visualization of ingredient-target-pathway/disease association network and KEGG biological pathway with highlighted targets; 4) comparison analysis of multiple TCMs. Finally, we applied BATMAN-TCM to Qishen Yiqi dripping Pill (QSYQ) and combined with subsequent experimental validation to reveal the functions of renin-angiotensin system responsible for QSYQ's cardioprotective effects for the first time. BATMAN-TCM will contribute to the understanding of the \"multi-component, multi-target and multi-pathway\" combinational therapeutic mechanism of TCM, and provide valuable clues for subsequent experimental validation, accelerating the elucidation of TCM's molecular mechanism. BATMAN-TCM is available at http://bionet.ncpsb.org/batman-tcm.",
+    "url": "https://doi.org/10.1038/srep21146",
+    "authors": [
+      "Zhongyang Liu",
+      "Feifei Guo",
+      "Yong Wang",
+      "Chun Li",
+      "Xinlei Zhang",
+      "Honglei Li",
+      "Lihong Diao",
+      "Jiangyong Gu",
+      "Wei Wang",
+      "Dong Li",
+      "Fuchu He"
+    ],
+    "tags": [
+      "Mechanism (biology)",
+      "Traditional Chinese medicine",
+      "KEGG",
+      "Computational biology",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2016-02-16",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "doi:10.52768/2833-5465/1056",
+    "name": "Reviving Hope by Using Platelet-Rich Plasma Combined with Saphenous Vein Stripping Surgery in Patients with Refractory Venous Leg Ulcer: A Case Report",
+    "source": "crossref",
+    "abstract": "<jats:p>Venous ulcer is an open skin lesion that is difficult to heal and easy to recur. Although the fatality rate is low, the quality of life of patients is seriously affected, and there is the possibility of infection, deterioration and even amputation. The use of platelet rich plasma therapy has obvious effect, but the combined treatment of great saphenous vein dissection is rarely reported.</jats:p>",
+    "url": "https://doi.org/10.52768/2833-5465/1056",
+    "authors": [
+      "Xiang Zhang",
+      "Man-ying Lin",
+      "Xi-wen Feng",
+      "Jia-jun Wu",
+      "Wei Cai",
+      "Bin-jun Tong",
+      "Mian-zhi Chen",
+      "Bang-sheng Cui"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2023-03-29T08:44:05Z",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "doi:10.1155/2019/6927374",
+    "name": "Diuretic and Antidiuretic Activities of Ethanol Extract and Fractions of <i>Lagopsis supina</i> in Normal Rats",
+    "source": "crossref",
+    "abstract": "<jats:p><jats:italic>Lagopsis supina</jats:italic> is a well-known traditional Chinese medicine and used as an agent for diuresis in China for centuries. This is the first time to evaluate the diuretic activity of the ethanol extract of <jats:italic>L. supina</jats:italic> (LS) and its four fractions (LSA, LSB, LSC, and LSD) in normal rats. After the administration of LS-H, LS-M, LSB-H, and LSC-L, the urine output of the rats was significantly increased, while the urine excretion was significantly reduced after treatment with LSB-L. The urine Na<jats:sup>+</jats:sup> excretion was remarkably increased with LS-H, LS-M, LSA-H, LSA-L, LSB-H, LSC-L, and LSD-L, and the urine K<jats:sup>+</jats:sup> excretion was significantly increased after administration of LS-H and LSB-H. Moreover, the urine Na<jats:sup>+</jats:sup> and K<jats:sup>+</jats:sup> excretion was significantly reduced after treatment with LSC-H and LSD-H. However, the urine pH values and urine and serum Na<jats:sup>+</jats:sup>-K<jats:sup>+</jats:sup>-ATPase levels did not show remarkable change after administration of LS or its four fractions in comparison with the control group. On the contrary, LS and its four fractions can suppress the renin-angiotensin-aldosterone system (RAAS), including ADH arrest by LSB-H, LSB-L, LSC-L, LSD-L, and LSD-H and ALD arrest by LSD-L, as well as promote ANP release by LS-M, LSB-H, LSC-H, and LSD-H, while furosemide can suppress only arrest of ADH within 24 h compared with the control group. In addition, LS and its four fractions did not change the urine and serum TNF-<jats:italic>α</jats:italic> and IL-6 levels in normal rats within 24 h. This study will provide a quantitative basis for explaining the natural medicinal use of LS as a diuretic agent for edema and promoting the diuretic process.</jats:p>",
+    "url": "https://doi.org/10.1155/2019/6927374",
+    "authors": [
+      "Zhiyong Liu",
+      "Li Yang",
+      "Longxue Li",
+      "Rongrui Wei",
+      "Xiaoquan Luo",
+      "Tingting Xu",
+      "Yun Huang",
+      "Zejing Mu",
+      "Junwei He"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2019-12-04T18:33:52Z",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "doi:10.1186/s12906-024-04661-5",
+    "name": "Efficacy and Safety of Suxiao Jiuxin Pills in the Treatment of Chronic Coronary Syndrome with Intolerance to Adverse Effects of Long-acting Nitrates: A Multicenter, Randomized, Double-blind, Placebo-controlled Study",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1186/s12906-024-04661-5",
+    "authors": [
+      "Yuanlong Hu",
+      "Yifei Wang",
+      "Shiqin Wang",
+      "Xirong Cui",
+      "Yong Feng",
+      "Zhengguang Li",
+      "Kegang Ji",
+      "Jianming Wang",
+      "Chenghua Sun",
+      "Yan Tang",
+      "Yunlun Li"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2024-10-04T08:02:09Z",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "doi:10.1186/s12906-024-04412-6",
+    "name": "Efficacy of acupuncture as an adjunctive treatment to patients with stable COPD: a multicenter, randomized, sham-controlled trial protocol",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title><jats:sec>\n                <jats:title>Background</jats:title>\n                <jats:p>Chronic obstructive pulmonary disease (COPD) is a common respiratory disease and the third leading cause of death worldwide. Previous evidence has shown that acupuncture may be an effective complementary alternative therapy for stable COPD. However, large-sample, rigorously designed long-term follow-up studies still need to be completed. Notably, the relationship between the frequency of acupuncture and clinical efficacy in studies on acupuncture for stable COPD still needs further validation. This study aims to evaluate the efficacy and safety of acupuncture for stable COPD and further investigate the dose–effect relationship of acupuncture.</jats:p>\n              </jats:sec><jats:sec>\n                <jats:title>Methods/design</jats:title>\n                <jats:p>This is a multicenter, randomized, controlled trial that uses central randomization to randomly allocate 550 participants in a 1:1:1:1:1 ratio to once a week acupuncture group, twice a week acupuncture group, three times a week acupuncture group, sham acupuncture group and waiting-list control group. The sham acupuncture group will receive placebo acupuncture treatments three times per week, and the waiting-list control group will not receive any form of acupuncture intervention. The study consists of a 2-week baseline, 12-week of treatment, and 52-week of follow-up. Patients with COPD between 40 to 80 years old who have received stable Western medication within the previous 3 months and have had at least 1 moderate or severe acute exacerbation within the past 1 year will be included in the study. Basic treatment will remain the same for all participants. The primary outcome is the proportion of responders at week 12. Secondary outcomes include the proportion of responders at week 64, change in the St. George's Respiratory Questionnaire (SGRQ) Scale, change in the Modified-Medical Research Council (mMRC) Scale, change in the COPD Assessment Test (CAT) Scale, change in the Lung Function Screening Indicators (LFSI), change in the 6-min walk distance (6-MWD), change in Short-Form 36 Health Survey (SF-36) Scale, the number of moderate and severe acute exacerbations and adverse event rate during the follow-up period.</jats:p>\n              </jats:sec><jats:sec>\n                <jats:title>Discussion</jats:title>\n                <jats:p>This study will provide robust evidence on whether acupuncture is safe and effective for treating stable COPD. Meanwhile, comparing the differences in efficacy between different acupuncture frequencies will further promote the optimization of acupuncture for stable COPD.</jats:p>\n              </jats:sec><jats:sec>\n                <jats:title>Trial registration</jats:title>\n                <jats:p>This study was registered in the Chinese Clinical Trial Registry (ChiCTR2200058757), on April 16, 2022.</jats:p>\n              </jats:sec>",
+    "url": "https://doi.org/10.1186/s12906-024-04412-6",
+    "authors": [
+      "Liuyang Huang",
+      "Sha Yang",
+      "Guixing Xu",
+      "Qin Luo",
+      "Chunyan Yang",
+      "Hao Tian",
+      "Yilin Liu",
+      "Zhuo Zhou",
+      "Fengyuan Huang",
+      "Siyao Gong",
+      "Qian Li",
+      "Xin Yu",
+      "Ming Chen",
+      "Dan Huang",
+      "Yunyu Liu",
+      "Juan Tang",
+      "Ruixin Zhang",
+      "Xin Sun",
+      "Guangbing Lu",
+      "Chunfang Zeng",
+      "Shuangchun Ai",
+      "Bin Li",
+      "Jian qin Chen",
+      "Quan Luo",
+      "Chan Xiong",
+      "Zhi Zou",
+      "Qiang Hu",
+      "Xiaochao Luo",
+      "Ling Li",
+      "Mingsheng Sun",
+      "Fang Zeng",
+      "Fanrong Liang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2024-03-07T09:47:17Z",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "doi:10.3403/30301319",
+    "name": "Traditional Chinese medicine. Categories of traditional Chinese medicine (TCM) clinical terminological systems",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3403/30301319",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2017-03-02T11:03:54Z",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "doi:10.3403/30301319u",
+    "name": "Traditional Chinese medicine. Categories of traditional Chinese medicine (TCM) clinical terminological systems",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3403/30301319u",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2017-03-02T17:05:10Z",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "doi:10.1186/s12964-024-01618-6",
+    "name": "PTEN: an emerging target in rheumatoid arthritis?",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>Phosphatase and tensin homolog deleted on chromosome 10 (<jats:italic>PTEN</jats:italic>) is a critical tumor suppressor protein that regulates various biological processes such as cell proliferation, apoptosis, and inflammatory responses by controlling the phosphatidylinositol 3-kinase (<jats:italic>PI3K</jats:italic>)/protein kinase B (<jats:italic>PI3K/AKT</jats:italic>) signaling pathway. <jats:italic>PTEN</jats:italic> plays a crucial role in the pathogenesis of rheumatoid arthritis (RA). Loss of <jats:italic>PTEN</jats:italic> may contribute to survival, proliferation, and pro-inflammatory cytokine release of fibroblast-like synoviocytes (FLS). Also, persistent <jats:italic>PI3K</jats:italic> signaling increases myeloid cells’ osteoclastic potential, enhancing localized bone destruction. Recent studies have shown that the expression of <jats:italic>PTEN</jats:italic> protein in the synovial lining of RA patients with aggressive FLS is minimal. Experimental upregulation of <jats:italic>PTEN</jats:italic> protein expression could reduce the damage caused by RA. Nonetheless, a complete comprehension of aberrant <jats:italic>PTEN</jats:italic> drives RA progression and its interactions with other crucial molecules remains elusive. This review is dedicated to promoting a thorough understanding of the signaling mechanisms of aberrant <jats:italic>PTEN</jats:italic> in RA and aims to furnish pertinent theoretical support for forthcoming endeavors in both basic and clinical research within this domain.</jats:p>",
+    "url": "https://doi.org/10.1186/s12964-024-01618-6",
+    "authors": [
+      "Pan Zhou",
+      "Xingwen Meng",
+      "Zhimin Nie",
+      "Hua Wang",
+      "Kaijun Wang",
+      "Aihua Du",
+      "Yu Lei"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2024-04-26T08:02:14Z",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "doi:10.1155/2022/2175913",
+    "name": "Systematic Evaluation of Randomized Clinical Trials of Huangqin Tang in Combination with Mesalazine for Ulcerative Colitis",
+    "source": "crossref",
+    "abstract": "<jats:p>Objective. To systematically evaluate the efficacy and safety of Huangqin Tang (HQT) combined with mesalazine for the treatment of ulcerative colitis (UC). Methods. The China Knowledge Network, Wanfang Data, VIP, PubMed, SinoMed, Embase, and Cochrane Library databases were searched for randomized controlled trials (RCTs) of UC with HQT in Chinese and English. The search time was from the establishment of the database to October 2021. The included literature was evaluated for data extraction and risk of bias, efficacy and safety were evaluated using the RevMan5.3 software, and the quality of evidence was evaluated using GRADE. Results. Six studies with a total of 565 subjects were included, and a meta-analysis showed that HQT combined with mesalazine for UC significantly improved the cure rate (RR = 1.56, 95% CI [1.23, 1.98), <jats:inline-formula>\n                     <a:math xmlns:a=\"http://www.w3.org/1998/Math/MathML\" id=\"M1\">\n                        <a:mi>P</a:mi>\n                        <a:mo>=</a:mo>\n                        <a:mn>0.0003</a:mn>\n                     </a:math>\n                  </jats:inline-formula>) and overall efficacy rate (RR = 1.24, 95% CI [1.14, 1.35], <jats:inline-formula>\n                     <c:math xmlns:c=\"http://www.w3.org/1998/Math/MathML\" id=\"M2\">\n                        <c:mi>P</c:mi>\n                        <c:mo>=</c:mo>\n                        <c:mn>0.00001</c:mn>\n                     </c:math>\n                  </jats:inline-formula>), which significantly reduced the clinical symptom scores; however, all had high heterogeneity. HQT combined with mesalazine modulated the patients’ serum IL-6, IL-10, IgA, and IgG levels. HQT combined with mesalazine for UC tended to reduce adverse effects; however, the difference was not statistically significant. All GRADE ratings of the quality of evidence were of low quality. Conclusions. HQT combined with mesalazine in the treatment of UC significantly improved the cure rate and overall treatment efficiency and regulated the expression levels of serum IL-6, IL-10, IgA, and IgG.</jats:p>",
+    "url": "https://doi.org/10.1155/2022/2175913",
+    "authors": [
+      "Chengyu Pan",
+      "Mengru Liu",
+      "Hui Li",
+      "Lanfu Wei",
+      "Pengcheng Wang",
+      "Kexuan Wu",
+      "Xing Ji",
+      "Limei Gu",
+      "Yaozhou Tian"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2022-08-11T18:05:20Z",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "pmid:42549032",
+    "name": "Honokiol Inhibits Arsenic Trioxide-Induced Cardiomyopathy by Modulating Ferroptosis via SIRT3 Signaling Pathway.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42549032/",
+    "authors": [
+      "Wei QQ",
+      "Huang AL",
+      "Liu NY",
+      "Zhang YR",
+      "Yang F"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "pmid:42548927",
+    "name": "Near-Infrared-Triggered \"Bridge-and-Attack\" Strategy via a Bioinspired Copper-Polyphenol Nanoarchitectonics Platform for Vascular Normalization-Enhanced Cuproptosis-Immunotherapy of Triple-Negative Breast Cancer.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548927/",
+    "authors": [
+      "Shen X",
+      "Zhang Y",
+      "Shan M",
+      "Kou Y",
+      "Jia X",
+      "Yang M",
+      "Yu C",
+      "Li J",
+      "Guo P",
+      "Li J",
+      "Liu Z"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "pmid:42548862",
+    "name": "Efficacy and safety of quadruple therapy versus triple therapy in patients with heart failure with preserved ejection fraction: a propensity score-matched real-world study.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548862/",
+    "authors": [
+      "Shi J",
+      "Fang L",
+      "Cai X",
+      "Wu H",
+      "Yang X",
+      "Wei L"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "pmid:42548801",
+    "name": "The efficacy of traditional Chinese medicine on immune function in patients with hepatitis B-related liver fibrosis or cirrhosis: a systematic review and meta-analysis.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548801/",
+    "authors": [
+      "Wu Z",
+      "Tan W",
+      "Luo B",
+      "Liu X",
+      "Zhang W",
+      "Wang L",
+      "Lai M"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "pmid:42548765",
+    "name": "CCR1-mediated monocyte chemotaxis in the immunopathology of primary Sjögren's syndrome: multi-omics integration analysis and computational target prioritization implicating Polygonatum odoratum.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548765/",
+    "authors": [
+      "Li J",
+      "Gesang Y",
+      "Tan N",
+      "Li R",
+      "Liu W"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "pmid:42548731",
+    "name": "The composition alteration of gut microbiota in lung cancer: a systematic review and meta-analysis.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548731/",
+    "authors": [
+      "Xu X",
+      "Yu T",
+      "Wu H",
+      "Guo Y",
+      "Li M",
+      "Han Y",
+      "Zhao L",
+      "Yu X"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "pmid:42548729",
+    "name": "Association of uric acid, HDL-C, and homocysteine with coronary artery disease and stenosis.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548729/",
+    "authors": [
+      "Zha L",
+      "Ma Y",
+      "Wan L",
+      "Xie P",
+      "Li X"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "pmid:42548727",
+    "name": "Integrative Multiomics Analysis Reveals a Cancer Stem Cell-Driven Prognostic Signature and Nominates Belinostat for Targeted Therapy in Hepatocellular Carcinoma.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548727/",
+    "authors": [
+      "Zi Y",
+      "Zhang Y",
+      "Wu J",
+      "Xie J",
+      "Yan X"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W2124679671",
+    "name": "TCMSP: a database of systems pharmacology for drug discovery from herbal medicines",
+    "source": "openalex",
+    "abstract": "BACKGROUND: Modern medicine often clashes with traditional medicine such as Chinese herbal medicine because of the little understanding of the underlying mechanisms of action of the herbs. In an effort to promote integration of both sides and to accelerate the drug discovery from herbal medicines, an efficient systems pharmacology platform that represents ideal information convergence of pharmacochemistry, ADME properties, drug-likeness, drug targets, associated diseases and interaction networks, are urgently needed. DESCRIPTION: The traditional Chinese medicine systems pharmacology database and analysis platform (TCMSP) was built based on the framework of systems pharmacology for herbal medicines. It consists of all the 499 Chinese herbs registered in the Chinese pharmacopoeia with 29,384 ingredients, 3,311 targets and 837 associated diseases. Twelve important ADME-related properties like human oral bioavailability, half-life, drug-likeness, Caco-2 permeability, blood-brain barrier and Lipinski's rule of five are provided for drug screening and evaluation. TCMSP also provides drug targets and diseases of each active compound, which can automatically establish the compound-target and target-disease networks that let users view and analyze the drug action mechanisms. It is designed to fuel the development of herbal medicines and to promote integration of modern medicine and traditional medicine for drug discovery and development. CONCLUSIONS: The particular strengths of TCMSP are the composition of the large number of herbal entries, and the ability to identify drug-target networks and drug-disease networks, which will help revealing the mechanisms of action of Chinese herbs, uncovering the nature of TCM theory and developing new herb-oriented drugs. TCMSP is freely available at http://sm.nwsuaf.edu.cn/lsp/tcmsp.php.",
+    "url": "https://doi.org/10.1186/1758-2946-6-13",
+    "authors": [
+      "Jinlong Ru",
+      "Peng Li",
+      "Jinan Wang",
+      "Wei Zhou",
+      "Bohui Li",
+      "Chao Huang",
+      "Pidong Li",
+      "Zihu Guo",
+      "Weiyang Tao",
+      "Yinfeng Yang",
+      "Xue Xu",
+      "Yan Li",
+      "Yonghua Wang",
+      "Ling Yang"
+    ],
+    "tags": [
+      "Systems pharmacology",
+      "ADME",
+      "Traditional Chinese medicine",
+      "Drug",
+      "Drug discovery"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-04-16",
+    "addedAt": "2026-08-04T10:40:31.947Z"
+  },
+  {
+    "id": "oa:W2044186731",
+    "name": "The growing use of herbal medicines: issues relating to adverse reactions and challenges in monitoring safety",
+    "source": "openalex",
+    "abstract": "The use of herbal medicinal products and supplements has increased tremendously over the past three decades with not less than 80% of people worldwide relying on them for some part of primary healthcare. Although therapies involving these agents have shown promising potential with the efficacy of a good number of herbal products clearly established, many of them remain untested and their use are either poorly monitored or not even monitored at all. The consequence of this is an inadequate knowledge of their mode of action, potential adverse reactions, contraindications, and interactions with existing orthodox pharmaceuticals and functional foods to promote both safe and rational use of these agents. Since safety continues to be a major issue with the use of herbal remedies, it becomes imperative, therefore, that relevant regulatory authorities put in place appropriate measures to protect public health by ensuring that all herbal medicines are safe and of suitable quality. This review discusses toxicity-related issues and major safety concerns arising from the use of herbal medicinal products and also highlights some important challenges associated with effective monitoring of their safety.",
+    "url": "https://doi.org/10.3389/fphar.2013.00177",
+    "authors": [
+      "Martins Ekor"
+    ],
+    "tags": [
+      "Medicine",
+      "Adverse effect",
+      "Quality (philosophy)",
+      "Risk analysis (engineering)",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-01-01",
+    "addedAt": "2026-08-04T10:40:31.947Z"
   }
 ]

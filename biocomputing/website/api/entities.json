@@ -1,1 +1,684 @@
-[]
+[
+  {
+    "id": "oa:W2144656637",
+    "name": "Computing topological parameters of biological networks",
+    "source": "openalex",
+    "abstract": "UNLABELLED: Rapidly increasing amounts of molecular interaction data are being produced by various experimental techniques and computational prediction methods. In order to gain insight into the organization and structure of the resultant large complex networks formed by the interacting molecules, we have developed the versatile Cytoscape plugin NetworkAnalyzer. It computes and displays a comprehensive set of topological parameters, which includes the number of nodes, edges, and connected components, the network diameter, radius, density, centralization, heterogeneity, and clustering coefficient, the characteristic path length, and the distributions of node degrees, neighborhood connectivities, average clustering coefficients, and shortest path lengths. NetworkAnalyzer can be applied to both directed and undirected networks and also contains extra functionality to construct the intersection or union of two networks. It is an interactive and highly customizable application that requires no expert knowledge in graph theory from the user. AVAILABILITY: NetworkAnalyzer can be downloaded via the Cytoscape web site: http://www.cytoscape.org",
+    "url": "https://doi.org/10.1093/bioinformatics/btm554",
+    "authors": [
+      "Yassen Assenov",
+      "Fidel Ramírez",
+      "Sven-Eric Schelhorn",
+      "Thomas Lengauer",
+      "Mario Albrecht"
+    ],
+    "tags": [
+      "Computer science",
+      "Plug-in",
+      "Biological network",
+      "Intersection (aeronautics)",
+      "Cluster analysis"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2007-11-15",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W2799524357",
+    "name": "MEGA X: Molecular Evolutionary Genetics Analysis across Computing Platforms",
+    "source": "openalex",
+    "abstract": "The Molecular Evolutionary Genetics Analysis (Mega) software implements many analytical methods and tools for phylogenomics and phylomedicine. Here, we report a transformation of Mega to enable cross-platform use on Microsoft Windows and Linux operating systems. Mega X does not require virtualization or emulation software and provides a uniform user experience across platforms. Mega X has additionally been upgraded to use multiple computing cores for many molecular evolutionary analyses. Mega X is available in two interfaces (graphical and command line) and can be downloaded from www.megasoftware.net free of charge.",
+    "url": "https://doi.org/10.1093/molbev/msy096",
+    "authors": [
+      "Sudhir Kumar",
+      "Glen Stecher",
+      "Michael Li",
+      "Christina Knyaz",
+      "Koichiro Tamura"
+    ],
+    "tags": [
+      "Mega-",
+      "Emulation",
+      "Biology",
+      "Software",
+      "Virtualization"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2018-05-01",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W2083146528",
+    "name": "Phase–contrast X–ray computed tomography for observing biological soft tissues",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nm0496-473",
+    "authors": [
+      "Atsushi Momose",
+      "Tohoru Takeda",
+      "Yuji Itai",
+      "K. Hirano"
+    ],
+    "tags": [
+      "X-ray",
+      "Tomography",
+      "Synchrotron radiation",
+      "Phase contrast microscopy",
+      "Phase (matter)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "1996-04-01",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W2243973145",
+    "name": "SeqinR 1.0-2: A Contributed Package to the R Project for Statistical Computing Devoted to Biological Sequences Retrieval and Analysis",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-540-35306-5_10",
+    "authors": [
+      "Delphine Charif",
+      "Jean R. Lobry"
+    ],
+    "tags": [
+      "GenBank",
+      "Computer science",
+      "Graphics",
+      "Coding (social sciences)",
+      "Sequence (biology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2007-01-01",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W1971421925",
+    "name": "Community structure in social and biological networks",
+    "source": "openalex",
+    "abstract": "A number of recent studies have focused on the statistical properties of networked systems such as social networks and the Worldwide Web. Researchers have concentrated particularly on a few properties that seem to be common to many networks: the small-world property, power-law degree distributions, and network transitivity. In this article, we highlight another property that is found in many networks, the property of community structure, in which network nodes are joined together in tightly knit groups, between which there are only looser connections. We propose a method for detecting such communities, built around the idea of using centrality indices to find community boundaries. We test our method on computer-generated and real-world graphs whose community structure is already known and find that the method detects this known structure with high sensitivity and reliability. We also apply the method to two networks whose community structure is not well known--a collaboration network and a food web--and find that it detects significant and informative community divisions in both cases.",
+    "url": "https://doi.org/10.1073/pnas.122653799",
+    "authors": [
+      "Michelle Girvan",
+      "M. E. J. Newman"
+    ],
+    "tags": [
+      "Community structure",
+      "Computer science",
+      "Centrality",
+      "Transitive relation",
+      "Clique percolation method"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2002-06-11",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W1512383952",
+    "name": "Introduction to Evolutionary Computing",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-662-05094-1",
+    "authors": [
+      "A. E. Eiben",
+      "James E. Smith"
+    ],
+    "tags": [
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2003-01-01",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W2001771035",
+    "name": "I.—COMPUTING MACHINERY AND INTELLIGENCE",
+    "source": "openalex",
+    "abstract": "I propose to consider the question, ‘Can machines think?’ This should begin with definitions of the meaning of the terms ‘machine’ and ‘think’. The definitions might be framed so as to reflect so far as possible the normal use of the words, but this attitude is dangerous. If the meaning of the words ‘machine’ and ‘think’ are to be found by examining how they are commonly used it is difficult to escape the conclusion that the meaning and the answer to the question, ‘Can machines think?’ is to be sought in a statistical survey such as a Gallup poll. But this is absurd. Instead of attempting such a definition I shall replace the question by another, which is closely related to it and is expressed in relatively unambiguous words. The new form of the problem can be described in terms of a game which we call the ‘imitation game’. It is played with three people, a man (A), a woman (B), and an interrogator (C) who may be of either sex. The interrogator stays in a room apart from the other two. The object of the game for the interrogator is to determine which of the other two is the man and which is the woman. He knows them by labels X and Y, and at the end of the game he says either ‘X is A and Y is B’ or ‘X is B and Y is A’. The interrogator is allowed to put questions to A and B thus: C: Will X please tell me the length of his or her hair? Now suppose X is actually A, then A must answer. It is A's object in the game to try and cause C to make the wrong identification. His answer might therefore be ‘My hair is shingled, and the longest strands are about nine inches long.’ that of may the interrogator the should be or The is to a the two the question and can be by an The object of the game for the is to the The for her is to can such as the to to her but it as the man can make the question, a the of A in this Will the interrogator as the game is played this as he the game is played a man and a questions replace ‘Can machines think?’ as is the answer to this new form of the may this new question a to This question we an The new problem the of a the and the of a or to be to a which is from the It is possible that at this might be but this we should in to make a by it in such The form in which we the problem this in the which the interrogator from or the other or other of the may be by questions and me a the of the me this I to about and then as I at and other at and at It is a of The question and answer to be for of the of that we to to the for to in to a man for in a an The of game make The can they consider it as as they please about or but the interrogator The game may be the that the are the If the man to try and to be the he make a He be at by and in machines which to be described as but which is from a man This is a but at we can that a can be to the game we be by this It might be that the ‘imitation the for the may be other of the of a This may but I it is that is of this is to the of the and it be that the is to try to that be by a The question which we put in be we we by the It is that we should to of to be used in to the an or of may a which but of be described by they a which is we to from the machines in the It is difficult to the definitions so as to three might for that the of should be of but this be for it is possible to a from a of the of a so be a of of the but we be to it as a of a This to the that of should be are the to so in of the that the in by a of an or this we to in This at to be a I shall to that it is so in this a of the and of It may be that this of machines with for be to it that are to a in the are a of in and it may be try the It be to the of the A of be and to how the The answer is that we are in the game the at but are which But this is the answer. shall this question in a The may be by that machines are to which be by a The is to be he to from them in may suppose that are in a which is he is put to a new He an of which he his He may his and a but this is If we use the as a definition we shall be in of",
+    "url": "https://doi.org/10.1093/mind/lix.236.433",
+    "authors": [
+      "Alan Turing"
+    ],
+    "tags": [
+      "Computer science",
+      "Cognitive science",
+      "Psychology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "1950-10-01",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W2101927907",
+    "name": "An introduction to computing with neural nets",
+    "source": "openalex",
+    "abstract": "Artificial neural net models have been studied for many years in the hope of achieving human-like performance in the fields of speech and image recognition. These models are composed of many nonlinear computational elements operating in parallel and arranged in patterns reminiscent of biological neural nets. Computational elements or nodes are connected via weights that are typically adapted during use to improve performance. There has been a recent resurgence in the field of artificial neural nets caused by new net topologies and algorithms, analog VLSI implementation techniques, and the belief that massive parallelism is essential for high performance speech and image recognition. This paper provides an introduction to the field of artificial neural nets by reviewing six important neural net models that can be used for pattern classification. These nets are highly parallel building blocks that illustrate neural net components and design principles and can be used to construct more complex systems. In addition to describing these nets, a major emphasis is placed on exploring how some existing classification and clustering algorithms can be performed using simple neuron-like components. Single-layer nets can implement algorithms required by Gaussian maximum-likelihood classifiers and optimum minimum-error classifiers for binary patterns corrupted by noise. More generally, the decision regions required by any classification algorithm can be generated in a straightforward manner by three-layer feed-forward nets.",
+    "url": "https://doi.org/10.1109/massp.1987.1165576",
+    "authors": [
+      "Richard P. Lippmann"
+    ],
+    "tags": [
+      "Computer science",
+      "Artificial neural network",
+      "Field (mathematics)",
+      "Artificial intelligence",
+      "Time delay neural network"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "1987-01-01",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W2098888435",
+    "name": "Development of soft computing and applications in agricultural and biological engineering",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.compag.2010.01.001",
+    "authors": [
+      "Yanbo Huang",
+      "Yubin Lan",
+      "Steven J. Thomson",
+      "Alex Fang",
+      "W. Clint Hoffmann",
+      "Ronald E. Lacey"
+    ],
+    "tags": [
+      "Soft computing",
+      "Context (archaeology)",
+      "Computer science",
+      "Agriculture",
+      "Precision agriculture"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2010-02-19",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W27052083",
+    "name": "Medical and Biological Engineering and Computing 1997-2005",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-642-30160-5_8",
+    "authors": [
+      "Herbert Voigt",
+      "Ratko Magjarević"
+    ],
+    "tags": [
+      "Computer science",
+      "Software engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2013-10-29",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W2798054687",
+    "name": "NIA‐AA Research Framework: Toward a biological definition of Alzheimer's disease",
+    "source": "openalex",
+    "abstract": "In 2011, the National Institute on Aging and Alzheimer's Association created separate diagnostic recommendations for the preclinical, mild cognitive impairment, and dementia stages of Alzheimer's disease. Scientific progress in the interim led to an initiative by the National Institute on Aging and Alzheimer's Association to update and unify the 2011 guidelines. This unifying update is labeled a \"research framework\" because its intended use is for observational and interventional research, not routine clinical care. In the National Institute on Aging and Alzheimer's Association Research Framework, Alzheimer's disease (AD) is defined by its underlying pathologic processes that can be documented by postmortem examination or in vivo by biomarkers. The diagnosis is not based on the clinical consequences of the disease (i.e., symptoms/signs) in this research framework, which shifts the definition of AD in living people from a syndromal to a biological construct. The research framework focuses on the diagnosis of AD with biomarkers in living persons. Biomarkers are grouped into those of β amyloid deposition, pathologic tau, and neurodegeneration [AT(N)]. This ATN classification system groups different biomarkers (imaging and biofluids) by the pathologic process each measures. The AT(N) system is flexible in that new biomarkers can be added to the three existing AT(N) groups, and new biomarker groups beyond AT(N) can be added when they become available. We focus on AD as a continuum, and cognitive staging may be accomplished using continuous measures. However, we also outline two different categorical cognitive schemes for staging the severity of cognitive impairment: a scheme using three traditional syndromal categories and a six-stage numeric scheme. It is important to stress that this framework seeks to create a common language with which investigators can generate and test hypotheses about the interactions among different pathologic processes (denoted by biomarkers) and cognitive symptoms. We appreciate the concern that this biomarker-based research framework has the potential to be misused. Therefore, we emphasize, first, it is premature and inappropriate to use this research framework in general medical practice. Second, this research framework should not be used to restrict alternative approaches to hypothesis testing that do not use biomarkers. There will be situations where biomarkers are not available or requiring them would be counterproductive to the specific research goals (discussed in more detail later in the document). Thus, biomarker-based research should not be considered a template for all research into age-related cognitive impairment and dementia; rather, it should be applied when it is fit for the purpose of the specific research goals of a study. Importantly, this framework should be examined in diverse populations. Although it is possible that β-amyloid plaques and neurofibrillary tau deposits are not causal in AD pathogenesis, it is these abnormal protein deposits that define AD as a unique neurodegenerative disease among different disorders that can lead to dementia. We envision that defining AD as a biological construct will enable a more accurate characterization and understanding of the sequence of events that lead to cognitive impairment that is associated with AD, as well as the multifactorial etiology of dementia. This approach also will enable a more precise approach to interventional trials where specific pathways can be targeted in the disease process and in the appropriate people.",
+    "url": "https://doi.org/10.1016/j.jalz.2018.02.018",
+    "authors": [
+      "Clifford R. Jack",
+      "David A. Bennett",
+      "Kaj Blennow",
+      "María C. Carrillo",
+      "Billy Dunn",
+      "Samantha Budd Haeberlein",
+      "David M. Holtzman",
+      "William J. Jagust",
+      "Frank Jessen",
+      "Jason Karlawish",
+      "Enchi Liu",
+      "José Luís Molinuevo",
+      "Thomas J. Montine",
+      "Creighton H. Phelps",
+      "Katherine P. Rankin",
+      "Christopher C. Rowe",
+      "Philip Scheltens",
+      "Eric Siemers",
+      "Heather M. Snyder",
+      "Reisa A. Sperling",
+      "Contributors",
+      "Cerise Elliott",
+      "Eliezer Masliah",
+      "Laurie Ryan",
+      "Nina Silverberg"
+    ],
+    "tags": [
+      "Disease",
+      "Alzheimer's disease",
+      "Psychology",
+      "Neuroscience",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2018-04-01",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W2605380321",
+    "name": "Laboratory x-ray micro-computed tomography: a user guideline for biological samples",
+    "source": "openalex",
+    "abstract": "Laboratory x-ray micro-computed tomography (micro-CT) is a fast-growing method in scientific research applications that allows for non-destructive imaging of morphological structures. This paper provides an easily operated \"how to\" guide for new potential users and describes the various steps required for successful planning of research projects that involve micro-CT. Background information on micro-CT is provided, followed by relevant setup, scanning, reconstructing, and visualization methods and considerations. Throughout the guide, a Jackson's chameleon specimen, which was scanned at different settings, is used as an interactive example. The ultimate aim of this paper is make new users familiar with the concepts and applications of micro-CT in an attempt to promote its use in future scientific studies.",
+    "url": "https://doi.org/10.1093/gigascience/gix027",
+    "authors": [
+      "Anton du Plessis",
+      "Chris Broeckhoven",
+      "Anina Guelpa",
+      "S. Roux"
+    ],
+    "tags": [
+      "Computed tomography",
+      "Computer science",
+      "Visualization",
+      "Tomography",
+      "Medical physics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2017-04-17",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "doi:10.1007/978-981-96-3870-3_3",
+    "name": "Biological Computing: Data",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title>\n          <jats:p>As known from Chap. <jats:ext-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"10.1007/978-981-96-3870-3_1\" ext-link-type=\"doi\">1</jats:ext-link>, biological computing is divided into DNA computing, RNA computing, and protein computing. The data used are DNA, RNA, and proteins, respectively. This chapter mainly introduces the physical and chemical characteristics and computational characteristics of these three types of biological macromolecules, which are the basis of biological computing.</jats:p>",
+    "url": "https://doi.org/10.1007/978-981-96-3870-3_3",
+    "authors": [
+      "Jin Xu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2025-04-10T11:10:46Z",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "doi:10.1007/978-981-96-3870-3_4",
+    "name": "Biological Computing Operators: Enzymes and Biochemical Operations",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title>\n          <jats:p>The previous chapter introduced the data required for biological computing: DNA, RNA, and proteins. They form the basis of biological computing. This chapter presents another important foundation of biological computing—basic operators: biological enzymes and biochemical operations.</jats:p>",
+    "url": "https://doi.org/10.1007/978-981-96-3870-3_4",
+    "authors": [
+      "Jin Xu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2025-04-10T11:10:43Z",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "doi:10.23880/oajpr-16000201",
+    "name": "Cloud Computing and Biological Data",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.23880/oajpr-16000201",
+    "authors": [
+      "Anubha Dubey"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2022-09-02T11:49:32Z",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "doi:10.1201/9781003542032-4",
+    "name": "Biological Computing",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1201/9781003542032-4",
+    "authors": [
+      "Cheng Hsiao Wu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2025-11-21T18:19:18Z",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "doi:10.1007/978-981-96-3870-3_12",
+    "name": "Protein Computing",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title>\n          <jats:p>Feynman’s vision of “developing computers at the molecular scale” led to the birth of the DNA computing model in 1994, followed by protein computing in 1995: a protein computing model of 2-state logic gates was proposed. Since then, many scholars have studied numerous protein logic gates, logic calculators, arithmetic calculators, protein computing models for solving <jats:bold>NP</jats:bold>-complete problems, protein storage and computing devices, etc. This chapter introduces some typical representatives.</jats:p>",
+    "url": "https://doi.org/10.1007/978-981-96-3870-3_12",
+    "authors": [
+      "Jin Xu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2025-04-10T11:11:17Z",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "doi:10.1007/978-981-96-3870-3_6",
+    "name": "Enumerative DNA Computing Model",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title>\n          <jats:p>From 1994 to 2004, research in DNA computing was in its nascent stage, encompassing various aspects such as computational models, encoding, experimentation, and detection. Notably, during this period, the computational models were primarily enumerative in nature. These pioneering research outcomes not only laid the foundation for the deeper exploration of DNA computing but also provided a solid groundwork for RNA computing and, more broadly, the entire field of biological computing. This chapter focuses on the enumerative DNA computing models, selecting a subset of representative achievements for detailed introduction and in-depth analysis.</jats:p>",
+    "url": "https://doi.org/10.1007/978-981-96-3870-3_6",
+    "authors": [
+      "Jin Xu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2025-04-10T11:11:20Z",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "doi:10.1007/978-981-96-3870-3_11",
+    "name": "RNA Computing",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title>\n          <jats:p>The emergence of DNA computing models naturally gave rise to the development of RNA computing. However, over the past three decades, DNA computing has advanced rapidly, while RNA computing has progressed more slowly, primarily due to the structural characteristics of RNA molecules. This chapter focuses on the computational properties of RNA molecules, RNA computing models for solving <jats:bold>NP</jats:bold>-complete problems, and related research on RNA computing in the context of logic gates and logic circuits.</jats:p>",
+    "url": "https://doi.org/10.1007/978-981-96-3870-3_11",
+    "authors": [
+      "Jin Xu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2025-04-10T11:10:26Z",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "doi:10.1016/0301-0511(90)90019-s",
+    "name": "An introduction to neural computing",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0301-0511(90)90019-s",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2002-10-08T08:59:02Z",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "pmid:42549020",
+    "name": "PREP-aring is worth it: Success of the Case Western Reserve University post-baccalaureate research education program and its scholars.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42549020/",
+    "authors": [
+      "Crawford DC",
+      "Vazquez-Hidalgo E",
+      "Lou H"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "pmid:42548856",
+    "name": "Foundation model-enhanced multimodal radiomics for predicting response to chemo-immunotherapy in advanced lung squamous cell carcinoma.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548856/",
+    "authors": [
+      "Wang Z",
+      "Zhang Y",
+      "He C",
+      "Wang M",
+      "Cai J"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "pmid:42548790",
+    "name": "Integrative GC-MS, FT-IR, and Molecular Docking Analysis of Drimycarpus racemosus (Roxb.) Hook.f ex Marchand: In Vivo Analgesic and Antidiabetic Potential.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548790/",
+    "authors": [
+      "Ali MS",
+      "Islam MR",
+      "Rafi MA",
+      "Esha SH",
+      "Hasan MM",
+      "Hossain P",
+      "Ripon A",
+      "Sultana N"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2026 Aug",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "pmid:42548765",
+    "name": "CCR1-mediated monocyte chemotaxis in the immunopathology of primary Sjögren's syndrome: multi-omics integration analysis and computational target prioritization implicating Polygonatum odoratum.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548765/",
+    "authors": [
+      "Li J",
+      "Gesang Y",
+      "Tan N",
+      "Li R",
+      "Liu W"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "pmid:42548736",
+    "name": "From stasis to systematics: deciphering the pathophysiology of secondary lymphedema through omics.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548736/",
+    "authors": [
+      "Stull-Lane AR",
+      "Chen X",
+      "Book AJ",
+      "Kratchmarov R",
+      "Pal S",
+      "Shin J",
+      "Ashokan G",
+      "Hespe GE",
+      "Mehrara BJ",
+      "Kataru RP"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "pmid:42548734",
+    "name": "The negligible biological impact of reproductive history on aging: a high-resolution variance analysis.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548734/",
+    "authors": [
+      "Roccetti M"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "pmid:42548727",
+    "name": "Integrative Multiomics Analysis Reveals a Cancer Stem Cell-Driven Prognostic Signature and Nominates Belinostat for Targeted Therapy in Hepatocellular Carcinoma.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548727/",
+    "authors": [
+      "Zi Y",
+      "Zhang Y",
+      "Wu J",
+      "Xie J",
+      "Yan X"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "pmid:42548704",
+    "name": "Conformational bias in SARS-CoV-2 Spike CD4+ T-cell epitope dominance.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42548704/",
+    "authors": [
+      "Landry SJ",
+      "Steede NK",
+      "Tiomkin Y",
+      "Smith H",
+      "Mettu RR",
+      "Gragert L",
+      "Aberle JH",
+      "Zwezdaryk KJ",
+      "Zheng C",
+      "Kolls JK",
+      "Gunn BM",
+      "Murrell AE",
+      "Trinh IV",
+      "Schieffelin JS",
+      "Robinson JE",
+      "Norton EB"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W1561605958",
+    "name": "DNA Computing: New Computing Paradigms",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://openalex.org/W1561605958",
+    "authors": [
+      "Gheorghe Pǎun",
+      "Grzegorz Rozenberg",
+      "Arto Salomaa"
+    ],
+    "tags": [
+      "DNA computing",
+      "Complementarity (molecular biology)",
+      "Computer science",
+      "Computation",
+      "Natural computing"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "1998-09-15",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  },
+  {
+    "id": "oa:W1492299013",
+    "name": "DNA computing on surfaces",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/35003155",
+    "authors": [
+      "Qinghua Liu",
+      "Liman Wang",
+      "Anthony G. Frutos",
+      "Anne Condon",
+      "Robert M. Corn",
+      "Lloyd M. Smith"
+    ],
+    "tags": [
+      "DNA computing",
+      "Boolean satisfiability problem",
+      "Computational problem",
+      "Computational complexity theory",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "biocomputing"
+    ],
+    "publishedDate": "2000-01-01",
+    "addedAt": "2026-08-04T10:39:27.853Z"
+  }
+]
