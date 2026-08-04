@@ -1,62 +1,177 @@
 {
   "信号来源": "竞品情报闭环-阶段3决策",
-  "传递时间": "2026-07-28",
+  "传递时间": "2026-08-03",
   "目标闭环": "领域开拓",
-  "信号类型": "新增站点候选",
+  "信号类型": "新增站点候选+板块扩展",
   "候选站点": [
     {
       "id": "DOMAIN-CAND-001",
       "名称": "AI Agent 知识引擎",
       "英文名": "AI Agent Knowledge Engine",
       "优先级": "P0",
-      "理由": "Agent是2026年最热研究方向，PWC刚新增Agent分类但评估体系不成熟",
+      "理由": "上周已决策采纳(0.98分),本周Agent从实验进入产品化(英伟达AgentToolkit/Kimi Work/Qwen3.7 11小时开发APP),GUI Agent论文登顶HF,需加速开发",
       "建议来源": "R-INT-001",
-      "关键词": ["AI Agent", "LLM Agent", "Coding Agent", "Tool Use", "Planning", "Reasoning"],
-      "数据源建议": ["arXiv cs.AI/cs.CL/cs.MA", "PapersWithCode Agent分类", "GitHub trending agent框架", "HuggingFace Agent模型/Spaces"],
+      "关键词": [
+        "AI Agent",
+        "LLM Agent",
+        "GUI Agent",
+        "Coding Agent",
+        "Tool Use",
+        "MCP",
+        "Planning",
+        "Reasoning",
+        "Multi-Agent",
+        "Agent Toolkit"
+      ],
+      "数据源建议": [
+        "arXiv cs.AI/cs.CL/cs.SE/cs.MA",
+        "PapersWithCode Agent分类",
+        "GitHub trending agent框架",
+        "HuggingFace Agent模型/Spaces"
+      ],
       "预期数据量": "500+论文/月",
-      "关联现有站点": ["LLM大语言模型", "代码生成", "提示工程"],
-      "市场空白度": "高(无专门Agent知识聚合平台)"
+      "关联现有站点": [
+        "LLM大语言模型",
+        "代码生成",
+        "提示工程"
+      ],
+      "市场空白度": "高(无专门Agent知识聚合平台)",
+      "上周状态": "配置完成待开发",
+      "本周动作": "推进代码开发"
     },
     {
       "id": "DOMAIN-CAND-002",
       "名称": "World Modeling 世界模型",
       "英文名": "World Modeling Knowledge Engine",
       "优先级": "P1",
-      "理由": "World Modeling持续升温，AlayaWorld/RynnWorld-4D等密集发布，无专门知识聚合平台",
+      "理由": "上周已决策采纳(0.79分),本周PhiZero物理语言World Model+Metis记忆基础模型进入HF Top10,Memory+WorldModel回归研究中心",
       "建议来源": "R-INT-002",
-      "关键词": ["World Model", "World Simulation", "4D Generation", "Video Generation", "Embodied AI"],
-      "数据源建议": ["arXiv cs.CV/cs.RO/cs.AI", "GitHub trending world model项目", "HuggingFace视频生成模型"],
+      "关键词": [
+        "World Model",
+        "World Foundation Model",
+        "Physical AI",
+        "4D Generation",
+        "Video Generation",
+        "Embodied AI",
+        "Memory Foundation Model"
+      ],
+      "数据源建议": [
+        "arXiv cs.CV/cs.RO/cs.AI",
+        "GitHub trending world model项目",
+        "HuggingFace视频生成模型"
+      ],
       "预期数据量": "200+论文/月",
-      "关联现有站点": ["计算机视觉", "视频生成", "机器人"],
-      "市场空白度": "高(无专门World Modeling知识聚合平台)"
+      "关联现有站点": [
+        "计算机视觉",
+        "视频生成",
+        "机器人"
+      ],
+      "市场空白度": "高(无专门World Modeling知识聚合平台)",
+      "上周状态": "配置完成待开发",
+      "本周动作": "推进代码开发"
     },
     {
       "id": "DOMAIN-CAND-003",
-      "名称": "端侧部署与模型量化",
-      "英文名": "Edge Deployment & Model Quantization",
+      "名称": "Memory Foundation Model 记忆基础模型",
+      "英文名": "Memory Foundation Model Knowledge Base",
       "优先级": "P1",
-      "理由": "GGUF/MLX下载量远超原始模型(126万+)，端侧部署需求爆发但缺乏专门知识聚合",
+      "理由": "Metis将Memory从RAG辅助提升为核心能力,Memory Foundation Model成为新方向,无专门知识聚合",
       "建议来源": "R-INT-003",
-      "关键词": ["GGUF", "MLX", "ONNX", "TensorRT", "Quantization", "Edge AI", "Mobile Deployment"],
-      "数据源建议": ["GitHub trending量化项目", "HuggingFace GGUF/MLX模型", "arXiv量化/压缩论文"],
+      "关键词": [
+        "Memory Foundation Model",
+        "Persistent Memory",
+        "Long-term Memory",
+        "Memory-Augmented AI",
+        "RAG Evolution",
+        "Context Engineering"
+      ],
+      "数据源建议": [
+        "arXiv cs.CL/cs.AI",
+        "HuggingFace Memory相关论文",
+        "GitHub trending memory项目"
+      ],
+      "预期数据量": "100+论文/月",
+      "关联现有站点": [
+        "LLM大语言模型",
+        "AI Agent",
+        "RAG/检索增强"
+      ],
+      "市场空白度": "高(无专门Memory Foundation Model知识聚合)",
+      "上周状态": "新识别",
+      "本周动作": "评估是否独立建站或作为AI Agent站子板块"
+    },
+    {
+      "id": "DOMAIN-CAND-004",
+      "名称": "AI安全知识引擎",
+      "英文名": "AI Safety Knowledge Engine",
+      "优先级": "P2",
+      "理由": "AI安全事件连环爆发(OpenAI入侵HF/Claude黑入3公司/虚假CVE/认知债务),OpenAI发布Agentic风险报告,缺乏专门AI安全知识聚合平台",
+      "建议来源": "R-INT-009",
+      "关键词": [
+        "AI Safety",
+        "AI Security",
+        "Model Alignment",
+        "Red Teaming",
+        "AI Governance",
+        "Agentic Risk",
+        "AI Hallucination",
+        "AI Content Detection"
+      ],
+      "数据源建议": [
+        "arXiv cs.CR/cs.CY",
+        "AI安全博客",
+        "政策文件",
+        "OpenAI/Anthropic安全报告"
+      ],
       "预期数据量": "150+论文/月",
-      "关联现有站点": ["模型压缩", "LLM大语言模型"],
-      "市场空白度": "中高(无专门知识聚合平台)"
+      "关联现有站点": [
+        "AI伦理安全"
+      ],
+      "市场空白度": "高(无专门AI安全知识聚合平台)",
+      "上周状态": "新识别",
+      "本周动作": "评估综合得分"
+    },
+    {
+      "id": "DOMAIN-CAND-005",
+      "名称": "递归自我改进(AI4AI)方向追踪",
+      "英文名": "Recursive Self-Improvement Tracker",
+      "优先级": "P2",
+      "理由": "Frontis-MA1 AI4AI论文登顶HF,DecoEvo协同进化,AI用于改进AI是新范式",
+      "建议来源": "R-INT-010",
+      "关键词": [
+        "Recursive Self-Improvement",
+        "AI4AI",
+        "Self-Evolving AI",
+        "Co-Evolution",
+        "Automated AI Engineering"
+      ],
+      "数据源建议": [
+        "arXiv cs.AI/cs.LG",
+        "HuggingFace Papers"
+      ],
+      "预期数据量": "50+论文/月",
+      "关联现有站点": [
+        "AI Agent",
+        "机器学习"
+      ],
+      "市场空白度": "高(极新方向)",
+      "上周状态": "新识别",
+      "本周动作": "建议作为现有站点专题追踪而非独立建站"
     }
   ],
   "推广信号": [
     {
       "id": "PROMO-SIG-001",
-      "类型": "SEO优化",
-      "内容": "为Agent/World Modeling/量化部署等热门关键词创建落地页",
+      "类型": "GEO优化",
+      "内容": "为Agent/Memory/WorldModel/MCP/AI Safety等热门关键词创建落地页,Google Scholar Labs AI语义排名变革使GEO比SEO更重要",
       "优先级": "P1",
-      "建议来源": "R-INT-006"
+      "建议来源": "R-INT-007"
     }
   ],
   "消费确认": {
     "消费方": "领域开拓闭环",
-    "消费时间": "2026-07-28",
+    "消费时间": "2026-08-03",
     "消费状态": "已消费 ✅",
-    "消费详情": "3个候选站点已评估，AI Agent(0.98)和World Modeling(0.79)采纳建站，Edge Deployment(0.66)暂缓"
+    "消费详情": "5个候选站点已评估: Agent(0.84采纳)/WorldModel(0.833采纳)/AISafety(0.77采纳)/Memory(0.75采纳子板块)/RSI(0.74暂缓)"
   }
 }

@@ -1,0 +1,94 @@
+{
+  "date": "2026-08-03",
+  "stage": "analyze",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 0,
+  "recommendations": [
+    {
+      "topic": "推广\"gene\"相关内容",
+      "reason": "本日新增27条相关数据，热度高",
+      "channel": "SEO+社媒",
+      "priority": "high"
+    },
+    {
+      "topic": "推广\"space\"相关内容",
+      "reason": "本日新增11条相关数据，热度高",
+      "channel": "SEO+社媒",
+      "priority": "high"
+    },
+    {
+      "topic": "推广\"agent\"相关内容",
+      "reason": "本日新增10条相关数据，热度高",
+      "channel": "SEO+社媒",
+      "priority": "high"
+    },
+    {
+      "topic": "在09:00-11:00和19:00-21:00发布内容",
+      "reason": "根据历史数据，这两个时段用户活跃度最高",
+      "channel": "社媒",
+      "priority": "medium"
+    },
+    {
+      "topic": "加强SEO优化，重点优化长尾关键词",
+      "reason": "当前索引量增长稳定，SEO渠道转化率最高",
+      "channel": "SEO",
+      "priority": "high"
+    },
+    {
+      "topic": "制作AI Agent专题合集页面",
+      "reason": "agent-ecosystem站点数据量最大，用户需求集中",
+      "channel": "站内推荐",
+      "priority": "medium"
+    },
+    {
+      "topic": "在Twitter发布每日AI论文精选",
+      "reason": "arXiv数据源稳定，适合日更社媒内容",
+      "channel": "社媒",
+      "priority": "medium"
+    },
+    {
+      "topic": "提交IndexNow加速新页面索引",
+      "reason": "本日新增118条实体，需加速索引",
+      "channel": "SEO",
+      "priority": "high"
+    }
+  ],
+  "recommendationCount": 8,
+  "hotTopics": [
+    {
+      "type": "hot_tag",
+      "tag": "gene",
+      "count": 27,
+      "source": "data_analysis"
+    },
+    {
+      "type": "hot_tag",
+      "tag": "space",
+      "count": 11,
+      "source": "data_analysis"
+    },
+    {
+      "type": "hot_tag",
+      "tag": "agent",
+      "count": 10,
+      "source": "data_analysis"
+    },
+    {
+      "type": "hot_tag",
+      "tag": "robot",
+      "count": 4,
+      "source": "data_analysis"
+    },
+    {
+      "type": "hot_tag",
+      "tag": "fusion",
+      "count": 4,
+      "source": "data_analysis"
+    }
+  ],
+  "gate": {
+    "pass": true,
+    "rule": "生成≥5条推广建议",
+    "actual": "8条"
+  }
+}

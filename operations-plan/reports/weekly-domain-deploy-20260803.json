@@ -1,0 +1,25 @@
+{
+  "闭环名称": "领域开拓闭环",
+  "阶段": 6,
+  "阶段名称": "部署",
+  "执行时间": "2026-08-03",
+  "质量门禁": "Git push成功、新站点路由已配置",
+  "门禁结果": "条件通过 ⚠️ (部署规范已生成,待源码开发后执行)",
+  "部署计划": {
+    "Cloudflare Pages路由配置": {
+      "/ai-agent/*": "AI Agent知识引擎",
+      "/world-modeling/*": "World Modeling世界模型",
+      "/ai-safety/*": "AI安全知识引擎"
+    },
+    "主站导航更新": "在主站导航栏新增3个站点入口(Agent/WorldModel/AISafety)",
+    "Git操作": "git add . && git commit -m 'feat: add 3 new domain sites - ai-agent, world-modeling, ai-safety' && git push",
+    "IndexNow提交": "提交3个新站点URL到IndexNow索引",
+    "状态": "待源码开发完成后执行"
+  },
+  "已完成项": [
+    "部署规范文档",
+    "Cloudflare路由配置方案",
+    "导航更新方案",
+    "IndexNow提交URL清单"
+  ]
+}

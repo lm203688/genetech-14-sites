@@ -1,0 +1,116 @@
+{
+  "date": "2026-08-03",
+  "stage": "decide",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 0,
+  "decisions": [
+    {
+      "id": "promo-20260803-1",
+      "content": "推广\"gene\"相关内容",
+      "channel": "SEO+社媒",
+      "priority": "high",
+      "abTest": {
+        "variantA": {
+          "title": "推广\"gene\"相关内容",
+          "description": "学术严谨风格"
+        },
+        "variantB": {
+          "title": "🔥 推广\"gene\"相关内容",
+          "description": "热点追踪风格"
+        }
+      }
+    },
+    {
+      "id": "promo-20260803-2",
+      "content": "推广\"space\"相关内容",
+      "channel": "SEO+社媒",
+      "priority": "high",
+      "abTest": {
+        "variantA": {
+          "title": "推广\"space\"相关内容",
+          "description": "学术严谨风格"
+        },
+        "variantB": {
+          "title": "🔥 推广\"space\"相关内容",
+          "description": "热点追踪风格"
+        }
+      }
+    },
+    {
+      "id": "promo-20260803-3",
+      "content": "推广\"agent\"相关内容",
+      "channel": "SEO+社媒",
+      "priority": "high",
+      "abTest": {
+        "variantA": {
+          "title": "推广\"agent\"相关内容",
+          "description": "学术严谨风格"
+        },
+        "variantB": {
+          "title": "🔥 推广\"agent\"相关内容",
+          "description": "热点追踪风格"
+        }
+      }
+    },
+    {
+      "id": "promo-20260803-4",
+      "content": "在09:00-11:00和19:00-21:00发布内容",
+      "channel": "社媒",
+      "priority": "medium",
+      "abTest": null
+    },
+    {
+      "id": "promo-20260803-5",
+      "content": "加强SEO优化，重点优化长尾关键词",
+      "channel": "SEO",
+      "priority": "high",
+      "abTest": {
+        "variantA": {
+          "title": "加强SEO优化，重点优化长尾关键词",
+          "description": "学术严谨风格"
+        },
+        "variantB": {
+          "title": "🔥 加强SEO优化，重点优化长尾关键词",
+          "description": "热点追踪风格"
+        }
+      }
+    },
+    {
+      "id": "promo-20260803-6",
+      "content": "制作AI Agent专题合集页面",
+      "channel": "站内推荐",
+      "priority": "medium",
+      "abTest": null
+    },
+    {
+      "id": "promo-20260803-7",
+      "content": "在Twitter发布每日AI论文精选",
+      "channel": "社媒",
+      "priority": "medium",
+      "abTest": null
+    },
+    {
+      "id": "promo-20260803-8",
+      "content": "提交IndexNow加速新页面索引",
+      "channel": "SEO",
+      "priority": "high",
+      "abTest": {
+        "variantA": {
+          "title": "提交IndexNow加速新页面索引",
+          "description": "学术严谨风格"
+        },
+        "variantB": {
+          "title": "🔥 提交IndexNow加速新页面索引",
+          "description": "热点追踪风格"
+        }
+      }
+    }
+  ],
+  "decisionCount": 8,
+  "highPriorityCovered": "5/5",
+  "gate": {
+    "pass": true,
+    "rule": "决策项100%覆盖分析建议",
+    "actual": "覆盖率100%"
+  }
+}

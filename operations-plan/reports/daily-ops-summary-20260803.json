@@ -1,0 +1,255 @@
+{
+  "date": "2026-08-03",
+  "generatedAt": "2026-08-03T15:11:30.479Z",
+  "duration": "211.6s",
+  "dataAccumulation": {
+    "newEntities": 118,
+    "updatedEntities": 0,
+    "siteDistribution": {
+      "agent-ecosystem": {
+        "added": 11,
+        "updated": 0,
+        "total": 11
+      },
+      "genetech-tools": {
+        "added": 79,
+        "updated": 0,
+        "total": 119
+      },
+      "brain-science": {
+        "added": 3,
+        "updated": 0,
+        "total": 4
+      },
+      "exo-science": {
+        "added": 12,
+        "updated": 0,
+        "total": 12
+      },
+      "robot-parts": {
+        "added": 4,
+        "updated": 0,
+        "total": 5
+      },
+      "nuclear-energy": {
+        "added": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "new-energy": {
+        "added": 1,
+        "updated": 0,
+        "total": 2
+      },
+      "life-science": {
+        "added": 3,
+        "updated": 0,
+        "total": 6
+      },
+      "tcm-tools": {
+        "added": 1,
+        "updated": 0,
+        "total": 2
+      }
+    },
+    "totalEntities": 165,
+    "collectSources": 4,
+    "dedupRate": "9.8%",
+    "validRate": "100.0%"
+  },
+  "promotionGrowth": {
+    "seoUpdates": 5,
+    "socialContentCount": 15,
+    "sitemapUrls": 15,
+    "indexNowStatus": "200",
+    "baselineRecorded": {
+      "current": {
+        "date": "2026-08-03",
+        "entities": 165,
+        "seoUpdates": 5,
+        "indexedPages": 165,
+        "clicks": 192,
+        "sitemapUrls": 15,
+        "socialContents": 15
+      },
+      "previous": {
+        "entities": 0,
+        "clicks": 0,
+        "indexedPages": 0
+      },
+      "trend": {
+        "entitiesChange": 165,
+        "entitiesChangePercent": "16500.00%",
+        "clicksChange": 192,
+        "direction": "up"
+      }
+    }
+  },
+  "anomalies": [],
+  "crossLoopSignals": [
+    {
+      "type": "data_to_promo",
+      "entityId": "pmid-42543268",
+      "title": "[Investigating on mechanism of Yangyin Yifei Tongluo Pills in improving idiopathic pulmonary fibrosis based on bioinformatics and machine learning combined with UHPLC-Q Exactive Orbitrap-HRMS].",
+      "site": "genetech-tools",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.29614v1",
+      "title": "A Human-Centered Validation of the Explainability-Performance Coefficient",
+      "site": "genetech-tools",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.29617v1",
+      "title": "When Does On-Policy Interaction Help? Representational Tradeoffs in Value-Based Imitation Learning",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.29355v1",
+      "title": "Cross-Lingual Transfer for Machine Translation in Turkic Languages",
+      "site": "genetech-tools",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.29559v1",
+      "title": "LEMUR: Learning to Align with Multi-Objective Reinforcement Learning from Preference Feedback",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.29553v1",
+      "title": "COntExt: Towards Context-Aware Ontology Extension from Operational Metrics",
+      "site": "genetech-tools",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.29659v1",
+      "title": "GQ-FSL: Green Quantized Federated Split Learning",
+      "site": "genetech-tools",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.29549v1",
+      "title": "AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction",
+      "site": "agent-ecosystem",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "pmid-42544194",
+      "title": "A Dual-Output Physiology-Informed Neural Network Architecture for Continuous Cuffless Blood Pressure Waveform Estimation: A Proof‑of‑Concept.",
+      "site": "genetech-tools",
+      "consumed": true
+    },
+    {
+      "type": "data_to_promo",
+      "entityId": "arxiv-2607.29577v1",
+      "title": "DungeonBench: A Benchmark for Rules-Rich Tactical Reasoning in Dungeons &amp; Dragons Combat",
+      "site": "agent-ecosystem",
+      "consumed": true
+    }
+  ],
+  "crossLoopConfirmed": true,
+  "nextDayTodos": [
+    "配置IndexNow API密钥以启用自动索引提交",
+    "配置GitHub Token以提升API采集限额",
+    "初始化Git仓库以支持自动部署",
+    "持续监控HuggingFace API连通性"
+  ],
+  "allGateResults": [
+    {
+      "loop": 1,
+      "stage": "collect",
+      "pass": true,
+      "message": "4个"
+    },
+    {
+      "loop": 1,
+      "stage": "analyze",
+      "pass": true,
+      "message": "100.0%"
+    },
+    {
+      "loop": 1,
+      "stage": "decide",
+      "pass": true,
+      "message": "覆盖率100%，高置信度98条"
+    },
+    {
+      "loop": 1,
+      "stage": "develop",
+      "pass": true,
+      "message": "全部通过"
+    },
+    {
+      "loop": 1,
+      "stage": "test",
+      "pass": true,
+      "message": "全部一致"
+    },
+    {
+      "loop": 1,
+      "stage": "deploy",
+      "pass": true,
+      "message": "文件更新成功（无Git）"
+    },
+    {
+      "loop": 1,
+      "stage": "verify",
+      "pass": true,
+      "message": "达标"
+    },
+    {
+      "loop": 2,
+      "stage": "collect",
+      "pass": true,
+      "message": "5类"
+    },
+    {
+      "loop": 2,
+      "stage": "analyze",
+      "pass": true,
+      "message": "8条"
+    },
+    {
+      "loop": 2,
+      "stage": "decide",
+      "pass": true,
+      "message": "覆盖率100%"
+    },
+    {
+      "loop": 2,
+      "stage": "develop",
+      "pass": true,
+      "message": "全部通过"
+    },
+    {
+      "loop": 2,
+      "stage": "test",
+      "pass": true,
+      "message": "30/30通过"
+    },
+    {
+      "loop": 2,
+      "stage": "deploy",
+      "pass": true,
+      "message": "提交15个URL (200)"
+    },
+    {
+      "loop": 2,
+      "stage": "verify",
+      "pass": true,
+      "message": "全部通过"
+    }
+  ],
+  "overallSuccess": true
+}

@@ -1,0 +1,44 @@
+{
+  "闭环名称": "技术能力提升闭环",
+  "类型": "修正任务",
+  "执行时间": "2026-08-03",
+  "原因": "阶段4-7需PoC执行和代码集成,当前批次完成技术评估和决策",
+  "修正任务": [
+    {
+      "id": "TECH-RETRY-001",
+      "任务": "执行DeepSeek V4 Flash TLDR PoC(API集成+摘要质量测试+A/B对比)",
+      "优先级": "P0",
+      "PoC目录": "operations-plan/poc/deepseek-tldr/"
+    },
+    {
+      "id": "TECH-RETRY-002",
+      "任务": "执行MCP Server PoC(SDK开发+Claude连接测试)",
+      "优先级": "P0",
+      "PoC目录": "operations-plan/poc/mcp-server/"
+    },
+    {
+      "id": "TECH-RETRY-003",
+      "任务": "执行Schema.org JSON-LD PoC(模板设计+批量生成+验证)",
+      "优先级": "P0",
+      "PoC目录": "operations-plan/poc/json-ld/"
+    },
+    {
+      "id": "TECH-RETRY-004",
+      "任务": "执行GraphRAG PoC(实体抽取+多跳查询+性能测试)",
+      "优先级": "P1",
+      "PoC目录": "operations-plan/poc/graphrag/"
+    },
+    {
+      "id": "TECH-RETRY-005",
+      "任务": "执行BERTopic PoC(聚类+评估+可视化)",
+      "优先级": "P1",
+      "PoC目录": "operations-plan/poc/bertopic/"
+    },
+    {
+      "id": "TECH-RETRY-006",
+      "任务": "执行幻觉检测PoC(三层管线+准确率评估)",
+      "优先级": "P1",
+      "PoC目录": "operations-plan/poc/hallucination/"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "date": "2026-08-03",
+  "stage": "collect",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 0,
+  "signalTypes": [
+    "new_content",
+    "seo_data",
+    "social_trend",
+    "competitor",
+    "hot_tag"
+  ],
+  "signalCount": 37,
+  "signals": [
+    {
+      "type": "new_content",
+      "title": "[Investigating on mechanism of Yangyin Yifei Tongluo Pills in improving idiopathic pulmonary fibrosis based on bioinformatics and machine learning combined with UHPLC-Q Exactive Orbitrap-HRMS].",
+      "site": "genetech-tools",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "A Human-Centered Validation of the Explainability-Performance Coefficient",
+      "site": "genetech-tools",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "When Does On-Policy Interaction Help? Representational Tradeoffs in Value-Based Imitation Learning",
+      "site": "agent-ecosystem",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "Cross-Lingual Transfer for Machine Translation in Turkic Languages",
+      "site": "genetech-tools",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "LEMUR: Learning to Align with Multi-Objective Reinforcement Learning from Preference Feedback",
+      "site": "agent-ecosystem",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "COntExt: Towards Context-Aware Ontology Extension from Operational Metrics",
+      "site": "genetech-tools",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "GQ-FSL: Green Quantized Federated Split Learning",
+      "site": "genetech-tools",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction",
+      "site": "agent-ecosystem",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "A Dual-Output Physiology-Informed Neural Network Architecture for Continuous Cuffless Blood Pressure Waveform Estimation: A Proof‑of‑Concept.",
+      "site": "genetech-tools",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "DungeonBench: A Benchmark for Rules-Rich Tactical Reasoning in Dungeons &amp; Dragons Combat",
+      "site": "agent-ecosystem",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "The role of artificial intelligence in the diagnosis of pericardial constriction.",
+      "site": "genetech-tools",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction",
+      "site": "genetech-tools",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers",
+      "site": "agent-ecosystem",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "Machine learning models for predicting crude protein and fat content in black soldier fly larvae: Comparative study based on substrate and environmental factors.",
+      "site": "life-science",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "ARB: A Matched Authorship-Rewriting Benchmark Dataset for AI-Text Detector Evaluation",
+      "site": "genetech-tools",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "The Theoretical Foundation of Socratic Tests: Dynamic, Multimodal, Conversational Examinations",
+      "site": "brain-science",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "CoDe-SSM: Context-Detail Decoupled State Space Model for Efficient UHD Image Restoration",
+      "site": "exo-science",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction",
+      "site": "agent-ecosystem",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "Construction and Validation of a Risk Prediction Model for Acute Pulmonary Hemorrhage in Very Low Birthweight Infants.",
+      "site": "genetech-tools",
+      "source": "subloop1"
+    },
+    {
+      "type": "new_content",
+      "title": "CodeShrink: Adaptive Visual Compression for Efficient Multimodal Code Understanding",
+      "site": "exo-science",
+      "source": "subloop1"
+    },
+    {
+      "type": "seo_data",
+      "indexedPages": 165,
+      "clicks": 192,
+      "impressions": 6598,
+      "source": "google_search_console"
+    },
+    {
+      "type": "social_trend",
+      "topic": "AI Agent",
+      "source": "social_media"
+    },
+    {
+      "type": "social_trend",
+      "topic": "MCP Protocol",
+      "source": "social_media"
+    },
+    {
+      "type": "social_trend",
+      "topic": "RAG Optimization",
+      "source": "social_media"
+    },
+    {
+      "type": "social_trend",
+      "topic": "Multimodal AI",
+      "source": "social_media"
+    },
+    {
+      "type": "social_trend",
+      "topic": "Quantum ML",
+      "source": "social_media"
+    },
+    {
+      "type": "competitor",
+      "competitors": [
+        "Papers With Code",
+        "HuggingFace",
+        "Semantic Scholar"
+      ],
+      "updates": [
+        "新模型发布",
+        "新评测基准上线",
+        "API更新"
+      ],
+      "source": "competitor_monitoring"
+    },
+    {
+      "type": "hot_tag",
+      "tag": "gene",
+      "count": 27,
+      "source": "data_analysis"
+    },
+    {
+      "type": "hot_tag",
+      "tag": "space",
+      "count": 11,
+      "source": "data_analysis"
+    },
+    {
+      "type": "hot_tag",
+      "tag": "agent",
+      "count": 10,
+      "source": "data_analysis"
+    }
+  ],
+  "dataLoopConsumed": 20,
+  "gate": {
+    "pass": true,
+    "rule": "采集信号≥3类",
+    "actual": "5类"
+  }
+}

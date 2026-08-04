@@ -1,0 +1,32 @@
+{
+  "date": "2026-08-03",
+  "stage": "collect",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 211464,
+  "sources": {
+    "arxiv": {
+      "count": 60,
+      "status": "success"
+    },
+    "pubmed": {
+      "count": 50,
+      "status": "success"
+    },
+    "github": {
+      "count": 80,
+      "status": "success"
+    },
+    "huggingface": {
+      "count": 45,
+      "status": "success"
+    }
+  },
+  "successSources": 4,
+  "failedSources": [],
+  "totalRawItems": 235,
+  "gate": {
+    "pass": true,
+    "rule": "采集成功源≥3个",
+    "actual": "4个"
+  }
+}

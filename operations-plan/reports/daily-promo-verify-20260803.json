@@ -1,0 +1,52 @@
+{
+  "date": "2026-08-03",
+  "stage": "verify",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 0,
+  "verifyItems": [
+    {
+      "item": "IndexNow提交",
+      "pass": true
+    },
+    {
+      "item": "sitemap.xml可访问",
+      "pass": true
+    },
+    {
+      "item": "OG标签预览正确",
+      "pass": true
+    },
+    {
+      "item": "结构化数据已部署",
+      "pass": true
+    }
+  ],
+  "allVerified": true,
+  "baseline": {
+    "current": {
+      "date": "2026-08-03",
+      "entities": 165,
+      "seoUpdates": 5,
+      "indexedPages": 165,
+      "clicks": 192,
+      "sitemapUrls": 15,
+      "socialContents": 15
+    },
+    "previous": {
+      "entities": 0,
+      "clicks": 0,
+      "indexedPages": 0
+    },
+    "trend": {
+      "entitiesChange": 165,
+      "entitiesChangePercent": "16500.00%",
+      "clicksChange": 192,
+      "direction": "up"
+    }
+  },
+  "gate": {
+    "pass": true,
+    "rule": "所有验证项通过",
+    "actual": "全部通过"
+  }
+}

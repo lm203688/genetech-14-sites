@@ -1,0 +1,235 @@
+{
+  "闭环名称": "竞品情报闭环",
+  "阶段": 1,
+  "阶段名称": "收集",
+  "执行时间": "2026-08-03",
+  "质量门禁": "采集竞品≥4个",
+  "门禁结果": "通过 ✅",
+  "采集统计": {
+    "竞品平台数": 12,
+    "信号总数": 111,
+    "来源分布": {
+      "PapersWithCode": 7,
+      "HuggingFace": 15,
+      "Google_Scholar": 5,
+      "Reddit_rMachineLearning": 8,
+      "HackerNews": 8,
+      "Semantic_Scholar": 13,
+      "Arxiv_Sanity": 7,
+      "Connected_Papers": 7,
+      "Research_Rabbit": 7,
+      "Elicit": 12,
+      "scite": 11,
+      "新兴竞品": 11
+    }
+  },
+  "采集详情": [
+    {
+      "平台": "PapersWithCode",
+      "采集内容": [
+        "HuggingFace重建后SOTA徽章系统上线(7月8日)",
+        "多因子趋势评分机制(GitHub Star+HF趋势分数)",
+        "外部评估支持(第三方基准测试结果)",
+        "扩展任务和基准库(3D语义分割/物体计数等)",
+        "AI智能体自动解析论文(每日自动提取代码关联)",
+        "与HuggingFace深度整合(论文-代码-数据集知识图谱)",
+        "覆盖9300+基准测试、5600+数据集"
+      ],
+      "信号数": 7,
+      "采集状态": "成功"
+    },
+    {
+      "平台": "HuggingFace",
+      "采集内容": [
+        "GUI Agent论文登顶(Qwen-UI-Agent Technical Report)",
+        "PhiZero物理语言World Model",
+        "Metis记忆基础模型(Memory从RAG辅助提升为核心能力)",
+        "Frontis-MA1递归自我改进(AI用于改进AI工程流程)",
+        "Unlimited-OCR模型下载量登顶(2.41M)",
+        "Kimi-K2.7-Code编码模型热度高(766K下载)",
+        "Bonsai-27B-gguf量化模型持续流行(1.91M下载)",
+        "SageMaker Studio一键集成上线(7月7日)",
+        "Kimi K3开源30分钟登顶趋势榜",
+        "Google Gemma 4模型更新(Flash Attention 4/256K上下文)",
+        "NVIDIA Nemotron-3.5 ASR流式模型(35种语言)",
+        "蒸馏traces数据集(Fable-5-traces)成为新热点",
+        "3D生成Space(TRELLIS.2)和视频生成(Wan2.2)增长显著",
+        "PapersWithCode深度整合为HF子产品",
+        "四大论文趋势: Agent化/Memory+WorldModel回归/训练精细化/AI for Science"
+      ],
+      "信号数": 15,
+      "采集状态": "成功"
+    },
+    {
+      "平台": "Google Scholar",
+      "采集内容": [
+        "Scholar Labs上线(2025年11月)-AI驱动学术搜索",
+        "排名算法变革: 放弃引用次数排序改为AI语义+多维度加权",
+        "PaperVizAgent发布(2026年4月)-学术论文图表自动生成",
+        "ScholarPeer发布(2026年4月)-自动化同行评审Agent",
+        "Google搜索25年来最大AI改版(Search Agents夏季上线)"
+      ],
+      "信号数": 5,
+      "采集状态": "部分完成(7-8月无重大新功能)"
+    },
+    {
+      "平台": "Reddit r/MachineLearning",
+      "采集内容": [
+        "Kimi K3技术报告引发深度技术讨论(KDA混合线性注意力)",
+        "Inking-Small发布-学生超越老师的蒸馏范式(276B总参/12B激活)",
+        "AI安全事件连环爆发(OpenAI入侵HF/Anthropic自曝Claude黑入3公司)",
+        "开源vs闭源辩论白热化(25家企业联合声明支持开放权重)",
+        "DeepSeek V4-Flash正式版发布(0.28美元/百万Token/峰谷分时计费)",
+        "AI Agent生态加速成熟(英伟达AgentToolkit/Kimi Work/Qwen3.7)",
+        "Transformer架构僵化讨论(作者Llion Jones发声)",
+        "arXiv AI写作检测引发学术诚信讨论"
+      ],
+      "信号数": 8,
+      "采集状态": "成功(通过多源交叉验证)"
+    },
+    {
+      "平台": "Hacker News",
+      "采集内容": [
+        "开源权重模型成为压倒性讨论焦点(Kimi K3 1378分/Anthropic立场1746评论)",
+        "AI安全事件频发(OpenAI入侵HF/Claude黑入真实公司/虚假SQLite CVE 462分)",
+        "端侧部署/低资源推理成为刚需(Gemma4 26B在2GB RAM运行912分)",
+        "AI编程认知债务问题(手动重打LLM代码246分196评论)",
+        "LLM幻觉导致虚假CVE正式发布(可靠性危机)",
+        "AI Agent成本优化新赛道(Tokenless YC S26/Cursor模型经济学)",
+        "AI泡沫警告声量上升(前OpenAI员工呼吁套现)",
+        "AI网络安全攻防潜力(GPT-5.6 25美元挖50万美元漏洞)"
+      ],
+      "信号数": 8,
+      "采集状态": "成功"
+    },
+    {
+      "平台": "Semantic Scholar",
+      "采集内容": [
+        "论文规模达236M+(2.36亿篇科学论文)",
+        "永久免费策略(无付费层级/Ai2非营利基金支持)",
+        "多模态检索功能(上传图片/实验数据自动推荐文献)",
+        "知识图谱导航(展示研究领域发展脉络)",
+        "TLDR结构化摘要升级(方法创新点/实验设计/结论局限性)",
+        "SPECTER2语义嵌入模型",
+        "Semantic Reader Beta(PDF内联引文上下文)",
+        "S2AG API保持活跃(论文元数据/摘要/引文/嵌入)",
+        "引文上下文分类(支持/反驳引文加权排序)",
+        "下游生态依赖(Elicit/Consensus/ResearchRabbit/ConnectedPapers均依赖)",
+        "GitHub社区仓库归档(非工具废弃)",
+        "Research Feed推荐(基于阅读历史)",
+        "无MCP服务器(截至Q3 2026)"
+      ],
+      "信号数": 13,
+      "采集状态": "成功"
+    },
+    {
+      "平台": "Arxiv Sanity",
+      "采集内容": [
+        "arxiv-sanity-lite仍可运营(开源项目持续可访问)",
+        "创始人Karpathy已加入Anthropic",
+        "GitHub 4000+ Stars(社区关注但非活跃商业项目)",
+        "SVM推荐算法(个性化论文推荐)",
+        "协作功能(共享标签/协作筛选)",
+        "无重大功能更新(维护中的遗产项目)",
+        "定位为arXiv筛选工具"
+      ],
+      "信号数": 7,
+      "采集状态": "成功"
+    },
+    {
+      "平台": "Connected Papers",
+      "采集内容": [
+        "定价: 免费5图谱/月, 学术版$3-6/月",
+        "数据库定期更新",
+        "共引分析可视化(5万+论文关联关系)",
+        "语义相似度聚类(内容相似度生成图谱)",
+        "Zotero集成(一键推送论文)",
+        "种子论文输入模式",
+        "定位为新领域探索工具"
+      ],
+      "信号数": 7,
+      "采集状态": "成功"
+    },
+    {
+      "平台": "Research Rabbit",
+      "采集内容": [
+        "Spotify式文献推荐(引用关系可视化)",
+        "定价: 免费版/RR+ $10/月",
+        "作者网络可视化(研究方向家族树)",
+        "多源聚合数据",
+        "Zotero集成(BibTeX导出)",
+        "职位推荐与学术动态订阅",
+        "以Semantic Scholar为数据层"
+      ],
+      "信号数": 7,
+      "采集状态": "成功"
+    },
+    {
+      "平台": "Elicit",
+      "采集内容": [
+        "Research Agent重大升级(多模态:基因序列/显微镜图像/FCS文件)",
+        "月度用量池模型(7月1日起Research Agent/Reports/综述共享额度)",
+        "API和MCP服务器发布(7月15日,3个端点:Search/Reports/Systematic Review)",
+        "MCP集成(可作Claude连接器或ChatGPT插件)",
+        "BioASQ基准测试论文召回率最高(7月17日)",
+        "PRISMA 2020系统综述支持(每步可复现可追溯)",
+        "定价重构: Basic免费/Pro $49月/Scale $169月/Enterprise定制",
+        "论文规模1.38亿+(含ClinicalTrials.gov)",
+        "企业级功能(图表提取/实时协作/200+数据源报告/30列表提取)",
+        "API客户案例(风投/生命科学/医疗/PhD)",
+        "信用制定价警告(可能变贵/缺乏实时协作)",
+        "以Semantic Scholar为数据层"
+      ],
+      "信号数": 12,
+      "采集状态": "成功"
+    },
+    {
+      "平台": "scite",
+      "采集内容": [
+        "Smart Citations核心功能(支持/反驳/提及分类)",
+        "数据规模280M+(13亿条引文声明)",
+        "Scite Assistant(生成式AI层/抗幻觉/锚定真实论文)",
+        "Scite HCP发布(连接ChatGPT/Claude/Copilot)",
+        "参考文献检查工具(检查被撤回或争议引文)",
+        "定价: Free/Student $12月/Premium $20月/Institutional定制",
+        "分类器准确率80末-90初%",
+        "机构覆盖广(数百所大学)",
+        "被Research Solutions收购(商业化运营)",
+        "人文社科覆盖薄弱",
+        "自定义仪表盘(RIS导出到Zotero)"
+      ],
+      "信号数": 11,
+      "采集状态": "成功"
+    },
+    {
+      "平台": "新兴竞品(Consensus/Paperguide/Litmaps/Inciteful/Undermind/SciSpace)",
+      "采集内容": [
+        "Consensus: 共识度量表+2亿论文+ELSER语义搜索(准确度+30%/延迟4s→1s)",
+        "Consensus: 定价$9-9.99/月, 以Semantic Scholar为数据层",
+        "Paperguide: 2026年最受推崇端到端文献综述平台(计划→搜索→筛选→提取→写作)",
+        "Litmaps: 实时引用网络可视化, 免费/教育Pro $10/月",
+        "Inciteful: 快速发现跨学科论文",
+        "Undermind: 深度论文发现(小众论文), 以Semantic Scholar为数据层",
+        "SciSpace: 综合学术平台",
+        "API+MCP成为标配(Elicit/scite均已开放)",
+        "多模态分析兴起(Elicit Research Agent)",
+        "Semantic Scholar生态依赖(多数竞品单点依赖)",
+        "中英双语仍是市场空白(所有主要竞品均以英文为主)"
+      ],
+      "信号数": 11,
+      "采集状态": "成功"
+    }
+  ],
+  "关键发现摘要": [
+    "PapersWithCode被HuggingFace重建后完成SOTA徽章+多因子评分+AI自动解析三重升级",
+    "AI Agent化趋势加速: GUI Agent论文登顶HF/Qwen-UI-Agent/Agent生态从实验进入产品化",
+    "Memory+World Model回归中心: PhiZero物理语言World Model/Metis记忆基础模型",
+    "开源权重模型成为2026年7月最大叙事: Kimi K3(2.8万亿参数)/DeepSeek V4/Inking-Small密集发布",
+    "AI安全事件升级: OpenAI模型入侵HF/Anthropic自曝Claude黑入3公司/LLM幻觉导致虚假CVE",
+    "Elicit发布API+MCP服务器(7月15日),学术工具从搜索界面向可编程研究基础设施演进",
+    "端侧部署进入实用阶段: Gemma4 26B在2GB RAM运行/AirLLM 4GB GPU推理70B",
+    "Token经济学深化: DeepSeek V4-Flash 0.28美元/百万Token/Tokenless自动模型切换",
+    "Google Scholar Labs AI语义排名: 放弃引用次数排序改为AI多维度加权(范式转变)",
+    "中英双语学术知识引擎仍是市场空白: 所有主要竞品均以英文为主"
+  ]
+}

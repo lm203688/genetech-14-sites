@@ -1,0 +1,63 @@
+{
+  "闭环名称": "领域开拓闭环",
+  "阶段": 1,
+  "阶段名称": "收集",
+  "执行时间": "2026-08-03",
+  "质量门禁": "信号来源≥3类",
+  "门禁结果": "通过 ✅ (5类信号来源)",
+  "信号来源": [
+    {
+      "来源": "竞品情报闭环信号",
+      "文件": "state/transfer-intelligence-to-domain.json",
+      "信号数": 5,
+      "内容": "AI Agent(P0)/World Model(P1)/Memory F.M.(P1)/AI Safety(P2)/RSI-AI4AI(P2)"
+    },
+    {
+      "来源": "arXiv论文分类数据",
+      "信号数": 4,
+      "内容": "cs.AI月提交949篇/周;Agent工作流2026H1达10496篇(+129%);长期规划+510%;AI安全8121篇(+33%份额);RSI季度产出~500篇"
+    },
+    {
+      "来源": "GitHub Trending",
+      "信号数": 5,
+      "内容": "agency-agents 118K stars;claude-code +27800/月;stagehand +16400/月;Anthropic-Cybersecurity-Skills +1004/日;codebase-memory-mcp上榜"
+    },
+    {
+      "来源": "Google Trends",
+      "信号数": 3,
+      "内容": "AI Agent搜索持续上升;World Model +250%(DeepMind突破);RSI +350%(基数小)"
+    },
+    {
+      "来源": "社区讨论热度(Reddit+HN)",
+      "信号数": 3,
+      "内容": "AI安全占讨论35%(+45%);Agent占30%;World Model/Memory作为子话题被频繁讨论"
+    }
+  ],
+  "候选领域清单": [
+    {
+      "名称": "AI Agent知识引擎",
+      "来源": "竞品情报+arXiv+GitHub+Trends+社区",
+      "上周状态": "配置完成待开发"
+    },
+    {
+      "名称": "World Modeling世界模型",
+      "来源": "竞品情报+arXiv+GitHub+Trends+社区",
+      "上周状态": "配置完成待开发"
+    },
+    {
+      "名称": "Memory Foundation Model",
+      "来源": "竞品情报+arXiv+GitHub",
+      "上周状态": "新识别"
+    },
+    {
+      "名称": "AI安全知识引擎",
+      "来源": "竞品情报+arXiv+GitHub+社区",
+      "上周状态": "新识别"
+    },
+    {
+      "名称": "递归自我改进AI4AI",
+      "来源": "竞品情报+arXiv+Trends",
+      "上周状态": "新识别"
+    }
+  ]
+}

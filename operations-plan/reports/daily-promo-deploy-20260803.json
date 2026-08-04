@@ -1,0 +1,29 @@
+{
+  "date": "2026-08-03",
+  "stage": "deploy",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 0,
+  "indexNow": {
+    "attempted": true,
+    "success": true,
+    "status": "200",
+    "urlsSubmitted": 15
+  },
+  "metaTagsUpdated": 5,
+  "socialContentsDeployed": 15,
+  "sitemapDeployed": true,
+  "baselineRecorded": {
+    "date": "2026-08-03",
+    "entities": 165,
+    "seoUpdates": 5,
+    "indexedPages": 165,
+    "clicks": 192,
+    "sitemapUrls": 15,
+    "socialContents": 15
+  },
+  "gate": {
+    "pass": true,
+    "rule": "IndexNow提交成功",
+    "actual": "200"
+  }
+}

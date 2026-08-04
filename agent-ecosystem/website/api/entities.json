@@ -1,0 +1,246 @@
+[
+  {
+    "id": "arxiv-2607.29677v1",
+    "name": "ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction",
+    "source": "arxiv",
+    "abstract": "Enterprise workflows increasingly rely on agents for \\emph{schema-guided extraction}: given a document and a user-defined schema, the agent faithfully follows the schema to produce the correct output with source evidence as grounding metadata. We present ExtractBench, a benchmark for schema-guided extraction and, to our knowledge, the first to score value accuracy, record completeness at scale, grounding, and measured cost together. The evaluation system contains 4,869 pages across 370 enterprise documents, 8 business domains, and 67 document types, with clear tags differentiating their challenge scenarios. The scalable schema and ground-truth curation pipeline combines independent-system agreement for real documents, known values for synthetic lists, and human verification for forms. We report order-insensitive value F1 for value accuracy, plus two grounding metrics for source traceability: word- and page-level F1. Commercial VLMs perform well on short documents but often truncate record lists on long ones, while coding agents retain higher accuracy at much higher cost. LlamaExtract Agentic Plus ranks first on all three metrics, with accuracy comparable to coding agents at a fraction of the cost. Dataset and evaluation code are available on \\href{https://huggingface.co/datasets/llamaindex/ExtractBench}{HuggingFace} and \\href{https://github.com/run-llama/ExtractBench}{GitHub}.",
+    "url": "https://arxiv.org/pdf/2607.29677v1",
+    "authors": [
+      "Boyang Zhang",
+      "Adrian Lyjak",
+      "Eli Stewart",
+      "Zhaoqi Li",
+      "Simon Suo"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-07-31T17:55:58Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29626v1",
+    "name": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers",
+    "source": "arxiv",
+    "abstract": "As LLMs evolve from code completion systems into autonomous scientific agents, evaluating their ability to conduct experiments has become increasingly important. Existing benchmarks typically focus on static code generation, paper replication, or final answer correctness, but do not directly assess whether agents can interpret experimental evidence and use it to guide subsequent hyperparameter decisions. To address this gap, we introduce AgentHPOBench, a sequential benchmark comprising 30 executable machine learning tasks across seven research categories. Each task begins with a validated baseline run, after which an agent performs several sequential interventions. At each step, the agent observes the accumulated configurations, metrics, and logs before proposing the next valid configuration. We evaluate 12 widely used agents and conventional HPO baselines under a unified protocol. The results show that current agents exhibit measurable experimental optimization ability across domains, but still face clear limitations in sustained iterative refinement, complex log diagnosis, and consistent progress toward reported reference performance.",
+    "url": "https://arxiv.org/pdf/2607.29626v1",
+    "authors": [
+      "Tianyu Huai",
+      "Tingshuo Fan",
+      "Xinchi Chen",
+      "Yining Zheng",
+      "Yuxin Wang",
+      "Shuang Chen",
+      "Jie Zhou",
+      "Xuanjing Huang"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem",
+      "genetech-tools"
+    ],
+    "publishedDate": "2026-07-31T16:58:00Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29617v1",
+    "name": "When Does On-Policy Interaction Help? Representational Tradeoffs in Value-Based Imitation Learning",
+    "source": "arxiv",
+    "abstract": "Imitation learning (IL)---training an agent to replicate expert behavior from demonstrations---underpins applications from robotics to language model training. Standard approaches such as Behavior Cloning (BC) are known to suffer from compounding errors and performance plateaus, particularly when the learner cannot perfectly represent the expert's policy (as is typical, e.g., in distillation). Two interventions are widely understood empirically to improve performance: querying the expert interactively along the learner's own trajectories, and using value function estimation en route to generating a policy rather than directly fitting the expert's full action distribution. We investigate the nature of these improvements and their potentially surprising interplay. Our main finding is that expert interaction relaxes the representational demands on the learner: one only needs a model capable of realizing the expert's value function, bypassing the (often stricter) requirement of realizing the expert's policy itself. Concretely, we introduce OVI, an interactive on-policy IL algorithm that is statistically efficient whenever the learner can represent the expert's value function and computationally efficient given access to a linear maximization oracle. We complement this with a negative result showing that interaction is necessary. Namely, without stronger assumptions beyond expert-value realizability alone, any offline IL algorithm must scale with the complexity of the expert policy class. Our findings bear out empirically. OVI outperforms offline policy-based (BC), interactive policy-based (DAgger), and offline value-based IL methods, with the largest gains when the learner network is substantially less expressive than the expert's.",
+    "url": "https://arxiv.org/pdf/2607.29617v1",
+    "authors": [
+      "Luca Viano",
+      "Antoine Moulin",
+      "Audrey Huang",
+      "Volkan Cevher",
+      "Philip Amortila",
+      "Dylan J. Foster"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem",
+      "genetech-tools",
+      "robot-parts"
+    ],
+    "publishedDate": "2026-07-31T16:52:47Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29577v1",
+    "name": "DungeonBench: A Benchmark for Rules-Rich Tactical Reasoning in Dungeons &amp; Dragons Combat",
+    "source": "arxiv",
+    "abstract": "Games and simulators make valuable benchmarks by turning decisions into measurable outcomes, but many current suites under-test rules-rich tactical reasoning: the ability to choose well when geometry, timing, resources, objectives, and rule interactions all matter at once. We introduce DungeonBench, a benchmark for tactical reasoning in Dungeons &amp; Dragons combat, built to cover the vast majority of combat-relevant 2014 System Reference Document content whose effects can be resolved by the simulator while retaining mechanics that simplified combat simulators often abstract away. At each step, DungeonBench exposes a complete tactical observation, a pending decision, and an indexed list of executable options spanning movement, attacks, spells, reactions, objectives, preparation, and scarce resources. The task is to value legal choices whose consequences depend on action economy, creature traits, battlefield geometry, timing windows, and future encounters. DungeonBench has two tracks: Encounter, which evaluates local tactical play in single fights, and Day, which links encounters through persistent hit points, spell slots, consumables, preparation, and short-rest timing, forcing policies to trade off immediate tactical advantage against future survivability. The same engine-generated decision stream supports heuristic controllers, language-model policies, learned option rankers, and masked-action reinforcement-learning agents. We evaluate frontier language-model policies on this shared decision stream. Results show that full tactical observations do not saturate the benchmark: frontier policies often win direct encounters, but linked encounter days expose failures in resource budgeting, rest timing, and rule-aware tactical discipline.",
+    "url": "https://arxiv.org/pdf/2607.29577v1",
+    "authors": [
+      "Ismayil Ismayilov",
+      "Atakan Kara",
+      "Kaan Oktay"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem",
+      "genetech-tools"
+    ],
+    "publishedDate": "2026-07-31T16:03:38Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29559v1",
+    "name": "LEMUR: Learning to Align with Multi-Objective Reinforcement Learning from Preference Feedback",
+    "source": "arxiv",
+    "abstract": "Reinforcement Learning (RL) systems are typically trained using a single, well-specified scalar reward function. However, real-world decision-making tasks often involve multiple, competing objectives, such as performance versus efficiency, where ground-truth reward functions are difficult to specify or inaccessible. While Multi-Objective RL (MORL) addresses such trade-offs by modeling rewards as vectors, existing approaches typically assume access to a well-specified reward function for each objective, inheriting the same challenges faced by single-objective RL. Meanwhile, Preference-based RL (PbRL) has shown great potential in solving complex tasks without access to a pre-defined reward function through reward learning from human feedback, yet has largely been studied in single-objective settings. In this work, we bridge this gap with LEMUR: Learning to Align with Multi-Objective Reinforcement Learning with Preference feedback, a novel framework where an agent interactively learns from the preferences of multiple humans to learn optimal multi-objective policies. Our approach jointly learns policies and multiple objective-specific reward models from human feedback, enabling agents to effectively balance competing objectives during learning. We evaluate LEMUR on a variety of benchmark multi-objective tasks, and empirical results demonstrate its superior performance over baseline methods. Our method presents a promising direction for solving multi-objective decision-making tasks without pre-defined reward functions.",
+    "url": "https://arxiv.org/pdf/2607.29559v1",
+    "authors": [
+      "Manith Adikari",
+      "Bei Peng",
+      "Samuele Vinanzi",
+      "Angelo Cangelosi"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-07-31T15:50:29Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29549v1",
+    "name": "AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction",
+    "source": "arxiv",
+    "abstract": "Large language models have demonstrated strong mathematical problem-solving capabilities, yet reliably verifying their candidate answers remains challenging. Existing representative methods mainly revise outputs through natural-language reflection or assist verification by directly generating verification programs; the former may not reliably support exact computation, whereas the latter prematurely couples mathematical modeling with low-level implementation. We propose AMTFV (Agentic Mathematical Tool-Flow Verification). By introducing Mathematical Tool Flow (MTF) as an interrupt--execute--resume interface, AMTFV decouples verification modeling from concrete execution and supports exact computation through a mathematical toolbox. Specifically, the verification agent first constructs a verification workflow, encodes the mathematical objects and computational intent requiring reliable execution in an MTF request, and sends it to the mathematical toolbox agent. The latter parses the request, generates executable calls, and dispatches them to the backend for exact computation. Tool outputs then support candidate-answer adjudication, answer revision, and verification-workflow revision. We evaluate AMTFV on five challenging mathematical reasoning datasets with seven model configurations from DeepSeek, GPT, and Gemini. Experimental results show that AMTFV outperforms the representative baselines evaluated in this study overall; under an individual model configuration, it improves average accuracy over the strongest baseline by up to 8.3 percentage points, with larger gains on samples of medium and high verification complexity.",
+    "url": "https://arxiv.org/pdf/2607.29549v1",
+    "authors": [
+      "Rui Zou",
+      "Yutao Zhu",
+      "Mengqi Wei",
+      "Ji-Rong Wen"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem",
+      "genetech-tools"
+    ],
+    "publishedDate": "2026-07-31T15:42:00Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29678v1",
+    "name": "TokTier: Exact Stateful Tokenization for Agentic LLM Serving",
+    "source": "arxiv",
+    "abstract": "LLM serving systems cache prompt KV state, yet most front ends still re-tokenize the full request text on every call. The cost lands on coding agents, which resubmit a long transcript after each small tool result, and reuse is hard because even a short append can change token boundaries near the end of the previous sequence. Across 153,951 calls from two agent ecosystems, the median call appends about 1.4K characters, and only 1.0-3.6% of calls start or rebuild a session with contexts of millions of characters. At a 94.1% fleet prompt-cache hit rate, tokenization reaches up to 64% of time to first token. TokTier is a stateful tokenization service with one contract: emitted token IDs are always identical to full reference tokenization of the request text. For a session continuation, it re-tokenizes a small window around the append and splices only after a per-request stable-boundary check, widening the window or falling back to full tokenization on failure. For a call without a reusable prefix, it decomposes GPT-family regex pre-tokenization into run-local rules and runs exact pre-tokenization and BPE on a GPU. A sampled shadow verifier re-checks live traffic. Across 17 tokenizer families, differential campaigns cover 1.5x10^10 split checks, a 12.4 TB real-text corpus, and 93,000+ replayed agent steps, with zero divergence. Incremental repair takes 0.5-1.1 ms from 100K to 3M characters, up to 437x faster than HF tokenization and 2.1x faster at 1M than the strongest cache-based baseline (Gigatoken) fully prewarmed. GPU full tokenization encodes a 1M-character request in 0.87 ms, up to 491x below HF and 23.4x below the fastest published CPU method. With vLLM, median time to first token drops 16-34% and P99 drops 23% under recorded bursts. Under a 50 ms P99 objective, four repair cores plus one GPU sustain 1,821 requests/s where a 16-core stateless front end saturates at 40.",
+    "url": "https://arxiv.org/pdf/2607.29678v1",
+    "authors": [
+      "Zhenyu Zhang",
+      "Zhichao Cao"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-07-31T17:56:30Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29433v1",
+    "name": "Know It, Act on It: Investigating Memory Utilization in LLM Personalization",
+    "source": "arxiv",
+    "abstract": "As large language model (LLM) agents evolve into personalized companions, memory has emerged as a core capability. However, LLMs face a knowledge utilization problem: they may fail to act on relevant user preferences even when they are fully present in context. When an agent fails to tailor its response in a context where previously shared user preferences should matter, it is unclear whether the model failed to remember that information or remembered it but failed to use it. To isolate this breakdown, we introduce a decoupled evaluation paradigm that administers paired Know and Act tests to the same user preference. We conduct large-scale experiments across 16 systems and five memory architectures, evaluating 1,000 preferences embedded at three levels of expression strength. Our results show a large gap between Know and Act outcomes: agents often pass the recall test for a user preference but fail to reflect that same preference in the paired behavioral scenario. While memory architectures reduce this gap, utilization remains especially weak for health and therapy-related preferences, where failures to act carry the greatest real-world stakes.",
+    "url": "https://arxiv.org/pdf/2607.29433v1",
+    "authors": [
+      "Zhaoxin Feng",
+      "Jianfei Ma",
+      "Emmanuele Chersoni"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-07-31T13:57:21Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29397v1",
+    "name": "Studying quantization trade-offs for efficient inference deployment in machine translation",
+    "source": "arxiv",
+    "abstract": "Deploying large language models in realistic server environments poses challenges, as the system needs to provide high-quality responses with low latency. Quantization is a common approach to reduce the memory footprint and improve inference efficiency, yet its impact on latency and throughput is rarely evaluated under controlled, orchestration-level workloads. In this work we study the quantization trade-offs of two translation model families, EuroLLM \\citep{martins2025eurollm} and Hy-MT2 \\citep{zheng2026hy} across five models ranging from 1.7B to 22B for efficient deployment on a single A100 or H100 GPU. We demonstrate that combining a document-chunking strategy with W4A8 or W8A8 quantization improves the latency-throughput Pareto-curve under a wide range of workloads. Furthermore, since standard machine translation (MT) benchmarks rely on isolated sentences and fail to capture long-context dynamics, we introduce a document-level evaluation from WMT24++ to assess how text chunking strategies affect translation quality under quantization. Our results reveal that standard segment-level evaluation can fail to predict the interaction between quantization and long-context document translation. While Hy-MT2 remains robust under quantization, EuroLLM shows strong sensitivity and translation quality collapses rapidly for all considered quantization formats. Overall, our experiments show that the trade-off between inference efficiency and translation quality depends not only on the quantization format, but also on the choice of text chunking strategy.",
+    "url": "https://arxiv.org/pdf/2607.29397v1",
+    "authors": [
+      "Jim Zhao",
+      "Sohir Maskey",
+      "Koen Oostermeijer",
+      "Douglas Orr",
+      "Teryn Jones"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-07-31T13:15:11Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29377v1",
+    "name": "Zero-Mem: Zero-Token Memory Operations for LLM Agents",
+    "source": "arxiv",
+    "abstract": "LLM agents need memory to act consistently over long interactions, yet many systems use additional LLM calls to operate that memory. Generating intermediate records and mediating their retrieval adds recurring token and time costs, while omitted or merged details can obscure the original evidence. We ask whether structured memory access requires generation at all. Zero-Mem introduces \\emph{zero-token memory operations}: no step outside final question answering invokes an LLM or consumes LLM input or output tokens; encoder computation is accounted for separately. Zero-Mem preserves original interaction traces as its source of record. It organizes the traces in two complementary ways. An entity--context graph exposes connections across interactions, while a temporal hierarchy preserves conversational locality and session state. For each query, Zero-Mem weighs the two views, retrieves from both, and follows their structure to recover supporting relations or surrounding context. Deterministic calibration first discards conflicting evidence and then keeps the reader's answer grounded in the retrieved traces. Only the final-QA reader invokes an LLM. Across long-memory and long-context question-answering benchmarks, Zero-Mem achieves competitive performance while eliminating LLM calls and LLM-token consumption from memory operations. With the same final-QA reader and context budget, it reduces memory-operation time cost by 57.6\\% relative to the fastest compared baseline. Ablations support the contribution of the two views and their query-dependent coordination. Overall, the results show that structured agent memory need not generate an intermediate representation of the past. After peer review, the code and implementation details will be available at \\textcolor{blue}{https://github.com/TheMoon0815/Zero-mem}.",
+    "url": "https://arxiv.org/pdf/2607.29377v1",
+    "authors": [
+      "Yilin Xiao",
+      "Zhehan Zhu",
+      "Yujing Zhang",
+      "Jin Chen",
+      "Zijin Hong",
+      "Luyao Zhuang",
+      "Qinggang Zhang",
+      "Shengyuan Chen",
+      "Xiaocao Ouyang",
+      "Lingfei Ren",
+      "Xiao Huang"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem",
+      "exo-science",
+      "genetech-tools"
+    ],
+    "publishedDate": "2026-07-31T13:01:06Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29637v1",
+    "name": "CodeShrink: Adaptive Visual Compression for Efficient Multimodal Code Understanding",
+    "source": "arxiv",
+    "abstract": "Rendering source code as images offers a promising way to reduce the input costs of Multimodal Large Language Models (MLLMs). Adjusting image resolution can trade visual token cost against content fidelity. However, resolution scaling alone overlooks two sources of inefficiency: blank regions created by line breaks and indentation, and code regions irrelevant to the current instruction. Moreover, the best compression setting varies across inputs, tasks, and models, limiting fixed-ratio strategies. We propose CodeShrink, an adaptive visual compression framework with three components. Blank-Free Rendering replaces whitespace-dependent layouts with compact layouts and explicit structural markers, removing layout-induced tokens. Adaptive Compression Configuration uses a lightweight agent trained with reinforcement learning to predict a per-input setting that balances token efficiency and readability. Dominant Token Selection jointly analyzes the instruction and code image to prune task-irrelevant visual tokens during inference. We evaluate CodeShrink on code question answering, clone detection, and code completion. CodeShrink reduces visual token use by up to 71.2\\% while matching or exceeding uncompressed text-only inputs, and consistently outperforms text-based and visual compression baselines across all three tasks. These results show that combining layout compaction, adaptive configuration, and instruction-aware pruning can make multimodal code understanding more efficient. Our code is available at https://github.com/vinsontang1/CodeShrink.",
+    "url": "https://arxiv.org/pdf/2607.29637v1",
+    "authors": [
+      "Wenxin Tang",
+      "Jingyu Xiao",
+      "Zhenyu Liu",
+      "Zipeng Xie",
+      "Junliang Liu",
+      "Wang Luo",
+      "Yuan Jiang",
+      "Yintong Huo",
+      "Michael Lyu"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem",
+      "exo-science"
+    ],
+    "publishedDate": "2026-07-31T17:15:51Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  }
+]

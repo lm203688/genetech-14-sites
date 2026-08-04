@@ -1,0 +1,171 @@
+{
+  "闭环名称": "领域开拓闭环",
+  "阶段": 3,
+  "阶段名称": "决策",
+  "执行时间": "2026-08-03",
+  "质量门禁": "决策有明确阈值标准(得分≥0.75),所有候选有明确采纳/放弃理由",
+  "门禁结果": "通过 ✅",
+  "决策阈值": "综合得分≥0.75 → 采纳; <0.75 → 暂缓",
+  "决策结果": [
+    {
+      "候选": "AI Agent知识引擎",
+      "综合得分": 0.84,
+      "决策": "采纳-加速开发",
+      "理由": "得分0.84≥0.75,上周已配置完成待开发,本周Agent从实验进入产品化(GUI Agent登顶HF/英伟达AgentToolkit/Kimi Work),需加速开发",
+      "站点定义": {
+        "中文名称": "AI Agent 知识引擎",
+        "英文名称": "AI Agent Knowledge Engine",
+        "URL路径": "/ai-agent",
+        "关键词": [
+          "AI Agent",
+          "LLM Agent",
+          "GUI Agent",
+          "Coding Agent",
+          "Tool Use",
+          "MCP",
+          "Planning",
+          "Reasoning",
+          "Multi-Agent",
+          "Agent Toolkit"
+        ],
+        "数据源": [
+          "arXiv cs.AI/cs.CL/cs.SE/cs.MA",
+          "PapersWithCode Agent分类",
+          "GitHub trending agent框架",
+          "HuggingFace Agent模型/Spaces"
+        ],
+        "目标数据量": "500+论文/月"
+      },
+      "配置方案": {
+        "颜色主题": "#6366F1(Indigo)",
+        "图标": "🤖",
+        "描述": "追踪AI Agent领域的最新论文、开源框架、工具和评估基准"
+      },
+      "任务清单": [
+        "创建站点目录/ai-agent",
+        "生成config.js/data.js/style.css",
+        "复制模板页面",
+        "预填充初始数据",
+        "生成llms.txt",
+        "配置路由和导航",
+        "Git push部署"
+      ]
+    },
+    {
+      "候选": "World Modeling世界模型",
+      "综合得分": 0.833,
+      "决策": "采纳-加速开发",
+      "理由": "得分0.833≥0.75,上周已配置完成待开发,本周PhiZero物理语言World Model+Metis记忆基础模型进入HF Top10",
+      "站点定义": {
+        "中文名称": "World Modeling 世界模型",
+        "英文名称": "World Modeling Knowledge Engine",
+        "URL路径": "/world-modeling",
+        "关键词": [
+          "World Model",
+          "World Foundation Model",
+          "Physical AI",
+          "4D Generation",
+          "Video Generation",
+          "Embodied AI",
+          "Memory Foundation Model"
+        ],
+        "数据源": [
+          "arXiv cs.CV/cs.RO/cs.AI",
+          "GitHub trending world model项目",
+          "HuggingFace视频生成模型"
+        ],
+        "目标数据量": "200+论文/月"
+      },
+      "配置方案": {
+        "颜色主题": "#0EA5E9(Sky Blue)",
+        "图标": "🌍",
+        "描述": "追踪世界模型、物理AI、场景理解和视频生成的最新研究进展"
+      },
+      "任务清单": [
+        "创建站点目录/world-modeling",
+        "生成配置和数据文件",
+        "复制模板页面",
+        "预填充初始数据",
+        "生成llms.txt",
+        "配置路由和导航"
+      ]
+    },
+    {
+      "候选": "AI安全知识引擎",
+      "综合得分": 0.77,
+      "决策": "采纳-独立建站",
+      "理由": "得分0.77≥0.75,AI安全事件连环爆发(OpenAI入侵HF/Claude黑入3公司/虚假CVE462分),社区讨论占35%(+45%),缺乏专门AI安全知识聚合平台",
+      "站点定义": {
+        "中文名称": "AI安全知识引擎",
+        "英文名称": "AI Safety Knowledge Engine",
+        "URL路径": "/ai-safety",
+        "关键词": [
+          "AI Safety",
+          "AI Security",
+          "Model Alignment",
+          "Red Teaming",
+          "AI Governance",
+          "Agentic Risk",
+          "AI Hallucination",
+          "AI Content Detection"
+        ],
+        "数据源": [
+          "arXiv cs.CR/cs.CY",
+          "AI安全博客",
+          "政策文件",
+          "OpenAI/Anthropic安全报告"
+        ],
+        "目标数据量": "150+论文/月"
+      },
+      "配置方案": {
+        "颜色主题": "#DC2626(Red - 代表安全警示)",
+        "图标": "🛡️",
+        "描述": "追踪AI安全、模型对齐、红队测试和AI治理的最新研究与事件"
+      },
+      "任务清单": [
+        "创建站点目录/ai-safety",
+        "生成配置和数据文件",
+        "复制模板页面",
+        "预填充初始数据",
+        "生成llms.txt",
+        "配置路由和导航"
+      ]
+    },
+    {
+      "候选": "Memory Foundation Model",
+      "综合得分": 0.75,
+      "决策": "采纳-作为AI Agent站子板块",
+      "理由": "得分0.75≥0.75(边界),Metis将Memory从RAG辅助提升为核心能力,与脑科学关联度高(0.70),但独立建站数据量不足(200篇/月),建议作为AI Agent站子板块",
+      "站点定义": {
+        "中文名称": "Memory Foundation Model (AI Agent站子板块)",
+        "英文名称": "Memory Foundation Model Section",
+        "URL路径": "/ai-agent#memory",
+        "关键词": [
+          "Memory Foundation Model",
+          "Persistent Memory",
+          "Long-term Memory",
+          "Memory-Augmented AI",
+          "RAG Evolution"
+        ],
+        "数据源": [
+          "arXiv cs.CL/cs.AI",
+          "HuggingFace Memory相关论文"
+        ],
+        "目标数据量": "100+论文/月(作为子板块)"
+      },
+      "替代方案": "在AI Agent站中设置Memory专题标签和过滤视图,不独立建站"
+    },
+    {
+      "候选": "递归自我改进AI4AI",
+      "综合得分": 0.74,
+      "决策": "暂缓-作为现有站点专题追踪",
+      "理由": "得分0.74<0.75未达阈值,基数极小(170篇/月,40帖/月),与现有站点关联度最低(0.50),属高风险前沿押注",
+      "替代方案": "在AI Agent站中设置RSI/AI4AI专题标签追踪,暂不独立建站,3-6个月后重新评估"
+    }
+  ],
+  "决策统计": {
+    "采纳独立建站": 3,
+    "采纳子板块": 1,
+    "暂缓": 1
+  }
+}

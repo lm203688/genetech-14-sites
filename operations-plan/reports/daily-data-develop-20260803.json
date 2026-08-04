@@ -1,0 +1,326 @@
+{
+  "date": "2026-08-03",
+  "stage": "develop",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 26,
+  "modifiedFiles": [
+    "agent-ecosystem\\website\\api\\entities.json",
+    "genetech-tools\\website\\api\\entities.json",
+    "brain-science\\website\\api\\entities.json",
+    "exo-science\\website\\api\\entities.json",
+    "robot-parts\\website\\api\\entities.json",
+    "nuclear-energy\\website\\api\\entities.json",
+    "new-energy\\website\\api\\entities.json",
+    "life-science\\website\\api\\entities.json",
+    "tcm-tools\\website\\api\\entities.json",
+    "data.js"
+  ],
+  "newEntities": [
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29677v1",
+      "name": "ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29626v1",
+      "name": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29617v1",
+      "name": "When Does On-Policy Interaction Help? Representational Tradeoffs in Value-Based Imitation Learning"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29577v1",
+      "name": "DungeonBench: A Benchmark for Rules-Rich Tactical Reasoning in Dungeons &amp; Dragons Combat"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29559v1",
+      "name": "LEMUR: Learning to Align with Multi-Objective Reinforcement Learning from Preference Feedback"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29549v1",
+      "name": "AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29678v1",
+      "name": "TokTier: Exact Stateful Tokenization for Agentic LLM Serving"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29433v1",
+      "name": "Know It, Act on It: Investigating Memory Utilization in LLM Personalization"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29397v1",
+      "name": "Studying quantization trade-offs for efficient inference deployment in machine translation"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29377v1",
+      "name": "Zero-Mem: Zero-Token Memory Operations for LLM Agents"
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29637v1",
+      "name": "CodeShrink: Adaptive Visual Compression for Efficient Multimodal Code Understanding"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29657v1",
+      "name": "Development of FDD-ON: an Ontology for VAV HVAC System Fault Detection and Diagnostics"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29626v1",
+      "name": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29617v1",
+      "name": "When Does On-Policy Interaction Help? Representational Tradeoffs in Value-Based Imitation Learning"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29614v1",
+      "name": "A Human-Centered Validation of the Explainability-Performance Coefficient"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29602v1",
+      "name": "FriendBench: Benchmarking Dyadic Familiarity Inference in Humans and Multimodal Large Language Models"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29577v1",
+      "name": "DungeonBench: A Benchmark for Rules-Rich Tactical Reasoning in Dungeons &amp; Dragons Combat"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29561v1",
+      "name": "MOT-SR: Multi-Objective Tool-Augmented Scientific Equation Discovery with Large Language Models"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29553v1",
+      "name": "COntExt: Towards Context-Aware Ontology Extension from Operational Metrics"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29549v1",
+      "name": "AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29539v1",
+      "name": "ARB: A Matched Authorship-Rewriting Benchmark Dataset for AI-Text Detector Evaluation"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29642v1",
+      "name": "Evolving language compositionality in a frequency-structured meaning space"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29613v1",
+      "name": "WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29591v1",
+      "name": "ResKV: Reconstructing Omitted Attention Contributions for Fixed-Budget KV Cache Compression"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29585v1",
+      "name": "Sycophancy Undermines Epistemic Vigilance in Cooperative Vision-Language Tasks"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29484v1",
+      "name": "Evidence-Type Competition: When Can Interventional Data Teach Language Models Causal Direction?"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29402v1",
+      "name": "Bridging the Question-Answer Gap in Retrieval-Augmented Generation: Hypothetical Prompt Embeddings"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29378v1",
+      "name": "PTP: Previous-Token Prediction based LLM Inversion for Near-Exact Prompt Reconstruction"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29377v1",
+      "name": "Zero-Mem: Zero-Token Memory Operations for LLM Agents"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29355v1",
+      "name": "Cross-Lingual Transfer for Machine Translation in Turkic Languages"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29287v1",
+      "name": "Translation with Thought: Difficulty-Adaptive Reasoning via Reinforcement Learning for Multi-Domain Machine Translation"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29684v1",
+      "name": "Toward Robust and 3D-Aware RGB-NIR Imaging in the Dark"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29679v1",
+      "name": "Scaling Properties of Text Conditioning in Visual Generation"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29638v1",
+      "name": "HierDoc: Hierarchical Page-to-Region Evidence Routing for Long-Document Visual Question Answering"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29633v1",
+      "name": "OASIS: Occlusion-aware Single-image Hand Avatar Reconstruction via 3D Gaussian Splatting"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29627v1",
+      "name": "FlexComposer: Unified Video Compositing from Images to Dynamic Footage with Flexible Trajectory Control"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29596v1",
+      "name": "FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampling"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29592v1",
+      "name": "TOOD: Task-Aware Out-of-Distribution Score Calibration for Continual Learners"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29581v1",
+      "name": "Explaining AI-Image Detection: What the Heatmap Actually Shows"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29675v1",
+      "name": "Differentially Private Nonparametric Modal Learning with Applications to Regression and Clustering"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29674v1",
+      "name": "Sign compression for Muon: SignMuon, MuonSign, and the Limits of Error Feedback"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29665v1",
+      "name": "Freeze, Then Select: Structured Field Adapters and Stability-Validated Weak Selection for PDE Discovery from Sparse Observations"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29659v1",
+      "name": "GQ-FSL: Green Quantized Federated Split Learning"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29606v1",
+      "name": "QASP: Query-Adaptive Robust Vector Search Policy"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29601v1",
+      "name": "The Parts Are Greater Than the Sum: Automated Task Sequencing for Efficient Training of Multi-Policy LLMs"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29555v1",
+      "name": "Pyramidal Width Can Increase Under Vertex Insertion"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29530v1",
+      "name": "A Neurosymbolic Approach for Explainable Early Diagnosis of Alzheimer's Disease"
+    },
+    {
+      "site": "genetech-tools",
+      "id": "pmid-42544432",
+      "name": "External Validation of a Machine Learning Model for the Early Prediction of Upper-Limb Recovery After Stroke."
+    },
+    {
+      "site": "genetech-tools",
+      "id": "pmid-42544420",
+      "name": "Present status of prostate cancer diagnosis, limitations, challenges, and future endeavors."
+    },
+    {
+      "site": "genetech-tools",
+      "id": "pmid-42544375",
+      "name": "Translating artificial intelligence into clinical practice for gastrointestinal endoscopy: current applications and future perspectives."
+    }
+  ],
+  "totalNewEntities": 118,
+  "siteStats": {
+    "agent-ecosystem": {
+      "added": 11,
+      "updated": 0,
+      "total": 11
+    },
+    "genetech-tools": {
+      "added": 79,
+      "updated": 0,
+      "total": 119
+    },
+    "brain-science": {
+      "added": 3,
+      "updated": 0,
+      "total": 4
+    },
+    "exo-science": {
+      "added": 12,
+      "updated": 0,
+      "total": 12
+    },
+    "robot-parts": {
+      "added": 4,
+      "updated": 0,
+      "total": 5
+    },
+    "nuclear-energy": {
+      "added": 4,
+      "updated": 0,
+      "total": 4
+    },
+    "new-energy": {
+      "added": 1,
+      "updated": 0,
+      "total": 2
+    },
+    "life-science": {
+      "added": 3,
+      "updated": 0,
+      "total": 6
+    },
+    "tcm-tools": {
+      "added": 1,
+      "updated": 0,
+      "total": 2
+    }
+  },
+  "jsonValidation": {
+    "pass": true
+  },
+  "gate": {
+    "pass": true,
+    "rule": "JSON格式校验通过",
+    "actual": "全部通过"
+  }
+}

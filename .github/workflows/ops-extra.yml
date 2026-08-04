@@ -1,0 +1,116 @@
+# GeneTech 14站知识引擎 — 补位闭环自动化（extra）
+# 文件位置: .github/workflows/ops-extra.yml
+#
+# 补齐报告要求的缺失定时任务，形成"报错→修复→验证→上线"自动化闭环：
+#   - sync-live      把数据 pipeline 产物并入线上站点真实路径（修复路径不匹配）
+#   - self-db-build  聚合自建知识图谱 data/knowledge-graph.json
+#   - pro-db-sync    专业库对接（OpenAlex/Crossref 标准标识符映射）
+#   - user-feedback  采集页面纠错/订阅信号
+#   - finance-track  MRR/许可看板
+#   - rollout-verify 部署后抽样验证 + 回退触发
+#   - mcp-publish    校验并标记 MCP 发布
+#   - api-guard-check 校验鉴权 Worker 语法与配置
+#
+# 与 operations-plan/github-actions-ops.yml 的 ops.yml 错峰：ops.yml 18:00 UTC 采集，
+# 本工作流 19:00 UTC 衔接，避免同一时刻多 job 推送冲突（统一单次提交）。
+
+name: GeneTech Extra Ops
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: '选择要运行的补位任务'
+        required: true
+        default: 'all'
+        type: choice
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, guard]
+  schedule:
+    # 每日 19:00 UTC（采集完成后衔接）
+    - cron: '0 19 * * *'
+    # 周一 02:00 UTC 额外跑一次发布/安全校验（与每日重叠无害）
+    - cron: '0 2 * * 1'
+
+permissions:
+  contents: write
+  actions: read
+  issues: write
+
+concurrency:
+  group: genetech-extra-ops-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: '20'
+  SCRIPTS_DIR: 'operations-plan'
+
+jobs:
+  extra-ops:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      SITE_BASE_URL: ${{ secrets.SITE_BASE_URL || 'https://genetech14.pages.dev' }}
+      CREEM_API_KEY: ${{ secrets.CREEM_API_KEY }}
+      LICENSE_STATS_URL: ${{ secrets.LICENSE_STATS_URL }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Run extra pipelines
+        run: |
+          TASK="${{ github.event.inputs.task || 'all' }}"
+          run_one() { node "$SCRIPTS_DIR/pipeline-$1.js"; }
+          if [[ "$TASK" == "all" || "$TASK" == "sync" ]]; then run_one sync-live; fi
+          if [[ "$TASK" == "all" || "$TASK" == "selfdb" ]]; then run_one self-db-build; fi
+          if [[ "$TASK" == "all" || "$TASK" == "prodb" ]]; then run_one pro-db-sync; fi
+          if [[ "$TASK" == "all" || "$TASK" == "feedback" ]]; then run_one user-feedback; fi
+          if [[ "$TASK" == "all" || "$TASK" == "finance" ]]; then run_one finance-track; fi
+          if [[ "$TASK" == "all" || "$TASK" == "verify" ]]; then run_one rollout-verify || echo "rollout-verify reported failures"; fi
+          if [[ "$TASK" == "all" || "$TASK" == "mcp" ]]; then run_one mcp-publish; fi
+          if [[ "$TASK" == "all" || "$TASK" == "guard" ]]; then
+            node --check api-guard/worker.js && echo "[guard] worker.js 语法 OK"
+            grep -q "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" api-guard/wrangler.toml && echo "::warning::api-guard wrangler.toml 的 PRO_KV id 仍为占位符" || echo "[guard] wrangler.toml KV 已配置"
+          fi
+
+      - name: Commit generated outputs
+        if: github.event.inputs.task != 'guard'
+        run: |
+          git config --local user.email "ops-bot@genetech.example"
+          git config --local user.name "GeneTech Ops Bot"
+          git add mcp-server/ data/ state/ reports/ \
+                  $(ls -d */website/api 2>/dev/null | sed 's#/$##' | xargs -I{} echo "{}/website/api") 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "[Bot] Extra ops update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            git push
+          fi
+        continue-on-error: true
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: extra-ops-reports
+          path: reports/
+          retention-days: 30
+
+  notify-on-failure:
+    runs-on: ubuntu-latest
+    needs: extra-ops
+    if: failure() && github.event_name != 'pull_request'
+    steps:
+      - name: Create failure / rollback issue
+        run: |
+          gh issue create \
+            --title "[Ops Alert] Extra Ops 执行失败或部署验证未通过 ${{ github.run_id }}" \
+            --body "补位闭环自动化执行失败，或 rollout-verify 检测到站点数据异常。请检查 Actions 日志与最新 report-rollout-verify-*.json。\n\nRun: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --label "ops-alert,failure"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true

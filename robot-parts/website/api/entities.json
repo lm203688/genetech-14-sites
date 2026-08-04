@@ -1,0 +1,96 @@
+[
+  {
+    "id": "pmid-42542946",
+    "name": "Are Artificial Intelligence and Robot Nurses a Threat to Student Nurses?: A Quasi-Experimental Study.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "",
+    "authors": [
+      "Ergin E",
+      "Yildiz N",
+      "İncekara İ"
+    ],
+    "tags": [],
+    "confidence": 0.75,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026 Aug",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29617v1",
+    "name": "When Does On-Policy Interaction Help? Representational Tradeoffs in Value-Based Imitation Learning",
+    "source": "arxiv",
+    "abstract": "Imitation learning (IL)---training an agent to replicate expert behavior from demonstrations---underpins applications from robotics to language model training. Standard approaches such as Behavior Cloning (BC) are known to suffer from compounding errors and performance plateaus, particularly when the learner cannot perfectly represent the expert's policy (as is typical, e.g., in distillation). Two interventions are widely understood empirically to improve performance: querying the expert interactively along the learner's own trajectories, and using value function estimation en route to generating a policy rather than directly fitting the expert's full action distribution. We investigate the nature of these improvements and their potentially surprising interplay. Our main finding is that expert interaction relaxes the representational demands on the learner: one only needs a model capable of realizing the expert's value function, bypassing the (often stricter) requirement of realizing the expert's policy itself. Concretely, we introduce OVI, an interactive on-policy IL algorithm that is statistically efficient whenever the learner can represent the expert's value function and computationally efficient given access to a linear maximization oracle. We complement this with a negative result showing that interaction is necessary. Namely, without stronger assumptions beyond expert-value realizability alone, any offline IL algorithm must scale with the complexity of the expert policy class. Our findings bear out empirically. OVI outperforms offline policy-based (BC), interactive policy-based (DAgger), and offline value-based IL methods, with the largest gains when the learner network is substantially less expressive than the expert's.",
+    "url": "https://arxiv.org/pdf/2607.29617v1",
+    "authors": [
+      "Luca Viano",
+      "Antoine Moulin",
+      "Audrey Huang",
+      "Volkan Cevher",
+      "Philip Amortila",
+      "Dylan J. Foster"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem",
+      "genetech-tools",
+      "robot-parts"
+    ],
+    "publishedDate": "2026-07-31T16:52:47Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29613v1",
+    "name": "WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning",
+    "source": "arxiv",
+    "abstract": "Reinforcement learning (RL) post-training of Vision-Language-Action (VLA) models has shown strong promise for robotic manipulation. Among RL methods, critic-based approaches rely on a value estimator that predominantly operates on single-frame observations or single-frame VLM backbone latents, which is a fundamental mismatch with the partially observable nature of robot control. A naive approach to incorporate observation history into the critic incurs exponential complexity with high-dimensional visual space, and still fails because pure scalar-return regression provides insufficient supervision for learning cross-temporal dynamics. We identify the root cause as a state approximation problem: without an explicit world modeling objective, the critic's representation cannot capture the temporal structure needed for accurate value estimation. To address this, we propose the World Critic Model (WCM), built on a lightweight LeJEPA architecture; WCM jointly predicts future latent state and estimates values, such that the critic's representation is explicitly trained to capture temporal dynamics rather than merely regress scalar returns. WCM integrates seamlessly into both on-policy and off-policy training pipelines and is compatible with state-of-the-art VLA backbones including Pi0, Pi0.5, and OpenVLA-OFT. Extensive experiments on 149 tasks across four benchmarks demonstrate that WCM consistently achieves state-of-the-art performance in both in-distribution and out-of-distribution settings, with particularly strong generalization gains. We further validate WCM on seven real-world manipulation tasks using OpenVLA-OFT and Pi0.5 with off-policy RL, confirming stable deployment across diverse settings.",
+    "url": "https://arxiv.org/pdf/2607.29613v1",
+    "authors": [
+      "Senyu Fei",
+      "Xiaopeng Yu",
+      "Siyin Wang",
+      "Xianzhong Zhao",
+      "Jingjing Gong",
+      "Xipeng Qiu"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "exo-science",
+      "genetech-tools",
+      "robot-parts"
+    ],
+    "publishedDate": "2026-07-31T16:48:45Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29622v1",
+    "name": "RayViT: Ray-Conditioned Visual Representations for Viewpoint-Robust Imitation Learning",
+    "source": "arxiv",
+    "abstract": "Visual imitation learning enables robots to acquire visuomotor skills directly from images, yet RGB observations lack explicit geometric cues, making learned policies brittle to camera perturbations. To address this, we propose \\textbf{Ray-conditioned Vision Transformer Encoder (RayViT)}, a lightweight architecture that injects camera geometry into pretrained ViT backbones. RayViT represents camera geometry as a Plücker ray map, patchifies it into ray features, and uses gated cross-attention to produce a ray-conditioned class token. These ray features are added as dense positional embeddings, while the ray class token replaces the original ViT class token to provide a geometry-aware summary representation. We combine this approach with an auxiliary cosine similarity loss to consistently improve the performance and robustness for geometry-aware tokens. Experiments on sim- and real-robot tasks demonstrate that RayViT improves robustness by approximately 13 percentage points under camera perturbations in multi-task RoboCasa benchmark and by 1.78 average completed stages in real-world multi-task success rate compared to baselines.",
+    "url": "https://arxiv.org/pdf/2607.29622v1",
+    "authors": [
+      "Qian Wang",
+      "Longrui Chen",
+      "Peiran Sun",
+      "Aleksandar Taranovic",
+      "Niklas Freymuth",
+      "Ge Li",
+      "Weiran Liao",
+      "C. F. Maximilian Nagy",
+      "Yucheng Tan",
+      "Tao Chen",
+      "Gerhard Neumann"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026-07-31T16:56:33Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  }
+]

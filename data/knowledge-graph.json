@@ -1,0 +1,1305 @@
+{
+  "builtAt": "2026-08-04T09:52:11.365Z",
+  "nodes": [
+    {
+      "id": "arxiv-2607.29677v1",
+      "name": "ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "agent-ecosystem"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29677v1"
+    },
+    {
+      "id": "arxiv-2607.29626v1",
+      "name": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "agent-ecosystem",
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29626v1"
+    },
+    {
+      "id": "arxiv-2607.29617v1",
+      "name": "When Does On-Policy Interaction Help? Representational Tradeoffs in Value-Based Imitation Learning",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "agent-ecosystem",
+        "genetech-tools",
+        "robot-parts"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29617v1"
+    },
+    {
+      "id": "arxiv-2607.29577v1",
+      "name": "DungeonBench: A Benchmark for Rules-Rich Tactical Reasoning in Dungeons &amp; Dragons Combat",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "agent-ecosystem",
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29577v1"
+    },
+    {
+      "id": "arxiv-2607.29559v1",
+      "name": "LEMUR: Learning to Align with Multi-Objective Reinforcement Learning from Preference Feedback",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "agent-ecosystem"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29559v1"
+    },
+    {
+      "id": "arxiv-2607.29549v1",
+      "name": "AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "agent-ecosystem",
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29549v1"
+    },
+    {
+      "id": "arxiv-2607.29678v1",
+      "name": "TokTier: Exact Stateful Tokenization for Agentic LLM Serving",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "agent-ecosystem"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29678v1"
+    },
+    {
+      "id": "arxiv-2607.29433v1",
+      "name": "Know It, Act on It: Investigating Memory Utilization in LLM Personalization",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "agent-ecosystem"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29433v1"
+    },
+    {
+      "id": "arxiv-2607.29397v1",
+      "name": "Studying quantization trade-offs for efficient inference deployment in machine translation",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "agent-ecosystem"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29397v1"
+    },
+    {
+      "id": "arxiv-2607.29377v1",
+      "name": "Zero-Mem: Zero-Token Memory Operations for LLM Agents",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "agent-ecosystem",
+        "exo-science",
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29377v1"
+    },
+    {
+      "id": "arxiv-2607.29637v1",
+      "name": "CodeShrink: Adaptive Visual Compression for Efficient Multimodal Code Understanding",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "agent-ecosystem",
+        "exo-science"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29637v1"
+    },
+    {
+      "id": "pmid-42543748",
+      "name": "Global and Voxel-Wise Brain Age Prediction Analyses Following Perinatal Stroke.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "brain-science"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "arxiv-2607.29624v1",
+      "name": "The Theoretical Foundation of Socratic Tests: Dynamic, Multimodal, Conversational Examinations",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "brain-science",
+        "exo-science"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29624v1"
+    },
+    {
+      "id": "arxiv-2607.29287v1",
+      "name": "Translation with Thought: Difficulty-Adaptive Reasoning via Reinforcement Learning for Multi-Domain Machine Translation",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "brain-science",
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29287v1"
+    },
+    {
+      "id": "arxiv-2607.29621v1",
+      "name": "CENDRe: Concept Extraction with Natural Domain Representations",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "exo-science"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29621v1"
+    },
+    {
+      "id": "arxiv-2607.29586v1",
+      "name": "TraceViT: Grounded Trace Supervision for Visual Abstract Reasoning",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "exo-science"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29586v1"
+    },
+    {
+      "id": "arxiv-2607.29561v1",
+      "name": "MOT-SR: Multi-Objective Tool-Augmented Scientific Equation Discovery with Large Language Models",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "exo-science",
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29561v1"
+    },
+    {
+      "id": "arxiv-2607.29642v1",
+      "name": "Evolving language compositionality in a frequency-structured meaning space",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "exo-science",
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29642v1"
+    },
+    {
+      "id": "arxiv-2607.29613v1",
+      "name": "WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "exo-science",
+        "genetech-tools",
+        "robot-parts"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29613v1"
+    },
+    {
+      "id": "arxiv-2607.29684v1",
+      "name": "Toward Robust and 3D-Aware RGB-NIR Imaging in the Dark",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "exo-science",
+        "genetech-tools",
+        "nuclear-energy"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29684v1"
+    },
+    {
+      "id": "arxiv-2607.29627v1",
+      "name": "FlexComposer: Unified Video Compositing from Images to Dynamic Footage with Flexible Trajectory Control",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "exo-science",
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29627v1"
+    },
+    {
+      "id": "arxiv-2607.29595v1",
+      "name": "CoDe-SSM: Context-Detail Decoupled State Space Model for Efficient UHD Image Restoration",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "exo-science"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29595v1"
+    },
+    {
+      "id": "arxiv-2607.29601v1",
+      "name": "The Parts Are Greater Than the Sum: Automated Task Sequencing for Efficient Training of Multi-Policy LLMs",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "exo-science",
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29601v1"
+    },
+    {
+      "id": "pmid-42544432",
+      "name": "External Validation of a Machine Learning Model for the Early Prediction of Upper-Limb Recovery After Stroke.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544420",
+      "name": "Present status of prostate cancer diagnosis, limitations, challenges, and future endeavors.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544375",
+      "name": "Translating artificial intelligence into clinical practice for gastrointestinal endoscopy: current applications and future perspectives.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544308",
+      "name": "CPT1A, CYGB, and MRPL3 in pre-eclampsia: biomarkers identified from oxidative stress-related gene analysis.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544294",
+      "name": "Refining Accelerometer-Based Animal Behaviour Classifications With Sequence-Informed Post-Processing.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544282",
+      "name": "Nigerian Nurses' and Nurse Educators' Readiness for Technology and Artificial Intelligence in Training and Practice: A Cross-Sectional Survey in Oyo State, Nigeria.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543040",
+      "name": "Development of a deep learning-based model for personal identification using postmortem CT and antemortem chest x-rays.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543251",
+      "name": "Identification of Activity, Insulin, and Dietary Thresholds Associated With Exercise-Related Hypoglycaemia and Hyperglycaemia in Children With Type 1 Diabetes: A Free-Living Study Using Explainable Machine Learning.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544216",
+      "name": "Early Prediction of Oral Precancerous Lesions Using Artificial Intelligence.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544207",
+      "name": "A machine learning-based risk prediction model for Hospitalized patients with deep vein thrombosis.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544194",
+      "name": "A Dual-Output Physiology-Informed Neural Network Architecture for Continuous Cuffless Blood Pressure Waveform Estimation: A Proof‑of‑Concept.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544129",
+      "name": "Automated modeling of polarons: defects and reactivity on TiO(2)(110) surfaces.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544099",
+      "name": "The role of artificial intelligence in the diagnosis of pericardial constriction.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544059",
+      "name": "18F-fluorodeoxyglucose PET/computed tomography-derived radiomics and 2.5D deep learning for noninvasive prediction of lymph node metastasis in pancreatic ductal adenocarcinoma.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543928",
+      "name": "AI-powered ECG Interpretation System for Arrhythmia Prediction and Hyperkalemia Detection Using Machine Learning.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543873",
+      "name": "Innovations, Applications, and Future Trends in Veterinary Diagnostic Technologies.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543866",
+      "name": "Precision Endodontics-Advancing Towards Omics-Guided Personalisation: A Narrative Review.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543845",
+      "name": "A Prompt-Based Tutorial for Large Language Model-Assisted Screening in Systematic Reviews and Meta-Analyses.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543758",
+      "name": "Missed Incidental Lung Cancer on Neck CT: Determinants and Impact on Diagnostic Delay and Stage Shift.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543741",
+      "name": "Machine-Learning-Assisted Discovery and Accelerated Synthesis of Metal Phosphosulfides.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543709",
+      "name": "Generalist Versus Specialist: What Is the Best AI Model for Health Care?",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543673",
+      "name": "Comparison of current global guidelines and consensus on the management of patients with cholangiocarcinoma: A 2026 update.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543581",
+      "name": "Construction and Validation of a Risk Prediction Model for Acute Pulmonary Hemorrhage in Very Low Birthweight Infants.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543514",
+      "name": "Quantifying Patellofemoral Instability in a Sea of Metrics.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543496",
+      "name": "Temporal Drivers of Opioid-Related ED Visits: An Ensemble Machine Learning Study With Consensus-Based Feature Attribution.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543469",
+      "name": "Personalized Prediction of Acute and Chronic Postsurgical Pain - the role of Multidomain Biosignatures, Machine Learning-Based Integration, and Standardized Outcome Definitions.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543454",
+      "name": "Prediction and critical feature analysis for coronary artery calcification progression.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543452",
+      "name": "Perceptions of Artificial Intelligence in Gynecologic Oncology Education: Insights from a Qualitative Study Using Semi-Structured Interviews.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543381",
+      "name": "Cancer drug response and resistance: molecular mechanisms and combating strategies.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543268",
+      "name": "[Investigating on mechanism of Yangyin Yifei Tongluo Pills in improving idiopathic pulmonary fibrosis based on bioinformatics and machine learning combined with UHPLC-Q Exactive Orbitrap-HRMS].",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543164",
+      "name": "Intron retention in health and amyotrophic lateral sclerosis.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543126",
+      "name": "MRI-based oxygen extraction fraction mapping using qBOLD, QSM, and hybrid QSM-qBOLD methods: Methodological advances, validation, and clinical applications.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543046",
+      "name": "Patterns of flavonoid digestion influenced by molecular descriptors: machine learning reveals flavonoid structure-conversion rate relationships in blood orange juice.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543033",
+      "name": "Artificial intelligence in forensic science: Evaluation of ChatGPT for post-mortem interval estimation and Henssge nomogram use.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42542933",
+      "name": "Update on imaging biomarkers in uveitis.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42542902",
+      "name": "The \"what wrote this?\" era: Artificial intelligence and the shifting paradigms of authorship, credit and originality.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42542897",
+      "name": "The Role of Artificial Neural Networks in Prostate Magnetic Resonance Imaging (MRI) Segmentation.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42542881",
+      "name": "Resveratrol Nanoformulations for Cancer Management: A Comprehensive Review of Disease-Specific Strategies and Clinical Translational Barriers.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42542868",
+      "name": "Classification of Inherited Retinal Diseases Using Artificial Intelligence Models for Fundus Autofluorescence and Ultrawide Retinal Images.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42542843",
+      "name": "Integrating AI-Driven Diagnostics in Arrhythmia Care to Enhance Patient Outcomes: A Narrative Review.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "arxiv-2607.29657v1",
+      "name": "Development of FDD-ON: an Ontology for VAV HVAC System Fault Detection and Diagnostics",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29657v1"
+    },
+    {
+      "id": "arxiv-2607.29614v1",
+      "name": "A Human-Centered Validation of the Explainability-Performance Coefficient",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29614v1"
+    },
+    {
+      "id": "arxiv-2607.29602v1",
+      "name": "FriendBench: Benchmarking Dyadic Familiarity Inference in Humans and Multimodal Large Language Models",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29602v1"
+    },
+    {
+      "id": "arxiv-2607.29553v1",
+      "name": "COntExt: Towards Context-Aware Ontology Extension from Operational Metrics",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29553v1"
+    },
+    {
+      "id": "arxiv-2607.29539v1",
+      "name": "ARB: A Matched Authorship-Rewriting Benchmark Dataset for AI-Text Detector Evaluation",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29539v1"
+    },
+    {
+      "id": "arxiv-2607.29591v1",
+      "name": "ResKV: Reconstructing Omitted Attention Contributions for Fixed-Budget KV Cache Compression",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29591v1"
+    },
+    {
+      "id": "arxiv-2607.29585v1",
+      "name": "Sycophancy Undermines Epistemic Vigilance in Cooperative Vision-Language Tasks",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29585v1"
+    },
+    {
+      "id": "arxiv-2607.29484v1",
+      "name": "Evidence-Type Competition: When Can Interventional Data Teach Language Models Causal Direction?",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29484v1"
+    },
+    {
+      "id": "arxiv-2607.29402v1",
+      "name": "Bridging the Question-Answer Gap in Retrieval-Augmented Generation: Hypothetical Prompt Embeddings",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29402v1"
+    },
+    {
+      "id": "arxiv-2607.29378v1",
+      "name": "PTP: Previous-Token Prediction based LLM Inversion for Near-Exact Prompt Reconstruction",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29378v1"
+    },
+    {
+      "id": "arxiv-2607.29355v1",
+      "name": "Cross-Lingual Transfer for Machine Translation in Turkic Languages",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29355v1"
+    },
+    {
+      "id": "arxiv-2607.29679v1",
+      "name": "Scaling Properties of Text Conditioning in Visual Generation",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools",
+        "nuclear-energy"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29679v1"
+    },
+    {
+      "id": "arxiv-2607.29638v1",
+      "name": "HierDoc: Hierarchical Page-to-Region Evidence Routing for Long-Document Visual Question Answering",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29638v1"
+    },
+    {
+      "id": "arxiv-2607.29633v1",
+      "name": "OASIS: Occlusion-aware Single-image Hand Avatar Reconstruction via 3D Gaussian Splatting",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29633v1"
+    },
+    {
+      "id": "arxiv-2607.29596v1",
+      "name": "FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampling",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29596v1"
+    },
+    {
+      "id": "arxiv-2607.29592v1",
+      "name": "TOOD: Task-Aware Out-of-Distribution Score Calibration for Continual Learners",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29592v1"
+    },
+    {
+      "id": "arxiv-2607.29581v1",
+      "name": "Explaining AI-Image Detection: What the Heatmap Actually Shows",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29581v1"
+    },
+    {
+      "id": "arxiv-2607.29675v1",
+      "name": "Differentially Private Nonparametric Modal Learning with Applications to Regression and Clustering",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29675v1"
+    },
+    {
+      "id": "arxiv-2607.29674v1",
+      "name": "Sign compression for Muon: SignMuon, MuonSign, and the Limits of Error Feedback",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29674v1"
+    },
+    {
+      "id": "arxiv-2607.29665v1",
+      "name": "Freeze, Then Select: Structured Field Adapters and Stability-Validated Weak Selection for PDE Discovery from Sparse Observations",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools",
+        "nuclear-energy"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29665v1"
+    },
+    {
+      "id": "arxiv-2607.29659v1",
+      "name": "GQ-FSL: Green Quantized Federated Split Learning",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29659v1"
+    },
+    {
+      "id": "arxiv-2607.29606v1",
+      "name": "QASP: Query-Adaptive Robust Vector Search Policy",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29606v1"
+    },
+    {
+      "id": "arxiv-2607.29555v1",
+      "name": "Pyramidal Width Can Increase Under Vertex Insertion",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29555v1"
+    },
+    {
+      "id": "arxiv-2607.29530v1",
+      "name": "A Neurosymbolic Approach for Explainable Early Diagnosis of Alzheimer's Disease",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29530v1"
+    },
+    {
+      "id": "pmid-42544269",
+      "name": "Development and Internal Validation of Machine Learning-Based Risk Prediction Models for Depression in Older Adults Undergoing Maintenance Hemodialysis.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544263",
+      "name": "Identification of N4-Acetylcytidine-Related Biomarkers in Adult Asthma: An Integrative Multi-Omics Study.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543743",
+      "name": "Development and Clinical Utility of Machine Learning Models for Prediction of Same-Day Discharge in Outpatient Hip and Knee Replacement: A Prognostic Study.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "genetech-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544084",
+      "name": "Mass Spectrometry-Based Extracellular Vesicle Proteomics for Biomarker Discovery.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "life-science"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543250",
+      "name": "Infrared spectroscopy-based chemometric modeling for monitoring mesenchymal stem cell functional decline across donors.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "life-science"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42543102",
+      "name": "Machine learning models for predicting crude protein and fat content in black soldier fly larvae: Comparative study based on substrate and environmental factors.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "life-science"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "pmid-42544554",
+      "name": "Operando XANES-FTIRS study of dehydrogenation of ethanol to acetaldehyde over V(2)O(5)/TiO(2) and V(2)O(5)/CeO(2) catalysts.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "new-energy"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "arxiv-2607.29593v1",
+      "name": "Convergence and Regret of the Policy Gradient for Multi-Armed Bandits in Diffusion Environment",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "nuclear-energy"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29593v1"
+    },
+    {
+      "id": "pmid-42542946",
+      "name": "Are Artificial Intelligence and Robot Nurses a Threat to Student Nurses?: A Quasi-Experimental Study.",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "robot-parts"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    },
+    {
+      "id": "arxiv-2607.29622v1",
+      "name": "RayViT: Ray-Conditioned Visual Representations for Viewpoint-Robust Imitation Learning",
+      "sources": [
+        "arxiv"
+      ],
+      "sites": [
+        "robot-parts"
+      ],
+      "tags": [],
+      "confidence": 0.9,
+      "url": "https://arxiv.org/pdf/2607.29622v1"
+    },
+    {
+      "id": "pmid-42543319",
+      "name": "[Virtual efficacy evaluation: methodological framework linking randomized controlled trials and real-world evidence in clinical research of TCM].",
+      "sources": [
+        "pubmed"
+      ],
+      "sites": [
+        "tcm-tools"
+      ],
+      "tags": [],
+      "confidence": 0.75,
+      "url": ""
+    }
+  ],
+  "edges": [],
+  "stats": {
+    "nodes": 98,
+    "edges": 0,
+    "sites": 9
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "date": "2026-08-03",
+  "stage": "verify",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 5,
+  "siteAccessResults": [
+    {
+      "site": "agent-ecosystem",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "alien-minerals",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "biocomputing",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "bionic-ai",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "brain-science",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "deep-sea-tech",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "exo-science",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "genetech-tools",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "life-science",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "new-energy",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "nuclear-energy",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "quantum-computing",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "robot-parts",
+      "homepageAccessible": true,
+      "statusCode": 200
+    },
+    {
+      "site": "tcm-tools",
+      "homepageAccessible": true,
+      "statusCode": 200
+    }
+  ],
+  "randomEntityChecks": [
+    {
+      "site": "genetech-tools",
+      "id": "pmid-42543268",
+      "name": "[Investigating on mechanism of Yangyin Yifei Tongluo Pills in improving idiopathic pulmonary fibrosis based on bioinformatics and machine learning combined with UHPLC-Q Exactive Orbitrap-HRMS].",
+      "verified": true
+    },
+    {
+      "site": "genetech-tools",
+      "id": "arxiv-2607.29614v1",
+      "name": "A Human-Centered Validation of the Explainability-Performance Coefficient",
+      "verified": true
+    },
+    {
+      "site": "agent-ecosystem",
+      "id": "arxiv-2607.29617v1",
+      "name": "When Does On-Policy Interaction Help? Representational Tradeoffs in Value-Based Imitation Learning",
+      "verified": true
+    }
+  ],
+  "entitiesVerified": 3,
+  "expectedEntities": 118,
+  "actualEntities": 118,
+  "entityRatio": "100.0%",
+  "indexNowAccepted": false,
+  "metrics": {
+    "newEntities": 118,
+    "updatedEntities": 0,
+    "duration": "211.6s",
+    "anomalies": []
+  },
+  "gate": {
+    "pass": true,
+    "rule": "线上实体数≥预期数×95%",
+    "actual": "100.0%"
+  }
+}

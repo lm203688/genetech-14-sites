@@ -1,0 +1,165 @@
+{
+  "date": "2026-08-03",
+  "stage": "test",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 7,
+  "testResults": [
+    {
+      "test": "structured_data",
+      "file": "agent-ecosystem\\structured-data.json",
+      "pass": "https://genetech14.pages.dev/agent-ecosystem/"
+    },
+    {
+      "test": "structured_data",
+      "file": "genetech-tools\\structured-data.json",
+      "pass": "https://genetech14.pages.dev/genetech-tools/"
+    },
+    {
+      "test": "structured_data",
+      "file": "brain-science\\structured-data.json",
+      "pass": "https://genetech14.pages.dev/brain-science/"
+    },
+    {
+      "test": "structured_data",
+      "file": "exo-science\\structured-data.json",
+      "pass": "https://genetech14.pages.dev/exo-science/"
+    },
+    {
+      "test": "structured_data",
+      "file": "robot-parts\\structured-data.json",
+      "pass": "https://genetech14.pages.dev/robot-parts/"
+    },
+    {
+      "test": "structured_data",
+      "file": "nuclear-energy\\structured-data.json",
+      "pass": "https://genetech14.pages.dev/nuclear-energy/"
+    },
+    {
+      "test": "structured_data",
+      "file": "new-energy\\structured-data.json",
+      "pass": "https://genetech14.pages.dev/new-energy/"
+    },
+    {
+      "test": "structured_data",
+      "file": "life-science\\structured-data.json",
+      "pass": "https://genetech14.pages.dev/life-science/"
+    },
+    {
+      "test": "structured_data",
+      "file": "tcm-tools\\structured-data.json",
+      "pass": "https://genetech14.pages.dev/tcm-tools/"
+    },
+    {
+      "test": "seo_tag",
+      "decisionId": "promo-20260803-1",
+      "pass": true
+    },
+    {
+      "test": "seo_tag",
+      "decisionId": "promo-20260803-2",
+      "pass": true
+    },
+    {
+      "test": "seo_tag",
+      "decisionId": "promo-20260803-3",
+      "pass": true
+    },
+    {
+      "test": "seo_tag",
+      "decisionId": "promo-20260803-4",
+      "pass": true
+    },
+    {
+      "test": "seo_tag",
+      "decisionId": "promo-20260803-5",
+      "pass": true
+    },
+    {
+      "test": "sitemap",
+      "pass": true,
+      "urlCount": 15
+    },
+    {
+      "test": "social_content",
+      "platform": "twitter",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "linkedin",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "wechat",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "twitter",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "linkedin",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "wechat",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "twitter",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "linkedin",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "wechat",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "twitter",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "linkedin",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "wechat",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "twitter",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "linkedin",
+      "pass": true
+    },
+    {
+      "test": "social_content",
+      "platform": "wechat",
+      "pass": true
+    }
+  ],
+  "totalTests": 30,
+  "passedTests": 30,
+  "gate": {
+    "pass": true,
+    "rule": "结构化数据校验100%通过",
+    "actual": "30/30通过"
+  }
+}

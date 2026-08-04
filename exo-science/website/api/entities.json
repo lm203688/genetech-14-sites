@@ -1,0 +1,276 @@
+[
+  {
+    "id": "arxiv-2607.29624v1",
+    "name": "The Theoretical Foundation of Socratic Tests: Dynamic, Multimodal, Conversational Examinations",
+    "source": "arxiv",
+    "abstract": "Traditional static assessments rely on a subtractive, deficit-based grading model that often penalizes ambition and obscures diagnostic feedback. Conversely, traditional face-to-face oral examinations introduce severe construct-irrelevant variance by exacerbating performative anxiety and the sociological power imbalances inherent to academic hierarchies. This paper presents the theoretical foundation for the \"Socratic Test,\" an automated, computer-mediated conversational assessment. By integrating Dynamic Assessment principles, multimodal workspaces, Bloom's Taxonomy for real-time proctoring, and the SOLO Taxonomy for structural evaluation, the Socratic Test actively maps a student's cognitive boundaries. This paper formalizes the use of graduated scaffolding to quantify the Zone of Proximal Development (ZPD) and details a non-compensatory, additive grading architecture that prioritizes mastery over penalty and human-AI alignment to ensure unprecedented measurement reliability.",
+    "url": "https://arxiv.org/pdf/2607.29624v1",
+    "authors": [
+      "Ilya Mikhelson"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "brain-science",
+      "exo-science"
+    ],
+    "publishedDate": "2026-07-31T16:57:49Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29621v1",
+    "name": "CENDRe: Concept Extraction with Natural Domain Representations",
+    "source": "arxiv",
+    "abstract": "Convolutional neural networks (CNNs) are widely used for time-series classification, but their deployment in critical domains requires understanding the temporal and spectral patterns that drive their predictions. Concept extraction (CE) methods identify such patterns by analyzing representations within the models' latent space. However, existing time-series CE methods have three limitations: they operate only in the time domain and overlook frequency features, predefine the number of concepts, and produce localizations misaligned with the regions the model uses. We address these limitations by proposing CENDRe, a concept extraction method for CNNs. It first discovers concepts by clustering per-timestep latent representations in two stages, where silhouette-guided aggregation selects the number of concepts automatically. Then, it localizes each concept through gradients of a presence score that contrasts the latent representations with their prototypes, producing masks that concentrate on the regions driving the concept. These gradients, propagated through a differentiable invertible mapping of the input such as a Fourier transform, yield localizations for the same concepts in the frequency domain. Finally, each concept receives a relevance score that quantifies its contribution to each class. On synthetic benchmarks, CENDRe achieves representation correctness comparable to state-of-the-art CE methods and significantly higher importance correctness. On real bearing-fault data, CENDRe extracts the frequency bands driving the model's predictions, located in regions commonly inspected for fault diagnosis, producing evidence to assess the model that time-domain CE methods cannot.",
+    "url": "https://arxiv.org/pdf/2607.29621v1",
+    "authors": [
+      "Antonia Holzapfel",
+      "Andres Felipe Posada Moreno",
+      "Sebastian Trimpe"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026-07-31T16:56:27Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29586v1",
+    "name": "TraceViT: Grounded Trace Supervision for Visual Abstract Reasoning",
+    "source": "arxiv",
+    "abstract": "The Abstraction and Reasoning Corpus (ARC) tests whether a model can infer an unseen transformation from a few input-output examples and apply it to a new grid. Looped visual reasoners refine predictions over multiple iterations, but conventional training constrains only the final output, leaving intermediate refinements unconstrained. We propose that these refinements should instead follow the transformation step by step. We introduce TraceViT, a looped visual reasoner trained with semantically monotonic transformation chains. We obtain these chains by rewriting and verifying programmatic task implementations, decomposing each solution into intermediate grid states. Each iteration is grounded by a task reference derived from the few-shot demonstrations and an object workspace representing the current grid state. Because these chains may differ in length from the loop, soft trace alignment enforces only their ordering, letting the model allocate iterations freely. TraceViT achieves 67.8% pass@2 on ARC-AGI-1 and 24.3% on ARC-AGI-2. Controlled ablations on ARC-AGI-1 show that trace supervision becomes beneficial only when paired with grounding. Code and data will be available at https://github.com/LiuBinnan/TraceViT.",
+    "url": "https://arxiv.org/pdf/2607.29586v1",
+    "authors": [
+      "Binnan Liu",
+      "Yechi Ma",
+      "Tian Xie",
+      "Wei Hua"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026-07-31T16:09:44Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29561v1",
+    "name": "MOT-SR: Multi-Objective Tool-Augmented Scientific Equation Discovery with Large Language Models",
+    "source": "arxiv",
+    "abstract": "Symbolic Regression (SR) aims to discover analytical equations from observational data and plays a central role in scientific modeling. While recent Large Language Model (LLM) based approaches show promise, they face two limitations. First, they lack data analysis mechanisms for uncovering variable dependencies, which reduces the efficiency of equation discovery. Second, most methods rely on single-objective evaluation focused solely on fitting error. This neglect of structural complexity and generalization often causes models to converge prematurely to local optima, limiting their ability to explore the broader equation space. We propose Multi-Objective Tool-augmented Symbolic Regression (MOT-SR), a unified framework that integrates external analytical tools to extract structural priors and guide equation generation, while jointly optimizing for accuracy, complexity, and generalization via a multi-objective evaluation module that maintains a dynamic Pareto front. MOT-SR employs two collaborative LLM modules: a Meta Strategy Generator, which selects tools and synthesizes structural optimization strategies based on Pareto-optimal equations, and an Equation Generator, which produces new candidate equations accordingly. The system operates in a closed-loop manner, continuously refining both strategies and equation structures. Across 40 standard tasks, MOT-SR outperforms existing SR methods in accuracy, generalization, and efficiency. We further validate MOT-SR on extreme mass-ratio inspiral (EMRI) orbital modeling, an important problem in space-based gravitational-wave astronomy where small local errors can accumulate substantially over long-term evolution. The discovered interpretable correction achieves the lowest trajectory-level integration error on held-out configurations. These results demonstrate the potential of MOT-SR to enable reliable modeling of long-horizon scientific dynamics.",
+    "url": "https://arxiv.org/pdf/2607.29561v1",
+    "authors": [
+      "Boxiao Wang",
+      "Runxiang Wang",
+      "Kai Li",
+      "Chongming Li",
+      "Zhiwei Chen",
+      "Yifan Zhang",
+      "Jian Cheng"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "exo-science",
+      "genetech-tools"
+    ],
+    "publishedDate": "2026-07-31T15:52:07Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29642v1",
+    "name": "Evolving language compositionality in a frequency-structured meaning space",
+    "source": "arxiv",
+    "abstract": "The iterated learning model was introduced to investigate language evolution: the way in which the characteristic properties of human languages have been shaped, at least partly, by repeated transmission from one language user to another. The key finding is that language compositionality can arise spontaneously as a consequence of language being passed repeatedly through a language learning bottleneck. Here we explore how changing the frequency of different meanings, so that some meanings occur much more frequently than others, affects the character of its compositionality. We find that, as observed in natural languages, high-frequency meanings can escape the pressure to conform to the grammar that characterizes lower-frequency meanings. However, when the frequency structure is instead imposed on parts rather than on whole meaning vectors, the language fails to transmit across generations. This occurs despite the fact that the most frequent elements are reliably learned. These results suggest that frequency can shape emergent linguistic structure only when the frequency distribution is defined over form-meaning units that learners can acquire holistically. When frequency is instead distributed over smaller units, it fails to support the relational structure required for compositional generalisation, thereby preventing stable language transmission.",
+    "url": "https://arxiv.org/pdf/2607.29642v1",
+    "authors": [
+      "Fabio De Ponte",
+      "Eloise Gaines-White",
+      "Conor Houghton",
+      "Seth Bullock"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "exo-science",
+      "genetech-tools"
+    ],
+    "publishedDate": "2026-07-31T17:18:57Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29613v1",
+    "name": "WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning",
+    "source": "arxiv",
+    "abstract": "Reinforcement learning (RL) post-training of Vision-Language-Action (VLA) models has shown strong promise for robotic manipulation. Among RL methods, critic-based approaches rely on a value estimator that predominantly operates on single-frame observations or single-frame VLM backbone latents, which is a fundamental mismatch with the partially observable nature of robot control. A naive approach to incorporate observation history into the critic incurs exponential complexity with high-dimensional visual space, and still fails because pure scalar-return regression provides insufficient supervision for learning cross-temporal dynamics. We identify the root cause as a state approximation problem: without an explicit world modeling objective, the critic's representation cannot capture the temporal structure needed for accurate value estimation. To address this, we propose the World Critic Model (WCM), built on a lightweight LeJEPA architecture; WCM jointly predicts future latent state and estimates values, such that the critic's representation is explicitly trained to capture temporal dynamics rather than merely regress scalar returns. WCM integrates seamlessly into both on-policy and off-policy training pipelines and is compatible with state-of-the-art VLA backbones including Pi0, Pi0.5, and OpenVLA-OFT. Extensive experiments on 149 tasks across four benchmarks demonstrate that WCM consistently achieves state-of-the-art performance in both in-distribution and out-of-distribution settings, with particularly strong generalization gains. We further validate WCM on seven real-world manipulation tasks using OpenVLA-OFT and Pi0.5 with off-policy RL, confirming stable deployment across diverse settings.",
+    "url": "https://arxiv.org/pdf/2607.29613v1",
+    "authors": [
+      "Senyu Fei",
+      "Xiaopeng Yu",
+      "Siyin Wang",
+      "Xianzhong Zhao",
+      "Jingjing Gong",
+      "Xipeng Qiu"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "exo-science",
+      "genetech-tools",
+      "robot-parts"
+    ],
+    "publishedDate": "2026-07-31T16:48:45Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29377v1",
+    "name": "Zero-Mem: Zero-Token Memory Operations for LLM Agents",
+    "source": "arxiv",
+    "abstract": "LLM agents need memory to act consistently over long interactions, yet many systems use additional LLM calls to operate that memory. Generating intermediate records and mediating their retrieval adds recurring token and time costs, while omitted or merged details can obscure the original evidence. We ask whether structured memory access requires generation at all. Zero-Mem introduces \\emph{zero-token memory operations}: no step outside final question answering invokes an LLM or consumes LLM input or output tokens; encoder computation is accounted for separately. Zero-Mem preserves original interaction traces as its source of record. It organizes the traces in two complementary ways. An entity--context graph exposes connections across interactions, while a temporal hierarchy preserves conversational locality and session state. For each query, Zero-Mem weighs the two views, retrieves from both, and follows their structure to recover supporting relations or surrounding context. Deterministic calibration first discards conflicting evidence and then keeps the reader's answer grounded in the retrieved traces. Only the final-QA reader invokes an LLM. Across long-memory and long-context question-answering benchmarks, Zero-Mem achieves competitive performance while eliminating LLM calls and LLM-token consumption from memory operations. With the same final-QA reader and context budget, it reduces memory-operation time cost by 57.6\\% relative to the fastest compared baseline. Ablations support the contribution of the two views and their query-dependent coordination. Overall, the results show that structured agent memory need not generate an intermediate representation of the past. After peer review, the code and implementation details will be available at \\textcolor{blue}{https://github.com/TheMoon0815/Zero-mem}.",
+    "url": "https://arxiv.org/pdf/2607.29377v1",
+    "authors": [
+      "Yilin Xiao",
+      "Zhehan Zhu",
+      "Yujing Zhang",
+      "Jin Chen",
+      "Zijin Hong",
+      "Luyao Zhuang",
+      "Qinggang Zhang",
+      "Shengyuan Chen",
+      "Xiaocao Ouyang",
+      "Lingfei Ren",
+      "Xiao Huang"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem",
+      "exo-science",
+      "genetech-tools"
+    ],
+    "publishedDate": "2026-07-31T13:01:06Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29684v1",
+    "name": "Toward Robust and 3D-Aware RGB-NIR Imaging in the Dark",
+    "source": "arxiv",
+    "abstract": "Robust low-light imaging remains challenging for the community. Recent studies have explored fusing Near-Infrared (NIR) with noisy RGB to achieve improved enhancement, yet most methods depend on carefully curated training data pairs, with limited robustness under different scenarios. This paper offers a new perspective for RGB-NIR low-light imaging by incorporating 3D-aware neural modeling. Without using clean RGB supervision, a powerful model can be optimized to implicitly fuse extremely noisy RGB observations with NIR cues in 3D space, effectively recovering clean RGB images. The proposed model obviates the requirement for clean RGB data collection, generalizes across different noise levels. Extensive evaluations on synthetic and real data demonstrate its superiority. Codes available: https://github.com/MyNiuuu/3DarkFusion",
+    "url": "https://arxiv.org/pdf/2607.29684v1",
+    "authors": [
+      "Muyao Niu",
+      "Mingze Ma",
+      "Yifan Zhan",
+      "Qingtian Zhu",
+      "Zhihang Zhong",
+      "Wei Guo",
+      "Chang Wen Chen",
+      "Yinqiang Zheng"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "exo-science",
+      "genetech-tools",
+      "nuclear-energy"
+    ],
+    "publishedDate": "2026-07-31T17:59:18Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29637v1",
+    "name": "CodeShrink: Adaptive Visual Compression for Efficient Multimodal Code Understanding",
+    "source": "arxiv",
+    "abstract": "Rendering source code as images offers a promising way to reduce the input costs of Multimodal Large Language Models (MLLMs). Adjusting image resolution can trade visual token cost against content fidelity. However, resolution scaling alone overlooks two sources of inefficiency: blank regions created by line breaks and indentation, and code regions irrelevant to the current instruction. Moreover, the best compression setting varies across inputs, tasks, and models, limiting fixed-ratio strategies. We propose CodeShrink, an adaptive visual compression framework with three components. Blank-Free Rendering replaces whitespace-dependent layouts with compact layouts and explicit structural markers, removing layout-induced tokens. Adaptive Compression Configuration uses a lightweight agent trained with reinforcement learning to predict a per-input setting that balances token efficiency and readability. Dominant Token Selection jointly analyzes the instruction and code image to prune task-irrelevant visual tokens during inference. We evaluate CodeShrink on code question answering, clone detection, and code completion. CodeShrink reduces visual token use by up to 71.2\\% while matching or exceeding uncompressed text-only inputs, and consistently outperforms text-based and visual compression baselines across all three tasks. These results show that combining layout compaction, adaptive configuration, and instruction-aware pruning can make multimodal code understanding more efficient. Our code is available at https://github.com/vinsontang1/CodeShrink.",
+    "url": "https://arxiv.org/pdf/2607.29637v1",
+    "authors": [
+      "Wenxin Tang",
+      "Jingyu Xiao",
+      "Zhenyu Liu",
+      "Zipeng Xie",
+      "Junliang Liu",
+      "Wang Luo",
+      "Yuan Jiang",
+      "Yintong Huo",
+      "Michael Lyu"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "agent-ecosystem",
+      "exo-science"
+    ],
+    "publishedDate": "2026-07-31T17:15:51Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29627v1",
+    "name": "FlexComposer: Unified Video Compositing from Images to Dynamic Footage with Flexible Trajectory Control",
+    "source": "arxiv",
+    "abstract": "Generative video compositing, which involves inserting external assets seamlessly into existing video sequences, is essential for content creation and visual effects. However, existing approaches suffer from a control-fidelity trade-off: they either hallucinate motion from static images, failing to preserve the dynamics of pre-animated assets, or lack fine-grained spatial control for precise asset placement along user-defined trajectories. We propose FlexComposer, a unified framework that standardizes video compositing as a trajectory-guided conditional generation task, enabling the seamless integration of both static images and dynamic footage. Our approach introduces three key designs: (1) a Unified Canonical Foreground Representation that decouples an object's intrinsic motion from its global displacement, standardizing heterogeneous inputs into a stabilized, centered latent space; (2) a Spatial-Aware Latent Injection strategy that exploits the translation equivariance of VAE latent spaces to transport canonical features onto target trajectories via a parameter-free mechanism; and (3) a Hybrid Dataset and Synthetic-to-Real Curriculum that synergizes procedural simulation, real-world cinematic footage, and generative data to implicitly learn physically plausible illumination and shadow harmonization. This unified design handles diverse inputs from product photos to dynamic subjects achieving high-fidelity motion control and environmental integration without the need for explicit 3D reconstruction or auxiliary learnable adapters. Extensive experiments demonstrate that FlexComposer outperforms state-of-the-art methods in visual quality, temporal consistency, and trajectory adherence.",
+    "url": "https://arxiv.org/pdf/2607.29627v1",
+    "authors": [
+      "Songchun Zhang",
+      "Sitong Guo",
+      "Xianghao Kong",
+      "Pengwei Liu",
+      "Yuwei Guo",
+      "Lvmin Zhang",
+      "Anyi Rao"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "exo-science",
+      "genetech-tools"
+    ],
+    "publishedDate": "2026-07-31T16:59:46Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29595v1",
+    "name": "CoDe-SSM: Context-Detail Decoupled State Space Model for Efficient UHD Image Restoration",
+    "source": "arxiv",
+    "abstract": "Ultra-high-definition (UHD) image restoration must balance the aggregation of spatially recurring degradation cues with the preservation of localized image structures. Compact aggregation can reduce redundant processing but may attenuate edges, textures, and other fine structures. Existing approaches manage UHD restoration cost through downsampling, window partitioning, or cluster-based token reduction; yet many of them do not explicitly retain information that is poorly represented by shared aggregation. In this study, we propose a Context-Detail Decoupled State Space Model (CoDe-SSM) for UHD restoration, which processes aggregated context and clustering residuals in separate pathways. The context modeling pathway, implemented by the Global Cluster Scan Module (GCSM), aggregates features into $K$ input-dependent cluster centers and applies selective SSM reasoning over the resulting fixed-order sequence, enabling cross-region context sharing while decoupling computational cost from spatial resolution. The detail recovery pathway, implemented by the Local High-Frequency Module (LHFM), processes the clustering residual with an input-derived high-frequency mask and a sparse mixture of convolutional experts. Extensive experiments on five UHD benchmarks and five degradation types demonstrate that our explicit context-detail decoupling strategy yields substantial gains in restoration quality while maintaining desirable efficiency.",
+    "url": "https://arxiv.org/pdf/2607.29595v1",
+    "authors": [
+      "Jiaxu Su",
+      "Zhijian Wu",
+      "Jun Li",
+      "Bo Zhang",
+      "Yefeng Zheng"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2026-07-31T16:23:06Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  },
+  {
+    "id": "arxiv-2607.29601v1",
+    "name": "The Parts Are Greater Than the Sum: Automated Task Sequencing for Efficient Training of Multi-Policy LLMs",
+    "source": "arxiv",
+    "abstract": "Parameter-Efficient Fine-Tuning (PEFT) commonly adapts large language models using a single shared Low-Rank Adapter (LoRA). This shared optimization space often suffers from interference when adapting heterogeneous task sequences, leading to poor transfer and catastrophic forgetting. Existing approaches mainly improve adapter expressiveness by increasing parameter capacity or composing multiple adapters, yet they still rely on a shared optimization path. In this paper, we propose an optimization-path organization framework for parameter-efficient fine-tuning of large language models, implemented as an automatic multi-policy PEFT architecture. Specifically, optimization-compatible adaptation paths are automatically organized through task grouping and task sequencing under a fixed parameter budget. The organized optimization paths are implemented as independent Quantized Low-Rank Adapters (QLoRA), enabling heterogeneous tasks to be optimized in decoupled adaptation spaces while preserving positive transfer among compatible tasks. Experiments on the TRACE benchmark demonstrate that performance consistently improves from conventional single-policy PEFT to multi-policy PEFT, with the proposed automatic multi-policy framework achieving the best performance of 44.78 under the same trainable capacity. This suggests that optimization-path organization is more effective than simply increasing adapter capacity for heterogeneous parameter-efficient fine-tuning.",
+    "url": "https://arxiv.org/pdf/2607.29601v1",
+    "authors": [
+      "Jiajia Tang",
+      "Sizhe Yuen",
+      "Francisco Gomez Medina",
+      "Yali Du",
+      "Adam Sobey"
+    ],
+    "tags": [],
+    "confidence": 0.9,
+    "sites": [
+      "exo-science",
+      "genetech-tools"
+    ],
+    "publishedDate": "2026-07-31T16:33:18Z",
+    "addedAt": "2026-08-03T15:11:30.479Z"
+  }
+]

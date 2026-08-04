@@ -1,0 +1,67 @@
+{
+  "date": "2026-08-03",
+  "stage": "analyze",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 13,
+  "totalRaw": 235,
+  "totalDeduped": 212,
+  "totalCleaned": 212,
+  "dedupRemoved": 23,
+  "dedupRate": "9.8%",
+  "validRate": "100.0%",
+  "siteDistribution": {
+    "agent-ecosystem": {
+      "newCount": 62
+    },
+    "alien-minerals": {
+      "newCount": 0
+    },
+    "biocomputing": {
+      "newCount": 0
+    },
+    "bionic-ai": {
+      "newCount": 0
+    },
+    "brain-science": {
+      "newCount": 3
+    },
+    "deep-sea-tech": {
+      "newCount": 0
+    },
+    "exo-science": {
+      "newCount": 14
+    },
+    "genetech-tools": {
+      "newCount": 149
+    },
+    "life-science": {
+      "newCount": 3
+    },
+    "new-energy": {
+      "newCount": 1
+    },
+    "nuclear-energy": {
+      "newCount": 4
+    },
+    "quantum-computing": {
+      "newCount": 0
+    },
+    "robot-parts": {
+      "newCount": 16
+    },
+    "tcm-tools": {
+      "newCount": 1
+    }
+  },
+  "sourceBreakdown": {
+    "arxiv": 48,
+    "pubmed": 50,
+    "github": 69,
+    "huggingface": 45
+  },
+  "gate": {
+    "pass": true,
+    "rule": "数据有效率≥80%",
+    "actual": "100.0%"
+  }
+}

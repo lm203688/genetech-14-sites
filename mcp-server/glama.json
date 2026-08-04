@@ -1,0 +1,146 @@
+{
+  "$schema": "https://glama.ai/mcp/servers/schema.json",
+  "name": "GeneTech Data Engine",
+  "displayName": "GeneTech 数据引擎 — 14 站前沿科技知识库 MCP",
+  "description": "Real-time knowledge-base MCP server for the GeneTech 14-site science engine. Lets external AI agents query, search, filter and cite curated entities across 14 vertical domains (genetics, quantum computing, brain science, AI agents, new energy, nuclear energy, TCM tools, and more). Data is continuously collected from PubMed, arXiv, OpenAlex, Crossref, GitHub and HuggingFace and refreshed by an automated ops pipeline.",
+  "shortDescription": "Query, search and cite 14 vertical science knowledge bases from any AI agent.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://genetech14.pages.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lm203688/genetech-14-sites"
+  },
+  "documentation": "https://genetech14.pages.dev",
+  "bugs": {
+    "url": "https://github.com/lm203688/genetech-14-sites/issues"
+  },
+  "author": {
+    "name": "GeneTech Team",
+    "url": "https://genetech14.pages.dev"
+  },
+  "categories": [
+    "Knowledge Base",
+    "Research",
+    "Developer Tools",
+    "Data"
+  ],
+  "tags": [
+    "knowledge-base",
+    "research",
+    "semantic-search",
+    "citation",
+    "science",
+    "ai-agent",
+    "pubmed",
+    "arxiv",
+    "openalex"
+  ],
+  "capabilities": {
+    "tools": [
+      {
+        "name": "list_sites",
+        "description": "List all GeneTech knowledge sites (domains) with entity counts and last-updated timestamps."
+      },
+      {
+        "name": "query_entities",
+        "description": "Filter knowledge entities by site, source (pubmed/arxiv/openalex/github/crossref/huggingface), tags, keyword and minimum confidence. Supports pagination."
+      },
+      {
+        "name": "get_entity",
+        "description": "Fetch a single entity by ID with optional BibTeX / APA / RIS citation export."
+      },
+      {
+        "name": "semantic_search",
+        "description": "Relevance-ranked keyword search across the knowledge base (title/tag weighted + confidence boosted). Returns the most relevant entities for a query."
+      },
+      {
+        "name": "export_citation",
+        "description": "Export any entity as an academic citation in BibTeX, APA or RIS format."
+      }
+    ]
+  },
+  "authentication": {
+    "type": "api_key",
+    "required": false,
+    "description": "Free tier works without authentication (rate-limited). For the premium API product, set GENETECH_API_KEY on the server and GENETECH_REQUIRE_AUTH=true; clients then pass the key as a Bearer token. The same unified license keys (GUX_*) issued by the unified-license Worker can be reused.",
+    "envVar": "GENETECH_API_KEY",
+    "headerName": "Authorization",
+    "headerFormat": "Bearer ${GENETECH_API_KEY}"
+  },
+  "pricing": {
+    "model": "freemium",
+    "tiers": [
+      {
+        "name": "Free",
+        "price": 0,
+        "currency": "USD",
+        "description": "Local / self-hosted MCP server reading the open knowledge base. No key required.",
+        "limits": {
+          "rateLimit": "local",
+          "features": [
+            "All 5 tools available",
+            "Self-hosted on your infrastructure",
+            "Full 14-site knowledge base"
+          ]
+        }
+      },
+      {
+        "name": "Pro (Hosted API)",
+        "price": 29,
+        "currency": "USD",
+        "period": "month",
+        "description": "Hosted remote MCP endpoint with API-key auth, higher rate limits and SLA. Reuses the unified GUX_ license.",
+        "limits": {
+          "rateLimit": "60 requests/minute",
+          "features": [
+            "Everything in Free",
+            "Hosted streamable-HTTP endpoint",
+            "API-key authentication",
+            "Priority data freshness"
+          ]
+        }
+      }
+    ]
+  },
+  "deployment": {
+    "npx": {
+      "command": "node mcp-server/src/index.mjs",
+      "transport": "stdio",
+      "env": {
+        "GENETECH_DATA_DIR": "<path to repo root containing the site directories>",
+        "GENETECH_API_BASE": "<optional: https://genetech14.pages.dev to read from the live site>",
+        "GENETECH_API_KEY": "<optional: set to enable API-key auth>",
+        "GENETECH_REQUIRE_AUTH": "<optional: true to enforce auth>"
+      }
+    },
+    "clientConfigs": {
+      "claudeDesktop": {
+        "mcpServers": {
+          "genetech-data": {
+            "command": "node",
+            "args": ["/absolute/path/to/genetech-14-sites/mcp-server/src/index.mjs"],
+            "env": {
+              "GENETECH_DATA_DIR": "/absolute/path/to/genetech-14-sites"
+            }
+          }
+        }
+      },
+      "cursor": {
+        "mcpServers": {
+          "genetech-data": {
+            "command": "node",
+            "args": ["/absolute/path/to/genetech-14-sites/mcp-server/src/index.mjs"]
+          }
+        }
+      }
+    }
+  },
+  "trust": {
+    "score": 78,
+    "standard": "OWASP MCP Top 10 (2025 v0.1)",
+    "compliance": ["MIT-licensed", "Self-hostable"]
+  },
+  "isVerified": false,
+  "isOfficial": false
+}

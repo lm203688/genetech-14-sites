@@ -1,0 +1,127 @@
+{
+  "date": "2026-08-03",
+  "stage": "test",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 47,
+  "testResults": [
+    {
+      "site": "agent-ecosystem",
+      "entityCount": 11,
+      "indexCount": 11,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "alien-minerals",
+      "entityCount": 0,
+      "indexCount": 0,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "biocomputing",
+      "entityCount": 0,
+      "indexCount": 0,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "bionic-ai",
+      "entityCount": 0,
+      "indexCount": 0,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "brain-science",
+      "entityCount": 4,
+      "indexCount": 4,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "deep-sea-tech",
+      "entityCount": 0,
+      "indexCount": 0,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "exo-science",
+      "entityCount": 12,
+      "indexCount": 12,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "genetech-tools",
+      "entityCount": 119,
+      "indexCount": 119,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "life-science",
+      "entityCount": 6,
+      "indexCount": 6,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "new-energy",
+      "entityCount": 2,
+      "indexCount": 2,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "nuclear-energy",
+      "entityCount": 4,
+      "indexCount": 4,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "quantum-computing",
+      "entityCount": 0,
+      "indexCount": 0,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "robot-parts",
+      "entityCount": 5,
+      "indexCount": 5,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    },
+    {
+      "site": "tcm-tools",
+      "entityCount": 2,
+      "indexCount": 2,
+      "consistent": true,
+      "jsonValid": true,
+      "requiredFieldsOk": true
+    }
+  ],
+  "totalSites": 14,
+  "consistentSites": 14,
+  "gate": {
+    "pass": true,
+    "rule": "计数一致性100%",
+    "actual": "全部一致"
+  }
+}

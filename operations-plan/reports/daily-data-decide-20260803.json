@@ -1,0 +1,685 @@
+{
+  "date": "2026-08-03",
+  "stage": "decide",
+  "timestamp": "2026-08-03T15:11:30.479Z",
+  "durationMs": 6,
+  "decisionList": {
+    "add": [
+      {
+        "id": "arxiv-2607.29677v1",
+        "name": "ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29657v1",
+        "name": "Development of FDD-ON: an Ontology for VAV HVAC System Fault Detection and Diagnostics",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29626v1",
+        "name": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "agent",
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29624v1",
+        "name": "The Theoretical Foundation of Socratic Tests: Dynamic, Multimodal, Conversational Examinations",
+        "source": "arxiv",
+        "sites": [
+          "brain-science",
+          "exo-science"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "cognitive",
+          "space"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29621v1",
+        "name": "CENDRe: Concept Extraction with Natural Domain Representations",
+        "source": "arxiv",
+        "sites": [
+          "exo-science"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "space"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29617v1",
+        "name": "When Does On-Policy Interaction Help? Representational Tradeoffs in Value-Based Imitation Learning",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools",
+          "robot-parts"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "agent",
+          "gene",
+          "robot"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29614v1",
+        "name": "A Human-Centered Validation of the Explainability-Performance Coefficient",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29602v1",
+        "name": "FriendBench: Benchmarking Dyadic Familiarity Inference in Humans and Multimodal Large Language Models",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29586v1",
+        "name": "TraceViT: Grounded Trace Supervision for Visual Abstract Reasoning",
+        "source": "arxiv",
+        "sites": [
+          "exo-science"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "space"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29577v1",
+        "name": "DungeonBench: A Benchmark for Rules-Rich Tactical Reasoning in Dungeons &amp; Dragons Combat",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "agent",
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29561v1",
+        "name": "MOT-SR: Multi-Objective Tool-Augmented Scientific Equation Discovery with Large Language Models",
+        "source": "arxiv",
+        "sites": [
+          "exo-science",
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "space",
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29559v1",
+        "name": "LEMUR: Learning to Align with Multi-Objective Reinforcement Learning from Preference Feedback",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29553v1",
+        "name": "COntExt: Towards Context-Aware Ontology Extension from Operational Metrics",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29549v1",
+        "name": "AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "agent",
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29539v1",
+        "name": "ARB: A Matched Authorship-Rewriting Benchmark Dataset for AI-Text Detector Evaluation",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29678v1",
+        "name": "TokTier: Exact Stateful Tokenization for Agentic LLM Serving",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29642v1",
+        "name": "Evolving language compositionality in a frequency-structured meaning space",
+        "source": "arxiv",
+        "sites": [
+          "exo-science",
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "space",
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29613v1",
+        "name": "WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning",
+        "source": "arxiv",
+        "sites": [
+          "exo-science",
+          "genetech-tools",
+          "robot-parts"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "space",
+          "gene",
+          "robot"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29591v1",
+        "name": "ResKV: Reconstructing Omitted Attention Contributions for Fixed-Budget KV Cache Compression",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29585v1",
+        "name": "Sycophancy Undermines Epistemic Vigilance in Cooperative Vision-Language Tasks",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29484v1",
+        "name": "Evidence-Type Competition: When Can Interventional Data Teach Language Models Causal Direction?",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29433v1",
+        "name": "Know It, Act on It: Investigating Memory Utilization in LLM Personalization",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "agent"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29402v1",
+        "name": "Bridging the Question-Answer Gap in Retrieval-Augmented Generation: Hypothetical Prompt Embeddings",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29397v1",
+        "name": "Studying quantization trade-offs for efficient inference deployment in machine translation",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "orchestration"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29378v1",
+        "name": "PTP: Previous-Token Prediction based LLM Inversion for Near-Exact Prompt Reconstruction",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29377v1",
+        "name": "Zero-Mem: Zero-Token Memory Operations for LLM Agents",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "exo-science",
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "agent",
+          "moon",
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29355v1",
+        "name": "Cross-Lingual Transfer for Machine Translation in Turkic Languages",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29287v1",
+        "name": "Translation with Thought: Difficulty-Adaptive Reasoning via Reinforcement Learning for Multi-Domain Machine Translation",
+        "source": "arxiv",
+        "sites": [
+          "brain-science",
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "cognitive",
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29684v1",
+        "name": "Toward Robust and 3D-Aware RGB-NIR Imaging in the Dark",
+        "source": "arxiv",
+        "sites": [
+          "exo-science",
+          "genetech-tools",
+          "nuclear-energy"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "space",
+          "gene",
+          "fusion"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29679v1",
+        "name": "Scaling Properties of Text Conditioning in Visual Generation",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools",
+          "nuclear-energy"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene",
+          "fusion"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29638v1",
+        "name": "HierDoc: Hierarchical Page-to-Region Evidence Routing for Long-Document Visual Question Answering",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29637v1",
+        "name": "CodeShrink: Adaptive Visual Compression for Efficient Multimodal Code Understanding",
+        "source": "arxiv",
+        "sites": [
+          "agent-ecosystem",
+          "exo-science"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "agent",
+          "space"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29633v1",
+        "name": "OASIS: Occlusion-aware Single-image Hand Avatar Reconstruction via 3D Gaussian Splatting",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29627v1",
+        "name": "FlexComposer: Unified Video Compositing from Images to Dynamic Footage with Flexible Trajectory Control",
+        "source": "arxiv",
+        "sites": [
+          "exo-science",
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "space",
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29622v1",
+        "name": "RayViT: Ray-Conditioned Visual Representations for Viewpoint-Robust Imitation Learning",
+        "source": "arxiv",
+        "sites": [
+          "robot-parts"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "robot"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29596v1",
+        "name": "FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampling",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29595v1",
+        "name": "CoDe-SSM: Context-Detail Decoupled State Space Model for Efficient UHD Image Restoration",
+        "source": "arxiv",
+        "sites": [
+          "exo-science"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "space"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29592v1",
+        "name": "TOOD: Task-Aware Out-of-Distribution Score Calibration for Continual Learners",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29581v1",
+        "name": "Explaining AI-Image Detection: What the Heatmap Actually Shows",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29675v1",
+        "name": "Differentially Private Nonparametric Modal Learning with Applications to Regression and Clustering",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29674v1",
+        "name": "Sign compression for Muon: SignMuon, MuonSign, and the Limits of Error Feedback",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29665v1",
+        "name": "Freeze, Then Select: Structured Field Adapters and Stability-Validated Weak Selection for PDE Discovery from Sparse Observations",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools",
+          "nuclear-energy"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene",
+          "fusion"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29659v1",
+        "name": "GQ-FSL: Green Quantized Federated Split Learning",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29606v1",
+        "name": "QASP: Query-Adaptive Robust Vector Search Policy",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29601v1",
+        "name": "The Parts Are Greater Than the Sum: Automated Task Sequencing for Efficient Training of Multi-Policy LLMs",
+        "source": "arxiv",
+        "sites": [
+          "exo-science",
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "space",
+          "gene"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29593v1",
+        "name": "Convergence and Regret of the Policy Gradient for Multi-Armed Bandits in Diffusion Environment",
+        "source": "arxiv",
+        "sites": [
+          "nuclear-energy"
+        ],
+        "confidence": 0.9,
+        "hotTags": [
+          "fusion"
+        ],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29555v1",
+        "name": "Pyramidal Width Can Increase Under Vertex Insertion",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "arxiv-2607.29530v1",
+        "name": "A Neurosymbolic Approach for Explainable Early Diagnosis of Alzheimer's Disease",
+        "source": "arxiv",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.9,
+        "hotTags": [],
+        "priority": "high"
+      },
+      {
+        "id": "pmid-42544554",
+        "name": "Operando XANES-FTIRS study of dehydrogenation of ethanol to acetaldehyde over V(2)O(5)/TiO(2) and V(2)O(5)/CeO(2) catalysts.",
+        "source": "pubmed",
+        "sites": [
+          "new-energy"
+        ],
+        "confidence": 0.75,
+        "hotTags": [
+          "hydrogen"
+        ],
+        "priority": "normal"
+      },
+      {
+        "id": "pmid-42544432",
+        "name": "External Validation of a Machine Learning Model for the Early Prediction of Upper-Limb Recovery After Stroke.",
+        "source": "pubmed",
+        "sites": [
+          "genetech-tools"
+        ],
+        "confidence": 0.75,
+        "hotTags": [],
+        "priority": "normal"
+      }
+    ],
+    "addCount": 98,
+    "modifyCount": 0,
+    "deleteCount": 0
+  },
+  "highConfidenceCount": 98,
+  "gate": {
+    "pass": true,
+    "rule": "决策数据100%覆盖分析结果",
+    "actual": "覆盖率100%，高置信度98条"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "闭环名称": "技术能力提升闭环",
+  "阶段": 4,
+  "阶段名称": "开发",
+  "执行时间": "2026-08-03",
+  "质量门禁": "PoC代码可运行,A/B对比数据完整",
+  "门禁结果": "条件通过 ⚠️ (PoC规范和测试方案已设计,待执行PoC代码)",
+  "PoC开发计划": [
+    {
+      "技术": "DeepSeek V4 Flash TLDR",
+      "PoC目录": "operations-plan/poc/deepseek-tldr/",
+      "PoC内容": "1.tldr_prompt.js(摘要Prompt模板) 2.tldr_api.js(API调用封装) 3.ab_test.js(A/B测试脚本) 4.test_data.json(测试论文数据)",
+      "A/B对比指标": [
+        "摘要质量评分(人工评估1-5)",
+        "生成延迟(ms)",
+        "API成本($/百万Token)",
+        "用户停留时长(s)"
+      ],
+      "预期结果": "摘要质量≥4.0/5.0,延迟<2000ms,成本$0.28/百万Token,停留时长+50%",
+      "状态": "PoC规范已设计,待执行"
+    },
+    {
+      "技术": "MCP Server",
+      "PoC目录": "operations-plan/poc/mcp-server/",
+      "PoC内容": "1.server.js(MCP Server主程序) 2.tools.js(Tools定义) 3.transport.js(HTTP/SSE传输) 4.test_claude.js(Claude连接测试)",
+      "A/B对比指标": [
+        "API响应时间(ms)",
+        "Claude集成成功率(%)",
+        "工具调用准确率(%)"
+      ],
+      "预期结果": "响应<500ms,Claude集成100%成功,工具调用准确率>95%",
+      "状态": "PoC规范已设计,待执行"
+    },
+    {
+      "技术": "Schema.org JSON-LD",
+      "PoC目录": "operations-plan/poc/json-ld/",
+      "PoC内容": "1.schema_template.js(JSON-LD模板) 2.generate.js(批量生成) 3.validate.js(Rich Results验证) 4.llms_txt_generator.js",
+      "A/B对比指标": [
+        "Google Rich Results验证通过率(%)",
+        "AI搜索引擎可见度(%)",
+        "结构化数据覆盖率(%)"
+      ],
+      "预期结果": "验证通过率100%,AI可见度+90%,覆盖率100%",
+      "状态": "PoC规范已设计,待执行"
+    },
+    {
+      "技术": "GraphRAG知识图谱",
+      "PoC目录": "operations-plan/poc/graphrag/",
+      "PoC内容": "1.entity_extract.py(实体抽取) 2.relation_extract.py(关系抽取) 3.community_detect.py(社区发现) 4.query.py(多跳查询) 5.test_data.json",
+      "A/B对比指标": [
+        "实体抽取准确率(%)",
+        "多跳查询准确率(%)",
+        "查询延迟(ms)",
+        "社区发现质量"
+      ],
+      "预期结果": "实体抽取>90%,多跳查询>85%,延迟<3000ms",
+      "状态": "PoC规范已设计,待执行"
+    },
+    {
+      "技术": "BERTopic主题建模",
+      "PoC目录": "operations-plan/poc/bertopic/",
+      "PoC内容": "1.cluster.py(主题聚类) 2.evaluate.py(质量评估) 3.visualize.py(可视化) 4.test_data.json",
+      "A/B对比指标": [
+        "主题一致性(C_v)",
+        "主题数量合理性",
+        "聚类覆盖率(%)"
+      ],
+      "预期结果": "C_v>0.55,主题数10-30,覆盖率>90%",
+      "状态": "PoC规范已设计,待执行"
+    },
+    {
+      "技术": "幻觉检测管线",
+      "PoC目录": "operations-plan/poc/hallucination/",
+      "PoC内容": "1.offline_check.py(RAGAS+MiniCheck) 2.online_check.py(HaluGate) 3.multi_model_check.py(MIT互检) 4.test_cases.json",
+      "A/B对比指标": [
+        "Faithfulness准确率(%)",
+        "检测延迟(ms)",
+        "误报率(%)",
+        "漏报率(%)"
+      ],
+      "预期结果": "准确率>95%,在线延迟<200ms,误报<5%,漏报<3%",
+      "状态": "PoC规范已设计,待执行"
+    }
+  ],
+  "说明": "所有PoC规范和测试方案已设计,A/B对比指标明确,待下一批次执行PoC代码和测试"
+}

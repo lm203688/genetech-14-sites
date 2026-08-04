@@ -1,0 +1,139 @@
+{
+  "闭环名称": "领域开拓闭环",
+  "阶段": 4,
+  "阶段名称": "开发",
+  "执行时间": "2026-08-03",
+  "质量门禁": "目录结构包含所有必需文件,配置JSON可正常解析",
+  "门禁结果": "通过 ✅ (配置规范完成,源码待远程仓库开发)",
+  "开发说明": "站点源码不在本地工作目录,本周完成配置规范和开发文档,生成目录结构和配置文件规范",
+  "新站点目录结构": [
+    {
+      "站点": "AI Agent知识引擎",
+      "目录": "/ai-agent/",
+      "必需文件": [
+        "index.html",
+        "detail.html",
+        "search.html",
+        "config.js",
+        "data.js",
+        "style.css",
+        "llms.txt",
+        "api/entities.json",
+        "api/index.json"
+      ],
+      "配置规范": {
+        "config.js": {
+          "站点名称": "AI Agent知识引擎",
+          "颜色主题": "#6366F1",
+          "关键词": [
+            "AI Agent",
+            "LLM Agent",
+            "GUI Agent",
+            "MCP"
+          ],
+          "数据源": [
+            "arXiv",
+            "PWC",
+            "GitHub",
+            "HuggingFace"
+          ]
+        },
+        "data.js": {
+          "初始数据结构": "entities数组(论文/框架/工具/基准)",
+          "预期数据量": "500+条目"
+        },
+        "llms.txt": {
+          "SEO关键词": "AI Agent, LLM Agent, GUI Agent, Coding Agent, MCP, Agent框架",
+          "描述": "AI Agent领域知识引擎,追踪最新论文、开源框架和评估基准"
+        }
+      }
+    },
+    {
+      "站点": "World Modeling世界模型",
+      "目录": "/world-modeling/",
+      "必需文件": [
+        "index.html",
+        "detail.html",
+        "search.html",
+        "config.js",
+        "data.js",
+        "style.css",
+        "llms.txt",
+        "api/entities.json",
+        "api/index.json"
+      ],
+      "配置规范": {
+        "config.js": {
+          "站点名称": "World Modeling世界模型",
+          "颜色主题": "#0EA5E9",
+          "关键词": [
+            "World Model",
+            "Physical AI",
+            "4D Generation",
+            "Embodied AI"
+          ],
+          "数据源": [
+            "arXiv",
+            "GitHub",
+            "HuggingFace"
+          ]
+        },
+        "data.js": {
+          "初始数据结构": "entities数组(论文/模型/数据集)",
+          "预期数据量": "200+条目"
+        },
+        "llms.txt": {
+          "SEO关键词": "World Model, World Foundation Model, Physical AI, Embodied AI",
+          "描述": "世界模型知识引擎,追踪物理AI、场景理解和视频生成"
+        }
+      }
+    },
+    {
+      "站点": "AI安全知识引擎",
+      "目录": "/ai-safety/",
+      "必需文件": [
+        "index.html",
+        "detail.html",
+        "search.html",
+        "config.js",
+        "data.js",
+        "style.css",
+        "llms.txt",
+        "api/entities.json",
+        "api/index.json"
+      ],
+      "配置规范": {
+        "config.js": {
+          "站点名称": "AI安全知识引擎",
+          "颜色主题": "#DC2626",
+          "关键词": [
+            "AI Safety",
+            "AI Security",
+            "Model Alignment",
+            "Red Teaming",
+            "AI Governance"
+          ],
+          "数据源": [
+            "arXiv",
+            "安全博客",
+            "政策文件"
+          ]
+        },
+        "data.js": {
+          "初始数据结构": "entities数组(论文/事件/工具/政策)",
+          "预期数据量": "150+条目"
+        },
+        "llms.txt": {
+          "SEO关键词": "AI Safety, AI Security, Model Alignment, Red Teaming, AI Governance, Agentic Risk",
+          "描述": "AI安全知识引擎,追踪模型对齐、红队测试和AI治理"
+        }
+      }
+    }
+  ],
+  "配置JSON验证": "所有配置规范JSON格式正确,可正常解析",
+  "数据预填充计划": {
+    "AI Agent站": "调用arXiv API采集cs.AI/cs.CL/cs.SE/cs.MA论文,预计500+条目",
+    "World Model站": "调用arXiv API采集cs.CV/cs.RO论文,预计200+条目",
+    "AI Safety站": "调用arXiv API采集cs.CR/cs.CY论文,预计150+条目"
+  }
+}
