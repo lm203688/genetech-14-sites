@@ -6,12 +6,15 @@
 #   - 二者缺失时本作业静默跳过（exit 0），不报错、不建 Issue、不打扰用户。
 #   - 一旦配置好，push（api-guard 变更）或每日定时都会自动重新部署，实现"持续运营"。
 #
+# 部署方式：直接使用 Cloudflare REST API（api-guard/deploy-api.mjs），不依赖 wrangler，
+# 避免 CI 中 wrangler 安装/PATH/模块上传格式等不稳定因素。已实测可成功部署。
+#
 # 用户一次性配置（之后不再需要手动操作）：
-#   1. Cloudflare 控制台 → My Profile → API Tokens → Create Token
-#      权限：Account > Workers Scripts:Edit + Account > Workers KV Storage:Edit
-#      把生成的 token 存入仓库 Secrets: CLOUDFLARE_API_TOKEN
-#      → Account ID 会自动从 token 反查；若你的 token 无 /accounts 读取权限，
-#        可额外在 Secrets 配置 CLOUDFLARE_ACCOUNT_ID（Cloudflare 控制台右侧栏可见）。
+#   1. Cloudflare 控制台 → My Profile → API Tokens → Create Token（Custom token）
+#      权限：Account > Workers Scripts:Edit + Account > KV Storage:Edit
+#      Account Resources: Include > All accounts
+#      存入仓库 Secrets: CLOUDFLARE_API_TOKEN（cf_ 开头）
+#      → Account ID 会自动从 token 反查；若反查失败，可额外配置 Secrets: CLOUDFLARE_ACCOUNT_ID
 #   2. 把 PRO_SECRET（付费墙签名密钥）存入仓库 Secrets: PRO_SECRET
 #      （本项目生成的密钥为 18b038764e967102e86ef87629e1ce4dea2ee5e3fb82512bf5ebcc3a7a625fe2）
 
@@ -28,7 +31,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: api-guard-deploy-${{ github.ref }}
@@ -62,57 +65,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install wrangler
-        if: steps.check.outputs.configured == 'true'
-        run: npm install -g wrangler
-
-      - name: Deploy API Guard Worker
+      - name: Deploy API Guard Worker (Cloudflare REST API)
         if: steps.check.outputs.configured == 'true'
         working-directory: api-guard
-        run: |
-          set -euo pipefail
-          export CF_API="https://api.cloudflare.com/client/v4"
-
-          # 0) 解析 Account ID：优先用 Secrets 中的 CLOUDFLARE_ACCOUNT_ID，否则用 token 反查
-          if [ -n "${CLOUDFLARE_ACCOUNT_ID:-}" ]; then
-            echo "→ 使用 Secrets 中的 CLOUDFLARE_ACCOUNT_ID"
-          else
-            echo "→ 用 API Token 反查 Account ID…"
-            ACCT_JSON="$(curl -fsS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$CF_API/accounts")"
-            CLOUDFLARE_ACCOUNT_ID="$(printf '%s' "$ACCT_JSON" | grep -oE '"id":"[a-f0-9]{32}"' | head -1 | grep -oE '[a-f0-9]{32}')"
-            if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-              echo "✗ 无法从 token 反查 Account ID（响应：$ACCT_JSON）"
-              echo "  请在仓库 Secrets 额外配置 CLOUDFLARE_ACCOUNT_ID（Cloudflare 控制台右侧栏可见）。"
-              exit 1
-            fi
-            echo "✓ 反查到 Account ID: $CLOUDFLARE_ACCOUNT_ID"
-          fi
-          export CLOUDFLARE_ACCOUNT_ID
-
-          # 1) 若 wrangler.toml 仍是占位符，自动创建 KV 命名空间并注入 id
-          if grep -q "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" wrangler.toml; then
-            echo "→ 创建 PRO_KV 命名空间…"
-            OUT="$(wrangler kv namespace create PRO_KV)"
-            KV_ID="$(printf '%s' "$OUT" | grep -oE 'id[[:space:]]*=[[:space:]]*"[a-f0-9]+"' | head -1 | grep -oE '[a-f0-9]{20,}')"
-            if [ -z "$KV_ID" ]; then
-              echo "✗ 无法解析 KV id，wrangler 输出：$OUT"
-              exit 1
-            fi
-            sed -i "s/REPLACE_WITH_YOUR_KV_NAMESPACE_ID/$KV_ID/" wrangler.toml
-            echo "✓ 已注入 PRO_KV id: $KV_ID"
-          fi
-
-          # 2) 注入 PRO_SECRET（从 stdin 读取，不落盘）
-          printf '%s' "$PRO_SECRET" | wrangler secret put PRO_SECRET
-
-          # 3) 部署
-          echo "→ wrangler deploy…"
-          wrangler deploy
-          echo "✓ api-guard 部署完成"
-
-          # 4) 把注入后的 KV id 提交回仓库（避免每次重复创建）
-          git config --local user.email "ops-bot@genetech.example"
-          git config --local user.name "GeneTech Ops Bot"
-          git add wrangler.toml
-          git commit -m "[Bot] api-guard: 记录 PRO_KV id (自动部署) [skip ci]" || true
-          git push || true
+        run: node deploy-api.mjs

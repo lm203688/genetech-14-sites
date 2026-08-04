@@ -1,10 +1,7 @@
 /**
- * GeneTech API 鉴权 Worker (api-auth-guard)
+ * GeneTech API 鉴权 Worker (genetech-api-guard) — 经典 Service Worker 格式
  * ============================================================================
  * 修复"付费墙形同虚设"：公开 JSON 数据可被直接访问绕过。
- *
- * 部署位置：Cloudflare Worker，路由到数据 API 域名（例如 api.genetech.io），
- * 或作为 Cloudflare Pages Function 前置在数据请求前。
  *
  * 职责：
  *   1. 免费层：对静态知识 JSON（<site>/website/api/*.json）放行，但做每 IP 限流
@@ -14,8 +11,8 @@
  *   3. 可选远程校验：若配置了 LICENSE_VALIDATE_URL，则改为调用 unified-license
  *      Worker 校验 GUX_ 统一许可证兑换出的 gtk_ 站点 Key（与统一许可体系打通）。
  *
- * 环境变量：
- *   PRO_SECRET            Pro Key 签名密钥（必填，生产环境用 Secrets 注入）
+ * 绑定（Cloudflare 侧注入，作为全局变量可用）：
+ *   PRO_SECRET            Pro Key 签名密钥（必填，Secrets 注入）
  *   PRO_FREE_RATE        免费层每 IP 每分钟请求上限（默认 60）
  *   PRO_KV               KV 命名空间绑定（限流用，可选；缺失则降级放行）
  *   LICENSE_VALIDATE_URL 可选：unified-license Worker 的 validate 端点
@@ -23,6 +20,17 @@
  */
 
 const DEFAULT_FREE_RATE = 60;
+
+// 把 Cloudflare 注入的绑定整理成统一的 env 对象（缺失时按 undefined 处理，不抛错）
+function getEnv() {
+  return {
+    PRO_SECRET: typeof PRO_SECRET !== 'undefined' ? PRO_SECRET : undefined,
+    PRO_KV: typeof PRO_KV !== 'undefined' ? PRO_KV : undefined,
+    PRO_FREE_RATE: typeof PRO_FREE_RATE !== 'undefined' ? PRO_FREE_RATE : undefined,
+    LICENSE_VALIDATE_URL: typeof LICENSE_VALIDATE_URL !== 'undefined' ? LICENSE_VALIDATE_URL : undefined,
+    LICENSE_API_SECRET: typeof LICENSE_API_SECRET !== 'undefined' ? LICENSE_API_SECRET : undefined,
+  };
+}
 
 // ---------------------------------------------------------------------------
 // 工具：HMAC / 常量时间比较
@@ -126,43 +134,44 @@ function json(data, status, extra = {}) {
   });
 }
 
-export default {
-  async fetch(request, env, ctx) {
-    const url = new URL(request.url);
-    const path = url.pathname;
-    const method = request.method;
-    const ip = getClientIp(request);
+async function handleRequest(request) {
+  const env = getEnv();
+  const url = new URL(request.url);
+  const path = url.pathname;
+  const ip = getClientIp(request);
 
-    // ---- 付费层：/api/pro/* 必须鉴权 ----
-    if (path.startsWith('/api/pro/')) {
-      const auth = request.headers.get('Authorization') || '';
-      const token = auth.replace(/^Bearer\s+/i, '').trim();
-      const site = url.searchParams.get('site') || '';
-      if (!token) return json({ error: 'unauthorized', message: 'Pro API 需要 Authorization: Bearer <ProAPIKey>' }, 401);
-      const v = await validateProKey(token, site, env);
-      if (!v.ok) {
-        const msg = { invalid_format: 'Key 格式无效', bad_signature: 'Key 签名验证失败', expired: 'Key 已过期', bad_payload: 'Key 负载无效', remote_unreachable: '许可证服务不可达', server_misconfigured: '服务端未配置' };
-        return json({ error: 'forbidden', message: msg[v.error] || 'Pro Key 校验失败' }, 403);
-      }
-      // 校验通过：在请求头注入 tier，转发到源站 Pro 端点
-      const req = new Request(request);
-      req.headers.set('X-GeneTech-Tier', 'pro');
-      req.headers.set('X-GeneTech-Site', v.site || site);
-      return fetch(req);
+  // ---- 付费层：/api/pro/* 必须鉴权 ----
+  if (path.startsWith('/api/pro/')) {
+    const auth = request.headers.get('Authorization') || '';
+    const token = auth.replace(/^Bearer\s+/i, '').trim();
+    const site = url.searchParams.get('site') || '';
+    if (!token) return json({ error: 'unauthorized', message: 'Pro API 需要 Authorization: Bearer <ProAPIKey>' }, 401);
+    const v = await validateProKey(token, site, env);
+    if (!v.ok) {
+      const msg = { invalid_format: 'Key 格式无效', bad_signature: 'Key 签名验证失败', expired: 'Key 已过期', bad_payload: 'Key 负载无效', remote_unreachable: '许可证服务不可达', server_misconfigured: '服务端未配置' };
+      return json({ error: 'forbidden', message: msg[v.error] || 'Pro Key 校验失败' }, 403);
     }
+    const req = new Request(request);
+    req.headers.set('X-GeneTech-Tier', 'pro');
+    req.headers.set('X-GeneTech-Site', v.site || site);
+    return fetch(req);
+  }
 
-    // ---- 免费层：静态知识 JSON 限流放行 ----
-    if (path.includes('/website/api/') || path.endsWith('.json')) {
-      const rl = await checkFreeRate(env, ip);
-      if (!rl.allowed) {
-        return json({ error: 'rate_limited', message: `免费层限流：每 IP 每分钟 ${env.PRO_FREE_RATE || DEFAULT_FREE_RATE} 次。升级 Pro 获取更高配额与语义检索/引用导出能力。` }, 429, { 'Retry-After': '60' });
-      }
-      const req = new Request(request);
-      req.headers.set('X-GeneTech-Tier', 'free');
-      return fetch(req);
+  // ---- 免费层：静态知识 JSON 限流放行 ----
+  if (path.includes('/website/api/') || path.endsWith('.json')) {
+    const rl = await checkFreeRate(env, ip);
+    if (!rl.allowed) {
+      return json({ error: 'rate_limited', message: `免费层限流：每 IP 每分钟 ${env.PRO_FREE_RATE || DEFAULT_FREE_RATE} 次。升级 Pro 获取更高配额与语义检索/引用导出能力。` }, 429, { 'Retry-After': '60' });
     }
+    const req = new Request(request);
+    req.headers.set('X-GeneTech-Tier', 'free');
+    return fetch(req);
+  }
 
-    // 其他路径直接转发
-    return fetch(request);
-  },
-};
+  // 其他路径直接转发
+  return fetch(request);
+}
+
+addEventListener('fetch', (event) => {
+  event.respondWith(handleRequest(event.request));
+});
