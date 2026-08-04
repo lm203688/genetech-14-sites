@@ -10,6 +10,8 @@
 #   1. Cloudflare 控制台 → My Profile → API Tokens → Create Token
 #      权限：Account > Workers Scripts:Edit + Account > Workers KV Storage:Edit
 #      把生成的 token 存入仓库 Secrets: CLOUDFLARE_API_TOKEN
+#      → Account ID 会自动从 token 反查；若你的 token 无 /accounts 读取权限，
+#        可额外在 Secrets 配置 CLOUDFLARE_ACCOUNT_ID（Cloudflare 控制台右侧栏可见）。
 #   2. 把 PRO_SECRET（付费墙签名密钥）存入仓库 Secrets: PRO_SECRET
 #      （本项目生成的密钥为 18b038764e967102e86ef87629e1ce4dea2ee5e3fb82512bf5ebcc3a7a625fe2）
 
@@ -38,6 +40,7 @@ jobs:
     timeout-minutes: 20
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       PRO_SECRET: ${{ secrets.PRO_SECRET }}
     steps:
       - name: Checkout
@@ -68,6 +71,24 @@ jobs:
         working-directory: api-guard
         run: |
           set -euo pipefail
+          export CF_API="https://api.cloudflare.com/client/v4"
+
+          # 0) 解析 Account ID：优先用 Secrets 中的 CLOUDFLARE_ACCOUNT_ID，否则用 token 反查
+          if [ -n "${CLOUDFLARE_ACCOUNT_ID:-}" ]; then
+            echo "→ 使用 Secrets 中的 CLOUDFLARE_ACCOUNT_ID"
+          else
+            echo "→ 用 API Token 反查 Account ID…"
+            ACCT_JSON="$(curl -fsS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$CF_API/accounts")"
+            CLOUDFLARE_ACCOUNT_ID="$(printf '%s' "$ACCT_JSON" | grep -oE '"id":"[a-f0-9]{32}"' | head -1 | grep -oE '[a-f0-9]{32}')"
+            if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+              echo "✗ 无法从 token 反查 Account ID（响应：$ACCT_JSON）"
+              echo "  请在仓库 Secrets 额外配置 CLOUDFLARE_ACCOUNT_ID（Cloudflare 控制台右侧栏可见）。"
+              exit 1
+            fi
+            echo "✓ 反查到 Account ID: $CLOUDFLARE_ACCOUNT_ID"
+          fi
+          export CLOUDFLARE_ACCOUNT_ID
+
           # 1) 若 wrangler.toml 仍是占位符，自动创建 KV 命名空间并注入 id
           if grep -q "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" wrangler.toml; then
             echo "→ 创建 PRO_KV 命名空间…"
