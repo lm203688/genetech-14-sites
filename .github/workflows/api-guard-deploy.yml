@@ -1,0 +1,97 @@
+# GeneTech 14站知识引擎 — API 鉴权 Worker 自动部署
+# 文件位置: .github/workflows/api-guard-deploy.yml
+#
+# 设计目标：把"部署付费墙 Worker"从人工步骤变成**密钥门控的自动化流水线**。
+#   - 仅当仓库配置了 Secrets: CLOUDFLARE_API_TOKEN 与 PRO_SECRET 时才执行部署；
+#   - 二者缺失时本作业静默跳过（exit 0），不报错、不建 Issue、不打扰用户。
+#   - 一旦配置好，push（api-guard 变更）或每日定时都会自动重新部署，实现"持续运营"。
+#
+# 用户一次性配置（之后不再需要手动操作）：
+#   1. Cloudflare 控制台 → My Profile → API Tokens → Create Token
+#      权限：Account > Workers Scripts:Edit + Account > Workers KV Storage:Edit
+#      把生成的 token 存入仓库 Secrets: CLOUDFLARE_API_TOKEN
+#   2. 把 PRO_SECRET（付费墙签名密钥）存入仓库 Secrets: PRO_SECRET
+#      （本项目生成的密钥为 18b038764e967102e86ef87629e1ce4dea2ee5e3fb82512bf5ebcc3a7a625fe2）
+
+name: GeneTech API Guard Deploy
+
+on:
+  push:
+    paths:
+      - 'api-guard/**'
+      - '.github/workflows/api-guard-deploy.yml'
+  schedule:
+    # 每日 03:30 UTC 确保 Worker 保持部署状态
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: api-guard-deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      PRO_SECRET: ${{ secrets.PRO_SECRET }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 检查密钥是否已配置
+        id: check
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$PRO_SECRET" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "ℹ️ api-guard 自动部署未启用：在仓库 Secrets 配置 CLOUDFLARE_API_TOKEN 与 PRO_SECRET 后自动生效（无需手动运行）。"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup Node.js
+        if: steps.check.outputs.configured == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install wrangler
+        if: steps.check.outputs.configured == 'true'
+        run: npm install -g wrangler
+
+      - name: Deploy API Guard Worker
+        if: steps.check.outputs.configured == 'true'
+        working-directory: api-guard
+        run: |
+          set -euo pipefail
+          # 1) 若 wrangler.toml 仍是占位符，自动创建 KV 命名空间并注入 id
+          if grep -q "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" wrangler.toml; then
+            echo "→ 创建 PRO_KV 命名空间…"
+            OUT="$(wrangler kv namespace create PRO_KV)"
+            KV_ID="$(printf '%s' "$OUT" | grep -oE 'id[[:space:]]*=[[:space:]]*"[a-f0-9]+"' | head -1 | grep -oE '[a-f0-9]{20,}')"
+            if [ -z "$KV_ID" ]; then
+              echo "✗ 无法解析 KV id，wrangler 输出：$OUT"
+              exit 1
+            fi
+            sed -i "s/REPLACE_WITH_YOUR_KV_NAMESPACE_ID/$KV_ID/" wrangler.toml
+            echo "✓ 已注入 PRO_KV id: $KV_ID"
+          fi
+
+          # 2) 注入 PRO_SECRET（从 stdin 读取，不落盘）
+          printf '%s' "$PRO_SECRET" | wrangler secret put PRO_SECRET
+
+          # 3) 部署
+          echo "→ wrangler deploy…"
+          wrangler deploy
+          echo "✓ api-guard 部署完成"
+
+          # 4) 把注入后的 KV id 提交回仓库（避免每次重复创建）
+          git config --local user.email "ops-bot@genetech.example"
+          git config --local user.name "GeneTech Ops Bot"
+          git add wrangler.toml
+          git commit -m "[Bot] api-guard: 记录 PRO_KV id (自动部署) [skip ci]" || true
+          git push || true
