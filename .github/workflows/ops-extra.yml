@@ -70,11 +70,13 @@ jobs:
           if [[ "$TASK" == "all" || "$TASK" == "prodb" ]]; then run_one pro-db-sync; fi
           if [[ "$TASK" == "all" || "$TASK" == "feedback" ]]; then run_one user-feedback; fi
           if [[ "$TASK" == "all" || "$TASK" == "finance" ]]; then run_one finance-track; fi
-          if [[ "$TASK" == "all" || "$TASK" == "verify" ]]; then run_one rollout-verify || echo "rollout-verify reported failures"; fi
+          if [[ "$TASK" == "all" || "$TASK" == "verify" ]]; then run_one rollout-verify; fi
           if [[ "$TASK" == "all" || "$TASK" == "mcp" ]]; then run_one mcp-publish; fi
           if [[ "$TASK" == "all" || "$TASK" == "guard" ]]; then
             node --check api-guard/worker.js && echo "[guard] worker.js 语法 OK"
-            grep -q "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" api-guard/wrangler.toml && echo "::warning::api-guard wrangler.toml 的 PRO_KV id 仍为占位符" || echo "[guard] wrangler.toml KV 已配置"
+            grep -q "addEventListener('fetch'" api-guard/worker.js || { echo "::error::worker.js 缺少 fetch 事件监听"; exit 1; }
+            grep -q "PRO_SECRET" api-guard/worker.js && echo "[guard] worker.js 引用 PRO_SECRET OK" || echo "::warning::worker.js 未引用 PRO_SECRET"
+            test -f api-guard/deploy-api.mjs && echo "[guard] 部署入口 deploy-api.mjs 存在 OK" || { echo "::error::缺少 api-guard/deploy-api.mjs 部署入口"; exit 1; }
           fi
 
       - name: Commit generated outputs

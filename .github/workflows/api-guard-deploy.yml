@@ -16,7 +16,8 @@
 #      存入仓库 Secrets: CLOUDFLARE_API_TOKEN（cf_ 开头）
 #      → Account ID 会自动从 token 反查；若反查失败，可额外配置 Secrets: CLOUDFLARE_ACCOUNT_ID
 #   2. 把 PRO_SECRET（付费墙签名密钥）存入仓库 Secrets: PRO_SECRET
-#      （本项目生成的密钥为 18b038764e967102e86ef87629e1ce4dea2ee5e3fb82512bf5ebcc3a7a625fe2）
+#      ⚠️ 必须是「签发 14 站 Pro Key 时使用的同一密钥」，否则重部署后所有 Pro Key 验签失败。
+#         不要在此填写与本仓库 Pro Key 不匹配的值；若不确定，核对 .secrets/pro_keys.json 的签发来源。
 
 name: GeneTech API Guard Deploy
 
