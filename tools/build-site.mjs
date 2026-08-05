@@ -35,6 +35,9 @@ const ORIGIN = SITE_ORIGIN || PROD_ORIGIN;
 // IndexNow 密钥：公开托管于 .well-known/indexnow.txt；CI 端需在仓库 Secrets 配置同名 INDEXNOW_KEY 才能向 Bing/Yandex 提交
 // 优先用 CI 注入的真实密钥（仓库 Secrets: INDEXNOW_KEY），缺省回退占位值（需替换）
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY || 'a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d';
+// Google Search Console 验证元标签：CI 端配 Secrets: GSC_VERIFICATION 后自动注入首页 <head>，
+// 用户即可在 GSC 用「HTML 标记」方式零服务器验证所有权
+const GSC_VERIFICATION = process.env.GSC_VERIFICATION || '';
 
 /** 站点中文名映射（用于标题与导航） */
 const SITE_LABELS = {
@@ -405,6 +408,7 @@ ${canonical ? `<link rel="canonical" href="${esc(canonical)}">` : ''}
 <meta name="theme-color" content="#0b62d6">
 <meta name="application-name" content="GeneTech 知识引擎">
 <link rel="alternate" type="application/rss+xml" title="GeneTech 博客" href="${ORIGIN}${BASE}/rss.xml">
+${GSC_VERIFICATION ? `<meta name="google-site-verification" content="${esc(GSC_VERIFICATION)}">` : ''}
 ${ldScripts}
 <style>${CSS}</style>
 </head>

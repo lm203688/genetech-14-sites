@@ -50,6 +50,7 @@ jobs:
           SITE_BASE: ${{ steps.pages.outputs.base_path }}
           SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          GSC_VERIFICATION: ${{ secrets.GSC_VERIFICATION }}
         run: |
           node tools/build-site.mjs --out _site
           echo "--- 产物概览 ---"
