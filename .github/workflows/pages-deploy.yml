@@ -58,14 +58,15 @@ jobs:
 
       - name: Verify data contract
         run: |
-          # 确保 MCP Server 依赖的 API 路径未被破坏
+          # 仅校验真正的数据站点（源仓库里确有 website/api/index.json 的目录），
+          # 避免把 blog/ .well-known 等非站点目录误判为缺失
           missing=0
-          for d in _site/*/; do
+          for d in */; do
             slug=$(basename "$d")
-            [ "$slug" = "api" ] && continue
+            [ -f "$slug/website/api/index.json" ] || continue
             for f in index.json entities.json; do
-              if [ ! -f "$d/website/api/$f" ]; then
-                echo "::error::缺失数据契约文件 $slug/website/api/$f"
+              if [ ! -f "_site/$slug/website/api/$f" ]; then
+                echo "::error::缺失数据契约文件 _site/$slug/website/api/$f"
                 missing=1
               fi
             done
