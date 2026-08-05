@@ -177,14 +177,13 @@ jobs:
             elif [[ "$SCHED" == "*/30 * * * *" ]]; then
               echo "should_run_data=true" >> $GITHUB_OUTPUT
               echo "[Decide] 数据涡轮: 每30分钟深度采集(data only)"
-            # 每日 20:30 CST = 12:30 UTC 全量运行 5 条闭环
+            # 每日 20:30 CST = 12:30 UTC 全量运行（推广由 ops-extra 的 geo 任务承担，避免同刻双跑）
             elif [[ "$HOUR" == "12" ]]; then
               echo "should_run_data=true" >> $GITHUB_OUTPUT
               echo "should_run_domain=true" >> $GITHUB_OUTPUT
               echo "should_run_tech=true" >> $GITHUB_OUTPUT
-              echo "should_run_promo=true" >> $GITHUB_OUTPUT
               echo "should_run_intel=true" >> $GITHUB_OUTPUT
-              echo "[Decide] 提升期: 12:30 UTC 全量运行 5 条闭环"
+              echo "[Decide] 提升期: 12:30 UTC 运行 data/domain/tech/intel（promo 由 ops-extra geo 负责）"
             fi
 
             # workflow_dispatch 的 all 也全部运行
@@ -464,15 +463,15 @@ jobs:
       - name: Run Promotion Pipeline
         run: |
           if [[ "${{ needs.prepare.outputs.dry_run }}" == "true" ]]; then
-            node ${{ env.SCRIPTS_DIR }}/pipeline-promotion.js --dry-run
+            node ${{ env.SCRIPTS_DIR }}/pipeline-geo-promotion.js --dry-run
           else
-            node ${{ env.SCRIPTS_DIR }}/pipeline-promotion.js
+            node ${{ env.SCRIPTS_DIR }}/pipeline-geo-promotion.js
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
-          INDEXNOW_KEY_LOCATION: ${{ secrets.INDEXNOW_KEY_LOCATION }}
-          SITE_BASE_URL: ${{ secrets.SITE_BASE_URL || 'https://genetech.example' }}
+          DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
+          SITE_BASE_URL: ${{ secrets.SITE_BASE_URL || 'https://lm203688.github.io/genetech-14-sites' }}
 
       - name: Upload reports and promotion assets
         if: always()
@@ -491,7 +490,7 @@ jobs:
         run: |
           git config --local user.email "ops-bot@genetech.example"
           git config --local user.name "GeneTech Ops Bot"
-          git add sites/*/structured-data.json sitemap.xml promotion-assets/ reports/ logs/ state/ 2>/dev/null || true
+          git add content/ reports/ logs/ state/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

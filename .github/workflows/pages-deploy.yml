@@ -8,6 +8,7 @@ on:
     paths:
       - '*/website/api/*.json'
       - 'tools/build-site.mjs'
+      - 'content/blog/**'
       - '.github/workflows/pages-deploy.yml'
   workflow_dispatch:
   schedule:

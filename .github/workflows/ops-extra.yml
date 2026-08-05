@@ -24,7 +24,7 @@ on:
         required: true
         default: 'all'
         type: choice
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, guard]
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard]
   schedule:
     # ===== 临时提升期（2026-08-05 ~ 2026-08-30）：每日 20:30 CST(12:30 UTC) 一次 =====
     # 恢复原始配置时，将下方单行替换为：
@@ -53,6 +53,8 @@ jobs:
       SITE_BASE_URL: ${{ secrets.SITE_BASE_URL || 'https://lm203688.github.io/genetech-14-sites' }}
       CREEM_API_KEY: ${{ secrets.CREEM_API_KEY }}
       LICENSE_STATS_URL: ${{ secrets.LICENSE_STATS_URL }}
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -73,6 +75,7 @@ jobs:
           if [[ "$TASK" == "all" || "$TASK" == "finance" ]]; then run_one finance-track; fi
           if [[ "$TASK" == "all" || "$TASK" == "verify" ]]; then run_one rollout-verify; fi
           if [[ "$TASK" == "all" || "$TASK" == "mcp" ]]; then run_one mcp-publish; fi
+          if [[ "$TASK" == "all" || "$TASK" == "geo" ]]; then run_one geo-promotion; fi
           if [[ "$TASK" == "all" || "$TASK" == "guard" ]]; then
             node --check api-guard/worker.js && echo "[guard] worker.js 语法 OK"
             grep -q "addEventListener('fetch'" api-guard/worker.js || { echo "::error::worker.js 缺少 fetch 事件监听"; exit 1; }
@@ -85,7 +88,7 @@ jobs:
         run: |
           git config --local user.email "ops-bot@genetech.example"
           git config --local user.name "GeneTech Ops Bot"
-          git add mcp-server/ data/ state/ reports/ \
+          git add mcp-server/ data/ state/ reports/ content/ \
                   $(ls -d */website/api 2>/dev/null | sed 's#/$##' | xargs -I{} echo "{}/website/api") 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit"

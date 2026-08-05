@@ -1,0 +1,14 @@
+version: v1
+name: genetech-data-mcp
+displayName: GeneTech Data MCP
+description: >-
+  Agent-native knowledge engine across 14 frontier-tech domains (genetics, quantum computing,
+  brain science, AI Agent ecosystem, life science, etc.). Hybrid retrieval (BM25 + field-weighting
+  + RRF) with citations. Exposes JSON API and MCP for AI Agents.
+repository:
+  type: git
+  url: https://github.com/lm203688/genetech-14-sites
+homepage: https://lm203688.github.io/genetech-14-sites/mcp.html
+startCommand:
+  type: npx
+  npx: -y @genetech/data-mcp

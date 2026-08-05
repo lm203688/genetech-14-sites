@@ -62,6 +62,141 @@ const esc = (s) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
+// ---------------------------------------------------------------------------
+// 轻量 Markdown -> HTML（无依赖，零成本；用于自动生成的 GEO 博客文章）
+// 支持：标题 #~######、段落、无序/有序列表、引用、分隔线、行内 **粗体** *斜体* `代码` [链接](url)、围栏代码块
+// ---------------------------------------------------------------------------
+function renderMarkdown(md) {
+  const lines = String(md).replace(/\r\n/g, '\n').split('\n');
+  let html = '';
+  let i = 0;
+  let inCode = false;
+  let codeBuf = [];
+  let inList = false;
+  let listType = '';
+  const closeList = () => {
+    if (inList) {
+      html += `</${listType}>`;
+      inList = false;
+      listType = '';
+    }
+  };
+  const inline = (s) =>
+    esc(s)
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" rel="noopener nofollow" target="_blank">$1</a>');
+  while (i < lines.length) {
+    const line = lines[i];
+    if (line.startsWith('```')) {
+      if (!inCode) {
+        inCode = true;
+        codeBuf = [];
+        closeList();
+        i++;
+        continue;
+      }
+      inCode = false;
+      html += `<pre><code>${esc(codeBuf.join('\n'))}</code></pre>`;
+      i++;
+      continue;
+    }
+    if (inCode) {
+      codeBuf.push(line);
+      i++;
+      continue;
+    }
+    let m;
+    if ((m = line.match(/^\s*(#{1,6})\s+(.*)$/))) {
+      closeList();
+      const lvl = m[1].length;
+      html += `<h${lvl}>${inline(m[2])}</h${lvl}>`;
+      i++;
+      continue;
+    }
+    if (/^\s*>\s?/.test(line)) {
+      closeList();
+      html += `<blockquote>${inline(line.replace(/^\s*>\s?/, ''))}</blockquote>`;
+      i++;
+      continue;
+    }
+    if ((m = line.match(/^\s*[-*]\s+(.*)$/))) {
+      if (!inList || listType !== 'ul') {
+        closeList();
+        html += '<ul>';
+        inList = true;
+        listType = 'ul';
+      }
+      html += `<li>${inline(m[1])}</li>`;
+      i++;
+      continue;
+    }
+    if ((m = line.match(/^\s*\d+\.\s+(.*)$/))) {
+      if (!inList || listType !== 'ol') {
+        closeList();
+        html += '<ol>';
+        inList = true;
+        listType = 'ol';
+      }
+      html += `<li>${inline(m[1])}</li>`;
+      i++;
+      continue;
+    }
+    if (/^\s*---\s*$/.test(line)) {
+      closeList();
+      html += '<hr>';
+      i++;
+      continue;
+    }
+    if (line.trim() === '') {
+      closeList();
+      i++;
+      continue;
+    }
+    closeList();
+    html += `<p>${inline(line)}</p>`;
+    i++;
+  }
+  closeList();
+  return html;
+}
+
+/** 解析 Markdown 前置元数据（--- title: ... ---） */
+function parseFrontMatter(md) {
+  const m = md.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+  if (!m) return { meta: {}, body: md };
+  const meta = {};
+  for (const ln of m[1].split('\n')) {
+    const mm = ln.match(/^([A-Za-z_]+):\s*(.*)$/);
+    if (mm) meta[mm[1].toLowerCase()] = mm[2].trim();
+  }
+  return { meta, body: m[3] };
+}
+
+/** 读取 content/blog/*.md（由 pipeline-geo-promotion.js 自动生成） */
+function loadGeneratedPosts() {
+  const dir = path.join(ROOT, 'content', 'blog');
+  if (!fs.existsSync(dir)) return [];
+  const out = [];
+  for (const f of fs.readdirSync(dir).sort()) {
+    if (!f.endsWith('.md')) continue;
+    const raw = fs.readFileSync(path.join(dir, f), 'utf8');
+    const { meta, body } = parseFrontMatter(raw);
+    if (!meta.title) continue;
+    out.push({
+      slug: f.replace(/\.md$/, ''),
+      title: meta.title,
+      desc: meta.desc || meta.description || '',
+      date: meta.date || '2026-01-01',
+      keywords: (meta.keywords || '').split(',').map((s) => s.trim()).filter(Boolean),
+      body: renderMarkdown(body),
+      generated: true,
+    });
+  }
+  return out;
+}
+
 /** 发现所有含标准数据契约的站点目录 */
 function discoverSites() {
   const out = [];
@@ -269,6 +404,7 @@ ${canonical ? `<link rel="canonical" href="${esc(canonical)}">` : ''}
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="theme-color" content="#0b62d6">
 <meta name="application-name" content="GeneTech 知识引擎">
+<link rel="alternate" type="application/rss+xml" title="GeneTech 博客" href="${ORIGIN}${BASE}/rss.xml">
 ${ldScripts}
 <style>${CSS}</style>
 </head>
@@ -518,6 +654,11 @@ const BLOG = [
   },
 ];
 
+// 合并硬编码文章 + 自动生成的 GEO 文章，按日期倒序（最新在前）
+const BLOG_POSTS = [...BLOG, ...loadGeneratedPosts()].sort((a, b) =>
+  String(b.date).localeCompare(String(a.date)),
+);
+
 /** 单篇博客文章页 */
 function renderArticle(a) {
   const url = `${ORIGIN}${BASE}/blog/${a.slug}.html`;
@@ -550,7 +691,7 @@ ${a.body}
 
 /** 博客首页 */
 function renderBlogIndex() {
-  const cards = BLOG.map(
+  const cards = BLOG_POSTS.map(
     (a) => `<a class="card" href="${BASE}/blog/${a.slug}.html">
 <div class="k">${esc(a.date)}</div>
 <div class="n">${esc(a.title)}</div>
@@ -654,7 +795,7 @@ function main() {
   writeFile('search.html', renderSearchPage(sites));
   writeFile('mcp.html', renderMcpPage());
   writeFile('blog/index.html', renderBlogIndex());
-  for (const a of BLOG) writeFile(`blog/${a.slug}.html`, renderArticle(a));
+  for (const a of BLOG_POSTS) writeFile(`blog/${a.slug}.html`, renderArticle(a));
 
   // 聚合目录，方便 Agent 一次拿到全量站点清单
   writeFile(
@@ -678,9 +819,64 @@ function main() {
     ),
   );
 
+  // llms.txt —— GEO 核心：给 LLM/AI Agent 一份机器友好的站点索引（llmstxt.org 标准）
+  const llmsTxt = [
+    '# GeneTech 知识引擎',
+    '',
+    'GeneTech 是一个覆盖 14 个前沿科技垂直领域的 Agent 原生知识引擎，提供机器可读的 JSON API 与 MCP 接口，供 AI Agent 实时检索、引用结构化科研实体。',
+    '',
+    '## 站点与 API',
+    ...sites.map(
+      (s) =>
+        `- ${SITE_LABELS[s.slug] || s.slug}: ${ORIGIN}${BASE}/${s.slug}/ (实体 API: ${ORIGIN}${BASE}/${s.slug}/website/api/entities.json)`,
+    ),
+    '',
+    '## 聚合入口',
+    `- 全站目录: ${ORIGIN}${BASE}/api/catalog.json`,
+    `- MCP 接入: npx -y @genetech/data-mcp`,
+    `- 全局搜索: ${ORIGIN}${BASE}/search.html`,
+    `- RSS: ${ORIGIN}${BASE}/rss.xml`,
+    '',
+    '## 博客',
+    ...BLOG_POSTS.map((a) => `- ${a.title}: ${ORIGIN}${BASE}/blog/${a.slug}.html`),
+    '',
+  ].join('\n');
+  writeFile('llms.txt', llmsTxt);
+
+  // rss.xml —— 供聚合器与 AI 引擎订阅最新内容
+  const rssItems = BLOG_POSTS.map((a) => {
+    const d = new Date(`${a.date}T00:00:00Z`);
+    return `  <item>
+    <title>${esc(a.title)}</title>
+    <link>${ORIGIN}${BASE}/blog/${a.slug}.html</link>
+    <guid>${ORIGIN}${BASE}/blog/${a.slug}.html</guid>
+    <description>${esc(a.desc)}</description>
+    <pubDate>${d.toUTCString()}</pubDate>
+  </item>`;
+  }).join('\n');
+  writeFile(
+    'rss.xml',
+    `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>GeneTech 知识引擎</title>
+  <link>${ORIGIN}${BASE}/</link>
+  <description>GeneTech 博客：Agent 原生知识引擎、混合检索与 GEO 技术笔记</description>
+${rssItems}
+</channel>
+</rss>
+`,
+  );
+
   // sitemap + robots
   const origin = ORIGIN;
-  const extraPages = ['search.html', 'mcp.html', 'blog/', ...BLOG.map((b) => `blog/${b.slug}.html`)];
+  const extraPages = [
+    'search.html',
+    'mcp.html',
+    'blog/',
+    'rss.xml',
+    ...BLOG_POSTS.map((b) => `blog/${b.slug}.html`),
+  ];
   const urls = ['', ...sites.map((s) => `${s.slug}/`), ...extraPages]
     .map((u) => `  <url><loc>${origin}${BASE}/${u}</loc></url>`)
     .join('\n');
@@ -690,7 +886,7 @@ function main() {
   );
   writeFile(
     'robots.txt',
-    `User-agent: *\nAllow: /\n${origin ? `Sitemap: ${origin}${BASE}/sitemap.xml\n` : ''}`,
+    `User-agent: *\nAllow: /\n${origin ? `Sitemap: ${origin}${BASE}/sitemap.xml\nLLMs.txt: ${origin}${BASE}/llms.txt\n` : ''}`,
   );
   // 禁止 GitHub Pages 的 Jekyll 处理，确保下划线等路径原样发布
   writeFile('.nojekyll', '');
