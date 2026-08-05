@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      SITE_BASE_URL: ${{ secrets.SITE_BASE_URL || 'https://genetech14.pages.dev' }}
+      SITE_BASE_URL: ${{ secrets.SITE_BASE_URL || 'https://lm203688.github.io/genetech-14-sites' }}
       CREEM_API_KEY: ${{ secrets.CREEM_API_KEY }}
       LICENSE_STATS_URL: ${{ secrets.LICENSE_STATS_URL }}
     steps:

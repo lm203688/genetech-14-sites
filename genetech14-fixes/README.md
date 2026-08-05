@@ -137,7 +137,7 @@ node monitoring/health-check.js --sites
 | 变量名 | 说明 | 默认值 |
 |--------|------|--------|
 | `PROJECT_ROOT` | 项目根目录 | 自动推断 |
-| `SITES_BASE_URL` | 站点根 URL | `https://genetech14.pages.dev` |
+| `SITES_BASE_URL` | 站点根 URL | `https://lm203688.github.io/genetech-14-sites` |
 | `API_BASE_URL` | API 根 URL | 同 `SITES_BASE_URL` |
 | `ALERT_WEBHOOK` | 告警 webhook 地址 | 空（不告警） |
 | `API_KEY` | API 认证密钥 | 用于健康检查 |

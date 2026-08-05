@@ -14,7 +14,7 @@
  *
  * 可选环境变量：
  *   GENETECH_DATA_DIR   本地数据根目录（默认：本文件上两级目录，即仓库根）
- *   GENETECH_API_BASE   已部署站点的基础 URL，例如 https://genetech14.pages.dev
+ *   GENETECH_API_BASE   已部署站点的基础 URL，例如 https://lm203688.github.io/genetech-14-sites
  *                       设置后优先从该 URL 拉取各站 <site>/website/api/*.json
  *   GENETECH_API_KEY    若设置，则要求客户端在 Authorization: Bearer 中携带相同值
  *                       （实现付费墙：MCP = 高级 API 产品）

@@ -15,7 +15,7 @@
  *   node health-check.js --all --alert
  *
  * 环境变量：
- *   SITES_BASE_URL    站点根 URL（默认 https://genetech14.pages.dev）
+ *   SITES_BASE_URL    站点根 URL（默认 https://lm203688.github.io/genetech-14-sites）
  *   API_BASE_URL      API 根 URL（默认同 SITES_BASE_URL）
  *   ALERT_WEBHOOK     告警 webhook 地址（可选）
  *   PROJECT_ROOT      项目根目录（默认自动推断）
@@ -32,7 +32,7 @@ const { URL } = require('url');
 // ============================================================
 
 const PROJECT_ROOT = process.env.PROJECT_ROOT || path.resolve(__dirname, '..', '..');
-const SITES_BASE_URL = process.env.SITES_BASE_URL || 'https://genetech14.pages.dev';
+const SITES_BASE_URL = process.env.SITES_BASE_URL || 'https://lm203688.github.io/genetech-14-sites';
 const API_BASE_URL = process.env.API_BASE_URL || SITES_BASE_URL;
 const ALERT_WEBHOOK = process.env.ALERT_WEBHOOK || '';
 

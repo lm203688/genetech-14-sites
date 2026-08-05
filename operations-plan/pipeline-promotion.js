@@ -54,7 +54,9 @@ const PROMOTION_CONFIG = {
     // Sitemap 生成
     sitemap: {
       enabled: true,
-      baseUrl: process.env.SITE_BASE_URL || 'https://genetech.example',
+      // 真实线上地址（GitHub Pages 发布通道）。此前默认值为占位域名 genetech.example，
+      // 会把无效 URL 写进 structured-data.json / sitemap.xml，导致 SEO 与 Agent 抓取全部失效。
+      baseUrl: process.env.SITE_BASE_URL || 'https://lm203688.github.io/genetech-14-sites',
     },
   },
   // 社交媒体内容生成

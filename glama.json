@@ -6,18 +6,18 @@
   "shortDescription": "Query, search and cite 14 vertical science knowledge bases from any AI agent.",
   "version": "1.0.0",
   "license": "MIT",
-  "homepage": "https://genetech14.pages.dev",
+  "homepage": "https://lm203688.github.io/genetech-14-sites",
   "repository": {
     "type": "git",
     "url": "https://github.com/lm203688/genetech-14-sites"
   },
-  "documentation": "https://genetech14.pages.dev",
+  "documentation": "https://lm203688.github.io/genetech-14-sites",
   "bugs": {
     "url": "https://github.com/lm203688/genetech-14-sites/issues"
   },
   "author": {
     "name": "GeneTech Team",
-    "url": "https://genetech14.pages.dev"
+    "url": "https://lm203688.github.io/genetech-14-sites"
   },
   "categories": [
     "Knowledge Base",
@@ -109,7 +109,7 @@
       "transport": "stdio",
       "env": {
         "GENETECH_DATA_DIR": "<path to repo root containing the site directories>",
-        "GENETECH_API_BASE": "<optional: https://genetech14.pages.dev to read from the live site>",
+        "GENETECH_API_BASE": "<optional: https://lm203688.github.io/genetech-14-sites to read from the live site>",
         "GENETECH_API_KEY": "<optional: set to enable API-key auth>",
         "GENETECH_REQUIRE_AUTH": "<optional: true to enforce auth>"
       }

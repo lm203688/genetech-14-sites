@@ -25,7 +25,7 @@ node src/index.mjs
 | 变量 | 说明 |
 |------|------|
 | `GENETECH_DATA_DIR` | 本地数据根目录（默认：仓库根） |
-| `GENETECH_API_BASE` | 已部署站点 URL，如 `https://genetech14.pages.dev`（设置后改为远程拉取） |
+| `GENETECH_API_BASE` | 已部署站点 URL，如 `https://lm203688.github.io/genetech-14-sites`（设置后改为远程拉取） |
 | `GENETECH_API_KEY` | 设置后要求客户端 Bearer 鉴权（付费墙） |
 | `GENETECH_REQUIRE_AUTH` | 设为 `true` 强制校验 API Key |
 

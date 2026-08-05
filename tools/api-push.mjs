@@ -8,8 +8,12 @@
  * 凭据来源：git credential helper（不接受命令行传入 token，避免泄漏到进程列表/日志）。
  *
  * 用法：
- *   node tools/api-push.mjs                 # 推送 HEAD 相对 origin/master 的全部改动文件
- *   node tools/api-push.mjs --dry-run       # 只打印将要推送的文件
+ *   node tools/api-push.mjs                     # 推送 HEAD 相对 origin/master 的全部改动文件
+ *   node tools/api-push.mjs --range HEAD~1..HEAD # 指定差异范围（本地与远端历史分叉后常用）
+ *   node tools/api-push.mjs --dry-run           # 只打印将要推送的文件
+ *
+ * 注意：本工具用 API 直接在远端造 commit，本地历史会与远端分叉。
+ * 网络恢复后建议执行 git fetch origin && git reset --hard origin/master 对齐。
  */
 
 import { execSync } from 'node:child_process';
@@ -77,12 +81,15 @@ function api(token, method, urlPath, body) {
 }
 
 function changedFiles() {
-  // HEAD 相对远端分支的差异；若无远端引用则退回最后一次提交
-  let range = `origin/${BRANCH}..HEAD`;
-  try {
-    execSync(`git rev-parse --verify origin/${BRANCH}`, { cwd: ROOT, stdio: 'ignore' });
-  } catch {
-    range = 'HEAD~1..HEAD';
+  // 优先使用显式指定的范围；否则取 HEAD 相对远端分支的差异；若无远端引用则退回最后一次提交
+  const ri = process.argv.indexOf('--range');
+  let range = ri !== -1 && process.argv[ri + 1] ? process.argv[ri + 1] : `origin/${BRANCH}..HEAD`;
+  if (ri === -1) {
+    try {
+      execSync(`git rev-parse --verify origin/${BRANCH}`, { cwd: ROOT, stdio: 'ignore' });
+    } catch {
+      range = 'HEAD~1..HEAD';
+    }
   }
   const out = execSync(`git diff --name-status ${range}`, { cwd: ROOT, encoding: 'utf8' });
   return out
