@@ -47,10 +47,14 @@ on:
   # 定时触发：与 scheduler.js 中的时间表对应，使用 UTC 时间
   schedule:
     # ===== 临时提升期（2026-08-05 ~ 2026-08-30）=====
-    # 数据收集高频涡轮：每 5 分钟一次，尽快扩充实体数据库（核心竞争力）
-    #   - 仅触发 data-accumulation 闭环（decide 步骤按 github.event.schedule 识别）
-    #   - pipeline 内置 git diff 判定：仅当采集到新实体才提交推送，不会空转刷仓库/触发 CF 重建
-    - cron: '*/5 * * * *'
+    # 数据收集涡轮：每 30 分钟一次（48次/天），尽快扩充实体数据库（核心竞争力）
+    #   频率经限流测算确定，勿随意调高（详见 operations-plan/RATE-LIMIT-BUDGET.md）：
+    #   - arXiv 官方要求 >=3s/请求，'*/5' 会达 2.8万次/天必被封 IP；'*/30' 降至 4.7k/天安全
+    #   - PubMed E-utilities 无 key 限 3 req/s，'*/5' 达 5.6万/天会触发 NCBI 封禁
+    #   - OpenAlex 礼貌池 10万/天，'*/30' 用量仅 4.7%
+    #   提速靠“抓得深”而非“抓得勤”：单次 limit=150 + 游标分页，单轮产出是原来的 5 倍
+    #   仅触发 data-accumulation 闭环（decide 步骤按 github.event.schedule 识别）
+    - cron: '*/30 * * * *'
     # 其余闭环：每日 20:30 CST(12:30 UTC) 一次全量运行
     # 恢复原始分时段配置时，删除上方 '*/5 * * * *' 与下方 '30 12 * * *' 两行，
     # 替换为以下 5 行（并删除 decide 步骤中的“提升期”与“数据涡轮”分支）：
@@ -145,10 +149,10 @@ jobs:
             # ===== 临时提升期（2026-08-05 ~ 2026-08-30）=====
             if [[ "$TODAY" > "2026-08-30" ]]; then
               echo "[Decide] 提升期已过($TODAY > 2026-08-30)，跳过全量运行，等待恢复原始分时段调度"
-            # 数据收集高频涡轮：每 5 分钟仅跑 data-accumulation，尽快扩充实体数据库
-            elif [[ "$SCHED" == "*/5 * * * *" ]]; then
+            # 数据收集涡轮：每 30 分钟仅跑 data-accumulation，尽快扩充实体数据库
+            elif [[ "$SCHED" == "*/30 * * * *" ]]; then
               echo "should_run_data=true" >> $GITHUB_OUTPUT
-              echo "[Decide] 数据涡轮: 每5分钟采集(data only)"
+              echo "[Decide] 数据涡轮: 每30分钟深度采集(data only)"
             # 每日 20:30 CST = 12:30 UTC 全量运行 5 条闭环
             elif [[ "$HOUR" == "12" ]]; then
               echo "should_run_data=true" >> $GITHUB_OUTPUT
@@ -230,11 +234,17 @@ jobs:
 
       - name: Run Data Backfill Pipeline
         run: |
+          # --limit=150：提速靠"抓得深"而非"抓得勤"。单轮上限 14站x150=2100 实体，
+          # 配合去重，总请求量仍远低于 arXiv/PubMed 限流线（见 RATE-LIMIT-BUDGET.md）
           if [[ "${{ needs.prepare.outputs.dry_run }}" == "true" ]]; then
-            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --dry-run
+            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --dry-run --limit=150
           else
-            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js
+            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --limit=150 2>&1 | tee /tmp/backfill.log
           fi
+          # 提取本轮新增实体数，供后续 Cloudflare 构建预算守门判定
+          ADDED=$(grep -oP '新增实体合计 \K[0-9]+' /tmp/backfill.log 2>/dev/null | tail -1)
+          echo "BACKFILL_ADDED=${ADDED:-0}" >> $GITHUB_ENV
+          echo "本轮新增实体: ${ADDED:-0}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -257,10 +267,32 @@ jobs:
           git add sites/ reports/ logs/ state/ data/ '*/website/api' 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "[Bot] Data backfill update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
-            for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
+            exit 0
           fi
+
+          # ===== Cloudflare Pages 构建预算守门 =====
+          # 本账号下 5 个项目共用 CF Pages 免费额度 500 builds/月（账号级共享）。
+          # 每 30 分钟采集 48 次/天，若每次都触发构建 => 1440 次/月，会拖垮全部项目部署。
+          # 策略：数据照常入库，但仅在「本轮新增 >= 60 条」或「距上次发布 >= 4 小时」时
+          # 才发出触发构建的提交；其余提交打 [CI Skip] 标记，CF 跳过构建。
+          # => 构建上限约 6 次/天 ≈ 180 次/月，给其余 4 个项目留出 320 次余量。
+          git fetch --deepen=100 2>/dev/null || true
+          LAST_PUB=$(git log --format='%at|%s' -100 2>/dev/null | grep -v '\[CI Skip\]' | head -1 | cut -d'|' -f1)
+          NOW=$(date -u +%s)
+          if [[ -n "$LAST_PUB" ]]; then HOURS=$(( (NOW - LAST_PUB) / 3600 )); else HOURS=99; fi
+          ADDED="${BACKFILL_ADDED:-0}"
+          echo "[Budget] 本轮新增=${ADDED} 距上次发布=${HOURS}h"
+
+          if [[ "$ADDED" -ge 60 || "$HOURS" -ge 4 ]]; then
+            MSG="[Bot] Data backfill update (+${ADDED} entities) $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            echo "[Budget] 触发 Cloudflare 构建发布"
+          else
+            MSG="[Bot] Data backfill accumulate (+${ADDED}) [CI Skip] $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            echo "[Budget] 攒批模式，跳过 CF 构建（省额度）"
+          fi
+
+          git commit -m "$MSG"
+          for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
         continue-on-error: true
 
   # ==================== 闭环二：领域开拓机制 ====================
