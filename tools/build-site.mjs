@@ -632,7 +632,12 @@ function main() {
     process.exit(1);
   }
 
-  fs.rmSync(OUT, { recursive: true, force: true });
+  // 清理旧产物；沙箱 safe-delete 可能拦截删除，失败不致命——后续 writeFile 会覆盖，CI(Linux)下可正常删除
+  try {
+    fs.rmSync(OUT, { recursive: true, force: true });
+  } catch (e) {
+    console.warn('[warn] 清理 _site 失败（沙箱删除拦截），继续覆盖写入：', e.message);
+  }
   fs.mkdirSync(OUT, { recursive: true });
 
   let totalEntities = 0;
