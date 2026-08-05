@@ -1,0 +1,80 @@
+name: GeneTech Pages Deploy
+
+# 备用发布通道：不依赖任何外部密钥，仅用内置 GITHUB_TOKEN。
+# 触发时机：数据落库后的 push（含 ops 机器人提交）、手动、以及每日兜底。
+on:
+  push:
+    branches: [master]
+    paths:
+      - '*/website/api/*.json'
+      - 'tools/build-site.mjs'
+      - '.github/workflows/pages-deploy.yml'
+  workflow_dispatch:
+  schedule:
+    # 每日 03:20 UTC 兜底重建，防止 push 事件漏触发
+    - cron: '20 3 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 与自身串行，但不阻塞 ops 数据流水线
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          # 若仓库尚未开启 Pages，自动启用（无需人工进设置页）
+          enablement: true
+
+      - name: Build static site
+        env:
+          SITE_BASE: ${{ steps.pages.outputs.base_path }}
+          SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
+        run: |
+          node tools/build-site.mjs --out _site
+          echo "--- 产物概览 ---"
+          find _site -maxdepth 1 -mindepth 1 | sort
+          echo "文件数: $(find _site -type f | wc -l)"
+
+      - name: Verify data contract
+        run: |
+          # 确保 MCP Server 依赖的 API 路径未被破坏
+          missing=0
+          for d in _site/*/; do
+            slug=$(basename "$d")
+            [ "$slug" = "api" ] && continue
+            for f in index.json entities.json; do
+              if [ ! -f "$d/website/api/$f" ]; then
+                echo "::error::缺失数据契约文件 $slug/website/api/$f"
+                missing=1
+              fi
+            done
+          done
+          [ "$missing" = "0" ] || exit 1
+          echo "数据契约校验通过"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
