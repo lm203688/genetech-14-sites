@@ -103,6 +103,108 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:v
 .api{background:var(--chip);border-radius:8px;padding:12px 14px;font-size:13px;margin:0 0 24px}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
 .pager{margin-top:22px;color:var(--muted);font-size:13px}
+.search{display:flex;gap:8px;margin:0 0 18px}
+.search input{flex:1;padding:9px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;outline:none}
+.search input:focus{border-color:var(--accent)}
+.search button{padding:9px 14px;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:8px;cursor:pointer;font-size:14px}
+.search-status{color:var(--muted);font-size:12.5px;margin:0 0 12px;min-height:1em}
+ul.items li.m{color:var(--muted);font-style:italic}
+.glb{margin:18px 0}
+`;
+
+// 客户端搜索脚本（站点内 / 首页卡片过滤 / 全局 14 站），纯原生 JS，无依赖
+const SEARCH_JS = `
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function norm(s){return String(s==null?'':s).toLowerCase();}
+  function makeItem(e){
+    var authors = Array.isArray(e.authors)? e.authors.slice(0,4).join(', '):'';
+    var more = (Array.isArray(e.authors)&&e.authors.length>4)?' 等':'';
+    var tags = Array.isArray(e.tags)? e.tags.slice(0,5):[];
+    var abs = e.abstract? String(e.abstract).slice(0,260):'';
+    return '<li><div class="t">'+(e.url?'<a href="'+esc(e.url)+'" rel="noopener nofollow" target="_blank">'+esc(e.name)+'</a>':esc(e.name))+'</div>'
+      + (abs?'<div class="abs">'+esc(abs)+(String(e.abstract).length>260?'…':'')+'</div>':'')
+      + '<div class="meta">'
+      + (e.source?'<span class="chip">'+esc(e.source)+'</span>':'')
+      + (authors?'<span>'+esc(authors)+more+'</span>':'')
+      + (e.publishedDate?'<span>'+esc(e.publishedDate)+'</span>':'')
+      + (typeof e.confidence==='number'?'<span>置信度 '+e.confidence.toFixed(2)+'</span>':'')
+      + tags.map(function(t){return '<span class="chip">'+esc(t)+'</span>';}).join('')
+      + '</div></li>';
+  }
+  function matches(e,q){
+    q = norm(q); if(!q) return true;
+    return [e.name,e.abstract,e.source,(e.authors||[]).join(' '),(e.tags||[]).join(' ')].some(function(f){return norm(f).indexOf(q)>=0;});
+  }
+  // 站点内检索
+  var siteInput = document.getElementById('site-search');
+  if(siteInput){
+    var cache=null, list=document.getElementById('entity-list'), status=document.getElementById('search-status');
+    if(list) list.dataset.original = list.innerHTML;
+    siteInput.addEventListener('input', function(){
+      var q = siteInput.value.trim();
+      if(cache===null){
+        status.textContent='加载中…';
+        fetch('website/api/entities.json').then(function(r){return r.json();}).then(function(j){
+          cache = Array.isArray(j)? j : (j.entities||[]);
+          run();
+        }).catch(function(){status.textContent='加载失败';});
+        return;
+      }
+      run();
+      function run(){
+        if(!q){ if(list) list.innerHTML = (list.dataset.original||''); if(status) status.textContent=''; return; }
+        var res = cache.filter(function(e){return matches(e,q);}).slice(0,100);
+        if(list) list.innerHTML = res.length? res.map(makeItem).join('') : '<li class="m">无匹配结果</li>';
+        if(status) status.textContent = res.length+' 条匹配';
+      }
+    });
+  }
+  // 首页卡片过滤
+  var homeInput = document.getElementById('home-search');
+  if(homeInput){
+    homeInput.addEventListener('input', function(){
+      var q = norm(homeInput.value);
+      document.querySelectorAll('.card').forEach(function(c){
+        c.style.display = (!q || norm(c.textContent).indexOf(q)>=0)?'':'none';
+      });
+    });
+  }
+  // 全局 14 站检索
+  var globalInput = document.getElementById('global-search');
+  if(globalInput){
+    var glist=document.getElementById('global-list'), gstatus=document.getElementById('search-status'), sites=[];
+    globalInput.addEventListener('input', function(){
+      var q = globalInput.value.trim();
+      if(!q){ if(glist) glist.innerHTML=''; if(gstatus) gstatus.textContent=''; return; }
+      if(!sites.length){
+        fetch('api/catalog.json').then(function(r){return r.json();}).then(function(c){sites=c.sites||[]; run();}).catch(function(){gstatus.textContent='目录加载失败';});
+        return;
+      }
+      run();
+      function run(){
+        gstatus.textContent='检索中…';
+        var out=[];
+        (function next(i){
+          if(i>=sites.length || out.length>250){ finish(); return; }
+          fetch(sites[i].site+'/website/api/entities.json').then(function(r){return r.json();}).then(function(j){
+            var ents = Array.isArray(j)? j : (j.entities||[]);
+            for(var k=0;k<ents.length;k++){ if(matches(ents[k],q)) out.push(Object.assign({},ents[k],{_site:sites[i].site})); }
+            next(i+1);
+          }).catch(function(){ next(i+1); });
+        })(0);
+        function finish(){
+          out.sort(function(a,b){return String(b.addedAt||'').localeCompare(String(a.addedAt||''));});
+          var top = out.slice(0,100);
+          glist.innerHTML = top.length? top.map(function(e){
+            return '<li>'+(e.url?'<a href="'+esc(e.url)+'" target="_blank" rel="noopener">'+esc(e.name)+'</a>':esc(e.name))+' <span class="chip">'+esc(e._site)+'</span></li>';
+          }).join('') : '<li class="m">无匹配</li>';
+          gstatus.textContent = top.length+' 条（扫描 '+out.length+'）';
+        }
+      }
+    });
+  }
+})();
 `;
 
 function layout({ title, desc, body, jsonld, canonical }) {
@@ -170,8 +272,11 @@ ${tags.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}
 <a href="${BASE}/${site.slug}/website/api/index.json"><code>index.json</code></a> ·
 <a href="${BASE}/${site.slug}/website/api/entities.json"><code>entities.json</code></a>
 </div>
-<ul class="items">${items}</ul>
-${total > list.length ? `<p class="pager">页面展示最新 ${list.length} 条，全部 ${total} 条请通过上方 <code>entities.json</code> 获取。</p>` : ''}
+<div class="search"><input id="site-search" type="search" placeholder="在本站内检索（标题/摘要/标签/作者，支持中英文）" autofocus><button onclick="document.getElementById('site-search').dispatchEvent(new Event('input'))">搜索</button></div>
+<div id="search-status" class="search-status"></div>
+<ul class="items" id="entity-list">${items}</ul>
+${total > list.length ? `<p class="pager">页面展示最新 ${list.length} 条，全部 ${total} 条请通过上方 <code>entities.json</code> 获取。检索框会即时过滤最新 ${list.length} 条；全量检索请用顶部「全局搜索」。</p>` : ''}
+<script>${SEARCH_JS}</script>
 `;
 
   const jsonld = {
@@ -217,9 +322,12 @@ function renderHome(sites) {
 <p class="sub">${sites.length} 个前沿科技垂直领域 · ${total} 条结构化科研实体 · 面向 AI Agent 的实时知识接口</p>
 <div class="api">
 每个站点均提供机器可读接口 <code>/&lt;site&gt;/website/api/entities.json</code>；
-也可通过 MCP 直接接入：<code>npx -y @genetech/data-mcp</code>
+也可通过 MCP 直接接入：<code>npx -y @genetech/data-mcp</code> ·
+<a href="${BASE}/search.html">全局搜索 14 站 →</a>
 </div>
+<div class="search"><input id="home-search" type="search" placeholder="过滤下方领域卡片（输入关键词）"></div>
 <div class="grid">${cards}</div>
+<script>${SEARCH_JS}</script>
 `;
 
   const jsonld = {
@@ -240,6 +348,25 @@ function renderHome(sites) {
     body,
     jsonld,
     canonical: SITE_ORIGIN ? `${SITE_ORIGIN}${BASE}/` : '',
+  });
+}
+
+/** 全局搜索页（跨 14 站） */
+function renderSearchPage(sites) {
+  const total = sites.reduce((s, x) => s + x.entities.length, 0);
+  const body = `
+<h1>全局搜索</h1>
+<p class="sub">跨全部 ${sites.length} 个领域、${total} 条实体即时检索（客户端加载各站 <code>entities.json</code>，无需后端）</p>
+<div class="search glb"><input id="global-search" type="search" placeholder="输入关键词，跨 14 站检索论文/工具/数据集（中英文）" autofocus><button onclick="document.getElementById('global-search').dispatchEvent(new Event('input'))">搜索</button></div>
+<div id="search-status" class="search-status"></div>
+<ul class="items" id="global-list"></ul>
+<script>${SEARCH_JS}</script>
+`;
+  return layout({
+    title: '全局搜索 — GeneTech 知识引擎',
+    desc: `跨 ${sites.length} 个前沿科技领域、${total} 条结构化实体的即时检索。`,
+    body,
+    canonical: SITE_ORIGIN ? `${SITE_ORIGIN}${BASE}/search.html` : '',
   });
 }
 
@@ -269,6 +396,7 @@ function main() {
   }
 
   writeFile('index.html', renderHome(sites));
+  writeFile('search.html', renderSearchPage(sites));
 
   // 聚合目录，方便 Agent 一次拿到全量站点清单
   writeFile(

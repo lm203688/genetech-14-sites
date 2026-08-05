@@ -27,6 +27,7 @@ import { fileURLToPath } from 'node:url';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
+import { SearchIndex } from './search.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
@@ -42,6 +43,8 @@ const REQUIRE_AUTH = process.env.GENETECH_REQUIRE_AUTH === 'true';
 let _cache = null;
 let _cacheTs = 0;
 const CACHE_TTL_MS = 5 * 60 * 1000;
+let _searchIndex = null;
+let _searchTs = 0;
 
 async function fetchJson(url, tryLocalPath) {
   if (API_BASE && url.startsWith('http')) {
@@ -81,6 +84,26 @@ async function loadSites(force = false) {
 
   _cache = sites;
   _cacheTs = now;
+
+  // 构建混合检索索引（BM25 + 字段加权 + RRF；可选向量）
+  const flat = [];
+  for (const [siteId, s] of Object.entries(sites)) {
+    for (const ent of s.entities) flat.push({ ...ent, _site: siteId });
+  }
+  const idx = new SearchIndex(flat);
+  // 若配置了嵌入端点，后台惰性建向量（不阻塞加载）
+  if (process.env.GENETECH_EMBED_URL) {
+    idx
+      .enableVector({
+        embedUrl: process.env.GENETECH_EMBED_URL,
+        embedModel: process.env.GENETECH_EMBED_MODEL || 'text-embedding-3-small',
+        embedKey: process.env.GENETECH_EMBED_KEY || '',
+        dataDir: DATA_DIR,
+      })
+      .catch((e) => console.error(`[search] 向量初始化失败: ${e.message}`));
+  }
+  _searchIndex = idx;
+  _searchTs = now;
   return sites;
 }
 
@@ -147,26 +170,6 @@ function exportCitation(ent, siteId, format) {
     `UR  - ${url}`,
     'ER  -',
   ].join('\n');
-}
-
-// ============================================================================
-// 关键词相关性排序（无嵌入，基于词频/字段加权）
-// ============================================================================
-
-function scoreEntity(ent, query) {
-  const q = query.toLowerCase();
-  const terms = q.split(/\s+/).filter(Boolean);
-  const name = (ent.name || ent.title || '').toLowerCase();
-  const abstract = (ent.abstract || '').toLowerCase();
-  const tags = (ent.tags || []).join(' ').toLowerCase();
-  let score = 0;
-  for (const t of terms) {
-    if (name.includes(t)) score += 5;
-    if (tags.includes(t)) score += 3;
-    if (abstract.includes(t)) score += 1;
-  }
-  if (ent.confidence) score += ent.confidence * 2; // 高置信实体加权
-  return score;
 }
 
 // ============================================================================
@@ -275,26 +278,21 @@ server.tool(
 
 server.tool(
   'semantic_search',
-  '对知识库做关键词相关性检索（标题/标签加权 + 置信度加权），返回最相关实体。',
+  '对知识库做混合检索（BM25 倒排 + 字段加权 + RRF 融合，可选向量语义），返回最相关实体。比纯关键词更抗噪声、召回更稳。',
   {
-    query: z.string().describe('检索词'),
+    query: z.string().describe('检索词（中英文均可）'),
     site: z.string().optional().describe('限定站点'),
     limit: z.number().min(1).max(100).default(10).describe('返回条数'),
   },
   async (args) => {
-    const sites = await loadSites();
-    const ents = allEntities(sites, args.site);
-    const ranked = ents
-      .map((e) => ({ e, score: scoreEntity(e, args.query) }))
-      .filter((x) => x.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, args.limit);
+    await loadSites();
+    const ranked = await _searchIndex.hybridSearch(args.query, { limit: args.limit, site: args.site });
     return {
       content: [
         {
           type: 'text',
           text: JSON.stringify(
-            { query: args.query, results: ranked.map((x) => ({ score: x.score, ...x.e })) },
+            { query: args.query, mode: 'hybrid(bm25+field' + (_searchIndex.vectors ? '+vector' : '') + ')', results: ranked },
             null,
             2
           ),

@@ -52,7 +52,8 @@
       },
       {
         "name": "semantic_search",
-        "description": "Relevance-ranked keyword search across the knowledge base (title/tag weighted + confidence boosted). Returns the most relevant entities for a query."
+        "description": "Hybrid retrieval across the knowledge base: BM25 inverted index + field-weighted scoring + Reciprocal Rank Fusion (RRF). Optional vector embedding via GENETECH_EMBED_URL (env-gated). Returns the most relevant entities for a query (Chinese/English)."
+
       },
       {
         "name": "export_citation",
