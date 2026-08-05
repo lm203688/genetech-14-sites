@@ -1,0 +1,120 @@
+{
+  "pipeline": "data-backfill",
+  "timestamp": "2026-08-05T01:49:32.485Z",
+  "dryRun": false,
+  "limit": 400,
+  "results": [
+    {
+      "site": "quantum-computing",
+      "fetched": 180,
+      "added": 179,
+      "total": 244,
+      "offset": 12,
+      "dryRun": false
+    },
+    {
+      "site": "alien-minerals",
+      "fetched": 180,
+      "added": 153,
+      "total": 183,
+      "offset": 0,
+      "dryRun": false
+    },
+    {
+      "site": "biocomputing",
+      "fetched": 167,
+      "added": 159,
+      "total": 345,
+      "offset": 36,
+      "dryRun": false
+    },
+    {
+      "site": "bionic-ai",
+      "fetched": 144,
+      "added": 122,
+      "total": 152,
+      "offset": 0,
+      "dryRun": false
+    },
+    {
+      "site": "deep-sea-tech",
+      "fetched": 144,
+      "added": 122,
+      "total": 152,
+      "offset": 0,
+      "dryRun": false
+    },
+    {
+      "site": "brain-science",
+      "fetched": 141,
+      "added": 119,
+      "total": 152,
+      "offset": 0,
+      "dryRun": false
+    },
+    {
+      "site": "life-science",
+      "fetched": 167,
+      "added": 145,
+      "total": 178,
+      "offset": 0,
+      "dryRun": false
+    },
+    {
+      "site": "new-energy",
+      "fetched": 144,
+      "added": 143,
+      "total": 357,
+      "offset": 12,
+      "dryRun": false
+    },
+    {
+      "site": "nuclear-energy",
+      "fetched": 143,
+      "added": 142,
+      "total": 314,
+      "offset": 12,
+      "dryRun": false
+    },
+    {
+      "site": "robot-parts",
+      "fetched": 141,
+      "added": 119,
+      "total": 153,
+      "offset": 0,
+      "dryRun": false
+    },
+    {
+      "site": "tcm-tools",
+      "fetched": 142,
+      "added": 120,
+      "total": 151,
+      "offset": 0,
+      "dryRun": false
+    },
+    {
+      "site": "genetech-tools",
+      "fetched": 131,
+      "added": 109,
+      "total": 218,
+      "offset": 0,
+      "dryRun": false
+    },
+    {
+      "site": "exo-science",
+      "fetched": 72,
+      "added": 64,
+      "total": 106,
+      "offset": 0,
+      "dryRun": false
+    },
+    {
+      "site": "agent-ecosystem",
+      "fetched": 71,
+      "added": 63,
+      "total": 104,
+      "offset": 0,
+      "dryRun": false
+    }
+  ]
+}

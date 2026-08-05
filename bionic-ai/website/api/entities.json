@@ -747,5 +747,2655 @@
     ],
     "publishedDate": "2017-01-25",
     "addedAt": "2026-08-04T10:39:37.682Z"
+  },
+  {
+    "id": "doi:10.5772/55800",
+    "name": "Brain Computer Interface for Epilepsy Treatment",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5772/55800",
+    "authors": [
+      "L. Huang",
+      "G. van"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2013-06-06T06:46:35Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1142/9789819829309_0007",
+    "name": "Brain–Computer Interface and Traffic Signal Control",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1142/9789819829309_0007",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026-07-29T01:53:58Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.5772/13556",
+    "name": "Visuo-Motor Tasks in a Brain-Computer Interface Analysis",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5772/13556",
+    "authors": [
+      "Vito Logar",
+      "Ale Beli"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2012-03-29T04:24:04Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1109/iww-bci.2015.7073019",
+    "name": "Data-driven brain computer interface in real environments",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/iww-bci.2015.7073019",
+    "authors": [
+      "Shin Ishii"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2015-04-03T10:53:39Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2971071529",
+    "name": "A bioinspired optoelectronically engineered artificial neurorobotics device with sensorimotor functionalities",
+    "source": "openalex",
+    "abstract": "Abstract Development of the next generation of bio- and nano-electronics is inseparably connected to the innovative concept of emulation and reproduction of biological sensorimotor systems and artificial neurobotics. Here, we report for the first time principally new artificial bioinspired optoelectronic sensorimotor system for the controlable immitation of opto-genetically engineered neurons in the biological motor system. The device is based on inorganic optical synapse (In-doped TiO 2 nanofilm) assembled into a liquid metal (galinstan) actuator. The optoelectronic synapse generates polarised excitatory and inhibitory postsynaptic potentials to trigger the liquid metal droplet to vibrate and then mimic the expansion and contraction of biological fibre muscle. The low-energy consumption and precise modulation of electrical and mechanical outputs are the distinguished characteristics of fabricated sensorimotor system. This work is the underlying significant step towards the development of next generation of low-energy the internet of things for bioinspired neurorobotic and bioelectronic system.",
+    "url": "https://doi.org/10.1038/s41467-019-11823-4",
+    "authors": [
+      "Mohammad Karbalaei Akbari",
+      "Serge Zhuiykov"
+    ],
+    "tags": [
+      "Computer science",
+      "Nanotechnology",
+      "Materials science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2019-08-27",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2796397123",
+    "name": "fNIRS-based Neurorobotic Interface for gait rehabilitation",
+    "source": "openalex",
+    "abstract": "BACKGROUND: In this paper, a novel functional near-infrared spectroscopy (fNIRS)-based brain-computer interface (BCI) framework for control of prosthetic legs and rehabilitation of patients suffering from locomotive disorders is presented. METHODS: fNIRS signals are used to initiate and stop the gait cycle, while a nonlinear proportional derivative computed torque controller (PD-CTC) with gravity compensation is used to control the torques of hip and knee joints for minimization of position error. In the present study, the brain signals of walking intention and rest tasks were acquired from the left hemisphere's primary motor cortex for nine subjects. Thereafter, for removal of motion artifacts and physiological noises, the performances of six different filters (i.e. Kalman, Wiener, Gaussian, hemodynamic response filter (hrf), Band-pass, finite impulse response) were evaluated. Then, six different features were extracted from oxygenated hemoglobin signals, and their different combinations were used for classification. Also, the classification performances of five different classifiers (i.e. k-Nearest Neighbour, quadratic discriminant analysis, linear discriminant analysis (LDA), Naïve Bayes, support vector machine (SVM)) were tested. RESULTS: The classification accuracies obtained from SVM using the hrf were significantly higher (p < 0.01) than those of the other classifier/ filter combinations. Those accuracies were 77.5, 72.5, 68.3, 74.2, 73.3, 80.8, 65, 76.7, and 86.7% for the nine subjects, respectively. CONCLUSION: The control commands generated using the classifiers initiated and stopped the gait cycle of the prosthetic leg, the knee and hip torques of which were controlled using the PD-CTC to minimize the position error. The proposed scheme can be effectively used for neurofeedback training and rehabilitation of lower-limb amputees and paralyzed patients.",
+    "url": "https://doi.org/10.1186/s12984-018-0346-2",
+    "authors": [
+      "Rayyan Azam Khan",
+      "Noman Naseer",
+      "Nauman Khalid Qureshi",
+      "Farzan Majeed Noori",
+      "Hammad Nazeer",
+      "Muhammad Umer Khan"
+    ],
+    "tags": [
+      "Support vector machine",
+      "Linear discriminant analysis",
+      "Brain–computer interface",
+      "Artificial intelligence",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2018-02-05",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W3092451347",
+    "name": "Nengo and Low-Power AI Hardware for Robust, Embedded Neurorobotics.",
+    "source": "openalex",
+    "abstract": "robotic arm. The code and implementation details are provided, with the intent of enabling other researchers to build and run their own neurorobotic systems.",
+    "url": "https://doi.org/10.3389/fnbot.2020.568359",
+    "authors": [
+      "Travis DeWolf",
+      "Pawel Jaworski",
+      "Chris Eliasmith"
+    ],
+    "tags": [
+      "Computer science",
+      "Neuromorphic engineering",
+      "Spiking neural network",
+      "Python (programming language)",
+      "Interfacing"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-01-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W3198803056",
+    "name": "Neurorobotic fusion of prosthetic touch, kinesthesia, and movement in bionic upper limbs promotes intrinsic brain behaviors",
+    "source": "openalex",
+    "abstract": "Bionic prostheses have restorative potential. However, the complex interplay between intuitive motor control, proprioception, and touch that represents the hallmark of human upper limb function has not been revealed. Here, we show that the neurorobotic fusion of touch, grip kinesthesia, and intuitive motor control promotes levels of behavioral performance that are stratified toward able-bodied function and away from standard-of-care prosthetic users. This was achieved through targeted motor and sensory reinnervation, a closed-loop neural-machine interface, coupled to a noninvasive robotic architecture. Adding touch to motor control improves the ability to reach intended target grasp forces, find target durometers among distractors, and promote prosthetic ownership. Touch, kinesthesia, and motor control restore balanced decision strategies when identifying target durometers and intrinsic visuomotor behaviors that reduce the need to watch the prosthetic hand during object interactions, which frees the eyes to look ahead to the next planned action. The combination of these three modalities also enhances error correction performance. We applied our unified theoretical, functional, and clinical analyses, enabling us to define the relative contributions of the sensory and motor modalities operating simultaneously in this neural-machine interface. This multiperspective framework provides the necessary evidence to show that bionic prostheses attain more human-like function with effective sensory-motor restoration.",
+    "url": "https://doi.org/10.1126/scirobotics.abf3368",
+    "authors": [
+      "Paul D. Marasco",
+      "Jacqueline S. Hebert",
+      "Jonathon W. Sensinger",
+      "Dylan T. Beckler",
+      "Zachary C. Thumser",
+      "Ahmed W. Shehata",
+      "Heather E. Williams",
+      "Kathleen R. Wilson"
+    ],
+    "tags": [
+      "Proprioception",
+      "GRASP",
+      "Stimulus modality",
+      "Sensory system",
+      "Modalities"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-09-02",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2252492246",
+    "name": "The Three Laws of Neurorobotics: A Review on What Neurorehabilitation Robots Should Do for Patients and Clinicians",
+    "source": "openalex",
+    "abstract": "Most studies and reviews on robots for neurorehabilitation focus on their effectiveness. These studies often report inconsistent results. This and many other reasons limit the credit given to these robots by therapists and patients. Further, neurorehabilitation is often still based on therapists' expertise, with competition among different schools of thought, generating substantial uncertainty about what exactly a neurorehabilitation robot should do. Little attention has been given to ethics. This review adopts a new approach, inspired by Asimov's three laws of robotics and based on the most recent studies in neurorobotics, for proposing new guidelines for designing and using robots for neurorehabilitation. We propose three laws of neurorobotics based on the ethical need for safe and effective robots, the redefinition of their role as therapist helpers, and the need for clear and transparent human-machine interfaces. These laws may allow engineers and clinicians to work closely together on a new generation of neurorobots.",
+    "url": "https://doi.org/10.1007/s40846-016-0115-2",
+    "authors": [
+      "Marco Iosa",
+      "Giovanni Morone",
+      "Andrea Cherubini",
+      "Stefano Paolucci"
+    ],
+    "tags": [
+      "Neurorehabilitation",
+      "Robot",
+      "Robotics",
+      "Engineering ethics",
+      "Work (physics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2016-02-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2047029964",
+    "name": "A neurorobotic platform to test the influence of neuromodulatory signaling on anxious and curious behavior",
+    "source": "openalex",
+    "abstract": "The vertebrate neuromodulatory systems are critical for appropriate value-laden responses to environmental challenges. Whereas changes in the overall level of dopamine (DA) have an effect on the organism's reward or curiosity-seeking behavior, changes in the level of serotonin (5-HT) can affect its level of anxiety or harm aversion. Moreover, top-down signals from frontal cortex can exert cognitive control on these neuromodulatory systems. The cholinergic (ACh) and noradrenergic (NE) systems affect the ability to filter out noise and irrelevant events. We introduce a neural network for action selection that is based on these principles of neuromodulatory systems. The algorithm tested the hypothesis that high levels of serotonin lead to withdrawn behavior by suppressing DA action and that high levels of DA or low levels of 5-HT lead to curious, exploratory behavior. Furthermore, the algorithm tested the idea that top-down signals from the frontal cortex to neuromodulatory areas are critical for an organism to cope with both stressful and novel events. The neural network was implemented on an autonomous robot and tested in an open-field paradigm. The open-field test is often used to test for models anxiety or exploratory behavior in the rodent and allows for qualitative comparisons with the neurorobot's behavior. The present neurorobotic experiments can lead to a better understanding of how neuromodulatory signaling affects the balance between anxious and curious behavior. Therefore, this experimental paradigm may also be informative in exploring a wide range of neurological diseases such as anxiety, autism, attention deficit disorders, and obsessive-compulsive disorders.",
+    "url": "https://doi.org/10.3389/fnbot.2013.00001",
+    "authors": [
+      "Jeffrey L. Krichmar"
+    ],
+    "tags": [
+      "Computer science",
+      "Test (biology)",
+      "Human–computer interaction",
+      "Biology",
+      "Paleontology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2013-01-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2292222414",
+    "name": "Human-Inspired Neurorobotic System for Classifying Surface Textures by Touch",
+    "source": "openalex",
+    "abstract": "Giving robots the ability to classify surface textures requires appropriate sensors and algorithms. Inspired by the biology of human tactile perception, we implement a neurorobotic texture classifier with a recurrent spiking neural network, using a novel semisupervised approach for classifying dynamic stimuli. Input to the network is supplied by accelerometers mounted on a robotic arm. The sensor data are encoded by a heterogeneous population of neurons, modeled to match the spiking activity of mechanoreceptor cells. This activity is convolved by a hidden layer using bandpass filters to extract nonlinear frequency information from the spike trains. The resulting high-dimensional feature representation is then continuously classified using a neurally implemented support vector machine. We demonstrate that our system classifies 18 metal surface textures scanned in two opposite directions at a constant velocity. We also demonstrate that our approach significantly improves upon a baseline model that does not use the described feature extraction. This method can be performed in real-time using neuromorphic hardware, and can be extended to other applications that process dynamic stimuli online.",
+    "url": "https://doi.org/10.1109/lra.2016.2517213",
+    "authors": [
+      "Ken E. Friedl",
+      "Aaron R. Voelker",
+      "Angelika Peer",
+      "Chris Eliasmith"
+    ],
+    "tags": [
+      "Computer science",
+      "Artificial intelligence",
+      "Neuromorphic engineering",
+      "Pattern recognition (psychology)",
+      "Feature extraction"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2016-01-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W1582232668",
+    "name": "Neurorobotics: From Vision to Action",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-319-32552-1_77",
+    "authors": [
+      "Patrick van der Smagt",
+      "Michael A. Arbib",
+      "Giorgio Metta"
+    ],
+    "tags": [
+      "Neuroethology",
+      "Artificial intelligence",
+      "Action (physics)",
+      "Creatures",
+      "Robotics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2016-01-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W3189839642",
+    "name": "Neurorobotics for neurorehabilitation",
+    "source": "openalex",
+    "abstract": "Peripheral neuromodulation boosts health and cognitive benefits in leg amputees",
+    "url": "https://doi.org/10.1126/science.abj5259",
+    "authors": [
+      "Staniša Raspopović"
+    ],
+    "tags": [
+      "Neurorehabilitation",
+      "Neuromodulation",
+      "Physical medicine and rehabilitation",
+      "Neuroscience",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-08-05",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W1965824588",
+    "name": "Neurorobotic Models in Neuroscience and Neuroinformatics",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1385/ni:3:3:167",
+    "authors": [
+      "Anil K. Seth",
+      "Olaf Sporns",
+      "Jeffrey L. Krichmar"
+    ],
+    "tags": [
+      "Neuroinformatics",
+      "Attendance",
+      "Set (abstract data type)",
+      "Dissemination",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2005-01-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/fnbot.2022.1109498",
+    "name": "Editorial: Rising stars in neurorobotics 2021",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3389/fnbot.2022.1109498",
+    "authors": [
+      "Giacomo Valle"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-12-16T07:21:05Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/fnbot.2022.882518",
+    "name": "Design Principles for Neurorobotics",
+    "source": "crossref",
+    "abstract": "<jats:p>In their book “How the Body Shapes the Way We Think: A New View of Intelligence,” Pfeifer and Bongard put forth an embodied approach to cognition. Because of this position, many of their robot examples demonstrated “intelligent” behavior despite limited neural processing. It is our belief that neurorobots should attempt to follow many of these principles. In this article, we discuss a number of principles to consider when designing neurorobots and experiments using robots to test brain theories. These principles are strongly inspired by Pfeifer and Bongard, but build on their design principles by grounding them in neuroscience and by adding principles based on neuroscience research. Our design principles fall into three categories. First, organisms must react quickly and appropriately to events. Second, organisms must have the ability to learn and remember over their lifetimes. Third, organisms must weigh options that are crucial for survival. We believe that by following these design principles a robot's behavior will be more naturalistic and more successful.</jats:p>",
+    "url": "https://doi.org/10.3389/fnbot.2022.882518",
+    "authors": [
+      "Jeffrey L. Krichmar",
+      "Tiffany J. Hwu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-05-25T07:47:18Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/fnbot.2022.1111877",
+    "name": "Editorial: Methods and applications in neurorobotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3389/fnbot.2022.1111877",
+    "authors": [
+      "Suparerk Janjarasjitt"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-12-15T08:56:11Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/fnbot.2023.1332724",
+    "name": "Editorial: Women in neurorobotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3389/fnbot.2023.1332724",
+    "authors": [
+      "Mariacarla Staffa",
+      "Silvia Tolu",
+      "Jiyeon Kang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2023-11-28T10:05:27Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/fnbot.2024.1426355",
+    "name": "Editorial: Horizons in neurorobotics 2022",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3389/fnbot.2024.1426355",
+    "authors": [
+      "Florian Röhrbein",
+      "Hang Su",
+      "Poramate Manoonpong"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2024-06-12T13:22:10Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/neuro.12.001.2007",
+    "name": "Virtual neurorobotics (VNR) to accelerate development of plausible neuromorphic brain architectures",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3389/neuro.12.001.2007",
+    "authors": [
+      "Philip H. Goodman"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2008-05-08T10:33:06Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/fnbot.2022.886050",
+    "name": "ROS-Neuro: An Open-Source Platform for Neurorobotics",
+    "source": "crossref",
+    "abstract": "<jats:p>The growing interest in neurorobotics has led to a proliferation of heterogeneous neurophysiological-based applications controlling a variety of robotic devices. Although recent years have seen great advances in this technology, the integration between human neural interfaces and robotics is still limited, making evident the necessity of creating a standardized research framework bridging the gap between neuroscience and robotics. This perspective paper presents Robot Operating System (ROS)-Neuro, an open-source framework for neurorobotic applications based on ROS. ROS-Neuro aims to facilitate the software distribution, the repeatability of the experimental results, and support the birth of a new community focused on neuro-driven robotics. In addition, the exploitation of Robot Operating System (ROS) infrastructure guarantees stability, reliability, and robustness, which represent fundamental aspects to enhance the translational impact of this technology. We suggest that ROS-Neuro might be the future development platform for the flourishing of a new generation of neurorobots to promote the rehabilitation, the inclusion, and the independence of people with disabilities in their everyday life.</jats:p>",
+    "url": "https://doi.org/10.3389/fnbot.2022.886050",
+    "authors": [
+      "Luca Tonin",
+      "Gloria Beraldo",
+      "Stefano Tortora",
+      "Emanuele Menegatti"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-05-10T10:12:59Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/fnbot.2023.1214871",
+    "name": "Editorial: Neurorobotics explores the human senses",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3389/fnbot.2023.1214871",
+    "authors": [
+      "Mehdi Khamassi",
+      "Marco Mirolli",
+      "Christian Wallraven"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2023-05-22T04:55:56Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/fnbot.2023.1127994",
+    "name": "Editorial: Neurorobotics explores gait movement in the sporting community",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3389/fnbot.2023.1127994",
+    "authors": [
+      "Andrej Gams",
+      "Ganesh R. Naik"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2023-01-17T06:22:00Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/fnbot.2018.00042",
+    "name": "Neurorobotics—A Thriving Community and a Promising Pathway Toward Intelligent Cognitive Robots",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3389/fnbot.2018.00042",
+    "authors": [
+      "Jeffrey L. Krichmar"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2018-07-16T04:24:36Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/fnbot.2023.1354389",
+    "name": "Editorial: Neurorobotics and strategies for adaptive human-machine interaction, volume II",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3389/fnbot.2023.1354389",
+    "authors": [
+      "Francesca Cordella",
+      "Surjo R. Soekadar",
+      "Loredana Zollo"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2024-01-09T04:44:15Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/fnbot.2021.809903",
+    "name": "Editorial: Robust Artificial Intelligence for Neurorobotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3389/fnbot.2021.809903",
+    "authors": [
+      "Joe Hays",
+      "Subramanian Ramamoorthy",
+      "Christian Tetzlaff"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-12-16T06:21:37Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2121680738",
+    "name": "Bionic ankle–foot prosthesis normalizes walking gait for persons with leg amputation",
+    "source": "openalex",
+    "abstract": "Over time, leg prostheses have improved in design, but have been incapable of actively adapting to different walking velocities in a manner comparable to a biological limb. People with a leg amputation using such commercially available passive-elastic prostheses require significantly more metabolic energy to walk at the same velocities, prefer to walk slower and have abnormal biomechanics compared with non-amputees. A bionic prosthesis has been developed that emulates the function of a biological ankle during level-ground walking, specifically providing the net positive work required for a range of walking velocities. We compared metabolic energy costs, preferred velocities and biomechanical patterns of seven people with a unilateral transtibial amputation using the bionic prosthesis and using their own passive-elastic prosthesis to those of seven non-amputees during level-ground walking. Compared with using a passive-elastic prosthesis, using the bionic prosthesis decreased metabolic cost by 8 per cent, increased trailing prosthetic leg mechanical work by 57 per cent and decreased the leading biological leg mechanical work by 10 per cent, on average, across walking velocities of 0.75-1.75 m s(-1) and increased preferred walking velocity by 23 per cent. Using the bionic prosthesis resulted in metabolic energy costs, preferred walking velocities and biomechanical patterns that were not significantly different from people without an amputation.",
+    "url": "https://doi.org/10.1098/rspb.2011.1194",
+    "authors": [
+      "Hugh Herr",
+      "Alena M. Grabowski"
+    ],
+    "tags": [
+      "Prosthesis",
+      "Amputation",
+      "Biomechanics",
+      "Ankle",
+      "Gait"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2011-07-13",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W3213623135",
+    "name": "Mechatronic System Design and Development of iROD: EMG Controlled Bionic Prosthesis for Middle- Third Forearm Amputee",
+    "source": "openalex",
+    "abstract": "In Peru, 5.2% of all the population are people with motor disabilities. Some of these with congenital malformations or forearm amputations suffer from difficulties within society to carry out their activities of daily living. Many times, they choose to use a cosmetic prosthesis, since a bionic one is very expensive. Today, thanks to 3D printing, it is possible to manufacture affordable bionic prosthesis. For this reason, the innovative research was carried out from 2019 to 2020 under the supervision of the School of Mechatronics Engineering at Ricardo Palma University, it was designed and developed in the Digital Systems Laboratory resulting in iROD, a bionic prosthesis for a person with amputation at the level of the middle third of the forearm applying EMG signals. In addition, this device captures EMG signals from the forearm using dry electrodes for greater patient comfort. For the development, the biomechanical concepts of the human hand were used, where SolidWorks was used for the mechanisms and then to be printed in 3D, Eagle for the electrical and electronic system, and Arduino IDE for the control system. This prosthesis was designed for Mr. Franz Dioses, a person with an amputation at the level of the middle third of the forearm, helping to carry out his activities of daily living. In conclusion, this bionic prosthesis is the functional prototype, being the beginning of a more advanced one, improving the mechanical system and including control with artificial intelligence. It is proposed to start in September 2021 to design and develop these improvements.",
+    "url": "https://doi.org/10.1109/etcm53643.2021.9590715",
+    "authors": [
+      "Richard A. Vergaray",
+      "Roger F. Del Aguila",
+      "Gladys A. Avellaneda",
+      "Ricardo Palomares",
+      "José Cornejo",
+      "Jorge Cornejo"
+    ],
+    "tags": [
+      "Prosthesis",
+      "Forearm",
+      "Mechatronics",
+      "Artificial limbs",
+      "Amputation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-10-12",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2887718271",
+    "name": "Multisensory bionic limb to achieve prosthesis embodiment and reduce distorted phantom limb perceptions",
+    "source": "openalex",
+    "abstract": "International audience",
+    "url": "https://doi.org/10.1136/jnnp-2018-318570",
+    "authors": [
+      "Giulio Rognini",
+      "Francesco M. Petrini",
+      "Staniša Raspopović",
+      "Giacomo Valle",
+      "Giuseppe Granata",
+      "Ivo Strauss",
+      "Marco Solcà",
+      "Javier Bello‐Ruiz",
+      "Bruno Herbelin",
+      "Robin Mange",
+      "Edoardo D’Anna",
+      "Riccardo Di Iorio",
+      "Giovanni Di Pino",
+      "David Andreu",
+      "David Guiraud",
+      "Thomas Stieglitz",
+      "Paolo Maria Rossini",
+      "Andrea Serino",
+      "Silvestro Micera",
+      "Olaf Blanke"
+    ],
+    "tags": [
+      "Phantom limb",
+      "Neuroprosthetics",
+      "Sensation",
+      "Forearm",
+      "Prosthesis"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2018-08-12",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2032423464",
+    "name": "Stretchable silicon nanoribbon electronics for skin prosthesis",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/ncomms6747",
+    "authors": [
+      "Jaemin Kim",
+      "Min‐Cheol Lee",
+      "Hyung Joon Shim",
+      "Roozbeh Ghaffari",
+      "Hye Rim Cho",
+      "Donghee Son",
+      "Yei Hwan Jung",
+      "Min Soh",
+      "Changsoon Choi",
+      "Sungmook Jung",
+      "Kon Chu",
+      "Daejong Jeon",
+      "Soon‐Tae Lee",
+      "Ji Hoon Kim",
+      "Seung Hong Choi",
+      "Taeghwan Hyeon",
+      "Dae‐Hyeong Kim"
+    ],
+    "tags": [
+      "Materials science",
+      "Electronic skin",
+      "Electronics",
+      "Stretchable electronics",
+      "Flexible electronics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2014-12-09",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W4206343540",
+    "name": "A Review of Existing Transtibial Bionic Prosthesis: Mechanical Design, Actuators and Power Transmission",
+    "source": "openalex",
+    "abstract": "Transtibial and transfemoral amputations are the most common amputations in the world, loss of lower extremity result in impaired function extremities and also body balance. A prosthesis is a medical device designed to replace a specific body part to restore function to a body part lost due to an accident or disease. Most doctors strongly recommend the use of a prosthesis so that patients can return to normal activities after undergoing an amputation. Besides functioning to support beauty, the use of prostheses is also to restore the quality of life of prosthetic users, the issue of metabolic energy consumption when walking is also very important in designing transtibial bionic prosthesis because it involves the comfort of the user transtibial prosthesis. Most of the existing transtibial prosthesis products in Indonesia are conventional passive transtibial foot products, and passive prosthesis users show a limp or asymmetrical gait pattern so that conventional passive prosthesis users experience discomfort when walking in the form of pain in the amputated leg and normal foot, which can cause secondary musculoskeletal injuries such as joint disorders. Passive prostheses cannot generate propulsive force during push-off phase (terminal stance and preswing) of the human gait cycle. The use of passive prostheses can also consume 20-30% more metabolic energy while walking so that it can cause fatigue for the user. Transtibial bionic prosthesis research is growing, transtibial bionic prosthesis can overcome the weakness of passive prosthesis because it can produce push-off during gait cycle and several researchers have shown that bionic prostheses are capable of mimicking the human gait, as well as improve the performance in a more natural gait and normal walking. This study aims to study the existing transtibial bionic prosthesis by comparing between 6 existing designs of powered ankle or transtibial bionic prosthesis that have been published in several publications. The discussion focuses on the design and mechanical systems, actuators related to the selection of motors and drive mechanisms as well as power transmission from actuators to moving components.",
+    "url": "https://doi.org/10.14710/jbiomes.2021.v1i2.65-72",
+    "authors": [
+      "Ade Reza Ismawan",
+      "Rifky Ismail",
+      "Tony Prahasto",
+      "Mochammad Ariyanto",
+      "Budi Setiyana"
+    ],
+    "tags": [
+      "Prosthesis",
+      "Gait",
+      "Physical medicine and rehabilitation",
+      "Amputation",
+      "Preferred walking speed"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-01-06",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2144368596",
+    "name": "The bionic eye (electronic visual prosthesis): A review",
+    "source": "openalex",
+    "abstract": "The concept of a visual prosthesis for the blind or partially sighted is not a new one. Indeed, for more than three decades this technology based treatment for blindness has appeared imminent. Despite the concerted efforts of numerous physicians, scientists and engineers, the successful application of a useful visual prosthesis remains elusive. The present review will endeavour to describe past efforts, investigate the present state of the art and indicate the obstacles that must be overcome in order to bring an electronic visual prosthesis to fruition.",
+    "url": "https://doi.org/10.1111/j.1442-9071.1998.tb01310.x",
+    "authors": [
+      "Gregg J. Suaning",
+      "Nigel H. Lovell",
+      "Klaus Schindhelm",
+      "Minas T. Coroneo"
+    ],
+    "tags": [
+      "Blindness",
+      "Visual prosthesis",
+      "Prosthesis",
+      "Optometry",
+      "Retinal Prosthesis"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "1998-08-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2994901782",
+    "name": "Bionic design and verification of 3D printed PEEK costal cartilage prosthesis",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.jmbbm.2019.103561",
+    "authors": [
+      "Chenguang Zhang",
+      "Ling Wang",
+      "Jianfeng Kang",
+      "Oscar Martel",
+      "Dichen Li"
+    ],
+    "tags": [
+      "Costal cartilage",
+      "Rib cage",
+      "Cartilage",
+      "Peek",
+      "Ultimate tensile strength"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2019-12-20",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W3108506906",
+    "name": "Restoration of sensory information via bionic hands",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s41551-020-00630-8",
+    "authors": [
+      "Sliman J. Bensmaı̈a",
+      "Dustin J. Tyler",
+      "Silvestro Micera"
+    ],
+    "tags": [
+      "Sensory system",
+      "Computer science",
+      "Biology",
+      "Neuroscience"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-11-23",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2140077762",
+    "name": "Design and Testing of a Bionic Dancing Prosthesis",
+    "source": "openalex",
+    "abstract": "Traditionally, prosthetic leg research has focused on improving mobility for activities of daily living. Artistic expression such as dance, however, is not a common research topic and consequently prosthetic technology for dance has been severely limited for the disabled. This work focuses on investigating the ankle joint kinetics and kinematics during a Latin-American dance to provide unique motor options for disabled individuals beyond those of daily living. The objective of this study was to develop a control system for a bionic ankle prosthesis that outperforms conventional prostheses when dancing the rumba. The biomechanics of the ankle joint of a non-amputee, professional dancer were acquired for the development of the bionic control system. Subsequently, a professional dancer who received a traumatic transtibial amputation in April 2013 tested the bionic dance prosthesis and a conventional, passive prosthesis for comparison. The ability to provide similar torque-angle behavior of the biological ankle was assessed to quantify the biological realism of the prostheses. The bionic dancing prosthesis overlapped with 37 ± 6% of the non-amputee ankle torque and ankle angle data, compared to 26 ± 2% for the conventional, passive prosthesis, a statistically greater overlap (p = 0.01). This study lays the foundation for quantifying unique, expressive activity modes currently unavailable to individuals with disabilities. Future work will focus on an expansion of the methods and types of dance investigated in this work.",
+    "url": "https://doi.org/10.1371/journal.pone.0135148",
+    "authors": [
+      "Elliott J. Rouse",
+      "Nathan C. Villagaray-Carski",
+      "Robert Wall Emerson",
+      "Hugh Herr"
+    ],
+    "tags": [
+      "Prosthesis",
+      "Ankle",
+      "Dance",
+      "Physical medicine and rehabilitation",
+      "Biomechanics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2015-08-18",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W3017296029",
+    "name": "The Manipulation of Bionic Prosthesis Using Neural Network Processing Information Principles",
+    "source": "openalex",
+    "abstract": "The features of the use of bionic principles for the control of robotic mechanisms are considered. It is revealed that the control system of bionic prosthesis should correspond to the biological properties of human body and perform quite complex and complete actions of the motor cycle without direct human intervention, as well as be adaptive with purposeful behavior changes under the influence of external conditions. The article describes the approach to the construction of a control system for a full-functional bionic prosthesis of the lower limb of a person. A neural network algorithm for prosthesis control is proposed, which allows to reduce the power consumption of computing means and increase the speed of the control system. The presence of sensors in the control system allows you to respond to external stimuli and provides a high degree of stability and safety of operation of the prosthesis. The modification of the control system of bioelectrical prosthesis, which is the synthesis of devices for processing of primary information and a control actuator, and the ways of its implementation, allow increasing the functionality of a hip prosthesis, to reduce the cost and size of its elements, to realize his movement in accordance with the natural movement of a person.",
+    "url": "https://doi.org/10.1109/mwent47943.2020.9067436",
+    "authors": [
+      "Oleg N. Bodin",
+      "G. A. Solodimova",
+      "A. N. Spirkin"
+    ],
+    "tags": [
+      "Computer science",
+      "Control system",
+      "Prosthesis",
+      "Control engineering",
+      "Neural Prosthesis"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-03-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W3165882235",
+    "name": "Toward higher-performance bionic limbs for wider clinical use",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s41551-021-00732-x",
+    "authors": [
+      "Dario Farina",
+      "Ivan Vujaklija",
+      "Rickard Brånemark",
+      "Anthony M. J. Bull",
+      "Hans Dietl",
+      "Bernhard Graimann",
+      "Levi J. Hargrove",
+      "Klaus‐Peter Hoffmann",
+      "He Huang",
+      "Þorvaldur Ingvarsson",
+      "Hilmar Bragi Janusson",
+      "Kristleifur Kristjánsson",
+      "Todd Kuiken",
+      "Silvestro Micera",
+      "Thomas Stieglitz",
+      "Agnes Sturma",
+      "Dustin J. Tyler",
+      "Richard F. Weir",
+      "Oskar C. Aszmann"
+    ],
+    "tags": [
+      "Interfacing",
+      "Neural Prosthesis",
+      "Bionics",
+      "Sensory system",
+      "Human–computer interaction"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-05-31",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2063016156",
+    "name": "EMG control of a bionic knee prosthesis: Exploiting muscle co-contractions for improved locomotor function",
+    "source": "openalex",
+    "abstract": "This paper presents the development and experimental evaluation of a volitional control architecture for a powered-knee transfemoral prosthesis that affords the amputee user with direct control of knee impedance using measured electromyogram (EMG) potentials of antagonist muscles in the residual limb. The control methodology incorporates a calibration procedure performed with each donning of the prosthesis that characterizes the co-contraction levels as the user performs volitional phantom-knee flexor and extensor contractions. The performance envelope for EMG control of impedance is then automatically shaped based on the flexor and extensor calibration datasets. The result is a control architecture that is optimized to the user's current co-contraction activity, providing performance robustness to variation in sensor placement or physiological changes in the residual-limb musculature. Experimental results with a single unilateral transfemoral amputee user demonstrate consistent and repeatable control performance for level walking at self-selected speed over a multi-week, multi-session period of evaluation.",
+    "url": "https://doi.org/10.1109/icorr.2013.6650389",
+    "authors": [
+      "James A. Dawley",
+      "Kevin B. Fite",
+      "George Fulk"
+    ],
+    "tags": [
+      "Electromyography",
+      "Computer science",
+      "Prosthesis",
+      "Motor control",
+      "Physical medicine and rehabilitation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2013-06-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3030/101223778",
+    "name": "",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3030/101223778",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2025-08-08T10:18:57Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.36227/techrxiv.170779871.15872799/v1",
+    "name": "Walking Biomechanics of Individuals with Transtibial Amputations Using a Prescribed Prosthesis and a Portable Bionic Prosthesis Under Myoelectric Control",
+    "source": "crossref",
+    "abstract": "<jats:p>Individuals with transtibial amputation can activate residual limb muscles to volitionally control robotic ankle prostheses for walking and postural control. Most continuous myoelectric ankle prostheses have used a tethered, pneumatic device. The Open Source Leg allows for myoelectric control on an untethered electromechanically actuated ankle. To evaluate continuous proportional myoelectric control on the Open Source Ankle, we recruited five individuals with transtibial amputation. Participants walked over ground with an experimental powered prosthesis and their prescribed passive prosthesis before and after multiple powered device practice sessions. Participants averaged five hours of total walking time, and received no visual feedback during practice. After the final testing session, participants indicated their prosthesis preference via questionnaire. Participants increased peak ankle power after practice (powered 1.02 ± 1.09 W/kg and passive 0.3 ± 0.13 W/kg). Additionally, participants generated greater ankle work with the powered prosthesis compared to their passive device (p=0.009, 148% increase). Although peak power generation was not different, participants preferred walking with a prosthesis under myoelectric control compared to their passive device. These results indicate individuals with transtibial amputation can walk with an untethered powered prosthesis under continuous myoelectric control and generate similar magnitudes in peak power to their passive prosthesis after minimal training.</jats:p>",
+    "url": "https://doi.org/10.36227/techrxiv.170779871.15872799/v1",
+    "authors": [
+      "Nicole Stafford",
+      "Eddie B Gonzalez",
+      "Daniel Ferris"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2024-02-12T23:32:03Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/s42235-025-00759-9",
+    "name": "Bionic Powered Ankle Prosthesis Based on Human Muscle Recruitment Mechanism",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s42235-025-00759-9",
+    "authors": [
+      "Shikai Jin",
+      "Jiehong Wang",
+      "Dianbiao Dong"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2025-09-30T08:23:25Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1016/s1672-6529(14)60114-1",
+    "name": "Design and Control of a Pneumatically Actuated Transtibial Prosthesis",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s1672-6529(14)60114-1",
+    "authors": [
+      "Hao Zheng",
+      "Xiangrong Shen"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2015-04-19T13:15:15Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.31525/ct1-nct04070105",
+    "name": "No Power Bionic Lower Extremity Prosthesis",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.31525/ct1-nct04070105",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2019-08-29T23:10:45Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3390/prosthesis8030029",
+    "name": "Development of a Modular Bionic Hand with Intuitive Control and Thumb Opposition",
+    "source": "crossref",
+    "abstract": "<jats:p>Background/Objectives: Hand loss or severe impairment significantly reduces quality of life by restricting essential daily activities and professional tasks. Despite advances in prosthetics, challenges remain in affordability, accessibility, and usability. This study aimed to design and develop a low-cost, ergonomic bionic hand prototype that integrates sustainable fabrication, intuitive control, and modular electronics. Methods: A user-centred design process guided by iterative prototyping, anatomical modelling, and functional validation. The prototype was manufactured using 3D printing techniques and assembled with modular electronic components. The design included segmented fingers, independent thumb articulation, and a tendon-like actuation system driven by micro-motors. Control was implemented through an ESP32-based board and a Bluetooth-enabled mobile application. Durability was preliminarily assessed through 500 grasp–release cycles. Results: Experimental validation confirmed the feasibility of both precision and power grips. The pinch grip successfully lifted objects to 120 g, and the power grip up to 85 g, corresponding to effective output forces of approximately 1.2 N and 0.83 N, respectively. The final prototype weighed ~350 g and maintained reliable performance during 500 grasp–release cycles. Conclusions: The developed bionic hand demonstrates that an affordable, ergonomic, and functional prosthetic can be achieved through sustainable 3D printing and accessible electronics. Future work will focus on enhancing actuation strength, long-term durability, and integration of sensory feedback, with the long-term objective of clinical testing and scalable production.</jats:p>",
+    "url": "https://doi.org/10.3390/prosthesis8030029",
+    "authors": [
+      "Larisa Dunai",
+      "Isabel Seguí Verdú",
+      "Alba Rey De Viñas Redondo",
+      "Lilia Sava"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026-03-13T15:06:22Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.4930459",
+    "name": "A Noise-Tolerant Multi-Classifier with Fuzzy Model Applied to the Control a Bionic Upper Limb Prosthesis",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.2139/ssrn.4930459",
+    "authors": [
+      "Pawel Trajdos"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2024-08-22T21:41:53Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.3389/978-2-83251-166-4",
+    "name": "Bioactive bone regenerative materials and bionic prosthesis interfaces",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3389/978-2-83251-166-4",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2023-01-18T06:48:01Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/s42235-025-00781-x",
+    "name": "Recent Advancement and Development of Biomimetic Heart Valve Prosthesis",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s42235-025-00781-x",
+    "authors": [
+      "Siddhi Chaudhari",
+      "Aatmaja Khade",
+      "Vaibhav Girase",
+      "Pankaj Dhatrak"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2025-09-22T13:43:30Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1016/s1672-6529(13)60244-9",
+    "name": "Biomechanical Study on the Novel Biomimetic Hemi-Pelvis Prosthesis",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s1672-6529(13)60244-9",
+    "authors": [
+      "Zikai Hua",
+      "Yongwei Fan",
+      "Qinghong Cao",
+      "Xianbo Wu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2013-11-08T20:08:49Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1109/ghtc55712.2022.9910993",
+    "name": "Design of an affordable lower limb bionic prosthesis",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/ghtc55712.2022.9910993",
+    "authors": [
+      "Maximiliano Palay",
+      "Rafael Sotelo"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-10-11T19:33:23Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/s42235-025-00831-4",
+    "name": "Design and Experiment of a Multi-driving Mode Bionic Hydraulic Knee Joint for Lower Limb Prosthesis",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Achieving high drive efficiency remains a significant challenge in active knee prosthesis design. Inspired by human knee biomechanics, this study presents a novel biomimetic hydraulic drive system integrated with three human-like mechanisms: antagonistic muscle driving mechanism, dynamic simulation of muscle forces, and multi-stage collaborative energy supply. The system features a multi-stage hydraulic-rope hybrid transmission enabling adjustable damping and compliant motion control, coupled with a dual-cylinder configuration that boosts driving efficiency while delivering 29.7 Nm peak torque. A pump-valve hybrid control strategy is developed to dynamically adjust the flow and driving torque across gait phases, enhancing response speed and angular tracking accuracy. Through computational modeling, simulation, and prototype validation, we demonstrate that the proposed hydraulic drive system achieves efficient and responsive knee flexion and extension while meeting functional demands, reducing energy consumption by 20–50% compared to traditional pump-controlled systems. This study introduces a novel strategy for developing multimodal muscle-joint collaborative mechanisms, establishing a foundational framework for next-generation, high-performance bioinspired prostheses.</jats:p>",
+    "url": "https://doi.org/10.1007/s42235-025-00831-4",
+    "authors": [
+      "Haisen Zeng",
+      "Xiangjuan Bai",
+      "Yiming Zhu",
+      "Zirong Luo"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2026-02-03T23:50:33Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2124776405",
+    "name": "Neural Networks: A Comprehensive Foundation",
+    "source": "openalex",
+    "abstract": "From the Publisher:\r\nThis book represents the most comprehensive treatment available of neural networks from an engineering perspective. Thorough, well-organized, and completely up to date, it examines all the important aspects of this emerging technology, including the learning process, back-propagation learning, radial-basis function networks, self-organizing systems, modular networks, temporal processing and neurodynamics, and VLSI implementation of neural networks. Written in a concise and fluid manner, by a foremost engineering textbook author, to make the material more accessible, this book is ideal for professional engineers and graduate students entering this exciting field. Computer experiments, problems, worked examples, a bibliography, photographs, and illustrations reinforce key concepts.",
+    "url": "https://openalex.org/W2124776405",
+    "authors": [
+      "Simon Haykin"
+    ],
+    "tags": [
+      "Modular design",
+      "Computer science",
+      "Field (mathematics)",
+      "Artificial neural network",
+      "Process (computing)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "1998-07-16",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2163605009",
+    "name": "ImageNet classification with deep convolutional neural networks",
+    "source": "openalex",
+    "abstract": "We trained a large, deep convolutional neural network to classify the 1.2 million high-resolution images in the ImageNet LSVRC-2010 contest into the 1000 different classes. On the test data, we achieved top-1 and top-5 error rates of 37.5% and 17.0%, respectively, which is considerably better than the previous state-of-the-art. The neural network, which has 60 million parameters and 650,000 neurons, consists of five convolutional layers, some of which are followed by max-pooling layers, and three fully connected layers with a final 1000-way softmax. To make training faster, we used non-saturating neurons and a very efficient GPU implementation of the convolution operation. To reduce overfitting in the fully connected layers we employed a recently developed regularization method called \"dropout\" that proved to be very effective. We also entered a variant of this model in the ILSVRC-2012 competition and achieved a winning top-5 test error rate of 15.3%, compared to 26.2% achieved by the second-best entry.",
+    "url": "https://doi.org/10.1145/3065386",
+    "authors": [
+      "Alex Krizhevsky",
+      "Ilya Sutskever",
+      "Geoffrey E. Hinton"
+    ],
+    "tags": [
+      "Softmax function",
+      "Convolutional neural network",
+      "Computer science",
+      "Pooling",
+      "Dropout (neural networks)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2017-05-24",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W639309485",
+    "name": "Neural Engineering: Computation, Representation, and Dynamics in Neurobiological Systems",
+    "source": "openalex",
+    "abstract": "For years, researchers have used the theoretical tools of engineering to understand neural systems, but much of this work has been conducted in relative isolation. In Neural Engineering, Chris Eliasmith and Charles Anderson provide a synthesis of the disparate approaches current in computational neuroscience, incorporating ideas from neural coding, neural computation, physiology, communications theory, control theory, dynamics, and probability theory. This synthesis, they argue, enables novel theoretical and practical insights into the functioning of neural systems. Such insights are pertinent to experimental and computational neuroscientists and to engineers, physicists, and computer scientists interested in how their quantitative tools relate to the brain. The authors present three principles of neural engineering based on the representation of signals by neural ensembles, transformations of these representations through neuronal coupling weights, and the integration of control theory and neural dynamics. Through detailed examples and in-depth discussion, they make the case that these guiding principles constitute a useful theory for generating large-scale models of neurobiological function. A software package written in MatLab for use with their methodology, as well as examples, course notes, exercises, documentation, and other material, are available on the Web.",
+    "url": "https://doi.org/10.1109/tnn.2004.826381",
+    "authors": [],
+    "tags": [
+      "Computer science",
+      "Representation (politics)",
+      "Computation",
+      "Artificial neural network",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2004-03-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W4301319368",
+    "name": "Neural engineering: Computation, representation, and dynamics in neurobiological systems",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0898-1221(03)90181-7",
+    "authors": [],
+    "tags": [
+      "Mathematics",
+      "Computation",
+      "Representation (politics)",
+      "Dynamics (music)",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2003-09-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W1562919956",
+    "name": "Fuzzy and neural approaches in engineering",
+    "source": "openalex",
+    "abstract": "From the Publisher:\r\nFuzzy and Neural Approaches in Engineering presents a detailed examination of the fundamentals of fuzzy systems and neural networks and then joins them synergistically - combining the feature extraction and modeling capabilities of the neural network with the representation capabilities of fuzzy systems. Exploring the value of relating genetic algorithms and expert systems to fuzzy and neural technologies, this forward-thinking text highlights an entire range of dynamic possibilities within soft computing. With examples of specifically designed to illuminate key concepts and overcome the obstacles of notation and overly mathematical presentations often encountered in other sources, plus tables, figures, and an up-to-date bibliography, this unique work is both an important reference and a practical guide to neural networks and fuzzy systems.",
+    "url": "https://openalex.org/W1562919956",
+    "authors": [
+      "Lefteri H. Tsoukalas",
+      "R.E. Uhrig"
+    ],
+    "tags": [
+      "Joins",
+      "Neuro-fuzzy",
+      "Computer science",
+      "Artificial neural network",
+      "Fuzzy logic"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "1997-01-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2043814505",
+    "name": "Fuzzy and neural approaches in engineering",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0893-6080(97)00079-8",
+    "authors": [
+      "Boriana L. Milenova"
+    ],
+    "tags": [
+      "Multistability",
+      "Mathematics",
+      "Equilibrium point",
+      "Applied mathematics",
+      "Artificial neural network"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "1997-12-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2116341502",
+    "name": "The Graph Neural Network Model",
+    "source": "openalex",
+    "abstract": "Many underlying relationships among data in several areas of science and engineering, e.g., computer vision, molecular chemistry, molecular biology, pattern recognition, and data mining, can be represented in terms of graphs. In this paper, we propose a new neural network model, called graph neural network (GNN) model, that extends existing neural network methods for processing the data represented in graph domains. This GNN model, which can directly process most of the practically useful types of graphs, e.g., acyclic, cyclic, directed, and undirected, implements a function tau(G,n) is an element of IR(m) that maps a graph G and one of its nodes n into an m-dimensional Euclidean space. A supervised learning algorithm is derived to estimate the parameters of the proposed GNN model. The computational cost of the proposed algorithm is also considered. Some experimental results are shown to validate the proposed learning algorithm, and to demonstrate its generalization capabilities.",
+    "url": "https://doi.org/10.1109/tnn.2008.2005605",
+    "authors": [
+      "Franco Scarselli",
+      "M. Gori",
+      "Ah Chung Tsoi",
+      "Markus Hagenbuchner",
+      "Gabriele Monfardini"
+    ],
+    "tags": [
+      "Computer science",
+      "Artificial neural network",
+      "Artificial intelligence",
+      "Graph",
+      "Theoretical computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2008-12-10",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2107514110",
+    "name": "Neural Tissue Engineering: Strategies for Repair and Regeneration",
+    "source": "openalex",
+    "abstract": "Nerve regeneration is a complex biological phenomenon. In the peripheral nervous system, nerves can regenerate on their own if injuries are small. Larger injuries must be surgically treated, typically with nerve grafts harvested from elsewhere in the body. Spinal cord injury is more complicated, as there are factors in the body that inhibit repair. Unfortunately, a solution to completely repair spinal cord injury has not been found. Thus, bioengineering strategies for the peripheral nervous system are focused on alternatives to the nerve graft, whereas efforts for spinal cord injury are focused on creating a permissive environment for regeneration. Fortunately, recent advances in neuroscience, cell culture, genetic techniques, and biomaterials provide optimism for new treatments for nerve injuries. This article reviews the nervous system physiology, the factors that are critical for nerve repair, and the current approaches that are being explored to aid peripheral nerve regeneration and spinal cord repair.",
+    "url": "https://doi.org/10.1146/annurev.bioeng.5.011303.120731",
+    "authors": [
+      "Christine E. Schmidt",
+      "Jennie B. Leach"
+    ],
+    "tags": [
+      "Regeneration (biology)",
+      "Spinal cord injury",
+      "Medicine",
+      "Peripheral nervous system",
+      "Spinal cord"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2003-08-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W1984417662",
+    "name": "Electrospinning of nano/micro scale poly(l-lactic acid) aligned fibers and their potential in neural tissue engineering",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.biomaterials.2004.06.051",
+    "authors": [
+      "Fang Yang",
+      "R. Murugan",
+      "S. Wang",
+      "Seeram Ramakrishna"
+    ],
+    "tags": [
+      "Materials science",
+      "Electrospinning",
+      "Neural tissue engineering",
+      "Tissue engineering",
+      "Nanofiber"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2004-11-03",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2109563136",
+    "name": "Neural Networks in Civil Engineering: 1989–2000",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1111/0885-9507.00219",
+    "authors": [
+      "Hojjat Adeli"
+    ],
+    "tags": [
+      "Artificial neural network",
+      "Computer science",
+      "Nervous system network models",
+      "Backpropagation",
+      "Fuzzy logic"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2001-03-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W3021236955",
+    "name": "Neural engineering",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://openalex.org/W3021236955",
+    "authors": [
+      "Chris Eliasmith"
+    ],
+    "tags": [
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2002-01-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2077458446",
+    "name": "Neural network design for engineering applications",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0045-7949(01)00039-6",
+    "authors": [
+      "Muhammad Rafiq",
+      "Guido Bugmann",
+      "Dave Easterbrook"
+    ],
+    "tags": [
+      "Artificial neural network",
+      "Engineering design process",
+      "Perceptron",
+      "Computer science",
+      "Process (computing)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2001-07-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/978-3-030-43395-6_23",
+    "name": "Correction to: Neural Engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-030-43395-6_23",
+    "authors": [
+      "Bin He"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-11-03T10:03:13Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-323-95730-4.00019-6",
+    "name": "Introduction to neural engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-323-95730-4.00019-6",
+    "authors": [
+      "Stephanie Willerth"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2024-09-20T02:38:35Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1088/1741-2560/4/4/e01",
+    "name": "What is Neural Engineering?",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1088/1741-2560/4/4/e01",
+    "authors": [
+      "Dominique M Durand"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2009-12-08T18:50:43Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/0-306-48610-5_11",
+    "name": "Neural System Identification",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/0-306-48610-5_11",
+    "authors": [
+      "Garrett B. Stanley"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2007-12-31T00:10:03Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1088/1741-2552/4/4/e01",
+    "name": "What is Neural Engineering?",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1088/1741-2552/4/4/e01",
+    "authors": [
+      "Dominique M Durand"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2007-09-13T03:14:38Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/978-1-4614-5227-0_19",
+    "name": "Neural Tissue Engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-4614-5227-0_19",
+    "authors": [
+      "Lohitash Karumbaiah",
+      "Ravi Bellamkonda"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2013-01-07T14:47:11Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1002/9781119902027.ch3",
+    "name": "Engineering Neural Networks",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/9781119902027.ch3",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2023-01-13T21:59:26Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/0-306-48610-5_1",
+    "name": "Sensory Neural Prostheses",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/0-306-48610-5_1",
+    "authors": [
+      "Philip R. Troyk",
+      "Stuart F. Cogan"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2007-12-31T05:10:03Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/0-306-48610-5_6",
+    "name": "Neural Signal Processing",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/0-306-48610-5_6",
+    "authors": [
+      "Donna L. Hudson",
+      "Maurice E. Cohen"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2007-12-31T00:10:03Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1088/1741-2552/8/6/060201",
+    "name": "Special issue on applied neurodynamics: from neural dynamics to neural engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1088/1741-2552/8/6/060201",
+    "authors": [
+      "Hillel J Chiel",
+      "Peter J Thomas"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2011-11-04T15:13:47Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.5040/9781350392434.ch-008",
+    "name": "Neural networks in control engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5040/9781350392434.ch-008",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2023-02-27T02:37:21Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1088/1741-2552/1/1/e01",
+    "name": "Why we need a new journal in neural engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1088/1741-2552/1/1/e01",
+    "authors": [
+      "Dominique M Durand"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2004-03-16T04:13:55Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2144910141",
+    "name": "High-performance neuroprosthetic control by an individual with tetraplegia",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0140-6736(12)61816-9",
+    "authors": [
+      "Jennifer L. Collinger",
+      "Brian Wodlinger",
+      "John E. Downey",
+      "Wei Wang",
+      "Elizabeth C. Tyler‐Kabara",
+      "Douglas J. Weber",
+      "Angus J. C. McMorland",
+      "Meel Velliste",
+      "Michael L. Boninger",
+      "Andrew B. Schwartz"
+    ],
+    "tags": [
+      "Tetraplegia",
+      "Physical medicine and rehabilitation",
+      "Neuroprosthetics",
+      "Medicine",
+      "Amputation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2012-12-16",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W4253453051",
+    "name": "Direct Cortical Control of 3D Neuroprosthetic Devices",
+    "source": "openalex",
+    "abstract": "Three-dimensional (3D) movement of neuroprosthetic devices can be controlled by the activity of cortical neurons when appropriate algorithms are used to decode intended movement in real time. Previous studies assumed that neurons maintain fixed tuning properties, and the studies used subjects who were unaware of the movements predicted by their recorded units. In this study, subjects had real-time visual feedback of their brain-controlled trajectories. Cell tuning properties changed when used for brain-controlled movements. By using control algorithms that track these changes, subjects made long sequences of 3D movements using far fewer cortical units than expected. Daily practice improved movement accuracy and the directional tuning of these units.",
+    "url": "https://doi.org/10.1126/science.1070291",
+    "authors": [
+      "Dawn M. Taylor",
+      "Stephen I. Helms Tillery",
+      "Andrew B. Schwartz"
+    ],
+    "tags": [
+      "Movement (music)",
+      "Computer science",
+      "Visual feedback",
+      "Movement control",
+      "Cortical neurons"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2002-06-07",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2048272660",
+    "name": "Emergence of a Stable Cortical Map for Neuroprosthetic Control",
+    "source": "openalex",
+    "abstract": "Cortical control of neuroprosthetic devices is known to require neuronal adaptations. It remains unclear whether a stable cortical representation for prosthetic function can be stored and recalled in a manner that mimics our natural recall of motor skills. Especially in light of the mixed evidence for a stationary neuron-behavior relationship in cortical motor areas, understanding this relationship during long-term neuroprosthetic control can elucidate principles of neural plasticity as well as improve prosthetic function. Here, we paired stable recordings from ensembles of primary motor cortex neurons in macaque monkeys with a constant decoder that transforms neural activity to prosthetic movements. Proficient control was closely linked to the emergence of a surprisingly stable pattern of ensemble activity, indicating that the motor cortex can consolidate a neural representation for prosthetic control in the presence of a constant decoder. The importance of such a cortical map was evident in that small perturbations to either the size of the neural ensemble or to the decoder could reversibly disrupt function. Moreover, once a cortical map became consolidated, a second map could be learned and stored. Thus, long-term use of a neuroprosthetic device is associated with the formation of a cortical map for prosthetic function that is stable across time, readily recalled, resistant to interference, and resembles a putative memory engram.",
+    "url": "https://doi.org/10.1371/journal.pbio.1000153",
+    "authors": [
+      "Karunesh Ganguly",
+      "Jose M. Carmena"
+    ],
+    "tags": [
+      "Neuroscience",
+      "Biology",
+      "Motor cortex",
+      "Macaque",
+      "Primary motor cortex"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2009-07-20",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2977226092",
+    "name": "Flexible Neuromorphic Electronics for Computing, Soft Robotics, and Neuroprosthetics",
+    "source": "openalex",
+    "abstract": "Flexible neuromorphic electronics that emulate biological neuronal systems constitute a promising candidate for next-generation wearable computing, soft robotics, and neuroprosthetics. For realization, with the achievement of simple synaptic behaviors in a single device, the construction of artificial synapses with various functions of sensing and responding and integrated systems to mimic complicated computing, sensing, and responding in biological systems is a prerequisite. Artificial synapses that have learning ability can perceive and react to events in the real world; these abilities expand the neuromorphic applications toward health monitoring and cybernetic devices in the future Internet of Things. To demonstrate the flexible neuromorphic systems successfully, it is essential to develop artificial synapses and nerves replicating the functionalities of the biological counterparts and satisfying the requirements for constructing the elements and the integrated systems such as flexibility, low power consumption, high-density integration, and biocompatibility. Here, the progress of flexible neuromorphic electronics is addressed, from basic backgrounds including synaptic characteristics, device structures, and mechanisms of artificial synapses and nerves, to applications for computing, soft robotics, and neuroprosthetics. Finally, future research directions toward wearable artificial neuromorphic systems are suggested for this emerging area.",
+    "url": "https://doi.org/10.1002/adma.201903558",
+    "authors": [
+      "Hea‐Lim Park",
+      "Yeongjun Lee",
+      "Naryung Kim",
+      "Dae‐Gyo Seo",
+      "Gyeong‐Tak Go",
+      "Tae‐Woo Lee"
+    ],
+    "tags": [
+      "Neuromorphic engineering",
+      "Neuroprosthetics",
+      "Soft robotics",
+      "Robotics",
+      "Materials science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2019-09-26",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W3154658958",
+    "name": "Foreign Body Reaction to Implanted Biomaterials and Its Impact in Nerve Neuroprosthetics",
+    "source": "openalex",
+    "abstract": "The implantation of any foreign material into the body leads to the development of an inflammatory and fibrotic process-the foreign body reaction (FBR). Upon implantation into a tissue, cells of the immune system become attracted to the foreign material and attempt to degrade it. If this degradation fails, fibroblasts envelop the material and form a physical barrier to isolate it from the rest of the body. Long-term implantation of medical devices faces a great challenge presented by FBR, as the cellular response disrupts the interface between implant and its target tissue. This is particularly true for nerve neuroprosthetic implants-devices implanted into nerves to address conditions such as sensory loss, muscle paralysis, chronic pain, and epilepsy. Nerve neuroprosthetics rely on tight interfacing between nerve tissue and electrodes to detect the tiny electrical signals carried by axons, and/or electrically stimulate small subsets of axons within a nerve. Moreover, as advances in microfabrication drive the field to increasingly miniaturized nerve implants, the need for a stable, intimate implant-tissue interface is likely to quickly become a limiting factor for the development of new neuroprosthetic implant technologies. Here, we provide an overview of the material-cell interactions leading to the development of FBR. We review current nerve neuroprosthetic technologies (cuff, penetrating, and regenerative interfaces) and how long-term function of these is limited by FBR. Finally, we discuss how material properties (such as stiffness and size), pharmacological therapies, or use of biodegradable materials may be exploited to minimize FBR to nerve neuroprosthetic implants and improve their long-term stability.",
+    "url": "https://doi.org/10.3389/fbioe.2021.622524",
+    "authors": [
+      "Alejandro Carnicer‐Lombarte",
+      "Shao‐Tuan Chen",
+      "George G. Malliaras",
+      "Damiano G. Barone"
+    ],
+    "tags": [
+      "Neuroprosthetics",
+      "Biocompatible material",
+      "Biomedical engineering",
+      "Medicine",
+      "Physical medicine and rehabilitation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-04-15",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W1968824665",
+    "name": "Corticostriatal plasticity is necessary for learning intentional neuroprosthetic skills",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nature10845",
+    "authors": [
+      "Aaron C. Koralek",
+      "Xin Jin",
+      "John D. Long",
+      "Rui M. Costa",
+      "Jose M. Carmena"
+    ],
+    "tags": [
+      "Neuroscience",
+      "Neuroplasticity",
+      "Psychology",
+      "Motor learning",
+      "Motor skill"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2012-03-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W3194786616",
+    "name": "A soft neuroprosthetic hand providing simultaneous myoelectric control and tactile feedback",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s41551-021-00767-0",
+    "authors": [
+      "Guoying Gu",
+      "Ningbin Zhang",
+      "Haipeng Xu",
+      "Shaoting Lin",
+      "Yang Yu",
+      "Guohong Chai",
+      "Lisen Ge",
+      "Houle Yang",
+      "Qiwen Shao",
+      "Xinjun Sheng",
+      "Xiangyang Zhu",
+      "Xuanhe Zhao"
+    ],
+    "tags": [
+      "Neuroprosthetics",
+      "Tactile sensor",
+      "Biomedical engineering",
+      "Electromyography",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-08-16",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W606114005",
+    "name": "Neuroprosthetics : Theory and Practice",
+    "source": "openalex",
+    "abstract": "Neuroprosthetics is an area of intense scientific and clinical interest and rapid progress. Since the introduction of the cardiac pacemaker in 1932, we have seen developments that include cochlear prostheses, techniques for bladder and bowel control, deep brain stimulation, and restoration of mobility and respiration to paralyzed individuals. The chapters in this book have been contributed by authors who are recognized internationally in their fields. The result is a comprehensive and up-to-date review that will be invaluable to graduate students, clinicians and researchers in neuroprosthetics. It is broadly divided into three sections: Section 1 provides a core of knowledge that forms a foundation for the rest of the book, and covers the basics of neuroanatomy and neurophysiology, biomaterials and biocompatibility, stimulation and recording techniques; Section 2 describes current clinical applications of neuroprosthetics; Section 3 looks at future developments in the field",
+    "url": "https://doi.org/10.1142/10368",
+    "authors": [
+      "Kenneth Horch",
+      "Gurpreet Singh Dhillon"
+    ],
+    "tags": [
+      "Neuroprosthetics",
+      "Neurophysiology",
+      "Neuroscience",
+      "Neuroanatomy",
+      "Stimulation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2004-04-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W4213421750",
+    "name": "Personalized Neuroprosthetics",
+    "source": "openalex",
+    "abstract": "Decades of technological developments have populated the field of neuroprosthetics with myriad replacement strategies, neuromodulation therapies, and rehabilitation procedures to improve the quality of life for individuals with neuromotor disorders. Despite the few but impressive clinical successes, and multiple breakthroughs in animal models, neuroprosthetic technologies remain mainly confined to sophisticated laboratory environments. We summarize the core principles and latest achievements in neuroprosthetics, but also address the challenges that lie along the path toward clinical fruition. We propose a pragmatic framework to personalize neurotechnologies and rehabilitation for patient-specific impairments to achieve the timely dissemination of neuroprosthetic medicine.",
+    "url": "https://doi.org/10.1126/scitranslmed.3005968",
+    "authors": [
+      "David A. Borton",
+      "Silvestro Micera",
+      "José del R. Millán",
+      "Grégoire Courtine"
+    ],
+    "tags": [
+      "Neuroprosthetics",
+      "Medicine",
+      "Neuroscience",
+      "Nervous system",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2013-11-06",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W1994120808",
+    "name": "Reversible large-scale modification of cortical networks during neuroprosthetic control",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nn.2797",
+    "authors": [
+      "Karunesh Ganguly",
+      "Dragan F. Dimitrov",
+      "Joni D. Wallis",
+      "Jose M. Carmena"
+    ],
+    "tags": [
+      "Neuroscience",
+      "Nerve net",
+      "Macaque",
+      "Artificial neural network",
+      "Population"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2011-04-17",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2048767020",
+    "name": "Effects of insertion conditions on tissue strain and vascular damage during neuroprosthetic device insertion",
+    "source": "openalex",
+    "abstract": "Long-term integration of neuroprosthetic devices is challenged by reactive responses that compromise the brain-device interface. The contribution of physical insertion parameters to immediate damage is not well described. We have developed an ex vivo preparation to capture real-time images of tissue deformation during device insertion using thick tissue slices from rat brains prepared with fluorescently labeled vasculature. Qualitative and quantitative assessments of damage were made for insertions using devices with different tip shapes inserted at different speeds. Direct damage to the vasculature included severing, rupturing and dragging, and was often observed several hundred micrometers from the insertion site. Slower insertions generally resulted in more vascular damage. Cortical surface features greatly affected insertion success; insertions attempted through pial blood vessels resulted in severe tissue compression. Automated image analysis techniques were developed to quantify tissue deformation and calculate mean effective strain. Quantitative measures demonstrated that, within the range of experimental conditions studied, faster insertion of sharp devices resulted in lower mean effective strain. Variability within each insertion condition indicates that multiple biological factors may influence insertion success. Multiple biological factors may contribute to tissue distortion, thus a wide variability was observed among insertions made under the same conditions.",
+    "url": "https://doi.org/10.1088/1741-2560/3/3/002",
+    "authors": [
+      "Chris S. Bjornsson",
+      "Seung‐June Oh",
+      "Yousef Al‐Kofahi",
+      "Yi-Je Lim",
+      "Karen L. Smith",
+      "James N. Turner",
+      "Suvranu De",
+      "Badri Roysam",
+      "William Shain",
+      "Sung Joon Kim"
+    ],
+    "tags": [
+      "Biomedical engineering",
+      "Strain (injury)",
+      "Insertion loss",
+      "Materials science",
+      "Structural integrity"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2006-06-21",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2044719021",
+    "name": "Closed-Loop Decoder Adaptation Shapes Neural Plasticity for Skillful Neuroprosthetic Control",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.neuron.2014.04.048",
+    "authors": [
+      "Amy L. Orsborn",
+      "Helene G. Moorman",
+      "Simon A. Overduin",
+      "Maryam M. Shanechi",
+      "Dragan F. Dimitrov",
+      "Jose M. Carmena"
+    ],
+    "tags": [
+      "Neuroplasticity",
+      "Neuroscience",
+      "Adaptation (eye)",
+      "Context (archaeology)",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2014-06-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1201/b19640-5",
+    "name": "Design thinking for neuroprosthetics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1201/b19640-5",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-03-05T17:15:54Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/978-3-030-68545-4_4",
+    "name": "History of Neuroprosthetics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-030-68545-4_4",
+    "authors": [
+      "Ute Eck",
+      "Rüdiger Rupp"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-04-26T20:40:57Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1201/b19640",
+    "name": "Neuroprosthetics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1201/b19640",
+    "authors": [
+      "Justin C. Sanchez"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2018-07-02T10:08:48Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.4018/978-1-4666-6094-6.ch001",
+    "name": "Neuroprosthetics",
+    "source": "crossref",
+    "abstract": "<jats:p>Neuroprostheses use electric stimuli to stimulate neural structures, muscles, or receptors in order to support, augment, or partly restore the respective disordered or lost function. The objective is to help the patient to participate in everyday life. The use of a neural prosthesis can improve the quality of life of the person concerned. The future of neuroprosthetics is challenging as well as interesting as it deals with several latest technological advancements that connect both biology and technology together. This chapter briefly explains the current advancements and future challenges related to Neuroprosthetics research.</jats:p>",
+    "url": "https://doi.org/10.4018/978-1-4666-6094-6.ch001",
+    "authors": [
+      "Ganesh R. Naik"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2014-06-26T07:35:40Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/978-3-642-80211-9_43",
+    "name": "Selective Intraneural Sensing for Neuroprosthetics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-642-80211-9_43",
+    "authors": [
+      "L. C. W. Rutten",
+      "H. J. Meier"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2012-01-02T13:10:49Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.4018/978-1-4666-6094-6.ch013",
+    "name": "Practical Artifact Removal Brain-Computer Interface System",
+    "source": "crossref",
+    "abstract": "<jats:p>In this chapter, a practical artifact removal Brain-Computer Interface (BCI) system for single-trial Electroencephalogram (EEG) data is proposed for applications in neuroprosthetics. Independent Component Analysis (ICA) combined with the use of a correlation coefficient is proposed to remove the EOG artifacts automatically, which can further improve classification accuracy. The features are then extracted from wavelet transform data by means of the proposed modified fractal dimension. Finally, Support Vector Machine (SVM) is used for the classification. When compared with the results obtained without using the EOG signal elimination, the proposed BCI system achieves promising results that will be effectively applied in neuroprosthetics.</jats:p>",
+    "url": "https://doi.org/10.4018/978-1-4666-6094-6.ch013",
+    "authors": [
+      "Wei-Yen Hsu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2014-06-26T07:35:40Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1201/b19640-11",
+    "name": "Principles of stimulation",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1201/b19640-11",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-03-05T17:15:54Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1016/c2019-0-04485-8",
+    "name": "Somatosensory Feedback for Neuroprosthetics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/c2019-0-04485-8",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-07-23T16:13:12Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-822828-9.00024-1",
+    "name": "Contents",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-822828-9.00024-1",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-07-23T13:31:14Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1201/b19640-10",
+    "name": "Neural decoding",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1201/b19640-10",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-03-05T17:15:54Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-822828-9.00027-7",
+    "name": "Copyright",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-822828-9.00027-7",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-07-23T13:33:43Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-822828-9.00020-4",
+    "name": "Preface",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-822828-9.00020-4",
+    "authors": [
+      "Burak Güçlü"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-07-23T13:27:10Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W4309474518",
+    "name": "Programmable ferroelectric bionic vision hardware with selective attention for high-precision image classification",
+    "source": "openalex",
+    "abstract": "Selective attention is an efficient processing strategy to allocate computational resources for pivotal optical information. However, the hardware implementation of selective visual attention in conventional intelligent system is usually bulky and complex along with high computational cost. Here, programmable ferroelectric bionic vision hardware to emulate the selective attention is proposed. The tunneling effect of photogenerated carriers are controlled by dynamic variation of energy barrier, enabling the modulation of memory strength from 9.1% to 47.1% without peripheral storage unit. The molecular polarization of ferroelectric P(VDF-TrFE) layer enables a single device not only multiple nonvolatile states but also the implementation of selective attention. With these ferroelectric devices are arrayed together, UV light information can be selectively recorded and suppressed the with high current decibel level. Furthermore, the device with positive polarization exhibits high wavelength dependence in the image attention processing, and the fabricated ferroelectric sensory network exhibits high accuracy of 95.7% in the pattern classification for multi-wavelength images. This study can enrich the neuromorphic functions of bioinspired sensing devices and pave the way for profound implications of future bioinspired optoelectronics.",
+    "url": "https://doi.org/10.1038/s41467-022-34565-2",
+    "authors": [
+      "Rengjian Yu",
+      "Lihua He",
+      "Changsong Gao",
+      "Xianghong Zhang",
+      "Enlong Li",
+      "Tailiang Guo",
+      "Wenwu Li",
+      "Huipeng Chen"
+    ],
+    "tags": [
+      "Neuromorphic engineering",
+      "Ferroelectricity",
+      "Computer science",
+      "Materials science",
+      "Computer hardware"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-11-17",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2137188910",
+    "name": "Bionic vision: system architectures – a review",
+    "source": "openalex",
+    "abstract": "The concept of an electronic visual prosthesis has been investigated since the early 20th century. While the first generation of long-term implantable devices were defined by the turn of the millennium, the greatest progress has been achieved in the past decade. This review describes the current state of the art of visual prosthesis investigated by more than two dozen active groups in this field of research. The focus is on technological solutions in regard to long-term safety of materials, electrode-tissue interfaces and encapsulation technologies. Furthermore, we critically assess the maximum number of stimulating electrodes each technological approach is likely to provide.",
+    "url": "https://doi.org/10.1586/erd.11.58",
+    "authors": [
+      "Thomas Guenther",
+      "Nigel H. Lovell",
+      "Gregg J. Suaning"
+    ],
+    "tags": [
+      "Visual prosthesis",
+      "Computer science",
+      "Human–computer interaction",
+      "Risk analysis (engineering)",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2011-12-06",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W4292466662",
+    "name": "Robot Bionic Vision Technologies: A Review",
+    "source": "openalex",
+    "abstract": "The visual organ is important for animals to obtain information and understand the outside world; however, robots cannot do so without a visual system. At present, the vision technology of artificial intelligence has achieved automation and relatively simple intelligence; however, bionic vision equipment is not as dexterous and intelligent as the human eye. At present, robots can function as smartly as human beings; however, existing reviews of robot bionic vision are still limited. Robot bionic vision has been explored in view of humans and animals’ visual principles and motion characteristics. In this study, the development history of robot bionic vision equipment and related technologies are discussed, the most representative binocular bionic and multi-eye compound eye bionic vision technologies are selected, and the existing technologies are reviewed; their prospects are discussed from the perspective of visual bionic control. This comprehensive study will serve as the most up-to-date source of information regarding developments in the field of robot bionic vision technology.",
+    "url": "https://doi.org/10.3390/app12167970",
+    "authors": [
+      "Hongxin Zhang",
+      "Suan Lee"
+    ],
+    "tags": [
+      "Robot",
+      "Artificial intelligence",
+      "Machine vision",
+      "Human–computer interaction",
+      "Computer vision"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-08-09",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2949900478",
+    "name": "pulse2percept: A Python-based simulation framework for bionic vision",
+    "source": "openalex",
+    "abstract": "By 2020 roughly 200 million people worldwide will suffer from photoreceptor diseases such as retinitis pigmentosa and age-related macular degeneration, and a variety of retinal sight restoration technologies are being developed to target these diseases. One technology, analogous to cochlear implants, uses a grid of electrodes to stimulate remaining retinal cells. Two brands of retinal prostheses are currently approved for implantation in patients with late stage photoreceptor disease. Clinical experience with these implants has made it apparent that the vision restored by these devices differs substantially from normal sight. To better understand the outcomes of this technology, we developed pulse2percept, an open-source Python implementation of a computational model that predicts the perceptual experience of retinal prosthesis patients across a wide range of implant configurations. A modular and extensible user interface exposes the different building blocks of the software, making it easy for users to simulate novel implants, stimuli, and retinal models. We hope that this library will contribute substantially to the field of medicine by providing a tool to accelerate the development of visual prostheses.",
+    "url": "https://doi.org/10.25080/shinma-7f4c6e7-00c",
+    "authors": [
+      "Michael Beyeler",
+      "Geoffrey M. Boynton",
+      "Ione Fine",
+      "Ariel Rokem"
+    ],
+    "tags": [
+      "Retinal implant",
+      "Retinitis pigmentosa",
+      "Computer science",
+      "Modular design",
+      "Python (programming language)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2017-01-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W3180443265",
+    "name": "Deep Learning–Based Scene Simplification for Bionic Vision",
+    "source": "openalex",
+    "abstract": "Retinal degenerative diseases cause profound visual impairment in more than 10 million people worldwide, and retinal prostheses are being developed to restore vision to these individuals. Analogous to cochlear implants, these devices electrically stimulate surviving retinal cells to evoke visual percepts (phosphenes). However, the quality of current prosthetic vision is still rudimentary. Rather than aiming to restore “natural” vision, there is potential merit in borrowing state-of-the-art computer vision algorithms as image processing techniques to maximize the usefulness of prosthetic vision. Here we combine deep learning–based scene simplification strategies with a psychophysically validated computational model of the retina to generate realistic predictions of simulated prosthetic vision, and measure their ability to support scene understanding of sighted subjects (virtual patients) in a variety of outdoor scenarios. We show that object segmentation may better support scene understanding than models based on visual saliency and monocular depth estimation. In addition, we highlight the importance of basing theoretical predictions on biologically realistic models of phosphene shape. Overall, this work has the potential to drastically improve the utility of prosthetic vision for people blinded from retinal degenerative diseases.",
+    "url": "https://doi.org/10.1145/3458709.3458982",
+    "authors": [
+      "Nicole Han",
+      "Sudhanshu Srivastava",
+      "Aiwen Xu",
+      "Devi Klein",
+      "Michael Beyeler"
+    ],
+    "tags": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Deep learning",
+      "Machine vision"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-02-22",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W4220933383",
+    "name": "Immersive Virtual Reality Simulations of Bionic Vision",
+    "source": "openalex",
+    "abstract": "Bionic vision uses neuroprostheses to restore useful vision to people living with incurable blindness. However, a major outstanding challenge is predicting what people \"see\" when they use their devices. The limited field of view of current devices necessitates head movements to scan the scene, which is difficult to simulate on a computer screen. In addition, many computational models of bionic vision lack biological realism. To address these challenges, we present VR-SPV, an open-source virtual reality toolbox for simulated prosthetic vision that uses a psychophysically validated computational model to allow sighted participants to \"see through the eyes\" of a bionic eye user. To demonstrate its utility, we systematically evaluated how clinically reported visual distortions affect performance in a letter recognition and an immersive obstacle avoidance task. Our results highlight the importance of using an appropriate phosphene model when predicting visual outcomes for bionic vision.",
+    "url": "https://doi.org/10.1145/3519391.3522752",
+    "authors": [
+      "Justin Kasowski",
+      "Michael Beyeler"
+    ],
+    "tags": [
+      "Virtual reality",
+      "Human–computer interaction",
+      "Computer science",
+      "Computer graphics (images)",
+      "Multimedia"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-03-13",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W1990440095",
+    "name": "Transformative Reality: Improving bionic vision with robotic sensing",
+    "source": "openalex",
+    "abstract": "Implanted visual prostheses provide bionic vision with very low spatial and intensity resolution when compared against healthy human vision. Vision processing converts camera video to low resolution imagery for bionic vision with the aim of preserving salient features such as edges. Transformative Reality extends and improves upon traditional vision processing in three ways. Firstly, a combination of visual and non-visual sensors are used to provide multi-modal data of a person's surroundings. This enables the sensing of features that are difficult to sense with only a camera. Secondly, robotic sensing algorithms construct models of the world in real time. This enables the detection of complex features such as navigable empty ground or people. Thirdly, models are visually rendered so that visually complex entities such as people can be effectively represented in low resolution. Preliminary simulated prosthetic vision trials, where a head mounted display is used to constrain a subject's vision to 25×25 binary phosphenes, suggest that Transformative Reality provides functional bionic vision for tasks such as indoor navigation, object manipulation and people detection in scenes where traditional processing is unusable.",
+    "url": "https://doi.org/10.1109/embc.2012.6345929",
+    "authors": [
+      "Wen Lik Dennis Lui",
+      "D. Browne",
+      "Lindsay Kleeman",
+      "Tom Drummond",
+      "Wai Ho Li"
+    ],
+    "tags": [
+      "Computer vision",
+      "Artificial intelligence",
+      "Computer science",
+      "Transformative learning",
+      "Machine vision"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2012-08-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2624192543",
+    "name": "pulse2percept: A Python-based simulation framework for bionic vision",
+    "source": "openalex",
+    "abstract": "Abstract By 2020 roughly 200 million people worldwide will suffer from photoreceptor diseases such as retinitis pigmentosa and age-related macular degeneration, and a variety of retinal sight restoration technologies are being developed to target these diseases. One technology, analogous to cochlear implants, uses a grid of electrodes to stimulate remaining retinal cells. Two brands of retinal prostheses are currently approved for implantation in patients with late stage photoreceptor disease. Clinical experience with these implants has made it apparent that the vision restored by these devices differs substantially from normal sight. To better understand the outcomes of this technology, we developed pulse2percept , an open-source Python implementation of a computational model that predicts the perceptual experience of retinal prosthesis patients across a wide range of implant configurations. A modular and extensible user interface exposes the different building blocks of the software, making it easy for users to simulate novel implants, stimuli, and retinal models. We hope that this library will contribute substantially to the field of medicine by providing a tool to accelerate the development of visual prostheses.",
+    "url": "https://doi.org/10.1101/148015",
+    "authors": [
+      "Michael Beyeler",
+      "Geoffrey M. Boynton",
+      "Ione Fine",
+      "Ariel Rokem"
+    ],
+    "tags": [
+      "Retinal implant",
+      "Retinitis pigmentosa",
+      "Computer science",
+      "Sight",
+      "Python (programming language)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2017-06-09",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2078266257",
+    "name": "Bionic vision inspired on-road obstacle detection and tracking using radar and visual information",
+    "source": "openalex",
+    "abstract": "Inspired by the cooperation between the cone cell and the rod cell in human vision system, this paper presents a novel method for fusing millimeter wave (MMW) radar and monocular vision sensor information for on-road obstacle detection. The MMW radar performs similarly as the cone cell to indicate potential target region in the view, while the camera plays the same role as that of the rod cell to obtain precise target contour and to allow tracking over frames. Using real-world data collected from on-road vehicles, experimental evaluations have shown that, our proposed system could detect on-road obstacles with high detection rate and low false-alarm rate, yet the overall image processing time is significantly reduced compared to conventional approaches. In addition, the system has been applied on our unmanned vehicle for the past two years' “Future Challenge” autonomous vehicles competition.",
+    "url": "https://doi.org/10.1109/itsc.2014.6957663",
+    "authors": [
+      "Xiao Wang",
+      "Linhai Xu",
+      "Hongbin Sun",
+      "Jingmin Xin",
+      "Nanning Zheng"
+    ],
+    "tags": [
+      "Obstacle",
+      "Computer vision",
+      "Computer science",
+      "Artificial intelligence",
+      "Radar"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2014-10-01",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2022449896",
+    "name": "Restoration of vision in blind individuals using bionic devices: A review with a focus on cortical visual prostheses",
+    "source": "openalex",
+    "abstract": "The field of neurobionics offers hope to patients with sensory and motor impairment. Blindness is a common cause of major sensory loss, with an estimated 39 million people worldwide suffering from total blindness in 2010. Potential treatment options include bionic devices employing electrical stimulation of the visual pathways. Retinal stimulation can restore limited visual perception to patients with retinitis pigmentosa, however loss of retinal ganglion cells precludes this approach. The optic nerve, lateral geniculate nucleus and visual cortex provide alternative stimulation targets, with several research groups actively pursuing a cortically-based device capable of driving several hundred stimulating electrodes. While great progress has been made since the earliest works of Brindley and Dobelle in the 1960s and 1970s, significant clinical, surgical, psychophysical, neurophysiological, and engineering challenges remain to be overcome before a commercially-available cortical implant will be realized. Selection of candidate implant recipients will require assessment of their general, psychological and mental health, and likely responses to visual cortex stimulation. Implant functionality, longevity and safety may be enhanced by careful electrode insertion, optimization of electrical stimulation parameters and modification of immune responses to minimize or prevent the host response to the implanted electrodes. Psychophysical assessment will include mapping the positions of potentially several hundred phosphenes, which may require repetition if electrode performance deteriorates over time. Therefore, techniques for rapid psychophysical assessment are required, as are methods for objectively assessing the quality of life improvements obtained from the implant. These measures must take into account individual differences in image processing, phosphene distribution and rehabilitation programs that may be required to optimize implant functionality. In this review, we detail these and other challenges facing developers of cortical visual prostheses in addition to briefly outlining the epidemiology of blindness, and the history of cortical electrical stimulation in the context of visual prosthetics.",
+    "url": "https://doi.org/10.1016/j.brainres.2014.11.020",
+    "authors": [
+      "Philip Lewis",
+      "Helen M Ackland",
+      "Arthur J. Lowery",
+      "Jeffrey V. Rosenfeld"
+    ],
+    "tags": [
+      "Phosphene",
+      "Retinal implant",
+      "Visual prosthesis",
+      "Neuroscience",
+      "Visual cortex"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2014-11-17",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W4362721936",
+    "name": "A neuromorphic bionic eye with filter-free color vision using hemispherical perovskite nanowire array retina",
+    "source": "openalex",
+    "abstract": "Spherical geometry, adaptive optics, and highly dense network of neurons bridging the eye with the visual cortex, are the primary features of human eyes which enable wide field-of-view (FoV), low aberration, excellent adaptivity, and preprocessing of perceived visual information. Therefore, fabricating spherical artificial eyes has garnered enormous scientific interest. However, fusing color vision, in-device preprocessing and optical adaptivity into spherical artificial eyes has always been a tremendous challenge. Herein, we demonstrate a bionic eye comprising tunable liquid crystal optics, and a hemispherical neuromorphic retina with filter-free color vision, enabled by wavelength dependent bidirectional synaptic photo-response in a metal-oxide nanotube/perovskite nanowire hybrid structure. Moreover, by tuning the color selectivity with bias, the device can reconstruct full color images. This work demonstrates a unique approach to address the color vision and optical adaptivity issues associated with artificial eyes that can bring them to a new level approaching their biological counterparts.",
+    "url": "https://doi.org/10.1038/s41467-023-37581-y",
+    "authors": [
+      "Zhenghao Long",
+      "Xiao Qiu",
+      "Chak Lam Jonathan Chan",
+      "Zhibo Sun",
+      "Zhengnan Yuan",
+      "Swapnadeep Poddar",
+      "Yuting Zhang",
+      "Yucheng Ding",
+      "Leilei Gu",
+      "Yu Zhou",
+      "Wenying Tang",
+      "Abhishek Kumar Srivastava",
+      "Cunjiang Yu",
+      "Xuming Zou",
+      "Guozhen Shen",
+      "Zhiyong Fan"
+    ],
+    "tags": [
+      "Neuromorphic engineering",
+      "Computer science",
+      "Artificial intelligence",
+      "Computer vision",
+      "Materials science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2023-04-08",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "oa:W2118771601",
+    "name": "Scene specific imaging for bionic vision implants",
+    "source": "openalex",
+    "abstract": "Progress within the field of bionic vision (visual prosthesis) implants is at clinical trial stage, with several blind patients fitted with implanted vision systems, in this paper we suggest the image processing required for these devices is adjusted depending on the scene type. Characteristics of simple scenes are listed along with image processing techniques required to best present information from that scene type.",
+    "url": "https://doi.org/10.1109/ispa.2003.1296934",
+    "authors": [
+      "Justin Boyle",
+      "Anthony Maeder",
+      "Wageeh Boles"
+    ],
+    "tags": [
+      "Computer vision",
+      "Artificial intelligence",
+      "Computer science",
+      "Machine vision",
+      "Image processing"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2004-07-09",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.64628/aa.spmq4kdfv",
+    "name": "Bionic vision: the fight for sight",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.64628/aa.spmq4kdfv",
+    "authors": [
+      "Anthony Burkitt"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2025-08-26T13:30:13Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/978-1-4614-6675-8_100072",
+    "name": "Bionic Vision",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-4614-6675-8_100072",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2015-03-23T13:43:24Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/978-1-0716-1006-0_300074",
+    "name": "Bionic Vision",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-0716-1006-0_300074",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-06-11T11:03:09Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1117/12.2560182.6138707175001",
+    "name": "",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1117/12.2560182.6138707175001",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-03-09T14:04:47Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1117/2.1201109.003874",
+    "name": "Non-invasive bionic vision",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1117/2.1201109.003874",
+    "authors": [
+      "Sally McArthur",
+      "Paul Stoddart"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2011-10-21T12:16:49Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1007/bf03399484",
+    "name": "Spectral test instrument for color vision measurement",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/bf03399484",
+    "authors": [
+      "Balázs Vince Nagy",
+      "György Ábrahám"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2018-02-08T04:33:17Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1109/cbs46900.2019.9114522",
+    "name": "BVMSOD: Bionic Vision Mechanism based Salient Object Detection",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/cbs46900.2019.9114522",
+    "authors": [
+      "Jingang Tan",
+      "Lili Chen",
+      "Liang Du",
+      "Jiamao Li",
+      "Xiaolin Zhang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-06-11T20:46:57Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1016/s1672-6529(08)60031-1",
+    "name": "RETRACTED ARTICLE: Fast and Robust Stereo Vision Algorithm for Obstacle Detection",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s1672-6529(08)60031-1",
+    "authors": [
+      "Yi-peng Zhou"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2008-10-16T05:35:34Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1117/12.2572352",
+    "name": "Vision communication and vision navigation method of UAV bionic flight",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1117/12.2572352",
+    "authors": [
+      "Hanwei Guo"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-09-21T20:32:26Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.34133/cbsystems.0231",
+    "name": "CrystalTac: Vision-Based Tactile Sensor Family Fabricated via Rapid Monolithic Manufacturing",
+    "source": "crossref",
+    "abstract": "<jats:p>Recently, vision-based tactile sensors (VBTSs) have gained popularity in robotics systems. The sensing mechanisms of most VBTSs can be categorized based on the type of tactile features they capture. Each category requires specific structural designs to convert physical contact into optical information. The complex architectures of VBTSs pose challenges for traditional manufacturing techniques in terms of design flexibility, cost-effectiveness, and quality stability. Previous research has shown that monolithic manufacturing using multimaterial 3-dimensional printing technology can address these challenges but fails to bridge the gap between the design phase and creation phase of VBTSs. Thereby, in this study, we introduce the CrystalTac family, a series of VBTSs designed with on-demand sensing mechanisms and fabricated through rapid monolithic manufacturing. Case studies on the CrystalTac family demonstrate their efficiency in targeted tasks involving tactile perception, along with impressive cost-effectiveness and design flexibility. The CrystalTac family aims to highlight the potential of rapid monolithic manufacturing techniques in VBTS development and inspire further research in tactile sensing and manipulation.</jats:p>",
+    "url": "https://doi.org/10.34133/cbsystems.0231",
+    "authors": [
+      "Wen Fan",
+      "Haoran Li",
+      "Dandan Zhang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2025-01-20T14:08:52Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1016/s1672-6529(08)60182-1",
+    "name": "Erratum to: Fast and robust stereo vision algorithm for obstacle detection",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s1672-6529(08)60182-1",
+    "authors": [
+      "Yi-peng Zhou"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2009-01-03T04:13:01Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
+  },
+  {
+    "id": "doi:10.1021/acsphotonics.4c02322.s001",
+    "name": "High-Robustness, Compact Bi2O2Se-Based NIR Retinal Sensor for Bionic Vision Systems",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1021/acsphotonics.4c02322.s001",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2025-04-09T06:31:12Z",
+    "addedAt": "2026-08-05T01:46:05.378Z"
   }
 ]

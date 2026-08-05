@@ -765,5 +765,2597 @@
     ],
     "publishedDate": "2010-10-25",
     "addedAt": "2026-08-04T10:40:21.516Z"
+  },
+  {
+    "id": "doi:10.1007/978-94-011-6100-8_8",
+    "name": "Actuator servocontrol",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-94-011-6100-8_8",
+    "authors": [
+      "Philippe Coiffet",
+      "Michel Chirouze"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2012-02-10T09:42:34Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1088/1748-3190/ae1fc8/v3/review1",
+    "name": "Review for \"A minimalistic walking fish robot twin based on the Single Actuator Wave-like mechanism\"",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1088/1748-3190/ae1fc8/v3/review1",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2025-11-14T22:57:38Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1088/1748-3190/ae1fc8/v1/review1",
+    "name": "Review for \"A minimalistic walking fish robot twin based on the Single Actuator Wave-like mechanism\"",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1088/1748-3190/ae1fc8/v1/review1",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2025-11-14T22:57:38Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1088/1748-3190/ae1fc8/v2/review1",
+    "name": "Review for \"A minimalistic walking fish robot twin based on the Single Actuator Wave-like mechanism\"",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1088/1748-3190/ae1fc8/v2/review1",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2025-11-14T22:57:38Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2296718990",
+    "name": "Soft Robotic Grippers for Biological Sampling on Deep Reefs",
+    "source": "openalex",
+    "abstract": "Abstract This article presents the development of an underwater gripper that utilizes soft robotics technology to delicately manipulate and sample fragile species on the deep reef. Existing solutions for deep sea robotic manipulation have historically been driven by the oil industry, resulting in destructive interactions with undersea life. Soft material robotics relies on compliant materials that are inherently impedance matched to natural environments and to soft or fragile organisms. We demonstrate design principles for soft robot end effectors, bench-top characterization of their grasping performance, and conclude by describing in situ testing at mesophotic depths. The result is the first use of soft robotics in the deep sea for the nondestructive sampling of benthic fauna.",
+    "url": "https://doi.org/10.1089/soro.2015.0019",
+    "authors": [
+      "Kevin C. Galloway",
+      "Kaitlyn P. Becker",
+      "Brennan Phillips",
+      "Jordan Kirby",
+      "Stephen Licht",
+      "Dan Tchernov",
+      "Robert J. Wood",
+      "David F. Gruber"
+    ],
+    "tags": [
+      "Robotics",
+      "Soft robotics",
+      "Artificial intelligence",
+      "Grippers",
+      "Robot"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2016-01-20",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2783801667",
+    "name": "A Soft Robotic Gripper With Gecko-Inspired Adhesive",
+    "source": "openalex",
+    "abstract": "Previous work has demonstrated the versatility of soft robotic grippers using simple control inputs. However, these grippers still face challenges in grasping large objects and in achieving high-strength grasps. This work investigates the combination of fluidic elastomer actuators and gecko-inspired adhesives to both enhance existing soft gripper properties and generate new capabilities. On rocky or dirty surfaces where adhesion is limited, the gripper retains the functionality of a pneumatically actuated elastomer gripper with no measured loss in performance. Design strategies for using the unique properties of the gecko-inspired adhesives are presented. By modeling fluidic elastomer actuators as a series of joints with associated joint torques, we designed an actuator that takes advantage of the unique properties of the gecko-inspired adhesive. Experiments showed higher strength grasps at lower pressures compared to nongecko actuators, in many cases enabling the gripper to actuate more quickly and use less energy. The gripper weighs 48.7 g, uses $7.25 of raw materials, and can support loads of over 50 N. A second gripper, using three fingers for a larger adhesive surface, demonstrated a grasping force of 111 N (25 lbf) when actuated at an internal pressure of 40 kPa.",
+    "url": "https://doi.org/10.1109/lra.2018.2792688",
+    "authors": [
+      "Paul E. Glick",
+      "Srinivasan A. Suresh",
+      "Donald Ruffatto",
+      "Mark R. Cutkosky",
+      "Michael T. Tolley",
+      "Aaron Parness"
+    ],
+    "tags": [
+      "Grippers",
+      "Actuator",
+      "Soft robotics",
+      "Adhesive",
+      "Elastomer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2018-01-12",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W3048356206",
+    "name": "State-of-the-art robotic grippers, grasping and control strategies, as well as their applications in agricultural robots: A review",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.compag.2020.105694",
+    "authors": [
+      "Baohua Zhang",
+      "Yuanxin Xie",
+      "Jun Zhou",
+      "Kai Wang",
+      "Zhen Zhang"
+    ],
+    "tags": [
+      "Grippers",
+      "Robot",
+      "Automation",
+      "Engineering",
+      "Adversary"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2020-08-07",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2273215869",
+    "name": "A Bioinspired Soft Robotic Gripper for Adaptable and Effective Grasping",
+    "source": "openalex",
+    "abstract": "The present article shows the development of a gripper for general purposes with grasping and holding capabilities enabled by a simple control scheme. This objective has been reached exploiting the combination of soft materials, underactuated mechanisms, and a bioinspired design. The development of the soft gripper will be explained by reporting the results obtained on three different and sequential versions. The devices are here presented in their main components, underlining the anthropomorphic approach used in the design of the fingers. The used actuation mechanism is based on the control of a single cable tension, which guarantees a grasping adaptable to objects of different shape. Manipulation capability and grasping force have been tested, in order to extract a quantitative comparative analysis between the three proposed devices. The main factor that influences the improvement of the gripper performance results to be represented by the suitable combination of material with the right mechanical properties. Outcomes show how the use of a bioinspired design together with the intrinsic mechanical properties of soft materials can give rise to new soft devices able to show dexterous grasping capabilities with a simple control and actuation system.",
+    "url": "https://doi.org/10.1089/soro.2015.0009",
+    "authors": [
+      "Mariangela Manti",
+      "Taimoor Hassan",
+      "Giovanni Passetti",
+      "Nicolò d’Elia",
+      "Cecilia Laschi",
+      "Matteo Cianchetti"
+    ],
+    "tags": [
+      "Underactuation",
+      "Mechanism (biology)",
+      "Soft robotics",
+      "Soft materials",
+      "Grippers"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2015-09-01",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2993673397",
+    "name": "Poly(ionic liquid) hydrogel-based anti-freezing ionic skin for a soft robotic gripper",
+    "source": "openalex",
+    "abstract": "A zwitterionic poly(ionic liquid) hydrogel with super-stretchability, self-healing ability, and high conductivity at −20 °C was fabricated and used for ionic skin for a soft robotic gripper.",
+    "url": "https://doi.org/10.1039/c9mh01688k",
+    "authors": [
+      "Ziyang Liu",
+      "Yue Wang",
+      "Yongyuan Ren",
+      "Guoqing Jin",
+      "Chengcheng Zhang",
+      "Wei Chen",
+      "Feng Yan"
+    ],
+    "tags": [
+      "Ionic liquid",
+      "Materials science",
+      "Ionic bonding",
+      "Ionic conductivity",
+      "Membrane"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2019-12-05",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2432137114",
+    "name": "State of the Art Robotic Grippers and Applications",
+    "source": "openalex",
+    "abstract": "In this paper, we present a recent survey on robotic grippers. In many cases, modern grippers outperform their older counterparts which are now stronger, more repeatable, and faster. Technological advancements have also attributed to the development of gripping various objects. This includes soft fabrics, microelectromechanical systems, and synthetic sheets. In addition, newer materials are being used to improve functionality of grippers, which include piezoelectric, shape memory alloys, smart fluids, carbon fiber, and many more. This paper covers the very first robotic gripper to the newest developments in grasping methods. Unlike other survey papers, we focus on the applications of robotic grippers in industrial, medical, for fragile objects and soft fabrics grippers. We report on new advancements on grasping mechanisms and discuss their behavior for different purposes. Finally, we present the future trends of grippers in terms of flexibility and performance and their vital applications in emerging areas of robotic surgery, industrial assembly, space exploration, and micromanipulation. These advancements will provide a future outlook on the new trends in robotic grippers.",
+    "url": "https://doi.org/10.3390/robotics5020011",
+    "authors": [
+      "Kevin Tai",
+      "Abdulrahman M. El‐Sayed",
+      "Mohammadali Shahriari",
+      "Mohammad Biglarbegian",
+      "Shohel Mahmud"
+    ],
+    "tags": [
+      "Grippers",
+      "Flexibility (engineering)",
+      "Robot",
+      "Computer science",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2016-06-17",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2577404187",
+    "name": "Passive Particle Jamming and Its Stiffening of Soft Robotic Grippers",
+    "source": "openalex",
+    "abstract": "The compliance of soft grippers contributes to their great superiority over rigid grippers in grasping irregularly shaped objects and forming soft contact with environments. Due to a relatively small pressure, soft grippers lack the stiffness required for wider applications. Particle jamming has been frequently reported as a means of stiffness control. Unlike previous research using vacuum for particle jamming, this paper proposes a novel passive particle jamming principle that does not need any vacuum power or other control means. The proposed method is by simply patching a silicone rubber soft actuator and a pack (made of strain-limiting membrane) of particles to form an integral gripping finger. The inflation of the soft actuator applies a pressure to the particle pack causing particles inside it to jam. A larger squeezing pressure will result in tighter particle jamming, thus increasing the stiffness of the finger. The stiffness of the finger is controllable as it is proportional to the actuator's air pressure, which has been verified by experiments in this research. The stiffness can increase more than six fold when air pressure changes from 20 to 80 kPa in the experimental studies. The reported discovery may enhance the capabilities of soft robotic grippers so that more robotic picking operations could be performed by soft grippers.",
+    "url": "https://doi.org/10.1109/tro.2016.2636899",
+    "authors": [
+      "Yingtian Li",
+      "Yonghua Chen",
+      "Yang Yang",
+      "Ying Wei"
+    ],
+    "tags": [
+      "Grippers",
+      "Jamming",
+      "Stiffness",
+      "Actuator",
+      "Particle (ecology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-01-11",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2970521931",
+    "name": "Ultragentle manipulation of delicate structures using a soft robotic gripper",
+    "source": "openalex",
+    "abstract": "Here, we present ultragentle soft robotic actuators capable of grasping delicate specimens of gelatinous marine life. Although state-of-the-art soft robotic manipulators have demonstrated gentle gripping of brittle animals (e.g., corals) and echinoderms (e.g., sea cucumbers) in the deep sea, they are unable to nondestructively grasp more fragile soft-bodied organisms, such as jellyfish. Through an exploration of design parameters and laboratory testing of individual actuators, we confirmed that our nanofiber-reinforced soft actuators apply sufficiently low contact pressure to ensure minimal harm to typical jellyfish species. We then built a gripping device using several actuators and evaluated its underwater grasping performance in the laboratory. By assessing the gripper's region of acquisition and robustness to external forces, we gained insight into the necessary precision and speed with which grasping maneuvers must be performed to achieve successful collection of samples. Last, we demonstrated successful manipulation of three live jellyfish species in an aquarium setting using a hand-held prototype gripper. Overall, our ultragentle gripper demonstrates an improvement in gentle sample collection compared with existing deep-sea sampling devices. Extensions of this technology may improve a variety of in situ characterization techniques used to study the ecological and genetic features of deep-sea organisms.",
+    "url": "https://doi.org/10.1126/scirobotics.aax5425",
+    "authors": [
+      "Nina R. Sinatra",
+      "Clark B. Teeple",
+      "Daniel M. Vogt",
+      "Kevin Kit Parker",
+      "David F. Gruber",
+      "Robert J. Wood"
+    ],
+    "tags": [
+      "Soft robotics",
+      "Silicone",
+      "Soft materials",
+      "Computer science",
+      "Materials science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2019-08-21",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2518073382",
+    "name": "A Novel, Variable Stiffness Robotic Gripper Based on Integrated Soft Actuating and Particle Jamming",
+    "source": "openalex",
+    "abstract": "This article presents the design principle and fabrication of a variable stiffness soft robotic gripper for adaptive grasping and robust holding. The proposed robotic gripper is based on a finger design that combines a fiber-reinforced soft actuator and a particle pack. The soft actuator is responsible for the bending motion of the finger, and the particle pack acts as a stiffness-changeable interface between the finger and the object. In the natural state, the particle pack is soft and adaptive to part geometry. It can rapidly stiffen (through vacuum) to resist external load or to freeze the currently bent contour of the finger. Experimental studies have shown that more than a 10-fold stiffness enhancement is achievable. Therefore, the proposed gripper is capable of handling objects with different shapes, weights, and rigidities, which have been a great challenge for robotic grasping. For more effective grasping, a grasping strategy is designed for the proposed soft gripper with simultaneous consideration of grasping adaption and robustness.",
+    "url": "https://doi.org/10.1089/soro.2016.0027",
+    "authors": [
+      "Ying Wei",
+      "Yonghua Chen",
+      "Tao Ren",
+      "Chen Qiao",
+      "Changxin Yan",
+      "Yang Yang",
+      "Yingtian Li"
+    ],
+    "tags": [
+      "Grippers",
+      "Actuator",
+      "Soft robotics",
+      "Robustness (evolution)",
+      "Stiffness"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2016-07-22",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2625731136",
+    "name": "A Soft-Robotic Gripper With Enhanced Object Adaptation and Grasping Reliability",
+    "source": "openalex",
+    "abstract": "A novel soft-robotic gripper design is presented, with three soft bending fingers and one passively adaptive palm. Each soft finger comprises two ellipse-profiled pneumatic chambers. Combined with the adaptive palm and the surface patterned feature, the soft gripper could achieve 40-N grasping force in practice, 10 times the self-weight, at a very low actuation pressure below 100 kPa. With novel soft finger design, the gripper could pick up small objects, as well as conform to large convex-shape objects with reliable contact. The fabrication process was presented in detail, involving commercial-grade three-dimensional printing and molding of silicone rubber. The fabricated actuators and gripper were tested on a dedicated platform, showing the gripper could reliably grasp objects of various shapes and sizes, even with external disturbances.",
+    "url": "https://doi.org/10.1109/lra.2017.2716445",
+    "authors": [
+      "Jianshu Zhou",
+      "Shu Chen",
+      "Zheng Wang"
+    ],
+    "tags": [
+      "Soft robotics",
+      "Grippers",
+      "GRASP",
+      "Actuator",
+      "Bending"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-06-16",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1109/tmech.2024.3488817/mm2",
+    "name": "INDEX Gripper: Industrial Dexterous Robotic Gripper Capable of All-Orientational Object Manipulation_supp1-3488817.mp4",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/tmech.2024.3488817/mm2",
+    "authors": [
+      "Uikyum Kim"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2024-11-21T14:09:54Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1109/lra.2023.3315204/mm1",
+    "name": "Underactuated Robotic Gripper with Fiber-Optic Force Sensing Tendons_supp1-3315204.mp4",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/lra.2023.3315204/mm1",
+    "authors": [
+      "Yong-Lae Park"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2023-09-14T14:00:40Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1109/jsen.2022.3181128/mm1",
+    "name": "supp1-3181128.mp4",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/jsen.2022.3181128/mm1",
+    "authors": [
+      "Haoyong Yu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2022-06-14T16:16:04Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1108/aa.2003.03323aad.008",
+    "name": "Robotic gripper",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1108/aa.2003.03323aad.008",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-11-12T19:51:41Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.14711/thesis-991013222958103412",
+    "name": "Gecko-inspired controllable adhesive for robotic gripper : design, fabrication and sensing integration",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.14711/thesis-991013222958103412",
+    "authors": [
+      "Chohei Pang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2023-09-21T22:45:02Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1109/tmech.2024.3488817/mm1",
+    "name": "INDEX Gripper: Industrial Dexterous Robotic Gripper Capable of All-Orientational Object Manipulation_supp2-3488817.mp4",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/tmech.2024.3488817/mm1",
+    "authors": [
+      "Uikyum Kim"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2024-11-21T14:09:54Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.70675/bd1218d2z58d4z457aza777zaea138b1a28c",
+    "name": "Innovative Design of a Soft Robotic Gripper for In-hand Manipulation",
+    "source": "crossref",
+    "abstract": "<jats:title>Nouvelle conception d'un préhenseur robotique souple pour la manipulation dextre</jats:title>\n                <jats:p xml:lang=\"fr\">Ce manuscrit de thèse est une dissertation en format multi-articles sur la conception, l'optimisation et la fabrication d'actionneurs pneumatiques souples pour des applications robotiques souples. Introduite comme une nouvelle technologie ces dernières années, la robotique souple ouvre de nouveaux horizons dans le domaine de la robotique grâce à des caractéristiques prometteuses telles que l'adaptabilité, la légèreté, la facilité d'assemblage et le faible coût pour réaliser des configurations complexes dans divers environnements. Même s'il existe une grande diversité d'applications pour les SFA, de nombreux défis subsistent dans ce domaine, notamment le contrôle de la rigidité et de la flexion. Pour illustrer les applications méthodologiques et théoriques actuelles des systèmes robotiques souples, le premier article présente une revue systématique des actionneurs fluidiques souples qui ont relèvent les défis critiques en matière de matériaux souples et actifs, de méthodes de traitement, d'architectures de préhension, de capteurs et de méthodes de contrôle. Différents modèles constitutifs de matériaux en silicone proposés et testés dans la littérature sont régénérés par le logiciel ABAQUS afin de comparer les données de déformation et de contrainte réelles issues des modèles constitutifs avec les données d'essai de traction standard basées sur la norme ASTM412. Cet article montre que la plupart de ces modèles peuvent prédire le modèle du matériau de manière acceptable dans une petite gamme de données de contrainte-déformation. Mais pour de grandes valeurs de contrainte-déformation, quelques-uns d'entre eux prédisent le comportement du matériau silicone avec précision. Le deuxième article présente un nouveau type de doigt souple avec une articulation mobile à commande pneumatique basée sur le contrôle du point de flexion et une rigidité variable. Le doigt proposé est plus performant que les solutions précédentes en termes d'espace 3D atteignable et de forces de contact applicables au bout du doigt en changeant la position de son articulation, et donc, le point de flexion. La méthode des éléments finis et l'algorithme NSGA-II sont appliqués pour optimiser la géométrie de l'articulation afin de maximiser l'angle de flexion et de minimiser les dimensions de l'articulation. Le troisième article de cette thèse se concentre sur le développement d'un nouveau type de préhenseur souple dextre avec trois doigts reconfigurables et une paume active améliorant les capacités de manipulation dextre. Dans chaque doigt, le point de flexion et la longueur de manipulation effective peuvent être modifiés et contrôlés en déplaçant une tige rigide insérée dans le trou central du doigt. La capacité de manipulation dextre de préhenseur robotique souple est validée par différents tests expérimentaux, notamment la rotation, les saisies multiples et le roulement. Par conséquent, deux types de paume artificiel à vide (ventouse et particules granulaires) sont utilisés pour garantir une large gamme de tâches de manipulation d'objets que les préhenseurs souples proposés précédemment ne peuvent pas complètement réaliser. Dans le dernier chapitre de cette thèse, le quatrième article propose un capteur tactile peu coûteux et facile à fabriquer pour des applications en robotique. Il est très flexible et facile à utiliser, ce qui en fait un choix approprié pour les applications de robots souples. La plupart des matériaux (encre conductrice, silicone, carte de contrôle) utilisés dans la fabrication de ce capteur sont peu coûteux et peuvent être trouvés facilement sur le marché. Le capteur capacitif proposé peut détecter la position et la force appliquée en mesurant la charge électrique des électrodes. En raison des incertitudes et des bruits, un réseau neuronal artificiel est proposé pour calibrer la force correspondant à l",
+    "url": "https://doi.org/10.70675/bd1218d2z58d4z457aza777zaea138b1a28c",
+    "authors": [
+      "Amir Pagoli"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026-04-07T03:52:40Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1007/978-3-319-04663-1_29",
+    "name": "Sensitive Robotic Processes",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-319-04663-1_29",
+    "authors": [
+      "Christian Binder"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-03-20T09:50:56Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1021/acsapm.6c00858.s001",
+    "name": "Natural Rubber-Based Soft Robotic Gripper with Tunable Performance",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1021/acsapm.6c00858.s001",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026-04-29T16:00:46Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1021/acsapm.6c00858.s004",
+    "name": "Natural Rubber-Based Soft Robotic Gripper with Tunable Performance",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1021/acsapm.6c00858.s004",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026-04-29T16:00:46Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1021/acsapm.6c00858.s003",
+    "name": "Natural Rubber-Based Soft Robotic Gripper with Tunable Performance",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1021/acsapm.6c00858.s003",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026-04-29T16:00:46Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1109/access.2025.3538001/mm1",
+    "name": "Motor-less Robotic Gripper: Driving Mechanism by Robotic Manipulator Movement_supp1-3538001.mp4",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/access.2025.3538001/mm1",
+    "authors": [
+      "Toshihiro NISHIMURA"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2025-02-04T13:43:00Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2965255349",
+    "name": "Finite-Time Continuous Terminal Sliding Mode Control of Servo Motor Systems",
+    "source": "openalex",
+    "abstract": "In this article, a continuous terminal sliding mode control algorithm is proposed for servo motor systems. A novel full-order terminal sliding mode surface is proposed based on the bilimit homogeneous property, such that the sliding motion is finite-time stable independent of the system's initial condition. A new continuous terminal sliding mode control algorithm is proposed to guarantee that the system states reach the sliding surface in finite-time. Not only the robustness is guaranteed by the proposed controller but also the continuity makes the control algorithm more suitable for the servo mechanical systems. Finally, a numerical example is presented to depict the advantages of the proposed control algorithm. An application in the rotary servo system is done to validate the effectiveness of the proposed control strategy.",
+    "url": "https://doi.org/10.1109/tie.2019.2931517",
+    "authors": [
+      "Huazhou Hou",
+      "Xinghuo Yu",
+      "Long Xu",
+      "Kamal Rsetam",
+      "Zhenwei Cao"
+    ],
+    "tags": [
+      "Control theory (sociology)",
+      "Terminal sliding mode",
+      "Robustness (evolution)",
+      "Sliding mode control",
+      "Servomechanism"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2019-08-02",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2066318268",
+    "name": "Tunable-focus liquid lens controlled using a servo motor",
+    "source": "openalex",
+    "abstract": "We demonstrated a liquid lens whose focal length can be controlled by an actuator. The lens cell is composed of elastic membrane, planar glass plate, a periphery sealing ring, and a liquid with a fixed volume in the lens chamber. Part of the periphery sealing ring is excavated to form a hollow chamber which functions as a reservoir. This hollowed periphery is surrounded by an exterior rubber membrane. The shaft of an actuator is used to deform the elastic rubber. Squeezing the liquid contained in the reservoir into the lens chamber. Excess liquid in the lens chamber will push the lens membrane to outward, resulting in a lens shape change. Due to the compact structure and easy operation, this liquid lens has potential applications in zoom lenses, auto beam steering, and eyeglasses.",
+    "url": "https://doi.org/10.1364/oe.14.008031",
+    "authors": [
+      "Hongwen Ren",
+      "David W. Fox",
+      "Phillip A. Anderson",
+      "Benjamin M. Wu",
+      "Shin‐Tson Wu"
+    ],
+    "tags": [
+      "Lens (geology)",
+      "Optics",
+      "Zoom lens",
+      "Actuator",
+      "Materials science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2006-01-01",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2026676067",
+    "name": "Microprocessor-Controlled DC Motor for Load-Insensitive Position Servo System",
+    "source": "openalex",
+    "abstract": "The conventional proportional P controller has been often used as the position controller of the dc servo motor. When the unknown and inaccessible load torque, such as the coulomb friction, the gravity, and so on, is imposed on the dc servo motor, this control system has the steady-and/or transient-state error.",
+    "url": "https://doi.org/10.1109/tie.1987.350923",
+    "authors": [
+      "Kiyoshi Ohishi",
+      "Masato Nakao",
+      "Kouhei Ohnishi",
+      "Kunio Miyachi"
+    ],
+    "tags": [
+      "Control theory (sociology)",
+      "DC motor",
+      "Servo drive",
+      "Servomotor",
+      "Servomechanism"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "1987-02-01",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2032054752",
+    "name": "Adaptive fuzzy sliding-mode controlforPM synchronous servo motor drives",
+    "source": "openalex",
+    "abstract": "An adaptive fuzzy sliding-mode control system, which combines the merits of sliding-mode control, the fuzzy inference mechanism and the adaptive algorithm, is proposed. First a sliding-mode controller with an integral-operation switching surface is designed. Then a fuzzy sliding-mode controller is investigated in which a simple fuzzy inference mechanism is used to estimate the upper bound of uncertainties. The fuzzy inference mechanism with centre adaptation of membership functions is investigated to estimate the optimal bound of uncertainties. Position control of a permanent magnet synchronous servo motor drive using the proposed control strategies is illustrated.",
+    "url": "https://doi.org/10.1049/ip-cta:19981683",
+    "authors": [
+      "Faa‐Jeng Lin",
+      "S.-L. Chiu"
+    ],
+    "tags": [
+      "Control theory (sociology)",
+      "Sliding mode control",
+      "Adaptive neuro fuzzy inference system",
+      "Controller (irrigation)",
+      "Fuzzy logic"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "1998-01-30",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2114824602",
+    "name": "Selection Criteria for Servo Motor Drives",
+    "source": "openalex",
+    "abstract": "The power density and acceleration characteristics of the ac servo drive are being recognized as being superior to those of the dc counterpart. The ac servo family consists of permanent-magnet synchronous, dc brushless, induction, and switched reluctance motor drives. This ac servo family is comprised of radial (also known as the sausage type) and axial (also known as the pancake type) field motors, thus enlarging the spectrum of ac servo motors to the users. Realizing that the ac servos are of recent development, it is obvious that their potentials and pitfalls have not been published, thus making it difficult for the user and application engineer to choose one servo from the family of ac servos for a particular application. In this regard, an attempt is made here to develop a set of selection criteria to differentiate the various servo drives of the ac family. The factors proposed to do that are cost, power density, acceleration rates, peak torque capability, speed range, torque per unit ampere, thermal capability, parameter sensitivity, cogging torque, ripple torque, braking, rotor position feedback device, etc. Application of these criteria would promote appreciation for the various facets of ac servos through their comparison with other drive types.",
+    "url": "https://doi.org/10.1109/tia.1987.4504902",
+    "authors": [
+      "R. Krishnan"
+    ],
+    "tags": [
+      "Switched reluctance motor",
+      "Servomechanism",
+      "Control theory (sociology)",
+      "Servo drive",
+      "Rotor (electric)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "1987-03-01",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2152681809",
+    "name": "Brushless servo motor control using variable structure approach",
+    "source": "openalex",
+    "abstract": "The variable structure system (VSS) is expected to be a powerful tool for constructing a control strategy for AC machines since it is based on discontinuous control inputs, i.e. variable structures. The application of VSS to the position control of a brushless servo motor is discussed. The resulting system is robust with respect to parametric variations and disturbances. On-off patterns for switching devices are generated directly by VSS, and the robustness is obtained in a total system including the inverter. This approach is useful for a nonlinear plant such as a direct-drive robot arm.&gt;",
+    "url": "https://doi.org/10.1109/28.87267",
+    "authors": [
+      "Hideki Hashimoto",
+      "Hajime Yamamoto",
+      "S. Yanagisawa",
+      "Fumio Harashima"
+    ],
+    "tags": [
+      "Control theory (sociology)",
+      "Robustness (evolution)",
+      "DC motor",
+      "Variable structure system",
+      "Variable structure control"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "1988-01-01",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2292331780",
+    "name": "Automatic Control Loop Tuning for Permanent-Magnet AC Servo Motor Drives",
+    "source": "openalex",
+    "abstract": "Servo motor drives generally consist of current, velocity, and position control loops. Tuning these controllers to achieve satisfactory and consistent dynamic responses is crucial. In this paper, a parameter identification and autotuning scheme for permanent-magnet ac servo motor drives is presented. Motor electrical parameters such as resistance and inductances were identified first for current control loop tuning. The torque constant and mechanical parameters were then identified for velocity and position loop tuning. The experimental results verified that the proposed scheme can estimate parameters accurately and within a short time. In addition, the system tuned by the proposed scheme was consistent with the desired dynamic performance.",
+    "url": "https://doi.org/10.1109/tie.2015.2495300",
+    "authors": [
+      "Sheng‐Ming Yang",
+      "Kuang-Wei Lin"
+    ],
+    "tags": [
+      "Control theory (sociology)",
+      "Servo drive",
+      "Servomotor",
+      "Machine control",
+      "Current loop"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2015-10-27",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2165584647",
+    "name": "Servo motor selection criterion for mechatronic applications",
+    "source": "openalex",
+    "abstract": "Modern mechatronic applications often involve complex motions, resulting in highly dynamic motor loads. The selection of an appropriate motor is based on the characteristics of the load, besides other technical, as well as economic, considerations. However, motor characteristics, such as rotor inertia, affect the motor load, which complicates the analysis. The selection criterion presented in this paper separates the motor characteristics from the load characteristics and its graphical representation facilitates the feasibility check of a certain drive and the comparison between different systems. In addition, it yields the range of possible transmission ratios. The method is illustrated with an industrial case study.",
+    "url": "https://doi.org/10.1109/3516.662867",
+    "authors": [
+      "H.J. Van de Straete",
+      "Pascal Degezelle",
+      "Joris De Schutter",
+      "Ronnie Belmans"
+    ],
+    "tags": [
+      "Mechatronics",
+      "Selection (genetic algorithm)",
+      "Rotor (electric)",
+      "Inertia",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "1998-03-01",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2086644516",
+    "name": "A Spherical DC Servo Motor With Three Degrees of Freedom",
+    "source": "openalex",
+    "abstract": "A spherical DC servo motor with three degrees of freedom is proposed. First, the process of generating three-dimensional torque is analyzed to obtain the torque constant matrix. The matrix elements are shown to vary with rotor inclination, and winding currents are shown to interfere with each other. Then, the dynamics of the spherical motor are investigated theoretically and experimentally, considering torque interference, gyro moment and gravity. Finally, the trajectory of the prototype motor is shown in order to clarify its abilities. This new spherical motor is expected to produce a smaller, a lighter mechanism, since no gears or linkages are needed.",
+    "url": "https://doi.org/10.1115/1.3153067",
+    "authors": [
+      "K. Kaneko",
+      "Ichiro Yamada",
+      "Kiyoshi Itao"
+    ],
+    "tags": [
+      "Control theory (sociology)",
+      "Torque",
+      "Rotor (electric)",
+      "Physics",
+      "Degrees of freedom (physics and chemistry)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "1989-09-01",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2107419110",
+    "name": "The application of Halbach cylinders to brushless AC servo motors",
+    "source": "openalex",
+    "abstract": "Halbach cylinders are applied to brushless ac servo motors. It is shown that a sinusoidal back-emf waveform and a low cogging torque can be achieved without recourse to conventional design features such as distributed windings and/or stator/rotor skew. A technique for imparting a multipole Halbach magnetization distribution on an isotropic permanent magnet cylinder is described, and it is shown that the torque capability of a Halbach ac servo motor can be up to 33% higher than conventional brushless permanent magnet ac motors.",
+    "url": "https://doi.org/10.1109/20.706795",
+    "authors": [
+      "Kais Atallah",
+      "D. Howe"
+    ],
+    "tags": [
+      "Cogging torque",
+      "Halbach array",
+      "Stator",
+      "Rotor (electric)",
+      "Magnet"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "1998-07-01",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2921490129",
+    "name": "A Wireless Servo Motor Drive With Bidirectional Motion Capability",
+    "source": "openalex",
+    "abstract": "In this paper, a novel wireless servo motor drive is proposed and implemented, which artfully integrates wireless power transfer into the dc servo motor drive to achieve wireless bidirectional servo motion. Prominently, there is no power converter or controller at the servo motor side to realize the bidirectional rotation, while the motor control is fully conducted at the transmitter side. The key is to adopt only one transmitter with LCL network to achieve power equalization of two receiver coils, hence realizing bidirectional motion. Meanwhile, the phase-shift control method is newly developed to perform the desired speed control at the transmitter side, without requiring any switched capacitor arrays. As a result, the proposed wireless bidirectional servo motor drive takes the definite advantages of electrocution free and totally sealable. Both calculation and experimental results are presented to validate the feasibility and controllability. For the prototype, the transmission distance can reach up to 130 mm and the transmission efficiency can be up to 85%.",
+    "url": "https://doi.org/10.1109/tpel.2019.2904757",
+    "authors": [
+      "Chaoqiang Jiang",
+      "K. T. Chau",
+      "Christopher H. T. Lee",
+      "Wei Han",
+      "Wei Liu",
+      "Weng Hoong Lam"
+    ],
+    "tags": [
+      "Servo drive",
+      "Transmitter",
+      "Servomotor",
+      "Wireless",
+      "Wireless power transfer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2019-03-13",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "oa:W2167261330",
+    "name": "Total sliding-mode controller for PM synchronous servo motor drive using recurrent fuzzy neural network",
+    "source": "openalex",
+    "abstract": "In this paper, the dynamic responses of a recurrent-fuzzy-neural-network (RFNN) sliding-mode-controlled permanent-magnet (PM) synchronous servo motor are described. First, a newly designed total sliding-mode control system, which is insensitive to uncertainties, including parameter variations and external disturbance in the whole control process, is introduced. The total sliding-mode control comprises the baseline model design and the curbing controller design. In the baseline model design, a computed torque controller is designed to cancel the nonlinearity of the nominal plant. In the curbing controller design, an additional controller is designed using a new sliding surface to ensure the sliding motion through the entire state trajectory. Therefore, in the total sliding-mode control system, the controlled system has a total sliding motion without a reaching phase. Then, to overcome the two main problems with sliding-mode control, i.e., the assumption of known uncertainty bounds and the chattering phenomena in the control effort, an RFNN sliding-mode control system is investigated to control the PM synchronous servo motor. In the RFNN sliding-mode control system, an RFNN bound observer is utilized to adjust the uncertainty bounds in real time. To guarantee the convergence of tracking error, analytical methods based on a discrete-type Lyapunov function are proposed to determine the varied learning rates of the RFNN. Simulated and experimental results due to periodic step and sinusoidal commands show that the dynamic behaviors of the proposed control systems are robust with regard to uncertainties.",
+    "url": "https://doi.org/10.1109/41.954557",
+    "authors": [
+      "Rong‐Jong Wai"
+    ],
+    "tags": [
+      "Control theory (sociology)",
+      "Sliding mode control",
+      "Controller (irrigation)",
+      "Servomotor",
+      "Artificial neural network"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2001-01-01",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1093/oed/9478990998",
+    "name": "servo motor, n.",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1093/oed/9478990998",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2023-07-19T09:26:39Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.21070/ups.2142",
+    "name": "Design An Automatic Shuttlecock Output Device Using An Arduino Based Servo Motor",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.21070/ups.2142",
+    "authors": [
+      "Fadly Hikmatus S",
+      "Syamsudduha Syahrorini"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2023-08-28T01:49:00Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1299/jsmelem.2015.8._0201-1_",
+    "name": "0201 Influence of Servo Activation Frequency on Servo Motor Temperature of Machine Tools Equipped with Idling Reduction System",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1299/jsmelem.2015.8._0201-1_",
+    "authors": [
+      "Masahiro NIKI",
+      "Toshiki HIROGAKI",
+      "Eiichi AOYAMA",
+      "Keiji OGAWA"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-06-24T22:26:50Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.1142/9789813206823_0099",
+    "name": "Modeling and Simulation of the Compound Servo System with Servo Motor and Hydraulic Motor",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1142/9789813206823_0099",
+    "authors": [
+      "Ze-Ming LONG",
+      "Bao-Jin GUAN",
+      "Guang-Jun CHEN",
+      "Hao-Yu LI",
+      "Shi-Qing GUO"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-07-17T01:59:44Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.4236/9781649972883",
+    "name": "Adaptive Control of Dual-Motor Driving Servo System",
+    "source": "crossref",
+    "abstract": "<jats:p>This book is a summary of the author’s research achievements, which includes more than 20 academic papers published in domestic and foreign journals and academic conferences. The author hopes that the publication of this book can further meet the requirements of the majority of peers, promote academic and technical exchanges better, and provide a reference for the further research of dual-motor driving servo system.</jats:p>",
+    "url": "https://doi.org/10.4236/9781649972883",
+    "authors": [
+      "Haibo Zhao"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026-07-24T01:43:23Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.29137/umagd.1124999",
+    "name": "Optimization of Servo Motor Control in Underwater Vehicles with PSO",
+    "source": "crossref",
+    "abstract": "<jats:p xml:lang=\"tr\">İnsansız yüzey araçları (USV) günümüzde, otonom veya yarı otonom robotlar olarak tasarlanmış ve teknolojik unsurlara donatılmış birer su altı robotu şeklinde tanımlanmaktadır. Bu çok yönlü akıllı araçlarda algılama, karar verme ve hareket kabiliyetini kurma becerisi mevcut haldedir. Teknolojik donatılarla güçlendirilmiş USV’ler; deniz yüzeyi ve dip tarama, haritalama, sualtında boru hattı döşemelerini gerçekleştirme, bilimsel araştırmalar ve askeri görevlerde kullanılmaktadırlar. Bununla birlikte, insanlı olarak bilinen denizaltı araçlarına yakıt taşıma veya akü ihtiyaçlarını giderme gibi görevleri de üstlenmektedirler. Bu çalışmada USV yapısının servo motor hız kontrolü PID denetleyici ile MATLAB/ Simulink ortamında gerçekleştirilmiştir. PID denetleyici katsayıları birincil olarak Ziegler-Nichols ile hesaplanmıştır. İkincil olarak Parçacık sürü optimizasyonu (PSO) ile optimize edilmiştir. Sistemde bu yönteme göre referans hız değerine yaklaşımı, salınımı ve kontrolü incelenmiştir.</jats:p>",
+    "url": "https://doi.org/10.29137/umagd.1124999",
+    "authors": [
+      "Zahide Nur YILMAZ",
+      "Nuri Alper METİN",
+      "Murat LÜY"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2022-09-12T13:28:10Z",
+    "addedAt": "2026-08-05T01:49:03.766Z"
+  },
+  {
+    "id": "doi:10.21275/sr23910182959",
+    "name": "Design of Astella Modem by LOOP connection of Pump and Servo Motor",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.21275/sr23910182959",
+    "authors": [
+      "Rohan Sarker"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2023-12-15T06:34:28Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.64803/joeer.v2i2.28",
+    "name": "Applying Arduino Libraries on Matlab to Design Servo Motor Controller in Sewing Machine",
+    "source": "crossref",
+    "abstract": "<jats:p>Currently, servo motors are extensively employed in manufacturing equipment, including the garment industry, owing to their high precision and ease of speed variation. Control problems in electronic sewing machines are primarily characterized by motor speed regulation to generate needle motion. The operating principle of the servo motor involves transmitting motion to the main shaft via a belt drive. Consequently, motor speed control can be formulated as a problem of simulating the main shaft motion, which directly affects the machine’s actuators, such as forward/reverse stitching, needle stopping, and precise positioning. This paper presents the Arduino library within the MATLAB environment and its application in the design of a controller for a servo motor.</jats:p>",
+    "url": "https://doi.org/10.64803/joeer.v2i2.28",
+    "authors": [
+      "Trung Ngo Kien"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2026-07-04T04:47:24Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.3724/sp.j.1087.2012.02944",
+    "name": "Model predictive control and PID control on servo motor",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3724/sp.j.1087.2012.02944",
+    "authors": [
+      "Yu-chuan HUANG",
+      "Dao-kui QU",
+      "Fang XU",
+      "Xiao-lei REN"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2013-05-23T13:24:06Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.21275/sr21825170847",
+    "name": "Experimental Investigation of the Proportional Controller - Based Model of DC Servo Motor",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.21275/sr21825170847",
+    "authors": [
+      "Adel S Bahakeem",
+      "Ahmad Jamal"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2024-12-06T09:29:34Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1201/9780203750513-7",
+    "name": "Servo Motor Tuning",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1201/9780203750513-7",
+    "authors": [
+      "Clarence W. de Silva"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2018-09-01T11:52:49Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.4028/www.scientific.net/amm.494-495.1175",
+    "name": "Synchronous Controller for Dual Servo Motor in Servo Press",
+    "source": "crossref",
+    "abstract": "<jats:p>This study shows the results of double servomotors synchronization controller (SC) for Mirco-precision servo press. Two systems are used in this study, one is the master motor and another is the slave motor. Each system is designed separately. Also, it is necessary to use the synchronous controller to minimize the synchronization error and the motion command is transmitted simultaneously to two motors. The control system for the master motor includes a feedback controller (FB) and a zero phase error tracking controller (ZPET). For the slave motor, only velocity is controlled. The feedback controller is a cascade control structure, velocity and position controller. It can make the output follows the command. In order to reduce synchronized motion error, two servomotors are synchronized by the SC. The results of simulation reveal that the performance of the overall control system is improved compare to open loop, the synchronous position error between two sliders were less than 4μmm.</jats:p>",
+    "url": "https://doi.org/10.4028/www.scientific.net/amm.494-495.1175",
+    "authors": [
+      "Shang Liang Chen",
+      "Dinh Hoai Nam",
+      "Nguyen Van Thanh"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-02-06T16:53:59Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2775635818",
+    "name": "GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force",
+    "source": "openalex",
+    "abstract": "Tactile sensing is an important perception mode for robots, but the existing tactile technologies have multiple limitations. What kind of tactile information robots need, and how to use the information, remain open questions. We believe a soft sensor surface and high-resolution sensing of geometry should be important components of a competent tactile sensor. In this paper, we discuss the development of a vision-based optical tactile sensor, GelSight. Unlike the traditional tactile sensors which measure contact force, GelSight basically measures geometry, with very high spatial resolution. The sensor has a contact surface of soft elastomer, and it directly measures its deformation, both vertical and lateral, which corresponds to the exact object shape and the tension on the contact surface. The contact force, and slip can be inferred from the sensor's deformation as well. Particularly, we focus on the hardware and software that support GelSight's application on robot hands. This paper reviews the development of GelSight, with the emphasis in the sensing principle and sensor design. We introduce the design of the sensor's optical system, the algorithm for shape, force and slip measurement, and the hardware designs and fabrication of different sensor versions. We also show the experimental evaluation on the GelSight's performance on geometry and force measurement. With the high-resolution measurement of shape and contact force, the sensor has successfully assisted multiple robotic tasks, including material perception or recognition and in-hand localization for robot manipulation.",
+    "url": "https://doi.org/10.3390/s17122762",
+    "authors": [
+      "Wenzhen Yuan",
+      "Siyuan Dong",
+      "Edward H. Adelson"
+    ],
+    "tags": [
+      "Tactile sensor",
+      "Robot",
+      "Slip (aerodynamics)",
+      "Focus (optics)",
+      "Contact force"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-11-29",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2594087187",
+    "name": "Recent advances in wearable tactile sensors: Materials, sensing mechanisms, and device performance",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.mser.2017.02.001",
+    "authors": [
+      "Tingting Yang",
+      "Dan Xie",
+      "Zhihong Li",
+      "Hongwei Zhu"
+    ],
+    "tags": [
+      "Wearable computer",
+      "Tactile sensor",
+      "Pressure sensor",
+      "Wearable technology",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-03-06",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2098329693",
+    "name": "Microstructured Graphene Arrays for Highly Sensitive Flexible Tactile Sensors",
+    "source": "openalex",
+    "abstract": "A highly sensitive tactile sensor is devised by applying microstructured graphene arrays as sensitive layers. The combination of graphene and anisotropic microstructures endows this sensor with an ultra-high sensitivity of -5.53 kPa(-1) , an ultra-fast response time of only 0.2 ms, as well as good reliability, rendering it promising for the application of tactile sensing in artificial skin and human-machine interface.",
+    "url": "https://doi.org/10.1002/smll.201401207",
+    "authors": [
+      "Bowen Zhu",
+      "Zhiqiang Niu",
+      "Hong Wang",
+      "Wan Ru Leow",
+      "Hua Wang",
+      "Yuangang Li",
+      "Liyan Zheng",
+      "Jun Wei",
+      "Fengwei Huo",
+      "Xiaodong Chen"
+    ],
+    "tags": [
+      "Graphene",
+      "Rendering (computer graphics)",
+      "Tactile sensor",
+      "Materials science",
+      "Nanotechnology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-06-04",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2611333474",
+    "name": "3D Printed Stretchable Tactile Sensors",
+    "source": "openalex",
+    "abstract": "The development of methods for the 3D printing of multifunctional devices could impact areas ranging from wearable electronics and energy harvesting devices to smart prosthetics and human-machine interfaces. Recently, the development of stretchable electronic devices has accelerated, concomitant with advances in functional materials and fabrication processes. In particular, novel strategies have been developed to enable the intimate biointegration of wearable electronic devices with human skin in ways that bypass the mechanical and thermal restrictions of traditional microfabrication technologies. Here, a multimaterial, multiscale, and multifunctional 3D printing approach is employed to fabricate 3D tactile sensors under ambient conditions conformally onto freeform surfaces. The customized sensor is demonstrated with the capabilities of detecting and differentiating human movements, including pulse monitoring and finger motions. The custom 3D printing of functional materials and devices opens new routes for the biointegration of various sensors in wearable electronics systems, and toward advanced bionic skin applications.",
+    "url": "https://doi.org/10.1002/adma.201701218",
+    "authors": [
+      "Shuang‐Zhuang Guo",
+      "Kaiyan Qiu",
+      "Fanben Meng",
+      "Sung Hyun Park",
+      "Michael C. McAlpine"
+    ],
+    "tags": [
+      "Microfabrication",
+      "Electronics",
+      "Wearable technology",
+      "Stretchable electronics",
+      "Wearable computer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-05-05",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W3155888146",
+    "name": "Recent Progress in Flexible Tactile Sensors for Human‐Interactive Systems: From Sensors to Advanced Applications",
+    "source": "openalex",
+    "abstract": "Flexible tactile sensors capable of measuring mechanical stimuli via physical contact have attracted significant attention in the field of human-interactive systems. The utilization of tactile information can complement vision and/or sound interaction and provide new functionalities. Recent advancements in micro/nanotechnology, material science, and information technology have resulted in the development of high-performance tactile sensors that reach and even surpass the tactile sensing ability of human skin. Here, important advances in flexible tactile sensors over recent years are summarized, from sensor designs to system-level applications. This review focuses on the representative strategies based on design and material configurations for improving key performance parameters including sensitivity, detection range/linearity, response time/hysteresis, spatial resolution/crosstalk, multidirectional force detection, and insensitivity to other stimuli. System-level integration for practical applications beyond conceptual prototypes and promising applications, such as artificial electronic skin for robotics and prosthetics, wearable controllers for electronics, and bidirectional communication tools, are also discussed. Finally, perspectives on issues regarding further advances are provided.",
+    "url": "https://doi.org/10.1002/adma.202005902",
+    "authors": [
+      "Soonjae Pyo",
+      "Jae Yong Lee",
+      "Kyubin Bae",
+      "Sangjun Sim",
+      "Jongbaeg Kim"
+    ],
+    "tags": [
+      "Tactile sensor",
+      "Wearable computer",
+      "Wearable technology",
+      "Computer science",
+      "Robotics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2021-04-22",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2462708931",
+    "name": "Flexible Capacitive Tactile Sensor Based on Micropatterned Dielectric Layer",
+    "source": "openalex",
+    "abstract": "Flexible tactile sensors are considered as an effective way to realize the sense of touch, which can perform the synchronized interactions with surrounding environment. Here, the utilization of bionic microstructures on natural lotus leaves is demonstrated to design and fabricate new‐type of high‐performance flexible capacitive tactile sensors. Taking advantage of unique surface micropattern of lotus leave as the template for electrodes and using polystyrene microspheres as the dielectric layer, the proposed devices present stable and high sensing performance, such as high sensitivity (0.815 kPa −1 ), wide dynamic response range (from 0 to 50 N), and fast response time (≈38 ms). In addition, the flexible capacitive sensor is not only applicable to pressure (touch of a single hair), but also to bending and stretching forces. The results indicate that the proposed capacitive tactile sensor is a promising candidate for the future applications in electronic skins, wearable robotics, and biomedical devices.",
+    "url": "https://doi.org/10.1002/smll.201600760",
+    "authors": [
+      "Tie Li",
+      "Hui Luo",
+      "Lin Qin",
+      "Xuewen Wang",
+      "Zuoping Xiong",
+      "Haiyan Ding",
+      "Yang Gu",
+      "Zheng Liu",
+      "Ting Zhang"
+    ],
+    "tags": [
+      "Capacitive sensing",
+      "Tactile sensor",
+      "Materials science",
+      "Wearable computer",
+      "Layer (electronics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2016-06-20",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2031763660",
+    "name": "Biomimetic Tactile Sensor Array",
+    "source": "openalex",
+    "abstract": "The performance of robotic and prosthetic hands in unstructured environments is severely limited by their having little or no tactile information compared to the rich tactile feedback of the human hand. We are developing a novel, robust tactile sensor array that mimics the mechanical properties and distributed touch receptors of the human fingertip. It consists of a rigid core surrounded by a weakly conductive fluid contained within an elastomeric skin. The sensor uses the deformable properties of the finger pad as part of the transduction process. Multiple electrodes are mounted on the surface of the rigid core and connected to impedance-measuring circuitry safely embedded within the core. External forces deform the fluid path around the electrodes, resulting in a distributed pattern of impedance changes containing information about those forces and the objects that applied them. Here we describe means to optimize the dynamic range of individual electrode sensors by texturing the inner surface of the silicone skin. Forces ranging from 0.1 to 30 N produced impedances ranging from 5 to 1000 kΩ. Spatial resolution (below 2 mm) and frequency response (above 50 Hz) appeared to be limited only by the viscoelastic properties of the silicone elastomeric skin.",
+    "url": "https://doi.org/10.1163/156855308x314533",
+    "authors": [
+      "Nicholas Wettels",
+      "Veronica J. Santos",
+      "Roland S. Johansson",
+      "Gerald E. Loeb"
+    ],
+    "tags": [
+      "Tactile sensor",
+      "Elastomer",
+      "Electrical impedance",
+      "Materials science",
+      "Electrode"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2008-01-01",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2781493652",
+    "name": "The TacTip Family: Soft Optical Tactile Sensors with 3D-Printed Biomimetic Morphologies",
+    "source": "openalex",
+    "abstract": "Tactile sensing is an essential component in human-robot interaction and object manipulation. Soft sensors allow for safe interaction and improved gripping performance. Here we present the TacTip family of sensors: a range of soft optical tactile sensors with various morphologies fabricated through dual-material 3D printing. All of these sensors are inspired by the same biomimetic design principle: transducing deformation of the sensing surface via movement of pins analogous to the function of intermediate ridges within the human fingertip. The performance of the TacTip, TacTip-GR2, TacTip-M2, and TacCylinder sensors is here evaluated and shown to attain submillimeter accuracy on a rolling cylinder task, representing greater than 10-fold super-resolved acuity. A version of the TacTip sensor has also been open-sourced, enabling other laboratories to adopt it as a platform for tactile sensing and manipulation research. These sensors are suitable for real-world applications in tactile perception, exploration, and manipulation, and will enable further research and innovation in the field of soft tactile sensing.",
+    "url": "https://doi.org/10.1089/soro.2017.0052",
+    "authors": [
+      "Benjamin Ward-Cherrier",
+      "Nicholas Pestell",
+      "Luke Cramphorn",
+      "Benjamin Winstone",
+      "Maria Elena Giannaccini",
+      "Jonathan Rossiter",
+      "Nathan F. Lepora"
+    ],
+    "tags": [
+      "Tactile sensor",
+      "Soft robotics",
+      "3d printed",
+      "Computer science",
+      "Wearable computer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2018-01-03",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2144333659",
+    "name": "Dexterous anthropomorphic robot hand with distributed tactile sensor: Gifu hand II",
+    "source": "openalex",
+    "abstract": "This paper presents an anthropomorphic robot hand, called the Gifu hand II, which has a thumb and four fingers, all the joints of which are driven by servomotors built into the fingers and the palm. The thumb has four joints with four-degrees-of-freedom (DOF), the other fingers have four joints with 3-DOF, and two axes of the joints near the palm cross orthogonally at one point, as is the case in the human hand. The Gifu hand II can be equipped with six-axes force sensor at each fingertip, and a developed distributed tactile sensor with 624 detecting points on its surface. The design concepts and specifications of the Gifu hand II, the basic characteristics of the tactile sensor, and the pressure distributions at the time of object grasping are described and discussed herein. Our results demonstrate that the Gifu hand II has a high potential to perform dexterous object manipulations like the human hand.",
+    "url": "https://doi.org/10.1109/tmech.2002.802720",
+    "authors": [
+      "Haruhisa Kawasaki",
+      "T. Komatsu",
+      "K. Uchiyama"
+    ],
+    "tags": [
+      "Thumb",
+      "Robot hand",
+      "Tactile sensor",
+      "Robotic hand",
+      "Computer vision"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2002-09-01",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2103561623",
+    "name": "Human Skin Based Triboelectric Nanogenerators for Harvesting Biomechanical Energy and as Self-Powered Active Tactile Sensor System",
+    "source": "openalex",
+    "abstract": "We report human skin based triboelectric nanogenerators (TENG) that can either harvest biomechanical energy or be utilized as a self-powered tactile sensor system for touch pad technology. We constructed a TENG utilizing the contact/separation between an area of human skin and a polydimethylsiloxane (PDMS) film with a surface of micropyramid structures, which was attached to an ITO electrode that was grounded across a loading resistor. The fabricated TENG delivers an open-circuit voltage up to -1000 V, a short-circuit current density of 8 mA/m(2), and a power density of 500 mW/m(2) on a load of 100 MΩ, which can be used to directly drive tens of green light-emitting diodes. The working mechanism of the TENG is based on the charge transfer between the ITO electrode and ground via modulating the separation distance between the tribo-charged skin patch and PDMS film. Furthermore, the TENG has been used in designing an independently addressed matrix for tracking the location and pressure of human touch. The fabricated matrix has demonstrated its self-powered and high-resolution tactile sensing capabilities by recording the output voltage signals as a mapping figure, where the detection sensitivity of the pressure is about 0.29 ± 0.02 V/kPa and each pixel can have a size of 3 mm × 3 mm. The TENGs may have potential applications in human-machine interfacing, micro/nano-electromechanical systems, and touch pad technology.",
+    "url": "https://doi.org/10.1021/nn403838y",
+    "authors": [
+      "Ya Yang",
+      "Hulin Zhang",
+      "Zong‐Hong Lin",
+      "Yusheng Zhou",
+      "Qingshen Jing",
+      "Yuanjie Su",
+      "Jin Yang",
+      "Jun Chen",
+      "Chenguo Hu",
+      "Zhong Lin Wang"
+    ],
+    "tags": [
+      "Triboelectric effect",
+      "Electronic skin",
+      "Materials science",
+      "Polydimethylsiloxane",
+      "Nanogenerator"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2013-09-05",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2715135432",
+    "name": "Recent progresses on flexible tactile sensors",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.mtphys.2017.06.002",
+    "authors": [
+      "Yongbiao Wan",
+      "Yan Wang",
+      "Chuan Fei Guo"
+    ],
+    "tags": [
+      "Conformable matrix",
+      "Tactile sensor",
+      "Flexibility (engineering)",
+      "Electronics",
+      "Wearable computer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-06-01",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2290066381",
+    "name": "MoS<sub>2</sub>‐Based Tactile Sensor for Electronic Skin Applications",
+    "source": "openalex",
+    "abstract": "A conformal tactile sensor based on MoS2 and graphene is demonstrated. The MoS2 tactile sensor exhibits excellent sensitivity, high uniformity, and good repeatability in terms of various strains. In addition, the outstanding flexibility enables the MoS2 strain tactile sensor to be realized conformally on a finger tip. The MoS2 -based tactile sensor can be utilized for wearable electronics, such as electronic skin.",
+    "url": "https://doi.org/10.1002/adma.201505124",
+    "authors": [
+      "Minhoon Park",
+      "Yong Ju Park",
+      "Xiang Chen",
+      "Yon‐Kyu Park",
+      "Minseok Kim",
+      "Jong‐Hyun Ahn"
+    ],
+    "tags": [
+      "Tactile sensor",
+      "Materials science",
+      "Electronics",
+      "Electronic skin",
+      "Wearable computer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2016-02-02",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-820633-1.00010-3",
+    "name": "Conductive composite-based tactile sensor",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-820633-1.00010-3",
+    "authors": [
+      "Haotian Chen",
+      "Haixia Zhang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2021-01-30T03:26:35Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1108/sr.2002.08722aab.009",
+    "name": "Ultra thin tactile sensor",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1108/sr.2002.08722aab.009",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-11-15T17:52:57Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1142/9781860948800_0118",
+    "name": "DEVELOPMENT OF A TACTILE SENSOR SYSTEM (TACTILE WARMTH COMPARED WITH PVDF SENSOR OUTPUT)",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1142/9781860948800_0118",
+    "authors": [
+      "YOSHIHIRO TANAKA",
+      "MAMI TANAKA",
+      "SEIJI CHONAN"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2008-04-16T07:39:25Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1109/iros45743.2020.9341596",
+    "name": "Deep Tactile Experience: Estimating Tactile Sensor Output from Depth Sensor Data",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/iros45743.2020.9341596",
+    "authors": [
+      "Karankumar Patel",
+      "Soshi Iba",
+      "Nawid Jamali"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2021-02-13T02:26:48Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.14711/thesis-991013246557903412",
+    "name": "Monolithically integrated systems from tactile sensor arrays to neuromorphic tactile perception based on dual-gate thin-film transistors",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.14711/thesis-991013246557903412",
+    "authors": [
+      "Tengteng Lei"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2024-12-29T22:23:59Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1109/lra.2023.3333701/mm1",
+    "name": "AllSight: A Low-Cost and High-Resolution Round Tactile Sensor With Zero-Shot Learning Capability_supp1-3333701.mp4",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/lra.2023.3333701/mm1",
+    "authors": [
+      "Avishai Sintov"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2023-11-17T14:22:42Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.5772/6634",
+    "name": "Tactile Sensor Without Wire and Sensing Element in the Tactile Region Using New Rubber Material",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5772/6634",
+    "authors": [
+      "Yo Kato",
+      "Toshiharu Mukai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2012-03-29T07:46:53Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-820633-1.00004-8",
+    "name": "Tactile sensor based on capacitive structure",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-820633-1.00004-8",
+    "authors": [
+      "Ho-Hsiu Chou",
+      "Wen-Ya Lee"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2021-01-30T03:23:56Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.26226/morressier.5f5f8e69aa777f8ba5bd60c6",
+    "name": "Designable flexible tactile sensor with linear response",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.26226/morressier.5f5f8e69aa777f8ba5bd60c6",
+    "authors": [
+      "Zhiguang Liu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2020-11-30T22:40:25Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1007/978-3-662-12402-4_4",
+    "name": "General Vision Sensor and Tactile Sensor Technology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-662-12402-4_4",
+    "authors": [
+      "Alan Gomersall"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2013-02-07T00:39:19Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1299/jsmecs.2004.i.173",
+    "name": "Development of a Tactile Sensor for Braille Pattern Reconition : Sensor Design and Simulation",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1299/jsmecs.2004.i.173",
+    "authors": [
+      "Sayyed Alireza ARABSHAHI",
+      "Zhangwei JIANG"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2017-06-20T19:58:34Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.5772/6626",
+    "name": "Design of a Tactile Sensor for Robot Hands",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5772/6626",
+    "authors": [
+      "Giorgio Cannata",
+      "Marco Maggiali"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2012-03-29T03:46:53Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W1515749184",
+    "name": "Design, fabrication and control of soft robots",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nature14543",
+    "authors": [
+      "Daniela Rus",
+      "Michael T. Tolley"
+    ],
+    "tags": [
+      "Soft robotics",
+      "Soft materials",
+      "Robot",
+      "Robotics",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2015-05-26",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2025613329",
+    "name": "Multigait soft robot",
+    "source": "openalex",
+    "abstract": "This manuscript describes a unique class of locomotive robot: A soft robot, composed exclusively of soft materials (elastomeric polymers), which is inspired by animals (e.g., squid, starfish, worms) that do not have hard internal skeletons. Soft lithography was used to fabricate a pneumatically actuated robot capable of sophisticated locomotion (e.g., fluid movement of limbs and multiple gaits). This robot is quadrupedal; it uses no sensors, only five actuators, and a simple pneumatic valving system that operates at low pressures (< 10 psi). A combination of crawling and undulation gaits allowed this robot to navigate a difficult obstacle. This demonstration illustrates an advantage of soft robotics: They are systems in which simple types of actuation produce complex motion.",
+    "url": "https://doi.org/10.1073/pnas.1116564108",
+    "authors": [
+      "Robert F. Shepherd",
+      "Filip Ilievski",
+      "Wonjae Choi",
+      "Stephen A. Morin",
+      "Adam A. Stokes",
+      "Aaron D. Mazzeo",
+      "Xin Chen",
+      "Michael Wang",
+      "George M. Whitesides"
+    ],
+    "tags": [
+      "Crawling",
+      "Robot",
+      "Soft robotics",
+      "Actuator",
+      "Soft materials"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2011-11-28",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2079574144",
+    "name": "Soft robotics: a bioinspired evolution in robotics",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.tibtech.2013.03.002",
+    "authors": [
+      "Sangbae Kim",
+      "Cecilia Laschi",
+      "Barry A. Trimmer"
+    ],
+    "tags": [
+      "Soft robotics",
+      "Robotics",
+      "Artificial intelligence",
+      "Exploit",
+      "Soft materials"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2013-04-17",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2166585449",
+    "name": "Soft Robotics for Chemists",
+    "source": "openalex",
+    "abstract": "Soft robots: A methodology based on embedded pneumatic networks (PneuNets) is described that enables large-amplitude actuations in soft elastomers by pressurizing embedded channels. Examples include a structure that can change its curvature from convex to concave, and devices that act as compliant grippers for handling fragile objects (e.g., a chicken egg).",
+    "url": "https://doi.org/10.1002/anie.201006464",
+    "authors": [
+      "Filip Ilievski",
+      "Aaron D. Mazzeo",
+      "Robert F. Shepherd",
+      "Xin Chen",
+      "George M. Whitesides"
+    ],
+    "tags": [
+      "Soft robotics",
+      "Robotics",
+      "Grippers",
+      "Curvature",
+      "Robot"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2011-01-20",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2803735436",
+    "name": "Biomedical applications of soft robotics",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s41578-018-0022-y",
+    "authors": [
+      "Matteo Cianchetti",
+      "Cecilia Laschi",
+      "Arianna Menciassi",
+      "Paolo Dario"
+    ],
+    "tags": [
+      "Soft robotics",
+      "Soft materials",
+      "Robotics",
+      "Robot",
+      "Context (archaeology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2018-05-23",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2560730116",
+    "name": "Soft robotics: Technologies and systems pushing the boundaries of robot abilities",
+    "source": "openalex",
+    "abstract": "The proliferation of soft robotics research worldwide has brought substantial achievements in terms of principles, models, technologies, techniques, and prototypes of soft robots. Such achievements are reviewed here in terms of the abilities that they provide robots that were not possible before. An analysis of the evolution of this field shows how, after a few pioneering works in the years 2009 to 2012, breakthrough results were obtained by taking seminal technological and scientific challenges related to soft robotics from actuation and sensing to modeling and control. Further progress in soft robotics research has produced achievements that are important in terms of robot abilities-that is, from the viewpoint of what robots can do today thanks to the soft robotics approach. Abilities such as squeezing, stretching, climbing, growing, and morphing would not be possible with an approach based only on rigid links. The challenge ahead for soft robotics is to further develop the abilities for robots to grow, evolve, self-heal, develop, and biodegrade, which are the ways that robots can adapt their morphology to the environment.",
+    "url": "https://doi.org/10.1126/scirobotics.aah3690",
+    "authors": [
+      "Cecilia Laschi",
+      "Barbara Mazzolai",
+      "Matteo Cianchetti"
+    ],
+    "tags": [
+      "Climb",
+      "Soft robotics",
+      "Robotics",
+      "Robot",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2016-12-06",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2054628872",
+    "name": "Soft robotic glove for combined assistance and at-home rehabilitation",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.robot.2014.08.014",
+    "authors": [
+      "Panagiotis Polygerinos",
+      "Zheng Wang",
+      "Kevin C. Galloway",
+      "Robert J. Wood",
+      "Conor J. Walsh"
+    ],
+    "tags": [
+      "Soft robotics",
+      "Computer science",
+      "Actuator",
+      "Wired glove",
+      "Pneumatic actuator"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-09-08",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2790084889",
+    "name": "Untethered soft robotics",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s41928-018-0024-1",
+    "authors": [
+      "Steven Rich",
+      "Robert J. Wood",
+      "Carmel Majidi"
+    ],
+    "tags": [
+      "Soft robotics",
+      "Robotics",
+      "Artificial intelligence",
+      "Wearable computer",
+      "Robot"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2018-02-08",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W4211124276",
+    "name": "Soft Robotics",
+    "source": "openalex",
+    "abstract": "This description of \"soft robotics\" is not intended to be a conventional review, in the sense of a comprehensive technical summary of a developing field. Rather, its objective is to describe soft robotics as a new field-one that offers opportunities to chemists and materials scientists who like to make \"things\" and to work with macroscopic objects that move and exert force. It will give one (personal) view of what soft actuators and robots are, and how this class of soft devices fits into the more highly developed field of conventional \"hard\" robotics. It will also suggest how and why soft robotics is more than simply a minor technical \"tweak\" on hard robotics and propose a unique role for chemistry, and materials science, in this field. Soft robotics is, at its core, intellectually and technologically different from hard robotics, both because it has different objectives and uses and because it relies on the properties of materials to assume many of the roles played by sensors, actuators, and controllers in hard robotics.",
+    "url": "https://doi.org/10.1002/anie.201800907",
+    "authors": [
+      "George M. Whitesides"
+    ],
+    "tags": [
+      "Robotics",
+      "Artificial intelligence",
+      "Soft robotics",
+      "Robot",
+      "Field (mathematics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2018-03-08",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W4244367163",
+    "name": "A Resilient, Untethered Soft Robot",
+    "source": "openalex",
+    "abstract": "A pneumatically powered, fully untethered mobile soft robot is described. Composites consisting of silicone elastomer, polyaramid fabric, and hollow glass microspheres were used to fabricate a sufficiently large soft robot to carry the miniature air compressors, battery, valves, and controller needed for autonomous operation. Fabrication techniques were developed to mold a 0.65-meter-long soft body with modified Pneu-Net actuators capable of operating at the elevated pressures (up to 138 kPa) required to actuate the legs of the robot and hold payloads of up to 8 kg. The soft robot is safe to interact with during operation, and its silicone body is innately resilient to a variety of adverse environmental conditions including snow, puddles of water, direct (albeit limited) exposure to flames, and the crushing force of being run over by an automobile.",
+    "url": "https://doi.org/10.1089/soro.2014.0008",
+    "authors": [
+      "Michael T. Tolley",
+      "Robert F. Shepherd",
+      "Bobak Mosadegh",
+      "Kevin C. Galloway",
+      "Michael Wehner",
+      "Michael Karpelson",
+      "Robert J. Wood",
+      "George M. Whitesides"
+    ],
+    "tags": [
+      "Robot",
+      "Pneumatic actuator",
+      "Silicone",
+      "Actuator",
+      "Soft robotics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-08-25",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1089/soro.2014.0006",
+    "name": "Soft Robotics for Architects: Integrating Soft Robotics Education in an Architectural Context",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1089/soro.2014.0006",
+    "authors": [
+      "Dino Rossi",
+      "Zoltán Nagy",
+      "Arno Schlueter"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-06-19T15:35:25Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1089/soro.2015.29001.lma",
+    "name": "The Soft Robotics Week: A New Yearly Event for the Community of Soft Robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1089/soro.2015.29001.lma",
+    "authors": [
+      "Laura Margheri",
+      "Cecilia Laschi"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2015-06-18T12:40:20Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1089/soro.2013.0003",
+    "name": "A Journal of Soft Robotics: Why Now?",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1089/soro.2013.0003",
+    "authors": [
+      "Barry Trimmer"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2013-07-17T16:30:18Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1089/soro.2015.29005.bat",
+    "name": "Humanoids and the Emergence of Soft Robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1089/soro.2015.29005.bat",
+    "authors": [
+      "Barry Trimmer"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2015-12-21T16:25:49Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1089/soro.2013.0004",
+    "name": "The Bioinspiration Design Paradigm: A Perspective for Soft Robotics",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>\n                    Biological inspiration is a key design approach for the development of innovative robots. Flapping wings, sensitized robotic skins, insect-inspired compound eyes, and artificial muscles are examples of nature acting as a source of inspiration for the design of novel artificial systems. The heart of successful bioinspired design is the abstraction of the underlying design principles found in biology and their implementation in robotics using state-of-the-art technology. In this article, I introduce the notion of the\n                    <jats:italic toggle=\"yes\">inspire–abstract–implement</jats:italic>\n                    (IAI) design flow as a paradigm for biological inspiration in robotics. The article develops the key aspects of the IAI approach and illustrates it on several examples in technology and on a case study of a miniature soft jumping robot. Using a locust-inspired jumping mechanism and a soft exoskeleton allows the robot to jump repetitively with minimal control and only one single actuator. Further, the article discusses how biological inspiration can be a promising perspective for advanced design in the novel field of soft robotics, and it outlines its main design challenges and opportunities.\n                  </jats:p>",
+    "url": "https://doi.org/10.1089/soro.2013.0004",
+    "authors": [
+      "Mirko Kovač"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2013-07-17T16:30:18Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1089/soro.2014.0009",
+    "name": "Soft Robotics Education",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1089/soro.2014.0009",
+    "authors": [
+      "Xiaoxiang Yu",
+      "Surya Girinatha Nurzaman",
+      "Utku Culha",
+      "Fumiya Iida"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-08-27T15:05:37Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1089/soro.2013.0001",
+    "name": "Soft Robotics: A Perspective—Current Trends and Prospects for the Future",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Soft robots are primarily composed of easily deformable matter such as fluids, gels, and elastomers that match the elastic and rheological properties of biological tissue and organs. Like an octopus squeezing through a narrow opening or a caterpillar rolling through uneven terrain, a soft robot must adapt its shape and locomotion strategy for a broad range of tasks, obstacles, and environmental conditions. This emerging class of elastically soft, versatile, and biologically inspired machines represents an exciting and highly interdisciplinary paradigm in engineering that could revolutionize the role of robotics in healthcare, field exploration, and cooperative human assistance.</jats:p>",
+    "url": "https://doi.org/10.1089/soro.2013.0001",
+    "authors": [
+      "Carmel Majidi"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2013-07-17T16:30:18Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1515/9783111069418-008",
+    "name": "1278 Advanced topics in soft robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1515/9783111069418-008",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2025-08-04T10:36:43Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1089/soro.2018.0136",
+    "name": "Soft Robotics in Minimally Invasive Surgery",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Soft robotic devices have desirable traits for applications in minimally invasive surgery (MIS), but many interdisciplinary challenges remain unsolved. To understand current technologies, we carried out a keyword search using the Web of Science and Scopus databases, applied inclusion and exclusion criteria, and compared several characteristics of the soft robotic devices for MIS in the resulting articles. There was low diversity in the device designs and a wide-ranging level of detail regarding their capabilities. We propose a standardized comparison methodology to characterize soft robotics for various MIS applications, which will aid designers producing the next generation of devices.</jats:p>",
+    "url": "https://doi.org/10.1089/soro.2018.0136",
+    "authors": [
+      "Mark Runciman",
+      "Ara Darzi",
+      "George P. Mylonas"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2019-03-28T10:58:36Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1089/soro.2014.1505",
+    "name": "Soft Robotics Community Events: Meeting Different Backgrounds for Common Challenges",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1089/soro.2014.1505",
+    "authors": [
+      "Laura Margheri",
+      "Barry Trimmer"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-12-23T10:14:49Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1089/soro.2015.1501",
+    "name": "Soft Robots and Society",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1089/soro.2015.1501",
+    "authors": [
+      "Barry Trimmer"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2015-03-19T14:52:09Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1089/soro.2021.0080",
+    "name": "Fast Thermal Actuators for Soft Robotics",
+    "source": "crossref",
+    "abstract": "<jats:p>\n                    Thermal actuation is a common actuation method for soft robots. However, a major limitation is the relatively slow actuation speed. Here we report significant increase in the actuation speed of a bimorph thermal actuator by harnessing the snap-through instability. The actuator is made of silver nanowire/polydimethylsiloxane composite. The snap-through instability is enabled by simply applying an offset displacement to part of the actuator structure. The effects of thermal conductivity of the composite, offset displacement, and actuation frequency on the actuator speed are investigated using both experiments and finite element analysis. The actuator yields a bending speed as high as 28.7 cm\n                    <jats:sup>−1</jats:sup>\n                    /s, 10 times that without the snap-through instability. A fast crawling robot with locomotion speed of 1.04 body length per second and a biomimetic Venus flytrap were demonstrated to illustrate the promising potential of the fast bimorph thermal actuators for soft robotic applications.\n                  </jats:p>",
+    "url": "https://doi.org/10.1089/soro.2021.0080",
+    "authors": [
+      "Shuang Wu",
+      "Gregory Langston Baker",
+      "Jie Yin",
+      "Yong Zhu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2021-12-07T16:34:23Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2472944192",
+    "name": "Agricultural robots for field operations: Concepts and components",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.biosystemseng.2016.06.014",
+    "authors": [
+      "Avital Bechar",
+      "Clément Vigneault"
+    ],
+    "tags": [
+      "Robot",
+      "Automation",
+      "Field (mathematics)",
+      "Task (project management)",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2016-07-14",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2099019320",
+    "name": "A survey of socially interactive robots",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0921-8890(02)00372-x",
+    "authors": [
+      "Terrence Fong",
+      "Illah Nourbakhsh",
+      "Kerstin Dautenhahn"
+    ],
+    "tags": [
+      "Robot",
+      "Computer science",
+      "Human–computer interaction",
+      "Robotics",
+      "Taxonomy (biology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2003-02-28",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2067094670",
+    "name": "GenoM3: Building middleware-independent robotic components",
+    "source": "openalex",
+    "abstract": "The topic of reusable software in robotics is now largely addressed. Components based architectures, where components are independent units that can be reused accross applications, have become more popular. As a consequence, a long list of middlewares and integration tools is available in the community, often in the form of open-source projects. However, these projects are generally self contained with little reuse between them. This paper presents a software engineering approach that intends to grant middleware independance to robotic software components so that a clear separation of concerns is achieved between highly reusable algorithmic parts and integration frameworks. Such a decoupling let middle-wares be used interchangeably, while fully benefitting from their specific, individual features. This work has been integrated into a new version of the open-source GenoM component generator tool: GenoM3",
+    "url": "https://doi.org/10.1109/robot.2010.5509539",
+    "authors": [
+      "Anthony Mallet",
+      "Cédric Pasteur",
+      "Matthieu Herrb",
+      "Séverin Lemaignan",
+      "Félix Ingrand"
+    ],
+    "tags": [
+      "Reuse",
+      "Computer science",
+      "Middleware (distributed applications)",
+      "Software",
+      "Decoupling (probability)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2010-05-01",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W1975949753",
+    "name": "RT-middleware: distributed component middleware for RT (robot technology)",
+    "source": "openalex",
+    "abstract": "In this paper, we propose RT-middleware for robot system integration. \"RT\" means \"robot technology\", which is applied not only to industrial field but also to nonindustrial field such as human daily life support systems. RT-middleware which is proposed in this paper is a software platform for RT systems. We have studied modularization of RT elements and have developed RT-middleware, which promotes application of RT in various fields. Robotic system development methodology and our RT-middleware concepts are discussed. The RT-component, which is a basic software unit of RT-middleware based system integration, is derived from this discussion. A methodology of system development by using RT-components, and a framework for component development are proposed. Evaluations of some RT-component based systems are performed. Finally, conclusions and future work is described.",
+    "url": "https://doi.org/10.1109/iros.2005.1545521",
+    "authors": [
+      "Noriaki Ando",
+      "Takashi Suehiro",
+      "K. Kitagaki",
+      "Tetsuo Kotoku",
+      "Woo-Keun Yoon"
+    ],
+    "tags": [
+      "Middleware (distributed applications)",
+      "Component (thermodynamics)",
+      "Computer science",
+      "Modular programming",
+      "Embedded system"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2005-01-01",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2146259039",
+    "name": "Snakes and Strings: New Robotic Components for Rescue Operations",
+    "source": "openalex",
+    "abstract": "The International Rescue System Institute has been established in Japan to promote research and development of key technologies for the realization of practical search-and-rescue robots, anticipating future large-scale earthquakes and other catastrophic disasters. In this paper we propose a new paradigm called “snakes and strings”, for developing practical mobile robot systems that may be useful in such situations. “Snakes” stands for snake-like robots, which can skillfully move among the debris of the collapsed buildings. “Strings”, on the other hand, means robotic systems using strings or tethers, such as proposed in the “hyper-tether” research. Tethers can continuously supply energy, accomplish reliable communication links, and also exhibit high traction force. In this paper we present many new mechanical implementations of snake-like robots developed in our laboratory, and we also explain in detail the new paradigm.",
+    "url": "https://doi.org/10.1177/0278364904042202",
+    "authors": [
+      "Shigeo Hirose",
+      "Edwardo F. Fukushima"
+    ],
+    "tags": [
+      "Rescue robot",
+      "Robot",
+      "Search and rescue",
+      "Implementation",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2004-04-01",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W1987665217",
+    "name": "Maritime Aerosol Network as a component of Aerosol Robotic Network",
+    "source": "openalex",
+    "abstract": "The paper presents the current status of the Maritime Aerosol Network (MAN), which has been developed as a component of the Aerosol Robotic Network (AERONET). MAN deploys Microtops handheld Sun photometers and utilizes the calibration procedure and data processing (Version 2) traceable to AERONET. A web site dedicated to the MAN activity is described. A brief historical perspective is given to aerosol optical depth (AOD) measurements over the oceans. A short summary of the existing data, collected on board ships of opportunity during the NASA Sensor Intercomparison and Merger for Biological and Interdisciplinary Oceanic Studies (SIMBIOS) Project is presented. Globally averaged oceanic aerosol optical depth (derived from island‐based AERONET measurements) at 500 nm is ∼0.11 and Angstrom parameter (computed within spectral range 440–870 nm) is calculated to be ∼0.6. First results from the cruises contributing to the Maritime Aerosol Network are shown. MAN ship‐based aerosol optical depth compares well to simultaneous island and near‐coastal AERONET site AOD.",
+    "url": "https://doi.org/10.1029/2008jd011257",
+    "authors": [
+      "A. Smirnov",
+      "B. N. Holben",
+      "I. Slutsker",
+      "D. M. Giles",
+      "C. R. McClain",
+      "T. F. Eck",
+      "S. M. Sakerin",
+      "Andreas Macke",
+      "Peter Croot",
+      "Giuseppe Zibordi",
+      "Patricia K. Quinn",
+      "Jean Sciare",
+      "Stefan Kinne",
+      "Mike Harvey",
+      "Tim Smyth",
+      "Stuart Piketh",
+      "Tymon Zieliński",
+      "Andrey Proshutinsky",
+      "Joaquim I. Goés",
+      "N. B. Nelson",
+      "Pierre Larouche",
+      "В. Ф. Радионов",
+      "Philippe Goloub",
+      "K. Krishna Moorthy",
+      "Raffaella Matarrese",
+      "E. J. Robertson",
+      "Frédéric Jourdin"
+    ],
+    "tags": [
+      "AERONET",
+      "Aerosol",
+      "Sun photometer",
+      "Environmental science",
+      "Photometer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2009-03-20",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W1526125926",
+    "name": "ROKVISS – ROBOTICS COMPONENT VERIFICATION ON ISS",
+    "source": "openalex",
+    "abstract": "ROKVISS, Germans new space robotics technology experiment, was successfully installed outside at the Russian Service Module of the International Space Station (ISS) during an extravehicular space walk at the end of January 2005. Since February 2005 a two joint manipulator can be operated from ground via a direct radio link. The aim of ROKVISS is the in flight verification of highly integrated modular robotic joints as well as the demonstration of different control modes, reaching from high system autonomy to force feedback teleoperation (telepresence mode). The experiment will be operated for one year in free space to evaluate and qualify intelligent light weight robotics components under realistic circumstances for maintenance and repair tasks as foreseen in upcoming manned and unmanned space applications in near future.",
+    "url": "https://openalex.org/W1526125926",
+    "authors": [
+      "Gerd Hirzinger",
+      "K. Landzettel",
+      "Detlef Reintsema",
+      "Carsten Preusche",
+      "Alin Albu‐Schäffer",
+      "Bernd Rebele",
+      "Matthias Türk"
+    ],
+    "tags": [
+      "Robotics",
+      "International Space Station",
+      "Teleoperation",
+      "Modular design",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2005-09-01",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2924849247",
+    "name": "Particle robotics based on statistical mechanics of loosely coupled components",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s41586-019-1022-9",
+    "authors": [
+      "Shuguang Li",
+      "Richa Batra",
+      "J. Brown",
+      "Hyun‐Dong Chang",
+      "Nikhil Ranganathan",
+      "Chuck Hoberman",
+      "Daniela Rus",
+      "Hod Lipson"
+    ],
+    "tags": [
+      "Statistical mechanics",
+      "Robotics",
+      "Particle (ecology)",
+      "Artificial intelligence",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2019-03-20",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W1801419048",
+    "name": "Fiber Encapsulation Additive Manufacturing: An Enabling Technology for 3D Printing of Electromechanical Devices and Robotic Components",
+    "source": "openalex",
+    "abstract": "The frontier in additive manufacturing has recently shifted beyond the ability to produce parts with complex geometries, to the ability to fabricate multimaterial structures. Recent work has demonstrated the capacity to 3D print structures that integrate dissimilar types of materials—such as electrical conductors and reinforcing elements along with dielectrics—enabling the rapid, custom production of highly functional electromechanical and electronic devices. This article introduces a new process, fiber encapsulation additive manufacturing (FEAM), which enables fiber and extrudable matrix material to be printed simultaneously in a single, potentially low-cost machine. One application of FEAM is the manufacturing of soft robotic components that move and sense, though a variety of other applications are contemplated. Using a prototype FEAM system, helical 3D coils/inductors of various heights and diameters were created. Leveraging this capability, a functional loudspeaker, rheostat, inductive sensor, and linear variable differential transformer were demonstrated, as well as a membrane switch array.",
+    "url": "https://doi.org/10.1089/3dp.2015.0003",
+    "authors": [
+      "Matt Saari",
+      "B. Cox",
+      "Edmond Richer",
+      "Paul S. Krueger",
+      "Adam L. Cohen"
+    ],
+    "tags": [
+      "3D printing",
+      "Encapsulation (networking)",
+      "Electronic component",
+      "Materials science",
+      "Transformer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2015-03-01",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W3024803996",
+    "name": "Robotic grinding of complex components: A step towards efficient and intelligent machining – challenges, solutions, and applications",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.rcim.2019.101908",
+    "authors": [
+      "Dahu Zhu",
+      "Xiaozhi Feng",
+      "Xiaohu Xu",
+      "Zeyuan Yang",
+      "Wenlong Li",
+      "Sijie Yan",
+      "Han Ding"
+    ],
+    "tags": [
+      "Machining",
+      "Grinding",
+      "Manufacturing engineering",
+      "Computer science",
+      "Mechanical engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2020-05-15",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "oa:W2011438161",
+    "name": "Towards component-based robotics",
+    "source": "openalex",
+    "abstract": "This paper gives an overview of component-based software engineering (CBSE), motivates its application to the field of mobile robotics, and proposes a particular component model. CBSE is an approach to system-building that aims to shift the emphasis from programming to composing systems from a mixture of off-the-shelf and custom-built software components. This paper argues that robotics is particularly well-suited for and in need of component-based ideas. Furthermore, now is the right time for their introduction. The paper introduces Orca - an open-source component-based software engineering framework proposed for mobile robotics with an associated repository of free, reusable components for building mobile robotic systems.",
+    "url": "https://doi.org/10.1109/iros.2005.1545523",
+    "authors": [
+      "Alex Brooks",
+      "Tobias Kaupp",
+      "Alexei Makarenko",
+      "Stefan B. Williams",
+      "Anders Orebäck"
+    ],
+    "tags": [
+      "Robotics",
+      "Component (thermodynamics)",
+      "Component-based software engineering",
+      "Computer science",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2005-01-01",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1109/mra.2007.901322",
+    "name": "Putting low-cost commercial robotics components to the test - Development of an educational mechatronics/robotics platform using LEGO components",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/mra.2007.901322",
+    "authors": [
+      "V. Papadimitriou",
+      "E. Papadopoulos"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2007-10-01T19:06:52Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1108/978-1-60752-805-020251019",
+    "name": "Student And Classroom Robotics Equipment",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1108/978-1-60752-805-020251019",
+    "authors": [
+      "Mark Gura"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2025-12-10T07:57:36Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1007/3-540-36268-1_3",
+    "name": "Snakes and Strings: New Robotic Components for Rescue Operations",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/3-540-36268-1_3",
+    "authors": [
+      "Shigeo Hirose",
+      "Edwardo F. Fukushima"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2007-10-09T19:06:47Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-361775-0.50008-x",
+    "name": "COMPONENTS OF A ROBOTIC SYSTEM",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-361775-0.50008-x",
+    "authors": [
+      "V. Daniel Hunt"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2014-08-15T13:52:49Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1201/9781003065456-1",
+    "name": "Basic Components of Robot Arms",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1201/9781003065456-1",
+    "authors": [
+      "David D. Ardayfio"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2020-08-03T11:46:05Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.4324/9781003065456-1",
+    "name": "Basic Components of Robot Arms",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.4324/9781003065456-1",
+    "authors": [
+      "David D. Ardayfio"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2020-07-23T07:47:59Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1007/978-1-4615-9888-6_4",
+    "name": "Electrical Drive Components",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-4615-9888-6_4",
+    "authors": [
+      "Moshe Shoham"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2012-03-07T23:32:18Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1021/acsami.1c20209.s002",
+    "name": "Freeform Liquid 3D Printing of Soft Functional Components for Soft Robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1021/acsami.1c20209.s002",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2021-12-28T15:46:28Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1021/acsami.1c20209.s003",
+    "name": "Freeform Liquid 3D Printing of Soft Functional Components for Soft Robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1021/acsami.1c20209.s003",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2021-12-28T15:46:28Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1021/acsami.1c20209.s004",
+    "name": "Freeform Liquid 3D Printing of Soft Functional Components for Soft Robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1021/acsami.1c20209.s004",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2021-12-28T15:46:28Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1021/acsami.1c20209.s005",
+    "name": "Freeform Liquid 3D Printing of Soft Functional Components for Soft Robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1021/acsami.1c20209.s005",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2021-12-28T15:46:28Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
+  },
+  {
+    "id": "doi:10.1021/acsami.1c20209.s001",
+    "name": "Freeform Liquid 3D Printing of Soft Functional Components for Soft Robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1021/acsami.1c20209.s001",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "robot-parts"
+    ],
+    "publishedDate": "2021-12-28T15:46:28Z",
+    "addedAt": "2026-08-05T01:49:03.767Z"
   }
 ]

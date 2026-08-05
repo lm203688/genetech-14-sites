@@ -788,5 +788,3249 @@
     ],
     "publishedDate": "2006-07-07",
     "addedAt": "2026-08-04T10:40:01.261Z"
+  },
+  {
+    "id": "doi:10.1016/0024-3205(73)90016-7",
+    "name": "Author and subject index to life sciences volume 13",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0024-3205(73)90016-7",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-12-14T12:14:32Z",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "doi:10.1016/0024-3205(74)90112-x",
+    "name": "Author and subject index to life sciences volume 14",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0024-3205(74)90112-x",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-12-14T12:14:32Z",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "doi:10.1016/0024-3205(75)90150-2",
+    "name": "Author and subject index to life sciences volume 16",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0024-3205(75)90150-2",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-12-14T17:14:32Z",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "doi:10.1016/0024-3205(89)90262-2",
+    "name": "Melatonin: Perspectives in the life sciences",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0024-3205(89)90262-2",
+    "authors": [
+      "Andrew Miles"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-12-14T14:42:57Z",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "oa:W2143784594",
+    "name": "Computational systems biology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nature01254",
+    "authors": [
+      "Hiroaki Kitano"
+    ],
+    "tags": [
+      "Systems biology",
+      "Computer science",
+      "Systems medicine",
+      "Synthetic biology",
+      "Modular design"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-11-01",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "oa:W2150908245",
+    "name": "The systems biology markup language (SBML): a medium forrepresentation and exchange of biochemical network models",
+    "source": "openalex",
+    "abstract": "MOTIVATION: Molecular biotechnology now makes it possible to build elaborate systems models, but the systems biology community needs information standards if models are to be shared, evaluated and developed cooperatively. RESULTS: We summarize the Systems Biology Markup Language (SBML) Level 1, a free, open, XML-based format for representing biochemical reaction networks. SBML is a software-independent language for describing models common to research in many areas of computational biology, including cell signaling pathways, metabolic pathways, gene regulation, and others. AVAILABILITY: The specification of SBML Level 1 is freely available from http://www.sbml.org/",
+    "url": "https://doi.org/10.1093/bioinformatics/btg015",
+    "authors": [
+      "Michael Hucka",
+      "Andrew Finney",
+      "Herbert M. Sauro",
+      "Hamid Bolouri",
+      "John C. Doyle",
+      "Hiroaki Kitano",
+      "Adam P. Arkin",
+      "B. Bornstein",
+      "D. Bray",
+      "Athel Cornish‐Bowden",
+      "Autumn Cuellar",
+      "С. М. Дронов",
+      "E. D. Gilles",
+      "Martin Ginkel",
+      "V. Gor",
+      "Igor Goryanin",
+      "Warren Hedley",
+      "Charlie Hodgman",
+      "Jan Hofmeyr",
+      "Peter Hunter",
+      "Nick Juty",
+      "Jay Kasberger",
+      "Andreas Kremling",
+      "Ursula Kummer",
+      "Nicolas Le Novère",
+      "Leslie M. Loew",
+      "Daniel Lucio",
+      "Pedro Mendes",
+      "Eric Minch",
+      "Eric Mjolsness",
+      "Yoichi Nakayama",
+      "M. R. Nelson",
+      "Poul Nielsen",
+      "Takeshi Sakurada",
+      "James C. Schaff",
+      "Bruce E. Shapiro",
+      "Thomas Shimizu",
+      "H. D. Spence",
+      "Joerg Stelling",
+      "Koichi Takahashi",
+      "Masaru Tomita",
+      "J. Wagner",
+      "Jian Wang"
+    ],
+    "tags": [
+      "SBML",
+      "Markup language",
+      "Systems biology",
+      "Computer science",
+      "XML"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2003-02-28",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "oa:W2152803686",
+    "name": "A methodology for performing global uncertainty and sensitivity analysis in systems biology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.jtbi.2008.04.011",
+    "authors": [
+      "Simeone Marino",
+      "Ian B. Hogue",
+      "Christian J. Ray",
+      "Denise E. Kirschner"
+    ],
+    "tags": [
+      "Sensitivity (control systems)",
+      "Computer science",
+      "Mathematical model",
+      "Parameter space",
+      "Variety (cybernetics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2008-04-21",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "oa:W2528271650",
+    "name": "An Introduction to Systems Biology",
+    "source": "openalex",
+    "abstract": "Praise for the first edition: … superb, beautifully written and organized work that takes an engineering approach to systems biology. Alon provides nicely written appendices to explain the basic mathematical and biological concepts clearly and succinctly without interfering with the main text. He starts with a mathematical description of transcriptional activation and then describes some basic transcription-network motifs (patterns) that can be combined to form larger networks. – Nature [This text deserves] serious attention from any quantitative scientist who hopes to learn about modern biology … It assumes no prior knowledge of or even interest in biology … One final aspect that must be mentioned is the wonderful set of exercises that accompany each chapter. … Alon’s book should become a standard part of the training of graduate students. – Physics Today Written for students and researchers, the second edition of this best-selling textbook continues to offer a clear presentation of design principles that govern the structure and behavior of biological systems. It highlights simple, recurring circuit elements that make up the regulation of cells and tissues. Rigorously classroom-tested, this edition includes new chapters on exciting advances made in the last decade. Features: Includes seven new chapters The new edition has 189 exercises, the previous edition had 66&nbsp; Offers new examples relevant to human physiology and disease The book website including course videos can be found here: https://www.weizmann.ac.il/mcb/UriAlon/introduction-systems-biology-design-principles-biological-circuits.",
+    "url": "https://doi.org/10.1201/9780429283321",
+    "authors": [
+      "Uri Alon"
+    ],
+    "tags": [
+      "Biology",
+      "Evolutionary biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2019-07-12",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "oa:W2128224069",
+    "name": "Effects of abiotic stress on plants: a systems biology perspective",
+    "source": "openalex",
+    "abstract": "The natural environment for plants is composed of a complex set of abiotic stresses and biotic stresses. Plant responses to these stresses are equally complex. Systems biology approaches facilitate a multi-targeted approach by allowing one to identify regulatory hubs in complex networks. Systems biology takes the molecular parts (transcripts, proteins and metabolites) of an organism and attempts to fit them into functional networks or models designed to describe and predict the dynamic activities of that organism in different environments. In this review, research progress in plant responses to abiotic stresses is summarized from the physiological level to the molecular level. New insights obtained from the integration of omics datasets are highlighted. Gaps in our knowledge are identified, providing additional focus areas for crop improvement research in the future.",
+    "url": "https://doi.org/10.1186/1471-2229-11-163",
+    "authors": [
+      "Grant R. Cramer",
+      "Kaoru Urano",
+      "Serge Delrot",
+      "Mario Pezzotti",
+      "Kazuo Shinozaki"
+    ],
+    "tags": [
+      "Biology",
+      "Organism",
+      "Abiotic component",
+      "Abiotic stress",
+      "Systems biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2011-01-01",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "oa:W2154972152",
+    "name": "A systems biology approach for pathway level analysis",
+    "source": "openalex",
+    "abstract": "A common challenge in the analysis of genomics data is trying to understand the underlying phenomenon in the context of all complex interactions taking place on various signaling pathways. A statistical approach using various models is universally used to identify the most relevant pathways in a given experiment. Here, we show that the existing pathway analysis methods fail to take into consideration important biological aspects and may provide incorrect results in certain situations. By using a systems biology approach, we developed an impact analysis that includes the classical statistics but also considers other crucial factors such as the magnitude of each gene's expression change, their type and position in the given pathways, their interactions, etc. The impact analysis is an attempt to a deeper level of statistical analysis, informed by more pathway-specific biology than the existing techniques. On several illustrative data sets, the classical analysis produces both false positives and false negatives, while the impact analysis provides biologically meaningful results. This analysis method has been implemented as a Web-based tool, Pathway-Express, freely available as part of the Onto-Tools (http://vortex.cs.wayne.edu).",
+    "url": "https://doi.org/10.1101/gr.6202607",
+    "authors": [
+      "Sorin Drăghici",
+      "Purvesh Khatri",
+      "Adi L. Tarca",
+      "K. Amin",
+      "A. Done",
+      "Călin Voichiţa",
+      "Constantin Georgescu",
+      "Roberto Romero"
+    ],
+    "tags": [
+      "Systems biology",
+      "Biology",
+      "Pathway analysis",
+      "Context (archaeology)",
+      "False positive paradox"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2007-09-04",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "oa:W2161304688",
+    "name": "Universally Sloppy Parameter Sensitivities in Systems Biology Models",
+    "source": "openalex",
+    "abstract": "Quantitative computational models play an increasingly important role in modern biology. Such models typically involve many free parameters, and assigning their values is often a substantial obstacle to model development. Directly measuring in vivo biochemical parameters is difficult, and collectively fitting them to other experimental data often yields large parameter uncertainties. Nevertheless, in earlier work we showed in a growth-factor-signaling model that collective fitting could yield well-constrained predictions, even when it left individual parameters very poorly constrained. We also showed that the model had a \"sloppy\" spectrum of parameter sensitivities, with eigenvalues roughly evenly distributed over many decades. Here we use a collection of models from the literature to test whether such sloppy spectra are common in systems biology. Strikingly, we find that every model we examine has a sloppy spectrum of sensitivities. We also test several consequences of this sloppiness for building predictive models. In particular, sloppiness suggests that collective fits to even large amounts of ideal time-series data will often leave many parameters poorly constrained. Tests over our model collection are consistent with this suggestion. This difficulty with collective fits may seem to argue for direct parameter measurements, but sloppiness also implies that such measurements must be formidably precise and complete to usefully constrain many model predictions. We confirm this implication in our growth-factor-signaling model. Our results suggest that sloppy sensitivity spectra are universal in systems biology models. The prevalence of sloppiness highlights the power of collective fits and suggests that modelers should focus on predictions rather than on parameters.",
+    "url": "https://doi.org/10.1371/journal.pcbi.0030189",
+    "authors": [
+      "Ryan N. Gutenkunst",
+      "Joshua J. Waterfall",
+      "Fergal Casey",
+      "Kevin Brown",
+      "Christopher R. Myers",
+      "James P. Sethna"
+    ],
+    "tags": [
+      "Statistical physics",
+      "Econometrics",
+      "Sensitivity (control systems)",
+      "Systems biology",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2007-09-28",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "oa:W2069157810",
+    "name": "The Systems Biology Graphical Notation",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nbt.1558",
+    "authors": [
+      "Nicolas Le Novère",
+      "Michael Hucka",
+      "Huaiyu Mi",
+      "Stuart Moodie",
+      "Falk Schreiber",
+      "Anatoly Sorokin",
+      "Emek Demir",
+      "Katja Wegner",
+      "Mirit I. Aladjem",
+      "Sarala Wimalaratne",
+      "Frank T Bergman",
+      "Ralph Gauges",
+      "Peter Ghazal",
+      "Hideya Kawaji",
+      "Lu Li",
+      "Yukiko Matsuoka",
+      "Alice Villéger",
+      "Sarah E Boyd",
+      "Laurence Calzone",
+      "Mélanie Courtot",
+      "Uğur Doğrusöz",
+      "Tom C. Freeman",
+      "Akira Funahashi",
+      "Samik Ghosh",
+      "Akiya Jouraku",
+      "Sohyoung Kim",
+      "Fedor Kolpakov",
+      "Augustin Luna",
+      "Sven Sahle",
+      "Esther Schmidt",
+      "Steven Watterson",
+      "Guanming Wu",
+      "Igor Goryanin",
+      "Douglas B. Kell",
+      "Chris Sander",
+      "Herbert M. Sauro",
+      "Jacky L. Snoep",
+      "Kurt W. Kohn",
+      "Hiroaki Kitano"
+    ],
+    "tags": [
+      "Computer science",
+      "Notation",
+      "SBML",
+      "Systems biology",
+      "Representation (politics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2009-08-01",
+    "addedAt": "2026-08-05T01:48:31.235Z"
+  },
+  {
+    "id": "oa:W2859249641",
+    "name": "KBase: The United States Department of Energy Systems Biology Knowledgebase",
+    "source": "openalex",
+    "abstract": "Over the past two decades, the scale and complexity of genomics technologies and data have advanced from sequencing genomes of a few organisms to generating metagenomes, genome variation, gene expression, metabolites, and phenotype data for thousands of organisms and their communities. A major challenge in this data-rich age of biology is integrating heterogeneous and distributed data into predictive models of biological function, ranging from a single gene to entire organisms and their ecologies. The US Department of Energy (DOE) has invested substantially in efforts to understand the complex interplay between biological and abiotic processes that influence soil, water, and environmental dynamics of our biosphere. The community that has grown around these efforts recognizes the need for scientists of diverse backgrounds to have access to sophisticated computational tools that enable them to analyze complex and heterogeneous data sets and integrate their data and results effectively with the work of others. In this way, new data and conclusions can be rapidly propagated across existing, related analyses and easily discovered by the community for evaluation and comparison with previous results 1 , 2 , 3 .",
+    "url": "https://doi.org/10.1038/nbt.4163",
+    "authors": [
+      "Adam P. Arkin",
+      "Robert W. Cottingham",
+      "Christopher S. Henry",
+      "Nomi L. Harris",
+      "Rick Stevens",
+      "Sergei Maslov",
+      "Paramvir Dehal",
+      "Doreen Ware",
+      "Fernando Pérez",
+      "Shane Canon",
+      "Michael W. Sneddon",
+      "Matthew Henderson",
+      "William J. Riehl",
+      "Dan Murphy-Olson",
+      "Stephen Y. Chan",
+      "Roy T. Kamimura",
+      "Sunita Kumari",
+      "Meghan M. Drake",
+      "Thomas Brettin",
+      "Elizabeth M. Glass",
+      "Dylan Chivian",
+      "Dan Gunter",
+      "David J. Weston",
+      "Benjamin Allen",
+      "Jason K. Baumohl",
+      "Aaron A. Best",
+      "Ben Bowen",
+      "Steven E. Brenner",
+      "Christopher Bun",
+      "John‐Marc Chandonia",
+      "Jer-Ming Chia",
+      "Ric Colasanti",
+      "Neal Conrad",
+      "James J. Davis",
+      "Brian H. Davison",
+      "Matthew DeJongh",
+      "Scott Devoid",
+      "Emily Dietrich",
+      "Inna Dubchak",
+      "Janaka N. Edirisinghe",
+      "Gang Fang",
+      "José P. Faria",
+      "Paul M Frybarger",
+      "Wolfgang Gerlach",
+      "Mark Gerstein",
+      "Annette Greiner",
+      "James Gurtowski",
+      "Holly L Haun",
+      "Fei He",
+      "Rashmi Jain",
+      "Marcin P. Joachimiak",
+      "Kevin Keegan",
+      "Shinnosuke Kondo",
+      "Vivek Kumar",
+      "Miriam Land",
+      "Folker Meyer",
+      "Marissa Mills",
+      "Pavel S. Novichkov",
+      "Taeyun Oh",
+      "Gary J. Olsen",
+      "Robert Olson",
+      "Bruce Parrello",
+      "Shiran Pasternak",
+      "Erik Pearson",
+      "Sarah Poon",
+      "Gavin A Price",
+      "Srividya Ramakrishnan",
+      "Priya Ranjan",
+      "Pamela C. Ronald",
+      "Michael C. Schatz",
+      "Samuel M. D. Seaver",
+      "Maulik Shukla",
+      "Roman A. Sutormin",
+      "Mustafa Syed",
+      "James Thomason",
+      "Nathan Tintle",
+      "Daifeng Wang",
+      "Fangfang Xia",
+      "Hyunseung Yoo",
+      "Shinjae Yoo",
+      "Dantong Yu"
+    ],
+    "tags": [
+      "Computational biology",
+      "Biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2018-07-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2122682406",
+    "name": "The Molecular and Systems Biology of Memory",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.cell.2014.03.001",
+    "authors": [
+      "Eric R. Kandel",
+      "Yadin Dudai",
+      "Mark Mayford"
+    ],
+    "tags": [
+      "Biology",
+      "Computational biology",
+      "Evolutionary biology",
+      "Genetics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2014-03-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1093/actrade/9780198828372.003.0004",
+    "name": "4. Computational systems biology",
+    "source": "crossref",
+    "abstract": "<p>The new methods of —omics biology, combined with more traditional experiments, have the capacity of generating more high-quality data than ever before. So, why isn’t that sufficient? What is missing? The missing aspects arise from subtle, but important differences between data, information, knowledge, and understanding. ‘Computational systems biology’ explains how laboratory experiments generate data, whereas understanding additionally requires significant human intelligence and knowledge. Computational systems biology (CSB) attempts to bridge the gap between data and understanding. It uses a pipeline from data to understanding that consists of two toolsets: machine learning and mathematical models. The most useful of these models in CSB fall into two categories: static networks and dynamic biological systems.</p>",
+    "url": "https://doi.org/10.1093/actrade/9780198828372.003.0004",
+    "authors": [
+      "Eberhard O. Voit"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2020-03-26T05:35:37Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-405926-9.00020-4",
+    "name": "Computational Systems Biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-405926-9.00020-4",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2013-12-06T20:48:48Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-405926-9.00021-6",
+    "name": "Computational Systems Biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-405926-9.00021-6",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2013-12-06T15:48:48Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1101/035022",
+    "name": "Hybrid Systems Modeling for (Cancer) Systems Biology",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title>\n                <jats:p>The advent of biological data of increasingly higher resolution in space and time has triggered the use of dynamic models to explain and predict the evolution of biological systems over space and time. Computer-aided system modeling and analysis in biology has led to many new discoveries and explanations that would otherwise be intractable to articulate without the available data and computing power. Nevertheless, the complexity in biology still challenges many labs in capturing studied phenomena in models that are tractable and simple enough to analyze. Moreover, the popular use of ordinary differential equation models have their limitations in that they solely capture continuous dynamics, while we observe many discrete dynamic phenomena in biology such as gene switching or mutations. Hybrid systems modeling provides a framework in which both continuous and discrete dynamics can be simulated and analyzed. Moreover, it provides techniques to develop approximations and abstractions of complex dynamics that are tractable to analyze.</jats:p>",
+    "url": "https://doi.org/10.1101/035022",
+    "authors": [
+      "Roel Dobbe",
+      "Claire J. Tomlin"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2015-12-24T01:12:21Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1101/2022.08.17.504297",
+    "name": "Mathematical Modeling Of Systems Biology",
+    "source": "crossref",
+    "abstract": "<jats:title>ABSTRACT</jats:title>\n                <jats:p>A modeling is a mathematical tool, like a microscope, which allows consequences to logically follow from a set of assumptions by which a real world problem can be described by a mathematical formulation. It has become indispensable tools for integrating and interpreting heterogeneous biological data, validating hypothesis and identifying potential diagnostic markers. The modern molecular biology that is characterized by experiments that reveal the behaviours of entire molecular systems is called systems biology. A fundamental step in synthetic biology and systems biology is to derive appropriate mathematical model for the purposes of analysis and design. This manuscript has been engaged in the use of mathematical modeling in the Gene Regulatory System (GRN). Different mathematical models that are inspired in gene regulatory network such as Central dogma, Hill function, Gillespie algorithm, Oscillating gene network and Deterministic vs Stochastic modelings are discussed along with their codes that are programmed in Python using different modules. Here, we underlined that the model should describes the continuous nature of the biochemical processes and reflect the non-linearity. It is also found that the stochastic model is far better than deterministic model to calculate future event exactly with low chance of error.</jats:p>",
+    "url": "https://doi.org/10.1101/2022.08.17.504297",
+    "authors": [
+      "Aaditya Prasad Gupta"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2022-08-19T14:55:12Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1093/actrade/9780198828372.003.0001",
+    "name": "1. What is systems biology all about?",
+    "source": "crossref",
+    "abstract": "<p>Systems biology is a new specialty area that has exactly the same goals and purposes as general biology, namely, to understand how life works. But in contrast to traditional biology, systems biology pursues these goals with a whole new arsenal of tools that come from mathematics, statistics, computing, and engineering, in addition to biology, biochemistry, and biophysics. ‘What is systems biology all about?’ explains how these tools are utilized to determine the specific roles of the many different components—from atoms and molecules to nuclei, cells, and organs—that we find in living organisms, how these components interact with each other, and how they all collaborate to create and support life.</p>",
+    "url": "https://doi.org/10.1093/actrade/9780198828372.003.0001",
+    "authors": [
+      "Eberhard O. Voit"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2020-03-26T05:37:01Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1007/978-1-4419-9863-7_101433",
+    "name": "Systems Biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-4419-9863-7_101433",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2013-07-03T21:04:23Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1007/978-1-4020-5468-6_5",
+    "name": "Systems Biology in Plant Research",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-4020-5468-6_5",
+    "authors": [
+      "Fumiaki Katagiri"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2007-05-14T11:42:27Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1017/cbo9781139854610.034",
+    "name": "Teaching Systems Biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1017/cbo9781139854610.034",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2015-02-09T03:02:24Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1201/9781420011661-4",
+    "name": "■ Systems Biology, Biological Knowledge",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1201/9781420011661-4",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2021-03-05T18:34:47Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/j.coisb.2017.02.007",
+    "name": "The Future of Systems Biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.coisb.2017.02.007",
+    "authors": [
+      "Arnold J. Levine"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2017-02-22T21:00:11Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1007/978-1-4419-9863-7_100601",
+    "name": "Green Systems Biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-4419-9863-7_100601",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2013-07-03T21:00:45Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551106",
+    "name": "Antiphasic Arctangent-Arccotangent (AAA) probes: A kinetically orthogonal design for single-tube, real-time, and low-crosstalk multiplex LAMP.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551106/",
+    "authors": [
+      "Zhu Y",
+      "Xu X",
+      "Huang M",
+      "Chen Y",
+      "Si C",
+      "Liu J",
+      "He C",
+      "Zhu Y",
+      "Jiang N",
+      "Li H",
+      "Wang S",
+      "Chen X",
+      "Peng H",
+      "Liu K",
+      "Tao SC",
+      "Zhu Z"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 3",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551102",
+    "name": "Astaxanthin activates PI3K/AKT and AMPK signaling to alleviate oxidative stress and improve mouse oocyte In vitro maturation.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551102/",
+    "authors": [
+      "Zhou M",
+      "Luo M",
+      "Yuan Y",
+      "Han L",
+      "Chen L",
+      "Gan S"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 3",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551076",
+    "name": "Biotic interactions regulate the fate and trophic transfer of particulate contaminants in sediment-water systems: an overlooked role of water mite-chironomid interactions.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551076/",
+    "authors": [
+      "Savić-Zdravković D",
+      "Pešić V",
+      "Manović A",
+      "Samardžić A",
+      "Stojanović J",
+      "Nikolić M",
+      "Onjia A",
+      "Milošević D"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Jul 28",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551069",
+    "name": "Beyond prediction: Why experimental structural biology remains essential in plants.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551069/",
+    "authors": [
+      "Palayam M",
+      "Shabek N"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 4",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551049",
+    "name": "4-Pentenoic acid exhibits broad-spectrum antibacterial activity against foodborne pathogens by disrupting bacterial membrane integrity and inhibiting efflux pump systems.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551049/",
+    "authors": [
+      "Mu J",
+      "Li J",
+      "Duan F",
+      "Wen R",
+      "Cai X",
+      "Meng Q",
+      "Qiao J",
+      "Ma Z"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 3",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551042",
+    "name": "Single-condensate fluorescence approaches: Resolving heterogeneity in molecular organization, dynamics and material state.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551042/",
+    "authors": [
+      "Polanco D",
+      "Viguri-Lamata B",
+      "van Zanten TS",
+      "Cremades N"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 4",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42550957",
+    "name": "Introduction to Double Focus Issue: Nonautonomous dynamical systems in the sciences.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42550957/",
+    "authors": [
+      "Ashwin P",
+      "Feudel U",
+      "Ghil M"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 1",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42550897",
+    "name": "Successful oocyte transport through the oviduct does not depend on the longitudinal alignment of oviduct epithelial folds.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42550897/",
+    "authors": [
+      "Usami FM",
+      "Arata M",
+      "Kato K",
+      "Shi D",
+      "Oka S",
+      "Yang Y",
+      "Fujimori T"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 11",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42550883",
+    "name": "Niche exclusion of a lung pathogen in mice with designed probiotic communities.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42550883/",
+    "authors": [
+      "Hern KE",
+      "Phillips AM",
+      "Mageeney CM",
+      "Williams KP",
+      "Sinha A",
+      "Carlson HK",
+      "Poorey K",
+      "Collette NM",
+      "Branda SS",
+      "Arkin AP"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 4",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42550874",
+    "name": "The SARS-CoV-2 S2'-helix compared to stem-helix confers higher genetic barrier to antibody resistance.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42550874/",
+    "authors": [
+      "Wang X",
+      "Qiao S",
+      "Bao Z",
+      "Bai J",
+      "Yi C",
+      "Ding Q",
+      "Sun X"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 4",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42550872",
+    "name": "igraph 1.0 enables fast and robust network analysis across programming languages.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42550872/",
+    "authors": [
+      "Antonov M",
+      "Csárdi G",
+      "Horvát S",
+      "Müller K",
+      "Nepusz T",
+      "Noom D",
+      "Salmon M",
+      "Traag V",
+      "Welles BF",
+      "Zanini F"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42550740",
+    "name": "Prognostic risk modeling based on integrated multi-omics analysis identifies CRY2 as a key regulator in tumor immunity and patient survival in colorectal cancer.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42550740/",
+    "authors": [
+      "Guo Y",
+      "Zou Y",
+      "Wang M"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Dec",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W1491459594",
+    "name": "Molecular Cell Biology",
+    "source": "openalex",
+    "abstract": "Molecular cell biology , Molecular cell biology , مرکز فناوری اطلاعات و اطلاع رسانی کشاورزی",
+    "url": "https://openalex.org/W1491459594",
+    "authors": [
+      "Harvey F. Lodish"
+    ],
+    "tags": [
+      "Computational biology",
+      "Biology",
+      "Evolutionary biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1986-01-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2786514708",
+    "name": "Shedding light on the cell biology of extracellular vesicles",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nrm.2017.125",
+    "authors": [
+      "Guillaume van Niel",
+      "Gisela D’Angelo",
+      "Graça Raposo"
+    ],
+    "tags": [
+      "Microvesicles",
+      "Vesicle",
+      "Cell biology",
+      "Biogenesis",
+      "Extracellular vesicle"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2018-01-17",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2044437167",
+    "name": "Biochemistry and molecular cell biology of diabetic complications",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/414813a",
+    "authors": [
+      "Michael Brownlee"
+    ],
+    "tags": [
+      "Diabetes mellitus",
+      "Blindness",
+      "Stroke (engine)",
+      "Disease",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2001-12-13",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2019731805",
+    "name": "Rho GTPases in cell biology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nature01148",
+    "authors": [
+      "Sandrine Etienne‐Manneville",
+      "Alan Hall"
+    ],
+    "tags": [
+      "GTPase",
+      "Cell biology",
+      "Biology",
+      "Signal transduction",
+      "Cytoskeleton"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-12-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W1644749979",
+    "name": "From molecular to modular cell biology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/35011540",
+    "authors": [
+      "Leland H. Hartwell",
+      "J. J. Hopfield",
+      "Stanislas Leibler",
+      "Andrew W. Murray"
+    ],
+    "tags": [
+      "Modular design",
+      "Computational biology",
+      "Synthetic biology",
+      "Systems biology",
+      "Biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1999-12-02",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W4249856617",
+    "name": "Nature Reviews Molecular Cell Biology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/41580.1471-0080",
+    "authors": [],
+    "tags": [
+      "Molecular cell biology",
+      "Biology",
+      "Computational biology",
+      "Evolutionary biology",
+      "Cell biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2019-07-18",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2143535440",
+    "name": "Cell biology and molecular basis of denitrification",
+    "source": "openalex",
+    "abstract": "Denitrification is a distinct means of energy conservation, making use of N oxides as terminal electron acceptors for cellular bioenergetics under anaerobic, microaerophilic, and occasionally aerobic conditions. The process is an essential branch of the global N cycle, reversing dinitrogen fixation, and is associated with chemolithotrophic, phototrophic, diazotrophic, or organotrophic metabolism but generally not with obligately anaerobic life. Discovered more than a century ago and believed to be exclusively a bacterial trait, denitrification has now been found in halophilic and hyperthermophilic archaea and in the mitochondria of fungi, raising evolutionarily intriguing vistas. Important advances in the biochemical characterization of denitrification and the underlying genetics have been achieved with Pseudomonas stutzeri, Pseudomonas aeruginosa, Paracoccus denitrificans, Ralstonia eutropha, and Rhodobacter sphaeroides. Pseudomonads represent one of the largest assemblies of the denitrifying bacteria within a single genus, favoring their use as model organisms. Around 50 genes are required within a single bacterium to encode the core structures of the denitrification apparatus. Much of the denitrification process of gram-negative bacteria has been found confined to the periplasm, whereas the topology and enzymology of the gram-positive bacteria are less well established. The activation and enzymatic transformation of N oxides is based on the redox chemistry of Fe, Cu, and Mo. Biochemical breakthroughs have included the X-ray structures of the two types of respiratory nitrite reductases and the isolation of the novel enzymes nitric oxide reductase and nitrous oxide reductase, as well as their structural characterization by indirect spectroscopic means. This revealed unexpected relationships among denitrification enzymes and respiratory oxygen reductases. Denitrification is intimately related to fundamental cellular processes that include primary and secondary transport, protein translocation, cytochrome c biogenesis, anaerobic gene regulation, metalloprotein assembly, and the biosynthesis of the cofactors molybdopterin and heme D1. An important class of regulators for the anaerobic expression of the denitrification apparatus are transcription factors of the greater FNR family. Nitrate and nitric oxide, in addition to being respiratory substrates, have been identified as signaling molecules for the induction of distinct N oxide-metabolizing enzymes.",
+    "url": "https://doi.org/10.1128/mmbr.61.4.533-616.1997",
+    "authors": [
+      "Walter G. Zumft"
+    ],
+    "tags": [
+      "Denitrification",
+      "Biology",
+      "Pseudomonas stutzeri",
+      "Nitrite reductase",
+      "Denitrifying bacteria"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1997-12-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2154699417",
+    "name": "Hematopoiesis: An Evolving Paradigm for Stem Cell Biology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.cell.2008.01.025",
+    "authors": [
+      "Stuart H. Orkin",
+      "Leonard I. Zon"
+    ],
+    "tags": [
+      "Biology",
+      "Reprogramming",
+      "Stem cell",
+      "Haematopoiesis",
+      "Hematopoietic stem cell"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2008-02-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W1988976106",
+    "name": "The cell biology of neurogenesis",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nrm1739",
+    "authors": [
+      "Magdalena Götz",
+      "Wieland Β. Huttner"
+    ],
+    "tags": [
+      "Neurogenesis",
+      "Neuroepithelial cell",
+      "Cell biology",
+      "Neural stem cell",
+      "Biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2005-10-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2034968148",
+    "name": "Apolipoprotein E: Cholesterol Transport Protein with Expanding Role in Cell Biology",
+    "source": "openalex",
+    "abstract": "Apolipoprotein E is a plasma protein that serves as a ligand for low density lipoprotein receptors and, through its interaction with these receptors, participates in the transport of cholesterol and other lipids among various cells of the body. A mutant form of apolipoprotein E that is defective in binding to low density lipoprotein receptors is associated with familial type III hyperlipoproteinemia, a genetic disorder characterized by elevated plasma cholesterol levels and accelerated coronary artery disease. Apolipoprotein E is synthesized in various organs, including liver, brain, spleen, and kidney, and is present in high concentrations in interstitial fluid, where it appears to participate in cholesterol redistribution from cells with excess cholesterol to those requiring cholesterol. Apolipo-protein E also appears to be involved in the repair response to tissue injury; for example, markedly increased amounts of apolipoprotein E are found at sites of peripheral nerve injury and regeneration. Other functions of apolipoprotein E, unrelated to lipid transport, are becoming known, including immunoregulation and modulation of cell growth and differentiation.",
+    "url": "https://doi.org/10.1126/science.3283935",
+    "authors": [
+      "Robert W. Mahley"
+    ],
+    "tags": [
+      "Apolipoprotein B",
+      "Cholesterol",
+      "Apolipoprotein E",
+      "Apolipoprotein C2",
+      "Lipoprotein"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1988-04-29",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2122221811",
+    "name": "Flavonoid Biosynthesis. A Colorful Model for Genetics, Biochemistry, Cell Biology, and Biotechnology",
+    "source": "openalex",
+    "abstract": "Schematic of the major branch pathways of flavonoid biosynthesis, starting with general phenylpropanoid metabolism and leading to the nine major subgroups: the colorless chalcones, aurones, isoflavonoids, flavones, flavonols, and flavandiols (gray boxes), and the anthocyanins, condensed tannins, and phlobaphene pigments (colored boxes). The first committed step is catalyzed by chalcone synthase (CHS), which uses malonyl CoA and 4-coumaroyl CoA as substrates. Only a few examples are shown of the enormous variety of end products that arise through terminal modification by the addition of sugars as well as methyl, ferulate, and other groups. P450 hydoxylases that may function as membrane anchors for multienzyme assemblies are indicated in red. The photographs illustrate the three major classes of pigments in the model plants, snapdragon, Arabidopsis, maize, and petunia. Root nodulation by rhizobia, which involves flavone as well as flavanone and isoflavone signal molecules, is also shown, in this case for sweet clover (Melilotus alba). Enzyme names are abbreviated as follows: cinnamate-4-hydroxylase (C4H), chalcone isomerase (CHI), chalcone reductase (CHR), chalcone synthase (CHS), 4-coumaroyl:CoA-ligase (4CL), dihydroflavonol 4-reductase (DFR), 7,2′-dihydroxy, 4′-methoxyisoflavanol dehydratase (DMID), flavanone 3-hydroxylase (F3H), flavone synthase (FSI and FSII), flavonoid 3′ hydroxylase (F3′H) or flavonoid 3′5′ hydroxylase (F3′5′H), isoflavoneO-methyltransferase (IOMT), isoflavone reductase (IFR), isoflavone 2′-hydroxylase (I2′H), isoflavone synthase (IFS), leucoanthocyanidin dioxygenase (LDOX), leucoanthocyanidin reductase (LCR), O-methyltransferase (OMT), Phe ammonia-lyase (PAL), rhamnosyl transferase (RT), stilbene synthase (STS), UDPG-flavonoid glucosyl transferase (UFGT), and vestitone reductase (VR). Photographs are courtesy of Cathie Martin (John Innes Centre, Norwich, UK; Antirrhinum), Francesca Quattrocchio (Free University, Amsterdam; petunia), Erich Grotewold (Ohio State University, Columbus; maize), and Yimei Lin and Ann Hirsch (University of California, Los Angeles; sweet clover). A well-known physiological function of the anthocyanin pigments and flavonol copigments is the recruitment of pollinators and seed dispersers. These compounds also have figured into some of the major scientific breakthroughs of the past 150 years, including Mendel's elucidation of genetics, seed coat color being one of the major characters followed in his experiments with peas (Pisum sativum), and McClintock's discovery of transposable elements, which moved in and out of flavonoid biosynthetic genes expressed in maize kernels. Anthocyanins more recently have aided in understanding the phenomenon of cosuppression, particularly in petunia (Petunia hybrida). But besides providing beautiful pigmentation in flowers, fruits, seeds, and leaves, flavonoids also have key roles in signaling between plants and microbes, in male fertility of some species, in defense as antimicrobial agents and feeding deterrents, and in UV protection. The “early” steps in the pathway are found even in the bryophytes (mosses) and it has been suggested that synthesis of flavones, flavanones, and flavonols may have evolved first to provide chemical messengers and then UV sunscreens (Stafford, 1991). Flavonoids also have significant activities when ingested by animals, and there is great interest in their potential health benefits, particularly for compounds such as isoflavonoids, which have been linked to the anticancer benefits of soy-based foods, and the stilbenes in red wine that are believed to contribute to reduced heart disease. In recent years, much effort has been directed at elucidating the flavonoid biosynthetic pathway from a molecular genetic point of view. Mutants affecting flavonoid synthesis have been isolated in a variety of plant species based on alterations in flower and seed pigmentation. Maize, snapdragon (Antirrhinum majus), and petunia were establ",
+    "url": "https://doi.org/10.1104/pp.126.2.485",
+    "authors": [
+      "A. Winkel"
+    ],
+    "tags": [
+      "Biosynthesis",
+      "Biology",
+      "Flavonoid biosynthesis",
+      "Genetics",
+      "Biochemistry"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2001-06-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W4236463097",
+    "name": "Molecular Biology of the Cell",
+    "source": "openalex",
+    "abstract": "As the amount of information in biology expands dramatically, it becomes increasingly important for textbooks to distill the vast amount of scientific knowledge into concise principles and enduring concepts.As with previous editions, Molecular Biology of the Cell, Sixth Edition accomplishes this goal with clear writing and beautiful illustrations. The Sixth Edition has been extensively revised and updated with the latest research in the field of cell biology, and it provides an exceptional framework for teaching and learning. The entire illustration program has been greatly enhanced.Protein structures better illustrate structure–function relationships, icons are simpler and more consistent within and between chapters, and micrographs have been refreshed and updated with newer, clearer, or better images. As a new feature, each chapter now contains intriguing openended questions highlighting “What We Don’t Know,” introducing students to challenging areas of future research. Updated end-of-chapter problems reflect new research discussed in the text, and these problems have been expanded to all chapters by adding questions on developmental biology, tissues and stem cells, pathogens, and the immune system.",
+    "url": "https://doi.org/10.1201/9781315735368",
+    "authors": [
+      "Bruce Alberts",
+      "Alexander D. Johnson",
+      "Julian Lewis",
+      "David Morgan",
+      "Martin Raff",
+      "Keith Roberts",
+      "Peter Walter"
+    ],
+    "tags": [
+      "Computational biology",
+      "Biology",
+      "Evolutionary biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2017-08-07",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1093/hesc/9780199697328.003.0001",
+    "name": "Introduction to cell biology",
+    "source": "crossref",
+    "abstract": "<p>This chapter recounts the first discovery of living cells by the Dutch linen merchant Leeuwenhoek, who observed unicellular organisms in pond water, and later blood cells, oral bacteria, and spermatozoa. It mentions the first use of the term ‘cell’ in 1665 by a curator of the Royal Society of London, who described the empty cell walls of a cork. It also considers cells as the basic structural and functional unit of all organisms, which are grouped into archaea, eucarya, and bacteria. The chapter cites the theory that life began with a group of molecules that were capable of catalyzing their self-replication. It explains that cells are largely composed of water and a variety of inorganic minerals and organic constituents.</p>",
+    "url": "https://doi.org/10.1093/hesc/9780199697328.003.0001",
+    "authors": [
+      "Qiuyu Wang",
+      "Chris Smith",
+      "Emma Davis"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2023-09-15T11:47:03Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1155/6405",
+    "name": "ISRN Cell Biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1155/6405",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2017-12-10T11:53:00Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.5402/cb",
+    "name": "ISRN Cell Biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5402/cb",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2012-10-25T08:27:31Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/0962-8924(91)90096-r",
+    "name": "Noninvasive techniques in cell biology (modern cell biology, vol 9)",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0962-8924(91)90096-r",
+    "authors": [
+      "Jean Davoust"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2003-02-12T17:35:20Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/0962-8924(92)90021-e",
+    "name": "Cell biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0962-8924(92)90021-e",
+    "authors": [
+      "Carolyn Elliss"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2003-02-12T12:35:20Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/s0962-8924(97)01154-9",
+    "name": "Pictures in cell biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0962-8924(97)01154-9",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-07-25T11:45:26Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/s0962-8924(97)01155-0",
+    "name": "Pictures in cell biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0962-8924(97)01155-0",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-07-25T13:40:30Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-394620-1.00017-5",
+    "name": "Methods in Cell Biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-394620-1.00017-5",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2012-01-08T04:57:32Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1042/bc20080225",
+    "name": "<i>Biology of the Cell</i>: serving the cell biology community",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1042/bc20080225",
+    "authors": [
+      "Thierry Galli"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2022-09-19T21:02:23Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/s0962-8924(97)01157-4",
+    "name": "Pictures in cell biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0962-8924(97)01157-4",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-07-25T09:40:30Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/0309-1651(83)90030-9",
+    "name": "Cell biology in Poland Cell Biology Committee of the Polish Academy of Sciences",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0309-1651(83)90030-9",
+    "authors": [
+      "J SIKORA"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2005-03-11T15:15:35Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/s0309-1651(06)80149-9",
+    "name": "Constituent cell biology societies",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0309-1651(06)80149-9",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2007-04-17T11:23:44Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2102619694",
+    "name": "BEDTools: a flexible suite of utilities for comparing genomic features",
+    "source": "openalex",
+    "abstract": "MOTIVATION: Testing for correlations between different sets of genomic features is a fundamental task in genomics research. However, searching for overlaps between features with existing web-based methods is complicated by the massive datasets that are routinely produced with current sequencing technologies. Fast and flexible tools are therefore required to ask complex questions of these data in an efficient manner. RESULTS: This article introduces a new software suite for the comparison, manipulation and annotation of genomic features in Browser Extensible Data (BED) and General Feature Format (GFF) format. BEDTools also supports the comparison of sequence alignments in BAM format to both BED and GFF features. The tools are extremely efficient and allow the user to compare large datasets (e.g. next-generation sequencing data) with both public and custom genome annotation tracks. BEDTools can be combined with one another as well as with standard UNIX commands, thus facilitating routine genomics tasks as well as pipelines that can quickly answer intricate questions of large genomic datasets. AVAILABILITY AND IMPLEMENTATION: BEDTools was written in C++. Source code and a comprehensive user manual are freely available at http://code.google.com/p/bedtools CONTACT: aaronquinlan@gmail.com; imh4y@virginia.edu SUPPLEMENTARY INFORMATION: Supplementary data are available at Bioinformatics online.",
+    "url": "https://doi.org/10.1093/bioinformatics/btq033",
+    "authors": [
+      "Aaron R. Quinlan",
+      "Ira M. Hall"
+    ],
+    "tags": [
+      "Computer science",
+      "Suite",
+      "Annotation",
+      "Unix",
+      "Source code"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2010-01-28",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2149441684",
+    "name": "The cBio Cancer Genomics Portal: An Open Platform for Exploring Multidimensional Cancer Genomics Data",
+    "source": "openalex",
+    "abstract": "The cBio Cancer Genomics Portal (http://cbioportal.org) is an open-access resource for interactive exploration of multidimensional cancer genomics data sets, currently providing access to data from more than 5,000 tumor samples from 20 cancer studies. The cBio Cancer Genomics Portal significantly lowers the barriers between complex genomic data and cancer researchers who want rapid, intuitive, and high-quality access to molecular profiles and clinical attributes from large-scale cancer genomics projects and empowers researchers to translate these rich data sets into biologic insights and clinical applications.",
+    "url": "https://doi.org/10.1158/2159-8290.cd-12-0095",
+    "authors": [
+      "Ethan Cerami",
+      "Jianjiong Gao",
+      "Uğur Doğrusöz",
+      "Benjamin Groß",
+      "S. Onur Sumer",
+      "Bülent Arman Aksoy",
+      "Anders Jacobsen",
+      "Caitlin J. Byrne",
+      "Michael Heuer",
+      "Erik Larsson",
+      "Yevgeniy Antipin",
+      "Boris Reva",
+      "Arthur P. Goldberg",
+      "Chris Sander",
+      "Nikolaus Schultz"
+    ],
+    "tags": [
+      "Genomics",
+      "Cancer",
+      "Computational biology",
+      "Biology",
+      "Bioinformatics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2012-05-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2138207763",
+    "name": "featureCounts: an efficient general purpose program for assigning sequence reads to genomic features",
+    "source": "openalex",
+    "abstract": "MOTIVATION: Next-generation sequencing technologies generate millions of short sequence reads, which are usually aligned to a reference genome. In many applications, the key information required for downstream analysis is the number of reads mapping to each genomic feature, for example to each exon or each gene. The process of counting reads is called read summarization. Read summarization is required for a great variety of genomic analyses but has so far received relatively little attention in the literature. RESULTS: We present featureCounts, a read summarization program suitable for counting reads generated from either RNA or genomic DNA sequencing experiments. featureCounts implements highly efficient chromosome hashing and feature blocking techniques. It is considerably faster than existing methods (by an order of magnitude for gene-level summarization) and requires far less computer memory. It works with either single or paired-end reads and provides a wide range of options appropriate for different sequencing applications. AVAILABILITY AND IMPLEMENTATION: featureCounts is available under GNU General Public License as part of the Subread (http://subread.sourceforge.net) or Rsubread (http://www.bioconductor.org) software packages.",
+    "url": "https://doi.org/10.1093/bioinformatics/btt656",
+    "authors": [
+      "Yang Liao",
+      "Gordon K. Smyth",
+      "Wei Shi"
+    ],
+    "tags": [
+      "Automatic summarization",
+      "Computer science",
+      "Bioconductor",
+      "MIT License",
+      "Software"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2013-11-13",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2021341670",
+    "name": "Integrative genomics viewer",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nbt.1754",
+    "authors": [
+      "James Robinson",
+      "Helga Thorvaldsdóttir",
+      "Wendy Winckler",
+      "Mitchell Guttman",
+      "Eric S. Lander",
+      "Gad Getz",
+      "Jill P. Mesirov"
+    ],
+    "tags": [
+      "Genomics",
+      "Computational biology",
+      "Profiling (computer programming)",
+      "Human genome",
+      "Genome"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2011-01-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2158804744",
+    "name": "Circos: An information aesthetic for comparative genomics",
+    "source": "openalex",
+    "abstract": "We created a visualization tool called Circos to facilitate the identification and analysis of similarities and differences arising from comparisons of genomes. Our tool is effective in displaying variation in genome structure and, generally, any other kind of positional relationships between genomic intervals. Such data are routinely produced by sequence alignments, hybridization arrays, genome mapping, and genotyping studies. Circos uses a circular ideogram layout to facilitate the display of relationships between pairs of positions by the use of ribbons, which encode the position, size, and orientation of related genomic elements. Circos is capable of displaying data as scatter, line, and histogram plots, heat maps, tiles, connectors, and text. Bitmap or vector images can be created from GFF-style data inputs and hierarchical configuration files, which can be easily generated by automated tools, making Circos suitable for rapid deployment in data analysis and reporting pipelines.",
+    "url": "https://doi.org/10.1101/gr.092759.109",
+    "authors": [
+      "Martin Krzywinski",
+      "Jacqueline E. Schein",
+      "İnanç Birol",
+      "Joseph M. Connors",
+      "Randy D. Gascoyne",
+      "Doug Horsman",
+      "Steven J.M. Jones",
+      "Marco A. Marra"
+    ],
+    "tags": [
+      "Biology",
+      "Genome",
+      "Visualization",
+      "Computational biology",
+      "Comparative genomics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2009-06-18",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2117131162",
+    "name": "Integrative Genomics Viewer (IGV): high-performance genomics data visualization and exploration",
+    "source": "openalex",
+    "abstract": "Data visualization is an essential component of genomic data analysis. However, the size and diversity of the data sets produced by today's sequencing and array-based profiling methods present major challenges to visualization tools. The Integrative Genomics Viewer (IGV) is a high-performance viewer that efficiently handles large heterogeneous data sets, while providing a smooth and intuitive user experience at all levels of genome resolution. A key characteristic of IGV is its focus on the integrative nature of genomic studies, with support for both array-based and next-generation sequencing data, and the integration of clinical and phenotypic data. Although IGV is often used to view genomic data from public sources, its primary emphasis is to support researchers who wish to visualize and explore their own data sets or those from colleagues. To that end, IGV supports flexible loading of local and remote data sets, and is optimized to provide high-performance data visualization and exploration on standard desktop systems. IGV is freely available for download from http://www.broadinstitute.org/igv, under a GNU LGPL open-source license.",
+    "url": "https://doi.org/10.1093/bib/bbs017",
+    "authors": [
+      "Helga Thorvaldsdóttir",
+      "James Robinson",
+      "Jill P. Mesirov"
+    ],
+    "tags": [
+      "Visualization",
+      "Computer science",
+      "Data visualization",
+      "Genomics",
+      "MIT License"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2012-04-19",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2051978340",
+    "name": "Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/gim.2015.30",
+    "authors": [
+      "Sue Richards",
+      "Nazneen Aziz",
+      "Sherri J. Bale",
+      "David Bick",
+      "Soma Das",
+      "Julie M. Gastier‐Foster",
+      "Wayne W. Grody",
+      "Madhuri Hegde",
+      "Elaine Lyon",
+      "Elaine Spector",
+      "Karl V. Voelkerding",
+      "Heidi L. Rehm"
+    ],
+    "tags": [
+      "Medical genetics",
+      "Workgroup",
+      "Exome sequencing",
+      "Context (archaeology)",
+      "Exome"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2015-03-05",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2114843025",
+    "name": "Integrative Analysis of Complex Cancer Genomics and Clinical Profiles Using the cBioPortal",
+    "source": "openalex",
+    "abstract": "The cBioPortal for Cancer Genomics (http://cbioportal.org) provides a Web resource for exploring, visualizing, and analyzing multidimensional cancer genomics data. The portal reduces molecular profiling data from cancer tissues and cell lines into readily understandable genetic, epigenetic, gene expression, and proteomic events. The query interface combined with customized data storage enables researchers to interactively explore genetic alterations across samples, genes, and pathways and, when available in the underlying data, to link these to clinical outcomes. The portal provides graphical summaries of gene-level data from multiple platforms, network visualization and analysis, survival analysis, patient-centric queries, and software programmatic access. The intuitive Web interface of the portal makes complex cancer genomics profiles accessible to researchers and clinicians without requiring bioinformatics expertise, thus facilitating biological discoveries. Here, we provide a practical guide to the analysis and visualization features of the cBioPortal for Cancer Genomics.",
+    "url": "https://doi.org/10.1126/scisignal.2004088",
+    "authors": [
+      "Jianjiong Gao",
+      "Bülent Arman Aksoy",
+      "Uğur Doğrusöz",
+      "Gideon Dresdner",
+      "Benjamin Groß",
+      "S. Onur Sumer",
+      "Yichao Sun",
+      "Anders Jacobsen",
+      "Rileen Sinha",
+      "Erik Larsson",
+      "Ethan Cerami",
+      "Chris Sander",
+      "Nikolaus Schultz"
+    ],
+    "tags": [
+      "Genomics",
+      "Visualization",
+      "Interface (matter)",
+      "Computer science",
+      "Computational biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2013-04-02",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2576734941",
+    "name": "Genomic sequencing.",
+    "source": "openalex",
+    "abstract": "Unique DNA sequences can be determined directly from mouse genomic DNA. A denaturing gel separates by size mixtures of unlabeled DNA fragments from complete restriction and partial chemical cleavages of the entire genome. These lanes of DNA are transferred and UV-crosslinked to nylon membranes. Hybridization with a short 32P-labeled single-stranded probe produces the image of a DNA sequence \"ladder\" extending from the 3' or 5' end of one restriction site in the genome. Numerous different sequences can be obtained from a single membrane by reprobing. Each band in these sequences represents 3 fg of DNA complementary to the probe. Sequence data from mouse immunoglobulin heavy chain genes from several cell types are presented. The genomic sequencing procedures are applicable to the analysis of genetic polymorphisms, DNA methylation at deoxycytidines, and nucleic acid-protein interactions at single nucleotide resolution.",
+    "url": "https://doi.org/10.1073/pnas.81.7.1991",
+    "authors": [
+      "George M. Church",
+      "W Gilbert"
+    ],
+    "tags": [
+      "DNA nanoball sequencing",
+      "Sequencing by hybridization",
+      "DNA",
+      "Biology",
+      "Genome"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1984-04-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W3005235420",
+    "name": "IQ-TREE 2: New Models and Efficient Methods for Phylogenetic Inference in the Genomic Era",
+    "source": "openalex",
+    "abstract": "IQ-TREE (http://www.iqtree.org, last accessed February 6, 2020) is a user-friendly and widely used software package for phylogenetic inference using maximum likelihood. Since the release of version 1 in 2014, we have continuously expanded IQ-TREE to integrate a plethora of new models of sequence evolution and efficient computational approaches of phylogenetic inference to deal with genomic data. Here, we describe notable features of IQ-TREE version 2 and highlight the key advantages over other software.",
+    "url": "https://doi.org/10.1093/molbev/msaa015",
+    "authors": [
+      "Bùi Quang Minh",
+      "Heiko A. Schmidt",
+      "Olga Chernomor",
+      "Dominik Schrempf",
+      "Michael D. Woodhams",
+      "Arndt von Haeseler",
+      "Robert Lanfear"
+    ],
+    "tags": [
+      "Phylogenetic tree",
+      "Inference",
+      "Biology",
+      "Tree (set theory)",
+      "Tree rearrangement"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2020-01-22",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2406250479",
+    "name": "Complex heatmaps reveal patterns and correlations in multidimensional genomic data",
+    "source": "openalex",
+    "abstract": "UNLABELLED: Parallel heatmaps with carefully designed annotation graphics are powerful for efficient visualization of patterns and relationships among high dimensional genomic data. Here we present the ComplexHeatmap package that provides rich functionalities for customizing heatmaps, arranging multiple parallel heatmaps and including user-defined annotation graphics. We demonstrate the power of ComplexHeatmap to easily reveal patterns and correlations among multiple sources of information with four real-world datasets. AVAILABILITY AND IMPLEMENTATION: The ComplexHeatmap package and documentation are freely available from the Bioconductor project: http://www.bioconductor.org/packages/devel/bioc/html/ComplexHeatmap.html CONTACT: m.schlesner@dkfz.de SUPPLEMENTARY INFORMATION: Supplementary data are available at Bioinformatics online.",
+    "url": "https://doi.org/10.1093/bioinformatics/btw313",
+    "authors": [
+      "Zuguang Gu",
+      "Roland Eils",
+      "Matthias Schlesner"
+    ],
+    "tags": [
+      "Bioconductor",
+      "R package",
+      "Annotation",
+      "Computer science",
+      "Documentation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2016-05-20",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2164154943",
+    "name": "Blast2GO: a universal tool for annotation, visualization and analysis in functional genomics research",
+    "source": "openalex",
+    "abstract": "SUMMARY: We present here Blast2GO (B2G), a research tool designed with the main purpose of enabling Gene Ontology (GO) based data mining on sequence data for which no GO annotation is yet available. B2G joints in one application GO annotation based on similarity searches with statistical analysis and highlighted visualization on directed acyclic graphs. This tool offers a suitable platform for functional genomics research in non-model species. B2G is an intuitive and interactive desktop application that allows monitoring and comprehension of the whole annotation and analysis process. AVAILABILITY: Blast2GO is freely available via Java Web Start at http://www.blast2go.de. SUPPLEMENTARY MATERIAL: http://www.blast2go.de -> Evaluation.",
+    "url": "https://doi.org/10.1093/bioinformatics/bti610",
+    "authors": [
+      "Ana Conesa",
+      "Stefan Götz",
+      "Juan Miguel García-Gómez",
+      "Javier Terol",
+      "Manuel Talón",
+      "Montserrat Robles"
+    ],
+    "tags": [
+      "Annotation",
+      "Computer science",
+      "Visualization",
+      "Java",
+      "Process (computing)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2005-08-04",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1093/hesc/9780198866893.003.0006",
+    "name": "Comparative Genomics",
+    "source": "crossref",
+    "abstract": "<p>This chapter examines the unity and diversity of life by analysing genomes, which define species, reveal evolutionary relationships, and demonstrate the role of horizontal gene transfer in reshaping the ‘tree of life’. It explains how genomes differ in size, organisation, and gene content across species, with gene duplication driving genome evolution and complexity. Comparative genomics identifies the small but impactful genetic differences between humans and our closest relatives, for example, chimpanzees, while also highlighting unique human genetic traits. The chapter explores what makes humans distinct by analysing genetic variation, comparing genomes with other organisms, and using model organisms to study human diseases. Finally, the chapter emphasises that while genomics offers deep insights into evolution and human identity, many biological traits arise from complex gene regulation and environmental interactions.</p>",
+    "url": "https://doi.org/10.1093/hesc/9780198866893.003.0006",
+    "authors": [
+      "Arthur M. Lesk"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2025-10-10T07:06:04Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1093/hesc/9780198754831.003.007",
+    "name": "Comparative Genomics",
+    "source": "crossref",
+    "abstract": "<p>This chapter analyses the three major divisions of living things (archaea, bacteria, and eukaryotes) based on the sequences of 16S rRNA genes. It notes the prevalence of historical gene transfer among prokaryotes. Historical gene transfer is not consistent with the hierarchical Linnaean classification scheme. The chapter discusses the general distribution of genome sizes and gene numbers while determining the characteristics of different types of genome organization in viruses, prokaryotes, and eukaryotes. The chapter notes the impact of gene duplication on genome evolution and considers the mechanism of genome change at the levels of individual bases, genes, chromosome segments, and whole genomes. It differentiates homologue, orthologue, and paralogue as well. The chapter also expounds on the human genome and the idea of a model organism in the study of human diseases.</p>",
+    "url": "https://doi.org/10.1093/hesc/9780198754831.003.007",
+    "authors": [
+      "Arthur M. Lesk"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2023-09-15T11:33:07Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1093/hesc/9780191991318.003.0002",
+    "name": "Genomics",
+    "source": "crossref",
+    "abstract": "<p>This chapter traces the development of genomics from early viral and bacterial sequencing to the complex structure of the human genome. It begins by outlining key breakthroughs in DNA sequencing, including Sanger's dideoxy method and the rise of next-generation sequencing, which enable rapid, large-scale analysis. The chapter explains genome assembly and annotation, introducing strategies like whole genome shotgun sequencing and defining metrics such as contiguous sequence (contig) and scaffold N50. It compares the human and chimpanzee genomes, revealing extensive synteny and insights into evolutionary divergence. Finally, the chapter explores the architecture of the human genome, examining gene-rich regions, alternative splicing, pseudogenes, transposons, CpG islands, and copy number variations, and shows how these features contribute to genome function, variation, and complexity.</p>",
+    "url": "https://doi.org/10.1093/hesc/9780191991318.003.0002",
+    "authors": [
+      "Jamil Momand",
+      "Eliot Bush"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026-03-27T12:57:06Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1186/1479-7364-5-2-75",
+    "name": "Changes in Human Genomics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1186/1479-7364-5-2-75",
+    "authors": [
+      "Vasilis Vasiliou"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2012-07-16T12:15:28Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1093/actrade/9780198786207.003.0005",
+    "name": "5. Evolutionary genomics",
+    "source": "crossref",
+    "abstract": "<p>We are still learning how to make sense of what genome sequences have to tell us. ‘Evolutionary genomics’ first considers the ‘molecular clock’, a bedrock concept underlying modern comparative genomic research. Molecular clocks can be inferred using both protein (amino acid) and DNA (nucleotide) sequences. It then looks at our understanding of Y-chromosome and mitochondrial DNA evolution before discussing the difficulties of extracting ancient DNA from fossils. Among the most remarkable achievements of ancient DNA research has been the sequencing of nuclear genomes from Neanderthals and other now-extinct human relatives, aiding research into what makes us human. The question of how eukaryotic cells evolved from prokaryotes is also considered.</p>",
+    "url": "https://doi.org/10.1093/actrade/9780198786207.003.0005",
+    "authors": [
+      "John Archibald"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2018-03-22T11:03:14Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.5402/genomics",
+    "name": "ISRN Genomics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5402/genomics",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2012-06-18T21:45:33Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/j.ygeno.2013.07.004",
+    "name": "Introduction to the Genomics special edition on clinical and translational genomics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.ygeno.2013.07.004",
+    "authors": [
+      "Nicholas F. Marko"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2013-07-26T03:41:14Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1093/oso/9780198567400.003.0009",
+    "name": "Functional Genomics",
+    "source": "crossref",
+    "abstract": "<p>The overarching purpose of this chapter is to introduce the reader to some of the essential elements of biology, genomics, and bioinformatics. It is by no means a comprehensive description of these fields, but rather the bare minimum that will be necessary to understand the remainder of the book. In the first section we introduce the primary biological molecules: nucleic acids and proteins. We discuss genetic information flow in living beings and how genetic material in DNA is translated into functional proteins. In the second section we present a short primer on probability theory; we review some of the basic concepts. In the third section we describe how biological sequences are obtained and the common strategies employed to analyze them. In the fourth section, we describe the methods used to collect high throughput gene expression data. We also review the popular methods used to analyze gene expression data. There are many other important areas of functional genomics that we do not address at all in this chapter. New experimental and analytical methods are constantly emerging. For the sake of brevity we focused our discussion on the areas that are most applicable to the remainder of the book. But, we note that many of the analytical methods presented here can be applied widely and without great difficulty to other data types than the ones they have been presented with. Here we present a focused review of molecular biology designed to give the reader a sufficient background to comprehend the remainder of the book. A thorough discussion is beyond the scope of this book and the interested reader is referred to other textbooks (Alberts, Bray et al. 1994; Stryer 1995; Nelson, Lehninger et al. 2000). The central dogma of molecular biology is a paradigm of information flow in living organisms (see Plate 2.1). Information is stored in the genomic deoxyriboculeic acid (DNA). DNA polymerase, a protein that synthesizes DNA, can replicate DNA so that it can be passed on to progeny after cell division.</p>",
+    "url": "https://doi.org/10.1093/oso/9780198567400.003.0009",
+    "authors": [
+      "Soumya Raychaudhuri"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2020-11-11T00:59:43Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1155/1513",
+    "name": "ISRN Genomics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1155/1513",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2017-12-10T11:53:43Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1093/hesc/9780190610548.003.0009",
+    "name": "Genomics",
+    "source": "crossref",
+    "abstract": "<p>This chapter displays genomics analysis with an emphasis on next-generation sequencing (NGS), and annotation of bacterial genomes. It uncovers the underlying principles of dideoxy sequencing and selected next-generation sequencing technologies. The chapter also examines the theory of polymerase chain reaction (PCR) and the general categories of DNA that constitute the human genome (the genomic landscape). The chapter then shifts to investigate how DNA fingerprinting is performed and the degree of synteny shared between genomes. It reviews the whole genome shotgun strategy approach to genome sequencing, then examines how gene prediction software programs predict and annotate genes in genomes. Finally, the chapter describes the haplotype, the HapMap Project, and the significance of the HapMap project. It then looks into the benefits and concerns of having knowledge of personal genome data.</p>",
+    "url": "https://doi.org/10.1093/hesc/9780190610548.003.0009",
+    "authors": [
+      "Jamil Momand",
+      "Alison Mccurdy",
+      "Silvia Heubach",
+      "Nancy Warter-Perez"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2023-09-15T12:26:13Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/9780470020036.ch3",
+    "name": "Comparative Genomics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/9780470020036.ch3",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2007-04-27T15:47:53Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1186/s12864-023-09542-8",
+    "name": "Medicinal plant genomics",
+    "source": "crossref",
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>Recent developments in plant genomics have enabled a comprehensive analysis of the medicinal potential of plants based on their gene repertoire. Genes of biosynthesis pathways can be discovered through comparative genomics and through integration of transcriptomic data. Data-driven discovery of specialized metabolites could accelerate research.</jats:p>",
+    "url": "https://doi.org/10.1186/s12864-023-09542-8",
+    "authors": [
+      "Christian Siadjeu",
+      "Boas Pucker"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2023-08-01T07:03:18Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551111",
+    "name": "Intellectual disability, neuroregression and adult-onset progressive dystonia due to a DLG4 pathogenic variant.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551111/",
+    "authors": [
+      "Peraferrer-Montesinos L",
+      "Nagaratnam SA",
+      "Forwood C",
+      "Berry A",
+      "Ashton K",
+      "Dong J",
+      "Zhu Y",
+      "Arpone M",
+      "Becker P",
+      "Delves M",
+      "Morales Briceno H"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 1",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551091",
+    "name": "Morphological changes and transcriptomic insights into skeletal development of embryos and larvae of the sea urchin Strongylocentrotus intermedius.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551091/",
+    "authors": [
+      "Cheng Y",
+      "Zhang J",
+      "Fan Y",
+      "Lei Y",
+      "Deng Y",
+      "Liu J",
+      "Han L",
+      "Zhao C",
+      "Chang Y",
+      "Ding J"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Jul 27",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551090",
+    "name": "Whole-transcriptome RNA sequencing and ceRNA network analyses provide novel insights into the antibacterial immune response of Hippocampus abdominalis against Vibrio harveyi.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551090/",
+    "authors": [
+      "Chu Q",
+      "Zhou J",
+      "Bai Y",
+      "Zhang L",
+      "Li M",
+      "Su X",
+      "Wang K"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 1",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551077",
+    "name": "Establishment of four induced pluripotent stem cell lines (IGIBi028-A, IGIBi029-A, IGIBi030-A, and IGIBi031-A) from peripheral blood derived cells of Spinocerebellar ataxia Type 12 patients.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551077/",
+    "authors": [
+      "Ahmad I",
+      "Reza S",
+      "Singh N",
+      "Yadav S",
+      "Singh P",
+      "Kumar D",
+      "Srivastava AK",
+      "Faruq M"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Jul 29",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551075",
+    "name": "Genotoxic, biochemical and behavioral effects of spilled oil in damselfish Stegastes fuscus.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551075/",
+    "authors": [
+      "Alves MKM",
+      "de Melo TJB",
+      "Mariz CF Jr",
+      "Ventura Dos Santos SM",
+      "Vasconcelos YSC",
+      "Correia MCAS",
+      "Zanardi-Lamardo E",
+      "Carvalho PSM"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Jul 29",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551065",
+    "name": "Genome-wide association study in the Baicheng-You chickens highlights candidate variants for egg quality traits.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551065/",
+    "authors": [
+      "Zhang S",
+      "Dong W",
+      "You G",
+      "Jiang T",
+      "Liao H",
+      "Hou Z",
+      "Yin Z"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Jul 9",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551048",
+    "name": "A complete hlyCABD-like RTX operon marks a virulence-associated subset of trh-positive Vibrio parahaemolyticus from Hangzhou Bay, China.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551048/",
+    "authors": [
+      "Wang L",
+      "He Y",
+      "He Y",
+      "Su X",
+      "Zhou X",
+      "Xu P",
+      "Xu J",
+      "Xu J",
+      "Yan Y"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 3",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551043",
+    "name": "Shared parts, different structures: How asymmetry drives IgM and IgA structure-function relationships.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551043/",
+    "authors": [
+      "Schneider RM",
+      "Ji Y",
+      "Stadtmueller BM"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 4",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551040",
+    "name": "Multilevel genomic constraints shape nuclear tRNA gene organization in plants.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551040/",
+    "authors": [
+      "Hummel G",
+      "Pflieger D",
+      "Cognat V",
+      "Drouard L",
+      "Berr A"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551038",
+    "name": "Influence of KRAS mutation subtypes on response to neoadjuvant chemoradiotherapy in locally advanced rectal cancer: meta-analysis.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551038/",
+    "authors": [
+      "Sadien ID",
+      "Cooper G",
+      "Phillips V",
+      "Joshi H",
+      "Wheeler J",
+      "Davies RJ"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Jul 3",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42551019",
+    "name": "Genomic Landscape of Phenotypes Causally Associated with Night Shift Work.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42551019/",
+    "authors": [
+      "Jin X",
+      "Yang Y",
+      "Xu J",
+      "Liu H"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Aug 4",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "pmid:42550929",
+    "name": "Identification of the Novel Allele HLA-B*13:220 Allele in a Brazilian Individual.",
+    "source": "pubmed",
+    "abstract": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42550929/",
+    "authors": [
+      "Machado EFG",
+      "Linhares JA",
+      "Dugonski ME",
+      "Cazarote HB",
+      "Von Glehn CQC"
+    ],
+    "tags": [],
+    "confidence": 0.82,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2026 Jul",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2023096047",
+    "name": "Mass spectrometry-based proteomics",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nature01511",
+    "authors": [
+      "Ruedi Aebersold",
+      "Matthias Mann"
+    ],
+    "tags": [
+      "Proteome",
+      "Proteomics",
+      "Computational biology",
+      "Systems biology",
+      "Mass spectrometry"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2003-03-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2137450588",
+    "name": "ExPASy: the proteomics server for in-depth protein knowledge and analysis",
+    "source": "openalex",
+    "abstract": "The ExPASy (the Expert Protein Analysis System) World Wide Web server (http://www.expasy.org), is provided as a service to the life science community by a multidisciplinary team at the Swiss Institute of Bioinformatics (SIB). It provides access to a variety of databases and analytical tools dedicated to proteins and proteomics. ExPASy databases include SWISS-PROT and TrEMBL, SWISS-2DPAGE, PROSITE, ENZYME and the SWISS-MODEL repository. Analysis tools are available for specific tasks relevant to proteomics, similarity searches, pattern and profile searches, post-translational modification prediction, topology prediction, primary, secondary and tertiary structure analysis and sequence alignment. These databases and tools are tightly interlinked: a special emphasis is placed on integration of database entries with related resources developed at the SIB and elsewhere, and the proteomics tools have been designed to read the annotations in SWISS-PROT in order to enhance their predictions. ExPASy started to operate in 1993, as the first WWW server in the field of life sciences. In addition to the main site in Switzerland, seven mirror sites in different continents currently serve the user community.",
+    "url": "https://doi.org/10.1093/nar/gkg563",
+    "authors": [
+      "Elisabeth Gasteiger"
+    ],
+    "tags": [
+      "UniProt",
+      "Proteomics",
+      "Biology",
+      "Web server",
+      "Service (business)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2003-06-25",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W3208691473",
+    "name": "The PRIDE database resources in 2022: a hub for mass spectrometry-based proteomics evidences",
+    "source": "openalex",
+    "abstract": "The PRoteomics IDEntifications (PRIDE) database (https://www.ebi.ac.uk/pride/) is the world's largest data repository of mass spectrometry-based proteomics data. PRIDE is one of the founding members of the global ProteomeXchange (PX) consortium and an ELIXIR core data resource. In this manuscript, we summarize the developments in PRIDE resources and related tools since the previous update manuscript was published in Nucleic Acids Research in 2019. The number of submitted datasets to PRIDE Archive (the archival component of PRIDE) has reached on average around 500 datasets per month during 2021. In addition to continuous improvements in PRIDE Archive data pipelines and infrastructure, the PRIDE Spectra Archive has been developed to provide direct access to the submitted mass spectra using Universal Spectrum Identifiers. As a key point, the file format MAGE-TAB for proteomics has been developed to enable the improvement of sample metadata annotation. Additionally, the resource PRIDE Peptidome provides access to aggregated peptide/protein evidences across PRIDE Archive. Furthermore, we will describe how PRIDE has increased its efforts to reuse and disseminate high-quality proteomics data into other added-value resources such as UniProt, Ensembl and Expression Atlas.",
+    "url": "https://doi.org/10.1093/nar/gkab1038",
+    "authors": [
+      "Yasset Pérez‐Riverol",
+      "Jingwen Bai",
+      "Chakradhar Bandla",
+      "David García‐Seisdedos",
+      "Suresh Hewapathirana",
+      "Selvakumar Kamatchinathan",
+      "Deepti J Kundu",
+      "Ananth Prakash",
+      "Anika Frericks-Zipper",
+      "Martin Eisenacher",
+      "Mathias Walzer",
+      "Shengbo Wang",
+      "Alvis Brāzma",
+      "Juan Antonio Vizcaíno"
+    ],
+    "tags": [
+      "Pride",
+      "Proteomics",
+      "Metadata",
+      "Identifier",
+      "UniProt"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2021-10-16",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W243303449",
+    "name": "The Proteomics Protocols Handbook",
+    "source": "openalex",
+    "abstract": "Recent developments in the field of proteomics have revolutionized the way that proteins, and their contribution to cellular functions, are studied. The subsequent increased understanding of the mechanisms of cellular function and misfunction will have particular impact in the area of medical research, where disease processes will be better understood, many new (protein) therapeutic targets identified, and novel therapeutic agents developed. At the basic research level, phenotype will be explained in terms of cellular mechanisms.",
+    "url": "https://doi.org/10.1385/1592598900",
+    "authors": [
+      "John M. Walker"
+    ],
+    "tags": [
+      "Computer science",
+      "Proteome",
+      "Proteomics",
+      "Data science",
+      "Computational biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2005-01-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2544360569",
+    "name": "The MaxQuant computational platform for mass spectrometry-based shotgun proteomics",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nprot.2016.136",
+    "authors": [
+      "Stefka Tyanova",
+      "Tikira Temu",
+      "Jüergen Cox"
+    ],
+    "tags": [
+      "Computer science",
+      "Shotgun proteomics",
+      "Workflow",
+      "Proteomics",
+      "Protocol (science)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2016-10-27",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2141091417",
+    "name": "Skyline: an open source document editor for creating and analyzing targeted proteomics experiments",
+    "source": "openalex",
+    "abstract": "SUMMARY: Skyline is a Windows client application for targeted proteomics method creation and quantitative data analysis. It is open source and freely available for academic and commercial use. The Skyline user interface simplifies the development of mass spectrometer methods and the analysis of data from targeted proteomics experiments performed using selected reaction monitoring (SRM). Skyline supports using and creating MS/MS spectral libraries from a wide variety of sources to choose SRM filters and verify results based on previously observed ion trap data. Skyline exports transition lists to and imports the native output files from Agilent, Applied Biosystems, Thermo Fisher Scientific and Waters triple quadrupole instruments, seamlessly connecting mass spectrometer output back to the experimental design document. The fast and compact Skyline file format is easily shared, even for experiments requiring many sample injections. A rich array of graphs displays results and provides powerful tools for inspecting data integrity as data are acquired, helping instrument operators to identify problems early. The Skyline dynamic report designer exports tabular data from the Skyline document model for in-depth analysis with common statistical tools. AVAILABILITY: Single-click, self-updating web installation is available at http://proteome.gs.washington.edu/software/skyline. This web site also provides access to instructional videos, a support board, an issues list and a link to the source code project.",
+    "url": "https://doi.org/10.1093/bioinformatics/btq054",
+    "authors": [
+      "Brendan MacLean",
+      "Daniela M. Tomazela",
+      "Nicholas Shulman",
+      "Matthew Chambers",
+      "Gregory L. Finney",
+      "Barbara Frewen",
+      "Randall Kern",
+      "David L. Tabb",
+      "D.C. Liebler",
+      "Michael J. MacCoss"
+    ],
+    "tags": [
+      "Skyline",
+      "Computer science",
+      "Software",
+      "Database",
+      "Interface (matter)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2010-02-09",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W1973268693",
+    "name": "Insights into the regulation of protein abundance from proteomic and transcriptomic analyses",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nrg3185",
+    "authors": [
+      "Christine Vogel",
+      "Edward M. Marcotte"
+    ],
+    "tags": [
+      "Biology",
+      "Proteome",
+      "Proteomics",
+      "Transcriptome",
+      "Computational biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2012-03-13",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2081465448",
+    "name": "A cross-platform toolkit for mass spectrometry and proteomics",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nbt.2377",
+    "authors": [
+      "Matthew Chambers",
+      "Brendan MacLean",
+      "Robert Burke",
+      "Dario Amodei",
+      "Daniel Ruderman",
+      "Steffen Neumann",
+      "Laurent Gatto",
+      "Bernd Fischer",
+      "Brian Pratt",
+      "Jarrett D. Egertson",
+      "Katherine Hoff",
+      "Darren Kessner",
+      "Natalie Tasman",
+      "Nicholas Shulman",
+      "Barbara Frewen",
+      "Tahmina A Baker",
+      "Mi‐Youn Brusniak",
+      "Christopher Paulse",
+      "David M. Creasy",
+      "Lisa Flashner",
+      "Kian Kani",
+      "Chris Moulding",
+      "Sean L. Seymour",
+      "Lydia M. Nuwaysir",
+      "Brent Lefebvre",
+      "Frank E. Kuhlmann",
+      "Joe Roark",
+      "Rainer Paape",
+      "Detlev Suckau",
+      "Tina Hemenway",
+      "Andreas Hühmer",
+      "James Langridge",
+      "B. Connolly",
+      "Trey Chadick",
+      "Krisztina Holly",
+      "Josh Eckels",
+      "Eric W. Deutsch",
+      "Robert L. Moritz",
+      "Jonathan E. Katz",
+      "David B. Agus",
+      "Michael J. MacCoss",
+      "David L. Tabb",
+      "Parag Mallick"
+    ],
+    "tags": [
+      "Proteomics",
+      "Computer science",
+      "Vendor",
+      "Application programming interface",
+      "Interface (matter)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2012-10-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2140946052",
+    "name": "Stable Isotope Labeling by Amino Acids in Cell Culture, SILAC, as a Simple and Accurate Approach to Expression Proteomics",
+    "source": "openalex",
+    "abstract": "Quantitative proteomics has traditionally been performed by two-dimensional gel electrophoresis, but recently, mass spectrometric methods based on stable isotope quantitation have shown great promise for the simultaneous and automated identification and quantitation of complex protein mixtures. Here we describe a method, termed SILAC, for stable isotope labeling by amino acids in cell culture, for the in vivo incorporation of specific amino acids into all mammalian proteins. Mammalian cell lines are grown in media lacking a standard essential amino acid but supplemented with a non-radioactive, isotopically labeled form of that amino acid, in this case deuterated leucine (Leu-d3). We find that growth of cells maintained in these media is no different from growth in normal media as evidenced by cell morphology, doubling time, and ability to differentiate. Complete incorporation of Leu-d3 occurred after five doublings in the cell lines and proteins studied. Protein populations from experimental and control samples are mixed directly after harvesting, and mass spectrometric identification is straightforward as every leucine-containing peptide incorporates either all normal leucine or all Leu-d3. We have applied this technique to the relative quantitation of changes in protein expression during the process of muscle cell differentiation. Proteins that were found to be up-regulated during this process include glyceraldehyde-3-phosphate dehydrogenase, fibronectin, and pyruvate kinase M2. SILAC is a simple, inexpensive, and accurate procedure that can be used as a quantitative proteomic approach in any cell culture system.",
+    "url": "https://doi.org/10.1074/mcp.m200025-mcp200",
+    "authors": [
+      "Shao‐En Ong",
+      "Blagoy Blagoev",
+      "Irina Kratchmarova",
+      "Dan Bach Kristensen",
+      "Hanno Steen",
+      "Akhilesh Pandey",
+      "Matthias Mann"
+    ],
+    "tags": [
+      "Stable isotope labeling by amino acids in cell culture",
+      "Quantitative proteomics",
+      "Proteomics",
+      "Amino acid",
+      "Proteome"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-05-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2134389439",
+    "name": "Use of proteomic patterns in serum to identify ovarian cancer",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0140-6736(02)07746-2",
+    "authors": [
+      "Emanuel F. Petricoin",
+      "Ali M. Ardekani",
+      "Ben A. Hitt",
+      "Peter J. Levine",
+      "Vincent A. Fusaro",
+      "Seth M. Steinberg",
+      "Gordon B. Mills",
+      "Charles B. Simone",
+      "David A. Fishman",
+      "Elise C. Kohn",
+      "Lance A. Liotta"
+    ],
+    "tags": [
+      "Ovarian cancer",
+      "Computational biology",
+      "Cancer",
+      "Biology",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-02-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2097463865",
+    "name": "Proteomics to study genes and genomes",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/35015709",
+    "authors": [
+      "Akhilesh Pandey",
+      "Matthias Mann"
+    ],
+    "tags": [
+      "Proteomics",
+      "Computational biology",
+      "Biology",
+      "Function (biology)",
+      "Genome"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2000-06-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W1986656413",
+    "name": "Protocol for micro-purification, enrichment, pre-fractionation and storage of peptides for proteomics using StageTips",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nprot.2007.261",
+    "authors": [
+      "Juri Rappsilber",
+      "Matthias Mann",
+      "Yasushi Ishihama"
+    ],
+    "tags": [
+      "Phosphopeptide",
+      "Chromatography",
+      "Pipette",
+      "Mass spectrometry",
+      "Chemistry"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2007-08-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/pmic.200690153",
+    "name": "PROTEOMICS Acknowledgements: Proteomics 24/2006",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/pmic.200690153",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2006-12-12T13:13:54Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/(issn)1615-9861",
+    "name": "PROTEOMICS",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/(issn)1615-9861",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2006-03-07T21:22:49Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/pmic.200690004",
+    "name": "Proteomics Acknowledgements: Proteomics 1/2006",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/pmic.200690004",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2006-01-09T15:15:35Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/9783527678679.dg06177",
+    "name": "Interaction proteomics (interactive proteomics, cell‐map proteomics)",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/9783527678679.dg06177",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2015-12-16T00:18:51Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/pmic.200890089",
+    "name": "PROTEOMICS Acknowledgements: Proteomics 23‐24/2008",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/pmic.200890089",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2008-12-12T12:05:16Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/1615-9861(200207)2:7<940::aid-prot940>3.0.co;2-c",
+    "name": "Meeting: Proteomics 7/2002",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/1615-9861(200207)2:7<940::aid-prot940>3.0.co;2-c",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-10-06T11:46:55Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/1615-9861(200207)2:7<803::aid-prot803>3.0.co;2-k",
+    "name": "Content: Proteomics 7/2002",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/1615-9861(200207)2:7<803::aid-prot803>3.0.co;2-k",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-10-06T11:46:55Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/1615-9861(200204)2:4<475::aid-prot475>3.0.co;2-6",
+    "name": "Meetings: Proteomics 4/2002",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/1615-9861(200204)2:4<475::aid-prot475>3.0.co;2-6",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-08-25T23:27:00Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/1615-9861(200208)2:8<1064::aid-prot1064>3.0.co;2-m",
+    "name": "Meetings: Proteomics 8/2002",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/1615-9861(200208)2:8<1064::aid-prot1064>3.0.co;2-m",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2002-10-06T12:12:48Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/pmic.202370133",
+    "name": "Contents: Proteomics 17'23",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/pmic.202370133",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2023-09-05T03:27:01Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/pmic.202370093",
+    "name": "Contents: Proteomics 12'23",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/pmic.202370093",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2023-06-14T02:42:33Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1002/pmic.202270043",
+    "name": "Contents: Proteomics 7'22",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1002/pmic.202270043",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2022-04-04T00:45:30Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2748101318",
+    "name": "Current protocols in molecular biology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0003-2697(88)90147-9",
+    "authors": [
+      "Tom Sargent"
+    ],
+    "tags": [
+      "Computational biology",
+      "Current (fluid)",
+      "Biology",
+      "Physics",
+      "Thermodynamics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1988-05-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W1996423252",
+    "name": "EMBOSS: The European Molecular Biology Open Software Suite",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0168-9525(00)02024-2",
+    "authors": [
+      "Peter Rice",
+      "Ian Longden",
+      "Alan J. Bleasby"
+    ],
+    "tags": [
+      "Biology",
+      "Suite",
+      "Software",
+      "Software suite",
+      "Scale (ratio)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2000-06-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W1512810258",
+    "name": "Escherichia coli and Salmonella :cellular and molecular biology",
+    "source": "openalex",
+    "abstract": "Preface The Enteric Bacterial Cell and the Age of Bacteria Variations on a Theme by Escherichia Part I: Molecular Architecture and Assembly of Cell Parts (11 chapters) Part II: Metabolism and General Physiology (58 chapters) Part III: Utilization of Energy for Cell Activities (7 chapters) Part IV: Regulation of Gene Expression (19 chapters) Part V: Growth of Cells and Cultures (12 chapters) Part VI: Genome, Genetics and Evolution (40 chapters) Part VII: Molecular Pathogenesis (7 chapters)",
+    "url": "https://openalex.org/W1512810258",
+    "authors": [
+      "Frederick C. Neidhardt"
+    ],
+    "tags": [
+      "Escherichia coli",
+      "Biology",
+      "Salmonella",
+      "Bacteria",
+      "Genetics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1996-01-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W4239403073",
+    "name": "Molecular Biology of the Cell",
+    "source": "openalex",
+    "abstract": "For nearly a quarter century Molecular Biology of the Cell has been the leading cell biology textbook. This tradition continues with the new Fifth Edition, which has been completely revised and updated to describe our current, rapidly advancing understanding of cell biology. To list but a few examples, a large amount of new material is presented on epigenetics; stem cells; RNAi; comparative genomics; the latest cancer therapies; apoptosis (now its own separate chapter); and cell cycle control and the mechanics of M phase (now integrated into one chapter). The hallmark features of Molecular Biology of the Cell have been retained, such as its consistent and comprehensive art program, clear concept headings, and succinct section summaries. Additionally, in response to extensive feedback from readers, the Fifth Edition now includes several new features. It is now more portable. Chapters 1-20 are printed and Chapters 21-25, covering multicellular systems, are provided as&nbsp;PDF files on the free Media DVD-ROM which accompanies the book.* And for the first time, Molecular Biology of the Cell now contains end-of-chapter questions. These problems, written by John Wilson and Tim Hunt, emphasize a quantitative approach and the art of reasoning from experiments, and they will help students review and extend their knowledge derived from reading the textbook. The Media DVD-ROM, which is packaged with every copy of the book, contains PowerPoint® presentations with all of the figures, tables and micrographs from the text (available as JPEGs too). Also included is the Media Player, which plays over 125 movies—animations, videos, and molecular models—all with voice-over narration. A new reader-friendly feature is the integration of media codes throughout the text that link directly to relevant videos and animations. The Media DVD-ROM holds the multicellular systems chapters (21-25) of the text as well. By skillfully extracting the fundamental concepts from this enormous and ever-growing field, the authors tell the story of cell biology, and thereby create a coherent framework through which readers may approach and enjoy this subject that is so central to all of biology. * There is also a reference edition of Molecular Biology of the Cell, Fifth Edition (ISBN 978-0-8153-4111-6) that contains Chapters 1-25 entirely in printed format.",
+    "url": "https://doi.org/10.1201/9780203833445",
+    "authors": [
+      "Bruce Alberts",
+      "Alexander D. Johnson",
+      "Julian Lewis",
+      "Martin Raff",
+      "Keith Roberts",
+      "Peter Walter"
+    ],
+    "tags": [
+      "Molecular cell biology",
+      "Biology",
+      "Computational biology",
+      "Evolutionary biology",
+      "Cell biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2007-12-31",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W276882634",
+    "name": "Current protocols in molecular biology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0014-5793(88)80264-3",
+    "authors": [
+      "R.K. Dudley"
+    ],
+    "tags": [
+      "Citation",
+      "Library science",
+      "Publishing",
+      "Computer science",
+      "Information retrieval"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1988-09-26",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W4241815492",
+    "name": "Current protocols in molecular biology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0968-0004(88)90131-4",
+    "authors": [],
+    "tags": [
+      "Computational biology",
+      "Biology",
+      "Current (fluid)",
+      "Evolutionary biology",
+      "Physics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1988-08-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2055214702",
+    "name": "Central Dogma of Molecular Biology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/227561a0",
+    "authors": [
+      "Francis Crick"
+    ],
+    "tags": [
+      "Nucleic acid",
+      "Computational biology",
+      "Residue (chemistry)",
+      "Structural biology",
+      "Biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1970-08-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2114850508",
+    "name": "Biopython: freely available Python tools for computational molecular biology and bioinformatics",
+    "source": "openalex",
+    "abstract": "Abstract Summary: The Biopython project is a mature open source international collaboration of volunteer developers, providing Python libraries for a wide range of bioinformatics problems. Biopython includes modules for reading and writing different sequence file formats and multiple sequence alignments, dealing with 3D macro molecular structures, interacting with common tools such as BLAST, ClustalW and EMBOSS, accessing key online databases, as well as providing numerical methods for statistical learning. Availability: Biopython is freely available, with documentation and source code at www.biopython.org under the Biopython license. Contact: All queries should be directed to the Biopython mailing lists, see www.biopython.org/wiki/_Mailing_listspeter.cock@scri.ac.uk.",
+    "url": "https://doi.org/10.1093/bioinformatics/btp163",
+    "authors": [
+      "Peter Cock",
+      "Tiago Antão",
+      "Jeffrey T. Chang",
+      "Brad Chapman",
+      "Cymon J. Cox",
+      "Andrew Dalke",
+      "Iddo Friedberg",
+      "Thomas Hamelryck",
+      "Frank Kauff",
+      "Bartek Wilczyński",
+      "Michiel de Hoon"
+    ],
+    "tags": [
+      "Python (programming language)",
+      "MIT License",
+      "Computer science",
+      "Documentation",
+      "Source code"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2009-03-20",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2036215574",
+    "name": "Biochemistry and molecular biology of plants",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://openalex.org/W2036215574",
+    "authors": [
+      "Timothy W. Short"
+    ],
+    "tags": [
+      "Biology",
+      "Computational biology",
+      "Biochemistry"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2001-01-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2157827172",
+    "name": "Biochemistry &amp; molecular biology of plants",
+    "source": "openalex",
+    "abstract": "Since its publication in 2000, Biochemistry & Molecular Biology of Plants, has been hailed as a major contribution to the plant sciences literature and critical acclaim has been matched by global sales success. Maintaining the scope and focus of the first edition, the second will provide a major update, include much new material and reorganise some chapters to further improve the presentation. This book is meticulously organised and richly illustrated, having over 1,000 full-colour illustrations and 500 photographs. It is divided into five parts covering: Compartments: Cell Reproduction: Energy Flow; Metabolic and Developmental Integration; and Plant Environment and Agriculture. Specific changes to this edition include: Completely revised with over half of the chapters having a major rewrite. Includes two new chapters on signal transduction and responses to pathogens. Restructuring of section on cell reproduction for improved presentation. Dedicated website to include all illustrative material. Biochemistry & Molecular Biology of Plants holds a unique place in the plant sciences literature as it provides the only comprehensive, authoritative, integrated single volume book in this essential field of study.",
+    "url": "https://doi.org/10.5860/choice.38-3895",
+    "authors": [],
+    "tags": [
+      "Presentation (obstetrics)",
+      "Scope (computer science)",
+      "Section (typography)",
+      "Restructuring",
+      "Cell and molecular biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2001-03-01",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "oa:W2124248841",
+    "name": "The Molecular Biology of Axon Guidance",
+    "source": "openalex",
+    "abstract": "Neuronal growth cones navigate over long distances along specific pathways to find their correct targets. The mechanisms and molecules that direct this pathfinding are the topics of this review. Growth cones appear to be guided by at least four different mechanisms: contact attraction, chemoattraction, contact repulsion, and chemorepulsion. Evidence is accumulating that these mechanisms act simultaneously and in a coordinated manner to direct pathfinding and that they are mediated by mechanistically and evolutionarily conserved ligand-receptor systems.",
+    "url": "https://doi.org/10.1126/science.274.5290.1123",
+    "authors": [
+      "Marc Tessier‐Lavigne",
+      "Corey S. Goodman"
+    ],
+    "tags": [
+      "Pathfinding",
+      "Axon guidance",
+      "Growth cone",
+      "Neuroscience",
+      "Biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "1996-11-15",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/j.celrep.2023.112110",
+    "name": "Genomic profiling of HIV-1 integration in microglia cells links viral integration to the topologically associated domains",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.celrep.2023.112110",
+    "authors": [
+      "Mona Rheinberger",
+      "Ana Luisa Costa",
+      "Martin Kampmann",
+      "Dunja Glavas",
+      "Iart Luca Shytaj",
+      "Sheetal Sreeram",
+      "Carlotta Penzo",
+      "Nadine Tibroni",
+      "Yoelvis Garcia-Mesa",
+      "Konstantin Leskov",
+      "Oliver T. Fackler",
+      "Kristian Vlahovicek",
+      "Jonathan Karn",
+      "Bojana Lucic",
+      "Carl Herrmann",
+      "Marina Lusic"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2023-02-14T20:25:14Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.4172/2168-9547.1000e101",
+    "name": "Molecular Biology... What Molecular (systems) Biology?",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.4172/2168-9547.1000e101",
+    "authors": [
+      "Miguel Ángel Medina Torres"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2012-11-20T13:15:10Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1155/3840",
+    "name": "ISRN Molecular Biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1155/3840",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2017-12-10T11:53:48Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1093/hesc/9780199671397.003.0001",
+    "name": "Introduction to Molecular Biology of RNA",
+    "source": "crossref",
+    "abstract": "<p>This chapter provides an overview of the biochemical properties of RNA, including the versatility of its structure that enables a multitude of RNA molecules and functions in cells. It describes different types of RNA-binding domains that have evolved, and the co-transcriptional processes of capping and pre-mRNA splicing, cleavage, and polyadenylation. It also discusses the process of alternative splicing, which is a major generator of proteomic diversity. The chapter covers the processes of RNA editing, nucleocytoplasmic traffic, mRNA localization, translation, stability, decay, and rRNA and tRNA processing. It also gives a historical perspective in explaining the roles of pioneering scientists in some of the key discoveries in molecular biology.</p>",
+    "url": "https://doi.org/10.1093/hesc/9780199671397.003.0001",
+    "authors": [
+      "David Elliott",
+      "Michael Ladomery"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2023-09-15T12:37:24Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.4061/mbi",
+    "name": "Molecular Biology International",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.4061/mbi",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2015-12-07T14:51:34Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/0022-2836(70)90333-5",
+    "name": "European Molecular Biology Organization (EMBO) short- and long-term fellowships in molecular biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0022-2836(70)90333-5",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2004-10-28T18:44:17Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/0022-2836(71)90338-x",
+    "name": "European Molecular Biology Organization (EMBO) Short- and Long-term fellowships in molecular biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0022-2836(71)90338-x",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2004-10-30T14:25:44Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.5402/mb",
+    "name": "ISRN Molecular Biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5402/mb",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2012-10-25T12:27:36Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/s0022-2836(76)80088-5",
+    "name": "European molecular biology organization",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0022-2836(76)80088-5",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2006-08-11T11:08:58Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/0022-2836(73)90357-4",
+    "name": "European Molecular Biology Organisation (EMBO) short- and long-term fellowships in molecular biology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0022-2836(73)90357-4",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2004-10-24T03:07:07Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1155/5714",
+    "name": "Molecular Biology International",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1155/5714",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2017-12-10T14:33:52Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
+  },
+  {
+    "id": "doi:10.1016/0022-2836(74)90055-2",
+    "name": "European Molecular Biology Organization",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0022-2836(74)90055-2",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "life-science"
+    ],
+    "publishedDate": "2004-10-24T03:07:07Z",
+    "addedAt": "2026-08-05T01:48:31.236Z"
   }
 ]

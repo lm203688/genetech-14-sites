@@ -972,5 +972,1086 @@
     ],
     "publishedDate": "2007-02-20",
     "addedAt": "2026-08-04T10:40:56.356Z"
+  },
+  {
+    "id": "doi:10.20517/aiagent.2025.06",
+    "name": "From single-agent to multi-agent: a comprehensive review of LLM-based legal agents",
+    "source": "crossref",
+    "abstract": "<jats:p>With the growing application of artificial intelligence (AI) in the legal domain, large language model (LLM)-based legal agents have achieved remarkable progress. This survey provides a comprehensive review of the applications and developments of LLM-driven agents in law. Firstly, we outline the core legal tasks, including legal information retrieval, question answering, judgment prediction, and legal text generation, along with the corresponding evaluation benchmarks. Then, we analyze the technical challenges faced by both single-agent and multi-agent systems in legal scenarios and summarize the prevailing research methods. Finally, we discuss future directions for legal agents, including enhancing single-agent trustworthiness through explainability, boosting multi-agent efficiency with collaborative AI techniques, enabling cross-jurisdictional interoperability via legal knowledge graphs, and establishing ethical governance with quantifiable metrics. By synthesizing existing research, this survey aims to offer theoretical insights and practical guidance for the sustainable advancement of legal agents.</jats:p>",
+    "url": "https://doi.org/10.20517/aiagent.2025.06",
+    "authors": [
+      "Se Yang",
+      "Zhe Yang",
+      "Yutong Liu",
+      "Hongtao Wang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-01-07T02:58:26Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.20517/aiagent.2025.07",
+    "name": "Accelerating multimetallic catalyst discovery with robotics and agentic AI",
+    "source": "crossref",
+    "abstract": "<jats:p>The design space of catalyst materials spans composition, processing, atomistic structure, and microstructure. As materials become more complex, the dimensionality of this parameter space for catalyst design grows combinatorially. Conventional active learning approaches operate on a single data stream and stay decoupled from the messy reality of experiments, limiting their efficiency and reproducibility in real-world catalyst optimization. To tackle this limitation, in a recent issue of Nature, Li et al. developed a robotic platform, Copilot for Real-world Experimental Scientists (CRESt), which facilitates multimetallic catalyst discovery in a multiplex parameter space by combining multimodal large vision-language models, knowledge-assisted Bayesian optimization, and robotic automation of synthesis, characterization, and electrochemical tests. Deployed on a direct formate fuel cell use case, CRESt efficiently explored hundreds of compositions and thousands of tests in months to deliver an octonary multimetallic electrocatalyst with excellent device-level performance at reduced noble-metal loading. In this Commentary, we highlight CRESt’s technical merits, while also outlining a forward agenda to translate systems such as CRESt from proof-of-concept, bespoke demonstrations to widely adoptable, scientifically robust agentic artificial intelligence for self-driving laboratories.</jats:p>",
+    "url": "https://doi.org/10.20517/aiagent.2025.07",
+    "authors": [
+      "Jiayu Peng",
+      "Chuanyu Liu",
+      "Yiwen Luo",
+      "Kritarth Dandapat"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-01-07T02:04:16Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.6028/nist.ir.8605d",
+    "name": "Control Overlays for Securing AI Systems: Using Agentic AI—Single Agent and Multi-Agent",
+    "source": "crossref",
+    "abstract": "<jats:p/>",
+    "url": "https://doi.org/10.6028/nist.ir.8605d",
+    "authors": [
+      "Vicky Pillitteri"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-01-06T14:56:07Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.6028/nist.ir.8605d.ipd",
+    "name": "Control Overlays for Securing AI Systems: Using Agentic AI—Single Agent and Multi-Agent",
+    "source": "crossref",
+    "abstract": "<jats:p/>",
+    "url": "https://doi.org/10.6028/nist.ir.8605d.ipd",
+    "authors": [
+      "Vicky Pillitteri"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-01-06T14:58:45Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.46916/24042026-3-978-5-00276-065-7",
+    "name": "BASIC PRINCIPLES OF MULTI-AGENT SYSTEM DESIGN",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.46916/24042026-3-978-5-00276-065-7",
+    "authors": [
+      "Svetlana Vladislavovna Sherstneva",
+      "Alena Vladislavovna Sherstneva"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-04-24T14:44:17Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.7717/peerjcs.794/fig-2",
+    "name": "Figure 2: Multi-agent system.",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.7717/peerjcs.794/fig-2",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2022-01-03T05:07:46Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.5772/intechopen.90297",
+    "name": "Applications of Multi-Agent System in Power System Engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5772/intechopen.90297",
+    "authors": [
+      "G.S. Satheesh Kumar",
+      "S. Tamil Selvi"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2020-04-24T06:25:43Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1109/iama.2009.5228086",
+    "name": "A multi-agent system (MAS) based scheme for health care and medical diagnosis system",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/iama.2009.5228086",
+    "authors": [
+      "Shibakali Gupta",
+      "Shiladitya Pujari"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2009-09-08T14:42:21Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.6427226",
+    "name": "A distributed multi-level Energy Management System for Multi-Microgrids based on Multi-Agent System",
+    "source": "crossref",
+    "abstract": "<jats:p>Enhancing energy resilience in response to the growing number of blackouts world-wide, primarily caused by High-Impact, Low-Probability (HILP) events, has become a major concern nowadays. Multi-Microgrids (MMGs) are increasingly recognized as a promising paradigm for strengthening the energy resilience of power systems. To achieve techno-economic goals and especially to guarantee highly resilient operation within MMGs, a well-designed Energy Management System (EMS) plays a pivotal role. In this context, a distributed multi-level EMS based on Multi-Agent System (MAS) with Model Predictive Control (MPC) for Cooperative MMGs (C-MMGs) is proposed in this paper. The aim of this research is to improve operational cost-effectiveness while enhancing energy resilience within C-MMGs. The MAS-based EMS is designed as a fault-tolerant architecture capable of addressing both predictable and unpredictable disturbances. To validate the effectiveness of the proposed MAS-based EMS, an in-depth comparative analysis is conducted to evaluate its performance against that of a centralized EMS. To this end, simulations and analyses are carried out under diverse scenarios, including normal and outage conditions. Two key performance metrics are employed to quantitatively assess each EMS topology in terms of operational cost-effectiveness and resilience. The findings reveal that EMS designers are encouraged to adopt the MAS-based EMS with MPC rather than a centralized EMS.</jats:p>",
+    "url": "https://doi.org/10.2139/ssrn.6427226",
+    "authors": [
+      "Yanandlall Gopee"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-03-16T15:08:19Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1007/3-540-47772-1_11",
+    "name": "An Agent Infrastructure to Build and Evaluate Multi-Agent Systems: The Java Agent Framework and Multi-Agent System Simulator",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/3-540-47772-1_11",
+    "authors": [
+      "Regis Vincent",
+      "Bryan Horling",
+      "Victor Lesser"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2007-08-16T12:13:32Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.4324/9780203006979-15",
+    "name": "MASCOT: a multi-agent system for construction claims negotiation",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.4324/9780203006979-15",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2021-04-06T13:40:36Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1109/icmas.1998.699296",
+    "name": "Computer aided multi-agent system engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/icmas.1998.699296",
+    "authors": [
+      "Soe-Tsyr Yuan"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2002-11-27T14:26:26Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1007/s10458-010-9148-z",
+    "name": "Implicit: a multi-agent recommendation system for web search",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s10458-010-9148-z",
+    "authors": [
+      "Aliaksandr Birukou",
+      "Enrico Blanzieri",
+      "Paolo Giorgini"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2010-08-19T09:37:48Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1007/978-3-642-01064-4_7",
+    "name": "Evaluation of Multi-agent System Architectures",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-642-01064-4_7",
+    "authors": [
+      "Danny Weyns"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2010-05-10T14:17:15Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1007/978-1-84628-647-6_6",
+    "name": "Multi-agent-based Substation Information Management System",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-84628-647-6_6",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2007-02-20T13:24:23Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1117/12.2241983.5229530591001",
+    "name": "",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1117/12.2241983.5229530591001",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2016-12-05T16:20:08Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.6734798",
+    "name": "Multi-Agent Orchestration: Coordination, Trust, and Cascading Failures",
+    "source": "crossref",
+    "abstract": "<jats:p>Background. Agentic artificial intelligence systems, defined by their capacity to reason, plan, and act autonomously through external tools and environments, represent a categorical shift in the operational profile of deployed AI. Architectures grounded in reasoning-and-acting paradigms, plan-and-execute decompositions, and tool-augmented designs have moved from research prototypes into enterprise deployment within three years, yet the security, safety, and governance literature has not kept pace with the speed of operational adoption.&lt;br&gt;&lt;br&gt;Purpose. This paper synthesises the contemporary literature on agentic AI architectures, autonomy taxonomies, emergent behaviours, memory and state management, and evaluation methodologies. It positions agentic AI as a distinct security and governance category requiring frameworks not satisfied by predictive AI controls, large language model controls, or traditional software assurance practices.&lt;br&gt;&lt;br&gt;Approach. The paper adopts a narrative literature review methodology drawing on authoritative primary sources, including the OWASP Top 10 for Agentic Applications (2025), the Cloud Security Alliance MAESTRO framework (2025), the DeepMind Levels of AGI autonomy taxonomy (Morris et al., 2024), foundational agent architecture research (Yao et al., 2023; Wang et al., 2024), and the emerging agentic red-teaming and evaluation literature.&lt;br&gt;&lt;br&gt;Findings. Three structural findings are advanced. First, agent architectures introduce attack surfaces (tool invocation, memory persistence, multi-step reasoning trajectories) that have no direct analogue in either traditional software or non-agentic AI systems. Second, autonomy is best treated as a continuum, operationalised through delegation boundaries, rather than as a binary property, with distinct security implications at each level. Third, evaluation methodologies designed for static models systematically underestimate risk in dynamic agentic systems, requiring red-teaming approaches that test for emergent behaviours, goal drift, and cascading failures across multi-step trajectories.&lt;br&gt;&lt;br&gt;Implications. Practitioners deploying agentic AI require architecture-aware governance: tool-invocation controls, memory-hygiene practices, autonomy classification at the system-design stage, continuous behavioural monitoring, and red-teaming methodologies tailored to multi-step agent operations. The paper provides a structured reference for translating architectural choices into security and governance controls.</jats:p>",
+    "url": "https://doi.org/10.2139/ssrn.6734798",
+    "authors": [
+      "Rizwan Tanveer"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-07-29T13:28:48Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.5629770",
+    "name": "SLA-Driven Orchestration of Long-Running Multi-Agent Enterprise Workflows",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.2139/ssrn.5629770",
+    "authors": [
+      "Laszlo Gyory"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-11-18T18:46:32Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.6389739",
+    "name": "Tool Orchestration in Production Agent Systems: Code vs Protocols",
+    "source": "crossref",
+    "abstract": "<jats:p>Model Context Protocol (MCP) has emerged as a promising way to standardize how AI agents discover and invoke tools. That promise is real: MCP improves interoperability by giving tools a consistent interface that multiple agent platforms can consume. However, in production environments, the hardest problem is often not tool invocation itself, but the reliable composition, validation, debugging, and execution of multi-step workflows.\n&lt;div&gt;\n This note argues that while MCP solves an important interface-level problem, many production agent systems benefit more from code-first orchestration than inference-first orchestration. In code-first systems, the language model generates a plan or program once, and a runtime executes it deterministically using APIs, SDKs, CLI tools, or service clients. In inference-first systems, the model remains inside the execution loop, repeatedly choosing tools, interpreting outputs, and deciding next actions. That distinction has practical consequences for cost, latency, debugging, security, and operational predictability.&amp;nbsp;\n&lt;/div&gt;\n&lt;div&gt;\n The central claim is not that MCP is useless. The claim is narrower and more practical: MCP standardizes how tools are described and invoked, but not how multi-step workflows are composed, validated, and executed reliably in production. That harder problem still lives in the orchestration layer. For many internal production systems, code-first orchestration is easier to reason about, easier to audit, and easier to operate at scale.\n&lt;/div&gt;</jats:p>",
+    "url": "https://doi.org/10.2139/ssrn.6389739",
+    "authors": [
+      "Shivi Bhatia"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-03-31T09:43:18Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1109/smartindustrycon68821.2026.11492954",
+    "name": "Centralized Agent Orchestration in Multi-Agent Systems",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/smartindustrycon68821.2026.11492954",
+    "authors": [
+      "Oleg Yu. Maryasin",
+      "Andrey Ripnyagov"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-04-27T19:47:39Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.5393186",
+    "name": "Dual-Mode AI Orchestration: Intelligent Coordination Mode Selection for Multi-Agent Systems",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.2139/ssrn.5393186",
+    "authors": [
+      "Erik Bernath"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-08-22T18:49:03Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.6339941",
+    "name": "Contract-Gated Execution: A Deterministic Governance Layer for Autonomous AI Agent Orchestration",
+    "source": "crossref",
+    "abstract": "<jats:p>This submission responds to the OECD's call for implementation tools that enable trustworthy AI deployment in consequential domains. Contract-gated execution was developed as commercial infrastructure and is presented here as a governance pattern directly applicable to public-sector AI deployment. Government procurement officers, compliance auditors, regulatory reviewers, and public administrators are the intended adopters of this framework-any agency deploying autonomous AI agents in consequential decision-making would benefit from the deterministic governance properties described below. The pattern addresses a specific gap in current AI governance approaches: the absence of architecturally enforced constraints on autonomous AI agent behavior. Policy-based governance depends on enforcement mechanisms that may themselves be subject to override. Contract-gated execution makes unauthorized actions structurally impossible, not merely prohibited.</jats:p>",
+    "url": "https://doi.org/10.2139/ssrn.6339941",
+    "authors": [
+      "Robert Stillwell"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-04-22T10:41:17Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.5928934",
+    "name": "CodeAir: A Multi-Agent Orchestration Framework for AI-Assisted Software Development",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.2139/ssrn.5928934",
+    "authors": [
+      "Gabriel Avila Rangel"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-01-26T16:19:40Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.5220/0014970300004021",
+    "name": "MAOIT: Multi-Agent Orchestration for Intelligent Tutoring - From Concept Delivery to Automated Evaluation",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5220/0014970300004021",
+    "authors": [
+      "Andrei Paul Dobrescu",
+      "Ioan Daniel Pop"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-05-24T09:48:27Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.21079/11681/50244",
+    "name": "Geospatial AI (GeoAI) agent stack : router-based orchestration and design rationale",
+    "source": "crossref",
+    "abstract": "<jats:p>This report summarizes the current state of a router-based, multiagent Geospatial AI (GeoAI) system designed to reliably execute geospatial workflows while retaining the flexibility of large language model (LLM) reasoning. The architecture is intentionally both language-model agnostic and orchestration-framework agnostic to support organizational controls and mandates, and it is designed to operate in air-gapped environments. It uses a domain router to scope tools before the model is invoked; a microrouter to decide whether the system should execute tools, retrieve knowledge, or produce a direct response; and a bounded cycle of execution and validation that supports multistep tool use. The design emphasizes determinism after the model makes decisions, strict boundaries around what the model can “see,” and modularity that keeps core business logic largely independent from orchestration and tool-protocol frameworks. The remainder of this report describes the architecture as implemented today, explains the design rationale, and outlines anticipated future work.</jats:p>",
+    "url": "https://doi.org/10.21079/11681/50244",
+    "authors": [
+      "Matthew Drouillard",
+      "Michael Lewis"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-05-12T15:23:52Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.36227/techrxiv.175099921.10546764/v1",
+    "name": "FATA: A Framework-Agnostic, Task-Agnostic Agentic AI Platform for Serverless Multi-Agent Orchestration",
+    "source": "crossref",
+    "abstract": "<jats:p>Contemporary agentic AI systems face critical challenges in tool orchestration, dynamic coordination, and framework interoperability. I present FATA (Framework Agnostic and Task Agnostic Agentic AI), a novel control plane design pattern that enables scalable, distributed multi-agent orchestration through serverless architecture. FATA introduces a unified tool management layer that dynamically routes, validates, and governs tool interactions while maintaining framework independence. My approach distinguishes between specialized AI agents for targeted automation and collaborative agentic ecosystems with emergent collective intelligence. Through systematic evaluation across cybersecurity, compliance, and document processing domains, FATA demonstrates the capability to reduce developer complexity, enable runtime adaptability, and provide robust governance mechanisms for enterprise-scale agentic deployments.</jats:p>",
+    "url": "https://doi.org/10.36227/techrxiv.175099921.10546764/v1",
+    "authors": [
+      "AKRAM SHERIFF"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-06-27T00:40:21Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.5896270",
+    "name": "Z-SPACE: A MULTI-AGENT TOOL ORCHESTRATION FRAMEWORK FOR ENTERPRISE-GRADE LLM AUTOMATION",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.2139/ssrn.5896270",
+    "authors": [
+      "Jing Nan"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-12-10T01:47:41Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.36227/techrxiv.175693284.49252769/v1",
+    "name": "Adaptive Multi-Agent Role Reassignment over Model Context Protocol for Resilient AI Orchestration",
+    "source": "crossref",
+    "abstract": "<jats:p>Multi-agent systems powered by large language models (LLMs) can automate complex workflows by dividing tasks among specialised roles such as research, critique and summarisation. Existing orchestration frameworks typically assign these roles statically throughout execution, making them brittle when agents fail or workloads fluctuate. This paper introduces Adaptive Role Reassignment (ARR), the first Model Context Protocol (MCP)-native protocol for real-time, context-preserving role switching in multi-agent LLM environments. ARR extends MCP with two primitives: RoleState, a serialised snapshot of an agent's conversational state, tool usage and pending actions, and RoleSwap, a message type enabling secure hand-off of that state to a new agent. We describe the ARR architecture, present a decision policy for triggering role swaps based on performance and confidence metrics, and evaluate our approach on synthetic stress tests and real-world data-analysis and news-summarisation pipelines. Experiments show that ARR improves task completion rates by up to 28% and reduces recovery latency by over 35% compared to fixed-role baselines, while incurring negligible runtime overhead. A case study of a live news intelligence system illustrates how ARR mitigates bottlenecks and preserves context during agent failures. Our contributions demonstrate that adaptive, MCP-native role reassignment is a critical capability for resilient agentic AI orchestration.</jats:p>",
+    "url": "https://doi.org/10.36227/techrxiv.175693284.49252769/v1",
+    "authors": [
+      "Manish A Shukla"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-09-03T20:54:10Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1145/3749421.3749436",
+    "name": "ALAS: A Stateful Multi-LLM Agent Framework for Disruption-Aware Planning",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1145/3749421.3749436",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-12-12T16:55:26Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1016/j.inffus.2025.103865",
+    "name": "LLM-Agent-UMF: LLM-based Agent Unified Modeling Framework for Seamless Design of Multi Active/Passive Core-Agent Architectures",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.inffus.2025.103865",
+    "authors": [
+      "Amine Ben Hassouna",
+      "Hana Chaari",
+      "Ines Belhaj"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-10-22T08:30:55Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.22541/au.177499048.88707055/v1",
+    "name": "Contamination Percolation in Multi-Agent LLM Systems: A Measurement Framework and Benchmark",
+    "source": "crossref",
+    "abstract": "<jats:p>Multi-agent large language model (LLM) systems are being deployed in healthcare, finance, and legal settings, yet we lack reliable methods for measuring how misinformation spreads through these networks. We introduce ContamPerc, a benchmark of 400 vignettes across 10 domains (8 clinical, 2 non-clinical), 50 domain-specific semantic markers, and a measurement pipeline that separates genuine contamination from defensive citations. The benchmark defines the Contamination Gap Diagnostic (CGD): a single number classifying a model's alignment behavior, computed from approximately 25,000 API calls via the released evaluation harness. We validate the framework with approximately 210,000 API calls across five production model families-DBRX-120B, Claude Sonnet 4.6, Llama 4 Maverick, Gemini 2.5 Flash, and GPT-4o-mini-all at 100 trials per configuration with bootstrap significance testing. The CGD reveals five distinct alignment profiles spanning +55 to −62. Sensitivity analysis across three temperatures and two prompt phrasings confirms the diagnostic is robust. Cross-domain validation with three models on legal and financial vignettes confirms generalization beyond healthcare. An ablation across five models shows contamination occurs at the individual agent level, with one model (GPT-4o-mini) exhibiting a novel social dilution effect where peer context reduces contamination by 24 percentage points.</jats:p>",
+    "url": "https://doi.org/10.22541/au.177499048.88707055/v1",
+    "authors": [
+      "Aman Sharma"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-03-31T20:54:50Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.5292405",
+    "name": "Di-Agent: A Multi-Agent Llm Framework for Full Lifecycle Bearing Health Management",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.2139/ssrn.5292405",
+    "authors": [
+      "Guancheng Hao",
+      "Tian Han",
+      "Jiachen Pang",
+      "Weizhong Wang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-06-14T04:19:58Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.31234/osf.io/6fw74_v1",
+    "name": "AutoPsychDx: An LLM Agent Framework for Automated Psychometric Diagnosis Using Multi-Method Classification",
+    "source": "crossref",
+    "abstract": "<p>Clinical screening with self-report instruments such as the PHQ-9 typically relies on a single psychometric method — most commonly, a sum-score cut-off. Yet this \"one-size-fits-all\" approach treats all items as equally informative, ignores measurement error, and can yield prevalence estimates that diverge substantially from those produced by latent-variable alternatives such as Item Response Theory (IRT) and Diagnostic Classification Models (DCMs). Reconciling results across methods demands expertise in multiple analytic frameworks and substantial manual effort, limiting methodological triangulation in practice. This paper introduces AutoPsychDx, an open-source framework that integrates a large language model (LLM) agent with psychometric software to automate the entire diagnostic pipeline: data validation, model fitting, cross-method comparison, and report generation. Given a project folder containing item metadata and response data, a single terminal command triggers a Claude Code agent that generates and executes R scripts for sum-score cut-off, IRT (Graded Response Model), and DCM (General Diagnostic Model), computes a consensus diagnosis (majority vote across methods), and writes a structured markdown report with prevalence tables, method agreement statistics, and plain-language clinical interpretation. The framework is demonstrated with the PHQ-9 depression screener from the Forbes et al. (2018) community sample (*N* = 403). Results show that the moderate cut-off ($\\geq$ 10) classified 29.8% as positive, the mild cut-off ($\\geq$ 5) classified 69.2%, and the latent-variable methods fell between these extremes (IRT: 52.1%; DCM: 59.6%), with consensus classification at 51.4% and 123 ambiguous cases flagged for review. Every cut-off-positive case ($\\geq$ 10) was also DCM-positive, but the DCM identified an additional 120 individuals below the sum-score threshold — consistent with prior findings that DCM-based screening captures cases missed by traditional cut-offs. AutoPsychDx is instrument-agnostic, pip-installable, and extensible to any polytomous or binary self-report scale.</p>",
+    "url": "https://doi.org/10.31234/osf.io/6fw74_v1",
+    "authors": [
+      "Jihong Zhang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-03-24T23:42:06Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.5586676",
+    "name": "Enhancing Automated Penetration Testing with Minimal Human Intervention: The AutoPentester LLM Agent Framework",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.2139/ssrn.5586676",
+    "authors": [
+      "Qinggele Magsar"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-10-13T10:22:09Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.31219/osf.io/bv5sg_v2",
+    "name": "A Survey on LLM-based Multi-Agent AI Hospital",
+    "source": "crossref",
+    "abstract": "<p>AI hospitals are workflow-level multi-agent systems built on large language models that run inside clinical processes. Agents take explicit roles, maintain shared state through handoffs, use EHR- and guideline-grounded tools, and operate under safety gateways with audit logs. Prior work is rich but fragmented across tasks and settings. This survey defines the scope and boundaries of AI hospitals and compiles designs into a compact taxonomy with head-to-head trade-off matrices. We introduce a layered evaluation stack that measures safety, clinical processes, outcomes, and operations (e.g., time-to-disposition, throughput, and token/latency costs), and we use Integration Readiness Levels (IRL1--IRL6) to gate autonomy from sandbox to deployment, with required logs and pass criteria. To make deployment claims testable, we map key integration tasks to minimal instrumentation and formulate several challenges as workflow-failure mechanisms with concrete tests and IRL gates. We close with a practical roadmap on workflow-aware memory, queue-aware planning, escalation learning, traceability, and playbook adoption.</p>",
+    "url": "https://doi.org/10.31219/osf.io/bv5sg_v2",
+    "authors": [
+      "Zonghai Yao",
+      "Hong Yu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-12-26T18:56:41Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.7162224",
+    "name": "Self-Refining Topology Optimization via an LLM-Based Multi-Agent Framework",
+    "source": "crossref",
+    "abstract": "<jats:p>Topology optimization is a widely used design method that produces optimized material distributions for prescribed objectives and constraints through well-established numerical algorithms. Throughout the workflow, engineers make a series of decisions ranging from setting and adjusting numerical parameters to assessing whether the converged design meets considerations beyond those explicitly included in the optimization problem, such as physical feasibility. These decisions, which draw on domain expertise, interfere with the autonomous design process.To address this difficulty, this study presents TopOptAgents, a multi-agent system for automating not only the design process but also decision-making during the key stages of the topology optimization process. TopOptAgents consists of six LLM-based agents collaborating through iterative self-refinement cycles spanning problem formulation, validation, code generation and execution, and quality assessment of the optimized structure. This process enables error correction and progressive improvement of both the optimization setup and resulting design. The framework is demonstrated on optimization problems selected to cover a range of settings that differ in their literature coverage and numerical characteristics.The benefits of iterative self-refinement are found to be particularly pronounced for problem classes where the pretrained language model has limited prior exposure, such as formulations whose literature and open-source implementations are comparatively sparse. In such cases, the proposed framework reliably produces converged designs where a single state-of-the-art LLM struggles, suggesting that self-refinement broadens the range of topology optimization problems that LLM-based automation can reliably address.</jats:p>",
+    "url": "https://doi.org/10.2139/ssrn.7162224",
+    "authors": [
+      "Hyunjee Park",
+      "Hayoung Chung"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-07-22T17:46:19Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.22541/au.176038145.52881012/v1",
+    "name": "Hierarchical LLM-Based Agent Framework for Natural Language-Driven Constraint-Aware Route Suggestion",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.22541/au.176038145.52881012/v1",
+    "authors": [
+      "Naranhvwar Tvlg"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-10-13T18:51:00Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.35542/osf.io/gt95h_v1",
+    "name": "LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System",
+    "source": "crossref",
+    "abstract": "<p>Intelligent Tutoring Systems (ITSs) have revolutionized education by offering personalized learning experiences. However, as goal-oriented learning, which emphasizes efficiently achieving specific objectives, becomes increasingly important in professional contexts, existing ITSs often struggle to deliver this type of targeted learning experience. In this paper, we propose GenMentor, an LLM-powered multi-agent framework designed to deliver goal-oriented, personalized learning within ITS. GenMentor begins by accurately mapping learners' goals to required skills using a fine-tuned LLM trained on a custom goal-to-skill dataset. After identifying the skill gap, it schedules an efficient learning path using an evolving optimization approach, driven by a comprehensive and dynamic profile of learners' multifaceted status. Additionally, GenMentor tailors learning content with an exploration-drafting-integration mechanism to align with individual learner needs. Extensive automated and human evaluations demonstrate GenMentor's effectiveness in learning guidance and content quality. Furthermore, we have deployed it in practice and also implemented it as an application. Practical human study with professional learners further highlights its effectiveness in goal alignment and resource targeting, leading to enhanced personalization. Supplementary resources are available at https://github.com/GeminiLight/gen-mentor.</p>",
+    "url": "https://doi.org/10.35542/osf.io/gt95h_v1",
+    "authors": [
+      "Tianfu Wang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-11-09T04:24:46Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.31219/osf.io/bv5sg_v1",
+    "name": "A Survey on LLM-based Multi-Agent AI Hospital",
+    "source": "crossref",
+    "abstract": "<p>AI hospitals use agent-driven multi-agent systems based on large language models (LLMs) to automate and optimize medical workflows, enabling intelligent agents to understand, reason, and assist in complex medical tasks. Although AI-driven healthcare applications are developing rapidly, research remains fragmented across various scenarios. This survey carefully analyzes 72 studies on LLM-based medical agents published between 2023 and 2025, provides a comprehensive review of AI hospitals, and systematically introduces a structured taxonomy to categorize its core components and applications. Additionally, we explored the key challenges associated with the core components of AI hospitals, including agent roles, interaction patterns, reasoning mechanisms, memory management, and tool integration. Finally, we explore how to further develop the AI hospital into a more meaningful research and practice platform that supports medical simulation, complex problem-solving, evaluation, and synthetic data generation. This, in turn, will accelerate progress in clinical reasoning, decision support, and AI-driven medical innovation, highlighting the crucial role of AI hospitals as the foundational framework for AI-powered healthcare ecosystems. By providing a structured perspective, this survey bridges AI and healthcare research, providing a roadmap for strengthening interdisciplinary collaboration and the practical applicability of AI hospitals.</p>",
+    "url": "https://doi.org/10.31219/osf.io/bv5sg_v1",
+    "authors": [
+      "Zonghai Yao",
+      "Hong Yu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-03-04T17:57:14Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/a:1010087325358",
+    "name": "Liability for Autonomous Agent Design",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1010087325358",
+    "authors": [
+      "Carey Heckman",
+      "Jacob O. Wobbrock"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2002-12-23T00:56:42Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/b:agnt.0000038029.82331.c0",
+    "name": "Agent-Mediated Electronic Commerce",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/b:agnt.0000038029.82331.c0",
+    "authors": [
+      "Carles Sierra"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2004-08-17T01:08:46Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/a:1010035201126",
+    "name": "Book Review: Heterogeneous Agent Systems",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1010035201126",
+    "authors": [
+      "Onn Shehory"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2002-12-23T00:56:42Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/a:1015504423309",
+    "name": "Pricing in Agent Economies Using Multi-Agent Q-Learning",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1015504423309",
+    "authors": [
+      "Gerald Tesauro",
+      "Jeffrey O. Kephart"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2002-12-28T23:59:19Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/a:1010091302035",
+    "name": "The Open Agent Architecture",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1010091302035",
+    "authors": [
+      "Adam Cheyer",
+      "David Martin"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2002-12-23T00:56:42Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/a:1017233520341",
+    "name": "Errata",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1017233520341",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2002-12-29T20:25:02Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/a:1010012406205",
+    "name": "An Agent Framework for Intranet Document Management",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1010012406205",
+    "authors": [
+      "Mark Ginsburg"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2002-12-23T00:56:42Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/b:agnt.0000038057.78313.87",
+    "name": "Guest Editorial: Challenges for Agent-Based Computing",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/b:agnt.0000038057.78313.87",
+    "authors": [
+      "Michael Luck"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2004-08-17T01:08:46Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/a:1012715226170",
+    "name": "The JavaSeal Mobile Agent Kernel",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1012715226170",
+    "authors": [
+      "Ciarán Bryce",
+      "Jan Vitek"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2002-12-23T14:27:29Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/a:1010033827337",
+    "name": "Synthesizing Coordination Requirements for Heterogeneous Autonomous Agents",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1010033827337",
+    "authors": [
+      "Munindar P. Singh"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2002-12-23T00:56:42Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/a:1017498327079",
+    "name": "Book Review",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1017498327079",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2002-12-29T21:45:55Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1023/a:1017496918598",
+    "name": "Book Review",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1017496918598",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2002-12-29T21:45:55Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.6459612",
+    "name": "Agentic Workflow Drift and Agentic Workflow Subversion: A New Risk Taxonomy for the Governance of Agentic AI in Financial Services",
+    "source": "crossref",
+    "abstract": "<jats:p>&lt;p&gt;Banks are beginning to deploy AI systems that do not just automate decisions — they determine whether decisions should be made at all. As agentic AI moves into workflow orchestration, a new failure mode is emerging workflows that execute correctly against definitions that were never explicitly authorized.&lt;/p&gt;\n&lt;p&gt;This paper introduces two original concepts: Agentic Workflow Drift and Agentic Workflow Subversion. Drift occurs when agentic systems reconcile inconsistent definitions across enterprise platforms into a working logic that no human explicitly approved. Subversion is the enterprise risk surface that emerges when this drift propagates across workflows, or is deliberately exploited by sophisticated actors, without triggering existing detection frameworks.&lt;/p&gt;\n&lt;p&gt;The paper argues that this risk originates in a previously ungoverned layer of enterprise architecture: the reasoning layer, where meaning is resolved before execution proceeds. Existing governance frameworks in financial services, including model risk management, controls testing, and operational risk, were not designed to govern this layer directly or comprehensively.&lt;/p&gt;\n&lt;p&gt;Using a detailed banking example spanning KYC, credit, and entitlement systems, the paper demonstrates how semantically inconsistent definitions can be synthesized into an unauthorized operating logic that propagates silently across workflows while all controls appear to function as designed. Cyber sees no breach. Fraud sees no misuse. Model risk sees no statistical deviation. The result is not control failure. It is valid execution against shifted meaning.&lt;/p&gt;\n&lt;p&gt;To address this gap, the paper proposes the Semantic Control Plane, a governance architecture that enforces consistent definitions at runtime before agentic reasoning determines execution. It further introduces the Agentic 3 C's Framework, comprising Context, Control, and Coordination, as the operating principles required to make agentic AI governable at enterprise scale.&lt;/p&gt;\n&lt;p&gt;Drawing on practitioner expertise in banking controls, model risk governance, and enterprise architecture, this work contributes what is, to the author's knowledge, the first risk taxonomy developed specifically for the reasoning layer of agentic AI systems in financial services, reframing AI risk from model outputs to the governance of meaning itself.&lt;/p&gt;\n&lt;p&gt;The Age of Inference is here. Banks that fail to govern the reasoning layer will not fail loudly. They will fail invisibly, within systems that appear fully controlled.&lt;/p&gt;</jats:p>",
+    "url": "https://doi.org/10.2139/ssrn.6459612",
+    "authors": [
+      "Maureen Doyle-Spare"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-03-30T12:51:31Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.7717/peerj-cs.3642/table-101",
+    "name": "Algorithm 1: Agentic RAG workflow for code smell detection.",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.7717/peerj-cs.3642/table-101",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-03-04T08:23:22Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.71097/ijsat.v16.i3.8359",
+    "name": "Simple Agentic AI workflow for AIOPS (Agentic AIOps)",
+    "source": "crossref",
+    "abstract": "<jats:p>This paper showcases a simple Agentic AI framework aimed at improving AIOps through the deployment of autonomous, goal-oriented agents. Artificial Intelligence for IT Operations (AIOps) refers to the application of AI and machine learning to make IT operations run more efficiently and automatically. This work demonstrates AI agents for detecting problems, automated baselining deduplication of alerts and remediation. By removing unnecessary alerts, the AI agent for deduplication makes sure that only distinct and actionable alerts move to the next phase. Using anomaly detection algorithms, the operational system identifies unexpected things in operational data streams, such as logs, metrics, and traces. Agents employ ARIMA time-series modeling, and past events to baseline metrics and start resolving automatically in case of anomaly, such as by adding more resources or restarting services. Agents may make incident resolution work better by constantly improving their answers with feedback. This agentic workflow uses smart policy engines, automation frameworks, and observability tools to build a scalable base for proactive and self-healing AIOps settings. Using AI agents to accomplish different tasks in AIOPS makes things operate more smoothly and needs less interference from people.</jats:p>",
+    "url": "https://doi.org/10.71097/ijsat.v16.i3.8359",
+    "authors": [
+      "Surendar A"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-09-29T11:00:22Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1117/12.3065753.2a918602-86e9-ef11-a9a6-005056914f1c",
+    "name": "",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1117/12.3065753.2a918602-86e9-ef11-a9a6-005056914f1c",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-09-18T23:07:57Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.14711/thesis-hdl167771",
+    "name": "Evaluation-Driven Intelligence: From Visual Captioning Metrics to Agentic Workflow Optimization",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.14711/thesis-hdl167771",
+    "authors": [
+      "Zheng Tang"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-01-15T23:02:10Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.5220/0015077700004088",
+    "name": "Agentic AI Workflow: From Natural Language Requirements to Verifiable and Executable Models",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.5220/0015077700004088",
+    "authors": [
+      "Vladimir Estivill-Castro",
+      "René Hexel"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-07-20T05:51:27Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.6714738",
+    "name": "The Workflow Control Plane: Why Identity Isn't Enough for Zero Trust Agentic Systems",
+    "source": "crossref",
+    "abstract": "<jats:p>&lt;p&gt;&lt;span&gt;Lee &amp;amp; Voicu [1], Debenedetti et al. (CaMeL) [2], and most recently He &amp;amp; Yu (SAL) [4] established that the security perimeter for agentic systems belongs outside the model: tools, not prompts or model output, are where authorization is enforced. This paper examines what that placement means for workflows that need to satisfy Zero Trust requirements, and what additional structure beyond per-call enforcement at the tool boundary is required.&lt;/span&gt;&lt;/p&gt;\n&lt;p&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p&gt;&lt;span&gt;Per-call enforcement handles workflows where the agent's identity-level permissions match what the work requires. It does not handle workflows where the required scope is a strict subset of identity, like one customer's account out of many or one case file out of thousands. Identity is not enough on its own.&lt;/span&gt;&lt;/p&gt;\n&lt;p&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p&gt;&lt;span&gt;Every input to an agentic system defines a scope: the resources the system operates on, the constraints its work must respect. Whether to trust the agent to honor that scope depends on who bears the cost of a wrong decision; in regulated, multi-stakeholder, or otherwise consequential deployments, model-trust is not an option.&lt;/span&gt;&lt;/p&gt;\n&lt;p&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p&gt;&lt;span&gt;We arrive at three criteria, R1 (decision reproducibility), R2 (tamper resistance), and R3 (functional completeness), that together specify what any candidate architecture must satisfy to support Zero Trust enforcement of workflow scope. Satisfying all three is required; any subset is insufficient.&lt;/span&gt;&lt;/p&gt;</jats:p>",
+    "url": "https://doi.org/10.2139/ssrn.6714738",
+    "authors": [
+      "Andrey Santrosyan"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-05-12T17:19:53Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.64388/irev9i2-1710430-859",
+    "name": "Agentic Reinforced and Operational Workflow",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.64388/irev9i2-1710430-859",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-09-05T09:10:00Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.1365/s40702-026-01299-4",
+    "name": "Agentic Workflow Generation: Mit Agentic AI von der funktionalen Beschreibung zur ausführbaren Prozesslogik",
+    "source": "crossref",
+    "abstract": "<jats:title>Zusammenfassung</jats:title>\n                  <jats:p>Die automatisierte Erstellung von Workflows gilt als vielversprechender Ansatz, um auch Fachkräfte ohne tiefgehende Programmierkenntnisse in die Prozessautomatisierung einzubinden. Doch bestehende Ansätze scheitern an einem grundlegenden Problem: Sie erzeugen syntaktisch korrekte Prozesse, die jedoch zur Laufzeit abbrechen, weil erforderliche Stammdaten fehlen oder halluziniert werden. Die Autoren entwickeln ein Multi-Agent-System, das dieses Abhängigkeitsdilemma durch intelligente Arbeitsteilung löst. Spezialisierte Agenten generieren Workflow-Strukturen, während ein Master-Data-Agent prüft, welche Stammdaten in der Zielanwendung existieren, und fehlende Einträge identifiziert. Die Evaluation anhand realer Verwaltungs-Workflows zeigt: Das System erreicht vollständige syntaktische Korrektheit aller erfolgreich generierten Workflows und hohe semantische Qualität bei Standard-Prozessen. Bei komplexen Abhängigkeiten stößt es jedoch an Grenzen. Der pragmatische Lösungsweg ist ein hybrider Ansatz: Das System übernimmt die technische Komplexität, der Mensch validiert fachliche Plausibilität und erstellt Stammdaten manuell. Diese Arbeitsteilung spart beim effizienteren Instruct-Model ein Drittel der Erstellungszeit und transformiert Fachkräfte vom Ersteller zum Reviewer. Der Beitrag liefert Handlungsempfehlungen und zeigt, wann sich der Einsatz agentischer Systeme zur Workflow-Generierung lohnt.</jats:p>",
+    "url": "https://doi.org/10.1365/s40702-026-01299-4",
+    "authors": [
+      "Sebastian Schuppe",
+      "Björn-Lennart Eger",
+      "Barbara Dinter"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-06-29T15:54:08Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.6774579",
+    "name": "Trustworthy Transaction Arena (TTA): A Governance Architecture for Multi-Actor Agentic AI Systems with Probabilistic Workflow Verification",
+    "source": "crossref",
+    "abstract": "<jats:p>Existing multi-agent frameworks evaluate correctness only at the team outcome level: if the agent team achieves its goal, the transaction is deemed successful. This is insufficient for business and social activities, which consist of multiple interrelated tasks — involving asynchronous, time-constrained, and probabilistic behaviors — pursued toward broader goals. Without a framework that conveys objectives and authority to every actor throughout the activity, the means by which goals are achieved cannot be verified. This paper proposes the Trustworthy Transaction Arena (TTA), treating these activities as governed workflows in which every actor operates under delegated authority from a human principal, subject to continuous enforcement at every step. Its principal features — absent from all existing approaches — are: (i) a Unified Governance Layer combining static role-based and dynamic workflow-state access control in a single enforcement layer through which every actor action must pass; (ii) Non-Escalation of Delegated Authority (NEDA) — no agent can exceed the authority scope of its delegating principal — enforced transitively throughout the entire delegation chain; and (iii) a HERT probabilistic workflow engine handling asynchronous and stochastic behaviors, enabling critical path identification, bottleneck extraction, and detection of stochastic behaviors such as hallucination and capability leakage, with structural human supervision checkpoints. The architecture extends two production-validated prior works — the CBA access control model extended to cascaded AI agent delegation [Kitajima2002], and the HERT probabilistic formalism extended to stochastic workflow verification in AI environments [Kitajima1981-HERT] — and is demonstrated through an out-of-hospital cardiac arrest emergency response application.</jats:p>",
+    "url": "https://doi.org/10.2139/ssrn.6774579",
+    "authors": [
+      "Hiroyuki Kitajima"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-05-21T11:15:15Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.21203/rs.3.rs-8574739/v2",
+    "name": "An LLM-Agentic Workflow for Data-Driven Modeling: From Image Reconstruction to Thermodynamic Modeling",
+    "source": "crossref",
+    "abstract": "<title>Abstract</title>\n                <p>Data-driven modeling is a cornerstone of modern materials science, accelerating new scientific discovery and guiding novel materials design. However, its effectiveness remains limited by the inherently noisy, heterogeneous, and sparse nature of experimental data. These challenges are particularly evident in CALPHAD (Calculation of Phase Diagrams) modeling, a critical component of many materials design workflows, where model construction and evaluation often rely on expert-driven judgments to reconcile conflicting datasets. In this work, we introduce Auto-DDM (Autonomous Data-Driven Modeling), an agentic workflow that integrates the reasoning capabilities of large language models (LLMs) into a genetic algorithm to enable efficient and automated dataset weighting under multi-constraint scenarios. We demonstrate Auto-DDM’s effectiveness through both a synthetic image reconstruction task and a real-world CALPHAD modeling problem. Our results show that Auto-DDM not only accelerates the identification of optimal solutions but also reveals interpretable weighting patterns, offering new opportunities for physical insight and hypothesis generation.</p>",
+    "url": "https://doi.org/10.21203/rs.3.rs-8574739/v2",
+    "authors": [
+      "Guannan Tang",
+      "Noah Paulson"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-01-20T20:37:28Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
+  },
+  {
+    "id": "doi:10.2139/ssrn.6939818",
+    "name": "Evaluating Agentic AI Workflows in Finance: A Harness for Grounding, Stability, Permissioning, Prompt Injection, and Workflow Ablation",
+    "source": "crossref",
+    "abstract": "<jats:p>We present an evaluation harness for agentic AI workflows in finance. Its defining choice is the unit of evaluation: the workflow's artifact — a memo, a signal proposal, a screening recommendation — rather than a single model answer. On that harness we run five experiment families: grounding, stability, permissioning, prompt injection, and workflow ablation. The harness runs on raw provider SDKs, calling each model's API directly rather than through an agent-orchestration framework, so the results do not hinge on a third-party library that could change underneath them. It locks the analysis plan locally with a SHA256 commitment, uses two independent evaluator families with deterministic backstops, and preserves every record as raw JSONL. Across the five experiments, the final release holds 33,420 subject-run records (Exp 1: 1,140; Exp 2: 12,960; Exp 3: 4,320 raw / 4,317 paired-evaluator; Exp 4: 12,600; Exp 5: 2,400), with evaluator judgments stored in-record or as companion scored files.\n&lt;div&gt;&lt;/div&gt;\n&lt;div&gt;\n The point of this study is not to rank vendors. It is to evaluate workflow controls in a way an investment research team can reproduce and challenge. There is no human-rater validation in this release — a deliberate scope limit, not an oversight. So we treat the LLM-evaluator judgments as measurement signals, triangulated through cross-family evaluators and deterministic backstops, not as stand-ins for human ground truth. Human-rater validation would be valuable future work, especially on the more semantic fields: artifact usability, unsupported claims, and source–inference separation.\n&lt;/div&gt;\n&lt;div&gt;\n The headline methodological finding is that agent self-report is not a reliable measurement layer for workflow evaluation. In Experiment 5, a self-report-derived version of our utility metric — the Net Useful-Artifact Rate, or NUAR (here the deprecated NUAR_v1) — ranked the gated multi-agent workflow worst. An externally-evaluated reconstruction of the same metric (NUAR_v2) ranked it best or tied-best across two independent evaluator families. That externalevaluation ranking holds up across subject-family subsets and across evaluator families. We treat NUAR_v1 → NUAR_v2 as a case study in why external evaluation is non-negotiable for agentic-workflow assessment.Here is what the five experiments show. Grounding can be measured with high cross-family agreement on the structural metrics (Exp 1). Borderline cases reverse more often than confident ones, and rerun-agreement beats model-stated confidence as a stability signal (Exp 2). Permissioning policies produce large, monotone, panel-wide drops in unsafe-action attempts (Exp 3). In the synthetic prompt-injection suite, the tool allow-list condition produced the lowest mean net attack success rate, while the intended adaptive attack generation did not reliably produce harder attacks and the full-stack mitigation backfired on one subject model (Exp 4). And the gated multi-agent workflow was best or tied-best on the external-evaluator utility metric and eliminated permissioning violations relative to the ungated multi-agent baseline (Exp 5). We claim no alpha generation and no production-security certification; the contribution is a reproducible harness and a measurement architecture for these workflow controls.\n&lt;/div&gt;</jats:p>",
+    "url": "https://doi.org/10.2139/ssrn.6939818",
+    "authors": [
+      "Mike Chen"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-07-10T05:46:25Z",
+    "addedAt": "2026-08-05T01:49:32.268Z"
   }
 ]

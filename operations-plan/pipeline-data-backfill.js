@@ -16,7 +16,10 @@
  *   5. 刷新 index.json（totalEntities / lastUpdated / categories）
  *
  * 用法：
- *   node pipeline-data-backfill.js [--dry-run] [--site=quantum-computing] [--limit=30]
+ *   node pipeline-data-backfill.js [--dry-run] [--site=quantum-computing] [--limit=400] [--max-entities=3000]
+ *
+ * 游标分页：四个数据源此前均硬编码第 1 页，导致每轮抓回完全相同的条目、去重后新增恒为 0。
+ * 现按站点维护 offset 游标（state/backfill-cursor.json），每轮推进一页，持续抓到新数据。
  */
 
 const fs = require('fs').promises;
@@ -115,8 +118,10 @@ function parseArxivXml(xml) {
 
 // ==================== 各数据源抓取（带领域检索词） ====================
 
-async function fetchOpenAlex(query, max) {
-  const url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&per-page=${max}&sort=relevance_score:desc`;
+async function fetchOpenAlex(query, max, offset = 0) {
+  // OpenAlex 用 page 分页（page 从 1 开始）；page*per-page 上限 10000，超出需 cursor
+  const page = Math.floor(offset / max) + 1;
+  const url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&per-page=${max}&page=${page}&sort=relevance_score:desc`;
   try {
     const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': 'GeneTechBot/1.0 (mailto:ops@genetech.example)' } }), 3, 1500);
     if (res.statusCode !== 200) return [];
@@ -135,8 +140,8 @@ async function fetchOpenAlex(query, max) {
   } catch { return []; }
 }
 
-async function fetchArxiv(query, max) {
-  const url = `http://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(query)}&start=0&max_results=${max}&sortBy=relevance`;
+async function fetchArxiv(query, max, offset = 0) {
+  const url = `http://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(query)}&start=${offset}&max_results=${max}&sortBy=relevance`;
   try {
     const res = await withRetry(() => httpGet(url), 3, 1500);
     if (res.statusCode !== 200) return [];
@@ -148,8 +153,9 @@ async function fetchArxiv(query, max) {
   } catch { return []; }
 }
 
-async function fetchCrossref(query, max) {
-  const url = `https://api.crossref.org/works?query=${encodeURIComponent(query)}&rows=${max}&sort=relevance`;
+async function fetchCrossref(query, max, offset = 0) {
+  // Crossref offset 深分页上限 10000，超出需 cursor=*
+  const url = `https://api.crossref.org/works?query=${encodeURIComponent(query)}&rows=${max}&offset=${offset}&sort=relevance`;
   try {
     const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': 'GeneTechBot/1.0 (mailto:ops@genetech.example)' } }), 3, 1500);
     if (res.statusCode !== 200) return [];
@@ -164,8 +170,9 @@ async function fetchCrossref(query, max) {
   } catch { return []; }
 }
 
-async function fetchPubMed(query, max) {
-  const searchUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${encodeURIComponent(query)}&retmax=${max}&retmode=json&sort=date`;
+async function fetchPubMed(query, max, offset = 0) {
+  // PubMed esearch retstart 上限约 9998
+  const searchUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${encodeURIComponent(query)}&retmax=${max}&retstart=${offset}&retmode=json&sort=date`;
   try {
     const sres = await withRetry(() => httpGet(searchUrl), 3, 1500);
     const idlist = JSON.parse(sres.body).esearchresult?.idlist || [];
@@ -205,23 +212,41 @@ function normalize(raw, site) {
   };
 }
 
-async function backfillSite(site, queries, limit, dryRun) {
+async function backfillSite(site, queries, limit, dryRun, offset = 0, maxEntities = Infinity) {
+  const siteDirPre = path.join(PROJECT_ROOT, site, 'website', 'api');
+  const livePathPre = path.join(siteDirPre, 'entities.json');
+  const existingPre = (await readJsonSafe(livePathPre)) || [];
+  // 容量闸门：达标即不再抓取（省 API 配额，也避免 entities.json 超出
+  // Cloudflare Pages 单文件 25MB 上限、以及 git 仓库无限膨胀）
+  if (existingPre.length >= maxEntities) {
+    console.log(`[Backfill] ${site}: 已达目标容量 ${existingPre.length}/${maxEntities}，跳过抓取`);
+    return { site, fetched: 0, added: 0, total: existingPre.length, offset, capped: true, dryRun };
+  }
+
   const collected = [];
   const seen = new Set();
-  for (const q of queries) {
+  // 检索词按小并发分批：串行时单站约 110s，14 站会逼近 job 的 timeout-minutes 而整轮丢数据；
+  // 并发 3 可降到约 40s/站，同时对单个数据源的并发请求数仍在其限流要求之内
+  const QUERY_CONCURRENCY = 3;
+  for (let i = 0; i < queries.length; i += QUERY_CONCURRENCY) {
     if (collected.length >= limit) break;
-    const batch = await Promise.allSettled([
-      fetchOpenAlex(q, 12), fetchArxiv(q, 8), fetchCrossref(q, 8), fetchPubMed(q, 8),
-    ]);
-    for (const r of batch) {
-      if (r.status !== 'fulfilled') continue;
-      for (const it of r.value) {
-        if (collected.length >= limit) break;
-        if (seen.has(it.id)) continue;
-        seen.add(it.id); collected.push(it);
+    const chunk = queries.slice(i, i + QUERY_CONCURRENCY);
+    const chunkResults = await Promise.all(chunk.map(q => Promise.allSettled([
+      // 四源单页取数统一为 12，与游标步长 PAGE_STEP 对齐：
+      // 若各源取数不一致（如 8 < 步长 12），窗口之间会留下永远抓不到的空档
+      fetchOpenAlex(q, 12, offset), fetchArxiv(q, 12, offset), fetchCrossref(q, 12, offset), fetchPubMed(q, 12, offset),
+    ])));
+    for (const batch of chunkResults) {
+      for (const r of batch) {
+        if (r.status !== 'fulfilled') continue;
+        for (const it of r.value) {
+          if (collected.length >= limit) break;
+          if (seen.has(it.id)) continue;
+          seen.add(it.id); collected.push(it);
+        }
       }
     }
-    await sleep(150); // 礼貌限速
+    await sleep(300); // 礼貌限速（并发后适当加长）
   }
 
   const siteDir = path.join(PROJECT_ROOT, site, 'website', 'api');
@@ -246,8 +271,8 @@ async function backfillSite(site, queries, limit, dryRun) {
   await ensureDir(siteDir);
   await fs.writeFile(livePath, JSON.stringify(all, null, 2), 'utf-8');
   await fs.writeFile(indexPath, JSON.stringify({ site, totalEntities: all.length, lastUpdated: getISOTime(), categories: cats }, null, 2), 'utf-8');
-  console.log(`[Backfill] ${site}: 抓取 ${collected.length}, 新增 ${added}, 现有合计 ${all.length}`);
-  return { site, fetched: collected.length, added, total: all.length, dryRun: false };
+  console.log(`[Backfill] ${site}: offset=${offset} 抓取 ${collected.length}, 新增 ${added}, 现有合计 ${all.length}`);
+  return { site, fetched: collected.length, added, total: all.length, offset, dryRun: false };
 }
 
 // ==================== 主流程 ====================
@@ -258,15 +283,33 @@ async function main() {
   const limitArg = args.find(a => a.startsWith('--limit='));
   const siteArg = args.find(a => a.startsWith('--site='));
   const limit = limitArg ? parseInt(limitArg.split('=')[1], 10) || 30 : 30;
+  // 每站目标容量：单条约 1.1KB，3000 条 ≈ 3.3MB，远低于 Cloudflare Pages 单文件 25MB 上限
+  const maxArg = args.find(a => a.startsWith('--max-entities='));
+  const maxEntities = maxArg ? parseInt(maxArg.split('=')[1], 10) || 3000 : 3000;
   const sites = siteArg ? [siteArg.split('=')[1]] : Object.keys(SITE_QUERIES);
 
-  console.log(`[Backfill] ${dryRun ? '[DRY-RUN] ' : ''}目标站点 ${sites.length} 个, 每站上限 ${limit}`);
+  // ===== 游标分页状态 =====
+  // 四个数据源此前均硬编码第 1 页，导致每轮抓回完全相同的条目、去重后新增恒为 0。
+  // 这里为每个站点维护一个 offset 游标，每轮推进一页，确保持续抓到新数据。
+  const cursorPath = path.join(STATE_DIR, 'backfill-cursor.json');
+  const cursor = (await readJsonSafe(cursorPath)) || {};
+  const PAGE_STEP = 12;      // 与 OpenAlex per-page 对齐（各源单页最大取数）
+  const MAX_OFFSET = 9000;   // Crossref/PubMed 深分页上限约 1 万，到顶则回绕重扫补漏
+
+  console.log(`[Backfill] ${dryRun ? '[DRY-RUN] ' : ''}目标站点 ${sites.length} 个, 单轮每站上限 ${limit}, 每站目标容量 ${maxEntities}`);
   const results = [];
   for (const site of sites) {
     const queries = SITE_QUERIES[site];
     if (!queries) { console.warn(`[Backfill] 未知站点 ${site}, 跳过`); continue; }
+    const offset = Number(cursor[site]) || 0;
     try {
-      results.push(await backfillSite(site, queries, limit, dryRun));
+      const r = await backfillSite(site, queries, limit, dryRun, offset, maxEntities);
+      results.push(r);
+      if (!dryRun && !r.capped) {
+        // 抓到东西才推进游标；本页为空说明该检索词已见底，回绕重扫
+        const next = r.fetched > 0 ? offset + PAGE_STEP : 0;
+        cursor[site] = next > MAX_OFFSET ? 0 : next;
+      }
     } catch (err) {
       console.error(`[Backfill] ${site} 失败: ${err.message}`);
       results.push({ site, error: err.message });
@@ -276,13 +319,18 @@ async function main() {
 
   const report = { pipeline: 'data-backfill', timestamp: getISOTime(), dryRun, limit, results };
   if (!dryRun) {
+    await ensureDir(STATE_DIR);
+    await fs.writeFile(cursorPath, JSON.stringify(cursor, null, 2), 'utf-8');
+    console.log(`[Backfill] 游标已保存 ${cursorPath}`);
     await ensureDir(REPORTS_DIR);
     const rp = path.join(REPORTS_DIR, `report-data-backfill-${getISOTime().slice(0, 10)}.json`);
     await fs.writeFile(rp, JSON.stringify(report, null, 2), 'utf-8');
     console.log(`[Backfill] 报告已写入 ${rp}`);
   }
   const totalAdded = results.reduce((s, r) => s + (r.added || 0), 0);
-  console.log(`[Backfill] 完成. 新增实体合计 ${totalAdded}, 涉及站点 ${results.length}`);
+  const totalNow = results.reduce((s, r) => s + (r.total || 0), 0);
+  const cappedN = results.filter(r => r.capped).length;
+  console.log(`[Backfill] 完成. 新增实体合计 ${totalAdded}, 现有合计 ${totalNow}, 涉及站点 ${results.length}, 已达容量站点 ${cappedN}/${results.length}`);
 }
 
 main().catch(err => { console.error('[FATAL]', err); process.exit(1); });

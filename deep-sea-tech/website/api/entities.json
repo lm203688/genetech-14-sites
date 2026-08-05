@@ -700,5 +700,2582 @@
     ],
     "publishedDate": "2012-06-28",
     "addedAt": "2026-08-04T10:39:44.918Z"
+  },
+  {
+    "id": "doi:10.3390/microorganisms11020536",
+    "name": "Changes of In Situ Prokaryotic and Eukaryotic Communities in the Upper Sanya River to the Sea over a Nine-Hour Period",
+    "source": "crossref",
+    "abstract": "<jats:p>The transition areas of riverine, estuarine, and marine environments are particularly valuable for the research of microbial ecology, biogeochemical processes, and other physical–chemical studies. Although a large number of microbial-related studies have been conducted within such systems, the vast majority of sampling have been conducted over a large span of time and distance, which may lead to separate batches of samples receiving interference from different factors, thus increasing or decreasing the variability between samples to some extent. In this study, a new in situ filtration system was used to collect membrane samples from six different sampling sites along the Sanya River, from upstream freshwater to the sea, over a nine-hour period. We used high-throughput sequencing of 16S and 18S rRNA genes to analyze the diversity and composition of prokaryotic and eukaryotic communities. The results showed that the structures of these communities varied according to the different sampling sites. The α-diversity of the prokaryotic and eukaryotic communities both decreased gradually along the downstream course. The structural composition of prokaryotic and eukaryotic communities changed continuously with the direction of river flow; for example, the relative abundances of Rhodobacteraceae and Flavobacteriaceae increased with distance downstream, while Sporichthyaceae and Comamonadaceae decreased. Some prokaryotic taxa, such as Phycisphaeraceae and Chromobacteriaceae, were present nearly exclusively in pure freshwater environments, while some additional prokaryotic taxa, including the SAR86 clade, Clade I, AEGEAN-169 marine group, and Actinomarinaceae, were barely present in pure freshwater environments. The eukaryotic communities were mainly composed of the Chlorellales X, Chlamydomonadales X, Sphaeropleales X, Trebouxiophyceae XX, Annelida XX, and Heteroconchia. The prokaryotic and eukaryotic communities were split into abundant, common, and rare communities for NCM analysis, respectively, and the results showed that assembly of the rare community assembly was more impacted by stochastic processes and less restricted by species dispersal than that of abundant and common microbial communities for both prokaryotes and eukaryotes. Overall, this study provides a valuable reference and new perspectives on microbial ecology during the transition from freshwater rivers to estuaries and the sea.</jats:p>",
+    "url": "https://doi.org/10.3390/microorganisms11020536",
+    "authors": [
+      "Shijie Bai",
+      "Jian Zhang",
+      "Xiaoxue Qi",
+      "Juntao Zeng",
+      "Shijun Wu",
+      "Xiaotong Peng"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2023-02-21T02:30:35Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1007/978-3-030-87982-2_1",
+    "name": "Deep-Sea Mining: Historical Perspectives",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-030-87982-2_1",
+    "authors": [
+      "David S. Cronan"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2022-01-13T08:03:35Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.3403/30419526u",
+    "name": "Ships and marine technology � Combined rigging for deep-sea mooring",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3403/30419526u",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2023-03-14T21:30:11Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.3403/30419526",
+    "name": "Ships and marine technology � Combined rigging for deep-sea mooring",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3403/30419526",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2023-03-14T21:30:11Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W4248049034",
+    "name": "Extended State Observer-Based Integral Sliding Mode Control for an Underwater Robot With Unknown Disturbances and Uncertain Nonlinearities",
+    "source": "openalex",
+    "abstract": "This paper develops a novel integral sliding mode controller (ISMC) for a general type of underwater robots based on multiple-input and multiple-output extended-state-observer (MIMO-ESO). The difficulties associated with the unmeasured velocities, unknown disturbances, and uncertain hydrodynamics of the robot have been successfully solved in the control design. An adaptive MIMO-ESO is designed not only to estimate the unmeasurable linear and angular velocities, but also to estimate the unknown external disturbances. An ISMC is then designed using Lyapunov synthesis, and an adaptive gain update algorithm is introduced to estimate the upper bound of the uncertainties. Rigorous theoretical analysis is performed to show that the proposed control method is able to achieve asymptotical tracking performance for the underwater robot. Experimental studies are also carried out to validate the effectiveness of the proposed control, and to show that the proposed approach performs better than a conventional potential difference (PD) control approach.",
+    "url": "https://doi.org/10.1109/tie.2017.2694410",
+    "authors": [
+      "Rongxin Cui",
+      "Lepeng Chen",
+      "Chenguang Yang",
+      "Mou Chen"
+    ],
+    "tags": [
+      "Control theory (sociology)",
+      "Integral sliding mode",
+      "Sliding mode control",
+      "MIMO",
+      "Underwater"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2017-04-17",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W1956244631",
+    "name": "Underwater robots: a review of technologies and applications",
+    "source": "openalex",
+    "abstract": "Purpose This paper aims to provide details of underwater robot technology and its applications. Design/methodology/approach Following an introduction, this article first discusses remotely operated vehicle (ROV) technology and applications and then considers their use in the emerging field of deep-sea mining. It then discusses autonomous underwater vehicle (AUV) technology and its applications, including sub-sea gliders. Finally, brief concluding comments are drawn. Findings ROVs were first developed in the 1950s for military applications. They are now widely used by the offshore oil and gas sector and other industries and are being developed for deep-sea mining. AUV technology has progressed rapidly in recent years and AUVs, including sub-sea gliders, are now emerging from their original role in oceanographic research and finding growing uses in the defence and offshore energy sectors. Originality/value This provides a detailed insight into underwater robot technologies, products and applications.",
+    "url": "https://doi.org/10.1108/ir-01-2015-0010",
+    "authors": [
+      "Robert Bogue"
+    ],
+    "tags": [
+      "Remotely operated underwater vehicle",
+      "Underwater",
+      "Submarine pipeline",
+      "Emerging technologies",
+      "Marine engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2015-05-18",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2125974808",
+    "name": "Underwater robotics: out of the research laboratory and into the field",
+    "source": "openalex",
+    "abstract": "The development of two new classes of commercial underwater robotic vehicles-deep diving work-class remotely operated vehicles and survey-class autonomous vehicles-is being driven by the needs of deep water oil production and deep ocean telecommunication cable operations. The paper presents a survey of the present state and future directions of commercial underwater robotics, examines principal technical challenges, and outlines new enabling technologies for commercial underwater robotic vehicles.",
+    "url": "https://doi.org/10.1109/robot.2000.844135",
+    "authors": [
+      "Louis L. Whitcomb"
+    ],
+    "tags": [
+      "Underwater",
+      "Robotics",
+      "Remotely operated underwater vehicle",
+      "Artificial intelligence",
+      "Class (philosophy)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-11-07",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2109797476",
+    "name": "Modeling and control of underwater robotic vehicles",
+    "source": "openalex",
+    "abstract": "With the increased utilization of remotely operated vehicles in subsea applications, the development of autonomous vehicles becomes highly desirable to enhance operator efficiency. The dynamic model of an untethered remotely operated underwater vehicle is presented, and an adaptive control strategy for such vehicles is described. The robustness of the control system with respect to nonlinear dynamic behavior and parameter uncertainties is investigated by computer simulation. The results show that the use of the adaptive control system can provide high performance of the vehicle in the presence of unpredictable changes in the dynamics of the vehicle and its environment.&gt;",
+    "url": "https://doi.org/10.1109/21.61218",
+    "authors": [
+      "J. Yuh"
+    ],
+    "tags": [
+      "Subsea",
+      "Robustness (evolution)",
+      "Underwater",
+      "Computer science",
+      "Control engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "1990-01-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W3137746387",
+    "name": "Underwater robot sensing technology: A survey",
+    "source": "openalex",
+    "abstract": "Underwater robot technologies are crucial for marine resource exploration and autonomous manipulation, and many breakthroughs have been achieved with key indicators (e.g., dive depth and navigation range). However, due to the complicated underwater environment, the state-of-the-art sensing technologies cannot handle all the needs of underwater observations. To improve the autonomous operating capacity of underwater robots, there is an urgent need to develop underwater sensing technology. Therefore, in this paper, we first introduce the development of underwater robot platforms. We then review some key sensing technologies such as underwater acoustic sensing, underwater optical sensing, underwater magnetic sensing, and underwater bionic sensing. Finally, we point out the challenges of underwater sensing technology and future directions in addressing these challenges, e.g., underwater bionic sensing, new underwater material development, multisource information fusion, and the construction of general test platforms.",
+    "url": "https://doi.org/10.1016/j.fmre.2021.03.002",
+    "authors": [
+      "Yang Cong",
+      "Changjun Gu",
+      "Tao Zhang",
+      "Yajun Gao"
+    ],
+    "tags": [
+      "Underwater",
+      "Key (lock)",
+      "Robot",
+      "Computer science",
+      "Resource (disambiguation)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2021-03-18",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2952381465",
+    "name": "Survey of underwater robot positioning navigation",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.apor.2019.06.002",
+    "authors": [
+      "Yinghao Wu",
+      "Xuxiang Ta",
+      "Ruichao Xiao",
+      "Yaoguang Wei",
+      "Dong An",
+      "Daoliang Li"
+    ],
+    "tags": [
+      "Underwater",
+      "Robot",
+      "Global Positioning System",
+      "Robustness (evolution)",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-06-12",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W4236708315",
+    "name": "Underwater Robots",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-319-02877-4",
+    "authors": [
+      "Gianluca Antonelli"
+    ],
+    "tags": [
+      "Underwater",
+      "Computer science",
+      "Robot",
+      "Marine engineering",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2013-11-22",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2059957264",
+    "name": "A neural net controller for underwater robotic vehicles",
+    "source": "openalex",
+    "abstract": "Results of a study on the application of neural networks to the control system of underwater robotic vehicles (URVs) are presented. The robustness of the control system with respect to nonlinear dynamic behavior and parameter uncertainties is investigated by computer simulation. The results show the feasibility of using unpredictable changes in the dynamics of the vehicle and its environment.",
+    "url": "https://doi.org/10.1109/48.107144",
+    "authors": [
+      "J. Yuh"
+    ],
+    "tags": [
+      "Robustness (evolution)",
+      "Underwater",
+      "Artificial neural network",
+      "Nonlinear system",
+      "Control engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "1990-07-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2023588319",
+    "name": "Vision-based object detection and tracking for autonomous navigation of underwater robots",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.oceaneng.2012.04.006",
+    "authors": [
+      "Donghwa Lee",
+      "Kevin Gonyop Kim",
+      "Donghoon Kim",
+      "Hyun Myung",
+      "Hyun‐Taek Choi"
+    ],
+    "tags": [
+      "Underwater",
+      "Artificial intelligence",
+      "Computer vision",
+      "Visibility",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-05-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2133294759",
+    "name": "Experiments with Underwater Robot Localization and Tracking",
+    "source": "openalex",
+    "abstract": "This paper describes a novel experiment in which two very different methods of underwater robot localization are compared. The first method is based on a geometric approach in which a mobile node moves within a field of static nodes, and all nodes are capable of estimating the range to their neighbours acoustically. The second method uses visual odometry, from stereo cameras, by integrating scaled optical flow. The fundamental algorithmic principles of each localization technique is described. We also present experimental results comparing acoustic localization with GPS for surface operation, and a comparison of acoustic and visual methods for underwater operation.",
+    "url": "https://doi.org/10.1109/robot.2007.364181",
+    "authors": [
+      "Peter Corke",
+      "Carrick Detweiler",
+      "Matthew Dunbabin",
+      "Michael Hamilton",
+      "Daniela Rus",
+      "Iuliu Vasilescu"
+    ],
+    "tags": [
+      "Underwater",
+      "Computer vision",
+      "Computer science",
+      "Odometry",
+      "Mobile robot"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2007-04-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.12681/eadd/55527",
+    "name": "Underwater robotics",
+    "source": "crossref",
+    "abstract": "<jats:p>Η υδατοκαλλιέργεια έχει αναδειχθεί ως ο ταχύτερα αναπτυσσόμενος κλάδος στη βιομηχανία παραγωγής τροφίμων, λόγω της ταχείας ανάπτυξής της. Εξυπηρετεί μια κομβική λειτουργία για την κάλυψη της αυξανόμενης παγκόσμιας ανάγκης για θαλασσινά, ενώ ταυτόχρονα αντιμετωπίζει τις δυσκολίες που δημιουργούνται από τη μείωση των αποθεμάτων άγριων ψαριών. Τα υποβρύχια οχήματα έχουν συμβάλει στην επέκταση της υδατοκαλλιέργειας επιτρέποντας υποβρύχιες επιθεωρήσεις, αποτελεσματική συλλογή δεδομένων και βελτιωμένες διαδικασίες συντήρησης. Αυτή η καινοτόμος τεχνολογία διαδραματίζει επίσης κρίσιμο ρόλο στην ενίσχυση της αλυσίδας εφοδιασμού τροφίμων, διευκολύνοντας την απόκτηση υποθαλάσσιων δεδομένων. Αυτή η ικανότητα όχι μόνο βοηθά τους ερευνητές στη βελτίωση των διαδικασιών υδατοκαλλιέργειας, αλλά υποστηρίζει επίσης πρωτοβουλίες που στοχεύουν στην επίτευξη επισιτιστικής ασφάλειας μέσω της βιώσιμης ανάπτυξης των υδρόβιων ειδών. Στόχος της παρούσας διατριβής είναι ο σχεδιασμός, η ανάπτυξη και η αξιολόγηση υποβρύχιων συστημάτων για την ικανότητα επιθεώρησης και συντήρησης διχτυών κλωβών σε εγκαταστάσεις υδατοκαλλιέργειας Η έρευνα επικεντρώνεται σε ένα υποβρύχιο όχημα για επιθεώρηση σε ιχθυοτροφεία και σε ένα αυτόνομο υποβρύχιο όχημα με το όνομα «Kalypso».Επιπλέον, παρουσιάζεται η ανάπτυξη, η κατασκευή και η προσομοίωση ενός προσιτού υποβρύχιου βραχίονα που ονομάζεται MURA (Multipurpose Underwater Robotic Arm) και μπορεί να ενσωματωθεί με το Kalypso για την εκτέλεση εργασιών όπως η αφαίρεση αντικειμένων που έχουν κολλήσει στα δίχτυα, η συλλογή νεκρών ψαριών, και η επιδιόρθωση σκισιμάτων στα δίχτυα. Αυτή η διατριβή παρέχει μια έρευνα υποβρύχιων οχημάτων και τις εφαρμογές τους στην υδατοκαλλιέργεια. Η μελέτη περιλαμβάνει μια ολοκληρωμένη εξέταση του υποβρύχιου οχήματος «Kalypso», τονίζοντας το λογισμικό, τη μοντελοποίηση, την υλοποίηση κινητικότητας και τις δυνατότητες πλοήγησης. Στη συνέχεια, η εστίαση κατευθύνεται στα προκαταρκτικά σχέδια υποβρύχιων οχημάτων, συμπεριλαμβανομένης της δομικής τους διαμόρφωσης, της ενσωμάτωσης εξαρτημάτων και των δυνατοτήτων κίνησης. Επιπλέον, παρουσιάζεται το MURA, διευκρινίζοντας τις θεμελιώδεις αρχές σχεδιασμού του, τις ικανότητες χειρισμού και τα ηλεκτρονικά του μέρη. Η αποτελεσματικότητα και οι επιχειρησιακές δυνατότητες των μοντέλων υποβρύχιων οχημάτων τεκμηριώνονται μέσω πειραματικών αξιολογήσεων που πραγματοποιήθηκαν στα Ιχθυοτροφεία της Κεφαλονιάς. Εν κατακλείδι, συνοψίζεται η έρευνα που προέκυψε εξετάζοντας τις συνέπειές τους και προσφέροντας προοπτικές για την υποβρύχια ρομποτική. Η παρούσα διατριβή συμβάλλει στα πεδία της τεχνολογίας υποβρύχιων οχημάτων και της υδατοκαλλιέργειας, διευκολύνοντας έτσι τη βελτίωση των δυνατοτήτων επιθεώρησης και χειρισμού στην υδατοκαλλιέργεια.</jats:p>",
+    "url": "https://doi.org/10.12681/eadd/55527",
+    "authors": [
+      "Μάριος Βασιλείου"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2024-01-08T10:13:06Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1575/1912/24860",
+    "name": "Underwater and out of sight: Towards ubiquity in underwater robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1575/1912/24860",
+    "authors": [
+      "Nicholas R. Rypkema"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-11-20T16:27:33Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1007/978-3-540-48113-3_34",
+    "name": "Session Overview Underwater Robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-540-48113-3_34",
+    "authors": [
+      "Louis L. Whitcomb",
+      "Hugh Durrant-Whyte"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2007-05-14T05:57:10Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1007/11540199_2",
+    "name": "2. Modelling of Underwater Robots",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/11540199_2",
+    "authors": [
+      "Gianluca Antonelli"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2006-08-02T14:50:52Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1163/156855301317033595",
+    "name": "Underwater robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1163/156855301317033595",
+    "authors": [
+      "J. Yuh",
+      "M. West"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-07-27T11:59:45Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1007/3-540-34319-9_12",
+    "name": "Autonomous Vessels and Underwater Vehicles",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/3-540-34319-9_12",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2006-08-02T18:45:45Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.32657/10356/6553",
+    "name": "Laser scanning imaging system for underwater robotics vehicle",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.32657/10356/6553",
+    "authors": [
+      "Lin Xu"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-10-02T09:14:08Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/j.cogr.2023.08.002",
+    "name": "SRGAN in underwater vision",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.cogr.2023.08.002",
+    "authors": [
+      "Dingqian Zhao"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2023-11-03T20:32:26Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/robot.1995.526021",
+    "name": "Development in underwater robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/robot.1995.526021",
+    "authors": [
+      "J. Yuh"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-11-19T16:11:47Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1163/156855309x443016",
+    "name": "Underwater Navigation for Long-Range Autonomous Underwater Vehicles Using Geomagnetic and Bathymetric Information",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1163/156855309x443016",
+    "authors": [
+      "Naomi Kato",
+      "Toshihide Shigetomi"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2009-06-02T20:06:39Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.59121/kcisr22120008",
+    "name": "Autonomous Navigation for Underwater Robotics: Challenges and Prospects",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.59121/kcisr22120008",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2023-03-15T08:57:23Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.20944/preprints202503.2020.v1",
+    "name": "Underwater Robotics: Challenges and Solutions",
+    "source": "crossref",
+    "abstract": "<jats:p>The development of an autonomous unmanned vehicle (AUV) presents both significant challenges and considerable benefits. This paper examines the issues encountered and the solutions implemented during the design and construction of the AUV, focusing specifically on the Kalypso robotic vehicle, which was developed for the inspection of fish farm nets. Kalypso is capable of detecting both overgrown and damaged nets through the application of advanced algorithms [1]. The robot is also equipped with a range of sensors that monitor key parameters, such as water ingress within the waterproof case, as well as its location, depth, temperature, and potential leaks. The waterproof section of the robot contains cables and connectors, some of which are detachable, allowing for the connection of various devices, including sensors and lights. Kalypso features two cameras, one positioned at the front and the other at the bottom, to provide comprehensive visual coverage. Additionally, the AUV is equipped with an underwater ultrasonic sensor that measures the distance to objects in its environment and an LED light at the front to enhance visibility in low-light conditions. A series of tests were conducted to assess the vehicle&amp;#039;s performance in both aquaculture net environments and open-sea conditions.</jats:p>",
+    "url": "https://doi.org/10.20944/preprints202503.2020.v1",
+    "authors": [
+      "Nikolaos Manos",
+      "Ergina Kavallieratou"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2025-03-28T00:52:39Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2897830955",
+    "name": "Challenges and future trends in marine robotics",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.arcontrol.2018.10.002",
+    "authors": [
+      "Enrica Zereik",
+      "Marco Bibuli",
+      "Nikola Mišković",
+      "Pere Ridao",
+      "A. Pascoal"
+    ],
+    "tags": [
+      "Robotics",
+      "Context (archaeology)",
+      "Artificial intelligence",
+      "Robot",
+      "Field (mathematics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-01-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2038754967",
+    "name": "Applications of marine robotic vehicles",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s11370-011-0096-5",
+    "authors": [
+      "J. Yuh",
+      "Giacomo Marani",
+      "D.R. Blidberg"
+    ],
+    "tags": [
+      "Oceanography",
+      "Underwater",
+      "Seafloor spreading",
+      "Marine species",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2011-07-21",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2138918534",
+    "name": "Future Trends in Marine Robotics [TC Spotlight]",
+    "source": "openalex",
+    "abstract": "The IEEE Robotics and Automation Society (RAS) Marine Robotics Technical Committee (MRTC) was first established in 2008 following the dismissal of the Underwater Robotics Technical Committee in spring 2008. The goal of the MRTC is to foster research on robots and intelligent systems that extend the human capabilities in marine environments and to promote maritime robotic applications important to science, industry, and defense. The TC organizes conferences, workshops, and special issues that bring marine robotics research to the forefront of the broader robotics community. The TC also introduces its members to the latest development of marine robotics through Web sites and online social media.",
+    "url": "https://doi.org/10.1109/mra.2014.2385561",
+    "authors": [
+      "Fumin Zhang",
+      "Giacomo Marani",
+      "Ryan N. Smith",
+      "Hyun‐Taek Choi"
+    ],
+    "tags": [
+      "Robotics",
+      "Artificial intelligence",
+      "Robot",
+      "Automation",
+      "Engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2015-03-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W3082243195",
+    "name": "Marine Robots for Underwater Surveillance",
+    "source": "openalex",
+    "abstract": "Abstract Purpose of Review The paper reviews the role of marine robots, in particular unmanned vehicles, in underwater surveillance, i.e. the control and monitoring of an area of competence aimed at identifying potential threats in support of homeland defence, antiterrorism, force protection and Explosive Ordnance Disposal (EOD). Recent Findings The paper explores separately robotic missions for identification and classification of threats lying on the seabed (e.g. EOD) and anti-intrusion robotic systems. The current main scientific challenge is identified in terms of enhancing autonomy and team/swarm mission capabilities by improving interoperability among robotic vehicles and providing communication networking capabilities, a non-trivial task, giving the severe limitations in bandwidth and latency of acoustic underwater messaging. Summary The work is intended to be a critical guide to the recent prolific bibliography on the topic, providing pointers to the main recent advancements in the field, and to give also a set of references in terms of mission and stakeholders’ requirements (port authorities, coastal guards, navies).",
+    "url": "https://doi.org/10.1007/s43154-020-00028-z",
+    "authors": [
+      "Daniele S. Terracciano",
+      "Lorenzo Bazzarello",
+      "Andrea Caiti",
+      "Riccardo Costanzi",
+      "Vincenzo Manzari"
+    ],
+    "tags": [
+      "Interoperability",
+      "Robot",
+      "Underwater",
+      "Computer security",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-08-27",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2614210171",
+    "name": "Coordinated motion control of marine robots *",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s1474-6670(17)37810-2",
+    "authors": [
+      "L. Lapierre",
+      "D. Soetanto",
+      "A. Pascoal"
+    ],
+    "tags": [
+      "Backstepping",
+      "Control theory (sociology)",
+      "Path (computing)",
+      "Robot",
+      "Controller (irrigation)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2003-09-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2595092153",
+    "name": "Coordinated Navigation of Surface and Underwater Marine Robotic Vehicles for Ocean Sampling and Environmental Monitoring",
+    "source": "openalex",
+    "abstract": "Water pollution generated by accidental spill of hazardous materials is a growing problem worldwide. There is an urgent need for a tool that would help environmental response teams perform rapid understanding of the location and the extent of the spill to effectively establish an appropriate response. This paper presents a cooperative robotic system for environmental monitoring consisting of an autonomous underwater vehicle (AUV) and an autonomous unmanned surface vehicle (USV). The main contributions of the paper are a systematic description of the design and implementation of the proposed cooperative robotic system, a novel human-on-the-loop (HOTL) approach applied on the system for environmental monitoring, and demonstration of the results of the open-sea experiments on pollution deliberately caused by harmless Rhodamine water tracing (WT), carried out in Cartagena, Spain, in June 2015. The proposed HOTL system provides near real-time pollution measurement data, while not consuming a significant amount of human time and effort. It supports decision-making and allows the operator to initiate the most adequate mission in a current situation, i.e., ensures mission change on-the-fly. While the AUV samples the ocean, the USV maintains the localization and communication data transfer to the control center and corrects the AUV's dead reckoning error.",
+    "url": "https://doi.org/10.1109/tmech.2017.2684423",
+    "authors": [
+      "Antonio Vasilijević",
+      "Đula Nađ",
+      "Filip Mandić",
+      "Nikola Mišković",
+      "Zoran Vukić"
+    ],
+    "tags": [
+      "Underwater",
+      "Marine engineering",
+      "Environmental monitoring",
+      "Unmanned surface vehicle",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2017-03-18",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W3005507178",
+    "name": "Development of Multibody Marine Robots: A Review",
+    "source": "openalex",
+    "abstract": "Multibody marine robots, representing a promising research and development area, have gained acute attention and response from civil and military fields. A multibody marine robot is a multibody system composed of multiple single-body marine robots (defined as a unit) in a certain topology. Such a system is generally characterized by underactuation, hyperredundancy, power distribution, modularization and so on. Compared with traditional single-body marine robots, multibody marine robots can carry greater loads and have more forms of motion, so they can meet more specialized functional requirements. At the same time, they also have more complex hydrodynamic characteristics due to their unique structures and motion forms. In this paper, the types, features, and hydrodynamic characteristics of typical multibody marine robots are reviewed and summarized based on the connection structures between units. In addition, the development trends of multibody marine robots are analyzed and discussed. This review work anticipates positive attention from future readers regarding multibody marine robots, which represent an important subarea of marine robots.",
+    "url": "https://doi.org/10.1109/access.2020.2969517",
+    "authors": [
+      "Shuai Kang",
+      "Jiancheng Yu",
+      "Jin Zhang",
+      "Qianlong Jin"
+    ],
+    "tags": [
+      "Multibody system",
+      "Robot",
+      "Computer science",
+      "Control engineering",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-01-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2980107516",
+    "name": "Stonefish: An Advanced Open-Source Simulation Tool Designed for Marine Robotics, With a ROS Interface",
+    "source": "openalex",
+    "abstract": "The marine robotics community is lacking a high quality simulator for doing scientific research, especially when it comes to testing control and vision algorithms in realistic underwater intervention tasks. All of the solutions used today are either outdated or try to combine different software tools, which often results in bad performance, stability issues and lack of important features. This paper presents a new software tool, focused on, but not limited to, simulation of intervention autonomous underwater vehicles (I-AUV). It delivers advanced hydrodynamics based on actual geometry, simulation of underwater sensors and actuators, as well as realistic rendering of underwater environment and ocean surface. It consists of a library written in C++ and a Robot Operating System (ROS) package.",
+    "url": "https://doi.org/10.1109/oceanse.2019.8867434",
+    "authors": [
+      "Patryk Cieśląk"
+    ],
+    "tags": [
+      "Rendering (computer graphics)",
+      "Underwater",
+      "Robotics",
+      "Computer science",
+      "Software"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-06-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W4230356358",
+    "name": "Marine Robot Autonomy",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-4614-5659-9",
+    "authors": [
+      "Mae L. Seto"
+    ],
+    "tags": [
+      "Autonomy",
+      "Robot",
+      "Field (mathematics)",
+      "Computer science",
+      "Engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-12-06",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W4312814074",
+    "name": "MARUS - A Marine Robotics Simulator",
+    "source": "openalex",
+    "abstract": "Marine robotics requires high quality simulators due to complexity and availability of trials at sea. While there are several simulators in the literature, these have gaps in applications requiring high visual fidelity and human-robot interaction. This paper describes Marine Robotics Unity Simulator (MARUS), an open-source simulator for marine robotics based on Unity3D software that aims to close those gaps. It can simulate multi-robot systems in a marine environment offering water physics and a wide array of sensors commonly used in underwater and maritime domain. An interface allowing inter-connectivity with the simulator was developed where the focus was put on ROS 1/2 integration preferred in robotics community. Due to growing requirements on high-fidelity visual simulation required for machine learning, tools were developed for enabling dataset generation with automatic annotations. Examples of simulator application demonstrate the capabilities of the simulator for real world problems encountered during research project development.",
+    "url": "https://doi.org/10.1109/oceans47191.2022.9976969",
+    "authors": [
+      "Ivan Lončar",
+      "Juraj Obradović",
+      "Natko Kraševac",
+      "Luka Mandić",
+      "Igor Kvasić",
+      "Fausto Ferreira",
+      "Vladimir Slosic",
+      "Đula Nađ",
+      "Nikola Mišković"
+    ],
+    "tags": [
+      "Robotics",
+      "Fidelity",
+      "Artificial intelligence",
+      "Computer science",
+      "Robot"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2022-10-17",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W4392637492",
+    "name": "Bioinspiration and biomimetics in marine robotics: a review on current applications and future trends",
+    "source": "openalex",
+    "abstract": "Over the past few years, the research community has witnessed a burgeoning interest in biomimetics, particularly within the marine sector. The study of biomimicry as a revolutionary remedy for numerous commercial and research-based marine businesses has been spurred by the difficulties presented by the harsh maritime environment. Biomimetic marine robots are at the forefront of this innovation by imitating various structures and behaviors of marine life and utilizing the evolutionary advantages and adaptations these marine organisms have developed over millennia to thrive in harsh conditions. This thorough examination explores current developments and research efforts in biomimetic marine robots based on their propulsion mechanisms. By examining these biomimetic designs, the review aims to solve the mysteries buried in the natural world and provide vital information for marine improvements. In addition to illuminating the complexities of these bio-inspired mechanisms, the investigation helps to steer future research directions and possible obstacles, spurring additional advancements in the field of biomimetic marine robotics. Considering the revolutionary potential of using nature's inventiveness to navigate and thrive in one of the most challenging environments on Earth, the current review's conclusion urges a multidisciplinary approach by integrating robotics and biology. The field of biomimetic marine robotics not only represents a paradigm shift in our relationship with the oceans, but it also opens previously unimaginable possibilities for sustainable exploration and use of marine resources by understanding and imitating nature's solutions.",
+    "url": "https://doi.org/10.1088/1748-3190/ad3265",
+    "authors": [
+      "Amal Prakash",
+      "Arjun R Nair",
+      "H. Arunav",
+      "P R Rthuraj",
+      "V M Akhil",
+      "Charbel Tawk",
+      "Karthik V. Shankar"
+    ],
+    "tags": [
+      "Biomimetics",
+      "Robotics",
+      "Artificial intelligence",
+      "Engineering",
+      "Current (fluid)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2024-03-11",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W602036032",
+    "name": "Marine Robot Autonomy",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-4614-5659-9",
+    "authors": [
+      "Mae Seto"
+    ],
+    "tags": [
+      "Autonomy",
+      "Robotics",
+      "Robot",
+      "Adaptation (eye)",
+      "Underwater"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-12-09",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1049/pbce099e_ch6",
+    "name": "Advances in marine robotics and mechatronics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1049/pbce099e_ch6",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2016-07-14T13:59:04Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-443-33621-8.00018-9",
+    "name": "Environmental impact assessment of swarm robotics in marine ecosystems",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-443-33621-8.00018-9",
+    "authors": [
+      "Nitin Agarwala"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2026-07-24T07:55:38Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.7551/mitpress/9407.003.0006",
+    "name": "Unmanned Marine Vehicles",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.7551/mitpress/9407.003.0006",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-01-11T13:15:48Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.3390/books978-3-03928-133-6",
+    "name": "Intelligent Marine Robotics Modelling, Simulation and Applications",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3390/books978-3-03928-133-6",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-06-30T03:51:59Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/0921-8890(93)90008-z",
+    "name": "Marine Minerals Technology Center",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0921-8890(93)90008-z",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2003-03-15T04:28:45Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1049/pbce099e_ch7",
+    "name": "Advances in aerospace robotics and mechatronics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1049/pbce099e_ch7",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2016-07-14T13:59:04Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1049/pbce099e_ch8",
+    "name": "Advances in medical robotics and mechatronics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1049/pbce099e_ch8",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2016-07-14T13:59:04Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/j.robot.2019.103404",
+    "name": "Robust mission planning for Autonomous Marine Vehicle fleets",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.robot.2019.103404",
+    "authors": [
+      "Fletcher Thompson",
+      "Roberto Galeazzi"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-12-16T12:21:34Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1049/pbce099e_ch5",
+    "name": "Dynamics and control of robotics and mechatronics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1049/pbce099e_ch5",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2016-07-14T13:59:04Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-443-33621-8.00021-9",
+    "name": "Advances in Nonlinear Dynamical Systems and Robotics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-443-33621-8.00021-9",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2026-07-24T07:55:38Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1049/pbce099e_ch2",
+    "name": "Importance of robotics and mechatronics in society",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1049/pbce099e_ch2",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2016-07-14T13:59:04Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1049/pbce099e_ch3",
+    "name": "How to create practical robotics and mechatronics",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1049/pbce099e_ch3",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2016-07-14T09:59:04Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W3031903852",
+    "name": "Ocean Observation Technologies: A Review",
+    "source": "openalex",
+    "abstract": "Abstract Covering about three quarters of the surface area of the earth, the ocean is a critical source of sustenance, medicine, and commerce. However, such vast expanse in both surface area and depth, presents myriad observing challenges for researchers, such as corrosion, attenuation of electromagnetic waves, and high pressure. Ocean observation technologies are progressing from the conventional single node, static and short-term modalities to multiple nodes, dynamic and long-term modalities, to increase the density of both temporal and spatial samplings. Although people’s knowledge of the oceans has been still quite limited, the contributions of many nations cooperating to develop the Global Ocean Observing System (GOOS) have remarkably promoted the development of ocean observing technologies. This paper reviews the typical observing technologies deployed from the sea surface to the seafloor, and discusses the future trend of the ocean observation systems with the docking technology and sustained ocean energy.",
+    "url": "https://doi.org/10.1186/s10033-020-00449-z",
+    "authors": [
+      "Mingwei Lin",
+      "Canjun Yang"
+    ],
+    "tags": [
+      "Modalities",
+      "Sustenance",
+      "Remote sensing",
+      "Seafloor spreading",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-04-15",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2082001988",
+    "name": "A dipole mode in the tropical Indian Ocean",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/43854",
+    "authors": [
+      "N. H. Saji",
+      "B. N. Goswami",
+      "P. N. Vinayachandran",
+      "Toshio Yamagata"
+    ],
+    "tags": [
+      "Indian Ocean Dipole",
+      "Subtropical Indian Ocean Dipole",
+      "Climatology",
+      "Sea surface temperature",
+      "Precipitation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "1999-09-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2136848554",
+    "name": "Long-Term Real-Time Coastal Ocean Observation Networks",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.5670/oceanog.2000.50",
+    "authors": [
+      "Scott Glenn",
+      "Tommy D. Dickey",
+      "Bruce Parker",
+      "William C. Boicourt"
+    ],
+    "tags": [
+      "Term (time)",
+      "Oceanography",
+      "Environmental science",
+      "Climatology",
+      "Geology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2000-01-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2015531086",
+    "name": "The impact of animal platforms on polar ocean observation",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.dsr2.2012.07.007",
+    "authors": [
+      "M. A. Fedak"
+    ],
+    "tags": [
+      "Ocean observations",
+      "Oceanography",
+      "Marine ecosystem",
+      "Software deployment",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-07-16",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2058798415",
+    "name": "The Wave Glider: enabling a new approach to persistent ocean observation and research",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s10236-011-0408-5",
+    "authors": [
+      "T. L. Daniel",
+      "Justin Manley",
+      "Neil Trenaman"
+    ],
+    "tags": [
+      "Glider",
+      "Underwater glider",
+      "Thrust",
+      "Sea trial",
+      "Float (project management)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2011-06-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W3199226567",
+    "name": "Projected ocean warming constrained by the ocean observational record",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s41558-021-01151-1",
+    "authors": [
+      "Kewei Lyu",
+      "Xuebin Zhang",
+      "John Church"
+    ],
+    "tags": [
+      "Argo",
+      "Ocean heat content",
+      "Effects of global warming on oceans",
+      "Environmental science",
+      "Climatology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2021-09-13",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2041107800",
+    "name": "Pacific ocean circulation based on observation",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s10872-010-0034-8",
+    "authors": [
+      "Masaki Kawabe",
+      "Shinzou Fujio"
+    ],
+    "tags": [
+      "Geology",
+      "Oceanography",
+      "Ridge",
+      "Circumpolar star",
+      "Circumpolar deep water"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-04-26",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2050175553",
+    "name": "Observation of swell dissipation across oceans",
+    "source": "openalex",
+    "abstract": "Global observations of ocean swell, from satellite Synthetic Aperture Radar data, are used to estimate the dissipation of swell energy for a number of storms. Swells can be very persistent with energy e‐folding scales exceeding 20,000 km. For increasing swell steepness this scale shrinks systematically, down to 2800 km for the steepest observed swells, revealing a significant loss of swell energy. This value corresponds to a normalized energy decay in time β = 4.2 × 10 −6 s −1 . Many processes may be responsible for this dissipation. The increase of dissipation rate in dissipation with swell steepness is interpreted as a laminar to turbulent transition of the boundary layer, with a threshold Reynolds number of the order of 100,000. These observations of swell evolution open the way for more accurate wave forecasting models, and provide a constraint on swell‐induced air‐sea fluxes of momentum and energy.",
+    "url": "https://doi.org/10.1029/2008gl037030",
+    "authors": [
+      "Fabrice Ardhuin",
+      "Bertrand Chapron",
+      "Fabrice Collard"
+    ],
+    "tags": [
+      "Swell",
+      "Dissipation",
+      "Momentum (technical analysis)",
+      "Geology",
+      "Meteorology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2009-03-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2899115934",
+    "name": "Fiber optic sensors in ocean observation: A comprehensive review",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.ijleo.2018.10.186",
+    "authors": [
+      "C. R. Uma Kumari",
+      "Samiappan Dhanalakshmi",
+      "R. Kumar",
+      "Tata Sudhakar"
+    ],
+    "tags": [
+      "Optical fiber",
+      "Materials science",
+      "Interferometry",
+      "Fiber optic sensor",
+      "Photonic-crystal fiber"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-10-29",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2894168339",
+    "name": "Challenges for global ocean observation: the need for increased human capacity",
+    "source": "openalex",
+    "abstract": "Sustained global ocean observations are needed to recognise, understand, and manage changes in marine biodiversity, resources and habitats, and to implement wise conservation and sustainable development strategies. To meet this need, the Global Ocean Observing System (GOOS), a network of observing systems distributed around the world and coordinated by the Intergovernmental Oceanographic Commission (IOC) has proposed Essential Ocean Variables (EOVs) that are relevant to both the scientific and the broader community, including resource managers. Building a network that is truly global requires expanding participation beyond scientists from well-resourced countries to a far broader representation of the global community. New approaches are required to provide appropriate training, and resources and technology should follow to enable the application of this training to engage meaningfully in global observing networks and in the use of the data. Investments in technical capacity fulfil international reporting obligations under the UN Sustainable Development Goal 14A. Important opportunities are emerging now for countries to develop research partnerships with the IOC and GOOS to address these obligations. Implementing these partnerships requires new funding models and initiatives that support a sustained research capacity and marine technology transfer.",
+    "url": "https://doi.org/10.1080/1755876x.2018.1526463",
+    "authors": [
+      "Patricia Miloslavich",
+      "Sophie Seeyave",
+      "Frank Müller‐Karger",
+      "Nicholas J. Bax",
+      "Elham M. Ali",
+      "Cláudia Delgado",
+      "Hayley Evers-King",
+      "Benjamin R. Loveday",
+      "Vivian A. Lutz",
+      "Jan Newton",
+      "Glenn Nolan",
+      "Ana Carolina Peralta",
+      "Christine Traeger-Chatterjee",
+      "Ed Urban"
+    ],
+    "tags": [
+      "Capacity building",
+      "Business",
+      "Environmental resource management",
+      "Ocean observations",
+      "Marine conservation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-09-27",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2928785238",
+    "name": "A Harmonized Nitrous Oxide (N2O) Ocean Observation Network for the 21st Century",
+    "source": "openalex",
+    "abstract": "1. Abstract Nitrous oxide (N2O) is an important atmospheric trace gas involved in tropospheric warming and stratospheric ozone depletion. Estimates of the global ocean contribution to N2O emissions average 21 % (range: 10 to 53 %). Ongoing environmental changes such as warming, deoxygenation and acidification are affecting oceanic N2O cycling and emissions to the atmosphere. International activities over the last decades aimed at improving estimates of global N2O emissions, including (i) the MarinE MethanE and NiTrous Oxide database (MEMENTO) for archiving of quality-controlled data, and (ii) a recent large-scale inter-laboratory comparison by Working Group 143 of the Scientific Committee on Ocean Research (SCOR). To reduce uncertainties in oceanic N2O emission estimates and to characterize the spatial and temporal variability in N2O distributions in a changing ocean, we propose the establishment of a harmonized N2O Observation Network (N2O-ON) combining discrete and continuous data from various platforms. The network will integrate observations obtained by calibrated techniques, using time series measurements at fixed stations and repeated hydrographic sections on voluntary observing ships and research vessels. In addition to exploiting existing oceanographic infrastructure, we propose the establishment of central calibration facilities in selected international laboratories to improve accuracy, and ensure standardization and comparability of N2O measurements. Final data products will include a harmonized global N2O concentration and emission field for use in model validation and projections of future oceanic N2O emissions, to inform the global research community and policy makers.",
+    "url": "https://doi.org/10.3389/fmars.2019.00157",
+    "authors": [
+      "Hermann W. Bange",
+      "Damian L. Arévalo‐Martínez",
+      "Mercedes de la Paz",
+      "Laura Farı́as",
+      "Jan Kaiser",
+      "Annette Kock",
+      "Cliff S. Law",
+      "Andrew P. Rees",
+      "Gregor Rehder",
+      "Philippe D. Tortell",
+      "Robert C. Upstill‐Goddard",
+      "Samuel T. Wilson"
+    ],
+    "tags": [
+      "Environmental science",
+      "Greenhouse gas",
+      "Trace gas",
+      "Ocean chemistry",
+      "Nitrous oxide"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-04-02",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2953462709",
+    "name": "Observing System Evaluation Based on Ocean Data Assimilation and Prediction Systems: On-Going Challenges and a Future Vision for Designing and Supporting Ocean Observational Networks",
+    "source": "openalex",
+    "abstract": "This paper demonstrates the value of Observing System Evaluation (OS-Eval) efforts which have been made or are ongoing to contribute to observing system review and design with the support of Ocean Data Assimilation and Prediction (ODAP) communities such as GODAE OceanView and CLIVAR-GSOP, by highlighting examples that illustrate the potential of the related OS-Eval methodologies and recent achievements. For instance, Observing System Experiment (OSE) studies illustrate the impacts of the severe decrease in the number of TAO buoys during 2012-2014 and TRITON buoys since 2013 on ODAP system performance. Multi-system evaluation of the impacts of assimilating satellite sea surface salinity data based on OSEs has been performed to demonstrate the need to continue and enhance satellite salinity missions. Impacts of underwater gliders have been assessed using Observing System Simulation Experiments (OSSEs) to provide guidance on effective coordination of the western North Atlantic observing system elements. OSSEs are also being performed under H2020 AtlantOS project with the goal to enhance and optimize the Atlantic in-situ networks. Potential of future satellite missions of wide-swash altimetry and surface ocean currents monitoring is explored through OSSEs and evaluation of Degrees of Freedom for Signal (DFS). Forecast Sensitivity Observation Impacts (FSOI) are routinely evaluated for monitoring the ocean observation impacts in the US Navy’s ODAP system. Perspective on the extension of OS-Eval to the deep ocean, polar regions, coupled data assimilation, and biogeochemical applications are also presented. Based on the examples above, we identify the limitations of OS-Eval, indicating that the most significant limitation is reduction of robustness and reliability of the results due to their system-dependency. Inability of performing evaluation in near real time is also critical. A strategy to mitigate the limitation and to strengthen the impact of evaluations is discussed. In particular, we emphasize the importance of collaboration within the ODAP community for multi-system evaluation and communication with ocean observational communities on the design of OS-Eval, required resources, and effective distribution of the results. Finally, we recommend to further develop OS-Eval activities at international level with the support of the international ODAP (e.g., OceanPredict and CLIVAR-GSOP) and observational communities.",
+    "url": "https://doi.org/10.3389/fmars.2019.00417",
+    "authors": [
+      "Yosuke Fujii",
+      "Élisabeth Rémy",
+      "Hao Zuo",
+      "Peter R. Oke",
+      "George R. Halliwell",
+      "Florent Gasparin",
+      "Mounir Benkiran",
+      "Nora Loose",
+      "James Cummings",
+      "Jiping Xie",
+      "Yan Xue",
+      "Shuhei Masuda",
+      "G. C. Moore Smith",
+      "Magdalena Balmaseda",
+      "Cyril Germineaud",
+      "Daniel J. Lea",
+      "Gilles Larnicol",
+      "Laurent Bertino",
+      "Antonio Bonaduce",
+      "Pierre Brasseur",
+      "Craig Donlon",
+      "Patrick Heimbach",
+      "Young Ho Kim",
+      "Villy Kourafalou",
+      "Pierre‐Yves Le Traon",
+      "Matthew Martin",
+      "Shastri Paturi",
+      "B. Tranchant",
+      "Norihisa Usui"
+    ],
+    "tags": [
+      "Data assimilation",
+      "Environmental science",
+      "Ocean observations",
+      "Satellite",
+      "Meteorology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-07-29",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.3403/30349200u",
+    "name": "Marine technology � Ocean observation systems � Design criteria of ocean hydro-meteorological observation systems reuse and interaction",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3403/30349200u",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-08-18T20:30:19Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.3403/30349200",
+    "name": "Marine technology � Ocean observation systems � Design criteria of ocean hydro-meteorological observation systems reuse and interaction",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3403/30349200",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-08-18T20:30:19Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.21236/ada597721",
+    "name": "Trident Warrior 2013 Ocean Observation Impact on Ocean Forecasts",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.21236/ada597721",
+    "authors": [
+      "Gregg Jacobs"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2017-07-25T17:23:59Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.21236/ada306623",
+    "name": "Theory and Observation of Ocean Fronts: Indian Ocean Drifters.",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.21236/ada306623",
+    "authors": [
+      "Donald B. Olson"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2017-08-30T20:32:05Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/oetic53770.2021",
+    "name": "2021 IEEE Ocean Engineering Technology and Innovation Conference: Ocean Observation, Technology and Innovation in Support of Ocean Decade of Science (OETIC)",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/oetic53770.2021",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2022-03-17T20:37:46Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.54499/2024.06057.bdana",
+    "name": "",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.54499/2024.06057.bdana",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2026-07-03T13:21:18Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.36266/ijwr/118",
+    "name": "Observation of Upwelling Process Using Ocean Parameters along the Visakhapatnam Coast",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.36266/ijwr/118",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2026-08-01T11:09:33Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.21236/ada243064",
+    "name": "Theory and Observation of Ocean Frontal Zones",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.21236/ada243064",
+    "authors": [
+      "Donald B. Olson"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2017-09-06T12:54:12Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/oetic53770.2021.9733721",
+    "name": "[Back cover]",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/oetic53770.2021.9733721",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2022-03-17T20:56:33Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.3390/books978-3-7258-4356-5",
+    "name": "Advanced Sensing Technology for Ocean Observation",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.3390/books978-3-7258-4356-5",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2025-06-30T08:01:36Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/oetic53770.2021.9733735",
+    "name": "[Copyright notice]",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/oetic53770.2021.9733735",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2022-03-17T20:56:33Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/oetic53770.2021.9733720",
+    "name": "[Front cover]",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/oetic53770.2021.9733720",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2022-03-17T20:56:33Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2145461394",
+    "name": "Seaglider: a long-range autonomous underwater vehicle for oceanographic research",
+    "source": "openalex",
+    "abstract": "Seagliders are small, reusable autonomous underwater vehicles designed to glide from the ocean surface to a programmed depth and back while measuring temperature, salinity, depth-averaged current, and other quantities along a sawtooth trajectory through the water. Their low hydrodynamic drag and wide pitch control range allow glide slopes in the range 0.2 to 3. They are designed for missions in a range of several thousand kilometers and durations of many months. Seagliders are commanded remotely and report their measurements in near real time via wireless telemetry. The development and operation of Seagliders and the results of field trials in Puget Sound are reported.",
+    "url": "https://doi.org/10.1109/48.972073",
+    "authors": [
+      "Charles C. Eriksen",
+      "T. James Osse",
+      "R.D. Light",
+      "Tsrong-Yi Wen",
+      "T.W. Lehman",
+      "P.L. Sabin",
+      "J. William O. Ballard",
+      "A. M. Chiodi"
+    ],
+    "tags": [
+      "Underwater",
+      "Sawtooth wave",
+      "Range (aeronautics)",
+      "Drag",
+      "Telemetry"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2001-01-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2937359304",
+    "name": "Advancements in the field of autonomous underwater vehicle",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.oceaneng.2019.04.011",
+    "authors": [
+      "Avilash Sahoo",
+      "Santosha K. Dwivedy",
+      "P. S. Robi"
+    ],
+    "tags": [
+      "Underwater",
+      "Sonar",
+      "Computer science",
+      "Motion planning",
+      "Inertial navigation system"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-04-15",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2021082829",
+    "name": "Autonomous Underwater Vehicles (AUVs): Their past, present and future contributions to the advancement of marine geoscience",
+    "source": "openalex",
+    "abstract": "Autonomous Underwater Vehicles (AUVs) have a wide range of applications in marine geoscience, and are increasingly being used in the scientific, military, commercial, and policy sectors. Their ability to operate autonomously of a host vessel makes them well suited to exploration of extreme environments, from the world's deepest hydrothermal vents to beneath polar ice sheets. They have revolutionised our ability to image the seafloor, providing higher resolution seafloor mapping data than can be achieved from surface vessels, particularly in deep water. This contribution focuses on the major advances in marine geoscience that have resulted from AUV data. The primary applications are i) submarine volcanism and hydrothermal vent studies, ii) mapping and monitoring of low-temperature fluid escape features and chemosynthetic ecosystems, iii) benthic habitat mapping in shallow- and deep-water environments, and iv) mapping of seafloor morphological features (e.g. bedforms generated beneath ice or sediment-gravity flows). A series of new datasets is presented that highlight the growing versatility of AUVs for marine geoscience studies, including i) multi-frequency acoustic imaging of trawling impacts on deep-water coral mounds, iii) collection of high-resolution seafloor photomosaics at abyssal depths, and iii) velocity measurements of active submarine density flows. Future developments in AUV technology of potential relevance to marine geoscience include new vehicles with enhanced hovering, long endurance, extreme depth, or rapid response capabilities, while development of new sensors will further expand the range of geochemical parameters that can be measured.",
+    "url": "https://doi.org/10.1016/j.margeo.2014.03.012",
+    "authors": [
+      "Russell B. Wynn",
+      "Veerle A.I. Huvenne",
+      "T. P. Le Bas",
+      "Bramley J. Murton",
+      "Douglas P. Connelly",
+      "Brian J. Bett",
+      "Henry A. Ruhl",
+      "Kirsty J. Morris",
+      "Jeff Peakall",
+      "Daniel R. Parsons",
+      "E. J. Sumner",
+      "Stephen E. Darby",
+      "R. M. Dorrell",
+      "James E. Hunt"
+    ],
+    "tags": [
+      "Seafloor spreading",
+      "Geology",
+      "Submarine",
+      "Underwater",
+      "Oceanography"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2014-03-23",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2036316876",
+    "name": "Leader–follower formation control of underactuated autonomous underwater vehicles",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.oceaneng.2010.07.006",
+    "authors": [
+      "Rongxin Cui",
+      "Shuzhi Sam Ge",
+      "Bernard Voon Ee How",
+      "Yoo Sang Choo"
+    ],
+    "tags": [
+      "Underactuation",
+      "Control theory (sociology)",
+      "Backstepping",
+      "Trajectory",
+      "Parametric statistics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-09-17",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2146500120",
+    "name": "Path Planning for Autonomous Underwater Vehicles",
+    "source": "openalex",
+    "abstract": "Efficient path-planning algorithms are a crucial issue for modern autonomous underwater vehicles. Classical path-planning algorithms in artificial intelligence are not designed to deal with wide continuous environments prone to currents. We present a novel Fast Marching (FM)-based approach to address the following issues. First, we develop an algorithm we call FM* to efficiently extract a 2-D continuous path from a discrete representation of the environment. Second, we take underwater currents into account thanks to an anisotropic extension of the original FM algorithm. Third, the vehicle turning radius is introduced as a constraint on the optimal path curvature for both isotropic and anisotropic media. Finally, a multiresolution method is introduced to speed up the overall path-planning process.",
+    "url": "https://doi.org/10.1109/tro.2007.895057",
+    "authors": [
+      "Clment Petres",
+      "Yan Pailhas",
+      "Pedro Patrón",
+      "Yvan Pétillot",
+      "Jonathan Evans",
+      "David M. Lane"
+    ],
+    "tags": [
+      "Motion planning",
+      "Path (computing)",
+      "Underwater",
+      "Computer science",
+      "Fast marching method"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2007-04-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W1544853044",
+    "name": "Verification of a six-degree of freedom simulation model for the REMUS autonomous underwater vehicle",
+    "source": "openalex",
+    "abstract": "Improving the performance of modular, low-cost autonomous underwater vehicles (AUVs) in such applications as long-range oceanographic survey, autonomous docking, and shallow-water mine countermeasures requires improving the vehicles' maneuvering precision and battery life. These goals can be achieved through the improvement of the vehicle control system. A vehicle dynamics model based on a combination of theory and empirical data would provide an efficient platform for vehicle control system development, and an alternative to the typical trial-and-error method of vehicle control system field tuning. As there exists no standard procedure for vehicle modeling in industry, the simulation of each vehicle system represents a new challenge. Developed by von Alt and associates at the Woods Hole Oceanographic Institute, the REMUS AUV is a small, low-cost platform serving in a range of oceanographic applications. This thesis describes the development and verification of a six degree of freedom, non-linear simulation model for the REMUS vehicle, the first such model for this platform. In this model, the external forces and moments resulting from hydrostatics, hydrodynamic lift and drag, added mass, and the control inputs of the vehicle propeller and fins are all defined in terms of vehicle coefficients. This thesis describes the derivation of these coefficients in detail. The equations determining the coefficients, as well as those describing the vehicle rigid-body dynamics, are left in non-linear form. to better simulate the inherently non-linear behavior of the vehicle. Simulation of the vehicle motion is achieved through numeric integration of the equations of motion. The simulator output is then checked against vehicle dynamics data collected in experiments performed at sea. The simulator is shown to accurately model the motion of the vehicle.",
+    "url": "https://doi.org/10.1575/1912/3040",
+    "authors": [
+      "Timothy Prestero"
+    ],
+    "tags": [
+      "Underwater",
+      "Degree (music)",
+      "Computer science",
+      "Simulation",
+      "Physics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2001-01-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2108905276",
+    "name": "Autonomous Underwater Vehicle Navigation",
+    "source": "openalex",
+    "abstract": "This paper considers the vehicle navigation problem for an autonomous underwater vehicle (AUV) with six degrees of freedom. We approach this problem using an error state formulation of the Kalman filter. Integration of the vehicle's high-rate inertial measurement unit's (IMU's) accelerometers and gyros allow time propagation while other sensors provide measurement corrections. The low-rate aiding sensors include a Doppler velocity log (DVL), an acoustic long baseline (LBL) system that provides round-trip travel times from known locations, a pressure sensor for aiding depth, and an attitude sensor. Measurements correct the filter independently as they arrive, and as such, the filter is not dependent on the arrival of any particular measurement. We propose novel tightly coupled techniques for the incorporation of the LBL and DVL measurements. In particular, the LBL correction properly accounts for the error state throughout the measurement cycle via the state transition matrix. Alternate tightly coupled approaches ignore the error state, utilizing only the navigation state to account for the physical latencies in the measurement cycle. These approaches account for neither the uncertainty of vehicle trajectory between interrogation and reply, nor the error state at interrogation. The navigation system also estimates critical sensor calibration parameters to improve performance. The result is a robust navigation system. Simulation and experimental results are provided.",
+    "url": "https://doi.org/10.1109/joe.2010.2052691",
+    "authors": [
+      "Paul Miller",
+      "Jay A. Farrell",
+      "Yuanyuan Zhao",
+      "Vladimir Djapic"
+    ],
+    "tags": [
+      "Inertial navigation system",
+      "Inertial measurement unit",
+      "Accelerometer",
+      "Kalman filter",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-07-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2164443866",
+    "name": "Cooperative Localization for Autonomous Underwater Vehicles",
+    "source": "openalex",
+    "abstract": "This paper describes an algorithm for distributed acoustic navigation for Autonomous Underwater Vehicles (AUVs). Whereas typical AUV navigation systems utilize pre-calibrated arrays of static transponders, our work seeks to create a fully mobile network of AUVs that perform acoustic ranging and data exchange with one another to achieve cooperative positioning for extended duration missions over large areas. The algorithm enumerates possible solutions for the AUV trajectory based on dead-reckoning and range-only measurements provided by acoustic modems that are mounted on each vehicle, and chooses the trajectory via minimization of a cost function based on these constraints. The resulting algorithm is computationally efficient, meets the strict bandwidth requirements of available AUV modems, and has potential to scale well to networks of large numbers of vehicles. The method has undergone extensive experimentation, and results from three different scenarios are reported in this paper, each of which utilizes MIT SCOUT Autonomous Surface Craft (ASC) as convenient platforms for testing. In the first experiment, we utilize three ASCs, each equipped with a Woods Hole acoustic modem, as surrogates for AUVs. In this scenario, two ASCs serve as Communication/Navigation Aids (CNAs) for a third ASC that computes its position based exclusively on GPS positions of the CNAs and acoustic range measurements between platforms. In the second scenario, an undersea glider is used in conjunction with two ASCs serving as CNAs. Finally, in the third experiment, a Bluefin12 AUV serves as the target vehicle. All three experiments demonstrate the successful operation of the technique with real ocean data.",
+    "url": "https://doi.org/10.1177/0278364908100561",
+    "authors": [
+      "Alexander Bähr",
+      "John J. Leonard",
+      "Maurice Fallon"
+    ],
+    "tags": [
+      "Glider",
+      "Underwater",
+      "Dead reckoning",
+      "Global Positioning System",
+      "Trajectory"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2009-05-20",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W1541628165",
+    "name": "Technology and Applications of Autonomous Underwater Vehicles",
+    "source": "openalex",
+    "abstract": "Autonomous underwater vehicles - robot submarines - are revolutionizing the way in which researchers and industry obtain data. Advances in technology have resulted in capable vehicles that have made new discoveries on how the oceans work and have dramatically reduced the cost to industry of surveying the seabed. Technology and Applications of Autonomous Underwater Vehicles describes the technologies that have made this happen and a host of applications from fish abundance studies to finding diamonds beneath the sea. This book will help the next generation of engineers and scientists in academia, industry, and government laboratories to continue in research, defense, and industry.",
+    "url": "https://doi.org/10.1201/9780203522301",
+    "authors": [],
+    "tags": [
+      "Underwater",
+      "Marine engineering",
+      "Computer science",
+      "Engineering",
+      "Geology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-11-28",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W4321793256",
+    "name": "Autonomous Underwater Vehicle navigation: A review",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.oceaneng.2023.113861",
+    "authors": [
+      "Bingbing Zhang",
+      "Daxiong Ji",
+      "Shuo Liu",
+      "Xinke Zhu",
+      "Wen Xu"
+    ],
+    "tags": [
+      "Dead reckoning",
+      "Underwater",
+      "Mobile robot navigation",
+      "Intervention AUV",
+      "Navigation system"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2023-02-24",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2148021103",
+    "name": "Navigation Technologies for Autonomous Underwater Vehicles",
+    "source": "openalex",
+    "abstract": "With recent advances in battery capacity and the development of hydrogen fuel cells, autonomous underwater vehicles (AUVs) are being used to undertake longer missions that were previously performed by manned or tethered vehicles. As a result, more advanced navigation systems are needed to maintain an accurate position over a larger operational area. The accuracy of the navigation system is critical to the quality of the data collected during survey missions and the recovery of the AUV. Many different methods for navigation in different underwater environments have been proposed in the literature. In this correspondence paper, the state of the art in navigation technologies for AUVs is investigated for theoretical and operational systems. Their suitability for use in different environments is compared and current limitations of these methods are identified. In addition, new approaches to address these current problems and areas for future research are suggested. Finally, it is concluded that only geophysically referenced methods will enable AUVs to navigate accurately over large areas and that advances in underwater feature recognition are required before these methods can be implemented in operational AUVs.",
+    "url": "https://doi.org/10.1109/tsmcc.2008.919147",
+    "authors": [
+      "L. Stutters",
+      "Honghai Liu",
+      "C. Tiltman",
+      "David Brown"
+    ],
+    "tags": [
+      "Underwater",
+      "Computer science",
+      "Systems engineering",
+      "Navigation system",
+      "Real-time computing"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2008-06-20",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2774922731",
+    "name": "Trajectory Tracking Control of an Autonomous Underwater Vehicle Using Lyapunov-Based Model Predictive Control",
+    "source": "openalex",
+    "abstract": "This paper studies the trajectory tracking control problem of an autonomous underwater vehicle (AUV). We develop a novel Lyapunov-based model predictive control (LMPC) framework for the AUV to utilize computational resource (online optimization) to improve the trajectory tracking performance. Within the LMPC framework, the practical constraints, such as actuator saturation, can be explicitly considered. Also, the thrust allocation subproblem can be addressed simultaneously with the LMPC controller design. Taking advantage of a nonlinear backstepping tracking control law, we construct the contraction constraint in the formulated LMPC problem so that the closed-loop stability is theoretically guaranteed. Sufficient conditions that ensure the recursive feasibility, and hence the closed-loop stability, are provided analytically. A guaranteed region of attraction is explicitly characterized. In the meantime, the robustness of the tracking control can be improved by the receding horizon implementation that is adopted in the LMPC control algorithm. Simulation results on the Saab SeaEye Falcon model AUV demonstrate the significantly enhance trajectory tracking control performance via the proposed LMPC method.",
+    "url": "https://doi.org/10.1109/tie.2017.2779442",
+    "authors": [
+      "Chao Shen",
+      "Yang Shi",
+      "Bradley J. Buckham"
+    ],
+    "tags": [
+      "Control theory (sociology)",
+      "Trajectory",
+      "Computer science",
+      "Backstepping",
+      "Model predictive control"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2017-12-04",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1990.110457",
+    "name": "A technique for autonomous underwater vehicle route planning",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1990.110457",
+    "authors": [
+      "C.W. Warren"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-12-04T19:27:50Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1990.110433",
+    "name": "Software structure for a simple autonomous underwater vehicle",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1990.110433",
+    "authors": [
+      "O.J. Rodseth"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-12-04T14:27:50Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1996.532394",
+    "name": "Proceedings of Symposium on Autonomous Underwater Vehicle Technology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1996.532394",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-11-20T20:47:34Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1990.110432",
+    "name": "Advanced autonomous underwater vehicle software architecture",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1990.110432",
+    "authors": [
+      "R.B. Schudy",
+      "C.N. Duarte"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-12-04T14:27:50Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1994.518598",
+    "name": "1994 Symposium on Autonomous Underwater Vehicle Technology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1994.518598",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2013-04-08T11:38:26Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1990.110466",
+    "name": "'New technology' magnetic attitude sensors in autonomous underwater vehicle (AUV) applications",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1990.110466",
+    "authors": [
+      "J.T. Fowler"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-12-04T14:27:50Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1996.532434",
+    "name": "Acoustic video-signal transmission system for autonomous underwater vehicle",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1996.532434",
+    "authors": [
+      "J. Kojima",
+      "Y. Shirasaki"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-12-23T18:52:33Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1990.110462",
+    "name": "Optimization of acoustic sensors for autonomous underwater vehicle applications",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1990.110462",
+    "authors": [
+      "D.A. Summa",
+      "J.W. Amos",
+      "G.P. Coble"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-12-04T19:27:50Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1990.110474",
+    "name": "Proceedings of the Symposium on Autonomous Underwater Vehicle Technology. AUV '90 (Cat. No.90CH2856-3)",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1990.110474",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-11-20T16:44:01Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1990.110435",
+    "name": "Fault-tolerant design optimization: application to an autonomous underwater vehicle navigation system",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1990.110435",
+    "authors": [
+      "P.S. Babcock",
+      "J.J. Zinchuk"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-12-04T19:27:50Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1990.110446",
+    "name": "A mission planning expert system for an autonomous underwater vehicle",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1990.110446",
+    "authors": [
+      "S.H. Kwak",
+      "S.M. Ong",
+      "R.B. McGhee"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2002-12-04T19:27:50Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1109/auv.1992.225225",
+    "name": "The application of the correlation sonar to autonomous underwater vehicle navigation",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1109/auv.1992.225225",
+    "authors": [
+      "B.L. Grose"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2003-01-02T12:45:18Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W289441223",
+    "name": "Subsea Engineering Handbook",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/c2016-0-03767-1",
+    "authors": [],
+    "tags": [
+      "Subsea",
+      "Engineering",
+      "Marine engineering",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-11-23",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W247605118",
+    "name": "Subsea Pipeline Engineering",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://openalex.org/W247605118",
+    "authors": [
+      "Andrew C. Palmer",
+      "Roger A. King"
+    ],
+    "tags": [
+      "Subsea",
+      "Pipeline (software)",
+      "Engineering",
+      "Marine engineering",
+      "Petroleum engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2004-10-26",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2492458258",
+    "name": "Overview of Subsea Engineering",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-1-85617-689-7.10001-9",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [
+      "Subsea",
+      "Wellhead",
+      "Submarine pipeline",
+      "Pipeline transport",
+      "Engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-01-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2136883402",
+    "name": "Subsea engineering ROV and seafloor observatory construction",
+    "source": "openalex",
+    "abstract": "Marine science starts shifting from the age of the exploration in the age of the observation. For the abyss research, submarine cabled seafloor observation is one of the expected engineering approaches to be realized real-time and long term observation of natural phenomenon. The DONET (Dense Ocean-floor Network system for Earthquakes and Tsunamis) is a submarine cabled seafloor observatory network design for earthquakes and tsunamis monitoring at the western part of the Pacific Rim. Twenty set of high performance observatories are installed to the seafloor in this project. One of the most difficult engineering in the project is to establish construction method of complex sensor observatory on seafloor. The use of ROV is necessary in the subsea construction. This paper describes the construction method of seafloor seismic observatory, tools design for construction, and experience result in an actual field.",
+    "url": "https://doi.org/10.1109/ut.2011.5774090",
+    "authors": [
+      "Katsuyoshi Kawaguchi",
+      "Eiichiro Araki",
+      "Sho Kaneko",
+      "T. Nishida",
+      "T Komine"
+    ],
+    "tags": [
+      "Seafloor spreading",
+      "Subsea",
+      "Submarine",
+      "Observatory",
+      "Remotely operated underwater vehicle"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2011-04-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W4248828610",
+    "name": "Overview of Subsea Engineering",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-812622-6.00001-4",
+    "authors": [
+      "Yong Bai",
+      "Qiang Baï"
+    ],
+    "tags": [
+      "Subsea",
+      "Wellhead",
+      "Submarine pipeline",
+      "Pipeline transport",
+      "Engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-11-23",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2922722781",
+    "name": "An Integrated FTA-FMEA Model for Risk Analysis of Engineering Systems: A Case Study of Subsea Blowout Preventers",
+    "source": "openalex",
+    "abstract": "Engineering systems such as energy production facilities, aviation systems, maritime vessels, etc. continue to grow in size and complexity. This growth has made the identification, quantification and mitigation of risks associated with the failure of such systems so complicated. To solve this problem, several advanced techniques such as Fault Tree Analysis (FTA), Failure Mode and Effects Analysis (FMEA), Reliability-Block Diagram (RBD), Reliability-Centered Maintenance (RCM), Monte-Carlo Simulation (MCS), Markov Analysis (MA) and Bayesian Networks (BN) have been developed in the literature. In order to improve the strengths and eliminate the drawbacks of classical techniques, some hybrid models have been recently developed. In this paper, an integrated FTA and FMEA model is proposed for risk analysis of safety-critical systems. Minimal cut sets derived from the fault trees are weighted based on Birnbaum’s measure of importance and then the weights are used to revise Risk Priority Numbers (RPNs) obtained from the use of traditional FMEA techniques. The proposed model is applied to a Blowout Preventer (BOP) system operating under erratic and extreme conditions in a subsea oil and gas field. Though those failures caused by kill valves and hydraulic lines remain among the top risks in the BOP system, significant differences are revealed in risk rankings when the results from the hybrid approach are compared with those obtained from the classical risk analysis methods.",
+    "url": "https://doi.org/10.3390/app9061192",
+    "authors": [
+      "Mahmood Shafiee",
+      "Evenye Enjema",
+      "Athanasios Kolios"
+    ],
+    "tags": [
+      "Subsea",
+      "Fault tree analysis",
+      "Reliability engineering",
+      "Failure mode and effects analysis",
+      "Reliability (semiconductor)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-03-21",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W4234445162",
+    "name": "Subsea System Engineering",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-812622-6.00012-9",
+    "authors": [
+      "Yong Bai",
+      "Qiang Baï"
+    ],
+    "tags": [
+      "Flow assurance",
+      "Subsea",
+      "Petroleum engineering",
+      "Engineering",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-11-23",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W4394788952",
+    "name": "A comparative review of subsea navigation technologies in offshore engineering projects",
+    "source": "openalex",
+    "abstract": "Subsea navigation technologies play a critical role in enhancing precision and efficiency in offshore engineering projects. This comparative review examines the evolution and application of subsea navigation systems, with a focus on improving precision in offshore construction and surveying. The study evaluates various subsea navigation technologies, including acoustic positioning systems, inertial navigation systems, and optical imaging systems, highlighting their capabilities and limitations. The review begins by discussing the historical development of subsea navigation technologies, tracing their evolution from early acoustic systems to modern integrated solutions. It then explores the key components and operation principles of each technology, providing insights into their functionalities and suitability for different offshore applications. The study also examines the challenges and advancements in subsea navigation, including issues related to signal interference, accuracy, and real-time data processing. It discusses how these challenges have been addressed through technological innovations, such as improved sensor technologies and advanced data fusion algorithms. Furthermore, the review assesses the practical application of subsea navigation technologies in offshore engineering projects, including pipeline installation, subsea infrastructure maintenance, and underwater surveying. It analyzes case studies and industry practices to illustrate the effectiveness of these technologies in improving precision, reducing costs, and mitigating risks in offshore operations. Overall, this comparative review provides a comprehensive overview of subsea navigation technologies in offshore engineering projects. It highlights the evolution, capabilities, and applications of these technologies, emphasizing their role in enhancing precision and efficiency in offshore construction and surveying. The study concludes with recommendations for future research and development to further improve the performance and reliability of subsea navigation systems in offshore operations.",
+    "url": "https://doi.org/10.53294/ijfetr.2024.6.2.0031",
+    "authors": [
+      "Osayi Philip Igbinenikaro",
+      "Oladipo Olugbenga Adekoya",
+      "Emmanuel Augustine Etukudoh"
+    ],
+    "tags": [
+      "Subsea",
+      "Systems engineering",
+      "Submarine pipeline",
+      "Engineering",
+      "Construction engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2024-04-13",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W4391934300",
+    "name": "Mitigating suspended-sediment environmental pressure in subsea engineering through colliding turbidity currents",
+    "source": "openalex",
+    "abstract": "Turbidity currents have extensively been explored in quiescent environments. However, during several underwater activities (e.g., dredging and deep sea mining), generated turbidity currents could travel in opposite directions and interact with each other, which could largely influence their hydrodynamics and sediment transport capacity. Therefore, we carried out a set of dual-lock-exchange experiments to study the interaction of colliding turbidity currents. Our experimental results show that the interaction of identical currents results in the reflection of both currents with almost no mixing, forcing them to travel in the opposite direction of the pre-collision one. In contrast, when a turbidity current interacts with a lighter, less-energetic current, clear mixing is observed. Furthermore, it is revealed that the collision of turbidity currents reduces the suspended sediment transported by them, which is favorable from an environmental point of view, and slightly increases the vertical dispersion of particles. In the case of two identical counterflowing currents, a 35% reduction in mass flux, accompanied by a 6% increase in turbidity current thickness was observed in our experiments.",
+    "url": "https://doi.org/10.1016/j.rineng.2024.101916",
+    "authors": [
+      "Said Alhaddad",
+      "Mohamed Elerian"
+    ],
+    "tags": [
+      "Turbidity current",
+      "Turbidity",
+      "Current (fluid)",
+      "Mixing (physics)",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2024-02-19",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2931328216",
+    "name": "Inspection and monitoring systems subsea pipelines: A review paper",
+    "source": "openalex",
+    "abstract": "One of the largest movers of the world economy is the oil and gas industry. The industry generates billions of barrels of oil to match more than half the world’s energy demands. Production of energy products at such a massive scale is supported by the equally massive oil and gas infrastructure sprawling around the globe. Especially characteristic of the industry are vast networks of pipelines that traverse tens of thousands of miles of land and sea to carry oil and gas from the deepest parts of the earth to faraway destinations. With such lengths come increased chances for damage, which can have disastrous consequences owing to the hazardous substances typically carried by pipelines. Subsea pipelines in particular face increased risk due to the typically harsher environments, the difficulty of accessing deepwater pipelines, and the possibility of sea currents spreading leaked oil across a wide area. The opportunity for research and engineering to overcome the challenge of subsea inspection and monitoring is tremendous and the progress in this area is continuously generating exciting new developments that may have far reaching benefits far outside of subsea pipeline inspection and monitoring. Thus, this review covers the most often used subsea inspection and monitoring technologies as well as their most recent developments and future trends.",
+    "url": "https://doi.org/10.1177/1475921719837718",
+    "authors": [
+      "Michael Ho",
+      "S. El-Borgi",
+      "Devendra Patil",
+      "Gangbing Song"
+    ],
+    "tags": [
+      "Subsea",
+      "Pipeline transport",
+      "Petroleum industry",
+      "Fossil fuel",
+      "Pipeline (software)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-04-02",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2479851332",
+    "name": "Subsea System Engineering",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-1-85617-689-7.10012-3",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [
+      "Flow assurance",
+      "Subsea",
+      "Petroleum engineering",
+      "Engineering",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-01-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "oa:W2334007714",
+    "name": "Evidence-based practice in subsea engineering",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.3723/ut.32.231",
+    "authors": [
+      "Sirous Yasseri"
+    ],
+    "tags": [
+      "Subsea",
+      "Marine engineering",
+      "Computer science",
+      "Engineering",
+      "Systems engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2015-03-01",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-812622-6.00012-9",
+    "name": "Subsea System Engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-812622-6.00012-9",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-11-23T14:01:19Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-1-85617-689-7.10012-3",
+    "name": "Subsea System Engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-1-85617-689-7.10012-3",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-12-14T04:43:50Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.53964/mset",
+    "name": "Modern Subsea Engineering and Technology",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.53964/mset",
+    "authors": [],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2023-03-31T03:35:15Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-1-85617-689-7.10001-9",
+    "name": "Overview of Subsea Engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-1-85617-689-7.10001-9",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-12-14T09:43:50Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-397804-2.00001-1",
+    "name": "Overview of Subsea Engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-397804-2.00001-1",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-03-01T16:37:46Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-812622-6.00001-4",
+    "name": "Overview of Subsea Engineering",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-812622-6.00001-4",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-11-23T19:01:08Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-397804-2.00027-8",
+    "name": "Subsea Pipelines",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-397804-2.00027-8",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-03-01T11:36:24Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-1-85617-689-7.10006-8",
+    "name": "Subsea Cost Estimation",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-1-85617-689-7.10006-8",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-12-14T04:43:50Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-812622-6.00007-5",
+    "name": "Subsea Control",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-812622-6.00007-5",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-11-23T19:01:15Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-397804-2.00019-9",
+    "name": "Subsea Manifolds",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-397804-2.00019-9",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-03-01T16:36:06Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-812622-6.00008-7",
+    "name": "Subsea Power Supply",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-812622-6.00008-7",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-11-23T19:01:17Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
+  },
+  {
+    "id": "doi:10.1016/b978-0-12-812622-6.00026-9",
+    "name": "Subsea Processing",
+    "source": "crossref",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/b978-0-12-812622-6.00026-9",
+    "authors": [
+      "Yong Bai",
+      "Qiang Bai"
+    ],
+    "tags": [],
+    "confidence": 0.7,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-11-23T19:01:44Z",
+    "addedAt": "2026-08-05T01:47:54.265Z"
   }
 ]
