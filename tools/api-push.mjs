@@ -1,16 +1,22 @@
 #!/usr/bin/env node
 /**
- * GitHub REST API 推送备用通道
+ * GitHub REST API 推送备用通道（健壮版）
  *
  * 用途：当 github.com 的 git 传输端口不可达、但 api.github.com 仍可访问时
- * （国内网络常见的间歇性阻断），用 REST API 把本地已提交的变更同步到远端。
+ * （国内网络常见的间歇性阻断），用 REST API 把本地已提交的内容同步到远端。
+ *
+ * 关键改进（相较旧版）：
+ *   旧版依赖本地 `origin/master` 引用计算差异；当该引用因“经 API 推送”而
+ *   与远端分叉、又未 fetch 对齐时，会算出错误的文件集 → HTTP 422 BadObjectState。
+ *   本版**完全不信任本地 origin/master**：直接拉取远端真实 base tree，与本地
+ *   HEAD tree 逐路径比对（path→sha 映射），只对“内容不同/新增”的文件造 blob，
+ *   在远端 base tree 之上建新 tree → 永不产生与远端冲突的差异。
  *
  * 凭据来源：git credential helper（不接受命令行传入 token，避免泄漏到进程列表/日志）。
  *
  * 用法：
- *   node tools/api-push.mjs                     # 推送 HEAD 相对 origin/master 的全部改动文件
- *   node tools/api-push.mjs --range HEAD~1..HEAD # 指定差异范围（本地与远端历史分叉后常用）
- *   node tools/api-push.mjs --dry-run           # 只打印将要推送的文件
+ *   node tools/api-push.mjs            # 推送本地 HEAD 相对远端真实 base 的全部改动
+ *   node tools/api-push.mjs --dry-run  # 只打印将要推送的文件
  *
  * 注意：本工具用 API 直接在远端造 commit，本地历史会与远端分叉。
  * 网络恢复后建议执行 git fetch origin && git reset --hard origin/master 对齐。
@@ -41,29 +47,6 @@ function getToken() {
   return m[1].trim();
 }
 
-/** 解码 git 对含非 ASCII 文件名做的引号+八进制转义（如 "GeneTech14\347\253\231-..."） */
-function unquoteGitPath(s) {
-  if (s.length >= 2 && s.startsWith('"') && s.endsWith('"')) {
-    s = s.slice(1, -1);
-    const bytes = [];
-    let i = 0;
-    while (i < s.length) {
-      if (s[i] === '\\' && /[0-7]/.test(s[i + 1] || '')) {
-        const m = /^\\([0-7]{1,3})/.exec(s.slice(i));
-        if (m) {
-          bytes.push(parseInt(m[1], 8));
-          i += m[1].length;
-          continue;
-        }
-      }
-      bytes.push(s.charCodeAt(i));
-      i++;
-    }
-    return Buffer.from(bytes).toString('utf8');
-  }
-  return s;
-}
-
 function api(token, method, urlPath, body) {
   return new Promise((resolve, reject) => {
     const data = body ? JSON.stringify(body) : null;
@@ -79,7 +62,7 @@ function api(token, method, urlPath, body) {
           'X-GitHub-Api-Version': '2022-11-28',
           ...(data ? { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(data) } : {}),
         },
-        timeout: 45000,
+        timeout: 60000,
       },
       (res) => {
         let buf = '';
@@ -103,42 +86,56 @@ function api(token, method, urlPath, body) {
   });
 }
 
-function changedFiles() {
-  // 优先使用显式指定的范围；否则取 HEAD 相对远端分支的差异；若无远端引用则退回最后一次提交
-  const ri = process.argv.indexOf('--range');
-  let range = ri !== -1 && process.argv[ri + 1] ? process.argv[ri + 1] : `origin/${BRANCH}..HEAD`;
-  if (ri === -1) {
-    try {
-      execSync(`git rev-parse --verify origin/${BRANCH}`, { cwd: ROOT, stdio: 'ignore' });
-    } catch {
-      range = 'HEAD~1..HEAD';
-    }
+/** 本地 HEAD 的 tree 映射：path -> sha（raw UTF-8 路径，关闭 quotepath 避免中文被八进制转义） */
+function localTreeMap() {
+  const out = execSync('git -c core.quotepath=false ls-tree -r HEAD', { cwd: ROOT, encoding: 'utf8' });
+  const map = new Map();
+  for (const line of out.split('\n')) {
+    if (!line.trim()) continue;
+    const m = /^(\d+) (\w+) ([0-9a-f]+)\t(.*)$/.exec(line);
+    if (m) map.set(m[4], m[3]);
   }
-  // 用 -z 输出（NUL 分隔、不引号、原始字节），按路径是否在磁盘判断增/删，彻底绕开中文引号+八进制转义坑
-  const buf = execSync(`git diff -z --no-renames --name-only ${range}`, { cwd: ROOT, encoding: 'buffer' });
-  const text = buf.toString('latin1');
-  const paths = text
-    .split('\0')
-    .filter(Boolean)
-    .map((p) => Buffer.from(p, 'latin1').toString('utf8'));
-  return paths.map((file) => ({ status: fs.existsSync(path.join(ROOT, file)) ? 'M' : 'D', file }));
+  return map;
+}
+
+/** 远端 base tree 映射：path -> sha（递归拉取；超大仓库会 truncated，本仓库不会） */
+async function remoteTreeMap(token, baseTreeSha) {
+  const map = new Map();
+  const r = await api(token, 'GET', `/repos/${OWNER}/${REPO}/git/trees/${baseTreeSha}?recursive=1`);
+  for (const e of r.tree || []) if (e.type === 'blob') map.set(e.path, e.sha);
+  if (r.truncated) console.warn('[warn] 远端 tree 过大被截断，部分文件可能未纳入对比');
+  return map;
+}
+
+/** 仅返回“内容不同/新增”的文件（不做删除，避免误删远端其他来源的文件） */
+function changedFiles(localMap, remoteMap) {
+  const changed = [];
+  for (const [p, sha] of localMap) {
+    if (remoteMap.get(p) !== sha) changed.push({ status: 'M', file: p });
+  }
+  changed.sort((a, b) => a.file.localeCompare(b.file));
+  return changed;
 }
 
 async function main() {
-  const files = changedFiles();
-  if (!files.length) {
-    console.log('[ok] 无待推送变更');
-    return;
-  }
-  console.log(`待推送 ${files.length} 个文件：`);
-  files.forEach((f) => console.log(`  ${f.status}  ${f.file}`));
-  if (DRY) return;
-
   const token = getToken();
 
   const ref = await api(token, 'GET', `/repos/${OWNER}/${REPO}/git/ref/heads/${BRANCH}`);
   const baseSha = ref.object.sha;
   const baseCommit = await api(token, 'GET', `/repos/${OWNER}/${REPO}/git/commits/${baseSha}`);
+  const baseTreeSha = baseCommit.tree.sha;
+
+  const localMap = localTreeMap();
+  const remoteMap = await remoteTreeMap(token, baseTreeSha);
+  const files = changedFiles(localMap, remoteMap);
+
+  if (!files.length) {
+    console.log('[ok] 本地 HEAD 树与远端 base 一致，无待推送变更');
+    return;
+  }
+  console.log(`待推送 ${files.length} 个文件（base=${baseSha.slice(0, 7)}）：`);
+  files.forEach((f) => console.log(`  ${f.status}  ${f.file}`));
+  if (DRY) return;
 
   const tree = [];
   for (const f of files) {
@@ -156,7 +153,7 @@ async function main() {
   }
 
   const newTree = await api(token, 'POST', `/repos/${OWNER}/${REPO}/git/trees`, {
-    base_tree: baseCommit.tree.sha,
+    base_tree: baseTreeSha,
     tree,
   });
 
