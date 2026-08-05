@@ -147,8 +147,32 @@ jobs:
             TODAY=$(date -u +%Y-%m-%d)
 
             # ===== 临时提升期（2026-08-05 ~ 2026-08-30）=====
+            # 注意：提升期分支与原始分时段判定必须互斥，否则 */30 涡轮会在
+            # 00:xx/10:xx 额外触发 promo、周日22:xx/周二20:xx/周四21:xx 额外触发
+            # domain/tech/intel，架空“涡轮只跑 data”的设计并多耗额度。
             if [[ "$TODAY" > "2026-08-30" ]]; then
-              echo "[Decide] 提升期已过($TODAY > 2026-08-30)，跳过全量运行，等待恢复原始分时段调度"
+              echo "[Decide] 提升期已过($TODAY > 2026-08-30)，回退到原始分时段判定（等待 8-31 还原自动化恢复原始 cron）"
+              # ===== 原始分时段调度判定 =====
+              # 数据积累: 18:00 UTC (02:00 UTC+8)
+              if [[ "$HOUR" == "18" ]]; then
+                echo "should_run_data=true" >> $GITHUB_OUTPUT
+              fi
+              # 领域开拓: 22:00 UTC Sunday (06:00 UTC+8 Monday)
+              if [[ "$HOUR" == "22" && "$DOW" == "0" ]]; then
+                echo "should_run_domain=true" >> $GITHUB_OUTPUT
+              fi
+              # 技术采纳: 20:00 UTC Tuesday (04:00 UTC+8 Wednesday)
+              if [[ "$HOUR" == "20" && "$DOW" == "2" ]]; then
+                echo "should_run_tech=true" >> $GITHUB_OUTPUT
+              fi
+              # 推广: 00:00, 10:00 UTC (08:00, 18:00 UTC+8)
+              if [[ "$HOUR" == "00" || "$HOUR" == "10" ]]; then
+                echo "should_run_promo=true" >> $GITHUB_OUTPUT
+              fi
+              # 情报: 21:00 UTC Thursday (05:00 UTC+8 Friday)
+              if [[ "$HOUR" == "21" && "$DOW" == "4" ]]; then
+                echo "should_run_intel=true" >> $GITHUB_OUTPUT
+              fi
             # 数据收集涡轮：每 30 分钟仅跑 data-accumulation，尽快扩充实体数据库
             elif [[ "$SCHED" == "*/30 * * * *" ]]; then
               echo "should_run_data=true" >> $GITHUB_OUTPUT
@@ -161,27 +185,6 @@ jobs:
               echo "should_run_promo=true" >> $GITHUB_OUTPUT
               echo "should_run_intel=true" >> $GITHUB_OUTPUT
               echo "[Decide] 提升期: 12:30 UTC 全量运行 5 条闭环"
-            fi
-            # ===== 以下为原始分时段调度判定（提升期结束后由 cron 恢复，逻辑保留）=====
-            # 数据积累: 18:00 UTC (02:00 UTC+8)
-            if [[ "$HOUR" == "18" ]]; then
-              echo "should_run_data=true" >> $GITHUB_OUTPUT
-            fi
-            # 领域开拓: 22:00 UTC Sunday (06:00 UTC+8 Monday)
-            if [[ "$HOUR" == "22" && "$DOW" == "0" ]]; then
-              echo "should_run_domain=true" >> $GITHUB_OUTPUT
-            fi
-            # 技术采纳: 20:00 UTC Tuesday (04:00 UTC+8 Wednesday)
-            if [[ "$HOUR" == "20" && "$DOW" == "2" ]]; then
-              echo "should_run_tech=true" >> $GITHUB_OUTPUT
-            fi
-            # 推广: 00:00, 10:00 UTC (08:00, 18:00 UTC+8)
-            if [[ "$HOUR" == "00" || "$HOUR" == "10" ]]; then
-              echo "should_run_promo=true" >> $GITHUB_OUTPUT
-            fi
-            # 情报: 21:00 UTC Thursday (05:00 UTC+8 Friday)
-            if [[ "$HOUR" == "21" && "$DOW" == "4" ]]; then
-              echo "should_run_intel=true" >> $GITHUB_OUTPUT
             fi
 
             # workflow_dispatch 的 all 也全部运行
