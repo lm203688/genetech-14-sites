@@ -29,6 +29,11 @@ const OUT = path.resolve(ROOT, getArg('--out', '_site'));
 // BASE 用于 GitHub Pages 的子路径部署，例如 /genetech-14-sites
 const BASE = (process.env.SITE_BASE ?? getArg('--base', '')).replace(/\/$/, '');
 const SITE_ORIGIN = process.env.SITE_ORIGIN || '';
+// 生产环境绝对地址（用于 canonical / og:url / JSON-LD；CI 会通过 SITE_ORIGIN 覆盖）
+const PROD_ORIGIN = 'https://lm203688.github.io';
+const ORIGIN = SITE_ORIGIN || PROD_ORIGIN;
+// IndexNow 密钥：公开托管于 .well-known/indexnow.txt；CI 端需在仓库 Secrets 配置同名 INDEXNOW_KEY 才能向 Bing/Yandex 提交
+const INDEXNOW_KEY = 'a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d';
 
 /** 站点中文名映射（用于标题与导航） */
 const SITE_LABELS = {
@@ -110,6 +115,30 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
 .search-status{color:var(--muted);font-size:12.5px;margin:0 0 12px;min-height:1em}
 ul.items li.m{color:var(--muted);font-style:italic}
 .glb{margin:18px 0}
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}
+.nav a{padding:5px 12px;border:1px solid var(--line);border-radius:999px;color:var(--fg);font-size:13px}
+.nav a:hover{text-decoration:none;background:var(--chip)}
+.hero{border:1px solid var(--line);border-radius:12px;padding:22px 24px;background:linear-gradient(180deg,#f5f9ff,#fff);margin:0 0 22px}
+.hero h1{margin:0 0 8px;font-size:28px}
+.hero p{color:#3d434d;font-size:14.5px;margin:8px 0}
+.cta{display:inline-block;margin:10px 10px 0 0;background:var(--accent);color:#fff;padding:9px 16px;border-radius:8px;font-weight:600;font-size:14px}
+.cta:hover{text-decoration:none;opacity:.92}
+.cta.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.faq{border:1px solid var(--line);border-radius:12px;padding:4px 20px;margin:28px 0}
+.faq h2{font-size:19px;margin:16px 0 4px}
+.faq details{border-top:1px solid var(--line);padding:12px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:15px}
+.faq p{color:#3d434d;font-size:14px;margin:8px 0 0;line-height:1.7}
+article.post{max-width:780px}
+article.post h1{font-size:27px;margin:0 0 4px}
+article.post .byline{color:var(--muted);font-size:13px;margin-bottom:16px}
+article.post h2{font-size:20px;margin:26px 0 8px}
+article.post p{color:#2b2f36;font-size:15.5px;line-height:1.85}
+article.post pre{background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:8px;overflow:auto;font-size:13px}
+article.post code{color:#0b62d6}
+article.post ul,article.post ol{line-height:1.9;color:#2b2f36}
+.cards2{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:14px 0}
+.card .k{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em}
 `;
 
 // 客户端搜索脚本（站点内 / 首页卡片过滤 / 全局 14 站），纯原生 JS，无依赖
@@ -207,27 +236,52 @@ const SEARCH_JS = `
 })();
 `;
 
-function layout({ title, desc, body, jsonld, canonical }) {
+function layout({ title, desc, body, jsonld, canonical, type }) {
+  const searchTarget = `${ORIGIN}${BASE}/search.html?q={query}`;
+  const webSite = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'GeneTech 知识引擎',
+    url: `${ORIGIN}${BASE}/`,
+    description: '覆盖基因、量子计算、脑科学、AI Agent 等 14 个前沿科技领域的 Agent 原生知识引擎，提供 JSON API 与 MCP 接口。',
+    potentialAction: { '@type': 'SearchAction', target: searchTarget, 'query-input': 'required name=query' },
+  };
+  const pageLd = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
+  const ldScripts = [webSite, ...pageLd]
+    .map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`)
+    .join('\n');
+  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a></nav>`;
   return `<!doctype html>
 <html lang="zh-CN">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 ${canonical ? `<link rel="canonical" href="${esc(canonical)}">` : ''}
+<meta property="og:type" content="${type || 'website'}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
-<meta property="og:type" content="website">
+<meta property="og:url" content="${esc(canonical || `${ORIGIN}${BASE}/`)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(title)}">
+<meta name="twitter:description" content="${esc(desc)}">
+<meta name="theme-color" content="#0b62d6">
+<meta name="application-name" content="GeneTech 知识引擎">
+${ldScripts}
 <style>${CSS}</style>
-${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}
+</head>
+<body>
 <header class="top"><div class="wrap"><a class="brand" href="${BASE}/">GeneTech 知识引擎<span>14 个前沿科技垂直领域</span></a></div></header>
 <div class="wrap">
+${nav}
 ${body}
 <footer>
 数据以 CC-BY 提供 · 通过 <code>@genetech/data-mcp</code> 可由 AI Agent 直接查询检索 ·
 生成于 ${new Date().toISOString()}
 </footer>
 </div>
+</body>
 </html>`;
 }
 
@@ -261,7 +315,7 @@ ${tags.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}
     })
     .join('\n');
 
-  const canonical = SITE_ORIGIN ? `${SITE_ORIGIN}${BASE}/${site.slug}/` : '';
+  const canonical = `${ORIGIN}${BASE}/${site.slug}/`;
   const body = `
 <h1>${esc(label)}</h1>
 <p class="sub">${total} 条实体 · 最后更新 ${esc(site.index.lastUpdated || '未知')}${
@@ -317,9 +371,28 @@ function renderHome(sites) {
     })
     .join('\n');
 
-  const body = `
+  const hero = `<section class="hero">
 <h1>GeneTech 知识引擎</h1>
 <p class="sub">${sites.length} 个前沿科技垂直领域 · ${total} 条结构化科研实体 · 面向 AI Agent 的实时知识接口</p>
+<p>把 14 个前沿科技垂直领域的结构化知识（基因、量子计算、脑科学、AI Agent、生命科学…）通过一行命令接入你的 AI Agent——实时检索、带引用、可溯源。</p>
+<a class="cta" href="${BASE}/mcp.html">用 MCP 接入 →</a>
+<a class="cta ghost" href="${BASE}/search.html">全局搜索 14 站 →</a>
+</section>`;
+
+  const faqItems = [
+    ['GeneTech 知识引擎是什么？', '一个覆盖 14 个前沿科技垂直领域的结构化知识库，提供机器可读的 JSON API 与 MCP 接口，让 AI Agent 能实时检索、引用前沿科研实体。'],
+    ['如何把知识库接入我的 AI Agent？', '安装 MCP Server：<code>npx -y @genetech/data-mcp</code>，在支持 MCP 的客户端（Claude Desktop、Cursor、任意 Function-Calling 框架）中配置即可调用 5 个工具。'],
+    ['数据来源与更新频率？', '数据来自 OpenAlex、arXiv、Crossref、PubMed 等开放学术源，经混合检索建库，每 30 分钟增量更新，覆盖论文、工具、数据集与专利。'],
+    ['检索是真正的语义检索吗？', '是的。我们采用 BM25 + 字段加权 + RRF 融合的混合检索（src/search.mjs），并预留向量嵌入接口，兼顾召回率与精度。'],
+    ['商业使用如何计费？', '基础接口免费（Free 层）；Pro 层提供高并发与 HMAC 鉴权；团队/企业可定制领域与 SLA。详见 MCP 接入页。'],
+  ];
+  const faq = `<section class="faq">
+<h2>常见问题</h2>
+${faqItems.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${a}</p></details>`).join('\n')}
+</section>`;
+
+  const body = `
+${hero}
 <div class="api">
 每个站点均提供机器可读接口 <code>/&lt;site&gt;/website/api/entities.json</code>；
 也可通过 MCP 直接接入：<code>npx -y @genetech/data-mcp</code> ·
@@ -327,10 +400,11 @@ function renderHome(sites) {
 </div>
 <div class="search"><input id="home-search" type="search" placeholder="过滤下方领域卡片（输入关键词）"></div>
 <div class="grid">${cards}</div>
+${faq}
 <script>${SEARCH_JS}</script>
 `;
 
-  const jsonld = {
+  const dataCatalog = {
     '@context': 'https://schema.org',
     '@type': 'DataCatalog',
     name: 'GeneTech 知识引擎',
@@ -338,7 +412,16 @@ function renderHome(sites) {
     dataset: sites.map((s) => ({
       '@type': 'Dataset',
       name: SITE_LABELS[s.slug] || s.slug,
-      url: `${SITE_ORIGIN}${BASE}/${s.slug}/`,
+      url: `${ORIGIN}${BASE}/${s.slug}/`,
+    })),
+  };
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(([q, a]) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') },
     })),
   };
 
@@ -346,8 +429,8 @@ function renderHome(sites) {
     title: 'GeneTech 知识引擎 — 14 个前沿科技领域的 Agent 原生知识库',
     desc: `覆盖基因、量子计算、脑科学、AI Agent 等 ${sites.length} 个前沿科技领域，共 ${total} 条结构化实体，提供 JSON API 与 MCP 接口。`,
     body,
-    jsonld,
-    canonical: SITE_ORIGIN ? `${SITE_ORIGIN}${BASE}/` : '',
+    jsonld: [dataCatalog, faqLd],
+    canonical: `${ORIGIN}${BASE}/`,
   });
 }
 
@@ -366,7 +449,173 @@ function renderSearchPage(sites) {
     title: '全局搜索 — GeneTech 知识引擎',
     desc: `跨 ${sites.length} 个前沿科技领域、${total} 条结构化实体的即时检索。`,
     body,
-    canonical: SITE_ORIGIN ? `${SITE_ORIGIN}${BASE}/search.html` : '',
+    canonical: `${ORIGIN}${BASE}/search.html`,
+  });
+}
+
+// ============================================================================
+// GEO / SEO 内容层：博客文章 + MCP 接入页
+// ============================================================================
+
+const BLOG = [
+  {
+    slug: 'mcp-for-agents',
+    title: '用 MCP 把 14 个前沿科技知识库接入你的 AI Agent（一行命令）',
+    desc: 'GeneTech 知识引擎通过 MCP（Model Context Protocol）把 14 个前沿科技垂直领域的结构化知识直接喂给 AI Agent：实时检索、带引用、可溯源。',
+    date: '2026-08-05',
+    keywords: ['MCP', 'AI Agent', '知识库', '科研知识接口', 'Function Calling'],
+    body: `<p>AI Agent 最大的短板之一，是<strong>缺乏可靠、可溯源的科研知识</strong>。大模型靠参数记忆事实，容易过时、易产生幻觉。GeneTech 知识引擎用 MCP（Model Context Protocol）把 14 个前沿科技垂直领域的结构化知识直接喂给 Agent。</p>
+<h2>一行命令接入</h2>
+<pre><code>npx -y @genetech/data-mcp</code></pre>
+<p>在 Claude Desktop、Cursor 或任意支持 Function-Calling 的框架里配置这条命令，Agent 即可调用以下 5 个工具：</p>
+<ul>
+<li><code>list_sites</code> — 列出 14 个知识领域及其实体量</li>
+<li><code>get_entities</code> — 按站点 / 分类获取结构化实体</li>
+<li><code>semantic_search</code> — 混合检索（BM25 + 字段加权 + RRF），返回最相关实体</li>
+<li><code>get_entity</code> — 获取单条实体详情与引用来源</li>
+<li><code>export_bibtex</code> — 导出 BibTeX，方便论文引用</li>
+</ul>
+<h2>为什么是 Agent 原生</h2>
+<p>传统科研工具（Elicit、Consensus）面向「人读」界面；GeneTech 面向「机器调用」：返回的是带 URL、作者、置信度、标签的结构化 JSON，Agent 可直接消费、可溯源到原始论文。这让它天然适合做 RAG 的知识底座、自动化综述与竞品监测。</p>
+<p>想立刻试试？前往 <a href="${BASE}/search.html">全局搜索</a> 体验检索，或浏览 <a href="${BASE}/">14 个知识领域</a>。</p>`,
+  },
+  {
+    slug: 'hybrid-search',
+    title: '生物医学 AI 文献检索：从关键词到混合检索（BM25 + 向量 + RRF）',
+    desc: '关键词检索召回高但精度差，纯向量语义好但易漏术语。GeneTech 在 src/search.mjs 用 BM25 + 字段加权 + RRF 融合实现兼顾召回与精度的混合检索。',
+    date: '2026-08-05',
+    keywords: ['混合检索', 'BM25', 'RRF', '语义搜索', '生物医学文献'],
+    body: `<p>关键词检索（如简单包含匹配）召回率高但精度差；纯向量检索语义好但容易漏掉精确术语。我们在 <code>src/search.mjs</code> 里实现了<strong>混合检索</strong>。</p>
+<h2>三路召回 + 融合</h2>
+<ul>
+<li><strong>BM25</strong>：经典词频逆文档频率，保证精确术语（如 "CRISPR-Cas9"）高排。</li>
+<li><strong>字段加权</strong>：标题 6 分、标签 3 分、作者 2 分、摘要 1 分，让核心字段主导排序。</li>
+<li><strong>RRF 融合</strong>：Reciprocal Rank Fusion 把多路排序归一后加权合并，兼顾召回与精度。</li>
+</ul>
+<pre><code>const fused = rrf([bm25Rank, fieldRank], { k: 60 });</code></pre>
+<h2>为什么对科研重要</h2>
+<p>科研检索里，术语精确性（"single-cell RNA-seq"）和语义相关性（"单细胞测序"）同样关键。混合检索让两者兼得，且无需 embedding 服务即可运行（向量接口预留，可按需开启）。</p>
+<p>这套检索已作为 MCP 的 <code>semantic_search</code> 工具对外开放，详见 <a href="${BASE}/mcp.html">MCP 接入页</a>。</p>`,
+  },
+  {
+    slug: 'geo-advantage',
+    title: 'Elicit / Consensus / Scite 之后：Agent 原生知识底座的 GEO 机会',
+    desc: '当科研工具还在做「人读文献」，让 AI Agent 自己查知识的入口正在打开——这就是 Generative Engine Optimization（GEO）的机会。GeneTech 用 MCP + 结构化数据抢占这一红利。',
+    date: '2026-08-05',
+    keywords: ['GEO', 'Generative Engine Optimization', '知识引擎', 'Agent 原生', '科研工具对比'],
+    body: `<p>当所有人还在用 Elicit、Consensus、SciSpace 做「人读文献」时，一个新的入口正在打开：<strong>让 AI Agent 自己去查知识</strong>。这就是 Generative Engine Optimization（GEO）的机会。</p>
+<h2>从「人读」到「机器读」</h2>
+<p>大模型在生成答案时会检索外部知识。如果你的内容：① 结构化（JSON-LD / Dataset）、② 事实可溯源、③ 机器可读，就更容易被 Agent 引用——这正是 GEO 的核心。</p>
+<h2>GeneTech 的差异化</h2>
+<ul>
+<li><strong>Agent 原生</strong>：知识以 MCP + JSON API 暴露，Agent 直接调用，而非爬网页。</li>
+<li><strong>垂直策展</strong>：14 个前沿科技领域，而非泛全科。</li>
+<li><strong>可溯源</strong>：每条实体带原始论文 URL 与置信度。</li>
+</ul>
+<h2>给研究者的建议</h2>
+<p>如果你的工具 / 数据集想被 AI 引用，尽快补齐结构化数据（schema.org Dataset / SoftwareApplication）、开放 API、以及清晰的引用链。这正是 GeneTech 已经做完的事——欢迎通过 <a href="${BASE}/mcp.html">MCP</a> 接入或 <a href="${BASE}/search.html">全局搜索</a> 体验。</p>`,
+  },
+];
+
+/** 单篇博客文章页 */
+function renderArticle(a) {
+  const url = `${ORIGIN}${BASE}/blog/${a.slug}.html`;
+  const jsonld = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: a.title,
+    description: a.desc,
+    datePublished: a.date,
+    author: { '@type': 'Organization', name: 'GeneTech' },
+    publisher: { '@type': 'Organization', name: 'GeneTech', url: `${ORIGIN}${BASE}/` },
+    mainEntityOfPage: url,
+    keywords: (a.keywords || []).join(', '),
+  };
+  const body = `<article class="post">
+<h1>${esc(a.title)}</h1>
+<p class="byline">GeneTech · ${esc(a.date)} · 关键词：${esc((a.keywords || []).join('、'))}</p>
+${a.body}
+<p style="margin-top:24px"><a href="${BASE}/blog/">← 返回博客</a> · <a href="${BASE}/mcp.html">MCP 接入</a> · <a href="${BASE}/search.html">全局搜索</a></p>
+</article>`;
+  return layout({
+    title: `${a.title} — GeneTech 博客`,
+    desc: a.desc,
+    body,
+    jsonld,
+    canonical: url,
+    type: 'article',
+  });
+}
+
+/** 博客首页 */
+function renderBlogIndex() {
+  const cards = BLOG.map(
+    (a) => `<a class="card" href="${BASE}/blog/${a.slug}.html">
+<div class="k">${esc(a.date)}</div>
+<div class="n">${esc(a.title)}</div>
+<div class="m">${esc((a.keywords || []).slice(0, 3).join(' · '))}</div>
+</a>`,
+  ).join('\n');
+  const body = `<h1>GeneTech 博客</h1>
+<p class="sub">关于 Agent 原生知识引擎、混合检索与 GEO 的技术笔记</p>
+<div class="grid">${cards}</div>`;
+  return layout({
+    title: 'GeneTech 博客 — Agent 原生知识引擎技术笔记',
+    desc: 'GeneTech 博客：MCP 接入、混合检索（BM25+RRF）、GEO 与科研知识底座的技术文章。',
+    body,
+    canonical: `${ORIGIN}${BASE}/blog/`,
+  });
+}
+
+/** MCP 接入页（SoftwareApplication 结构化数据 + 转化入口） */
+function renderMcpPage() {
+  const jsonld = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'GeneTech Data MCP',
+    operatingSystem: 'Any',
+    applicationCategory: 'DeveloperApplication',
+    description: '面向 AI Agent 的科研知识引擎 MCP Server：实时检索、引用 14 个前沿科技垂直领域的结构化实体。',
+    url: 'https://www.npmjs.com/package/@genetech/data-mcp',
+    sameAs: ['https://www.npmjs.com/package/@genetech/data-mcp'],
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    author: { '@type': 'Organization', name: 'GeneTech' },
+  };
+  const tools = [
+    ['list_sites', '列出 14 个知识领域及其实体量'],
+    ['get_entities', '按站点 / 分类获取结构化实体'],
+    ['semantic_search', '混合检索（BM25 + 字段加权 + RRF），返回最相关实体'],
+    ['get_entity', '获取单条实体详情与引用来源'],
+    ['export_bibtex', '导出 BibTeX，方便论文引用'],
+  ];
+  const body = `<h1>GeneTech Data MCP</h1>
+<p class="sub">面向 AI Agent 的科研知识引擎接口 · 一行命令接入 14 个前沿科技垂直领域</p>
+<section class="hero">
+<h1 style="font-size:20px">快速开始</h1>
+<pre><code>npx -y @genetech/data-mcp</code></pre>
+<p>在 Claude Desktop、Cursor 或任意支持 MCP / Function-Calling 的框架中配置上述命令即可。</p>
+<a class="cta" href="https://www.npmjs.com/package/@genetech/data-mcp">在 npm 查看 →</a>
+<a class="cta ghost" href="${BASE}/search.html">全局搜索体验 →</a>
+</section>
+<h2>提供的工具</h2>
+<div class="cards2">
+${tools.map(([n, d]) => `<div class="card"><div class="n"><code>${esc(n)}</code></div><div class="m">${esc(d)}</div></div>`).join('\n')}
+</div>
+<h2>数据覆盖</h2>
+<p>基因技术、量子计算、脑科学、AI Agent 生态、生命科学、新能源、核能、深海科技、地外科学、中医药、机器人零部件、仿生智能、生物计算、地外矿物，共 14 个垂直领域，实体持续增量更新。</p>
+<h2>计费</h2>
+<ul>
+<li><strong>Free</strong>：基础接口免费调用。</li>
+<li><strong>Pro</strong>：高并发 + HMAC 鉴权（通过 Cloudflare Worker 付费墙）。</li>
+<li><strong>Team / Enterprise</strong>：定制领域、SLA 与企业内网部署。</li>
+</ul>
+<p>想直接检索？前往 <a href="${BASE}/search.html">全局搜索</a> 或浏览 <a href="${BASE}/">14 个知识领域</a>。</p>`;
+  return layout({
+    title: 'GeneTech Data MCP — 面向 AI Agent 的科研知识接口',
+    desc: 'GeneTech Data MCP：一行命令把 14 个前沿科技垂直领域的结构化知识接入 AI Agent，提供混合检索与引用。',
+    body,
+    jsonld,
+    canonical: `${ORIGIN}${BASE}/mcp.html`,
   });
 }
 
@@ -397,6 +646,9 @@ function main() {
 
   writeFile('index.html', renderHome(sites));
   writeFile('search.html', renderSearchPage(sites));
+  writeFile('mcp.html', renderMcpPage());
+  writeFile('blog/index.html', renderBlogIndex());
+  for (const a of BLOG) writeFile(`blog/${a.slug}.html`, renderArticle(a));
 
   // 聚合目录，方便 Agent 一次拿到全量站点清单
   writeFile(
@@ -421,8 +673,9 @@ function main() {
   );
 
   // sitemap + robots
-  const origin = SITE_ORIGIN || '';
-  const urls = ['', ...sites.map((s) => `${s.slug}/`)]
+  const origin = ORIGIN;
+  const extraPages = ['search.html', 'mcp.html', 'blog/', ...BLOG.map((b) => `blog/${b.slug}.html`)];
+  const urls = ['', ...sites.map((s) => `${s.slug}/`), ...extraPages]
     .map((u) => `  <url><loc>${origin}${BASE}/${u}</loc></url>`)
     .join('\n');
   writeFile(
@@ -435,6 +688,8 @@ function main() {
   );
   // 禁止 GitHub Pages 的 Jekyll 处理，确保下划线等路径原样发布
   writeFile('.nojekyll', '');
+  // IndexNow 验证文件（密钥公开；CI 端配置 INDEXNOW_KEY 后由 promotion 管线提交 Bing/Yandex）
+  writeFile('.well-known/indexnow.txt', INDEXNOW_KEY);
 
   console.log(`[ok] 生成 ${sites.length} 个站点 / ${totalEntities} 条实体 → ${OUT}`);
 }

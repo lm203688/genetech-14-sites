@@ -41,6 +41,29 @@ function getToken() {
   return m[1].trim();
 }
 
+/** 解码 git 对含非 ASCII 文件名做的引号+八进制转义（如 "GeneTech14\347\253\231-..."） */
+function unquoteGitPath(s) {
+  if (s.length >= 2 && s.startsWith('"') && s.endsWith('"')) {
+    s = s.slice(1, -1);
+    const bytes = [];
+    let i = 0;
+    while (i < s.length) {
+      if (s[i] === '\\' && /[0-7]/.test(s[i + 1] || '')) {
+        const m = /^\\([0-7]{1,3})/.exec(s.slice(i));
+        if (m) {
+          bytes.push(parseInt(m[1], 8));
+          i += m[1].length;
+          continue;
+        }
+      }
+      bytes.push(s.charCodeAt(i));
+      i++;
+    }
+    return Buffer.from(bytes).toString('utf8');
+  }
+  return s;
+}
+
 function api(token, method, urlPath, body) {
   return new Promise((resolve, reject) => {
     const data = body ? JSON.stringify(body) : null;
@@ -69,7 +92,7 @@ function api(token, method, urlPath, body) {
             /* 非 JSON 响应 */
           }
           if (res.statusCode >= 200 && res.statusCode < 300) resolve(parsed);
-          else reject(new Error(`HTTP ${res.statusCode} ${method} ${urlPath}: ${(parsed?.message || buf).slice(0, 300)}`));
+          else reject(new Error(`HTTP ${res.statusCode} ${method} ${urlPath}: ${buf.slice(0, 800)}`));
         });
       },
     );
@@ -91,15 +114,14 @@ function changedFiles() {
       range = 'HEAD~1..HEAD';
     }
   }
-  const out = execSync(`git diff --name-status ${range}`, { cwd: ROOT, encoding: 'utf8' });
-  return out
-    .split('\n')
-    .map((l) => l.trim())
+  // 用 -z 输出（NUL 分隔、不引号、原始字节），按路径是否在磁盘判断增/删，彻底绕开中文引号+八进制转义坑
+  const buf = execSync(`git diff -z --no-renames --name-only ${range}`, { cwd: ROOT, encoding: 'buffer' });
+  const text = buf.toString('latin1');
+  const paths = text
+    .split('\0')
     .filter(Boolean)
-    .map((l) => {
-      const [status, ...rest] = l.split('\t');
-      return { status: status[0], file: rest[rest.length - 1] };
-    });
+    .map((p) => Buffer.from(p, 'latin1').toString('utf8'));
+  return paths.map((file) => ({ status: fs.existsSync(path.join(ROOT, file)) ? 'M' : 'D', file }));
 }
 
 async function main() {
