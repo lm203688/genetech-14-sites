@@ -46,16 +46,20 @@ on:
 
   # 定时触发：与 scheduler.js 中的时间表对应，使用 UTC 时间
   schedule:
-    # 闭环一：数据积累流水线 — 每日 02:00 UTC+8 = 前日 18:00 UTC
-    - cron: '0 18 * * *'
-    # 闭环二：领域开拓机制 — 每周一 06:00 UTC+8 = 周日 22:00 UTC
-    - cron: '0 22 * * 0'
-    # 闭环三：技术采纳闭环 — 每周三 04:00 UTC+8 = 周二 20:00 UTC
-    - cron: '0 20 * * 2'
-    # 闭环四：推广技术应用 — 每日 08:00, 18:00 UTC+8 = 00:00, 10:00 UTC
-    - cron: '0 0,10 * * *'
-    # 闭环五：竞品情报收集 — 每周五 05:00 UTC+8 = 周四 21:00 UTC
-    - cron: '0 21 * * 4'
+    # ===== 临时提升期（2026-08-05 ~ 2026-08-30）=====
+    # 数据收集高频涡轮：每 5 分钟一次，尽快扩充实体数据库（核心竞争力）
+    #   - 仅触发 data-accumulation 闭环（decide 步骤按 github.event.schedule 识别）
+    #   - pipeline 内置 git diff 判定：仅当采集到新实体才提交推送，不会空转刷仓库/触发 CF 重建
+    - cron: '*/5 * * * *'
+    # 其余闭环：每日 20:30 CST(12:30 UTC) 一次全量运行
+    # 恢复原始分时段配置时，删除上方 '*/5 * * * *' 与下方 '30 12 * * *' 两行，
+    # 替换为以下 5 行（并删除 decide 步骤中的“提升期”与“数据涡轮”分支）：
+    #   - cron: '0 18 * * *'   # 数据积累 每日 02:00 UTC+8
+    #   - cron: '0 22 * * 0'   # 领域开拓 周日 22:00 UTC
+    #   - cron: '0 20 * * 2'   # 技术采纳 周二 20:00 UTC
+    #   - cron: '0 0,10 * * *' # 推广 每日 00:00,10:00 UTC
+    #   - cron: '0 21 * * 4'   # 情报 周四 21:00 UTC
+    - cron: '30 12 * * *'
 
   # push 到 main 分支时进行验证
   push:
@@ -135,7 +139,26 @@ jobs:
             # 定时触发时，根据当前 UTC 时间判断
             HOUR=$(date -u +%H)
             DOW=$(date -u +%w)  # 0=Sunday
+            SCHED="${{ github.event.schedule }}"
+            TODAY=$(date -u +%Y-%m-%d)
 
+            # ===== 临时提升期（2026-08-05 ~ 2026-08-30）=====
+            if [[ "$TODAY" > "2026-08-30" ]]; then
+              echo "[Decide] 提升期已过($TODAY > 2026-08-30)，跳过全量运行，等待恢复原始分时段调度"
+            # 数据收集高频涡轮：每 5 分钟仅跑 data-accumulation，尽快扩充实体数据库
+            elif [[ "$SCHED" == "*/5 * * * *" ]]; then
+              echo "should_run_data=true" >> $GITHUB_OUTPUT
+              echo "[Decide] 数据涡轮: 每5分钟采集(data only)"
+            # 每日 20:30 CST = 12:30 UTC 全量运行 5 条闭环
+            elif [[ "$HOUR" == "12" ]]; then
+              echo "should_run_data=true" >> $GITHUB_OUTPUT
+              echo "should_run_domain=true" >> $GITHUB_OUTPUT
+              echo "should_run_tech=true" >> $GITHUB_OUTPUT
+              echo "should_run_promo=true" >> $GITHUB_OUTPUT
+              echo "should_run_intel=true" >> $GITHUB_OUTPUT
+              echo "[Decide] 提升期: 12:30 UTC 全量运行 5 条闭环"
+            fi
+            # ===== 以下为原始分时段调度判定（提升期结束后由 cron 恢复，逻辑保留）=====
             # 数据积累: 18:00 UTC (02:00 UTC+8)
             if [[ "$HOUR" == "18" ]]; then
               echo "should_run_data=true" >> $GITHUB_OUTPUT
@@ -236,7 +259,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "[Bot] Data backfill update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
-            git push
+            for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
           fi
         continue-on-error: true
 
@@ -297,7 +320,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "[Bot] Domain expansion update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
-            git push
+            for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
           fi
         continue-on-error: true
 
@@ -429,7 +452,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "[Bot] Promotion & SEO update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
-            git push
+            for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
           fi
         continue-on-error: true
 
@@ -490,7 +513,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "[Bot] Intelligence update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
-            git push
+            for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
           fi
         continue-on-error: true
 

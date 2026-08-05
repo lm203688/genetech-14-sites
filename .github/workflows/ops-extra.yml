@@ -26,10 +26,11 @@ on:
         type: choice
         options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, guard]
   schedule:
-    # 每日 19:00 UTC（采集完成后衔接）
-    - cron: '0 19 * * *'
-    # 周一 02:00 UTC 额外跑一次发布/安全校验（与每日重叠无害）
-    - cron: '0 2 * * 1'
+    # ===== 临时提升期（2026-08-05 ~ 2026-08-30）：每日 20:30 CST(12:30 UTC) 一次 =====
+    # 恢复原始配置时，将下方单行替换为：
+    #   - cron: '0 19 * * *'   # 每日 19:00 UTC
+    #   - cron: '0 2 * * 1'    # 周一 02:00 UTC 额外校验
+    - cron: '30 12 * * *'
 
 permissions:
   contents: write
@@ -90,7 +91,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "[Bot] Extra ops update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
-            git push
+            for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
           fi
         continue-on-error: true
 

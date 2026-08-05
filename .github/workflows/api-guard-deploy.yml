@@ -27,8 +27,9 @@ on:
       - 'api-guard/**'
       - '.github/workflows/api-guard-deploy.yml'
   schedule:
-    # 每日 03:30 UTC 确保 Worker 保持部署状态
-    - cron: '30 3 * * *'
+    # ===== 临时提升期（2026-08-05 ~ 2026-08-30）：每日 20:30 CST(12:30 UTC) 一次 =====
+    # 恢复原始配置时改回： - cron: '30 3 * * *'
+    - cron: '30 12 * * *'
   workflow_dispatch:
 
 permissions:
