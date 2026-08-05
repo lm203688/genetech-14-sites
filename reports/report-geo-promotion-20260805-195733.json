@@ -1,0 +1,54 @@
+{
+  "pipeline": "geo-promotion",
+  "timestamp": "2026-08-05T11:57:33.580Z",
+  "dryRun": false,
+  "siteBaseUrl": "https://lm203688.github.io/genetech-14-sites",
+  "summary": {
+    "entityCount": 2809,
+    "geoPostGenerated": true,
+    "indexNowSubmitted": 0,
+    "searchEnginePings": 2,
+    "gitHubTopicsSet": false,
+    "devtoPublished": false
+  },
+  "geoPost": {
+    "generated": true,
+    "slug": "geo-roundup-2026-08-05",
+    "title": "GeneTech 前沿速览（2026-08-05）：AI Agent 生态、地外科学、基因技术工具 等 10 条新增实体",
+    "filePath": "content/blog/geo-roundup-2026-08-05.md",
+    "entityCount": 10,
+    "siteCount": 4,
+    "cursor": "2026-08-05T01:49:32.268Z",
+    "newCount": 2809
+  },
+  "indexNow": {
+    "submitted": 0,
+    "skipped": true,
+    "reason": "未配置 INDEXNOW_KEY（仓库 Secrets 一次性设置即可启用）"
+  },
+  "pings": [
+    {
+      "engine": "www.google.com",
+      "error": "connect ETIMEDOUT 185.45.5.35:443"
+    },
+    {
+      "engine": "www.bing.com",
+      "statusCode": 410
+    }
+  ],
+  "topics": {
+    "ok": false,
+    "skipped": true,
+    "reason": "无 GITHUB_TOKEN"
+  },
+  "devto": {
+    "ok": false,
+    "skipped": true,
+    "reason": "未配置 DEV_TO_API_KEY（一次性设置即自动发文）"
+  },
+  "issue": {
+    "ok": false,
+    "skipped": true,
+    "reason": "无 GITHUB_TOKEN"
+  }
+}

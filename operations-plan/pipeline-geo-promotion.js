@@ -109,6 +109,19 @@ function slugify(s) {
     .replace(/^-+|-+$/g, '')
     .slice(0, 60);
 }
+/** 清洗摘要：去除源数据自带的 JATS/HTML 标签与实体编码，避免渲染出 <jats:p> 等噪音 */
+function cleanAbstract(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
 // ==================== 1. 收集新增实体 ====================
 async function collectAllEntities() {
@@ -189,7 +202,8 @@ async function maybeGeneratePost(allEntities, state, dryRun) {
     for (const e of bySite[site]) {
       const conf = e.confidence != null ? ` · 置信度 ${e.confidence.toFixed(2)}` : '';
       const src = e.source ? ` · 来源 ${e.source}` : '';
-      const abs = e.abstract ? ` — ${String(e.abstract).slice(0, 120)}${e.abstract.length > 120 ? '…' : ''}` : '';
+      const absRaw = cleanAbstract(e.abstract);
+      const abs = absRaw ? ` — ${absRaw.slice(0, 120)}${absRaw.length > 120 ? '…' : ''}` : '';
       const link = e.url ? `[${e.name}](${e.url})` : e.name;
       lines.push(`- **${link}**${src}${conf}${abs}`);
     }
