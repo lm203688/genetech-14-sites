@@ -11,6 +11,8 @@
 #   4. 配置 Secrets（切勿写入本文件）：
 #        npx wrangler secret put ADMIN_SECRET
 #        npx wrangler secret put CREEM_WEBHOOK_SECRET
+#        npx wrangler secret put HUPIJIAO_APP_ID
+#        npx wrangler secret put HUPIJIAO_APP_SECRET
 #   5. 部署：npx wrangler deploy
 #   6. 记录部署后的 Worker URL（如 https://unified-license.<account>.workers.dev）
 #      或绑定自定义域名 license.genetech.io
@@ -48,6 +50,19 @@ ALLOWED_SITES = "site1,site2,site3,site4,site5,site6,site7,site8,site9,site10,si
 # Creem 统一产品 ID -> 套餐映射（JSON 字符串）。
 # 一个产品即解锁全部 14 站。将占位符替换为真实 Creem 产品 ID：
 # CREEM_PRODUCT_MAP = '{"prod_aaa111":"starter","prod_bbb222":"pro","prod_ccc333":"lifetime"}'
+
+# === 虎皮椒国内支付（微信 / 支付宝）===
+# 敏感凭据 APPID / APPSECRET 必须通过 wrangler secret put 注入，切勿写入本文件！
+#   npx wrangler secret put HUPIJIAO_APP_ID
+#   npx wrangler secret put HUPIJIAO_APP_SECRET
+# 单通道时只需上面两个 secret；若同时有微信 + 支付宝两个渠道（各自 appid/appsecret），
+# 则用 HUPIJIAO_CHANNELS（JSON 数组）配置，worker 会自动识别回调来自哪个通道：
+# HUPIJIAO_CHANNELS = '[{"key":"wechat","appid":"...","appsecret":"...","label":"微信支付"},{"key":"alipay","appid":"...","appsecret":"...","label":"支付宝"}]'
+# 套餐 -> 人民币价格（元，decimal(18,2)），可在此覆盖：
+HUPIJIAO_PRICE_MAP = '{"starter":"9.90","pro":"39.90","lifetime":"199.00"}'
+# 可选：覆盖回调 / 跳转地址（默认从请求域名自动推导，无需配置）
+# HUPIJIAO_NOTIFY_URL = "https://unified-license.<your-subdomain>.workers.dev/api/hupijiao/callback"
+# HUPIJIAO_RETURN_URL = "https://license.genetech.io/pay/success"
 
 # === 可选：自定义路由 ===
 # 如需绑定自有域名（推荐 license.genetech.io），取消注释并配置：

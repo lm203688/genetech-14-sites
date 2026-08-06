@@ -17,6 +17,9 @@
  *   GET    /api/license/status         查询许可证状态与全站使用情况
  *   POST   /api/admin/issue            发行统一许可证（管理员，HMAC 签名）
  *   POST   /api/creem/webhook           Creem Webhook（自动发行 / 吊销）
+ *   POST   /api/hupijiao/create-order   虎皮椒（国内微信/支付宝）发起支付，返回二维码
+ *   POST   /api/hupijiao/callback       虎皮椒异步回调（验签后自动发行 / 吊销 GUX_）
+ *   GET    /api/hupijiao/order          查询订单状态与已签发的许可证密钥
  *   GET    /health                     健康检查
  *
  * 安全：
@@ -29,6 +32,8 @@
  *
  * 许可证密钥格式：GUX_ + 32 位十六进制字符（16 字节随机）
  */
+
+import { createHupijiaoOrder, verifyHupijiaoCallback } from './hupijiao.js';
 
 // ============================================================================
 // 配置
@@ -96,6 +101,56 @@ const DEFAULT_CREEM_PRODUCT_MAP = {
   __CREEM_PRODUCT_PRO__: 'pro',
   __CREEM_PRODUCT_LIFETIME__: 'lifetime',
 };
+
+/**
+ * 虎皮椒国内支付：套餐 -> 人民币价格（元，字符串，decimal(18,2)）。
+ * 通过环境变量 HUPIJIAO_PRICE_MAP（JSON 字符串）覆盖为真实标价。
+ */
+const DEFAULT_HUPIJIAO_PRICE_MAP = {
+  starter: '9.90',
+  pro: '39.90',
+  lifetime: '199.00',
+};
+
+/**
+ * 虎皮椒支付通道配置。
+ * - 若配置了 HUPIJIAO_CHANNELS（JSON 数组：[{key, appid, appsecret, label}]），使用它；
+ * - 否则若配置了 HUPIJIAO_APP_ID / HUPIJIAO_APP_SECRET，作为单个通道（key=default）。
+ * 凭据（appsecret）必须通过 wrangler secret put 注入，切勿写入源码。
+ */
+function getHupijiaoChannels(env) {
+  if (env.HUPIJIAO_CHANNELS) {
+    try {
+      const arr = JSON.parse(env.HUPIJIAO_CHANNELS);
+      if (Array.isArray(arr) && arr.length) return arr;
+    } catch {
+      console.warn('[hupijiao] HUPIJIAO_CHANNELS 解析失败，回退默认通道');
+    }
+  }
+  if (env.HUPIJIAO_APP_ID && env.HUPIJIAO_APP_SECRET) {
+    return [
+      {
+        key: 'default',
+        appid: env.HUPIJIAO_APP_ID,
+        appsecret: env.HUPIJIAO_APP_SECRET,
+        label: '虎皮椒支付',
+      },
+    ];
+  }
+  return [];
+}
+
+/** 套餐 -> 国内价格（元） */
+function getHupijiaoPriceMap(env) {
+  if (env.HUPIJIAO_PRICE_MAP) {
+    try {
+      return JSON.parse(env.HUPIJIAO_PRICE_MAP);
+    } catch {
+      console.warn('[hupijiao] HUPIJIAO_PRICE_MAP 解析失败，回退默认价格');
+    }
+  }
+  return DEFAULT_HUPIJIAO_PRICE_MAP;
+}
 
 // ============================================================================
 // 工具函数：哈希 / HMAC / 常量时间比较
@@ -418,7 +473,7 @@ function creditsRemaining(license) {
  * @param {object} params { plan, email, creem_checkout_id, expires, source }
  * @returns {Promise<{license: object, key: string}>}
  */
-async function issueLicense(env, { plan, email, creem_checkout_id, expires, source }) {
+async function issueLicense(env, { plan, email, creem_checkout_id, hupijiao_order_id, expires, source }) {
   const planDef = PLANS[plan];
   if (!planDef) throw new Error(`unknown_plan: ${plan}`);
 
@@ -445,6 +500,7 @@ async function issueLicense(env, { plan, email, creem_checkout_id, expires, sour
     created: now,
     expires: expiresAt,
     creem_checkout_id: creem_checkout_id || null,
+    hupijiao_order_id: hupijiao_order_id || null,
     status: 'active', // active | revoked
     source: source || 'manual',
   };
@@ -690,6 +746,171 @@ async function handleCreemWebhook(request, rawBody, env, corsH) {
 }
 
 // ============================================================================
+// 虎皮椒支付处理（国内微信 / 支付宝）
+// ============================================================================
+
+/**
+ * 创建虎皮椒支付订单。
+ * 生成唯一商户订单号，将待支付订单写入 KV，向虎皮椒发起下单，返回二维码与手机支付链接。
+ */
+async function handleHupijiaoCreateOrder(request, rawBody, body, env, corsH) {
+  const channels = getHupijiaoChannels(env);
+  if (!channels.length) {
+    return err('payment_unavailable', '虎皮椒支付通道未配置（请在 Cloudflare 配置 HUPIJIAO_APP_ID / HUPIJIAO_APP_SECRET）', 503, corsH);
+  }
+  const plan = (body.plan || '').trim();
+  if (!PLANS[plan]) {
+    return err('invalid_plan', `无效套餐: ${plan}（可选: starter / pro / lifetime）`, 400, corsH);
+  }
+  const channelKey = (body.channel || '').trim() || channels[0].key;
+  const channel = channels.find((c) => c.key === channelKey) || channels[0];
+
+  const priceMap = getHupijiaoPriceMap(env);
+  const totalFee = priceMap[plan];
+  if (!totalFee) {
+    return err('missing_price', `套餐 ${plan} 未配置国内价格（HUPIJIAO_PRICE_MAP）`, 400, corsH);
+  }
+
+  const email = body.email ? String(body.email).trim() : null;
+  // 商户订单号：GUX + 时间戳36进制 + 随机，限 [0-9a-zA-Z_-*] 且 ≤32 位
+  let tradeOrderId =
+    'GUX' +
+    Date.now().toString(36).toUpperCase() +
+    crypto.getRandomValues(new Uint8Array(4)).reduce((a, b) => a + b.toString(36).toUpperCase(), '');
+  if (tradeOrderId.length > 32) tradeOrderId = tradeOrderId.slice(-32);
+
+  const title = (body.title || `GeneTech ${PLANS[plan].name} 许可证`).slice(0, 42);
+  const origin = new URL(request.url).origin;
+  const notifyUrl = env.HUPIJIAO_NOTIFY_URL || `${origin}/api/hupijiao/callback`;
+  const returnUrl = body.return_url || env.HUPIJIAO_RETURN_URL || `${origin}/pay/success`;
+
+  // 持久化待支付订单（30 分钟过期，避免 KV 无限增长）
+  if (env.UNIFIED_LICENSES) {
+    await env.UNIFIED_LICENSES.put(
+      `hupijiao:${tradeOrderId}`,
+      JSON.stringify({
+        plan,
+        email,
+        channel: channel.key,
+        status: 'pending',
+        license_key: null,
+        created: new Date().toISOString(),
+      }),
+      { expirationTtl: 1800 }
+    );
+  }
+
+  try {
+    const order = await createHupijiaoOrder({
+      appId: channel.appid,
+      appSecret: channel.appsecret,
+      tradeOrderId,
+      totalFee,
+      title,
+      notifyUrl,
+      returnUrl,
+      attach: JSON.stringify({ plan, email: email || '' }),
+    });
+    return json(
+      {
+        success: true,
+        trade_order_id: tradeOrderId,
+        qrcode: order.qrcode, // PC 端二维码图片地址（有效期 5 分钟）
+        pay_url: order.payUrl, // 手机端跳转地址
+        plan,
+        total_fee: totalFee,
+        expires_in: 300,
+      },
+      200,
+      corsH
+    );
+  } catch (e) {
+    console.error('[hupijiao] 下单失败:', e.message);
+    return err('create_order_failed', e.message, 502, corsH);
+  }
+}
+
+/**
+ * 虎皮椒异步回调（form 表单）。验签后：OD=已支付→签发 GUX_；CD=已退款→吊销。
+ * 无论结果都必须返回纯文本 "success"，否则虎皮椒会重试 6 次。
+ */
+async function handleHupijiaoCallback(request, env, corsH) {
+  let params = {};
+  try {
+    const form = await request.formData();
+    for (const [k, v] of form.entries()) params[k] = v;
+  } catch {
+    return new Response('success', { status: 200 });
+  }
+
+  const channels = getHupijiaoChannels(env);
+  const channel =
+    channels.find((c) => c.appid === params.appid) || channels[0];
+  // 验签失败也返回 success，避免无意义的重试风暴（但不签发许可证）
+  if (!channel || !verifyHupijiaoCallback(params, channel.appsecret)) {
+    console.warn('[hupijiao] 回调签名校验失败或通道缺失，忽略:', params.appid);
+    return new Response('success', { status: 200 });
+  }
+
+  const tradeOrderId = params.trade_order_id;
+  if (!tradeOrderId || !env.UNIFIED_LICENSES) {
+    return new Response('success', { status: 200 });
+  }
+  const orderRaw = await env.UNIFIED_LICENSES.get(`hupijiao:${tradeOrderId}`);
+  if (!orderRaw) {
+    return new Response('success', { status: 200 });
+  }
+  const order = JSON.parse(orderRaw);
+
+  if (params.status === 'OD') {
+    if (!order.license_key) {
+      const { license, key } = await issueLicense(env, {
+        plan: order.plan,
+        email: order.email,
+        hupijiao_order_id: tradeOrderId,
+        source: 'hupijiao',
+      });
+      order.license_key = key;
+      order.status = 'paid';
+      // 支付成功后保留 24 小时，便于查询/排障
+      await env.UNIFIED_LICENSES.put(`hupijiao:${tradeOrderId}`, JSON.stringify(order), {
+        expirationTtl: 86400,
+      });
+      console.log(`[hupijiao] 统一许可证已发放: ${order.plan} -> ${key.slice(0, 12)}...`);
+    }
+  } else if (params.status === 'CD') {
+    // 退款：吊销已签发的许可证
+    if (order.license_key) {
+      await revokeLicense(env, order.license_key, 'hupijiao:refund');
+    }
+  }
+
+  return new Response('success', { status: 200 });
+}
+
+/**
+ * 查询虎皮椒订单状态与已签发的许可证（供前端轮询）。
+ */
+async function handleHupijiaoOrderQuery(request, url, env, corsH) {
+  const tradeOrderId = url.searchParams.get('trade_order_id') || '';
+  if (!tradeOrderId) return err('missing_trade_order_id', '请提供 trade_order_id', 400, corsH);
+  if (!env.UNIFIED_LICENSES) return err('server_misconfigured', 'KV 不可用', 500, corsH);
+  const raw = await env.UNIFIED_LICENSES.get(`hupijiao:${tradeOrderId}`);
+  if (!raw) return json({ success: false, status: 'not_found' }, 404, corsH);
+  const order = JSON.parse(raw);
+  return json(
+    {
+      success: true,
+      status: order.status,
+      plan: order.plan,
+      license_key: order.license_key || null,
+    },
+    200,
+    corsH
+  );
+}
+
+// ============================================================================
 // 请求处理器
 // ============================================================================
 
@@ -799,9 +1020,9 @@ export default {
         );
       }
 
-      // 速率限制（管理员与 Creem webhook 路径豁免，由各自鉴权保护）
+      // 速率限制（管理员、Creem webhook、虎皮椒回调路径豁免，由各自鉴权/签名保护）
       const isAdminPath = path.startsWith('/api/admin/');
-      const isWebhookPath = path === '/api/creem/webhook';
+      const isWebhookPath = path === '/api/creem/webhook' || path === '/api/hupijiao/callback';
       if (!isAdminPath && !isWebhookPath) {
         const ip = getClientIp(request);
         const rl = await checkRateLimit(env, ip);
@@ -821,11 +1042,19 @@ export default {
         if (path === '/api/license/status') {
           return handleStatus(request, env, url, corsH);
         }
+        if (path === '/api/hupijiao/order') {
+          return handleHupijiaoOrderQuery(request, url, env, corsH);
+        }
         return err('not_found', `未知路由: ${method} ${path}`, 404, corsH);
       }
 
       // ---- POST 路由 ----
       if (method === 'POST') {
+        // 虎皮椒异步回调（form 表单，非 JSON），需最先匹配
+        if (path === '/api/hupijiao/callback') {
+          return handleHupijiaoCallback(request, env, corsH);
+        }
+
         const rawBody = await request.text();
 
         // Creem Webhook（中央直接接收）
@@ -846,6 +1075,9 @@ export default {
         }
         if (path === '/api/license/redeem') {
           return handleRedeem(env, body, corsH);
+        }
+        if (path === '/api/hupijiao/create-order') {
+          return handleHupijiaoCreateOrder(request, rawBody, body, env, corsH);
         }
         if (path === '/api/admin/issue') {
           return handleIssue(request, rawBody, body, env, corsH);
