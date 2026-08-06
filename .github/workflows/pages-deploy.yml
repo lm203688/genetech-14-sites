@@ -83,3 +83,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # 数据量增长后 artifact 显著变大（每站 entities.json 可达 3MB+，14 站合计数十 MB），
+          # deploy-pages 默认 10 分钟轮询上限会被击穿（曾报 Timeout reached, aborting!）。
+          # 放宽到 30 分钟并提高容错次数，避免发布侧偶发变慢导致整轮上线失败。
+          timeout: 1800000
+          error_count: 15
+          reporting_interval: 10000

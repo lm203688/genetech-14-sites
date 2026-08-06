@@ -36,7 +36,9 @@ permissions:
   contents: write
   actions: read
   issues: write
-  administration: write
+  # 注意：GITHUB_TOKEN 不支持 `administration` 权限域。此前写了 `administration: write`
+  # 导致整个工作流解析失败（表现：run 无任何 job、名称回退成文件路径 .github/workflows/ops-extra.yml）。
+  # 需要仓库管理类操作（如设置 Topics）时改用带 repo scope 的 PAT，不要在此声明该权限。
 
 concurrency:
   group: genetech-extra-ops-${{ github.ref }}

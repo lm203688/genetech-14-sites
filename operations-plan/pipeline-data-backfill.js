@@ -46,6 +46,15 @@ const SITE_QUERIES = {
   'genetech-tools': ['genomics', 'CRISPR gene editing', 'gene therapy', 'DNA sequencing', 'genome engineering', 'gene regulation'],
   'exo-science': ['exoplanet', 'astrobiology', 'biosignature', 'extraterrestrial life', 'SETI', 'planetary habitability'],
   'agent-ecosystem': ['AI agent', 'multi-agent system', 'agent orchestration', 'LLM agent framework', 'autonomous agent', 'agentic workflow'],
+  // ---- 2026-08 扩域：对齐国家「十五五」未来产业六大方向 + 全球 2026 前沿趋势 ----
+  'embodied-ai': ['embodied intelligence', 'humanoid robot', 'vision language action model', 'robot learning', 'sim-to-real transfer', 'dexterous manipulation', 'embodied navigation'],
+  'synbio-manufacturing': ['synthetic biology', 'biomanufacturing', 'metabolic engineering', 'cell factory', 'bio-based materials', 'enzyme engineering', 'biofoundry'],
+  'semiconductor': ['semiconductor device', 'advanced packaging chiplet', 'wide bandgap semiconductor', 'EUV lithography', 'gate-all-around transistor', 'silicon photonics', 'compound semiconductor'],
+  'ai4science': ['AI for science', 'machine learning interatomic potential', 'protein structure prediction', 'AI drug discovery', 'materials discovery machine learning', 'scientific foundation model', 'self-driving laboratory'],
+  'low-altitude': ['eVTOL aircraft', 'urban air mobility', 'unmanned aerial vehicle', 'UAV swarm', 'drone delivery', 'flight control algorithm', 'low altitude airspace'],
+  'sat-6g': ['6G wireless network', 'satellite internet constellation', 'integrated sensing and communication', 'terahertz communication', 'non-terrestrial network', 'LEO satellite communication'],
+  'spatial-computing': ['spatial computing', 'augmented reality display', 'mixed reality interaction', 'digital twin', 'neural radiance field', 'visual SLAM'],
+  'privacy-computing': ['federated learning', 'secure multiparty computation', 'homomorphic encryption', 'differential privacy', 'trusted execution environment', 'privacy preserving machine learning'],
 };
 
 const SOURCE_CONFIDENCE = {
@@ -357,7 +366,10 @@ async function main() {
   // 每站目标容量：单条约 1.1KB，3000 条 ≈ 3.3MB，远低于 Cloudflare Pages 单文件 25MB 上限
   const maxArg = args.find(a => a.startsWith('--max-entities='));
   const maxEntities = maxArg ? parseInt(maxArg.split('=')[1], 10) || 3000 : 3000;
-  const sites = siteArg ? [siteArg.split('=')[1]] : Object.keys(SITE_QUERIES);
+  // --site 支持逗号分隔多站（如 --site=a,b,c）；缺省则遍历全部站点
+  const sites = siteArg
+    ? siteArg.split('=').slice(1).join('=').split(',').map(s => s.trim()).filter(Boolean)
+    : Object.keys(SITE_QUERIES);
 
   // ===== 游标：站点×检索词 级 =====
   const cursorPath = path.join(STATE_DIR, 'backfill-cursor.json');

@@ -1,16 +1,79 @@
 {
-  "biocomputing": 48,
-  "quantum-computing": 24,
-  "new-energy": 24,
-  "nuclear-energy": 24,
-  "alien-minerals": 12,
-  "bionic-ai": 12,
-  "deep-sea-tech": 12,
-  "brain-science": 12,
-  "life-science": 12,
-  "robot-parts": 12,
-  "tcm-tools": 12,
-  "genetech-tools": 12,
-  "exo-science": 12,
-  "agent-ecosystem": 12
+  "biocomputing": {},
+  "quantum-computing": {},
+  "new-energy": {
+    "renewable energy": 100,
+    "solid-state battery": 100,
+    "hydrogen energy": 100,
+    "perovskite solar cell": 100,
+    "lithium battery": 100,
+    "grid energy storage": 100
+  },
+  "nuclear-energy": {
+    "nuclear fusion": 100,
+    "tokamak": 100,
+    "small modular reactor": 100,
+    "nuclear fission": 100,
+    "fusion energy": 100,
+    "plasma confinement": 100
+  },
+  "alien-minerals": {},
+  "bionic-ai": {},
+  "deep-sea-tech": {},
+  "brain-science": {
+    "neuroscience": 100,
+    "brain imaging": 100,
+    "neural plasticity": 100,
+    "connectome": 100,
+    "neurogenesis": 100,
+    "cognitive neuroscience": 100
+  },
+  "life-science": {
+    "life sciences": 100,
+    "systems biology": 100,
+    "cell biology": 100,
+    "genomics": 100,
+    "proteomics": 100,
+    "molecular biology": 100
+  },
+  "robot-parts": {
+    "robot actuator": 100,
+    "robotic gripper": 100,
+    "servo motor": 100,
+    "tactile sensor": 100,
+    "soft robotics": 100,
+    "robotics components": 100
+  },
+  "tcm-tools": {
+    "traditional Chinese medicine": 100,
+    "herbal medicine": 100,
+    "acupuncture": 100,
+    "medicinal plant": 100,
+    "TCM formula": 100,
+    "pharmacology of herbs": 100
+  },
+  "genetech-tools": {
+    "genomics": 100,
+    "CRISPR gene editing": 100,
+    "gene therapy": 100,
+    "DNA sequencing": 100,
+    "genome engineering": 100,
+    "gene regulation": 100
+  },
+  "exo-science": {
+    "exoplanet": 100,
+    "astrobiology": 100,
+    "biosignature": 100,
+    "extraterrestrial life": 100,
+    "SETI": 100,
+    "planetary habitability": 100
+  },
+  "agent-ecosystem": {
+    "AI agent": 100,
+    "multi-agent system": 100,
+    "agent orchestration": 100,
+    "LLM agent framework": 100,
+    "autonomous agent": 100,
+    "agentic workflow": 100
+  }
 }

@@ -14,6 +14,7 @@ build/
 .wrangler/
 # 静态站点生成产物（由 tools/build-site.mjs 在 CI 中重建，不入库）
 _site/
+_site_test/
 
 # IDE
 .vscode/

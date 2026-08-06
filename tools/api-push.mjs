@@ -47,7 +47,7 @@ function getToken() {
   return m[1].trim();
 }
 
-function api(token, method, urlPath, body) {
+function apiOnce(token, method, urlPath, body) {
   return new Promise((resolve, reject) => {
     const data = body ? JSON.stringify(body) : null;
     const req = https.request(
@@ -84,6 +84,37 @@ function api(token, method, urlPath, body) {
     if (data) req.write(data);
     req.end();
   });
+}
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * 带指数退避的 API 调用。
+ * 本机到 api.github.com 的长连接在上传大 blob（单站 entities.json 可达 3MB+，
+ * base64 后约 4MB）时经常被中途 reset（ECONNRESET / TLS socket disconnected）。
+ * 这类是纯瞬时网络故障，重试即可成功；HTTP 4xx（鉴权/参数错）则立即失败不重试。
+ */
+async function api(token, method, urlPath, body, attempts = 6) {
+  let lastErr;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      return await apiOnce(token, method, urlPath, body);
+    } catch (err) {
+      lastErr = err;
+      const msg = String(err && err.message);
+      // 4xx 为确定性错误（除 429 限流外），重试无意义
+      const httpCode = /^HTTP (\d{3})/.exec(msg);
+      if (httpCode) {
+        const code = Number(httpCode[1]);
+        if (code >= 400 && code < 500 && code !== 429) throw err;
+      }
+      if (i === attempts) break;
+      const wait = Math.min(1000 * 2 ** (i - 1), 15000);
+      console.log(`[retry ${i}/${attempts - 1}] ${method} ${urlPath.slice(0, 60)} → ${msg.slice(0, 80)}；${wait}ms 后重试`);
+      await sleep(wait);
+    }
+  }
+  throw lastErr;
 }
 
 /** 本地 HEAD 的 tree 映射：path -> sha（raw UTF-8 路径，关闭 quotepath 避免中文被八进制转义） */

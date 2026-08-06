@@ -276,10 +276,14 @@ async function submitIndexNow(urls, dryRun) {
     return { submitted: 0, skipped: true, reason: '内置 key 缺失（state/indexnow-key.txt）' };
   }
   const host = new URL(SITE_BASE_URL).hostname;
+  // keyLocation 必须真实可访问，且其所在目录需覆盖待提交 URL。
+  // 本站部署在子路径（https://lm203688.github.io/genetech-14-sites/），
+  // 主机根 https://<host>/.well-known/indexnow.txt 是 404（那是用户主页仓库的地盘），
+  // 此前一直填根路径，导致 IndexNow 提交必然被拒。改用站点根下的标准 key 文件。
   const payload = {
     host,
     key: INDEXNOW_KEY,
-    keyLocation: `https://${host}/.well-known/indexnow.txt`,
+    keyLocation: `${SITE_BASE_URL}/${INDEXNOW_KEY}.txt`,
     urlList: Array.from(urls).slice(0, 10000),
   };
   if (dryRun) return { submitted: payload.urlList.length, dryRun: true };
@@ -449,9 +453,11 @@ async function main() {
     console.log(`[GEO-Promo] 未生成文章: ${geoPost.reason}`);
   }
 
-  // 2. IndexNow（所有站点 + 博客 + rss）
+  // 2. IndexNow —— 优先直接解析线上 sitemap.xml，自动覆盖全部可索引页
+  //    （含各站归档分页 <site>/page/N.html，页数随数据量自动增长），
+  //    读取失败时回退到静态基础清单。
   const siteSlugs = [...new Set(allEntities.map((e) => e.site))];
-  const urls = new Set([
+  const fallbackUrls = [
     `${SITE_BASE_URL}/`,
     `${SITE_BASE_URL}/search.html`,
     `${SITE_BASE_URL}/mcp.html`,
@@ -459,7 +465,18 @@ async function main() {
     `${SITE_BASE_URL}/rss.xml`,
     ...siteSlugs.map((s) => `${SITE_BASE_URL}/${s}/`),
     ...(geoPost.generated ? [`${SITE_BASE_URL}/blog/${geoPost.slug}.html`] : []),
-  ]);
+  ];
+  let urls;
+  try {
+    const sm = await httpReq(`${SITE_BASE_URL}/sitemap.xml`);
+    const locs = String(sm.body || '').match(/<loc>([^<]+)<\/loc>/g) || [];
+    const fromSitemap = locs.map((x) => x.replace(/<\/?loc>/g, '').trim()).filter(Boolean);
+    urls = new Set(fromSitemap.length ? [...fromSitemap, ...fallbackUrls] : fallbackUrls);
+    console.log(`[GEO-Promo] sitemap 解析到 ${fromSitemap.length} 个 URL`);
+  } catch (e) {
+    console.warn(`[GEO-Promo] sitemap 读取失败(${e.message})，回退基础 URL 清单`);
+    urls = new Set(fallbackUrls);
+  }
   const indexNow = await submitIndexNow(urls, dryRun);
 
   // 3. 搜索引擎 ping

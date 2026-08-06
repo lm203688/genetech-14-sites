@@ -70,6 +70,15 @@ const SITE_LABELS = {
   'quantum-computing': '量子计算',
   'robot-parts': '机器人零部件',
   'tcm-tools': '中医药工具',
+  // ---- 2026-08 扩域：对齐国家「十五五」未来产业方向 ----
+  'embodied-ai': '具身智能',
+  'synbio-manufacturing': '合成生物与生物制造',
+  'semiconductor': '半导体与先进封装',
+  'ai4science': 'AI 驱动科学发现',
+  'low-altitude': '低空经济',
+  'sat-6g': '6G 与卫星互联网',
+  'spatial-computing': '空间计算',
+  'privacy-computing': '隐私计算与数据要素',
 };
 
 const esc = (s) =>
@@ -291,6 +300,13 @@ article.post p{color:#2b2f36;font-size:15.5px;line-height:1.85}
 article.post pre{background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:8px;overflow:auto;font-size:13px}
 article.post code{color:#0b62d6}
 article.post ul,article.post ol{line-height:1.9;color:#2b2f36}
+.pagenav{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:28px 0 8px}
+.pagenav .pn{padding:8px 14px;border:1px solid var(--line);border-radius:8px;text-decoration:none}
+.pagenav .pn.dim{color:#9aa1ab;border-color:#eceef1}
+.pagenums{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.pagenums a{padding:6px 10px;border:1px solid var(--line);border-radius:6px;text-decoration:none}
+.pagenums .cur{padding:6px 10px;border-radius:6px;background:#0b62d6;color:#fff;font-weight:600}
+.pagenums .gap{color:#9aa1ab;padding:0 2px}
 article.post table{border-collapse:collapse;width:100%;margin:18px 0;font-size:14px}
 article.post th,article.post td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
 article.post th{background:var(--chip);font-weight:600}
@@ -446,17 +462,19 @@ ${body}
 }
 
 /** 单站页面 */
-function renderSitePage(site, allSites) {
-  const label = SITE_LABELS[site.slug] || site.slug;
-  const total = site.entities.length;
-  const cats = Array.isArray(site.index.categories) ? site.index.categories.slice(0, 12) : [];
+/** 每个归档分页承载的实体条数 */
+const ARCHIVE_PAGE_SIZE = 100;
 
-  // 按加入时间倒序，最多展示 300 条，避免单页过大
-  const list = [...site.entities]
-    .sort((a, b) => String(b.addedAt || '').localeCompare(String(a.addedAt || '')))
-    .slice(0, 300);
+/** 按加入时间倒序取全量实体（站点页与归档分页共用同一排序，保证翻页不重不漏） */
+function sortedEntities(site) {
+  return [...site.entities].sort((a, b) =>
+    String(b.addedAt || '').localeCompare(String(a.addedAt || '')),
+  );
+}
 
-  const items = list
+/** 实体条目渲染（站点首页与归档分页共用） */
+function renderEntityItems(list) {
+  return list
     .map((e) => {
       const authors = Array.isArray(e.authors) ? e.authors.slice(0, 4).join(', ') : '';
       const more = Array.isArray(e.authors) && e.authors.length > 4 ? ' 等' : '';
@@ -474,6 +492,94 @@ ${tags.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}
 </li>`;
     })
     .join('\n');
+}
+
+/**
+ * 归档分页 —— GEO/SEO 关键表面。
+ * 站点首页只渲染最新 300 条，其余实体此前完全没有 HTML 载体，
+ * 搜索引擎与 AI 引擎无法抓取（数据全锁在 entities.json 里）。
+ * 这里把全量实体按每页 ARCHIVE_PAGE_SIZE 条铺成静态页并进 sitemap，
+ * 使全部实体的标题/摘要/来源都可被索引与引用。
+ */
+function renderArchivePage(site, pageNo, totalPages, list) {
+  const label = SITE_LABELS[site.slug] || site.slug;
+  const total = site.entities.length;
+  const from = (pageNo - 1) * ARCHIVE_PAGE_SIZE + 1;
+  const to = from + list.length - 1;
+  const canonical = `${ORIGIN}${BASE}/${site.slug}/page/${pageNo}.html`;
+
+  const pageHref = (n) => `${BASE}/${site.slug}/page/${n}.html`;
+  // 页码条：首末页 + 当前页附近，避免几百页时导航爆炸
+  const nums = new Set([1, totalPages, pageNo, pageNo - 1, pageNo + 1, pageNo - 2, pageNo + 2]);
+  const pageNums = [...nums]
+    .filter((n) => n >= 1 && n <= totalPages)
+    .sort((a, b) => a - b)
+    .map((n, i, arr) => {
+      const gap = i > 0 && n - arr[i - 1] > 1 ? '<span class="gap">…</span>' : '';
+      return `${gap}${
+        n === pageNo
+          ? `<span class="cur">${n}</span>`
+          : `<a href="${pageHref(n)}">${n}</a>`
+      }`;
+    })
+    .join('');
+
+  const body = `
+<h1>${esc(label)} · 全部实体（第 ${pageNo} / ${totalPages} 页）</h1>
+<p class="sub">本页收录第 ${from}–${to} 条，共 ${total} 条 · <a href="${BASE}/${site.slug}/">返回 ${esc(label)} 首页</a></p>
+<div class="api">
+机器可读接口：
+<a href="${BASE}/${site.slug}/website/api/index.json"><code>index.json</code></a> ·
+<a href="${BASE}/${site.slug}/website/api/entities.json"><code>entities.json</code></a>
+</div>
+<ul class="items">${renderEntityItems(list)}</ul>
+<nav class="pagenav">
+${pageNo > 1 ? `<a class="pn" href="${pageHref(pageNo - 1)}">← 上一页</a>` : '<span class="pn dim">← 上一页</span>'}
+<span class="pagenums">${pageNums}</span>
+${pageNo < totalPages ? `<a class="pn" href="${pageHref(pageNo + 1)}">下一页 →</a>` : '<span class="pn dim">下一页 →</span>'}
+</nav>
+`;
+
+  const jsonld = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${label} 实体列表 第 ${pageNo} 页`,
+    url: canonical,
+    numberOfItems: list.length,
+    itemListElement: list.slice(0, 100).map((e, i) => ({
+      '@type': 'ListItem',
+      position: from + i,
+      item: {
+        '@type': 'ScholarlyArticle',
+        name: String(e.name || '').slice(0, 300),
+        url: e.url || canonical,
+        ...(e.abstract ? { abstract: String(e.abstract).slice(0, 500) } : {}),
+        ...(Array.isArray(e.authors) && e.authors.length
+          ? { author: e.authors.slice(0, 8).map((a) => ({ '@type': 'Person', name: String(a) })) }
+          : {}),
+        ...(e.publishedDate ? { datePublished: e.publishedDate } : {}),
+      },
+    })),
+  };
+
+  return layout({
+    title: `${label} 全部实体 第 ${pageNo}/${totalPages} 页 — GeneTech 知识引擎`,
+    desc: `${label}领域结构化科研实体第 ${from}–${to} 条（共 ${total} 条），含标题、摘要、作者与原始来源链接，可经 JSON API 与 MCP 供 AI Agent 引用。`,
+    body,
+    jsonld,
+    canonical,
+  });
+}
+
+function renderSitePage(site, allSites) {
+  const label = SITE_LABELS[site.slug] || site.slug;
+  const total = site.entities.length;
+  const cats = Array.isArray(site.index.categories) ? site.index.categories.slice(0, 12) : [];
+
+  // 首页展示最新 300 条；全量通过归档分页暴露给搜索/AI 引擎
+  const list = sortedEntities(site).slice(0, 300);
+  const totalPages = Math.max(1, Math.ceil(total / ARCHIVE_PAGE_SIZE));
+  const items = renderEntityItems(list);
 
   const canonical = `${ORIGIN}${BASE}/${site.slug}/`;
   const body = `
@@ -489,7 +595,13 @@ ${tags.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}
 <div class="search"><input id="site-search" type="search" placeholder="在本站内检索（标题/摘要/标签/作者，支持中英文）" autofocus><button onclick="document.getElementById('site-search').dispatchEvent(new Event('input'))">搜索</button></div>
 <div id="search-status" class="search-status"></div>
 <ul class="items" id="entity-list">${items}</ul>
-${total > list.length ? `<p class="pager">页面展示最新 ${list.length} 条，全部 ${total} 条请通过上方 <code>entities.json</code> 获取。检索框会即时过滤最新 ${list.length} 条；全量检索请用顶部「全局搜索」。</p>` : ''}
+${
+    total > list.length
+      ? `<p class="pager">页面展示最新 ${list.length} 条；<strong>全部 ${total} 条已按每页 ${ARCHIVE_PAGE_SIZE} 条铺开，可逐页浏览：</strong>
+<a href="${BASE}/${site.slug}/page/1.html">浏览全部实体（共 ${totalPages} 页）→</a><br>
+也可直接通过 <code>entities.json</code> 一次性获取全量。检索框即时过滤本页最新 ${list.length} 条；全量检索请用顶部「全局搜索」。</p>`
+      : ''
+  }
 <script>${SEARCH_JS}</script>
 `;
 
@@ -849,13 +961,24 @@ function main() {
   fs.mkdirSync(OUT, { recursive: true });
 
   let totalEntities = 0;
+  const archivePaths = []; // 归档分页相对路径，用于写入 sitemap
   for (const s of sites) {
     totalEntities += s.entities.length;
     // 保持原始 API 路径契约
     writeFile(`${s.slug}/website/api/index.json`, JSON.stringify(s.index));
     writeFile(`${s.slug}/website/api/entities.json`, JSON.stringify(s.entities));
     writeFile(`${s.slug}/index.html`, renderSitePage(s, sites));
+
+    // 归档分页：让全部实体都拥有可被搜索/AI 引擎抓取的 HTML 表面
+    const ordered = sortedEntities(s);
+    const totalPages = Math.max(1, Math.ceil(ordered.length / ARCHIVE_PAGE_SIZE));
+    for (let p = 1; p <= totalPages; p++) {
+      const slice = ordered.slice((p - 1) * ARCHIVE_PAGE_SIZE, p * ARCHIVE_PAGE_SIZE);
+      writeFile(`${s.slug}/page/${p}.html`, renderArchivePage(s, p, totalPages, slice));
+      archivePaths.push(`${s.slug}/page/${p}.html`);
+    }
   }
+  console.log(`[archive] 生成归档分页 ${archivePaths.length} 页，覆盖 ${totalEntities} 条实体`);
 
   writeFile('index.html', renderHome(sites));
   writeFile('search.html', renderSearchPage(sites));
@@ -947,7 +1070,7 @@ ${rssItems}
     'rss.xml',
     ...BLOG_POSTS.map((b) => `blog/${b.slug}.html`),
   ];
-  const urls = ['', ...sites.map((s) => `${s.slug}/`), ...extraPages]
+  const urls = ['', ...sites.map((s) => `${s.slug}/`), ...extraPages, ...archivePaths]
     .map((u) => `  <url><loc>${origin}${BASE}/${u}</loc></url>`)
     .join('\n');
   writeFile(
@@ -960,8 +1083,12 @@ ${rssItems}
   );
   // 禁止 GitHub Pages 的 Jekyll 处理，确保下划线等路径原样发布
   writeFile('.nojekyll', '');
-  // IndexNow 验证文件（密钥公开；CI 端配置 INDEXNOW_KEY 后由 promotion 管线提交 Bing/Yandex）
-  writeFile('.well-known/indexnow.txt', INDEXNOW_KEY);
+  // IndexNow 验证文件（密钥本就是公开的）。
+  // 站点部署在子路径下，主机根目录无法放文件，因此把标准 key 文件写到站点根：
+  //   https://<host><BASE>/<key>.txt
+  // promotion 管线的 keyLocation 必须指向它，否则 IndexNow 会因 key 不可达而拒收。
+  writeFile(`${INDEXNOW_KEY}.txt`, INDEXNOW_KEY);
+  writeFile('.well-known/indexnow.txt', INDEXNOW_KEY); // 兼容保留
 
   console.log(`[ok] 生成 ${sites.length} 个站点 / ${totalEntities} 条实体 → ${OUT}`);
 }
