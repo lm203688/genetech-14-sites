@@ -2,19 +2,19 @@
 /**
  * 自动推广闭环（GEO / SEO）—— pipeline-geo-promotion.js
  *
- * 设计原则：自动化优先。能由机器自跑的获客动作全部闭环化，人工只做一次「配密钥」。
- * 每次运行（默认每日，提升期随 ops-extra 12:30 UTC 跑）会：
+ * 设计原则：完全自动化、零人工参与。所有获客动作由机器自跑，无需任何外部账号或密钥。
+ * 每次运行（默认每日，随 ops-extra 12:30 UTC 跑）会：
  *   1. 按新增实体自动生成 GEO 博客文章（Markdown）→ 进 content/blog/ → 触发 pages-deploy 自动部署
- *   2. 通过 IndexNow 把站点/文章 URL 推给 Bing / Yandex（需仓库 Secret INDEXNOW_KEY，一次性）
- *   3. 主动向 Google / Bing 提交 sitemap（无需密钥，永远可用）
+ *   2. 通过 IndexNow 把站点/文章 URL 推给 Bing / Yandex（key 取自仓库内置 state/indexnow-key.txt，零账号）
+ *   3. 主动向 Google / Bing 提交 sitemap（免密钥 ping 端点，永远可用）
  *   4. 自动设置 GitHub Topics（用内置 GITHUB_TOKEN，零额外密钥）
- *   5. 可选：自动发布到 dev.to（需 Secret DEV_TO_API_KEY，一次性）——真实自动发文，开发者 GEO 高价值
- *   6. 自动更新「🚀 GEO 自动推广状态」GitHub Issue，让用户无需手动查也能看到进展
+ *   5. 可选：自动发布到 dev.to（需 Secret DEV_TO_API_KEY——唯一需要用户账号的渠道，缺则优雅跳过）
+ *   6. 自动更新「🚀 GEO 自动推广状态」GitHub Issue，闭环自报告
  *
  * 所有外部调用均优雅降级：缺密钥/接口异常仅记录，不阻断整体流程。
  *
  * 用法：node pipeline-geo-promotion.js [--dry-run]
- * 环境变量：SITE_BASE_URL, INDEXNOW_KEY, DEV_TO_API_KEY, GITHUB_TOKEN, GITHUB_REPOSITORY
+ * 环境变量：SITE_BASE_URL, INDEXNOW_KEY(可选覆盖), DEV_TO_API_KEY(可选), GITHUB_TOKEN, GITHUB_REPOSITORY
  */
 
 const fs = require('fs').promises;
@@ -31,7 +31,20 @@ const CONTENT_BLOG_DIR = path.join(PROJECT_ROOT, 'content', 'blog');
 
 const SITE_BASE_URL =
   process.env.SITE_BASE_URL || 'https://lm203688.github.io/genetech-14-sites';
-const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '';
+// IndexNow 密钥：优先用 CI 注入的 INDEXNOW_KEY；否则读取仓库内置稳定 key（state/indexnow-key.txt，
+// 已随仓库提交，零外部账号），从而 IndexNow 提交完全自治，不需要任何 Bing 账号或 Secret。
+function loadIndexNowKey() {
+  if (process.env.INDEXNOW_KEY) return process.env.INDEXNOW_KEY;
+  try {
+    const kp = path.join(PROJECT_ROOT, 'state', 'indexnow-key.txt');
+    if (fss.existsSync(kp)) {
+      const k = fss.readFileSync(kp, 'utf8').trim();
+      if (k) return k;
+    }
+  } catch {}
+  return '';
+}
+const INDEXNOW_KEY = loadIndexNowKey();
 const DEV_TO_API_KEY = process.env.DEV_TO_API_KEY || '';
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
 const GITHUB_REPOSITORY = process.env.GITHUB_REPOSITORY || 'lm203688/genetech-14-sites';
@@ -259,7 +272,7 @@ async function maybeGeneratePost(allEntities, state, dryRun) {
 // ==================== 3. IndexNow 提交 ====================
 async function submitIndexNow(urls, dryRun) {
   if (!INDEXNOW_KEY) {
-    return { submitted: 0, skipped: true, reason: '未配置 INDEXNOW_KEY（仓库 Secrets 一次性设置即可启用）' };
+    return { submitted: 0, skipped: true, reason: '内置 key 缺失（state/indexnow-key.txt）' };
   }
   const host = new URL(SITE_BASE_URL).hostname;
   const payload = {
@@ -378,7 +391,8 @@ async function updateStatusIssue(report, dryRun) {
 
 **站点根地址**：${SITE_BASE_URL}
 **MCP 接入**：\`npx -y @genetech/data-mcp\`
-**唯一需人工的一次性操作**：在仓库 Secrets 配置 \`INDEXNOW_KEY\`（Bing Webmaster 生成）与 \`DEV_TO_API_KEY\`（dev.to 生成）；Glama/Smithery 目录用 GitHub 登录连接即可自动索引。
+**自动化程度**：GEO 文章 / IndexNow(Bing,Yandex) / Google,Bing sitemap ping / GitHub Topics 均已零密钥自驱；Glama、Smithery 因仓库含 glama.json、smithery.yaml 会被自动发现索引。
+**仅 dev.to 发文需要你的账号**：在仓库 Secrets 配置 \`DEV_TO_API_KEY\`（dev.to 登录后生成）即自动开启；不配则自动跳过，不影响其余闭环。
 
 > 自动生成，最后更新 ${new Date().toISOString()}
 `;

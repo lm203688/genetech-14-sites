@@ -34,7 +34,18 @@ const PROD_ORIGIN = 'https://lm203688.github.io';
 const ORIGIN = SITE_ORIGIN || PROD_ORIGIN;
 // IndexNow 密钥：公开托管于 .well-known/indexnow.txt；CI 端需在仓库 Secrets 配置同名 INDEXNOW_KEY 才能向 Bing/Yandex 提交
 // 优先用 CI 注入的真实密钥（仓库 Secrets: INDEXNOW_KEY），缺省回退占位值（需替换）
-const INDEXNOW_KEY = process.env.INDEXNOW_KEY || 'a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d';
+// IndexNow 密钥：默认用仓库内置稳定 key（state/indexnow-key.txt，已随仓库提交，零外部账号），
+// 若 CI 注入 INDEXNOW_KEY 则优先用其覆盖；最后回退占位值（仅本地调试）。
+// 该 key 发布到 .well-known/indexnow.txt 即与提交请求自洽，无需任何 Bing 账号。
+const INDEXNOW_KEY = (() => {
+  if (process.env.INDEXNOW_KEY) return process.env.INDEXNOW_KEY;
+  try {
+    const kp = path.join(ROOT, 'state', 'indexnow-key.txt');
+    const k = fs.readFileSync(kp, 'utf8').trim();
+    if (k) return k;
+  } catch {}
+  return 'a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d';
+})();
 // Google Search Console 验证元标签：CI 端配 Secrets: GSC_VERIFICATION 后自动注入首页 <head>，
 // 用户即可在 GSC 用「HTML 标记」方式零服务器验证所有权
 const GSC_VERIFICATION = process.env.GSC_VERIFICATION || '';
