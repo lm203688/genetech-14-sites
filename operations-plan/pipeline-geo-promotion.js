@@ -95,6 +95,7 @@ function httpReq(urlStr, { method = 'GET', headers = {}, body } = {}) {
         path: url.pathname + url.search,
         method,
         headers: {
+          'User-Agent': 'genetech-geo-bot',
           ...(body ? { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) } : {}),
           ...headers,
         },
