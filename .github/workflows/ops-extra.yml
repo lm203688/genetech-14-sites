@@ -55,6 +55,8 @@ jobs:
       LICENSE_STATS_URL: ${{ secrets.LICENSE_STATS_URL }}
       INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
       DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
