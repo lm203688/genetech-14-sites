@@ -1,25 +1,24 @@
 #!/usr/bin/env node
 /**
- * 站点感知数据回填 / 扩充流水线
+ * 站点感知数据回填 / 扩充流水线（扩量版 v2）
  * pipeline-data-backfill.js
  *
- * 背景（修复报告"5 个科学站点为空壳"的根因）：
- *   原 data-accumulation 的 SITE_MAPPING_RULES 全是 AI 主题词（ai-agents/mcp/llm…），
- *   与 14 个科学领域站点完全不匹配；且写入路径 sites/<site>/_data/ 不存在于线上结构。
- *   导致 alien-minerals/biocomputing/bionic-ai/deep-sea-tech/quantum-computing 等站永不被灌数据。
- *
- * 本管线做法：
- *   1. 为每个站点定义"领域检索词" SITE_QUERIES（科学领域语义，而非 AI 关键词）
- *   2. 用 OpenAlex（主通道，稳定免 key）+ arXiv + Crossref + PubMed 真实抓取
- *   3. 归一化为线上 schema：{id,name,source,abstract,url,authors,tags,confidence,sites,publishedDate,addedAt}
- *   4. 合并写入 <site>/website/api/entities.json（按 id 去重，绝不覆盖既有数据）
- *   5. 刷新 index.json（totalEntities / lastUpdated / categories）
+ * 相比 v1 的核心改进（直接解决"数据不增长"根因）：
+ *   1. 单页取数 12 → 100（OpenAlex/Crossref/arXiv/S2/EuropePMC 均支持 ≥100/页），
+ *      单轮单站可取数从 ~336 条理论值提升到 ~2800 条原始候选。
+ *   2. 数据源从 4 个增至 6 个：新增 Semantic Scholar（CS/跨学科）、Europe PMC（生物医学全文索引）。
+ *   3. 游标从"站点级"改为"站点×检索词"级：每个检索词独立推进 offset，
+ *      避免 7 个词共用一个 offset 导致词间进度不同步、深页大面积重复命中。
+ *   4. 修复 PubMed 摘要恒为空：esearch → esummary（标题/DOI/日期）→ efetch（AbstractText）。
+ *   5. 清洗 Crossref 的 JATS 标签摘要（<jats:p> 等）。
+ *   6. 按 DOI / 标题+首作者 做跨源去重合并：同一篇论文在多个源只计一次，且优先保留带摘要的版本。
  *
  * 用法：
- *   node pipeline-data-backfill.js [--dry-run] [--site=quantum-computing] [--limit=400] [--max-entities=3000]
+ *   node pipeline-data-backfill.js [--dry-run] [--site=quantum-computing]
+ *       [--limit=600] [--max-entities=3000] [--per-page=100]
  *
- * 游标分页：四个数据源此前均硬编码第 1 页，导致每轮抓回完全相同的条目、去重后新增恒为 0。
- * 现按站点维护 offset 游标（state/backfill-cursor.json），每轮推进一页，持续抓到新数据。
+ * 设计原则：失败即空数组（不抛停整轮），礼貌限速（源内并发受控、站间 sleep），
+ * 去重幂等（重跑安全），容量闸门（达标停抓，避免单文件与仓库无限膨胀）。
  */
 
 const fs = require('fs').promises;
@@ -50,7 +49,8 @@ const SITE_QUERIES = {
 };
 
 const SOURCE_CONFIDENCE = {
-  pubmed: 0.82, arxiv: 0.78, openalex: 0.72, crossref: 0.7, github: 0.6, huggingface: 0.6,
+  pubmed: 0.82, arxiv: 0.78, openalex: 0.72, crossref: 0.7,
+  semanticscholar: 0.74, europepmc: 0.8, github: 0.6, huggingface: 0.6,
 };
 
 // ==================== 工具函数 ====================
@@ -84,6 +84,13 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 async function readJsonSafe(p) { try { return JSON.parse(await fs.readFile(p, 'utf-8')); } catch { return null; } }
 async function ensureDir(d) { try { await fs.mkdir(d, { recursive: true }); } catch {} }
 
+const UA = 'GeneTechBot/2.0 (mailto:ops@genetech.example)';
+
+function stripTags(s) {
+  if (!s) return '';
+  return String(s).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 // OpenAlex inverted_index -> 文本摘要
 function reconstructAbstract(invIndex) {
   if (!invIndex) return '';
@@ -116,14 +123,26 @@ function parseArxivXml(xml) {
   return entries;
 }
 
+// ==================== 去重键 ====================
+
+// 跨源去重：优先用 DOI；否则用「标题(归一)+首作者」；再不行用原始 id。
+function dedupeKey(e) {
+  const doi = String(e.doi || '').toLowerCase().replace(/^doi:/, '').replace(/^https?:\/\/(dx\.)?doi\.org\//, '').trim();
+  if (doi) return 'doi:' + doi;
+  const name = String(e.name || '').toLowerCase().replace(/[^a-z0-9一-龥]/g, '');
+  const firstAuthor = String((e.authors && e.authors[0]) || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  if (name) return 'n:' + name.slice(0, 64) + '|' + (firstAuthor.slice(0, 14) || 'x');
+  return 'id:' + (e.id || Math.random().toString(36));
+}
+
 // ==================== 各数据源抓取（带领域检索词） ====================
 
 async function fetchOpenAlex(query, max, offset = 0) {
-  // OpenAlex 用 page 分页（page 从 1 开始）；page*per-page 上限 10000，超出需 cursor
+  // OpenAlex 用 page 分页（page 从 1 开始）；page*per-page 上限 10000
   const page = Math.floor(offset / max) + 1;
-  const url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&per-page=${max}&page=${page}&sort=relevance_score:desc`;
+  const url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&per-page=${max}&page=${page}&sort=relevance_score:desc&mailto=ops@genetech.example`;
   try {
-    const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': 'GeneTechBot/1.0 (mailto:ops@genetech.example)' } }), 3, 1500);
+    const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': UA } }), 3, 1500);
     if (res.statusCode !== 200) return [];
     const data = JSON.parse(res.body);
     return (data.results || []).map(w => ({
@@ -141,7 +160,7 @@ async function fetchOpenAlex(query, max, offset = 0) {
 }
 
 async function fetchArxiv(query, max, offset = 0) {
-  const url = `http://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(query)}&start=${offset}&max_results=${max}&sortBy=relevance`;
+  const url = `https://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(query)}&start=${offset}&max_results=${max}&sortBy=relevance`;
   try {
     const res = await withRetry(() => httpGet(url), 3, 1500);
     if (res.statusCode !== 200) return [];
@@ -154,20 +173,85 @@ async function fetchArxiv(query, max, offset = 0) {
 }
 
 async function fetchCrossref(query, max, offset = 0) {
-  // Crossref offset 深分页上限 10000，超出需 cursor=*
+  // Crossref offset 深分页上限 10000，超出需 cursor=*（v2 暂不深翻）
   const url = `https://api.crossref.org/works?query=${encodeURIComponent(query)}&rows=${max}&offset=${offset}&sort=relevance`;
   try {
-    const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': 'GeneTechBot/1.0 (mailto:ops@genetech.example)' } }), 3, 1500);
+    const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': UA } }), 3, 1500);
     if (res.statusCode !== 200) return [];
     const data = JSON.parse(res.body);
-    return (data.message?.items || []).map(it => ({
-      id: it.DOI ? 'doi:' + it.DOI : 'cr:' + (it.URL || Math.random().toString(36)),
-      source: 'crossref', name: (it.title || [''])[0] || '', abstract: it.abstract || '',
-      url: it.URL || '', authors: (it.author || []).map(a => `${a.given || ''} ${a.family || ''}`.trim()).filter(Boolean),
-      tags: it.subject || [], publishedDate: (it.publishedPrint?.dateParts?.[0]?.join('-')) || it.created?.['date-time'] || '',
-      doi: it.DOI || '',
-    }));
+    return (data.message?.items || []).map(it => {
+      const rawAbs = it.abstract || '';
+      const abs = rawAbs.startsWith('<') || rawAbs.includes('<jats') ? stripTags(rawAbs) : rawAbs;
+      return {
+        id: it.DOI ? 'doi:' + it.DOI : 'cr:' + (it.URL || Math.random().toString(36)),
+        source: 'crossref', name: (it.title || [''])[0] || '', abstract: abs.slice(0, 4000),
+        url: it.URL || '', authors: (it.author || []).map(a => `${a.given || ''} ${a.family || ''}`.trim()).filter(Boolean),
+        tags: it.subject || [], publishedDate: (it.publishedPrint?.dateParts?.[0]?.join('-')) || it.created?.['date-time'] || '',
+        doi: it.DOI || '',
+      };
+    });
   } catch { return []; }
+}
+
+async function fetchSemanticScholar(query, max, offset = 0) {
+  // 免费、无需 key（速率受限，失败即空）。字段含 paperId / DOI / abstract。
+  const url = `https://api.semanticscholar.org/graph/v1/paper/search?query=${encodeURIComponent(query)}&limit=${max}&offset=${offset}&fields=paperId,title,abstract,url,year,venue,publicationDate,authors.name,externalIds`;
+  try {
+    const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': UA } }), 3, 1500);
+    if (res.statusCode !== 200) return [];
+    const data = JSON.parse(res.body);
+    return (data.data || []).map(p => {
+      const doi = p.externalIds?.DOI || '';
+      return {
+        id: doi ? 'doi:' + doi : 'ss:' + (p.paperId || Math.random().toString(36)),
+        source: 'semanticscholar', name: p.title || '', abstract: (p.abstract || '').slice(0, 4000),
+        url: p.url || (doi ? `https://doi.org/${doi}` : ''),
+        authors: (p.authors || []).map(a => a.name).filter(Boolean),
+        tags: p.venue ? [p.venue] : [], publishedDate: p.publicationDate || (p.year ? String(p.year) : ''),
+        doi,
+      };
+    });
+  } catch { return []; }
+}
+
+async function fetchEuropePMC(query, max, offset = 0) {
+  // Europe PMC：免费、无需 key，覆盖 PubMed + PMC + Agricola 等，含摘要。
+  const url = `https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=${encodeURIComponent(query)}&format=json&pageSize=${max}&resultStart=${offset}`;
+  try {
+    const res = await withRetry(() => httpGet(url), 3, 1500);
+    if (res.statusCode !== 200) return [];
+    const data = JSON.parse(res.body);
+    return (data.resultList?.result || []).map(it => {
+      const doi = it.doi || '';
+      return {
+        id: doi ? 'doi:' + doi : `epmc:${it.source || 'x'}${it.id || Math.random().toString(36)}`,
+        source: 'europepmc', name: it.title || '', abstract: stripTags(it.abstractText || '').slice(0, 4000),
+        url: doi ? `https://doi.org/${doi}` : (it.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${it.pmid}/` : ''),
+        authors: (it.authorList?.author || []).map(a => a.fullName || a.collectedFrom || '').filter(Boolean),
+        tags: it.keywordList?.keyword || [], publishedDate: it.pubYear || '',
+        doi,
+      };
+    });
+  } catch { return []; }
+}
+
+async function fetchPubMedAbstracts(idlist) {
+  if (!idlist.length) return {};
+  const url = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=${idlist.join(',')}&rettype=abstract&retmode=xml`;
+  try {
+    const res = await withRetry(() => httpGet(url), 3, 1500);
+    const map = {};
+    const artRegex = /<PubmedArticle>[\s\S]*?<\/PubmedArticle>/g;
+    let m;
+    while ((m = artRegex.exec(res.body)) !== null) {
+      const a = m[0];
+      const pmidMatch = a.match(/<PMID[^>]*>(\d+)<\/PMID>/);
+      const pmid = pmidMatch ? pmidMatch[1] : '';
+      const absMatch = a.match(/<AbstractText[^>]*>([\s\S]*?)<\/AbstractText>/);
+      if (pmid && absMatch) map[pmid] = stripTags(absMatch[1]).replace(/\s+/g, ' ').trim();
+    }
+    return map;
+  } catch { return {}; }
 }
 
 async function fetchPubMed(query, max, offset = 0) {
@@ -180,18 +264,30 @@ async function fetchPubMed(query, max, offset = 0) {
     const sumUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${idlist.join(',')}&retmode=json`;
     const res = await withRetry(() => httpGet(sumUrl), 3, 1500);
     const resultMap = JSON.parse(res.body).result || {};
+    // 第二跳：efetch 取摘要（修复 v1 摘要恒为空）
+    const absMap = await fetchPubMedAbstracts(idlist);
     return idlist.map(pmid => {
       const info = resultMap[pmid]; if (!info) return null;
+      const doi = info.articleids?.find(a => a.idtype === 'doi')?.value || '';
       return {
-        id: 'pmid:' + pmid, source: 'pubmed', name: info.title || '', abstract: '',
+        id: 'pmid:' + pmid, source: 'pubmed', name: info.title || '', abstract: absMap[pmid] || '',
         url: `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`,
         authors: (info.authors || []).map(a => a.name),
-        tags: [], publishedDate: info.pubdate || '',
-        doi: info.articleids?.find(a => a.idtype === 'doi')?.value || '',
+        tags: [], publishedDate: info.pubdate || '', doi,
       };
     }).filter(Boolean);
   } catch { return []; }
 }
+
+// 6 个数据源的统一入口
+const SOURCE_FETCHERS = [
+  (q, n, o) => fetchOpenAlex(q, n, o),
+  (q, n, o) => fetchArxiv(q, n, o),
+  (q, n, o) => fetchCrossref(q, n, o),
+  (q, n, o) => fetchSemanticScholar(q, n, o),
+  (q, n, o) => fetchEuropePMC(q, n, o),
+  (q, n, o) => fetchPubMed(q, n, o),
+];
 
 // ==================== 归一化 + 合并 ====================
 
@@ -212,67 +308,40 @@ function normalize(raw, site) {
   };
 }
 
-async function backfillSite(site, queries, limit, dryRun, offset = 0, maxEntities = Infinity) {
-  const siteDirPre = path.join(PROJECT_ROOT, site, 'website', 'api');
-  const livePathPre = path.join(siteDirPre, 'entities.json');
-  const existingPre = (await readJsonSafe(livePathPre)) || [];
-  // 容量闸门：达标即不再抓取（省 API 配额，也避免 entities.json 超出
-  // Cloudflare Pages 单文件 25MB 上限、以及 git 仓库无限膨胀）
-  if (existingPre.length >= maxEntities) {
-    console.log(`[Backfill] ${site}: 已达目标容量 ${existingPre.length}/${maxEntities}，跳过抓取`);
-    return { site, fetched: 0, added: 0, total: existingPre.length, offset, capped: true, dryRun };
-  }
-
+/**
+ * 处理单个（站点, 检索词）：抓 6 源 → 去重合并进 map（map 已含既有实体）。
+ * 返回 { fetched, added, nextOffset }。
+ */
+async function backfillQuery(site, query, offset, perPage, limit, map) {
+  // 6 源并发抓取（失败即空数组）；PubMed 内部含 3 次 e-utils 调用，已由 withRetry 保护
+  const settled = await Promise.allSettled(SOURCE_FETCHERS.map(f => f(query, perPage, offset)));
+  let fetched = 0;
   const collected = [];
-  const seen = new Set();
-  // 检索词按小并发分批：串行时单站约 110s，14 站会逼近 job 的 timeout-minutes 而整轮丢数据；
-  // 并发 3 可降到约 40s/站，同时对单个数据源的并发请求数仍在其限流要求之内
-  const QUERY_CONCURRENCY = 3;
-  for (let i = 0; i < queries.length; i += QUERY_CONCURRENCY) {
-    if (collected.length >= limit) break;
-    const chunk = queries.slice(i, i + QUERY_CONCURRENCY);
-    const chunkResults = await Promise.all(chunk.map(q => Promise.allSettled([
-      // 四源单页取数统一为 12，与游标步长 PAGE_STEP 对齐：
-      // 若各源取数不一致（如 8 < 步长 12），窗口之间会留下永远抓不到的空档
-      fetchOpenAlex(q, 12, offset), fetchArxiv(q, 12, offset), fetchCrossref(q, 12, offset), fetchPubMed(q, 12, offset),
-    ])));
-    for (const batch of chunkResults) {
-      for (const r of batch) {
-        if (r.status !== 'fulfilled') continue;
-        for (const it of r.value) {
-          if (collected.length >= limit) break;
-          if (seen.has(it.id)) continue;
-          seen.add(it.id); collected.push(it);
-        }
-      }
-    }
-    await sleep(300); // 礼貌限速（并发后适当加长）
+  for (const r of settled) {
+    if (r.status !== 'fulfilled') continue;
+    for (const it of r.value) { collected.push(it); fetched++; }
   }
-
-  const siteDir = path.join(PROJECT_ROOT, site, 'website', 'api');
-  const livePath = path.join(siteDir, 'entities.json');
-  const indexPath = path.join(siteDir, 'index.json');
-
-  const existing = (await readJsonSafe(livePath)) || [];
-  const map = new Map(existing.map(e => [e.id || e.name, e]));
   let added = 0;
   for (const raw of collected) {
+    if (added >= limit) break;
     const n = normalize(raw, site);
-    if (!map.has(n.id)) { map.set(n.id, n); added++; }
+    const dk = dedupeKey(n);
+    if (map.has(dk)) {
+      // 跨源命中：若既有条目缺摘要而新条目有，补全摘要（提升语义检索质量）
+      const ex = map.get(dk);
+      if ((!ex.abstract || ex.abstract.length < 40) && n.abstract && n.abstract.length > 40) {
+        ex.abstract = n.abstract;
+        if (n.tags && n.tags.length) ex.tags = Array.from(new Set([...(ex.tags || []), ...n.tags])).slice(0, 8);
+      }
+      continue;
+    }
+    map.set(dk, n);
+    added++;
   }
-  const all = Array.from(map.values());
-  const cats = [...new Set(all.flatMap(x => x.tags || []))].slice(0, 20).filter(Boolean);
-
-  if (dryRun) {
-    console.log(`[DRY-RUN] ${site}: 抓取 ${collected.length} 条, 可新增 ${added}, 现有 ${existing.length}, 合计将达 ${all.length}`);
-    return { site, fetched: collected.length, added, total: all.length, dryRun: true };
-  }
-
-  await ensureDir(siteDir);
-  await fs.writeFile(livePath, JSON.stringify(all, null, 2), 'utf-8');
-  await fs.writeFile(indexPath, JSON.stringify({ site, totalEntities: all.length, lastUpdated: getISOTime(), categories: cats }, null, 2), 'utf-8');
-  console.log(`[Backfill] ${site}: offset=${offset} 抓取 ${collected.length}, 新增 ${added}, 现有合计 ${all.length}`);
-  return { site, fetched: collected.length, added, total: all.length, offset, dryRun: false };
+  // 游标推进：按 perPage 前进；到达深分页上限则回绕重扫补漏
+  const MAX_OFFSET = 9000;
+  const nextOffset = (offset + perPage) > MAX_OFFSET ? 0 : (offset + perPage);
+  return { fetched, added, nextOffset };
 }
 
 // ==================== 主流程 ====================
@@ -282,42 +351,84 @@ async function main() {
   const dryRun = args.includes('--dry-run');
   const limitArg = args.find(a => a.startsWith('--limit='));
   const siteArg = args.find(a => a.startsWith('--site='));
-  const limit = limitArg ? parseInt(limitArg.split('=')[1], 10) || 30 : 30;
+  const perPageArg = args.find(a => a.startsWith('--per-page='));
+  const limit = limitArg ? parseInt(limitArg.split('=')[1], 10) || 600 : 600;
+  const perPage = Math.min(perPageArg ? parseInt(perPageArg.split('=')[1], 10) || 100 : 100, 200);
   // 每站目标容量：单条约 1.1KB，3000 条 ≈ 3.3MB，远低于 Cloudflare Pages 单文件 25MB 上限
   const maxArg = args.find(a => a.startsWith('--max-entities='));
   const maxEntities = maxArg ? parseInt(maxArg.split('=')[1], 10) || 3000 : 3000;
   const sites = siteArg ? [siteArg.split('=')[1]] : Object.keys(SITE_QUERIES);
 
-  // ===== 游标分页状态 =====
-  // 四个数据源此前均硬编码第 1 页，导致每轮抓回完全相同的条目、去重后新增恒为 0。
-  // 这里为每个站点维护一个 offset 游标，每轮推进一页，确保持续抓到新数据。
+  // ===== 游标：站点×检索词 级 =====
   const cursorPath = path.join(STATE_DIR, 'backfill-cursor.json');
-  const cursor = (await readJsonSafe(cursorPath)) || {};
-  const PAGE_STEP = 12;      // 与 OpenAlex per-page 对齐（各源单页最大取数）
-  const MAX_OFFSET = 9000;   // Crossref/PubMed 深分页上限约 1 万，到顶则回绕重扫补漏
+  const rawCursor = (await readJsonSafe(cursorPath)) || {};
+  // 兼容 v1 的「站点→数字」旧格式：遇到数字重置为 {}，让各检索词从 0 重新开始
+  const cursor = {};
+  for (const [s, v] of Object.entries(rawCursor)) {
+    cursor[s] = (v && typeof v === 'object') ? v : {};
+  }
 
-  console.log(`[Backfill] ${dryRun ? '[DRY-RUN] ' : ''}目标站点 ${sites.length} 个, 单轮每站上限 ${limit}, 每站目标容量 ${maxEntities}`);
+  console.log(`[Backfill v2] ${dryRun ? '[DRY-RUN] ' : ''}站点 ${sites.length} 个, 单轮每站上限 ${limit}, 单页 ${perPage}, 每站目标容量 ${maxEntities}, 数据源 ${SOURCE_FETCHERS.length} 个`);
   const results = [];
+  const QUERY_CONCURRENCY = 3; // 检索词并发；站间另有 sleep，整体礼貌限速
+
   for (const site of sites) {
     const queries = SITE_QUERIES[site];
     if (!queries) { console.warn(`[Backfill] 未知站点 ${site}, 跳过`); continue; }
-    const offset = Number(cursor[site]) || 0;
-    try {
-      const r = await backfillSite(site, queries, limit, dryRun, offset, maxEntities);
-      results.push(r);
-      if (!dryRun && !r.capped) {
-        // 抓到东西才推进游标；本页为空说明该检索词已见底，回绕重扫
-        const next = r.fetched > 0 ? offset + PAGE_STEP : 0;
-        cursor[site] = next > MAX_OFFSET ? 0 : next;
-      }
-    } catch (err) {
-      console.error(`[Backfill] ${site} 失败: ${err.message}`);
-      results.push({ site, error: err.message });
+    if (!cursor[site]) cursor[site] = {};
+
+    const siteDir = path.join(PROJECT_ROOT, site, 'website', 'api');
+    const livePath = path.join(siteDir, 'entities.json');
+    const indexPath = path.join(siteDir, 'index.json');
+    const existing = (await readJsonSafe(livePath)) || [];
+
+    if (existing.length >= maxEntities) {
+      console.log(`[Backfill] ${site}: 已达目标容量 ${existing.length}/${maxEntities}，跳过抓取`);
+      results.push({ site, fetched: 0, added: 0, total: existing.length, capped: true, dryRun });
+      await sleep(150);
+      continue;
     }
+
+    // 既有实体预装入 map（键=去重键），保证幂等 + 跨源去重
+    const map = new Map();
+    for (const e of existing) map.set(dedupeKey(e), e);
+
+    let siteFetched = 0;
+    let siteAdded = 0;
+    for (let i = 0; i < queries.length; i += QUERY_CONCURRENCY) {
+      if (map.size >= maxEntities) break;
+      const chunk = queries.slice(i, i + QUERY_CONCURRENCY);
+      const chunkRes = await Promise.all(chunk.map(q => {
+        const off = Number(cursor[site][q]) || 0;
+        return backfillQuery(site, q, off, perPage, limit, map).then(r => ({ q, ...r }));
+      }));
+      for (const r of chunkRes) {
+        cursor[site][r.q] = r.nextOffset;
+        siteFetched += r.fetched;
+        siteAdded += r.added;
+      }
+      await sleep(300); // 检索词批次间礼貌限速
+    }
+
+    const all = Array.from(map.values());
+    const cats = [...new Set(all.flatMap(x => x.tags || []))].slice(0, 20).filter(Boolean);
+
+    if (dryRun) {
+      console.log(`[DRY-RUN] ${site}: 抓取 ${siteFetched} 条, 可新增 ${siteAdded}, 现有 ${existing.length}, 合计将达 ${all.length}`);
+      results.push({ site, fetched: siteFetched, added: siteAdded, total: all.length, dryRun: true });
+      await sleep(150);
+      continue;
+    }
+
+    await ensureDir(siteDir);
+    await fs.writeFile(livePath, JSON.stringify(all, null, 2), 'utf-8');
+    await fs.writeFile(indexPath, JSON.stringify({ site, totalEntities: all.length, lastUpdated: getISOTime(), categories: cats }, null, 2), 'utf-8');
+    console.log(`[Backfill] ${site}: 抓取 ${siteFetched}, 新增 ${siteAdded}, 现有合计 ${all.length}`);
+    results.push({ site, fetched: siteFetched, added: siteAdded, total: all.length, dryRun: false });
     await sleep(200);
   }
 
-  const report = { pipeline: 'data-backfill', timestamp: getISOTime(), dryRun, limit, results };
+  const report = { pipeline: 'data-backfill-v2', timestamp: getISOTime(), dryRun, limit, perPage, results };
   if (!dryRun) {
     await ensureDir(STATE_DIR);
     await fs.writeFile(cursorPath, JSON.stringify(cursor, null, 2), 'utf-8');

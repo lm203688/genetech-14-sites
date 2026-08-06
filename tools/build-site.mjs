@@ -291,6 +291,9 @@ article.post p{color:#2b2f36;font-size:15.5px;line-height:1.85}
 article.post pre{background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:8px;overflow:auto;font-size:13px}
 article.post code{color:#0b62d6}
 article.post ul,article.post ol{line-height:1.9;color:#2b2f36}
+article.post table{border-collapse:collapse;width:100%;margin:18px 0;font-size:14px}
+article.post th,article.post td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+article.post th{background:var(--chip);font-weight:600}
 .cards2{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:14px 0}
 .card .k{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em}
 `;
@@ -616,6 +619,49 @@ function renderSearchPage(sites) {
 
 const BLOG = [
   {
+    slug: 'vs-elicit-consensus-scite',
+    title: 'GeneTech 对比 Elicit / Consensus / Scite：面向 AI Agent 的科研知识底座有何不同',
+    desc: 'Elicit、Consensus、Scite 都是优秀的「人读」科研工具；GeneTech 走另一条路——把 14 个前沿科技垂直领域的结构化知识，通过 MCP + JSON API 交给 AI Agent 直接调用、可溯源引用。本文给出客观对比与选型建议。',
+    date: '2026-08-06',
+    keywords: ['GeneTech', 'Elicit', 'Consensus', 'Scite', 'Perplexity', 'Semantic Scholar', '科研工具对比', 'AI Agent 知识库', 'MCP'],
+    body: `<p><strong>结论先行：</strong>Elicit、Consensus、Scite、Perplexity 解决的是「人读文献」效率问题；GeneTech 解决的是「让 AI Agent 自动查知识」的可溯源接入问题。两者不互斥——GeneTech 更适合做 RAG 知识底座、自动化综述与竞品监测。</p>
+
+<h2>一、四类主流科研工具在做什么</h2>
+<ul>
+<li><strong>Elicit</strong>（约 $12/月）：以自然语言提问，自动抽取多篇论文的方法、样本量、结论到结构化表格，强于系统综述的数据提取。</li>
+<li><strong>Consensus</strong>（约 $9–12/月）：用「共识仪表盘」回答 yes/no 类循证问题，聚合大量同行评议研究给出倾向。</li>
+<li><strong>Scite</strong>（约 $20/月）：Smart Citations 区分引用是「支持 / 对比 / 提及」，用于判断一篇论文在领域里实际被如何对待。</li>
+<li><strong>Perplexity / Semantic Scholar</strong>：前者是通用 AI 搜索（学术模式限定同行评议源），后者是免费的大规模论文发现与引用图谱底座。</li>
+</ul>
+
+<h2>二、GeneTech 的差异点</h2>
+<table class="cmp">
+<thead><tr><th>维度</th><th>Elicit / Consensus / Scite</th><th>GeneTech 知识引擎</th></tr></thead>
+<tbody>
+<tr><td>核心使用者</td><td>人类研究者（UI 驱动）</td><td>AI Agent / 开发者（MCP + JSON API 驱动）</td></tr>
+<tr><td>数据形态</td><td>交互式网页 + 导出</td><td>结构化实体（含 URL、作者、置信度、标签）+ 机器可读 API</td></tr>
+<tr><td>领域覆盖</td><td>泛全科（生物医学/社科偏重）</td><td>14 个前沿垂直领域策展（量子计算、脑科学、中医药工具、新能源、AI Agent 生态等）</td></tr>
+<tr><td>可溯源</td><td>有（引用论文）</td><td>有（每条实体带原始论文 URL + 置信度）</td></tr>
+<tr><td>接入方式</td><td>网页 / 插件</td><td>一行命令 <code>npx -y @genetech/data-mcp</code>，5 个 MCP 工具实时检索</td></tr>
+<tr><td>付费模式</td><td>按月订阅（国际信用卡）</td><td>一次性买断、国内微信/支付宝（¥9.9 入门 / ¥199 终身）</td></tr>
+</tbody>
+</table>
+
+<h2>三、什么时候选 GeneTech</h2>
+<ul>
+<li>你要<strong>把科研知识喂给自己的 Agent</strong>（RAG、自动化报告、竞品监测），而不是自己一篇篇读。</li>
+<li>你的场景落在我们策展的<strong>前沿垂直领域</strong>（如中医药工具、聚变能源、地外科学），且需要中文友好的结构化数据。</li>
+<li>你想用<strong>国内支付 + 一次性买断</strong>拿到全站通用许可证，避免月费。</li>
+</ul>
+
+<h2>四、常见问答</h2>
+<p><strong>Q：GeneTech 会取代 Elicit 吗？</strong><br>A：不会。Elicit 擅长「人做系统综述时的数据提取」，GeneTech 擅长「机器可调用、可溯源的知识底座」。两者可配合：用 GeneTech 给 Agent 供数，用 Elicit 做人工深读。</p>
+<p><strong>Q：数据从哪来、权威吗？</strong><br>A：聚合 OpenAlex、arXiv、Crossref、PubMed、Semantic Scholar、Europe PMC 等开放学术源，每条实体标注来源与置信度，并附原始论文链接以便核对。</p>
+<p><strong>Q：免费能用吗？</strong><br>A：14 站的结构化数据、全局搜索、MCP 基础检索均可直接体验；许可证用于解锁更高配额与引用导出等增强能力。</p>
+
+<p>想立刻体验？前往 <a href="${BASE}/search.html">全局搜索</a> 或 <a href="${BASE}/mcp.html">MCP 接入页</a>。数据规模与更新频率见 <a href="${BASE}/">首页各站实体量</a>。</p>`,
+  },
+  {
     slug: 'mcp-for-agents',
     title: '用 MCP 把 14 个前沿科技知识库接入你的 AI Agent（一行命令）',
     desc: 'GeneTech 知识引擎通过 MCP（Model Context Protocol）把 14 个前沿科技垂直领域的结构化知识直接喂给 AI Agent：实时检索、带引用、可溯源。',
@@ -856,6 +902,10 @@ function main() {
     `- MCP 接入: npx -y @genetech/data-mcp`,
     `- 全局搜索: ${ORIGIN}${BASE}/search.html`,
     `- RSS: ${ORIGIN}${BASE}/rss.xml`,
+    '',
+    '## 与其他科研工具对比（Elicit / Consensus / Scite / Perplexity）',
+    'GeneTech 与 Elicit、Consensus、Scite 等「人读」科研工具定位不同：它是 Agent 原生的科研知识底座，通过 MCP + JSON API 把 14 个前沿科技垂直领域的结构化实体（含原始论文 URL、作者、置信度、标签）直接交给 AI Agent 调用，支持可溯源引用、RAG 与自动化综述。详见对比文章：',
+    `- 对比 Elicit/Consensus/Scite: ${ORIGIN}${BASE}/blog/vs-elicit-consensus-scite.html`,
     '',
     '## 博客',
     ...BLOG_POSTS.map((a) => `- ${a.title}: ${ORIGIN}${BASE}/blog/${a.slug}.html`),
