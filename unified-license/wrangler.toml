@@ -10,7 +10,6 @@
 #      将返回的 id 填入下方 [[kv_namespaces]] 的 id 字段
 #   4. 配置 Secrets（切勿写入本文件）：
 #        npx wrangler secret put ADMIN_SECRET
-#        npx wrangler secret put CREEM_WEBHOOK_SECRET
 #        npx wrangler secret put HUPIJIAO_APP_ID
 #        npx wrangler secret put HUPIJIAO_APP_SECRET
 #   5. 部署：npx wrangler deploy
@@ -36,7 +35,7 @@ id = "__KV_UNIFIED_LICENSES_ID__"
 # preview_id = "__KV_UNIFIED_LICENSES_PREVIEW_ID__"
 
 # === 环境变量（非敏感） ===
-# 敏感变量（ADMIN_SECRET / CREEM_WEBHOOK_SECRET）必须通过
+# 敏感变量（ADMIN_SECRET / HUPIJIAO_APP_ID / HUPIJIAO_APP_SECRET）必须通过
 # `wrangler secret put` 配置，不要写在此文件中！
 [vars]
 # 允许兑换的 14 个站点名（逗号分隔，小写）。
@@ -46,10 +45,6 @@ ALLOWED_SITES = "site1,site2,site3,site4,site5,site6,site7,site8,site9,site10,si
 # CORS 允许的来源（逗号分隔）。默认在 worker.js 中内置 14 个 genetech.io 子域。
 # 如需覆盖，取消注释并填入真实域名（含 https://）：
 # ALLOWED_ORIGINS = "https://site1.genetech.io,https://site2.genetech.io,..."
-
-# Creem 统一产品 ID -> 套餐映射（JSON 字符串）。
-# 一个产品即解锁全部 14 站。将占位符替换为真实 Creem 产品 ID：
-# CREEM_PRODUCT_MAP = '{"prod_aaa111":"starter","prod_bbb222":"pro","prod_ccc333":"lifetime"}'
 
 # === 虎皮椒国内支付（微信 / 支付宝）===
 # 敏感凭据 APPID / APPSECRET 必须通过 wrangler secret put 注入，切勿写入本文件！
@@ -76,8 +71,7 @@ HUPIJIAO_PRICE_MAP = '{"starter":"9.90","pro":"39.90","lifetime":"199.00"}'
 
 # === 注意事项 ===
 # 1. ADMIN_SECRET：管理员发行许可证的密钥，调用 /api/admin/issue 时用于 HMAC 签名
-# 2. CREEM_WEBHOOK_SECRET：Creem Webhook 签名校验密钥，仅在启用中央直连 Creem 时需要
-# 3. 本 Worker 是全部 14 站的许可证权威，部署后 URL 需告知所有站点
+# 2. 本 Worker 是全部 14 站的许可证权威，部署后 URL 需告知所有站点
 # 4. KV 有最终一致性，统计接口（meta:stats）与速率限制可能有数秒延迟
 # 5. 免费版 Cloudflare Workers 每日 100,000 次请求；站点侧 site-adapter.js
 #    已做 1 小时本地缓存，可大幅降低中央 Worker 调用量

@@ -16,7 +16,6 @@
  *   POST   /api/license/redeem          为指定站点兑换，返回站点专属 API Key
  *   GET    /api/license/status         查询许可证状态与全站使用情况
  *   POST   /api/admin/issue            发行统一许可证（管理员，HMAC 签名）
- *   POST   /api/creem/webhook           Creem Webhook（自动发行 / 吊销）
  *   POST   /api/hupijiao/create-order   虎皮椒（国内微信/支付宝）发起支付，返回二维码
  *   POST   /api/hupijiao/callback       虎皮椒异步回调（验签后自动发行 / 吊销 GUX_）
  *   GET    /api/hupijiao/order          查询订单状态与已签发的许可证密钥
@@ -25,7 +24,6 @@
  * 安全：
  *   - 管理员接口使用 HMAC-SHA256 签名（X-Admin-Signature + X-Admin-Timestamp），防重放
  *   - 同时兼容 X-Admin-Secret 明文头（常量时间比较，便于调试）
- *   - Creem Webhook 校验 X-Creem-Signature（HMAC-SHA256）
  *   - 邮箱仅存 SHA-256 哈希，不存明文
  *   - CORS 反射 14 个站点域名白名单
  *   - 速率限制 10 次/分钟/IP（基于 KV，近似限流）
@@ -91,16 +89,6 @@ const DEFAULT_SITE_ORIGINS = [
   'http://localhost:8788',
   'http://localhost:3000',
 ];
-
-/**
- * Creem 产品 ID -> 套餐映射（默认占位符）。
- * 通过环境变量 CREEM_PRODUCT_MAP（JSON 字符串）覆盖为真实产品 ID。
- */
-const DEFAULT_CREEM_PRODUCT_MAP = {
-  __CREEM_PRODUCT_STARTER__: 'starter',
-  __CREEM_PRODUCT_PRO__: 'pro',
-  __CREEM_PRODUCT_LIFETIME__: 'lifetime',
-};
 
 /**
  * 虎皮椒国内支付：套餐 -> 人民币价格（元，字符串，decimal(18,2)）。
@@ -234,7 +222,7 @@ function isValidKeyFormat(key) {
 // ============================================================================
 
 const ALLOWED_HEADERS =
-  'Content-Type, X-License-Key, X-Site-Name, X-Site-Domain, X-Admin-Signature, X-Admin-Timestamp, X-Admin-Secret, X-Creem-Signature, Authorization';
+  'Content-Type, X-License-Key, X-Site-Name, X-Site-Domain, X-Admin-Signature, X-Admin-Timestamp, X-Admin-Secret, Authorization';
 
 /** 获取允许的来源列表（环境变量优先） */
 function getAllowedOrigins(env) {
@@ -470,10 +458,10 @@ function creditsRemaining(license) {
 /**
  * 发行统一许可证
  * @param {object} env
- * @param {object} params { plan, email, creem_checkout_id, expires, source }
+ * @param {object} params { plan, email, hupijiao_order_id, expires, source }
  * @returns {Promise<{license: object, key: string}>}
  */
-async function issueLicense(env, { plan, email, creem_checkout_id, hupijiao_order_id, expires, source }) {
+async function issueLicense(env, { plan, email, hupijiao_order_id, expires, source }) {
   const planDef = PLANS[plan];
   if (!planDef) throw new Error(`unknown_plan: ${plan}`);
 
@@ -499,7 +487,6 @@ async function issueLicense(env, { plan, email, creem_checkout_id, hupijiao_orde
     sites: [], // [{ name, api_key, redeemed_at }]
     created: now,
     expires: expiresAt,
-    creem_checkout_id: creem_checkout_id || null,
     hupijiao_order_id: hupijiao_order_id || null,
     status: 'active', // active | revoked
     source: source || 'manual',
@@ -632,117 +619,6 @@ async function revokeLicense(env, key, reason) {
 
   await bumpStats(env, { plan: license.plan, type: 'revoke' });
   return { ok: true, key, status: 'revoked' };
-}
-
-// ============================================================================
-// Creem Webhook 处理（自动发行 / 吊销）
-// ============================================================================
-
-function getCreemProductMap(env) {
-  if (env.CREEM_PRODUCT_MAP) {
-    try {
-      return JSON.parse(env.CREEM_PRODUCT_MAP);
-    } catch {
-      console.warn('[creem] CREEM_PRODUCT_MAP 解析失败，回退默认映射');
-    }
-  }
-  return DEFAULT_CREEM_PRODUCT_MAP;
-}
-
-async function handleCreemWebhook(request, rawBody, env, corsH) {
-  const secret = env.CREEM_WEBHOOK_SECRET;
-  if (!secret) {
-    return err('server_misconfigured', 'CREEM_WEBHOOK_SECRET 未配置', 500, corsH);
-  }
-  const signature =
-    request.headers.get('X-Creem-Signature') ||
-    request.headers.get('x-creem-signature') ||
-    '';
-  if (!(await hmacVerify(rawBody, signature, secret))) {
-    return err('invalid_signature', 'Creem 签名验证失败', 401, corsH);
-  }
-
-  let event;
-  try {
-    event = JSON.parse(rawBody);
-  } catch {
-    return err('bad_request', '请求体不是有效 JSON', 400, corsH);
-  }
-
-  const eventType = event.type || event.event_type || 'unknown';
-  const data = event.data || event.object || event;
-
-  // 订阅取消 / 退款 -> 吊销
-  const revokeEvents = [
-    'subscription.canceled',
-    'subscription.cancelled',
-    'payment.refunded',
-    'charge.refunded',
-  ];
-  if (revokeEvents.includes(eventType)) {
-    const customerEmail = data.customer?.email || data.customer_email || data.metadata?.email || null;
-    if (customerEmail && env.UNIFIED_LICENSES) {
-      const emailHash = await sha256(customerEmail.trim().toLowerCase());
-      const key = await env.UNIFIED_LICENSES.get(`email:${emailHash}`);
-      if (key) {
-        await revokeLicense(env, key, `creem:${eventType}`);
-        return json(
-          { success: true, action: 'revoked', key: key.slice(0, 12) + '...' },
-          200,
-          corsH
-        );
-      }
-    }
-    return json({ success: true, action: 'no_license_found', event_type: eventType }, 200, corsH);
-  }
-
-  // 支付完成 -> 发行统一许可证
-  const issueEvents = ['checkout.completed', 'payment.succeeded', 'order.completed'];
-  if (!issueEvents.includes(eventType)) {
-    return json(
-      { success: true, message: '事件已接收（非支付完成事件，忽略）', event_type: eventType },
-      200,
-      corsH
-    );
-  }
-
-  const productId =
-    data.product_id || data.productId || data.product?.id || data.metadata?.product_id || null;
-  const customerEmail = data.customer?.email || data.customer_email || data.metadata?.email || null;
-  const checkoutId = data.id || data.checkout_id || data.checkoutId || null;
-
-  if (!productId) {
-    return err('missing_product', '缺少产品 ID', 400, corsH);
-  }
-
-  const productMap = getCreemProductMap(env);
-  const plan = productMap[productId];
-  if (!plan) {
-    return err('unknown_product', `未知产品 ID: ${productId}`, 400, corsH);
-  }
-
-  const { license, key } = await issueLicense(env, {
-    plan,
-    email: customerEmail,
-    creem_checkout_id: checkoutId,
-    source: 'creem_webhook',
-  });
-
-  console.log(`[creem] 统一许可证已创建: ${plan} -> ${key.slice(0, 12)}...`);
-
-  return json(
-    {
-      success: true,
-      message: '支付已确认，统一许可证已创建',
-      event_type: eventType,
-      plan,
-      license_key: key,
-      credits_total: license.credits_total === -1 ? 'unlimited' : license.credits_total,
-      expires: license.expires,
-    },
-    200,
-    corsH
-  );
 }
 
 // ============================================================================
@@ -967,7 +843,6 @@ async function handleIssue(request, rawBody, body, env, corsH) {
   const { license, key } = await issueLicense(env, {
     plan,
     email,
-    creem_checkout_id: body.creem_checkout_id || null,
     expires: body.expires || null,
     source: body.source || 'admin_issue',
   });
@@ -1020,9 +895,9 @@ export default {
         );
       }
 
-      // 速率限制（管理员、Creem webhook、虎皮椒回调路径豁免，由各自鉴权/签名保护）
+      // 速率限制（管理员、虎皮椒回调路径豁免，由各自鉴权/签名保护）
       const isAdminPath = path.startsWith('/api/admin/');
-      const isWebhookPath = path === '/api/creem/webhook' || path === '/api/hupijiao/callback';
+      const isWebhookPath = path === '/api/hupijiao/callback';
       if (!isAdminPath && !isWebhookPath) {
         const ip = getClientIp(request);
         const rl = await checkRateLimit(env, ip);
@@ -1056,11 +931,6 @@ export default {
         }
 
         const rawBody = await request.text();
-
-        // Creem Webhook（中央直接接收）
-        if (path === '/api/creem/webhook') {
-          return handleCreemWebhook(request, rawBody, env, corsH);
-        }
 
         // 解析 JSON
         let body;

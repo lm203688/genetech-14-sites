@@ -12,7 +12,7 @@
 4. [部署中央 Worker](#4-部署中央-worker)
 5. [环境变量与密钥](#5-环境变量与密钥)
 6. [与 14 个站点集成](#6-与-14-个站点集成)
-7. [Creem Webhook 自动发卡](#7-creem-webhook-自动发卡)
+7. [虎皮椒 国内支付（微信/支付宝）自动发卡](#7-虎皮椒-国内支付微信支付宝自动发卡)
 8. [API 接口文档](#8-api-接口文档)
 9. [安全模型](#9-安全模型)
 10. [常见问题](#10-常见问题)
@@ -30,7 +30,9 @@
                          │   POST /api/license/redeem     兑换站点Key  │
                          │   GET  /api/license/status    状态查询      │
                          │   POST /api/admin/issue        发行(管理员) │
-                         │   POST /api/creem/webhook      Creem自动发卡│
+                         │   POST /api/hupijiao/create-order 发起支付 │
+                         │   POST /api/hupijiao/callback    虎皮椒回调 │
+                         │   GET  /api/hupijiao/order       订单查询   │
                          └───────────────────┬───────────────────────┘
                                   HTTPS + CORS(14域名) + 限流(10/min/IP)
                  ┌────────────────────┼────────────────────┐
@@ -112,9 +114,9 @@ GUX_3f9a2c1e8b7d4065a1c2d3e4f5a6b7c8
   ],
   "created": "2026-08-01T00:00:00Z",
   "expires": "2027-08-01T00:00:00Z",    // null = 终身
-  "creem_checkout_id": "chk_xxx",       // Creem 结账 ID（ webhook 自动发行时填入）
+  "hupijiao_order_id": "GUXHPJ_xxx",    // 虎皮椒商户订单号（回调自动发行时填入）
   "status": "active",                   // active | revoked
-  "source": "creem_webhook"            // 发行来源
+  "source": "hupijiao_callback"          // 发行来源
 }
 ```
 
@@ -167,12 +169,13 @@ npx wrangler kv namespace create UNIFIED_LICENSES
 
 # 5. 配置 Secrets（交互式输入，切勿写入文件）
 npx wrangler secret put ADMIN_SECRET            # 管理员密钥（发行许可证用）
-npx wrangler secret put CREEM_WEBHOOK_SECRET    # Creem Webhook 签名密钥
+npx wrangler secret put HUPIJIAO_APP_ID         # 虎皮椒 AppID
+npx wrangler secret put HUPIJIAO_APP_SECRET    # 虎皮椒 AppSecret
 
 # 6. 编辑 wrangler.toml：
 #    - ALLOWED_SITES 填入 14 个真实站点名（逗号分隔，小写）
 #    - （可选）ALLOWED_ORIGINS 覆盖 CORS 域名白名单
-#    - （可选）CREEM_PRODUCT_MAP 配置 Creem 产品 ID → 套餐
+#    - （可选）HUPIJIAO_PRICE_MAP 配置套餐人民币价格
 
 # 7. 部署
 npx wrangler deploy
@@ -200,10 +203,11 @@ npx wrangler deploy
 |------|------|------|------|
 | `UNIFIED_LICENSES` | KV 绑定 | 是 | 许可证数据存储（在 wrangler.toml 中绑定） |
 | `ADMIN_SECRET` | Secret | 是 | 管理员发行许可证的密钥，`/api/admin/issue` 用于 HMAC 签名 |
-| `CREEM_WEBHOOK_SECRET` | Secret | 否 | 仅启用中央直连 Creem Webhook 时需要 |
+| `HUPIJIAO_APP_ID` | Secret | 是 | 虎皮椒 AppID（国内微信/支付宝支付） |
+| `HUPIJIAO_APP_SECRET` | Secret | 是 | 虎皮椒 AppSecret |
 | `ALLOWED_SITES` | Var | 否 | 允许兑换的站点名白名单（逗号分隔），未配置则放行全部 |
 | `ALLOWED_ORIGINS` | Var | 否 | CORS 来源白名单（逗号分隔），未配置则用内置 14 个 genetech.io 子域 |
-| `CREEM_PRODUCT_MAP` | Var | 否 | Creem 产品 ID → 套餐的 JSON 映射 |
+| `HUPIJIAO_PRICE_MAP` | Var | 否 | 套餐 → 人民币价格（元）的 JSON 映射，如 `{"starter":"9.90","pro":"39.90","lifetime":"199.00"}` |
 
 ### 每个站点（在站点 wrangler.toml / Pages 设置中配置）
 
@@ -283,47 +287,46 @@ export const UNIFIED_API = 'https://license.genetech.io';
 
 ---
 
-## 7. Creem Webhook 自动发卡
+## 7. 虎皮椒 国内支付（微信/支付宝）自动发卡
 
 ### 配置思路
 
-在 Creem 后台创建 **3 个统一产品**（对应 3 个套餐），每个产品解锁全部 14 站：
+虎皮椒提供国内聚合支付（微信 / 支付宝），用户扫码支付成功后，虎皮椒异步回调中央 Worker，
+由 Worker 验签并自动发行 `GUX_` 统一许可证，无需在境外注册任何支付账号。
 
-| Creem 产品 | 套餐 | 总积分 | 有效期 |
-|------------|------|--------|--------|
-| GeneTech 全站入门版 | `starter` | 100 | 30 天 |
-| GeneTech 全站专业版 | `pro` | 500 | 365 天 |
-| GeneTech 全站终身版 | `lifetime` | 无限 | 终身 |
+三个套餐对应统一的人民币价格（在 `wrangler.toml` 的 `HUPIJIAO_PRICE_MAP` 中配置）：
 
-### Webhook 指向
+| 套餐 | 代号 | 总积分 | 有效期 | 默认价格 |
+|------|------|--------|--------|----------|
+| 入门版 | `starter` | 100 | 30 天 | ¥9.90 |
+| 专业版 | `pro` | 500 | 365 天 | ¥39.90 |
+| 终身版 | `lifetime` | 无限 | 终身 | ¥199.00 |
 
-将 Creem Webhook 直接指向中央 Worker：
+### 回调地址
+
+虎皮椒后台将异步回调（notify_url）指向中央 Worker：
 
 ```
-https://license.genetech.io/api/creem/webhook
+https://license.genetech.io/api/hupijiao/callback
 ```
 
-中央收到 `checkout.completed` 等支付成功事件后，自动：
-1. 通过 `CREEM_PRODUCT_MAP` 将产品 ID 映射为套餐
-2. 发行对应的 `GUX_` 统一许可证
-3. 返回 `license_key`（可展示在支付成功页或通过邮件发送给用户）
+（默认从请求域名自动推导，无需手动配置；如需覆盖可设 `HUPIJIAO_NOTIFY_URL`。）
 
-收到 `subscription.canceled` / `payment.refunded` 等事件时，自动通过邮箱哈希反查并吊销对应许可证。
+中央收到支付成功（`status=OD`）后，自动：
+1. 校验回调签名（MD5，按虎皮椒规则）
+2. 通过 `attach` 中的 `plan` 确定套餐并发行 `GUX_` 统一许可证
+3. 将许可证密钥写入 KV（由前端轮询 `/api/hupijiao/order` 获取，展示在支付成功页）
 
-### 产品 ID 映射配置
+收到退款（`status=CD`）时，自动通过邮箱哈希反查并吊销对应许可证。
 
-在 `wrangler.toml` 的 `[vars]` 中配置（或在 Dashboard 环境变量中设置）：
+### 发起支付
 
-```toml
-[vars]
-CREEM_PRODUCT_MAP = '{"prod_aaa111":"starter","prod_bbb222":"pro","prod_ccc333":"lifetime"}'
-```
-
-Creem Webhook 签名通过 `CREEM_WEBHOOK_SECRET` 校验（`X-Creem-Signature` 头，HMAC-SHA256）。
+前端调用 `POST /api/hupijiao/create-order` 发起下单，返回微信/支付宝二维码（`url_qrcode`）
+与手机支付链接（`pay_url`）。完整字段见 [第 8 节](#8-api-接口文档)。
 
 ### 手动发行（管理员）
 
-不使用 Creem 时，也可通过管理员接口手动发行：
+也可通过管理员接口手动发行，不依赖任何支付渠道：
 
 ```bash
 # 生成 HMAC 签名（示例：使用 openssl）
@@ -414,7 +417,7 @@ curl "https://license.genetech.io/api/license/status?key=GUX_3f9a..."
 
 ### POST /api/admin/issue — 发行许可证（管理员）
 
-需要 HMAC-SHA256 签名鉴权（见 [第 7 节](#7-creem-webhook-自动发卡)）。
+需要 HMAC-SHA256 签名鉴权（见 [第 7 节](#7-虎皮椒-国内支付微信支付宝自动发卡)）。
 
 请求体：
 
@@ -422,7 +425,6 @@ curl "https://license.genetech.io/api/license/status?key=GUX_3f9a..."
 {
   "plan": "pro",
   "email": "user@example.com",
-  "creem_checkout_id": "chk_xxx",
   "expires": "2027-08-01T00:00:00Z",
   "source": "admin_issue"
 }
@@ -443,9 +445,40 @@ curl "https://license.genetech.io/api/license/status?key=GUX_3f9a..."
 }
 ```
 
-### POST /api/creem/webhook — Creem Webhook
+### POST /api/hupijiao/create-order — 发起虎皮椒支付
 
-由 Creem 直接调用，通过 `X-Creem-Signature` 校验。支付成功自动发行许可证，订阅取消/退款自动吊销。
+请求体：
+
+```json
+{ "plan": "pro", "email": "user@example.com", "channel": "default" }
+```
+
+成功响应：
+
+```json
+{
+  "success": true,
+  "order_id": "GUXHPJ_xxx",
+  "url_qrcode": "https://api.xunhupay.com/.../qr.png",
+  "pay_url": "https://api.xunhupay.com/.../pay",
+  "price": "39.90",
+  "currency": "CNY"
+}
+```
+
+`url_qrcode` 为微信/支付宝二维码图片地址，前端直接展示；`pay_url` 为手机端拉起支付链接。
+
+### POST /api/hupijiao/callback — 虎皮椒异步回调
+
+由虎皮椒直接调用（form 表单，非 JSON），通过 MD5 签名校验。支付成功（`status=OD`）自动发行许可证，退款（`status=CD`）自动吊销。返回纯文本 `success` 表示已处理。
+
+### GET /api/hupijiao/order — 查询订单与许可证
+
+```
+https://license.genetech.io/api/hupijiao/order?order_id=GUXHPJ_xxx
+```
+
+支付成功后返回已签发的 `GUX_` 许可证密钥，供前端轮询展示在支付成功页。
 
 ### GET /health — 健康检查
 
@@ -466,14 +499,14 @@ curl https://license.genetech.io/health
 - 常量时间比较签名，防止时序攻击
 - 调试阶段兼容 `X-Admin-Secret` 明文头（常量时间比较）
 
-### Creem Webhook 鉴权
+### 虎皮椒回调鉴权
 
-`/api/creem/webhook` 校验 `X-Creem-Signature`（HMAC-SHA256，密钥为 `CREEM_WEBHOOK_SECRET`）。
+`/api/hupijiao/callback` 校验虎皮椒回调签名（MD5，按虎皮椒规则对非空参数排序拼接后附加 AppSecret 计算），签名不符直接拒绝。
 
 ### 速率限制
 
 - 公开接口（validate / redeem / status）限制 **10 次/分钟/IP**
-- 管理员与 Creem Webhook 路径豁免（由各自鉴权保护）
+- 管理员与虎皮椒回调路径豁免（由各自鉴权/签名保护）
 - 基于 KV 的近似限流；如需更严格限流，建议叠加 Cloudflare 原生 Rate Limiting 规则
 
 ### CORS 跨域
@@ -485,7 +518,7 @@ curl https://license.genetech.io/health
 ### 数据安全
 
 - **邮箱脱敏**：仅存储邮箱的 SHA-256 哈希，不存明文
-- **密钥不落盘**：`ADMIN_SECRET` / `CREEM_WEBHOOK_SECRET` 通过 `wrangler secret put` 配置，不出现在代码与 wrangler.toml 中
+- **密钥不落盘**：`ADMIN_SECRET` / `HUPIJIAO_APP_ID` / `HUPIJIAO_APP_SECRET` 通过 `wrangler secret put` 配置，不出现在代码与 wrangler.toml 中
 - **站点白名单**：配置 `ALLOWED_SITES` 后，仅允许列表内站点发起兑换
 - **API Key 不外泄**：`validate` / `status` 仅返回站点名列表，不返回各站 API Key 明文；API Key 仅在 `redeem` 时返回给调用方
 - **幂等兑换**：同一密钥在同一站点重复兑换返回同一 Key，不会重复发放
@@ -500,7 +533,7 @@ curl https://license.genetech.io/health
 ## 10. 常见问题
 
 **Q: 用户购买后，GUX_ 密钥在哪里查看？**
-A: Creem Webhook 自动发行后返回 `license_key`，可展示在支付成功页或通过邮件发送。也可由管理员通过 `/api/admin/issue` 手动发行。
+A: 虎皮椒支付成功后，中央 Worker 自动发行 `GUX_` 许可证，前端轮询 `/api/hupijiao/order` 取回密钥，可展示在支付成功页或通过邮件发送。也可由管理员通过 `/api/admin/issue` 手动发行。
 
 **Q: 一个 GUX_ 密钥能在同一站点重复兑换吗？**
 A: 可以重复调用，但幂等返回首次生成的同一个 API Key，不会重复发放。
