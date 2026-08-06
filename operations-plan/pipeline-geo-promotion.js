@@ -385,9 +385,9 @@ async function updateStatusIssue(report, dryRun) {
 | 动作 | 状态 |
 | --- | --- |
 | 生成 GEO 文章 | ${report.geoPost.generated ? `✅ ${report.geoPost.entityCount} 条实体 → ${report.geoPost.filePath}` : `⏸️ ${report.geoPost.reason || '未达阈值'}`} |
-| IndexNow 提交 | ${report.indexNow.skipped ? '⏸️ ' + (report.indexNow.reason || '跳过') : `✅ ${report.indexNow.submitted} 个 URL (HTTP ${report.indexNow.statusCode})`} |
+| IndexNow 提交 | ${report.indexNow.skipped ? '⏸️ ' + (report.indexNow.reason || '跳过') : (report.indexNow.statusCode === 422 ? `⚠️ 422（github.io 共享域名限制，需在 Bing Webmaster 验证站点后生效；非阻断）` : `✅ ${report.indexNow.submitted} 个 URL (HTTP ${report.indexNow.statusCode})`)} |
 | 搜索引擎 ping | ${report.pings.map((p) => `${p.engine}:${p.statusCode || p.error || 'dry'}`).join(' / ')} |
-| GitHub Topics | ${report.topics.ok ? '✅ 已设置' : '⏸️ ' + (report.topics.reason || report.topics.error || '跳过')} |
+| GitHub Topics | ${report.topics.ok ? '✅ 已设置' : '⏸️ ' + (report.topics.reason || report.topics.error || ('HTTP ' + report.topics.statusCode) || '跳过')} |
 | dev.to 发布 | ${report.devto.skipped ? '⏸️ ' + (report.devto.reason || '跳过') : report.devto.ok ? '✅ 已发布' : '❌ ' + (report.devto.error || '失败')} |
 
 **站点根地址**：${SITE_BASE_URL}

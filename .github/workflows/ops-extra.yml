@@ -36,6 +36,7 @@ permissions:
   contents: write
   actions: read
   issues: write
+  administration: write
 
 concurrency:
   group: genetech-extra-ops-${{ github.ref }}
