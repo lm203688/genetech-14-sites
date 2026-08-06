@@ -317,7 +317,7 @@ async function pingSearchEngines(dryRun) {
   return results;
 }
 
-// ==================== 5. GitHub Topics（内置 GITHUB_TOKEN）====================
+// ==================== 5. GitHub Topics（直接调 REST API, 用内置 GITHUB_TOKEN）====================
 async function setGitHubTopics(dryRun) {
   if (!GITHUB_TOKEN) return { ok: false, skipped: true, reason: '无 GITHUB_TOKEN' };
   const topics = [
@@ -334,14 +334,14 @@ async function setGitHubTopics(dryRun) {
   ];
   if (dryRun) return { ok: true, dryRun: true, topics };
   try {
-    execSync(`gh api repos/${GITHUB_REPOSITORY}/topics -X PUT -H "Accept: application/vnd.github+json" --input -`, {
-      input: JSON.stringify({ names: topics }),
-      stdio: 'pipe',
-      env: { ...process.env, GITHUB_TOKEN },
+    const res = await httpReq(`https://api.github.com/repos/${GITHUB_REPOSITORY}/topics`, {
+      method: 'PUT',
+      headers: { Authorization: `Bearer ${GITHUB_TOKEN}`, Accept: 'application/vnd.github+json' },
+      body: JSON.stringify({ names: topics }),
     });
-    return { ok: true, topics };
+    return { ok: res.statusCode >= 200 && res.statusCode < 300, statusCode: res.statusCode };
   } catch (e) {
-    return { ok: false, error: String(e.message).slice(0, 200) };
+    return { ok: false, error: e.message };
   }
 }
 
@@ -373,7 +373,7 @@ async function publishDevTo(post, dryRun) {
   }
 }
 
-// ==================== 7. 更新状态 Issue ====================
+// ==================== 7. 更新状态 Issue（直接调 REST API, 用内置 GITHUB_TOKEN）====================
 async function updateStatusIssue(report, dryRun) {
   if (!GITHUB_TOKEN) return { ok: false, skipped: true, reason: '无 GITHUB_TOKEN' };
   if (dryRun) return { ok: true, dryRun: true };
@@ -396,24 +396,24 @@ async function updateStatusIssue(report, dryRun) {
 
 > 自动生成，最后更新 ${new Date().toISOString()}
 `;
+  const headers = { Authorization: `Bearer ${GITHUB_TOKEN}`, Accept: 'application/vnd.github+json' };
   try {
-    const existing = execSync(
-      `gh issue list --repo ${GITHUB_REPOSITORY} --label geo-promo --state open --json number --jq ".[0].number"`,
-      { stdio: 'pipe', env: { ...process.env, GITHUB_TOKEN } },
-    )
-      .toString()
-      .trim();
-    if (existing && /^\d+$/.test(existing)) {
-      execSync(`gh issue edit ${existing} --repo ${GITHUB_REPOSITORY} --body -`, {
-        input: body,
-        stdio: 'pipe',
-        env: { ...process.env, GITHUB_TOKEN },
+    const list = await httpReq(
+      `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues?labels=geo-promo&state=open&per_page=1`,
+      { headers },
+    );
+    const arr = JSON.parse(list.body || '[]');
+    if (Array.isArray(arr) && arr.length && arr[0].number) {
+      await httpReq(`https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${arr[0].number}`, {
+        method: 'PATCH',
+        headers,
+        body: JSON.stringify({ body }),
       });
     } else {
-      execSync(`gh issue create --repo ${GITHUB_REPOSITORY} --title "🚀 GEO 自动推广状态" --label geo-promo --body -`, {
-        input: body,
-        stdio: 'pipe',
-        env: { ...process.env, GITHUB_TOKEN },
+      await httpReq(`https://api.github.com/repos/${GITHUB_REPOSITORY}/issues`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ title: '🚀 GEO 自动推广状态', body, labels: ['geo-promo'] }),
       });
     }
     return { ok: true };
