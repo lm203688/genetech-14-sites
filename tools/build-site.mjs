@@ -49,6 +49,10 @@ const INDEXNOW_KEY = (() => {
 // Google Search Console 验证元标签：CI 端配 Secrets: GSC_VERIFICATION 后自动注入首页 <head>，
 // 用户即可在 GSC 用「HTML 标记」方式零服务器验证所有权
 const GSC_VERIFICATION = process.env.GSC_VERIFICATION || '';
+// Bing Webmaster 验证元标签：CI 端配 Secrets: BING_VERIFICATION 后自动注入首页 <head>，
+// 用户即可在 Bing Webmaster 用「meta 标签」方式验证所有权（github.io 无法放 BingSiteAuth.xml，
+// 故用 meta 标签法替代，避免 XML 文件验证失败）。值为 Bing 给出的 msvalidate.01 的 content 串。
+const BING_VERIFICATION = process.env.BING_VERIFICATION || '';
 
 /** 站点中文名映射（用于标题与导航） */
 const SITE_LABELS = {
@@ -420,6 +424,7 @@ ${canonical ? `<link rel="canonical" href="${esc(canonical)}">` : ''}
 <meta name="application-name" content="GeneTech 知识引擎">
 <link rel="alternate" type="application/rss+xml" title="GeneTech 博客" href="${ORIGIN}${BASE}/rss.xml">
 ${GSC_VERIFICATION ? `<meta name="google-site-verification" content="${esc(GSC_VERIFICATION)}">` : ''}
+${BING_VERIFICATION ? `<meta name="msvalidate.01" content="${esc(BING_VERIFICATION)}">` : ''}
 ${ldScripts}
 <style>${CSS}</style>
 </head>

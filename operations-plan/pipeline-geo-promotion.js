@@ -395,6 +395,8 @@ async function updateStatusIssue(report, dryRun) {
 **自动化程度**：GEO 文章 / IndexNow(Bing,Yandex) / Google,Bing sitemap ping / GitHub Topics 均已零密钥自驱；Glama、Smithery 因仓库含 glama.json、smithery.yaml 会被自动发现索引。
 **仅 dev.to 发文需要你的账号**：在仓库 Secrets 配置 \`DEV_TO_API_KEY\`（dev.to 登录后生成）即自动开启；不配则自动跳过，不影响其余闭环。
 
+**搜索引擎所有权验证（可选，提升收录质量）**：想在各后台看板确认站点，可在仓库 Secrets 配置 GSC_VERIFICATION（GSC「HTML 标记」的 content 值）与 BING_VERIFICATION（Bing「meta 标签」msvalidate.01 的 content 值）；配置后下次部署自动注入首页 meta，即可在各自后台点验证。不配也不影响 Google 经 robots.txt 自动发现 sitemap 并收录，以及 IndexNow 每日提交。
+
 > 自动生成，最后更新 ${new Date().toISOString()}
 `;
   const headers = { Authorization: `Bearer ${GITHUB_TOKEN}`, Accept: 'application/vnd.github+json' };
