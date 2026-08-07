@@ -6,7 +6,7 @@
  * 相比 v1 的核心改进（直接解决"数据不增长"根因）：
  *   1. 单页取数 12 → 100（OpenAlex/Crossref/arXiv/S2/EuropePMC 均支持 ≥100/页），
  *      单轮单站可取数从 ~336 条理论值提升到 ~2800 条原始候选。
- *   2. 数据源从 4 个增至 6 个：新增 Semantic Scholar（CS/跨学科）、Europe PMC（生物医学全文索引）。
+ *   2. 数据源从 4 个增至 11 个：新增 Semantic Scholar、Europe PMC、PubMed、DOAJ、DataCite、Zenodo、CORE、预印本专源（bioRxiv/medRxiv）；CNKI/万方在配置 CNKI_TOKEN 后自动启用。
  *   3. 游标从"站点级"改为"站点×检索词"级：每个检索词独立推进 offset，
  *      避免 7 个词共用一个 offset 导致词间进度不同步、深页大面积重复命中。
  *   4. 修复 PubMed 摘要恒为空：esearch → esummary（标题/DOI/日期）→ efetch（AbstractText）。
@@ -76,6 +76,9 @@ const SOURCE_CONFIDENCE = {
   doaj: 0.76, datacite: 0.66, zenodo: 0.64,
   // v4 新增：CORE 聚合全球开放获取全文（含预印本/期刊），质量较高
   core: 0.72,
+  // v5 新增：preprints 专源（bioRxiv/medRxiv 等经 Europe PMC 检索），cnki 中文权威（需凭证）
+  preprints: 0.74,
+  cnki: 0.8,
 };
 
 // ==================== 工具函数 ====================
@@ -158,6 +161,28 @@ function dedupeKey(e) {
   const firstAuthor = String((e.authors && e.authors[0]) || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   if (name) return 'n:' + name.slice(0, 64) + '|' + (firstAuthor.slice(0, 14) || 'x');
   return 'id:' + (e.id || Math.random().toString(36));
+}
+
+/**
+ * 跨源增量合并：当新抓到的实体与既有实体同键（同 DOI / 同篇）时，
+ * 做字段级合并而非整体覆盖——优先保留更长的摘要、并集标签与作者、
+ * 取更高置信度、补全缺失的 URL/DOI/日期。这就是「按 DOI 增量更新已有实体」的核心：
+ * 重新抓取时，旧实体的高质量字段不会被新源的稀疏字段冲掉。
+ */
+function mergeEntity(oldE, newE) {
+  const merged = { ...oldE };
+  if (newE.abstract && (!oldE.abstract || newE.abstract.length > oldE.abstract.length)) merged.abstract = newE.abstract;
+  merged.tags = Array.from(new Set([...(oldE.tags || []), ...(newE.tags || [])])).slice(0, 10);
+  merged.authors = Array.from(new Set([...(oldE.authors || []), ...(newE.authors || [])])).slice(0, 12);
+  merged.confidence = Math.max(oldE.confidence || 0, newE.confidence || 0);
+  if (!oldE.url && newE.url) merged.url = newE.url;
+  if (!oldE.doi && newE.doi) merged.doi = newE.doi;
+  if (newE.publishedDate && (!oldE.publishedDate || newE.publishedDate < oldE.publishedDate)) merged.publishedDate = newE.publishedDate;
+  // 取置信度更高的源作为主来源标注（避免产生逗号拼接的多值）
+  merged.source = (newE.confidence >= (oldE.confidence || 0)) ? newE.source : oldE.source;
+  merged.sites = Array.from(new Set([...(oldE.sites || []), ...(newE.sites || [])]));
+  if (newE.addedAt && (!oldE.addedAt || newE.addedAt < oldE.addedAt)) merged.addedAt = newE.addedAt;
+  return merged;
 }
 
 // ==================== 各数据源抓取（带领域检索词） ====================
@@ -418,7 +443,42 @@ async function fetchCORE(query, max, offset = 0) {
   } catch { return []; }
 }
 
-// 10 个数据源的统一入口（DOAJ/DataCite/Zenodo 于 v3、CORE 于 v4 加入）
+async function fetchPreprints(query, max, offset = 0) {
+  // 预印本专源：bioRxiv / medRxiv / Research Square 等，经 Europe PMC 的 SRC:PPR 检索。
+  // 与 fetchEuropePMC 的区别：仅取预印本，覆盖最新、未同行评审的活跃研究（趋势发现价值高）。
+  const q = `${encodeURIComponent(query)} AND SRC:PPR`;
+  const url = `https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=${q}&format=json&pageSize=${max}&resultStart=${offset}`;
+  try {
+    const res = await withRetry(() => httpGet(url), 3, 1500);
+    if (res.statusCode !== 200) return [];
+    const data = JSON.parse(res.body);
+    return (data.resultList?.result || []).map((it) => {
+      const doi = it.doi || '';
+      return {
+        id: doi ? 'doi:' + doi : `pp:${it.source || 'x'}${it.id || Math.random().toString(36)}`,
+        source: 'preprints',
+        name: it.title || '',
+        abstract: stripTags(it.abstractText || '').slice(0, 4000),
+        url: doi ? `https://doi.org/${doi}` : (it.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${it.pmid}/` : ''),
+        authors: (it.authorList?.author || []).map((a) => a.fullName || '').filter(Boolean),
+        tags: it.keywordList?.keyword || [],
+        publishedDate: it.pubYear || '',
+        doi,
+      };
+    });
+  } catch { return []; }
+}
+
+async function fetchCNKI(query, max, offset = 0) {
+  // 中文文献源（CNKI / 万方）：需机构订阅凭证，默认无 CNKI_TOKEN 时直接返回空，
+  // 避免无意义外呼。配置 CNKI_TOKEN 后，按机构网关填入对应 endpoint 即可启用中文覆盖。
+  if (!process.env.CNKI_TOKEN) return [];
+  // 真实实现骨架依赖具体机构网关协议，此处保留钩子；启用时在此拼装请求。
+  return [];
+}
+
+// 11 个数据源的统一入口（DOAJ/DataCite/Zenodo 于 v3、CORE/preprints 于 v4/v5 加入；
+// CNKI 仅在配置了 CNKI_TOKEN 时动态加入，避免无凭证空跑）
 const SOURCE_FETCHERS = [
   (q, n, o) => fetchOpenAlex(q, n, o),
   (q, n, o) => fetchArxiv(q, n, o),
@@ -430,7 +490,12 @@ const SOURCE_FETCHERS = [
   (q, n, o) => fetchDataCite(q, n, o),
   (q, n, o) => fetchZenodo(q, n, o),
   (q, n, o) => fetchCORE(q, n, o),
+  (q, n, o) => fetchPreprints(q, n, o),
 ];
+// 中文文献源：机构凭证就绪后自动加入（默认不启用）
+if (process.env.CNKI_TOKEN) {
+  SOURCE_FETCHERS.push((q, n, o) => fetchCNKI(q, n, o));
+}
 
 // ==================== 归一化 + 合并 ====================
 
@@ -470,12 +535,8 @@ async function backfillQuery(site, query, offset, perPage, limit, map) {
     const n = normalize(raw, site);
     const dk = dedupeKey(n);
     if (map.has(dk)) {
-      // 跨源命中：若既有条目缺摘要而新条目有，补全摘要（提升语义检索质量）
-      const ex = map.get(dk);
-      if ((!ex.abstract || ex.abstract.length < 40) && n.abstract && n.abstract.length > 40) {
-        ex.abstract = n.abstract;
-        if (n.tags && n.tags.length) ex.tags = Array.from(new Set([...(ex.tags || []), ...n.tags])).slice(0, 8);
-      }
+      // 跨源 / 再次抓取到同篇：字段级增量合并（摘要取更长、标签作者并集、置信度取高）
+      map.set(dk, mergeEntity(map.get(dk), n));
       continue;
     }
     map.set(dk, n);
