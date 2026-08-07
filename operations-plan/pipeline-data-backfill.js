@@ -31,35 +31,40 @@ const REPORTS_DIR = path.join(PROJECT_ROOT, 'reports');
 const STATE_DIR = path.join(PROJECT_ROOT, 'state');
 
 // 每个站点抓取的领域检索词（科学语义）
+// v3（2026-08-06）：每站从 6-7 个扩到 13-15 个细分子领域词。
+// 关键：游标是「站点 × 检索词」级，因此检索词数量 ≈ 可抓取容量上限的线性倍数。
+// 139 → 300+ 意味着每站理论可抓容量翻一倍以上，且覆盖更细的长尾主题（利于主题聚合页 SEO）。
 const SITE_QUERIES = {
-  'quantum-computing': ['quantum computing', 'quantum error correction', 'superconducting qubit', 'quantum algorithm', 'quantum supremacy', 'topological qubit', 'quantum key distribution'],
-  'alien-minerals': ['extraterrestrial minerals', 'meteorite mineralogy', 'lunar regolith', 'asteroid mining', 'space resources', 'lunar ice', 'astrobiology minerals'],
-  'biocomputing': ['biological computing', 'DNA computing', 'molecular computing', 'synthetic biology circuits', 'living computers', 'microbial computing'],
-  'bionic-ai': ['brain-computer interface', 'neurorobotics', 'bionic prosthesis', 'neural engineering', 'neuroprosthetics', 'bionic vision'],
-  'deep-sea-tech': ['deep sea technology', 'underwater robotics', 'marine robotics', 'ocean observation', 'autonomous underwater vehicle', 'subsea engineering'],
-  'brain-science': ['neuroscience', 'brain imaging', 'neural plasticity', 'connectome', 'neurogenesis', 'cognitive neuroscience'],
-  'life-science': ['life sciences', 'systems biology', 'cell biology', 'genomics', 'proteomics', 'molecular biology'],
-  'new-energy': ['renewable energy', 'solid-state battery', 'hydrogen energy', 'perovskite solar cell', 'lithium battery', 'grid energy storage'],
-  'nuclear-energy': ['nuclear fusion', 'tokamak', 'small modular reactor', 'nuclear fission', 'fusion energy', 'plasma confinement'],
-  'robot-parts': ['robot actuator', 'robotic gripper', 'servo motor', 'tactile sensor', 'soft robotics', 'robotics components'],
-  'tcm-tools': ['traditional Chinese medicine', 'herbal medicine', 'acupuncture', 'medicinal plant', 'TCM formula', 'pharmacology of herbs'],
-  'genetech-tools': ['genomics', 'CRISPR gene editing', 'gene therapy', 'DNA sequencing', 'genome engineering', 'gene regulation'],
-  'exo-science': ['exoplanet', 'astrobiology', 'biosignature', 'extraterrestrial life', 'SETI', 'planetary habitability'],
-  'agent-ecosystem': ['AI agent', 'multi-agent system', 'agent orchestration', 'LLM agent framework', 'autonomous agent', 'agentic workflow'],
+  'quantum-computing': ['quantum computing', 'quantum error correction', 'superconducting qubit', 'quantum algorithm', 'quantum supremacy', 'topological qubit', 'quantum key distribution', 'trapped ion quantum computer', 'quantum machine learning', 'variational quantum eigensolver', 'quantum annealing', 'photonic quantum computing', 'quantum compiler', 'silicon spin qubit'],
+  'alien-minerals': ['extraterrestrial minerals', 'meteorite mineralogy', 'lunar regolith', 'asteroid mining', 'space resources', 'lunar ice', 'astrobiology minerals', 'in-situ resource utilization', 'Martian soil composition', 'chondrite petrology', 'cosmochemistry isotopes', 'space weathering', 'planetary geology remote sensing', 'sample return mission'],
+  'biocomputing': ['biological computing', 'DNA computing', 'molecular computing', 'synthetic biology circuits', 'living computers', 'microbial computing', 'DNA data storage', 'genetic logic gate', 'biosensor computation', 'neuromorphic biological system', 'protein based computing', 'wetware computing', 'cell-free biocomputing', 'organoid intelligence'],
+  'bionic-ai': ['brain-computer interface', 'neurorobotics', 'bionic prosthesis', 'neural engineering', 'neuroprosthetics', 'bionic vision', 'neural decoding motor', 'EEG signal classification', 'cochlear implant', 'spinal cord stimulation', 'biohybrid robot', 'artificial muscle actuator', 'closed-loop neuromodulation', 'implantable neural electrode'],
+  'deep-sea-tech': ['deep sea technology', 'underwater robotics', 'marine robotics', 'ocean observation', 'autonomous underwater vehicle', 'subsea engineering', 'deep sea mining', 'hydrothermal vent exploration', 'underwater acoustic communication', 'remotely operated vehicle', 'ocean sensor network', 'bathymetry mapping', 'deep sea biodiversity', 'marine geotechnics'],
+  'brain-science': ['neuroscience', 'brain imaging', 'neural plasticity', 'connectome', 'neurogenesis', 'cognitive neuroscience', 'functional MRI analysis', 'neurodegenerative disease mechanism', 'single-cell brain atlas', 'synaptic transmission', 'neural circuit optogenetics', 'sleep and memory consolidation', 'computational neuroscience model', 'neuroinflammation'],
+  'life-science': ['life sciences', 'systems biology', 'cell biology', 'genomics', 'proteomics', 'molecular biology', 'single cell RNA sequencing', 'metabolomics', 'immunology mechanism', 'stem cell differentiation', 'microbiome analysis', 'structural biology cryo-EM', 'epigenetics regulation', 'developmental biology'],
+  'new-energy': ['renewable energy', 'solid-state battery', 'hydrogen energy', 'perovskite solar cell', 'lithium battery', 'grid energy storage', 'sodium ion battery', 'green hydrogen electrolysis', 'fuel cell catalyst', 'offshore wind power', 'carbon capture utilization', 'battery recycling', 'vehicle to grid', 'thermoelectric materials'],
+  'nuclear-energy': ['nuclear fusion', 'tokamak', 'small modular reactor', 'nuclear fission', 'fusion energy', 'plasma confinement', 'inertial confinement fusion', 'stellarator', 'molten salt reactor', 'nuclear fuel cycle', 'tritium breeding blanket', 'radiation shielding materials', 'nuclear waste disposal', 'high temperature gas reactor'],
+  'robot-parts': ['robot actuator', 'robotic gripper', 'servo motor', 'tactile sensor', 'soft robotics', 'robotics components', 'harmonic drive reducer', 'series elastic actuator', 'force torque sensor', 'robot joint design', 'cable driven mechanism', 'lidar for robotics', 'robot end effector', 'exoskeleton mechanism'],
+  'tcm-tools': ['traditional Chinese medicine', 'herbal medicine', 'acupuncture', 'medicinal plant', 'TCM formula', 'pharmacology of herbs', 'network pharmacology', 'Chinese herbal compound mechanism', 'moxibustion therapy', 'TCM syndrome differentiation', 'herbal quality control chromatography', 'natural product isolation', 'ethnopharmacology', 'acupoint stimulation mechanism'],
+  'genetech-tools': ['genomics', 'CRISPR gene editing', 'gene therapy', 'DNA sequencing', 'genome engineering', 'gene regulation', 'base editing', 'prime editing', 'AAV vector delivery', 'CAR-T cell engineering', 'long read sequencing', 'gene knockout screening', 'mRNA therapeutics', 'genome wide association study'],
+  'exo-science': ['exoplanet', 'astrobiology', 'biosignature', 'extraterrestrial life', 'SETI', 'planetary habitability', 'transit photometry detection', 'exoplanet atmosphere spectroscopy', 'habitable zone modeling', 'JWST exoplanet observation', 'planetary formation simulation', 'technosignature search', 'extremophile organism', 'ocean world Europa Enceladus'],
+  'agent-ecosystem': ['AI agent', 'multi-agent system', 'agent orchestration', 'LLM agent framework', 'autonomous agent', 'agentic workflow', 'tool use language model', 'retrieval augmented generation', 'agent memory architecture', 'agent benchmark evaluation', 'model context protocol', 'agent planning reasoning', 'human agent collaboration', 'agent safety alignment'],
   // ---- 2026-08 扩域：对齐国家「十五五」未来产业六大方向 + 全球 2026 前沿趋势 ----
-  'embodied-ai': ['embodied intelligence', 'humanoid robot', 'vision language action model', 'robot learning', 'sim-to-real transfer', 'dexterous manipulation', 'embodied navigation'],
-  'synbio-manufacturing': ['synthetic biology', 'biomanufacturing', 'metabolic engineering', 'cell factory', 'bio-based materials', 'enzyme engineering', 'biofoundry'],
-  'semiconductor': ['semiconductor device', 'advanced packaging chiplet', 'wide bandgap semiconductor', 'EUV lithography', 'gate-all-around transistor', 'silicon photonics', 'compound semiconductor'],
-  'ai4science': ['AI for science', 'machine learning interatomic potential', 'protein structure prediction', 'AI drug discovery', 'materials discovery machine learning', 'scientific foundation model', 'self-driving laboratory'],
-  'low-altitude': ['eVTOL aircraft', 'urban air mobility', 'unmanned aerial vehicle', 'UAV swarm', 'drone delivery', 'flight control algorithm', 'low altitude airspace'],
-  'sat-6g': ['6G wireless network', 'satellite internet constellation', 'integrated sensing and communication', 'terahertz communication', 'non-terrestrial network', 'LEO satellite communication'],
-  'spatial-computing': ['spatial computing', 'augmented reality display', 'mixed reality interaction', 'digital twin', 'neural radiance field', 'visual SLAM'],
-  'privacy-computing': ['federated learning', 'secure multiparty computation', 'homomorphic encryption', 'differential privacy', 'trusted execution environment', 'privacy preserving machine learning'],
+  'embodied-ai': ['embodied intelligence', 'humanoid robot', 'vision language action model', 'robot learning', 'sim-to-real transfer', 'dexterous manipulation', 'embodied navigation', 'imitation learning robot', 'reinforcement learning locomotion', 'robot foundation model', 'tactile manipulation learning', 'whole body control humanoid', 'embodied question answering', 'robot teleoperation data collection'],
+  'synbio-manufacturing': ['synthetic biology', 'biomanufacturing', 'metabolic engineering', 'cell factory', 'bio-based materials', 'enzyme engineering', 'biofoundry', 'directed evolution protein', 'precision fermentation', 'CO2 to chemicals biological', 'genetic circuit design', 'microbial chassis strain', 'bioprocess scale-up', 'de novo protein design'],
+  'semiconductor': ['semiconductor device', 'advanced packaging chiplet', 'wide bandgap semiconductor', 'EUV lithography', 'gate-all-around transistor', 'silicon photonics', 'compound semiconductor', 'gallium nitride power device', 'silicon carbide MOSFET', 'high bandwidth memory', 'ferroelectric memory device', '2D material transistor', 'in-memory computing chip', 'semiconductor thermal management'],
+  'ai4science': ['AI for science', 'machine learning interatomic potential', 'protein structure prediction', 'AI drug discovery', 'materials discovery machine learning', 'scientific foundation model', 'self-driving laboratory', 'neural network quantum chemistry', 'weather forecasting deep learning', 'symbolic regression physics', 'graph neural network molecules', 'automated experiment optimization', 'physics informed neural network', 'AI mathematical reasoning proof'],
+  'low-altitude': ['eVTOL aircraft', 'urban air mobility', 'unmanned aerial vehicle', 'UAV swarm', 'drone delivery', 'flight control algorithm', 'low altitude airspace', 'UAV traffic management', 'distributed electric propulsion', 'drone obstacle avoidance', 'aerial manipulation', 'BVLOS operation safety', 'tiltrotor aerodynamics', 'drone battery endurance'],
+  'sat-6g': ['6G wireless network', 'satellite internet constellation', 'integrated sensing and communication', 'terahertz communication', 'non-terrestrial network', 'LEO satellite communication', 'reconfigurable intelligent surface', 'massive MIMO beamforming', 'inter-satellite laser link', 'network slicing orchestration', 'semantic communication', 'satellite IoT connectivity', 'millimeter wave propagation', 'AI native air interface'],
+  'spatial-computing': ['spatial computing', 'augmented reality display', 'mixed reality interaction', 'digital twin', 'neural radiance field', 'visual SLAM', '3D Gaussian splatting', 'waveguide optical display', 'eye tracking foveated rendering', 'hand gesture recognition XR', 'scene understanding 3D reconstruction', 'haptic feedback interface', 'volumetric video capture', 'spatial audio rendering'],
+  'privacy-computing': ['federated learning', 'secure multiparty computation', 'homomorphic encryption', 'differential privacy', 'trusted execution environment', 'privacy preserving machine learning', 'zero knowledge proof', 'post quantum cryptography', 'secure aggregation protocol', 'data anonymization technique', 'confidential computing enclave', 'split learning', 'privacy preserving record linkage', 'blockchain data sharing'],
 };
 
 const SOURCE_CONFIDENCE = {
   pubmed: 0.82, arxiv: 0.78, openalex: 0.72, crossref: 0.7,
   semanticscholar: 0.74, europepmc: 0.8, github: 0.6, huggingface: 0.6,
+  // v3 新增：DOAJ 为同行评审开放获取期刊，质量较高；DataCite/Zenodo 含大量自主提交的数据集与软件
+  doaj: 0.76, datacite: 0.66, zenodo: 0.64,
 };
 
 // ==================== 工具函数 ====================
@@ -288,7 +293,93 @@ async function fetchPubMed(query, max, offset = 0) {
   } catch { return []; }
 }
 
-// 6 个数据源的统一入口
+async function fetchDOAJ(query, max, offset = 0) {
+  // DOAJ：开放获取期刊论文，免费无 key。page 从 1 开始，pageSize 上限 100。
+  const page = Math.floor(offset / max) + 1;
+  const url = `https://doaj.org/api/search/articles/${encodeURIComponent(query)}?pageSize=${Math.min(max, 100)}&page=${page}`;
+  try {
+    const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': UA } }), 3, 1500);
+    if (res.statusCode !== 200) return [];
+    const data = JSON.parse(res.body);
+    return (data.results || []).map(r => {
+      const b = r.bibjson || {};
+      const doi = (b.identifier || []).find(i => i.type === 'doi')?.id || '';
+      const link = (b.link || []).find(l => l.type === 'fulltext')?.url || '';
+      const ym = b.year ? `${b.year}${b.month ? '-' + String(b.month).padStart(2, '0') : ''}` : '';
+      return {
+        id: doi ? 'doi:' + doi : 'doaj:' + (r.id || Math.random().toString(36)),
+        source: 'doaj',
+        name: b.title || '',
+        abstract: stripTags(b.abstract || '').slice(0, 4000),
+        url: doi ? `https://doi.org/${doi}` : link,
+        authors: (b.author || []).map(a => a.name).filter(Boolean),
+        tags: (b.keywords || []).slice(0, 8),
+        publishedDate: ym,
+        doi,
+      };
+    });
+  } catch { return []; }
+}
+
+async function fetchDataCite(query, max, offset = 0) {
+  // DataCite：数据集 / 预印本 / 软件的 DOI 注册库，免费无 key。补齐 dataset 类型实体。
+  const page = Math.floor(offset / max) + 1;
+  const url = `https://api.datacite.org/dois?query=${encodeURIComponent(query)}&page[size]=${Math.min(max, 100)}&page[number]=${page}`;
+  try {
+    const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': UA } }), 3, 1500);
+    if (res.statusCode !== 200) return [];
+    const data = JSON.parse(res.body);
+    return (data.data || []).map(d => {
+      const a = d.attributes || {};
+      const doi = a.doi || '';
+      const abs = (a.descriptions || []).find(x => x.descriptionType === 'Abstract')?.description
+        || (a.descriptions || [])[0]?.description || '';
+      return {
+        id: doi ? 'doi:' + doi : 'datacite:' + (d.id || Math.random().toString(36)),
+        source: 'datacite',
+        name: (a.titles || [])[0]?.title || '',
+        abstract: stripTags(String(abs)).slice(0, 4000),
+        url: doi ? `https://doi.org/${doi}` : (a.url || ''),
+        authors: (a.creators || []).map(c => c.name || `${c.givenName || ''} ${c.familyName || ''}`.trim()).filter(Boolean),
+        tags: (a.subjects || []).map(s => s.subject).filter(Boolean).slice(0, 8),
+        publishedDate: a.publicationYear ? String(a.publicationYear) : '',
+        doi,
+        resourceType: a.types?.resourceTypeGeneral || '',
+      };
+    });
+  } catch { return []; }
+}
+
+async function fetchZenodo(query, max, offset = 0) {
+  // Zenodo：科研软件 / 数据集 / 报告，免费无 key。对"工具类"站点价值高。
+  const page = Math.floor(offset / max) + 1;
+  // Zenodo 限制 size*page <= 10000
+  if (page * max > 10000) return [];
+  const url = `https://zenodo.org/api/records?q=${encodeURIComponent(query)}&size=${Math.min(max, 100)}&page=${page}`;
+  try {
+    const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': UA } }), 3, 1500);
+    if (res.statusCode !== 200) return [];
+    const data = JSON.parse(res.body);
+    return (data.hits?.hits || []).map(h => {
+      const md = h.metadata || {};
+      const doi = h.doi || md.doi || '';
+      return {
+        id: doi ? 'doi:' + doi : 'zenodo:' + (h.id || Math.random().toString(36)),
+        source: 'zenodo',
+        name: md.title || '',
+        abstract: stripTags(md.description || '').slice(0, 4000),
+        url: h.links?.self_html || (doi ? `https://doi.org/${doi}` : ''),
+        authors: (md.creators || []).map(c => c.name).filter(Boolean),
+        tags: (md.keywords || []).slice(0, 8),
+        publishedDate: md.publication_date || '',
+        doi,
+        resourceType: md.resource_type?.type || '',
+      };
+    });
+  } catch { return []; }
+}
+
+// 9 个数据源的统一入口（DOAJ/DataCite/Zenodo 于 v3 加入，补充开放获取期刊与数据集/软件类实体）
 const SOURCE_FETCHERS = [
   (q, n, o) => fetchOpenAlex(q, n, o),
   (q, n, o) => fetchArxiv(q, n, o),
@@ -296,6 +387,9 @@ const SOURCE_FETCHERS = [
   (q, n, o) => fetchSemanticScholar(q, n, o),
   (q, n, o) => fetchEuropePMC(q, n, o),
   (q, n, o) => fetchPubMed(q, n, o),
+  (q, n, o) => fetchDOAJ(q, n, o),
+  (q, n, o) => fetchDataCite(q, n, o),
+  (q, n, o) => fetchZenodo(q, n, o),
 ];
 
 // ==================== 归一化 + 合并 ====================

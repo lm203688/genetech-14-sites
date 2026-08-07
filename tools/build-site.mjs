@@ -14,6 +14,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import zlib from 'node:zlib';
 import { fileURLToPath } from 'node:url';
 import {
   buildStructure,
@@ -578,16 +579,18 @@ ${pageNo < totalPages ? `<a class="pn" href="${pageHref(pageNo + 1)}">下一页 
     name: `${label} 实体列表 第 ${pageNo} 页`,
     url: canonical,
     numberOfItems: list.length,
+    // 注意：此处刻意不写 abstract。摘要已在可见 HTML 中完整呈现，搜索引擎会直接读取；
+    // 在 ItemList 里再存一份会让单页体积翻倍（实测 169KB 页中 JSON-LD 占 94KB），
+    // 在 10 万级实体规模下会把站点撑到 GitHub Pages 的 1GB 上限。作者同理裁到 3 位。
     itemListElement: list.slice(0, 100).map((e, i) => ({
       '@type': 'ListItem',
       position: from + i,
       item: {
         '@type': 'ScholarlyArticle',
-        name: String(e.name || '').slice(0, 300),
+        name: String(e.name || '').slice(0, 200),
         url: e.url || canonical,
-        ...(e.abstract ? { abstract: String(e.abstract).slice(0, 500) } : {}),
         ...(Array.isArray(e.authors) && e.authors.length
-          ? { author: e.authors.slice(0, 8).map((a) => ({ '@type': 'Person', name: String(a) })) }
+          ? { author: e.authors.slice(0, 3).map((a) => ({ '@type': 'Person', name: String(a) })) }
           : {}),
         ...(e.publishedDate ? { datePublished: e.publishedDate } : {}),
       },
@@ -1116,7 +1119,7 @@ function renderDataPage(sites, stats, labels) {
 <td><a href="${BASE}/${s.slug}/">${esc(labels[s.slug] || s.slug)}</a></td>
 <td>${s.entities.length}</td>
 <td><a href="${BASE}/${s.slug}/website/api/entities.json">JSON</a></td>
-<td><a href="${BASE}/${s.slug}/website/api/entities.jsonl">JSONL</a></td>
+<td><a href="${BASE}/${s.slug}/website/api/entities.jsonl.gz">JSONL.gz</a></td>
 <td><a href="${BASE}/${s.slug}/website/api/entities.csv">CSV</a></td>
 <td><a href="${BASE}/${s.slug}/website/api/citations.bib">BibTeX</a></td>
 <td><a href="${BASE}/${s.slug}/website/api/citations.csl.json">CSL-JSON</a></td>
@@ -1209,6 +1212,17 @@ function writeFile(rel, content) {
   fs.writeFileSync(dest, isText && typeof content === 'string' ? localizeSiteCount(content) : content);
 }
 
+/**
+ * 写 gzip 压缩产物。用于体积大、面向程序消费的批量导出（如 JSONL）。
+ * 之所以不靠 HTTP 传输层压缩：GitHub Pages 的 1GB 容量上限按解压后体积计，
+ * 且部署时需整体上传为 artifact，明文大文件会直接拖垮部署耗时。
+ */
+function writeGzip(rel, content) {
+  const dest = path.join(OUT, rel);
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.writeFileSync(dest, zlib.gzipSync(Buffer.from(content), { level: 9 }));
+}
+
 function main() {
   const sites = discoverSites();
   if (!sites.length) {
@@ -1245,7 +1259,10 @@ function main() {
     writeFile(`${s.slug}/website/api/entities.json`, JSON.stringify(s.entities));
 
     // ---- 多格式导出：同一份数据以不同结构形态开放，覆盖 RAG / 数据分析 / 文献管理三类用途
-    writeFile(`${s.slug}/website/api/entities.jsonl`, toJSONL(s.entities, s.slug));
+    // JSONL 与 entities.json 内容高度重复且体积最大（实测占产物 45MB / 20%），
+    // 因此只发 gzip 版：pandas / HuggingFace datasets / curl 均原生支持 .gz，
+    // 体积约为明文的 1/5，是 10 万级规模下守住 GitHub Pages 1GB 上限的关键。
+    writeGzip(`${s.slug}/website/api/entities.jsonl.gz`, toJSONL(s.entities, s.slug));
     writeFile(`${s.slug}/website/api/entities.csv`, toCSV(s.entities, s.slug));
     // 引文格式体积大且低频，只导出质量分最高的部分，避免产物膨胀拖慢部署
     const cites = [...s.entities].sort((a, b) => qualityScore(b) - qualityScore(a)).slice(0, CITATION_EXPORT_CAP);
@@ -1357,7 +1374,7 @@ function main() {
     '',
     '## 每个领域提供的数据格式',
     '- `<site>/website/api/entities.json` 完整实体（JSON）',
-    '- `<site>/website/api/entities.jsonl` 行式 JSON，适合 RAG 摄取与模型训练',
+    '- `<site>/website/api/entities.jsonl.gz` 行式 JSON（gzip），适合 RAG 摄取与模型训练，pandas/datasets 可直读',
     '- `<site>/website/api/entities.csv` 表格格式，Excel/pandas 直接可用',
     '- `<site>/website/api/citations.bib` BibTeX 引文，Zotero/LaTeX 直接导入',
     '- `<site>/website/api/citations.csl.json` CSL-JSON 引文交换格式',
