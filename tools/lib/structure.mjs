@@ -249,6 +249,7 @@ export function buildStructure(sites, opts = {}) {
   const yearMap = new Map(); // year -> {total, bySite}
   const sourceMap = new Map(); // source -> count
   const typeMap = new Map();
+  const coAuthorMap = new Map(); // "keyA\u0000keyB" -> {aKey,aName,bKey,bName,weight,sites:Set}
   const perSite = {};
 
   let totalEntities = 0;
@@ -343,7 +344,9 @@ export function buildStructure(sites, opts = {}) {
         siteTopics.set(n, (siteTopics.get(n) || 0) + 1);
       }
 
-      // ---- 作者
+      // ---- 作者 + 合著对
+      const entAuthorKeys = [];
+      const entAuthorNames = {};
       for (const raw of authors) {
         const a = normalizeAuthor(raw);
         if (!a) continue;
@@ -355,6 +358,24 @@ export function buildStructure(sites, opts = {}) {
         am.sites[s.slug] = (am.sites[s.slug] || 0) + 1;
         if (year) am.years[year] = (am.years[year] || 0) + 1;
         siteAuthors.set(a.key, (siteAuthors.get(a.key) || 0) + 1);
+        entAuthorKeys.push(a.key);
+        entAuthorNames[a.key] = a.display;
+      }
+      // 合著网络：同一实体内的作者两两计数（限前 12 位以控复杂度）
+      const cap = Math.min(entAuthorKeys.length, 12);
+      for (let i = 0; i < cap; i++) {
+        for (let j = i + 1; j < cap; j++) {
+          const [a, b] = entAuthorKeys[i] < entAuthorKeys[j]
+            ? [entAuthorKeys[i], entAuthorKeys[j]]
+            : [entAuthorKeys[j], entAuthorKeys[i]];
+          const k = `${a}\u0000${b}`;
+          if (!coAuthorMap.has(k)) {
+            coAuthorMap.set(k, { aKey: a, aName: entAuthorNames[a], bKey: b, bName: entAuthorNames[b], weight: 0, sites: new Set() });
+          }
+          const ca = coAuthorMap.get(k);
+          ca.weight += 1;
+          ca.sites.add(s.slug);
+        }
       }
     }
 
@@ -449,6 +470,46 @@ export function buildStructure(sites, opts = {}) {
       .map((r) => ({ topic: r.topic, slug: topicSlug(r.topic), weight: r.weight }));
   }
 
+  // ---- 趋势速度（trend velocity）：近 3 年 vs 前 3 年增量，识别上升/下降/新兴空白
+  for (const t of topics) {
+    const yrs = Object.entries(t.years)
+      .map(([y, c]) => [parseInt(y, 10), c])
+      .sort((a, b) => a[0] - b[0]);
+    const last3 = yrs.slice(-3).reduce((s, [, c]) => s + c, 0);
+    const prev3 = yrs.slice(-6, -3).reduce((s, [, c]) => s + c, 0);
+    const total = t.docCount;
+    const delta = last3 - prev3;
+    const pctGrowth = prev3 > 0 ? Math.round((delta / prev3) * 100) : last3 > 0 ? 999 : 0;
+    t.trend = {
+      last3,
+      prev3,
+      delta,
+      pctGrowth,
+      recentShare: total ? Math.round((last3 / total) * 1000) / 10 : 0,
+    };
+  }
+  const risingTopics = topics
+    .filter((t) => t.trend.delta > 0)
+    .sort((a, b) => b.trend.delta - a.trend.delta)
+    .slice(0, 80);
+  // 新兴研究空白：近 3 年占比高（≥45%）但整体覆盖仍薄（< 250 篇）——高增长、低饱和，值得优先扩量与选题
+  const emergingTopics = topics
+    .filter((t) => t.trend.recentShare >= 45 && t.docCount >= minTopicDocs && t.docCount < 250)
+    .sort((a, b) => b.trend.recentShare - a.trend.recentShare)
+    .slice(0, 60);
+  // 跨站桥接主题：同时横跨 ≥3 个站点，反映跨学科汇聚方向
+  const topBridges = topics
+    .filter((t) => t.siteCount >= 3)
+    .sort((a, b) => b.siteCount - a.siteCount)
+    .slice(0, 50);
+
+  // ---- 合著网络：同一实体的作者两两共现，权重 = 共现次数
+  const coAuthors = [...coAuthorMap.values()]
+    .filter((c) => c.weight >= 3)
+    .sort((a, b) => b.weight - a.weight)
+    .slice(0, 500)
+    .map((c) => ({ a: c.aName, b: c.bName, weight: c.weight, sites: [...c.sites] }));
+
   const authors = [...authorMap.values()]
     .filter((a) => a.docCount >= 3)
     .sort((a, b) => b.docCount - a.docCount)
@@ -471,6 +532,10 @@ export function buildStructure(sites, opts = {}) {
     uniqueAuthors: authorMap.size,
     graphNodes: graph.nodes.length,
     graphEdges: edges.length,
+    coAuthorEdges: coAuthors.length,
+    risingTopics: risingTopics.length,
+    emergingTopics: emergingTopics.length,
+    bridgeTopics: topBridges.length,
     coverage: {
       abstract: pct(withAbstract, totalEntities),
       authors: pct(withAuthors, totalEntities),
@@ -485,7 +550,16 @@ export function buildStructure(sites, opts = {}) {
     byYear: Object.fromEntries(timeline.map((t) => [t.year, t.total])),
   };
 
-  return { stats, topics, authors, timeline, graph, perSite };
+  return {
+    stats,
+    topics,
+    authors,
+    timeline,
+    graph,
+    perSite,
+    trends: { risingTopics, emergingTopics, topBridges },
+    coAuthors,
+  };
 }
 
 function pct(n, total) {

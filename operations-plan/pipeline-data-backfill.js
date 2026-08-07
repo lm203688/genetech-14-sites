@@ -58,6 +58,15 @@ const SITE_QUERIES = {
   'sat-6g': ['6G wireless network', 'satellite internet constellation', 'integrated sensing and communication', 'terahertz communication', 'non-terrestrial network', 'LEO satellite communication', 'reconfigurable intelligent surface', 'massive MIMO beamforming', 'inter-satellite laser link', 'network slicing orchestration', 'semantic communication', 'satellite IoT connectivity', 'millimeter wave propagation', 'AI native air interface'],
   'spatial-computing': ['spatial computing', 'augmented reality display', 'mixed reality interaction', 'digital twin', 'neural radiance field', 'visual SLAM', '3D Gaussian splatting', 'waveguide optical display', 'eye tracking foveated rendering', 'hand gesture recognition XR', 'scene understanding 3D reconstruction', 'haptic feedback interface', 'volumetric video capture', 'spatial audio rendering'],
   'privacy-computing': ['federated learning', 'secure multiparty computation', 'homomorphic encryption', 'differential privacy', 'trusted execution environment', 'privacy preserving machine learning', 'zero knowledge proof', 'post quantum cryptography', 'secure aggregation protocol', 'data anonymization technique', 'confidential computing enclave', 'split learning', 'privacy preserving record linkage', 'blockchain data sharing'],
+  // ---- 2026-08 第三批扩域：对齐国家「十五五」未来产业 + 全球 2026 科研热点 ----
+  'ai-safety': ['ai alignment', 'interpretability neural network', 'mechanistic interpretability', 'rlhf', 'constitutional ai', 'ai safety', 'red teaming language model', 'scalable oversight', 'ai risk assessment', 'value learning', 'deceptive alignment', 'ai governance policy', 'model evaluation safety', 'ai control problem'],
+  'quantum-materials': ['quantum material', 'topological insulator', 'topological superconductor', 'quantum spin liquid', 'majorana fermion', 'twisted bilayer graphene', 'magnetic topological material', 'quantum anomalous hall effect', 'correlated electron system', 'kagome superconductor', 'nonlinear optical crystal', '2d quantum material', 'moire material', 'quantum criticality'],
+  'carbon-neutral': ['carbon capture utilization storage', 'ccus', 'direct air capture', 'carbon mineralization', 'green ammonia', 'power to gas', 'negative emission technology', 'carbon utilization co2', 'co2 electroreduction', 'biochar carbon sequestration', 'industrial decarbonization', 'climatetech carbon', 'methane pyrolysis', 'co2 to methanol'],
+  'digital-twin': ['digital twin', 'digital twin manufacturing', 'city digital twin', 'digital twin engineering', 'twin model predictive control', 'physics based digital twin', 'digital twin industrial iot', 'twin driven simulation', 'digital thread', 'twin synchronization', 'digital twin maintenance', 'virtual commissioning', 'twin enabled optimization', 'digital twin energy'],
+  'biomed-ai': ['medical artificial intelligence', 'clinical machine learning', 'healthcare large language model', 'medical image segmentation', 'clinical decision support ai', 'radiology ai', 'electronic health record ml', 'drug target discovery ai', 'pathology deep learning', 'medical foundation model', 'clinical nlp', 'ai diagnostics', 'biomarker discovery machine learning', 'precision medicine ai'],
+  'edge-ai': ['edge artificial intelligence', 'tiny machine learning', 'tinyml', 'edge inference', 'on device ai', 'edge computing neural network', 'model quantization', 'neural network pruning', 'edge deployment deep learning', 'federated edge learning', 'low power ai chip', 'edge vision', 'sparse model', 'knowledge distillation edge'],
+  'neuromorphic': ['neuromorphic computing', 'spiking neural network', 'neuro-inspired computing', 'memristor neural network', 'brain inspired chip', 'event driven computing', 'neuromorphic hardware', 'synaptic device', 'resistive random access memory computing', 'silicon neuron', 'neuromorphic vision sensor', 'analog in memory computing', 'physical reservoir computing', 'spiking neural network training'],
+  'agritech': ['precision agriculture', 'smart farming', 'agricultural robotics', 'crop phenotyping', 'plant phenotyping', 'agricultural ai', 'vertical farming', 'controlled environment agriculture', 'crop disease detection', 'soil sensor network', 'livestock monitoring', 'agricultural drone', 'gene editing crop', 'synthetic fertilizer alternative'],
 };
 
 const SOURCE_CONFIDENCE = {
@@ -65,6 +74,8 @@ const SOURCE_CONFIDENCE = {
   semanticscholar: 0.74, europepmc: 0.8, github: 0.6, huggingface: 0.6,
   // v3 新增：DOAJ 为同行评审开放获取期刊，质量较高；DataCite/Zenodo 含大量自主提交的数据集与软件
   doaj: 0.76, datacite: 0.66, zenodo: 0.64,
+  // v4 新增：CORE 聚合全球开放获取全文（含预印本/期刊），质量较高
+  core: 0.72,
 };
 
 // ==================== 工具函数 ====================
@@ -379,7 +390,35 @@ async function fetchZenodo(query, max, offset = 0) {
   } catch { return []; }
 }
 
-// 9 个数据源的统一入口（DOAJ/DataCite/Zenodo 于 v3 加入，补充开放获取期刊与数据集/软件类实体）
+async function fetchCORE(query, max, offset = 0) {
+  // CORE：全球开放获取聚合（预印本+期刊全文），免费 demo key 可用；失败即空。
+  const key = (process.env.CORE_API_KEY || 'e6d5c495-5365-4616-be4c-f5203f0e3a98');
+  const url = `https://api.core.ac.uk/v3/search/works?q=${encodeURIComponent(query)}&limit=${Math.min(max, 100)}&offset=${offset}`;
+  try {
+    const res = await withRetry(
+      () => httpGet(url, { headers: { Authorization: `Bearer ${key}`, 'User-Agent': UA } }),
+      2, 1500,
+    );
+    if (res.statusCode !== 200) return [];
+    const data = JSON.parse(res.body);
+    return (data.results || []).map((r) => {
+      const doi = r.doi || '';
+      return {
+        id: doi ? 'doi:' + doi : 'core:' + (r.id || Math.random().toString(36)),
+        source: 'core',
+        name: r.title || '',
+        abstract: stripTags(r.abstract || '').slice(0, 4000),
+        url: r.downloadUrl || (doi ? `https://doi.org/${doi}` : (r.url || '')),
+        authors: (r.authors || []).map((a) => a.name).filter(Boolean),
+        tags: (r.subjects || []).map((s) => (typeof s === 'string' ? s : s.name)).filter(Boolean).slice(0, 8),
+        publishedDate: r.year ? String(r.year) : '',
+        doi,
+      };
+    });
+  } catch { return []; }
+}
+
+// 10 个数据源的统一入口（DOAJ/DataCite/Zenodo 于 v3、CORE 于 v4 加入）
 const SOURCE_FETCHERS = [
   (q, n, o) => fetchOpenAlex(q, n, o),
   (q, n, o) => fetchArxiv(q, n, o),
@@ -390,6 +429,7 @@ const SOURCE_FETCHERS = [
   (q, n, o) => fetchDOAJ(q, n, o),
   (q, n, o) => fetchDataCite(q, n, o),
   (q, n, o) => fetchZenodo(q, n, o),
+  (q, n, o) => fetchCORE(q, n, o),
 ];
 
 // ==================== 归一化 + 合并 ====================
@@ -457,9 +497,10 @@ async function main() {
   const perPageArg = args.find(a => a.startsWith('--per-page='));
   const limit = limitArg ? parseInt(limitArg.split('=')[1], 10) || 600 : 600;
   const perPage = Math.min(perPageArg ? parseInt(perPageArg.split('=')[1], 10) || 100 : 100, 200);
-  // 每站目标容量：单条约 1.1KB，3000 条 ≈ 3.3MB，远低于 Cloudflare Pages 单文件 25MB 上限
+  // 每站目标容量：单条约 1.1KB，4000 条 ≈ 4.4MB；30 站全满 ≈ 132MB（entities.json 合计），
+  // 加结构化索引后总产物仍安全低于 GitHub Pages 1GB 上限（实测 22 站/3k 时为 184MB）
   const maxArg = args.find(a => a.startsWith('--max-entities='));
-  const maxEntities = maxArg ? parseInt(maxArg.split('=')[1], 10) || 3000 : 3000;
+  const maxEntities = maxArg ? parseInt(maxArg.split('=')[1], 10) || 4000 : 4000;
   // 时间预算：CI 的 job timeout-minutes 是硬杀，一旦触发，末尾的「提交数据」步骤不会执行，
   // 整轮抓取全部作废。这里主动在预算内收尾，保证已抓数据必被提交。默认 35 分钟（CI 上限 50）。
   const minutesArg = args.find(a => a.startsWith('--max-minutes='));

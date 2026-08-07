@@ -88,6 +88,15 @@ const SITE_LABELS = {
   'sat-6g': '6G 与卫星互联网',
   'spatial-computing': '空间计算',
   'privacy-computing': '隐私计算与数据要素',
+  // ---- 2026-08 第三批扩域 ----
+  'ai-safety': 'AI 安全与对齐',
+  'quantum-materials': '量子材料',
+  'carbon-neutral': '碳中和与 CCUS',
+  'digital-twin': '数字孪生',
+  'biomed-ai': '医疗人工智能',
+  'edge-ai': '边缘智能',
+  'neuromorphic': '类脑计算',
+  'agritech': '智慧农业',
 };
 
 const esc = (s) =>
@@ -315,6 +324,8 @@ article.post ul,article.post ol{line-height:1.9;color:#2b2f36}
 .chip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border:1px solid #dfe3e8;border-radius:999px;background:#fff;font-size:13px;color:#39414d;text-decoration:none}
 a.chip:hover{border-color:#0b62d6;color:#0b62d6}
 .chip b{color:#0b62d6;font-weight:600}
+.up{color:#1a9e57;font-weight:600}
+.down{color:#d23b3b;font-weight:600}
 .ybars{display:flex;align-items:flex-end;gap:5px;height:70px;margin:10px 0 20px;padding:6px 0;border-bottom:1px solid #e8ebef}
 .yb{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px}
 .yb i{display:block;width:16px;background:linear-gradient(180deg,#3b8bf0,#0b62d6);border-radius:3px 3px 0 0}
@@ -454,7 +465,7 @@ function layout({ title, desc, body, jsonld, canonical, type }) {
   const ldScripts = [webSite, ...pageLd]
     .map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`)
     .join('\n');
-  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/topic/">主题图谱</a><a href="${BASE}/data.html">数据下载</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a></nav>`;
+  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/topic/">主题图谱</a><a href="${BASE}/insights.html">研究洞察</a><a href="${BASE}/data.html">数据下载</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a></nav>`;
   return `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -479,7 +490,7 @@ ${ldScripts}
 <style>${CSS}</style>
 </head>
 <body>
-<header class="top"><div class="wrap"><a class="brand" href="${BASE}/">GeneTech 知识引擎<span>14 个前沿科技垂直领域</span></a></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="${BASE}/">GeneTech 知识引擎<span>${localizeSiteCount('14 个前沿科技垂直领域')}</span></a></div></header>
 <div class="wrap">
 ${nav}
 ${body}
@@ -1205,6 +1216,116 @@ function localizeSiteCount(s) {
     .replace(/(?<!\d)14(\s?)站/g, `${SITE_COUNT}$1站`);
 }
 
+// 研究洞察页：把结构化层的高价值派生事实（趋势/研究空白/桥接主题/合著网络）直接呈现为可索引、可引用的页面
+function renderInsightsPage(struct, labels) {
+  const canonical = `${ORIGIN}${BASE}/insights.html`;
+  const { risingTopics, emergingTopics, topBridges } = struct.trends;
+  const coAuthors = struct.coAuthors || [];
+
+  const risingRows = risingTopics
+    .slice(0, 40)
+    .map(
+      (t) => `<tr>
+<td><a href="${BASE}/topic/${t.slug}.html">${esc(t.topic)}</a></td>
+<td>${t.docCount.toLocaleString('en-US')}</td>
+<td><span class="up">▲ ${t.trend.pctGrowth >= 999 ? '新起' : '+' + t.trend.pctGrowth + '%'}</span></td>
+<td>${t.trend.last3.toLocaleString('en-US')}</td>
+<td>${t.siteCount}</td>
+</tr>`,
+    )
+    .join('\n');
+
+  const gapRows = emergingTopics
+    .slice(0, 40)
+    .map(
+      (t) => `<tr>
+<td><a href="${BASE}/topic/${t.slug}.html">${esc(t.topic)}</a></td>
+<td>${t.docCount.toLocaleString('en-US')}</td>
+<td><span class="up">${t.trend.recentShare}%</span></td>
+<td>${[...new Set(Object.keys(t.siteCounts || {}))].map((s) => labels[s] || s).slice(0, 4).join('、') || '—'}</td>
+</tr>`,
+    )
+    .join('\n');
+
+  const bridgeRows = topBridges
+    .slice(0, 40)
+    .map(
+      (t) => `<tr>
+<td><a href="${BASE}/topic/${t.slug}.html">${esc(t.topic)}</a></td>
+<td><span class="up">${t.siteCount} 站</span></td>
+<td>${t.docCount.toLocaleString('en-US')}</td>
+<td>${[...new Set(Object.keys(t.siteCounts || {}))].map((s) => labels[s] || s).slice(0, 5).join('、') || '—'}</td>
+</tr>`,
+    )
+    .join('\n');
+
+  const coRows = coAuthors
+    .slice(0, 40)
+    .map(
+      (c) => `<tr>
+<td>${esc(c.a)}</td>
+<td>${esc(c.b)}</td>
+<td><span class="chip">${c.weight}</span></td>
+<td>${(c.sites || []).map((s) => esc(labels[s] || s)).slice(0, 3).join('、') || '—'}</td>
+</tr>`,
+    )
+    .join('\n');
+
+  const body = `
+<h1>研究洞察</h1>
+<p class="sub">基于 <b>${struct.stats.totalEntities.toLocaleString('en-US')}</b> 条实体、<b>${struct.stats.indexedTopics.toLocaleString('en-US')}</b> 个主题自动派生。以下四类洞察每天随数据更新——可直接引用，也供 AI Agent 通过 <code>api/insights.json</code> 实时读取。</p>
+
+<h2>① 上升最快的主题（近 3 年增量）</h2>
+<p class="sub">按近 3 年相对前 3 年的净增量排序，反映正在升温的研究方向。</p>
+<div class="tablewrap"><table class="cmp">
+<thead><tr><th>主题</th><th>文献量</th><th>趋势</th><th>近3年</th><th>横跨站点</th></tr></thead>
+<tbody>${risingRows}</tbody></table></div>
+
+<h2>② 新兴研究空白（高增长 · 低饱和）</h2>
+<p class="sub">近 3 年占比 ≥45% 但总文献量仍偏低（&lt;250），是值得优先选题与扩量的蓝海方向。</p>
+<div class="tablewrap"><table class="cmp">
+<thead><tr><th>主题</th><th>文献量</th><th>近3年占比</th><th>代表领域</th></tr></thead>
+<tbody>${gapRows}</tbody></table></div>
+
+<h2>③ 跨站桥接主题（学科交汇点）</h2>
+<p class="sub">同时横跨 ≥3 个垂直领域，是跨学科汇聚、技术迁移的高价值枢纽。</p>
+<div class="tablewrap"><table class="cmp">
+<thead><tr><th>主题</th><th>横跨站点</th><th>文献量</th><th>涉及领域</th></tr></thead>
+<tbody>${bridgeRows}</tbody></table></div>
+
+<h2>④ 核心合著网络（高产合作对）</h2>
+<p class="sub">同一篇文献中两两共现 ≥3 次，反映稳定的合作轴心，可用于专家发现与团队组建。</p>
+<div class="tablewrap"><table class="cmp">
+<thead><tr><th>作者 A</th><th>作者 B</th><th>共现</th><th>领域</th></tr></thead>
+<tbody>${coRows}</tbody></table></div>
+
+<h2>机器可读</h2>
+<p>全部洞察以 <code>api/insights.json</code> 开放（含上升趋势、研究空白、桥接主题与合著网络），CC-BY 许可。企业批量获取或私有化部署见 <a href="${BASE}/mcp.html">MCP 接入</a>。</p>`;
+
+  const mentions = [...risingTopics.slice(0, 12), ...emergingTopics.slice(0, 8)].map((t) => ({
+    '@type': 'DefinedTerm',
+    name: t.topic,
+    url: `${ORIGIN}${BASE}/topic/${t.slug}.html`,
+  }));
+
+  return layout({
+    title: `研究洞察 — ${struct.stats.indexedTopics.toLocaleString('en-US')} 主题自动派生趋势 / GeneTech`,
+    desc: `从 ${struct.stats.totalEntities.toLocaleString('en-US')} 条科研实体自动派生的研究洞察：上升最快的主题、新兴研究空白、跨站桥接主题与核心合著网络，每日随数据更新。`,
+    body,
+    canonical,
+    jsonld: {
+      '@context': 'https://schema.org',
+      '@type': 'Dataset',
+      name: 'GeneTech 研究洞察数据集',
+      description: `基于 ${struct.stats.totalEntities} 条实体自动派生的科研趋势与关系洞察。`,
+      url: canonical,
+      license: 'https://creativecommons.org/licenses/by/4.0/',
+      creator: { '@type': 'Organization', name: 'GeneTech 知识引擎' },
+      hasPart: mentions,
+    },
+  });
+}
+
 function writeFile(rel, content) {
   const dest = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
@@ -1315,11 +1436,21 @@ function main() {
   writeFile('api/authors.json', JSON.stringify({ generatedAt: struct.stats.generatedAt, total: struct.authors.length, authors: struct.authors }));
   writeFile('api/timeline.json', JSON.stringify({ generatedAt: struct.stats.generatedAt, timeline: struct.timeline }));
   writeFile('api/stats.json', JSON.stringify(struct.stats, null, 2));
+  // 洞察层：上升趋势主题、新兴研究空白、跨站桥接主题、合著网络 —— 给 AI 引擎与企业买家可直接引用的高价值聚合事实
+  writeFile(
+    'api/insights.json',
+    JSON.stringify({
+      generatedAt: struct.stats.generatedAt,
+      trends: struct.trends,
+      coAuthors: struct.coAuthors,
+    }, null, 2),
+  );
 
   writeFile('index.html', renderHome(sites));
   writeFile('search.html', renderSearchPage(sites));
   writeFile('mcp.html', renderMcpPage());
   writeFile('data.html', renderDataPage(sites, struct.stats, SITE_LABELS));
+  writeFile('insights.html', renderInsightsPage(struct, SITE_LABELS));
   writeFile('blog/index.html', renderBlogIndex());
   for (const a of BLOG_POSTS) writeFile(`blog/${a.slug}.html`, renderArticle(a));
 
@@ -1370,6 +1501,8 @@ function main() {
     `- 作者索引（归一化去重后的高产作者及领域分布）: ${ORIGIN}${BASE}/api/authors.json`,
     `- 年度时间线（逐年产出量，分站点）: ${ORIGIN}${BASE}/api/timeline.json`,
     `- 数据质量统计（覆盖率/来源/类型/质量分）: ${ORIGIN}${BASE}/api/stats.json`,
+    `- 研究洞察（上升趋势/研究空白/桥接主题/合著网络）: ${ORIGIN}${BASE}/api/insights.json`,
+    `- 研究洞察页（可读）: ${ORIGIN}${BASE}/insights.html`,
     `- 主题聚合页索引: ${ORIGIN}${BASE}/topic/`,
     '',
     '## 每个领域提供的数据格式',
@@ -1425,6 +1558,7 @@ ${rssItems}
   const extraPages = [
     'search.html',
     'mcp.html',
+    'insights.html',
     'data.html',
     'topic/',
     'blog/',
