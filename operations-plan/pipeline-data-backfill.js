@@ -366,27 +366,49 @@ async function main() {
   // 每站目标容量：单条约 1.1KB，3000 条 ≈ 3.3MB，远低于 Cloudflare Pages 单文件 25MB 上限
   const maxArg = args.find(a => a.startsWith('--max-entities='));
   const maxEntities = maxArg ? parseInt(maxArg.split('=')[1], 10) || 3000 : 3000;
+  // 时间预算：CI 的 job timeout-minutes 是硬杀，一旦触发，末尾的「提交数据」步骤不会执行，
+  // 整轮抓取全部作废。这里主动在预算内收尾，保证已抓数据必被提交。默认 35 分钟（CI 上限 50）。
+  const minutesArg = args.find(a => a.startsWith('--max-minutes='));
+  const parsedMinutes = minutesArg ? parseInt(minutesArg.split('=')[1], 10) : NaN;
+  const maxMinutes = Number.isFinite(parsedMinutes) && parsedMinutes >= 0 ? parsedMinutes : 35;
+  const deadline = Date.now() + maxMinutes * 60 * 1000;
   // --site 支持逗号分隔多站（如 --site=a,b,c）；缺省则遍历全部站点
-  const sites = siteArg
+  const explicitSites = siteArg
     ? siteArg.split('=').slice(1).join('=').split(',').map(s => s.trim()).filter(Boolean)
-    : Object.keys(SITE_QUERIES);
+    : null;
 
   // ===== 游标：站点×检索词 级 =====
   const cursorPath = path.join(STATE_DIR, 'backfill-cursor.json');
   const rawCursor = (await readJsonSafe(cursorPath)) || {};
   // 兼容 v1 的「站点→数字」旧格式：遇到数字重置为 {}，让各检索词从 0 重新开始
   const cursor = {};
+  let rotate = 0;
   for (const [s, v] of Object.entries(rawCursor)) {
+    if (s === '__rotate') { rotate = Number(v) || 0; continue; }
     cursor[s] = (v && typeof v === 'object') ? v : {};
   }
+
+  // ===== 站点轮转 =====
+  // 站点数增长后（22 站）单轮跑不完全部，若每次都从第一个站开始，
+  // 排在后面的站将永远抓不到数据。用持久化的 rotate 偏移轮流做起点，保证公平覆盖。
+  const allSites = Object.keys(SITE_QUERIES);
+  const sites = explicitSites
+    ? explicitSites
+    : [...allSites.slice(rotate % allSites.length), ...allSites.slice(0, rotate % allSites.length)];
 
   console.log(`[Backfill v2] ${dryRun ? '[DRY-RUN] ' : ''}站点 ${sites.length} 个, 单轮每站上限 ${limit}, 单页 ${perPage}, 每站目标容量 ${maxEntities}, 数据源 ${SOURCE_FETCHERS.length} 个`);
   const results = [];
   const QUERY_CONCURRENCY = 3; // 检索词并发；站间另有 sleep，整体礼貌限速
 
+  let processedSites = 0;
   for (const site of sites) {
+    if (Date.now() > deadline) {
+      console.log(`[Backfill] 已达时间预算 ${maxMinutes} 分钟，本轮在第 ${processedSites} 站收尾（剩余站点下轮由轮转起点优先处理）`);
+      break;
+    }
     const queries = SITE_QUERIES[site];
     if (!queries) { console.warn(`[Backfill] 未知站点 ${site}, 跳过`); continue; }
+    processedSites++;
     if (!cursor[site]) cursor[site] = {};
 
     const siteDir = path.join(PROJECT_ROOT, site, 'website', 'api');
@@ -443,8 +465,10 @@ async function main() {
   const report = { pipeline: 'data-backfill-v2', timestamp: getISOTime(), dryRun, limit, perPage, results };
   if (!dryRun) {
     await ensureDir(STATE_DIR);
+    // 仅全站遍历时推进轮转起点；显式 --site 是定点补数，不应打乱全局轮转节奏
+    if (!explicitSites) cursor.__rotate = (rotate + processedSites) % allSites.length;
     await fs.writeFile(cursorPath, JSON.stringify(cursor, null, 2), 'utf-8');
-    console.log(`[Backfill] 游标已保存 ${cursorPath}`);
+    console.log(`[Backfill] 游标已保存 ${cursorPath}（下轮起点偏移 ${cursor.__rotate ?? rotate}）`);
     await ensureDir(REPORTS_DIR);
     const rp = path.join(REPORTS_DIR, `report-data-backfill-${getISOTime().slice(0, 10)}.json`);
     await fs.writeFile(rp, JSON.stringify(report, null, 2), 'utf-8');

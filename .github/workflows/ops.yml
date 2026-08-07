@@ -54,7 +54,10 @@ on:
     #   - OpenAlex 礼貌池 10万/天，'*/30' 用量仅 4.7%
     #   提速靠“抓得深”而非“抓得勤”：单次 limit=150 + 游标分页，单轮产出是原来的 5 倍
     #   仅触发 data-accumulation 闭环（decide 步骤按 github.event.schedule 识别）
-    - cron: '*/30 * * * *'
+    #   2026-08-07 修正：单轮数据任务实际耗时已达 35-50 分钟（6 数据源 × 22 站），
+    #   而 concurrency 组只保留 1 个排队位——'*/30' 会让第三轮到达时把排队中的那轮 cancel 掉，
+    #   表现为持续的 "prepare => cancelled" 假失败。改为整点每小时一轮，与实际耗时匹配。
+    - cron: '0 * * * *'
     # 其余闭环：每日 20:30 CST(12:30 UTC) 一次全量运行
     # 恢复原始分时段配置时，删除上方 '*/5 * * * *' 与下方 '30 12 * * *' 两行，
     # 替换为以下 5 行（并删除 decide 步骤中的“提升期”与“数据涡轮”分支）：
@@ -249,9 +252,9 @@ jobs:
           #                    Cloudflare Pages 单文件 25MB 上限；达标站点自动跳过抓取，
           #                    API 请求量与仓库体积同时收敛
           if [[ "${{ needs.prepare.outputs.dry_run }}" == "true" ]]; then
-            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --dry-run --limit=800 --per-page=100 --max-entities=3000
+            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --dry-run --limit=800 --per-page=100 --max-entities=3000 --max-minutes=35
           else
-            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --limit=800 --per-page=100 --max-entities=3000 2>&1 | tee /tmp/backfill.log
+            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --limit=800 --per-page=100 --max-entities=3000 --max-minutes=35 2>&1 | tee /tmp/backfill.log
           fi
           # 提取本轮新增实体数，供后续 Cloudflare 构建预算守门判定
           ADDED=$(grep -oP '新增实体合计 \K[0-9]+' /tmp/backfill.log 2>/dev/null | tail -1)

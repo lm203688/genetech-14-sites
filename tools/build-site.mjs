@@ -15,6 +15,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  buildStructure,
+  toJSONL,
+  toCSV,
+  toBibTeX,
+  toCSLJSON,
+  qualityScore,
+} from './lib/structure.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -300,6 +308,28 @@ article.post p{color:#2b2f36;font-size:15.5px;line-height:1.85}
 article.post pre{background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:8px;overflow:auto;font-size:13px}
 article.post code{color:#0b62d6}
 article.post ul,article.post ol{line-height:1.9;color:#2b2f36}
+.crumb{font-size:13px;color:#6b7280;margin:0 0 4px}
+.crumb a{color:#0b62d6;text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border:1px solid #dfe3e8;border-radius:999px;background:#fff;font-size:13px;color:#39414d;text-decoration:none}
+a.chip:hover{border-color:#0b62d6;color:#0b62d6}
+.chip b{color:#0b62d6;font-weight:600}
+.ybars{display:flex;align-items:flex-end;gap:5px;height:70px;margin:10px 0 20px;padding:6px 0;border-bottom:1px solid #e8ebef}
+.yb{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px}
+.yb i{display:block;width:16px;background:linear-gradient(180deg,#3b8bf0,#0b62d6);border-radius:3px 3px 0 0}
+.yb em{font-size:10px;color:#8a93a0;font-style:normal}
+ul.elist{list-style:none;padding:0;margin:0}
+ul.elist li{padding:11px 0;border-bottom:1px solid #eef1f4}
+ul.elist .t{font-size:15px;color:#12212f;text-decoration:none;font-weight:600;line-height:1.5}
+ul.elist .t:hover{color:#0b62d6}
+ul.elist .m{font-size:12.5px;color:#6b7280;margin-top:4px;line-height:1.6}
+ul.elist .m a{color:#0b62d6;text-decoration:none}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin:16px 0}
+.tcard{display:flex;flex-direction:column;gap:3px;padding:11px 13px;border:1px solid #e3e7ec;border-radius:9px;background:#fff;text-decoration:none}
+.tcard:hover{border-color:#0b62d6;box-shadow:0 2px 10px rgba(11,98,214,.09)}
+.tcard .n{font-size:14px;color:#12212f;font-weight:600;line-height:1.4}
+.tcard .c{font-size:12px;color:#8a93a0}
+.tablewrap{overflow-x:auto}
 .pagenav{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:28px 0 8px}
 .pagenav .pn{padding:8px 14px;border:1px solid var(--line);border-radius:8px;text-decoration:none}
 .pagenav .pn.dim{color:#9aa1ab;border-color:#eceef1}
@@ -423,7 +453,7 @@ function layout({ title, desc, body, jsonld, canonical, type }) {
   const ldScripts = [webSite, ...pageLd]
     .map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`)
     .join('\n');
-  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a></nav>`;
+  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/topic/">主题图谱</a><a href="${BASE}/data.html">数据下载</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a></nav>`;
   return `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -464,6 +494,8 @@ ${body}
 /** 单站页面 */
 /** 每个归档分页承载的实体条数 */
 const ARCHIVE_PAGE_SIZE = 100;
+/** 每站导出的引文条数上限（BibTeX / CSL-JSON 按质量分取头部，控制产物体积） */
+const CITATION_EXPORT_CAP = 1500;
 
 /** 按加入时间倒序取全量实体（站点页与归档分页共用同一排序，保证翻页不重不漏） */
 function sortedEntities(site) {
@@ -922,7 +954,7 @@ function renderMcpPage() {
 ${tools.map(([n, d]) => `<div class="card"><div class="n"><code>${esc(n)}</code></div><div class="m">${esc(d)}</div></div>`).join('\n')}
 </div>
 <h2>数据覆盖</h2>
-<p>基因技术、量子计算、脑科学、AI Agent 生态、生命科学、新能源、核能、深海科技、地外科学、中医药、机器人零部件、仿生智能、生物计算、地外矿物，共 14 个垂直领域，实体持续增量更新。</p>
+<p>${esc(ALL_SITE_LABELS.join('、'))}，共 ${ALL_SITE_LABELS.length} 个垂直领域，实体持续增量更新。</p>
 <h2>计费</h2>
 <ul>
 <li><strong>Free</strong>：基础接口免费调用。</li>
@@ -939,10 +971,242 @@ ${tools.map(([n, d]) => `<div class="card"><div class="n"><code>${esc(n)}</code>
   });
 }
 
+/**
+ * 站点数量在文案里曾被硬编码为 14，扩域后（22 站及以后）会全站失真。
+ * 站点数是运行期才知道的，而 BLOG/常量在模块加载期就已求值，逐处改易漏，
+ * 因此统一在输出层做一次收口替换（只针对确定性的量词搭配，避免误伤论文标题）。
+ */
+let SITE_COUNT = 0;
+let ALL_SITE_LABELS = [];
+
+/** 主题聚合页：把「主题」升级为一等公民，承接长尾检索并给 AI 引擎提供可引用的聚合事实 */
+function renderTopicPage(t, labels) {
+  const canonical = `${ORIGIN}${BASE}/topic/${t.slug}.html`;
+  const siteRows = Object.entries(t.siteCounts)
+    .sort((a, b) => b[1] - a[1])
+    .map(
+      ([slug, n]) =>
+        `<a class="chip" href="${BASE}/${slug}/">${esc(labels[slug] || slug)} <b>${n}</b></a>`,
+    )
+    .join('');
+
+  const years = Object.entries(t.years)
+    .map(([y, n]) => [parseInt(y, 10), n])
+    .filter(([y]) => y >= 2015)
+    .sort((a, b) => a[0] - b[0]);
+  const maxY = Math.max(1, ...years.map(([, n]) => n));
+  const yearBars = years
+    .map(
+      ([y, n]) =>
+        `<span class="yb" title="${y} 年 ${n} 篇"><i style="height:${Math.max(6, Math.round((n / maxY) * 46))}px"></i><em>${String(y).slice(2)}</em></span>`,
+    )
+    .join('');
+
+  const items = t.entities
+    .slice(0, 60)
+    .map(
+      (e) => `<li>
+<a class="t" href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.name)}</a>
+<div class="m">${e.year ? `${e.year} · ` : ''}<a href="${BASE}/${e.site}/">${esc(labels[e.site] || e.site)}</a>${e.abstract ? ` · ${esc(e.abstract)}…` : ''}</div>
+</li>`,
+    )
+    .join('\n');
+
+  const rel = (t.related || [])
+    .map((r) => `<a class="chip" href="${BASE}/topic/${r.slug}.html">${esc(r.topic)}</a>`)
+    .join('');
+
+  const jsonld = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: `${t.topic} — 研究主题聚合`,
+      url: canonical,
+      description: `GeneTech 知识引擎收录 ${t.docCount} 篇与「${t.topic}」相关的科研实体，横跨 ${t.siteCount} 个前沿科技垂直领域。`,
+      about: { '@type': 'DefinedTerm', name: t.topic },
+      isPartOf: { '@type': 'WebSite', name: 'GeneTech 知识引擎', url: `${ORIGIN}${BASE}/` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      numberOfItems: Math.min(60, t.entities.length),
+      itemListElement: t.entities.slice(0, 60).map((e, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'ScholarlyArticle',
+          name: e.name,
+          url: e.url,
+          ...(e.year ? { datePublished: String(e.year) } : {}),
+        },
+      })),
+    },
+  ];
+
+  const body = `
+<p class="crumb"><a href="${BASE}/topic/">主题图谱</a> / ${esc(t.topic)}</p>
+<h1>${esc(t.topic)}</h1>
+<p class="sub">GeneTech 知识引擎共收录 <b>${t.docCount}</b> 篇相关科研实体，横跨 <b>${t.siteCount}</b> 个垂直领域。数据来自 OpenAlex、arXiv、Crossref、PubMed、Europe PMC 等公开学术源，全部可溯源到原文。</p>
+<div class="chips">${siteRows}</div>
+${years.length ? `<h2>年度产出趋势</h2><div class="ybars">${yearBars}</div>` : ''}
+${rel ? `<h2>相关主题</h2><div class="chips">${rel}</div>` : ''}
+<h2>代表性文献（按质量分排序，前 ${Math.min(60, t.entities.length)} 条）</h2>
+<ul class="elist">${items}</ul>
+<h2>以 API 获取该主题全量数据</h2>
+<pre><code># 主题词表（含本主题的站点分布与年度分布）
+curl ${ORIGIN}${BASE}/api/topics.json
+
+# 主题共现知识图谱
+curl ${ORIGIN}${BASE}/api/graph.json</code></pre>
+<p>需要按主题批量拉取、导出 BibTeX 或接入 AI Agent？查看 <a href="${BASE}/data.html">数据下载与格式</a> 或 <a href="${BASE}/mcp.html">MCP 接入</a>。</p>`;
+
+  return layout({
+    title: `${t.topic} — ${t.docCount} 篇研究聚合 | GeneTech 知识引擎`,
+    desc: `「${t.topic}」主题下的 ${t.docCount} 篇科研实体聚合，横跨 ${t.siteCount} 个前沿科技领域，含年度趋势、相关主题与可溯源原文链接，支持 JSON API 与 MCP 调用。`,
+    body,
+    jsonld,
+    canonical,
+  });
+}
+
+/** 主题总览页 */
+function renderTopicIndex(topics) {
+  const canonical = `${ORIGIN}${BASE}/topic/`;
+  const items = topics
+    .map(
+      (t) =>
+        `<a class="tcard" href="${BASE}/topic/${t.slug}.html"><span class="n">${esc(t.topic)}</span><span class="c">${t.docCount} 篇 · ${t.siteCount} 站</span></a>`,
+    )
+    .join('\n');
+  const body = `
+<h1>主题图谱</h1>
+<p class="sub">从 ${SITE_COUNT} 个垂直领域的全部实体中自动抽取、归一化并按共现关系聚合出的 <b>${topics.length}</b> 个研究主题。每个主题页含站点分布、年度趋势、相关主题与代表文献。</p>
+<div class="search"><input id="topic-filter" type="search" placeholder="过滤主题…"></div>
+<div class="tgrid" id="tgrid">${items}</div>
+<script>
+(function(){var i=document.getElementById('topic-filter'),g=document.getElementById('tgrid');
+if(!i||!g)return;var cards=[].slice.call(g.children);
+i.addEventListener('input',function(){var q=i.value.trim().toLowerCase();
+cards.forEach(function(c){c.style.display=!q||c.textContent.toLowerCase().indexOf(q)>-1?'':'none';});});})();
+</script>
+<h2>机器可读版本</h2>
+<pre><code>curl ${ORIGIN}${BASE}/api/topics.json   # 主题词表
+curl ${ORIGIN}${BASE}/api/graph.json    # 主题共现图谱（节点+边）</code></pre>`;
+  return layout({
+    title: `主题图谱 — ${topics.length} 个前沿研究主题 | GeneTech 知识引擎`,
+    desc: `GeneTech 从 ${SITE_COUNT} 个前沿科技垂直领域自动抽取的 ${topics.length} 个研究主题聚合索引，含共现图谱、年度趋势与可溯源文献。`,
+    body,
+    jsonld: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: '主题图谱',
+      url: canonical,
+      description: `${topics.length} 个前沿研究主题的聚合索引`,
+    },
+    canonical,
+  });
+}
+
+/** 数据下载页：把「结构化资产」显性化，是 GEO 与商业转化的关键落地页 */
+function renderDataPage(sites, stats, labels) {
+  const canonical = `${ORIGIN}${BASE}/data.html`;
+  const rows = sites
+    .map(
+      (s) => `<tr>
+<td><a href="${BASE}/${s.slug}/">${esc(labels[s.slug] || s.slug)}</a></td>
+<td>${s.entities.length}</td>
+<td><a href="${BASE}/${s.slug}/website/api/entities.json">JSON</a></td>
+<td><a href="${BASE}/${s.slug}/website/api/entities.jsonl">JSONL</a></td>
+<td><a href="${BASE}/${s.slug}/website/api/entities.csv">CSV</a></td>
+<td><a href="${BASE}/${s.slug}/website/api/citations.bib">BibTeX</a></td>
+<td><a href="${BASE}/${s.slug}/website/api/citations.csl.json">CSL-JSON</a></td>
+</tr>`,
+    )
+    .join('\n');
+
+  const body = `
+<h1>数据下载与结构化格式</h1>
+<p class="sub">GeneTech 的 <b>${stats.totalEntities.toLocaleString('en-US')}</b> 条科研实体以 <b>7 种</b>结构化形态开放：原始 JSON、行式 JSONL、表格 CSV、文献管理 BibTeX / CSL-JSON，以及派生的主题词表、作者索引与知识图谱。全部以 CC-BY 提供。</p>
+
+<h2>全站聚合资产</h2>
+<table class="cmp">
+<thead><tr><th>资产</th><th>说明</th><th>典型用途</th><th>下载</th></tr></thead>
+<tbody>
+<tr><td>站点目录</td><td>${SITE_COUNT} 个领域的清单与各自 API 地址</td><td>Agent 一次性发现全部数据源</td><td><a href="${BASE}/api/catalog.json">catalog.json</a></td></tr>
+<tr><td>主题词表</td><td>${stats.indexedTopics} 个归一化主题，含站点分布与年度分布</td><td>主题导航、趋势分析、选题</td><td><a href="${BASE}/api/topics.json">topics.json</a></td></tr>
+<tr><td>知识图谱</td><td>${stats.graphNodes} 节点 / ${stats.graphEdges} 条共现边</td><td>关联发现、图可视化、推荐</td><td><a href="${BASE}/api/graph.json">graph.json</a></td></tr>
+<tr><td>作者索引</td><td>归一化后的高产作者及其领域分布</td><td>专家发现、合作网络</td><td><a href="${BASE}/api/authors.json">authors.json</a></td></tr>
+<tr><td>时间线</td><td>逐年产出量（分站点）</td><td>领域热度趋势判断</td><td><a href="${BASE}/api/timeline.json">timeline.json</a></td></tr>
+<tr><td>统计快照</td><td>覆盖率、质量分、来源与类型分布</td><td>数据质量评估</td><td><a href="${BASE}/api/stats.json">stats.json</a></td></tr>
+</tbody>
+</table>
+
+<h2>数据质量快照</h2>
+<div class="chips">
+<span class="chip">实体总量 <b>${stats.totalEntities.toLocaleString('en-US')}</b></span>
+<span class="chip">领域 <b>${stats.totalSites}</b></span>
+<span class="chip">摘要覆盖 <b>${stats.coverage.abstract}%</b></span>
+<span class="chip">作者覆盖 <b>${stats.coverage.authors}%</b></span>
+<span class="chip">DOI 可溯源 <b>${stats.coverage.doi}%</b></span>
+<span class="chip">平均质量分 <b>${stats.avgQuality}</b></span>
+</div>
+<p class="sub">来源分布：${Object.entries(stats.bySource).map(([k, v]) => `${esc(k)} ${v}`).join(' · ')}</p>
+
+<h2>分领域下载</h2>
+<div class="tablewrap">
+<table class="cmp">
+<thead><tr><th>领域</th><th>实体数</th><th>JSON</th><th>JSONL</th><th>CSV</th><th>BibTeX</th><th>CSL-JSON</th></tr></thead>
+<tbody>${rows}</tbody>
+</table>
+</div>
+
+<h2>格式怎么选</h2>
+<ul>
+<li><strong>JSONL</strong> — 每行一条独立 JSON，是 RAG 摄取与模型微调的事实标准，可直接流式读取，无需整文件载入内存。</li>
+<li><strong>CSV</strong> — Excel / pandas / BI 工具直接打开，含 <code>year / authors / tags / quality</code> 等已归一化列。</li>
+<li><strong>BibTeX / CSL-JSON</strong> — Zotero、EndNote、LaTeX、Pandoc 直接导入，写论文时免去手工录入。</li>
+<li><strong>JSON</strong> — 完整原始实体，字段最全，适合二次开发。</li>
+<li><strong>MCP</strong> — 不想下载？用 <code>npx -y @genetech/data-mcp</code> 让 AI Agent 实时查询，见 <a href="${BASE}/mcp.html">接入说明</a>。</li>
+</ul>
+
+<h2>许可</h2>
+<p>数据以 <strong>CC-BY</strong> 提供：可自由用于研究、商业产品与模型训练，请保留来源标注（GeneTech 知识引擎 + 原始文献链接）。需要更高调用配额、私有部署或定制领域，见 <a href="${BASE}/mcp.html">计费说明</a>。</p>`;
+
+  return layout({
+    title: `数据下载 — ${stats.totalEntities.toLocaleString('en-US')} 条科研实体 / 7 种结构化格式 | GeneTech`,
+    desc: `开放下载 ${stats.totalEntities.toLocaleString('en-US')} 条前沿科技科研实体：JSON / JSONL / CSV / BibTeX / CSL-JSON，以及主题词表、作者索引与知识图谱。CC-BY 许可，支持 RAG 摄取、文献管理与 AI Agent 调用。`,
+    body,
+    canonical,
+    jsonld: {
+      '@context': 'https://schema.org',
+      '@type': 'Dataset',
+      name: 'GeneTech 前沿科技科研实体数据集',
+      description: `覆盖 ${stats.totalSites} 个前沿科技垂直领域的 ${stats.totalEntities} 条结构化科研实体，含主题、作者、年份、来源与质量分。`,
+      url: canonical,
+      license: 'https://creativecommons.org/licenses/by/4.0/',
+      creator: { '@type': 'Organization', name: 'GeneTech 知识引擎' },
+      distribution: [
+        { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: `${ORIGIN}${BASE}/api/catalog.json` },
+        { '@type': 'DataDownload', encodingFormat: 'application/x-ndjson', contentUrl: `${ORIGIN}${BASE}/data.html` },
+        { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: `${ORIGIN}${BASE}/data.html` },
+      ],
+      variableMeasured: ['title', 'abstract', 'authors', 'tags', 'year', 'source', 'doi', 'quality'],
+    },
+  });
+}
+
+function localizeSiteCount(s) {
+  if (!SITE_COUNT) return s;
+  return s
+    .replace(/(?<!\d)14(\s?)个(\s?)(前沿|知识领域|垂直领域)/g, `${SITE_COUNT}$1个$2$3`)
+    .replace(/(?<!\d)14(\s?)站/g, `${SITE_COUNT}$1站`);
+}
+
 function writeFile(rel, content) {
   const dest = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
-  fs.writeFileSync(dest, content);
+  const isText = /\.(html|txt|xml)$/i.test(rel);
+  fs.writeFileSync(dest, isText && typeof content === 'string' ? localizeSiteCount(content) : content);
 }
 
 function main() {
@@ -960,6 +1224,18 @@ function main() {
   }
   fs.mkdirSync(OUT, { recursive: true });
 
+  SITE_COUNT = sites.length;
+  ALL_SITE_LABELS = sites.map((s) => SITE_LABELS[s.slug] || s.slug);
+
+  // ===== 结构化层：从扁平实体派生主题/作者/时间线/图谱（构建期计算，不落仓库）=====
+  const t0 = Date.now();
+  const struct = buildStructure(sites, { labels: SITE_LABELS });
+  console.log(
+    `[structure] ${struct.stats.totalEntities} 实体 → 主题 ${struct.stats.indexedTopics}/${struct.stats.uniqueTopics}，` +
+      `作者 ${struct.stats.uniqueAuthors}，图谱 ${struct.stats.graphNodes} 节点/${struct.stats.graphEdges} 边` +
+      `（${((Date.now() - t0) / 1000).toFixed(1)}s）`,
+  );
+
   let totalEntities = 0;
   const archivePaths = []; // 归档分页相对路径，用于写入 sitemap
   for (const s of sites) {
@@ -967,6 +1243,17 @@ function main() {
     // 保持原始 API 路径契约
     writeFile(`${s.slug}/website/api/index.json`, JSON.stringify(s.index));
     writeFile(`${s.slug}/website/api/entities.json`, JSON.stringify(s.entities));
+
+    // ---- 多格式导出：同一份数据以不同结构形态开放，覆盖 RAG / 数据分析 / 文献管理三类用途
+    writeFile(`${s.slug}/website/api/entities.jsonl`, toJSONL(s.entities, s.slug));
+    writeFile(`${s.slug}/website/api/entities.csv`, toCSV(s.entities, s.slug));
+    // 引文格式体积大且低频，只导出质量分最高的部分，避免产物膨胀拖慢部署
+    const cites = [...s.entities].sort((a, b) => qualityScore(b) - qualityScore(a)).slice(0, CITATION_EXPORT_CAP);
+    writeFile(`${s.slug}/website/api/citations.bib`, toBibTeX(cites));
+    writeFile(`${s.slug}/website/api/citations.csl.json`, JSON.stringify(toCSLJSON(cites)));
+    // 站点级分面（主题/作者/年份/来源），供站内导航与第三方分析直接消费
+    writeFile(`${s.slug}/website/api/facets.json`, JSON.stringify(struct.perSite[s.slug]));
+
     writeFile(`${s.slug}/index.html`, renderSitePage(s, sites));
 
     // 归档分页：让全部实体都拥有可被搜索/AI 引擎抓取的 HTML 表面
@@ -980,9 +1267,42 @@ function main() {
   }
   console.log(`[archive] 生成归档分页 ${archivePaths.length} 页，覆盖 ${totalEntities} 条实体`);
 
+  // ===== 主题聚合页：承接长尾检索，并给 AI 引擎提供可直接引用的聚合事实 =====
+  const topicPaths = [];
+  for (const t of struct.topics) {
+    writeFile(`topic/${t.slug}.html`, renderTopicPage(t, SITE_LABELS));
+    topicPaths.push(`topic/${t.slug}.html`);
+  }
+  writeFile('topic/index.html', renderTopicIndex(struct.topics));
+  console.log(`[structure] 生成主题聚合页 ${topicPaths.length} 个`);
+
+  // ===== 派生数据 API =====
+  writeFile(
+    'api/topics.json',
+    JSON.stringify({
+      generatedAt: struct.stats.generatedAt,
+      total: struct.topics.length,
+      topics: struct.topics.map((t) => ({
+        topic: t.topic,
+        slug: t.slug,
+        docCount: t.docCount,
+        siteCount: t.siteCount,
+        siteCounts: t.siteCounts,
+        years: t.years,
+        related: (t.related || []).map((r) => r.topic),
+        url: `${ORIGIN}${BASE}/topic/${t.slug}.html`,
+      })),
+    }),
+  );
+  writeFile('api/graph.json', JSON.stringify(struct.graph));
+  writeFile('api/authors.json', JSON.stringify({ generatedAt: struct.stats.generatedAt, total: struct.authors.length, authors: struct.authors }));
+  writeFile('api/timeline.json', JSON.stringify({ generatedAt: struct.stats.generatedAt, timeline: struct.timeline }));
+  writeFile('api/stats.json', JSON.stringify(struct.stats, null, 2));
+
   writeFile('index.html', renderHome(sites));
   writeFile('search.html', renderSearchPage(sites));
   writeFile('mcp.html', renderMcpPage());
+  writeFile('data.html', renderDataPage(sites, struct.stats, SITE_LABELS));
   writeFile('blog/index.html', renderBlogIndex());
   for (const a of BLOG_POSTS) writeFile(`blog/${a.slug}.html`, renderArticle(a));
 
@@ -1024,7 +1344,29 @@ function main() {
     `- 全站目录: ${ORIGIN}${BASE}/api/catalog.json`,
     `- MCP 接入: npx -y @genetech/data-mcp`,
     `- 全局搜索: ${ORIGIN}${BASE}/search.html`,
+    `- 数据下载与格式说明: ${ORIGIN}${BASE}/data.html`,
     `- RSS: ${ORIGIN}${BASE}/rss.xml`,
+    '',
+    '## 结构化派生资产（均为机器可读，CC-BY 许可）',
+    `- 主题词表（${struct.stats.indexedTopics} 个归一化主题，含站点/年度分布）: ${ORIGIN}${BASE}/api/topics.json`,
+    `- 主题共现知识图谱（${struct.stats.graphNodes} 节点 / ${struct.stats.graphEdges} 边）: ${ORIGIN}${BASE}/api/graph.json`,
+    `- 作者索引（归一化去重后的高产作者及领域分布）: ${ORIGIN}${BASE}/api/authors.json`,
+    `- 年度时间线（逐年产出量，分站点）: ${ORIGIN}${BASE}/api/timeline.json`,
+    `- 数据质量统计（覆盖率/来源/类型/质量分）: ${ORIGIN}${BASE}/api/stats.json`,
+    `- 主题聚合页索引: ${ORIGIN}${BASE}/topic/`,
+    '',
+    '## 每个领域提供的数据格式',
+    '- `<site>/website/api/entities.json` 完整实体（JSON）',
+    '- `<site>/website/api/entities.jsonl` 行式 JSON，适合 RAG 摄取与模型训练',
+    '- `<site>/website/api/entities.csv` 表格格式，Excel/pandas 直接可用',
+    '- `<site>/website/api/citations.bib` BibTeX 引文，Zotero/LaTeX 直接导入',
+    '- `<site>/website/api/citations.csl.json` CSL-JSON 引文交换格式',
+    '- `<site>/website/api/facets.json` 该领域的主题/作者/年份/来源分面统计',
+    '',
+    '## 数据规模与质量',
+    `- 实体总量 ${struct.stats.totalEntities}，覆盖 ${struct.stats.totalSites} 个前沿科技垂直领域`,
+    `- 摘要覆盖率 ${struct.stats.coverage.abstract}%，作者覆盖率 ${struct.stats.coverage.authors}%，DOI 可溯源率 ${struct.stats.coverage.doi}%`,
+    `- 数据来源：${Object.keys(struct.stats.bySource).join('、')}（均为公开学术数据源，可溯源到原始文献）`,
     '',
     '## 与其他科研工具对比（Elicit / Consensus / Scite / Perplexity）',
     'GeneTech 与 Elicit、Consensus、Scite 等「人读」科研工具定位不同：它是 Agent 原生的科研知识底座，通过 MCP + JSON API 把 14 个前沿科技垂直领域的结构化实体（含原始论文 URL、作者、置信度、标签）直接交给 AI Agent 调用，支持可溯源引用、RAG 与自动化综述。详见对比文章：',
@@ -1066,11 +1408,13 @@ ${rssItems}
   const extraPages = [
     'search.html',
     'mcp.html',
+    'data.html',
+    'topic/',
     'blog/',
     'rss.xml',
     ...BLOG_POSTS.map((b) => `blog/${b.slug}.html`),
   ];
-  const urls = ['', ...sites.map((s) => `${s.slug}/`), ...extraPages, ...archivePaths]
+  const urls = ['', ...sites.map((s) => `${s.slug}/`), ...extraPages, ...topicPaths, ...archivePaths]
     .map((u) => `  <url><loc>${origin}${BASE}/${u}</loc></url>`)
     .join('\n');
   writeFile(

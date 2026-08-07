@@ -75,5 +75,74 @@
     "LLM agent framework": 100,
     "autonomous agent": 100,
     "agentic workflow": 100
+  },
+  "embodied-ai": {
+    "embodied intelligence": 100,
+    "humanoid robot": 100,
+    "vision language action model": 100,
+    "robot learning": 100,
+    "sim-to-real transfer": 100,
+    "dexterous manipulation": 100,
+    "embodied navigation": 100
+  },
+  "synbio-manufacturing": {
+    "synthetic biology": 100,
+    "biomanufacturing": 100,
+    "metabolic engineering": 100,
+    "cell factory": 100,
+    "bio-based materials": 100,
+    "enzyme engineering": 100,
+    "biofoundry": 100
+  },
+  "semiconductor": {
+    "semiconductor device": 100,
+    "advanced packaging chiplet": 100,
+    "wide bandgap semiconductor": 100,
+    "EUV lithography": 100,
+    "gate-all-around transistor": 100,
+    "silicon photonics": 100,
+    "compound semiconductor": 100
+  },
+  "ai4science": {
+    "AI for science": 100,
+    "machine learning interatomic potential": 100,
+    "protein structure prediction": 100,
+    "AI drug discovery": 100,
+    "materials discovery machine learning": 100,
+    "scientific foundation model": 100,
+    "self-driving laboratory": 100
+  },
+  "low-altitude": {
+    "eVTOL aircraft": 100,
+    "urban air mobility": 100,
+    "unmanned aerial vehicle": 100,
+    "UAV swarm": 100,
+    "drone delivery": 100,
+    "flight control algorithm": 100,
+    "low altitude airspace": 100
+  },
+  "sat-6g": {
+    "6G wireless network": 100,
+    "satellite internet constellation": 100,
+    "integrated sensing and communication": 100,
+    "terahertz communication": 100,
+    "non-terrestrial network": 100,
+    "LEO satellite communication": 100
+  },
+  "spatial-computing": {
+    "spatial computing": 100,
+    "augmented reality display": 100,
+    "mixed reality interaction": 100,
+    "digital twin": 100,
+    "neural radiance field": 100,
+    "visual SLAM": 100
+  },
+  "privacy-computing": {
+    "federated learning": 100,
+    "secure multiparty computation": 100,
+    "homomorphic encryption": 100,
+    "differential privacy": 100,
+    "trusted execution environment": 100,
+    "privacy preserving machine learning": 100
   }
 }
