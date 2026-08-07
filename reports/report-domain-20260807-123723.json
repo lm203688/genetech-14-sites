@@ -1,0 +1,305 @@
+{
+  "pipeline": "domain-expansion",
+  "version": "1.0",
+  "timestamp": "2026-08-07T12:37:23.577Z",
+  "dryRun": false,
+  "durationMs": 34157,
+  "summary": {
+    "signalsCollected": 19,
+    "domainsEvaluated": 7,
+    "domainsExpanded": 0
+  },
+  "signals": [
+    {
+      "source": "arxiv",
+      "category": "cs.AI",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.CL",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.CV",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.LG",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.IR",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.RO",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.SE",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.DB",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.CR",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.HC",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.CY",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.NE",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "ai",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "agent",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "llm",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "rag",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "multimodal",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "mcp",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "safety",
+      "isHot": false,
+      "_dryRun": false
+    }
+  ],
+  "domains": [
+    {
+      "domainName": "github-topic-ai",
+      "displayName": "领域: ai",
+      "compositeScore": 0.34,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 1,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.33,
+        "relatednessToExisting": 0.4
+      },
+      "relatedKeywords": [
+        "ai"
+      ]
+    },
+    {
+      "domainName": "github-topic-agent",
+      "displayName": "领域: agent",
+      "compositeScore": 0.34,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 1,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.33,
+        "relatednessToExisting": 0.4
+      },
+      "relatedKeywords": [
+        "agent"
+      ]
+    },
+    {
+      "domainName": "github-topic-llm",
+      "displayName": "领域: llm",
+      "compositeScore": 0.31,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 1,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.28,
+        "relatednessToExisting": 0.2
+      },
+      "relatedKeywords": [
+        "llm",
+        "apple-silicon",
+        "gemma",
+        "gemma4",
+        "gemma4-26b-a4b",
+        "gpgpu",
+        "llm",
+        "llm-inference",
+        "local-ai",
+        "macos",
+        "metal",
+        "on-device-ai",
+        "on-device-llm",
+        "swift"
+      ]
+    },
+    {
+      "domainName": "github-topic-mcp",
+      "displayName": "领域: mcp",
+      "compositeScore": 0.31,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0.97,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.19,
+        "relatednessToExisting": 0.4
+      },
+      "relatedKeywords": [
+        "mcp",
+        "codex",
+        "guide",
+        "llm",
+        "workbuddy"
+      ]
+    },
+    {
+      "domainName": "github-topic-rag",
+      "displayName": "领域: rag",
+      "compositeScore": 0.11,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0.23,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.05,
+        "relatednessToExisting": 0.4
+      },
+      "relatedKeywords": [
+        "rag",
+        "agent-security",
+        "ai-security",
+        "ai-security-tool",
+        "artificial-intelligence",
+        "ctf",
+        "docker",
+        "genai",
+        "large-language-models",
+        "llm",
+        "llm-security",
+        "llm-security-testing",
+        "owasp",
+        "owasp-llm-top-10",
+        "penetration-testing",
+        "prompt-injection",
+        "prompt-injection-llm-security",
+        "python",
+        "rag",
+        "red-team",
+        "vulnerable-lab"
+      ]
+    },
+    {
+      "domainName": "github-topic-multimodal",
+      "displayName": "领域: multimodal",
+      "compositeScore": 0.07,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0.17,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.03,
+        "relatednessToExisting": 0.2
+      },
+      "relatedKeywords": [
+        "multimodal",
+        "android-app",
+        "android-library",
+        "android-package",
+        "android-sdk",
+        "android-ui",
+        "androidstudio",
+        "flutter",
+        "flutter-app",
+        "flutter-apps",
+        "flutter-examples",
+        "flutter-package",
+        "flutter-ui",
+        "flutter-web",
+        "visual-search",
+        "visual-semantic",
+        "visual-sentiment-analysis"
+      ]
+    },
+    {
+      "domainName": "github-topic-safety",
+      "displayName": "领域: safety",
+      "compositeScore": 0.03,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0.03,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.01,
+        "relatednessToExisting": 0.2
+      },
+      "relatedKeywords": [
+        "safety",
+        "cli",
+        "developer-tools",
+        "filesystem",
+        "ld-preload",
+        "linux",
+        "safety",
+        "shell",
+        "undo"
+      ]
+    }
+  ],
+  "expanded": [],
+  "techRequirements": []
+}
