@@ -19,8 +19,10 @@
 # ============================================================================
 
 name = "unified-license"
+account_id = "8162aa3b2241c132e43a81f526d7f758"
 main = "worker.js"
 compatibility_date = "2024-09-23"
+workers_dev = false
 
 # === KV 命名空间绑定 ===
 # 存储全部统一许可证数据：
@@ -30,7 +32,7 @@ compatibility_date = "2024-09-23"
 #   rl:<ip>:<minute>    速率限制计数（TTL 120s）
 [[kv_namespaces]]
 binding = "UNIFIED_LICENSES"
-id = "__KV_UNIFIED_LICENSES_ID__"
+id = "a24af3fc198b443a8a615d27516d6156"
 # preview_id 仅在 wrangler dev 本地开发时使用，可留空
 # preview_id = "__KV_UNIFIED_LICENSES_PREVIEW_ID__"
 
@@ -40,7 +42,7 @@ id = "__KV_UNIFIED_LICENSES_ID__"
 [vars]
 # 允许兑换的 14 个站点名（逗号分隔，小写）。
 # 与各站点 SITE_NAME 保持一致；redeem 时会校验站点名是否在此列表内。
-ALLOWED_SITES = "site1,site2,site3,site4,site5,site6,site7,site8,site9,site10,site11,site12,site13,site14"
+ALLOWED_SITES = "quantum-computing,alien-minerals,biocomputing,bionic-ai,deep-sea-tech,brain-science,life-science,new-energy,nuclear-energy,robot-parts,tcm-tools,genetech-tools,exo-science,agent-ecosystem,embodied-ai,synbio-manufacturing,semiconductor,ai4science,low-altitude,sat-6g,spatial-computing,privacy-computing,ai-safety,quantum-materials,carbon-neutral,digital-twin,biomed-ai,edge-ai,neuromorphic,agritech"
 
 # CORS 允许的来源（逗号分隔）。默认在 worker.js 中内置 14 个 genetech.io 子域。
 # 如需覆盖，取消注释并填入真实域名（含 https://）：
@@ -59,15 +61,12 @@ HUPIJIAO_PRICE_MAP = '{"starter":"9.90","pro":"39.90","lifetime":"199.00"}'
 # HUPIJIAO_NOTIFY_URL = "https://unified-license.<your-subdomain>.workers.dev/api/hupijiao/callback"
 # HUPIJIAO_RETURN_URL = "https://license.genetech.io/pay/success"
 
-# === 可选：自定义路由 ===
-# 如需绑定自有域名（推荐 license.genetech.io），取消注释并配置：
-# routes = [
-#   { pattern = "license.genetech.io/*", custom_domain = true }
-# ]
-# 或使用 zone 方式：
-# routes = [
-#   { pattern = "license.genetech.io/*", zone_name = "genetech.io" }
-# ]
+# === 自定义路由（已启用）===
+# 账户下暂无 genetech.io，先挂到现有 zone swarmlabs.tools 的子域；
+# 接入 genetech.io 后改 zone_name + pattern 即可。
+routes = [
+  { pattern = "license.swarmlabs.tools/*", zone_name = "swarmlabs.tools" }
+]
 
 # === 注意事项 ===
 # 1. ADMIN_SECRET：管理员发行许可证的密钥，调用 /api/admin/issue 时用于 HMAC 签名
