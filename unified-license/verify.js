@@ -29,7 +29,7 @@
 // 配置：中央许可证 API 地址（可按需修改为你的部署地址）
 // ============================================================================
 
-export const UNIFIED_API = 'https://license.genetech.io';
+export const UNIFIED_API = 'https://license.swarmlabs.tools';
 
 // 统一许可证密钥前缀
 const UNIFIED_KEY_PREFIX = 'GUX_';

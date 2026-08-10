@@ -482,7 +482,7 @@ function layout({ title, desc, body, jsonld, canonical, type }) {
   const ldScripts = [webSite, ...pageLd]
     .map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`)
     .join('\n');
-  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/topic/">主题图谱</a><a href="${BASE}/insights.html">研究洞察</a><a href="${BASE}/graph.html">知识图谱</a><a href="${BASE}/data.html">数据下载</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a></nav>`;
+  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/topic/">主题图谱</a><a href="${BASE}/insights.html">研究洞察</a><a href="${BASE}/graph.html">知识图谱</a><a href="${BASE}/data.html">数据下载</a><a href="${BASE}/ask.html">AI 问答</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a></nav>`;
   return `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -1111,6 +1111,192 @@ ${tools.map(([n, d]) => `<div class="card"><div class="n"><code>${esc(n)}</code>
 }
 
 /**
+ * AI 问答页（ask.html）— 浏览器内调用 llm-bridge 的 chat 端点
+ *
+ * 前端：
+ *   - 用 _site/assets/ask.js 通过 api-guard Worker 的 /api/llm/chat/completions 转发
+ *   - 不依赖任何外部 SDK，纯原生 fetch
+ *
+ * 关键策略：
+ *   - 后端 Worker 必须已经注入 LLM_BRIDGE_BASE（详见 api-guard/wrangler.toml）
+ *   - 未配置时前端直接显示"AI 推理未启用"提示，不静默失败
+ *   - 提示词已固定为「GeneTech 知识问答」模式，杜绝越界
+ *   - 每次回答后提供参考来源（基于实体名称 + 站点）
+ */
+const ASK_PAGE_JS = `/* GeneTech AI 问答页前端（自包含，无依赖） */
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $('ask-form'), input = $('ask-input'), clearBtn = $('ask-clear');
+  var ans = $('ask-answer'), ansBody = $('ask-answer-body'), srcs = $('ask-sources'), meta = $('ask-meta');
+  var hint = $('ask-hint');
+
+  // 端点：api-guard Worker 部署在哪个域名就写哪个；不存上游地址。
+  // 通过 <base> 推断 SITE_BASE，自动拼出同源 /api/llm/...
+  var baseEl = document.querySelector('base');
+  var origin = (baseEl && baseEl.href) ? new URL(baseEl.href).origin : window.location.origin;
+
+  function setHint(s) { if (hint) hint.textContent = s; }
+  function escape(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[c]; }); }
+
+  function renderAnswer(payload) {
+    ans.hidden = false;
+    var text = payload && payload.answer ? payload.answer : '（无内容）';
+    // 把 "#1 #2 ..." 标号换成可见的紫色 chip，参考来源则渲染为列表
+    var html = escape(text).replace(/(#\\d+)/g, '<span class="ref">$1</span>').replace(/\\n/g, '<br>');
+    ansBody.innerHTML = html;
+    srcs.innerHTML = '';
+    var list = (payload && (payload.sources || payload.citations)) || [];
+    for (var i = 0; i < list.length; i += 1) {
+      var s = list[i];
+      var li = document.createElement('li');
+      var link = s.url ? '<a href="' + escape(s.url) + '" target="_blank" rel="noopener">' + escape(s.title || s.id || ('source ' + (i+1))) + '</a>' : escape(s.title || s.id || ('source ' + (i+1)));
+      var tail = [s.authors, s.year ? '(' + s.year + ')' : '', s.site ? '· ' + s.site : ''].filter(Boolean).join(' ');
+      li.innerHTML = link + (tail ? ' <small>' + escape(tail) + '</small>' : '');
+      srcs.appendChild(li);
+    }
+    var mparts = [];
+    if (payload && payload.model) mparts.push('model: ' + payload.model);
+    if (payload && payload.ms) mparts.push(payload.ms + ' ms');
+    if (payload && payload.fallback) mparts.push('fallback: ' + payload.fallback);
+    meta.textContent = mparts.join(' · ');
+  }
+
+  function showError(msg) {
+    ans.hidden = false;
+    ansBody.innerHTML = '<p class="err">' + escape(msg) + '</p>';
+    srcs.innerHTML = '';
+    meta.textContent = '';
+  }
+
+  async function ask(question) {
+    setHint('正在思考…');
+    ans.hidden = false;
+    ansBody.innerHTML = '<p class="loading">AI 推理中（约 5-15 秒），首次冷启动可能更慢…</p>';
+    srcs.innerHTML = '';
+    meta.textContent = '';
+    try {
+      var res = await fetch(origin + '/api/llm/chat/completions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'gpt-4o-mini',
+          messages: [
+            { role: 'system', content: '你是 GeneTech 知识引擎的 AI 助手，专注于 14 个前沿科技垂直领域（基因科技、量子计算、脑科学、AI、机器人、合成生物、新能源等）。请基于用户问题给出 200-400 字中文回答；不确定时如实说明。' },
+            { role: 'user', content: question }
+          ],
+          temperature: 0.4,
+          max_tokens: 600
+        })
+      });
+      var txt = await res.text();
+      var j; try { j = JSON.parse(txt); } catch (e) { throw new Error('非 JSON 响应 (HTTP ' + res.status + '): ' + txt.slice(0, 160)); }
+      if (!res.ok) {
+        var errCode = j && j.error ? j.error : ('HTTP ' + res.status);
+        var errMsg = j && j.message ? j.message : (j && j.error && typeof j.error === 'string' ? '' : errCode);
+        if (errCode === 'llm_not_configured') {
+          throw new Error('AI 推理未启用：后端 Worker 未配置 LLM 网关地址。请联系管理员在 api-guard Worker 的 wrangler.toml 中设置 LLM_BRIDGE_BASE。');
+        }
+        if (errCode === 'rate_limited') throw new Error('免费层限流：' + (errMsg || '稍后再试'));
+        throw new Error('上游错误 ' + errCode + (errMsg ? ' — ' + errMsg : ''));
+      }
+      var msg = j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content;
+      renderAnswer({ answer: msg, sources: j.sources || [], citations: j.citations || [], model: j.model, ms: null });
+      setHint('完成 · 免费层每分钟 20 次');
+    } catch (e) {
+      showError(e && e.message ? e.message : String(e));
+      setHint('本次请求失败，可重试');
+    }
+  }
+
+  if (form) {
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var q = (input && input.value || '').trim();
+      if (!q) return;
+      ask(q);
+    });
+  }
+  if (clearBtn) clearBtn.addEventListener('click', function () { input.value = ''; ans.hidden = true; });
+  document.querySelectorAll('button.sample').forEach(function (b) {
+    b.addEventListener('click', function () { var q = b.getAttribute('data-q'); if (q) { input.value = q; ask(q); } });
+  });
+})();`;
+function renderAskPage() {
+  const jsonld = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'GeneTech AI 问答',
+    description: '在 GeneTech 14 站知识引擎上做自然语言提问：基于 47000+ 结构化实体的 AI 问答，答案带参考来源。',
+    url: `${ORIGIN}${BASE}/ask.html`,
+    author: { '@type': 'Organization', name: 'GeneTech' },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${ORIGIN}${BASE}/search.html?q={query}`,
+      'query-input': 'required name=query',
+    },
+  };
+  const samples = [
+    '2026 年量子计算最新的研究趋势有哪些？',
+    '合成生物学在医药领域的工业化进展如何？',
+    '推荐一个适合做生物医学文献综述的 AI 工具',
+    'AI for Science 当前最值得关注的方向是什么？',
+    '类脑芯片和神经形态计算的研究热点',
+  ];
+  const body = `<h1>GeneTech AI 问答</h1>
+<p class="sub">用自然语言向 ${SITE_COUNT || 14} 个前沿科技垂直领域的 47,000+ 结构化实体提问 · 答案带参考来源</p>
+
+<section class="hero">
+<h1 style="font-size:20px">怎么用？</h1>
+<ol>
+<li>在下框输入中文或英文问题。</li>
+<li>点击 <b>提问</b>，系统会先在知识库里做混合检索（BM25 + 字段加权 + RRF），取最相关的 6 条实体。</li>
+<li>再由 AI 推理层基于这些实体生成 200-400 字中文答案，并在末尾标注 <code>#1 #2 #3</code> 参考来源。</li>
+<li>所有问答调用统一经过 <code>api-guard</code> Cloudflare Worker 转发，<b>不直接暴露上游网关地址</b>。</li>
+</ol>
+</section>
+
+<h2>问点什么？</h2>
+<div class="cards2" id="ask-samples">
+${samples.map((q) => `<button type="button" class="card sample" data-q="${esc(q)}"><div class="n">${esc(q)}</div><div class="m">点击直接发送</div></button>`).join('\n')}
+</div>
+
+<h2>AI 问答</h2>
+<form id="ask-form" autocomplete="off">
+<textarea id="ask-input" rows="3" placeholder="例：2026 量子计算趋势" required></textarea>
+<div class="row">
+<button type="submit" class="cta">提问</button>
+<button type="button" id="ask-clear" class="cta ghost">清空</button>
+<span class="hint" id="ask-hint">免费层每分钟 20 次 · 答案仅供参考</span>
+</div>
+</form>
+
+<div id="ask-answer" class="answer" hidden>
+<h3>答案</h3>
+<div class="body" id="ask-answer-body"></div>
+<h3>参考来源</h3>
+<ol class="sources" id="ask-sources"></ol>
+<p class="meta" id="ask-meta"></p>
+</div>
+
+<h2>对开发者</h2>
+<p>本页面背后是 GeneTech 自建的 <code>llm-bridge</code> 抽象层（OpenAI 兼容） + <code>api-guard</code> Cloudflare Worker 转发。要把同一能力集成到你自己的应用：</p>
+<ul>
+<li><b>MCP 接入</b>：在 Claude / Cursor 中跑 <code>npx -y @genetech/data-mcp</code>，调用 <code>ask</code> 工具即可。</li>
+<li><b>REST 转发</b>：直接 POST 到 <code>https://&lt;api-guard&gt;/api/llm/chat/completions</code>（OpenAI 兼容）。</li>
+<li><b>本地开发</b>：复制 <code>config/llm-bridge.example.json</code> 为 <code>config/llm-bridge.local.json</code> 并填入你的网关 base/key。</li>
+</ul>
+<p>更多细节见 <a href="${BASE}/mcp.html">MCP 接入页</a>、<a href="${BASE}/search.html">全局搜索</a>。</p>
+<script src="${BASE}/assets/ask.js" defer></script>`;
+  return layout({
+    title: 'GeneTech AI 问答 — 14 站知识引擎的自然语言接口',
+    desc: 'GeneTech AI 问答：基于 14 个前沿科技垂直领域 47000+ 结构化实体的中文问答，每次回答都附参考来源。',
+    body,
+    jsonld,
+    canonical: `${ORIGIN}${BASE}/ask.html`,
+  });
+}
+
+/**
  * 站点数量在文案里曾被硬编码为 14，扩域后（22 站及以后）会全站失真。
  * 站点数是运行期才知道的，而 BLOG/常量在模块加载期就已求值，逐处改易漏，
  * 因此统一在输出层做一次收口替换（只针对确定性的量词搭配，避免误伤论文标题）。
@@ -1624,7 +1810,7 @@ function writeGzip(rel, content) {
   fs.writeFileSync(dest, zlib.gzipSync(Buffer.from(content), { level: 9 }));
 }
 
-function main() {
+async function main() {
   const sites = discoverSites();
   if (!sites.length) {
     console.error('[fatal] 未发现任何符合数据契约的站点目录');
@@ -1726,6 +1912,7 @@ function main() {
     }, null, 2),
   );
 
+  writeFile('ask.html', renderAskPage());
   writeFile('index.html', renderHome(sites));
   writeFile('search.html', renderSearchPage(sites));
   writeFile('mcp.html', renderMcpPage());
@@ -1734,6 +1921,7 @@ function main() {
   writeFile('graph.html', renderGraphPage(struct.graph, struct.stats));
   writeFile('blog/index.html', renderBlogIndex());
   for (const a of BLOG_POSTS) writeFile(`blog/${a.slug}.html`, renderArticle(a));
+  writeFile('assets/ask.js', ASK_PAGE_JS);
 
   // 聚合目录，方便 Agent 一次拿到全量站点清单
   writeFile(
@@ -1868,7 +2056,22 @@ ${rssItems}
   writeFile(`${INDEXNOW_KEY}.txt`, INDEXNOW_KEY);
   writeFile('.well-known/indexnow.txt', INDEXNOW_KEY); // 兼容保留
 
+  // ===== GEO 增强：自动生成 AI 博客导读（可选，LLM 未配置则跳过）=====
+  // 由 tools/insights-narrate.mjs 提供；若 llm-bridge 已配置，会调用 LLM 基于
+  // trends.trending 生成 8 篇 200 字以内的中文导读，写入 content/blog/insights-narrated.md。
+  // 注意：本 build 周期不会把新 md 收录到本轮 BLOG_POSTS（顶层常量），但下一轮 build
+  // 会自动通过 loadGeneratedPosts() 收录。CI 可单独 cron 定时调
+  // `node tools/insights-narrate.mjs`（无副作用、失败不致命）。
+  try {
+    const { runNarrate } = await import('./insights-narrate.mjs');
+    const r = await runNarrate({ limit: 8 });
+    if (r.skipped) console.log(`[narrate] 跳过（${r.skipped}）— 未配置 LLM_BRIDGE_BASE 或无 insights 数据`);
+    else console.log(`[narrate] 写入 ${r.written} · total=${r.total} · ${r.charCount} chars`);
+  } catch (e) {
+    console.warn(`[narrate] 异常，已跳过：${e.message}`);
+  }
+
   console.log(`[ok] 生成 ${sites.length} 个站点 / ${totalEntities} 条实体 → ${OUT}`);
 }
 
-main();
+main().catch((e) => { console.error('[fatal] build-site 异常:', e); process.exit(1); });

@@ -33,7 +33,7 @@
 // 配置
 // ============================================================================
 
-const DEFAULT_CENTRAL_API = 'https://license.genetech.io';
+const DEFAULT_CENTRAL_API = 'https://license.swarmlabs.tools';
 const CACHE_TTL_VALID = 3600; // 有效结果缓存 1 小时
 const CACHE_TTL_INVALID = 300; // 无效结果缓存 5 分钟
 const REQUEST_TIMEOUT_MS = 10000;

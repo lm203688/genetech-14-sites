@@ -28,6 +28,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
 import { SearchIndex } from './search.mjs';
+import { runAsk } from '../../tools/lib/ask.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
@@ -104,6 +105,8 @@ async function loadSites(force = false) {
   }
   _searchIndex = idx;
   _searchTs = now;
+  // 暴露给 ask 工具使用（避免其内部重建索引）
+  globalThis.__geneTechSearchIndex = idx;
   return sites;
 }
 
@@ -318,6 +321,50 @@ server.tool(
       return { content: [{ type: 'text', text: `404: 未找到实体 ${args.id}` }], isError: true };
     }
     return { content: [{ type: 'text', text: exportCitation(ent, ent._site, args.format) }] };
+  }
+);
+
+// ============================================================================
+// ask — 自然语言问题 → 混合检索 → LLM 桥接 → 带参考来源的答案
+// ============================================================================
+//
+// 当外部 Agent 只想问"2026 量子计算的趋势是什么"这类开放问题时，
+// 直接调 semantic_search 拿实体仍要自己做归纳。ask 帮你把"检索 + 写作"两步
+// 合成一步：内部复用 SearchIndex.hybridSearch() 取前 N 条最相关实体
+// （BM25 + 字段加权 + RRF，可选向量），把实体压缩成参考片段交给 LLM 桥接层，
+// 让模型基于参考片段生成中文答案并标注来源。LLM 未配置时退化为"实体浓缩列表"。
+server.tool(
+  'ask',
+  '对 GeneTech 14 站知识引擎做自然语言提问：内部混合检索 + LLM 桥接，生成带参考来源的答案。LLM 未配置时退化为实体浓缩列表。',
+  {
+    question: z.string().describe('自然语言问题（中文/英文均可）'),
+    site: z.string().optional().describe('限定站点，例如 quantum-computing'),
+    limit: z.number().min(1).max(20).optional().describe('参考实体条数，默认 6'),
+  },
+  async (args) => {
+    await loadSites();
+    const r = await runAsk({
+      question: args.question,
+      sites: args.site,
+      limit: args.limit,
+    });
+    if (!r.ok) {
+      return { content: [{ type: 'text', text: `ask 失败：${r.error || r.message || 'unknown'}` }], isError: true };
+    }
+    const body = JSON.stringify(
+      {
+        answer: r.answer,
+        sources: r.sources || [],
+        citations: r.citations || r.sources || [],
+        model: r.model,
+        ms: r.ms,
+        fallback: r.fallback || null,
+        usage: r.usage || null,
+      },
+      null,
+      2
+    );
+    return { content: [{ type: 'text', text: body }] };
   }
 );
 

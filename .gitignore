@@ -62,6 +62,9 @@ command-center/status-*.json
 .poc/
 promotion-assets/
 
+# LLM bridge local config (contains base URL + API key, never commit)
+config/llm-bridge.local.json
+
 # Transient shell error logs (e.g. from push/retry loops)
 err.log
 
@@ -74,3 +77,7 @@ mcp_out.log
 mcp-server/mcp_*.jsonl
 mcp-server/mcp_*.log
 tmp/verify-scratch/
+
+# Unified-license local smoke/check scratch (generated during local verification)
+unified-license/_chk.mjs
+unified-license/_smoke.mjs

@@ -29,6 +29,10 @@ function getEnv() {
     PRO_FREE_RATE: typeof PRO_FREE_RATE !== 'undefined' ? PRO_FREE_RATE : undefined,
     LICENSE_VALIDATE_URL: typeof LICENSE_VALIDATE_URL !== 'undefined' ? LICENSE_VALIDATE_URL : undefined,
     LICENSE_API_SECRET: typeof LICENSE_API_SECRET !== 'undefined' ? LICENSE_API_SECRET : undefined,
+    LLM_BRIDGE_BASE: typeof LLM_BRIDGE_BASE !== 'undefined' ? LLM_BRIDGE_BASE : undefined,
+    LLM_BRIDGE_KEY: typeof LLM_BRIDGE_KEY !== 'undefined' ? LLM_BRIDGE_KEY : undefined,
+    LLM_BRIDGE_MODEL: typeof LLM_BRIDGE_MODEL !== 'undefined' ? LLM_BRIDGE_MODEL : undefined,
+    LLM_FREE_RATE: typeof LLM_FREE_RATE !== 'undefined' ? LLM_FREE_RATE : undefined,
   };
 }
 
@@ -123,6 +127,23 @@ function getClientIp(request) {
   return request.headers.get('CF-Connecting-IP') || (request.headers.get('X-Forwarded-For') || '').split(',')[0].trim() || 'unknown';
 }
 
+// ---- LLM 免费层限流（独立桶，避免污染知识 JSON 限流统计） ----
+async function checkLlmRate(env, ip) {
+  const limit = parseInt(env.LLM_FREE_RATE || '20', 10);
+  if (!env.PRO_KV || !ip || ip === 'unknown') return { allowed: true };
+  const bucket = Math.floor(Date.now() / 60000);
+  const key = `llm:${ip}:${bucket}`;
+  try {
+    const raw = await env.PRO_KV.get(key);
+    const count = raw ? parseInt(raw, 10) : 0;
+    if (count >= limit) return { allowed: false };
+    await env.PRO_KV.put(key, String(count + 1), { expirationTtl: 120 });
+    return { allowed: true };
+  } catch {
+    return { allowed: true };
+  }
+}
+
 // ---------------------------------------------------------------------------
 // 主处理器
 // ---------------------------------------------------------------------------
@@ -166,6 +187,44 @@ async function handleRequest(request) {
     const req = new Request(request);
     req.headers.set('X-GeneTech-Tier', 'free');
     return fetch(req);
+  }
+
+  // ---- LLM 桥接：/api/llm/* 转发到上游 OpenAI 兼容网关 ----
+  // 设计：
+  //   - 仅放行 /api/llm/chat/completions（OpenAI 兼容）与 /api/llm/embeddings
+  //   - 其余 /api/llm/* 路径返回 404
+  //   - 未配置 LLM_BRIDGE_BASE 直接 503，避免请求泄漏到任何默认上游
+  //   - 默认限流每 IP 每分钟 20 次；可通过 LLM_FREE_RATE 调整
+  if (path.startsWith('/api/llm/')) {
+    const base = (env.LLM_BRIDGE_BASE || '').replace(/\/+$/, '');
+    if (!base) {
+      return json({ error: 'llm_not_configured', message: 'LLM 桥接未配置（请在 wrangler [vars] 或 secret 中设置 LLM_BRIDGE_BASE）。' }, 503);
+    }
+    const llmRl = await checkLlmRate(env, ip);
+    if (!llmRl.allowed) {
+      return json({ error: 'rate_limited', message: `LLM 免费层限流：每 IP 每分钟 ${env.LLM_FREE_RATE || 20} 次。` }, 429, { 'Retry-After': '60' });
+    }
+    let sub = path.slice('/api/llm'.length); // => "/chat/completions" 或 "/embeddings"
+    if (sub !== '/chat/completions' && sub !== '/embeddings') {
+      return json({ error: 'not_found', message: `LLM 网关路径 ${sub} 未开放` }, 404);
+    }
+    const target = base + sub + (url.search || '');
+    const init = {
+      method: request.method,
+      headers: { 'Content-Type': 'application/json' },
+      body: ['GET', 'HEAD'].includes(request.method) ? undefined : await request.clone().arrayBuffer(),
+    };
+    if (env.LLM_BRIDGE_KEY) init.headers.Authorization = `Bearer ${env.LLM_BRIDGE_KEY}`;
+    try {
+      const upstream = await fetch(target, init);
+      const buf = await upstream.arrayBuffer();
+      const headers = new Headers(upstream.headers);
+      headers.set('Access-Control-Allow-Origin', '*');
+      headers.set('Cache-Control', 'no-store');
+      return new Response(buf, { status: upstream.status, headers });
+    } catch (e) {
+      return json({ error: 'upstream_unreachable', message: String(e.message || e) }, 502);
+    }
   }
 
   // 其他路径直接转发

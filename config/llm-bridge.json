@@ -1,0 +1,14 @@
+{
+  "base": "",
+  "apiKey": "",
+  "model": "gpt-4o-mini",
+  "embedModel": "text-embedding-3-small",
+  "timeoutMs": 30000,
+  "retries": 2,
+  "_comment": [
+    "仓库内共享的 LLM 桥接默认配置（不入敏感信息的兜底值）。",
+    "真实 base/apiKey 请放到 llm-bridge.local.json（已在 .gitignore）。",
+    "环境变量 LLM_BRIDGE_BASE/LLM_BRIDGE_KEY/LLM_BRIDGE_MODEL 优先级最高。",
+    "base 形如 https://your-llm-gateway.example.com/v1"
+  ]
+}

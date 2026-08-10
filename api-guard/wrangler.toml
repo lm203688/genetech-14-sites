@@ -5,8 +5,19 @@ compatibility_date = "2024-09-23"
 # 免费层每 IP 每分钟请求上限
 [vars]
 PRO_FREE_RATE = "60"
+# LLM 桥接后端：所有 /api/llm/* 请求统一由此 Worker 转发，避免前端直连上游
+# 默认指向仓库内 config/llm-bridge.json 配置的上游 OpenAI 兼容网关；
+# 如使用 gateway.swarmlabs.tools / 自托管 OpenAI 兼容端点均可按下面格式替换。
+LLM_BRIDGE_BASE = ""
+# 可选：请求网关时附加的鉴权 header 名/值（多数网关走 Authorization: Bearer <key>）
+# 若网关本身无鉴权（仅内网），留空。
+LLM_BRIDGE_KEY = ""
+# 可选：静态页 chat 默认请求的模型名
+LLM_BRIDGE_MODEL = "gpt-4o-mini"
+# 可选：未登录用户每 IP 每分钟聊天上限
+LLM_FREE_RATE = "20"
 # 可选：指向 unified-license Worker 的 validate 端点，打通 GUX_ 统一许可证
-# LICENSE_VALIDATE_URL = "https://license.genetech.io/api/license/validate"
+# LICENSE_VALIDATE_URL = "https://license.swarmlabs.tools/api/license/validate"
 # LICENSE_API_SECRET = "..."
 
 # 限流 KV（在 Cloudflare 控制台创建 KV 命名空间后填入 id）
@@ -15,4 +26,6 @@ binding = "PRO_KV"
 id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
 
 # 部署：wrangler deploy
-# 注入密钥（不要写进文件）：wrangler secret put PRO_SECRET
+# 注入密钥（不要写进文件）：
+#   wrangler secret put PRO_SECRET
+#   wrangler secret put LLM_BRIDGE_KEY          （可选；与 [vars] 二选一，secret 优先）
