@@ -81,3 +81,5 @@ tmp/verify-scratch/
 # Unified-license local smoke/check scratch (generated during local verification)
 unified-license/_chk.mjs
 unified-license/_smoke.mjs
+unified-license/_test_order.mjs
+unified-license/_test_verify.mjs

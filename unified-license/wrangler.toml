@@ -22,7 +22,7 @@ name = "unified-license"
 account_id = "8162aa3b2241c132e43a81f526d7f758"
 main = "worker.js"
 compatibility_date = "2024-09-23"
-workers_dev = false
+workers_dev = true
 
 # === KV 命名空间绑定 ===
 # 存储全部统一许可证数据：
@@ -61,12 +61,11 @@ HUPIJIAO_PRICE_MAP = '{"starter":"9.90","pro":"39.90","lifetime":"199.00"}'
 # HUPIJIAO_NOTIFY_URL = "https://unified-license.<your-subdomain>.workers.dev/api/hupijiao/callback"
 # HUPIJIAO_RETURN_URL = "https://license.genetech.io/pay/success"
 
-# === 自定义路由（已启用）===
-# 账户下暂无 genetech.io，先挂到现有 zone swarmlabs.tools 的子域；
-# 接入 genetech.io 后改 zone_name + pattern 即可。
-routes = [
-  { pattern = "license.swarmlabs.tools/*", zone_name = "swarmlabs.tools" }
-]
+# === 路由 ===
+# 独立部署：启用 workers.dev 子域（https://genetech-license.<你的子域>.workers.dev），
+# 不再挂到 swarmlabs.tools 等共享 zone。部署后在 Dashboard 查看真实子域，
+# 回填代码中的 61960005 占位符，再 build + push。
+# workers_dev = true 时自动获得 <name>.<sub>.workers.dev 路由，无需 routes。
 
 # === 注意事项 ===
 # 1. ADMIN_SECRET：管理员发行许可证的密钥，调用 /api/admin/issue 时用于 HMAC 签名

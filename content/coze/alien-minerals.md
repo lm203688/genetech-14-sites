@@ -525,4 +525,4 @@
 
 ---
 
-> 需要完整 47,000+ 条跨 22 个站点的结构化数据与 API 接入？见 `bridging-report.md` 与 Bot 提示词中的升级指引（license.swarmlabs.tools）。
+> 需要完整 47,000+ 条跨 22 个站点的结构化数据与 API 接入？见 `bridging-report.md` 与 Bot 提示词中的升级指引（genetech-license.61960005.workers.dev）。

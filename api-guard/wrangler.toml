@@ -5,19 +5,18 @@ compatibility_date = "2024-09-23"
 # 免费层每 IP 每分钟请求上限
 [vars]
 PRO_FREE_RATE = "60"
-# LLM 桥接后端：所有 /api/llm/* 请求统一由此 Worker 转发，避免前端直连上游
-# 默认指向仓库内 config/llm-bridge.json 配置的上游 OpenAI 兼容网关；
-# 如使用 gateway.swarmlabs.tools / 自托管 OpenAI 兼容端点均可按下面格式替换。
-LLM_BRIDGE_BASE = ""
-# 可选：请求网关时附加的鉴权 header 名/值（多数网关走 Authorization: Bearer <key>）
-# 若网关本身无鉴权（仅内网），留空。
+# LLM 桥接后端：所有 /api/llm/* 请求统一由此 Worker 转发，避免前端直连上游。
+# 填 ECS 上的 OpenAI 兼容网关（ATEX/自建），路径必须含 /v1：
+LLM_BRIDGE_BASE = "http://150.158.119.19:8420/v1"
+# 可选：请求网关时附加的鉴权 header（多数网关走 Authorization: Bearer <key>）
+# 若网关本身无鉴权（仅内网/已开白名单），留空。
 LLM_BRIDGE_KEY = ""
-# 可选：静态页 chat 默认请求的模型名
-LLM_BRIDGE_MODEL = "gpt-4o-mini"
+# 必填：模型名必须与网关暴露的模型名一致（如 deepseek-chat / gpt-4o / claude-3-5…）
+LLM_BRIDGE_MODEL = "deepseek-chat"
 # 可选：未登录用户每 IP 每分钟聊天上限
 LLM_FREE_RATE = "20"
 # 可选：指向 unified-license Worker 的 validate 端点，打通 GUX_ 统一许可证
-# LICENSE_VALIDATE_URL = "https://license.swarmlabs.tools/api/license/validate"
+# LICENSE_VALIDATE_URL = "https://genetech-license.61960005.workers.dev/api/license/validate"
 # LICENSE_API_SECRET = "..."
 
 # 限流 KV（在 Cloudflare 控制台创建 KV 命名空间后填入 id）

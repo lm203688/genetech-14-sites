@@ -1,6 +1,6 @@
 # GeneTech 14站 · Coze 知识包总览
 
-> 生成时间：2026-08-10T02:36:56.647Z
+> 生成时间：2026-08-10T07:04:02.156Z
 > 站点数：22 ｜ 实体总数：47,566 ｜ 精选每站：100
 
 ## 文件清单
@@ -36,4 +36,4 @@
 
 ## 如何用于变现
 
-详见 `coze-import-guide.md`。核心：Coze 免费 Bot 引流 → license.swarmlabs.tools 收 Pro/终身费。
+详见 `coze-import-guide.md`。核心：Coze 免费 Bot 引流 → genetech-license.61960005.workers.dev 收 Pro/终身费。

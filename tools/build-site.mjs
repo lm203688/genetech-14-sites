@@ -1130,10 +1130,13 @@ const ASK_PAGE_JS = `/* GeneTech AI 问答页前端（自包含，无依赖） *
   var ans = $('ask-answer'), ansBody = $('ask-answer-body'), srcs = $('ask-sources'), meta = $('ask-meta');
   var hint = $('ask-hint');
 
-  // 端点：api-guard Worker 部署在哪个域名就写哪个；不存上游地址。
-  // 通过 <base> 推断 SITE_BASE，自动拼出同源 /api/llm/...
-  var baseEl = document.querySelector('base');
-  var origin = (baseEl && baseEl.href) ? new URL(baseEl.href).origin : window.location.origin;
+  // 端点：优先读 <meta name="llm-api-base">，否则默认 api-guard 公开子域。
+  // 这样 ask.html 无论部署在 GitHub Pages 还是任意域名，都能调到 AI 推理后端，
+  // 且不暴露上游网关地址（api-guard Worker 做同源转发 + CORS *）。
+  var metaBase = document.querySelector('meta[name="llm-api-base"]');
+  var ENDPOINT = (metaBase && metaBase.content && metaBase.content.trim())
+    ? metaBase.content.trim().replace(/\\/+$/, '')
+    : 'https://genetech-api-guard.61960005.workers.dev';
 
   function setHint(s) { if (hint) hint.textContent = s; }
   function escape(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[c]; }); }
@@ -1175,7 +1178,7 @@ const ASK_PAGE_JS = `/* GeneTech AI 问答页前端（自包含，无依赖） *
     srcs.innerHTML = '';
     meta.textContent = '';
     try {
-      var res = await fetch(origin + '/api/llm/chat/completions', {
+      var res = await fetch(ENDPOINT + '/api/llm/chat/completions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1277,6 +1280,7 @@ ${samples.map((q) => `<button type="button" class="card sample" data-q="${esc(q)
 <ol class="sources" id="ask-sources"></ol>
 <p class="meta" id="ask-meta"></p>
 </div>
+<meta name="llm-api-base" content="${process.env.ASK_LLM_BASE || 'https://genetech-api-guard.61960005.workers.dev'}">
 
 <h2>对开发者</h2>
 <p>本页面背后是 GeneTech 自建的 <code>llm-bridge</code> 抽象层（OpenAI 兼容） + <code>api-guard</code> Cloudflare Worker 转发。要把同一能力集成到你自己的应用：</p>
@@ -1913,6 +1917,7 @@ async function main() {
   );
 
   writeFile('ask.html', renderAskPage());
+  writeFile('license.html', renderLicensePage());
   writeFile('index.html', renderHome(sites));
   writeFile('search.html', renderSearchPage(sites));
   writeFile('mcp.html', renderMcpPage());
@@ -2072,6 +2077,109 @@ ${rssItems}
   }
 
   console.log(`[ok] 生成 ${sites.length} 个站点 / ${totalEntities} 条实体 → ${OUT}`);
+}
+
+/**
+ * 许可证购买页（license.html）— 浏览器内调用 unified-license Worker 的虎皮椒下单接口
+ * 跨域：Worker 对非白名单 Origin 回退 Access-Control-Allow-Origin: *，原生 fetch 可用。
+ */
+function renderLicensePage() {
+  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/ask.html">AI 问答</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a></nav>`;
+  const page = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GeneTech 许可证中心 · 一处购买 14 站通用</title>
+<style>
+* { box-sizing: border-box; }
+body { margin:0; font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:#f6f8fb; color:#1c2430; }
+.nav { display:flex; gap:18px; padding:14px 24px; background:#0e1726; flex-wrap:wrap; }
+.nav a { color:#cdd6e4; text-decoration:none; font-size:14px; }
+.nav a:hover { color:#fff; }
+.wrap { max-width:860px; margin:0 auto; padding:40px 20px 80px; }
+h1 { font-size:28px; margin:0 0 8px; }
+.lead { color:#5a6577; margin:0 0 28px; }
+.field { margin-bottom:22px; }
+.field label { display:block; font-size:13px; color:#5a6577; margin-bottom:6px; }
+.field input { width:100%; max-width:360px; padding:11px 13px; border:1px solid #d4dae3; border-radius:8px; font-size:15px; }
+.plans { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.plan { background:#fff; border:1px solid #e6eaf0; border-radius:14px; padding:22px; text-align:center; }
+.plan h3 { margin:0 0 8px; font-size:18px; }
+.price { font-size:26px; font-weight:700; color:#0e1726; margin-bottom:4px; }
+.price span { font-size:13px; font-weight:400; color:#8a93a3; }
+.plan ul { list-style:none; padding:0; margin:12px 0 18px; font-size:13px; color:#5a6577; }
+.plan li { padding:3px 0; }
+.plan button { width:100%; padding:11px; border:0; border-radius:9px; background:#0e1726; color:#fff; font-size:14px; cursor:pointer; }
+.plan button:disabled { opacity:.6; cursor:default; }
+.plan.featured { border-color:#3b82f6; box-shadow:0 6px 20px rgba(59,130,246,.15); }
+.paybox { margin-top:30px; text-align:center; background:#fff; border:1px solid #e6eaf0; border-radius:14px; padding:24px; }
+.paybox img { width:220px; height:220px; border:1px solid #eee; border-radius:8px; }
+.paybox a { display:inline-block; margin:10px 0; color:#3b82f6; }
+.status { font-size:15px; margin-top:8px; }
+.status code { background:#f0f4fa; padding:3px 8px; border-radius:6px; font-size:14px; word-break:break-all; }
+.note { color:#8a93a3; font-size:12px; margin-top:24px; }
+@media (max-width:680px){ .plans { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+${nav}
+<main class="wrap">
+  <h1>GeneTech 14 站知识引擎 · 许可证中心</h1>
+  <p class="lead">一处购买，14 个科研站点通用。支持微信 / 支付宝扫码支付。</p>
+  <div class="field"><label for="email">邮箱（用于接收凭证与找回）</label><input id="email" type="email" placeholder="you@example.com"></div>
+  <div class="plans">
+    <div class="plan"><h3>入门版</h3><div class="price">¥9.9<span> / 30天</span></div><ul><li>100 积分额度</li><li>14 站任选兑换</li></ul><button id="pay-starter" onclick="pay('starter')">微信/支付宝支付</button></div>
+    <div class="plan featured"><h3>专业版</h3><div class="price">¥39.9<span> / 年</span></div><ul><li>500 积分额度</li><li>14 站任选兑换</li><li>高优先级推理</li></ul><button id="pay-pro" onclick="pay('pro')">微信/支付宝支付</button></div>
+    <div class="plan"><h3>终身版</h3><div class="price">¥199<span> / 终身</span></div><ul><li>无限积分</li><li>14 站任选兑换</li><li>永久有效</li></ul><button id="pay-lifetime" onclick="pay('lifetime')">微信/支付宝支付</button></div>
+  </div>
+  <div id="paybox" class="paybox" style="display:none">
+    <img id="qr" src="" alt="扫码支付"><br>
+    <a id="paylink" href="#" target="_blank" style="display:none">或在手机上打开支付链接</a>
+    <p id="status" class="status"></p>
+  </div>
+  <p class="note">支付由虎皮椒（国内合规聚合支付）处理。下单即生成待支付订单，支付成功后自动签发 GUX_ 统一许可证。</p>
+</main>
+<script>
+var WORKER = 'https://genetech-license.61960005.workers.dev';
+var timer = null;
+function pay(plan){
+  var email = document.getElementById('email').value.trim();
+  if(!email){ alert('请先填写邮箱'); return; }
+  var btn = document.getElementById('pay-'+plan);
+  btn.disabled = true; var old = btn.textContent; btn.textContent = '生成中…';
+  fetch(WORKER + '/api/hupijiao/create-order', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ plan:plan, email:email }) })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if(!d.success){ alert('下单失败：' + (d.message || '未知错误')); return; }
+      document.getElementById('paybox').style.display = 'block';
+      document.getElementById('qr').src = d.qrcode;
+      var link = document.getElementById('paylink'); link.href = d.pay_url; link.style.display = 'inline';
+      document.getElementById('status').textContent = '请使用微信或支付宝扫码支付（二维码 5 分钟内有效）…';
+      poll(d.trade_order_id);
+    })
+    .catch(function(e){ alert('请求失败：' + e.message); })
+    .finally(function(){ btn.disabled = false; btn.textContent = old; });
+}
+function poll(tid){
+  if(timer) clearInterval(timer);
+  timer = setInterval(function(){
+    fetch(WORKER + '/api/hupijiao/order?trade_order_id=' + encodeURIComponent(tid))
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if(d.success && d.license_key){
+          clearInterval(timer);
+          document.getElementById('status').innerHTML = '✅ 支付成功！您的统一许可证密钥：<br><code>' + d.license_key + '</code><br>复制后可在 14 站任意站点「兑换」获取站点 API Key。';
+          document.getElementById('qr').style.display = 'none';
+          document.getElementById('paylink').style.display = 'none';
+        }
+      }).catch(function(){});
+  }, 3000);
+}
+</script>
+</body>
+</html>`;
+  return page;
 }
 
 main().catch((e) => { console.error('[fatal] build-site 异常:', e); process.exit(1); });

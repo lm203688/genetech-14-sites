@@ -19,6 +19,12 @@ const PRO_SECRET = process.env.PRO_SECRET;
 const SCRIPT = 'genetech-api-guard';
 const CF_API = 'https://api.cloudflare.com/client/v4';
 
+// LLM 桥接（可选）：让 /api/llm/* 通；不传则不开启 AI（Worker 返回 503 提示）。
+const LLM_BRIDGE_BASE = process.env.LLM_BRIDGE_BASE || '';
+const LLM_BRIDGE_KEY = process.env.LLM_BRIDGE_KEY || '';
+const LLM_BRIDGE_MODEL = process.env.LLM_BRIDGE_MODEL || 'deepseek-chat';
+const LLM_FREE_RATE = process.env.LLM_FREE_RATE || '20';
+
 function need(v, name) { if (!v) { console.error(`✗ 缺少环境变量 ${name}`); process.exit(1); } }
 need(CF, 'CLOUDFLARE_API_TOKEN');
 need(PRO_SECRET, 'PRO_SECRET');
@@ -61,7 +67,13 @@ async function deploy(acct, kvId) {
       { type: 'secret_text', name: 'PRO_SECRET', text: PRO_SECRET },
       { type: 'kv_namespace', name: 'PRO_KV', namespace_id: kvId },
     ],
-    vars: { PRO_FREE_RATE: '60' },
+    vars: {
+      PRO_FREE_RATE: '60',
+      LLM_BRIDGE_BASE,
+      LLM_BRIDGE_KEY,
+      LLM_BRIDGE_MODEL,
+      LLM_FREE_RATE,
+    },
   };
   const body =
     `--${boundary}\r\nContent-Disposition: form-data; name="metadata"\r\nContent-Type: application/json\r\n\r\n` + JSON.stringify(meta) + '\r\n' +

@@ -22,7 +22,7 @@
 ## 四、变现开通
 1. 🔗 https://www.coze.cn/store （扣子商店）→ 发布 Bot / 技能
 2. 开启「付费订阅」或上架「技能包」（参考 pricing.md 档位）
-3. 深度版 CTA 指向 🔗 https://license.swarmlabs.tools （Pro ¥39.9 / 终身 ¥199，虎皮椒支付已就绪）
+3. 深度版 CTA 指向 🔗 https://genetech-license.61960005.workers.dev （Pro ¥39.9 / 终身 ¥199，虎皮椒支付已就绪）
 
 ## 五、注意事项
 - 知识库为公开学术元数据，无版权风险；可定期重跑 `tools/coze-exporter.mjs` 更新。

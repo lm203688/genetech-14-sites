@@ -67,10 +67,10 @@ const PLANS = {
 /**
  * 14 个站点的默认 CORS 白名单（生产环境请替换为真实域名，
  * 或通过环境变量 ALLOWED_ORIGINS 覆盖，逗号分隔）。
- * license.swarmlabs.tools 为中央 API 自身域名（genetech.tools 接回后改回）。
+ * genetech-license.<sub>.workers.dev 为中央 API 自身域名（独立部署，不再依赖 swarmlabs.tools / genetech.tools）。
  */
 const DEFAULT_SITE_ORIGINS = [
-  'https://license.swarmlabs.tools',
+  'https://genetech-license.61960005.workers.dev',
   'https://site1.genetech.io',
   'https://site2.genetech.io',
   'https://site3.genetech.io',

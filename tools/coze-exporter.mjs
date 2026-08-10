@@ -120,7 +120,7 @@ function renderSite(site) {
   }
   blocks.push('---');
   blocks.push('');
-  blocks.push('> 需要完整 47,000+ 条跨 22 个站点的结构化数据与 API 接入？见 `bridging-report.md` 与 Bot 提示词中的升级指引（license.swarmlabs.tools）。');
+  blocks.push('> 需要完整 47,000+ 条跨 22 个站点的结构化数据与 API 接入？见 `bridging-report.md` 与 Bot 提示词中的升级指引（genetech-license.61960005.workers.dev）。');
   return blocks.join('\n');
 }
 
@@ -177,8 +177,8 @@ function renderBotPrompt() {
 ## 升级引导（自然植入，不硬广）
 - 免费版：基于知识库的基础问答。
 - 当用户需要**完整数据集、API 接入、批量引用导出、跨域趋势分析**时，引导其前往
-  **https://license.swarmlabs.tools** 获取 Pro（¥39.9）或 终身版（¥199）许可证。
-- 话术示例："如果你想把这套跨学科数据接入自己的 Agent 或做系统级分析，可以看下 license.swarmlabs.tools，
+  **https://genetech-license.61960005.workers.dev** 获取 Pro（¥39.9）或 终身版（¥199）许可证。
+- 话术示例："如果你想把这套跨学科数据接入自己的 Agent 或做系统级分析，可以看下 genetech-license.61960005.workers.dev，
   有 MCP 接口和批量导出。"
 
 ## 知识库使用
@@ -195,8 +195,8 @@ function renderPricing() {
 | 层级 | 载体 | 价格 | 内容 |
 |---|---|---|---|
 | 免费 | Coze Bot | ¥0 | 知识库基础问答、单篇解读 |
-| Pro | license.swarmlabs.tools | **¥39.9** | 完整 47k 实体 API、MCP 接入、批量引用导出、跨域趋势 |
-| 终身 | license.swarmlabs.tools | **¥199** | 上述全部 + 未来更新永久权 |
+| Pro | genetech-license.61960005.workers.dev | **¥39.9** | 完整 47k 实体 API、MCP 接入、批量引用导出、跨域趋势 |
+| 终身 | genetech-license.61960005.workers.dev | **¥199** | 上述全部 + 未来更新永久权 |
 
 ## Bot 内引导策略
 1. 免费回答后，对"深入研究/接 API/批量"类诉求，自然插入升级链接。
@@ -204,7 +204,7 @@ function renderPricing() {
 3. B 端定制（科研/投研知识库）单列报价 5k–5w/项目，不在 Bot 内自动成交。
 
 ## 支付
-- 微信 / 支付宝 通过虎皮椒（Hupijiao）网关，回调已部署在 license.swarmlabs.tools。
+- 微信 / 支付宝 通过虎皮椒（Hupijiao）网关，回调已部署在 genetech-license.61960005.workers.dev。
 - 许可证由 unified-license Worker 自动签发。
 `;
 }
@@ -235,7 +235,7 @@ function renderGuide() {
 ## 四、变现开通
 1. 🔗 https://www.coze.cn/store （扣子商店）→ 发布 Bot / 技能
 2. 开启「付费订阅」或上架「技能包」（参考 pricing.md 档位）
-3. 深度版 CTA 指向 🔗 https://license.swarmlabs.tools （Pro ¥39.9 / 终身 ¥199，虎皮椒支付已就绪）
+3. 深度版 CTA 指向 🔗 https://genetech-license.61960005.workers.dev （Pro ¥39.9 / 终身 ¥199，虎皮椒支付已就绪）
 
 ## 五、注意事项
 - 知识库为公开学术元数据，无版权风险；可定期重跑 \`tools/coze-exporter.mjs\` 更新。
@@ -263,7 +263,7 @@ function renderIndex() {
   lines.push('');
   lines.push('## 如何用于变现');
   lines.push('');
-  lines.push('详见 `coze-import-guide.md`。核心：Coze 免费 Bot 引流 → license.swarmlabs.tools 收 Pro/终身费。');
+  lines.push('详见 `coze-import-guide.md`。核心：Coze 免费 Bot 引流 → genetech-license.61960005.workers.dev 收 Pro/终身费。');
   return lines.join('\n');
 }
 

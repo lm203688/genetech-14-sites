@@ -209,10 +209,29 @@ async function handleRequest(request) {
       return json({ error: 'not_found', message: `LLM 网关路径 ${sub} 未开放` }, 404);
     }
     const target = base + sub + (url.search || '');
+    // 构造请求体：/chat/completions 且配置了 LLM_BRIDGE_MODEL 时，强制覆盖模型名，
+    // 避免前端写死 gpt-4o-mini 而上游（ATEX/自建网关）无该模型导致 404。
+    let bodyBuf;
+    if (['GET', 'HEAD'].includes(request.method)) {
+      bodyBuf = undefined;
+    } else {
+      const raw = await request.clone().arrayBuffer();
+      if (sub === '/chat/completions' && env.LLM_BRIDGE_MODEL) {
+        try {
+          const parsed = JSON.parse(new TextDecoder().decode(raw));
+          parsed.model = env.LLM_BRIDGE_MODEL;
+          bodyBuf = new TextEncoder().encode(JSON.stringify(parsed));
+        } catch {
+          bodyBuf = raw;
+        }
+      } else {
+        bodyBuf = raw;
+      }
+    }
     const init = {
       method: request.method,
       headers: { 'Content-Type': 'application/json' },
-      body: ['GET', 'HEAD'].includes(request.method) ? undefined : await request.clone().arrayBuffer(),
+      body: bodyBuf,
     };
     if (env.LLM_BRIDGE_KEY) init.headers.Authorization = `Bearer ${env.LLM_BRIDGE_KEY}`;
     try {
