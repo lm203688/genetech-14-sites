@@ -171,9 +171,58 @@ Pro 订阅(¥39.9/¥199 HMAC配额) ─┤→ MCP 分发层
 
 ---
 
-## 10. 进度刷新（2026-08-07）
+## 10. 进度刷新（2026-08-14）
 
-- 实体规模：**47,566 条 / 22 站已部署**，回填引擎已扩至 **30 站 / 10 源 / 单站 4000**（CI 自动跑，新 8 站陆续填充）。
-- 结构化层：主题词表 / 作者归一 / 时间线 / 知识图谱 / **研究洞察（趋势·研究空白·桥接·合著网络）** 全部落地，另有 `insights.html` 可读页 + `api/insights.json`。
-- 部署产物：gzip JSONL + JSON-LD 去摘要后 **190 MB（GitHub Pages 1GB 上限 19%）**，扩容空间充足。
-- **待用户手动**：① 虎皮椒 Cloudflare Worker 部署（支付网关上线，否则全商业闭环不闭合）；② 真实支付密钥仅存 Cloudflare secret；③ 企业数据授权商务拓展。
+- 实体规模：**47,566 条 / 30 站**（回填引擎 6 源 / 单页 100 / 游标站点×检索词，CI 自动跑）。
+- 结构化层：主题词表 / 作者归一 / 时间线 / 知识图谱 / 研究洞察（趋势·研究空白·桥接·合著网络）全部落地，`insights.html` + `api/insights.json` 可读。
+- 部署产物：gzip JSONL + JSON-LD 去摘要后 **~190 MB（GitHub Pages 1GB 上限 19%）**，扩容空间充足。
+- **支付网关**：unified-license Worker 已部署 `license.swarmlabs.tools`（61960005 账户 zone），虎皮椒下单 + 验签**已实测通过** → 购买闭环已通。
+- **待用户手动（关键路径）**：
+  1. 虎皮椒商户后台配 `notify_url=https://license.swarmlabs.tools/api/hupijiao/callback` + `return_url=https://license.swarmlabs.tools/pay/success`（支付回调闭环最后一环）。
+  2. 在 Cloudflare Dashboard 为 `swarmlabs.tools` zone 加路由 `api.swarmlabs.tools/* → genetech-api-guard`（ask 推理闭环国内可用性的前提，见第 11 节）。
+  3. `genetech.tools` zone 仍卡 `pending/ns_mismatch`（Registrar 在未知账户），需改 NS 或跨账户转移 Registrar 后才可加 `license.genetech.tools` / `api.genetech.tools` 路由。
+  4. 重新 `wrangler deploy`（让 api-guard 的 `LICENSE_VALIDATE_URL` 指向 `swarmlabs.tools` 生效）。
+  5. Glama/Smithery/mcp.so 目录认领（Glama 卡浏览器 GitHub 登录）；Google Search Console 交 sitemap；IndexNow 真实 key；企业数据授权商务拓展。
+  6. 推送本次提交（commit a4fdd5a）重建 Pages，使线上 `license.html` 不再指向被墙的 `workers.dev`。
+
+---
+
+## 11. 线上平台「嫁接」落地：把项目接入外部流量入口（2026-08-14）
+
+> 用户诉求：把项目嫁接到线上平台，提升曝光与引流；并先把所有闭环走通、修逻辑洞。
+> 原则（契合用户低摩擦偏好）：**AI 备料、用户只点「发布/确认」**；不替用户注册账号、不碰私钥。
+
+### 11.1 引流渠道分层（按「启动成本 / 获客质量」排序）
+
+| 层 | 平台 | 作用 | 用户动作（低摩擦） | 物料 |
+|---|---|---|---|---|
+| **GEO 自动获客（免费、最长效）** | ChatGPT / Perplexity / 豆包 / DeepSeek 的答案引用 | AI 答科研问句时引述开放数据 | 无需动作（靠 `llms.txt`+JSON-LD 自动生效）；每月跑引用率探针 | §6 |
+| **开发者/AI 目录** | Glama / Smithery / mcp.so / PulseMCP | MCP 分发与发现 | GitHub 登录认领 + 粘贴描述（1 次/平台） | `docs/growth-materials.md` §A |
+| **中文社媒矩阵** | 知乎 / 小红书 / 公众号 / CSDN / 掘金 | 对比类 + 问答类内容，喂 AI 语料 | 复制粘贴发布（每篇 5 分钟） | `docs/growth-materials.md` §B |
+| **Bot 商店** | Coze（扣子）bot 商店 / 微信生态 | 用户在对话里直接调 14 站知识 | 导入 `content/coze/*` + 发布（1 次） | `docs/growth-materials.md` §C |
+| **产品发布** | ProductHunt / Hacker News / 稀土掘金 | 一次性曝光高峰 | 发布文案（1 次） | `docs/growth-materials.md` §D |
+| **外链权威** | 垂直媒体 / 高校实验室博客 引用数据集 | 领先 AI 引用 4–8 周 | 商务/投稿（可选） | §6.4 |
+
+### 11.2 嫁接的技术前提（必须先闭合，否则引流来了也转化不了）
+
+1. **购买闭环已修**（本次）：线上 `license.html` 不再硬编码被墙的 `workers.dev`，改为 `['license.genetech.tools' → 'license.swarmlabs.tools' → workers.dev]` 故障转移；`swarmlabs.tools` 已验证国内可用。
+2. **ask 推理闭环待修（同因）**：`ask.html` 故障转移末端是 `genetech-api-guard.61960005.workers.dev`（国内被墙）。**国内可用前提是 `api.swarmlabs.tools/* → genetech-api-guard` 路由已建**（见 11.1 第 2 项）。否则社媒引来的流量当场流失。
+3. **Coze bot 端点一致**：`content/coze/*` 已统一指向 `license.genetech.tools`；bot 发布前确认其调用 API 走 `swarmlabs.tools` 兜底。
+
+### 11.3 30 天引流节奏（嫁接执行表）
+
+- **第 1 周**：① 修 `api.swarmlabs.tools` 路由（闭 ask 洞）→ ② Glama/Smithery/mcp.so 认领（§A）→ ③ 发 2 篇知乎「Elicit 中文替代」长文（§B1）。
+- **第 2 周**：① Coze bot 导入发布（§C）→ ② 小红书/公众号 4 篇种草（§B2/B3）→ ③ ProductHunt 发布（§D1）。
+- **第 3–4 周**：① 补齐 5–10 篇问答/GEO 短文（喂 AI 语料）→ ② 跑第一次引用率探针（15–20 问句），针对缺口补内容 → ③ CSDN/掘金 技术文（§B4）。
+
+---
+
+## 12. 引流物料包索引
+
+全部可复制即发文案在 **`docs/growth-materials.md`**：
+- §A 开发者/AI 目录提交文案（Glama / Smithery / mcp.so / PulseMCP）
+- §B 中文社媒矩阵（知乎 / 小红书 / 公众号 / CSDN / 掘金）
+- §C Coze bot 发布包（导入说明 + 商店文案）
+- §D 产品发布（ProductHunt / Hacker News / 稀土掘金）
+
+> 文案统一话术（护城河四句，务必每篇都带）：**Agent 原生 · 垂直策展 30 域 · 微信/支付宝买断（¥9.9 起）· 开放结构化数据可被 AI 直接调用**。

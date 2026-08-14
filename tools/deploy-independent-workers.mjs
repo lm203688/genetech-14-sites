@@ -123,7 +123,7 @@ const apiBindings = [
   { type: 'plain_text', name: 'LLM_BRIDGE_MODEL', text: 'deepseek-chat' },
   { type: 'plain_text', name: 'LLM_FREE_RATE', text: '20' },
   { type: 'plain_text', name: 'LLM_BRIDGE_KEY', text: '' },
-  { type: 'plain_text', name: 'LICENSE_VALIDATE_URL', text: `https://genetech-license.${SUB}.workers.dev/api/license/validate` },
+  { type: 'plain_text', name: 'LICENSE_VALIDATE_URL', text: `https://license.swarmlabs.tools/api/license/validate` },
 ];
 
 const a = await deployClassic('genetech-license', licenseCode, licenseBindings);

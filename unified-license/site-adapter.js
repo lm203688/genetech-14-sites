@@ -19,7 +19,7 @@
  *   失败 -> { "valid": false, "error": "...", "message": "..." }
  *
  * 依赖环境变量（站点侧，在站点 wrangler.toml / Pages 设置中配置）：
- *   - UNIFIED_LICENSE_API   中央 API 地址（默认 https://license.genetech.io）
+ *   - UNIFIED_LICENSE_API   中央 API 地址（默认多端点故障转移列表首项）
  *   - SITE_NAME              当前站点名（若请求体未传 site_name，则使用此值）
  *
  * 依赖 KV 命名空间（站点侧，复用已有或新建）：
@@ -27,13 +27,22 @@
  *     缓存键：ulc:<sha256(license_key)>:<site_name>
  *     有效结果 TTL：3600 秒（1 小时）
  *     无效结果 TTL：300 秒（5 分钟，防止被刷接口）
+ *
+ * 多端点故障转移说明：
+ *   ⚠️ `*.workers.dev` 在中国大陆被墙，绝不能作主端点。
+ *   默认顺序：license.genetech.tools（待 NS 改好）→ license.swarmlabs.tools（已实测可用）→
+ *   genetech-license.61960005.workers.dev（末位兜底）。任一可达即返回。
  */
 
 // ============================================================================
 // 配置
 // ============================================================================
 
-const DEFAULT_CENTRAL_API = 'https://genetech-license.61960005.workers.dev';
+const DEFAULT_CENTRAL_APIS = [
+  'https://license.genetech.tools',
+  'https://license.swarmlabs.tools',
+  'https://genetech-license.61960005.workers.dev',
+];
 const CACHE_TTL_VALID = 3600; // 有效结果缓存 1 小时
 const CACHE_TTL_INVALID = 300; // 无效结果缓存 5 分钟
 const REQUEST_TIMEOUT_MS = 10000;
@@ -51,9 +60,33 @@ async function sha256(text) {
     .join('');
 }
 
-/** 获取中央 API 地址（环境变量优先） */
-function getCentralApi(env) {
-  return (env && env.UNIFIED_LICENSE_API) || DEFAULT_CENTRAL_API;
+/**
+ * 获取中央 API 地址列表（环境变量 UNIFIED_LICENSE_API 优先作为首项，
+ * 其余回落到默认多端点）。多端点顺序即故障转移顺序。
+ */
+function getCentralApis(env) {
+  const primary = env && env.UNIFIED_LICENSE_API && env.UNIFIED_LICENSE_API.trim();
+  if (primary) {
+    const clean = primary.replace(/\/+$/, '');
+    return [...new Set([clean, ...DEFAULT_CENTRAL_APIS])];
+  }
+  return DEFAULT_CENTRAL_APIS;
+}
+
+/** 多端点故障转移：依次尝试每个中央 API，返回首个可达且非 5xx 的响应 */
+async function fetchCentral(path, options, timeoutMs, env) {
+  const apis = getCentralApis(env);
+  let lastErr;
+  for (const base of apis) {
+    try {
+      const resp = await fetchWithTimeout(`${base}${path}`, options, timeoutMs);
+      if (resp.ok || resp.status < 500) return resp;
+      lastErr = new Error('HTTP ' + resp.status);
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  throw lastErr || new Error('所有许可证端点均不可达');
 }
 
 /** 获取缓存 KV（优先 LICENSE_CACHE，回退 API_KEYS） */
@@ -104,20 +137,20 @@ async function fetchWithTimeout(url, options, timeoutMs) {
  * @returns {Promise<object>} { valid, api_key?, credits?, plan?, error? }
  */
 async function callCentral(licenseKey, siteName, siteDomain, env) {
-  const base = getCentralApi(env).replace(/\/+$/, '');
   const headers = { 'Content-Type': 'application/json' };
 
-  // 1. validate（只读校验）
+  // 1. validate（只读校验，多端点故障转移）
   let validateData;
   try {
-    const vResp = await fetchWithTimeout(
-      `${base}/api/license/validate`,
+    const vResp = await fetchCentral(
+      '/api/license/validate',
       {
         method: 'POST',
         headers,
         body: JSON.stringify({ key: licenseKey, site_name: siteName, site_domain: siteDomain }),
       },
-      REQUEST_TIMEOUT_MS
+      REQUEST_TIMEOUT_MS,
+      env
     );
     validateData = await vResp.json();
   } catch (e) {
@@ -132,17 +165,18 @@ async function callCentral(licenseKey, siteName, siteDomain, env) {
     };
   }
 
-  // 2. redeem（兑换获得站点专属 API Key）
+  // 2. redeem（兑换获得站点专属 API Key，多端点故障转移）
   let redeemData;
   try {
-    const rResp = await fetchWithTimeout(
-      `${base}/api/license/redeem`,
+    const rResp = await fetchCentral(
+      '/api/license/redeem',
       {
         method: 'POST',
         headers,
         body: JSON.stringify({ key: licenseKey, site_name: siteName, site_domain: siteDomain }),
       },
-      REQUEST_TIMEOUT_MS
+      REQUEST_TIMEOUT_MS,
+      env
     );
     redeemData = await rResp.json();
   } catch (e) {
@@ -287,13 +321,13 @@ export async function onRequestGet({ request, env, ctx }) {
     }
   }
 
-  // 回源中央 status
-  const base = getCentralApi(env).replace(/\/+$/, '');
+  // 回源中央 status（多端点故障转移）
   try {
-    const resp = await fetchWithTimeout(
-      `${base}/api/license/status?key=${encodeURIComponent(licenseKey)}`,
+    const resp = await fetchCentral(
+      `/api/license/status?key=${encodeURIComponent(licenseKey)}`,
       { method: 'GET', headers: { 'Content-Type': 'application/json' } },
-      REQUEST_TIMEOUT_MS
+      REQUEST_TIMEOUT_MS,
+      env
     );
     const data = await resp.json();
     return jsonResponse({ ...data, cached: false }, 200, corsH);

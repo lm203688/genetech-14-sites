@@ -16,7 +16,7 @@ LLM_BRIDGE_MODEL = "deepseek-chat"
 # 可选：未登录用户每 IP 每分钟聊天上限
 LLM_FREE_RATE = "20"
 # 可选：指向 unified-license Worker 的 validate 端点，打通 GUX_ 统一许可证
-# LICENSE_VALIDATE_URL = "https://genetech-license.61960005.workers.dev/api/license/validate"
+# LICENSE_VALIDATE_URL = "https://license.genetech.tools/api/license/validate"
 # LICENSE_API_SECRET = "..."
 
 # 限流 KV（在 Cloudflare 控制台创建 KV 命名空间后填入 id）

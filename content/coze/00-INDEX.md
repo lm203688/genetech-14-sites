@@ -36,4 +36,4 @@
 
 ## 如何用于变现
 
-详见 `coze-import-guide.md`。核心：Coze 免费 Bot 引流 → genetech-license.61960005.workers.dev 收 Pro/终身费。
+详见 `coze-import-guide.md`。核心：Coze 免费 Bot 引流 → license.genetech.tools 收 Pro/终身费。

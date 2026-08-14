@@ -37,6 +37,7 @@ const BRANCH = 'master';
 
 /** 从 git credential helper 读取 token，绝不打印 */
 function getToken() {
+  if (process.env.GITHUB_TOKEN) return process.env.GITHUB_TOKEN.trim();
   const out = execSync('git credential fill', {
     input: 'protocol=https\nhost=github.com\n\n',
     cwd: ROOT,

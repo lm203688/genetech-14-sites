@@ -1134,9 +1134,21 @@ const ASK_PAGE_JS = `/* GeneTech AI 问答页前端（自包含，无依赖） *
   // 这样 ask.html 无论部署在 GitHub Pages 还是任意域名，都能调到 AI 推理后端，
   // 且不暴露上游网关地址（api-guard Worker 做同源转发 + CORS *）。
   var metaBase = document.querySelector('meta[name="llm-api-base"]');
-  var ENDPOINT = (metaBase && metaBase.content && metaBase.content.trim())
-    ? metaBase.content.trim().replace(/\\/+$/, '')
-    : 'https://genetech-api-guard.61960005.workers.dev';
+  var FALLBACK_ENDPOINTS = ['https://api.genetech.tools', 'https://api.swarmlabs.tools', 'https://genetech-api-guard.61960005.workers.dev'];
+  var ENDPOINTS = (metaBase && metaBase.content && metaBase.content.trim())
+    ? [metaBase.content.trim().replace(/\/+$/, '')].concat(FALLBACK_ENDPOINTS)
+    : FALLBACK_ENDPOINTS;
+  async function fetchAny(path, opts) {
+    var lastErr;
+    for (var i = 0; i < ENDPOINTS.length; i++) {
+      try {
+        var r = await fetch(ENDPOINTS[i] + path, opts);
+        if (r.ok || (r.status >= 200 && r.status < 500)) return r;
+        lastErr = new Error('HTTP ' + r.status);
+      } catch (e) { lastErr = e; }
+    }
+    throw lastErr || new Error('所有推理端点均不可达');
+  }
 
   function setHint(s) { if (hint) hint.textContent = s; }
   function escape(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[c]; }); }
@@ -1178,7 +1190,7 @@ const ASK_PAGE_JS = `/* GeneTech AI 问答页前端（自包含，无依赖） *
     srcs.innerHTML = '';
     meta.textContent = '';
     try {
-      var res = await fetch(ENDPOINT + '/api/llm/chat/completions', {
+      var res = await fetchAny('/api/llm/chat/completions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1280,7 +1292,7 @@ ${samples.map((q) => `<button type="button" class="card sample" data-q="${esc(q)
 <ol class="sources" id="ask-sources"></ol>
 <p class="meta" id="ask-meta"></p>
 </div>
-<meta name="llm-api-base" content="${process.env.ASK_LLM_BASE || 'https://genetech-api-guard.61960005.workers.dev'}">
+<meta name="llm-api-base" content="${process.env.ASK_LLM_BASE || 'https://api.genetech.tools'}">
 
 <h2>对开发者</h2>
 <p>本页面背后是 GeneTech 自建的 <code>llm-bridge</code> 抽象层（OpenAI 兼容） + <code>api-guard</code> Cloudflare Worker 转发。要把同一能力集成到你自己的应用：</p>
@@ -2141,14 +2153,25 @@ ${nav}
   <p class="note">支付由虎皮椒（国内合规聚合支付）处理。下单即生成待支付订单，支付成功后自动签发 GUX_ 统一许可证。</p>
 </main>
 <script>
-var WORKER = 'https://genetech-license.61960005.workers.dev';
+var WORKERS = ['https://license.genetech.tools', 'https://license.swarmlabs.tools', 'https://genetech-license.61960005.workers.dev'];
+async function fetchWorker(path, opts) {
+  var lastErr;
+  for (var i = 0; i < WORKERS.length; i++) {
+    try {
+      var r = await fetch(WORKERS[i] + path, opts);
+      if (r.ok || (r.status >= 200 && r.status < 500)) return r;
+      lastErr = new Error('HTTP ' + r.status);
+    } catch (e) { lastErr = e; }
+  }
+  throw lastErr || new Error('所有许可证端点均不可达');
+}
 var timer = null;
 function pay(plan){
   var email = document.getElementById('email').value.trim();
   if(!email){ alert('请先填写邮箱'); return; }
   var btn = document.getElementById('pay-'+plan);
   btn.disabled = true; var old = btn.textContent; btn.textContent = '生成中…';
-  fetch(WORKER + '/api/hupijiao/create-order', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ plan:plan, email:email }) })
+  fetchWorker('/api/hupijiao/create-order', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ plan:plan, email:email }) })
     .then(function(r){ return r.json(); })
     .then(function(d){
       if(!d.success){ alert('下单失败：' + (d.message || '未知错误')); return; }
@@ -2164,7 +2187,7 @@ function pay(plan){
 function poll(tid){
   if(timer) clearInterval(timer);
   timer = setInterval(function(){
-    fetch(WORKER + '/api/hupijiao/order?trade_order_id=' + encodeURIComponent(tid))
+    fetchWorker('/api/hupijiao/order?trade_order_id=' + encodeURIComponent(tid))
       .then(function(r){ return r.json(); })
       .then(function(d){
         if(d.success && d.license_key){

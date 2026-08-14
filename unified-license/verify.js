@@ -29,7 +29,7 @@
 // 配置：中央许可证 API 地址（可按需修改为你的部署地址）
 // ============================================================================
 
-export const UNIFIED_API = 'https://genetech-license.61960005.workers.dev';
+export const UNIFIED_APIS = ['https://license.genetech.tools', 'https://license.swarmlabs.tools', 'https://genetech-license.61960005.workers.dev'];
 
 // 统一许可证密钥前缀
 const UNIFIED_KEY_PREFIX = 'GUX_';
@@ -61,6 +61,21 @@ async function fetchWithTimeout(url, options, timeoutMs) {
 }
 
 /**
+ * 多端点兜底：依次尝试所有中央 API 基址，哪个可达用哪个。
+ */
+async function fetchUnified(path, options, timeoutMs) {
+  let lastErr;
+  for (const base of UNIFIED_APIS) {
+    try {
+      const resp = await fetchWithTimeout(base + path, options, timeoutMs);
+      if (resp.ok || resp.status < 500) return resp;
+      lastErr = new Error('HTTP ' + resp.status);
+    } catch (e) { lastErr = e; }
+  }
+  throw lastErr || new Error('所有许可证端点均不可达');
+}
+
+/**
  * 调用中央 API 校验许可证（只读，返回站点列表与积分）
  * @returns {Promise<object|null>} 校验结果对象；网络异常返回 null
  */
@@ -71,8 +86,8 @@ async function callValidate(licenseKey, siteName, siteDomain) {
     site_domain: siteDomain || undefined,
   });
   try {
-    const resp = await fetchWithTimeout(
-      `${UNIFIED_API}/api/license/validate`,
+    const resp = await fetchUnified(
+      '/api/license/validate',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -98,8 +113,8 @@ async function callRedeem(licenseKey, siteName, siteDomain) {
     site_domain: siteDomain || undefined,
   });
   try {
-    const resp = await fetchWithTimeout(
-      `${UNIFIED_API}/api/license/redeem`,
+    const resp = await fetchUnified(
+      '/api/license/redeem',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
