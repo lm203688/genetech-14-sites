@@ -7,6 +7,7 @@ package-lock.json
 .env.local
 .env.*.local
 .secrets/
+.dev.vars
 
 # Build output
 dist/

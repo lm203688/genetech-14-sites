@@ -191,7 +191,7 @@ npx wrangler deploy
 { "service": "genetech-unified-license", "status": "ok", "version": "2.0", "time": "..." }
 ```
 
-> 推荐绑定自定义域名 `license.genetech.io`，这样 `verify.js` 与 `site-adapter.js` 中的默认地址无需修改。
+> 当前线上已绑定自定义域名 `license.swarmlabs.tools`（Cloudflare 账户 `61960005`）；`verify.js`、`site-adapter.js` 与前端购买页均已内置该端点的多端点故障转移。`license.genetech.io` 待 `genetech.tools` 改 NS 后启用。
 
 ---
 
@@ -307,7 +307,7 @@ export const UNIFIED_API = 'https://license.genetech.io';
 虎皮椒后台将异步回调（notify_url）指向中央 Worker：
 
 ```
-https://license.genetech.io/api/hupijiao/callback
+https://license.swarmlabs.tools/api/hupijiao/callback
 ```
 
 （默认从请求域名自动推导，无需手动配置；如需覆盖可设 `HUPIJIAO_NOTIFY_URL`。）
