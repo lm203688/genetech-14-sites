@@ -31,16 +31,26 @@ npx wrangler secret put ADMIN_SECRET           # 粘贴一个你自己定的强�
 > 凭据走 Cloudflare Secret，**不写入任何仓库文件**。本地 `wrangler dev` 可把同样的值放进
 > `unified-license/.dev.vars`（已被根 `.gitignore` 忽略，不会提交）。
 
-### 2) 在虎皮椒商户后台配置异步回调（关键 —— 自动发卡靠它）
+### 2) 虎皮椒商户后台：无需、也找不到 notify_url 输入框（重要更正）
 
-登录虎皮椒后台 → 支付/接口设置 → **异步回调 notify_url** 填写：
+> **更正（已搜证核实）**：虎皮椒（xunhupay）商户后台**没有 notify_url / 异步回调 输入框**。
+> 这是虎皮椒的设计——回调地址不是后台设置项，而是由**每次下单的 API 请求携带**。
+> 搜证确认：所有第三方系统（AnheyuPro、魔豆文库、phalapi 等）集成虎皮椒时，notify_url 都是
+> 「由系统自动生成」或「写在开发者自己的代码/config 里」，虎皮椒后台只管 appid/appsecret 与账单。
+> 本项目的 `worker.js` 第 660 行已经在每笔订单里自动带上
+> `https://license.swarmlabs.tools/api/hupijiao/callback`，所以**你找不到这个设置是正常的，也不用找**。
+>
+> 你在虎皮椒后台真正要确认的两件事：
+> 1. 应用 `AppID = 201906181178` 状态为「已启用 / 已开通支付」；
+> 2. `App Secret` 与你提供的 `d856af3c…` 一致（后台一般只显示一次，忘了需重置）。
+>
+> 若你的虎皮椒合同版本后台恰好有「授权回调域名 / 白名单」字段，把 `license.swarmlabs.tools`
+> 填进去即可；**没有就直接跳过，不影响闭环**。
 
-```
-https://license.swarmlabs.tools/api/hupijiao/callback
-```
-
-Worker 收到 `status=OD` 且验签通过后，自动签发 `GUX_` 统一许可证并写入 KV（前端轮询取回）。
-Worker 默认从请求域名自动推导该地址，但虎皮椒侧必须显式填写。
+Worker 收到 `status=OD`（已支付）且验签通过后，自动签发 `GUX_` 统一许可证并写入 KV（前端轮询取回）。
+若想把回调地址**钉死**、不随 Worker 域名变化，可在 Cloudflare 侧用
+`npx wrangler secret put HUPIJIAO_NOTIFY_URL` 显式设成
+`https://license.swarmlabs.tools/api/hupijiao/callback`（可选，属于我们这侧，不是虎皮椒后台）。
 
 **跳转地址 return_url（可选）** 建议填站点许可证页：
 

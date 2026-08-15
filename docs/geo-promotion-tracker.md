@@ -2,7 +2,7 @@
 
 > 用途：① 用户可执行的「线上平台嫁接」清单（AI 备料、用户只点发布/确认）；② 自动化每周维护的进度看板。
 > 原则：免费层 GEO 自动获客（边际成本≈0）为主，付费分发（目录/社媒/发布）为辅；所有「需要账号/私钥」的动作由用户执行，AI 不替用户注册。
-> 关联文档：`docs/growth-strategy.md` §11（渠道分层）、`docs/growth-materials.md`（复制即发文案）、`docs/competitor-models.md`（商业模式借鉴）。
+> 关联文档：`docs/growth-strategy.md` §11（渠道分层）、`docs/growth-materials.md`（复制即发文案）、`docs/competitor-models.md`（商业模式借鉴）、**`docs/x-algorithm-promo-playbook.md`（X 开源算法 → 推广打法，所有内容默认带其 §5 信号自检）**。
 
 ---
 
@@ -69,9 +69,17 @@
 
 ## F. 自动化节奏（持续做推广）
 
-- **每周一（自动化）**：基于最新入库实体生成 1 篇 bio×AI / 前沿集群 GEO 博客 → 写入 `content/blog/` → 更新本追踪表 → 推送 GitHub 触发 Pages 重建。
+- **每周一（自动化）**：基于最新入库实体生成 1 篇 bio×AI / 前沿集群 GEO 博客 → **默认带 X 算法排名信号结构（钩子问题 / 配图 / 收藏级长文 / 垂直关键词 / 转化 CTA / 避罚，见 `docs/x-algorithm-promo-playbook.md` §5）** → 写入 `content/blog/` → 更新本追踪表 → 推送 GitHub 触发 Pages 重建。
 - **每月**：跑一次「引用率探针」（15–20 个真实买家问句，在 ChatGPT/Perplexity/豆包/DeepSeek 测是否被引述），针对缺口补内容。
 - **每季度**：刷新企业数据授权商务进展（$20万–500万/年 给 AI 公司，见 growth-strategy §9.1）。
+
+---
+
+## H. X（Twitter）算法借鉴 —— 原理转译，非直连
+
+- **现实约束**：你在中国大陆，X 无法直接直连。因此不依赖"在 X 上发帖"，而是把 X 开源推荐算法揭示的**通用排名原理**（回复>>点赞、早期势能 log2、媒体 boost、社区对齐 SimClusters、作者信誉 Tweepcred、垃圾重罚）转译为所有可达平台的打法。详见 `docs/x-algorithm-promo-playbook.md`。
+- **Track A（当下就能做）**：把上述原理用于小红书 / 知乎 / 公众号 / 掘金 / B站 与我们自有 GEO 引擎——末尾抛评论钩子、必带图、投对垂直圈子、养权威号、躲惩罚。已写入每周自动化。
+- **Track B（需海外通道）**：若你有合规的海外节点 / 合伙人可触达 X，手册 §4 给了可直接发的英文模板与发布纪律。无通道则跳过。
 
 ---
 
