@@ -2115,7 +2115,8 @@ h1 { font-size:28px; margin:0 0 8px; }
 .field { margin-bottom:22px; }
 .field label { display:block; font-size:13px; color:#5a6577; margin-bottom:6px; }
 .field input { width:100%; max-width:360px; padding:11px 13px; border:1px solid #d4dae3; border-radius:8px; font-size:15px; }
-.plans { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.plans { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+@media (max-width:900px){ .plans { grid-template-columns:repeat(2,1fr); } }
 .plan { background:#fff; border:1px solid #e6eaf0; border-radius:14px; padding:22px; text-align:center; }
 .plan h3 { margin:0 0 8px; font-size:18px; }
 .price { font-size:26px; font-weight:700; color:#0e1726; margin-bottom:4px; }
@@ -2144,7 +2145,24 @@ ${nav}
     <div class="plan"><h3>入门版</h3><div class="price">¥9.9<span> / 30天</span></div><ul><li>100 积分额度</li><li>14 站任选兑换</li></ul><button id="pay-starter" onclick="pay('starter')">微信/支付宝支付</button></div>
     <div class="plan featured"><h3>专业版</h3><div class="price">¥39.9<span> / 年</span></div><ul><li>500 积分额度</li><li>14 站任选兑换</li><li>高优先级推理</li></ul><button id="pay-pro" onclick="pay('pro')">微信/支付宝支付</button></div>
     <div class="plan"><h3>终身版</h3><div class="price">¥199<span> / 终身</span></div><ul><li>无限积分</li><li>14 站任选兑换</li><li>永久有效</li></ul><button id="pay-lifetime" onclick="pay('lifetime')">微信/支付宝支付</button></div>
+    <div class="plan"><h3>前沿内参</h3><div class="price">¥299<span> / 年</span></div><ul><li>周报 + 季度展望</li><li>上新提醒</li><li>私域社群答疑</li></ul><button id="pay-insider" onclick="joinCommunity()">加入社群</button></div>
   </div>
+  <section class="biz" style="margin-top:34px;background:#fff;border:1px solid #e6eaf0;border-radius:14px;padding:24px;">
+    <h2 style="font-size:20px;margin:0 0 6px;">企业数据授权（卖水人主引擎）</h2>
+    <p style="color:#5a6577;margin:0 0 16px;font-size:14px;">对标 Schrödinger 软件授权 74% 毛利、晶泰「平台授权+里程碑+分成」首次盈利。把持续自动扩张的前沿科技结构化数据，授权给 AI 公司 / 研究机构作训练语料、RAG 知识库、行业情报。</p>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <tr style="background:#f6f8fb;color:#5a6577;"><th style="text-align:left;padding:8px;border:1px solid #e6eaf0;">档位</th><th style="text-align:left;padding:8px;border:1px solid #e6eaf0;">年费</th><th style="text-align:left;padding:8px;border:1px solid #e6eaf0;">包含</th></tr>
+      <tr><td style="padding:8px;border:1px solid #e6eaf0;">标准版</td><td style="padding:8px;border:1px solid #e6eaf0;"><b>¥20 万</b></td><td style="padding:8px;border:1px solid #e6eaf0;">全 30 域 API 100 万次/年 + 引用授权</td></tr>
+      <tr><td style="padding:8px;border:1px solid #e6eaf0;">专业版</td><td style="padding:8px;border:1px solid #e6eaf0;"><b>¥80 万</b></td><td style="padding:8px;border:1px solid #e6eaf0;">原始抽取字段 + 定制实体 + 联合白皮书</td></tr>
+      <tr><td style="padding:8px;border:1px solid #e6eaf0;">旗舰/独占版</td><td style="padding:8px;border:1px solid #e6eaf0;"><b>¥300 万+</b></td><td style="padding:8px;border:1px solid #e6eaf0;">指定域独占 + 首付+里程碑+销售分成</td></tr>
+    </table>
+    <p style="margin:14px 0 0;"><button onclick="bookBiz()" style="padding:11px 18px;border:0;border-radius:9px;background:#3b82f6;color:#fff;font-size:14px;cursor:pointer;">预约商务演示 / 获取报价单</button> <span style="color:#8a93a3;font-size:12px;">报价单与 BD 邮件模板见 docs/enterprise-data-license-kit.md</span></p>
+  </section>
+  <section class="moat" style="margin-top:22px;color:#5a6577;font-size:13px;line-height:1.7;">
+    <b>我们的商业模式（卖水人逻辑，已写入 docs/profitable-model-alignment.md）：</b><br>
+    免费层（开放结构化数据 + GEO 获客）→ 个人买断（¥9.9/¥39.9/¥199）→ <b>企业数据授权（¥20万–500万/年，主利润引擎）</b> → 用量/授权叠加（MCP 计量 API 档）→ 私域年费社群（¥299/年 抬 LTV）。<br>
+    护城河：数据库每小时自动扩张（第一方数据、边际成本≈0），且<b>永不租第三方模型按次计费</b>（Cursor 2025 负毛利 -30% 的反面教材）。
+  </section>
   <div id="paybox" class="paybox" style="display:none">
     <img id="qr" src="" alt="扫码支付"><br>
     <a id="paylink" href="#" target="_blank" style="display:none">或在手机上打开支付链接</a>
@@ -2183,6 +2201,18 @@ function pay(plan){
     })
     .catch(function(e){ alert('请求失败：' + e.message); })
     .finally(function(){ btn.disabled = false; btn.textContent = old; });
+}
+function joinCommunity(){
+  // TODO: 社群载体（公众号/企微群）就绪后，把下方链接替换为真实入群二维码/链接
+  var s = document.getElementById('status');
+  s.innerHTML = '社群入口即将开放。可先邮件 <a href="mailto:bd@genetech.tools?subject=前沿数据内参社群">bd@genetech.tools</a> 预约，或关注公众号【GeneTech 前沿】获取上线通知。';
+  document.getElementById('paybox').style.display = 'none';
+}
+function bookBiz(){
+  // TODO: 替换为真实商务邮箱（当前为占位）
+  var subject = encodeURIComponent('GeneTech 14站 企业数据授权合作');
+  var body = encodeURIComponent('您好，\n\n我们维护持续自动扩张的前沿科技结构化数据库（30 垂直域，已入库 4.9 万+ 实体，每小时增量），以开放结构化格式对外提供。\n\n希望了解企业级数据授权（标准版 ¥20万 / 专业版 ¥80万 / 旗舰版 ¥300万+ 每年），含全 30 域 API、引用授权与里程碑/分成结构。\n\n方便的话本周线上聊 20 分钟确认数据域与调用量需求，我再出正式报价。\n');
+  window.location.href = 'mailto:bd@genetech.tools?subject=' + subject + '&body=' + body;
 }
 function poll(tid){
   if(timer) clearInterval(timer);
