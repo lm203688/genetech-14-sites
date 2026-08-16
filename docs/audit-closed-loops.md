@@ -22,7 +22,7 @@
 |---|---|---|---|---|
 | L1 | 数据→构建→发布 | data-backfill(CI 30min) → `/api/entities.json`/`index.json` → `build-site.mjs` → GitHub Pages | ✅ 通 | 数据契约对齐，CI 内置 Verify 拦截 |
 | L2 | ask 推理 | `ask.html` → `api-guard` Worker → ECS ATEX 网关 `150.158.119.19:8420/v1` | 🟡 国内待路由 | 需 `api.swarmlabs.tools/* → genetech-api-guard`（见 §3-H3） |
-| L3 | license 购买 | `license.html` → `unified-license` Worker → 虎皮椒 | ✅ 已修 | `swarmlabs.tools` 实测通；虎皮椒 `notify/return_url` 待配 |
+| L3 | license 购买 | `license.html` → `unified-license` Worker → 虎皮椒 | ✅ 已修 | `swarmlabs.tools` 实测通；虎皮椒后台无 notify_url 入口，回调由 worker.js 自动带，卡点为本机 wrangler secret put |
 | L4 | 站点侧校验 | 站点 Functions `/api/license` → `unified-license` | ✅ 已修 | `fetchCentral` 多端点；需确认各站 Functions 已部署 |
 | L5 | MCP Server | `@genetech/data-mcp`（npm）stdio | ✅ 可用 | Glama 认领卡浏览器 GitHub 登录 |
 | L6 | Coze bot | `content/coze/*` → Coze 商店 | 🟡 待发布 | 物料备好，端点已统一 `license.genetech.tools` |
@@ -48,7 +48,7 @@
 - 链路：`license.html` 下单 → `unified-license` Worker（`license.swarmlabs.tools`）→ 虎皮椒创建订单 → 回调签发 `GUX_` 许可证 → 站点兑换 `gtk_` 密钥。
 - 旧洞：线上 `license.html` 硬编码 `var WORKER='https://genetech-license.61960005.workers.dev'`（国内 ERR_CONNECTION_TIMED_OUT）→ **购买闭环国内 100% 断**。
 - 修复：改为 `WORKERS=[genetech.tools → swarmlabs.tools → workers.dev]` 故障转移；`swarmlabs.tools` 已实测 HTTP 200、下单+验签通过。
-- 状态：**✅ 已修**（待 push 让线上生效）。剩余：虎皮椒商户后台配 `notify_url`/`return_url` 指向 `license.swarmlabs.tools`（回调闭环最后一环，用户手动）。
+- 状态：**✅ 已修**（待 push 让线上生效）。剩余：**虎皮椒后台无需、也无 `notify_url` 配置入口**（回调地址由 `worker.js` 每笔订单自动携带 `https://license.swarmlabs.tools/api/hupijiao/callback`）；真正卡点为本机 `wrangler secret put HUPIJIAO_APP_ID/APP_SECRET/ADMIN_SECRET`。
 
 ### L4 站点侧许可证校验（本次已修）
 - 链路：各站 `functions/api/license/index.js`（即 `site-adapter.js`）→ 中央 `unified-license` 校验/兑换 → 返回 `api_key` + 缓存。
@@ -93,7 +93,7 @@
 ## 4. 仍待办（需用户 / 待条件）
 
 **用户手动（关键路径）**
-1. 虎皮椒商户后台配 `notify_url=https://license.swarmlabs.tools/api/hupijiao/callback` + `return_url=https://license.swarmlabs.tools/pay/success`（支付回调闭环最后一环）。
+1. 本机 `wrangler secret put HUPIJIAO_APP_ID/APP_SECRET/ADMIN_SECRET`（支付闭环真正卡点；虎皮椒后台无需、也无 notify_url 配置入口，worker.js 已自动带回调地址）。
 2. `swarmlabs.tools` zone 加 `api.swarmlabs.tools/* → genetech-api-guard` 路由（闭 H3）。
 3. `genetech.tools` zone 仍卡 `pending/ns_mismatch`（Registrar 在未知账户）→ 改 NS 或跨账户转移 Registrar 后才可加 `license.genetech.tools`/`api.genetech.tools` 路由。
 4. 重新 `wrangler deploy`（让 H2 的 `LICENSE_VALIDATE_URL` 改动生效）。
