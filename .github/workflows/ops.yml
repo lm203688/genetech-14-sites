@@ -247,13 +247,14 @@ jobs:
           #   "站点×检索词"级游标 —— 30 站、每站 14 个细分子领域词，单轮单站可取数千原始候选、去重后新增数百~上千。
           #   提速靠"抓得深"而非"抓得勤"（见 operations-plan/RATE-LIMIT-BUDGET.md）：
           #   --limit=800      单轮每站新增上限（检索词在并发 3 下都能被遍历）
-          #   --per-page=100   各源单页最大取数（OpenAlex/Crossref/arXiv/S2/EuropePMC/CORE 均支持）
-          #   --max-entities=4000  每站目标容量。单条约 1.1KB，4000 条约 4.4MB，30 站全满 ≈ 132MB；
+          #   --per-page=200   各源单页最大取数（OpenAlex/Crossref/arXiv/S2/EuropePMC/CORE/PubMed 均支持 ≥200）
+          #   --max-entities=10000  每站目标容量。单条约 1.1KB，10000 条约 11MB，30 站全满 ≈ 330MB；
           #                    加结构化索引后总产物仍安全低于 GitHub Pages 1GB 上限；达标站点自动跳过抓取
+          #   --pages=3      每个检索词每轮连翻 3 页（默认），配合逐页持久化游标，单轮产出较旧版 ~3-5×，且部分运行也不丢进度
           if [[ "${{ needs.prepare.outputs.dry_run }}" == "true" ]]; then
-            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --dry-run --limit=800 --per-page=100 --max-entities=4000 --max-minutes=35
+            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --dry-run --limit=800 --per-page=200 --max-entities=10000 --pages=3 --max-minutes=45
           else
-            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --limit=800 --per-page=100 --max-entities=4000 --max-minutes=35 2>&1 | tee /tmp/backfill.log
+            node ${{ env.SCRIPTS_DIR }}/pipeline-data-backfill.js --limit=800 --per-page=200 --max-entities=10000 --pages=3 --max-minutes=45 2>&1 | tee /tmp/backfill.log
           fi
           # 提取本轮新增实体数，供后续 Cloudflare 构建预算守门判定
           ADDED=$(grep -oP '新增实体合计 \K[0-9]+' /tmp/backfill.log 2>/dev/null | tail -1)

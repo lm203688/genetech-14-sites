@@ -15,7 +15,7 @@
  *
  * 用法：
  *   node pipeline-data-backfill.js [--dry-run] [--site=quantum-computing]
- *       [--limit=600] [--max-entities=3000] [--per-page=100]
+ *       [--limit=800] [--max-entities=10000] [--per-page=200] [--pages=3] [--max-minutes=45]
  *
  * 设计原则：失败即空数组（不抛停整轮），礼貌限速（源内并发受控、站间 sleep），
  * 去重幂等（重跑安全），容量闸门（达标停抓，避免单文件与仓库无限膨胀）。
@@ -587,10 +587,12 @@ async function main() {
   const perPageArg = args.find(a => a.startsWith('--per-page='));
   const limit = limitArg ? parseInt(limitArg.split('=')[1], 10) || 600 : 600;
   const perPage = Math.min(perPageArg ? parseInt(perPageArg.split('=')[1], 10) || 100 : 100, 200);
+  const pagesArg = args.find(a => a.startsWith('--pages='));
+  const PAGES_PER_QUERY = pagesArg ? Math.min(parseInt(pagesArg.split('=')[1], 10) || 3, 8) : 3;
   // 每站目标容量：单条约 1.1KB，4000 条 ≈ 4.4MB；30 站全满 ≈ 132MB（entities.json 合计），
   // 加结构化索引后总产物仍安全低于 GitHub Pages 1GB 上限（实测 22 站/3k 时为 184MB）
   const maxArg = args.find(a => a.startsWith('--max-entities='));
-  const maxEntities = maxArg ? parseInt(maxArg.split('=')[1], 10) || 4000 : 4000;
+  const maxEntities = maxArg ? parseInt(maxArg.split('=')[1], 10) || 10000 : 10000;
   // 时间预算：CI 的 job timeout-minutes 是硬杀，一旦触发，末尾的「提交数据」步骤不会执行，
   // 整轮抓取全部作废。这里主动在预算内收尾，保证已抓数据必被提交。默认 35 分钟（CI 上限 50）。
   const minutesArg = args.find(a => a.startsWith('--max-minutes='));
@@ -610,7 +612,15 @@ async function main() {
   let rotate = 0;
   for (const [s, v] of Object.entries(rawCursor)) {
     if (s === '__rotate') { rotate = Number(v) || 0; continue; }
-    cursor[s] = (v && typeof v === 'object') ? v : {};
+    if (v && typeof v === 'object') {
+      cursor[s] = v; // 已是「检索词→offset」对象格式，直接沿用，分页继续推进
+    } else {
+      // 旧 flat「站点→数字」格式：视为 page1 已抓，跳过已抓页，直接从 offset 100 起步，
+      // 让下一轮立刻开始抓 page2，避免永远停在第 1 页（这正是此前扩张停滞的根因）
+      cursor[s] = {};
+      const qs = SITE_QUERIES[s];
+      if (Array.isArray(qs)) for (const q of qs) cursor[s][q] = 100;
+    }
   }
 
   // ===== 站点轮转 =====
@@ -631,7 +641,9 @@ async function main() {
       console.log(`[Backfill] 已达时间预算 ${maxMinutes} 分钟，本轮在第 ${processedSites} 站收尾（剩余站点下轮由轮转起点优先处理）`);
       break;
     }
-    const queries = SITE_QUERIES[site];
+    let queries = SITE_QUERIES[site];
+    // 轻量扩量：为每个检索词追加「2025」年份限定，优先捕获近年文献（跨源/再次抓取由 dedupeKey 兜底去重）
+    queries = queries.flatMap(q => [q, q + ' 2025']);
     if (!queries) { console.warn(`[Backfill] 未知站点 ${site}, 跳过`); continue; }
     processedSites++;
     if (!cursor[site]) cursor[site] = {};
@@ -661,19 +673,28 @@ async function main() {
 
     let siteFetched = 0;
     let siteAdded = 0;
+    // 多页抓取：每个检索词每轮连翻 PAGES_PER_QUERY 页，游标逐页持久化；
+    // 即便被时间预算截断，已翻页的偏移也已写入 cursor，下轮无缝续抓（修复「永远停在第 1 页」）
+    async function runQuery(q) {
+      let off = Number(cursor[site][q]) || 0;
+      let f = 0, a = 0;
+      for (let p = 0; p < PAGES_PER_QUERY; p++) {
+        if (map.size >= maxEntities) break;
+        const r = await backfillQuery(site, q, off, perPage, limit, map);
+        f += r.fetched; a += r.added;
+        off = r.nextOffset;
+        cursor[site][q] = off; // 逐页落盘（站点循环结束后统一写文件）
+        if (r.fetched === 0) break; // 该页已无新结果，停止翻页
+      }
+      return { q, fetched: f, added: a };
+    }
+
     for (let i = 0; i < queries.length; i += QUERY_CONCURRENCY) {
       if (map.size >= maxEntities) break;
       const chunk = queries.slice(i, i + QUERY_CONCURRENCY);
-      const chunkRes = await Promise.all(chunk.map(q => {
-        const off = Number(cursor[site][q]) || 0;
-        return backfillQuery(site, q, off, perPage, limit, map).then(r => ({ q, ...r }));
-      }));
-      for (const r of chunkRes) {
-        cursor[site][r.q] = r.nextOffset;
-        siteFetched += r.fetched;
-        siteAdded += r.added;
-      }
-      await sleep(300); // 检索词批次间礼貌限速
+      const chunkRes = await Promise.all(chunk.map(runQuery));
+      for (const r of chunkRes) { siteFetched += r.fetched; siteAdded += r.added; }
+      await sleep(150); // 检索词批次间礼貌限速
     }
 
     const all = Array.from(map.values());
