@@ -66,4 +66,6 @@ CF Dashboard → `swarmlabs.tools` → Workers Routes → 加 `api.swarmlabs.too
 | 虎皮椒后台需配 notify_url | ❌ 虎皮椒后台无此入口；回调由 worker.js 每笔订单自动带 | 已 WebSearch 核实 + 代码第 660 行 |
 | `*.workers.dev` 可作国内主端点 | ❌ 国内被墙（ERR_CONNECTION_TIMED_OUT） | 实测 |
 | genetech.tools 已可加路由 | ❌ Registrar 在未知账户，zone pending/ns_mismatch | CF API 实测 |
-| 数据库已停滞 | ❌ 49,879 实体、CI 每小时推进 | 本仓实算 |
+| 数据库持续每小时扩张 | ❌ 2026-08-17 后游标触顶停滞于 49,879（CI 无新增） | 本仓实算 + db-health-history.json |
+| §4.5 运维/质量改进已推送部署 | ❌ 仅编码未推送，DOI 仍 0% 印证未部署 | git status + 线上 DOI 0% |
+| 每日巡检会自动告警触达 | ❌ 此前仅写本地日志无触达，8-18 的 STALL 未被看到（本轮补强为经 Agent Mail 发信） | db-health-log.md 2026-08-18 |

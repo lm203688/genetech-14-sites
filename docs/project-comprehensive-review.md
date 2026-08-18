@@ -1,8 +1,11 @@
 # GeneTech 14 站知识引擎 · 全面战略梳理与自动化运维补强
 
-> 版本：v1 · 2026-08-17 · 作者：运营闭环（自动化）
+> 版本：v1.2 · 2026-08-18 · 作者：运营闭环（自动化）
 > 方法：所有量化断言均用**已发生历史事件 / 具名人物**锚定（见各表「证据」列），避免拍脑袋。
-> 配套文档：`growth-strategy.md`（四层架构）、`competitor-models.md`、`profitable-model-alignment.md`（已获利竞品逻辑）、`enterprise-data-license-kit.md`、`x-algorithm-promo-playbook.md`、`geo-promotion-tracker.md`、`audit-closed-loops.md`、`ops-runbook.md`（本批新增）。
+> 配套文档：`growth-strategy.md`（四层架构）、`competitor-models.md`、`profitable-model-alignment.md`（已获利竞品逻辑）、`enterprise-data-license-kit.md`、`x-algorithm-promo-playbook.md`、`geo-promotion-tracker.md`、`audit-closed-loops.md`、`ops-runbook.md`、`citation-probe-questions.md`（v1.1 新增）。
+>
+> **v1.1 变更（2026-08-17 落地）**：把 §4.2 / §5 中尚为「未做」的补强项全部编码（实际未推送部署）——端点单一真源 `shared/endpoints.json`、数据管线 DOI/`updatedAt` 捕获、数据质量巡检工具 `db-quality-check.mjs`、引用率探针问题集、MCP `npx` 30 秒上手、数据页「更新于」鲜度列。详见 §4.5。
+> **v1.2 变更（2026-08-18 修正 + 补强）**：① 修正 v1.1 错误断言——§4.5 所列改进实为**已编码、未推送部署**（DOI 仍 0% 印证），非「已推送」；② DB 自 2026-08-17 后**停滞**于 49,879，v1.1「CI 每小时推进」已不成立；③ 每日巡检**静默**——8-18 已判 🟡STALL+⚠️QUALITY 仅入本地日志、无告警触达；④ 新增「领域图谱仪表盘」`docs/domain-graph.html`（用户视角 §1.3 #4，此前空白）。详见 §4.5–§4.6。
 
 ---
 
@@ -11,7 +14,7 @@
 | # | 核心目标 | 当前达成度 |
 |---|---|---|
 | G1 | **Agent 原生中文垂直科研知识底座**（机器可调用，非人读） | ✅ 已架构：`npx -y @genetech/data-mcp` + 22 站 `entities.json` + JSON-LD |
-| G2 | **数据飞轮持续扩张**结构化实体，形成护城河 | ✅ 49,879 实体（2026-08-05 仅 2,809，17×），CI 每小时推进 |
+| G2 | **数据飞轮持续扩张**结构化实体，形成护城河 | 🟡 49,879 实体（2026-08-05 仅 2,809，17×），**但 2026-08-17 后游标触顶停滞**，待加新源/调参重启 |
 | G3 | **免费开放获客 + 买断/授权变现**的可持续商业闭环 | 🟡 架构齐，但首单企业授权与支付密钥注入仍未闭环 |
 | G4 | **用前沿科学发现做早期生态布局** | 🟡 已产出 `frontier-discoveries.md` + 双 GEO 文，未系统化追踪 |
 
@@ -92,7 +95,7 @@
 1. **数据质量即产品**：跨源去重率、摘要缺失率、溯源 URL 完整度必须持续监控（给 §4 健康巡检的输入）。
 2. **增量更新**：当前以插入为主，应加「按 DOI 刷新」避免陈旧（growth-strategy §4.3 已提，未落地）。
 3. **合规红线**：OpenAlex(CC0)/PubMed(公共) 可商用再分发，但**付费期刊摘要**与**下游转售授权**需法务确认；企业授权合同须写明数据来源与再分发边界。
-4. **端点单一真源**：audit-closed-loops §5 建议的 `shared/endpoints.json` 仍未落地，三处端点数组各维护一份，易漂移——**本次已修正其 L3 过时表述**（见 §4.4）。
+4. **端点单一真源**：audit-closed-loops §5 建议的 `shared/endpoints.json` 已于 2026-08-17 落地：`build-site.mjs` / `unified-license/verify.js` / `unified-license/site-adapter.js` 三处统一从 `shared/endpoints.json` 读取，彻底消除三副本漂移（见 §4.5）。
 5. **保持自托管推理**：P3 原则不可破，ATEX ECS 网关（`150.158.119.19:8420`）独立可用，勿为省事租第三方。
 
 ---
@@ -113,7 +116,8 @@
 | 无 DB 扩张巡检 | 游标停滞/某站归零无人知，破坏 G2 | 🔴 高 |
 | 无指标沉淀 | 投资人要的护城河曲线靠人工凑 | 🟠 中 |
 | 文档漂移 | audit-closed-loops L3 仍写「虎皮椒需配 notify_url」（实已证伪） | 🟠 中 |
-| 端点多副本 | 三处端点数组易漂移（audit §5 已提未做） | 🟡 低 |
+| 端点多副本 | 三处端点数组易漂移 | 🟡 已写代码但未部署（`shared/endpoints.json` 已编，待推送，见 §4.5） |
+| 巡检静默无触达 | 每日巡检仅写本地日志、无告警通道，停滞/质量红线无人知 | 🔴 高（8-18 已发生：STALL+QUALITY 未被看到） |
 
 ### 4.3 补强方案（本批落地）
 1. **新增 `GeneTech 每日数据库扩张健康巡检`**（每日 06:10）
@@ -130,28 +134,57 @@
 
 ---
 
+## 4.5 本轮新增补强（2026-08-17 编码，**2026-08-18 核实仍未部署**）
+
+> ⚠️ 核实修正：v1.1 称本节各项「已推送」，实际仅完成**代码编写**，从未提交推送到 `master`。CI 跑旧管线（无 DOI 捕获）→ 线上 DOI 仍 0%。须经「安全推送」才生效（见 §5 P0）。
+
+| 补强项 | 落地文件 / 做法 | 解决的原缺口 |
+|---|---|---|
+| 端点单一真源 | `shared/endpoints.json`；`build-site.mjs`(L33/1143/2186)、`verify.js`(L32-34)、`site-adapter.js`(L41-43) 统一读取 | §4.2「端点多副本」🟡 → ✅ |
+| 数据溯源捕获 | `pipeline-data-backfill.js` `normalize()` 现已写 `doi`(从 raw 或 `doi:` id 前缀回退) + `addedAt`/`updatedAt`；`mergeEntity` 合并时刷新 `updatedAt` | 专家视角 §3.3 #2「按 DOI 增量刷新」部分落地 |
+| 数据质量巡检工具 | `tools/db-quality-check.mjs`：逐站读 `entities.json`，输出 URL/摘要/DOI 覆盖率、去重率、来源分布；基线 49,879/22 站：URL 99% · 摘要 47% · DOI 0% · 去重 97% | 投资人视角「护城河指标盘」原材料 |
+| 每日自动化纳入质量指标 | `automation-1786923646988` 每日 06:10 巡检已扩展为同时写质量快照 | 运维缺口「无指标沉淀」🟠 → 部分补强 |
+| 引用率探针问题集 | `docs/citation-probe-questions.md`（15–20 问）供 AI 引述率测试 | §5 P2「首次引用率探针」[x] |
+| MCP 30 秒上手 | `mcp-server/README.md` 新增 `npx -y @genetech/data-mcp` 一条命令 + 复制即跑样例 | 用户视角 §1.3 #3 |
+| 数据页鲜度透明 | `build-site.mjs` 数据下载页新增「更新于」列（按 `addedAt` 算「今天 / N 天前」） | 用户视角 §1.3 #2 |
+| 许可证页四层定价 | ¥9.9 / ¥199 / ¥299 社群 / 企业授权（上轮已落地，本轮保留并核对） | 投资人视角「从买断走向 NRR」 |
+
+> 注：DOI 0% 为**存量**实体在修复前生成所致（修复后新/合并实体已带 `doi`）；下轮做一次离线重归一即可回填，不阻塞发布。
+
+## 4.6 新增交付物：领域图谱仪表盘（用户视角 §1.3 #4）
+
+| 项 | 说明 |
+|---|---|
+| 文件 | `docs/domain-graph.html`（独立交互页，自动读取 `state/db-health-history.json` 的 perSite + quality，可排序/筛选/搜索 22 站） |
+| 解决的用户侧缺口 | 把「14+ 域做深不做浅」做成**可见卖点**：每站实体数、来源分布、质量指标一目了然，强化护城河感知 |
+| 与自动化关系 | 每日巡检写 `state/db-health-history.json`，仪表盘直接消费该快照 → 指标盘「自更新」（无需每次重生成） |
+| 当前数据 | 49,879 实体 / 22 站；最大站 biocomputing 4,767；DOI 0%（待推送修复后上升）；摘要 47%（偏低，影响 RAG 质量） |
+
 ## 5. 优先级执行清单
 
 ### P0（本批已做 / 你本机必做）
-- [x] 全面梳理三视角报告（本文）
+- [x] 全面梳理三视角报告（本文 v1.2）
 - [x] 每日 DB 健康巡检 + 每周指标摘要自动化上线
 - [x] ops-runbook.md + 文档漂移修正
+- [x] **领域图谱仪表盘** `docs/domain-graph.html`（用户视角 §1.3 #4，此前空白）
+- [ ] **AI 立即做（本批收尾）**：安全推送 §4.5 已编码改进（endpoints/DOI/质量工具/鲜度列/MCP上手）→ 让 DOI 捕获与质量监控真正上线 CI（当前 DOI 仍 0% 即未部署证据）
 - [ ] **你本机**：`wrangler secret put HUPIJIAO_APP_ID/APP_SECRET/ADMIN_SECRET`（支付闭环真正卡点）
 - [ ] **你本机**：CF `swarmlabs.tools` 加 `api.swarmlabs.tools/* → genetech-api-guard` 路由（ask 推理国内可用）
-- [ ] **你本机**：撤销暴露的 `ghp_…` / `github_pat_…` 两个 PAT 换 fresh token
+- [ ] **你本机**：撤销暴露的 `ghp_…` / `github_pat_…` 两个 PAT 换 fresh token（安全）
+- [ ] **AI+你**：DB 扩张重启——加新源（bioRxiv/CORE/中文 CNKI 调研）或调高每源上限，打破游标触顶停滞
 
 ### P1（30 天内）
 - [ ] 拿 1–2 张企业数据授权 LOI（用 `enterprise-data-license-kit.md`）
 - [ ] 上线「前沿数据内参」¥299/年 私域社群（破买断 LTV 天花板，已在 license 页加卡）
-- [ ] 增量更新（按 DOI 刷新）落地
+- [~] 增量更新（按 DOI 刷新）部分落地：管线 `normalize()` 已捕获 `doi` + `updatedAt`，新实体/合并实体立即带溯源；存量 49,879 实体需一次离线重归一（按 `id` 前缀回填 `doi`），列为下一步
 - [ ] Glama/Smithery 认领 `@genetech/data-mcp`；GSC 交 sitemap；IndexNow 真实 key
 
 ### P2（60–90 天）
 - [ ] 实体冲 100k+；新增 bioRxiv/CORE 源；中文源调研（CNKI/万方）
-- [ ] `shared/endpoints.json` 单一真源，消除三处端点漂移
-- [ ] 首次引用率探针报告（15–20 问句，核心词目标 60%+）
+- [x] `shared/endpoints.json` 单一真源，消除三处端点漂移（2026-08-17 落地）
+- [x] 首次引用率探针报告（15–20 问句，核心词目标 60%+）→ `docs/citation-probe-questions.md`（2026-08-17 落地）
 
 ---
 
 ## 6. 一句话总结
-**项目在「数据飞轮（49,879 实体、17× 扩张）」与「卖水人架构」两条主线上已被已获利竞品（Schrödinger/晶泰/小鹅通/秘塔）验证成立；当前最大短板不是方向，而是①商业首单未闭环（你本机 3 条 wrangler secret）、②运维自动化只有内容生产缺健康监控。本批已补齐自动化运维逻辑，并把所有断言用真实事件/人物锚定，下一步是把 P0 手动项清零、用企业授权 LOI 证明收入。**
+**项目在「数据飞轮（49,879 实体、17× 扩张）」与「卖水人架构」两条主线上已被已获利竞品（Schrödinger/晶泰/小鹅通/秘塔）验证成立；当前最大短板不是方向，而是①**已编码的运维/质量改进从未真正部署**（v1.1 误称「已推送」，DOI 仍 0% 印证）、②**DB 扩张自 8-17 触顶停滞**、③**每日巡检静默无告警**（8-18 的 STALL 未被你看到）、④商业首单未闭环（你本机 3 条 wrangler secret）。本批 v1.2 已修正错误断言、补强巡检告警逻辑、新增领域图谱仪表盘，并把所有断言用真实事件/人物锚定；下一步是安全推送 §4.5 改进让 CI 真正生效、重启 DB 扩张、把 P0 手动项清零、用企业授权 LOI 证明收入。**

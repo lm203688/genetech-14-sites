@@ -29,10 +29,11 @@
 | CSDN / 掘金（技术） | 手把手接 MCP | ⬜ 待发 | growth-materials §B4 |
 
 **新增 GEO 权威长文（本批产出，建议同步分发）**：
-- `content/blog/bio-ai-frontier-2025-2026.md` — AI for Science 范式转移（bio×AI 核心集群）
-- `content/blog/gene-editing-2-0-2025-2026.md` — 基因编辑 2.0（genetech-tools 域）
+- `content/blog/bio-ai-frontier-2025-2026.md` — AI for Science 范式转移（bio×AI 核心集群）· 2026-08-14
+- `content/blog/gene-editing-2-0-2025-2026.md` — 基因编辑 2.0（genetech-tools 域）· 2026-08-14
+- `content/blog/biocomputing-2025-2026.md` — 生物计算：DNA 存储 / CRISPRi 基因电路 / ML×代谢建模（biocomputing 域）· **2026-08-17 本周产出**，默认带 X 算法排名信号结构（钩子问题 / 配图占位 / 收藏级长文 / 垂直关键词 / 转化 CTA / 避罚）
 
-这两篇带可溯源引用、答案优先，是喂给 AI 引擎做「XX 领域最新进展」类问句的高价值语料；发布后建议在知乎/公众号各改写一篇。
+这三篇带可溯源引用、答案优先，是喂给 AI 引擎做「XX 领域最新进展」类问句的高价值语料；发布后建议在知乎/公众号各改写一篇。主题已按周轮换：AI4S 范式 → 基因编辑 2.0 → 生物计算，避免重复。
 
 ---
 

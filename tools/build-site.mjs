@@ -28,6 +28,12 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
+// 端点单一真源：三处（license / api）故障转移数组统一从此读取，杜绝漂移。
+// 顺序即故障转移顺序；*.workers.dev 仅末位兜底（国内被墙）。
+const ENDPOINTS = JSON.parse(fs.readFileSync(path.join(ROOT, 'shared', 'endpoints.json'), 'utf8'));
+const ENDPOINTS_LICENSE = ENDPOINTS.license;
+const ENDPOINTS_API = ENDPOINTS.api;
+
 const argv = process.argv.slice(2);
 const getArg = (flag, def) => {
   const i = argv.indexOf(flag);
@@ -1134,7 +1140,7 @@ const ASK_PAGE_JS = `/* GeneTech AI 问答页前端（自包含，无依赖） *
   // 这样 ask.html 无论部署在 GitHub Pages 还是任意域名，都能调到 AI 推理后端，
   // 且不暴露上游网关地址（api-guard Worker 做同源转发 + CORS *）。
   var metaBase = document.querySelector('meta[name="llm-api-base"]');
-  var FALLBACK_ENDPOINTS = ['https://api.genetech.tools', 'https://api.swarmlabs.tools', 'https://genetech-api-guard.61960005.workers.dev'];
+  var FALLBACK_ENDPOINTS = ${JSON.stringify(ENDPOINTS_API)};
   var ENDPOINTS = (metaBase && metaBase.content && metaBase.content.trim())
     ? [metaBase.content.trim().replace(/\/+$/, '')].concat(FALLBACK_ENDPOINTS)
     : FALLBACK_ENDPOINTS;
@@ -1452,17 +1458,23 @@ curl ${ORIGIN}${BASE}/api/graph.json    # 主题共现图谱（节点+边）</co
 function renderDataPage(sites, stats, labels) {
   const canonical = `${ORIGIN}${BASE}/data.html`;
   const rows = sites
-    .map(
-      (s) => `<tr>
+    .map((s) => {
+      const ents = s.entities || [];
+      let freshTs = 0;
+      for (const e of ents) { const t = e.addedAt ? Date.parse(e.addedAt) : 0; if (t > freshTs) freshTs = t; }
+      const days = freshTs ? Math.floor((Date.now() - freshTs) / 86400000) : -1;
+      const fresh = days < 0 ? '—' : days === 0 ? '今天' : days + ' 天前';
+      return `<tr>
 <td><a href="${BASE}/${s.slug}/">${esc(labels[s.slug] || s.slug)}</a></td>
-<td>${s.entities.length}</td>
+<td>${ents.length}</td>
+<td>${fresh}</td>
 <td><a href="${BASE}/${s.slug}/website/api/entities.json">JSON</a></td>
 <td><a href="${BASE}/${s.slug}/website/api/entities.jsonl.gz">JSONL.gz</a></td>
 <td><a href="${BASE}/${s.slug}/website/api/entities.csv">CSV</a></td>
 <td><a href="${BASE}/${s.slug}/website/api/citations.bib">BibTeX</a></td>
 <td><a href="${BASE}/${s.slug}/website/api/citations.csl.json">CSL-JSON</a></td>
-</tr>`,
-    )
+</tr>`;
+    })
     .join('\n');
 
   const body = `
@@ -1496,7 +1508,7 @@ function renderDataPage(sites, stats, labels) {
 <h2>分领域下载</h2>
 <div class="tablewrap">
 <table class="cmp">
-<thead><tr><th>领域</th><th>实体数</th><th>JSON</th><th>JSONL</th><th>CSV</th><th>BibTeX</th><th>CSL-JSON</th></tr></thead>
+<thead><tr><th>领域</th><th>实体数</th><th>更新于</th><th>JSON</th><th>JSONL</th><th>CSV</th><th>BibTeX</th><th>CSL-JSON</th></tr></thead>
 <tbody>${rows}</tbody>
 </table>
 </div>
@@ -2171,7 +2183,7 @@ ${nav}
   <p class="note">支付由虎皮椒（国内合规聚合支付）处理。下单即生成待支付订单，支付成功后自动签发 GUX_ 统一许可证。</p>
 </main>
 <script>
-var WORKERS = ['https://license.genetech.tools', 'https://license.swarmlabs.tools', 'https://genetech-license.61960005.workers.dev'];
+var WORKERS = ${JSON.stringify(ENDPOINTS_LICENSE)};
 async function fetchWorker(path, opts) {
   var lastErr;
   for (var i = 0; i < WORKERS.length; i++) {

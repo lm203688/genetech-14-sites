@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-17",
+  "date": "2026-08-18",
   "total": 49879,
   "sites": 22,
   "perSite": {
@@ -25,5 +25,22 @@
     "spatial-computing": 1258,
     "synbio-manufacturing": 2711,
     "tcm-tools": 2289
+  },
+  "quality": {
+    "urlCompleteness": 99,
+    "abstractCompleteness": 47,
+    "doiTraceability": 0,
+    "dedupRate": 97,
+    "uniqueKeys": 48249,
+    "bySource": {
+      "arxiv": 8684,
+      "openalex": 8573,
+      "crossref": 12093,
+      "pubmed": 6106,
+      "europepmc": 12679,
+      "semanticscholar": 671,
+      "datacite": 442,
+      "preprints": 631
+    }
   }
 }

@@ -35,14 +35,12 @@
  */
 
 // ============================================================================
-// 配置
+// 配置（单一真源 shared/endpoints.json，杜绝三处端点数组漂移）
 // ============================================================================
 
-const DEFAULT_CENTRAL_APIS = [
-  'https://license.genetech.tools',
-  'https://license.swarmlabs.tools',
-  'https://genetech-license.61960005.workers.dev',
-];
+import endpoints from '../shared/endpoints.json' with { type: 'json' };
+
+const DEFAULT_CENTRAL_APIS = endpoints.license;
 const CACHE_TTL_VALID = 3600; // 有效结果缓存 1 小时
 const CACHE_TTL_INVALID = 300; // 无效结果缓存 5 分钟
 const REQUEST_TIMEOUT_MS = 10000;

@@ -12,6 +12,32 @@ GeneTech 14 站知识引擎的实体数据。这是项目从"给人看的内容�
 - `<site>/website/api/entities.json` → 实体数组
   `{ id, name, source, abstract, url, authors[], tags[], confidence, sites[], publishedDate, addedAt }`
 
+## 30 秒上手（零安装，推荐）
+
+无需 clone、无需 `npm install`——一条命令让任意支持 MCP 的 AI 客户端（Claude Desktop / Cursor / Cline）实时查询全部 22 域数据：
+
+```bash
+npx -y @genetech/data-mcp
+```
+
+接入 Claude Desktop（`claude_desktop_config.json`）后，直接对 AI 说：
+
+> 用 GeneTech 的 ai4science 域，找 3 篇 2025 年 AlphaFold 3 相关的论文，导出 BibTeX。
+
+最小可运行样例（Python，复制即跑，免密钥拉取开放数据）：
+
+```python
+import urllib.request, json
+BASE = "https://lm203688.github.io/genetech-14-sites"
+catalog = json.load(urllib.request.urlopen(f"{BASE}/api/catalog.json"))
+print("可查询领域数:", len(catalog["sites"]))
+site0 = catalog["sites"][0]["slug"]
+ents = json.load(urllib.request.urlopen(f"{BASE}/{site0}/website/api/entities.json"))
+print(f"{site0} 实体数:", len(ents))
+```
+
+> 付费墙：设置 `GENETECH_API_KEY` + `GENETECH_REQUIRE_AUTH` 后，远程模式才会要求 Bearer 鉴权（见下）。
+
 ## 快速开始（本地 / 自托管）
 
 ```bash

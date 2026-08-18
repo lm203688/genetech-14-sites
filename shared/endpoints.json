@@ -1,0 +1,13 @@
+{
+  "license": [
+    "https://license.genetech.tools",
+    "https://license.swarmlabs.tools",
+    "https://genetech-license.61960005.workers.dev"
+  ],
+  "api": [
+    "https://api.genetech.tools",
+    "https://api.swarmlabs.tools",
+    "https://genetech-api-guard.61960005.workers.dev"
+  ],
+  "_note": "单一真源：build-site.mjs / unified-license/verify.js / unified-license/site-adapter.js 均从此读取，杜绝三处端点数组漂移。顺序即故障转移顺序，*.workers.dev 仅末位兜底（国内被墙）。"
+}

@@ -182,7 +182,33 @@ function mergeEntity(oldE, newE) {
   merged.source = (newE.confidence >= (oldE.confidence || 0)) ? newE.source : oldE.source;
   merged.sites = Array.from(new Set([...(oldE.sites || []), ...(newE.sites || [])]));
   if (newE.addedAt && (!oldE.addedAt || newE.addedAt < oldE.addedAt)) merged.addedAt = newE.addedAt;
+  // 标记最近一次字段级合并时间（使「按 DOI 增量刷新」可量化、可监控）
+  merged.updatedAt = newE.updatedAt || getISOTime();
   return merged;
+}
+
+/**
+ * 存量 DOI 自愈回填：早期管线未把 doi 写入实体，导致「溯源率」长期为 0。
+ * 这里按 id 前缀（doi:10.xxxx）或 url 中的 doi.org 反推补全——
+ * 纯函数、幂等，仅对缺失 doi 的实体补全，不动其它字段。
+ * 由下一轮 CI 落库时自动生效（CI 拥有推送凭据），无需手动改远端实体文件，
+ * 也避免本地直推覆盖 CI 已推进的游标/实体。
+ */
+function backfillDoi(list) {
+  let changed = 0;
+  const norm = list.map((e) => {
+    if (e.doi) return e;
+    let doi = '';
+    if (typeof e.id === 'string' && e.id.startsWith('doi:')) doi = e.id.slice(4);
+    if (!doi) {
+      const m = /doi\.org\/(10\.[^\s)]+)/.exec(e.url || '');
+      if (m) doi = m[1];
+    }
+    if (!doi) return e;
+    changed++;
+    return { ...e, doi, updatedAt: e.updatedAt || getISOTime() };
+  });
+  return { norm, changed };
 }
 
 // ==================== 各数据源抓取（带领域检索词） ====================
@@ -512,7 +538,10 @@ function normalize(raw, site) {
     confidence: typeof raw.confidence === 'number' ? raw.confidence : (SOURCE_CONFIDENCE[raw.source] || 0.6),
     sites: [site],
     publishedDate: raw.publishedDate || '',
+    // 溯源补全：doi 优先取源字段；若源未给但 id 以 doi: 开头则回退（跨源可溯源关键字段）
+    doi: raw.doi || (String(id).startsWith('doi:') ? id.slice(4) : ''),
     addedAt: getISOTime(),
+    updatedAt: getISOTime(),
   };
 }
 
@@ -611,17 +640,24 @@ async function main() {
     const livePath = path.join(siteDir, 'entities.json');
     const indexPath = path.join(siteDir, 'index.json');
     const existing = (await readJsonSafe(livePath)) || [];
+    // 存量 DOI 自愈回填：下一轮落库即对全部存量生效（含已饱和站点）
+    const { norm: existingNorm, changed: doiChanged } = backfillDoi(existing);
 
     if (existing.length >= maxEntities) {
-      console.log(`[Backfill] ${site}: 已达目标容量 ${existing.length}/${maxEntities}，跳过抓取`);
-      results.push({ site, fetched: 0, added: 0, total: existing.length, capped: true, dryRun });
+      // 已饱和站点：即便不抓取，也把回溯到的 doi 落库，抬升溯源率
+      if (doiChanged && !dryRun) {
+        await ensureDir(siteDir);
+        await fs.writeFile(livePath, JSON.stringify(existingNorm, null, 2), 'utf-8');
+      }
+      console.log(`[Backfill] ${site}: 已达目标容量 ${existingNorm.length}/${maxEntities}${doiChanged ? `，回溯 DOI ${doiChanged} 条` : ''}，跳过抓取`);
+      results.push({ site, fetched: 0, added: 0, total: existingNorm.length, capped: true, doiBackfilled: doiChanged, dryRun });
       await sleep(150);
       continue;
     }
 
     // 既有实体预装入 map（键=去重键），保证幂等 + 跨源去重
     const map = new Map();
-    for (const e of existing) map.set(dedupeKey(e), e);
+    for (const e of existingNorm) map.set(dedupeKey(e), e);
 
     let siteFetched = 0;
     let siteAdded = 0;

@@ -26,10 +26,12 @@
  */
 
 // ============================================================================
-// 配置：中央许可证 API 地址（可按需修改为你的部署地址）
+// 配置：中央许可证 API 地址（单一真源 shared/endpoints.json，杜绝三处漂移）
 // ============================================================================
 
-export const UNIFIED_APIS = ['https://license.genetech.tools', 'https://license.swarmlabs.tools', 'https://genetech-license.61960005.workers.dev'];
+import endpoints from '../shared/endpoints.json' with { type: 'json' };
+
+export const UNIFIED_APIS = endpoints.license;
 
 // 统一许可证密钥前缀
 const UNIFIED_KEY_PREFIX = 'GUX_';
