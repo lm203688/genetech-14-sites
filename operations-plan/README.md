@@ -43,7 +43,7 @@ cp .env.example .env
 
 ```env
 # GitHub API Token（用于采集 GitHub 仓库数据，必需）
-GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
+GITHUB_TOKEN=<你的_GITHUB_TOKEN_仅_contents_write_最小权限>
 
 # IndexNow 配置（用于 SEO 自动提交，可选）
 INDEXNOW_KEY=your-indexnow-key

@@ -3,8 +3,11 @@
 //   genetech-license.<sub>.workers.dev
 //   genetech-api-guard.<sub>.workers.dev
 //
-// 用法（需 CF_API_TOKEN 环境变量）：
-//   CF_API_TOKEN=cfut_xxx node tools/deploy-independent-workers.mjs
+// 用法（以下环境变量必须预先 export，切勿硬编码凭证）：
+//   CF_API_TOKEN=cfut_xxx                # Cloudflare API Token（部署 Worker）
+//   HUPIJIAO_APP_ID=<你的_虎皮椒_AppID>         # 虎皮椒 AppID（或改用 wrangler secret put 注入）
+//   HUPIJIAO_APP_SECRET=xxx              # 虎皮椒 AppSecret
+//   node tools/deploy-independent-workers.mjs
 //
 // 设计：复用现有 KV (UNIFIED_LICENSES) 避免已签发许可证丢失；
 //       虎皮椒凭证直接注入 secret；全新 ADMIN_SECRET（KV 当前为空，换密钥安全）。
@@ -113,13 +116,16 @@ const licenseBindings = [
   { type: 'plain_text', name: 'ALLOWED_SITES', text: ALLOWED_SITES },
   { type: 'plain_text', name: 'HUPIJIAO_PRICE_MAP', text: JSON.stringify({ starter: '9.90', pro: '39.90', lifetime: '199.00' }) },
   { type: 'secret_text', name: 'ADMIN_SECRET', text: ADMIN_SECRET },
-  { type: 'secret_text', name: 'HUPIJIAO_APP_ID', text: '201906181178' },
-  { type: 'secret_text', name: 'HUPIJIAO_APP_SECRET', text: 'd856af3cab45ce0b0ae5d491a2ac94b0' },
+  { type: 'secret_text', name: 'HUPIJIAO_APP_ID', text: process.env.HUPIJIAO_APP_ID || '' },
+  { type: 'secret_text', name: 'HUPIJIAO_APP_SECRET', text: process.env.HUPIJIAO_APP_SECRET || '' },
 ];
+if (!process.env.HUPIJIAO_APP_ID || !process.env.HUPIJIAO_APP_SECRET) {
+  console.warn('[WARN] HUPIJIAO_APP_ID/SECRET 未设置，支付通道将不可用（请 export 或用 wrangler secret put 注入）');
+}
 
 const apiCode = fs.readFileSync(path.join(ROOT, 'api-guard/worker.js'), 'utf8');
 const apiBindings = [
-  { type: 'plain_text', name: 'LLM_BRIDGE_BASE', text: 'http://150.158.119.19:8420/v1' },
+  { type: 'plain_text', name: 'LLM_BRIDGE_BASE', text: process.env.LLM_BRIDGE_BASE || 'http://150.158.119.19:8420/v1' },
   { type: 'plain_text', name: 'LLM_BRIDGE_MODEL', text: 'deepseek-chat' },
   { type: 'plain_text', name: 'LLM_FREE_RATE', text: '20' },
   { type: 'plain_text', name: 'LLM_BRIDGE_KEY', text: '' },

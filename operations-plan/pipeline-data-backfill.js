@@ -442,8 +442,10 @@ async function fetchZenodo(query, max, offset = 0) {
 }
 
 async function fetchCORE(query, max, offset = 0) {
-  // CORE：全球开放获取聚合（预印本+期刊全文），免费 demo key 可用；失败即空。
-  const key = (process.env.CORE_API_KEY || 'e6d5c495-5365-4616-be4c-f5203f0e3a98');
+  // CORE：全球开放获取聚合（预印本+期刊全文）。KEY 必须经环境变量 CORE_API_KEY 注入，
+  // 严禁硬编码（旧 key 已泄露，须在 CORE 后台 rotate 后设为 GitHub Actions secret）。
+  const key = process.env.CORE_API_KEY || '';
+  if (!key) { console.warn('[CORE] 未配置 CORE_API_KEY，跳过该数据源'); return []; }
   const url = `https://api.core.ac.uk/v3/search/works?q=${encodeURIComponent(query)}&limit=${Math.min(max, 100)}&offset=${offset}`;
   try {
     const res = await withRetry(

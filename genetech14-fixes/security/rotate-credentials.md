@@ -119,10 +119,12 @@ wrangler secret put CREEM_API_KEY
 
 ## 第五步：验证修复
 
+> ⚠️ 安全：本步原示例含真实 `cfut_` token，已脱敏为占位符。若该 token 曾真实可用，请立即到 Cloudflare 后台吊销并轮换（旧 token 泄露 = 账户接管风险）。
+
 1. 确认旧凭证已失效：
    ```powershell
    # 用旧 Token 测试 Cloudflare API（应返回 401）
-   curl -H "Authorization: Bearer cfut_GnELipaQ4TMRXnNbHIVlSi2xKFyVEM0sMYV42R9o6e9bd36f" `
+   curl -H "Authorization: Bearer <OLD_CF_TOKEN_REDACTED>" `
      "https://api.cloudflare.com/client/v4/user/tokens/verify"
    ```
 
