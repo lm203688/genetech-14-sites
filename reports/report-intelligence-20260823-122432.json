@@ -1,0 +1,217 @@
+{
+  "pipeline": "intelligence",
+  "version": "1.0",
+  "timestamp": "2026-08-23T12:24:32.173Z",
+  "dryRun": false,
+  "durationMs": 5288,
+  "summary": {
+    "signalsCollected": 4,
+    "competitorsMonitored": 6,
+    "marketGapsIdentified": 4,
+    "recommendationsGenerated": 4
+  },
+  "rawIntel": [
+    {
+      "source": "hackernews",
+      "type": "LLM",
+      "_dryRun": false
+    },
+    {
+      "source": "hackernews",
+      "type": "AI agent",
+      "_dryRun": false
+    },
+    {
+      "source": "hackernews",
+      "type": "RAG",
+      "_dryRun": false
+    },
+    {
+      "source": "hackernews",
+      "type": "MCP",
+      "_dryRun": false
+    }
+  ],
+  "competitorMatrix": [
+    {
+      "name": "Semantic Scholar",
+      "type": "platform",
+      "scores": {
+        "功能覆盖度": 0.92,
+        "更新频率": 0.69,
+        "用户体验": 0.76,
+        "社区活跃度": 0.85,
+        "技术前沿度": 0.87
+      },
+      "weightedScore": 0.82
+    },
+    {
+      "name": "Papers With Code",
+      "type": "knowledge-engine",
+      "scores": {
+        "功能覆盖度": 0.77,
+        "更新频率": 0.56,
+        "用户体验": 0.99,
+        "社区活跃度": 0.84,
+        "技术前沿度": 0.81
+      },
+      "weightedScore": 0.79
+    },
+    {
+      "name": "HuggingFace Papers",
+      "type": "knowledge-engine",
+      "scores": {
+        "功能覆盖度": 0.94,
+        "更新频率": 0.56,
+        "用户体验": 0.64,
+        "社区活跃度": 0.89,
+        "技术前沿度": 0.9
+      },
+      "weightedScore": 0.79
+    },
+    {
+      "name": "Google Scholar",
+      "type": "platform",
+      "scores": {
+        "功能覆盖度": 0.55,
+        "更新频率": 0.8,
+        "用户体验": 0.87,
+        "社区活跃度": 0.98,
+        "技术前沿度": 0.51
+      },
+      "weightedScore": 0.74
+    },
+    {
+      "name": "GeneTech (Self)",
+      "type": "self",
+      "scores": {
+        "功能覆盖度": 0.75,
+        "更新频率": 0.9,
+        "用户体验": 0.6,
+        "社区活跃度": 0.5,
+        "技术前沿度": 0.85
+      },
+      "weightedScore": 0.72
+    },
+    {
+      "name": "Connected Papers",
+      "type": "tool",
+      "scores": {
+        "功能覆盖度": 0.53,
+        "更新频率": 0.92,
+        "用户体验": 0.85,
+        "社区活跃度": 0.6,
+        "技术前沿度": 0.56
+      },
+      "weightedScore": 0.69
+    },
+    {
+      "name": "Arxiv Sanity Preserver",
+      "type": "knowledge-engine",
+      "scores": {
+        "功能覆盖度": 0.54,
+        "更新频率": 0.85,
+        "用户体验": 0.78,
+        "社区活跃度": 0.61,
+        "技术前沿度": 0.57
+      },
+      "weightedScore": 0.67
+    }
+  ],
+  "marketGaps": [
+    {
+      "domain": "agent",
+      "description": "社区讨论热度高，建议加强 agent 相关内容聚合",
+      "confidence": 0.8,
+      "source": "community-intelligence"
+    },
+    {
+      "domain": "mcp",
+      "description": "社区讨论热度高，建议加强 mcp 相关内容聚合",
+      "confidence": 0.72,
+      "source": "community-intelligence"
+    },
+    {
+      "domain": "rag",
+      "description": "社区讨论热度高，建议加强 rag 相关内容聚合",
+      "confidence": 0.65,
+      "source": "community-intelligence"
+    },
+    {
+      "domain": "llm",
+      "description": "社区讨论热度高，建议加强 llm 相关内容聚合",
+      "confidence": 0.89,
+      "source": "community-intelligence"
+    }
+  ],
+  "recommendations": [
+    {
+      "target": "闭环四（推广）",
+      "action": "优化站点导航和搜索体验，增加交互式可视化组件",
+      "priority": "high",
+      "reason": "用户体验评分低于竞品均值"
+    },
+    {
+      "target": "闭环四（推广）",
+      "action": "增加社区互动功能，如评论、投票、用户贡献入口",
+      "priority": "high",
+      "reason": "社区活跃度是主要短板"
+    },
+    {
+      "target": "闭环二（领域开拓）",
+      "action": "加速新兴领域站点建设，覆盖市场空白",
+      "priority": "medium",
+      "reason": "功能覆盖度有提升空间",
+      "relatedGaps": [
+        "agent",
+        "mcp",
+        "rag"
+      ]
+    },
+    {
+      "target": "闭环二（领域开拓）",
+      "action": "重点关注 MCP 和 Agent 生态，考虑独立建设深度专题",
+      "priority": "high",
+      "reason": "社区热点: agent, mcp, rag"
+    }
+  ],
+  "analysisReport": {
+    "path": "/home/runner/work/genetech-14-sites/genetech-14-sites/logs/intelligence-analysis-20260823-122432.md",
+    "generated": true
+  },
+  "strategyOutput": {
+    "domainExpansionSignals": [
+      {
+        "domain": "agent",
+        "confidence": 0.8,
+        "reason": "社区讨论热度高，建议加强 agent 相关内容聚合"
+      },
+      {
+        "domain": "mcp",
+        "confidence": 0.72,
+        "reason": "社区讨论热度高，建议加强 mcp 相关内容聚合"
+      },
+      {
+        "domain": "rag",
+        "confidence": 0.65,
+        "reason": "社区讨论热度高，建议加强 rag 相关内容聚合"
+      },
+      {
+        "domain": "llm",
+        "confidence": 0.89,
+        "reason": "社区讨论热度高，建议加强 llm 相关内容聚合"
+      }
+    ],
+    "promotionOptimization": [
+      {
+        "action": "优化站点导航和搜索体验，增加交互式可视化组件",
+        "priority": "high"
+      },
+      {
+        "action": "增加社区互动功能，如评论、投票、用户贡献入口",
+        "priority": "high"
+      }
+    ],
+    "dataPipelineOptimization": []
+  }
+}
