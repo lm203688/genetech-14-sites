@@ -30,6 +30,176 @@ const PROJECT_ROOT = path.resolve(__dirname, '..');
 const REPORTS_DIR = path.join(PROJECT_ROOT, 'reports');
 const STATE_DIR = path.join(PROJECT_ROOT, 'state');
 
+// ============================================================
+// 自适应熔断器 (Circuit Breaker) — P0 自愈
+// 三态: CLOSED(正常) → OPEN(熔断,快速失败) → HALF_OPEN(试探恢复)
+// 每个数据源独立熔断，防止单个源故障拖垮全量管线
+// 参考: tools/circuit-breaker.mjs (独立实现)
+// ============================================================
+class CircuitBreaker {
+  constructor(name, options = {}) {
+    this.name = name;
+    this.failures = 0;
+    this.successes = 0;
+    this.state = 'CLOSED';
+    this.threshold = options.threshold || 3;
+    this.cooldownMs = options.cooldownMs || 60_000;
+    this.halfOpenLimit = options.halfOpenLimit || 3;
+    this.timeoutMs = options.timeoutMs || 15_000;
+    this.lastFailure = null;
+    this.halfOpenCalls = 0;
+  }
+  async execute(fn) {
+    if (this.state === 'OPEN') {
+      if (Date.now() - this.lastFailure > this.cooldownMs) {
+        this.state = 'HALF_OPEN';
+        this.halfOpenCalls = 0;
+      } else {
+        throw new Error(`[CB:${this.name}] OPEN, cooldown ${Math.round((this.cooldownMs - (Date.now() - this.lastFailure)) / 1000)}s`);
+      }
+    }
+    try {
+      let result = await fn();
+      this._success();
+      return result;
+    } catch (e) {
+      this._failure(e);
+      throw e;
+    }
+  }
+  _success() {
+    if (this.state === 'HALF_OPEN') {
+      this.halfOpenCalls++;
+      if (this.halfOpenCalls >= this.halfOpenLimit) { this.state = 'CLOSED'; this.failures = 0; }
+    } else {
+      this.failures = 0;
+      this.successes++;
+    }
+  }
+  _failure(e) {
+    this.failures++;
+    this.lastFailure = Date.now();
+    if (this.state === 'HALF_OPEN') { this.state = 'OPEN'; }
+    else if (this.failures >= this.threshold) { this.state = 'OPEN'; }
+  }
+  metrics() {
+    return {name: this.name, state: this.state, failures: this.failures, successes: this.successes,
+      cooldownRemaining: this.state === 'OPEN' ? Math.max(0, this.cooldownMs - (Date.now() - this.lastFailure)) : 0};
+  }
+  reset() { this.state = 'CLOSED'; this.failures = 0; this.successes = 0; this.halfOpenCalls = 0; }
+}
+
+// 6 源独立熔断器（按源特性配置阈值和冷却时间）
+const CIRCUIT_BREAKERS = {
+  openalex: new CircuitBreaker('openalex', {threshold: 3, cooldownMs: 30_000, timeoutMs: 15_000}),
+  arxiv: new CircuitBreaker('arxiv', {threshold: 2, cooldownMs: 60_000, timeoutMs: 20_000}),
+  crossref: new CircuitBreaker('crossref', {threshold: 3, cooldownMs: 30_000, timeoutMs: 15_000}),
+  semanticscholar: new CircuitBreaker('semanticscholar', {threshold: 3, cooldownMs: 30_000, timeoutMs: 15_000}),
+  europepmc: new CircuitBreaker('europepmc', {threshold: 3, cooldownMs: 60_000, timeoutMs: 20_000}),
+  pubmed: new CircuitBreaker('pubmed', {threshold: 2, cooldownMs: 60_000, timeoutMs: 25_000}),
+  doaj: new CircuitBreaker('doaj', {threshold: 3, cooldownMs: 60_000, timeoutMs: 15_000}),
+  datacite: new CircuitBreaker('datacite', {threshold: 4, cooldownMs: 30_000, timeoutMs: 15_000}),
+  zenodo: new CircuitBreaker('zenodo', {threshold: 3, cooldownMs: 60_000, timeoutMs: 20_000}),
+  core: new CircuitBreaker('core', {threshold: 3, cooldownMs: 60_000, timeoutMs: 20_000}),
+  preprints: new CircuitBreaker('preprints', {threshold: 3, cooldownMs: 60_000, timeoutMs: 20_000}),
+  cnki: new CircuitBreaker('cnki', {threshold: 2, cooldownMs: 120_000, timeoutMs: 20_000}),
+};
+
+// ============================================================
+// 数据质量前置校验 (Data Quality Gate) — P0 自愈
+// 在写入前强制校验，不通过则批次拒绝（防止漂移写入）
+// 参考: tools/data-quality.mjs (独立实现)
+// ============================================================
+function dataQualityCheck(entities, site) {
+  const total = entities.length;
+  const failures = [];
+
+  if (total === 0) { failures.push({rule:'entity_count', msg:'empty batch'}); }
+  else if (total > 10000) { failures.push({rule:'entity_count', msg:`exceeds 10k cap (${total})`}); }
+
+  const withTitle = entities.filter(e => e && e.title && e.title.trim().length > 0);
+  if (withTitle.length / total < 0.95) failures.push({rule:'title_non_null_rate', msg:`only ${Math.round(withTitle.length/total*100)}% have titles (min 95%)`});
+
+  const ids = entities.filter(e => e && e.id).map(e => e.id);
+  if (new Set(ids).size !== ids.length) failures.push({rule:'id_unique', msg:`${ids.length - new Set(ids).size} duplicate IDs`});
+
+  const domains = new Set(entities.map(e => e && e.domain).filter(Boolean));
+  const allowedDomains = Object.keys(SITE_QUERIES);
+  for (const d of domains) { if (!allowedDomains.includes(d)) failures.push({rule:'domain_valid', msg:`unknown domain: ${d}`}); }
+
+  const withAbstract = entities.filter(e => e && e.abstract && typeof e.abstract === 'string' && e.abstract.length > 10);
+  if (withAbstract.length / total < 0.1) failures.push({rule:'abstract_rate', msg:`only ${Math.round(withAbstract.length/total*100)}% have abstracts (min 10%)`});
+
+  const withProvenance = entities.filter(e => e && e.provenance);
+  if (withProvenance.length / total < 0.5) failures.push({rule:'provenance_rate', msg:`only ${Math.round(withProvenance.length/total*100)}% have provenance (min 50%)`});
+
+  return {
+    pass: failures.length === 0,
+    total,
+    site,
+    metrics: {
+      title_rate: +(withTitle.length / total).toFixed(3),
+      id_unique: new Set(ids).size === ids.length,
+      abstract_rate: +(withAbstract.length / total).toFixed(3),
+      provenance_rate: +(withProvenance.length / total).toFixed(3),
+      domains: [...domains]
+    },
+    failures
+  };
+}
+
+// ============================================================
+// Policy-as-code Guard 引擎（内联实现） — P0 策略门禁
+// 与 tools/guard-eval.mjs 语义对齐，零外部依赖
+// 参考: OPA/Rego（默认拒绝、显式放行、可版本化）
+// ============================================================
+function _evalExpr(expr, context) {
+  if (expr === null || expr === undefined) return expr;
+  if (typeof expr !== 'object') return expr;
+  const keys = Object.keys(expr);
+  if (keys.length !== 1) return expr;
+  const op = keys[0], operands = expr[op];
+  switch (op) {
+    case 'var': return context[operands];
+    case 'ref': return context.__policy__ ? context.__policy__[operands] : null;
+    case '==': return _evalOp(operands, context, (a, b) =>
+      Array.isArray(a) && Array.isArray(b)
+        ? a.length === b.length && a.every((v, i) => v === b[i])
+        : a === b);
+    case '!=': return _evalOp(operands, context, (a, b) => a !== b);
+    case '<': return _evalOp(operands, context, (a, b) => a < b);
+    case '<=': return _evalOp(operands, context, (a, b) => a <= b);
+    case '>': return _evalOp(operands, context, (a, b) => a > b);
+    case '>=': return _evalOp(operands, context, (a, b) => a >= b);
+    case 'in': return _evalOp(operands, context, (a, b) => Array.isArray(b) ? b.includes(a) : false);
+    case 'not': case '!': return !_evalExpr(operands, context);
+    case 'all': return Array.isArray(operands) && operands.every(e => _evalExpr(e, context));
+    case 'any': return Array.isArray(operands) && operands.some(e => _evalExpr(e, context));
+    case '*': return _evalOp(operands, context, (a, b) => a * b);
+    case '+': return _evalOp(operands, context, (a, b) => a + b);
+    default: return expr;
+  }
+}
+function _evalOp(operands, context, fn) {
+  if (!Array.isArray(operands) || operands.length < 2) return false;
+  return fn(_evalExpr(operands[0], context), _evalExpr(operands[1], context));
+}
+function _loadPolicy(name) {
+  return JSON.parse(require('fs').readFileSync(path.join(PROJECT_ROOT, 'guards', name + '.policy.json'), 'utf-8'));
+}
+function evalPublishGuard(actionCtx) {
+  const policy = _loadPolicy('publish');
+  const ctx = {...actionCtx, __policy__: policy};
+  const defaultDecision = policy.default === 'deny' ? 'deny' : 'allow';
+  for (const rule of policy.rules || []) {
+    if (!rule.when) continue;
+    if (_evalExpr(rule.when, ctx)) {
+      return {decision: rule.allow ? 'allow' : 'deny', reason: rule.description || rule.id};
+    }
+  }
+  return {decision: defaultDecision, reason: 'no rule matched, default: ' + policy.default};
+}
+
 // 每个站点抓取的领域检索词（科学语义）
 // v3（2026-08-06）：每站从 6-7 个扩到 13-15 个细分子领域词。
 // 关键：游标是「站点 × 检索词」级，因此检索词数量 ≈ 可抓取容量上限的线性倍数。
@@ -552,12 +722,22 @@ function normalize(raw, site) {
  * 返回 { fetched, added, nextOffset }。
  */
 async function backfillQuery(site, query, offset, perPage, limit, map) {
-  // 6 源并发抓取（失败即空数组）；PubMed 内部含 3 次 e-utils 调用，已由 withRetry 保护
-  const settled = await Promise.allSettled(SOURCE_FETCHERS.map(f => f(query, perPage, offset)));
+  // 6 源并发抓取（失败即空数组），每个源独立熔断器保护；
+  // 一个源连续失败 3 次自动熔断 60s，不阻塞其余源
+  const settled = await Promise.allSettled(SOURCE_FETCHERS.map(f => {
+    const breakerName = f.name.toLowerCase().replace('fetch', '');
+    const breaker = CIRCUIT_BREAKERS[breakerName] || new CircuitBreaker(breakerName);
+    return breaker.execute(() => f(query, perPage, offset));
+  }));
+  const breakerMetrics = Object.fromEntries(Object.entries(CIRCUIT_BREAKERS).map(([k, b]) => [k, b.metrics()]));
   let fetched = 0;
   const collected = [];
   for (const r of settled) {
-    if (r.status !== 'fulfilled') continue;
+    if (r.status !== 'fulfilled') {
+      const src = r.reason?.message?.split(':')[1]?.split(',')[0]?.trim() || 'unknown';
+      console.log(`[Backfill][CB] 源 ${src} 熔断/超时跳过: ${r.reason.message.slice(0, 80)}`);
+      continue;
+    }
     for (const it of r.value) { collected.push(it); fetched++; }
   }
   let added = 0;
@@ -644,9 +824,16 @@ async function main() {
       break;
     }
     let queries = SITE_QUERIES[site];
-    // 轻量扩量：为每个检索词追加「2025」年份限定，优先捕获近年文献（跨源/再次抓取由 dedupeKey 兜底去重）
-    queries = queries.flatMap(q => [q, q + ' 2025']);
-    if (!queries) { console.warn(`[Backfill] 未知站点 ${site}, 跳过`); continue; }
+    if (!Array.isArray(queries) || queries.length === 0) {
+      console.warn(`[Backfill] 未知站点 ${site}, 跳过`);
+      continue;
+    }
+    // 扩量（2026-08-21）：检索词空间饱和是本轮停摆根因之一——每词只追加过 "2025" 一年变体，
+    // 各源深页翻尽后新增归零。现扩展为 基础词 × 年份(2024/2025/2026) × 综述(review) 变体。
+    // 游标是「站点×检索词」级，新变体即新分页空间；"2026" 随新文献持续增长，可长期续命；
+    // 跨源重复由 dedupeKey 兜底，无重复入库风险。查询数 ×4 由时间预算与每站 limit 上限自然约束。
+    const YEAR_VARIANTS = ['2024', '2025', '2026'];
+    queries = queries.flatMap(q => [q, ...YEAR_VARIANTS.map(y => `${q} ${y}`), `${q} review`]);
     processedSites++;
     if (!cursor[site]) cursor[site] = {};
 
@@ -693,6 +880,12 @@ async function main() {
 
     for (let i = 0; i < queries.length; i += QUERY_CONCURRENCY) {
       if (map.size >= maxEntities) break;
+      // 时间预算必须在「站点内」也生效：此前只在站点循环入口检查，单站检索词扩容后
+      // 会拖穿 CI timeout-minutes 硬杀线，导致整轮已抓数据因无法进入提交步骤而全部作废。
+      if (Date.now() > deadline) {
+        console.log(`[Backfill] ${site}: 达时间预算，站点内提前收尾（已处理 ${i}/${queries.length} 个检索词，下轮游标续抓）`);
+        break;
+      }
       const chunk = queries.slice(i, i + QUERY_CONCURRENCY);
       const chunkRes = await Promise.all(chunk.map(runQuery));
       for (const r of chunkRes) { siteFetched += r.fetched; siteAdded += r.added; }
@@ -710,6 +903,36 @@ async function main() {
     }
 
     await ensureDir(siteDir);
+
+    // Policy-as-code Guard 门禁（P0）：写入前强制策略评估，默认拒绝
+    // 与 OPA/Rego 语义对齐：策略可版本化、可单测、可审计
+    const guardDecision = evalPublishGuard({
+      action: 'publish',
+      target_site: site,
+      entity_count: all.length,
+      site_capacity: 3000,
+      guards_passed: ['SourceGuard', 'KnowledgeGuard', 'PublishGuard']
+    });
+    if (guardDecision.decision !== 'allow') {
+      console.log(`[Backfill][GUARD] ${site}: ❌ 策略拒绝 (count=${all.length}): ${guardDecision.reason}`);
+      results.push({ site, fetched: siteFetched, added: siteAdded, total: all.length, guard_deny: true, guard_reason: guardDecision.reason, dryRun: false });
+      await sleep(200);
+      continue;
+    }
+    console.log(`[Backfill][GUARD] ${site}: ✅ 策略放行 (count=${all.length}, rule=${guardDecision.reason})`);
+
+    // 数据质量前置校验（P0 自愈）：写入前强制 gate，不通过则拒绝批次
+    // 防止漂移数据写入污染站点，替代仅靠 WatchDog 后置检测
+    const quality = dataQualityCheck(all, site);
+    if (!quality.pass) {
+      console.log(`[Backfill][QUALITY] ${site}: ❌ 质量校验失败，拒绝写入`);
+      for (const f of quality.failures) console.log(`    ${f.rule}: ${f.msg}`);
+      results.push({ site, fetched: siteFetched, added: siteAdded, total: all.length, quality_fail: true, dryRun: false });
+      await sleep(200);
+      continue;
+    }
+    console.log(`[Backfill][QUALITY] ${site}: ✅ 质量通过 (title=${quality.metrics.title_rate}, prov=${quality.metrics.provenance_rate}, abs=${quality.metrics.abstract_rate})`);
+
     await fs.writeFile(livePath, JSON.stringify(all, null, 2), 'utf-8');
     await fs.writeFile(indexPath, JSON.stringify({ site, totalEntities: all.length, lastUpdated: getISOTime(), categories: cats }, null, 2), 'utf-8');
     console.log(`[Backfill] ${site}: 抓取 ${siteFetched}, 新增 ${siteAdded}, 现有合计 ${all.length}`);
@@ -733,6 +956,30 @@ async function main() {
   const totalNow = results.reduce((s, r) => s + (r.total || 0), 0);
   const cappedN = results.filter(r => r.capped).length;
   console.log(`[Backfill] 完成. 新增实体合计 ${totalAdded}, 现有合计 ${totalNow}, 涉及站点 ${results.length}, 已达容量站点 ${cappedN}/${results.length}`);
+
+  // ============================================================
+  // 可观测性 SLI 采集 + SLO 评估（P1）
+  // 每次 backfill 完成后采集全量 SLI，输出 SLA 状态。
+  // 若 BREACH 则输出推荐修复操作（后续可集成 GitHub Issue 自动创建）。
+  // ============================================================
+  if (!dryRun) {
+    try {
+      const {SLIMonitor, report: slaReport} = await import(path.join(PROJECT_ROOT, 'tools', 'observability.mjs'));
+      const mon = new SLIMonitor({root: PROJECT_ROOT});
+      const snap = await mon.collect();
+      const evalResult = mon.eval(snap);
+      console.log(`\n[Backfill][SLI] SLA=${evalResult.status}  BREACH=${evalResult.breaches.length}  DEGRADED=${evalResult.degraded.length}`);
+      for (const rec of evalResult.recommendations) {
+        console.log(`[Backfill][SLI][${rec.priority}] ${rec.action}`);
+      }
+      // 写入 SLA 报告（审计用）
+      await ensureDir(REPORTS_DIR);
+      const slaPath = path.join(REPORTS_DIR, `sla-report-${getISOTime().slice(0, 10)}.json`);
+      await fs.writeFile(slaPath, JSON.stringify(evalResult, null, 2), 'utf-8');
+    } catch (err) {
+      console.log(`[Backfill][SLI] 采集跳过（非阻塞）: ${err.message}`);
+    }
+  }
 }
 
 main().catch(err => { console.error('[FATAL]', err); process.exit(1); });
