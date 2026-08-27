@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>14 站 Demo 走查 — Query → 6 Agent → 答案</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;line-height:1.5;padding:20px}
+.container{max-width:1080px;margin:0 auto}
+h1{text-align:center;font-size:22px;color:#58a6ff;margin-bottom:4px}
+.subtitle{text-align:center;color:#8b949e;font-size:13px;margin-bottom:20px}
+.query-box{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.query-label{color:#58a6ff;font-weight:600;white-space:nowrap}
+.query-text{color:#f0f6fc;font-size:15px}
+.stage{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;margin-bottom:12px;opacity:0;transform:translateY(10px);transition:all .5s ease}
+.stage.visible{opacity:1;transform:translateY(0)}
+.stage-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.stage-title{font-weight:600;color:#f0f6fc;font-size:14px}
+.stage-time{color:#8b949e;font-size:12px}
+.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:8px 0}
+.agent-chip{background:#21262d;border:1px solid #30363d;border-radius:6px;padding:4px 10px;font-size:12px;display:flex;align-items:center;gap:4px}
+.agent-chip.active{background:#1f3a5f;border-color:#58a6ff;color:#58a6ff}
+.agent-chip.done{background:#122d1a;border-color:#3fb950;color:#3fb950}
+.agent-icon{font-size:11px}
+.arrow{color:#484f58;font-size:12px}
+.detail{background:#0d1117;border:1px solid #21262d;border-radius:6px;padding:10px 12px;margin-top:8px;font-size:12px;font-family:monospace;color:#8b949e}
+.detail-key{color:#79c0ff}
+.detail-val{color:#a5d6ff}
+.detail-warn{color:#d29922}
+.detail-err{color:#f85149}
+.detail-ok{color:#3fb950}
+.timeline{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;margin-top:16px}
+.timeline-title{font-weight:600;color:#f0f6fc;margin-bottom:10px;font-size:14px}
+.tl-item{display:flex;gap:10px;padding:4px 0;font-size:12px;border-bottom:1px solid #21262d}
+.tl-time{color:#8b949e;font-family:monospace;white-space:nowrap;width:130px}
+.tl-actor{color:#79c0ff;width:110px}
+.tl-action{flex:1}
+.tl-status{width:50px;text-align:right}
+.status-ok{color:#3fb950}
+.status-warn{color:#d29922}
+.status-error{color:#f85149}
+.answer{background:linear-gradient(135deg,#1f3a5f,#0d1117);border:2px solid #58a6ff;border-radius:10px;padding:18px;margin-top:16px}
+.answer h3{color:#58a6ff;margin-bottom:8px}
+.answer-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.answer-stat{background:#161b22;border-radius:6px;padding:8px;text-align:center}
+.answer-stat-num{font-size:18px;font-weight:700;color:#58a6ff}
+.answer-stat-label{font-size:11px;color:#8b949e}
+.answer-entities{margin-top:10px}
+.entity-row{display:flex;justify-content:space-between;padding:4px 8px;background:#161b22;border-radius:4px;margin:3px 0;font-size:12px}
+.guards-panel{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px;margin-top:12px}
+.guard-row{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:12px}
+.guard-name{color:#f0f6fc;width:140px;font-weight:600}
+.guard-decision{padding:2px 8px;border-radius:10px;font-size:11px}
+.decision-allow{background:#122d1a;color:#3fb950;border:1px solid #3fb950}
+.decision-deny{background:#2d1212;color:#f85149;border:1px solid #f85149}
+.footer{text-align:center;color:#484f58;font-size:11px;margin-top:20px;padding:10px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🧠 14 站全链路 Demo 走查</h1>
+<div class="subtitle">Multi-Agent Knowledge Operations Platform · 90 秒可视化</div>
+
+<div class="query-box">
+<span class="query-label">🔍 用户查询:</span>
+<span class="query-text">"2025-2026 年 LLM + 量子计算交叉领域最新突破与趋势"</span>
+</div>
+
+<div id="stage1" class="stage">
+<div class="stage-header">
+<span class="stage-title">Stage 1 — CollectorAgent: 多源并发采集</span>
+<span class="stage-time">T+0.0s → T+3.2s</span>
+</div>
+<div class="flow">
+<span class="agent-chip active"><span class="agent-icon">📡</span>CollectorAgent</span>
+<span class="arrow">→</span>
+<span class="agent-chip done"><span class="agent-icon">📚</span>arXiv</span>
+<span class="agent-chip done"><span class="agent-icon">🏥</span>PubMed</span>
+<span class="agent-chip done"><span class="agent-icon">📝</span>Crossref</span>
+<span class="agent-chip done"><span class="agent-icon">🔬</span>SemanticScholar</span>
+<span class="agent-chip done"><span class="agent-icon">🌐</span>EuropePMC</span>
+<span class="agent-chip done"><span class="agent-icon">📊</span>OpenAlex</span>
+</div>
+<div class="detail">
+<span class="detail-key">query:</span> <span class="detail-val">"LLM+quantum OR 'large language model'+'quantum computing'"</span><br>
+<span class="detail-key">arxiv:</span> <span class="detail-val">182 篇 (avg 820ms)</span> &nbsp;
+<span class="detail-key">pubmed:</span> <span class="detail-val">34 篇 (avg 1.2s)</span><br>
+<span class="detail-key">crossref:</span> <span class="detail-val">156 篇 (avg 2.1s)</span> &nbsp;
+<span class="detail-key">semanticscholar:</span> <span class="detail-val">210 篇 (avg 1.8s)</span><br>
+<span class="detail-key">europemc:</span> <span class="detail-val">28 篇</span> &nbsp;
+<span class="detail-key">openalex:</span> <span class="detail-val">94 篇</span>
+<span class="detail-ok">&nbsp; ✓ 6/6 源可用</span>
+</div>
+</div>
+
+<div id="stage2" class="stage">
+<div class="stage-header">
+<span class="stage-title">Stage 2 — NormalizerAgent: 异构数据归一化</span>
+<span class="stage-time">T+3.2s → T+6.5s</span>
+</div>
+<div class="flow">
+<span class="agent-chip active"><span class="agent-icon">⚙️</span>NormalizerAgent</span>
+<span class="arrow">→</span>
+<span class="agent-chip done">DOI 统一</span>
+<span class="agent-chip done">作者实体化</span>
+<span class="agent-chip done">领域映射</span>
+<span class="agent-chip done">语言检测</span>
+<span class="agent-chip done">时间戳归一</span>
+</div>
+<div class="detail">
+<span class="detail-key">raw:</span> <span class="detail-val">704 条</span> &nbsp;
+<span class="detail-key">dedup:</span> <span class="detail-val">-89</span> &nbsp;
+<span class="detail-key">normalized:</span> <span class="detail-val">615 条</span><br>
+<span class="detail-key">domains:</span> <span class="detail-val">swarmlabs=421, genetech=194</span> &nbsp;
+<span class="detail-key"> langs:</span> <span class="detail-val">en=578, zh=37</span>
+<span class="detail-ok">&nbsp; ✓ 去重率 87.4%</span>
+</div>
+</div>
+
+<div id="stage3" class="stage">
+<div class="stage-header">
+<span class="stage-title">Stage 3 — ValidatorAgent: 串行提案审查 + Guard 矩阵</span>
+<span class="stage-time">T+6.5s → T+8.1s</span>
+</div>
+<div class="flow">
+<span class="agent-chip active"><span class="agent-icon">🔍</span>ValidatorAgent</span>
+<span class="arrow">→</span>
+<span class="agent-chip done">SourceGuard ✓</span>
+<span class="agent-chip done">KnowledgeGuard ✓</span>
+<span class="agent-chip done">PublishGuard ✓</span>
+<span class="agent-chip done">ComplianceGuard ✓</span>
+</div>
+<div class="detail">
+<span class="detail-key">proposal:</span> <span class="detail-val">arxiv-cross-domain-bridge</span>
+<span class="detail-val"> (.proposals/ → .active/)</span><br>
+<span class="detail-key">SourceGuard:</span> <span class="detail-ok">allow</span> — arxiv.org reachable, avg 820ms<br>
+<span class="detail-key">KnowledgeGuard:</span> <span class="detail-ok">allow</span> — 615 entities, dedup 87.4% > 85% threshold<br>
+<span class="detail-key">PublishGuard:</span> <span class="detail-ok">allow</span> — swarmlabs 62% capacity, genetech 58% capacity<br>
+<span class="detail-key">ComplianceGuard:</span> <span class="detail-ok">allow</span> — open data, no license issues<br>
+<span class="detail-warn">⚠ 跳过 12 条: 缺少 DOI，降级至 secondary 通道</span>
+</div>
+</div>
+
+<div id="stage4" class="stage">
+<div class="stage-header">
+<span class="stage-title">Stage 4 — EnrichAgent: 跨域桥接 + 引用网络构建</span>
+<span class="stage-time">T+8.1s → T+11.4s</span>
+</div>
+<div class="flow">
+<span class="agent-chip active"><span class="agent-icon">🔗</span>EnrichAgent</span>
+<span class="arrow">→</span>
+<span class="agent-chip done">引用图谱</span>
+<span class="agent-chip done">共现网络</span>
+<span class="agent-chip done">趋势曲线</span>
+<span class="agent-chip done">跨域桥接</span>
+</div>
+<div class="detail">
+<span class="detail-key">cross-domain-bridge:</span> <span class="detail-val">swarmlabs ↔ genetech = 37 桥接实体</span><br>
+<span class="detail-key">trends:</span> <span class="detail-val">12 月增长 3.2x</span> &nbsp;
+<span class="detail-key">key-entities:</span> <span class="detail-val">QAOA, VQE, QuantumTransformer, GPT4Quantum</span><br>
+<span class="detail-key">citation-network:</span> <span class="detail-val">avg citations/paper = 12.4</span> &nbsp;
+<span class="detail-ok">✓ 桥接覆盖 6.0%（目标 10%）</span>
+</div>
+</div>
+
+<div id="stage5" class="stage">
+<div class="stage-header">
+<span class="stage-title">Stage 5 — PublisherAgent: 站点感知发布</span>
+<span class="stage-time">T+11.4s → T+14.8s</span>
+</div>
+<div class="flow">
+<span class="agent-chip active"><span class="agent-icon">🚀</span>PublisherAgent</span>
+<span class="arrow">→</span>
+<span class="agent-chip done">swarmlabs 站点</span>
+<span class="agent-chip done">genetech 站点</span>
+<span class="agent-chip done">领域图谱更新</span>
+<span class="agent-chip done">趋势曲线更新</span>
+<span class="agent-chip done">GEO 博客触达</span>
+</div>
+<div class="detail">
+<span class="detail-key">swarmlabs:</span> <span class="detail-val">+421 entities</span> &nbsp;
+<span class="detail-key">genetech:</span> <span class="detail-val">+194 entities</span><br>
+<span class="detail-key">graph-visual:</span> <span class="detail-ok">updated</span> &nbsp;
+<span class="detail-key">trend-chart:</span> <span class="detail-ok">updated</span><br>
+<span class="detail-key">sitemap:</span> <span class="detail-ok">regenerated</span> &nbsp;
+<span class="detail-key">llms.txt:</span> <span class="detail-ok">updated</span>
+<span class="detail-ok">&nbsp; ✓ 2/2 站点发布成功</span>
+</div>
+</div>
+
+<div id="stage6" class="stage">
+<div class="stage-header">
+<span class="stage-title">Stage 6 — KnowledgeGuard: 受控演化 + 审计归档</span>
+<span class="stage-time">T+14.8s → T+15.6s</span>
+</div>
+<div class="flow">
+<span class="agent-chip active"><span class="agent-icon">🛡️</span>KnowledgeGuard</span>
+<span class="arrow">→</span>
+<span class="agent-chip done">准入记录</span>
+<span class="agent-chip done">降级检查</span>
+<span class="agent-chip done">淘汰检查</span>
+<span class="agent-chip done">审计日志</span>
+</div>
+<div class="detail">
+<span class="detail-key">admitted:</span> <span class="detail-val">arxiv-cross-domain-bridge → active</span><br>
+<span class="detail-key">degraded:</span> <span class="detail-val">0</span> &nbsp;
+<span class="detail-key">retired:</span> <span class="detail-val">0</span> &nbsp;
+<span class="detail-key">audit:</span> <span class="detail-val">audit/2026-08-24.jsonl +47 entries</span><br>
+<span class="detail-key">evolution-log:</span> <span class="detail-ok">evolution/2026-08-24.json +1 event</span>
+<span class="detail-ok">&nbsp; ✓ 本轮运行: 15.6s, 47 audit events, 0 errors</span>
+</div>
+</div>
+
+<div class="answer">
+<h3>📋 最终交付 — 用户答案</h3>
+<p style="color:#c9d1d9;font-size:13px;margin-bottom:8px">
+2025-2026 年 LLM + 量子计算交叉领域关键发现：
+</p>
+<div class="answer-stats">
+<div class="answer-stat"><div class="answer-stat-num">615</div><div class="answer-stat-label">采集实体</div></div>
+<div class="answer-stat"><div class="answer-stat-num">37</div><div class="answer-stat-label">跨域桥接</div></div>
+<div class="answer-stat"><div class="answer-stat-num">3.2x</div><div class="answer-stat-label">年增长</div></div>
+<div class="answer-stat"><div class="answer-stat-num">15.6s</div><div class="answer-stat-label">全链路耗时</div></div>
+</div>
+<div class="answer-entities">
+<div class="entity-row"><span>🔬 QAOA × Transformer</span><span style="color:#58a6ff">swarmlabs</span></div>
+<div class="entity-row"><span>🔬 VQE × GPT-4 推理加速</span><span style="color:#58a6ff">genetech</span></div>
+<div class="entity-row"><span>🔬 QuantumErrorCorrection × LLM 纠错</span><span style="color:#58a6ff">跨域桥接</span></div>
+<div class="entity-row"><span>🔬 QuantumMachineLearning × 蛋白质折叠</span><span style="color:#58a6ff">跨域桥接</span></div>
+<div class="entity-row"><span>🔬 中文 NER × 量子材料命名实体识别</span><span style="color:#58a6ff">swarmlabs</span></div>
+</div>
+</div>
+
+<div class="guards-panel">
+<div class="timeline-title">🛡️ Guard 矩阵执行记录</div>
+<div class="guard-row"><span class="guard-name">KnowledgeGuard</span><span class="guard-decision decision-allow">✓ allow</span><span style="color:#8b949e">准入规则：数据量 615 ≤ 2000，去重 87.4% > 85%</span></div>
+<div class="guard-row"><span class="guard-name">SourceGuard</span><span class="guard-decision decision-allow">✓ allow</span><span style="color:#8b949e">6 源全部可达，平均延迟 < 30s，许可合规</span></div>
+<div class="guard-row"><span class="guard-name">PublishGuard</span><span class="guard-decision decision-allow">✓ allow</span><span style="color:#8b949e">swarmlabs 62% / genetech 58% 容量，未超 90% 上限</span></div>
+<div class="guard-row"><span class="guard-name">ComplianceGuard</span><span class="guard-decision decision-allow">✓ allow</span><span style="color:#8b949e">开放数据源，无商业许可限制</span></div>
+</div>
+
+<div class="timeline">
+<div class="timeline-title">📜 Audit Log 时间线（截取）</div>
+<div class="tl-item"><span class="tl-time">10:30:00.124</span><span class="tl-actor">collector_agent</span><span class="tl-action">fetch → arXiv query "LLM+quantum" → 182 entities</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:01.342</span><span class="tl-actor">collector_agent</span><span class="tl-action">fetch → PubMed → 34 entities</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:02.567</span><span class="tl-actor">collector_agent</span><span class="tl-action">fetch → Crossref → 156 entities</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:05.891</span><span class="tl-actor">normalizer_agent</span><span class="tl-action">normalize → 704 raw → 615 entities (dedup 87.4%)</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:06.234</span><span class="tl-actor">normalizer_agent</span><span class="tl-action">normalize → 12 entities missing DOI → degrade to secondary</span><span class="tl-status status-warn">warn</span></div>
+<div class="tl-item"><span class="tl-time">10:30:08.012</span><span class="tl-actor">validator_agent</span><span class="tl-action">review → proposal arxiv-cross-domain-bridge</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:08.145</span><span class="tl-actor">validator_agent</span><span class="tl-action">guard → SourceGuard → allow</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:08.148</span><span class="tl-actor">validator_agent</span><span class="tl-action">guard → KnowledgeGuard → allow</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:08.151</span><span class="tl-actor">validator_agent</span><span class="tl-action">guard → PublishGuard → allow</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:08.155</span><span class="tl-actor">validator_agent</span><span class="tl-action">approve → arxiv-cross-domain-bridge → .active/</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:11.423</span><span class="tl-actor">publisher_agent</span><span class="tl-action">publish → swarmlabs +421 entities</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:14.891</span><span class="tl-actor">publisher_agent</span><span class="tl-action">publish → genetech +194 entities</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:15.600</span><span class="tl-actor">knowledge_guard</span><span class="tl-action">admit → arxiv-cross-domain-bridge → evolution log</span><span class="tl-status status-ok">ok</span></div>
+<div class="tl-item"><span class="tl-time">10:30:15.612</span><span class="tl-actor">knowledge_guard</span><span class="tl-action">audit → 47 events written to audit/2026-08-24.jsonl</span><span class="tl-status status-ok">ok</span></div>
+</div>
+
+<div class="footer">
+GeneTech 14 站 · Multi-Agent Knowledge Operations Platform<br>
+Demo 版本 v1 · 2026-08-24 · 实际运行时间以 pipeline 为准
+</div>
+
+</div>
+
+<script>
+// 自动播放: 依次显示 6 个 stage
+const stages = document.querySelectorAll('.stage');
+let i = 0;
+function showNext() {
+  if (i < stages.length) {
+    stages[i].classList.add('visible');
+    i++;
+    setTimeout(showNext, 800);
+  }
+}
+// 页面加载后自动开始
+setTimeout(showNext, 500);
+</script>
+</body>
+</html>
