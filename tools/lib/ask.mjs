@@ -19,7 +19,7 @@
  * 不出现任何上游桥接项目的内部名称（"ATEX/atex"），保持本工具对外中性。
  */
 
-import { isConfigured, chat } from './lib/llm-bridge.mjs';
+import { isConfigured, chat } from './llm-bridge.mjs';
 
 const DEFAULT_LIMIT = 6;
 const MAX_ABSTRACT_CHARS = 400;
