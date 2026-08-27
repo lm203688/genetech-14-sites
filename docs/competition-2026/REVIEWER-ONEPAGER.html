@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>14 站知识引擎 — 评审一页纸</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a2e;background:#f5f7fa;line-height:1.5;font-size:13px;padding:20px}
+.page{max-width:960px;margin:0 auto;background:#fff;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.08);padding:28px 32px}
+h1{font-size:22px;color:#0f3460;border-bottom:3px solid #16213e;padding-bottom:8px;margin-bottom:14px}
+.subtitle{color:#555;font-size:12px;margin-bottom:14px}
+h2{font-size:15px;color:#16213e;margin:14px 0 6px 0;border-left:3px solid #e94560;padding-left:8px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.card{background:#f8f9fa;border:1px solid #e9ecef;border-radius:6px;padding:10px 12px}
+.card h3{font-size:13px;color:#0f3460;margin-bottom:4px}
+.tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin:2px}
+.tag-blue{background:#dbe4ff;color:#16213e}
+.tag-red{background:#ffe0e0;color:#c0392b}
+.tag-green{background:#d4edda;color:#155724}
+.tag-orange{background:#fff3cd;color:#856404}
+table{width:100%;border-collapse:collapse;margin:6px 0;font-size:12px}
+th,td{padding:6px 8px;border:1px solid #dee2e6;text-align:left}
+th{background:#0f3460;color:#fff}
+tr:nth-child(even) td{background:#f8f9fa}
+ul{margin:4px 0 4px 16px}
+li{margin:2px 0}
+.score-bar{display:flex;align-items:center;gap:6px;margin:2px 0}
+.bar{height:10px;border-radius:5px;background:#dee2e6;flex:1;overflow:hidden}
+.bar-fill{height:100%;border-radius:5px;transition:width .3s}
+.stat-num{font-size:20px;font-weight:700;color:#0f3460}
+.stat-label{font-size:11px;color:#555}
+.highlight{background:#fff3cd;padding:2px 4px;border-radius:3px}
+footer{margin-top:14px;padding-top:8px;border-top:1px solid #dee2e6;font-size:11px;color:#888;text-align:center}
+@media print{body{background:#fff;padding:0}.page{box-shadow:none;max-width:100%}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>🧠 Multi-Agent Knowledge Operations Platform（14 站知识引擎）</h1>
+<div class="subtitle">GoAI 2026 · 赛道一「新智基座」· 评审一页纸 · 2026-08-24</div>
+
+<div class="grid3">
+<div class="card">
+<h3>📦 项目定位</h3>
+<p style="font-size:12px">多智能体协作驱动的大规模知识采集、清洗、融合、发布平台。14 个垂直站点，共享统一数据引擎与 Guard 矩阵。</p>
+<div><span class="tag tag-blue">AI for Science</span><span class="tag tag-blue">医疗</span><span class="tag tag-blue">材料</span><span class="tag tag-blue">政策</span></div>
+</div>
+<div class="card">
+<h3>🤖 核心 Agent</h3>
+<ul>
+<li>CollectorAgent — 6 源并发采集</li>
+<li>NormalizerAgent — 异构数据归一化</li>
+<li>ValidatorAgent — 串行提案审查</li>
+<li>PublisherAgent — 站点感知发布</li>
+<li>RepairAgent — 漂移自动修复</li>
+<li>KnowledgeGuard — 受控演化策略</li>
+</ul>
+</div>
+<div class="card">
+<h3>🛡️ Guard 矩阵</h3>
+<ul>
+<li>KnowledgeGuard — 准入/降级/淘汰</li>
+<li>SourceGuard — 源质量与合规</li>
+<li>PublishGuard — 发布容量保护</li>
+<li>ComplianceGuard — 数据合规审计</li>
+</ul>
+</div>
+</div>
+
+<h2>🎯 与赛道三方向映射</h2>
+<div class="grid">
+<div class="card">
+<h3>🔐 可信执行</h3>
+<ul>
+<li>Audit Log 全链路不可篡改</li>
+<li>Guard 矩阵 4 道闸门</li>
+<li>提案 → 审查 → 发布串行闭环</li>
+<li>时间机器溯源（任意时间点重放）</li>
+</ul>
+</div>
+<div class="card">
+<h3>🔗 多 Agent 协作</h3>
+<ul>
+<li>6 个 Agent 显式分工</li>
+<li>并行采集 + 串行审查</li>
+<li>6 源并发 × 14 站分发</li>
+<li>提案/Active 状态机流转</li>
+</ul>
+</div>
+<div class="card" style="grid-column:span 2">
+<h3>🧠 知识累积</h3>
+<div class="grid3" style="gap:6px">
+<div><div class="stat-num">47,566</div><div class="stat-label">结构化实体</div></div>
+<div><div class="stat-num">6</div><div class="stat-label">数据源</div></div>
+<div><div class="stat-num">14</div><div class="stat-label">垂直站点</div></div>
+<div><div class="stat-num">12</div><div class="stat-label">GEO 博客</div></div>
+<div><div class="stat-num">3.2x</div><div class="stat-label">跨域桥接增长</div></div>
+<div><div class="stat-num">90%</div><div class="stat-label">容量利用</div></div>
+</div>
+</div>
+</div>
+
+<h2>⭐ 借鉴自赛道一高频母题</h2>
+<table>
+<tr><th style="width:80px">母题</th><th style="width:90px">代表项目</th><th>14 站落地</th><th style="width:60px">状态</th></tr>
+<tr><td>多 Agent 团队</td><td>RepoMesh / 2origin</td><td>6 Agent 显式分工，协作流程图</td><td><span class="tag tag-green">已文档化</span></td></tr>
+<tr><td>串行 PR 闭环</td><td>MergePilot</td><td>.proposals → .active 状态机</td><td><span class="tag tag-green">demo 就绪</span></td></tr>
+<tr><td>Guard 矩阵</td><td>LabOps Guard</td><td>4 个 Guard 命名统一</td><td><span class="tag tag-green">已整合</span></td></tr>
+<tr><td>时间机器</td><td>AsoulAI ChronosFix</td><td>provenance 字段 + 任意时间点重放</td><td><span class="tag tag-orange">设计完成</span></td></tr>
+<tr><td>受控演化</td><td>FinFlux</td><td>准入/降级/淘汰三规则</td><td><span class="tag tag-green">已文档化</span></td></tr>
+<tr><td>审计日志</td><td>CodeNotary</td><td>JSONL 格式 + opt-in 实现</td><td><span class="tag tag-orange">参考实现就绪</span></td></tr>
+<tr><td>企业落地</td><td>MedAssist-Agent</td><td>AI4S 趋势周报 → 企业 R&D 团队</td><td><span class="tag tag-red">待客户</span></td></tr>
+</table>
+
+<h2>📊 自评估（9 维度，1-5 分）</h2>
+<div class="grid">
+<div class="card">
+<h3>能力雷达</h3>
+<div class="score-bar"><span style="width:90px;font-size:11px">场景价值</span><div class="bar"><div class="bar-fill" style="width:70%;background:#3498db"></div></div><span>3.5</span></div>
+<div class="score-bar"><span style="width:90px;font-size:11px">Agent 协同</span><div class="bar"><div class="bar-fill" style="width:50%;background:#e67e22"></div></div><span>2.5</span></div>
+<div class="score-bar"><span style="width:90px;font-size:11px">Skill 生态</span><div class="bar"><div class="bar-fill" style="width:60%;background:#2ecc71"></div></div><span>3.0</span></div>
+<div class="score-bar"><span style="width:90px;font-size:11px">工程落地</span><div class="bar"><div class="bar-fill" style="width:80%;background:#27ae60"></div></div><span>4.0</span></div>
+<div class="score-bar"><span style="width:90px;font-size:11px">安全审计</span><div class="bar"><div class="bar-fill" style="width:40%;background:#e74c3c"></div></div><span>2.0</span></div>
+<div class="score-bar"><span style="width:90px;font-size:11px">Agent 闭环</span><div class="bar"><div class="bar-fill" style="width:60%;background:#f39c12"></div></div><span>3.0</span></div>
+<div class="score-bar"><span style="width:90px;font-size:11px">Demo 完成</span><div class="bar"><div class="bar-fill" style="width:50%;background:#9b59b6"></div></div><span>2.5</span></div>
+<div class="score-bar"><span style="width:90px;font-size:11px">技术深度</span><div class="bar"><div class="bar-fill" style="width:80%;background:#1abc9c"></div></div><span>4.0</span></div>
+<div class="score-bar"><span style="width:90px;font-size:11px">合规安全</span><div class="bar"><div class="bar-fill" style="width:50%;background:#34495e"></div></div><span>2.5</span></div>
+</div>
+<div class="card">
+<h3>差异化叙事</h3>
+<table>
+<tr><th>评审会问</th><th>我们的回答</th></tr>
+<tr><td>为什么不直接用 OpenAlex?</td><td>14 站做了跨源归一 + 跨域桥接 + 中文政产学融合</td></tr>
+<tr><td>跟 AutoGen/CrewAI 有何不同?</td><td>14 站是「领域知识工程专用」，非通用框架</td></tr>
+<tr><td>47k 实体跟 Scite 比?</td><td>中文学术 + 跨域 + 政产学融合，他们英文商业</td></tr>
+<tr><td>Agent 失败了你知不知道?</td><td>Audit log 5 分钟内可定位</td></tr>
+<tr><td>飞轮漂移你怎么发现?</td><td>audit log + WatchDog 自动告警</td></tr>
+</table>
+</div>
+</div>
+
+<h2>📋 真实交付物清单</h2>
+<table>
+<tr><th>文件</th><th>作用</th><th style="width:60px">状态</th></tr>
+<tr><td><code>README.md</code></td><td>多智能体平台定位 + 6 Agent + Guard 矩阵</td><td><span class="tag tag-green">已上线</span></td></tr>
+<tr><td><code>docs/competition-2026/AGENTS.md</code></td><td>6 Agent 角色定义 + 协作流程图</td><td><span class="tag tag-green">已上线</span></td></tr>
+<tr><td><code>docs/competition-2026/GUARD-MATRIX.md</code></td><td>4 Guard 整合方案 + 迁移路径</td><td><span class="tag tag-green">已上线</span></td></tr>
+<tr><td><code>docs/competition-2026/EVOLUTION-POLICY.md</code></td><td>受控演化：准入/降级/淘汰</td><td><span class="tag tag-green">已上线</span></td></tr>
+<tr><td><code>docs/competition-2026/TIME-MACHINE.md</code></td><td>时间机器溯源设计</td><td><span class="tag tag-green">已上线</span></td></tr>
+<tr><td><code>docs/competition-2026/AUDIT-LOG.md</code></td><td>审计日志规范 + 参考实现</td><td><span class="tag tag-green">已上线</span></td></tr>
+<tr><td><code>docs/competition-2026/PROPOSALS.md</code></td><td>串行 PR 闭环 demo</td><td><span class="tag tag-green">demo 就绪</span></td></tr>
+<tr><td><code>.proposals/arxiv-cross-domain-bridge/</code></td><td>真实提案示例</td><td><span class="tag tag-green">demo 就绪</span></td></tr>
+<tr><td><code>tools/audit-logger.mjs</code></td><td>审计日志 opt-in 实现</td><td><span class="tag tag-green">已上线</span></td></tr>
+<tr><td><code>docs/competition-2026/demo-walkthrough.html</code></td><td>交互式 Demo 走查</td><td><span class="tag tag-orange">即将交付</span></td></tr>
+<tr><td>60-90 秒全链路录屏</td><td>query→6 Agent 协作→出答案</td><td><span class="tag tag-red">待拍摄</span></td></tr>
+</table>
+
+<footer>
+GeneTech 14 站知识引擎 · Multi-Agent Knowledge Operations Platform · <a href="https://lm203688.github.io/genetech-14-sites/">线上地址</a> · 评审时间 2026-08-24
+</footer>
+
+</div>
+</body>
+</html>
