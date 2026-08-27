@@ -1,0 +1,65 @@
+{
+  "pipeline": "data-backfill-v2",
+  "timestamp": "2026-08-06T22:49:42.240Z",
+  "dryRun": false,
+  "limit": 700,
+  "perPage": 100,
+  "results": [
+    {
+      "site": "embodied-ai",
+      "fetched": 3400,
+      "added": 2961,
+      "total": 2961,
+      "dryRun": false
+    },
+    {
+      "site": "synbio-manufacturing",
+      "fetched": 3037,
+      "added": 2711,
+      "total": 2711,
+      "dryRun": false
+    },
+    {
+      "site": "semiconductor",
+      "fetched": 2470,
+      "added": 2280,
+      "total": 2280,
+      "dryRun": false
+    },
+    {
+      "site": "ai4science",
+      "fetched": 2500,
+      "added": 2216,
+      "total": 2216,
+      "dryRun": false
+    },
+    {
+      "site": "low-altitude",
+      "fetched": 2047,
+      "added": 1942,
+      "total": 1942,
+      "dryRun": false
+    },
+    {
+      "site": "sat-6g",
+      "fetched": 1500,
+      "added": 1393,
+      "total": 1393,
+      "dryRun": false
+    },
+    {
+      "site": "spatial-computing",
+      "fetched": 1300,
+      "added": 1258,
+      "total": 1258,
+      "dryRun": false
+    },
+    {
+      "site": "privacy-computing",
+      "fetched": 1400,
+      "added": 1310,
+      "total": 1310,
+      "dryRun": false
+    }
+  ]
+}
