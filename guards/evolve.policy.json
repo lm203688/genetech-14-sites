@@ -1,0 +1,53 @@
+{
+  "id": "evolve-guard",
+  "version": 1,
+  "description": "演化策略：数据/agent 的准入、降级、淘汰",
+  "default": "deny",
+  "rules": [
+    {
+      "id": "admit-new-source",
+      "description": "准入：新数据源通过后进入 active",
+      "allow": true,
+      "when": {
+        "all": [
+          {"==": [{"var": "action"}, "admit"]},
+          {"in": [{"var": "type"}, ["new_source", "new_agent", "new_content"]]},
+          {"<=": [{"var": "risk_score"}, 0.7]}
+        ]
+      }
+    },
+    {
+      "id": "degrade-low-quality",
+      "description": "降级：数据质量连续 3 次低于阈值",
+      "allow": true,
+      "when": {
+        "all": [
+          {"==": [{"var": "action"}, "degrade"]},
+          {">=": [{"var": "consecutive_fails"}, 3]}
+        ]
+      }
+    },
+    {
+      "id": "retire-stale",
+      "description": "淘汰：数据源连续 7 天无产出",
+      "allow": true,
+      "when": {
+        "all": [
+          {"==": [{"var": "action"}, "retire"]},
+          {">=": [{"var": "days_without_output"}, 7]}
+        ]
+      }
+    },
+    {
+      "id": "deny-high-risk-admit",
+      "description": "高风险准入拒绝",
+      "allow": false,
+      "when": {
+        "all": [
+          {"==": [{"var": "action"}, "admit"]},
+          {">": [{"var": "risk_score"}, 0.9]}
+        ]
+      }
+    }
+  ]
+}
