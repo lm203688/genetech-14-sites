@@ -1,0 +1,85 @@
+{
+  "team": "knowledge-ops",
+  "version": 1,
+  "description": "14 站知识引擎多 Agent 团队声明 — 每个 Agent 的角色、工具、决策模式、文件系统作用域",
+  "agents": [
+    {
+      "id": "collector_agent",
+      "role": "采集",
+      "decision": "parallel",
+      "tools": ["arxiv", "pubmed", "crossref", "openalex", "semanticscholar", "europepmc", "doaj", "datacite", "zenodo", "core", "preprints", "cnki"],
+      "fs_scope": ["data/", "state/"],
+      "guard": "ingest-guard",
+      "circuit_breaker": true
+    },
+    {
+      "id": "normalizer_agent",
+      "role": "归一化",
+      "decision": "parallel",
+      "tools": ["dedup", "schema_map", "doi_backfill"],
+      "fs_scope": ["data/"],
+      "guard": "publish-guard"
+    },
+    {
+      "id": "validator_agent",
+      "role": "审查",
+      "decision": "serial",
+      "tools": ["guard_eval", "proposal_review", "data_quality_check"],
+      "fs_scope": [".proposals/", ".active/", "data/", "guards/"],
+      "guard": "publish-guard"
+    },
+    {
+      "id": "enrich_agent",
+      "role": "跨域桥接",
+      "decision": "serial",
+      "tools": ["bridge_link", "trend_calc", "citation_network"],
+      "fs_scope": ["data/", "content/"]
+    },
+    {
+      "id": "publisher_agent",
+      "role": "发布",
+      "decision": "serial",
+      "tools": ["build_site", "graph_update", "sitemap_gen"],
+      "fs_scope": ["**/website/", "_site/"],
+      "guard": "publish-guard"
+    },
+    {
+      "id": "repair_agent",
+      "role": "修复",
+      "decision": "event_driven",
+      "tools": ["drift_fix", "stall_watchdog", "self_heal_retry"],
+      "fs_scope": ["data/", "state/", "reports/"],
+      "guard": "evolve-guard"
+    },
+    {
+      "id": "knowledge_guard",
+      "role": "策略",
+      "decision": "admission",
+      "tools": ["evolve_policy", "schema_registry"],
+      "fs_scope": ["guards/", "data/", ".proposals/", ".active/"],
+      "guard": "evolve-guard"
+    },
+    {
+      "id": "orchestrator_agent",
+      "role": "编排",
+      "decision": "dag",
+      "tools": ["dag_runner", "event_bus", "audit_logger"],
+      "fs_scope": ["data/events/", "audit/", "operations-plan/"],
+      "guard": "publish-guard"
+    }
+  ],
+  "communication": {
+    "bus": "data/events/queue.jsonl",
+    "dead_letter": "data/events/dead.jsonl",
+    "retention_days": 7
+  },
+  "execution_order": [
+    "collector_agent",
+    "normalizer_agent",
+    "validator_agent",
+    "enrich_agent",
+    "publisher_agent",
+    "repair_agent",
+    "knowledge_guard"
+  ]
+}
