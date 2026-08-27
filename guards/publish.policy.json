@@ -1,0 +1,62 @@
+{
+  "id": "publish-guard",
+  "version": 1,
+  "description": "发布策略：默认拒绝，显式放行。每个 agent 发布动作必须过此策略引擎。",
+  "default": "deny",
+  "rules": [
+    {
+      "id": "allow-valid-site",
+      "description": "目标站点在允许列表中",
+      "allow": true,
+      "when": {
+        "all": [
+          {"==": [{"var": "action"}, "publish"]},
+          {"in": [{"var": "target_site"}, {
+            "ref": "allowed_sites"
+          }]},
+          {"<=": [{"var": "entity_count"}, {"*": [{"var": "site_capacity"}, 0.9]}]},
+          {"==": [{"var": "guards_passed"}, ["SourceGuard", "KnowledgeGuard", "PublishGuard"]]}
+        ]
+      }
+    },
+    {
+      "id": "allow-small-batch",
+      "description": "小批量发布（≤100 条）宽松放行",
+      "allow": true,
+      "when": {
+        "all": [
+          {"==": [{"var": "action"}, "publish"]},
+          {">": [{"var": "entity_count"}, 0]},
+          {"<=": [{"var": "entity_count"}, 100]},
+          {"in": [{"var": "target_site"}, {"ref": "allowed_sites"}]}
+        ]
+      }
+    },
+    {
+      "id": "deny-empty",
+      "description": "空批次直接拒绝",
+      "allow": false,
+      "when": {
+        "==": [{"var": "entity_count"}, 0]
+      }
+    }
+  ],
+  "allowed_sites": [
+    "agent-ecosystem", "ai4science", "alien-minerals", "biocomputing",
+    "bionic-ai", "brain-science", "deep-sea-tech", "embodied-ai",
+    "exo-science", "genetech-tools", "life-science", "low-altitude",
+    "new-energy", "nuclear-energy", "privacy-computing", "quantum-computing",
+    "robot-parts", "sat-6g", "semiconductor", "spatial-computing",
+    "synbio-manufacturing", "tcm-tools", "swarmlabs"
+  ],
+  "site_capacity": {
+    "agent-ecosystem": 3000, "ai4science": 3000, "alien-minerals": 3000,
+    "biocomputing": 5000, "bionic-ai": 3000, "brain-science": 3000,
+    "deep-sea-tech": 3000, "embodied-ai": 3000, "exo-science": 3000,
+    "genetech-tools": 3000, "life-science": 3000, "low-altitude": 3000,
+    "new-energy": 3000, "nuclear-energy": 3000, "privacy-computing": 3000,
+    "quantum-computing": 3000, "robot-parts": 3000, "sat-6g": 3000,
+    "semiconductor": 3000, "spatial-computing": 3000,
+    "synbio-manufacturing": 3000, "tcm-tools": 3000, "swarmlabs": 5000
+  }
+}
