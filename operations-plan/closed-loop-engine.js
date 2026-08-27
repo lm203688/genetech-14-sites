@@ -24,7 +24,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { spawn, execSync } = require('child_process');
+const { spawn, spawnSync, execSync } = require('child_process');
 
 // ============================================================
 // 核心配置
@@ -612,6 +612,8 @@ class ClosedLoopEngine {
     }
     this.dryRun = options.dryRun || false;
     this.onlyStage = options.stage || null;
+    // 执行模式：默认 false（只写报告）；--execute 或 CLOSED_LOOP_EXECUTE=1 时真实执行管线脚本
+    this.executeMode = options.execute || process.env.CLOSED_LOOP_EXECUTE === '1';
     this.stateFile = path.join(STATE_DIR, `${loopId}-state.json`);
     this.startTime = new Date();
   }
@@ -678,11 +680,28 @@ class ClosedLoopEngine {
     const outputFile = path.join(REPORTS_DIR, `${this.loopId}-${stageName}-${this.startTime.toISOString().slice(0, 10)}.json`);
 
     // 尝试调用对应的 pipeline 脚本
+    // 2026-08-21 修复「假闭环」：此前 spawnSync 被注释、只写报告不执行。
+    // 现在默认仍为报告模式；显式传入 --execute 或设置 CLOSED_LOOP_EXECUTE=1 时真实执行管线脚本，
+    // 并把执行结果（exit code + stdout 尾部）写入阶段报告，形成可审计的执行闭环。
     const pipelineScript = this.getPipelineScript();
+    let execution = null;
     if (pipelineScript && fs.existsSync(pipelineScript)) {
-      log(this.loopId, `调用 pipeline 脚本: ${path.basename(pipelineScript)} --stage=${stageName}`, 'info');
-      // 这里可以实际执行脚本，为安全起见先只记录
-      // const result = spawnSync('node', [pipelineScript, '--stage', stageName], { encoding: 'utf8' });
+      if (this.executeMode) {
+        log(this.loopId, `执行 pipeline 脚本: ${path.basename(pipelineScript)} --stage=${stageName}`, 'info');
+        const result = spawnSync(process.execPath, [pipelineScript, '--stage', stageName], { encoding: 'utf8', timeout: 10 * 60 * 1000 });
+        execution = {
+          command: `node ${path.basename(pipelineScript)} --stage ${stageName}`,
+          status: result.status,
+          error: result.error ? String(result.error) : undefined,
+          stderrTail: (result.stderr || '').split('\n').slice(-15).join('\n'),
+        };
+        log(this.loopId, `pipeline 执行完成 status=${result.status}`, result.status === 0 ? 'ok' : 'error');
+        if (result.status !== 0) {
+          throw new Error(`pipeline 执行失败 status=${result.status}: ${(result.stderr || '').split('\n').slice(-3).join(' | ')}`);
+        }
+      } else {
+        log(this.loopId, `[报告模式] 跳过实际执行: ${path.basename(pipelineScript)}（加 --execute 开启真实执行）`, 'info');
+      }
     }
 
     // 生成阶段输出报告
@@ -693,6 +712,8 @@ class ClosedLoopEngine {
       stageName: stageDef.name,
       timestamp: new Date().toISOString(),
       actions: stageDef.actions,
+      executeMode: this.executeMode,
+      execution,
       status: 'completed',
     };
 
@@ -800,6 +821,7 @@ function main() {
   const loopArg = args.find((a) => a.startsWith('--loop='));
   const dryRun = args.includes('--dry-run');
   const stageArg = args.find((a) => a.startsWith('--stage='));
+  const execute = args.includes('--execute') || process.env.CLOSED_LOOP_EXECUTE === '1';
 
   if (!loopArg) {
     console.log(`
@@ -837,7 +859,7 @@ ${Object.entries(LOOP_REGISTRY)
   const stage = stageArg ? stageArg.split('=')[1] : null;
 
   try {
-    const engine = new ClosedLoopEngine(loopId, { dryRun, stage });
+    const engine = new ClosedLoopEngine(loopId, { dryRun, stage, execute });
     engine.run().then((summary) => {
       process.exit(summary.overallSuccess ? 0 : 1);
     });
