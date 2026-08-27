@@ -31,9 +31,11 @@
 **新增 GEO 权威长文（本批产出，建议同步分发）**：
 - `content/blog/bio-ai-frontier-2025-2026.md` — AI for Science 范式转移（bio×AI 核心集群）· 2026-08-14
 - `content/blog/gene-editing-2-0-2025-2026.md` — 基因编辑 2.0（genetech-tools 域）· 2026-08-14
-- `content/blog/biocomputing-2025-2026.md` — 生物计算：DNA 存储 / CRISPRi 基因电路 / ML×代谢建模（biocomputing 域）· **2026-08-17 本周产出**，默认带 X 算法排名信号结构（钩子问题 / 配图占位 / 收藏级长文 / 垂直关键词 / 转化 CTA / 避罚）
+- `content/blog/biocomputing-2025-2026.md` — 生物计算：DNA 存储 / CRISPRi 基因电路 / ML×代谢建模（biocomputing 域）· 2026-08-17 本周产出，默认带 X 算法排名信号结构（钩子问题 / 配图占位 / 收藏级长文 / 垂直关键词 / 转化 CTA / 避罚）
+- `content/blog/life-science-2025-2026.md` — 生命科学前沿：空间蛋白组虚拟组织 / 单细胞 in-context learning 基础模型 / 合成生物评测体系 / 类器官组织干细胞（life-science 域）· **2026-08-24 本周产出**，默认带 X 算法排名信号结构（钩子问题 / 配图占位 / 收藏级长文 / 垂直关键词 / 转化 CTA / 避罚）
+- `content/blog/synbio-manufacturing-2025-2026.md` — **合成生物制造：AI×Biofoundry 把「造分子」做成流水线**（synbio-manufacturing 域，2711 条实体；取材 QbD×AI×Biofoundry 自动化 / 数据稀缺 ML 工艺建模 / 无质粒细胞工厂 / 智能+可持续制造 / 生物安全治理，12 条跨 PubMed·arXiv·Crossref·Europe PMC 可溯源引用）· **2026-08-24 本周追加产出（同周第 2 篇，主题轮换至 synbio-manufacturing，未与已有 6 篇前沿长文重复）**，默认带 X 算法排名信号结构（钩子问题 / 配图占位 / 收藏级长文 / 垂直关键词 / 转化 CTA / 避罚）
 
-这三篇带可溯源引用、答案优先，是喂给 AI 引擎做「XX 领域最新进展」类问句的高价值语料；发布后建议在知乎/公众号各改写一篇。主题已按周轮换：AI4S 范式 → 基因编辑 2.0 → 生物计算，避免重复。
+这四篇带可溯源引用、答案优先，是喂给 AI 引擎做「XX 领域最新进展」类问句的高价值语料；发布后建议在知乎/公众号各改写一篇。主题已按周轮换：AI4S 范式 → 基因编辑 2.0 → 生物计算 → 生命科学 → 合成生物制造，避免重复。
 
 ---
 
@@ -108,7 +110,9 @@
 | 周次 | 日期 | 本周 GEO 产出 | 累计博客 | 推送状态 |
 |---|---|---|---|---|
 | W1（基线） | 2026-08-23 | `biocomputing-2025-2026.md`（2026-08-17，带 X 算法排名信号结构：钩子/配图/收藏级长文/垂直关键词/CTA/避罚） | 4 篇（1 roundup + 3 前沿权威长文） | ⏳ 待用户手动推送（本环境无 GitHub 凭据，`api-push.mjs` 鉴权失败） |
-| W2 | 2026-08-23 | **0 篇新增** 🔴 —— 远端每日仅 `[Bot] Intelligence update`（2 文件），未产长文；内容飞轮与数据飞轮同步降速 | 4 篇（未变） | ⏳ 待用户手动推送（`GITHUB_TOKEN` 缺失；且推送前须先拍板 A/B，避免 `ca85ad1` 闭源提交致 CI 无引擎） |
+| W2 | 2026-08-23 | **实施阶段补写 1 篇** ✅ `high-na-euv-2025-2026.md`（High-NA EUV 光刻，补最薄前沿环节，带 X 算法排名信号：钩子/收藏级长文/垂直关键词/CTA）+ 新增独立停摆巡检 workflow | 5 篇（1 roundup + 3 前沿权威长文 + 1 High-NA EUV） | ⏳ 待用户用 PAT 推送（本地已提交；A/B 已定为方案 B：引擎重新入库作公开兜底，无需 ENGINE_TOKEN） |
+| W3 | 2026-08-24 | **本周 GEO 产出** ✅ `life-science-2025-2026.md`（生命科学前沿：空间蛋白组虚拟组织 / 单细胞基础模型 / 合成生物评测 / 类器官，带 X 算法排名信号：钩子/配图占位/收藏级长文/垂直关键词/CTA/避罚），主题轮换至 life-science 域，避免与已有 3 篇前沿长文重复 | 6 篇（1 roundup + 4 前沿权威长文 + 1 High-NA EUV） | ⏳ 待用户手动推送（本环境无 GitHub 凭据，`api-push.mjs` 鉴权失败） |
+| W4 | 2026-08-24 | **本周追加产出** ✅ `synbio-manufacturing-2025-2026.md`（合成生物制造：AI×Biofoundry 把「造分子」做成流水线；synbio-manufacturing 域 2711 条实体，12 条跨源可溯源引用，带 X 算法排名信号：钩子/配图占位/收藏级长文/垂直关键词/CTA/避罚），主题轮换至 synbio-manufacturing 域，未与已有 6 篇前沿长文重复 | 7 篇（1 roundup + 5 前沿权威长文 + 1 High-NA EUV） | ⏳ 待用户手动推送（本环境无 GitHub 凭据，`api-push.mjs` 鉴权失败） |
 
 ### W2 补充说明（2026-08-23）
 
