@@ -1,0 +1,15 @@
+{
+  "id": "arxiv-cross-domain-bridge",
+  "type": "new_source",
+  "title": "新增 arXiv 跨域桥接主题：LLM + 量子计算",
+  "review_status": "approved",
+  "reviewed_at": "2026-08-24T10:30:00Z",
+  "reviewed_by": "validator_agent",
+  "guards_passed": ["SourceGuard", "KnowledgeGuard", "PublishGuard"],
+  "guards_detail": [
+    {"name": "SourceGuard", "decision": "allow", "reason": "arxiv.org reachable, avg latency 820ms"},
+    {"name": "KnowledgeGuard", "decision": "allow", "reason": "est. 180 entities, dedup > 90%, within capacity"},
+    {"name": "PublishGuard", "decision": "allow", "reason": "target sites swarmlabs/genetech both under 80% capacity"}
+  ],
+  "note": "Demo 通过记录，展示串联 Guard 审查后自动流转至 active 的能力"
+}
