@@ -1,0 +1,23 @@
+{
+  "id": "arxiv-cross-domain-bridge",
+  "type": "new_source",
+  "title": "新增 arXiv 跨域桥接主题：LLM + 量子计算",
+  "created_at": "2026-08-24T10:00:00Z",
+  "created_by": "collector_agent",
+  "motivation": "arXiv 上 LLM+quantum 论文过去 12 个月增长 3.2x，14 站尚无跨域桥接覆盖",
+  "config": {
+    "source": "arxiv",
+    "query": "LLM+quantum OR 'large language model'+'quantum computing'",
+    "max_entities": 200,
+    "target_sites": ["swarmlabs", "genetech"]
+  },
+  "risk_assessment": {
+    "data_quality": "high",
+    "compliance": "open_data_ok",
+    "duplication_risk": "low"
+  },
+  "review_status": "pending",
+  "reviewed_at": null,
+  "reviewed_by": null,
+  "review_notes": "Demo 提案，用于展示串行 PR 闭环流程。Validator Agent 自动审查后流转至 .active/"
+}
