@@ -84,3 +84,20 @@ unified-license/_chk.mjs
 unified-license/_smoke.mjs
 unified-license/_test_order.mjs
 unified-license/_test_verify.mjs
+
+# ============================================================
+# 引擎目录（2026-08-21 混合回退模式）：operations-plan/、tools/build-site.mjs、
+# shared/、unified-license/、api-guard/ 保持入库，作为 CI 的公开兜底引擎——
+# 私有仓 genetech-14-engine 可用时优先（workflows 经 ENGINE_TOKEN 克隆到 engine/），
+# 不可用时回退仓内副本，确保「推送闭源 refactor 后 Secrets 未配」不再导致全线停摆。
+# ============================================================
+# CI 运行时从私有仓克隆的引擎（防御：勿被机器人提交步骤写回公开仓）
+engine/
+
+# 审计日志目录（运行时生成，.gitignore 防泄漏；demo 数据在 .proposals/ .active/）
+audit/
+
+# scratch scripts from prior sessions（不入库，避免混淆）
+tools/_*.mjs
+tools/_*.py
+tools/cf_*.mjs
