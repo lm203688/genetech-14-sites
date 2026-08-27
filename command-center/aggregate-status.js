@@ -17,7 +17,9 @@ const path = require('path');
 
 // ==================== 配置区 ====================
 
-const DESKTOP = 'C:\\Users\\xing\\Desktop';
+// 桌面根目录：优先环境变量 GENETECH_DESKTOP_ROOT；默认由本文件位置向上推导
+// （command-center/ → 仓库根 → 上级即桌面），消除对 C:\Users\xing\Desktop 的硬编码依赖。
+const DESKTOP = process.env.GENETECH_DESKTOP_ROOT || path.resolve(__dirname, '..', '..');
 const OUTPUT_DIR = __dirname;
 
 /** 项目配置 */
