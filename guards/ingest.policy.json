@@ -1,0 +1,36 @@
+{
+  "id": "ingest-guard",
+  "version": 1,
+  "description": "采集策略：数据源准入检查",
+  "default": "deny",
+  "rules": [
+    {
+      "id": "allow-known-source",
+      "allow": true,
+      "when": {
+        "all": [
+          {"in": [{"var": "source"}, ["arxiv", "pubmed", "crossref", "openalex", "semanticscholar", "europepmc", "doaj", "datacite", "zenodo", "core", "preprints"]]},
+          {"<=": [{"var": "latency_ms"}, 30000]},
+          {"==": [{"var": "license"}, "open"]}
+        ]
+      }
+    },
+    {
+      "id": "allow-cnki-with-token",
+      "allow": true,
+      "when": {
+        "all": [
+          {"==": [{"var": "source"}, "cnki"]},
+          {"!": [{"var": "cnki_token_missing"}]}
+        ]
+      }
+    },
+    {
+      "id": "deny-unknown-source",
+      "allow": false,
+      "when": {
+        "not": {"in": [{"var": "source"}, ["arxiv", "pubmed", "crossref", "openalex", "semanticscholar", "europepmc", "doaj", "datacite", "zenodo", "core", "preprints", "cnki"]]}
+      }
+    }
+  ]
+}
