@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-28",
+  "date": "2026-08-23",
   "total": 49879,
   "sites": 22,
   "perSite": {
@@ -44,9 +44,9 @@
     }
   },
   "status": "🟡 STALL ⚠️ QUALITY",
-  "consecutiveStall": 11,
+  "consecutiveStall": 6,
   "frozenSinceDate": "2026-08-17",
-  "frozenDays": 12,
+  "frozenDays": 7,
   "delta": {
     "total": 0,
     "sites": 0
@@ -54,10 +54,11 @@
   "remoteCheck": {
     "cursorLastCommit": "75bfb85",
     "cursorLastCommitAt": "2026-08-14T12:48:37Z",
-    "cursorFrozenDays": 14,
-    "remoteEqualsLocal": true,
-    "remoteFetchMethod": "raw.githubusercontent.com（08-25 已确认逐字节一致，本日沿用既有证据；08-28 未重拉：GetMe 占用 Agent Mail 通道且邮件通道已失效，远端核验不影响结论）",
-    "note": "依据 08-25 已确认证据，远端游标与本地逐字节一致 → CI 侧冻结确证（非本地过期）；ops.yml 每小时 completed/success 但零数据提交 —— 绿色空转持续"
+    "cursorFrozenDays": 9,
+    "ciRunsSampled": 8,
+    "ciAllSuccess": true,
+    "ciDataCommits": 0,
+    "note": "ops.yml 每小时 completed/success 但零数据提交 —— 绿色空转持续"
   },
   "rootCause": {
     "confirmed": "ops.yml decide 步骤仍比对旧 cron 字符串 '*/30 * * * *'（2026-08-07 已改为 '0 * * * *'），数据涡轮分支永不命中，should_run_data 仅靠 HOUR==12 兜底，扩量频次由预期 24~48 轮/天塌缩至约 2 轮/天",
@@ -70,8 +71,8 @@
     "localLog": "ok",
     "agentMail": "failed",
     "chatReply": "ok",
-    "alertFile": "docs/ALERT-2026-08-28.md"
+    "alertFile": "docs/ALERT-2026-08-23.md"
   },
-  "alertDeliveryFailed": "Agent Mail 授权连续第 7 天失效（08-22~28），GetMe 仍被拒「当前请勿重试」，邮件告警发不出；本日改用 docs/ALERT-2026-08-28.md + 对话回复补偿触达",
+  "alertDeliveryFailed": "Agent Mail 授权连续第 2 天失效（08-22、08-23），邮件发送被拒，须用户重新授权 workbuddy://agentmail",
   "pushedRemote": false
 }
