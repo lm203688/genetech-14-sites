@@ -719,9 +719,10 @@ function normalize(raw, site) {
 
 /**
  * 处理单个（站点, 检索词）：抓 6 源 → 去重合并进 map（map 已含既有实体）。
- * 返回 { fetched, added, nextOffset }。
+ * cap = 站点容量硬上限（= maxEntities）；在插入粒度上强制截断，
+ * 保证 map.size 永不越界。返回 { fetched, added, nextOffset }。
  */
-async function backfillQuery(site, query, offset, perPage, limit, map) {
+async function backfillQuery(site, query, offset, perPage, limit, map, cap) {
   // 6 源并发抓取（失败即空数组），每个源独立熔断器保护；
   // 一个源连续失败 3 次自动熔断 60s，不阻塞其余源
   const settled = await Promise.allSettled(SOURCE_FETCHERS.map(f => {
@@ -743,6 +744,12 @@ async function backfillQuery(site, query, offset, perPage, limit, map) {
   let added = 0;
   for (const raw of collected) {
     if (added >= limit) break;
+    if (cap && map.size >= cap) {
+      // 容量硬截断（插入粒度）：此前只在页间/批间检查，QUERY_CONCURRENCY=3 并发插入 +
+      // 单页最多 limit 条会让 map 一页跳越 maxEntities，导致 publish.guard 容量规则
+      // total_after <= site_capacity 永远失败、全站落 default:deny（2026-08-29 入库冻结真根因）。
+      break;
+    }
     const n = normalize(raw, site);
     const dk = dedupeKey(n);
     if (map.has(dk)) {
@@ -869,7 +876,7 @@ async function main() {
       let f = 0, a = 0;
       for (let p = 0; p < PAGES_PER_QUERY; p++) {
         if (map.size >= maxEntities) break;
-        const r = await backfillQuery(site, q, off, perPage, limit, map);
+        const r = await backfillQuery(site, q, off, perPage, limit, map, maxEntities);
         f += r.fetched; a += r.added;
         off = r.nextOffset;
         cursor[site][q] = off; // 逐页落盘（站点循环结束后统一写文件）

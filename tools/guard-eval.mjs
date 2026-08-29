@@ -148,23 +148,29 @@ export async function guardedAction(policyName, context, actionFn) {
   );
 }
 
-// 冒烟测试
-if (process.argv[1] && import.meta.url.includes('guard-eval')) {
+// 冒烟测试（仅「直接执行本文件」时运行；被 import 时静默，避免污染调用方输出）
+// 2026-08-29：判断条件原为 import.meta.url.includes('guard-eval')，被 import 时也恒真 →
+// 冒烟测试会混进任何调用方的 stdout。改为 resolve(argv[1]) === 本文件。
+// 同时把 v1 语义用例（entity_count:421 / site_capacity:3000）更新为 v2 语义：
+// 拆分 added_count（本轮新增）与 total_after（发布后总量），容量与引擎 --max-entities 对齐。
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const publishPolicy = loadPolicy('publish');
+  const ALL = ['SourceGuard', 'KnowledgeGuard', 'PublishGuard'];
   const tests = [
-    {ctx: {action:'publish', target_site:'swarmlabs', entity_count:421, site_capacity:3000, guards_passed:['SourceGuard','KnowledgeGuard','PublishGuard']}, expect:'allow'},
-    {ctx: {action:'publish', target_site:'swarmlabs', entity_count:3000, site_capacity:3000, guards_passed:['SourceGuard','KnowledgeGuard','PublishGuard']}, expect:'deny'},
-    {ctx: {action:'publish', target_site:'unknown', entity_count:10, site_capacity:3000}, expect:'deny'},
-    {ctx: {action:'publish', target_site:'swarmlabs', entity_count:50, site_capacity:3000}, expect:'allow'},
-    {ctx: {action:'publish', target_site:'swarmlabs', entity_count:0}, expect:'deny'},
+    {name:'常规批次 +500 (9800/10000)', ctx:{action:'publish', target_site:'quantum-computing', added_count:500, total_after:9800, site_capacity:10000, guards_passed:ALL}, expect:'allow'},
+    {name:'小批量 +12 (三道守卫齐备)', ctx:{action:'publish', target_site:'swarmlabs', added_count:12, total_after:2600, site_capacity:10000, guards_passed:ALL}, expect:'allow'},
+    {name:'超容 total_after=10001 > 10000', ctx:{action:'publish', target_site:'quantum-computing', added_count:101, total_after:10001, site_capacity:10000, guards_passed:ALL}, expect:'deny'},
+    {name:'空批次 added_count=0', ctx:{action:'publish', target_site:'quantum-computing', added_count:0, total_after:9000, site_capacity:10000, guards_passed:ALL}, expect:'deny'},
+    {name:'非白名单站点', ctx:{action:'publish', target_site:'unknown', added_count:10, total_after:10, site_capacity:10000, guards_passed:ALL}, expect:'deny'},
+    {name:'守卫缺失（仅两道）', ctx:{action:'publish', target_site:'quantum-computing', added_count:500, total_after:9800, site_capacity:10000, guards_passed:['SourceGuard','KnowledgeGuard']}, expect:'deny'},
   ];
 
-  console.log('=== Guard Eval Smoke Test ===');
+  console.log('=== Guard Eval Smoke Test (policy v' + publishPolicy.version + ') ===');
   let pass = 0;
   for (const t of tests) {
     const d = evalGuard(publishPolicy, t.ctx);
     const ok = d.decision === t.expect;
-    console.log(`${ok ? '✅' : '❌'} action=${t.ctx.action} site=${t.ctx.target_site} count=${t.ctx.entity_count} → ${d.decision} (${d.reason})`);
+    console.log(`${ok ? '✅' : '❌'} ${t.name} -> ${d.decision} (${d.reason})`);
     if (ok) pass++;
   }
   console.log(`\n${pass}/${tests.length} passed`);
