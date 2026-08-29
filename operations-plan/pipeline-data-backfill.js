@@ -906,11 +906,18 @@ async function main() {
 
     // Policy-as-code Guard 门禁（P0）：写入前强制策略评估，默认拒绝
     // 与 OPA/Rego 语义对齐：策略可版本化、可单测、可审计
+    // v2 修复（2026-08-29）：v1 把「本轮新增」与「发布后总量」塞进同一字段 entity_count，
+    // 使 publish.policy.json 的 allow 规则要么要求总量 ≤ 容量*0.9（已达 1 万+ 的站点永远不满足），
+    // 要么要求 ≤ 100 条（与单轮实际新增量级不符）→ 两条 allow 规则皆不可能命中，
+    // 全部站点落 default:deny，数据入库自 2026-08-17 起完全冻结。
+    // 现拆分为 added_count（本轮新增）与 total_after（发布后总量），容量对齐本引擎 maxEntities。
     const guardDecision = evalPublishGuard({
       action: 'publish',
       target_site: site,
-      entity_count: all.length,
-      site_capacity: 3000,
+      entity_count: siteAdded,
+      added_count: siteAdded,
+      total_after: all.length,
+      site_capacity: maxEntities,
       guards_passed: ['SourceGuard', 'KnowledgeGuard', 'PublishGuard']
     });
     if (guardDecision.decision !== 'allow') {

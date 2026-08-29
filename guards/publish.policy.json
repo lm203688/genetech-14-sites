@@ -1,12 +1,12 @@
 {
   "id": "publish-guard",
-  "version": 1,
-  "description": "发布策略：默认拒绝，显式放行。每个 agent 发布动作必须过此策略引擎。",
+  "version": 2,
+  "description": "发布策略：默认拒绝，显式放行。每个 agent 发布动作必须过此策略引擎。v2（2026-08-29）修复：v1 把「批次新增数」与「发布后总量」混用同一字段 entity_count，且容量上限停留在旧的 3000/5000，与引擎 --max-entities=10000 漂移，导致每条 allow 规则都无法命中、全部站点落 default:deny，数据入库自 2026-08-17 起完全冻结（单轮丢弃 26 万+ 候选）。v2 拆分为 added_count（本轮新增）与 total_after（发布后总量）两个独立字段，容量表对齐引擎目标 10000，并恢复「防超容」的真实作用。",
   "default": "deny",
   "rules": [
     {
-      "id": "allow-valid-site",
-      "description": "目标站点在允许列表中",
+      "id": "allow-normal-batch",
+      "description": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
       "allow": true,
       "when": {
         "all": [
@@ -14,30 +14,31 @@
           {"in": [{"var": "target_site"}, {
             "ref": "allowed_sites"
           }]},
-          {"<=": [{"var": "entity_count"}, {"*": [{"var": "site_capacity"}, 0.9]}]},
+          {">": [{"var": "added_count"}, 0]},
+          {"<=": [{"var": "total_after"}, {"var": "site_capacity"}]},
           {"==": [{"var": "guards_passed"}, ["SourceGuard", "KnowledgeGuard", "PublishGuard"]]}
         ]
       }
     },
     {
       "id": "allow-small-batch",
-      "description": "小批量发布（≤100 条）宽松放行",
+      "description": "小批量发布（≤100 条新增）宽松放行：小批量风险低，不强制三道守卫齐备",
       "allow": true,
       "when": {
         "all": [
           {"==": [{"var": "action"}, "publish"]},
-          {">": [{"var": "entity_count"}, 0]},
-          {"<=": [{"var": "entity_count"}, 100]},
+          {">": [{"var": "added_count"}, 0]},
+          {"<=": [{"var": "added_count"}, 100]},
           {"in": [{"var": "target_site"}, {"ref": "allowed_sites"}]}
         ]
       }
     },
     {
       "id": "deny-empty",
-      "description": "空批次直接拒绝",
+      "description": "空批次直接拒绝（本轮零新增）",
       "allow": false,
       "when": {
-        "==": [{"var": "entity_count"}, 0]
+        "==": [{"var": "added_count"}, 0]
       }
     }
   ],
@@ -50,13 +51,13 @@
     "synbio-manufacturing", "tcm-tools", "swarmlabs"
   ],
   "site_capacity": {
-    "agent-ecosystem": 3000, "ai4science": 3000, "alien-minerals": 3000,
-    "biocomputing": 5000, "bionic-ai": 3000, "brain-science": 3000,
-    "deep-sea-tech": 3000, "embodied-ai": 3000, "exo-science": 3000,
-    "genetech-tools": 3000, "life-science": 3000, "low-altitude": 3000,
-    "new-energy": 3000, "nuclear-energy": 3000, "privacy-computing": 3000,
-    "quantum-computing": 3000, "robot-parts": 3000, "sat-6g": 3000,
-    "semiconductor": 3000, "spatial-computing": 3000,
-    "synbio-manufacturing": 3000, "tcm-tools": 3000, "swarmlabs": 5000
+    "agent-ecosystem": 10000, "ai4science": 10000, "alien-minerals": 10000,
+    "biocomputing": 10000, "bionic-ai": 10000, "brain-science": 10000,
+    "deep-sea-tech": 10000, "embodied-ai": 10000, "exo-science": 10000,
+    "genetech-tools": 10000, "life-science": 10000, "low-altitude": 10000,
+    "new-energy": 10000, "nuclear-energy": 10000, "privacy-computing": 10000,
+    "quantum-computing": 10000, "robot-parts": 10000, "sat-6g": 10000,
+    "semiconductor": 10000, "spatial-computing": 10000,
+    "synbio-manufacturing": 10000, "tcm-tools": 10000, "swarmlabs": 10000
   }
 }
