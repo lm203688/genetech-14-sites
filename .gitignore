@@ -101,3 +101,12 @@ audit/
 tools/_*.mjs
 tools/_*.py
 tools/cf_*.mjs
+
+# Local push utilities（一次性 Git API 推送脚本，不入库）
+tools/push-*.mjs
+tools/push-*.py
+tools/api-push.mjs
+__test_push__.txt
+
+# OpenCode / agent local files
+.opencode/
