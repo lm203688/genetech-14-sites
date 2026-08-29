@@ -176,10 +176,12 @@ jobs:
               if [[ "$HOUR" == "21" && "$DOW" == "4" ]]; then
                 echo "should_run_intel=true" >> $GITHUB_OUTPUT
               fi
-            # 数据收集涡轮：每 30 分钟仅跑 data-accumulation，尽快扩充实体数据库
-            elif [[ "$SCHED" == "*/30 * * * *" ]]; then
+            # 数据收集涡轮：整点每小时仅跑 data-accumulation，尽快扩充实体数据库
+            # 注意：2026-08-07 起 cron 已改为 '0 * * * *'（每小时整点），此处需与之对齐，
+            # 否则每小时触发时本分支永不匹配，should_run_data 只剩 12:30 UTC 一轮，扩量塌缩。
+            elif [[ "$SCHED" == "0 * * * *" ]]; then
               echo "should_run_data=true" >> $GITHUB_OUTPUT
-              echo "[Decide] 数据涡轮: 每30分钟深度采集(data only)"
+              echo "[Decide] 数据涡轮: 整点每小时深度采集(data only)"
             # 每日 20:30 CST = 12:30 UTC 全量运行（推广由 ops-extra 的 geo 任务承担，避免同刻双跑）
             elif [[ "$HOUR" == "12" ]]; then
               echo "should_run_data=true" >> $GITHUB_OUTPUT
