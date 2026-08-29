@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-23",
+  "date": "2026-08-29",
   "total": 49879,
   "sites": 22,
   "perSite": {
@@ -44,21 +44,23 @@
     }
   },
   "status": "🟡 STALL ⚠️ QUALITY",
-  "consecutiveStall": 6,
+  "consecutiveStall": 12,
   "frozenSinceDate": "2026-08-17",
-  "frozenDays": 7,
+  "frozenDays": 12,
   "delta": {
     "total": 0,
     "sites": 0
   },
   "remoteCheck": {
-    "cursorLastCommit": "75bfb85",
+    "cursorLastCommit": "75bfb8589a35",
+    "cursorLastCommitMsg": "[Bot] Intelligence update",
     "cursorLastCommitAt": "2026-08-14T12:48:37Z",
-    "cursorFrozenDays": 9,
-    "ciRunsSampled": 8,
-    "ciAllSuccess": true,
-    "ciDataCommits": 0,
-    "note": "ops.yml 每小时 completed/success 但零数据提交 —— 绿色空转持续"
+    "cursorFrozenDays": 14,
+    "cursorEqualsLocal": true,
+    "masterLastCommit": "6f28ccea93d1",
+    "masterLastCommitAt": "2026-08-28T04:29:55Z",
+    "masterStillActive": true,
+    "note": "游标文件自 08-14 起零变更，但 master 08-28 仍有其他提交 → 仅数据 backfill 管线停摆，非本地副本过期；远端游标内容与本地逐字节一致"
   },
   "rootCause": {
     "confirmed": "ops.yml decide 步骤仍比对旧 cron 字符串 '*/30 * * * *'（2026-08-07 已改为 '0 * * * *'），数据涡轮分支永不命中，should_run_data 仅靠 HOUR==12 兜底，扩量频次由预期 24~48 轮/天塌缩至约 2 轮/天",
@@ -71,8 +73,8 @@
     "localLog": "ok",
     "agentMail": "failed",
     "chatReply": "ok",
-    "alertFile": "docs/ALERT-2026-08-23.md"
+    "alertFile": "docs/ALERT-2026-08-29.md"
   },
-  "alertDeliveryFailed": "Agent Mail 授权连续第 2 天失效（08-22、08-23），邮件发送被拒，须用户重新授权 workbuddy://agentmail",
+  "alertDeliveryFailed": "Agent Mail 授权连续第 8 天失效（08-22 ~ 08-29），GetMe 返回『授权已失效，请前往 workbuddy://agentmail 重新授权，当前请勿重试』，邮件告警发不出；使用 docs/ALERT-2026-08-29.md + present_files + 对话回复作为补偿触达",
   "pushedRemote": false
 }
