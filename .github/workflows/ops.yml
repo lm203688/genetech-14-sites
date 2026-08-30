@@ -288,14 +288,21 @@ jobs:
         run: |
           git config --local user.email "ops-bot@genetech.example"
           git config --local user.name "GeneTech Ops Bot"
-          # 2026-08-30 加固（入库冻结第六重根因）：
-          # ① 原用目录级 pathspec '*/website/api' —— git 不会对目录做 glob 展开，
-          #    该 pathspec 永远匹配不到任何文件，git add 以 rc=128 直接失败；
-          #    而 git add 是原子操作，一条 pathspec 致命失败 => 一个文件都不暂存，
-          #    错误再被 2>/dev/null || true 完全吞掉 => 13 天「run 全绿但零产出」。
-          # ② logs/ 已被 .gitignore 排除，每轮都打印 ignored 警告（rc=1，不阻塞但污染日志）。
-          # 现改为精确文件级 pathspec + 显式校验暂存数，任何失败都在日志里可见。
-          git add sites/ reports/ state/ data/ '*/website/api/entities.json' '*/website/api/index.json' 2>&1 | grep -vE '^(warning:|hint:)' || true
+          # 2026-08-30 加固（入库冻结第六重根因，实测定位）：
+          # git add 是**原子操作**——任一 pathspec 匹配不到文件即以 rc=128 fatal 失败，
+          # 结果是「一个文件都不暂存」，而错误长期被 2>/dev/null || true 吞掉，
+          # => 数据照写、run 全绿、远端零提交（13 天「成功的零产出」）。
+          # 三个已实证的致命/噪声点：
+          #   ① sites/ 在仓库里 **0 个被跟踪文件**，CI 全新 checkout 后该目录根本不存在
+          #      -> fatal: pathspec 'sites/' did not match any files（本次真凶）
+          #      -> 改为先判存在再 add
+          #   ② '*/website/api' 目录级 pathspec 永不匹配（git 不对目录做 glob 展开）
+          #      -> 改为文件级 '*/website/api/entities.json' + 'index.json'
+          #   ③ logs/ 已被 .gitignore 排除，每轮打印 ignored 警告（rc=1，不阻塞但污染日志）
+          # 另加 STAGED 显式校验，让任何 staging 失败在日志里可见，不再静默。
+          if [ -d sites ]; then git add sites/ 2>&1 | grep -vE '^(warning:|hint:)' || true; fi
+          if [ -d data ]; then git add data/ 2>&1 | grep -vE '^(warning:|hint:)' || true; fi
+          git add reports/ state/ '*/website/api/entities.json' '*/website/api/index.json' 2>&1 | grep -vE '^(warning:|hint:)' || true
           STAGED=$(git diff --cached --name-only | wc -l | tr -d ' ')
           echo "[Commit] 暂存文件数=${STAGED}"
           if [ "${STAGED}" -eq 0 ]; then
@@ -382,7 +389,8 @@ jobs:
         run: |
           git config --local user.email "ops-bot@genetech.example"
           git config --local user.name "GeneTech Ops Bot"
-          git add sites/ reports/ logs/ state/ 2>/dev/null || true
+          if [ -d sites ]; then git add sites/ 2>/dev/null || true; fi
+          git add reports/ state/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
@@ -514,7 +522,8 @@ jobs:
         run: |
           git config --local user.email "ops-bot@genetech.example"
           git config --local user.name "GeneTech Ops Bot"
-          git add content/ reports/ logs/ state/ 2>/dev/null || true
+          if [ -d content ]; then git add content/ 2>/dev/null || true; fi
+          git add reports/ state/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
@@ -575,7 +584,7 @@ jobs:
         run: |
           git config --local user.email "ops-bot@genetech.example"
           git config --local user.name "GeneTech Ops Bot"
-          git add reports/ logs/ state/ 2>/dev/null || true
+          git add reports/ state/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
