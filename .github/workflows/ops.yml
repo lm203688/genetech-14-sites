@@ -281,7 +281,7 @@ jobs:
         run: |
           git config --local user.email "ops-bot@genetech.example"
           git config --local user.name "GeneTech Ops Bot"
-          git add sites/ reports/ logs/ state/ data/ '*/website/api' 2>/dev/null || true
+          git add sites/ reports/ logs/ state/ data/ '*/website/api/entities.json' '*/website/api/index.json' 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
