@@ -153,7 +153,7 @@
 
 ## 2026-08-30（第 3 期 / 本周定时执行）
 
-> ⚠️ **DOI 可溯源度仍为 0% + 数据库连续冻结 13+ 天**：线上 catalog 总实体 49,879 与 2026-08-17 基线完全重合，21 站 `lastUpdated` 停在 2026-08-06、biocomputing 停在 2026-08-14。冻结真尾凶（第六重）`sites/` 目录在 CI 全新 checkout 不存在 → `git add sites/` pathspec 致命失败(rc=128) → 0 暂存 → 入库冻结，已本地修复（commit `410bff4`+`0104751`+`76971e2` 策略 v2+`operations-plan/pipeline-data-backfill.js` 容量 cap+`tools/guard-eval.mjs`），**仍仅编码未部署**，须安全推送让 CI 生效（本周 P0-1）。纠正 W1/W2 红标：§4.5 质量门禁字段契约修复（`6def99b`）**已部署**，DOI 0% 的真实阻断是「冻结无新数据入库」，非质量代码未部署。
+> ⚠️ **DOI 可溯源度仍为 0% + 数据库连续冻结 13+ 天**：线上 catalog 总实体 49,879 与 2026-08-17 基线完全重合，21 站 `lastUpdated` 停在 2026-08-06、biocomputing 停在 2026-08-14。第六重根因（`sites/` 目录 pathspec 致 0 暂存）**经确认已部署**（远端 `6220c82` 含 `if [ -d sites ]` 守卫 + `*/website/api/*.json` 文件级 glob；本次推送时 `api-push.mjs` 仅推送 2 文档即证明远端已含该修复），但 **catalog 仍 49,879 / lastUpdated ≤ 2026-08-14** → 冻结在修复部署后仍未解除，存在第六重之后的残留阻断（本周 P0-1，须升级 ALERT）。纠正 W1/W2 红标：§4.5 质量门禁（`6def99b`）与 git add 修复均**已部署**，DOI 0% 的真实阻断是「冻结无新数据入库」，非代码未部署。
 
 ### 一、本周关键指标（对比 W2）
 
@@ -190,7 +190,7 @@
 
 - **每日闭环 #1（2026-08-30 08:00）状态**：🔴 入库冻结第 13 天，但根因已定位并部分修复部署。
 - **自愈动作（已执行）**：① 修复 `ops.yml:284` `git add` 目录级 glob → 文件级 `*/website/api/entities.json` `*/website/api/index.json`；② 定向单文件 Git Database 提交（base=远端 6def99b，仅覆盖 ops.yml）→ 远端 HEAD=`4ca84db`；③ 触发自愈 `push.mjs dispatch ops.yml pipeline=data-accumulation` → run `33283138461`（约 40 min）。
-- **验证结果（本期复核）**：远端 catalog 仍 49,879、lastUpdated ≤ 2026-08-14 → `4ca84db` 仅修 website/api glob**未解真尾凶**；真尾凶是 `sites/` 目录 pathspec（CI 全新 checkout 无 `sites/` → rc=128 → 0 暂存），本地 `410bff4` 已用 `if [ -d sites ]; then git add sites/; fi` 加固，**仍未部署**。
+- **验证结果（本期复核）**：远端 catalog 仍 49,879、lastUpdated ≤ 2026-08-14 → `4ca84db` 仅修 website/api glob**未解真尾凶**；真尾凶是 `sites/` 目录 pathspec（CI 全新 checkout 无 `sites/` → rc=128 → 0 暂存），本地 `410bff4` 已用 `if [ -d sites ]; then git add sites/; fi` 加固，**且经本次推送验证远端已含**（`api-push` 仅推送 2 文档即证远端 `ops.yml` 与本地 `410bff4` 一致）→ git 提交层（第六重）**已解**，但 **catalog 仍冻结** → 残留阻断在更下游（见 P0-1）。
 - **GUARD/QUALITY 体检（dispatch 33236340549 + 33276085461）**：✅ 全部 22 站策略放行 + 质量通过（685a89a/6def99b 生效），GUARD_BLOCKED/QUALITY_BLOCKED 已排除 → 三层门禁仅剩 git 提交层失效。
 - **升级建议（承接为本周 P0/P1）**：① 其它 pipeline `git add` 文件级 glob（ops.yml:369/501/562 未含 website/api 路径）；② 门禁可观测性——三层均显式打印「实际入库条数」，避免 `No changes to commit` 掩盖故障；③ 提升期决策（见 §七/1d）；④ 质量红线阈值改为「较基线降 >5pt」避免 DOI 0% 基线误报（每日闭环已建议）。
 
@@ -204,7 +204,7 @@
 
 ### 七、建议提升（本周行动）
 
-- 🔴 **P0-1｜部署入库冻结根治补丁（解除 13 天冻结）**：本地已就绪、待部署的文件——`.github/workflows/ops.yml`(`410bff4`+`0104751` sites/ 加固)、`guards/publish.policy.json`(v2)、`operations-plan/pipeline-data-backfill.js`(容量 cap)、`tools/guard-eval.mjs`。本次 `push.mjs commit` **一并部署这 4 个文件**（无 secrets/闭源依赖、无 ENGINE_TOKEN 依赖），部署后远端 HEAD 推进、Pages 重建、下一轮 data-accumulation 应出现「新增实体 >0」→ 冻结解除。
+- 🔴 **P0-1｜冻结在修复部署后仍持续 → 升级 ALERT + 人工诊断残留阻断**：`git add` 第六重修复（远端 `6220c82` 已含 `sites/` 守卫 + `*/website/api/*.json` glob，本次推送证明远端 `ops.yml` 与本地 `410bff4` 一致）部署后，**catalog 仍 49,879 / lastUpdated ≤ 2026-08-14** → 冻结未解除，存在第六重之后的残留阻断。诊断路径：① `push.mjs dispatch ops.yml pipeline=data-accumulation` 触发后，抓 run 日志的 `[QUALITY] ✅ 质量通过` 站点数、`Commit data updates` 是否输出新 commit SHA（非 `No changes to commit`）、`STAGED=暂存文件数`；② 若仍 `No changes to commit` → 比对**引擎实际写盘路径**与 git add glob（`'*/website/api/entities.json'` 能否命中引擎输出目录；`sites/` 守卫在 CI checkout 无 `sites/` 时不生效）——疑似引擎写盘路径与 glob 仍错位，或 cron `decide` 分支（ops.yml:182）未选中 data 轮；③ 排除 CF 预算守门把 catalog 刷新滞后误判为冻结（以远端 HEAD / entities.json 为准）。
 - 🔴 **P0-2｜DOI 可溯源 0%（冻结的症状）**：根因是冻结无新数据，部署 P0-1 后 crossref/pubmed/europepmc/datacite 四源原生带 DOI（合计 31,320 条/63%）的新实体入库即可改善；同时建议把质量红线阈值从"绝对 <10%"改为"较基线降 >5pt"，避免基线误报（每日闭环已建议）。
 - **P1｜摘要完整度 47% → 70%+**：纳入扩量引擎摘要回填 job。
 - **P1｜开通社群载体 + `api-guard` 企业路由**：解锁 ¥299 社群 LTV 与企业授权计量。
@@ -214,5 +214,5 @@
 ### 八、部署 / 推送状态
 
 - 通道自检 `push.mjs ping` ✅（凭据可用，身份 lm203688）。
-- 本次 `push.mjs commit` 提交并推送：2 个文档（本摘要 + GEO 追踪）+ 4 个入库冻结修复文件（`ops.yml` / `guards/publish.policy.json` / `operations-plan/pipeline-data-backfill.js` / `tools/guard-eval.mjs`），均经 `api-push.mjs` 单文件 base_tree 提交（parent=远端 6220c82，无 force、无 history 冲突、无 secrets/闭源）。
-- 远端 HEAD 推进后 Pages 重建触发；部署后下一轮 `data-accumulation` 应验证「新增实体 >0」→ 冻结解除（以 `push.mjs status` 远端 HEAD 变化 + catalog 实体数增长为证）。
+- 本次 `push.mjs commit` 提交并推送：**仅 2 个文档**（本摘要 + GEO 追踪）。`api-push.mjs` 比对本地 HEAD 与远端 base 后仅推送 2 文件，证明 4 个入库冻结修复文件（`ops.yml` / `guards/publish.policy.json` / `operations-plan/pipeline-data-backfill.js` / `tools/guard-eval.mjs`）**远端已存在**（远端 `6220c82` = 本地 `410bff4`），即 git add 修复此前已部署。
+- 远端 HEAD → `87f6033`（本次文档推送），Pages 重建触发。**但本推送未触动实体数据、未解除冻结**：catalog 仍 49,879 / lastUpdated ≤ 2026-08-14（见 P0-1 残留阻断诊断）。
