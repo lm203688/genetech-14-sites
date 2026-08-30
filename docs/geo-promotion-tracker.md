@@ -117,10 +117,10 @@
 - **下期 GEO 选题建议（补最薄前沿环节）**：High-NA EUV（线上仅 8 条实体，最薄）与固态电池（new-energy 240 条，料足），二者均属 2025-2026 真突破，兼具补数据与产 GEO 资产双重收益。
 - **渠道现状**：Glama / Smithery MCP 目录认领仍待用户登录（P2）；远端 open issue 仅 `#1 🚀 GEO 自动推广状态`（2026-08-22 更新）。
 
-| W3 | 2026-08-30 | **本周新增 2 篇**（均 2026-08-24，周一 GEO 自动化）：`life-science-2025-2026.md`（空间蛋白组/单细胞基础模型/合成生物/类器官）+ `synbio-manufacturing-2025-2026.md`（Biofoundry/DBTL 流水线） | 7 篇（1 roundup + 4 前沿权威长文 + High-NA EUV + life-science + synbio-manufacturing） | ✅ 已推送（含入库冻结修复 4 文件，远端 HEAD 推进，Pages 重建触发） |
+| W3 | 2026-08-30 | **本周新增 2 篇**（均 2026-08-24，周一 GEO 自动化）：`life-science-2025-2026.md`（空间蛋白组/单细胞基础模型/合成生物/类器官）+ `synbio-manufacturing-2025-2026.md`（Biofoundry/DBTL 流水线） | 7 篇（1 roundup + 4 前沿权威长文 + High-NA EUV + life-science + synbio-manufacturing） | ✅ 已推送（2 文档；冻结修复此前已部署于远端 6220c82，本次仅推文档，Pages 重建触发） |
 
 ### W3 补充说明（2026-08-30）
 
 - **GEO 资产存量**：7 篇长文 + llms.txt / JSON-LD / RSS / IndexNow 全链路在线，被引概率未退化；本周 +2 篇补生命科学 / 合成生物制造最相关前沿环节，仍默认带 X 算法排名信号结构。
-- **数据飞轮仍冻结（GEO 选题 blocker）**：49,879 连续 13+ 天无变化，上游无新实体 → GEO 选题缺新料；根因 `sites/` 零暂存已本地修复（commit `410bff4`）随本周推送部署，部署后数据飞轮恢复 → GEO 选题料恢复。
+- **数据飞轮仍冻结（GEO 选题 blocker）**：49,879 连续 13+ 天无变化，上游无新实体 → GEO 选题缺新料；根因 `sites/` 零暂存修复（commit `410bff4`）此前已部署于远端 `6220c82`（本次推送仅推文档即印证），但冻结在部署后仍持续、残留阻断待诊断（见 strategy-weekly.md W3 P0-1）→ GEO 选题料恢复取决于该阻断解除。
 - **渠道现状**：Glama / Smithery 认领仍待用户登录（P2）；远端 open issue 仅 `#1 🚀 GEO 自动推广状态`。
