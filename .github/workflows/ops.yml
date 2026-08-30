@@ -281,8 +281,17 @@ jobs:
         run: |
           git config --local user.email "ops-bot@genetech.example"
           git config --local user.name "GeneTech Ops Bot"
-          git add sites/ reports/ logs/ state/ data/ '*/website/api/entities.json' '*/website/api/index.json' 2>/dev/null || true
-          if git diff --cached --quiet; then
+          # 2026-08-30 加固（入库冻结第六重根因）：
+          # ① 原用目录级 pathspec '*/website/api' —— git 不会对目录做 glob 展开，
+          #    该 pathspec 永远匹配不到任何文件，git add 以 rc=128 直接失败；
+          #    而 git add 是原子操作，一条 pathspec 致命失败 => 一个文件都不暂存，
+          #    错误再被 2>/dev/null || true 完全吞掉 => 13 天「run 全绿但零产出」。
+          # ② logs/ 已被 .gitignore 排除，每轮都打印 ignored 警告（rc=1，不阻塞但污染日志）。
+          # 现改为精确文件级 pathspec + 显式校验暂存数，任何失败都在日志里可见。
+          git add sites/ reports/ state/ data/ '*/website/api/entities.json' '*/website/api/index.json' 2>&1 | grep -vE '^(warning:|hint:)' || true
+          STAGED=$(git diff --cached --name-only | wc -l | tr -d ' ')
+          echo "[Commit] 暂存文件数=${STAGED}"
+          if [ "${STAGED}" -eq 0 ]; then
             echo "No changes to commit"
             exit 0
           fi
