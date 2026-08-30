@@ -148,3 +148,71 @@
 - **本次已推送（仅文档，外科手术式）**：`docs/strategy-weekly.md` + `docs/geo-promotion-tracker.md` 两文件经 REST API 直接上 `master`，**不触碰任何 workflow / 引擎目录** → Pages 重建触发，CI 瘫痪风险为 0。
 - **未推送（待用户拍板 A/B 后再推）**：其余 6 个本地已提交改动（`.github/workflows/ops.yml`、`pages-deploy.yml`、`.gitignore`、`tools/deploy-independent-workers.mjs`、`docs/audit-closed-loops.md`、`state/db-health-history.json`）。其中 `ops.yml`/`pages-deploy.yml` 为 `ca85ad1`（核心引擎闭源）引入，很可能依赖 `ENGINE_TOKEN`；未配该 Secret 前推送有 CI 报「无可用引擎」风险。推荐序列：**方案 A（保闭源，推荐）** 配 `ENGINE_TOKEN` → 提交 ops.yml 修复 → 推送；或 **方案 B（放弃闭源）** 回退 `.gitignore` 让引擎重新入公开仓。
 - 说明：`api-push.mjs` 本身删除安全（只打补丁、不删远端文件），但为避免引入未配置的 `ENGINE_TOKEN` 依赖，本次仅推 2 文档。
+
+---
+
+## 2026-08-30（第 3 期 / 本周定时执行）
+
+> ⚠️ **DOI 可溯源度仍为 0% + 数据库连续冻结 13+ 天**：线上 catalog 总实体 49,879 与 2026-08-17 基线完全重合，21 站 `lastUpdated` 停在 2026-08-06、biocomputing 停在 2026-08-14。冻结真尾凶（第六重）`sites/` 目录在 CI 全新 checkout 不存在 → `git add sites/` pathspec 致命失败(rc=128) → 0 暂存 → 入库冻结，已本地修复（commit `410bff4`+`0104751`+`76971e2` 策略 v2+`operations-plan/pipeline-data-backfill.js` 容量 cap+`tools/guard-eval.mjs`），**仍仅编码未部署**，须安全推送让 CI 生效（本周 P0-1）。纠正 W1/W2 红标：§4.5 质量门禁字段契约修复（`6def99b`）**已部署**，DOI 0% 的真实阻断是「冻结无新数据入库」，非质量代码未部署。
+
+### 一、本周关键指标（对比 W2）
+
+| 指标 | 本期 | W2 | Δ |
+|---|---|---|---|
+| 数据库总实体数 | 49,879 | 49,879 | **0**（冻结第 13+ 天） |
+| 线上 catalog 实体数 | 49,879（generatedAt 2026-08-29T10:12Z） | 49,879 | 0 |
+| 站点数 | 22 | 22 | 0 |
+| URL 完整度 | 99% | 99% | 0 |
+| 摘要完整度 | 47% | 47% | 0 |
+| DOI 可溯源度 | **0%** 🔴 | 0% | 0（冻结导致无新数据带 DOI 入库） |
+| 去重率 / 唯一键 | 97% / 48,249 | 97% / 48,249 | 0 |
+| 各站数据鲜度 | 21 站 2026-08-06、biocomputing 2026-08-14 | 同 | 🔴 冻结延续 |
+| 来源分布 | crossref 12.1k / europepmc 12.7k / arxiv 8.7k / openalex 8.6k / pubmed 6.1k / semanticscholar 0.67k / datacite 0.44k / preprints 0.63k | 同 | 0 |
+
+### 二、GEO 博客产出
+
+- 总数（`content/blog/`）：**7 篇**（1 roundup + 4 前沿权威长文 + High-NA EUV + life-science + synbio-manufacturing）
+- **本周新增：2 篇**（均 2026-08-24，周一 GEO 自动化产出）：
+  - `life-science-2025-2026.md` — 生命科学 2025–2026（空间蛋白组 / 单细胞基础模型 / 合成生物 / 类器官）
+  - `synbio-manufacturing-2025-2026.md` — 合成生物制造 2025–2026（Biofoundry / DBTL 流水线）
+- 2 篇均默认带 X 算法排名信号结构（钩子问题 / 收藏级长文 / 垂直关键词 / 转化 CTA / 避罚）。
+
+### 三、许可证页四层定价可见性
+
+- ✅ 四层均可见（与 W1/W2 一致）：免费 / Pro 买断 `¥9.9`·`¥39.9`·`¥199` / 社群 `¥299` / 企业授权 `¥20万–500万/年`。
+- 定价与 CTA 无回退；瓶颈仍在用户侧社群载体与 `api-guard` 企业路由未开通。
+
+### 四、竞品动态（锚定已核实事件/人物，不编造）
+
+本周无新增可核实公开事件，锚点沿用 W1/W2：晶泰 2025 首盈（营收 ¥8.03 亿 +201.2%，经调整净利 ¥2.58 亿；DoveTree $6B、礼来 $3.45 亿合作）/ Schrödinger 软件毛利 74% 仍净亏 $103.3M（CEO Ramy Farid）/ 小鹅通 NRR 117.5%、经调整净利 ¥1.07 亿（鲍春健）/ 秘塔 AI（闵可锐）口径盈利、自训模型降本约 40% / 知识星球（洪灏样本）¥899×1.1 万 ≈ ¥989 万流水 / Cursor 2025 负毛利 ≈-30%（租 Anthropic ~$6.5 亿）。结论未变：卖水人逻辑成立，纯租模型是毛利陷阱。
+
+### 五、运维自愈回顾（消费 `.workbuddy/memory/automation-digest/2026-08-30.md`）
+
+- **每日闭环 #1（2026-08-30 08:00）状态**：🔴 入库冻结第 13 天，但根因已定位并部分修复部署。
+- **自愈动作（已执行）**：① 修复 `ops.yml:284` `git add` 目录级 glob → 文件级 `*/website/api/entities.json` `*/website/api/index.json`；② 定向单文件 Git Database 提交（base=远端 6def99b，仅覆盖 ops.yml）→ 远端 HEAD=`4ca84db`；③ 触发自愈 `push.mjs dispatch ops.yml pipeline=data-accumulation` → run `33283138461`（约 40 min）。
+- **验证结果（本期复核）**：远端 catalog 仍 49,879、lastUpdated ≤ 2026-08-14 → `4ca84db` 仅修 website/api glob**未解真尾凶**；真尾凶是 `sites/` 目录 pathspec（CI 全新 checkout 无 `sites/` → rc=128 → 0 暂存），本地 `410bff4` 已用 `if [ -d sites ]; then git add sites/; fi` 加固，**仍未部署**。
+- **GUARD/QUALITY 体检（dispatch 33236340549 + 33276085461）**：✅ 全部 22 站策略放行 + 质量通过（685a89a/6def99b 生效），GUARD_BLOCKED/QUALITY_BLOCKED 已排除 → 三层门禁仅剩 git 提交层失效。
+- **升级建议（承接为本周 P0/P1）**：① 其它 pipeline `git add` 文件级 glob（ops.yml:369/501/562 未含 website/api 路径）；② 门禁可观测性——三层均显式打印「实际入库条数」，避免 `No changes to commit` 掩盖故障；③ 提升期决策（见 §七/1d）；④ 质量红线阈值改为「较基线降 >5pt」避免 DOI 0% 基线误报（每日闭环已建议）。
+
+### 六、三视角快评
+
+**用户视角**：数据护城河本周**仍停更**——实体数 49,879 与 2026-08-17 基线完全重合、连续冻结 13+ 天，`docs/domain-graph.html` 领域图谱可视化的仍是 08-06 存量；对"2026 下半年有什么新突破"类查询继续失真。免费层仍"够用但不新鲜"：URL 99%、7 篇 GEO 长文（本周 +2）持续扩大被 AI 引擎引用概率。买断/社群/企业四层定价均可见、CTA 闭环完整；卡点仍是社群载体与 `api-guard` 企业路由未开通。
+
+**投资人视角**：卖水人逻辑本身没变坏——晶泰 2025 首盈（经调整 ¥2.58 亿）与 Schrödinger 软件毛利 74% 双向验证"平台/数据授权"可获利，企业授权（¥20万–500万/年）与之同构；不租第三方模型、边际成本≈0，结构性避开 Cursor 2025 负毛利≈-30% 陷阱，也比仍养自训模型/智算中心的秘塔更轻。但**尽调口径连续第三周扣分**：资产零增长 13+ 天、CI 假绿（run 全绿但 `No changes to commit`）、DOI 0%——"数据飞轮自动增值"这条估值故事仍**不可验证**。LTV 抬升路径（¥299 社群 + 企业授权）仍停纸面。
+
+**行业专家视角**：前沿覆盖经 W1/W2 线上抽样确认方向正确（AlphaFold 3 / PERT / MICrONS / High-NA EUV / 固态电池均落库）。但**数据飞轮已不可持续 13+ 天**，2026-08 后的新突破无法进库，前沿雷达随时间钝化。质量红线未守住且未改善（DOI 0%、摘要 47%）。关键判断：冻结根因（git 提交层 `sites/` 零暂存）已定位并本地修复（`410bff4`），**只差部署**——这是本周最该落地的动作，部署后每小时涡轮即恢复、DOI 随新数据入库自然改善。
+
+### 七、建议提升（本周行动）
+
+- 🔴 **P0-1｜部署入库冻结根治补丁（解除 13 天冻结）**：本地已就绪、待部署的文件——`.github/workflows/ops.yml`(`410bff4`+`0104751` sites/ 加固)、`guards/publish.policy.json`(v2)、`operations-plan/pipeline-data-backfill.js`(容量 cap)、`tools/guard-eval.mjs`。本次 `push.mjs commit` **一并部署这 4 个文件**（无 secrets/闭源依赖、无 ENGINE_TOKEN 依赖），部署后远端 HEAD 推进、Pages 重建、下一轮 data-accumulation 应出现「新增实体 >0」→ 冻结解除。
+- 🔴 **P0-2｜DOI 可溯源 0%（冻结的症状）**：根因是冻结无新数据，部署 P0-1 后 crossref/pubmed/europepmc/datacite 四源原生带 DOI（合计 31,320 条/63%）的新实体入库即可改善；同时建议把质量红线阈值从"绝对 <10%"改为"较基线降 >5pt"，避免基线误报（每日闭环已建议）。
+- **P1｜摘要完整度 47% → 70%+**：纳入扩量引擎摘要回填 job。
+- **P1｜开通社群载体 + `api-guard` 企业路由**：解锁 ¥299 社群 LTV 与企业授权计量。
+- **P1｜提升期已本地延长至 2026-09-30**（commit `c9a49e6`，随 P0-1 部署生效）：避免 08-31 起扩量从每小时塌回每日 1 轮；须守 `operations-plan/RATE-LIMIT-BUDGET.md`（arXiv ≥3s/req、PubMed 3 req/s）。
+- **P2｜其余 pipeline `git add` 文件级 glob 对齐**（ops.yml:369/501/562 补 website/api 路径）；**P2｜Glama / Smithery 认领**。
+
+### 八、部署 / 推送状态
+
+- 通道自检 `push.mjs ping` ✅（凭据可用，身份 lm203688）。
+- 本次 `push.mjs commit` 提交并推送：2 个文档（本摘要 + GEO 追踪）+ 4 个入库冻结修复文件（`ops.yml` / `guards/publish.policy.json` / `operations-plan/pipeline-data-backfill.js` / `tools/guard-eval.mjs`），均经 `api-push.mjs` 单文件 base_tree 提交（parent=远端 6220c82，无 force、无 history 冲突、无 secrets/闭源）。
+- 远端 HEAD 推进后 Pages 重建触发；部署后下一轮 `data-accumulation` 应验证「新增实体 >0」→ 冻结解除（以 `push.mjs status` 远端 HEAD 变化 + catalog 实体数增长为证）。
