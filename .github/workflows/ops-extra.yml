@@ -26,7 +26,9 @@ on:
         type: choice
         options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard]
   schedule:
-    # ===== 临时提升期（2026-08-05 ~ 2026-08-30）：每日 20:30 CST(12:30 UTC) 一次 =====
+    # ===== 临时提升期（2026-08-05 ~ 2026-12-31）：每日 12:30 UTC(20:30 CST) 一次全量运行 =====
+    # 提升期到期判定在 ops.yml 的 decide 步骤（$TODAY > 2026-12-31），此处仅跟随其节奏；
+    # 本文件无日期门，到期后需一并还原为下方原始配置。
     # 恢复原始配置时，将下方单行替换为：
     #   - cron: '0 19 * * *'   # 每日 19:00 UTC
     #   - cron: '0 2 * * 1'    # 周一 02:00 UTC 额外校验
