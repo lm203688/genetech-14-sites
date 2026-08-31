@@ -329,16 +329,15 @@ jobs:
           echo "[Budget] 本轮新增=${ADDED} 距上次发布=${HOURS}h"
 
           if [[ "$HOURS" -ge 4 ]]; then
-            MSG="[Bot] Data backfill update (+${ADDED} entities) $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            MSG="[Bot] Data backfill update (+${ADDED} entities) $(date -u +'%Y-%m-%d-%H:%M:%S UTC')"
             echo "[Budget] 距上次发布 ${HOURS}h >= 4h，触发 Cloudflare 构建发布"
           else
-            MSG="[Bot] Data backfill accumulate (+${ADDED}) [CI Skip] $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            MSG="[Bot] Data backfill accumulate (+${ADDED}) [CI Skip] $(date -u +'%Y-%m-%d-%H:%M:%S UTC')"
             echo "[Budget] 攒批模式，跳过 CF 构建（省额度）"
           fi
 
           git commit -m "$MSG"
           for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
-        continue-on-error: true
 
   # ==================== 闭环二：领域开拓机制 ====================
   domain-expansion:
@@ -397,7 +396,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "[Bot] Domain expansion update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            git commit -m "[Bot] Domain expansion update $(date -u +'%Y-%m-%d-%H:%M:%S UTC')"
             for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
           fi
         continue-on-error: true
@@ -530,7 +529,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "[Bot] Promotion & SEO update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            git commit -m "[Bot] Promotion & SEO update $(date -u +'%Y-%m-%d-%H:%M:%S UTC')"
             for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
           fi
         continue-on-error: true
@@ -591,7 +590,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "[Bot] Intelligence update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            git commit -m "[Bot] Intelligence update $(date -u +'%Y-%m-%d-%H:%M:%S UTC')"
             for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
           fi
         continue-on-error: true

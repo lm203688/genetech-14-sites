@@ -100,7 +100,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "[Bot] Extra ops update $(date -u +%Y-%m-%d-%H:%M:%S UTC)"
+            git commit -m "[Bot] Extra ops update $(date -u +'%Y-%m-%d-%H:%M:%S UTC')"
             for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
           fi
         continue-on-error: true
