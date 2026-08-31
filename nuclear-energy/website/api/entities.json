@@ -164137,17 +164137,25 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/39506368/",
     "authors": [
       "Whitlock JM",
-      "Chernomordik LV"
+      "Chernomordik LV",
+      "Jarred M. Whitlock",
+      "Leonid Chernomordik"
     ],
-    "tags": [],
+    "tags": [
+      "Cell fusion",
+      "Cell",
+      "Biology",
+      "Cell biology",
+      "Genetics"
+    ],
     "confidence": 0.82,
     "sites": [
       "nuclear-energy"
     ],
-    "publishedDate": "2025 Feb",
+    "publishedDate": "2024-11-06",
     "doi": "10.1002/bies.202400206",
     "addedAt": "2026-08-31T06:33:53.650Z",
-    "updatedAt": "2026-08-31T06:33:53.650Z"
+    "updatedAt": "2026-08-31T14:44:50.280Z"
   },
   {
     "id": "pmid:39493951",
@@ -222446,5 +222454,1286 @@
     "doi": "10.1016/j.anucene.2022.109126",
     "addedAt": "2026-08-31T06:34:09.632Z",
     "updatedAt": "2026-08-31T06:34:09.632Z"
+  },
+  {
+    "id": "oa:W4403122391",
+    "name": "Validation of the OpenMC Code for Fusion Applications: The FNG-Streaming Benchmark Case",
+    "source": "openalex",
+    "abstract": "In this work, we benchmark OpenMC against the FNG-ITER streaming experiment. FNG-ITER streaming, a high-quality experiment carried out at the ENEA laboratories in Frascati, Italy, was initially included in SINBAD (Shielding Integral Benchmark Archive and Database). More recently, the benchmark was included in the Compilation of Nuclear Data Experiments for Radiation Characterization as well. It consists of a neutron shielding experiment with a rather complex geometry that constitutes an appropriate validation study for the use of weight windows within OpenMC. Measurements include flux detection via four different types of activation foils divided into three batches and a set of thermoluminescent detectors for nuclear heating. The OpenMC results are in very good agreement with those of MCNP and the experimental measurements, with the majority of the discrepancies within the combined statistical error and experimental uncertainty (less than 10% computed measured discrepancy).",
+    "url": "https://doi.org/10.1080/15361055.2024.2400762",
+    "authors": [
+      "Stefano Segantin",
+      "Bamidele Ebiwonjumi",
+      "Ethan Peterson"
+    ],
+    "tags": [
+      "Benchmark (surveying)",
+      "Code (set theory)",
+      "Computer science",
+      "Database",
+      "Programming language"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-10-04",
+    "doi": "https://doi.org/10.1080/15361055.2024.2400762",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4391682769",
+    "name": "Enhancement of fusion reactivities using non-Maxwellian energy distributions",
+    "source": "openalex",
+    "abstract": "We discuss conditions for the enhancement of fusion reactivities arising from different choices of energy distribution functions for the reactants. The key element for potential gains in fusion reactivity is identified in the functional dependence of the tunneling coefficient on the energy, ensuring the existence of a finite range of temperatures for which reactivity of fusion processes is boosted with respect to the Maxwellian case. This is shown using a convenient parametrization of the tunneling coefficient dependence on the energy, analytically in the simplified case of a bimodal Maxwell-Boltzmann distribution, and numerically for kappa distributions. We then consider tunneling potentials progressively better approximating fusion processes and evaluate in each case the average reactivity in the case of kappa distributions.",
+    "url": "https://doi.org/10.1103/physreve.109.025207",
+    "authors": [
+      "Ben I. Squarer",
+      "Carlo Presilla",
+      "Roberto Onofrio"
+    ],
+    "tags": [
+      "Fusion",
+      "Energy (signal processing)",
+      "Statistical physics",
+      "Physics",
+      "Philosophy"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-02-09",
+    "doi": "https://doi.org/10.1103/physreve.109.025207",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4408104715",
+    "name": "Mechanical and electromagnetic characteristics of MgB2 wires & Cable-in-Conduit Conductors for fusion magnet application",
+    "source": "openalex",
+    "abstract": "A study on a 4-stage sub-size MgB 2 Cable-in-Conduit Conductor (CICC), tested at the Institute of Plasma Physics, Chinese Academy of Sciences (ASIPP), revealed a 20% degradation in critical current at 4.2 K compared to single-strand data. To address this issue, the mechanical properties of MgB 2 wires from Hyper Tech and WST were investigated, and two sub-size CICCs were manufactured using a “close-to-1-ratio” Twente design with smaller diameter wires. These cables demonstrated no significant degradation in critical current after cabling and compaction, nor after electromagnetic load cycling. The results indicate that the close-to-1-ratio cable design is optimal for brittle superconducting materials such as MgB 2 , Nb 3 Sn, and BSCCO, as it minimizes mechanical stress and preserves superconducting properties. This design shows significant potential for the application of MgB 2 in next-generation fusion reactors, particularly in Poloidal Field (PF) coils, Correction Coils (CC), and feeders.",
+    "url": "https://doi.org/10.1016/j.supcon.2025.100155",
+    "authors": [
+      "Peng Gao",
+      "Jiahao Wan",
+      "Yishan Chen",
+      "Hongjun Ma",
+      "Weijun Wang",
+      "Xintao Zhang",
+      "Chao Dai",
+      "Tianli Dai",
+      "Min Yu",
+      "Arend Nijhuis",
+      "M. Rindfleisch",
+      "Mike Tomsic",
+      "Huan Jin",
+      "Huajun Liu",
+      "Fang Liu",
+      "Jinggang Qin",
+      "Chao Zhou"
+    ],
+    "tags": [
+      "Electrical conduit",
+      "Electrical conductor",
+      "Magnet",
+      "Materials science",
+      "Fusion"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2025-03-01",
+    "doi": "https://doi.org/10.1016/j.supcon.2025.100155",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W1513563151",
+    "name": "The draft genome of the grass carp (Ctenopharyngodon idellus) provides insights into its evolution and vegetarian adaptation",
+    "source": "openalex",
+    "abstract": "Bin Han and colleagues report the draft genome sequence of the grass carp Ctenopharyngodon idellus, a major commercially farmed species of freshwater fish. Analyses of the grass carp genome identify lineage-specific duplications that may have contributed to the adaptation of this species to a vegetarian diet. The grass carp is an important farmed fish, accounting for ∼16% of global freshwater aquaculture, and has a vegetarian diet. Here we report a 0.9-Gb draft genome of a gynogenetic female adult and a 1.07-Gb genome of a wild male adult. Genome annotation identified 27,263 protein-coding gene models in the female genome. A total of 114 scaffolds consisting of 573 Mb are anchored on 24 linkage groups. Divergence between grass carp and zebrafish is estimated to have occurred 49–54 million years ago. We identify a chromosome fusion in grass carp relative to zebrafish and report frequent crossovers between the grass carp X and Y chromosomes. We find that transcriptional activation of the mevalonate pathway and steroid biosynthesis in liver is associated with the grass carp's adaptation from a carnivorous to an herbivorous diet. We believe that the grass carp genome could serve as an initial platform for breeding better-quality fish using a genomic approach.",
+    "url": "https://doi.org/10.1038/ng.3280",
+    "authors": [
+      "Yaping Wang",
+      "Ying Lü",
+      "Yong Zhang",
+      "Zemin Ning",
+      "Yan Li",
+      "Qiang Zhao",
+      "Hengyun Lu",
+      "Rong Huang",
+      "Xiao-Qin Xia",
+      "Qi Feng",
+      "Xu‐Fang Liang",
+      "Kunyan Liu",
+      "Lei Zhang",
+      "Tingting Lu",
+      "Tao Huang",
+      "Danlin Fan",
+      "Qijun Weng",
+      "Chuanrang Zhu",
+      "Yiqi Lu",
+      "Wenjun Li",
+      "Ziruo Wen",
+      "Congcong Zhou",
+      "Qilin Tian",
+      "Xiaojun Kang",
+      "Mijuan Shi",
+      "Wanting Zhang",
+      "Songhun Jang",
+      "Fukuan Du",
+      "Shan He",
+      "Lanjie Liao",
+      "Yongming Li",
+      "Bin Gui",
+      "Huihui He",
+      "Zhen Ning",
+      "Cheng Yang",
+      "Libo He",
+      "Lifei Luo",
+      "Rui Yang",
+      "Qiong Luo",
+      "Xiaochun Liu",
+      "Shuisheng Li",
+      "Wen Huang",
+      "Ling Xiao",
+      "Haoran Lin",
+      "Bin Han",
+      "Zuoyan Zhu"
+    ],
+    "tags": [
+      "Grass carp",
+      "Biology",
+      "Genome",
+      "Carp",
+      "Common carp"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2015-05-04",
+    "doi": "https://doi.org/10.1038/ng.3280",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4410805323",
+    "name": "Artificial Intelligence Augmented Cerebral Nuclear Imaging",
+    "source": "openalex",
+    "abstract": "Artificial intelligence (AI), particularly machine learning (ML) and deep learning (DL), has significant potential to advance the capabilities of nuclear neuroimaging. The current and emerging applications of ML and DL in the processing, analysis, enhancement and interpretation of SPECT and PET imaging are explored for brain imaging. Key developments include automated image segmentation, disease classification, and radiomic feature extraction, including lower dimensionality first and second order radiomics, higher dimensionality third order radiomics and more abstract fourth order deep radiomics. DL-based reconstruction, attenuation correction using pseudo-CT generation, and denoising of low-count studies have a role in enhancing image quality. AI has a role in sustainability through applications in radioligand design and preclinical imaging while federated learning addresses data security challenges to improve research and development in nuclear cerebral imaging. There is also potential for generative AI to transform the nuclear cerebral imaging space through solutions to data limitations, image enhancement, patient-centered care, workflow efficiencies and trainee education. Innovations in ML and DL are re-engineering the nuclear neuroimaging ecosystem and reimagining tomorrow's precision medicine landscape.",
+    "url": "https://doi.org/10.1053/j.semnuclmed.2025.05.005",
+    "authors": [
+      "Geoffrey Currie",
+      "K. Elizabeth Hawk"
+    ],
+    "tags": [
+      "Medicine",
+      "Medical physics",
+      "Nuclear imaging",
+      "Nuclear medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2025-05-28",
+    "doi": "https://doi.org/10.1053/j.semnuclmed.2025.05.005",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4404058032",
+    "name": "EXECUTER1 and singlet oxygen signaling: A reassessment of nuclear activity",
+    "source": "openalex",
+    "abstract": "Chloroplasts are recognized as environmental sensors, capable of translating environmental fluctuations into diverse signals to communicate with the nucleus. Among the reactive oxygen species produced in chloroplasts, singlet oxygen (1O2) has been extensively studied due to its dual roles, encompassing both damage and signaling activities, and the availability of conditional mutants overproducing 1O2 in chloroplasts. In particular, investigating the Arabidopsis (Arabidopsis thaliana) mutant known as fluorescent (flu) has led to the discovery of EXECUTER1 (EX1), a plastid 1O2 sensor residing in the grana margin of the thylakoid membrane. 1O2-triggered EX1 degradation is critical for the induction of 1O2-responsive nuclear genes (SOrNGs). However, a recent study showed that EX1 relocates from chloroplasts to the nucleus upon 1O2 release, where it interacts with WRKY18 and WRKY40 (WRKY18/40) transcription factors to regulate SOrNG expression. In this study, we challenge this assertion. Our confocal microscopy analysis and subcellular fractionation assays demonstrate that EX1 does not accumulate in the nucleus. While EX1 appears in nuclear fractions, subsequent thermolysin treatment assays indicate that it adheres to the outer nuclear region rather than localizing inside the nucleus. Furthermore, luciferase complementation imaging and yeast 2-hybrid assays reveal that EX1 does not interact with nuclear WRKY18/40. Consequently, our study refines the current model of 1O2 signaling by ruling out the nuclear relocation of intact EX1 as a means of communication between the chloroplast and nucleus.",
+    "url": "https://doi.org/10.1093/plcell/koae296",
+    "authors": [
+      "Kaiwei Liu",
+      "Huan Zhao",
+      "Keun Pyo Lee",
+      "Qing Yu",
+      "Minghui Di",
+      "Liangsheng Wang",
+      "Chanhong Kim"
+    ],
+    "tags": [
+      "Biology",
+      "Arabidopsis",
+      "Cell biology",
+      "Nucleus",
+      "Chloroplast"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-11-05",
+    "doi": "https://doi.org/10.1093/plcell/koae296",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4392100586",
+    "name": "FER-like iron deficiency-induced transcription factor (FIT) accumulates in nuclear condensates",
+    "source": "openalex",
+    "abstract": "The functional importance of nuclear protein condensation remains often unclear. The bHLH FER-like iron deficiency-induced transcription factor (FIT) controls iron acquisition and growth in plants. Previously described C-terminal serine residues allow FIT to interact and form active transcription factor complexes with subgroup Ib bHLH factors such as bHLH039. FIT has lower nuclear mobility than mutant FITmSS271AA. Here, we show that FIT undergoes a light-inducible subnuclear partitioning into FIT nuclear bodies (NBs). Using quantitative and qualitative microscopy-based approaches, we characterized FIT NBs as condensates that were reversible and likely formed by liquid-liquid phase separation. FIT accumulated preferentially in NBs versus nucleoplasm when engaged in protein complexes with itself and with bHLH039. FITmSS271AA, instead, localized to NBs with different dynamics. FIT colocalized with splicing and light signaling NB markers. The NB-inducing light conditions were linked with active FIT and elevated FIT target gene expression in roots. FIT condensation may affect nuclear mobility and be relevant for integrating environmental and Fe nutrition signals.",
+    "url": "https://doi.org/10.1083/jcb.202311048",
+    "authors": [
+      "Ksenia Trofimov",
+      "Regina Grätz",
+      "Rumen Ivanov",
+      "Yvonne Stahl",
+      "Petra Bauer",
+      "Tzvetina Brumbarova"
+    ],
+    "tags": [
+      "Nucleoplasm",
+      "Transcription factor",
+      "RNA splicing",
+      "Cell biology",
+      "Nuclear transport"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-01-24",
+    "doi": "https://doi.org/10.1083/jcb.202311048",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4200457168",
+    "name": "A Review on Friction Stir Welding of Steels",
+    "source": "openalex",
+    "abstract": "Abstract Friction Stir Welding (FSW) is the most promising solid-state metals joining method introduced in this era. Compared to the conventional fusion welding methods, this FSW can produce joints with higher mechanical and metallurgical properties. Formerly, FSW was adopted for low melting metals like aluminum alloys. In recent years it has made significant progress in friction stir welding of steels since unfavourable phase transformations occurred in welds due to the melting of the parent and filler metals in fusion welding can be eliminated. The main advantage of FSW over traditional fusion welding is the reduction in the heat-affected zone (HAZ), and the joints exhibit excellent mechanical and corrosion resistance properties. This article reviews the progress in the relevant issues such as the FSW tool materials and tool profiles for joining steels, microstructure and mechanical properties of steels joints, special problems in joining dissimilar steels. Moreover, in-situ heating sources was used to overcome the main limitations in FSW of hard metals and their alloys, i.e., tool damages and insufficient heat generation. Different in-situ heating sources like laser, induction heat, gas tungsten arc welding assisted FSW for various types of steels are introduced in this review. On the basis of the up-to-date status, some problems that need further investigation are put forward.",
+    "url": "https://doi.org/10.1186/s10033-021-00655-3",
+    "authors": [
+      "Dhanesh G. Mohan",
+      "Chuansong Wu"
+    ],
+    "tags": [
+      "Welding",
+      "Friction stir welding",
+      "Materials science",
+      "Metallurgy",
+      "Fusion welding"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2021-12-01",
+    "doi": "https://doi.org/10.1186/s10033-021-00655-3",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W2806185298",
+    "name": "A fuzzy feature fusion method for auto-segmentation of gliomas with multi-modality diffusion and perfusion magnetic resonance images in radiotherapy",
+    "source": "openalex",
+    "abstract": "The diffusion and perfusion magnetic resonance (MR) images can provide functional information about tumour and enable more sensitive detection of the tumour extent. We aimed to develop a fuzzy feature fusion method for auto-segmentation of gliomas in radiotherapy planning using multi-parametric functional MR images including apparent diffusion coefficient (ADC), fractional anisotropy (FA) and relative cerebral blood volume (rCBV). For each functional modality, one histogram-based fuzzy model was created to transform image volume into a fuzzy feature space. Based on the fuzzy fusion result of the three fuzzy feature spaces, regions with high possibility belonging to tumour were generated automatically. The auto-segmentations of tumour in structural MR images were added in final auto-segmented gross tumour volume (GTV). For evaluation, one radiation oncologist delineated GTVs for nine patients with all modalities. Comparisons between manually delineated and auto-segmented GTVs showed that, the mean volume difference was 8.69% (±5.62%); the mean Dice's similarity coefficient (DSC) was 0.88 (±0.02); the mean sensitivity and specificity of auto-segmentation was 0.87 (±0.04) and 0.98 (±0.01) respectively. High accuracy and efficiency can be achieved with the new method, which shows potential of utilizing functional multi-parametric MR images for target definition in precision radiation treatment planning for patients with gliomas.",
+    "url": "https://doi.org/10.1038/s41598-018-21678-2",
+    "authors": [
+      "Lu Guo",
+      "Ping Wang",
+      "Ranran Sun",
+      "Chengwen Yang",
+      "Ning Zhang",
+      "Yu Guo",
+      "Yuanming Feng"
+    ],
+    "tags": [
+      "Feature (linguistics)",
+      "Segmentation",
+      "Magnetic resonance imaging",
+      "Artificial intelligence",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2018-02-13",
+    "doi": "https://doi.org/10.1038/s41598-018-21678-2",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4391781018",
+    "name": "DNALI1 Promotes Neurodegeneration after Traumatic Brain Injury via Inhibition of Autophagosome‐Lysosome Fusion",
+    "source": "openalex",
+    "abstract": "Traumatic brain injury (TBI) leads to progressive neurodegeneration that may be caused by chronic traumatic encephalopathy (CTE). However, the precise mechanism remains unclear. Herein, the study identifies a crucial protein, axonemal dynein light intermediate polypeptide 1 (DNALI1), and elucidated its potential pathogenic role in post-TBI neurodegeneration. The DNALI1 gene is systematically screened through analyses of Aging, Dementia, and TBI studies, confirming its elevated expression both in vitro and in vivo. Moreover, it is observed that altered DNALI1 expression under normal conditions has no discernible effect. However, upon overexpression, DNALI1 inhibits autophagosome-lysosome fusion, reduces autophagic flux, and exacerbates cell death under pathological conditions. DNALI1 silencing significantly enhances autophagic flux and alleviates neurodegeneration in a CTE model. These findings highlight DNALI1 as a potential key target for preventing TBI-related neurodegeneration.",
+    "url": "https://doi.org/10.1002/advs.202306399",
+    "authors": [
+      "Xulong Ding",
+      "Shuqiang Cao",
+      "Qing Wang",
+      "Bin Du",
+      "Kefeng Lu",
+      "Shiqian Qi",
+      "Ying Cheng",
+      "Qing‐zhang Tuo",
+      "Weibo Liang",
+      "Peng Lei"
+    ],
+    "tags": [
+      "Neurodegeneration",
+      "Lysosome",
+      "Autophagy",
+      "Autophagosome",
+      "Traumatic brain injury"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-02-13",
+    "doi": "https://doi.org/10.1002/advs.202306399",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4392391557",
+    "name": "Unraveling the intricacies of osteoclast differentiation and maturation: insight into novel therapeutic strategies for bone-destructive diseases",
+    "source": "openalex",
+    "abstract": "Osteoclasts are the principal cells that efficiently resorb bone. Numerous studies have attempted to reveal the molecular pathways leading to the differentiation and activation of osteoclasts to improve the treatment and prevention of osteoporosis and other bone-destructive diseases. While the cumulative knowledge of osteoclast regulatory molecules, such as receptor activator of nuclear factor-kB ligand (RANKL) and nuclear factor of activated T cells 1 (NFATc1), contributes to the understanding of the developmental progression of osteoclasts, little is known about how the discrete steps of osteoclastogenesis modify osteoclast status but not the absolute number of osteoclasts. The regulatory mechanisms involved in osteoclast maturation but not those involved in differentiation deserve special attention due to their potential use in establishing a more effective treatment strategy: targeting late-phase differentiation while preserving coupled bone formation. Recent studies have shed light on the molecules that govern late-phase osteoclast differentiation and maturation, as well as the metabolic changes needed to adapt to shifting metabolic demands. This review outlines the current understanding of the regulation of osteoclast differentiation, as well as osteoclast metabolic adaptation as a differentiation control mechanism. Additionally, this review introduces molecules that regulate the late-phase osteoclast differentiation and thus minimally impact coupled bone formation.",
+    "url": "https://doi.org/10.1038/s12276-024-01157-7",
+    "authors": [
+      "Noriko Takegahara",
+      "Hyunsoo Kim",
+      "Yongwon Choi"
+    ],
+    "tags": [
+      "Osteoclast",
+      "RANKL",
+      "Cell biology",
+      "Osteoporosis",
+      "Activator (genetics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-01-31",
+    "doi": "https://doi.org/10.1038/s12276-024-01157-7",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4404219723",
+    "name": "A primary intracranial neuroepithelial neoplasm with novel TCF3::BEND2 fusion: a case report",
+    "source": "openalex",
+    "abstract": "Astroblastoma, MN1-altered, is a rare circumscribed glial neoplasm that is composed of round, cuboidal, orcolumnar cells with astroblastic perivascular pseudorosettes, often associated with MN1::BEND2 and MN1::CXXC5 fusions. Atroblastoma-like gliomas harbouring EWSR1::BEND2 have been reported that they defined an epigenetically distinct subtype of astroblastoma. We report a case of a 19-year-old female with an intracranial neuroepithelial tumor featuring a novel TCF3::BEND2 fusion. This tumor, while classified as EWSR1::BEND2 gliomas based on DNA methylation, did not exhibit the MN1 alteration or typical astroblastoma morphology. The patient, initially diagnosed as ependymoma WHO grade 2 following surgery for an intracranial tumor four years prior, presented with a suspected recurrence. Magnetic resonance imaging identified a mixed solid-cystic lesion in the temporal area of the left lateral ventricle. For the recurrent tumor, the histological examination revealed the tumor cells predominantly exhibited a solid arrangement, with the solid areas primarily consisting of oval and short-spindle cells. In certain regions, loosely arranged short-spindle cells was observed. The tumor exhibited high cellular density, nuclear atypia, and frequent mitoses, but lacked the hallmark features typically associated with astroblastoma. Immunohistochemistry revealed patchy positivity for GFAP and OLIG2, diffuse positivity for EMA, and a high MIB-1 labeling index. Genome-wide DNA methylation profiling confirmed the tumor's classification as EWSR1::BEND2 gliomas with a high-confidence match and revealed focal deletion of chromosome 9q. Targeted next-generation sequencing identified a TCF3::BEND2 fusion, validated by reverse transcription polymerase chain reaction and Sanger sequencing. This case broadens the genetic spectrum of high-grade neuroepithelial tumor and suggests that BEND2 alterations may serve as critical determinants for this EWSR1::BEND2 glioma subgroup within the methylation classifier.",
+    "url": "https://doi.org/10.1186/s40478-024-01884-y",
+    "authors": [
+      "Linmao Zheng",
+      "Tao Luo",
+      "Jie Xian",
+      "Mengxin Zhang",
+      "Xiuyi Pan",
+      "Xiang Wang",
+      "Qiang Yue",
+      "Qiao Zhou",
+      "Ni Chen"
+    ],
+    "tags": [
+      "Neuroepithelial cell",
+      "Neurology",
+      "Medicine",
+      "Pathology",
+      "Biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-11-11",
+    "doi": "https://doi.org/10.1186/s40478-024-01884-y",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4405511787",
+    "name": "Structural basis for nuclear import of adeno-associated virus serotype 6 capsid protein",
+    "source": "openalex",
+    "abstract": "Adeno-associated viruses (AAVs) are the most extensively researched viral vectors for gene therapy globally. The AAV viral protein 1 (VP1) N-terminus controls the capsid's ability to translocate into the cell nucleus; however, the exact mechanism of this process is largely unknown. In this study, we sought to elucidate the precise interactions between AAV serotype 6 (AAV6), a promising vector for immune disorders, and host transport receptors responsible for vector nuclear localization. Focusing on the positively charged basic areas within the N-terminus of AAV6 VP1, we identified a 53-amino acid region that interacts with nuclear import receptors. We measured the binding affinities between this region and various nuclear import receptors, discovering a notably strong interaction with IMPα5 and IMPα7 in the low nanomolar range. We also elucidated the X-ray crystal structure of this region in complex with an importin alpha (IMPα) isoform, uncovering its binding as a bipartite nuclear localization signal (NLS). Furthermore, we show that using this bipartite NLS, AAV6 VP1 capsid protein can localize to the nucleus of mammalian cells in a manner dependent on the IMPα/IMPβ nuclear import pathway. This study provides detailed insights into the interaction between the AAV6 VP1 capsid protein and nuclear import receptors, deepening our knowledge of AAV nuclear import mechanisms and establishing a basis for the improvement of AAV6-based gene therapy vectors.IMPORTANCEAAVs, recognized as the most extensively researched viral vectors for gene therapy globally, offer significant advantages over alternatives due to their small size, non-pathogenic nature, and innate ability for tissue-specific targeting. AAVs are required to localize to the nucleus to perform their role as a gene therapy vector; however, the precise mechanisms that facilitate this process remain unknown. Despite sharing overt genomic similarities with AAV1 and AAV2, AAV6 is a unique serotype. It is currently recognized for its ability to effectively transduce hematopoietic cell lineages and, consequently, is considered promising for the treatment of immune disorders. Identifying the exact mechanisms that permit AAV6 to access the nucleus can open up new avenues for gene therapy vector engineering, which can ultimately lead to increased therapeutic benefits.",
+    "url": "https://doi.org/10.1128/jvi.01345-24",
+    "authors": [
+      "Mikayla Hoad",
+      "Sepehr Nematollahzadeh",
+      "Gayle F. Petersen",
+      "Justin A. Roby",
+      "Gualtiero Alvisi",
+      "Jade K. Forwood"
+    ],
+    "tags": [
+      "Capsid",
+      "Nuclear transport",
+      "Biology",
+      "Importin",
+      "NLS"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-12-18",
+    "doi": "https://doi.org/10.1128/jvi.01345-24",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4390965192",
+    "name": "Machine learning inference of continuous single-cell state transitions during myoblast differentiation and fusion",
+    "source": "openalex",
+    "abstract": "Cells modify their internal organization during continuous state transitions, supporting functions from cell division to differentiation. However, tools to measure dynamic physiological states of individual transitioning cells are lacking. We combined live-cell imaging and machine learning to monitor ERK1/2-inhibited primary murine skeletal muscle precursor cells, that transition rapidly and robustly from proliferating myoblasts to post-mitotic myocytes and then fuse, forming multinucleated myotubes. Our models, trained using motility or actin intensity features from single-cell tracking data, effectively tracked real-time continuous differentiation, revealing that differentiation occurs 7.5-14.5 h post induction, followed by fusion ~3 h later. Co-inhibition of ERK1/2 and p38 led to differentiation without fusion. Our model inferred co-inhibition leads to terminal differentiation, indicating that p38 is specifically required for transitioning from terminal differentiation to fusion. Our model also predicted that co-inhibition leads to changes in actin dynamics. Mass spectrometry supported these in silico predictions and suggested novel fusion and maturation regulators downstream of differentiation. Collectively, this approach can be adapted to various biological processes to uncover novel links between dynamic single-cell states and their functional outcomes.",
+    "url": "https://doi.org/10.1038/s44320-024-00010-3",
+    "authors": [
+      "Amit Shakarchy",
+      "Giulia Zarfati",
+      "Adi Hazak",
+      "Reut Mealem",
+      "Karina Huk",
+      "Tamar Ziv",
+      "Ori Avinoam",
+      "Assaf Zaritsky"
+    ],
+    "tags": [
+      "Biology",
+      "Myogenesis",
+      "Cell biology",
+      "Cellular differentiation",
+      "Cell fusion"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-01-18",
+    "doi": "https://doi.org/10.1038/s44320-024-00010-3",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4408548219",
+    "name": "The Balance of MFN2 and OPA1 in Mitochondrial Dynamics, Cellular Homeostasis, and Disease",
+    "source": "openalex",
+    "abstract": "Mitochondrial dynamics, governed by fusion and fission, are crucial for maintaining cellular homeostasis, energy production, and stress adaptation. MFN2 and OPA1, key regulators of mitochondrial fusion, play essential roles beyond their structural functions, influencing bioenergetics, intracellular signaling, and quality control mechanisms such as mitophagy. Disruptions in these processes, often caused by MFN2 or OPA1 mutations, are linked to neurodegenerative diseases like Charcot-Marie-Tooth disease type 2A (CMT2A) and autosomal dominant optic atrophy (ADOA). This review explores the molecular mechanisms underlying mitochondrial fusion, the impact of MFN2 and OPA1 dysfunction on oxidative phosphorylation and autophagy, and their role in disease progression. Additionally, we discuss the divergent cellular responses to MFN2 and OPA1 mutations, particularly in terms of proliferation, senescence, and metabolic signaling. Finally, we highlight emerging therapeutic strategies to restore mitochondrial integrity, including mTOR modulation and autophagy-targeted approaches, with potential implications for neurodegenerative disorders.",
+    "url": "https://doi.org/10.3390/biom15030433",
+    "authors": [
+      "Paola Zanfardino",
+      "Alessandro Amati",
+      "Mirko Perrone",
+      "Vittoria Petruzzella"
+    ],
+    "tags": [
+      "MFN2",
+      "Mitophagy",
+      "mitochondrial fusion",
+      "Biology",
+      "Mitochondrion"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2025-03-18",
+    "doi": "https://doi.org/10.3390/biom15030433",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4403576371",
+    "name": "Toxicity of nuclear-localized GFP in reporter mice",
+    "source": "openalex",
+    "abstract": "Various techniques using fluorescent reporter probes have been developed, such as GFP transgenic mouse lines that are used to detect spatial-temporal expression levels of genes. Although GFP expression is largely considered non-toxic, recent reports have indicated that under certain conditions GFP can display cellular toxicity. We hereby report the nuclear toxicity of H2B-GFP using a K14 specific Tet-on reporter mouse system. Using this system, GFP accumulates in the nucleus of all K14 expressing cells, such as the ocular surface epithelia and ocular adnexa. Expression of high levels of nuclear GFP during embryonic stages led to an eye open-at-birth (EOB) phenotype and abnormal ocular adnexa development and during adult and aging stages showed notable toxicity to ocular tissues. Other tissues, such as skin, also presented multiple defects associated with H2B-GFP expression. This toxicity was found to be concentration dependent, with homozygous mice presenting extremely high toxicity, while heterozygous mice presented limited toxicity. Upon induction, the accumulation of H2B-GFP in the nucleus of homozygous mice led to apoptosis within 2 weeks. This study therefore shows that although the use of nuclear GFP reporter mice is a valuable tool, at high levels, nuclear GFP can be toxic, leading to cell death and affecting tissue function.",
+    "url": "https://doi.org/10.1038/s41598-024-75741-2",
+    "authors": [
+      "Sudhir Verma",
+      "Isabel Y. Moreno",
+      "Tarsis F. Gesteira",
+      "Vivien J. Coulson‐Thomas"
+    ],
+    "tags": [
+      "Green fluorescent protein",
+      "Toxicity",
+      "Cell biology",
+      "Computational biology",
+      "Chemistry"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-10-20",
+    "doi": "https://doi.org/10.1038/s41598-024-75741-2",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4403401941",
+    "name": "FUS::DDIT3 Fusion Protein in the Development of Myxoid Liposarcoma and Possible Implications for Therapy",
+    "source": "openalex",
+    "abstract": "The FUS::DDIT3 fusion protein, formed by the chromosomal translocation t (12;16) (q13;p11), is found in over 90% of myxoid liposarcoma (MLS) cases and is a crucial protein in its development. Many studies have explored the role of FUS::DDIT3 in MLS, and the prevailing view is that FUS::DDIT3 inhibits adipocyte differentiation and promotes MLS growth and invasive migration by functioning as an aberrant transcription factor that affects gene expression and regulates its downstream molecules. As fusion proteins are gradually showing their potential as targets for precision cancer therapy, FUS::DDIT3 has also been investigated as a therapeutic target. Drugs that target FUS::DDIT3 and its downstream molecules for treating MLS are widely utilized in both clinical practice and experimental studies, and some of them have demonstrated promising results. This article reviews the findings of relevant research, providing an overview of the oncogenic mechanisms of the FUS::DDIT3 fusion protein in MLS, as well as recent advancements in its therapy.",
+    "url": "https://doi.org/10.3390/biom14101297",
+    "authors": [
+      "Xutong Hou",
+      "Wenjin Shi",
+      "Wenxin Luo",
+      "Yuwen Luo",
+      "Xuelin Huang",
+      "Jing Li",
+      "Ning Ji",
+      "Qianming Chen"
+    ],
+    "tags": [
+      "Myxoid liposarcoma",
+      "Fusion gene",
+      "Fusion protein",
+      "Transcription factor",
+      "Biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-10-14",
+    "doi": "https://doi.org/10.3390/biom14101297",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W7163593678",
+    "name": "Overview of the physics basis for the ARC fusion power plant",
+    "source": "openalex",
+    "abstract": "Commonwealth Fusion Systems plans to build ARC as the first fusion power plant at a site in Chesterfield County, Virginia, USA by the early 2030s. We present an overview of analysis comprising the physics basis of the ARC V3A design, a high-magnetic-field tokamak with $B_0=11.4 \\ \\text{T}$ , $I_p=12.0 \\ \\text{MA}$ , $R_0=4.62 \\, \\text{m}$ , $a=1.18 \\, \\text{m}$ . ARC V3A is designed to produce $P_{fus} \\approx 1.13$ GW DT fusion power and deliver $\\geqslant$ 400 MW net electric power to the grid. This overview includes quantitative analysis of fundamental issues for design of and operational plasma scenarios for a tokamak power plant, and lays out the design targets and strategic choices for ARC, including empirical fusion performance projections, assessment of H-mode access, ion cyclotron resonance heating simulations, alpha particle physics and time-dependent full-pulse simulations. This is complemented by topical papers on fusion performance and transport, disruption physics, boundary physics and magnetohydrodynamic stability. Critically, these studies identify key model uncertainties and physics risks to be retired through SPARC operation. Due to the modular nature of ARC, early results from SPARC can be incorporated into the design of the first ARC as well as subsequent replacements of the ARC vacuum vessel.",
+    "url": "https://doi.org/10.1017/s0022377826101706",
+    "authors": [
+      "J. C. Hillesheim",
+      "A. J. Creely",
+      "Thomas H. Eich",
+      "Nathan T. Howard",
+      "N. Leuthold",
+      "Ryan Sweeney",
+      "Alexandra LeViness",
+      "Andrew O. Nelson",
+      "Leon Nichols",
+      "Roy Alexander Tinguely",
+      "Maria Usoltseva",
+      "Devon Battaglia",
+      "Thomas A.J. Body",
+      "Christopher Hansen",
+      "Nikolas C. Logan",
+      "Robert T. Mumgaard",
+      "P. Rodriguez-Fernandez",
+      "P.B. Snyder",
+      "Brandon Sorbom",
+      "J. C. Wright"
+    ],
+    "tags": [
+      "Tokamak",
+      "Physics",
+      "Aerospace engineering",
+      "Nuclear engineering",
+      "Fusion power"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2026-06-01",
+    "doi": "https://doi.org/10.1017/s0022377826101706",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4403946214",
+    "name": "Fusions in salivary gland neoplasms: a review of practical diagnostic applications",
+    "source": "openalex",
+    "abstract": "There is an ongoing explosion of new information regarding the underlying molecular alterations driving a variety of salivary gland neoplasms. The volume of this emerging data makes it difficult to keep up with and may cause pathologists to believe that salivary gland neoplasms cannot be diagnosed without genetic analysis. This review focuses on the practical diagnostic applications of molecular tools in surgical pathology specimens.",
+    "url": "https://doi.org/10.1136/jcp-2024-209859",
+    "authors": [
+      "Justin A. Bishop"
+    ],
+    "tags": [
+      "Salivary gland",
+      "Pathology",
+      "Variety (cybernetics)",
+      "Medicine",
+      "Bioinformatics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-10-31",
+    "doi": "https://doi.org/10.1136/jcp-2024-209859",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4411045714",
+    "name": "Ca2+-dependent cytoplasmic and nuclear phosphorylation of STOP1 by CPK21 and CPK23 confers ALMT1-dependent aluminum resistance",
+    "source": "openalex",
+    "abstract": "Calcium (Ca) signalling is critical for plant responses to aluminum (Al) stress, with STOP1-mediated ALMT1 expression playing a crucial role in Arabidopsis Al resistance. However, the specific intracellular Ca2+ sensors responsible for transducing Al signals in this process remain unclear. In this study, we identified CPK21 and CPK23, members of the CPK family, as key regulators promoting STOP1-mediated ALMT1 expression under Al stress, significantly influencing malate exudation from roots to limit Al accumulation in root tips. Al stress triggers rapid Ca2+-dependent accumulation of CPK21 and CPK23 in the plasma membrane, cytoplasm and nucleus of root apical cells. The Al-activated CPK21 and CPK23 subsequently phosphorylate STOP1 in both the cytoplasm and nucleus of root apical cells, stabilizing STOP1 by preventing its interaction with RAE1, ultimately enhancing Al resistance. This entire process is Ca2+-dependent. The study unveils a previously undisclosed regulatory network in which CPKs integrate Al-evoked Ca2+ signals and transcriptional reprogramming through the Ca2+-CPK21/23-STOP1 cascade to effectively respond to and adapt to Al stress in plants. Calcium signalling is critical for plant responses to aluminium stress. Here the authors show that CPK21 and CPK23 are Ca²⁺-dependent regulators that stabilize STOP1 and activate ALMT1-mediated malate exudation to confer aluminium resistance.",
+    "url": "https://doi.org/10.1038/s41467-025-60426-9",
+    "authors": [
+      "Hongrui Cao",
+      "Rongxiu Cui",
+      "Huan Guo",
+      "Qiuchen Xia",
+      "Jianing Zhang",
+      "Wenxin Liu",
+      "Zhong‐Bao Yang"
+    ],
+    "tags": [
+      "Phosphorylation",
+      "Cytoplasm",
+      "Cell biology",
+      "Chemistry",
+      "Biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2025-06-05",
+    "doi": "https://doi.org/10.1038/s41467-025-60426-9",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4399803792",
+    "name": "Exploring Blockchain for Nuclear Material Tracking: A Scoping Review and Innovative Model Proposal",
+    "source": "openalex",
+    "abstract": "Ensuring safe and transparent tracking of nuclear materials in the modern era is critical for global security and compliance with international regulations. Blockchain technology, a decentralized and immutable ledger, offers a new approach to recording transactions, increasing trust without intermediaries. In this study, it was investigated whether nuclear material tracking was performed with advanced technology blockchain from past to present; it was seen that there needed to be a study on this subject in the literature, and that there was a gap. Search results proving this are presented. The authors present a model that can enable nuclear material tracking with blockchain technology, which will create a solid structure for recording and verifying every process step in the nuclear supply chain, from the creation of the first product to destruction. This model discusses how nuclear materials, which are very important to track from the beginning until they become waste, can be tracked with blockchain technology, and the contributions they can make nationally and internationally are explained. As a result of the research, it is shown that blockchain technology has the potential to pave the way for more resilient and precise nuclear supply chains by significantly increasing the security and efficiency of nuclear material tracking.",
+    "url": "https://doi.org/10.3390/en17123028",
+    "authors": [
+      "İrem Nur Ecemiş",
+      "Fatih Ekinci",
+      "Koray Açıcı",
+      "Mehmet Serdar Güzel",
+      "İ̇hsan Tolga Medeni",
+      "Tunç Aşuroğlu"
+    ],
+    "tags": [
+      "Blockchain",
+      "Nuclear material",
+      "Tracking (education)",
+      "Computer science",
+      "Systems engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-06-19",
+    "doi": "https://doi.org/10.3390/en17123028",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4391540524",
+    "name": "Nuclear Binding Protein 2/Nesfatin-1 Affects Trophoblast Cell Fusion during Placental Development via the EGFR-PLCG1-CAMK4 Pathway",
+    "source": "openalex",
+    "abstract": "Previous studies have shown that nuclear binding protein 2 (NUCB2) is expressed in the human placenta and increases with an increase in the syncytialization of trophoblast cells. This study aimed to investigate the role of NUCB2 in the differentiation and fusion of trophectoderm cells. In this study, the expression levels of NUCB2 and E-cadherin in the placentas of rats at different gestation stages were investigated. The results showed that there was an opposite trend between the expression of placental NUCB2 and E-cadherin in rat placentas in different trimesters. When primary human trophoblast (PHT) and BeWo cells were treated with high concentrations of Nesfatin-1, the trophoblast cell syncytialization was significantly inhibited. The effects of NUCB2 knockdown in BeWo cells and Forskolin-induced syncytialization were investigated. These cells showed a significantly decreased cell fusion rate. The mechanism underlying NUCB2-regulated trophoblast cell syncytialization was explored using RNA-Seq and the results indicated that the epidermal growth factor receptor (EGFR)-phospholipase C gamma 1 (PLCG1)-calmodulin-dependent protein kinase IV (CAMK4) pathway might be involved. The results suggested that the placental expression of NUCB2 plays an important role in the fusion of trophoblasts during differentiation via the EGFR-PLCG1-CAMK4 pathway.",
+    "url": "https://doi.org/10.3390/ijms25031925",
+    "authors": [
+      "Qinyu Dang",
+      "Yandi Zhu",
+      "Yadi Zhang",
+      "Zhuo Hu",
+      "Yuchen Wei",
+      "Zhaoyang Chen",
+      "Xinyin Jiang",
+      "Xiaxia Cai",
+      "Huanling Yu"
+    ],
+    "tags": [
+      "Trophoblast",
+      "Cell fusion",
+      "Biology",
+      "Cell biology",
+      "Placenta"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-02-05",
+    "doi": "https://doi.org/10.3390/ijms25031925",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4403485199",
+    "name": "An Overview of Probabilistic Safety Assessment for Nuclear Safety: What Has Been Done, and Where Do We Go from Here?",
+    "source": "openalex",
+    "abstract": "The paper provides an introduction to the concept of Probabilistic Safety Assessment, an evaluation of its recent developments, and perspectives on the future research directions in this area. To do so, a conceptual understanding to safety assessment is first provided, followed by an introduction to what Probabilistic Safety Assessment is about. From this, the historical background and development of Probabilistic Safety Assessment in the context of nuclear safety are discussed, including a brief description and evaluation of some methods implemented to perform such analysis. After this, the paper reviews some of the recent research developments in Probabilistic Safety Assessment in the aspects of multi-unit safety assessment, dynamic Probabilistic Safety Assessment, reliability analysis, cyber-security, and policy-making. Each aspect is elaborated in detail, with perspectives provided on its potential limitations. Finally, the paper discusses research topics in six areas and challenges within the Probabilistic Safety Assessment discipline, for which further investigation might be conducted in the future. Hence, the objectives of the review paper are (1) to serve as a tutorial for readers who are new to the concept of Probabilistic Safety Assessment; (2) to provide a historical perspective on the development of the Probabilistic Safety Assessment field over the past seven decades; (3) to review the state-of-the-art developments in the use of Probabilistic Safety Assessment in the context of nuclear safety; (4) to provide an evaluative perspective on the methods implemented for Probabilistic Safety Assessment within the current literature; and (5) to provide perspectives on the future research directions that can potentially be explored, thereby also targeting the wider research community within the nuclear safety discipline towards pushing the frontiers of Probabilistic Safety Assessment research.",
+    "url": "https://doi.org/10.3390/jne5040029",
+    "authors": [
+      "Adolphus Lye",
+      "Jathniel Chang",
+      "Sicong Xiao",
+      "Keng Yeow Chung"
+    ],
+    "tags": [
+      "Probabilistic logic",
+      "Psychology",
+      "Risk analysis (engineering)",
+      "Computer science",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-10-16",
+    "doi": "https://doi.org/10.3390/jne5040029",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W3035567484",
+    "name": "Towards Safer and More Sustainable Ways for Exploiting Nuclear Power",
+    "source": "openalex",
+    "abstract": "Future electricity systems are challenged by deep decarbonization and concurrently increasing demand and there are growing concerns that renewables cannot shoulder this alone. Starting from the proven principle of diversity, we argue for keeping the nuclear option open or even for expanding its use. However, the perspectives are dim for the current technology as safety concerns and social aversion remain as fundamental problems. While looking for future revolutionary safe and more sustainable nuclear concepts we first review the main characteristics of civil nuclear energy, as well as its safety records and technical progress. We then list the key requirements for innovative nuclear systems designs which are less dependent on active safety systems and human performance as well as social stability. This allows us to provide a concept by concept comparison and assessment of existing and novel technologies and designs including different coolants and neutron spectra. The results indicate a high potential for far-reaching improvements compared to most advanced LWRs, although none of the candidate concepts meets all requirements convincingly, yet, helium cooled, small modular reactors (HTR-PM) come closest. We end by stressing the need for future research and development, and keeping human capital and know-how in nuclear energy; we call for an urgent increase in government and international RD&D funding by the order of a few hundreds of billions of USD per year, which will likely lead to breakthroughs that will restart productivity growth in severely affected stagnating modern economies.",
+    "url": "https://doi.org/10.4236/wjnst.2020.103010",
+    "authors": [
+      "Wolfgang Kröger",
+      "Didier Sornette",
+      "Ali Ayoub"
+    ],
+    "tags": [
+      "Nuclear power",
+      "SAFER",
+      "Risk analysis (engineering)",
+      "Government (linguistics)",
+      "Nuclear technology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2020-01-01",
+    "doi": "https://doi.org/10.4236/wjnst.2020.103010",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4409091411",
+    "name": "A Systematic Review of Artificial Intelligence's Function in the Diagnosis of Lung Cancer (2018–2024)",
+    "source": "openalex",
+    "abstract": "Lung cancer is a leading cause of cancer-related mortality, often diagnosed at advanced stages. This systematic review explores AI applications in lung cancer diagnosis, focusing on medical imaging, pathology, and genetic analysis. A systematic literature review methodology was employed, analyzing studies from databases such as PubMed, IEEE Xplore, and Scopus (2018–2024). Findings indicate that AI-powered diagnostic models, particularly deep learning techniques, outperform conventional methods in accuracy, sensitivity, and early detection capabilities. However, integration into clinical practice presents challenges, including data privacy concerns, model biases, and regulatory limitations. This review highlights the potential of AI in lung cancer screening and provides insights into future research directions.",
+    "url": "https://doi.org/10.58496/mjaih/2025/002",
+    "authors": [
+      "Rokan Hazim Hamad"
+    ],
+    "tags": [
+      "Cancer",
+      "Lung cancer",
+      "Function (biology)",
+      "Lung function",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2025-02-20",
+    "doi": "https://doi.org/10.58496/mjaih/2025/002",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4411081271",
+    "name": "Two-photon polymerization for inertial fusion energy target fabrication",
+    "source": "openalex",
+    "abstract": "Abstract This study focuses on optimizing the fabrication of foam targets for laser-driven inertial fusion energy using two-photon polymerization (2PP). 2PP offers nanoscale precision, enabling the fabrication of foams with precise control over structure, strut thickness, and pore size distribution. Due to its repeatable and deterministic fabrication, 2PP is a promising technique for studying crucial target parameters on the path towards a fusion power plant. However, 2PP faces challenges such as stitching errors in large prints, data limitations, and extended printing times, which limit it to single-piece production. We investigate the impact of foam structures and printing parameters on the foam density and demonstrate the successful fabrication of a foam-shell target for the proton fast ignition approach. By optimizing the printing path, we achieved a reduction in file size by one order of magnitude and printing time by a factor of four for the fabrication of a hexagonal honeycomb structure. Additionally, this research identifies and addresses key limitations and provides a detailed outlook for future improvements.",
+    "url": "https://doi.org/10.1007/s00339-025-08657-x",
+    "authors": [
+      "F. Richard Christ",
+      "G. Schaumann",
+      "N. R. Schott",
+      "Johanna Vetter",
+      "Andreas Blaeser",
+      "M. Roth"
+    ],
+    "tags": [
+      "Fabrication",
+      "Polymerization",
+      "Inertial confinement fusion",
+      "Fusion",
+      "Photon"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2025-06-06",
+    "doi": "https://doi.org/10.1007/s00339-025-08657-x",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4405187573",
+    "name": "SNARE mimicry by the CD225 domain of IFITM3 enables regulation of homotypic late endosome fusion",
+    "source": "openalex",
+    "abstract": "The CD225/Dispanin superfamily contains membrane proteins that regulate vesicular transport and membrane fusion events required for neurotransmission, glucose transport, and antiviral immunity. However, how the CD225 domain controls membrane trafficking has remained unknown. Here we show that the CD225 domain contains a SNARE-like motif that enables interaction with cellular SNARE fusogens. Proline-rich transmembrane protein 2 (PRRT2) encodes a SNARE-like motif that enables interaction with neuronal SNARE proteins; mutations in this region disrupt SNARE binding and are linked to neurological disease. Another CD225 member, interferon-induced transmembrane protein 3 (IFITM3), protects cells against influenza A virus infection. IFITM3 interacts with SNARE proteins that mediate late endosome-late endosome (homotypic) fusion and late endosome-lysosome (heterotypic) fusion. IFITM3 binds to syntaxin 7 (STX7) in cells and in vitro, and mutations that abrogate STX7 binding cause loss of antiviral activity against influenza A virus. Mechanistically, IFITM3 disrupts assembly of the SNARE complex controlling homotypic fusion and accelerates the trafficking of endosomal cargo to lysosomes. Our results suggest that SNARE modulation plays a previously unrecognized role in the diverse functions performed by CD225 proteins.",
+    "url": "https://doi.org/10.1038/s44318-024-00334-8",
+    "authors": [
+      "Kazi Rahman",
+      "Isaiah Wilt",
+      "Abigail A. Jolley",
+      "Bhabadeb Chowdhury",
+      "Siddhartha A.K. Datta",
+      "Alex A. Compton"
+    ],
+    "tags": [
+      "Endosome",
+      "Biology",
+      "Cell biology",
+      "Lipid bilayer fusion",
+      "SNARE complex"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-12-09",
+    "doi": "https://doi.org/10.1038/s44318-024-00334-8",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4383377610",
+    "name": "Spatial and temporal organization of the genome: Current state and future aims of the 4D nucleome project",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.molcel.2023.06.018",
+    "authors": [
+      "Job Dekker",
+      "Frank Alber",
+      "Sarah Aufmkolk",
+      "Brian J. Beliveau",
+      "Benoit G. Bruneau",
+      "Andrew S. Belmont",
+      "Lacramioara Bintu",
+      "Alistair N. Boettiger",
+      "Riccardo Calandrelli",
+      "Christine M. Distèche",
+      "David M. Gilbert",
+      "Thomas Gregor",
+      "Anders S. Hansen",
+      "Bo Huang",
+      "Danwei Huangfu",
+      "Reza Kalhor",
+      "Christina S. Leslie",
+      "Wenbo Li",
+      "Yun Li",
+      "Jian Ma",
+      "William Stafford Noble",
+      "Peter J. Park",
+      "Jennifer E. Phillips‐Cremins",
+      "Katherine S. Pollard",
+      "Susanne M. Rafelski",
+      "Bing Ren",
+      "Yijun Ruan",
+      "Yaron Shav‐Tal",
+      "Yin Shen",
+      "Jay Shendure",
+      "Xiaokun Shu",
+      "Caterina Strambio‐De‐Castillia",
+      "Anastassiia Vertii",
+      "Huaiying Zhang",
+      "Sheng Zhong"
+    ],
+    "tags": [
+      "Biology",
+      "Genome",
+      "Computational biology",
+      "Spatial organization",
+      "Function (biology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2023-07-06",
+    "doi": "https://doi.org/10.1016/j.molcel.2023.06.018",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W3091780146",
+    "name": "PROSPECTS OF NUCLEAR ENERGY DEVELOPMENT IN ASIA: COMPARISON WITH “GREEN ENERGY”",
+    "source": "openalex",
+    "abstract": "Nuclear energy is an important part of energy balance of Asian countries. But at the same time, concerns about the safety of nuclear energy production are high, and the future of nuclear energy in Asia is unclear. New trends in the development of “green energy” production, especially in the most dynamically developing countries of Asia, create a high competition with nuclear energy in the region. The authors aim at a general analysis of the energy markets of leading Asian countries, which have a significant share of nuclear energy production in their energy balance – China, Japan, Korea and India. The second tool that the authors use is an econometric analysis of energy production in the studied countries. These two aspects of the energy sector analysis allow the authors to comprise the results and to form a vision of a more promising sector of the energy industry. Based on these results, the authors give a number of recommendations on the development of nuclear energy production in the studied countries. One of the main conclusions is that nuclear energy should be used as a reserve source of energy in Asian economies until they reach a high share of “green energy” in energy balance.Keywords: Nuclear energy, “green energy”, Asia, policy, energy marketJEL Classifications: Q40; Q47; P18; P28; P48DOI: https://doi.org/10.32479/ijeep.9983",
+    "url": "https://doi.org/10.32479/ijeep.9983",
+    "authors": [
+      "Olga Panina",
+      "Stanislav Prokofiev",
+      "Н.А. Барменкова",
+      "N. L. Krasyukova",
+      "Nikolay P. Kushchev"
+    ],
+    "tags": [
+      "Energy balance",
+      "Production (economics)",
+      "Energy (signal processing)",
+      "China",
+      "Energy policy"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2020-10-10",
+    "doi": "https://doi.org/10.32479/ijeep.9983",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4404910714",
+    "name": "Present understanding of ignition and gain using indirect-drive inertial confinement fusion target designs on the U.S. National Ignition Facility",
+    "source": "openalex",
+    "abstract": "Abstract For many decades, the running joke in fusion research has been that ‘fusion’ is thirty years away and always will be. Yet, these past few years we find ourselves in a position where we can now talk about the milestones of burning plasmas, fusion ignition, and target energy gain greater than unity (scientific breakeven) in the past tense. Fusion is no longer a joke! Yet getting to fusion ignition, the tipping-point of thermonuclear instability resulting in an explosive increase in ion thermal temperature and fusion reaction-rate, and scientific breakeven (target gain, G target = fusion yield/deposited laser energy > 1 , in the laser-driven inertial confinement fusion context) has not been easy. In this publication we discuss our present understanding of the physics and technological challenges surrounding ignition and Gain as well as highlight some outstanding problems that still need resolution.",
+    "url": "https://doi.org/10.1088/1361-6587/ad994f",
+    "authors": [
+      "O. A. Hurricane",
+      "A. Allen",
+      "B. Bachmann",
+      "K. L. Baker",
+      "Salmaan H. Baxamusa",
+      "S. D. Bhandarkar",
+      "Juergen Biener",
+      "S. M. Bionta",
+      "T. Braun",
+      "T. M. Briggs",
+      "G. Brunton",
+      "D. T. Casey",
+      "T. Chapman",
+      "C. Choate",
+      "D. S. Clark",
+      "E. L. Dewald",
+      "J. M. Di-Nicola",
+      "L. Divol",
+      "A. Do",
+      "T. Fehrenbach",
+      "D. N. Fittinghoff",
+      "M. Gatu Johnson",
+      "Hermann Geppert-Kleinrath",
+      "V. Geppert-Kleinrath",
+      "S. W. Haan",
+      "T. J. Hilsabeck",
+      "D. E. Hinkel",
+      "M. Hohenberger",
+      "K. D. Humbird",
+      "N. Izumi",
+      "C. Kong",
+      "A. L. Kritcher",
+      "O. L. Landen",
+      "J. D. Lindl",
+      "B. J. MacGowan",
+      "Alexander J. Mackinnon",
+      "S. MacLaren",
+      "M. M. Marinak",
+      "R. Meeuwsen",
+      "P. Michel",
+      "J. L. Milovich",
+      "K. D. Meaney",
+      "M. Millot",
+      "J. D. Moody",
+      "A. S. Moore",
+      "A. Nikroo",
+      "R. Nora",
+      "A. Pak",
+      "J. E. Ralph",
+      "M. Ratledge",
+      "J. S. Ross",
+      "M. S. Rubery",
+      "D. J. Schlossberg",
+      "Paul Schmit",
+      "S. M. Sepke",
+      "V. A. Smalyuk",
+      "B. K. Spears",
+      "P T Springer",
+      "M. Stadermann",
+      "D. J. Strozzi",
+      "Tayyab I. Suratwala",
+      "R. Tommasini",
+      "Richard Town",
+      "C. R. Weber",
+      "C. Wild",
+      "B. Van Wonterghem",
+      "B. N. Woodworth",
+      "J. J. Wu",
+      "C. V. Young",
+      "A. B. Zylstra"
+    ],
+    "tags": [
+      "National Ignition Facility",
+      "Ignition system",
+      "Inertial confinement fusion",
+      "Nuclear engineering",
+      "Fusion"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-12-02",
+    "doi": "https://doi.org/10.1088/1361-6587/ad994f",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4392739277",
+    "name": "Primary Resistance to RET Inhibition in a RET Fusion-Positive Pancreatic Neuroendocrine Carcinoma",
+    "source": "openalex",
+    "abstract": "We present a 54-year-old White male with a diagnosis of stage IV pancreatic neuroendocrine carcinoma. Next-generation sequencing of the tumor/blood identified a complex tumor genome, which included a rearranged during transfection (RET) gene fusion. The patient initially received cytotoxic chemotherapy with a significant radiographic response. After 4 cycles of chemotherapy, the patient was transitioned to a clinical trial using selpercatinib, a RET inhibitor, as maintenance therapy. Unfortunately, our patient developed progression of disease at the first treatment monitoring scan. Our patient suffered primary resistance to RET-targeted therapy. Proposed mechanisms of resistance include intrinsic resistance of the nuclear receptor co-activator 4-RET fusion to RET inhibition, the RET fusion representing a passenger alteration to another tumorigenic driver pathway and/or decreased efficacy of RET inhibition after platinum-based chemotherapy. Our patient's clinical course highlights the fact that \"actionable\" genomic alterations do not always equate to patient benefit.",
+    "url": "https://doi.org/10.1093/oncolo/oyae034",
+    "authors": [
+      "Blake McKinley",
+      "Tucker W Coston",
+      "Jason S. Starr"
+    ],
+    "tags": [
+      "Neuroendocrine carcinoma",
+      "Medicine",
+      "Internal medicine",
+      "Cancer research",
+      "Oncology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-03-13",
+    "doi": "https://doi.org/10.1093/oncolo/oyae034",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4408054144",
+    "name": "Alpha particle production from novel targets via laser-driven proton-boron fusion",
+    "source": "openalex",
+    "abstract": "Novel targets were implemented in the beam-driven (in-target) proton-boron fusion with beneficial characteristics (chemical composition and density) compared to the commonly used boron nitride. A fusion-generated alpha particle flux of up to ( 5 × 10 7 sr − 1 J − 1 ) was generated via the proton-boron fusion reactions when irradiating the targets with a moderate laser system ( 10 J , 800 fs , 10 19 W cm − 2 ). Normalized by laser energy, the alpha particle flux generated in this experiment is comparable with the highest alpha particle yields reported in the literature. We present experimental results with supporting simulations and calculations of the expected alpha particle yield.",
+    "url": "https://doi.org/10.1103/physrevresearch.7.013230",
+    "authors": [
+      "Daniel Molloy",
+      "Davide Orecchia",
+      "Marco Tosca",
+      "Alessandro Milani",
+      "Matteo Valt",
+      "Aaron McNamee",
+      "C. R. J. Fitzpatrick",
+      "V. Kantarelou",
+      "J. P. Kennedy",
+      "Philip Martin",
+      "G. Nersisyan",
+      "Kateryna Biliak",
+      "Mariia Protsak",
+      "Daniil Nikitin",
+      "M. Borghesi",
+      "A. Choukourov",
+      "L. Giuffrida",
+      "S. Kar",
+      "Alessandro Maffini",
+      "M. Passoni",
+      "A. Picciotto",
+      "D. Margarone"
+    ],
+    "tags": [
+      "Proton",
+      "Alpha particle",
+      "Boron",
+      "Fusion",
+      "Particle (ecology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2025-02-28",
+    "doi": "https://doi.org/10.1103/physrevresearch.7.013230",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W2001513215",
+    "name": "Unified ab initio approach to bound and unbound states: No-core shell model with continuum and its application to 7 He",
+    "source": "openalex",
+    "abstract": "We introduce a unified approach to nuclear bound and continuum states based on the coupling of the no-core shell model (NCSM), a bound-state technique, with the no-core shell model/resonating group method (NCSM/RGM), a nuclear scattering technique. This new ab initio method, no-core shell model with continuum (NCSMC), leads to convergence properties superior to either NCSM or NCSM/RGM while providing a balanced approach to different classes of states. In the NCSMC, the ansatz for the many-nucleon wave function includes (i) a square-integrable $A$-nucleon component expanded in a complete harmonic oscillator basis and (ii) a binary-cluster component with asymptotic boundary conditions that can properly describe weakly bound states, resonances, and scattering. The Schr\\\"odinger equation is transformed into a system of coupled-channel integral-differential equations that we solve using a modified microscopic $R$-matrix formalism within a Lagrange mesh basis. We demonstrate the usefulness of the approach by investigating the unbound ${}^{7}$He nucleus.",
+    "url": "https://doi.org/10.1103/physrevc.87.034326",
+    "authors": [
+      "Simone Baroni",
+      "P. Navrátil",
+      "Sofia Quaglioni"
+    ],
+    "tags": [
+      "Physics",
+      "Bound state",
+      "Ansatz",
+      "Wave function",
+      "Ab initio"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2013-03-26",
+    "doi": "https://doi.org/10.1103/physrevc.87.034326",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4402972902",
+    "name": "A Review of Online Monitoring within Used Nuclear Fuel Recycling Processes",
+    "source": "openalex",
+    "abstract": "The processing of used nuclear fuels and related materials is often complex and variable. The ability to quickly optimize conditions to the material being processed can aid in increasing efficiency and safety, but requires very quick determination of the conditions present in the feedstock, the process, and the product. Furthermore, accurate quantification of materials such as enriched uranium and plutonium aids in maintaining material accountancy and avoiding nuclear proliferation risks. Traditional analytical methods require process samples to be collected and analyzed in a laboratory, which often takes days to weeks. Online monitoring is suitable for collecting this information nearly instantaneously, enabling much faster optimization of the process or detection of material diversion. Online monitoring is also beneficial as it is typically based on robust and nondestructive analytical methods, so no material is removed as samples. This review examines online monitoring relevant to used nuclear fuel processing for the determination of both chemical and physical parameters. The chemical parameters include quantities such as concentration, isotopic composition, and speciation. These values are often well suited to spectroscopic or spectrometric measurements as they are fast, nondestructive, and easily implemented in an online manner. Physical quantities are often more varied and include temperature, pressure, tank fill levels, and others. Due to the specificity of these quantities, specialized instrumentation is often used. However, this instrumentation is often amendable to online monitoring.",
+    "url": "https://doi.org/10.1080/07366299.2024.2395917",
+    "authors": [
+      "Poki Tse",
+      "Nathan P. Bessen",
+      "Gabriel B. Hall",
+      "Brienne N. Seiner",
+      "Gregg J. Lumetta",
+      "Samuel A. Bryan",
+      "Amanda M. Lines"
+    ],
+    "tags": [
+      "Chemistry",
+      "Process engineering",
+      "Waste management",
+      "Nuclear engineering",
+      "Biochemical engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-07-28",
+    "doi": "https://doi.org/10.1080/07366299.2024.2395917",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4404116077",
+    "name": "Inertial confinement fusion: Recent results and perspectives",
+    "source": "openalex",
+    "abstract": "This paper presents an overview of the principles of inertial confinement fusion (ICF) and of recent results, describing what are the difficulties which had to be overcome in order to get ignition, as demonstrated at the National Ignition Facility in the United States in 2022. It also describes the scientific and technological challenges that should be met to be able to develop laser-driven fusion reactors in the next years.",
+    "url": "https://doi.org/10.1051/epjconf/202431000013",
+    "authors": [
+      "Dimitri Batani"
+    ],
+    "tags": [
+      "Inertial confinement fusion",
+      "Aerospace engineering",
+      "Inertial frame of reference",
+      "Fusion",
+      "Physics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-01-01",
+    "doi": "https://doi.org/10.1051/epjconf/202431000013",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4392091318",
+    "name": "High‐strength Si–SiC lattices prepared by powder bed fusion, infiltration‐pyrolysis, and reactive silicon infiltration",
+    "source": "openalex",
+    "abstract": "Abstract This study focuses on the design, additive manufacturing, and characterization of silicon carbide‐based components with complex geometries. These parts were produced using a novel hybrid technique, previously developed: powder bed fusion of polyamide was used to 3D print two different templates with complex architectures. Preceramic polymer infiltrations and pyrolysis with polycarbosilane and furan resin were performed to obtain the ceramic parts. The final densification was achieved with reactive or nonreactive silicon infiltrations according to four different strategies, producing ceramics comprised of crystalline βSiC, reaction‐bonded βSiC, and low residual silicon. The final gyroid samples (∼70 vol% macroporosity) exhibited a maximum compressive strength of 24.7 ± 2.2 MPa, with a skeleton density of 3.173 ± 0.022 g/cm 3 , and a relative density of 0.935 ± 0.016. These findings underscore the potential of this manufacturing approach and showcase its effectiveness in fabricating intricate ceramic structures for engineering applications as heat exchangers and catalytic supports.",
+    "url": "https://doi.org/10.1111/jace.19750",
+    "authors": [
+      "Marco Pelanconi",
+      "Samuele Bottacin",
+      "Giovanni Bianchi",
+      "Dietmar Koch",
+      "Paolo Colombo",
+      "Alberto Ortona"
+    ],
+    "tags": [
+      "Materials science",
+      "Ceramic",
+      "Silicon carbide",
+      "Silicon",
+      "Pyrolysis"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-02-21",
+    "doi": "https://doi.org/10.1111/jace.19750",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4393926504",
+    "name": "Targeting fusion oncoproteins in childhood cancers: challenges and future opportunities for developing therapeutics",
+    "source": "openalex",
+    "abstract": "Fusion oncoproteins are associated with childhood cancers and have proven challenging to target, aside from those that include kinases. As part of its efforts for targeting childhood cancers, the National Cancer Institute recently conducted a series on Novel Chemical Approaches for Targeting Fusion Oncoproteins. Key learnings on leading platforms and technologies that can be used to advance the development of molecular therapeutics that target fusion oncoproteins in childhood cancers are described. Recent breakthroughs in medicinal chemistry and chemical biology provide new ground and creative strategies to exploit for the development of targeted agents for improving outcomes against these recalcitrant cancers.",
+    "url": "https://doi.org/10.1093/jnci/djae075",
+    "authors": [
+      "Sharad K. Verma",
+      "Keren L. Witkin",
+      "Anu Sharman",
+      "Malcolm A. Smith"
+    ],
+    "tags": [
+      "Medicine",
+      "Cancer",
+      "Targeted therapy",
+      "Cancer research",
+      "Internal medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2024-04-02",
+    "doi": "https://doi.org/10.1093/jnci/djae075",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
+  },
+  {
+    "id": "oa:W4411074386",
+    "name": "Selected advances in nuclear mass predictions based on covariant density functional theory with continuum effects",
+    "source": "openalex",
+    "abstract": "Abstract Precision measurements and reliable predictions of nuclear masses are pivotal in advancing nuclear physics and astrophysics. In this paper, we review recent progress in constructing a microscopic nuclear mass table based on the deformed relativistic Hartree-Bogoliubov theory in continuum (DRHBc) that simultaneously incorporates deformation and continuum effects. We present the predictive power and accuracy of the DRHBc mass table, highlighting its diverse applications and extensions. We then introduce the refinement of nuclear mass predictions from the relativistic continuum Hartree-Bogoliubov theory through the kernel ridge regression (KRR) machine learning approach, examining the physical effects encoded in the KRR corrections and the extrapolation distance with reasonable predictions. Finally, we offer a perspective on future improvements to the DRHBc mass table and the continued advancement of nuclear mass predictions.",
+    "url": "https://doi.org/10.1007/s43673-025-00153-x",
+    "authors": [
+      "Kaiyuan Zhang",
+      "Cong Pan",
+      "Xinhui Wu",
+      "Xiaoying Qu",
+      "Xinxin Lu",
+      "Guangmin Sun"
+    ],
+    "tags": [
+      "Covariant transformation",
+      "Density functional theory",
+      "Physics",
+      "Statistical physics",
+      "Theoretical physics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "nuclear-energy"
+    ],
+    "publishedDate": "2025-06-05",
+    "doi": "https://doi.org/10.1007/s43673-025-00153-x",
+    "addedAt": "2026-08-31T14:44:50.280Z",
+    "updatedAt": "2026-08-31T14:44:50.280Z"
   }
 ]

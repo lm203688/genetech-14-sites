@@ -5118,7 +5118,7 @@
     "publishedDate": "2006-02-04",
     "addedAt": "2026-08-06T15:26:48.918Z",
     "doi": "10.1016/j.chroma.2005.12.091",
-    "updatedAt": "2026-08-31T06:34:57.665Z"
+    "updatedAt": "2026-08-31T14:44:57.441Z"
   },
   {
     "id": "oa:W2077981974",
@@ -36454,7 +36454,7 @@
     "publishedDate": "2013-01-01",
     "addedAt": "2026-08-06T15:34:08.111Z",
     "doi": "10.1155/2013/257909",
-    "updatedAt": "2026-08-31T06:34:57.668Z"
+    "updatedAt": "2026-08-31T14:44:57.441Z"
   },
   {
     "id": "oa:W3141256144",
@@ -82405,25 +82405,33 @@
   {
     "id": "doi:10.1016/s0254-6272(16)30034-6",
     "name": "Therapeutic targets of Traditional Chinese Medicine for colorectal cancer",
-    "source": "crossref",
-    "abstract": "",
+    "source": "openalex",
+    "abstract": "OBJECTIVE: To explore the role of Traditional Chinese Medicine (TCM) in the prevention and treatment of colorectal cancer and identify possible therapeutic targets of TCM to provide clues for the use of TCM for colorectal cancer prevention and treatment in the clinic and to find novel directions for new drug discovery for colorectal cancer. METHODS: We used PubMed and Google to search for and collect scientific publications for a full evalu- ation of current evidence in the literature indicating the potential role of Chinese herbal medicines and their respective ingredients as effective candidates for colorectal cancer prevention and treatment. RESULTS: We extracted a detailed description of potential therapeutic Chinese herbal medicines and their constituent ingredients that target different mechanisms in colorectal cancer such as gene mutation, dysregulation of signaling pathways, metabolism disorders, and the inflammatory microenvironment, including both conventional and non-conventional approaches. CONCLUSION: TCM may be a promising complementary and alternative therapy for the treatment of colorectal cancer.",
     "url": "https://doi.org/10.1016/s0254-6272(16)30034-6",
     "authors": [
       "Li Weidong",
       "Li Chunsheng",
       "Zheng Honggang",
       "Chen Guohong",
-      "Hua Baojin"
+      "Hua Baojin",
+      "LI Wei-dong",
+      "Chunsheng Li"
     ],
-    "tags": [],
-    "confidence": 0.7,
+    "tags": [
+      "Medicine",
+      "Colorectal cancer",
+      "Traditional Chinese medicine",
+      "Cancer",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
     "sites": [
       "tcm-tools"
     ],
-    "publishedDate": "2016-06-01T00:16:44Z",
+    "publishedDate": "2016-04-01",
     "doi": "10.1016/s0254-6272(16)30034-6",
     "addedAt": "2026-08-31T06:35:00.225Z",
-    "updatedAt": "2026-08-31T06:35:08.520Z"
+    "updatedAt": "2026-08-31T14:44:57.441Z"
   },
   {
     "id": "doi:10.4103/wjtcm.wjtcm_87_24",
@@ -212263,5 +212271,3304 @@
     "doi": "10.3389/fmed.2026.1785644",
     "addedAt": "2026-08-31T06:35:24.050Z",
     "updatedAt": "2026-08-31T06:35:24.050Z"
+  },
+  {
+    "id": "oa:W2915957789",
+    "name": "The Role of Traditional Chinese Medicine in the Regulation of Oxidative Stress in Treating Coronary Heart Disease",
+    "source": "openalex",
+    "abstract": "Oxidative stress has been closely related with coronary artery disease. In coronary heart disease (CHD), an excess of reactive oxygen species (ROS) production generates endothelial cell and smooth muscle functional disorders, leading to a disequilibrium between the antioxidant capacity and prooxidants. ROS also leads to inflammatory signal activation and mitochondria-mediated apoptosis, which can promote and increase the occurrence and development of CHD. There are several kinds of antioxidative and small molecular systems of antioxidants, such asβ-carotene, ascorbic acid,α-tocopherol, and reduced glutathione (GSH). Studies have shown that antioxidant treatment was effective and decreased the risk of CHD, but the effect of the treatment varies greatly. Traditional Chinese medicine (TCM) has been utilized for thousands of years in China and is becoming increasingly popular all over the world, especially for the treatments of cardiovascular diseases. This review will concentrate on the evidence of the action mechanism of TCM in preventing CHD by modulating oxidative stress-related signaling pathways.",
+    "url": "https://doi.org/10.1155/2019/3231424",
+    "authors": [
+      "Xinyu Yang",
+      "Tianmai He",
+      "Songjie Han",
+      "Xiaoyu Zhang",
+      "Yang Sun",
+      "Yanwei Xing",
+      "Hongcai Shang"
+    ],
+    "tags": [
+      "Oxidative stress",
+      "Reactive oxygen species",
+      "Antioxidant",
+      "Ascorbic acid",
+      "Coronary artery disease"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2019-02-24",
+    "doi": "https://doi.org/10.1155/2019/3231424",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2071798131",
+    "name": "Drug Design for Neuropathic Pain Regulation from Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "FAAH-like anandamide transporter (FLAT) regulates anandamide transport for hydrolysis and may be an attractive drug target for pain regulation. We aimed to discover potential FLAT antagonists from traditional Chinese medicine (TCM) using virtual screening, ligand-based drug design and molecular dynamics simulation (MD). Guineensine and Retrofractamide A exhibited high Dock Scores in FLAT. Consensus from multiple linear regression (MLR; R(2) = 08973) and support vector machine (SVM; R(2) = 0.7988) showed similar bioactivities for Guineensine and the FAAH-1 inhibitor (9Z)-1-(5-pyridin-2-yl-1,3,4-oxadiazol-2-yl)octadec-9-en-1-one. Contour of Guineensine to CoMFA and CoMSIA features also imply bioactivity. MD revealed shake or vibration in the secondary structure of FLAT complexed with Guineensine and (9Z)-1-(5-pyridin-2-yl-1,3,4-oxadiazol-2-yl)octadec-9-en-1-one. Ligand movement might contribute to protein changes leading to vibration patterns. Violent vibrations leading to an overall decrease in FLAT function could be the underlying mechanism for Guineensine. Here we suggest Guineensine as a drug-like compound with potential application in relieving neuropathic pain by inhibiting FLAT.",
+    "url": "https://doi.org/10.1038/srep00844",
+    "authors": [
+      "Weng Ieong Tou",
+      "Su‐Sen Chang",
+      "Cheng-Chun Lee",
+      "Calvin Yu‐Chian Chen"
+    ],
+    "tags": [
+      "Pharmacology",
+      "Drug",
+      "Ligand (biochemistry)",
+      "Neuropathic pain",
+      "Transporter"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2013-01-30",
+    "doi": "https://doi.org/10.1038/srep00844",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2122261882",
+    "name": "Tongue Area Extraction in Tongue Diagnosis of Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "The extraction of tongue area from digital photos is essential to an automatic tongue diagnostic system in traditional Chinese medicine. Simple segmentation methods couldn't be effective due to the weak edge of tongue and the details on the tongue's surface. In this paper, we propose a unique segmentation method based on the combination of the watershed transform and active contour model (ACM). The watershed transform is used to get the initial contour, and an active contour model, or \"snakes\", is used to converge to the precise edge. This method is proved to be effective and steady in experiments on tongue image.",
+    "url": "https://doi.org/10.1109/iembs.2005.1615586",
+    "authors": [
+      "Jia Wu",
+      "Yonghong Zhang",
+      "Jing Bai"
+    ],
+    "tags": [
+      "Tongue",
+      "Computer science",
+      "Traditional Chinese medicine",
+      "Artificial intelligence",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2005-01-01",
+    "doi": "https://doi.org/10.1109/iembs.2005.1615586",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4306818191",
+    "name": "Systematic review of Lonicerae Japonicae Flos: A significant food and traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "Lonicerae Japonicae Flos has been used as a tea and medicine for more than 1,500 years. It has the functions of clearing heat, detoxification, and is often used to treat carbuncle, furuncle, throat arthralgia, erysipelas, heat-toxic blood dysentery, febrile fever. This paper summarizes the botany, ethnopharmacology, chemical composition and pharmacological action of Lonicerae Japonicae Flos from 1986 to 2022, and looks forward to the future research direction of Lonicerae Japonicae Flos. At present, the components isolated from Lonicerae Japonicae Flos include essential oils, organic acids, flavonoids, iridoids, saponins and other compounds. It has the effects of anti-inflammation, anti-virus, anti-bacteria, anti-oxidation, anti-tumor, protect liver and galltesticles, hypotensive, hypolipidemic, anti-thrombosis, anti-allergy, immune regulation and so on. It is often used in clinical treatment of diarrhea, hematochezia, febrile disease, exogenous wind-heat, and cold, swelling and toxin of carbuncle, sore throat and so on. The comprehensive evaluation of the quality of Lonicerae Japonicae Flos and the understanding of multi-target network pharmacology also need to be studied. As a kind of health food with high value, LJF is worthy of further promotion and development.",
+    "url": "https://doi.org/10.3389/fphar.2022.1013992",
+    "authors": [
+      "Senwang Zheng",
+      "Songtao Liu",
+      "Ajiao Hou",
+      "Song Wang",
+      "Yexin Na",
+      "Jianhua Hu",
+      "Hai Jiang",
+      "Yang Liu"
+    ],
+    "tags": [
+      "Flos",
+      "Medicine",
+      "Traditional medicine",
+      "Sore throat",
+      "Traditional Chinese medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2022-10-19",
+    "doi": "https://doi.org/10.3389/fphar.2022.1013992",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2052163283",
+    "name": "Impact of whole systems traditional Chinese medicine on in-vitro fertilization outcomes",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.rbmo.2015.02.005",
+    "authors": [
+      "Lee Hullender Rubin",
+      "Michael S. Opsahl",
+      "Klaus E. Wiemer",
+      "Scott Mist",
+      "Aaron B. Caughey"
+    ],
+    "tags": [
+      "Medicine",
+      "Odds ratio",
+      "Live birth",
+      "Acupuncture",
+      "Embryo transfer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2015-02-24",
+    "doi": "https://doi.org/10.1016/j.rbmo.2015.02.005",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W3008779998",
+    "name": "Traditional Chinese medicine is a resource for drug discovery against 2019 novel coronavirus (SARS-CoV-2)",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.joim.2020.02.004",
+    "authors": [
+      "Changquan Ling"
+    ],
+    "tags": [
+      "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+      "Coronavirus disease 2019 (COVID-19)",
+      "Coronavirus",
+      "2019-20 coronavirus outbreak",
+      "Virology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2020-02-19",
+    "doi": "https://doi.org/10.1016/j.joim.2020.02.004",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2317154051",
+    "name": "Chemical constituents of pericarps of Rosa davurica Pall., a traditional Chinese medicine.",
+    "source": "openalex",
+    "abstract": "From pericarps of Rosa davurica (Rosaceae), a traditional Chinese medicine, eight known tetracyclic triterpene acids, three known flavonoids, ethyl beta-fructopyranoside and methyl 3-O-beta-glucopyranosyl-gallate were isolated.",
+    "url": "https://doi.org/10.1248/cpb.37.2232",
+    "authors": [
+      "Haixue Kuang",
+      "Ryoji Kasai",
+      "Kazuhiro Ohtani",
+      "Zhong-Shen LIU",
+      "Yuan Chun-sheng",
+      "Osamu Tanaka"
+    ],
+    "tags": [
+      "Chemistry",
+      "Traditional medicine",
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Alternative medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "1989-01-01",
+    "doi": "https://doi.org/10.1248/cpb.37.2232",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2131574786",
+    "name": "HPLC Method for Simultaneous Quantitative Detection of Quercetin and Curcuminoids in Traditional Chinese Medicines",
+    "source": "openalex",
+    "abstract": "OBJECTIVES: Quercetin and curcuminoids are important bioactive compounds found in many herbs. Previously reported high performance liquid chromatography ultraviolet (HPLC-UV) methods for the detection of quercetin and curcuminoids have several disadvantages, including unsatisfactory separation times and lack of validation according the standard guidelines of the International Conference on Harmonisation of Technical Requirements for Registration of Pharmaceuticals for Human Use. METHODS: A rapid, specific, reversed phase, HPLC-UV method with an isocratic elution of acetonitrile and 2% v/v acetic acid (40% : 60% v/v) (pH 2.6) at a flow rate of 1.3 mL/minutes, a column temperature of 35°C, and ultraviolet (UV) detection at 370 nm was developed. The method was validated and applied to the quantification of different types of market available Chinese medicine extracts, pills and tablets. RESULTS: The method allowed simultaneous determination of quercetin, bisdemethoxycurcumin, demethoxycurcumin and curcumin in the concentration ranges of 0.00488 ─ 200 μg/mL, 0.625 ─ 320 μg/mL, 0.07813 ─ 320 μg/mL and 0.03906 ─ 320 μg/mL, respectively. The limits of detection and quantification, respectively, were 0.00488 and 0.03906 μg/mL for quercetin, 0.62500 and 2.50000 μg/mL for bisdemethoxycurcumin, 0.07813 and 0.31250 μg/mL for demethoxycurcumin, and 0.03906 and 0.07813 μg/mL for curcumin. The percent relative intra day standard deviation (% RSD) values were 0.432 ─ 0.806 μg/mL, 0.576 ─ 0.723 μg/mL, 0.635 ─ 0.752 μg/mL and 0.655 ─ 0.732 μg/mL for quercetin, bisdemethoxycurcumin, demethoxycurcumin and curcumin, respectively, and those for intra day precision were 0.323 ─ 0.968 μg/mL, 0.805 ─ 0.854 μg/mL, 0.078 ─ 0.844 μg/mL and 0.275 ─ 0.829 μg/mL, respectively. The intra day accuracies were 99.589% ─ 100.821%, 98.588% ─ 101.084%, 9.289% ─ 100.88%, and 98.292% ─ 101.022% for quercetin, bisdemethoxycurcumin, demethoxycurcumin and curcumin, respectively, and the inter day accuracy were 99.665% ─ 103.06%, 97.669% ─ 103.513%, 99.569% ─ 103.617%, and 97.929% ─ 103.606%, respectively. CONCLUSION: The method was found to be simple, accurate and precise and is recommended for routine quality control analysis of commercial Chinese medicine products containing the flour flavonoids as their principle components in the extracts.",
+    "url": "https://doi.org/10.3831/kpi.2014.17.035",
+    "authors": [
+      "Lee Fung Ang",
+      "Mun Fei Yam",
+      "Yvonne Tan Tze Fung",
+      "Peh Kok Kiang",
+      "Yusrida Darwin"
+    ],
+    "tags": [
+      "Quercetin",
+      "Chromatography",
+      "Chemistry",
+      "Curcumin",
+      "High-performance liquid chromatography"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-12-01",
+    "doi": "https://doi.org/10.3831/kpi.2014.17.035",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2321365636",
+    "name": "Quality control of traditional Chinese medicines: a review",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.3724/sp.j.1009.2013.00596",
+    "authors": [
+      "Xinyue Song",
+      "Yingdong Li",
+      "Yan‐Ping Shi",
+      "Ling Jin",
+      "Juan Chen"
+    ],
+    "tags": [
+      "Traditional medicine",
+      "Quality (philosophy)",
+      "Business",
+      "Control (management)",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-03-24",
+    "doi": "https://doi.org/10.3724/sp.j.1009.2013.00596",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4289731247",
+    "name": "Research progress on classical traditional chinese medicine formula xiaoyaosan in the treatment of depression",
+    "source": "openalex",
+    "abstract": "Depression is an emotional disorder that is problematic in psychiatry owing to its unclear etiology and unknown pathogenesis. Traditional Chinese medicine formulations such as Xiaoyaosan have been widely used throughout history to treat depression. In this review, we have focused on recent evidences elucidating the links between Xiaoyaosan and the treatment of depression. Data from animal and clinical studies, focusing on the pharmacological mechanisms, clinical applications, and effective materials that form the basis for the treatment of depression are presented and discussed. We found that the antidepressant effects of Xiaoyaosan are related to the effects of monoamine neurotransmitters, regulation of the hypothalamic-pituitary-adrenal axis, neuroplasticity, synaptic plasticity, inflammatory response, neuroprotection, brain-gut axis, regulation of intestinal microbiota, oxidative stress, and autophagy for reducing neuronal apoptosis. This review highlights the current evidence supporting the use of Xiaoyaosan as an antidepressant and provides an overview of the potential mechanisms involved.",
+    "url": "https://doi.org/10.3389/fphar.2022.925514",
+    "authors": [
+      "Jianbei Chen",
+      "Jianbei Chen",
+      "Chaofang Lei",
+      "Xiaojuan Li",
+      "Qian Wu",
+      "Chenyue Liu",
+      "Qingyu Ma",
+      "Jiaxu Chen",
+      "Jiaxu Chen"
+    ],
+    "tags": [
+      "Antidepressant",
+      "Medicine",
+      "Depression (economics)",
+      "Neuroprotection",
+      "Monoamine neurotransmitter"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2022-08-04",
+    "doi": "https://doi.org/10.3389/fphar.2022.925514",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W1980449096",
+    "name": "The fundamental theory of traditional Chinese medicine and the consideration in its research strategy",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s11684-011-0126-x",
+    "authors": [
+      "Zhenji Li",
+      "XU Chun-bo"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Moxibustion",
+      "Management science",
+      "Epistemology",
+      "Engineering ethics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2011-06-01",
+    "doi": "https://doi.org/10.1007/s11684-011-0126-x",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2902844785",
+    "name": "Role of traditional Chinese medicine in the management of patients with hepatocellular carcinoma",
+    "source": "openalex",
+    "abstract": "Traditional Chinese Medicines (TCMs) have been employed for centuries in the treatment of patients with hepatocellular carcinoma (HCC). Previous reviews of this topic have focused on certain aspects of TCM treatment rather than an overall assessment of their value and mechanisms of action. Both the Chinese and English medical literatures were reviewed to identify where TCM might be of value in the treatment of HCC and the justification for such treatment. TCM treatment corrects the \"internal disequilibriums\" thought to be responsible for the development, growth, and spread of the tumor. It has also been used to manage symptoms associated with HCC and the adverse effects of chemo- and radiation-therapies. Recent research has documented the precise effects of TCM on tumor biology. There are also increasing efforts to identify which of the many components of TCM herbal remedies are primarily responsible for these beneficial effects. This review outlines the benefits of TCM treatment of HCC and the laboratory data describing their anti-tumor properties.",
+    "url": "https://doi.org/10.4254/wjh.v10.i11.799",
+    "authors": [
+      "Shengyan Xi",
+      "Gerald Y. Minuk"
+    ],
+    "tags": [
+      "Medicine",
+      "Hepatocellular carcinoma",
+      "Traditional Chinese medicine",
+      "Alternative medicine",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2018-11-27",
+    "doi": "https://doi.org/10.4254/wjh.v10.i11.799",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4391844873",
+    "name": "Advances in Traditional Chinese Medicine research in diabetic kidney disease treatment",
+    "source": "openalex",
+    "abstract": "CONTEXT: Diabetic kidney disease (DKD) is a prominent complication arising from diabetic microangiopathy, and its prevalence and renal impact have placed it as the primary cause of end-stage renal disease. Traditional Chinese Medicine (TCM) has the distinct advantage of multifaceted and multilevel therapeutic attributes that show efficacy in improving clinical symptoms, reducing proteinuria, protecting renal function, and slowing DKD progression. Over recent decades, extensive research has explored the mechanisms of TCM for preventing and managing DKD, with substantial studies that endorse the therapeutic benefits of TCM compounds and single agents in the medical intervention of DKD. OBJECTIVE: This review lays the foundation for future evidence-based research efforts and provide a reference point for DKD investigation. METHODS: The relevant literature published in Chinese and English up to 30 June 2023, was sourced from PubMed, Cochrane Library, VIP Database for Chinese Technical Periodicals (VIP), Wanfang Data, CNKI, and China Biology Medicine disc (CBM). The process involved examining and summarizing research on TCM laboratory tests and clinical randomized controlled trials for DKD treatment. RESULTS AND CONCLUSIONS: The TCM intervention has shown the potential to inhibit the expression of inflammatory cytokines and various growth factors, lower blood glucose levels, and significantly affect insulin resistance, lipid metabolism, and improved renal function. Furthermore, the efficacy of TCM can be optimized by tailoring personalized treatment regimens based on the unique profiles of individual patients. We anticipate further rigorous and comprehensive clinical and foundational investigations into the mechanisms underlying the role of TCM in treating DKD.",
+    "url": "https://doi.org/10.1080/13880209.2024.2314705",
+    "authors": [
+      "Shiyi Shen",
+      "Huiyun Zhong",
+      "Xiaoshi Zhou",
+      "Guolin Li",
+      "Changji Zhang",
+      "Yulian Zhu",
+      "Yong Yang"
+    ],
+    "tags": [
+      "Medicine",
+      "Traditional Chinese medicine",
+      "Cochrane Library",
+      "Disease",
+      "Intensive care medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2024-02-15",
+    "doi": "https://doi.org/10.1080/13880209.2024.2314705",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2322220261",
+    "name": "Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "Medical University of South Carolina, Charleston, South Carolina Correspondence: Gary Nestler, DA, AP, LAC, 30 Bee Street, Charleston, SC 29401. E-mail: [email protected].",
+    "url": "https://doi.org/10.1097/00003081-200112000-00018",
+    "authors": [
+      "Gary Nestler",
+      "Michael Dovey"
+    ],
+    "tags": [
+      "Medicine",
+      "Traditional medicine",
+      "Traditional Chinese medicine",
+      "Family medicine",
+      "Alternative medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2001-12-01",
+    "doi": "https://doi.org/10.1097/00003081-200112000-00018",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2413567721",
+    "name": "Recent progress of research on medicinal mushrooms, foods, and other herbal products used in traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "This article will review selected herbal products used in traditional Chinese medicine, including medicinal mushrooms ( bā xī mó gū; Agaricus blazei, yún zhī; Coriolus versicolor, líng zhī; Ganoderma lucidum, xiāng xùn; shiitake, Lentinus edodes, niú zhāng zhī; Taiwanofungus camphoratus), Cordyceps ( dōng chóng xià cǎo), pomegranate ( shí liú; Granati Fructus), green tea ( lǜ chá; Theae Folium Non Fermentatum), garlic ( dà suàn; Allii Sativi Bulbus), turmeric ( jiāng huáng; Curcumae Longae Rhizoma), and Artemisiae Annuae Herba ( qīng hāo; sweet wormwood). Many of the discussed herbal products have gained popularity in their uses as dietary supplements for health benefits. The review will focus on the active constituents of the herbs and their bioactivities, with emphasis on the most recent progress in research for the period of 2003 to 2011.",
+    "url": "https://doi.org/10.1016/s2225-4110(16)30081-5",
+    "authors": [
+      "Kuo‐Hsiung Lee",
+      "Susan L. Morris‐Natschke",
+      "Xiaoming Yang",
+      "Rong Huang",
+      "Ting Zhou",
+      "Shou‐Fang Wu",
+      "Qian Shi",
+      "Hideji Itokawa"
+    ],
+    "tags": [
+      "Traditional medicine",
+      "Cordyceps",
+      "Lentinus",
+      "Ganoderma",
+      "Ganoderma lucidum"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2012-04-01",
+    "doi": "https://doi.org/10.1016/s2225-4110(16)30081-5",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W1868325805",
+    "name": "The Immunoregulatory Effects of Traditional Chinese Medicine on Treatment of Asthma or Asthmatic Inflammation",
+    "source": "openalex",
+    "abstract": "Asthma is a chronic respiratory symptoms with variable airflow limitation and airway hyperresponsiveness (AHR), and causes high economic burden. Traditional Chinese medicine (TCM) has a long-lasting history of using herbal medicine in the treatment of various respiratory diseases including asthma. In the last several decades, an increasing number of herbs have been shown to be effective in the treatment of asthma in clinical trials or asthmatic inflammation in animal models. Literature about the effects of TCM on the immune system were searched in electronic databases such as PubMed, Google Scholar and Scopus from 2000 to 2014. 'TCM' and 'asthma' were used as keywords for the searches. Over 400 literatures were searched and the literatures about the immune system were selected and reviewed. We only reviewed literatures published in English. Accumulating evidence suggests that TCM can directly inhibit the activation and migration of inflammatory cells, regulate the balance of Th1/Th2 responses, and suppress allergic hyperreactivity through inducing regulatory T cells or attenuating the function of dendritic cells (DCs). These studies provided useful information to facilitate the use of TCM to treat asthma. This review was conducted to classify the findings based on their possible mechanisms of action reported.",
+    "url": "https://doi.org/10.1142/s0192415x15500615",
+    "authors": [
+      "Jinyu Li",
+      "Fuchun Zhang",
+      "Jinyao Li"
+    ],
+    "tags": [
+      "Asthma",
+      "Medicine",
+      "Traditional Chinese medicine",
+      "Airway hyperresponsiveness",
+      "Immune system"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2015-01-01",
+    "doi": "https://doi.org/10.1142/s0192415x15500615",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2160630673",
+    "name": "Traditional Chinese Medicines Wu Wei Zi (Schisandra chinensis Baill) and Gan Cao (Glycyrrhiza uralensis Fisch) Activate Pregnane X Receptor and Increase Warfarin Clearance in Rats",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1124/jpet.105.094342",
+    "authors": [
+      "Ying Mu",
+      "Jinnan Zhang",
+      "Shimin Zhang",
+      "Hong-Hao Zhou",
+      "David Toma",
+      "Songrong Ren",
+      "Leaf Huang",
+      "Maria Yaramus",
+      "Andrew Baum",
+      "Raman Venkataramanan",
+      "Wen Xie"
+    ],
+    "tags": [
+      "Pregnane X receptor",
+      "Glycyrrhiza uralensis",
+      "Schisandra chinensis",
+      "Pharmacology",
+      "Chemistry"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2006-01-19",
+    "doi": "https://doi.org/10.1124/jpet.105.094342",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W1907013007",
+    "name": "Investigation into Potent Inflammation Inhibitors from Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "Microsomal prostaglandin E synthase-1 (mPGES-1) is the key enzyme for prostaglandin E2 (PGE2) generation during inflammation and is a potential target for designing anti-inflammatory drugs. Potential inhibitors of m-PGES-1 were selected from traditional Chinese medicine (TCM Database@Taiwan) based on the pharmacophore map generated by the top HypoGen hypothesis and validated using structure- and ligand-based analysis. Key features for potential m-PGES-1 inhibitors include pi-interactions and H-bond donors. TCM compounds, shanciol B, shanciol A, castilliferol, and aurantiamide acetate, contoured to the quantitative structure-activity relationship pharmacophore and exhibited high docking scores and binding stability with m-PGES-1. Bioactivity models multiple linear regression (MLR) and support vector machine also supported activity predictions for the candidate compounds. Our results indicate that the investigated TCM compounds could be of use for development into mPGES-1 inhibitors.",
+    "url": "https://doi.org/10.1111/j.1747-0285.2011.01202.x",
+    "authors": [
+      "Kuan‐Chung Chen",
+      "Mao‐Feng Sun",
+      "Shun‐Chieh Yang",
+      "Su‐Sen Chang",
+      "Hsin‐Yi Chen",
+      "Fuu‐Jen Tsai",
+      "Calvin Yu‐Chian Chen"
+    ],
+    "tags": [
+      "Inflammation",
+      "Traditional Chinese medicine",
+      "Traditional medicine",
+      "Computational biology",
+      "Pharmacology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2011-08-01",
+    "doi": "https://doi.org/10.1111/j.1747-0285.2011.01202.x",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2335277040",
+    "name": "Application of Plant Metabonomics in Quality Assessment for Large-Scale Production of Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "The curative effects of traditional Chinese medicines are principally based on the synergic effect of their multi-targeting, multi-ingredient preparations, in contrast to modern pharmacology and drug development that often focus on a single chemical entity. Therefore, the method employing a few markers or pharmacologically active constituents to assess the quality and authenticity of the complex preparations has a number of severe challenges. Metabonomics can provide an effective platform for complex sample analysis. It is also reported to be applied to the quality analysis of the traditional Chinese medicine. Metabonomics enables comprehensive assessment of complex traditional Chinese medicines or herbal remedies and sample classification of diverse biological statuses, origins, or qualities in samples, by means of chemometrics. Identification, processing, and pharmaceutical preparation are the main procedures in the large-scale production of Chinese medicinal preparations. Through complete scans, plants metabonomics addresses some of the shortfalls of single analyses and presents a considerable potential to become a sharp tool for traditional Chinese medicine quality assessment.",
+    "url": "https://doi.org/10.1055/s-0032-1328656",
+    "authors": [
+      "Zhangchi Ning",
+      "Cheng Lü",
+      "Yuxin Zhang",
+      "Siyu Zhao",
+      "Bao-Qin Liu",
+      "Xuegong Xu",
+      "Yuanyan Liu"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Traditional medicine",
+      "Medicine",
+      "Chemometrics",
+      "Quality (philosophy)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2013-06-27",
+    "doi": "https://doi.org/10.1055/s-0032-1328656",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4391179938",
+    "name": "Treatment of gastric ulcer, traditional Chinese medicine may be a better choice",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.jep.2024.117793",
+    "authors": [
+      "Haiying Gong",
+      "Ning Zhao",
+      "Conglei Zhu",
+      "Lin Luo",
+      "Sen Liu"
+    ],
+    "tags": [
+      "Medicine",
+      "Traditional Chinese medicine",
+      "Autophagy",
+      "Traditional medicine",
+      "Gastric mucosa"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2024-01-24",
+    "doi": "https://doi.org/10.1016/j.jep.2024.117793",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2115502992",
+    "name": "Systematic Review of Traditional Chinese Medicine for Depression in Parkinson's Disease",
+    "source": "openalex",
+    "abstract": "Depression is the most common non-motor symptom of Parkinson's disease (PD). Recent clinical trials have evaluated the effectiveness of traditional Chinese medicine (TCM) in the treatment of depression in PD (dPD). However, the results are conflicting rather than conclusive. To investigate the effectiveness of TCM for the treatment of dPD, a systematic review was conducted. Literature searches and collections were performed to identify studies addressing the treatment of TCM for dPD. The methodological quality and risk of bias in all studies included were evaluated. Weighted mean difference (WMD) with 95% confidence interval (CI) was used as the effect measure. Finally, a total of 10 studies involving 582 patients were identified. The pooled results revealed that TCM combined with conventional drugs significantly improved the total scores of the unified Parkinson's disease rating scale (WMD = -7.35, 95% CI: -11.24 to -3.47) and the score of the Hamilton rating scale for depression (HAM-D) (WMD = -4.19, 95% CI: -5.14 to -3.24) compared with conventional drug, respectively. Conclusively, there is evidence that TCM may be beneficial to the treatment of dPD in spite of the methodological weakness of the included studies.",
+    "url": "https://doi.org/10.1142/s0192415x14500657",
+    "authors": [
+      "Yi Zhang",
+      "Zhenzhen Wang",
+      "Hong‐Mei Sun",
+      "Ping Li",
+      "Yunfeng Li",
+      "Nai‐Hong Chen"
+    ],
+    "tags": [
+      "Medicine",
+      "Depression (economics)",
+      "Traditional Chinese medicine",
+      "Rating scale",
+      "Confidence interval"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-01-01",
+    "doi": "https://doi.org/10.1142/s0192415x14500657",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2602336176",
+    "name": "Mechanisms of Traditional Chinese Medicine in the Treatment of Mammary Gland Hyperplasia",
+    "source": "openalex",
+    "abstract": "Mammary gland hyperplasia (MGH) occurs with high frequency among middle-aged women and is closely related to breast cancer. The treatment of this disease has become a research hotspot. Many patients with MGH are worried about the potential side effects of the synthetic drugs they are on. Thus, they seek alternative therapy, such as traditional Chinese medicine (TCM). In recent years, along with the Chinese herbs and its active ingredients, TCM compounds have been widely accepted and implemented in the treatment of MGH, whose mechanism hitherto is not completely clear. In this paper, we elaborate the mechanism of TCM in the treatment of MGH from the perspectives of sexual hormone levels, the expression of ER and PR, hemorheology, free radical activity and lipid peroxidation, VEGF and BFGF, cell proliferation activities, anti-apoptosis gene BcL-2, promoting apoptosis gene Bax, ERK, and tumor suppressor gene. In conclusion, TCM appears to be promising for MGH treatment. This paper will provide an overview of the mechanism of TCM in the treatment of MGH. In the near term, a better understanding of TCM will be achieved through comprehensive studies of its molecular mechanism.",
+    "url": "https://doi.org/10.1142/s0192415x17500276",
+    "authors": [
+      "Xiaoliang Li",
+      "Ping Xin",
+      "Changfu Wang",
+      "Zhibin Wang",
+      "Qiuhong Wang",
+      "Haixue Kuang"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Apoptosis",
+      "Mechanism (biology)",
+      "Mammary gland"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2017-01-01",
+    "doi": "https://doi.org/10.1142/s0192415x17500276",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4392132948",
+    "name": "Traditional Chinese medicine and mitophagy: A novel approach for cardiovascular disease management",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.phymed.2024.155472",
+    "authors": [
+      "Jinhui Wang",
+      "Junbo Zou",
+      "Yajun Shi",
+      "Nan Zeng",
+      "Dongyan Guo",
+      "He Wang",
+      "Chongbo Zhao",
+      "Fei Luan",
+      "Xiaofei Zhang",
+      "Jing Sun"
+    ],
+    "tags": [
+      "Medicine",
+      "Mitophagy",
+      "Disease",
+      "Clinical trial",
+      "Intensive care medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2024-02-24",
+    "doi": "https://doi.org/10.1016/j.phymed.2024.155472",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W3004199579",
+    "name": "A chromosome-scale genome assembly of Isatis indigotica, an important medicinal plant used in traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "Abstract Isatis indigotica (2n = 14) is an important medicinal plant in China. Its dried leaves and roots (called Isatidis Folium and Isatidis Radix, respectively) are broadly used in traditional Chinese medicine for curing diseases caused by bacteria and viruses such as influenza and viral pneumonia. Various classes of compounds isolated from this species have been identified as effective ingredients. Previous studies based on transcriptomes revealed only a few candidate genes for the biosynthesis of these active compounds in this medicinal plant. Here, we report a high-quality chromosome-scale genome assembly of I. indigotica with a total size of 293.88 Mb and scaffold N50 = 36.16 Mb using single-molecule real-time long reads and high-throughput chromosome conformation capture techniques. We annotated 30,323 high-confidence protein-coding genes. Based on homolog searching and functional annotations, we identified many candidate genes involved in the biosynthesis of main active components such as indoles, terpenoids, and phenylpropanoids. In addition, we found that some key enzyme-coding gene families related to the biosynthesis of these components were expanded due to tandem duplications, which likely drove the production of these major active compounds and explained why I. indigotica has excellent antibacterial and antiviral activities. Our results highlighted the importance of genome sequencing in identifying candidate genes for metabolite synthesis in medicinal plants.",
+    "url": "https://doi.org/10.1038/s41438-020-0240-5",
+    "authors": [
+      "Minghui Kang",
+      "Haolin Wu",
+      "Qiao Yang",
+      "Li Huang",
+      "Quanjun Hu",
+      "Tao Ma",
+      "Zaiyun Li",
+      "Jianquan Liu"
+    ],
+    "tags": [
+      "Biology",
+      "Gene",
+      "Genome",
+      "Sequence assembly",
+      "Medicinal plants"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2020-02-01",
+    "doi": "https://doi.org/10.1038/s41438-020-0240-5",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2902029511",
+    "name": "Traditional Chinese medicine Gegen Qinlian decoction ameliorates irinotecan chemotherapy-induced gut toxicity in mice",
+    "source": "openalex",
+    "abstract": "Background Gegen Qinlian decoction (GQT), is a classic traditional Chinese medicine formula chronicled in Shang Han Lun , and is widely used to treat diarrhea and inflammation symptoms in various gastrointestinal disorders. Although it has been found to inhibit delayed-onset mice diarrhea resulted from irinotecan (CPT-11) administration in preliminary experiments, the underlying mechanisms and chemical components remain elusive. Methods The effective fraction of GQT by macroporous resin elution was obtained and screened using a diarrhea mouse model induced by CPT-11 and quantified by UPLC analysis. The protective effect of GQT extract towards alleviating diarrhea in mice following CPT-11 administration was further investigated. The levels of inflammatory cytokines and intestinal tight junction related proteins in colonic tissues were determined. The inhibitory effect of GQT extract against hCE2 was evaluated by a fluorescence-based method. Lastly, the synergistic effect of GQT extract combined with CPT-11 against tumor growth in a colorectal tumor mouse model, induced by HT-29 colon cancer cells xenograft subcutaneously, was investigated. Results The obtained GQT extract, which profoundly ameliorated the gut toxicity induced by CPT-11, contained puerarin, liquiritin, berberine, and baicalin of 27.2 mg/g, 4.6 mg/g, 491.4 mg/g, and 304.2 mg/g, respectively. After 5 days of administration of GQT extract to mice with diarrhea induced by CPT-11, aberrantly elevated levels of pro-inflammatory cytokines, including IL-1β, COX-2, ICAM-1, and TNF-α, were significantly decreased. Meanwhile, GQT extract also exhibited a remarkable anti-oxidative stress effect, involving activating the Keap1/Nrf2 pathway, and up-regulating the intestinal barrier function by enhancing the expression of tight junction proteins ZO-1, HO-1, and occludin. Additionally, a potent inhibitory effect of GQT extract against hCE2 was observedin vitro, with its IC 50 value of 0.187 mg/ml, suggesting alleviating activity on hCE2-mediated severe diarrhea in patients suffered from CPT-11. Moreover, GQT extract was shown to improve inhibition of the colonic tumor growth synergistically with CPT-11. Conclusion The present study indicates that GQT extract can ameliorate CPT-11 induced gut toxicity in mice and improve CPT-11 efficacy in colorectal cancer treatment.",
+    "url": "https://doi.org/10.1016/j.biopha.2018.11.095",
+    "authors": [
+      "Yihan Wu",
+      "Di Wang",
+      "Xiaoqin Yang",
+      "Chaomei Fu",
+      "Liang Zou",
+      "Jinming Zhang"
+    ],
+    "tags": [
+      "Decoction",
+      "Irinotecan",
+      "Loperamide",
+      "Pharmacology",
+      "Diarrhea"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2018-11-28",
+    "doi": "https://doi.org/10.1016/j.biopha.2018.11.095",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W3134270545",
+    "name": "Application of immune checkpoint targets in the anti-tumor novel drugs and traditional Chinese medicine development",
+    "source": "openalex",
+    "abstract": "Immune checkpoints are the crucial regulators of immune system and play essential roles in maintaining self-tolerance, preventing autoimmune responses, and minimizing tissue damage by regulating the duration and intensity of the immune response. Furthermore, immune checkpoints are usually overexpressed in cancer cells or noninvasive cells in tumor tissues and are capable of suppressing the antitumor response. Based on substantial physiological analyses as well as preclinical and clinical studies, checkpoint molecules have been evaluated as potential therapeutic targets for the treatment of multiple types of cancers. In the last few years, extensive evidence has supported the immunoregulatory effects of traditional Chinese medicines (TCMs). The main advantage of TCMs and natural medicine is that they usually contain multiple active components, which can act on multiple targets at the same time, resulting in additive or synergistic effects. The strong immune regulation function of traditional Chinese medicine on immune checkpoints has also been of great interest. For example, Astragalus membranaceus polysaccharides can induce anti-PD-1 antibody responses in animals, and these antibodies can overcome the exhaustion of immune cells under tumor immune evasion. Furthermore, many other TCM molecules could also be novel and effective drug candidates for the treatment of cancers. Therefore, it is essential to assess the application of immune checkpoints in the development of new drugs and TCMs. In this review, we focus on research progress in the field of immune checkpoints based on three topics: (1) immune checkpoint targets and pathways, (2) development of novel immune checkpoint-based drugs, and (3) application of immune checkpoints in the development of TCMs.",
+    "url": "https://doi.org/10.1016/j.apsb.2021.03.004",
+    "authors": [
+      "Yuli Wang",
+      "Xingyan Zhang",
+      "Yuyan Wang",
+      "Wenjing Zhao",
+      "Huling Li",
+      "Lixing Zhang",
+      "Xinping Li",
+      "Tiejun Zhang",
+      "Hongbing Zhang",
+      "He Huang",
+      "Changxiao Liu"
+    ],
+    "tags": [
+      "Immune system",
+      "Immune checkpoint",
+      "Traditional Chinese medicine",
+      "Drug development",
+      "Cancer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2021-03-09",
+    "doi": "https://doi.org/10.1016/j.apsb.2021.03.004",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2091306452",
+    "name": "Ligustri Lucidi Fructusas a traditional Chinese medicine: a review of its phytochemistry and pharmacology",
+    "source": "openalex",
+    "abstract": "Ligustri lucidi fructus (LLF) is the fruits of Ligustrum lucidum Ait. (Oleaceae). This review based on nearly 80 literary sources discusses the knowledge of chemistry and biological effects of this species. Several types of chemical constituents considered as the characteristic and active constituents from LLF were isolated including 40 triterpenoids, 48 iridoids, 10 flavones, 10 phenylethanoid glycosides and others. Various extracts and individual compounds derived from this species have been found to possess a variety of pharmacological effects, e.g. anti-tumour, hepatoprotective, immune regulating, antioxidative and anti-ageing effects, anti-inflammation and reducing hypercholesterolaemia effects and so on. The results of data analysis on the chemical, pharmacological characteristics of LLF support the view that this species has many therapeutic properties and indicate its potential as an effective herbal remedy. Finally, some suggestions for further research on chemical and pharmacological properties are given in this review. Theoretical basis was given for further exploiting and utilising LLF.",
+    "url": "https://doi.org/10.1080/14786419.2014.954114",
+    "authors": [
+      "Liang-Liang Gao",
+      "Chun Li",
+      "Zhimin Wang",
+      "Xiaoqian Liu",
+      "Yun You",
+      "Hua Wei",
+      "Guo Tao"
+    ],
+    "tags": [
+      "Phenylethanoid",
+      "Phytochemistry",
+      "Traditional medicine",
+      "Flavones",
+      "Chemical constituents"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-09-23",
+    "doi": "https://doi.org/10.1080/14786419.2014.954114",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W1991608788",
+    "name": "Therapeutic Potential of Traditional Chinese Medicine on Inflammatory Diseases",
+    "source": "openalex",
+    "abstract": "Increased oxidative stress induces inflammation to several tissues/organs leading to cell death and long-term injury. Traditional Chinese Medicine (TCM) with antioxidant, anti-inflammatory, anti-apoptotic, and autophagic regulatory functions has been widely used as preventive or therapeutic strategy in modern medicine. Oxidative stress and inflammation have been widely reported to contribute to cigarette smoke-induced lung inflammation, hepatotoxicity, or sympathetic activation-induced liver inflammation, lipopolysaccharide-induced renal inflammation, and substance P-mediated neurogenic hyperactive bladder based on clinical findings. In this review, we introduce several evidences for TCM treatment including Monascus adlay (MA) produced by inoculating adlay (Cois lachrymal-jobi L. var. ma-yuen Stapf) with Monascus purpureus on lung injury, Amla (Emblica officinalis Gaertn. of Euphorbiaceae family) on hepatotoxin-induced liver inflammation, Virgate Wormwood Decoction (Yīn Chén Hāo tāng) and its active component genipin on sympathetic activation-induced liver inflammation, and green tea extract and its active components, catechins, or a modified TCM formula Five Stranguries Powder (Wǔ Lén Sǎn) plus Crataegi Fructus (Shān Zhā) on hyperactive bladder. The pathophysiologic and molecular mechanisms of TCM on ameliorating inflammatory diseases are discussed in the review.",
+    "url": "https://doi.org/10.4103/2225-4110.114898",
+    "authors": [
+      "Wen-Hsin Tsai",
+      "C.-C. Yang",
+      "Ping-Chia Li",
+      "Wang-Chuan Chen",
+      "Chiang‐Ting Chien"
+    ],
+    "tags": [
+      "Inflammation",
+      "Oxidative stress",
+      "Medicine",
+      "Traditional Chinese medicine",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2013-07-01",
+    "doi": "https://doi.org/10.4103/2225-4110.114898",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W1975582371",
+    "name": "The Role of Traditional Chinese Herbal Medicines in Cancer Therapy – from TCM Theory to Mechanistic Insights",
+    "source": "openalex",
+    "abstract": "Traditional Chinese medicine-based herbal medicines have gained increasing acceptance worldwide in recent years and are being pursued by pharmaceutical companies as rich resources for drug discovery. For many years, traditional Chinese medicines (TCM) have been applied for the treatment of cancers in China and beyond. Herbal medicines are generally low in cost, plentiful, and show very little toxicity or side effects in clinical practice. However, despite the vast interest and ever-increasing demand, the absence of strong evidence-based research and the lack of standardization of the herbal products are the main obstacles toward the globalization of TCM. In recent years, TCM research has greatly accelerated with the advancement of analytical technologies and methodologies. This review of TCM specifically used in the treatment of cancer is divided into two parts. Part one provides an overview of the philosophy, approaches and progress in TCM-based cancer therapy. Part two summarizes the current understanding of how TCM-derived compounds function as anticancer drugs.",
+    "url": "https://doi.org/10.1055/s-0030-1250186",
+    "authors": [
+      "W.L. Wendy Hsiao",
+      "Liang Liu"
+    ],
+    "tags": [
+      "Medicine",
+      "Traditional medicine",
+      "Alternative medicine",
+      "Traditional Chinese medicine",
+      "Standardization"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2010-07-15",
+    "doi": "https://doi.org/10.1055/s-0030-1250186",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2070932285",
+    "name": "Complex Traditional Chinese Medicine for Poststroke Motor Dysfunction",
+    "source": "openalex",
+    "abstract": "BACKGROUND AND PURPOSE: For its current dimensions, stroke represents the world's primary health challenge. In China stroke is the second most common cause of death. Traditional Chinese Medicine (TCM) has for many centuries been used, and it is still widely used today in countries of south and east Asia for the treatment of people with stroke. The objective of this systematic review was to evaluate whether complex Traditional Chinese Medicine (cTCM) improves poststroke motor recovery. In particular, we defined cTCM as intervention that included at least acupuncture and Chinese herbal medicine. METHODS: An extensive search including PubMed, EMBASE, CBM, and the Cochrane Library was performed up to December 2007. Randomized clinical trials (RCTs) about cTCM for motor dysfunction of poststroke were searched irrespective of any language. The quality of each trial was assessed according to the Cochrane Reviewers' Handbook 4.2.6. RESULTS: After selection of 11 234 articles, 34 RCTs and quasi-RCTs were included. All these trials were conducted in China and published on Chinese journals. All trials but one reported results in favor of cTCM treatments suggesting a strong publication bias. Because of the significant clinical and methodological heterogeneity, no meta-analysis was performed and thus no cumulative result was obtained pooling data of RCTs. CONCLUSIONS: What appears from this systematic review is that scant data are available to evaluate efficacy of cTCM for poststroke motor dysfunction. Most of the primary studies available for this review were inadequately designed trials characterized by unknown dropout rates and definitional vagueness in outcomes measures. None of the studies approached important end points like death, survival times, rate of dependency, reduction in length of stay in hospital, etc. The key to lead to evidence-based practices is establishing a consensus on standardized relevant outcome measures and then designing and conducting appropriate RCTs that adopt those standards.",
+    "url": "https://doi.org/10.1161/strokeaha.109.555227",
+    "authors": [
+      "Zhang Junhua",
+      "Francesca Menniti‐Ippolito",
+      "Gao Xiumei",
+      "Fabio Firenzuoli",
+      "Zhang Boli",
+      "Marco Massari",
+      "Shang Hong-cai",
+      "Huang Yuhong",
+      "Rita Maria Ferrelli",
+      "Limin Hu",
+      "Alice Josephine Fauci",
+      "Ranieri Guerra",
+      "Roberto Raschetti"
+    ],
+    "tags": [
+      "Medicine",
+      "Stroke (engine)",
+      "Physical medicine and rehabilitation",
+      "Traditional Chinese medicine",
+      "Physical therapy"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2009-06-26",
+    "doi": "https://doi.org/10.1161/strokeaha.109.555227",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2029548715",
+    "name": "Developing a QSAR model for hepatotoxicity screening of the active compounds in traditional Chinese medicines",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.fct.2015.01.020",
+    "authors": [
+      "Shan-Han Huang",
+      "Chun-Wei Tung",
+      "Ferenc Fülöp",
+      "Jih‐Heng Li"
+    ],
+    "tags": [
+      "Quantitative structure–activity relationship",
+      "Traditional Chinese medicine",
+      "Drug",
+      "Medicine",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2015-02-04",
+    "doi": "https://doi.org/10.1016/j.fct.2015.01.020",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W3093963750",
+    "name": "Role of Traditional Chinese Medicine in the Management of Viral Pneumonia",
+    "source": "openalex",
+    "abstract": "Viral pneumonia is one kind of acute respiratory tract infection caused by the virus. There have been many outbreaks of viral pneumonia with high contagiousness and mortality both in China and abroad, such as the great influenza in 1918, the severe acute respiratory syndrome (SARS) coronavirus in 2003, the Influenza A (H1N1) virus in 2009, and the Middle East Respiratory Syndrome coronavirus (MERS-CoV) in 2012 and the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) in 2019. These outbreaks and/or pandemic have significant impact on human life, social behaviors, and economic development. Moreover, no specific drug has been developed for these viruses. Traditional Chinese medicine (TCM) plays an important role in the treatment of viral pneumonia during these outbreaks especially in SARS and SARS-CoV-2 because studies suggest that TCM formulations may target several aspects of the disease and may have lesser side effects than manufactured pharmaceuticals. In recent years, a lot of clinicians and researchers have made a series of in-depth explorations and investigations on the treatment of viral pneumonia with TCM, which have understood TCM therapeutic mechanisms more specifically and clearly. But critical analysis of this research in addition to further studies are needed to assess the potential of TCM in the treatment of viral pneumonia.",
+    "url": "https://doi.org/10.3389/fphar.2020.582322",
+    "authors": [
+      "Shengyan Xi",
+      "Yunhong Li",
+      "Lifeng Yue",
+      "Yuewen Gong",
+      "Linchao Qian",
+      "Tengxiao Liang",
+      "Yongan Ye"
+    ],
+    "tags": [
+      "Viral pneumonia",
+      "Pneumonia",
+      "Medicine",
+      "Middle East respiratory syndrome coronavirus",
+      "Coronavirus"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2020-10-22",
+    "doi": "https://doi.org/10.3389/fphar.2020.582322",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4383198004",
+    "name": "Traditional Chinese Medicine: A promising strategy to regulate the imbalance of bacterial flora, impaired intestinal barrier and immune function attributed to ulcerative colitis through intestinal microecology",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.jep.2023.116879",
+    "authors": [
+      "Mei Wang",
+      "Rui‐Jia Fu",
+      "Ding-Qiao Xu",
+      "Yanyan Chen",
+      "Shi‐Jun Yue",
+      "Sai Zhang",
+      "Yuping Tang"
+    ],
+    "tags": [
+      "Microecology",
+      "Ulcerative colitis",
+      "Traditional Chinese medicine",
+      "Immune system",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2023-07-05",
+    "doi": "https://doi.org/10.1016/j.jep.2023.116879",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2054875551",
+    "name": "BCQs: A Body Constitution Questionnaire to assess Stasis in traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.eujim.2012.05.001",
+    "authors": [
+      "Jun-Dai Lin",
+      "Jui‐Shan Lin",
+      "Li-Li Chen",
+      "Chih‐Hung Chang",
+      "Yi-Chia Huang",
+      "Yi‐Chang Su"
+    ],
+    "tags": [
+      "Blood stasis",
+      "Medicine",
+      "Traditional Chinese medicine",
+      "Cronbach's alpha",
+      "Physical therapy"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2012-06-23",
+    "doi": "https://doi.org/10.1016/j.eujim.2012.05.001",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2118045803",
+    "name": "Traditional Chinese Medicine——Sea Urchin",
+    "source": "openalex",
+    "abstract": "The sea urchin is an ancient, common, seafloor-dwelling marine invertebrate that belongs to the phylum Echinodermata. There are multiple species of sea urchin with resources that are widely distributed in China, where they were used in ancient times as Traditional Chinese Medicine for treating a variety of diseases. At present, it is known that the shell, spine and gonad of the sea urchin have many medicinal values determined through modern research. In this paper, we summarized the major chemical constituents and medicinal value of the sea urchin.",
+    "url": "https://doi.org/10.2174/1389557514666140529224147",
+    "authors": [
+      "Xiao-Hui Shang",
+      "Xiaoyu Liu",
+      "Jianpeng Zhang",
+      "Yun Gao",
+      "Binghua Jiao",
+      "Heng Zheng",
+      "Xiaoling Lu"
+    ],
+    "tags": [
+      "Sea urchin",
+      "Phylum",
+      "Marine invertebrates",
+      "Biology",
+      "Fishery"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-05-29",
+    "doi": "https://doi.org/10.2174/1389557514666140529224147",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2046399609",
+    "name": "Treatment of Rheumatoid Arthritis with Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "Rheumatoid arthritis (RA) is a chronic inflammatory disease that will affect quality of life and, working efficiency, and produce negative thoughts for patients. Current therapy of RA is treated with disease-modifying antirheumatic drugs (DMARDs). Although most of these treatment methods are effective, most patients still have a pleasant experience either due to poor efficacy or side effects or both. Interleukin-6 receptor (IL6R) is important in the pathogenesis of RA. In this study, we would like to detect the potential candidates which inhibit IL6R against RA from traditional Chinese medicine (TCM). We use TCM compounds from the TCM Database@Taiwan for virtually screening the potential IL6R inhibitors. The TCM candidate compound, calycosin, has potent binding affinity with IL6R protein. The molecular dynamics simulation was employed to validate the stability of interaction in the protein complex with calycosin. The analysis indicates that protein complex with calycosin is more stable. In addition, calycosin is known to be one of the components of Angelica sinensis, which has been indicated to have an important role in the treatment of rheumatoid arthritis. Therefore, calycosin is a potential candidate as lead compounds for further study in drug development process with IL6R protein against rheumatoid arthritis.",
+    "url": "https://doi.org/10.1155/2014/528018",
+    "authors": [
+      "Wen‐Yuan Lee",
+      "Hsin‐Yi Chen",
+      "Kuan‐Chung Chen",
+      "Calvin Yu‐Chian Chen"
+    ],
+    "tags": [
+      "Calycosin",
+      "Rheumatoid arthritis",
+      "Medicine",
+      "Traditional Chinese medicine",
+      "Arthritis"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-01-01",
+    "doi": "https://doi.org/10.1155/2014/528018",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2970284930",
+    "name": "Interactions between clopidogrel and traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s11239-019-01945-3",
+    "authors": [
+      "Yunzhen Hu",
+      "Jing Wang"
+    ],
+    "tags": [
+      "Clopidogrel",
+      "Medicine",
+      "Pharmacology",
+      "Ginkgo biloba",
+      "Adverse effect"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2019-08-30",
+    "doi": "https://doi.org/10.1007/s11239-019-01945-3",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W3047276716",
+    "name": "Traditional Chinese medicine for anti-Alzheimer’s disease: berberine and evodiamine from Evodia rutaecarpa",
+    "source": "openalex",
+    "abstract": "Abstract Alzheimer’s disease (AD) is one of the most common diseases in elderly people with a high incidence of dementia at approximately 60–80%. The pathogenesis of AD was quite complicated and currently there is no unified conclusion in the academic community, so no efficiently clinical treatment is available. In recent years, with the development of traditional Chinese medicine (TCM), researchers have proposed the idea of relying on TCM to prevent and treat AD based on the characteristic of multiple targets of TCM. This study reviewed the pathological hypothesis of AD and the potential biomarkers found in the current researches. And the potential targets of berberine and evodiamine fromEvodia rutaecarpain AD were summarized and further analyzed. A compound-targets-pathway network was carried out to clarify the mechanism of action of berberine and evodiamine for AD. Furthermore, the limitations of current researches on the TCM and AD were discussed. It is hoped that this review will provide some references for development of TCM in the prevention and treatment of AD.",
+    "url": "https://doi.org/10.1186/s13020-020-00359-1",
+    "authors": [
+      "Zhiling Fang",
+      "Yuqing Tang",
+      "Jiaming Ying",
+      "Chunlan Tang",
+      "Qinwen Wang"
+    ],
+    "tags": [
+      "Evodiamine",
+      "Berberine",
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Disease"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2020-08-05",
+    "doi": "https://doi.org/10.1186/s13020-020-00359-1",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W1999496814",
+    "name": "Study on the history of Traditional Chinese Medicine to treat diabetes",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.eujim.2010.02.004",
+    "authors": [
+      "Hui Zhang",
+      "Conge Tan",
+      "Hongzhan Wang",
+      "Shengbo Xue",
+      "Miqu Wang"
+    ],
+    "tags": [
+      "Thirst",
+      "Wasting",
+      "Medicine",
+      "Diabetes mellitus",
+      "Traditional Chinese medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2010-03-08",
+    "doi": "https://doi.org/10.1016/j.eujim.2010.02.004",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2766717606",
+    "name": "Herbal Traditional Chinese Medicine and suspected liver injury: A prospective study",
+    "source": "openalex",
+    "abstract": "AIM: To analyze liver tests before and following treatment with herbal Traditional Chinese Medicine (TCM) in order to evaluate the frequency of newly detected liver injury. METHODS: Patients with normal values of alanine aminotransferase (ALT) as a diagnostic marker for ruling out pre-existing liver disease were enrolled in a prospective study of a safety program carried out at the First German Hospital of TCM from 1994 to 2015. All patients received herbal products, and their ALT values were reassessed 1-3 d prior to discharge. To verify or exclude causality for suspected TCM herbs, the Roussel Uclaf Causality Assessment Method (RUCAM) was used. RESULTS: This report presents for the first time liver injury data derived from a prospective, hospital-based and large-scale study of 21470 patients who had no liver disease prior to treatment with herbal TCM. Among these, ALT ranged from 1 × to < 5 × upper limit normal (ULN) in 844 patients (3.93%) and suggested mild or moderate liver adaptive abnormalities. However, 26 patients (0.12%) experienced higher ALT values of ≥ 5 × ULN (300.0 ± 172.9 U/L, mean ± SD). Causality for TCM herbs was RUCAM-based probable in 8/26 patients, possible in 16/26, and excluded in 2/26 cases. Bupleuri radix and Scutellariae radix were the two TCM herbs most commonly implicated. CONCLUSION: In 26 (0.12%) of 21470 patients treated with herbal TCM, liver injury with ALT values of ≥ 5 × ULN was found, which normalized shortly following treatment cessation, also substantiating causality.",
+    "url": "https://doi.org/10.4254/wjh.v9.i29.1141",
+    "authors": [
+      "Dieter Melchart",
+      "Stefan Häger",
+      "Sabine Albrecht",
+      "Jingzhang Dai",
+      "Wolfgang Weidenhammer",
+      "Rolf Teschke"
+    ],
+    "tags": [
+      "Medicine",
+      "Internal medicine",
+      "Liver injury",
+      "Prospective cohort study",
+      "Traditional Chinese medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2017-10-16",
+    "doi": "https://doi.org/10.4254/wjh.v9.i29.1141",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2050002931",
+    "name": "Prescription of Chinese Herbal Medicine and Selection of Acupoints in Pattern-Based Traditional Chinese Medicine Treatment for Insomnia: A Systematic Review",
+    "source": "openalex",
+    "abstract": "Traditional Chinese medicine (TCM) treatments are often prescribed based on individuals' pattern diagnoses. A systematic review of Chinese and English literatures on TCM pattern differentiation, treatment principle, and pattern-based treatment for insomnia has therefore been conducted. A total of 227 studies, 17916 subjects, and 87 TCM patterns were analyzed. There was a limited consistency in pattern-based TCM treatment of insomnia across practitioners. Except for Gui Pi Tang, An Shen Ding Zhi Wan, and Wen Dan Tang which were used more commonly for deficiency of both the heart and spleen, internal disturbance of phlegm-heat, and qi deficiency of the heart and gallbladder, respectively, the selection of herbal formula for other patterns and pattern-based prescription of individual herbs and acupoints were not consistent. Suanzaoren (Semen Z. spinosae), Fuling (Poria), Yejiaoteng (Caulis P. multiflori), Gancao (Radix Glycyrrhizae), Baishao (Radix P. alba), Shenmen (HT7), Yintang (EX-HN3), Sanyinjiao (SP6), Baihui (GV20), Anmian (EX-HN22), and Sishencong (EX-HN1) were commonly used, but nonspecifically for many patterns. Treatment principles underlying herb and acupoint selection were seldom reported. Although many studies were reviewed, the study quality and diagnostic process were inadequate. More high quality studies are needed to examine the additional benefits of pattern differentiation and pattern-based TCM treatment.",
+    "url": "https://doi.org/10.1155/2012/902578",
+    "authors": [
+      "Wing‐Fai Yeung",
+      "Ka‐Fai Chung",
+      "Maggie Man-Ki Poon",
+      "Fiona Yan‐Yee Ho",
+      "Shiping Zhang",
+      "Zhang-Jin Zhang",
+      "Eric Tat-Chi Ziea",
+      "Vivian Wong Taam"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Medical prescription",
+      "Alternative medicine",
+      "Traditional medicine",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2012-01-01",
+    "doi": "https://doi.org/10.1155/2012/902578",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2108557469",
+    "name": "Systems Biology Technologies Enable Personalized Traditional Chinese Medicine: A Systematic Review",
+    "source": "openalex",
+    "abstract": "Traditional Chinese medicine (TCM), an alternative medicine, focuses on the treatment of human disease via the integrity of the close relationship between body and syndrome analysis. It remains a form of primary care in most Asian countries and its characteristics showcase the great advantages of personalized medicine. Although this approach to disease diagnosis, prognosis and treatment has served the medical establishment well for thousands of years, it has serious shortcomings in the era of modern medicine that stem from its reliance on reductionist principles of experimentation and analysis. In this way, systems biology offers the potential to personalize medicine, facilitating the provision of the right care to the right patient at the right time. We expect that systems biology will have a major impact on future personalized therapeutic approaches which herald the future of medicine. Here we summarize current trends and critically review the potential limitations and future prospects of such treatments. Some characteristic examples are presented to highlight the application of this groundbreaking platform to personalized TCM as well as some of the necessary milestones for moving systems biology of a state-of-the-art nature into mainstream health care.",
+    "url": "https://doi.org/10.1142/s0192415x12500826",
+    "authors": [
+      "Xijun Wang",
+      "Aihua Zhang",
+      "Hui Sun",
+      "Ping Wang"
+    ],
+    "tags": [
+      "Personalized medicine",
+      "Mainstream",
+      "Systems biology",
+      "Reductionism",
+      "Alternative medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2012-01-01",
+    "doi": "https://doi.org/10.1142/s0192415x12500826",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2413298632",
+    "name": "Dissecting Traditional Chinese Medicines by Omics and Bioinformatics",
+    "source": "openalex",
+    "abstract": "Traditional Chinese medicines (TCM) are a rich source of potential leads for drug development. However, there are fundamental differences between traditional Chinese medical concepts and modern pharmacology, which greatly hinder the modern development of TCM. To address this challenge, new techniques associated with genomics, transcriptomics, proteomics, metabolomics and bioinformatics have been used to dissect the pharmacological mechanisms of TCM. This review article provides an overview of the current research in this area, and illustrates the potential of omic and bioinformatic methods in TCM-based drug discovery.",
+    "url": "https://doi.org/10.1177/1934578x1400900942",
+    "authors": [
+      "Yuan Quan",
+      "Zhongyi Wang",
+      "Min Xiong",
+      "Zhengtao Xiao",
+      "Hongyu Zhang"
+    ],
+    "tags": [
+      "Omics",
+      "Drug discovery",
+      "Computational biology",
+      "Proteomics",
+      "Metabolomics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-09-01",
+    "doi": "https://doi.org/10.1177/1934578x1400900942",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4200482827",
+    "name": "Mind-Body Therapies From Traditional Chinese Medicine: Evidence Map",
+    "source": "openalex",
+    "abstract": "Background: The mind-body therapies of traditional Chinese medicine include several intervention types and combine physical poses with conscious relaxation and breathing techniques. The purpose of this Evidence Map is to describe these different interventions and report related health outcomes. Methods: This evidence map is based on the 3iE Evidence Gap Map methodology. We searched seven electronic databases (BVS, PUBMED, EMBASE, PEDro, ScienceDirect, Web of Sciences, and PschyInfo) from inception to November 2019 and included systematic reviews only. Systematic reviews were analyzed based on AMSTAR 2. We used Tableau to graphically display quality assessment, the number of reviews, outcomes, and effects. Results: The map is based on 116 systematic reviews and 44 meta-analyses. Most of the reviews were published in the last 5 years. The most researched interventions were Tai Chi and Qi Gong. The reviews presented the following quality assessment: 80 high, 43 moderate, 23 low, and 14 critically low. Every 680 distinct outcome effect was classified: 421 as potential positive; 237 as positive; 21 as inconclusive/mixed; one potential negative and none no effect. Positive effects were related to chronic diseases; mental indicators and disorders; vitality, well-being, and quality of life. Potential positive effects were related to balance, mobility, Parkinson's disease, hypertension, joint pain, cognitive performance, and sleep quality. Inconclusive/mixed-effects justify further research, especially in the following areas: Acupressure as Shiatsu and Tuiná for nausea and vomiting; Tai Chi and Qi Gong for acute diseases, prevention of stroke, stroke risk factors, and schizophrenia. Conclusions: The mind-body therapies from traditional Chinese medicine have been applied in different areas and this Evidence Map provides a visualization of valuable information for patients, professionals, and policymakers, to promote evidence-based complementary therapies.",
+    "url": "https://doi.org/10.3389/fpubh.2021.659075",
+    "authors": [
+      "Lissandra Zanovelo Fogaça",
+      "Caio Fábio Schlechta Portella",
+      "Ricardo Ghelman",
+      "Carmen Verônica Mendes Abdala",
+      "Mariana Cabral Schveitzer"
+    ],
+    "tags": [
+      "Medicine",
+      "Systematic review",
+      "Psychological intervention",
+      "Vitality",
+      "MEDLINE"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2021-12-10",
+    "doi": "https://doi.org/10.3389/fpubh.2021.659075",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2157390056",
+    "name": "Use of traditional Chinese medicine in the management of urinary stone disease",
+    "source": "openalex",
+    "abstract": "OBJECTIVE: To assess the evidence-based literature supporting the use of traditional Chinese medicine Kampo herbal and Acupuncture in stone disease management. MATERIALS AND METHODS: Four of the most commonly used herbal components of Kampo medicine in the treatment of stone disease are described according to their in vitro and in vivo effects. We also reviewed the role of Acupuncture in urologic clinical setting as well as its proposed mechanisms of action and results. Medline database was assessed using isolated and conjugated key words (Chinese Medicine, Kampo, Chinese Herbal, Calculi, Stone Disease, Kidney, Acupuncture, Herbal Medicine). Articles were reviewed and summarized. RESULTS: Herbal medicine has been proven to be free from side-effects and therefore suitable for long term use therapy. Its antilithic beneficial effects include increased urinary volume, increased magnesium excretion (Takusya), inhibitory activity on calcium oxalate aggregation (Takusya, Wulingsan and Desmodyum styracyfolium), inhibition of calcium oxalate nucleation and hydroxyapatite internalization (Wulingsan). In contrast, acupuncture, has shown to be effective as a pre-treatment anxiolytic and analgesic during colic pain and extracorporeal shock wave lithotripsy treatment, reducing the need for complementary sedative drugs. CONCLUSION: Chinese traditional medicine is promising as regards its role in stone prevention. An effort must be made in order to standardize study protocols to better assess acupuncture results since each procedure differs in regards to selected acupoints, electrostimulation technique and adjunct anesthetics. Similarly, standardization of Kampo formulations and acceptable clinical endpoints (imaging vs. symptomatic events) is needed.",
+    "url": "https://doi.org/10.1590/s1677-55382009000400002",
+    "authors": [
+      "Ricardo Miyaoka",
+      "Manoj Monga"
+    ],
+    "tags": [
+      "Medicine",
+      "Kampo",
+      "Acupuncture",
+      "Traditional Chinese medicine",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2009-08-01",
+    "doi": "https://doi.org/10.1590/s1677-55382009000400002",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W1978065825",
+    "name": "Network pharmacology: A new approach to unveiling Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s1875-5364(15)60001-2",
+    "authors": [
+      "Jinhui Wu",
+      "Chunfu Wu"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Traditional medicine",
+      "Medicine",
+      "Pharmacology",
+      "Alternative medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2015-01-01",
+    "doi": "https://doi.org/10.1016/s1875-5364(15)60001-2",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W3148347771",
+    "name": "Colorectal Cancer, Gut Microbiota and Traditional Chinese Medicine: A Systematic Review",
+    "source": "openalex",
+    "abstract": "Based on the study and research on the pathogenesis of colorectal cancer, the types and functions of gut microbiota, and its role in guiding and regulating the occurrence and development of diseases, we have explored the mechanism of traditional Chinese medicine in the treatment of colorectal cancer by regulating the gut microbiota. Genetic variation, abnormal responses of innate and adaptive immunity, mucosal barrier dysfunction, imbalance of intestinal microbial colonization, personal and environmental risk factors are the main pathogenesis of colorectal cancer. The gut microbiota mainly includes Sclerotium (including Clostridium, Enterococcus, Lactobacillus and Ruminococcus) and Bacteroides (including Bacteroides and Prevotella), which have biological antagonism, nutrition for the organism, metabolic abilities, immune stimulation, and ability to shape cancer genes functions to body. The gut microbiota can be related to the health of the host. Current studies have shown that Chinese herbal compound, single medicinal materials, and monomer components can treat colorectal cancer by regulating the gut microbiota, such as Xiaoyaosan can increase the abundance of Bacteroides, Lactobacillus, and Proteus and decrease the abundance of Desulfovibrio and Rickerella. Therefore, studying the regulation and mechanism of gut microbiota on colorectal cancer is of great benefit to disease treatment.",
+    "url": "https://doi.org/10.1142/s0192415x21500385",
+    "authors": [
+      "Hui Zhao",
+      "Man He",
+      "Meng Zhang",
+      "Qiang Sun",
+      "Sha Zeng",
+      "Li Chen",
+      "Han Yang",
+      "Maolun Liu",
+      "Shan Ren",
+      "Xianli Meng",
+      "Haibo Xu"
+    ],
+    "tags": [
+      "Gut flora",
+      "Faecalibacterium prausnitzii",
+      "Colorectal cancer",
+      "Bacteroides",
+      "Biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2021-01-01",
+    "doi": "https://doi.org/10.1142/s0192415x21500385",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W3194658429",
+    "name": "Traditional Chinese medicine for prevention and treatment of hepatocellular carcinoma: A focus on epithelial-mesenchymal transition",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.joim.2021.08.004",
+    "authors": [
+      "Jiajia Li",
+      "Qing Liang",
+      "Guangchun Sun"
+    ],
+    "tags": [
+      "Hepatocellular carcinoma",
+      "Epithelial–mesenchymal transition",
+      "Medicine",
+      "Malignancy",
+      "Metastasis"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2021-08-25",
+    "doi": "https://doi.org/10.1016/j.joim.2021.08.004",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W3166608272",
+    "name": "Traditional Chinese Medicine Intervenes in Vascular Dementia: Traditional Medicine Brings New Expectations",
+    "source": "openalex",
+    "abstract": "Vascular dementia (VD) is one of the most common forms of dementia, referring to a group of symptoms that mainly manifest as advanced neurocognitive dysfunction induced by cerebrovascular disease (CVD). A significant number of studies have shown that traditional Chinese medicine (TCM) has a clinical impact on VD and thus has promising prospects. There have been many discussions regarding the pharmacological mechanisms involved in treatment of the kidney, elimination of turbidity, and promotion of blood circulation. TCM has a prominent effect on improving patients' cognitive function and quality of life. In this review, we summarize the pathogenesis of VD in modern medicine and TCM, traditional prescriptions, single-agent effective ingredients and their pharmacological mechanisms for treating VD, highlight TCM's characteristics, and discuss TCM's multi-targeted mechanism for the treatment of VD.",
+    "url": "https://doi.org/10.3389/fphar.2021.689625",
+    "authors": [
+      "Xue Bai",
+      "Meng Zhang"
+    ],
+    "tags": [
+      "Vascular dementia",
+      "Dementia",
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Vascular Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2021-06-14",
+    "doi": "https://doi.org/10.3389/fphar.2021.689625",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2917487855",
+    "name": "Challenge and Prospect of Traditional Chinese Medicine in Depression Treatment",
+    "source": "openalex",
+    "abstract": "Current medication for depression is inadequate and far from ideal. Development of novel antidepressant drugs is a pressing task. The discovery of ketamine and related agents represents a new era in drug discovery for the rapid treatment of depression. Due to potential neurotoxicity, short-lasting efficacy, the limitation of a single target approach, and a limited role in depression prevention of these agents, additional approaches or drugs that exert synergy and compatibility, with the rapid-acting agents are required for better treatment of depression. Traditional Chinese Medicine (TCM) is a systems medicine and its clinical experience and integrated theory for diagnosis and treatment provides an alternative method of novel drug discovery in depression treatment. In TCM, there are numerous claimed effective antidepressant formulas, but comprehensive research and evidence-based clinical studies are required for their acceptance as a treatment. In this essay, we review current attempts in the discovery of new agents, TCM drug formulation, and TCM treatment of depression, and discuss the challenges and opportunities of TCM in the new era of antidepressant discovery. TCM could provide an important resource in the discovery of novel agents, assistance of the rapid-acting antidepressants, development of new agents for female patients, and the prevention of depression at its early stages. The study of depression in conjunction with TCM therefore not only provides an opportunity to scientifically evaluate the benefits and risks of TCM, but also accelerates the development of novel antidepressant agents by combining the principle of modern molecular medicine with the ideas of empirical systems medicine.",
+    "url": "https://doi.org/10.3389/fnins.2019.00190",
+    "authors": [
+      "Yuan‐Wei Zhang",
+      "Yung‐Chi Cheng"
+    ],
+    "tags": [
+      "Antidepressant",
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Depression (economics)",
+      "Intensive care medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2019-03-05",
+    "doi": "https://doi.org/10.3389/fnins.2019.00190",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2017616386",
+    "name": "Multicenter clinical trial of the serum lipid-lowering effects of a Monascus purpureus (red yeast) rice preparation from traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0011-393x(97)80063-x",
+    "authors": [
+      "Jun‐Xian Wang",
+      "Zongliang Lu",
+      "Jiamin Chi",
+      "Wenhua Wang",
+      "Meizhe Su",
+      "Wen‐Rong Kou",
+      "Pulin Yu",
+      "Lijiang Yu",
+      "Li Chen",
+      "Jia‐Shi Zhu",
+      "Joseph Chang"
+    ],
+    "tags": [
+      "Monascus purpureus",
+      "Red yeast rice",
+      "Lablab purpureus",
+      "Biology",
+      "Hyperlipidemia"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "1997-12-01",
+    "doi": "https://doi.org/10.1016/s0011-393x(97)80063-x",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2982399331",
+    "name": "Application of two‐dimensional liquid chromatography in the separation of traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "Traditional Chinese medicines have been widely used to prevent and cure diseases for thousands of years. For the purpose of better understanding the extremely complicated traditional Chinese medicines, powerful separation techniques are essential. Two-dimensional liquid chromatography has been proven to be more powerful for the separation of complex traditional Chinese medicines due to its enhanced peak capacity and resolution compared with one-dimensional liquid chromatography. Enormous efforts have been made on the coupling of independent separation mechanisms to improve the resolving power for complex traditional Chinese medicine samples, including the development and introduction of novel stationary phases. This review aims to give an overview on the applications of two-dimensional liquid chromatography in traditional Chinese medicine research since 2008, including comprehensive two-dimensional liquid chromatography, heart-cutting two-dimensional liquid chromatography both in on-line, and off-line mode. Different couplings of separation modes were respectively discussed based on specific studies, with emphasis on the applications of novel stationary phases in the two-dimensional liquid chromatography.",
+    "url": "https://doi.org/10.1002/jssc.201900765",
+    "authors": [
+      "Weijia Zhou",
+      "Yanming Liu",
+      "Yanming Liu",
+      "Jixia Wang",
+      "Zhimou Guo",
+      "Aijin Shen",
+      "Yanfang Liu",
+      "Yanfang Liu",
+      "Xinmiao Liang"
+    ],
+    "tags": [
+      "Chromatography",
+      "High-performance liquid chromatography",
+      "Two-dimensional chromatography",
+      "Resolution (logic)",
+      "Separation method"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2019-10-30",
+    "doi": "https://doi.org/10.1002/jssc.201900765",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2029657028",
+    "name": "Symptom selection for multi-label data of inquiry diagnosis in traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s11432-011-4406-5",
+    "authors": [
+      "Huan Shao",
+      "Guozheng Li",
+      "Shuai Liu",
+      "Yiqin Wang"
+    ],
+    "tags": [
+      "Feature selection",
+      "Dimensionality reduction",
+      "Classifier (UML)",
+      "Computer science",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2012-01-02",
+    "doi": "https://doi.org/10.1007/s11432-011-4406-5",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2057716533",
+    "name": "Statistical Validation of Traditional Chinese Medicine Theories",
+    "source": "openalex",
+    "abstract": "The theories of Traditional Chinese Medicine (TCM) originated from experiences doctors had with patients in ancient times. We ask the question whether aspects of TCM theories can be reconstructed through data analysis. To answer the question, we have developed a data analysis method called latent tree models and have used it to analyze several TCM data sets. This paper reports the results we obtained on one of the data sets and explains how they provide statistical validation to the relevant TCM theories.",
+    "url": "https://doi.org/10.1089/acm.2007.7019",
+    "authors": [
+      "Nevin L. Zhang",
+      "Shihong Yuan",
+      "Tao Chen",
+      "Yi Wang"
+    ],
+    "tags": [
+      "Medicine",
+      "Traditional Chinese medicine",
+      "Ask price",
+      "Statistical analysis",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2008-06-01",
+    "doi": "https://doi.org/10.1089/acm.2007.7019",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2054654188",
+    "name": "Agreements among traditional Chinese medicine practitioners in the diagnosis and treatment of irritable bowel syndrome",
+    "source": "openalex",
+    "abstract": "BACKGROUND: Traditional Chinese Medicine was frequently used by patients with irritable bowel syndrome. AIM: To evaluate the agreement on diagnoses and prescription of irritable bowel syndrome among Traditional Chinese Medicine practitioners. METHODS: Consecutive irritable bowel syndrome patients were interviewed independently by four Traditional Chinese Medicine practitioners. The study was divided into three phases: (i) blinded individual assessment, (ii) discussion to achieve consensus on diagnosis and treatment, (iii) individual assessment based on consensual diagnostic criteria. Patients with other causes of diarrhoea were recruited as controls in phase (iii). Percentage agreement and kappa-value in diagnosis, treatment principle and regime were determined. RESULTS: Thirty-nine irritable bowel syndrome patients were assessed in phase (i) whereas 65 irritable bowel syndrome patients and 17 non-irritable bowel syndrome controls were studied in phase (iii). The mean agreement rates in diagnosis, treatment principle and regimen were: 57, 58 and 52% for phase (i) and 80, 81 and 80% for phase (iii) (P = 0.002). Accordingly, there was significant improvement in the mean kappa-values in diagnosis (0.11-0.34, P = 0.015) and treatment principle (0.16-0.37, P = 0.002) but not in treatment regime. CONCLUSIONS: Variations in diagnosis and treatment principles do exist among Traditional Chinese Medicine practitioners. Concordant diagnosis can be reached by mutual understanding and converging opinion among Traditional Chinese Medicine practitioners.",
+    "url": "https://doi.org/10.1111/j.1365-2036.2004.02242.x",
+    "authors": [
+      "Joseph J.�Y. Sung",
+      "Wai K. Leung",
+      "Jessica Ching",
+      "Lixing Lao",
+      "G. Zhang",
+      "Justin C. Y. Wu",
+      "Surui Liang",
+      "He Xie",
+      "Yin-Ping Ho",
+      "Lawrence S. Chan",
+      "Brian Berman",
+      "Francis K.L. Chan"
+    ],
+    "tags": [
+      "Irritable bowel syndrome",
+      "Medicine",
+      "Traditional Chinese medicine",
+      "Internal medicine",
+      "Medical prescription"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2004-11-01",
+    "doi": "https://doi.org/10.1111/j.1365-2036.2004.02242.x",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4221045286",
+    "name": "Progress in traditional Chinese medicine and natural extracts for the treatment of lupus nephritis",
+    "source": "openalex",
+    "abstract": "Lupus nephritis (LN) is an autoimmune disease with multiple system involvement and is also one of the most serious forms of organ damage in systemic lupus erythematosus (SLE), which is mainly caused by the formation and deposition of immune complexes in glomeruli. More than 50% of SLE patients have clinical manifestations of renal damage. At present, the treatment of lupus nephritis is mainly based on glucocorticoids and immunosuppressants. However, due to adverse drug reactions and frequent recurrence or aggravation after drug reduction or withdrawal, the prognosis remains poor; thus, it is still one of the most important causes of end-stage renal failure. Therefore, new treatment strategies are urgently needed. This article aims to review the application of traditional Chinese medicine and natural extracts in the treatment of lupus nephritis to provide the basic mechanisms of treatment and a new treatment strategy with clear effects and high safety performance.",
+    "url": "https://doi.org/10.1016/j.biopha.2022.112799",
+    "authors": [
+      "Yujiao Wang",
+      "Yaxin Li",
+      "Shuo Li",
+      "Wei He",
+      "Zirui Wang",
+      "Tian-Peng Zhan",
+      "Chao-Yue Lv",
+      "Yingping Liu",
+      "Yang Yang",
+      "Xiaoxi Zeng"
+    ],
+    "tags": [
+      "Lupus nephritis",
+      "Medicine",
+      "Systemic lupus erythematosus",
+      "Nephritis",
+      "Drug"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2022-03-09",
+    "doi": "https://doi.org/10.1016/j.biopha.2022.112799",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2079243996",
+    "name": "Western-medicine-validated anti-tumor agents and traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.molmed.2007.11.002",
+    "authors": [
+      "Xuejuan Li",
+      "Hong‐Yu Zhang"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Western medicine",
+      "Medicine",
+      "Traditional medicine",
+      "Alternative medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2007-12-06",
+    "doi": "https://doi.org/10.1016/j.molmed.2007.11.002",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2603813434",
+    "name": "World Science and Technology – Modernization of Traditional Chinese Medicine and Materia Medica",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://openalex.org/W2603813434",
+    "authors": [
+      "Elsevier Sdol"
+    ],
+    "tags": [
+      "Materia medica",
+      "Modernization theory",
+      "Traditional medicine",
+      "Engineering ethics",
+      "Political science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2009-01-01",
+    "doi": "",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W1978673975",
+    "name": "Integrative mining of traditional Chinese medicine literature and MEDLINE for functional gene networks",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.artmed.2007.07.007",
+    "authors": [
+      "Xuezhong Zhou",
+      "Baoyan Liu",
+      "Zhaohui Wu",
+      "Yi Feng"
+    ],
+    "tags": [
+      "MEDLINE",
+      "Computer science",
+      "Bioinformatics",
+      "Data science",
+      "Computational biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2007-09-06",
+    "doi": "https://doi.org/10.1016/j.artmed.2007.07.007",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W1947251452",
+    "name": "Effect and Molecular Mechanisms of Traditional Chinese Medicine on Regulating Tumor Immunosuppressive Microenvironment",
+    "source": "openalex",
+    "abstract": "Traditional Chinese medicine (TCM) is an important complementary strategy for treating cancer in China. The mechanism is related to regulating the internal environment and remodeling the tumor immunosuppressive microenvironment (TIM). Herein we illustrate how TIM is reformed and its protumor activity on promoting tumor cell proliferation, angiogenesis and lymphangiogenesis, tumor invasion, and the oncogenicity of cancer stem cells. Furthermore we summarize the effects and mechanism of TCM on regulating TIM via enhancing antitumor immune responses (e.g., regulating the expression of MHC molecules and Fas/FasL, attenuating cancerigenic ability of cancer stem cells) and remolding immunosuppressive cells (e.g., reversing immune phenotypes of T lymphocytes and tumor associated macrophages, promoting dendritic cells mature, restraining myeloid derived suppressor cells function, and regulating Th1/Th2 factors). We also reveal the bidirectional and multitargeting functions of TCM on regulating TIM. Hopefully, it provides new theoretical basis for TCM clinical practice in cancer treatment and prevention.",
+    "url": "https://doi.org/10.1155/2015/261620",
+    "authors": [
+      "Qiujun Guo",
+      "Jie Li",
+      "Hongsheng Lin"
+    ],
+    "tags": [
+      "Tumor microenvironment",
+      "Immune system",
+      "Cancer research",
+      "Lymphangiogenesis",
+      "Angiogenesis"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2015-01-01",
+    "doi": "https://doi.org/10.1155/2015/261620",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2143839974",
+    "name": "Characteristics of traditional Chinese medicine use in children with asthma: a nationwide population-based study",
+    "source": "openalex",
+    "abstract": "Asthma is a chronic inflammatory airway disease accounting for severe morbidity and mortality in children. To determine the characteristics of traditional Chinese medicine (TCM) used to treat pediatric asthma, we conducted a nationwide population-based study by analyzing a cohort of one million randomly sampled patients from the beneficiaries of the National Health Insurance Program in Taiwan from 2002 to 2010. Children under 18 years of age with newly diagnosed asthma (ICD-9-CM code: 493, N = 45 833) were enrolled, and 57.95% (N = 26 585) of them had used TCM. The number of TCM users was significantly more than that of non-TCM users in school-age children. The most commonly prescribed TCM formula is Ding-chuan-tang, or Xing-ren (Semen Armeniacae Amarum) for the single herb. Our study is the first to reveal characteristics and prescription patterns of the use of TCM in children with asthma. Further research is needed to elucidate the efficacy and safety of these Chinese herbal products.",
+    "url": "https://doi.org/10.1111/all.12273",
+    "authors": [
+      "Tzu-Ping Huang",
+      "Pi‐Hua Liu",
+      "A. S.-Y. Lien",
+      "Shu-Ling Yang",
+      "Hen‐Hong Chang",
+      "Hung‐Rong Yen"
+    ],
+    "tags": [
+      "Medicine",
+      "Asthma",
+      "Traditional Chinese medicine",
+      "Medical prescription",
+      "Pediatrics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2013-10-14",
+    "doi": "https://doi.org/10.1111/all.12273",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2288357343",
+    "name": "Separation and determination of flavonoids in three traditional chinese medicines by capillary electrophoresis with amperometric detection",
+    "source": "openalex",
+    "abstract": "Flavonoids are important active ingredients in many traditional Chinese medicines. In this paper, capillary electrophoresis with amperometric detection was employed to separate and detect eight flavonoids, rutin, quercetrin, quercetin, kaempferol, kaempferide, catechin, apigenin, and luteolin, in a home-made capillary electrophoresis device. Under the separation voltage of 2000 V, the eight flavonoids could be completely separated within 33 min in 18 mM borax running buffer at pH 10.2. Good linear relationships were obtained for all analytes and the detection limits for flavonoids ranged from 0.46 to 0.85 μM. Then, the method was applied to separate and determine the flavonoids in three traditional Chinese medicines, hippophae rhamnoides, hypericum perforatum, and cacumen platycladi. Finally, rutin, kaempferol, quercetin, and quercetrin were discovered in these medicines and the concentrations ranged from 0.28 to 9.94 mg/g. The recoveries of flavonoids ranged from 84.7 to 113%, which showed the high reliability of this method.",
+    "url": "https://doi.org/10.1002/jssc.201501287",
+    "authors": [
+      "Wei Wang",
+      "Ping Lin",
+      "Lihong Ma",
+      "Kaixuan Xu",
+      "Xiuli Lin"
+    ],
+    "tags": [
+      "Capillary electrophoresis",
+      "Rutin",
+      "Chromatography",
+      "Chemistry",
+      "Kaempferol"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2016-02-01",
+    "doi": "https://doi.org/10.1002/jssc.201501287",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W1968034217",
+    "name": "Concentrating the extract of traditional Chinese medicine by direct contact membrane distillation",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.memsci.2007.11.036",
+    "authors": [
+      "Zhongwei Ding",
+      "Liying Liu",
+      "Jianfei Yu",
+      "Runyu Ma",
+      "Zurong Yang"
+    ],
+    "tags": [
+      "Membrane distillation",
+      "Membrane",
+      "Fouling",
+      "Membrane fouling",
+      "Flux (metallurgy)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2007-12-05",
+    "doi": "https://doi.org/10.1016/j.memsci.2007.11.036",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2111575150",
+    "name": "The Study on the Agreement between Automatic Tongue Diagnosis System and Traditional Chinese Medicine Practitioners",
+    "source": "openalex",
+    "abstract": "Tongue diagnosis is an important practice in traditional Chinese medicine (TCM) for diagnosing diseases before determining proper means of treatments. Traditionally, it depends solely on personal knowledge and experience of the practitioner, thereby being criticized as lacking of objectivity. Currently, no research regarding intra- and inter-agreements of automatic tongue diagnosis system (ATDS) and TCM doctors has been conducted. In this study, the ATDS is developed to extract a variety of tongue features and provide practitioners with objective information to assist diagnoses. To evaluate the ATDS clinical stability, 2 sets of tongue images taken 1 hour apart from 20 patients with possible variations in lighting and extruding tongue, are employed to investigate intra-agreement of the ATDS, intra-agreement of the TCM doctors, and the inter-agreement between the ATDS and TCM doctors. The ATDS is shown to be more consistent with significantly higher intra-agreement than the TCM doctors (kappa value: 0.93 ± 0.06 versus 0.64 ± 0.13) with P < 0.001 (Student's t-test). Inter-agreements between the ATDS and TCM doctors, as well as among the TCM doctors are both moderate. The high agreement of the ATDS can provide objective and reliable tongue features to facilitate doctor in making effective observation and diagnosis of specific diseases.",
+    "url": "https://doi.org/10.1155/2012/505063",
+    "authors": [
+      "Lun-Chien Lo",
+      "Yung‐Fu Chen",
+      "Wen-Jiuan Chen",
+      "Tsung-Lin Cheng",
+      "John Y. Chiang"
+    ],
+    "tags": [
+      "Tongue",
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Medical physics",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2012-01-01",
+    "doi": "https://doi.org/10.1155/2012/505063",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4288925975",
+    "name": "Bidirectional effects and mechanisms of traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.jep.2022.115578",
+    "authors": [
+      "Xiaonian Peng",
+      "Fang Tang",
+      "Yong Yang",
+      "Tiandan Li",
+      "Xiaochao Hu",
+      "Sha Li",
+      "Weihua Wu",
+      "Kai He"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Traditional medicine",
+      "Medical prescription",
+      "Medicine",
+      "Web of science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2022-07-31",
+    "doi": "https://doi.org/10.1016/j.jep.2022.115578",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2340644511",
+    "name": "Characteristics of traditional Chinese medicine usage in patients with stroke in Taiwan: A nationwide population-based study",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.jep.2016.04.018",
+    "authors": [
+      "Chia‐Chi Chang",
+      "Yu‐Chen Lee",
+      "Che‐Chen Lin",
+      "Chin-Hsien Chang",
+      "Cheng‐Di Chiu",
+      "Li‐Wei Chou",
+      "Mao-Feng Sun",
+      "Hung‐Rong Yen"
+    ],
+    "tags": [
+      "Medicine",
+      "Stroke (engine)",
+      "Traditional medicine",
+      "Traditional Chinese medicine",
+      "Alternative medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2016-04-14",
+    "doi": "https://doi.org/10.1016/j.jep.2016.04.018",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2528800307",
+    "name": "Systems Pharmacology Dissection of the Integrated Treatment for Cardiovascular and Gastrointestinal Disorders by Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "Though cardiovascular diseases (CVDs) and gastrointestinal disorders (GIDs) are different diseases associated with different organs, they are highly correlated clinically. Importantly, in Traditional Chinese Medicine (TCM), similar treatment strategies have been applied in both diseases. However, the etiological mechanisms underlying them remain unclear. Here, an integrated systems pharmacology approach is presented for illustrating the molecular correlations between CVDs and GIDs. Firstly, we identified pairs of genes that are associated with CVDs and GIDs and found that these genes are functionally related. Then, the association between 115 heart meridian (HM) herbs and 163 stomach meridian (SM) herbs and their combination application in Chinese patent medicine was investigated, implying that both CVDs and GIDs can be treated by the same strategy. Exemplified by a classical formula Sanhe Decoration (SHD) treating chronic gastritis, we applied systems-based analysis to introduce a drug-target-pathway-organ network that clarifies mechanisms of different diseases being treated by the same strategy. The results indicate that SHD regulated several pathological processes involved in both CVDs and GIDs. We experimentally confirmed the predictions implied by the effect of SHD for myocardial ischemia. The systems pharmacology suggests a novel integrated strategy for rational drug development for complex associated diseases.",
+    "url": "https://doi.org/10.1038/srep32400",
+    "authors": [
+      "Wenjuan Zhang",
+      "Tao Qin",
+      "Zihu Guo",
+      "Yingxue Fu",
+      "Xuetong Chen",
+      "Piar Ali Shar",
+      "Mohamed Shahen",
+      "Jinglin Zhu",
+      "Jun Xue",
+      "Yaofei Bai",
+      "Ziyin Wu",
+      "Zhenzhong Wang",
+      "Wei Xiao",
+      "Yonghua Wang"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Systems pharmacology",
+      "Drug",
+      "Bioinformatics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2016-09-06",
+    "doi": "https://doi.org/10.1038/srep32400",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2147550119",
+    "name": "Interaction of a traditional Chinese Medicine (PHY906) and CPT-11 on the inflammatory process in the tumor microenvironment",
+    "source": "openalex",
+    "abstract": "BACKGROUND: Traditional Chinese Medicine (TCM) has been used for thousands of years to treat or prevent diseases, including cancer. Good manufacturing practices (GMP) and sophisticated product analysis (PhytomicsQC) to ensure consistency are now available allowing the assessment of its utility. Polychemical Medicines, like TCM, include chemicals with distinct tissue-dependent pharmacodynamic properties that result in tissue-specific bioactivity. Determining the mode of action of these mixtures was previously unsatisfactory; however, information rich RNA microarray technologies now allow for thorough mechanistic studies of the effects complex mixtures. PHY906 is a long used four herb TCM formula employed as an adjuvant to relieve the side effects associated with chemotherapy. Animal studies documented a decrease in global toxicity and an increase in therapeutic effectiveness of chemotherapy when combined with PHY906. METHODS: Using a systems biology approach, we studied tumor tissue to identify reasons for the enhancement of the antitumor effect of CPT-11 (CPT-11) by PHY906 in a well-characterized pre-clinical model; the administration of PHY906 and CPT-11 to female BDF-1 mice bearing subcutaneous Colon 38 tumors. RESULTS: We observed that 1) individually PHY906 and CPT-11 induce distinct alterations in tumor, liver and spleen; 2) PHY906 alone predominantly induces repression of transcription and immune-suppression in tumors; 3) these effects are reverted in the presence of CPT-11, with prevalent induction of pro-apoptotic and pro-inflammatory pathways that may favor tumor rejection. CONCLUSIONS: PHY906 together with CPT-11 triggers unique changes not activated by each one alone suggesting that the combination creates a unique tissue-specific response.",
+    "url": "https://doi.org/10.1186/1755-8794-4-38",
+    "authors": [
+      "Ena Wang",
+      "Scott Bussom",
+      "Jinguo Chen",
+      "Courtney Quinn",
+      "Davide Bedognetti",
+      "Wing Lam",
+      "Fulan Guan",
+      "Zaoli Jiang",
+      "Y. J. Mark",
+      "Yingdong Zhao",
+      "David F. Stroncek",
+      "Jeffrey H. White",
+      "Francesco M. Marincola",
+      "Yung‐Chi Cheng"
+    ],
+    "tags": [
+      "Pharmacodynamics",
+      "Tumor microenvironment",
+      "Pharmacology",
+      "Traditional Chinese medicine",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2011-05-11",
+    "doi": "https://doi.org/10.1186/1755-8794-4-38",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4280501659",
+    "name": "Botanical Drugs in Traditional Chinese Medicine With Wound Healing Properties",
+    "source": "openalex",
+    "abstract": "Chronic and unhealed wound is a serious public problem, which brings severe economic burdens and psychological pressure to patients. Various botanical drugs in traditional Chinese medicine have been used for the treatment of wounds since ancient time. Nowadays, multiple wound healing therapeutics derived from botanical drugs are commercially available worldwide. An increasing number of investigations have been conducted to elucidate the wound healing activities and the potential mechanisms of botanical drugs in recent years. The aim of this review is to summarize the botanical drugs in traditional Chinese medicine with wound healing properties and the underlying mechanisms of them, which can contribute to the research of wound healing and drug development. Taken together, five botanical drugs that have been developed into commercially available products, and 24 botanical drugs with excellent wound healing activities and several multiherbal preparations are reviewed in this article.",
+    "url": "https://doi.org/10.3389/fphar.2022.885484",
+    "authors": [
+      "Shuyi Ning",
+      "Jie Zang",
+      "Bingyang Zhang",
+      "Xinchi Feng",
+      "Feng Qiu"
+    ],
+    "tags": [
+      "Medicine",
+      "Wound healing",
+      "Traditional medicine",
+      "Traditional Chinese medicine",
+      "Tissue repair"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2022-05-12",
+    "doi": "https://doi.org/10.3389/fphar.2022.885484",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2077575275",
+    "name": "Traditional Chinese medicine for Parkinson??s disease: a review of Chinese literature",
+    "source": "openalex",
+    "abstract": "Occidental medicine has a given definition for Parkinson's disease and knowledge of Parkinson's disease pathophysiology has led to development of its therapeutic management. Parkinson's disease, however, is likely to have always existed in different parts of the world. Description and management of this neurodegenerative condition could be found in ancient medical systems. Here, we introduce the philosophical concepts of traditional Chinese medicine and the description, classification and understanding of parkinsonian symptoms in traditional Chinese medicine. We have conducted an in-depth review of Chinese literature reporting anti-parkinsonian and anti-dyskinetic efficacy of more than 60 traditional medicines in Parkinson's disease patients. A number of issues, however, plague the relevance of these reports and call for a scientific re-evaluation of these therapies in preclinical models of Parkinson's disease before proposing traditional Chinese medicine-based symptomatic treatment of Parkinson's disease.",
+    "url": "https://doi.org/10.1097/00008877-200609000-00006",
+    "authors": [
+      "Qin Li",
+      "Deming Zhao",
+      "Erwan Bézard"
+    ],
+    "tags": [
+      "Disease",
+      "Parkinson's disease",
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Plague (disease)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2006-08-29",
+    "doi": "https://doi.org/10.1097/00008877-200609000-00006",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2079702984",
+    "name": "Developments in cancer prevention and treatment using traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s11684-011-0137-7",
+    "authors": [
+      "Hongsheng Lin",
+      "Jie Liu",
+      "Ying–Jun Angela Zhang"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Cancer treatment",
+      "Alternative medicine",
+      "Medicine",
+      "Cancer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2011-06-01",
+    "doi": "https://doi.org/10.1007/s11684-011-0137-7",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W89460129",
+    "name": "History and development of traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://openalex.org/W89460129",
+    "authors": [
+      "Zhenguo Wang",
+      "Ping Chen",
+      "Xie PeiPing"
+    ],
+    "tags": [
+      "Traditional medicine",
+      "Traditional Chinese medicine",
+      "Engineering ethics",
+      "History",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "1999-01-01",
+    "doi": "",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W3130914957",
+    "name": "Evidence‐based traditional Chinese medicine research: Two decades of development, its impact, and breakthrough",
+    "source": "openalex",
+    "abstract": "It has been over 20 years since the introduction of evidence-based medicine (EBM) into the research of traditional Chinese medicine (TCM). The development of evidence-based TCM research has profoundly influenced the process of clinical research and decision-making, impelling researchers to pay attention to raise evidence quality, accumulate data, and explore appropriate evaluation methods adaptive to TCM original theories and knowledge. In this paper, the authors aim to summarize and review the existing work and seek promising research interests in this field, expecting to inspire more thoughts leading to breakthroughs in the near future.",
+    "url": "https://doi.org/10.1111/jebm.12420",
+    "authors": [
+      "Guihua Tian",
+      "Chen Zhao",
+      "Xiaoyu Zhang",
+      "Wei Mu",
+      "Yin Jiang",
+      "Xuxu Wei",
+      "Mengzhu Zhao",
+      "Zhaofeng Shi",
+      "Yinghui Jin",
+      "Jinhua Si",
+      "Jiaying Wang",
+      "Jiayuan Hu",
+      "Manke Guan",
+      "Ruijin Qiu",
+      "Changming Zhong",
+      "Min Li",
+      "Yang Sun",
+      "Zhao Chen",
+      "Liangzhen You",
+      "Jinyu Li",
+      "Hongcai Shang"
+    ],
+    "tags": [
+      "Engineering ethics",
+      "Evidence-based medicine",
+      "Quality (philosophy)",
+      "Psychology",
+      "Alternative medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2021-02-01",
+    "doi": "https://doi.org/10.1111/jebm.12420",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4281763026",
+    "name": "The Application of UHPLC-HRMS for Quality Control of Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "UHPLC-HRMS (ultra-high-performance liquid chromatography-high resolution mass spectrometry) is a new technique that unifies the application of UHPLC with HRMS. Because of the high sensitivity and good separation ability of UHPLC and the sensitivity of HRMS, this technique has been widely used for structure identification, quantitative determination, fingerprint analysis, and elucidation of the mechanisms of action of traditional Chinese medicines (TCMs) in recent years. This review mainly outlines the advantages of using UHPLC-HRMS and provides a survey of the research advances on UHPLC-HRMS for the quality control of TCMs.",
+    "url": "https://doi.org/10.3389/fphar.2022.922488",
+    "authors": [
+      "Jieyao Ma",
+      "Kailin Li",
+      "Silin Shi",
+      "Jian Li",
+      "Sunv Tang",
+      "Lianghong Liu"
+    ],
+    "tags": [
+      "Chromatography",
+      "Biochemical engineering",
+      "Computer science",
+      "Chemistry",
+      "Engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2022-06-02",
+    "doi": "https://doi.org/10.3389/fphar.2022.922488",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2342288602",
+    "name": "Alisma orientale: Ethnopharmacology, Phytochemistry and Pharmacology of an Important Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "Alisma orientale (Sam.) Juzep. (Alismataceae) is a traditional and famous Chinese medicinal herb. Its rhizomes, which possess versatile bioactivities, are commonly used to treat oliguria, edema, gonorrhea with turbid urine, leukorrhea, diarrhea and dizziness. Approximately 120 compounds have been isolated from A. orientale. Terpenoids have been identified as A. orientale's characteristic constituents, which include protostane triterpenoids and guaiane sesquiterpenoids. The traditional medical uses of A. orientale in TCM have been evaluated in modern pharmacological studies, which have shown that A. orientale and its active constituents exhibit a wide range of bioactivities, such as diuretic, anti-urolithiatic, antinephritic, anti-atherosclerotic, immunomodulatory, and hepatoprotective activities. The medicinal potential of A. orientale makes it an ideal candidate for new drug development. Further studies are still required to identify its bioactive constituents, and elucidate the structure-activity relationship and detailed mechanisms of action. Additionally, the use of the other medicinal parts of A. orientale may reduce resource waste and afford novel secondary metabolites.",
+    "url": "https://doi.org/10.1142/s0192415x16500142",
+    "authors": [
+      "Zhiheng Shu",
+      "Jiang Pu",
+      "Chen Ling",
+      "Yuanbin Zhang",
+      "Khalid Rahman",
+      "Luping Qin",
+      "Chengjian Zheng"
+    ],
+    "tags": [
+      "Traditional medicine",
+      "Phytochemistry",
+      "Medicinal plants",
+      "Traditional Chinese medicine",
+      "Chemical constituents"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2016-01-01",
+    "doi": "https://doi.org/10.1142/s0192415x16500142",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W1988368846",
+    "name": "Integration of traditional Chinese medicine with Western medicine—Right or wrong?",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0277-9536(88)90376-0",
+    "authors": [
+      "Cai Jingfeng"
+    ],
+    "tags": [
+      "Social medicine",
+      "Western medicine",
+      "Medicine",
+      "Alternative medicine",
+      "Traditional Chinese medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "1988-01-01",
+    "doi": "https://doi.org/10.1016/0277-9536(88)90376-0",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2032123459",
+    "name": "Drug–target network and polypharmacology studies of a Traditional Chinese Medicine for type II diabetes mellitus",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.compbiolchem.2011.07.003",
+    "authors": [
+      "Jiangyong Gu",
+      "Hu Zhang",
+      "Lirong Chen",
+      "Shun Xu",
+      "Gu Yuan",
+      "Xiaojie Xu"
+    ],
+    "tags": [
+      "Type 2 Diabetes Mellitus",
+      "Drug",
+      "Pharmacology",
+      "Traditional Chinese medicine",
+      "Computational biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2011-07-24",
+    "doi": "https://doi.org/10.1016/j.compbiolchem.2011.07.003",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W2468583430",
+    "name": "WILDLIFE AND TRADITIONAL CHINESE MEDICINE-SUPPLY AND DEMAND FOR WILDLIFE SPECIES",
+    "source": "openalex",
+    "abstract": "Traditional Chinese medicine dates back more than 5,000 years and many animal products are included in recommended treatments. The use of wildlife in these medications is creating a drain on already declining free-ranging populations. In particular, wild populations of tigers, bears, rhinos, and swiftlets are under threat due to their use in traditional medications. Where possible, farming of some of these species has been attempted to provide a steady source of materials for medical use. Although substitutes and alternatives for these medicines are being sought, other solutions to this problem must be pursued, including improved protection of species in their habitats, strict legislation controlling domestic and international trade and enforcement of these laws, and increasing public awareness of the threats to wildlife.",
+    "url": "https://openalex.org/W2468583430",
+    "authors": [
+      "Judy A. Mills"
+    ],
+    "tags": [
+      "Wildlife",
+      "Legislation",
+      "Enforcement",
+      "Business",
+      "Wildlife trade"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "1995-01-01",
+    "doi": "",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W4286213504",
+    "name": "Where traditional Chinese medicine meets Western medicine in the prevention of rheumatoid arthritis",
+    "source": "openalex",
+    "abstract": "Chinese medicine has a long tradition of use against rheumatoid arthritis (RA). The formulations are based on combinations of typically 5-10 plants, which are usually boiled and administered as a decoction or tea. There are few clinical trials performed so the clinical evidence is sparse. One fundamental of traditional medicine is to prevent disease. RA is an autoimmune, inflammatory and chronic disease that primarily affects the joints of 0.5%-1% of the population. In two out of three of the cases, the patients are characterised by the presence of autoantibodies such as the rheumatoid factor and the more disease-specific autoantibody against citrullinated proteins, so-called 'ACPA' (anticitrullinated protein/peptide antibodies). ACPA positivity is also strongly associated with specific variations in the HLA-DRB1 gene, the shared epitope alleles. Together with smoking, these factors account for the major risks of developing RA. In this review, we will summarise the background using certain plant-based formulations based on Chinese traditional medicine for the treatment and prevention of RA and the strategy we have taken to explore the mechanisms of action. We also summarise the major pathophysiological pathways related to RA and how these could be analysed. Finally, we summarise our ideas on how a clinical trial using Chinese herbal medicine to prevent RA could be conducted.",
+    "url": "https://doi.org/10.1111/joim.13537",
+    "authors": [
+      "Per‐Johan Jakobsson",
+      "Luke P. Robertson",
+      "Janika Welzel",
+      "Mingshu Zhang",
+      "Yang Zhihua",
+      "Gao Kaixin",
+      "Huang Runyue",
+      "Wen Zehuai",
+      "Marina Korotkova",
+      "Ulf Göransson"
+    ],
+    "tags": [
+      "Medicine",
+      "Rheumatoid arthritis",
+      "Autoantibody",
+      "Traditional Chinese medicine",
+      "Disease"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2022-07-19",
+    "doi": "https://doi.org/10.1111/joim.13537",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.441Z"
+  },
+  {
+    "id": "oa:W3082715170",
+    "name": "The RIGHT Extension Statement for Traditional Chinese Medicine: Development, Recommendations, and Explanation",
+    "source": "openalex",
+    "abstract": "Nowadays, the number of traditional Chinese medicine (TCM) guidelines is constantly increasing, but its reporting quality remains unsatisfactory. One of the main reasons is that there is a lack of suitable reporting standard to guide it. In response to this long-standing problem, the Reporting Items for practice Guidelines in HealThcare (RIGHT) Working Group has invited a group of TCM clinical experts, methodologists and epidemiology, and developed the RIGHT Extension Statement for TCM (RIGHT-TCM) through a multi-staged development process, including systematic review, reporting quality evaluation and online Delphi expert consensus. The RIGHT-TCM extends two sections of the RIGHT Statement, includes basic information and recommendations section. Seven strong recommendation sub-items were added to RIGHT Statement and formed the final RIGHT-TCM. The group hopes that the RIGHT-TCM may assist TCM guideline developers in reporting guidelines, support journal editors and peer reviewers when considering TCM guideline reports, and help health care practitioners understand and implement a TCM guideline. This article will introduce its background, development, recommendations and explanation.",
+    "url": "https://doi.org/10.1016/j.phrs.2020.105178",
+    "authors": [
+      "Runsheng Xie",
+      "Yun Xia",
+      "Yaolong Chen",
+      "Hui Li",
+      "Hongcai Shang",
+      "Xinying Kuang",
+      "Linjun Xia",
+      "Yi Guo"
+    ],
+    "tags": [
+      "Guideline",
+      "Statement (logic)",
+      "Delphi method",
+      "Delphi",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2020-09-01",
+    "doi": "https://doi.org/10.1016/j.phrs.2020.105178",
+    "addedAt": "2026-08-31T14:44:57.441Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2008453461",
+    "name": "Cytotoxic genes from traditional Chinese medicine inhibit tumor growth both in vitro and in vivo",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s2095-4964(14)60057-1",
+    "authors": [
+      "Yuan-hui Zhang",
+      "Yuan Wang",
+      "Ali Hussein Yusufali",
+      "Frederick Ashby",
+      "Dongke Zhang",
+      "Zi-fei Yin",
+      "George Aslanidi",
+      "Arun Srivastava",
+      "Changquan Ling",
+      "Chen Ling"
+    ],
+    "tags": [
+      "In vivo",
+      "In vitro",
+      "Cytotoxic T cell",
+      "Pharmacology",
+      "Traditional Chinese medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-11-01",
+    "doi": "https://doi.org/10.1016/s2095-4964(14)60057-1",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W3181259744",
+    "name": "Network differentiation: A computational method of pathogenesis diagnosis in traditional Chinese medicine based on systems science",
+    "source": "openalex",
+    "abstract": "Resembling the role of disease diagnosis in Western medicine, pathogenesis (also called Bing Ji) diagnosis is one of the utmost important tasks in traditional Chinese medicine (TCM). In TCM theory, pathogenesis is a complex system composed of a group of interrelated factors, which is highly consistent with the character of systems science (SS). In this paper, we introduce a heuristic definition called pathogenesis network (PN) to represent pathogenesis in the form of the directed graph. Accordingly, a computational method of pathogenesis diagnosis, called network differentiation (ND), is proposed by integrating the holism principle in SS. ND consists of three stages. The first stage is to generate all possible diagnoses by Cartesian Product operated on specified prior knowledge corresponding to the input symptoms. The second stage is to screen the validated diagnoses by holism principle. The third stage is to pick out the clinical diagnosis by physician-computer interaction. Some theorems are stated and proved for the further optimization of ND in this paper. We conducted simulation experiments on 100 clinical cases. The experimental results show that our proposed method has an excellent capability to fit the holistic thinking in the process of physician inference.",
+    "url": "https://doi.org/10.1016/j.artmed.2021.102134",
+    "authors": [
+      "Qiang Xu",
+      "Qiang Guo",
+      "Chunxia Wang",
+      "Song Zhang",
+      "Chuanbiao Wen",
+      "Tao Sun",
+      "Wei Peng",
+      "Jun Chen",
+      "Weihong Li"
+    ],
+    "tags": [
+      "Holism",
+      "Medical diagnosis",
+      "Computer science",
+      "Pathogenesis",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2021-07-03",
+    "doi": "https://doi.org/10.1016/j.artmed.2021.102134",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2102432555",
+    "name": "Herbogenomics: From Traditional Chinese Medicine to Novel Therapeutics",
+    "source": "openalex",
+    "abstract": "Traditional Chinese medicine (TCM) has a long history of development and application and has demonstrated on evidence basis its efficacy in the treatment of many diseases affecting multiple organ systems. In particular, TCM is effective in the prevention and treatment of chronic diseases and metabolic syndromes. However, the value of TCM has not been fully recognized worldwide due to the lack of definitive information of active ingredients in almost any TCM preparation. Novel functional genomics and proteomics approaches provide alternate perspectives on the mechanism of action of TCM. The target molecules on which TCM either activates or inactivates can be identified by functional genomics and proteomics, thus the affected critical signaling pathway cascades leading to effective recovery of chronic diseases can be studied. Several TCM preparations have been available for the treatment of liver fibrosis and cirrhosis, even advanced liver cirrhosis that has been shown to be irreversible and has no US-FDA approved therapy. In the TCM-treated livers with fibrosis and cirrhosis, some critical molecules that are significantly involved in the recovery can be identified through functional genomics and proteomics studies. These molecules become novel targets for drug discovery and development and candidates for the development of gene therapy. Gene therapy developed based on this strategy for the treatment of advanced liver fibrosis and cirrhosis in animal models has obtained promising results. This process thus establishes a herbogenomics approach to understand mechanisms of action of TCM and to identify effective molecular targets for the discovery and development of novel therapeutics.",
+    "url": "https://doi.org/10.3181/0802-mr-47",
+    "authors": [
+      "Yin Kang"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Proteomics",
+      "Cirrhosis",
+      "Drug development"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2008-06-05",
+    "doi": "https://doi.org/10.3181/0802-mr-47",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2089495735",
+    "name": "Pharmacokinetic and Absolute Bioavailability Study of Total Panax Notoginsenoside, a Typical Multiple Constituent Traditional Chinese Medicine (TCM) in Rats",
+    "source": "openalex",
+    "abstract": "LC/ESI/MS method was employed for the pharmacokinetic evaluation of total panax notoginsenoside (TPNS) in rats. After oral or intravenous administration of TPNS at the dosage of 300.0 or 10.0 mg kg(-1) to rats respectively, panax notoginsenoside R1, ginsenoside Rg1, Rd, Re and Rb1 were simultaneous determined in rat plasma. Pharmacokinetic parameters and absolute bioavailability of panax notoginsenoside R1, ginsenoside Rg1, Rd, Re and Rb1 were obtained by the Drug And Statistics for windows (DAS) pharmacokinetic software. The pharmacokinetic parameters of all analytes were different form each other. T(1/2) were changed from 0.72 to 22.16 h and AUC were changed from 1.03 to 98.94 mg/l.h after oral or intravenous administration TPNS or Xuesaitong (TPNS) injection. The absolute bioavailability of R1, Rg1, Rd, Re and Rb1 were of 9.29%, 6.06%, 2.36%, 7.06% and 1.18%, respectively.",
+    "url": "https://doi.org/10.1248/bpb.30.847",
+    "authors": [
+      "Xiaoyu Li",
+      "Guangji Wang",
+      "Jianguo Sun",
+      "Haiping Hao",
+      "Yuqing Xiong",
+      "Bei Yan",
+      "Yuanting Zheng",
+      "Longsheng Sheng"
+    ],
+    "tags": [
+      "Pharmacokinetics",
+      "Bioavailability",
+      "Ginsenoside Rg1",
+      "Pharmacology",
+      "Chemistry"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2007-01-01",
+    "doi": "https://doi.org/10.1248/bpb.30.847",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W1968872051",
+    "name": "Traditional Chinese Medicine Tongue Inspection: An Examination of the Inter- and Intrapractitioner Reliability for Specific Tongue Characteristics",
+    "source": "openalex",
+    "abstract": "AIM: To examine the reliability of Traditional Chinese Medicine (TCM) tongue inspection by evaluation of inter- and intrapractitioner agreement levels for specific tongue characteristics, achieved by a group of TCM practitioners. METHOD: Ten (10) realistic tongue slides and a set of questionnaires were used to examine the agreement levels among 30 TCM practitioners in two data collection sessions. Statistical analysis involved descriptive statistics, predominantly percentage frequency agreement with the agreement level of > or =80% set as the criterion for an acceptable level of reliability. RESULTS: Overall, both inter- and intrapractitioner agreement levels were low. Only on 19 occasions (17.3%) in session 1 and 21 occasions (19.1%) in session 2 were interpractitioner (between a practitioner) agreement levels of > or =80% achieved. Moreover, virtually all (15 occasions in session 1 and 14 occasions in session 2) of these questions involved simple dichotomous response choices, and the practitioners achieved levels of > or =80% reliability in only 5% of occasions where more complex response choices were offered. In terms of intrapractitioner (within a practitioner) agreement, the highest agreement level was achieved for the dichotomous response choice questions on presence of coat and presence of crack, with the 29 and 20 practitioners achieving > or =80% intrapractitioner agreement, respectively. Only 2 subjects achieved higher than 80% intrapractitioner agreement level for all tongue slides on all questions, with the highest intrapractitioner agreement level being 88% followed by 82%. The findings showed that the TCM tongue inspection for specific characteristics examined was not a reliable diagnostic method, at least for the group of TCM practitioners involved in this study. CONCLUSIONS: The findings suggest that a major contribution to the low levels of inter- and intrapractitioner agreements stems from inadequate operational definitions of both the tongue characteristics studied and of the inspection regions of the tongue.",
+    "url": "https://doi.org/10.1089/acm.2007.0079",
+    "authors": [
+      "Minah Kim",
+      "Deirdre Cobbin",
+      "Chris Zaslawski"
+    ],
+    "tags": [
+      "Tongue",
+      "Medicine",
+      "Reliability (semiconductor)",
+      "Session (web analytics)",
+      "Descriptive statistics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2008-06-01",
+    "doi": "https://doi.org/10.1089/acm.2007.0079",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2896317910",
+    "name": "End-to-End syndrome differentiation of Yin deficiency and Yang deficiency in traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.cmpb.2018.10.011",
+    "authors": [
+      "Qinan Hu",
+      "Tong Yu",
+      "Jinghua Li",
+      "Qi Yu",
+      "Ling Zhu",
+      "Yueguo Gu"
+    ],
+    "tags": [
+      "Yin and yang",
+      "Traditional Chinese medicine",
+      "Yin deficiency",
+      "Medicine",
+      "Pathological"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2018-10-16",
+    "doi": "https://doi.org/10.1016/j.cmpb.2018.10.011",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W4388701641",
+    "name": "Harnessing the power of traditional Chinese medicine monomers and compound prescriptions to boost cancer immunotherapy",
+    "source": "openalex",
+    "abstract": "At present, cancer is the largest culprit that endangers human health. The current treatment options for cancer mainly include surgical resection, adjuvant radiotherapy and chemotherapy, but their therapeutic effects and long-term prognosis are unsatisfactory. Immunotherapy is an emerging therapy that has completely transformed the therapeutic landscape of advanced cancers, and has tried to occupy a place in the neoadjuvant therapy of resectable tumors. However, not all patients respond to immunotherapy due to the immunological and molecular features of the tumors. Traditional Chinese Medicine (TCM) provides a new perspective for cancer treatment and is considered to have the potential as promising anti-tumor drugs considering its immunoregulatory properties. This review concludes commonly used TCM monomers and compounds from the perspective of immune regulatory pathways, aiming to clearly introduce the basic mechanisms of TCM in boosting cancer immunotherapy and mechanisms of several common TCM. In addition, we also summarized closed and ongoing trials and presented prospects for future development. Due to the significant role of immunotherapy in the treatment of non-small cell lung cancer (NSCLC), TCM combined with immunotherapy should be emphasized in NSCLC.",
+    "url": "https://doi.org/10.3389/fimmu.2023.1277243",
+    "authors": [
+      "Keyan Miao",
+      "Weici Liu",
+      "Jingtong Xu",
+      "Zhengtao Qian",
+      "Qinglin Zhang"
+    ],
+    "tags": [
+      "Medicine",
+      "Immunotherapy",
+      "Traditional Chinese medicine",
+      "Cancer Medicine",
+      "Cancer"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2023-11-15",
+    "doi": "https://doi.org/10.3389/fimmu.2023.1277243",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2092704248",
+    "name": "Anti-acetylcholinesterase activities of traditional Chinese medicine for treating Alzheimer's disease",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.cbi.2008.05.030",
+    "authors": [
+      "Haidong Lin",
+      "Michelle T. Ho",
+      "Lesley S. K. Lau",
+      "Kelvin Wong",
+      "Pang‐Chui Shaw",
+      "David Chi‐Cheong Wan"
+    ],
+    "tags": [
+      "Acetylcholinesterase",
+      "Traditional medicine",
+      "Aché",
+      "Huperzine A",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2008-06-01",
+    "doi": "https://doi.org/10.1016/j.cbi.2008.05.030",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2015551931",
+    "name": "History and Experience: A Survey of Traditional Chinese Medicine Treatment for Alzheimer′s Disease",
+    "source": "openalex",
+    "abstract": "Traditional Chinese medicine (TCM) is practiced in the Chinese health care system for more than 2,000 years. In recent years, herbal medicines, which are used to treat Alzheimer's disease (AD) in China based on TCM or modern pharmacological theories have attracted considerable attention. In this paper, we discuss etiology and pathogenesis of AD, TCM therapy, and herbal extracts for the treatment of AD. There is evidence to suggest that TCM therapy may offer certain complementary cognitive benefits for the treatment of AD. Chinese herb may have advantages with multiple target regulation compared with the single-target antagonist in view of TCM.",
+    "url": "https://doi.org/10.1155/2014/642128",
+    "authors": [
+      "Ping Liu",
+      "Mingwang Kong",
+      "Shihe Yuan",
+      "Junfeng Liu",
+      "Ping Wang"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "Disease",
+      "Medicine",
+      "Traditional medicine",
+      "Alternative medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-01-01",
+    "doi": "https://doi.org/10.1155/2014/642128",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W1989837532",
+    "name": "Effects of comprehensive therapy based on traditional Chinese medicine patterns in stable chronic obstructive pulmonary disease: a four-center, open-label, randomized, controlled study",
+    "source": "openalex",
+    "abstract": "BACKGROUND: Traditional Chinese medicine (TCM) has been used to treat chronic obstructive pulmonary disease (COPD) for many years. This study aimed to evaluate the efficacy and safety of the comprehensive therapy based on the three common TCM patterns in stable COPD patients. METHODS: A four-center, open-label randomized controlled method was conducted. A total of 352 patients were divided into the trial group (n = 176, treated with conventional Western medicine and Bu-Fei Jian-Pi granules, Bu-Fei Yi-Shen granules, and Yi-Qi Zi-Shen granules based on the TCM patterns respectively) and the control group (n = 176, treated with conventional Western medicine). The frequency and duration of acute exacerbation, lung function, clinical symptoms, 6-minute walking distance (6MWD), dyspnea scale and quality of life were observed during a 6-month treatment period and at a further 12-month follow-up. RESULTS: A total of 306 patients completed the study fully. The full analysis set (FAS) population was 350 and the per-protocol analysis set (PPS) population was 306. After the 6-month treatment and 12-month follow-up, there were significant differences between the trial and control group in the following: frequency of acute exacerbation (FAS: P = 0.000; PPS: P = 0.000); duration of acute exacerbation (FAS: P = 0.000; PPS: P = 0.001); FEV1 (FAS: P = 0.007; PPS: P = 0.008); symptoms (FAS: P = 0.001; PPS: P = 0.001); 6MWD (FAS: P = 0.045; PPS: P = 0.042); dyspnea scale (FAS: P = 0.002; PPS: P = 0.004); and physical domain (FAS: P = 0.000; PPS: P = 0.000), psychological domain (FAS: P = 0.008; PPS: P = 0.011), social domain (FAS: P = 0.001; PPS: P = 0.000) and environment domain (FAS: P = 0.015; PPS: P = 0.009) of the WHOQOL-BREF questionnaire. There were no differences between the trial and control group in FVC, FEV1% and adverse events. CONCLUSIONS: Based on the TCM patterns, Bu-Fei Jian-Pi granules, Bu-Fei Yi-Shen granules and Yi-Qi Zi-Shen granules have beneficial effects on measured outcomes in stable COPD patients over the 6-month treatment and 12-month follow-up, with no relevant between-group differences in adverse events. TRIAL REGISTRATION: This trial was registered at Chinese Clinical Trial Register Center, ChiCTR-TRC-11001406.",
+    "url": "https://doi.org/10.1186/1472-6882-12-197",
+    "authors": [
+      "Suyun Li",
+      "Jiansheng Li",
+      "Minghang Wang",
+      "Yang Xie",
+      "Xueqing Yu",
+      "Zikai Sun",
+      "Li-Jun Ma",
+      "Wei Zhang",
+      "Hailong Zhang",
+      "Fan Cao",
+      "Ying-chao Pan"
+    ],
+    "tags": [
+      "Medicine",
+      "Exacerbation",
+      "COPD",
+      "Internal medicine",
+      "Traditional Chinese medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2012-10-29",
+    "doi": "https://doi.org/10.1186/1472-6882-12-197",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2163285210",
+    "name": "Integrative medicine — Traditional Chinese medicine, A model ?",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s11655-011-0602-9",
+    "authors": [
+      "Nicola Robinson"
+    ],
+    "tags": [
+      "Plea",
+      "Integrative medicine",
+      "China",
+      "Traditional Chinese medicine",
+      "Action (physics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2011-01-01",
+    "doi": "https://doi.org/10.1007/s11655-011-0602-9",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2115547357",
+    "name": "Recent Advance in Applications of Proteomics Technologies on Traditional Chinese Medicine Research",
+    "source": "openalex",
+    "abstract": "Proteomics technology, a major component of system biology, has gained comprehensive attention in the area of medical diagnosis, drug development, and mechanism research. On the holistic and systemic theory, proteomics has a convergence with traditional Chinese medicine (TCM). In this review, we discussed the applications of proteomic technologies in diseases-TCM syndrome combination researches. We also introduced the proteomic studies on the in vivo and in vitro effects and underlying mechanisms of TCM treatments using Chinese herbal medicine (CHM), Chinese herbal formula (CHF), and acupuncture. Furthermore, the combined studies of proteomics with other \"-omics\" technologies in TCM were also discussed. In summary, this report presents an overview of the recent advances in the application of proteomic technologies in TCM studies and sheds a light on the future global and further research on TCM.",
+    "url": "https://doi.org/10.1155/2015/983139",
+    "authors": [
+      "Qing Ji",
+      "Fangshi Zhu",
+      "Xuan Liu",
+      "Qi Li",
+      "Shibing Su"
+    ],
+    "tags": [
+      "Proteomics",
+      "Traditional Chinese medicine",
+      "Medical research",
+      "Medicine",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2015-01-01",
+    "doi": "https://doi.org/10.1155/2015/983139",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2027801736",
+    "name": "Traditional Chinese medicine in the treatment of acute respiratory tract infections",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.rmed.2008.03.015",
+    "authors": [
+      "Taixiang Wu",
+      "Xunzhe Yang",
+      "Xiaoxi Zeng",
+      "Phillippa Poole"
+    ],
+    "tags": [
+      "Medicine",
+      "Intensive care medicine",
+      "Respiratory tract infections",
+      "Clinical trial",
+      "Systematic review"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2008-07-01",
+    "doi": "https://doi.org/10.1016/j.rmed.2008.03.015",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2999542722",
+    "name": "Compounds of traditional Chinese medicine and neuropathic pain",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s1875-5364(20)30002-9",
+    "authors": [
+      "Shunhua Li",
+      "Lin Li",
+      "Runan Yang",
+      "Shangdong Liang"
+    ],
+    "tags": [
+      "Neuropathic pain",
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Pharmacology",
+      "Alternative medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2020-01-01",
+    "doi": "https://doi.org/10.1016/s1875-5364(20)30002-9",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2563131480",
+    "name": "Screening of enzyme inhibitors from traditional Chinese medicine by magnetic immobilized α-glucosidase coupled with capillary electrophoresis",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.talanta.2016.12.028",
+    "authors": [
+      "Dongmei Liu",
+      "Juan Chen",
+      "Yan‐Ping Shi"
+    ],
+    "tags": [
+      "Chemistry",
+      "Glutaraldehyde",
+      "Capillary electrophoresis",
+      "Fourier transform infrared spectroscopy",
+      "Immobilized enzyme"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2016-12-12",
+    "doi": "https://doi.org/10.1016/j.talanta.2016.12.028",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W1540390830",
+    "name": "Chinese Drugs of Plant Origin: Chemistry, Pharmacology, and Use in Traditional and Modern Medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://openalex.org/W1540390830",
+    "authors": [
+      "Weici Tang",
+      "Gerhard Eisenbrand"
+    ],
+    "tags": [
+      "Pharmacology",
+      "Traditional medicine",
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Chemistry"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "1992-04-01",
+    "doi": "",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W3172239270",
+    "name": "The interpretation of human body in traditional Chinese medicine and its influence on the characteristics of TCM theory",
+    "source": "openalex",
+    "abstract": "Traditional Chinese medicine (TCM) has a long history of serving the Chinese people's health since its birth, including playing an important role in treating and preventing COVID-19 in 2020. The fact that TCM has been used in China for thousands of years shows the value and reason why it must exist. Although TCM has been or is being questioned, there is no doubt about its importance in terms of efficacy. This article focuses on how TCM understands the human body in comparison with anatomy knowledge in western medicine and discusses the development and advances of TCM in terms of the body view and the theory innovation. The purpose is to let foreign scholars get better understanding of TCM from this perspective.",
+    "url": "https://doi.org/10.1002/ar.24643",
+    "authors": [
+      "Shan Liu",
+      "Jiajie Zhu",
+      "Ji‐Cheng Li"
+    ],
+    "tags": [
+      "Traditional Chinese medicine",
+      "China",
+      "Interpretation (philosophy)",
+      "Value (mathematics)",
+      "Human body"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2021-06-11",
+    "doi": "https://doi.org/10.1002/ar.24643",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2256536926",
+    "name": "Synergy in traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s1470-2045(15)00557-4",
+    "authors": [
+      "Tianhan Xue"
+    ],
+    "tags": [
+      "China",
+      "Traditional Chinese medicine",
+      "Traditional medicine",
+      "Alternative medicine",
+      "Scopus"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2016-02-01",
+    "doi": "https://doi.org/10.1016/s1470-2045(15)00557-4",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W3113883099",
+    "name": "Novel Opportunity to Reverse Antibiotic Resistance: To Explore Traditional Chinese Medicine With Potential Activity Against Antibiotics-Resistance Bacteria",
+    "source": "openalex",
+    "abstract": "Antibiotic resistance is becoming significantly prominent and urgent in clinical practice with the increasing and wide application of antibacterial drugs. However, developing and synthesizing new antimicrobial drugs is costly and time-consuming. Recently, researchers shifted their sights to traditional Chinese medicine (TCM). Here, we summarized the inhibitory mechanism of TCM herbs and their active ingredients on bacteria, discussed the regulatory mechanism of TCM on antibiotic-resistant bacteria, and revealed preclinical results of TCM herbs and their active components against antibiotic-resistant bacteria in mouse models. Those data suggest that TCM herbs and their effective constituents exhibit potential blockage ability on antibiotic-resistant bacteria, providing novel therapeutic ideas for reversing antibiotic resistance.",
+    "url": "https://doi.org/10.3389/fmicb.2020.610070",
+    "authors": [
+      "Ting Su",
+      "Ye Qiu",
+      "Xuesi Hua",
+      "Ye Bi",
+      "Haoming Luo",
+      "Da Liu",
+      "Peng Qu",
+      "Zhidong Qiu"
+    ],
+    "tags": [
+      "Antibiotics",
+      "Antibiotic resistance",
+      "Bacteria",
+      "Antimicrobial",
+      "Traditional Chinese medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2020-12-22",
+    "doi": "https://doi.org/10.3389/fmicb.2020.610070",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2789793216",
+    "name": "The method of quality marker research and quality evaluation of traditional Chinese medicine based on drug properties and effect characteristics",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.phymed.2018.02.009",
+    "authors": [
+      "Tiejun Zhang",
+      "Gang Bai",
+      "Yanqi Han",
+      "Jun Xu",
+      "Suxiao Gong",
+      "Yazhuo Li",
+      "Hongbing Zhang",
+      "Changxiao Liu"
+    ],
+    "tags": [
+      "Quality (philosophy)",
+      "Traditional Chinese medicine",
+      "Traceability",
+      "Risk analysis (engineering)",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2018-03-01",
+    "doi": "https://doi.org/10.1016/j.phymed.2018.02.009",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2018360927",
+    "name": "Switching between Traditional Chinese Medicine and Viagra: Cosmopolitanism and Medical Pluralism Today1",
+    "source": "openalex",
+    "abstract": "Based on the fieldwork in China in the Viagra era, this paper examines the reluctance to embrace Viagra as well as the willingness to switch back and forth between taking Viagra and taking Chinese medicine among impotence patients. Through the notion of \"switching\" as a framework, this paper discovers the conflict between Viagra and herbs not only as two types of medicine but also as representing two types of economy of potency and ethics of sexuality, and the difficulty in replacing the latter by the former. Nonetheless, switching back and forth so as to absorb them together in the body creates possibilities to cross the line between the Viagra regime revolving around desire and the regime of Chinese medicine revolving around the cultivation of life. Out of switching is the possibility of hybridization of Chinese medicine and biomedicine as well as a hybridized economy of sexual potency and ethics of sexuality.",
+    "url": "https://doi.org/10.1080/01459740601184448",
+    "authors": [
+      "Everett Yuehong Zhang"
+    ],
+    "tags": [
+      "Pluralism (philosophy)",
+      "Human sexuality",
+      "China",
+      "Biomedicine",
+      "Medical ethics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2007-02-13",
+    "doi": "https://doi.org/10.1080/01459740601184448",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W3204780994",
+    "name": "An introduction to traditional Chinese medicine, including acupuncture",
+    "source": "openalex",
+    "abstract": "As an independent medical system, the scientific value behind traditional Chinese medicine (TCM) is gaining appreciation because of growing evidence about mechanisms and efficacy. The aim of this special issue is to introduce this ancient medicine to readers through the compiled research papers focusing on TCM. The papers in this issue cover many research fields such as TCM theory, traditional Chinese prescription, syndrome biomarkers, and acupuncture. In particular for acupuncture, the focus on the history of acupuncture, the importance of precise acupoint positioning, the effect of Fu's subcutaneous needling among patients with shoulder pain, and the effect of electroacupuncture on senile plaque and insulin signaling pathway in the olfactory bulb of transgenic mice. By combining, the papers in this issue and TCM papers published elsewhere provide scientific evidence to improve understanding this ancient Oriental form of medicine.",
+    "url": "https://doi.org/10.1002/ar.24782",
+    "authors": [
+      "Shan‐Qiang Zhang",
+      "Ji‐Cheng Li"
+    ],
+    "tags": [
+      "Acupuncture",
+      "Dry needling",
+      "Traditional Chinese medicine",
+      "Medicine",
+      "Electroacupuncture"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2021-10-09",
+    "doi": "https://doi.org/10.1002/ar.24782",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2043250724",
+    "name": "Treatment of Asthma and Food Allergy With Herbal Interventions From Traditional Chinese Medicine",
+    "source": "openalex",
+    "abstract": "Prevalence of asthma and allergy has increased over the past 2-3 decades in Westernized countries. Despite increased understanding of the pathogenesis of asthma and allergic diseases, control of severe asthma is still difficult. Asthma is also associated with a high prevalence of anxiety, particularly in adolescents. There is no effective treatment for food allergy. Food allergy is often associated with severe and recalcitrant eczema. Novel approaches for treatment of asthma and food allergy and comorbid conditions are urgently needed. Traditional Chinese medicine, used in Asia for centuries, is beginning to play a role in Western healthcare. There is increasing scientific evidence supporting the use of traditional Chinese medicine for asthma treatment. Since 2005, several controlled clinical studies of \"antiasthma\" herbal remedies have been published. Among the herbal medicines, antiasthma herbal medicine intervention is the only antiasthma traditional Chinese medicine product that is a Food and Drug Administration investigational new drug that has entered clinical trials in the United States. Research into the effects and mechanisms of action of antiasthma herbal medicine intervention in animal models is actively being pursued. Research on traditional Chinese medicine herbal medicines for treating food allergy is rare. The herbal intervention Food Allergy Herbal Formula-2 is the only Food and Drug Administration botanical investigational new drug under investigation as a multiple food allergy therapy. This review article discusses promising traditional Chinese medicine interventions for asthma, food allergy, and comorbid conditions, and explores their possible mechanisms of action.",
+    "url": "https://doi.org/10.1002/msj.20294",
+    "authors": [
+      "Xiu‐Min Li"
+    ],
+    "tags": [
+      "Medicine",
+      "Asthma",
+      "Food allergy",
+      "Traditional Chinese medicine",
+      "Psychological intervention"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2011-09-01",
+    "doi": "https://doi.org/10.1002/msj.20294",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W4220989260",
+    "name": "Traditional Chinese medicine against COVID-19: Role of the gut microbiota",
+    "source": "openalex",
+    "abstract": "Coronavirus disease 2019 (COVID-19) is an acute respiratory infectious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), and it has become a public health concern worldwide. In addition to respiratory symptoms, some COVID‑19 patients also show various gastrointestinal symptoms and even consider gastrointestinal symptoms to be the first manifestation. A large amount of evidence has shown that SARS-CoV-2 infection could disrupt the gut microbiota balance, and disorders of the gut microbiota could aggravate the condition of COVID-19 patients. Therefore, maintaining the gut microbiota balance is expected to become a potential new therapeutic target for treating COVID-19. Traditional Chinese medicine (TCM) has significant effects in all stages of the prevention and treatment of COVID-19. It can adjust the gut microbiota and is an ideal intestinal microecological regulator. This review summarizes the advantages and clinical efficacy of TCM in the treatment of COVID-19 and expounds on the relationship between TCM and the gut microbiota, the relationship between COVID-19 and the gut microbiota, the mechanism of gut microbiota disorders induced by SARS-CoV-2, the relationship between cytokine storms and the gut microbiota, and the role and mechanism of TCM in preventing and treating COVID-19 by regulating the gut microbiota to provide new research ideas for TCM in the prevention and treatment of COVID-19.",
+    "url": "https://doi.org/10.1016/j.biopha.2022.112787",
+    "authors": [
+      "Zhihua Yang",
+      "Yangxi Liu",
+      "Lin Wang",
+      "Shanshan Lin",
+      "Xiangdong Dai",
+      "Haifeng Yan",
+      "Zhao Ge",
+      "Qiuan Ren",
+      "Hui Wang",
+      "Feng Zhu",
+      "Shu‐Ping Wang"
+    ],
+    "tags": [
+      "Gut flora",
+      "Disease",
+      "Medicine",
+      "Immunology",
+      "Coronavirus"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2022-03-07",
+    "doi": "https://doi.org/10.1016/j.biopha.2022.112787",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2206879497",
+    "name": "Traditional Chinese Medicine treatment as maintenance therapy in advanced non-small-cell lung cancer: A randomized controlled trial",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.ctim.2015.12.006",
+    "authors": [
+      "Yi Jiang",
+      "Lingshuang Liu",
+      "Liping Shen",
+      "Zhifen Han",
+      "Hong Jian",
+      "Jiaxiang Liu",
+      "Ling Xu",
+      "Hegen Li",
+      "Jianhui Tian",
+      "Zhu-Jun Mao"
+    ],
+    "tags": [
+      "Medicine",
+      "Internal medicine",
+      "Lung cancer",
+      "Randomized controlled trial",
+      "Discontinuation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2015-12-17",
+    "doi": "https://doi.org/10.1016/j.ctim.2015.12.006",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2020394336",
+    "name": "Mechanisms of “kidney governing bones” theory in traditional Chinese medicine",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s11684-014-0362-y",
+    "authors": [
+      "Dahong Ju",
+      "Meijie Liu",
+      "Hongyan Zhao",
+      "Jun Wang"
+    ],
+    "tags": [
+      "Kidney",
+      "Medicine",
+      "Osteoporosis",
+      "Mechanism (biology)",
+      "Traditional Chinese medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2014-09-01",
+    "doi": "https://doi.org/10.1007/s11684-014-0362-y",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2031473225",
+    "name": "Traditional Chinese medicine research in the post-genomic era: Good practice, priorities, challenges and opportunities",
+    "source": "openalex",
+    "abstract": "BACKGROUND AND AIMS: GP-TCM is the 1st EU-funded Coordination Action consortium dedicated to traditional Chinese medicine (TCM) research. This paper aims to summarise the objectives, structure and activities of the consortium and introduces the position of the consortium regarding good practice, priorities, challenges and opportunities in TCM research. Serving as the introductory paper for the GP-TCM Journal of Ethnopharmacology special issue, this paper describes the roadmap of this special issue and reports how the main outputs of the ten GP-TCM work packages are integrated, and have led to consortium-wide conclusions. MATERIALS AND METHODS: Literature studies, opinion polls and discussions among consortium members and stakeholders. RESULTS: By January 2012, through 3 years of team building, the GP-TCM consortium had grown into a large collaborative network involving ∼200 scientists from 24 countries and 107 institutions. Consortium members had worked closely to address good practice issues related to various aspects of Chinese herbal medicine (CHM) and acupuncture research, the focus of this Journal of Ethnopharmacology special issue, leading to state-of-the-art reports, guidelines and consensus on the application of omics technologies in TCM research. In addition, through an online survey open to GP-TCM members and non-members, we polled opinions on grand priorities, challenges and opportunities in TCM research. Based on the poll, although consortium members and non-members had diverse opinions on the major challenges in the field, both groups agreed that high-quality efficacy/effectiveness and mechanistic studies are grand priorities and that the TCM legacy in general and its management of chronic diseases in particular represent grand opportunities. Consortium members cast their votes of confidence in omics and systems biology approaches to TCM research and believed that quality and pharmacovigilance of TCM products are not only grand priorities, but also grand challenges. Non-members, however, gave priority to integrative medicine, concerned on the impact of regulation of TCM practitioners and emphasised intersectoral collaborations in funding TCM research, especially clinical trials. CONCLUSIONS: The GP-TCM consortium made great efforts to address some fundamental issues in TCM research, including developing guidelines, as well as identifying priorities, challenges and opportunities. These consortium guidelines and consensus will need dissemination, validation and further development through continued interregional, interdisciplinary and intersectoral collaborations. To promote this, a new consortium, known as the GP-TCM Research Association, is being established to succeed the 3-year fixed term FP7 GP-TCM consortium and will be officially launched at the Final GP-TCM Congress in Leiden, the Netherlands, in April 2012.",
+    "url": "https://doi.org/10.1016/j.jep.2012.02.028",
+    "authors": [
+      "Halil Uzuner",
+      "Rudolf Bauer",
+      "Tai-Ping Fan",
+      "De‐an Guo",
+      "Alberto Carlos Pires Dias",
+      "Hani El‐Nezami",
+      "Thomas Efferth",
+      "Elizabeth M. Williamson",
+      "Michael Heinrich",
+      "Nicola Robinson",
+      "Peter J. Hylands",
+      "Bruce M. Hendry",
+      "Yung‐Chi Cheng",
+      "Qihe Xu"
+    ],
+    "tags": [
+      "Medicine",
+      "Integrative medicine",
+      "Alternative medicine",
+      "Traditional Chinese medicine",
+      "Traditional medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2012-02-23",
+    "doi": "https://doi.org/10.1016/j.jep.2012.02.028",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2415608657",
+    "name": "Serious cutaneous adverse reactions to traditional Chinese medicines.",
+    "source": "openalex",
+    "abstract": "INTRODUCTION: Serious cutaneous adverse reactions to traditional medicines are not well described or reported in the literature, despite growing use of these medicines. METHODS: This is a case series of four patients who were found to have various serious cutaneous adverse reactions to the traditional Chinese medicines that they had taken. RESULTS: In this series, there was a patient with toxic epidermal necrolysis from traditional Chinese medicine, another with acute generalised exanthematous pustulosis from piroxicam and salicylate-contaminated traditional Chinese medicine, and two patients with drug hypersensitivity syndrome--one from traditional Chinese medicine and the other from phenylbutazone-adulterated traditional Chinese medicine. CONCLUSION: The series illustrates that serious cutaneous adverse reactions do occur with traditional medicines and emphasises the importance of being aware of such reactions.",
+    "url": "https://openalex.org/W2415608657",
+    "authors": [
+      "Yen Loo Lim",
+      "T Thirumoorthy"
+    ],
+    "tags": [
+      "Medicine",
+      "Toxic epidermal necrolysis",
+      "Traditional Chinese medicine",
+      "Traditional medicine",
+      "Dermatology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2005-12-01",
+    "doi": "",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2053356055",
+    "name": "Identification and determination of the major constituents in traditional Chinese medicine Si-Wu-Tang by HPLC coupled with DAD and ESI–MS",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0731-7085(03)00650-2",
+    "authors": [
+      "Haijiang Zhang",
+      "Peng Shen",
+      "Yiyu Cheng"
+    ],
+    "tags": [
+      "Chemistry",
+      "Repeatability",
+      "Chromatography",
+      "High-performance liquid chromatography",
+      "Paeonia lactiflora"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2003-12-24",
+    "doi": "https://doi.org/10.1016/s0731-7085(03)00650-2",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W2014217057",
+    "name": "Residues of 18 organochlorine pesticides in 30 traditional Chinese medicines",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.chemosphere.2007.11.014",
+    "authors": [
+      "Jian Xue",
+      "Lili Hao",
+      "Fei Peng"
+    ],
+    "tags": [
+      "Heptachlor",
+      "Hexachlorobenzene",
+      "Aldrin",
+      "Pesticide",
+      "Chemistry"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2008-01-07",
+    "doi": "https://doi.org/10.1016/j.chemosphere.2007.11.014",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
+  },
+  {
+    "id": "oa:W3175143880",
+    "name": "The Anti-Obesity Effect of Traditional Chinese Medicine on Lipid Metabolism",
+    "source": "openalex",
+    "abstract": "With the improvement of living conditions and the popularity of unhealthy eating and living habits, obesity is becoming a global epidemic. Obesity is now recognized as a disease that not only increases the risk of metabolic diseases such as type 2 diabetes (T2D), non-alcoholic fatty liver disease (NAFLD), cardiovascular disease (CVD), and cancer but also negatively affects longevity and the quality of life. The traditional Chinese medicines (TCMs) are highly enriched in bioactive compounds and have been used for the treatment of obesity and obesity-related metabolic diseases over a long period of time. In this review, we selected the most commonly used anti-obesity or anti-hyperlipidemia TCMs and, where known, their major bioactive compounds. We then summarized their multi-target molecular mechanisms, specifically focusing on lipid metabolism, including the modulation of lipid absorption, reduction of lipid synthesis, and increase of lipid decomposition and lipid transportation, as well as the regulation of appetite. This review produces a current and comprehensive understanding of integrative and systematic mechanisms for the use of TCMs for anti-obesity. We also advocate taking advantage of TCMs as another therapy for interventions on obesity-related diseases, as well as stressing the fact that more is needed to be done, scientifically, to determine the active compounds and modes of action of the TCMs.",
+    "url": "https://doi.org/10.3389/fphar.2021.696603",
+    "authors": [
+      "Qijing Fan",
+      "Furong Xu",
+      "Bin Liang",
+      "Xiaoju Zou"
+    ],
+    "tags": [
+      "Obesity",
+      "Lipid metabolism",
+      "Medicine",
+      "Traditional Chinese medicine",
+      "Disease"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "tcm-tools"
+    ],
+    "publishedDate": "2021-06-21",
+    "doi": "https://doi.org/10.3389/fphar.2021.696603",
+    "addedAt": "2026-08-31T14:44:57.442Z",
+    "updatedAt": "2026-08-31T14:44:57.442Z"
   }
 ]

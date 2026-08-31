@@ -1,232 +1,232 @@
 {
   "pipeline": "data-backfill-v2",
-  "timestamp": "2026-08-31T06:47:40.401Z",
+  "timestamp": "2026-08-31T14:49:29.934Z",
   "dryRun": false,
   "limit": 800,
   "perPage": 200,
   "results": [
     {
       "site": "quantum-computing",
-      "fetched": 16000,
-      "added": 7516,
-      "total": 9876,
+      "fetched": 3500,
+      "added": 124,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "alien-minerals",
-      "fetched": 14754,
-      "added": 7269,
-      "total": 9893,
+      "fetched": 2408,
+      "added": 107,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "biocomputing",
-      "fetched": 9100,
-      "added": 5332,
-      "total": 9881,
+      "fetched": 3500,
+      "added": 119,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "bionic-ai",
-      "fetched": 19248,
-      "added": 7888,
-      "total": 9952,
+      "fetched": 3200,
+      "added": 48,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "deep-sea-tech",
-      "fetched": 17805,
-      "added": 7823,
-      "total": 9940,
+      "fetched": 2882,
+      "added": 60,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "brain-science",
-      "fetched": 14100,
-      "added": 7504,
-      "total": 9632,
+      "fetched": 3500,
+      "added": 368,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "life-science",
-      "fetched": 16600,
-      "added": 8028,
-      "total": 9558,
+      "fetched": 3300,
+      "added": 442,
+      "total": 9998,
       "dryRun": false
     },
     {
       "site": "new-energy",
-      "fetched": 15676,
-      "added": 7390,
-      "total": 9849,
+      "fetched": 3300,
+      "added": 151,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "nuclear-energy",
-      "fetched": 20992,
-      "added": 7772,
-      "total": 9962,
+      "fetched": 2679,
+      "added": 38,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "robot-parts",
-      "fetched": 31406,
-      "added": 8547,
-      "total": 9903,
+      "fetched": 2030,
+      "added": 97,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "tcm-tools",
-      "fetched": 21246,
-      "added": 7747,
-      "total": 9889,
+      "fetched": 2700,
+      "added": 111,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "genetech-tools",
-      "fetched": 16500,
-      "added": 8430,
-      "total": 9825,
+      "fetched": 2700,
+      "added": 175,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "exo-science",
-      "fetched": 30455,
-      "added": 7814,
-      "total": 9817,
+      "fetched": 2293,
+      "added": 183,
+      "total": 9987,
       "dryRun": false
     },
     {
       "site": "agent-ecosystem",
-      "fetched": 23983,
-      "added": 7621,
-      "total": 9905,
+      "fetched": 2900,
+      "added": 95,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "embodied-ai",
-      "fetched": 24967,
-      "added": 7124,
-      "total": 9860,
+      "fetched": 2336,
+      "added": 140,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "synbio-manufacturing",
-      "fetched": 22979,
-      "added": 7398,
-      "total": 9838,
+      "fetched": 2650,
+      "added": 162,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "semiconductor",
-      "fetched": 28341,
-      "added": 7738,
-      "total": 9655,
+      "fetched": 2470,
+      "added": 345,
+      "total": 9999,
       "dryRun": false
     },
     {
       "site": "ai4science",
-      "fetched": 21304,
-      "added": 7793,
-      "total": 9900,
+      "fetched": 2700,
+      "added": 100,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "low-altitude",
-      "fetched": 24860,
-      "added": 8072,
-      "total": 9795,
+      "fetched": 1406,
+      "added": 205,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "sat-6g",
-      "fetched": 28064,
-      "added": 8614,
-      "total": 9761,
+      "fetched": 2064,
+      "added": 239,
+      "total": 9998,
       "dryRun": false
     },
     {
       "site": "spatial-computing",
-      "fetched": 23406,
-      "added": 8756,
-      "total": 9870,
+      "fetched": 2700,
+      "added": 130,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "privacy-computing",
-      "fetched": 29489,
-      "added": 8702,
-      "total": 9861,
+      "fetched": 2700,
+      "added": 139,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "ai-safety",
-      "fetched": 26924,
+      "fetched": 19400,
       "added": 10000,
-      "total": 9875,
+      "total": 9881,
       "guard_deny": true,
       "guard_reason": "no rule matched, default: deny",
       "dryRun": false
     },
     {
       "site": "quantum-materials",
-      "fetched": 29281,
+      "fetched": 16172,
       "added": 10000,
-      "total": 9790,
+      "total": 9898,
       "guard_deny": true,
       "guard_reason": "no rule matched, default: deny",
       "dryRun": false
     },
     {
       "site": "carbon-neutral",
-      "fetched": 34353,
+      "fetched": 32232,
       "added": 10000,
-      "total": 9831,
+      "total": 9805,
       "guard_deny": true,
       "guard_reason": "no rule matched, default: deny",
       "dryRun": false
     },
     {
       "site": "digital-twin",
-      "fetched": 38804,
+      "fetched": 31442,
       "added": 10000,
-      "total": 9854,
+      "total": 9801,
       "guard_deny": true,
       "guard_reason": "no rule matched, default: deny",
       "dryRun": false
     },
     {
       "site": "biomed-ai",
-      "fetched": 21500,
+      "fetched": 18800,
       "added": 10000,
-      "total": 9897,
+      "total": 9945,
       "guard_deny": true,
       "guard_reason": "no rule matched, default: deny",
       "dryRun": false
     },
     {
       "site": "edge-ai",
-      "fetched": 29186,
+      "fetched": 19830,
       "added": 10000,
-      "total": 9838,
+      "total": 9792,
       "guard_deny": true,
       "guard_reason": "no rule matched, default: deny",
       "dryRun": false
     },
     {
       "site": "neuromorphic",
-      "fetched": 32489,
+      "fetched": 30138,
       "added": 10000,
-      "total": 9871,
+      "total": 9902,
       "guard_deny": true,
       "guard_reason": "no rule matched, default: deny",
       "dryRun": false
     },
     {
       "site": "agritech",
-      "fetched": 23721,
+      "fetched": 23115,
       "added": 10000,
-      "total": 9740,
+      "total": 9736,
       "guard_deny": true,
       "guard_reason": "no rule matched, default: deny",
       "dryRun": false

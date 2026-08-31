@@ -71431,7 +71431,7 @@
     "publishedDate": "2007-07-20",
     "doi": "10.7551/mitpress/7493.003.0008",
     "addedAt": "2026-08-31T06:31:11.975Z",
-    "updatedAt": "2026-08-31T06:31:36.970Z"
+    "updatedAt": "2026-08-31T14:44:20.145Z"
   },
   {
     "id": "doi:10.1007/978-3-030-72254-8_13",
@@ -75029,7 +75029,7 @@
     "publishedDate": "2021-07-12",
     "doi": "https://doi.org/10.3390/s21144754",
     "addedAt": "2026-08-31T06:31:12.832Z",
-    "updatedAt": "2026-08-31T06:31:42.055Z"
+    "updatedAt": "2026-08-31T14:44:20.145Z"
   },
   {
     "id": "oa:W2945032471",
@@ -122506,7 +122506,7 @@
     "publishedDate": "1996-09-01",
     "doi": "https://doi.org/10.1007/bf02520010",
     "addedAt": "2026-08-31T06:31:15.579Z",
-    "updatedAt": "2026-08-31T06:31:15.579Z"
+    "updatedAt": "2026-08-31T14:44:20.145Z"
   },
   {
     "id": "oa:W2742638082",
@@ -122591,7 +122591,7 @@
     "publishedDate": "2020-01-01",
     "doi": "https://doi.org/10.1109/access.2020.2994226",
     "addedAt": "2026-08-31T06:31:15.579Z",
-    "updatedAt": "2026-08-31T06:31:15.579Z"
+    "updatedAt": "2026-08-31T14:44:20.145Z"
   },
   {
     "id": "oa:W3011418366",
@@ -122617,7 +122617,7 @@
     "publishedDate": "2020-01-01",
     "doi": "https://doi.org/10.1016/b978-0-444-63934-9.00009-3",
     "addedAt": "2026-08-31T06:31:15.579Z",
-    "updatedAt": "2026-08-31T06:31:36.969Z"
+    "updatedAt": "2026-08-31T14:44:20.145Z"
   },
   {
     "id": "doi:10.1109/iccas.2010.5669841",
@@ -186172,7 +186172,7 @@
     "publishedDate": "2023-01-12",
     "doi": "https://doi.org/10.3390/brainsci13010134",
     "addedAt": "2026-08-31T06:31:30.774Z",
-    "updatedAt": "2026-08-31T06:31:30.774Z"
+    "updatedAt": "2026-08-31T14:44:20.145Z"
   },
   {
     "id": "oa:W1641498739",
@@ -186291,7 +186291,7 @@
     "publishedDate": "2021-10-10",
     "doi": "https://doi.org/10.1007/978-981-16-4035-3_3",
     "addedAt": "2026-08-31T06:31:30.774Z",
-    "updatedAt": "2026-08-31T06:31:30.774Z"
+    "updatedAt": "2026-08-31T14:44:20.145Z"
   },
   {
     "id": "oa:W3127807610",
@@ -232623,7 +232623,7 @@
     "publishedDate": "2013-09-04",
     "doi": "https://doi.org/10.1016/j.ijpsycho.2013.08.011",
     "addedAt": "2026-08-31T06:31:36.969Z",
-    "updatedAt": "2026-08-31T06:31:36.969Z"
+    "updatedAt": "2026-08-31T14:44:20.145Z"
   },
   {
     "id": "oa:W2898826767",
@@ -232651,7 +232651,7 @@
     "publishedDate": "2018-10-01",
     "doi": "https://doi.org/10.1016/j.bica.2018.10.005",
     "addedAt": "2026-08-31T06:31:36.969Z",
-    "updatedAt": "2026-08-31T06:31:36.969Z"
+    "updatedAt": "2026-08-31T14:44:20.145Z"
   },
   {
     "id": "oa:W2000927833",
@@ -235520,7 +235520,7 @@
     "publishedDate": "2013-09-04",
     "doi": "https://doi.org/10.1371/journal.pone.0074583",
     "addedAt": "2026-08-31T06:31:36.969Z",
-    "updatedAt": "2026-08-31T06:31:36.969Z"
+    "updatedAt": "2026-08-31T14:44:20.145Z"
   },
   {
     "id": "oa:W3095278499",
@@ -245389,5 +245389,1372 @@
     "doi": "https://doi.org/10.3389/fnbot.2025.1582995",
     "addedAt": "2026-08-31T06:31:42.055Z",
     "updatedAt": "2026-08-31T06:31:42.055Z"
+  },
+  {
+    "id": "oa:W2094397982",
+    "name": "Activation of a mobile robot through a brain computer interface",
+    "source": "openalex",
+    "abstract": "This work presents the development of a brain computer interface as an alternative communication channel to be used in Robotics. It encompasses the implementation of an electroencephalograph (EEG), as well as the development of all computational methods and necessary techniques to identify mental activities. The developed brain computer interface (BCI) is applied to activate the movements of a 120lb mobile robot, associating four different mental activities to robot commands. The interface is based on EEG signal analyses, which extract features that can be classified as specific mental activities. First, a signal preprocessing is performed from the EEG data, filtering noise, using a spatial filter to increase the scalp signal resolution, and extracting relevant features. Then, different classifier models are proposed, evaluated and compared. At last, two implementations of the developed classifiers are proposed to improve the rate of successful commands to the mobile robot. In one of the implementations, a 91% average hit rate is obtained, with only 1.25% wrong commands after 400 attempts to control the mobile robot.",
+    "url": "https://doi.org/10.1109/robot.2010.5509150",
+    "authors": [
+      "Alexandre Barbosa",
+      "David Achanccaray",
+      "Marco Antônio Meggiolaro"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Mobile robot",
+      "Interface (matter)",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2010-05-01",
+    "doi": "https://doi.org/10.1109/robot.2010.5509150",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2115126565",
+    "name": "Improving the Separability of Motor Imagery EEG Signals Using a Cross Correlation-Based Least Square Support Vector Machine for Brain–Computer Interface",
+    "source": "openalex",
+    "abstract": "Although brain-computer interface (BCI) techniques have been developing quickly in recent decades, there still exist a number of unsolved problems, such as improvement of motor imagery (MI) signal classification. In this paper, we propose a hybrid algorithm to improve the classification success rate of MI-based electroencephalogram (EEG) signals in BCIs. The proposed scheme develops a novel cross-correlation based feature extractor, which is aided with a least square support vector machine (LS-SVM) for two-class MI signals recognition. To verify the effectiveness of the proposed classifier, we replace the LS-SVM classifier by a logistic regression classifier and a kernel logistic regression classifier, separately, with the same features extracted from the cross-correlation technique for the classification. The proposed approach is tested on datasets, IVa and IVb of BCI Competition III. The performances of those methods are evaluated with classification accuracy through a 10-fold cross-validation procedure. We also assess the performance of the proposed method by comparing it with eight recently reported algorithms. Experimental results on the two datasets show that the proposed LS-SVM classifier provides an improvement compared to the logistic regression and kernel logistic regression classifiers. The results also indicate that the proposed approach outperforms the most recently reported eight methods and achieves a 7.40% improvement over the best results of the other eight studies.",
+    "url": "https://doi.org/10.1109/tnsre.2012.2184838",
+    "authors": [
+      "Siuly Siuly",
+      "Yan Li"
+    ],
+    "tags": [
+      "Support vector machine",
+      "Pattern recognition (psychology)",
+      "Classifier (UML)",
+      "Artificial intelligence",
+      "Brain–computer interface"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2012-01-23",
+    "doi": "https://doi.org/10.1109/tnsre.2012.2184838",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2765817727",
+    "name": "Self-Paced Operation of a Wheelchair Based on a Hybrid Brain-Computer Interface Combining Motor Imagery and P300 Potential",
+    "source": "openalex",
+    "abstract": "This paper presents a hybrid brain-computer interface (BCI) that combines motor imagery (MI) and P300 potential for the asynchronous operation of a brain-controlled wheelchair whose design is based on a Mecanum wheel. This paradigm is completely user-centric. By sequentially performing MI tasks or paying attention to P300 flashing, the user can use eleven functions to control the wheelchair: move forward/backward, move left/right, move left45/right45, accelerate/decelerate, turn left/right, and stop. The practicality and effectiveness of the proposed approach were validated in eight subjects, all of whom achieved good performance. The preliminary results indicated that the proposed hybrid BCI system with different mental strategies operating sequentially is feasible and has potential applications for practical self-paced control.",
+    "url": "https://doi.org/10.1109/tnsre.2017.2766365",
+    "authors": [
+      "Yang Yu",
+      "Zongtan Zhou",
+      "Yadong Liu",
+      "Jun Jiang",
+      "Erwei Yin",
+      "Nannan Zhang",
+      "Zhihua Wang",
+      "Yaru Liu",
+      "Xingjie Wu",
+      "Dewen Hu"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Wheelchair",
+      "Motor imagery",
+      "Interface (matter)",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2017-11-02",
+    "doi": "https://doi.org/10.1109/tnsre.2017.2766365",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2028965838",
+    "name": "An SSVEP-Actuated Brain Computer Interface Using Phase-Tagged Flickering Sequences: A Cursor System",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s10439-010-9964-y",
+    "authors": [
+      "Po‐Lei Lee",
+      "Jyun-Jie Sie",
+      "Yu-Ju Liu",
+      "Chi-Hsun Wu",
+      "Ming-Huan Lee",
+      "Chih-Hung Shu",
+      "Po-Hung Li",
+      "Chia-Wei Sun",
+      "Kuo‐Kai Shyu"
+    ],
+    "tags": [
+      "Flicker",
+      "Brain–computer interface",
+      "Electroencephalography",
+      "Computer science",
+      "Computer vision"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2010-02-22",
+    "doi": "https://doi.org/10.1007/s10439-010-9964-y",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2165810317",
+    "name": "Brain Computer Interface Design Using Band Powers Extracted During Mental Tasks",
+    "source": "openalex",
+    "abstract": "In this paper, a brain computer interface (BCI) is designed using electroencephalogram (EEG) signals where the subjects have to think of only a single mental task. The method uses spectral power and power difference in 4 bands: delta and theta, beta, alpha and gamma. This could be used as an alternative to the existing BCI designs that require classification of several mental tasks. In addition, an attempt is made to show that different subjects require different mental task for minimising the error in BCI output. In the experimental study, EEG signals were recorded from 4 subjects while they were thinking of 4 different mental tasks. Combinations of resting (baseline) state and another mental task are studied at a time for each subject. Spectral powers in the 4 bands from 6 channels are computed using the energy of the elliptic FIR filter output. The mental tasks are detected by a neural network classifier. The results show that classification accuracy up to 97.5% is possible, provided that the most suitable mental task is used. As an application, the proposed method could be used to move a cursor on the screen. If cursor movement is used with a translation scheme like Morse code, the subjects could use the proposed BCI for constructing letters/words. This would be very useful for paralysed individuals to communicate with their external surroundings",
+    "url": "https://doi.org/10.1109/cne.2005.1419622",
+    "authors": [
+      "Ramaswamy Palaniappan"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Electroencephalography",
+      "Classifier (UML)",
+      "Speech recognition"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2005-04-19",
+    "doi": "https://doi.org/10.1109/cne.2005.1419622",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W4293550306",
+    "name": "Adaptive transfer learning-based multiscale feature fused deep convolutional neural network for EEG MI multiclassification in brain–computer interface",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.engappai.2022.105347",
+    "authors": [
+      "Arunabha M. Roy"
+    ],
+    "tags": [
+      "Computer science",
+      "Brain–computer interface",
+      "Transfer of learning",
+      "Convolutional neural network",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-08-30",
+    "doi": "https://doi.org/10.1016/j.engappai.2022.105347",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2142445533",
+    "name": "Utilizing Gamma Band to Improve Mental Task Based Brain-Computer Interface Design",
+    "source": "openalex",
+    "abstract": "A common method for designing brain-computer Interface (BCI) is to use electroencephalogram (EEG) signals extracted during mental tasks. In these BCI designs, features from EEG such as power and asymmetry ratios from delta, theta, alpha, and beta bands have been used in classifying different mental tasks. In this paper, the performance of the mental task based BCI design is improved by using spectral power and asymmetry ratios from gamma (24-37 Hz) band in addition to the lower frequency bands. In the experimental study, EEG signals extracted during five mental tasks from four subjects were used. Elman neural network (ENN) trained by the resilient backpropagation algorithm was used to classify the power and asymmetry ratios from EEG into different combinations of two mental tasks. The results indicated that ((1) the classification performance and training time of the BCI design were improved through the use of additional gamma band features; (2) classification performances were nearly invariant to the number of ENN hidden units or feature extraction method.",
+    "url": "https://doi.org/10.1109/tnsre.2006.881539",
+    "authors": [
+      "Ramaswamy Palaniappan"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Electroencephalography",
+      "Computer science",
+      "Artificial intelligence",
+      "Feature extraction"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2006-09-01",
+    "doi": "https://doi.org/10.1109/tnsre.2006.881539",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2081436264",
+    "name": "Brain-computer interfaces (BCIs) for communication and control",
+    "source": "openalex",
+    "abstract": "No abstract available.",
+    "url": "https://doi.org/10.1145/1296843.1296845",
+    "authors": [
+      "Jonathan R. Wolpaw"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Human–computer interaction",
+      "Control (management)",
+      "Electroencephalography"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2007-10-15",
+    "doi": "https://doi.org/10.1145/1296843.1296845",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2144632064",
+    "name": "The Utility Metric: A Novel Method to Assess the Overall Performance of Discrete Brain–Computer Interfaces",
+    "source": "openalex",
+    "abstract": "A relevant issue in a brain-computer interface (BCI) is the capability to efficiently convert user intentions into correct actions, and how to properly measure this efficiency. Usually, the evaluation of a BCI system is approached through the quantification of the classifier performance, which is often measured by means of the information transfer rate (ITR). A shortcoming of this approach is that the control interface design is neglected, and hence a poor description of the overall performance is obtained for real systems. To overcome this limitation, we propose a novel metric based on the computation of BCI Utility. The new metric can accurately predict the overall performance of a BCI system, as it takes into account both the classifier and the control interface characteristics. It is therefore suitable for design purposes, where we have to select the best options among different components and different parameters setup. In the paper, we compute Utility in two scenarios, a P300 speller and a P300 speller with an error correction system (ECS), for different values of accuracy of the classifier and recall of the ECS. Monte Carlo simulations confirm that Utility predicts the performance of a BCI better than ITR.",
+    "url": "https://doi.org/10.1109/tnsre.2009.2032642",
+    "authors": [
+      "Bernardo Dal Seno",
+      "Matteo Matteucci",
+      "Luca Mainardi"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Classifier (UML)",
+      "Computation",
+      "Metric (unit)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2009-09-24",
+    "doi": "https://doi.org/10.1109/tnsre.2009.2032642",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2043562489",
+    "name": "Long-Term Independent Brain-Computer Interface Home Use Improves Quality of Life of a Patient in the Locked-In State: A Case Study",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.apmr.2014.03.035",
+    "authors": [
+      "Elisa Mira Holz",
+      "Loïc Botrel",
+      "Tobias Kaufmann",
+      "Andrea Kübler"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Session (web analytics)",
+      "Usability",
+      "Interface (matter)",
+      "Quality of life (healthcare)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2015-02-23",
+    "doi": "https://doi.org/10.1016/j.apmr.2014.03.035",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2159667012",
+    "name": "EEG and MEG brain-computer interface for tetraplegic patients",
+    "source": "openalex",
+    "abstract": "We characterized features of magnetoencephalographic (MEG) and electroencephalographic (EEG) signals generated in the sensorimotor cortex of three tetraplegics attempting index finger movements. Single MEG and EEG trials were classified offline into two classes using two different classifiers, a batch trained classifier and a dynamic classifier. Classification accuracies obtained with dynamic classifier were better, at 75%, 89%, and 91% in different subjects, when features were in the 0.5-3.0-Hz frequency band. Classification accuracies of EEG and MEG did not differ.",
+    "url": "https://doi.org/10.1109/tnsre.2006.875546",
+    "authors": [
+      "Laura Kauhanen",
+      "Tommi Nykopp",
+      "Janne Lehtonen",
+      "Pasi Jylänki",
+      "Jukka Heikkonen",
+      "Pekka Rantanen",
+      "Hannu Alaranta",
+      "Mikko Sams"
+    ],
+    "tags": [
+      "Magnetoencephalography",
+      "Electroencephalography",
+      "Brain–computer interface",
+      "Classifier (UML)",
+      "Pattern recognition (psychology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2006-06-01",
+    "doi": "https://doi.org/10.1109/tnsre.2006.875546",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W1997293236",
+    "name": "Effects of training and motivation on auditory P300 brain–computer interface performance",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.clinph.2015.04.054",
+    "authors": [
+      "Ebru Baykara",
+      "Carolin A. Ruf",
+      "Chiara Fioravanti",
+      "Ivo Käthner",
+      "Nolwenn Simon",
+      "Sonja C. Kleih",
+      "Andrea Kübler",
+      "Sebastian Halder"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Headset",
+      "Gaze",
+      "Psychology",
+      "Session (web analytics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2015-04-17",
+    "doi": "https://doi.org/10.1016/j.clinph.2015.04.054",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2152209396",
+    "name": "Thinking Penguin: Multimodal Brain–Computer Interface Control of a VR Game",
+    "source": "openalex",
+    "abstract": "In this paper, we describe a multimodal brain-computer interface (BCI) experiment, situated in a highly immersive CAVE. A subject sitting in the virtual environment controls the main character of a virtual reality game: a penguin that slides down a snowy mountain slope. While the subject can trigger a jump action via the BCI, additional steering with a game controller as a secondary task was tested. Our experiment profits from the game as an attractive task where the subject is motivated to get a higher score with a better BCI performance. A BCI based on the so-called brain switch was applied, which allows discrete asynchronous actions. Fourteen subjects participated, of which 50% achieved the required performance to test the penguin game. Comparing the BCI performance during the training and the game showed that a transfer of skills is possible, in spite of the changes in visual complexity and task demand. Finally and most importantly, our results showed that the use of a secondary motor task, in our case the joystick control, did not deteriorate the BCI performance during the game. Through these findings, we conclude that our chosen approach is a suitable multimodal or hybrid BCI implementation, in which the user can even perform other tasks in parallel.",
+    "url": "https://doi.org/10.1109/tciaig.2013.2242072",
+    "authors": [
+      "Robert Leeb",
+      "Marcel Lancelle",
+      "Vera Kaiser",
+      "Dieter W. Fellner",
+      "Gert Pfurtscheller"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Joystick",
+      "Task (project management)",
+      "Virtual reality"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2013-01-23",
+    "doi": "https://doi.org/10.1109/tciaig.2013.2242072",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2067444592",
+    "name": "EEG-Based Brain-Computer Interface for Tetraplegics",
+    "source": "openalex",
+    "abstract": "Movement-disabled persons typically require a long practice time to learn how to use a brain-computer interface (BCI). Our aim was to develop a BCI which tetraplegic subjects could control only in 30 minutes. Six such subjects (level of injury C4-C5) operated a 6-channel EEG BCI. The task was to move a circle from the centre of the computer screen to its right or left side by attempting visually triggered right- or left-hand movements. During the training periods, the classifier was adapted to the user's EEG activity after each movement attempt in a supervised manner. Feedback of the performance was given immediately after starting the BCI use. Within the time limit, three subjects learned to control the BCI. We believe that fast initial learning is an important factor that increases motivation and willingness to use BCIs. We have previously tested a similar single-trial classification approach in healthy subjects. Our new results show that methods developed and tested with healthy subjects do not necessarily work as well as with motor-disabled patients. Therefore, it is important to use motor-disabled persons as subjects in BCI development.",
+    "url": "https://doi.org/10.1155/2007/23864",
+    "authors": [
+      "Laura Kauhanen",
+      "Pasi Jylänki",
+      "Janne Lehtonen",
+      "Pekka Rantanen",
+      "Hannu Alaranta",
+      "Mikko Sams"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Electroencephalography",
+      "Sensorimotor rhythm",
+      "Motor imagery",
+      "Physical medicine and rehabilitation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2007-01-01",
+    "doi": "https://doi.org/10.1155/2007/23864",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2088425373",
+    "name": "Inducing a virtual hand ownership illusion through a brain–computer interface",
+    "source": "openalex",
+    "abstract": "The apparently stable brain representation of our bodies is easily challenged. We have recently shown that the illusion of ownership of a three-dimensional virtual hand can be evoked through synchronous tactile stimulation of a person's hidden real hand and that of the virtual hand. This reproduces the well-known rubber-hand illusion, but in virtual reality. Here we show that some aspects of the illusion can also occur through motor imagery used to control movements of a virtual hand. When movements of the virtual hand followed motor imagery, the illusion of ownership of the virtual hand was evoked and muscle activity measured through electromyogram correlated with movements of the virtual arm. Using virtual bodies has a great potential in the fields of physical and neural rehabilitation, making the understanding of ownership of a virtual body highly relevant.",
+    "url": "https://doi.org/10.1097/wnr.0b013e32832a0a2a",
+    "authors": [
+      "Daniel Pérez-Marcos",
+      "Mel Slater",
+      "María V. Sánchez-Vives"
+    ],
+    "tags": [
+      "Illusion",
+      "Motor imagery",
+      "Virtual reality",
+      "Brain–computer interface",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2009-04-22",
+    "doi": "https://doi.org/10.1097/wnr.0b013e32832a0a2a",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2994422921",
+    "name": "Application of Continuous Wavelet Transform and Convolutional Neural Network in Decoding Motor Imagery Brain-Computer Interface",
+    "source": "openalex",
+    "abstract": "The motor imagery-based brain-computer interface (BCI) using electroencephalography (EEG) has been receiving attention from neural engineering researchers and is being applied to various rehabilitation applications. However, the performance degradation caused by motor imagery EEG with very low single-to-noise ratio faces several application issues with the use of a BCI system. In this paper, we propose a novel motor imagery classification scheme based on the continuous wavelet transform and the convolutional neural network. Continuous wavelet transform with three mother wavelets is used to capture a highly informative EEG image by combining time-frequency and electrode location. A convolutional neural network is then designed to both classify motor imagery tasks and reduce computation complexity. The proposed method was validated using two public BCI datasets, BCI competition IV dataset 2b and BCI competition II dataset III. The proposed methods were found to achieve improved classification performance compared with the existing methods, thus showcasing the feasibility of motor imagery BCI.",
+    "url": "https://doi.org/10.3390/e21121199",
+    "authors": [
+      "Hyeon Kyu Lee",
+      "Young-Seok Choi"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Motor imagery",
+      "Computer science",
+      "Convolutional neural network",
+      "Electroencephalography"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2019-12-05",
+    "doi": "https://doi.org/10.3390/e21121199",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2921773252",
+    "name": "A closed-loop, music-based brain-computer interface for emotion mediation",
+    "source": "openalex",
+    "abstract": "Emotions play a critical role in rational and intelligent behavior; a better fundamental knowledge of them is indispensable for understanding higher order brain function.We propose a non-invasive brain-computer interface (BCI) system to feedback a person's affective state such that a closed-loop interaction between the participant's brain responses and the musical stimuli is established.We realized this concept technically in a functional prototype of an algorithm that generates continuous and controllable patterns of synthesized affective music in real-time, which is embedded within a BCI architecture.We evaluated our concept in two separate studies.In the first study, we tested the efficacy of our music algorithm by measuring subjective affective responses from 11 participants.In a second pilot study, the algorithm was embedded in a real-time BCI architecture to investigate affective closed-loop interactions in 5 participants.Preliminary results suggested that participants were able to intentionally modulate the musical feedback by self-inducing emotions (e.g., by recalling memories), suggesting that the system was able not only to capture the listener's current affective state in real-time, but also potentially provide a tool for listeners to mediate their own emotions by interacting with music.The proposed concept offers a tool to study emotions in the loop, promising to cast a complementary light on emotion-related brain research, particularly in terms of clarifying the interactive, spatio-temporal dynamics underlying affective processing in the brain. IntroductionResearch on emotion has a longstanding tradition that has garnered interest from a variety of scientific fields, such as psychology, sociology, and neuroscience (e.g., [1-4]).For example, scientists now know that there is at least some degree of independence between emotion processing and attentional mechanisms, that the amygdala is crucial in forming conditioned fear responses, and that evoking certain emotional states biases decision making processes [5].These findings have shed light on the cognitive, neural, and social factors at play in emotion",
+    "url": "https://doi.org/10.1371/journal.pone.0213516",
+    "authors": [
+      "Stefan K. Ehrlich",
+      "Kat Agres",
+      "Cuntai Guan",
+      "Gordon Cheng"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Mediation",
+      "Interface (matter)",
+      "Affective computing",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2019-03-18",
+    "doi": "https://doi.org/10.1371/journal.pone.0213516",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W4399397361",
+    "name": "IoT in Brain-Computer Interfaces for Enabling Communication and Control for the Disabled",
+    "source": "openalex",
+    "abstract": "The proposed system integrates Internet of Things (IoT) technologies with Brain-computer interfaces to improve disability-related communication and control. BCIs may directly communicate between the brain and external equipment, providing a lifeline for persons with severe physical restrictions. Incorporating IoT concepts may boost BCI efficacy. Integration of BCI with IoT technology demonstrates unique advantages. BCIs may be connected to the IoT framework to provide a more flexible and comprehensive communication and control environment. Thanks to IoT connection, BCIs can seamlessly interface with assistive devices, home automation systems, wearables, and digital platforms. Interconnectedness expands BCIs’ reach, improves user experiences, and allows creative applications. It shows how IoT-enabled BCIs may help disabled people connect with their surroundings, enhance their quality of life, and recover independence. The study discusses data security, privacy, latency, and device compatibility difficulties while integrating various technologies. This combination promises immediate practicality and future progress in both sectors, creating a more comprehensive and accessible digital world.",
+    "url": "https://doi.org/10.1109/iccsp60870.2024.10543610",
+    "authors": [
+      "S. Rajarajan",
+      "T. Kowsalya",
+      "Nukala Sujata Gupta",
+      "P M Suresh",
+      "P Ilampiray",
+      "Suriya Murugan"
+    ],
+    "tags": [
+      "Computer science",
+      "Brain–computer interface",
+      "Human–computer interaction",
+      "Control (management)",
+      "Neuroscience"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2024-04-12",
+    "doi": "https://doi.org/10.1109/iccsp60870.2024.10543610",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2023570477",
+    "name": "Brain–computer interface using water-based electrodes",
+    "source": "openalex",
+    "abstract": "Current brain-computer interfaces (BCIs) that make use of EEG acquisition techniques require unpleasant electrode gel causing skin abrasion during the standard preparation procedure. Electrodes that require tap water instead of electrolytic electrode gel would make both daily setup and clean up much faster, easier and comfortable. This paper presents the results from ten subjects that controlled an SSVEP-based BCI speller system using two EEG sensor modalities: water-based and gel-based surface electrodes. Subjects performed in copy spelling mode using conventional gel-based electrodes and water-based electrodes with a mean information transfer rate (ITR) of 29.68 ± 14.088 bit min(-1) and of 26.56 ± 9.224 bit min(-1), respectively. A paired t-test failed to reveal significant differences in the information transfer rates and accuracies of using gel- or water-based electrodes for EEG acquisition. This promising result confirms the operational readiness of water-based electrodes for BCI applications.",
+    "url": "https://doi.org/10.1088/1741-2560/7/6/066007",
+    "authors": [
+      "Ivan Volosyak",
+      "Diana Valbuena",
+      "Tatsiana Malechka",
+      "Jan Peuscher",
+      "Axel Gräser"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Electroencephalography",
+      "Electrode",
+      "Computer science",
+      "Interface (matter)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2010-11-03",
+    "doi": "https://doi.org/10.1088/1741-2560/7/6/066007",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W3005807242",
+    "name": "Neuropsychological and neurophysiological aspects of brain‐computer‐interface (BCI) control in paralysis",
+    "source": "openalex",
+    "abstract": "Brain-computer interfaces (BCIs) aim to help paralysed patients to interact with their environment by controlling external devices using brain activity, thereby bypassing the dysfunctional motor system. Some neuronal disorders, such as amyotrophic lateral sclerosis (ALS), severely impair the communication capacity of patients. Several invasive and non-invasive brain-computer interfaces (BCIs), most notably using electroencephalography (EEG), have been developed to provide a means of communication to paralysed patients. However, except for a few reports, all available BCI literature for the paralysed (mostly ALS patients) describes patients with intact eye movement control, i.e. patients in a locked-in state (LIS) but not a completely locked-in state (CLIS). In this article we will discuss: (1) the fundamental neuropsychological learning factors and neurophysiological factors determining BCI performance in clinical applications; (2) the difference between LIS and CLIS; (3) recent development in BCIs for communication with patients in the completely locked-in state; (4) the effect of BCI-based communication on emotional well-being and quality of life; and (5) the outlook and the methodology needed to provide a means of communication for patients who have none. Thus, we present an overview of available studies and recent results and try to anticipate future developments which may open new doors for BCI communication with the completely paralysed.",
+    "url": "https://doi.org/10.1113/jp278775",
+    "authors": [
+      "Ujwal Chaudhary",
+      "Natalie Mrachacz‐Kersting",
+      "Niels Birbaumer"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Neurophysiology",
+      "Neuropsychology",
+      "Paralysis",
+      "Neuroscience"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-02-11",
+    "doi": "https://doi.org/10.1113/jp278775",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W1997243535",
+    "name": "Behavioral and neural correlates of visuomotor adaptation observed through a brain-computer interface in primary motor cortex",
+    "source": "openalex",
+    "abstract": "Brain-computer interfaces (BCIs) provide a defined link between neural activity and devices, allowing a detailed study of the neural adaptive responses generating behavioral output. We trained monkeys to perform two-dimensional center-out movements of a computer cursor using a BCI. We then applied a perturbation by randomly selecting a subset of the recorded units and rotating their directional contributions to cursor movement by a consistent angle. Globally, this perturbation mimics a visuomotor transformation, and in the first part of this article we characterize the psychophysical indications of motor adaptation and compare them with known results from adaptation of natural reaching movements. Locally, however, only a subset of the neurons in the population actually contributes to error, allowing us to probe for signatures of neural adaptation that might be specific to the subset of neurons we perturbed. One compensation strategy would be to selectively adapt the subset of cells responsible for the error. An alternate strategy would be to globally adapt the entire population to correct the error. Using a recently developed mathematical technique that allows us to differentiate these two mechanisms, we found evidence of both strategies in the neural responses. The dominant strategy we observed was global, accounting for ∼86% of the total error reduction. The remaining 14% came from local changes in the tuning functions of the perturbed units. Interestingly, these local changes were specific to the details of the applied rotation: in particular, changes in the depth of tuning were only observed when the percentage of perturbed cells was small. These results imply that there may be constraints on the network's adaptive capabilities, at least for perturbations lasting only a few hundreds of trials.",
+    "url": "https://doi.org/10.1152/jn.00371.2011",
+    "authors": [
+      "Steven M. Chase",
+      "Robert E. Kass",
+      "Andrew B. Schwartz"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Population",
+      "Computer science",
+      "Neuroscience",
+      "Adaptation (eye)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2012-04-12",
+    "doi": "https://doi.org/10.1152/jn.00371.2011",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2012063294",
+    "name": "The advantages of the surface Laplacian in brain–computer interface research",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.ijpsycho.2014.07.009",
+    "authors": [
+      "Dennis J. McFarland"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Orthogonality",
+      "Computer science",
+      "Laplace operator",
+      "SIGNAL (programming language)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2014-08-01",
+    "doi": "https://doi.org/10.1016/j.ijpsycho.2014.07.009",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2046731322",
+    "name": "User-centered design in brain–computer interfaces—A case study",
+    "source": "openalex",
+    "abstract": "OBJECTIVE: The array of available brain-computer interface (BCI) paradigms has continued to grow, and so has the corresponding set of machine learning methods which are at the core of BCI systems. The latter have evolved to provide more robust data analysis solutions, and as a consequence the proportion of healthy BCI users who can use a BCI successfully is growing. With this development the chances have increased that the needs and abilities of specific patients, the end-users, can be covered by an existing BCI approach. However, most end-users who have experienced the use of a BCI system at all have encountered a single paradigm only. This paradigm is typically the one that is being tested in the study that the end-user happens to be enrolled in, along with other end-users. Though this corresponds to the preferred study arrangement for basic research, it does not ensure that the end-user experiences a working BCI. In this study, a different approach was taken; that of a user-centered design. It is the prevailing process in traditional assistive technology. Given an individual user with a particular clinical profile, several available BCI approaches are tested and - if necessary - adapted to him/her until a suitable BCI system is found. METHODS: Described is the case of a 48-year-old woman who suffered from an ischemic brain stem stroke, leading to a severe motor- and communication deficit. She was enrolled in studies with two different BCI systems before a suitable system was found. The first was an auditory event-related potential (ERP) paradigm and the second a visual ERP paradigm, both of which are established in literature. RESULTS: The auditory paradigm did not work successfully, despite favorable preconditions. The visual paradigm worked flawlessly, as found over several sessions. This discrepancy in performance can possibly be explained by the user's clinical deficit in several key neuropsychological indicators, such as attention and working memory. While the auditory paradigm relies on both categories, the visual paradigm could be used with lower cognitive workload. Besides attention and working memory, several other neurophysiological and -psychological indicators - and the role they play in the BCIs at hand - are discussed. CONCLUSION: The user's performance on the first BCI paradigm would typically have excluded her from further ERP-based BCI studies. However, this study clearly shows that, with the numerous paradigms now at our disposal, the pursuit for a functioning BCI system should not be stopped after an initial failed attempt.",
+    "url": "https://doi.org/10.1016/j.artmed.2013.07.005",
+    "authors": [
+      "Martijn Schreuder",
+      "Angela Riccio",
+      "Monica Risetti",
+      "Sven Dähne",
+      "Andrew Ramsay",
+      "John Williamson",
+      "Donatella Mattia",
+      "Michael Tangermann"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Human–computer interaction",
+      "Set (abstract data type)",
+      "Process (computing)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2013-09-13",
+    "doi": "https://doi.org/10.1016/j.artmed.2013.07.005",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W1975717934",
+    "name": "Z-Score Linear Discriminant Analysis for EEG Based Brain-Computer Interfaces",
+    "source": "openalex",
+    "abstract": "Linear discriminant analysis (LDA) is one of the most popular classification algorithms for brain-computer interfaces (BCI). LDA assumes Gaussian distribution of the data, with equal covariance matrices for the concerned classes, however, the assumption is not usually held in actual BCI applications, where the heteroscedastic class distributions are usually observed. This paper proposes an enhanced version of LDA, namely z-score linear discriminant analysis (Z-LDA), which introduces a new decision boundary definition strategy to handle with the heteroscedastic class distributions. Z-LDA defines decision boundary through z-score utilizing both mean and standard deviation information of the projected data, which can adaptively adjust the decision boundary to fit for heteroscedastic distribution situation. Results derived from both simulation dataset and two actual BCI datasets consistently show that Z-LDA achieves significantly higher average classification accuracies than conventional LDA, indicating the superiority of the new proposed decision boundary definition strategy.",
+    "url": "https://doi.org/10.1371/journal.pone.0074433",
+    "authors": [
+      "Rui Zhang",
+      "Peng Xu",
+      "Lanjin Guo",
+      "Yangsong Zhang",
+      "Peiyang Li",
+      "Dezhong Yao"
+    ],
+    "tags": [
+      "Linear discriminant analysis",
+      "Heteroscedasticity",
+      "Artificial intelligence",
+      "Pattern recognition (psychology)",
+      "Decision boundary"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2013-09-13",
+    "doi": "https://doi.org/10.1371/journal.pone.0074433",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W3046051368",
+    "name": "CWT Based Transfer Learning for Motor Imagery Classification for Brain computer Interfaces",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.jneumeth.2020.108886",
+    "authors": [
+      "Piyush Kant",
+      "Shahedul Haque Laskar",
+      "Jupitara Hazarika",
+      "Rupesh Mahamune"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Artificial intelligence",
+      "Transfer of learning",
+      "Motor imagery"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-07-27",
+    "doi": "https://doi.org/10.1016/j.jneumeth.2020.108886",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W3087333752",
+    "name": "Exploiting dimensionality reduction and neural network techniques for the development of expert brain–computer interfaces",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.eswa.2020.114031",
+    "authors": [
+      "Muhammad Tariq Sadiq",
+      "Xiaojun Yu",
+      "Zhaohui Yuan"
+    ],
+    "tags": [
+      "Computer science",
+      "Dimensionality reduction",
+      "Pattern recognition (psychology)",
+      "Principal component analysis",
+      "Brain–computer interface"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-09-17",
+    "doi": "https://doi.org/10.1016/j.eswa.2020.114031",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W4210839512",
+    "name": "FGANet: fNIRS-Guided Attention Network for Hybrid EEG-fNIRS Brain-Computer Interfaces",
+    "source": "openalex",
+    "abstract": "Non-invasive brain-computer interfaces (BCIs) have been widely used for neural decoding, linking neural signals to control devices. Hybrid BCI systems using electroencephalography (EEG) and functional near-infrared spectroscopy (fNIRS) have received significant attention for overcoming the limitations of EEG- and fNIRS-standalone BCI systems. However, most hybrid EEG-fNIRS BCI studies have focused on late fusion because of discrepancies in their temporal resolutions and recording locations. Despite the enhanced performance of hybrid BCIs, late fusion methods have difficulty in extracting correlated features in both EEG and fNIRS signals. Therefore, in this study, we proposed a deep learning-based early fusion structure, which combines two signals before the fully-connected layer, called the fNIRS-guided attention network (FGANet). First, 1D EEG and fNIRS signals were converted into 3D EEG and fNIRS tensors to spatially align EEG and fNIRS signals at the same time point. The proposed fNIRS-guided attention layer extracted a joint representation of EEG and fNIRS tensors based on neurovascular coupling, in which the spatially important regions were identified from fNIRS signals, and detailed neural patterns were extracted from EEG signals. Finally, the final prediction was obtained by weighting the sum of the prediction scores of the EEG and fNIRS-guided attention features to alleviate performance degradation owing to delayed fNIRS response. In the experimental results, the FGANet significantly outperformed the EEG-standalone network. Furthermore, the FGANet has 4.0% and 2.7% higher accuracy than the state-of-the-art algorithms in mental arithmetic and motor imagery tasks, respectively.",
+    "url": "https://doi.org/10.1109/tnsre.2022.3149899",
+    "authors": [
+      "Youngchul Kwak",
+      "Woo‐Jin Song",
+      "Seong‐Eun Kim"
+    ],
+    "tags": [
+      "Electroencephalography",
+      "Brain–computer interface",
+      "Computer science",
+      "Functional near-infrared spectroscopy",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2022-01-01",
+    "doi": "https://doi.org/10.1109/tnsre.2022.3149899",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W3004193878",
+    "name": "Wearable Brain–Computer Interface Instrumentation for Robot-Based Rehabilitation by Augmented Reality",
+    "source": "openalex",
+    "abstract": "An instrument for remote control of the robot by wearable brain-computer interface (BCI) is proposed for rehabilitating children with attention-deficit/hyperactivity disorder (ADHD). Augmented reality (AR) glasses generate flickering stimuli, and a single-channel electroencephalographic BCI detects the elicited steady-state visual evoked potentials (SSVEPs). This allows benefiting from the SSVEP robustness by leaving available the view of robot movements. Together with the lack of training, a single channel maximizes the device's wearability, fundamental for the acceptance by ADHD children. Effectively controlling the movements of a robot through a new channel enhances rehabilitation engagement and effectiveness. A case study at an accredited rehabilitation center on ten healthy adult subjects highlighted an average accuracy higher than 83%, with information transfer rate (ITR) up to 39 b/min. Preliminary further tests on four ADHD patients between six- and eight-years old provided highly positive feedback on device acceptance and attentional performance.",
+    "url": "https://doi.org/10.1109/tim.2020.2970846",
+    "authors": [
+      "Pasquale Arpaïa",
+      "Luigi Duraccio",
+      "Nicola Moccaldi",
+      "Silvia Rossi"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Wearable computer",
+      "Robot",
+      "Rehabilitation",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-01-31",
+    "doi": "https://doi.org/10.1109/tim.2020.2970846",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2168905284",
+    "name": "Free-paced high-performance brain–computer interfaces",
+    "source": "openalex",
+    "abstract": "Neural prostheses aim to improve the quality of life of severely disabled patients by translating neural activity into control signals for guiding prosthetic devices or computer cursors. We recently demonstrated that plan activity from premotor cortex, which specifies the endpoint of the upcoming arm movement, can be used to swiftly and accurately guide computer cursors to the desired target locations. However, these systems currently require additional, non-neural information to specify when plan activity is present. We report here the design and performance of state estimator algorithms for automatically detecting the presence of plan activity using neural activity alone. Prosthesis performance was nearly as good when state estimation was used as when perfect plan timing information was provided separately ( approximately 5 percentage points lower, when using 200 ms of plan activity). These results strongly suggest that a completely neurally-driven high-performance brain-computer interface is possible.",
+    "url": "https://doi.org/10.1088/1741-2560/4/3/018",
+    "authors": [
+      "Neil Achtman",
+      "Afsheen Afshar",
+      "Gopal Santhanam",
+      "Byron M. Yu",
+      "Stephen I. Ryu",
+      "Krishna V. Shenoy"
+    ],
+    "tags": [
+      "Computer science",
+      "Brain–computer interface",
+      "Plan (archaeology)",
+      "Brain activity and meditation",
+      "Interface (matter)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2007-08-22",
+    "doi": "https://doi.org/10.1088/1741-2560/4/3/018",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2944895870",
+    "name": "A randomized controlled trial of a brain-computer interface based attention training program for ADHD",
+    "source": "openalex",
+    "abstract": "OBJECTIVE: The use of brain-computer interface in neurofeedback therapy for attention deficit hyperactivity disorder (ADHD) is a relatively new approach. We conducted a randomized controlled trial (RCT) to determine whether an 8-week brain computer interface (BCI)-based attention training program improved inattentive symptoms in children with ADHD compared to a waitlist-control group, and the effects of a subsequent 12-week lower-intensity training. STUDY DESIGN: We randomized 172 children aged 6-12 attending an outpatient child psychiatry clinic diagnosed with inattentive or combined subtypes of ADHD and not receiving concurrent pharmacotherapy or behavioral intervention to either the intervention or waitlist-control group. Intervention involved 3 sessions of BCI-based training for 8 weeks, followed by 3 training sessions per month over the subsequent 12 weeks. The waitlist-control group received similar 20-week intervention after a wait-time of 8 weeks. RESULTS: The participants' mean age was 8.6 years (SD = 1.51), with 147 males (85.5%) and 25 females (14.5%). Modified intention to treat analyzes conducted on 163 participants with at least one follow-up rating showed that at 8 weeks, clinician-rated inattentive symptoms on the ADHD-Rating Scale (ADHD-RS) was reduced by 3.5 (SD 3.97) in the intervention group compared to 1.9 (SD 4.42) in the waitlist-control group (between-group difference of 1.6; 95% CI 0.3 to 2.9 p = 0.0177). At the end of the full 20-week treatment, the mean reduction (pre-post BCI) of the pooled group was 3.2 (95% CI 2.4 to 4.1). CONCLUSION: The results suggest that the BCI-based attention training program can improve ADHD symptoms after a minimum of 24 sessions and maintenance training may sustain this improvement. This intervention may be an option for treating milder cases or as an adjunctive treatment.",
+    "url": "https://doi.org/10.1371/journal.pone.0216225",
+    "authors": [
+      "Choon Guan Lim",
+      "Xue Wei Wendy Poh",
+      "Shuen Sheng Daniel Fung",
+      "Cuntai Guan",
+      "Dianne Bautista",
+      "Yin Bun Cheung",
+      "Haihong Zhang",
+      "Si Ning Yeo",
+      "Ranga Krishnan",
+      "Tih Shih Lee"
+    ],
+    "tags": [
+      "Randomized controlled trial",
+      "Medicine",
+      "Attention deficit hyperactivity disorder",
+      "Neurofeedback",
+      "Physical therapy"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2019-05-21",
+    "doi": "https://doi.org/10.1371/journal.pone.0216225",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W4200409924",
+    "name": "RETRACTED: A 1D CNN for high accuracy classification and transfer learning in motor imagery EEG-based brain-computer interface",
+    "source": "openalex",
+    "abstract": "Abstract Objective. Brain-computer interface (BCI) aims to establish communication paths between the brain processes and external devices. Different methods have been used to extract human intentions from electroencephalography (EEG) recordings. Those based on motor imagery (MI) seem to have a great potential for future applications. These approaches rely on the extraction of EEG distinctive patterns during imagined movements. Techniques able to extract patterns from raw signals represent an important target for BCI as they do not need labor-intensive data pre-processing. Approach. We propose a new approach based on a 10-layer one-dimensional convolution neural network (1D-CNN) to classify five brain states (four MI classes plus a ‘baseline’ class) using a data augmentation algorithm and a limited number of EEG channels. In addition, we present a transfer learning method used to extract critical features from the EEG group dataset and then to customize the model to the single individual by training its late layers with only 12-min individual-related data. Main results. The model tested with the ‘EEG Motor Movement/Imagery Dataset’ outperforms the current state-of-the-art models by achieving a 99.38 % accuracy at the group level. In addition, the transfer learning approach we present achieves an average accuracy of 99.46 % . Significance. The proposed methods could foster the development of future BCI applications relying on few-channel portable recording devices and individual-based training.",
+    "url": "https://doi.org/10.1088/1741-2552/ac4430",
+    "authors": [
+      "F. Mattioli",
+      "Camillo Porcaro",
+      "Gianluca Baldassarre"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Electroencephalography",
+      "Motor imagery",
+      "Transfer of learning"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2021-12-01",
+    "doi": "https://doi.org/10.1088/1741-2552/ac4430",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2132904845",
+    "name": "Comparison of tactile, auditory, and visual modality for brain-computer interface use: a case study with a patient in the locked-in state",
+    "source": "openalex",
+    "abstract": "This paper describes a case study with a patient in the classic locked-in state, who currently has no means of independent communication. Following a user-centered approach, we investigated event-related potentials (ERP) elicited in different modalities for use in brain-computer interface (BCI) systems. Such systems could provide her with an alternative communication channel. To investigate the most viable modality for achieving BCI based communication, classic oddball paradigms (1 rare and 1 frequent stimulus, ratio 1:5) in the visual, auditory and tactile modality were conducted (2 runs per modality). Classifiers were built on one run and tested offline on another run (and vice versa). In these paradigms, the tactile modality was clearly superior to other modalities, displaying high offline accuracy even when classification was performed on single trials only. Consequently, we tested the tactile paradigm online and the patient successfully selected targets without any error. Furthermore, we investigated use of the visual or tactile modality for different BCI systems with more than two selection options. In the visual modality, several BCI paradigms were tested offline. Neither matrix-based nor so-called gaze-independent paradigms constituted a means of control. These results may thus question the gaze-independence of current gaze-independent approaches to BCI. A tactile four-choice BCI resulted in high offline classification accuracies. Yet, online use raised various issues. Although performance was clearly above chance, practical daily life use appeared unlikely when compared to other communication approaches (e.g., partner scanning). Our results emphasize the need for user-centered design in BCI development including identification of the best stimulus modality for a particular user. Finally, the paper discusses feasibility of EEG-based BCI systems for patients in classic locked-in state and compares BCI to other AT solutions that we also tested during the study.",
+    "url": "https://doi.org/10.3389/fnins.2013.00129",
+    "authors": [
+      "Tobias Kaufmann",
+      "Elisa Mira Holz",
+      "Andrea Kübler"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Modality (human–computer interaction)",
+      "Modalities",
+      "Computer science",
+      "Stimulus modality"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2013-01-01",
+    "doi": "https://doi.org/10.3389/fnins.2013.00129",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2077315274",
+    "name": "Real-time brain-computer interfacing: A preliminary study using Bayesian learning",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/bf02344689",
+    "authors": [
+      "Stephen Roberts",
+      "W.D. Penny"
+    ],
+    "tags": [
+      "Interfacing",
+      "Computer science",
+      "Brain–computer interface",
+      "Smoothing",
+      "Bayesian probability"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2000-01-01",
+    "doi": "https://doi.org/10.1007/bf02344689",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2070574492",
+    "name": "Challenges in clinical applications of brain computer interfaces in individuals with spinal cord injury",
+    "source": "openalex",
+    "abstract": "Brain computer interfaces (BCIs) are devices that measure brain activities and translate them into control signals used for a variety of applications. Among them are systems for communication, environmental control, neuroprostheses, exoskeletons, or restorative therapies. Over the last years the technology of BCIs has reached a level of matureness allowing them to be used not only in research experiments supervised by scientists, but also in clinical routine with patients with neurological impairments supervised by clinical personnel or caregivers. However, clinicians and patients face many challenges in the application of BCIs. This particularly applies to high spinal cord injured patients, in whom artificial ventilation, autonomic dysfunctions, neuropathic pain, or the inability to achieve a sufficient level of control during a short-term training may limit the successful use of a BCI. Additionally, spasmolytic medication and the acute stress reaction with associated episodes of depression may have a negative influence on the modulation of brain waves and therefore the ability to concentrate over an extended period of time. Although BCIs seem to be a promising assistive technology for individuals with high spinal cord injury systematic investigations are highly needed to obtain realistic estimates of the percentage of users that for any reason may not be able to operate a BCI in a clinical setting.",
+    "url": "https://doi.org/10.3389/fneng.2014.00038",
+    "authors": [
+      "RÃ ⁄ diger Rupp"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Exoskeleton",
+      "Spinal cord injury",
+      "Physical medicine and rehabilitation",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2014-09-24",
+    "doi": "https://doi.org/10.3389/fneng.2014.00038",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2061753672",
+    "name": "EEG-based Brain-Computer Interface to support post-stroke motor rehabilitation of the upper limb",
+    "source": "openalex",
+    "abstract": "Brain-Computer Interfaces (BCIs) process brain activity in real time, and mediate non-muscular interaction between and individual and the environment. The subserving algorithms can be used to provide a quantitative measurement of physiological or pathological cognitive processes - such as Motor Imagery (MI) - and feed it back the user. In this paper we propose the clinical application of a BCI-based rehabilitation device, to promote motor recovery after stroke. The BCI-based device and the therapy exploiting its use follow the same principles that drive classical neuromotor rehabilitation, and (i) provides the physical therapist with a monitoring instrument, to assess the patient's participation in the rehabilitative cognitive exercise; (ii) assists the patient in the practice of MI. The device was installed in the ward of a rehabilitation hospital and a group of 29 patients were involved in its testing. Among them, eight have already undergone a one-month training with the device, as an add-on to the regular therapy. An improved system, which includes analysis of Electromyographic (EMG) patterns and Functional Electrical Stimulation (FES) of the arm muscles, is also under clinical evaluation. We found that the rehabilitation exercise based on BCI-mediated neurofeedback mechanisms enables a better engagement of motor areas with respect to motor imagery alone and thus it can promote neuroplasticity in brain regions affected by a cerebrovascular accident. Preliminary results also suggest that the functional outcome of motor rehabilitation may be improved by the use of the proposed device.",
+    "url": "https://doi.org/10.1109/embc.2012.6346871",
+    "authors": [
+      "Febo Cincotti",
+      "Floriana Pichiorri",
+      "Pietro Aricò",
+      "Fabio Aloise",
+      "Francesco Leotta",
+      "Fabrizio De Vico Fallani",
+      "José del R. Millán",
+      "Marco Molinari",
+      "Donatella Mattia"
+    ],
+    "tags": [
+      "Rehabilitation",
+      "Motor imagery",
+      "Brain–computer interface",
+      "Neurofeedback",
+      "Physical medicine and rehabilitation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2012-08-01",
+    "doi": "https://doi.org/10.1109/embc.2012.6346871",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2585880058",
+    "name": "Assessing motor imagery in brain-computer interface training: Psychological and neurophysiological correlates",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.neuropsychologia.2017.02.005",
+    "authors": [
+      "Anatoly N. Vasilyev",
+      "С.П. Либуркина",
+      "Lev Yakovlev",
+      "Olga Perepelkina",
+      "Alexander Kaplan"
+    ],
+    "tags": [
+      "Motor imagery",
+      "Brain–computer interface",
+      "Psychology",
+      "Electroencephalography",
+      "Transcranial magnetic stimulation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2017-02-04",
+    "doi": "https://doi.org/10.1016/j.neuropsychologia.2017.02.005",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2133373764",
+    "name": "Exploring miniaturized EEG electrodes for brain-computer interfaces. An EEG you do not see?",
+    "source": "openalex",
+    "abstract": "Electroencephalography (EEG) allows the study of the brain-behavior relationship in humans. Most of what we have learned with EEG was through observing the brain-behavior relationship under well-controlled laboratory conditions. However, by reducing \"normal\" behavior to a minimum the ecological validity of the results can be limited. Recent developments toward mobile EEG solutions allow to study the brain-behavior relationship outside the laboratory in more natural situations. Besides mobility and robustness with respect to motion, mobile EEG systems should also interfere as little as possible with the participant's behavior. For example, natural interaction with other people could be hindered when it is obvious that a participant wears an EEG cap. This study evaluates the signal quality obtained with an unobtrusive solution for EEG monitoring through the integration of miniaturized EEG ton-electrodes into both a discreet baseball cap and an individualized ear piece. We show that such mini electrodes located at scalp and ear locations can reliably record event related potentials in a P300 brain-computer-interface application.",
+    "url": "https://doi.org/10.14814/phy2.12362",
+    "authors": [
+      "Martin G. Bleichner",
+      "Micha Lundbeck",
+      "Matthias Selisky",
+      "Falk Minow",
+      "Manuela Jäger",
+      "Reiner Emkes",
+      "Stefan Debener",
+      "Maarten De Vos"
+    ],
+    "tags": [
+      "Electroencephalography",
+      "EEG-fMRI",
+      "Brain–computer interface",
+      "Computer science",
+      "Robustness (evolution)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2015-04-01",
+    "doi": "https://doi.org/10.14814/phy2.12362",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2403091650",
+    "name": "Determining Optimal Feature-Combination for LDA Classification of Functional Near-Infrared Spectroscopy Signals in Brain-Computer Interface Application",
+    "source": "openalex",
+    "abstract": "In this study, we determine the optimal feature-combination for classification of functional near-infrared spectroscopy (fNIRS) signals with the best accuracies for development of a two-class brain-computer interface (BCI). Using a multi-channel continuous-wave imaging system, mental arithmetic signals are acquired from the prefrontal cortex of seven healthy subjects. After removing physiological noises, six oxygenated and deoxygenated hemoglobin (HbO and HbR) features-mean, slope, variance, peak, skewness and kurtosis-are calculated. All possible 2- and 3-feature combinations of the calculated features are then used to classify mental arithmetic vs. rest using linear discriminant analysis (LDA). It is found that the combinations containing mean and peak values yielded significantly higher (p < 0.05) classification accuracies for both HbO and HbR than did all of the other combinations, across all of the subjects. These results demonstrate the feasibility of achieving high classification accuracies using mean and peak values of HbO and HbR as features for classification of mental arithmetic vs. rest for a two-class BCI.",
+    "url": "https://doi.org/10.3389/fnhum.2016.00237",
+    "authors": [
+      "Noman Naseer",
+      "Farzan Majeed Noori",
+      "Nauman Khalid Qureshi",
+      "Keum‐Shik Hong"
+    ],
+    "tags": [
+      "Feature (linguistics)",
+      "Interface (matter)",
+      "Pattern recognition (psychology)",
+      "Artificial intelligence",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2016-05-24",
+    "doi": "https://doi.org/10.3389/fnhum.2016.00237",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W3041051645",
+    "name": "An Accurate EEGNet-based Motor-Imagery Brain–Computer Interface for Low-Power Edge Computing",
+    "source": "openalex",
+    "abstract": "This paper presents an accurate and robust embedded motor-imagery brain–computer interface (MI-BCI). The proposed novel model, based on EEGNet [1], matches the requirements of memory footprint and computational resources of low-power microcontroller units (MCUs), such as the ARM Cortex-M family. Furthermore, the paper presents a set of methods, including temporal downsampling, channel selection, and narrowing of the classification window, to further scale down the model to relax memory requirements with negligible accuracy degradation. Experimental results on the Physionet EEG Motor Movement/Imagery Dataset show that standard EEGNet achieves 82.43%, 75.07%, and 65.07% classification accuracy on 2-, 3-, and 4-class MI tasks in global validation, outperforming the state-of-the-art (SoA) convolutional neural network (CNN) by 2.05%, 5.25%, and 6.49%. Our novel method further scales down the standard EEGNet at a negligible accuracy loss of 0.31% with 7.6× memory footprint reduction and a small accuracy loss of 2.51% with 15× reduction. The scaled models are deployed on a commercial Cortex-M4F MCU taking 101 ms and consuming 4.28 mJ per inference for operating the smallest model, and on a Cortex-M7 with 44 ms and 18.1 mJ per inference for the medium-sized model, enabling a fully autonomous, wearable, and accurate low-power BCI.",
+    "url": "https://doi.org/10.1109/memea49120.2020.9137134",
+    "authors": [
+      "Xiaying Wang",
+      "Michael Hersche",
+      "Batuhan Tömekçe",
+      "Burak Kaya",
+      "Michele Magno",
+      "Luca Benini"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Upsampling",
+      "Memory footprint",
+      "Convolutional neural network"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-06-01",
+    "doi": "https://doi.org/10.1109/memea49120.2020.9137134",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2984664345",
+    "name": "Immediate brain plasticity after one hour of brain–computer interface (BCI)",
+    "source": "openalex",
+    "abstract": "KEY POINTS: Two groups of inexperienced brain-computer interface users underwent a purely mental EEG-BCI session that rapidly impacted on their brain. Modulations in structural and functional MRI were found after only 1 h of BCI training. Two different types of BCI (based on motor imagery or visually evoked potentials) were employed and analyses showed that the brain plastic changes are spatially specific for the respective neurofeedback. This spatial specificity promises tailored therapeutic interventions (e.g. for stroke patients). ABSTRACT: A brain-computer-interface (BCI) allows humans to control computational devices using only neural signals. However, it is still an open question, whether performing BCI also impacts on the brain itself, i.e. whether brain plasticity is induced. Here, we show rapid and spatially specific signs of brain plasticity measured with functional and structural MRI after only 1 h of purely mental BCI training in BCI-naive subjects. We employed two BCI approaches with neurofeedback based on (i) modulations of EEG rhythms by motor imagery (MI-BCI) or (ii) event-related potentials elicited by visually targeting flashing letters (ERP-BCI). Before and after the BCI session we performed structural and functional MRI. For both BCI approaches we found increased T1-weighted MR signal in the grey matter of the respective target brain regions, such as occipital/parietal areas after ERP-BCI and precuneus and sensorimotor regions after MI-BCI. The latter also showed increased functional connectivity and higher task-evoked BOLD activity in the same areas. Our results demonstrate for the first time that BCI by means of targeted neurofeedback rapidly impacts on MRI measures of brain structure and function. The spatial specificity of BCI-induced brain plasticity promises therapeutic interventions tailored to individual functional deficits, for example in patients after stroke.",
+    "url": "https://doi.org/10.1113/jp278118",
+    "authors": [
+      "Till Nierhaus",
+      "Carmen Vidaurre",
+      "Claudia Sannelli",
+      "Klaus-Robert Müller",
+      "Arno Villringer"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Interface (matter)",
+      "Neuroplasticity",
+      "Computer science",
+      "Neuroscience"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2019-11-06",
+    "doi": "https://doi.org/10.1113/jp278118",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W162680006",
+    "name": "Critical Decision-Speed and Information Transfer in the “Graz Brain–Computer Interface”",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1024637331493",
+    "authors": [
+      "Gunther Krausz",
+      "Reinhold Scherer",
+      "G. Korisek",
+      "G. Pfurtscheller"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Electroencephalography",
+      "Motor imagery",
+      "Computer science",
+      "Psychology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2003-09-01",
+    "doi": "https://doi.org/10.1023/a:1024637331493",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2793397193",
+    "name": "EEG Based Brain Computer Interface for Controlling a Robot Arm Movement Through Thought",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.irbm.2018.02.001",
+    "authors": [
+      "Rihab Bousseta",
+      "Issam El Ouakouak",
+      "Mourad Gharbi",
+      "Fakhita Regragui"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Robotic arm",
+      "Electroencephalography",
+      "Computer science",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2018-02-14",
+    "doi": "https://doi.org/10.1016/j.irbm.2018.02.001",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2025082679",
+    "name": "Dual-frequency steady-state visual evoked potential for brain computer interface",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.neulet.2010.07.043",
+    "authors": [
+      "Kuo‐Kai Shyu",
+      "Po‐Lei Lee",
+      "Yu-Ju Liu",
+      "Jyun-Jie Sie"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Evoked potential",
+      "Interface (matter)",
+      "Dual (grammatical number)",
+      "Stimulation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2010-07-23",
+    "doi": "https://doi.org/10.1016/j.neulet.2010.07.043",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2104700195",
+    "name": "Brain-computer interfacing using modulations of alpha activity induced by covert shifts of attention",
+    "source": "openalex",
+    "abstract": "BACKGROUND: Visual brain-computer interfaces (BCIs) often yield high performance only when targets are fixated with the eyes. Furthermore, many paradigms use intense visual stimulation, which can be irritating especially in long BCI sessions. However, BCIs can more directly directly tap the neural processes underlying visual attention. Covert shifts of visual attention induce changes in oscillatory alpha activity in posterior cortex, even in the absence of visual stimulation. The aim was to investigate whether different pairs of directions of attention shifts can be reliably differentiated based on the electroencephalogram. To this end, healthy participants (N = 8) had to strictly fixate a central dot and covertly shift visual attention to one out of six cued directions. RESULTS: Covert attention shifts induced a prolonged alpha synchronization over posterior electrode sites (PO and O electrodes). Spectral changes had specific topographies so that different pairs of directions could be differentiated. There was substantial variation across participants with respect to the direction pairs that could be reliably classified. Mean accuracy for the best-classifiable pair amounted to 74.6%. Furthermore, an alpha power index obtained during a relaxation measurement showed to be predictive of peak BCI performance (r = .66). CONCLUSIONS: Results confirm posterior alpha power modulations as a viable input modality for gaze-independent EEG-based BCIs. The pair of directions yielding optimal performance varies across participants. Consequently, participants with low control for standard directions such as left-right might resort to other pairs of directions including top and bottom. Additionally, a simple alpha index was shown to predict prospective BCI performance.",
+    "url": "https://doi.org/10.1186/1743-0003-8-24",
+    "authors": [
+      "Matthias S. Treder",
+      "Ali Bahramisharif",
+      "Nico M. Schmidt",
+      "Marcel van Gerven",
+      "Benjamin Blankertz"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Electroencephalography",
+      "Covert",
+      "Gaze",
+      "Psychology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2011-01-01",
+    "doi": "https://doi.org/10.1186/1743-0003-8-24",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2916044792",
+    "name": "Shared control of a robotic arm using non-invasive brain–computer interface and computer vision guidance",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.robot.2019.02.014",
+    "authors": [
+      "Xu Yang",
+      "Cheng Ding",
+      "Xiaokang Shu",
+      "Kai Gui",
+      "Yulia Bezsudnova",
+      "Xinjun Sheng",
+      "Dingguo Zhang"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "GRASP",
+      "Computer science",
+      "Robotic arm",
+      "Interface (matter)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2019-02-25",
+    "doi": "https://doi.org/10.1016/j.robot.2019.02.014",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2056180919",
+    "name": "An online brain–computer interface using non-flashing visual evoked potentials",
+    "source": "openalex",
+    "abstract": "Not until recently have motion-onset visual evoked potentials (mVEPs) been explored as a modality for brain-computer interface (BCI) applications. In this study, the first online BCI system based on mVEPs is presented, in which selection is discerned by subjects' focused attention to the moving cursor at a target virtual button. An adaptive approach was used to adjust the number of trial presentations according to the participants' online performance. With the EEG signal acquired from only a single channel, an acceptable information transfer rate of 42.1 bits min(-1) was achieved, averaged by 12 subjects. Furthermore, an online application for the Google search system was developed based on this paradigm. The promising results, that all of 12 participants were able to operate the system freely, validate the feasibility of a practical motion-onset VEP-based BCI which could be embedded into computer screen elements, such as menu, button and icon, for various applications.",
+    "url": "https://doi.org/10.1088/1741-2560/7/3/036003",
+    "authors": [
+      "Tao Liu",
+      "Leslie Ann Goldberg",
+      "Shangkai Gao",
+      "Bo Hong"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Computer science",
+      "Cursor (databases)",
+      "Interface (matter)",
+      "Modality (human–computer interaction)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2010-04-19",
+    "doi": "https://doi.org/10.1088/1741-2560/7/3/036003",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W2128723763",
+    "name": "Amplitude and phase coupling measures for feature extraction in an EEG-based brain–computer interface",
+    "source": "openalex",
+    "abstract": "Most of the feature extraction methods in existing brain-computer interfaces (BCIs) are based on the dynamic behavior of separate signals, without using the coupling information between different brain regions. In this paper, amplitude and phase coupling measures, quantified by a nonlinear regressive coefficient and phase locking value respectively, were used for feature extraction. The two measures were based on three different coupling methods determined by neurophysiological a priori knowledge, and applied to a small number of electrodes of interest, leading to six feature vectors for classification. Five subjects participated in an online BCI experiment during which they were asked to imagine a movement of either the left or right hand. The electroencephalographic (EEG) recordings from all subjects were analyzed offline. The averaged classification accuracies of the five subjects ranged from 87.4% to 92.9% for the six feature vectors and the best classification accuracies of the six feature vectors ranged between 84.4% and 99.6% for the five subjects. The performance of coupling features was compared with that of the autoregressive (AR) feature. Results indicated that coupling measures are appropriate methods for feature extraction in BCIs. Furthermore, the combination of coupling and AR feature can effectively improve the classification accuracy due to their complementarities.",
+    "url": "https://doi.org/10.1088/1741-2560/4/2/012",
+    "authors": [
+      "Qingguo Wei",
+      "Yijun Wang",
+      "Xiaorong Gao",
+      "Shangkai Gao"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Feature extraction",
+      "Pattern recognition (psychology)",
+      "Electroencephalography",
+      "Feature (linguistics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2007-03-28",
+    "doi": "https://doi.org/10.1088/1741-2560/4/2/012",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
+  },
+  {
+    "id": "oa:W3101114935",
+    "name": "Combination of Augmented Reality Based Brain- Computer Interface and Computer Vision for High-Level Control of a Robotic Arm",
+    "source": "openalex",
+    "abstract": "Recent advances in robotics, neuroscience, and signal processing make it possible to operate a robot through electroencephalography (EEG)-based brain-computer interface (BCI). Although some successful attempts have been made in recent years, the practicality of the entire system still has much room for improvement. The present study designed and realized a robotic arm control system by combing augmented reality (AR), computer vision, and steady-state visual evoked potential (SSVEP)-BCI. AR environment was implemented by a Microsoft HoloLens. Flickering stimuli for eliciting SSVEPs were presented on the HoloLens, which allowed users to see both the robotic arm and the user interface of the BCI. Thus users did not need to switch attention between the visual stimulator and the robotic arm. A four-command SSVEP-BCI was built for users to choose the specific object to be operated by the robotic arm. Once an object was selected, the computer vision would provide the location and color of the object in the workspace. Subsequently, the object was autonomously picked up and placed by the robotic arm. According to the online results obtained from twelve participants, the mean classification accuracy of the proposed system was 93.96 ± 5.05%. Moreover, all subjects could utilize the proposed system to successfully pick and place objects in a specific order. These results demonstrated the potential of combining AR-BCI and computer vision to control robotic arms, which is expected to further promote the practicality of BCI-controlled robots.",
+    "url": "https://doi.org/10.1109/tnsre.2020.3038209",
+    "authors": [
+      "Xiaogang Chen",
+      "Xiaoshan Huang",
+      "Yijun Wang",
+      "Xiaorong Gao"
+    ],
+    "tags": [
+      "Brain–computer interface",
+      "Robotic arm",
+      "Computer science",
+      "Interface (matter)",
+      "Workspace"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "bionic-ai"
+    ],
+    "publishedDate": "2020-11-16",
+    "doi": "https://doi.org/10.1109/tnsre.2020.3038209",
+    "addedAt": "2026-08-31T14:44:20.145Z",
+    "updatedAt": "2026-08-31T14:44:20.145Z"
   }
 ]

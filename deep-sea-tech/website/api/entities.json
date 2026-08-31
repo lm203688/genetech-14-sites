@@ -1840,7 +1840,7 @@
     "publishedDate": "2020-04-15",
     "addedAt": "2026-08-05T01:47:54.265Z",
     "doi": "10.1186/s10033-020-00449-z",
-    "updatedAt": "2026-08-31T06:32:00.350Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W2082001988",
@@ -50195,7 +50195,7 @@
     "publishedDate": "2002-02-01",
     "doi": "https://doi.org/10.1029/2000rg000095",
     "addedAt": "2026-08-31T06:31:46.478Z",
-    "updatedAt": "2026-08-31T06:31:46.478Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W4317625850",
@@ -56083,19 +56083,31 @@
   {
     "id": "doi:10.3901/jme.2024.22.385",
     "name": "Drilling Technology Status and Development Trends of Deep-sea Seafloor Drill",
-    "source": "crossref",
-    "abstract": "",
+    "source": "openalex",
+    "abstract": "摘要： 海底钻探取芯是开展海洋地质及环境科学研究、进行海洋矿产资源勘探和海底工程地质勘察所必备的关键技术，而海底钻机是深海钻探最具发展潜力的技术装备。首先，对世界几种主要深海海底钻机的现有技术特点与钻探案例进行阐述；然后，分深海海底浅孔钻机、深海海底中深孔钻机、深海海底深孔钻机以及深海海底超深孔钻机四个阶段系统总结中国深海海底钻机技术特点和钻机钻探取芯应用情况；最后，分析深海海底钻机的发展趋势以及面临的挑战——将朝着超水深、超钻深、高品质和多功能四个方向发展，以及面临材料、密封、支撑、收放等四个方面的挑战。通过全面综述国内外深海海底钻机的技术特点以及钻探现状为后续深海海底钻机的设计及研究提供参考依据。",
     "url": "https://doi.org/10.3901/jme.2024.22.385",
-    "authors": [],
-    "tags": [],
-    "confidence": 0.7,
+    "authors": [
+      "WAN Buyan",
+      "PENG Fenfei",
+      "JIN Yongping",
+      "PENG Youduo",
+      "LIU Deshun"
+    ],
+    "tags": [
+      "Drill",
+      "Drilling",
+      "Geology",
+      "Seafloor spreading",
+      "Mining engineering"
+    ],
+    "confidence": 0.72,
     "sites": [
       "deep-sea-tech"
     ],
-    "publishedDate": "2025-12-19T03:15:36Z",
+    "publishedDate": "2024-01-01",
     "doi": "10.3901/jme.2024.22.385",
     "addedAt": "2026-08-31T06:31:46.479Z",
-    "updatedAt": "2026-08-31T06:31:46.479Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "doi:10.3403/30419526u",
@@ -56179,19 +56191,28 @@
   {
     "id": "doi:10.1007/978-981-97-2417-8",
     "name": "Advanced Construction Technology and Research of Deep-Sea Tunnels",
-    "source": "crossref",
-    "abstract": "",
+    "source": "openalex",
+    "abstract": "This open access book intends to provide a review of relevant studies on deep-sea tunnel construction around the globe",
     "url": "https://doi.org/10.1007/978-981-97-2417-8",
-    "authors": [],
-    "tags": [],
-    "confidence": 0.7,
+    "authors": [
+      "Guoxiong Mei",
+      "Zengguang Xu",
+      "Fei Zhang"
+    ],
+    "tags": [
+      "Construction engineering",
+      "Engineering",
+      "Forensic engineering",
+      "Geology"
+    ],
+    "confidence": 0.72,
     "sites": [
       "deep-sea-tech"
     ],
-    "publishedDate": "2024-08-01T01:02:48Z",
+    "publishedDate": "2024-01-01",
     "doi": "10.1007/978-981-97-2417-8",
     "addedAt": "2026-08-31T06:31:46.479Z",
-    "updatedAt": "2026-08-31T06:31:46.479Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "doi:10.5852/mem218",
@@ -90166,7 +90187,7 @@
     "publishedDate": "2013-12-01",
     "doi": "https://doi.org/10.1016/s1876-3804(13)60093-2",
     "addedAt": "2026-08-31T06:31:50.971Z",
-    "updatedAt": "2026-08-31T06:31:50.971Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W4294741352",
@@ -90197,7 +90218,7 @@
     "publishedDate": "2022-09-06",
     "doi": "https://doi.org/10.1016/j.aej.2022.08.017",
     "addedAt": "2026-08-31T06:31:50.971Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W1618305965",
@@ -90222,7 +90243,7 @@
     "publishedDate": "2013-11-08",
     "doi": "https://doi.org/10.1002/2013rg000434",
     "addedAt": "2026-08-31T06:31:50.971Z",
-    "updatedAt": "2026-08-31T06:32:00.351Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W2883197540",
@@ -140102,7 +140123,7 @@
     "publishedDate": "2018-01-26",
     "doi": "https://doi.org/10.3389/fpls.2018.00038",
     "addedAt": "2026-08-31T06:31:55.904Z",
-    "updatedAt": "2026-08-31T06:31:55.904Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W3043763415",
@@ -140155,7 +140176,7 @@
     "publishedDate": "2001-01-01",
     "doi": "https://doi.org/10.1063/1.1357902",
     "addedAt": "2026-08-31T06:31:55.904Z",
-    "updatedAt": "2026-08-31T06:31:55.904Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W2522863355",
@@ -160779,7 +160800,7 @@
     "publishedDate": "2012-06-18",
     "doi": "https://doi.org/10.1016/j.measurement.2012.05.032",
     "addedAt": "2026-08-31T06:32:00.350Z",
-    "updatedAt": "2026-08-31T06:32:00.350Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W3006275595",
@@ -160844,7 +160865,7 @@
     "publishedDate": "2022-01-25",
     "doi": "https://doi.org/10.2196/34384",
     "addedAt": "2026-08-31T06:32:00.350Z",
-    "updatedAt": "2026-08-31T06:32:00.350Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W2165201237",
@@ -167375,11 +167396,7 @@
       "Xiaoyong Shi",
       "Rongguo Su",
       "Naihao Ye",
-      "Dongyan Liu",
-      "Rencheng Yu",
-      "Zongling Wang",
-      "Mingjiang Zhou",
-      "Nianzhi Jiao"
+      "Dongyan Liu"
     ],
     "tags": [
       "China",
@@ -167395,7 +167412,7 @@
     "publishedDate": "2019-03-18",
     "doi": "https://doi.org/10.1093/nsr/nwz026",
     "addedAt": "2026-08-31T06:32:02.046Z",
-    "updatedAt": "2026-08-31T06:32:02.046Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W2115701239",
@@ -167460,7 +167477,7 @@
     "publishedDate": "2021-03-27",
     "doi": "https://doi.org/10.3390/md19040188",
     "addedAt": "2026-08-31T06:32:02.046Z",
-    "updatedAt": "2026-08-31T06:32:02.046Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W3177816066",
@@ -189534,7 +189551,7 @@
     "publishedDate": "2023-07-27",
     "doi": "https://doi.org/10.3390/rs15153742",
     "addedAt": "2026-08-31T06:32:02.626Z",
-    "updatedAt": "2026-08-31T06:32:02.626Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W3017162204",
@@ -189619,7 +189636,7 @@
     "publishedDate": "2006-06-01",
     "doi": "https://doi.org/10.1109/tie.2006.878356",
     "addedAt": "2026-08-31T06:32:02.626Z",
-    "updatedAt": "2026-08-31T06:32:02.626Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W2783489174",
@@ -191455,13 +191472,7 @@
       "George A. Jackson",
       "Rolf Koppelmann",
       "Bernard Quéguiner",
-      "Olivier Ragueneau",
-      "Fereidoun Rassoulzadegan",
-      "Bruce H. Robison",
-      "Christian Tamburini",
-      "Tsuneo Tanaka",
-      "Karen F. Wishner",
-      "Jing Zhang"
+      "Olivier Ragueneau"
     ],
     "tags": [
       "Mesopelagic zone",
@@ -191477,7 +191488,7 @@
     "publishedDate": "2010-03-09",
     "doi": "https://doi.org/10.1016/j.dsr2.2010.02.018",
     "addedAt": "2026-08-31T06:32:02.627Z",
-    "updatedAt": "2026-08-31T06:32:02.627Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W3084064394",
@@ -191749,7 +191760,7 @@
     "publishedDate": "2000-09-01",
     "doi": "https://doi.org/10.1128/mmbr.64.3.573-606.2000",
     "addedAt": "2026-08-31T06:32:02.627Z",
-    "updatedAt": "2026-08-31T06:32:02.627Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W3204164233",
@@ -210731,7 +210742,7 @@
     "publishedDate": "2021-01-01",
     "doi": "https://doi.org/10.1109/access.2021.3118642",
     "addedAt": "2026-08-31T06:32:04.826Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W4365505984",
@@ -210778,39 +210789,7 @@
       "Luís Cardona",
       "Carlos Carreras",
       "Paolo Casale",
-      "SA Ceriani",
-      "PH Dutton",
-      "Tomoharu Eguchi",
-      "Ángela Formia",
-      "MMPB Fuentes",
-      "WJ Fuller",
-      "Marc Girondot",
-      "MH Godfrey",
-      "Mark Hamann",
-      "KM Hart",
-      "Graeme C. Hays",
-      "Sandra Hochscheid",
-      "Yakup Kaska",
-      "Michael P. Jensen",
-      "Jeffrey C. Mangel",
-      "Jeanne A. Mortimer",
-      "Eugênia Naro‐Maciel",
-      "CKY Ng",
-      "WJ Nichols",
-      "Andrea D. Phillott",
-      "Richard D. Reina",
-      "Ohiana Revuelta",
-      "Gail Schofield",
-      "JA Seminoff",
-      "Kartik Shanker",
-      "Jesús Tomás",
-      "Jason P. van de Merwe",
-      "Kyle S. Van Houtan",
-      "Hannah B. Vander Zanden",
-      "BP Wallace",
-      "KR Wedemeyer-Strombel",
-      "Thierry M. Work",
-      "Brendan J. Godley"
+      "SA Ceriani"
     ],
     "tags": [
       "Turtle (robot)",
@@ -210826,7 +210805,7 @@
     "publishedDate": "2016-12-13",
     "doi": "https://doi.org/10.3354/esr00801",
     "addedAt": "2026-08-31T06:32:04.826Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W3135761705",
@@ -211304,7 +211283,7 @@
     "publishedDate": "2015-01-27",
     "doi": "https://doi.org/10.1128/mbio.02288-14",
     "addedAt": "2026-08-31T06:32:04.826Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W2873785960",
@@ -211331,7 +211310,7 @@
     "publishedDate": "2018-07-07",
     "doi": "https://doi.org/10.1016/j.rser.2018.06.047",
     "addedAt": "2026-08-31T06:32:04.826Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W4291670288",
@@ -211871,15 +211850,7 @@
       "Daniel C. Carvalho",
       "Rodolfo Dirzo",
       "Stephannie Fernandes",
-      "Pedro Manoel Galetti",
-      "Virginia García Millán",
-      "Christian Mielke",
-      "Jorge L. Ramírez",
-      "Ana Carolina de Oliveira Neves",
-      "Christian Rogaß",
-      "Sérvio Pontes Ribeiro",
-      "Aldicìr Scariot",
-      "Britaldo Soares‐Filho"
+      "Pedro Manoel Galetti"
     ],
     "tags": [
       "Livelihood",
@@ -211895,7 +211866,7 @@
     "publishedDate": "2016-07-01",
     "doi": "https://doi.org/10.1016/j.ncon.2016.10.003",
     "addedAt": "2026-08-31T06:32:04.826Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W1536609381",
@@ -211922,7 +211893,7 @@
     "publishedDate": "2015-06-18",
     "doi": "https://doi.org/10.1080/01431161.2015.1057301",
     "addedAt": "2026-08-31T06:32:04.826Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W2943035173",
@@ -212137,7 +212108,7 @@
     "publishedDate": "2003-04-01",
     "doi": "https://doi.org/10.3723/175605403783379741",
     "addedAt": "2026-08-31T06:32:04.826Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W3009734908",
@@ -212252,7 +212223,7 @@
     "publishedDate": "2017-03-09",
     "doi": "https://doi.org/10.1111/raq.12194",
     "addedAt": "2026-08-31T06:32:04.826Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W2149888331",
@@ -212327,7 +212298,7 @@
     "publishedDate": "2020-09-02",
     "doi": "https://doi.org/10.1016/j.envint.2020.106067",
     "addedAt": "2026-08-31T06:32:04.826Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W2990623049",
@@ -212564,7 +212535,7 @@
     "publishedDate": "2021-12-14",
     "doi": "https://doi.org/10.1016/j.wasman.2021.12.001",
     "addedAt": "2026-08-31T06:32:04.826Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W3216221236",
@@ -212720,30 +212691,7 @@
       "John S. Edwards",
       "Aled Eirug",
       "Vassilis Galanos",
-      "P. Vigneswara Ilavarasan",
-      "Marijn Janssen",
-      "Paul Jones",
-      "Arpan Kumar Kar",
-      "Hatice Kizgin",
-      "Bianca Kronemann",
-      "Banita Lal",
-      "Biagio Lucini",
-      "Rony Medaglia",
-      "Kenneth Le Meunier‐FitzHugh",
-      "Leslie Caroline Le Meunier-FitzHugh",
-      "Santosh K. Misra",
-      "Emmanuel Mogaji",
-      "Sujeet Kumar Sharma",
-      "Jang Bahadur Singh",
-      "Vishnupriya Raghavan",
-      "Ramakrishnan Raman",
-      "Nripendra P. Rana",
-      "Spyridon Samothrakis",
-      "Jak Spencer",
-      "Kuttimani Tamilmani",
-      "Annie Tubadji",
-      "Paul Walton",
-      "Michael D. Williams"
+      "P. Vigneswara Ilavarasan"
     ],
     "tags": [
       "Pace",
@@ -212759,7 +212707,7 @@
     "publishedDate": "2019-08-27",
     "doi": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002",
     "addedAt": "2026-08-31T06:32:04.826Z",
-    "updatedAt": "2026-08-31T06:32:04.826Z"
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   },
   {
     "id": "oa:W3014687155",
@@ -241170,5 +241118,2016 @@
     "doi": "10.1109/icra55743.2025.11128759",
     "addedAt": "2026-08-31T06:32:13.943Z",
     "updatedAt": "2026-08-31T06:32:13.943Z"
+  },
+  {
+    "id": "oa:W2122090100",
+    "name": "Novel lineages of Prochlorococcus and Synechococcus in the global oceans",
+    "source": "openalex",
+    "abstract": "Picocyanobacteria represented by Prochlorococcus and Synechococcus have an important role in oceanic carbon fixation and nutrient cycling. In this study, we compared the community composition of picocyanobacteria from diverse marine ecosystems ranging from estuary to open oceans, tropical to polar oceans and surface to deep water, based on the sequences of 16S-23S rRNA internal transcribed spacer (ITS). A total of 1339 ITS sequences recovered from 20 samples unveiled diverse and several previously unknown clades of Prochlorococcus and Synechococcus. Six high-light (HL)-adapted Prochlorococcus clades were identified, among which clade HLVI had not been described previously. Prochlorococcus clades HLIII, HLIV and HLV, detected in the Equatorial Pacific samples, could be related to the HNLC clades recently found in the high-nutrient, low-chlorophyll (HNLC), iron-depleted tropical oceans. At least four novel Synechococcus clades (out of six clades in total) in subcluster 5.3 were found in subtropical open oceans and the South China Sea. A niche partitioning with depth was observed in the Synechococcus subcluster 5.3. Members of Synechococcus subcluster 5.2 were dominant in the high-latitude waters (northern Bering Sea and Chukchi Sea), suggesting a possible cold-adaptation of some marine Synechococcus in this subcluster. A distinct shift of the picocyanobacterial community was observed from the Bering Sea to the Chukchi Sea, which reflected the change of water temperature. Our study demonstrates that oceanic systems contain a large pool of diverse picocyanobacteria, and further suggest that new genotypes or ecotypes of picocyanobacteria will continue to emerge, as microbial consortia are explored with advanced sequencing technology.",
+    "url": "https://doi.org/10.1038/ismej.2011.106",
+    "authors": [
+      "Sijun Huang",
+      "Steven W. Wilhelm",
+      "H. Rodger Harvey",
+      "Karen Taylor",
+      "Nianzhi Jiao",
+      "Feng Chen"
+    ],
+    "tags": [
+      "Prochlorococcus",
+      "Synechococcus",
+      "Biology",
+      "Clade",
+      "Ecology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2011-09-29",
+    "doi": "https://doi.org/10.1038/ismej.2011.106",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W3026717616",
+    "name": "A critical social perspective on deep sea mining: Lessons from the emergent industry in Japan",
+    "source": "openalex",
+    "abstract": "In 2017 the Japanese government reported that its state-owned mining company had successfully extracted zinc from the seabed off the coast of Okinawa. This piloting of technology is currently the world's only example of large-scale extractive activity operating at such depths. Alongside Japan's innovations, the global deep sea mining (DSM) industry is moving towards commercial viability. This paper draws upon critical theoretical perspectives to better understand the complex debates being provoked. While there has been an increasing range of scholarship focusing on DSM from both the natural and social sciences, this paper cautions that the social sciences are not merely tools for assessing public and stakeholder acceptability. They require and deserve a central role in defining the purpose, nature and scope of commercial DSM. This paper therefore develops an approach that seeks to diversify and broaden engagements with DSM and that is well-placed to navigate the political questions that emerge from mining on the seabed. These perspectives also enable us to interrogate claims that DSM offers greater ‘sustainability’ than terrestrial mining does. This paper's interdisciplinary approach draws on empirical reference to, and examples from, the Japanese context, highlighting four main areas of concern for DSM: geography, geopolitics, law and political economy. These areas of critical enquiry reveal DSM's complexities and caution against perceiving DSM as a singular phenomenon. The emergent complex and multi-scalar questions from seabed mining therefore require a more holistic approach. Mining the seabed produces, and is underpinned by, a multitude of social, cultural and political dimensions and the potential consequences of DSM will not be experienced evenly. As this paper demonstrates, DSM is an interdisciplinary issue. The confines of disciplinary norms must therefore be exceeded to facilitate a deeper understanding of both the practices of DSM and their consequences.",
+    "url": "https://doi.org/10.1016/j.ocecoaman.2020.105242",
+    "authors": [
+      "Rosanna Carver",
+      "John Childs",
+      "Philip E. Steinberg",
+      "Leslie Mabon",
+      "Hiroyuki Matsuda",
+      "Rachael Squire",
+      "Benjamin McLellan",
+      "Miguel Esteban"
+    ],
+    "tags": [
+      "Perspective (graphical)",
+      "Environmental resource management",
+      "Geography",
+      "Political science",
+      "Economic geography"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-05-18",
+    "doi": "https://doi.org/10.1016/j.ocecoaman.2020.105242",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W3119733622",
+    "name": "The National Geographic Society Deep-Sea Camera System: A Low-Cost Remote Video Survey Instrument to Advance Biodiversity Observation in the Deep Ocean",
+    "source": "openalex",
+    "abstract": "There is a growing need for marine biodiversity baseline and monitoring data to assess ocean ecosystem health, especially in the deep sea, where data are notoriously sparse. Baited cameras are a biological observing method especially useful in the deep ocean to estimate relative abundances of scavenging fishes and invertebrates. The National Geographic Society Exploration Technology Lab developed an autonomous benthic lander platform with a baited camera system to conduct stationary video surveys of deep-sea megafauna. The first-generation landers were capable of sampling to full ocean depth, however, the form factor, power requirements, and cost of the system limited deployment opportunities. Therefore, a miniaturized version (76 cm × 76 cm × 36 cm, 18 kg in air) was developed to provide a cost-effective method to observe ocean life to 6000 m depth. Here, we detail this next-generation deep-sea camera system, including the structural design, scientific payload, and the procedures for deployment. We provide an overview of NGS deep-sea camera system deployments over the past decade with a focus on the performance improvements of the next-generation system, which began field operations in 2017 and have performed 264 deployments. We present example imagery and discuss the strengths and limitations of the instrument in the context of existing complementary survey methods, and for use in down-stream data products. The key operational advantages of this new instrument are spatial flexibility and cost-efficiency. The instrument can be hand-deployed by a single operator from a small craft concurrent with other shipboard operations. The main limitation of the system is battery power, which allows for 6 h of continuous recording, and takes up to 8 h to recharge between deployments. Like many baited-camera methods, this instrument is specialized to measure the relative abundance of mobile megafauna that are attracted to bait, which results in a stochastic snapshot of the species at the deployment location and time. The small size and ease of deployment of this next-generation camera system allows for increased sample replication on expeditions, and presents a path forward to advance cost-effective biological observing and sustained monitoring in the deep ocean.",
+    "url": "https://doi.org/10.3389/fmars.2020.601411",
+    "authors": [
+      "Jonatha Giddens",
+      "Alan Turchik",
+      "Whitney Goodell",
+      "Michelle Rodriguez",
+      "Denley Delaney"
+    ],
+    "tags": [
+      "Software deployment",
+      "Payload (computing)",
+      "Flexibility (engineering)",
+      "Context (archaeology)",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2021-01-11",
+    "doi": "https://doi.org/10.3389/fmars.2020.601411",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2967354367",
+    "name": "The role of magmatism in the thinning and breakup of the South China Sea continental margin",
+    "source": "openalex",
+    "abstract": "Magmatism plays a key role in the process of continental margin breakup and ocean formation. Even in the extremely magma-poor Iberia and Newfoundland margin, studies of field outcrops have shown that syn-rift magmatism had participated in rifting from a very early stage and contributed directly to the rifting process. The final transition from exhumed continental mantle to the ocean formation is also triggered by the accumulation and eruption of magma [1]. Therefore, Atlantic-type passive continental margins are classified into two end-members: magma-poor (non-volcanic) and magma-rich (volcanic). The differences between them lie in whether a large amount of intrusive and extrusive magmatism from the mantle plume/hotspot is involved in the syn-rift and breakup stages. A magma-rich margin [2] should include the following characteristics: (i) a high-velocity lower crust (HVLC) caused by syn-rift mafic magma underplating; (ii) continental crust intruded by abundant sills and dikes; (iii) a large volume of seaward-dipping reflectors (SDRs) caused by flood basalt eruption or tuffs. All other margins are classified as magma-poor margins. The South China Sea (SCS) is a marginal sea surrounded by subduction zones on three sides (Fig. 1). Onshore outcrop and offshore drilling suggested that the SCS started rifting in Late Cretaceous following the Mesozoic subduction and developed into an ocean after early Oligocene. Although classified as a magma-poor margin, the northern continental margin of the SCS shows many features different from the classic examples of Iberia and Newfoundland, including the widely distributed (over 250 km) detachment faults, widespread HVLC and magmatic intrusion below extended crust, large amount of landward-dipping fault systems and especially the fast transition from continental margin-to-seafloor spreading [3]. Thus, the northern central SCS continental margin challenged the typical magma-poor and magma-rich models by having combined features of both. Geological setting of the South China Sea (SCS) as shown by a bathymetry map and ODP/IODP sites. The inset map on the upper left corner shows the subduction zones surrounding the SCS. The black line indicates the location of the seismic profile of Fig. 2; the red line indicates the position of the seismic tomography profile of Fig. 3. Sedimentary basins: PRMB, Pearl River Mouth basin; QDNB, Qiongdongnan basin; TXNB, Taixinan basin; YGHB, Yinggehai basin; ZJNB, Zhongjiannan basin; SFB, Shuangfeng basin; CLB, Cuu Long basin; WAB, Wanan basin; NWXB, Nanweixi basin; JZB, Jiuzhang basin; YSB, Yongshu basin; ADB, Andu basin; NSTB, Nansha Trough basin; LYB, Liyue basin; SWPB, Southwest Palawan basin; NWPB, Northwest Palawan basin. To test what kind of thinning process might have controlled the transition from continent to ocean in the SCS, International Ocean Discovery Program (IODP) Expeditions 367, 368 and 368X were carried out in 2017 and 2018. Seven sites were drilled from the Outer Margin High (OMH) to the continent–ocean transition (COT) and to the early ocean basin [4] (Figs 1 and 2). Neither serpentinized mantle nor flood basalt/tuff was encountered; instead, over 120 m fresh mid-ocean ridge basalt (MORB) with sediment interlayers were recovered at Site U1500 and ~180 m altered basalt at Site U1502. According to the magnetic anomaly interpretation, paleontological dating in sediment and ship-board major-element analysis, the earliest MORB is about 30–34 Ma [4]. How is the transition from continent to ocean fulfilled? Discriminating the magmatic process of the SCS continental margin will greatly help to understand its thinning and breakup processes. Original (a) and interpreted (b) transect SCS-1 across most of the drill sites. Zoom-in sections about diking are shown in (c) and (d). Interpretation highlights the sills, diking and underplating reflections, as well as the associated deformation of sedimentary sequences. MSB, mid-slope basin; OMH, Outer Margin High",
+    "url": "https://doi.org/10.1093/nsr/nwz116",
+    "authors": [
+      "Zhen Sun",
+      "Jian Lin",
+      "N. Qiu",
+      "Zhimin Jian",
+      "Pinxian Wang",
+      "Xiong Pang",
+      "Jinyun Zheng",
+      "Benduo Zhu"
+    ],
+    "tags": [
+      "Breakup",
+      "Magmatism",
+      "Thinning",
+      "Continental margin",
+      "Geology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-08-08",
+    "doi": "https://doi.org/10.1093/nsr/nwz116",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2054413250",
+    "name": "Active colonisation of disturbed sediments by deep-sea nematodes: evidence for the patch mosaic model",
+    "source": "openalex",
+    "abstract": "An on-board experiment was performed during a research cruise to investigate the ability of deep-sea nematode species to actively colonise defaunated sediments. Small cylinders of 500 m wire mesh filled with defaunated sediment were inserted into microcosms containing sediment with indigenous meiofauna collected from 1300 m depth in the Arctic Ocean. The defaunated sediments were either enriched with the diatom Thalassiosira weissflogii, or remained unenriched. Samples from the defaunated sediment were taken after 9 and 17 d. As controls, microcosms with sediment containing the indigenous meiofauna but without an internal cylinder were also sampled at each time interval. Nematodes colonised both enriched and unenriched sediments with abundances of up to 20% of the controls. Irrespective of the time of sampling, abundance and number of species were significantly higher in the enriched treatment, suggesting that the presence of food enhances colonisation and resilience. Nematode assemblages in the defaunated sediments were species-rich and differed from the controls. The majority of colonising species were rare or undetectable in the controls, suggesting that episodic disturbances may be necessary for their persistence in deep sea sediments. Colonisation was in part determined by species characteristics such as size and motility. At the same time, a large number of different species colonised the empty cylinders, resulting in poor similarity in community composition between replicates, particularly between samples enriched with diatoms. Our results indicate a poor predictability of community composition of recently disturbed sediments despite highly reproducible abundance and diversity patterns and lends experimental support to the existence of a spatio-temporal mosaic that emerges from highly localised colonisation patterns.",
+    "url": "https://doi.org/10.3354/meps07537",
+    "authors": [
+      "Fabiane Gallucci",
+      "Tom Moens",
+      "Ann Vanreusel",
+      "Gustavo Fonseca"
+    ],
+    "tags": [
+      "Meiobenthos",
+      "Colonisation",
+      "Microcosm",
+      "Sediment",
+      "Ecology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2008-05-08",
+    "doi": "https://doi.org/10.3354/meps07537",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W3112519824",
+    "name": "A Deep Learning Approach to Spatiotemporal Sea Surface Height Interpolation and Estimation of Deep Currents in Geostrophic Ocean Turbulence",
+    "source": "openalex",
+    "abstract": "Abstract Satellite altimeters provide global observations of sea surface height (SSH) and present a unique data set for advancing our theoretical understanding of upper‐ocean dynamics and monitoring its variability. Considering that mesoscale SSH patterns can evolve on timescales comparable to or shorter than satellite return periods, it is challenging to accurately reconstruct the continuous SSH evolution as currently available altimetry observations are still spatially and temporally sparse. Here we explore the possibility of SSH interpolation via Deep Learning by using synthetic observations from an idealized quasigeostrophic model of baroclinic ocean turbulence. We demonstrate that Convolutional Neural Networks with Residual Learning are superior in SSH reconstruction to linear and recently developed dynamical interpolation techniques. Also, the deep neural networks can provide a skillful state estimate of unobserved deep ocean currents at mesoscales. These conspicuous results suggest that SSH patterns of eddies might contain substantial information about the underlying deep ocean currents that are necessary for SSH prediction. Our training data are focused on highly idealized physics and diversification of processes needs to be considered to more accurately represent the real ocean. In addition, methodological improvements such as transfer learning and implementation of dynamically aware loss functions might be necessary to consider before its ultimate use with real satellite observations. Nonetheless, by providing a proof of concept based on synthetic data, our results point to deep learning as a viable alternative to existing interpolation and, more generally, state estimation methods for satellite observations of eddying currents.",
+    "url": "https://doi.org/10.1029/2019ms001965",
+    "authors": [
+      "Georgy E. Manucharyan",
+      "Lia Siegelman",
+      "Patrice Klein"
+    ],
+    "tags": [
+      "Sea-surface height",
+      "Altimeter",
+      "Interpolation (computer graphics)",
+      "Mesoscale meteorology",
+      "Satellite"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-12-11",
+    "doi": "https://doi.org/10.1029/2019ms001965",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2036171395",
+    "name": "High-Throughput Sequencing Reveals Differential Expression of miRNAs in Intestine from Sea Cucumber during Aestivation",
+    "source": "openalex",
+    "abstract": "The regulatory role of miRNA in gene expression is an emerging hot new topic in the control of hypometabolism. Sea cucumber aestivation is a complicated physiological process that includes obvious hypometabolism as evidenced by a decrease in the rates of oxygen consumption and ammonia nitrogen excretion, as well as a serious degeneration of the intestine into a very tiny filament. To determine whether miRNAs play regulatory roles in this process, the present study analyzed profiles of miRNA expression in the intestine of the sea cucumber (Apostichopus japonicus), using Solexa deep sequencing technology. We identified 308 sea cucumber miRNAs, including 18 novel miRNAs specific to sea cucumber. Animals sampled during deep aestivation (DA) after at least 15 days of continuous torpor, were compared with animals from a non-aestivation (NA) state (animals that had passed through aestivation and returned to the active state). We identified 42 differentially expressed miRNAs [RPM (reads per million) >10, |FC| (|fold change|) ≥ 1, FDR (false discovery rate) <0.01] during aestivation, which were validated by two other miRNA profiling methods: miRNA microarray and real-time PCR. Among the most prominent miRNA species, miR-200-3p, miR-2004, miR-2010, miR-22, miR-252a, miR-252a-3p and miR-92 were significantly over-expressed during deep aestivation compared with non-aestivation animals. Preliminary analyses of their putative target genes and GO analysis suggest that these miRNAs could play important roles in global transcriptional depression and cell differentiation during aestivation. High-throughput sequencing data and microarray data have been submitted to GEO database.",
+    "url": "https://doi.org/10.1371/journal.pone.0076120",
+    "authors": [
+      "Muyan Chen",
+      "Xiumei Zhang",
+      "Jian Ning Liu",
+      "Kenneth B. Storey"
+    ],
+    "tags": [
+      "Aestivation",
+      "Apostichopus japonicus",
+      "Biology",
+      "Deep sequencing",
+      "microRNA"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2013-10-15",
+    "doi": "https://doi.org/10.1371/journal.pone.0076120",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2939287118",
+    "name": "Pressure-Retaining Sampler and High-Pressure Systems to Study Deep-Sea Microbes Under in situ Conditions",
+    "source": "openalex",
+    "abstract": "The pelagic realm of the dark ocean is characterized by high hydrostatic pressure, low temperature, high-inorganic nutrients and low organic carbon concentrations. Measurements of metabolic activities of bathypelagic bacteria are often underestimated due to the technological limitations in recovering samples and maintaining them under in situ environmental conditions. Moreover, most of the pressure-retaining samplers, developed by a number of different labs, able to maintain seawater samples at in situ pressure during recovery have remained at the prototype stage, and therefore not available to the scientific community. In this paper, we will describe a ready-to-use pressure-retaining sampler, which can be adapted to use on a CTD-carousel sampler. As well as being able to recover samples under in situ pressure, we propose a sample processing in equi-pressure mode. Using a piloted pressure generator, we present how to perform sub-sampling and transfer of samples in equi-pressure mode to obtain replicates and perform hyperbaric experiments safely and efficiently (with less than 2% pressure variability). As proof of concept, we describe a field application (prokaryotic activity measurements and incubation experiment) with samples collected at 3000m-depth in the Mediterranean Sea. Sampling, sub-sampling, transfer and incubations were performed under in situ pressure conditions and compared to those performed following decompression and incubation at atmospheric pressure. Three successive incubations were made for each condition using direct dissolved-oxygen concentration measurements to determine the incubation times. Subsamples were collected at the end of each incubation to monitor the prokaryotic diversity, using 16S-rDNA/rRNA high-throughput sequencing. Our results demonstrated that oxygen consumption by prokaryotes is always higher under in situ conditions than after decompression and incubation at atmospheric pressure. In addition, over time, the variations in the prokaryotic community composition and structure are seen to be driven by the different experimental conditions. Finally, within samples maintained under in situ pressure conditions, the active (16S rRNA) prokaryotic community was dominated by sequences affiliated with rare families containing piezophilic isolates, such as Oceanospirillaceae or Colwelliaceae. These results demonstrate the biological importance of maintaining in situ conditions during and after sampling in deep-sea environments.",
+    "url": "https://doi.org/10.3389/fmicb.2019.00453",
+    "authors": [
+      "Marc Garel",
+      "Patricia Bonin",
+      "Séverine Martini",
+      "Sophie Guasco",
+      "Marie Roumagnac",
+      "Nagib Bhairy",
+      "Fabrice Armougom",
+      "Christian Tamburini"
+    ],
+    "tags": [
+      "Hydrostatic pressure",
+      "Seawater",
+      "Incubation",
+      "In situ",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-04-09",
+    "doi": "https://doi.org/10.3389/fmicb.2019.00453",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2147408679",
+    "name": "Challenges in Indoor Global Navigation Satellite Systems: Unveiling its core features in signal processing",
+    "source": "openalex",
+    "abstract": "Accurately determining one's position has been a recurrent problem in history [1]. It even precedes the first deep-sea navigation attempts of ancient civilizations and reaches the present time with the issue of legal mandates for the location identification of emergency calls in cellular networks and the emergence of location-based services. The science and technology for positioning and navigation has experienced a dramatic evolution [2]. The observation of celestial bodies for navigation purposes has been replaced today by the use of electromagnetic waveforms emitted from reference sources [3].",
+    "url": "https://doi.org/10.1109/msp.2011.943410",
+    "authors": [
+      "Gonzalo Seco‐Granados",
+      "José A. López-Salcedo",
+      "David Jiménez-Baños",
+      "G. López-Risueño"
+    ],
+    "tags": [
+      "Radio navigation",
+      "Computer science",
+      "Satellite navigation",
+      "Satellite",
+      "Position (finance)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-02-22",
+    "doi": "https://doi.org/10.1109/msp.2011.943410",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W4378902195",
+    "name": "Editorial: Deep-sea sampling technology",
+    "source": "openalex",
+    "abstract": "With the increasing demand for the marine scientific research and the harvesting of deep-sea resources, such as crude oil, natural gas hydrate and polymetallic nodules, the investigation of deep-sea environment has become increasingly important. It is essential to develop high-accuracy and reliable deep-sea detection technologies, including in-situ multidisciplinary observation, and high-fidelity sampling of fluids, sediments and benthos. In this Research Topic, we have collected several progresses made in recent years.",
+    "url": "https://doi.org/10.3389/fmars.2023.1182211",
+    "authors": [
+      "Yuan Lin",
+      "Jiawang Chen",
+      "Zhilei Sun",
+      "N. Phan‐Thien"
+    ],
+    "tags": [
+      "Oceanography",
+      "Sampling (signal processing)",
+      "Deep sea",
+      "Volume (thermodynamics)",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2023-05-31",
+    "doi": "https://doi.org/10.3389/fmars.2023.1182211",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2979777794",
+    "name": "Genomic, transcriptomic, and proteomic insights into the symbiosis of deep-sea tubeworm holobionts",
+    "source": "openalex",
+    "abstract": "Deep-sea hydrothermal vents and methane seeps are often densely populated by animals that host chemosynthetic symbiotic bacteria, but the molecular mechanisms of such host-symbiont relationship remain largely unclear. We characterized the symbiont genome of the seep-living siboglinid Paraescarpia echinospica and compared seven siboglinid-symbiont genomes. Our comparative analyses indicate that seep-living siboglinid endosymbionts have more virulence traits for establishing infections and modulating host-bacterium interaction than the vent-dwelling species, and have a high potential to resist environmental hazards. Metatranscriptome and metaproteome analyses of the Paraescarpia holobiont reveal that the symbiont is highly versatile in its energy use and efficient in carbon fixation. There is close cooperation within the holobiont in production and supply of nutrients, and the symbiont may be able to obtain nutrients from host cells using virulence factors. Moreover, the symbiont is speculated to have evolved strategies to mediate host protective immunity, resulting in weak expression of host innate immunity genes in the trophosome. Overall, our results reveal the interdependence of the tubeworm holobiont through mutual nutrient supply, a pathogen-type regulatory mechanism, and host-symbiont cooperation in energy utilization and nutrient production, which is a key adaptation allowing the tubeworm to thrive in deep-sea chemosynthetic environments.",
+    "url": "https://doi.org/10.1038/s41396-019-0520-y",
+    "authors": [
+      "Yi Yang",
+      "Jin Sun",
+      "Yanan Sun",
+      "Yick Hang Kwan",
+      "Wai Chuen Wong",
+      "Yanjie Zhang",
+      "Ting Xu",
+      "Dong Feng",
+      "Yu Zhang",
+      "Jian‐Wen Qiu",
+      "Pei‐Yuan Qian"
+    ],
+    "tags": [
+      "Biology",
+      "Holobiont",
+      "Symbiosis",
+      "Chemosynthesis",
+      "Host (biology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-10-08",
+    "doi": "https://doi.org/10.1038/s41396-019-0520-y",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2145360866",
+    "name": "Upper limit for sea level projections by 2100",
+    "source": "openalex",
+    "abstract": "We construct the probability density function of global sea level at 2100, estimating that sea level rises larger than 180 cm are less than 5% probable. An upper limit for global sea level rise of 190 cm is assembled by summing the highest estimates of individual sea level rise components simulated by process based models with the RCP8.5 scenario. The agreement between the methods may suggest more confidence than is warranted since large uncertainties remain due to the lack of scenario-dependent projections from ice sheet dynamical models, particularly for mass loss from marine-based fast flowing outlet glaciers in Antarctica. This leads to an intrinsically hard to quantify fat tail in the probability distribution for global mean sea level rise. Thus our low probability upper limit of sea level projections cannot be considered definitive. Nevertheless, our upper limit of 180 cm for sea level rise by 2100 is based on both expert opinion and process studies and hence indicates that other lines of evidence are needed to justify a larger sea level rise this century.",
+    "url": "https://doi.org/10.1088/1748-9326/9/10/104008",
+    "authors": [
+      "Svetlana Jevrejeva",
+      "Aslak Grinsted",
+      "John C. Moore"
+    ],
+    "tags": [
+      "Sea level",
+      "Future sea level",
+      "Glacier",
+      "Sea level rise",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2014-10-01",
+    "doi": "https://doi.org/10.1088/1748-9326/9/10/104008",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W1974435099",
+    "name": "Iodine emissions from the sea ice of the Weddell Sea",
+    "source": "openalex",
+    "abstract": "Abstract. Iodine compounds were measured above, below and within the sea ice of the Weddell Sea during a cruise in 2009, to make progress in elucidating the mechanism of local enhancement and volatilisation of iodine. I2 mixing ratios of up to 12.4 pptv were measured 10 m above the sea ice, and up to 31 pptv was observed above surface snow on the nearby Brunt Ice Shelf – large amounts. Atmospheric IO of up to 7 pptv was measured from the ship, and the average sum of HOI and ICl was 1.9 pptv. These measurements confirm the Weddell Sea as an iodine hotspot. Average atmospheric concentrations of CH3I, C2H5I, CH2ICl, 2-C3H7I, CH2IBr and 1-C3H7I were each 0.2 pptv or less. On the Brunt Ice Shelf, enhanced concentrations of CH3I and C2H5I (up to 0.5 and 1 pptv respectively) were observed in firn air, with a diurnal profile that suggests the snow may be a source. In the sea ice brine, iodocarbons concentrations were over 10 times those of the sea water below. The sum of iodide + iodate was depleted in sea ice samples, suggesting some missing iodine chemistry. Flux calculations suggest I2 dominates the iodine atom flux to the atmosphere, but models cannot reconcile the observations and suggest either a missing iodine source or other deficiencies in our understanding of iodine chemistry. The observation of new particle formation, consistent with the model predictions, strongly suggests an iodine source. This combined study of iodine compounds is the first of its kind in this unique region of sea ice rich in biology and rich in iodine chemistry.",
+    "url": "https://doi.org/10.5194/acp-12-11229-2012",
+    "authors": [
+      "H. M. Atkinson",
+      "Ru‐Jin Huang",
+      "Rosie Chance",
+      "H. K. Roscoe",
+      "Catherine E. Hughes",
+      "B. Davison",
+      "Anja Schönhardt",
+      "Anoop S. Mahajan",
+      "Alfonso Saiz‐Lopez",
+      "Thorsten Hoffmann",
+      "Peter S. Liss"
+    ],
+    "tags": [
+      "Iodine",
+      "Sea ice",
+      "Iodide",
+      "Snow",
+      "Firn"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-11-27",
+    "doi": "https://doi.org/10.5194/acp-12-11229-2012",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W1590584399",
+    "name": "Technology developments in real-time tsunami measuring, monitoring and forecasting",
+    "source": "openalex",
+    "abstract": "Fast, accurate tsunami forecasts are an essential component of an effective tsunami warning system. Decision-makers at tsunami warning centers must assess the hazard to coastal communities by rapidly collecting and interpreting earthquake and sea-level data. The stakes are high: A missed warning could devastate entire regions and needless evacuations are expensive, dangerous and erode confidence in the warning system. Tsunami forecasting technology under development at NOAA/PMEL is based on the well-tested approach used in many other forecast systems - i.e., the integration of real-time measurement and modeling technologies. Real-time monitoring and measurement of sea-level data in the deep ocean is presently made by a seven-station network of DART (Deep-ocean Assessment and Reporting of Tsunamis) systems. DART II is a new generation system that will have additional features and capabilities to aid the forecasting ability of tsunami warning centers. As a result of the devastating impact of the 26 December 2004 Sumatra tsunami and the proven value of the DART array, the number of network stations will be increased to 39 by mid-2007.",
+    "url": "https://doi.org/10.1109/oceans.2005.1639996",
+    "authors": [
+      "Christian Meinig",
+      "Scott Stalin",
+      "A. Nakamura",
+      "F. I. González",
+      "Hugh B. Milburn"
+    ],
+    "tags": [
+      "Warning system",
+      "Early warning system",
+      "Meteorology",
+      "Hazard",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2005-01-01",
+    "doi": "https://doi.org/10.1109/oceans.2005.1639996",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W3081355259",
+    "name": "Long Distance Commucation Technology of Deep sea Acoustic Release Transponder",
+    "source": "openalex",
+    "abstract": "Deep-sea examination and oceanographic surveys have become normally, deep sea acoustic release transponder is an important guarantee for mass laying and reliable release of instruments. This paper proposes pseudo-random code and wideband multiple access technology, which has been used in the self-developed product of 6000m acoustic releaser. The technology increases the processing gain and allows the releaser to communicate robustly over long distances at low signal-to-noise ratios, which is proved by the experimentation the lake and in the sea that the method is effective.",
+    "url": "https://doi.org/10.1109/icsidp47821.2019.9173060",
+    "authors": [
+      "Yang Shi",
+      "Lin Guo",
+      "Shuxiang Wang"
+    ],
+    "tags": [
+      "Transponder (aeronautics)",
+      "Wideband",
+      "Computer science",
+      "Noise (video)",
+      "Acoustics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-12-01",
+    "doi": "https://doi.org/10.1109/icsidp47821.2019.9173060",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2073183764",
+    "name": "Deep-Sea Bioluminescence Blooms after Dense Water Formation at the Ocean Surface",
+    "source": "openalex",
+    "abstract": "The deep ocean is the largest and least known ecosystem on Earth. It hosts numerous pelagic organisms, most of which are able to emit light. Here we present a unique data set consisting of a 2.5-year long record of light emission by deep-sea pelagic organisms, measured from December 2007 to June 2010 at the ANTARES underwater neutrino telescope in the deep NW Mediterranean Sea, jointly with synchronous hydrological records. This is the longest continuous time-series of deep-sea bioluminescence ever recorded. Our record reveals several weeks long, seasonal bioluminescence blooms with light intensity up to two orders of magnitude higher than background values, which correlate to changes in the properties of deep waters. Such changes are triggered by the winter cooling and evaporation experienced by the upper ocean layer in the Gulf of Lion that leads to the formation and subsequent sinking of dense water through a process known as \"open-sea convection\". It episodically renews the deep water of the study area and conveys fresh organic matter that fuels the deep ecosystems. Luminous bacteria most likely are the main contributors to the observed deep-sea bioluminescence blooms. Our observations demonstrate a consistent and rapid connection between deep open-sea convection and bathypelagic biological activity, as expressed by bioluminescence. In a setting where dense water formation events are likely to decline under global warming scenarios enhancing ocean stratification, in situ observatories become essential as environmental sentinels for the monitoring and understanding of deep-sea ecosystem shifts.",
+    "url": "https://doi.org/10.1371/journal.pone.0067523",
+    "authors": [
+      "Christian Tamburini",
+      "Miquel Canals",
+      "Xavier Durrieu de Madron",
+      "Loïc Houpert",
+      "Dominique Lefèvre",
+      "Séverine Martini",
+      "Fabrizio D’Ortenzio",
+      "Anne Robert",
+      "Pierre Testor",
+      "J. A. Aguilar",
+      "Imen Al Samarai",
+      "Arnaud Albert",
+      "M. André",
+      "M. Anghinolfi",
+      "G. Anton",
+      "Shebli Anvar",
+      "Miguel Ardid",
+      "A.C. Assis Jesus",
+      "T. Astraatmadja",
+      "J.-J. Aubert",
+      "Bruny Baret",
+      "S. Basa",
+      "Vincent Bertin",
+      "S. Biagi",
+      "A. Bigi",
+      "C. Bigongiari",
+      "C. Bogazzi",
+      "M. Bou-Cabo",
+      "B. Bouhou",
+      "M.C. Bouwhuis",
+      "J. Brünner",
+      "José Busto",
+      "Francisco Camarena",
+      "A. Capone",
+      "C. Cârloganu",
+      "Giada Carminati",
+      "J. Carr",
+      "Stefano Cecchini",
+      "Z. Charif",
+      "Philippe Charvis",
+      "T. Chiarusi",
+      "M. Circella",
+      "R. Coniglione",
+      "H. Costantini",
+      "P. Coyle",
+      "Christian Curtil",
+      "Patrick Decowski",
+      "Ivan Dekeyser",
+      "A. Deschamps",
+      "C. Donzaud",
+      "Damien Dornic",
+      "Hasankiadeh Q. Dorosti",
+      "Doriane Drouhin",
+      "T. Eberl",
+      "U. Emanuele",
+      "Jean-Pierre ERNENWEIN",
+      "S. Escoffier",
+      "P. Fermani",
+      "M. Ferri",
+      "V. Flaminio",
+      "F. Folger",
+      "Ulf Fritsch",
+      "Jean‐Luc Fuda",
+      "S. Galatà",
+      "Pascal Gay",
+      "Giorgio Giacomelli",
+      "V. Giordano",
+      "Juan-Pablo Gómez-González",
+      "Kay Graf",
+      "G. Guillard",
+      "Garadeb Halladjian",
+      "Gregory Hallewell",
+      "Hans van Haren",
+      "J. Hartman",
+      "A. Heijboer",
+      "Yann Hello",
+      "J.J. Hernandez",
+      "B. Herold",
+      "Jurgen Hößl",
+      "C. C. Hsu",
+      "Marteen de Jong",
+      "M. Kadler",
+      "O. R. Kalekin",
+      "A. Kappes",
+      "U. Katz",
+      "O. Kavatsyuk",
+      "Paul Kooijman",
+      "Claudio Kopper",
+      "A. Kouchner",
+      "I. Kreykenbohm",
+      "V. Kulikovskiy",
+      "R. Lahmann",
+      "Patrick Lamare",
+      "G. Larosa",
+      "D. Lattuada",
+      "Gordon Lim",
+      "D. Lo Presti",
+      "Herbert Loehner",
+      "Sotiris Loucatos",
+      "S. Mangano"
+    ],
+    "tags": [
+      "Oceanography",
+      "Pelagic zone",
+      "Deep sea",
+      "Environmental science",
+      "Bloom"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2013-07-10",
+    "doi": "https://doi.org/10.1371/journal.pone.0067523",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2080697333",
+    "name": "Assessing confidence in Pliocene sea surface temperatures to evaluate predictive models",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/nclimate1455",
+    "authors": [
+      "Harry J. Dowsett",
+      "Marci M. Robinson",
+      "Alan M. Haywood",
+      "Daniel J. Hill",
+      "Aisling M. Dolan",
+      "Danielle K. Stoll",
+      "Wing‐Le Chan",
+      "Ayako Abe‐Ouchi",
+      "Mark A. Chandler",
+      "Nan Rosenbloom",
+      "Bette L. Otto‐Bliesner",
+      "Fran Bragg",
+      "Daniel J. Lunt",
+      "Kevin M. Foley",
+      "Christina R. Riesselman"
+    ],
+    "tags": [
+      "Climatology",
+      "Environmental science",
+      "Sea surface temperature",
+      "Oceanography",
+      "Confidence interval"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-03-16",
+    "doi": "https://doi.org/10.1038/nclimate1455",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W3088544613",
+    "name": "Sea Mining Exploration With an UVMS: Experimental Validation of the Control and Perception Framework",
+    "source": "openalex",
+    "abstract": "The article discusses the main methodologies and key technologies behind the ROBUST project, funded by the European Union within the Horizon 2020 framework, whose goal is the development of an autonomous underwater vehicle manipulator system for deep sea mining exploration. This article focuses on the developed control and perception framework and related mechatronics, and presents the experimental results from the sea trials in Sardinia, Italy, supporting the proposed methodologies.",
+    "url": "https://doi.org/10.1109/tmech.2020.3025973",
+    "authors": [
+      "Enrico Simetti",
+      "Ricard Campos",
+      "Daniele Di Vito",
+      "Josep Quintana",
+      "Gianluca Antonelli",
+      "Rafael García",
+      "Alessio Turetta"
+    ],
+    "tags": [
+      "European union",
+      "Mechatronics",
+      "Sea trial",
+      "Perception",
+      "Control (management)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-09-22",
+    "doi": "https://doi.org/10.1109/tmech.2020.3025973",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W3080939968",
+    "name": "Deep Ocean Passive Acoustic Technologies for Exploration of Ocean and Surface Sea Worlds in the Outer Solar System",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.5670/oceanog.2020.221",
+    "authors": [
+      "Robert P. Dziak",
+      "D. Banfield",
+      "R. D. Lorenz",
+      "Haruyoshi Matsumoto",
+      "Holger Klinck",
+      "R. Dissly",
+      "Christian Meinig",
+      "Brian H. Kahn"
+    ],
+    "tags": [
+      "Oceanography",
+      "Deep sea",
+      "Geology",
+      "Ocean surface topography",
+      "Astrobiology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-06-01",
+    "doi": "https://doi.org/10.5670/oceanog.2020.221",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W4293770403",
+    "name": "Energy efficiency in cloud computing data centers: a survey on software technologies",
+    "source": "openalex",
+    "abstract": "Cloud computing is a commercial and economic paradigm that has gained traction since 2006 and is presently the most significant technology in IT sector. From the notion of cloud computing to its energy efficiency, cloud has been the subject of much discussion. The energy consumption of data centres alone will rise from 200 TWh in 2016 to 2967 TWh in 2030. The data centres require a lot of power to provide services, which increases CO2 emissions. In this survey paper, software-based technologies that can be used for building green data centers and include power management at individual software level has been discussed. The paper discusses the energy efficiency in containers and problem-solving approaches used for reducing power consumption in data centers. Further, the paper also gives details about the impact of data centers on environment that includes the e-waste and the various standards opted by different countries for giving rating to the data centers. This article goes beyond just demonstrating new green cloud computing possibilities. Instead, it focuses the attention and resources of academia and society on a critical issue: long-term technological advancement. The article covers the new technologies that can be applied at the individual software level that includes techniques applied at virtualization level, operating system level and application level. It clearly defines different measures at each level to reduce the energy consumption that clearly adds value to the current environmental problem of pollution reduction. This article also addresses the difficulties, concerns, and needs that cloud data centres and cloud organisations must grasp, as well as some of the factors and case studies that influence green cloud usage.",
+    "url": "https://doi.org/10.1007/s10586-022-03713-0",
+    "authors": [
+      "Avita Katal",
+      "Susheela Dahiya",
+      "Tanupriya Choudhury"
+    ],
+    "tags": [
+      "Cloud computing",
+      "Computer science",
+      "Green computing",
+      "Efficient energy use",
+      "Virtualization"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2022-08-29",
+    "doi": "https://doi.org/10.1007/s10586-022-03713-0",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2033568201",
+    "name": "Escapes of fishes from Norwegian sea-cage aquaculture: causes, consequences and prevention",
+    "source": "openalex",
+    "abstract": "The escape of fish from aquaculture is perceived as a threat to wild fish populations. The escapes problem is largely caused by technical and operational failures of fish farming equipment. In Norway, 3.93 million Atlantic salmon Salmo salar, 0.98 million rainbow trout Oncorhynchus mykiss and 1.05 million Atlantic cod Gadus morhua escaped from 2001 to 2009. Salmonids primarily escape after structural failures of containment equipment, while a far greater percentage of cod than salmon escape through holes in the nets. Correlative evidence suggests that after the Norwegian technical standard (NS 9415) for sea-cage farms took effect in 2004, the total number of escaped Atlantic salmon declined from > 600 000 (2001 to 2006) to < 200 000 fish yr -1 (2007 to 2009), despite the total number of salmon held in sea-cages increasing by 44% during this period. No similar decrease in escaped cod has occurred, suggesting that other measures, such as improved netting materials for sea-cages, are required. In addition to escaping as juveniles or adults, cod may reproduce in seacages, and thus fertilised eggs escape to the environment. The ecological effects of 'escape through spawning' are unclear, and methods to inhibit escape by this mechanism are being explored. To prevent escapes of juvenile and adult fish as sea-cage aquaculture industries develop, we recommend that policy-makers implement a 5 component strategy: (1) establish mandatory reporting of all escape incidents; (2) establish a mechanism to analyse and learn from the mandatory reporting; (3) conduct mandatory, rapid, technical assessments to determine the causes of escape incidents involving more than 10 000 fish; (4) introduce a technical standard for sea-cage aquaculture equipment coupled with an independent mechanism to enforce the standard; and (5) conduct mandatory training of fish farm staff in escape-critical operations and techniques.",
+    "url": "https://doi.org/10.3354/aei00008",
+    "authors": [
+      "Ø. Jensen",
+      "Tim Dempster",
+      "Eva B. Thorstad",
+      "I Uglem",
+      "Arne Fredheim"
+    ],
+    "tags": [
+      "Salmo",
+      "Fishery",
+      "Aquaculture",
+      "Rainbow trout",
+      "Norwegian"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-07-27",
+    "doi": "https://doi.org/10.3354/aei00008",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2109254022",
+    "name": "The Antarctica component of postglacial rebound model ICE-6G_C (VM5a) based on GPS positioning, exposure age dating of ice thicknesses, and relative sea level histories",
+    "source": "openalex",
+    "abstract": "A new model of the deglaciation history of Antarctica over the past 25 kyr has been developed, which we refer to herein as ICE-6G_C (VM5a). This revision of its predecessor ICE-5G (VM2) has been constrained to fit all available geological and geodetic observations, consisting of:",
+    "url": "https://doi.org/10.1093/gji/ggu140",
+    "authors": [
+      "Donald F. Argus",
+      "W. R. Peltier",
+      "R. Drummond",
+      "A. W. Moore"
+    ],
+    "tags": [
+      "Geology",
+      "Deglaciation",
+      "Radiocarbon dating",
+      "Holocene",
+      "Post-glacial rebound"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2014-05-29",
+    "doi": "https://doi.org/10.1093/gji/ggu140",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W1979761969",
+    "name": "An extensive bloom of the N2-fixing cyanobacterium Trichodesmium erythraeum in the central Arabian Sea",
+    "source": "openalex",
+    "abstract": "LVe encountered an extensive surface bloom of the N, fixing cyanobactenum Trichodesrniurn erythraeum in the central basin of the Arabian Sea during the spring ~nter-n~onsoon of 1995. The bloom, which occurred dunng a penod of calm winds and relatively high atmospher~c iron content, was metabollcally active. Carbon fixation by the bloom represented about one-quarter of water column primary productivity while input by h:: flxation could account for a major fraction of the estimated 'new' N demand of pnmary production. Isotopic measurements of the N in surface suspended material confirmed a direct contribution of N, fixation to the organic nltrogen pools of the upper water column. Retrospective analysis of NOAA-12 AVHRR imagery indicated that blooms covered up to 2 X 106 km2, or 20% of the Arabian Sea surface, during the period from 22 to 27 May 1995. In addition to their biogeochemical impact, surface blooms of this extent may have secondary effects on sea surface albedo and light penetration as well as heat and gas exchange across the air-sea interface. A preliminary extrapolation based on our observed, non-bloom rates of N, fixation from our limited sampling in the spring intermonsoon, including a conservative estimate of the input by blooms, suggest N2 fixation may account for an input of about 1 Tg N yr-I This is substantial, but relatively minor compared to current estimates of the removal of N through denitrification in the basin. However, N2 fixation may also occur in the central basin through the mild winter monsoon, be considerably greater during the fall intermonsoon than we observed during the spring intermonsoon, and may also occur at higher levels in the chronically oligotrophic southern basin. Ongoing satellite observations will help to determine more accurately the distribution and density of Trichodesmium in this and other tropical oceanic basins, as well as resolving the actual frequency and duration of bloom occurrence.",
+    "url": "https://doi.org/10.3354/meps172281",
+    "authors": [
+      "DG Capone",
+      "Ajit Subramaniam",
+      "Joseph P. Montoya",
+      "Max Voss",
+      "Christoph Humborg",
+      "AM Johansen",
+      "RL Siefert",
+      "EJ Carpenter"
+    ],
+    "tags": [
+      "Bloom",
+      "Oceanography",
+      "Spring bloom",
+      "Library science",
+      "Trichodesmium"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "1998-01-01",
+    "doi": "https://doi.org/10.3354/meps172281",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2081725145",
+    "name": "Dispersal and Differentiation of Deep-Sea Mussels of the GenusBathymodiolus(Mytilidae, Bathymodiolinae)",
+    "source": "openalex",
+    "abstract": "We sequenced the mitochondrial ND4 gene to elucidate the evolutionary processes ofBathymodiolusmussels and mytilid relatives. Mussels of the subfamily Bathymodiolinae from vents and seeps belonged to 3 groups and mytilid relatives from sunken wood and whale carcasses assumed the outgroup positions to bathymodioline mussels. Shallow water mytilid mussels were positioned more distantly relative to the vent/seep mussels, indicating an evolutionary transition from shallow to deep sea via sunken wood and whale carcasses.Bathymodiolus platifronsis distributed in the seeps and vents, which are approximately 1500 km away. There was no significant genetic differentiation between the populations. There existed high gene flow betweenB. septemdierumandB. breviorand low but not negligible gene flow betweenB. marisindicusandB. septemdierumorB. brevior, although their habitats are 5000–10 000 km away. These indicate a high adaptability to the abyssal environments and a high dispersal ability ofBathymodiolusmussels.",
+    "url": "https://doi.org/10.1155/2009/625672",
+    "authors": [
+      "Akiko Kyuno",
+      "Mifue Shintaku",
+      "Yūkō Fujita",
+      "Hiroto Matsumoto",
+      "Motoo Utsumi",
+      "Hiromi Watanabe",
+      "Yoshihiro Fujiwara",
+      "Jun-Ichi Miyazaki"
+    ],
+    "tags": [
+      "Mytilidae",
+      "Biology",
+      "Biological dispersal",
+      "Ecology",
+      "Abyssal zone"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2009-01-01",
+    "doi": "https://doi.org/10.1155/2009/625672",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2898947732",
+    "name": "Ship Classification in SAR Images Using a New Hybrid CNN–MLP Classifier",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s12524-018-0891-y",
+    "authors": [
+      "Foroogh Sharifzadeh",
+      "Gholamreza Akbarizadeh",
+      "Yousef S. Kavian"
+    ],
+    "tags": [
+      "Artificial intelligence",
+      "Convolutional neural network",
+      "Computer science",
+      "Pixel",
+      "Pattern recognition (psychology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-10-29",
+    "doi": "https://doi.org/10.1007/s12524-018-0891-y",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2081198055",
+    "name": "Saharan dust inputs to the western Mediterranean Sea: depositional patterns, geochemistry and sedimentological implications",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0967-0645(96)00096-3",
+    "authors": [
+      "Stefano Guerzoni",
+      "Emanuela Molinaroli",
+      "R. Chester"
+    ],
+    "tags": [
+      "Mineral dust",
+      "Mediterranean sea",
+      "Dolomite",
+      "Deposition (geology)",
+      "Calcite"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "1997-01-01",
+    "doi": "https://doi.org/10.1016/s0967-0645(96)00096-3",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W3019016568",
+    "name": "Influence of Water Masses on the Biodiversity and Biogeography of Deep-Sea Benthic Ecosystems in the North Atlantic",
+    "source": "openalex",
+    "abstract": "Circulation patterns in the North Atlantic Ocean have changed and re-organized multiple times over millions of years, influencing the biodiversity, distribution and connectivity patterns of deep-sea species and ecosystems. In this study, we review the effects of the water mass properties (temperature, salinity, food supply, carbonate chemistry and oxygen) on deep-sea benthic megafauna (from species to community level) and discussed in future scenarios of climate change. We focus on the key oceanic controls on deep-sea megafauna biodiversity and biogeography patterns. We place particular attention on cold-water corals and sponges, as these are ecosystem-engineering organisms that constitute vulnerable marine ecosystems with high associated biodiversity. Besides documenting the current state of the knowledge on this topic, a future scenario for water mass properties in the deep North Atlantic basin was predicted. The pace and severity of climate change in the deep-sea will vary across regions. However, predicted water mass properties showed that all regions in the North Atlantic will be exposed to multiple stressors by 2100, experiencing at least one critical change in water temperature (+2°C), organic carbon fluxes (reduced up to 50 %), ocean acidification (pH reduced up to 0.3), aragonite saturation horizon (shoaling above 1000 m) and/or reduction in dissolved oxygen (5%). The northernmost regions of the North Atlantic will suffer the greatest impacts. Warmer and more acidic oceans will drastically reduce the suitable habitat for ecosystem-engineers, with severe consequences such as declines in population densities, even compromising their long-term survival, loss of biodiversity and reduced biogeographic distribution that might compromise connectivity at large scales. These effects can be aggravated by reductions in carbon fluxes, particularly in areas where food availability is already limited. Declines in benthic biomass and biodiversity will diminish ecosystem services such as habitat provision, nutrient cycling, etc. This study shows that the deep-sea vulnerable marine ecosystems affected by contemporary anthropogenic impacts and with the the ongoing climate change impacts are unlikely to withstand additional pressures from more intrusive human activities. This study serves also as a warning to protect these ecosystems through regulations and by tempering the ongoing socio-political drivers for increasing exploitation of marine resources.",
+    "url": "https://doi.org/10.3389/fmars.2020.00239",
+    "authors": [
+      "Patricia Puerta",
+      "Clare Johnson",
+      "Marina Carreiro‐Silva",
+      "Lea‐Anne Henry",
+      "Ellen Kenchington",
+      "Telmo Morato",
+      "Georgios Kazanidis",
+      "José Luis Rueda",
+      "Javier Urra",
+      "Steve Ross",
+      "Chih‐Lin Wei",
+      "José Manuel González‐Irusta",
+      "Sophie Arnaud‐Haond",
+      "Covadonga Orejas"
+    ],
+    "tags": [
+      "Oceanography",
+      "Biodiversity",
+      "Benthic zone",
+      "Ecosystem",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-04-21",
+    "doi": "https://doi.org/10.3389/fmars.2020.00239",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2098301314",
+    "name": "Vertical stratification of microbial communities in the Red Sea revealed by 16S rDNA pyrosequencing",
+    "source": "openalex",
+    "abstract": "The ecosystems of the Red Sea are among the least-explored microbial habitats in the marine environment. In this study, we investigated the microbial communities in the water column overlying the Atlantis II Deep and Discovery Deep in the Red Sea. Taxonomic classification of pyrosequencing reads of the 16S rRNA gene amplicons showed vertical stratification of microbial diversity from the surface water to 1500 m below the surface. Significant differences in both bacterial and archaeal diversity were observed in the upper (20 [corrected] and 50 m) and deeper layers (200 and 1500 m). There were no obvious differences in community structure at the same depth for the two sampling stations. The bacterial community in the upper layer was dominated by Cyanobacteria whereas the deeper layer harbored a large proportion of Proteobacteria. Among Archaea, Euryarchaeota, especially Halobacteriales, were dominant in the upper layer but diminished drastically in the deeper layer where Desulfurococcales belonging to Crenarchaeota became the dominant group. The results of our study indicate that the microbial communities sampled in this study are different from those identified in water column in other parts of the world. The depth-wise compositional variation in the microbial communities is attributable to their adaptations to the various environments in the Red Sea.",
+    "url": "https://doi.org/10.1038/ismej.2010.112",
+    "authors": [
+      "Pei‐Yuan Qian",
+      "Yong Wang",
+      "On On Lee",
+      "Stanley C. K. Lau",
+      "Jiangke Yang",
+      "Feras F. Lafi",
+      "Abdulaziz Al‐Suwailem",
+      "Tim Y H Wong"
+    ],
+    "tags": [
+      "Biology",
+      "Pyrosequencing",
+      "Crenarchaeota",
+      "Water column",
+      "Euryarchaeota"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-07-29",
+    "doi": "https://doi.org/10.1038/ismej.2010.112",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2030485614",
+    "name": "Circumpolar Mapping of Antarctic Coastal Polynyas and Landfast Sea Ice: Relationship and Variability",
+    "source": "openalex",
+    "abstract": "Abstract Sinking of dense water from Antarctic coastal polynyas produces Antarctic Bottom Water (AABW), which is the densest water in the global overturning circulation and is a key player in climate change as a significant sink for heat and carbon dioxide. Very recent studies have suggested that landfast sea ice (fast ice) plays an important role in the formation and variability of the polynyas and possibly AABW. However, they have been limited to regional and case investigations only. This study provides the first coincident circumpolar mapping of Antarctic coastal polynyas and fast ice. The map reveals that most of the polynyas are formed on the western side of fast ice, indicating an important role of fast ice in the polynya formation. Winds diverging from a boundary comprising both coastline and fast ice are the primary determinant of polynya formation. The blocking effect of fast ice on westward sea ice advection by the coastal current would be another key factor. These effects on the variability in sea ice production for 13 major polynyas are evaluated quantitatively. Furthermore, it is demonstrated that a drastic change in fast ice extent, which is particularly vulnerable to climate change, causes dramatic changes in the polynyas and possibly AABW formation that can potentially contribute to further climate change. These results suggest that fast ice and precise polynya processes should be addressed by next-generation models to produce more accurate climate projections. This study provides the boundary and validation data of fast ice and sea ice production for such models.",
+    "url": "https://doi.org/10.1175/jcli-d-14-00369.1",
+    "authors": [
+      "Sohey Nihashi",
+      "Κay I. Ohshima"
+    ],
+    "tags": [
+      "Sea ice",
+      "Geology",
+      "Ice shelf",
+      "Oceanography",
+      "Lead (geology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2015-02-20",
+    "doi": "https://doi.org/10.1175/jcli-d-14-00369.1",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2124577968",
+    "name": "The Atlantis II Deep Project in the Red Sea as a Source of Technology for the Development of Marine Polymetallic Sulphides",
+    "source": "openalex",
+    "abstract": "Base and noble metals (Zn, Cu, Ag, Au, etc.) in hydrothermal sediments of the Atlantis II Deep in the Central Red Sea at waterdepths of more than 2000 m have caused considerable scientific attention and technical development during the last fifteen years. In 1976, the Saudi Sudanese Red Sea Commission awarded a contract to Preussag AG, a mining and engineering company in Hannover, West-Germany, to develop methods of ocean mining and beneficiation which would protect the ocean environment and to assess the economics of the project. Some of the results of research, development and analysis, applicable directly or indirectly to the polymetallic sulphides of the East Pacific, are: - ocean mining and offshore processing are technically feasible with adaptation of known technologies to the marine and deep sea environment, - economics of deep ocean mining depend on quantity and grade of resources and prices of metals and appear competitive compared with many conventional onshore mining projects, - ocean mining can be performed in an environmentally acceptable manner. Ocean mining is yet a novel Industry which would require appropriate legal protection, large-scale know-how exercises and about 10 years of further development to level out the learning curve to international industrial standards.",
+    "url": "https://doi.org/10.1109/oceans.1983.1152199",
+    "authors": [
+      "H. Amann"
+    ],
+    "tags": [
+      "Beneficiation",
+      "Deep sea",
+      "Oceanography",
+      "Submarine pipeline",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "1983-01-01",
+    "doi": "https://doi.org/10.1109/oceans.1983.1152199",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2033082872",
+    "name": "The deep structure of continents",
+    "source": "openalex",
+    "abstract": "The Lehmann discontinuity at 220‐km depth is an important global feature which occurs under both oceans and continents. It is a barrier to penetration by young lithosphere and marks the base of seismicity in regions of continent‐continent collision. The strong lateral variation in upper mantle velocities occurs mainly above this depth. Continental roots extend no deeper than about 150–200 km. The basalteclogite transformation and eclogite‐harzburgite separation may be responsible for the geometry of intermediate depth earthquakes. Oceanic and continental geotherms converge above about 200 km and become less steep than the melting gradient at greater depth. This implies a low viscosity channel near 250 km. This would give a decoupling zone of maximum shear beneath continental shields. The Lehmann discontinuity may be the interface between two distinct geochemical reservoirs. The velocity jump, and the inferred density jump, at 220 km are consistent with an increase in garnet content. The mantle may be garnet lherzolite above and eclogite immediately below the Lehmann discontinuity. The transition region may be mainly eclogite and be the source region for oceanic tholeiites.",
+    "url": "https://doi.org/10.1029/jb084ib13p07555",
+    "authors": [
+      "Don L. Anderson"
+    ],
+    "tags": [
+      "Geology",
+      "Eclogite",
+      "Lithosphere",
+      "Mantle (geology)",
+      "Transition zone"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "1979-12-10",
+    "doi": "https://doi.org/10.1029/jb084ib13p07555",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2105021047",
+    "name": "Transnational Corporations and Ocean Technology Transfer: New Economic Zones Are Being Developed by Public/Private Partnerships but Deep Sea Miners Balk on Royalties",
+    "source": "openalex",
+    "abstract": "Abstract. Coastal state jurisdiction at 200‐nautical miles is today a fact of international law. This has led to a unique situation in the ownership and control of ocean resources; thus 15 coastal states have received among them approximately 41 percent of the world's 200 mile economic zone area. At least half of these are less‐developed coastal states (LDCS) which lack the key inputs, capital, technology, and managerial skill, essential to tap their ocean resources. A significant part of ocean technology in offshore oil, fisheries, aquaculture, and deep seabed mining exists in the private sector. Consequently, the transnational corporations (TNCs) are the major providers of ocean technology to the LDCS by a process of transfer through service contracts, turnkey operations, co‐production agreements and, most importantly, Joint ventures. All evidence points to a continued constructive partnership between the LDCS and the TNCs under the new regime of ocean resource management.",
+    "url": "https://doi.org/10.1111/j.1536-7150.1989.tb03190.x",
+    "authors": [
+      "Chennat Gopalakrishnan"
+    ],
+    "tags": [
+      "Exclusive economic zone",
+      "Business",
+      "Jurisdiction",
+      "General partnership",
+      "Private sector"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "1989-07-01",
+    "doi": "https://doi.org/10.1111/j.1536-7150.1989.tb03190.x",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2178384640",
+    "name": "Validation and Error Analysis of OSCAR Sea Surface Currents",
+    "source": "openalex",
+    "abstract": "Abstract Comparisons of OSCAR satellite-derived sea surface currents with in situ data from moored current meters, drifters, and shipboard current profilers indicate that OSCAR presently provides accurate time means of zonal and meridional currents, and in the near-equatorial region reasonably accurate time variability (correlation = 0.5–0.8) of zonal currents at periods as short as 40 days and meridional wavelengths as short as 8°. At latitudes higher than 10° the zonal current correlation remains respectable, but OSCAR amplitudes diminish unrealistically. Variability of meridional currents is poorly reproduced, with severely diminished amplitudes and reduced correlations relative to those for zonal velocity on the equator. OSCAR’s RMS differences from drifter velocities are very similar to those experienced by the ECCO (Estimating the Circulation and Climate of the Ocean) data-assimilating models, but OSCAR generally provides a larger ocean-correlated signal, which enhances its ratio of estimated signal over noise. Several opportunities exist for modest improvements in OSCAR fidelity even with presently available datasets.",
+    "url": "https://doi.org/10.1175/jtech1971.1",
+    "authors": [
+      "Eric S. Johnson",
+      "Fabrice Bonjean",
+      "Gary Lagerloef",
+      "John T. Gunn",
+      "Gary T. Mitchum"
+    ],
+    "tags": [
+      "Drifter",
+      "Zonal and meridional",
+      "Equator",
+      "Amplitude",
+      "Climatology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2007-04-01",
+    "doi": "https://doi.org/10.1175/jtech1971.1",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2510072571",
+    "name": "Diversity, Biogeography, and Biodegradation Potential of Actinobacteria in the Deep-Sea Sediments along the Southwest Indian Ridge",
+    "source": "openalex",
+    "abstract": "The phylum Actinobacteria has been reported to be common or even abundant in deep marine sediments, however, knowledge about the diversity, distribution, and function of actinobacteria is limited. In this study, actinobacterial diversity in the deep sea along the Southwest Indian Ridge (SWIR) was investigated using both 16S rRNA gene pyrosequencing and culture-based methods. The samples were collected at depths of 1662-4000 m below water surface. Actinobacterial sequences represented 1.2-9.1% of all microbial 16S rRNA gene amplicon sequences in each sample. A total of 5 actinobacterial classes, 17 orders, 28 families, and 52 genera were detected by pyrosequencing, dominated by the classes Acidimicrobiia and Actinobacteria. Differences in actinobacterial community compositions were found among the samples. The community structure showed significant correlations to geochemical factors, notably pH, calcium, total organic carbon, total phosphorus, and total nitrogen, rather than to spatial distance at the scale of the investigation. In addition, 176 strains of the Actinobacteria class, belonging to 9 known orders, 18 families, and 29 genera, were isolated. Among these cultivated taxa, 8 orders, 13 families, and 15 genera were also recovered by pyrosequencing. At a 97% 16S rRNA gene sequence similarity, the pyrosequencing data encompassed 77.3% of the isolates but the isolates represented only 10.3% of the actinobacterial reads. Phylogenetic analysis of all the representative actinobacterial sequences and isolates indicated that at least four new orders within the phylum Actinobacteria were detected by pyrosequencing. More than half of the isolates spanning 23 genera and all samples demonstrated activity in the degradation of refractory organics, including polycyclic aromatic hydrocarbons and polysaccharides, suggesting their potential ecological functions and biotechnological applications for carbon recycling.",
+    "url": "https://doi.org/10.3389/fmicb.2016.01340",
+    "authors": [
+      "Ping Chen",
+      "Limin Zhang",
+      "Xiaoxuan Guo",
+      "Xin Dai",
+      "Li Liu",
+      "Lijun Xi",
+      "Jian Wang",
+      "Lei Song",
+      "Yuezhu Wang",
+      "Yaxin Zhu",
+      "Li Huang",
+      "Ying Huang"
+    ],
+    "tags": [
+      "Actinobacteria",
+      "Pyrosequencing",
+      "Biology",
+      "16S ribosomal RNA",
+      "Phylum"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2016-08-29",
+    "doi": "https://doi.org/10.3389/fmicb.2016.01340",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2892316001",
+    "name": "A new and prospective resource for scandium: Evidence from the geochemistry of deep-sea sediment in the western North Pacific Ocean",
+    "source": "openalex",
+    "abstract": "Scandium is a critical element in state-of-the-art, green technologies. However, it is also extremely expensive due to its scarcity. Recently, some deep-sea sediments that contain significant amounts of rare-earth elements that are indispensable to modern industries have been discovered in the western North Pacific Ocean, and the concentration of Sc in these sediments is comparable with that of land-based mines. A simple leaching experiment has demonstrated that up to 70% of Sc in these sediments, contained within biogenic calcium phosphate particles, can be recovered in 5 min, using dilute acids. On the basis of available core samples, we propose that a promising target area to mine Sc is along a west–east transect between longitudes 153°30′ E and 154°00′ E, at an approximate latitude of 21°58′ N. Depending on the depth of the most enriched sediment layer, just 1 km 2 of the sediment could potentially yield 3.3–6.6 times the current global annual consumption of Sc. Because these sediments contain an unusually high concentration, at commercial quantities, of industrially important, heavy rare-earth elements, apart from Sc, they could be a productive source for the long-term extraction of these critical metals.",
+    "url": "https://doi.org/10.1016/j.oregeorev.2018.09.001",
+    "authors": [
+      "Kazutaka Yasukawa",
+      "Junichiro Ohta",
+      "Kazuhide Mimura",
+      "Erika Tanaka",
+      "Yutaro Takaya",
+      "Yoichi Usui",
+      "Koichiro Fujinaga",
+      "Shiki Machida",
+      "Tatsuo Nozaki",
+      "Koichi Iijima",
+      "Kentaro Nakamura",
+      "Yasuhiro Kato"
+    ],
+    "tags": [
+      "Geology",
+      "Sediment",
+      "Leaching (pedology)",
+      "Geochemistry",
+      "Transect"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2018-09-04",
+    "doi": "https://doi.org/10.1016/j.oregeorev.2018.09.001",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2599417231",
+    "name": "metaSPAdes: a new versatile metagenomic assembler",
+    "source": "openalex",
+    "abstract": "While metagenomics has emerged as a technology of choice for analyzing bacterial populations, the assembly of metagenomic data remains challenging, thus stifling biological discoveries. Moreover, recent studies revealed that complex bacterial populations may be composed from dozens of related strains, thus further amplifying the challenge of metagenomic assembly. metaSPAdes addresses various challenges of metagenomic assembly by capitalizing on computational ideas that proved to be useful in assemblies of single cells and highly polymorphic diploid genomes. We benchmark metaSPAdes against other state-of-the-art metagenome assemblers and demonstrate that it results in high-quality assemblies across diverse data sets.",
+    "url": "https://doi.org/10.1101/gr.213959.116",
+    "authors": [
+      "Sergey Nurk",
+      "Dmitry Meleshko",
+      "Anton Korobeynikov",
+      "Pavel A. Pevzner"
+    ],
+    "tags": [
+      "Metagenomics",
+      "Biology",
+      "Computational biology",
+      "Genome",
+      "Benchmark (surveying)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2017-03-15",
+    "doi": "https://doi.org/10.1101/gr.213959.116",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2018465564",
+    "name": "Trend and progress in global oil and gas exploration",
+    "source": "openalex",
+    "abstract": "Major progress achieved in oil and gas exploration in terms of reserves, number of oil and gas fields and discovery of large oilfields were analyzed, trend and progress of global oil and gas exploration in eight aspects were elaborated, and four enlightenments for oil and gas exploration in China were proposed. The following aspects have become the shifting trend of oil and gas exploration around the world: from oil and gas reservoirs to source rocks, from trap to large area reservoir, from structural reservoirs and lithological reservoirs to unconventional continuous reservoirs, from structural highs to low sags and slopes, from conventional hydrocarbon to unconventional hydrocarbon, from middle depth layers to deep and ultra-deep layers, from shallow and middle depth sea to deep and ultra-deep sea, and from conventional zones to extreme zones. China should put more effort into the research on basic exploration theory and key techniques, attach more attention to the role of exploration engineering technology, seek the effective way for comprehensive exploration of oil and gas resources, and strengthen secondary exploration of old oil and gas fields. The major transformation in oil and gas exploration field and strategy will be beneficial to the discovery of more oil and gas fields in China.",
+    "url": "https://doi.org/10.1016/s1876-3804(13)60055-5",
+    "authors": [
+      "Wenrui Hu",
+      "Jingwei BAO",
+      "Bin Hu"
+    ],
+    "tags": [
+      "Petroleum engineering",
+      "Fossil fuel",
+      "Geology",
+      "Source rock",
+      "Natural gas field"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2013-08-01",
+    "doi": "https://doi.org/10.1016/s1876-3804(13)60055-5",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W4238027886",
+    "name": "Deep-sea Scientific Investigation and Manned Submersible Technology",
+    "source": "openalex",
+    "abstract": "The vast expansion of the blue ocean is always an intriguing sight and the deep sea is even more luring and mysterious.Deep down in the ocean are the largest mountain range on earth and canyons far grander than any on land.Actually,we know much less about the ocean,particularly the deep-sea floor,than about the far side of the Moon.Certainly,Chinese scientists are not satisfied with the current situation and ought to find more about it.",
+    "url": "https://doi.org/10.3724/sp.j.7101866527",
+    "authors": [],
+    "tags": [
+      "Aeronautics",
+      "Marine engineering",
+      "Engineering",
+      "Oceanography",
+      "Geology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-01-01",
+    "doi": "https://doi.org/10.3724/sp.j.7101866527",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W4295046667",
+    "name": "Sea-Surface Object Detection Based on Electro-Optical Sensors: A Review",
+    "source": "openalex",
+    "abstract": "Sea-surface object detection is critical for navigation safety of autonomous ships. Electro-optical (EO) sensors, such as video cameras, complement radar on board in detecting small obstacle sea-surface objects. Traditionally, researchers have used horizon detection, background subtraction, and foreground segmentation techniques to detect sea-surface objects. Recently, deep learning-based object detection technologies have been gradually applied to sea-surface object detection. This article demonstrates a comprehensive overview of sea-surface object-detection approaches where the advantages and drawbacks of each technique are compared, covering four essential aspects: EO sensors and image types, traditional object-detection methods, deep learning methods, and maritime datasets collection. In particular, sea-surface object detections based on deep learning methods are thoroughly analyzed and compared with highly influential public datasets introduced as benchmarks to verify the effectiveness of these approaches. The article also proposes the direction of future research for sea-surface object detection based on EO sensors.",
+    "url": "https://doi.org/10.1109/mits.2022.3198334",
+    "authors": [
+      "Hongguang Lyu",
+      "Zeyuan Shao",
+      "Tao Cheng",
+      "Yong Yin",
+      "Xiaowei Gao"
+    ],
+    "tags": [
+      "Object detection",
+      "Artificial intelligence",
+      "Computer vision",
+      "Background subtraction",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2022-09-09",
+    "doi": "https://doi.org/10.1109/mits.2022.3198334",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W1967095991",
+    "name": "Conserving marine biodiversity in areas beyond national jurisdiction: co-evolution and interaction with the law of the sea",
+    "source": "openalex",
+    "abstract": "As global shipping intensifies and technological advances provide more opportunities to access the resources of the high seas and the deep seabed beyond national jurisdiction (ABNJ), the catalogue of threats to the marine environment and its biodiversity increase commensurately. Beyond these threats, new and emerging uses of ABNJ including more intrusive marine scientific research, bio-prospecting, deep seabed mining and environmental modification activities to mitigate the effects of climate change have the potential to harm the highly interconnected and sensitive ecosystems of the open ocean and the deep seabed if not sustainably managed now and into the future. Modern conservation norms such as environmental impact assessment, marine protected areas, marine spatial planning and development mechanisms such as technology transfer and capacity building are under developed in the legal and institutional framework for ABNJ. This article examines key normative features of the legal and institutional framework for ABNJ and their applicability to conservation of marine biodiversity, gaps and disconnects in that framework and ongoing global initiatives to develop more effective governance structures. It discusses some of the options being considered in the UN Ad Hoc Informal Open-ended Working Group to study issues related to the conservation and sustainable use of marine biodiversity in areas beyond national jurisdiction (BBNJ Working Group) to evolve the legal and institutional framework for conservation and sustainable use of marine biodiversity in ABNJ and their current and future relevance for the law of the sea. It concludes that the discussions in the BBNJ Working Group and related initiatives in the Convention on Biological Diversity (CBD) and at regional level have demonstrated that a more integrated legal and institutional structure is needed to address growing threats to marine biodiversity in ABNJ.",
+    "url": "https://doi.org/10.3389/fmars.2014.00006",
+    "authors": [
+      "Robin Warner"
+    ],
+    "tags": [
+      "Jurisdiction",
+      "Marine protected area",
+      "Sustainability",
+      "United Nations Convention on the Law of the Sea",
+      "Environmental planning"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2014-05-20",
+    "doi": "https://doi.org/10.3389/fmars.2014.00006",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W4315487692",
+    "name": "Floating wind power in deep-sea area: Life cycle assessment of environmental impacts",
+    "source": "openalex",
+    "abstract": "Floating offshore wind power, an emerging technology in the offshore wind industry, has attracted increasing attention for its potential to cooperate with other renewable energies to decarbonize energy systems. The environmental effects of the floating offshore wind farm in deep-sea areas should be considered, and methods to enhance the low-carbon effect should be devised. There have been a few studies assessing the environmental effects of the floating offshore wind farm, but the scales of these studies were relatively small. This study evaluated the environmental impacts of a floating wind farm with 100 wind turbines of 6.7 MW using life cycle assessment (LCA) method, based on the Chinese core life cycle database. Results showed that the carbon footprint of the wind farm was 25.76 g CO2-eq/kWh, which was relatively low in terms of global warming potential. Additionally, the floating offshore wind farm contributed most to eutrophication potential. A ± 20% variation in steel resulted in a ±3% to ±15% variation in the indicator score of each environmental category, indicating that the environmental performance of the wind farm was mainly influenced by this parameter. Moreover, scenario analysis showed that electric arc furnace routes can reduce the cumulative greenhouse gas emissions from upstream process of the floating offshore wind farm by 1.75 Mt CO2-eq by 2030. Emission reduction of the steel industry will further reduce the carbon footprint of the floating offshore wind farm. In the future, more baseline data need to be collected to improve the reliability of LCA. The effects of the floating offshore wind farm on marine ecology and atmospheric physical characteristics remain to be investigated in depth.",
+    "url": "https://doi.org/10.1016/j.adapen.2023.100122",
+    "authors": [
+      "Weiyu Yuan",
+      "Jing‐Chun Feng",
+      "Si Zhang",
+      "Liwei Sun",
+      "Yanpeng Cai",
+      "Zhifeng Yang",
+      "Songwei Sheng"
+    ],
+    "tags": [
+      "Offshore wind power",
+      "Life-cycle assessment",
+      "Environmental science",
+      "Wind power",
+      "Greenhouse gas"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2023-01-10",
+    "doi": "https://doi.org/10.1016/j.adapen.2023.100122",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2033892743",
+    "name": "Full-scale unsteady RANS CFD simulations of ship behaviour and performance in head seas due to slow steaming",
+    "source": "openalex",
+    "abstract": "It is critical to be able to estimate a ship׳s response to waves, since the resulting added resistance and loss of speed may cause delays or course alterations, with consequent financial repercussions. Slow steaming has recently become a popular approach for commercial vessels, as a way of reducing fuel consumption, and therefore operating costs, in the current economic and regulatory climate. Traditional methods for the study of ship motions are based on potential flow theory and cannot incorporate viscous effects. Fortunately, unsteady Reynolds-Averaged Navier–Stokes computations are capable of incorporating both viscous and rotational effects in the flow and free surface waves. The key objective of this study is to perform a fully nonlinear unsteady RANS simulation to predict the ship motions and added resistance of a full scale KRISO Container Ship model, and to estimate the increase in effective power and fuel consumption due to its operation in waves. The analyses are performed at design and slow steaming speeds, covering a range of regular head waves, using a commercial RANS solver. The results are validated against available experimental data and are found to be in good agreement with the experiments. Also, the results are compared to those from potential theory.",
+    "url": "https://doi.org/10.1016/j.oceaneng.2015.01.011",
+    "authors": [
+      "Tahsin Tezdogan",
+      "Yiğit Kemal Demirel",
+      "Paula Kellett",
+      "Mahdi Khorasanchi",
+      "Atilla İncecik",
+      "Osman Turan"
+    ],
+    "tags": [
+      "Reynolds-averaged Navier–Stokes equations",
+      "Computational fluid dynamics",
+      "Full scale",
+      "Marine engineering",
+      "Mechanics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2015-02-23",
+    "doi": "https://doi.org/10.1016/j.oceaneng.2015.01.011",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2057658333",
+    "name": "Characterizing the nonlinear internal wave climate in the northeastern South China Sea",
+    "source": "openalex",
+    "abstract": "Abstract. Four oceanographic moorings were deployed in the South China Sea from April 2005 to June 2006 along a transect extending from the Batanes Province, Philippines in the Luzon Strait to just north of Dong-Sha Island on the Chinese continental slope. The purpose of the array was to observe and track large-amplitude nonlinear internal waves (NIWs) from generation to shoaling over the course of one full year. The basin and slope moorings observed velocity, temperature (T) and salinity (S) at 1–3 min intervals to observe the waves without aliasing. The Luzon mooring observed velocity at 15 min and T and S at 3 min, primarily to resolve the tidal forcing in the strait. The observed waves travelled WNW towards 282–288 degrees with little variation. They were predominantly mode-1 waves with orbital velocities exceeding 100 cm s−1 and thermal displacements exceeding 100 m. Consistent with earlier authors, two types of waves were observed: the a-waves arrived diurnally and had a rank-ordered packet structure. The b-waves arrived in between, about an hour later each day similar to the pattern of the semi-diurnal tide. The b-waves were weaker than the a-waves, usually consisted of just one large wave, and were often absent in the deep basin, appearing as NIW only upon reaching the continental slope. The propagation speed of both types of waves was 323±31 cm s−1 in the deep basin and 222±18 cm s−1 over the continental slope. These speeds were 11–20% faster than the theoretical mode-1 wave speeds for the observed stratification, roughly consistent with the additional contribution from the nonlinear wave amplitude. The observed waves were clustered around the time of the spring tide at the presumed generation site in the Luzon Strait, and no waves were observed at neap tide. A remarkable feature was the distinct lack of waves during the winter months, December 2005 through February 2006. Most of the features of the wave arrivals can be explained by the tidal variability in the Luzon Strait. The near-bottom tidal currents in the Luzon Strait were characterized by a large fortnightly envelope, large diurnal inequality, and stronger ebb (towards the Pacific) than flood tides. Within about ±4 days of spring tide, when currents exceeded 71 cm s−1, the ebb tides generated high-frequency motions immediately that evolved into well-developed NIWs by the time they reached mooring B1 in the deep basin. These waves formed diurnally and correspond to the a-waves described by previous authors. Also near spring tide, the weaker flood tides formed NIWs which took longer/further to form, usually not until they reached mooring S7 on the upper continental slope. These waves tracked the semidiurnal tide and correspond to the b-waves described by previous authors. These patterns were consistent from March to November. During December–February, the structure of the barotropic tide was unchanged, so the lack of waves during this time is attributed to the deep surface mixed layer and weaker stratification along the propagation path in winter.",
+    "url": "https://doi.org/10.5194/npg-17-481-2010",
+    "authors": [
+      "Steven R. Ramp",
+      "Yiing Jang Yang",
+      "Fred Bahr"
+    ],
+    "tags": [
+      "Geology",
+      "Continental shelf",
+      "Mooring",
+      "Internal tide",
+      "Internal wave"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-09-29",
+    "doi": "https://doi.org/10.5194/npg-17-481-2010",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2017340582",
+    "name": "Advances in research on the deep South China Sea circulation",
+    "source": "openalex",
+    "abstract": "Deep sea circulation is important for world climate and has been a substantial research area in ocean science, leading to various breakthroughs and discoveries. With the rapid advance in research on ocean science, these matters have received increasing attention from the oceanography community. In this article, we attempt to convey the progress made in recent years. We first provide an overview of existing observations, theories, and simulations of deep South China Sea circulation. Finally, we discuss remaining issues.",
+    "url": "https://doi.org/10.1007/s11434-012-5269-x",
+    "authors": [
+      "Jiwei Tian",
+      "Tangdong Qu"
+    ],
+    "tags": [
+      "Circulation (fluid dynamics)",
+      "Oceanography",
+      "China",
+      "Deep sea",
+      "Ocean science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2012-06-16",
+    "doi": "https://doi.org/10.1007/s11434-012-5269-x",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2025724632",
+    "name": "Diversity and abundance of diazotrophic microorganisms in the South China Sea during intermonsoon",
+    "source": "openalex",
+    "abstract": "The spatial heterogeneity of diversity and abundance of diazotrophs were investigated off the Vietnamese coast in the South China Sea (SCS). The study area extended from the Mekong River plume to the shelf region and beyond to stations extending to 1700 m depth. The SCS diazotroph community, based on nifH gene diversity, had components closely related to sequences from open ocean, estuarine, saltmarsh and microbial mat communities. Rarefaction analysis suggested that by using a 97% similarity operational taxonomic unit definition, the majority of nifH sequence diversity in the samples was covered by the 384 nifH clones obtained. The majority of the nifH sequences recovered fell into two clusters: one comprised of Trichodesmium sequences and the other an alpha-proteobacterial group. Unicellular cyanobacterial groups A and B, and symbiotic filamentous cyanobacterial diazotrophs were detected sporadically. Trichodesmium was by far the most abundant diazotroph, with up to 6 x 10(5) nifH gene copies per liter. Quantitative PCR probe-primer sets were designed and used to quantify two proteobacterial groups, revealing abundances up to 10(3)-10(4) nifH gene copies per liter, with the highest abundances in the photic zone. Major components of the clone library were also revealed by a nifH microarray and multidimensional scaling (MDS) analysis. MDS showed that samples from the >10 microm size fraction from 0- to 5-m depths clustered separately from the rest of the samples, primarily due to the abundance of Trichodesmium sequences. The SCS diazotroph community has a relatively low diversity and is a mixture of both estuarine and oceanic fingerprints.",
+    "url": "https://doi.org/10.1038/ismej.2008.51",
+    "authors": [
+      "Pia H. Moisander",
+      "Roxanne A. Beinart",
+      "Maren Voß",
+      "Jonathan P. Zehr"
+    ],
+    "tags": [
+      "Diazotroph",
+      "Biology",
+      "Trichodesmium",
+      "Geomicrobiology",
+      "Phylogenetic diversity"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2008-06-05",
+    "doi": "https://doi.org/10.1038/ismej.2008.51",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2283456401",
+    "name": "Deep-sea whale fall fauna from the Atlantic resembles that of the Pacific Ocean",
+    "source": "openalex",
+    "abstract": "Whale carcasses create remarkable habitats in the deep-sea by producing concentrated sources of organic matter for a food-deprived biota as well as places of evolutionary novelty and biodiversity. Although many of the faunal patterns on whale falls have already been described, the biogeography of these communities is still poorly known especially from basins other than the NE Pacific Ocean. The present work describes the community composition of the deepest natural whale carcass described to date found at 4204 m depth on Southwest Atlantic Ocean with manned submersible Shinkai 6500. This is the first record of a natural whale fall in the deep Atlantic Ocean. The skeleton belonged to an Antarctic Minke whale composed of only nine caudal vertebrae, whose degradation state suggests it was on the bottom for 5-10 years. The fauna consisted mainly of galatheid crabs, a new species of the snail Rubyspira and polychaete worms, including a new Osedax species. Most of the 41 species found in the carcass are new to science, with several genera shared with NE Pacific whale falls and vent and seep ecosystems. This similarity suggests the whale-fall fauna is widespread and has dispersed in a stepping stone fashion, deeply influencing its evolutionary history.",
+    "url": "https://doi.org/10.1038/srep22139",
+    "authors": [
+      "Paulo Yukio Gomes Sumida",
+      "Joan M. Alfaro‐Lucas",
+      "Maurício Shimabukuro",
+      "Hiroshi Kitazato",
+      "José Ángel Álvarez Pérez",
+      "Abı́lio Soares-Gomes",
+      "Takashi Toyofuku",
+      "André Oliveira de Souza Lima",
+      "Koichi Ara",
+      "Yoshihiro Fujiwara"
+    ],
+    "tags": [
+      "Whale",
+      "Fauna",
+      "Polychaete",
+      "Minke whale",
+      "Deep sea"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2016-02-24",
+    "doi": "https://doi.org/10.1038/srep22139",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2109961832",
+    "name": "Decadal Trends in Sea Level Patterns: 1993–2004",
+    "source": "openalex",
+    "abstract": "Abstract Estimates of regional patterns of global sea level change are obtained from a 1° horizontal resolution general circulation model constrained by least squares to about 100 million ocean observations and many more meteorological estimates during the period 1993–2004. The data include not only altimetric variability, but most of the modern hydrography, Argo float profiles, sea surface temperature, and other observations. Spatial-mean trends in altimetric data are explicitly suppressed to isolate global average long-term changes required by the in situ data alone. On large scales, some regions display strong signals although few individual points have statistically significant trends. In the regional patterns, thermal, salinity, and mass redistribution contributions are all important, showing that regional sea level change is tied directly to the general circulation. Contributions below about 900 m are significant, but not dominant, and are expected to grow with time as the abyssal ocean shifts. Estimates made here produce a global mean of about 1.6 mm yr−1, or about 60% of the pure altimetric estimate, of which about 70% is from the addition of freshwater. Interannual global variations may be dominated by the freshwater changes rather than by heating changes. The widely quoted altimetric global average values may well be correct, but the accuracies being inferred in the literature are not testable by existing in situ observations. Useful estimation of the global averages is extremely difficult given the realities of space–time sampling and model approximations. Systematic errors are likely to dominate most estimates of global average change: published values and error bars should be used very cautiously.",
+    "url": "https://doi.org/10.1175/2007jcli1840.1",
+    "authors": [
+      "Carl Wunsch",
+      "Rui M. Ponte",
+      "Patrick Heimbach"
+    ],
+    "tags": [
+      "Argo",
+      "Climatology",
+      "Hydrography",
+      "Ocean observations",
+      "Altimeter"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2007-12-15",
+    "doi": "https://doi.org/10.1175/2007jcli1840.1",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W4297823068",
+    "name": "Seawater hydraulics: From the sea surface to depths of 11000 meters",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s11431-022-2097-4",
+    "authors": [
+      "Yinshui Liu",
+      "Qian Cheng",
+      "Zhenyao Wang",
+      "Hao Pang",
+      "Yipan Deng",
+      "XinPing Zhou",
+      "Xiaohui Luo",
+      "Yan Cui",
+      "Defa Wu"
+    ],
+    "tags": [
+      "Seawater",
+      "Hydraulics",
+      "Environmental science",
+      "Hydraulic machinery",
+      "Hydraulic fluid"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2022-08-03",
+    "doi": "https://doi.org/10.1007/s11431-022-2097-4",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2156536539",
+    "name": "General circulation of the Eastern Mediterranean",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0012-8252(92)90002-b",
+    "authors": [
+      "Allan R. Robinson",
+      "Paola Malanotte‐Rizzoli",
+      "A. Hecht",
+      "A. Michelato",
+      "Wolfgang Roether",
+      "Alexander Theocharis",
+      "Ümi̇t Ünlüata",
+      "Nadia Pinardi",
+      "A. Artegiani",
+      "A. Bergamasco",
+      "J. Bishop",
+      "S. Brenner",
+      "S. Christianidis",
+      "M. Gacic",
+      "Dimitri Georgopoulos",
+      "Maryam Golnaraghi",
+      "Martin Hausmann",
+      "H.-G. Junghaus",
+      "A. Lascaratos",
+      "M. A. Latif",
+      "Wayne G. Leslie",
+      "Carlos J. Lozano",
+      "T. Og ̨uz",
+      "Emi̇n Özsoy",
+      "Emmanuel Papageorgiou",
+      "E. Paschini",
+      "Z. Rozentroub",
+      "E. Sansone",
+      "P. Scarazzato",
+      "Reiner Schlitzer",
+      "Giancarlo Spezie",
+      "Eli Tziperman",
+      "George Zodiatis",
+      "L. Athanassiadou",
+      "Makram A. Gerges",
+      "M. M. Osman"
+    ],
+    "tags": [
+      "Mesoscale meteorology",
+      "Thermocline",
+      "Hydrography",
+      "Geology",
+      "Ocean gyre"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "1992-07-01",
+    "doi": "https://doi.org/10.1016/0012-8252(92)90002-b",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2128278121",
+    "name": "Living with Sea-Level Rise and Climate Change: A Case Study of the Netherlands",
+    "source": "openalex",
+    "abstract": "Based on historical hindsight, this paper shows that sea-level rise has played a fundamental role in the development of the low-lying environment of the Netherlands. It was beneficial in morphological terms during the mid-Holocene, but from Roman times, it has been a threat to the coastal zone evolution and human habitation. Collective human response started to play a role in coastal evolution as early as the ninth century, while its influence started to become a major factor during the nineteenth and twentieth century. Throughout its history, Dutch society has always been receptive to new technologies, approaches, and policies in its dealings with the many water-related challenges. The success of concerted human response explains why the water boards were successful as the first democratic institutions in the Netherlands. Development of technology and increasing financial means (the Dutch Golden Age) gave rise to increasingly viable flood abatement measures and reclamation projects, which took place on increasingly larger scales. This culminated in large-scale works such as the closure of the Zuiderzee and the Delta Project in the twentieth century. During this project, a turning point in thinking emerged; while flood protection remained a top priority, human interventions were considered in a broader, more holistic context with natural values being weighed against socioeconomic interests. In the face of the challenges of the twenty-first century, policy and management approaches as well as science and technology approaches need to be adapted further in accordance to the principles of working with nature in a trans-disciplinary way. The success of this adaptation will to a large extent determine the viability of the Dutch society as a whole.",
+    "url": "https://doi.org/10.2112/07a-0010.1",
+    "authors": [
+      "Mark van Koningsveld",
+      "Jan Mulder",
+      "M.J.F. Stive",
+      "L. VanDerValk",
+      "A. W. VanDerWeck"
+    ],
+    "tags": [
+      "Context (archaeology)",
+      "Flood myth",
+      "Political science",
+      "Economic growth",
+      "Geography"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2008-03-01",
+    "doi": "https://doi.org/10.2112/07a-0010.1",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W1823752106",
+    "name": "Is Biological Sound Production Important in the Deep Sea?",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-1-4419-7311-5_41",
+    "authors": [
+      "Rodney A. Rountree",
+      "Francis Juanes",
+      "Clifford A. Goudey",
+      "K. E. Ekstrom"
+    ],
+    "tags": [
+      "Sound (geography)",
+      "Griffin",
+      "Sound production",
+      "Oceanography",
+      "Deep sea"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2011-12-07",
+    "doi": "https://doi.org/10.1007/978-1-4419-7311-5_41",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2168949004",
+    "name": "AMADEUS—The acoustic neutrino detection test system of the ANTARES deep-sea neutrino telescope",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.nima.2010.09.053",
+    "authors": [
+      "J. A. Aguilar",
+      "I. Al Samarai",
+      "A. Albert",
+      "M. Anghinolfi",
+      "G. Anton",
+      "S. Anvar",
+      "M. Ardid",
+      "A.C. Assis Jesus",
+      "T. Astraatmadja",
+      "J.-J. Aubert",
+      "R. Auer",
+      "E. Barbarito",
+      "B. Baret",
+      "S. Basa",
+      "M. Bazzotti",
+      "V. Bertin",
+      "S. Biagi",
+      "C. Bigongiari",
+      "M. Bou-Cabo",
+      "M.C. Bouwhuis",
+      "A. M. Brown",
+      "J. Brünner",
+      "J. Busto",
+      "Francisco Camarena",
+      "A. Capone",
+      "C. Cârloganu",
+      "G. Carminati",
+      "J. Carr",
+      "B. Cassano",
+      "Emanuele Castorina",
+      "V. Cavasinni",
+      "S. Cecchini",
+      "A. Ceres",
+      "Philippe Charvis",
+      "T. Chiarusi",
+      "N. Chon Sen",
+      "M. Circella",
+      "R. Coniglione",
+      "H. Costantini",
+      "N. Cottini",
+      "P. Coyle",
+      "C. Curtil",
+      "G. De Bonis",
+      "M. P. Decowski",
+      "I. Dekeyser",
+      "A. Deschamps",
+      "C. Distefano",
+      "C. Donzaud",
+      "D. Dornic",
+      "D. Drouhin",
+      "T. Eberl",
+      "U. Emanuele",
+      "J.-P. Ernenwein",
+      "S. Escoffier",
+      "F. Fehr",
+      "C. Fiorello",
+      "V. Flaminio",
+      "U. Fritsch",
+      "Jean‐Luc Fuda",
+      "P. Gay",
+      "G. Giacomelli",
+      "J. Gómez-González",
+      "K. Graf",
+      "G. Guillard",
+      "G. Halladjian",
+      "G. Hallewell",
+      "H. van Haren",
+      "A.J. Heijboer",
+      "E. Heine",
+      "Y. Hello",
+      "J.J. Hernandez",
+      "B. Herold",
+      "J. Hößl",
+      "M. de Jong",
+      "N. Kalantar-Nayestanaki",
+      "O. Kalekin",
+      "A. Kappes",
+      "U. Katz",
+      "Matthias Keller",
+      "P. Kooijman",
+      "C. Kopper",
+      "A. Kouchner",
+      "W. Kretschmer",
+      "R. Lahmann",
+      "P. Lamare",
+      "G. Lambard",
+      "G. Larosa",
+      "H. Laschinsky",
+      "H. Le Provost",
+      "D. Lefèvre",
+      "G. Lelaizant",
+      "G. Lim",
+      "D. Lo Presti",
+      "H. Loehner",
+      "S. Loucatos",
+      "F. Louis",
+      "F. Lucarelli",
+      "S. Mangano",
+      "M. Marcelin",
+      "A Margiotta"
+    ],
+    "tags": [
+      "Preamplifier",
+      "Physics",
+      "Neutrino",
+      "Detector",
+      "Noise (video)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2010-09-22",
+    "doi": "https://doi.org/10.1016/j.nima.2010.09.053",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2289856109",
+    "name": "Environmental DNA as a ‘Snapshot’ of Fish Distribution: A Case Study of Japanese Jack Mackerel in Maizuru Bay, Sea of Japan",
+    "source": "openalex",
+    "abstract": "Recent studies in streams and ponds have demonstrated that the distribution and biomass of aquatic organisms can be estimated by detection and quantification of environmental DNA (eDNA). In more open systems such as seas, it is not evident whether eDNA can represent the distribution and biomass of aquatic organisms because various environmental factors (e.g., water flow) are expected to affect eDNA distribution and concentration. To test the relationships between the distribution of fish and eDNA, we conducted a grid survey in Maizuru Bay, Sea of Japan, and sampled surface and bottom waters while monitoring biomass of the Japanese jack mackerel (Trachurus japonicus) using echo sounder technology. A linear model showed a high R(2) value (0.665) without outlier data points, and the association between estimated eDNA concentrations from the surface water samples and echo intensity was significantly positive, suggesting that the estimated spatial variation in eDNA concentration can reflect the local biomass of the jack mackerel. We also found that a best-fit model included echo intensity obtained within 10-150 m from water sampling sites, indicating that the estimated eDNA concentration most likely reflects fish biomass within 150 m in the bay. Although eDNA from a wholesale fish market partially affected eDNA concentration, we conclude that eDNA generally provides a 'snapshot' of fish distribution and biomass in a large area. Further studies in which dynamics of eDNA under field conditions (e.g., patterns of release, degradation, and diffusion of eDNA) are taken into account will provide a better estimate of fish distribution and biomass based on eDNA.",
+    "url": "https://doi.org/10.1371/journal.pone.0149786",
+    "authors": [
+      "Satoshi Yamamoto",
+      "Kenji Minami",
+      "Keiichi Fukaya",
+      "K. Takahashi",
+      "Hideki Sawada",
+      "Hiroaki Murakami",
+      "Satsuki Tsuji",
+      "Hiroki Hashizume",
+      "Shou Kubonaga",
+      "Tomoya Horiuchi",
+      "Masamichi Hongo",
+      "Jo Nishida",
+      "Yuta Okugawa",
+      "Ayaka Fujiwara",
+      "Miho Fukuda",
+      "Shunsuke Hidaka",
+      "Keita W. Suzuki",
+      "Masaki Miya",
+      "Hitoshi Araki",
+      "Hiroki Yamanaka",
+      "Atsushi Maruyama",
+      "Kazushi Miyashita",
+      "Reiji Masuda",
+      "Toshifumi Minamoto",
+      "Michio Kondoh"
+    ],
+    "tags": [
+      "Environmental DNA",
+      "Bay",
+      "Fishery",
+      "Environmental science",
+      "Biomass (ecology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2016-03-02",
+    "doi": "https://doi.org/10.1371/journal.pone.0149786",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W3096838799",
+    "name": "Mesophotic Ecosystems: The Link between Shallow and Deep-Sea Habitats",
+    "source": "openalex",
+    "abstract": "Mesophotic ecosystems (MEs) are characterized by the presence of light-dependent organisms, found at depths ranging from ~30 to 150 m in temperate, subtropical and tropical regions. These communities occasionally create massive reef structures with diverse but characteristic morphologies, which serve as the framework builders of those ecosystems. In many localities, MEs are physically linked with shallow and deep-sea habitats, and while taxa from both environments share this space, a unique and endemic biodiversity is also found. The main MEs studied to date are the mesophotic coral ecosystems (MCEs) and the temperate mesophotic ecosystems (TMEs), which have received increased attention during the last decade. As shallow coral reef ecosystems are among the most threatened habitats on Earth, the potential of MEs to act as refugia and contribute to the resilience of the whole ecosystem has been a subject of scrutiny. New technologies and methods have become more available to study these deeper parts of the reef ecosystems, yielding many new discoveries. However, basic gaps in knowledge remain in our scientific understanding of the global diversity of MEs, limiting our ability to recognize biogeographic patterns and to make educated decisions for the management and conservation of these ecosystems.",
+    "url": "https://doi.org/10.3390/d12110411",
+    "authors": [
+      "Gal Eyal",
+      "Hudson T. Pinheiro"
+    ],
+    "tags": [
+      "Ecosystem",
+      "Coral reef",
+      "Habitat",
+      "Reef",
+      "Ecology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2020-10-28",
+    "doi": "https://doi.org/10.3390/d12110411",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2082284070",
+    "name": "The δ18O record along the Greenland Ice Core Project deep ice core and the problem of possible Eemian climatic instability",
+    "source": "openalex",
+    "abstract": "Over 70,000 samples from the 3029‐m‐long Greenland Ice Core Project (GRIP) ice core drilled on the top of the Greenland Ice Sheet (Summit) have been analyzed for δ8O. A highly detailed and continuous δ8O profile has thus been obtained and is discussed in terms of past temperatures in Greenland. We also discuss a three‐core stacked annual δ8O profile for the past 917 years. The short‐term (<50 years) variability of the annual δ8O signal is found to be 1‰ in the Holocene, and estimates for the coldest parts of the last glacial are 3‰ or higher. These data also provide insights into possible disturbances of the stratigraphic layering in the core which seems to be sound down to the onset of the Eemian. Spectral analysis of highly detailed sequences of the profile helps determine the smoothing of the δ8O signal, which for the Holocene ice is found to be considerably stronger than expected. We suggest this is due to a process involving diffusion of water molecules along crystal boundaries in the recrystallizing ice matrix. Deconvolution techniques were employed for restoring with great confidence the highly attenuated annual δ8O signal in the Holocene. We confirm earlier findings of dramatic temperature changes in Greenland during the last glacial cycle. Abrupt and strong climatic shifts are also found within the Eem/Sangamon Interglaciation, which is normally recorded as a period of warm and stable climate in lower latitudes. The stratigraphic continuity of the Eemian layers is consequently discussed in section 3 of this paper in terms of all pertinent data which we are not able to reconcile.",
+    "url": "https://doi.org/10.1029/97jc00167",
+    "authors": [
+      "S. J. Johnsen",
+      "Henrik Clausen",
+      "W. Dansgaard",
+      "N. Gundestrup",
+      "C. U. Hammer",
+      "Uffe Brandt Andersen",
+      "K. K. Andersen",
+      "Christine S. Hvidberg",
+      "Dorthe Dahl‐Jensen",
+      "J. P. Steffensen",
+      "Hitoshi Shoji",
+      "Árný E. Sveinbjörnsdóttir",
+      "J. W. C. White",
+      "Jean Jouzel",
+      "David Fisher"
+    ],
+    "tags": [
+      "Ice core",
+      "Eemian",
+      "Geology",
+      "Holocene",
+      "Glacial period"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "1997-11-30",
+    "doi": "https://doi.org/10.1029/97jc00167",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2965951146",
+    "name": "Comparative transcriptomic analysis illuminates the host-symbiont interactions in the deep-sea mussel Bathymodiolus platifrons",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.dsr.2019.103082",
+    "authors": [
+      "Hao Wang",
+      "Huan Zhang",
+      "Minxiao Wang",
+      "Hao Chen",
+      "Chao Lian",
+      "Chaolun Li"
+    ],
+    "tags": [
+      "Biology",
+      "Mussel",
+      "Host (biology)",
+      "Hydrothermal vent",
+      "Symbiosis"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2019-08-05",
+    "doi": "https://doi.org/10.1016/j.dsr.2019.103082",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W3188856809",
+    "name": "Deep-Sea Exploration Robots and Elemental Technologies of JAMSTEC",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.7210/jrsj.39.492",
+    "authors": [
+      "Tadahiro Hyakudome"
+    ],
+    "tags": [
+      "Robot",
+      "Geology",
+      "Marine engineering",
+      "Remotely operated underwater vehicle",
+      "Oceanography"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2021-01-01",
+    "doi": "https://doi.org/10.7210/jrsj.39.492",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2060613340",
+    "name": "Massive outbreaks of Noctiluca scintillans blooms in the Arabian Sea due to spread of hypoxia",
+    "source": "openalex",
+    "abstract": "In the last decade, the northern Arabian Sea has witnessed a radical shift in the composition of winter phytoplankton blooms, which previously comprised mainly of diatoms, the unicellular, siliceous photosynthetic organisms favoured by nutrient-enriched waters from convective mixing. These trophically important diatom blooms have been replaced by widespread blooms of a large, green dinoflagellate, Noctiluca scintillans, which combines carbon fixation from its chlorophyll-containing endosymbiont with ingestion of prey. Here, we report that these massive outbreaks of N. scintillans during winter are being facilitated by an unprecedented influx of oxygen deficient waters into the euphotic zone and by the extraordinary ability of its endosymbiont Pedinomonas noctilucae to fix carbon more efficiently than other phytoplankton under hypoxic conditions. We contend that N. scintillans blooms could disrupt the traditional diatom-sustained food chain to the detriment of regional fisheries and long-term health of an ecosystem supporting a coastal population of nearly 120 million people.",
+    "url": "https://doi.org/10.1038/ncomms5862",
+    "authors": [
+      "Helga do Rosário Gomes",
+      "Joaquim I. Goés",
+      "S.G.P. Matondkar",
+      "Edward J. Buskey",
+      "Subhajit Basu",
+      "Sushma G. Parab",
+      "Prasad G. Thoppil"
+    ],
+    "tags": [
+      "Dinoflagellate",
+      "Phytoplankton",
+      "Algal bloom",
+      "Diatom",
+      "Photic zone"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2014-09-09",
+    "doi": "https://doi.org/10.1038/ncomms5862",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W3153249728",
+    "name": "Improved YOLOv4 Marine Target Detection Combined with CBAM",
+    "source": "openalex",
+    "abstract": "Marine target detection technology plays an important role in sea surface monitoring, sea area management, ship collision avoidance, and other fields. Traditional marine target detection algorithms cannot meet the requirements of accuracy and speed. This article uses the advantages of deep learning in big data feature learning to propose the YOLOv4 marine target detection method fused with a convolutional attention module. Marine target detection datasets were collected and produced and marine targets were divided into ten categories, including speedboat, warship, passenger ship, cargo ship, sailboat, tugboat, and kayak. Aiming at the problem of insufficient detection accuracy of YOLOv4’s self-built marine target dataset, a convolutional attention module is added to the YOLOv4 network to increase the weight of useful features while suppressing the weight of invalid features to improve detection accuracy. The experimental results show that the improved YOLOv4 has higher detection accuracy than the original YOLOv4, and has better detection results for small targets, multiple targets, and overlapping targets. The detection speed meets the real-time requirements, verifying the effectiveness of the improved algorithm.",
+    "url": "https://doi.org/10.3390/sym13040623",
+    "authors": [
+      "Huixuan Fu",
+      "Guoqing Song",
+      "Yuchao Wang"
+    ],
+    "tags": [
+      "Computer science",
+      "Feature (linguistics)",
+      "Artificial intelligence",
+      "Deep learning",
+      "Convolutional neural network"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2021-04-08",
+    "doi": "https://doi.org/10.3390/sym13040623",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
+  },
+  {
+    "id": "oa:W2035231925",
+    "name": "Technologies for the high seas: meeting the climate challenge",
+    "source": "openalex",
+    "abstract": "Background:Progress toward decarbonizing shipping has been slow compared with other sectors. To explore the scope for an urgent step-change cut in CO2, this paper presents results from a participatory technology roadmapping exercise. Results: Combining existing incremental and novel technologies with slow-steaming can deliver reductions in CO2 of over 50% even in the short term for existing ships. However, roadmaps for three vessel types illustrate barriers to change including the sector's complexity, infrastructure lock-in and a need for tailored market and vessel-specific roadmaps to support decision-making. Conclusions: Through technology and engineering, the outlook for the shipping sector to significantly cut its CO2 emissions, even in the short term, is promising. Nevertheless, the scale of change requires support to demonstrate how the long-term low-carbon vision offers enough benefit to overcome necessary short-term investment.",
+    "url": "https://doi.org/10.1080/17583004.2015.1013676",
+    "authors": [
+      "Paul Gilbert",
+      "Alice Bows‐Larkin",
+      "Sarah Mander",
+      "Conor Walsh"
+    ],
+    "tags": [
+      "Scope (computer science)",
+      "Term (time)",
+      "Investment (military)",
+      "Scale (ratio)",
+      "Climate change"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "deep-sea-tech"
+    ],
+    "publishedDate": "2014-07-04",
+    "doi": "https://doi.org/10.1080/17583004.2015.1013676",
+    "addedAt": "2026-08-31T14:44:37.816Z",
+    "updatedAt": "2026-08-31T14:44:37.816Z"
   }
 ]

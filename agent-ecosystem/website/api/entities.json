@@ -649,22 +649,23 @@
   {
     "id": "doi:10.20517/aiagent.2026.07",
     "name": "AI agents: opportunity, hype, and the way through",
-    "source": "crossref",
+    "source": "openalex",
     "abstract": "",
     "url": "https://doi.org/10.20517/aiagent.2026.07",
     "authors": [
       "Chaoyue Zhao",
-      "Hao Li"
+      "Hao Li",
+      "H. C. Li"
     ],
     "tags": [],
-    "confidence": 0.7,
+    "confidence": 0.72,
     "sites": [
       "agent-ecosystem"
     ],
-    "publishedDate": "2026-03-27T11:16:13Z",
+    "publishedDate": "2026-03-27",
     "addedAt": "2026-08-04T10:40:56.356Z",
     "doi": "10.20517/aiagent.2026.07",
-    "updatedAt": "2026-08-31T06:36:48.068Z"
+    "updatedAt": "2026-08-31T14:45:11.911Z"
   },
   {
     "id": "doi:10.20517/aiagent.2026.25",
@@ -9260,7 +9261,13 @@
       "Qiang Duan",
       "Zhihui Lu"
     ],
-    "tags": [],
+    "tags": [
+      "Key (lock)",
+      "Computer science",
+      "The Internet",
+      "Virtualization",
+      "Knowledge management"
+    ],
     "confidence": 0.8,
     "sites": [
       "agent-ecosystem"
@@ -9268,7 +9275,7 @@
     "publishedDate": "2026",
     "addedAt": "2026-08-06T14:57:41.205Z",
     "doi": "10.20944/preprints202602.0306.v1",
-    "updatedAt": "2026-08-31T06:36:48.435Z"
+    "updatedAt": "2026-08-31T14:45:11.911Z"
   },
   {
     "id": "doi:10.21203/rs.3.rs-8564669/v1",
@@ -9513,18 +9520,28 @@
     "id": "doi:10.1007/s10055-025-01284-0",
     "name": "Towards user-centered interactive medical image segmentation in VR with an assistive AI agent.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Crucial in disease analysis and surgical planning, manual segmentation of volumetric medical scans (e.g. MRI, CT) is laborious, error-prone, and challenging to master, while fully automatic algorithms can benefit from user feedback. Therefore, with the complementary power of the latest radiological AI foundation models and virtual reality (VR)'s intuitive data interaction, we propose SAMIRA, a novel conversational AI agent for medical VR that assists users with localizing, segmenting, and visualizing 3D medical concepts. Through speech-based interaction, the agent helps users understand radiological features, locate clinical targets, and generate segmentation masks that can be refined with just a few point prompts. The system also supports true-to-scale 3D visualization of segmented pathology to enhance patient-specific anatomical understanding. Furthermore, to determine the optimal interaction paradigm under near-far attention-switching for refining segmentation masks in an immersive, human-in-the-loop workflow, we compare VR controller pointing, head pointing, and eye tracking as input modes. With a user study, evaluations demonstrated a high usability score (SUS = 90.0 ± 9.0), low overall task load, as well as strong support for the proposed VR system's guidance, training potential, and integration of AI in radiological segmentation tasks.",
     "url": "https://doi.org/10.1007/s10055-025-01284-0",
-    "authors": [],
-    "tags": [],
+    "authors": [
+      "Pascal Spiegler",
+      "Arash Harirpoush",
+      "Yiming Xiao"
+    ],
+    "tags": [
+      "Computer science",
+      "Segmentation",
+      "Visualization",
+      "Virtual reality",
+      "Artificial intelligence"
+    ],
     "confidence": 0.8,
     "sites": [
       "agent-ecosystem"
     ],
-    "publishedDate": "2026",
+    "publishedDate": "2025-12-25",
     "addedAt": "2026-08-06T14:57:41.205Z",
     "doi": "10.1007/s10055-025-01284-0",
-    "updatedAt": "2026-08-31T06:37:01.230Z"
+    "updatedAt": "2026-08-31T14:45:11.910Z"
   },
   {
     "id": "doi:10.1101/2025.09.11.675660",
@@ -9837,10 +9854,29 @@
     "id": "doi:10.1101/2025.04.01.646719",
     "name": "Fleming: An AI Agent for Antibiotic Design for Mycobacterium tuberculosis",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Antibiotic development is challenged by high costs and failure rates. Artificial intelligence (AI) holds promise to overcome these challenges by predicting inhibitory properties of novel compounds, generating new candidates, and contextualizing property predictions in the biological background. Fleming is an integrative AI agent that explores novel chemical space to identify lead compounds meeting multiple criteria. The discriminative and generative AI models for Mycobacterium tuberculosis (Mtb) inhibition were trained on a set of 114,900 diverse compounds and fragments based on in vitro growth inhibition. We combined both models as well as molecular optimization, ADMET prediction and literature search functions to make Fleming an integrated agent for Mtb preclinical lead identification. Fleming has 17% higher discrimination between known Mtb leads and leads for other diseases than a generic LLM agent along with 13% higher discrimination than molecular property prediction alone on challenging ADMET tasks. Fleming demonstrates an 83% in vitro hit rate of predicted inhibition and a 100% hit rate of de novo generative design. Fleming’s generative designs also demonstrate an 83% rate of favorable ADMET profiles. Fleming is an integrative AI agent able to explore new regions of the chemical space to select lead compounds that simultaneously meet several desirable criteria.",
     "url": "https://doi.org/10.1101/2025.04.01.646719",
-    "authors": [],
-    "tags": [],
+    "authors": [
+      "Ziming Wei",
+      "Yasha Ektefaie",
+      "Xiao‐Hua Zhou",
+      "Dereje A. Negatu",
+      "Bree B. Aldridge",
+      "T. B. Dick",
+      "Michael Skarlinski",
+      "Andrew White",
+      "Samuel G. Rodriques",
+      "Sepideh Hosseiniporgham",
+      "Maloy Parai",
+      "Armando Flores"
+    ],
+    "tags": [
+      "Mycobacterium tuberculosis",
+      "Antibiotics",
+      "Tuberculosis",
+      "Microbiology",
+      "Medicine"
+    ],
     "confidence": 0.8,
     "sites": [
       "agent-ecosystem"
@@ -9848,7 +9884,7 @@
     "publishedDate": "2025",
     "addedAt": "2026-08-06T14:57:41.205Z",
     "doi": "10.1101/2025.04.01.646719",
-    "updatedAt": "2026-08-31T06:36:44.305Z"
+    "updatedAt": "2026-08-31T14:45:11.911Z"
   },
   {
     "id": "doi:10.64898/2026.06.02.26354777",
@@ -10081,10 +10117,25 @@
     "id": "doi:10.1111/aphw.70067",
     "name": "Effect of an AI agent trained on a large language model (LLM) as an intervention for depression and anxiety symptoms in young adults: A 28-day randomized controlled trial.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "BACKGROUND: Young adults face emotional problems in their daily lives. Considering that youth are prevalent among mobile internet users, it would be helpful if functions that can intervene in young people's depression and anxiety can be designed based on short video apps. Large language model (LLM)-based AI conversational agents based on short video apps may play an important role in intervening in young adults' negative emotions. METHODS: This study is a 28-day randomized controlled trial (RCT) in which 865 participants were randomly assigned to an intervention group or a waiting group, and each user was asked to engage in a total of 28 days of dialog intervention with the AI agent and complete three psychological questionnaires. RESULTS: The dialog intervention significantly reduced depression in the intervention group at two weeks and significantly reduced both depression and anxiety in the intervention group at four weeks. CONCLUSIONS: This study found evidence that the LLM-based conversational agent could effectively alleviate the mild anxiety and depressive symptoms of young adults with negative emotions through dialog interventions when the AI companion bot is used sufficiently enough. REGISTRATION: Clinicaltrials.gov NCT06346496, https://clinicaltrials.gov/study/NCT06346496.",
     "url": "https://doi.org/10.1111/aphw.70067",
-    "authors": [],
-    "tags": [],
+    "authors": [
+      "Yuqing Zhao",
+      "Wei Qian",
+      "Ya-Ru Chen",
+      "Dong‐Hong Wu",
+      "Yujia Luo",
+      "Cong Gao",
+      "Kankan Wu",
+      "Zhengkui Liu"
+    ],
+    "tags": [
+      "Anxiety",
+      "Randomized controlled trial",
+      "Intervention (counseling)",
+      "Dialog box",
+      "Psychological intervention"
+    ],
     "confidence": 0.8,
     "sites": [
       "agent-ecosystem"
@@ -10092,7 +10143,7 @@
     "publishedDate": "2025",
     "addedAt": "2026-08-06T14:57:41.205Z",
     "doi": "10.1111/aphw.70067",
-    "updatedAt": "2026-08-31T06:36:44.304Z"
+    "updatedAt": "2026-08-31T14:45:11.911Z"
   },
   {
     "id": "doi:10.1101/2025.04.03.25325003",
@@ -11351,7 +11402,7 @@
     "publishedDate": "2020-01-23",
     "addedAt": "2026-08-06T14:58:37.140Z",
     "doi": "10.48550/arxiv.2001.08361",
-    "updatedAt": "2026-08-31T06:36:38.289Z"
+    "updatedAt": "2026-08-31T14:45:11.911Z"
   },
   {
     "id": "oa:W2572000446",
@@ -72513,22 +72564,28 @@
   {
     "id": "doi:10.1002/9781394272587.ch15",
     "name": "Using Reinforcement Learning in Unity Environments for Training AI Agent",
-    "source": "crossref",
-    "abstract": "",
+    "source": "openalex",
+    "abstract": "An intelligent AI agent capable of performing tasks in a virtual environment is developed using reinforcement learning techniques. This chapter serves to demonstrate how machine learning and artificial intelligence methods can be employed to deploy an AI agent across settings, effectively addressing a wide range of challenges. By utilizing an AI agent, the need for developing agents for each unique problem encountered in diverse environments is eliminated. This approach transforms the AI agent into an entity that can be trained and adapted to scenarios, enabling it to effectively solve specific problems presented in each situation. The utilization of AI agents enhances resilience and adaptability in dynamic environments, leading to optimized resource allocation (including time, money, and energy) and increased human innovation. To accomplish this, the tools utilized are Unity 3D Engine, Python programming language, PyTorch framework, and ML agents.",
     "url": "https://doi.org/10.1002/9781394272587.ch15",
     "authors": [
       "Geetika Munjal",
       "Monika Lamba"
     ],
-    "tags": [],
-    "confidence": 0.7,
+    "tags": [
+      "Training (meteorology)",
+      "Reinforcement",
+      "Reinforcement learning",
+      "Computer science",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
     "sites": [
       "agent-ecosystem"
     ],
-    "publishedDate": "2024-10-04T21:22:31Z",
+    "publishedDate": "2024-10-04",
     "doi": "10.1002/9781394272587.ch15",
     "addedAt": "2026-08-31T06:36:40.312Z",
-    "updatedAt": "2026-08-31T06:36:40.312Z"
+    "updatedAt": "2026-08-31T14:45:11.911Z"
   },
   {
     "id": "doi:10.51219/urforum.2024.oluwatimilehin-odubola",
@@ -73319,22 +73376,29 @@
   {
     "id": "doi:10.1109/ccsb63463.2024.10735538",
     "name": "Research on Complex Control of Internet of Things Based on AI Agent Technology",
-    "source": "crossref",
-    "abstract": "",
+    "source": "openalex",
+    "abstract": "With the development and widespread application of IoT technology, there are problems affecting the performance of IoT databases, such as high dimensionality of database parameters and difficulty in parameter classification. This article focuses on the problem of optimizing data parameters in the Internet of Things. Using AI agent technology, an AI agent database parameter tuning method is proposed to achieve on-demand classification of IoT parameters and effectively expand tuning parameters. Through the collaboration and learning of multiple agents, reasonable parameter settings are recommended for IoT databases. Experiments were conducted in three workload environments: YCSB, TPC-C, and Seats. The results showed that compared to other mainstream models, the model proposed in this paper is more likely to expand the number of adjustable parameters for IoT databases and achieve better database performance.",
     "url": "https://doi.org/10.1109/ccsb63463.2024.10735538",
     "authors": [
       "Yulou Li",
-      "Zhangzhi Tao"
+      "Zhangzhi Tao",
+      "Youfu Li"
     ],
-    "tags": [],
-    "confidence": 0.7,
+    "tags": [
+      "Computer science",
+      "The Internet",
+      "Control (management)",
+      "Internet of Things",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
     "sites": [
       "agent-ecosystem"
     ],
-    "publishedDate": "2024-11-04T18:32:14Z",
+    "publishedDate": "2024-09-06",
     "doi": "10.1109/ccsb63463.2024.10735538",
     "addedAt": "2026-08-31T06:36:40.313Z",
-    "updatedAt": "2026-08-31T06:36:40.313Z"
+    "updatedAt": "2026-08-31T14:45:11.911Z"
   },
   {
     "id": "doi:10.61453/intij.202422",
@@ -103859,8 +103923,8 @@
   {
     "id": "doi:10.1109/iv55156.2024.10588800",
     "name": "Data on the Move: Traffic-Oriented Data Trading Platform Powered by AI Agent with Common Sense",
-    "source": "crossref",
-    "abstract": "",
+    "source": "openalex",
+    "abstract": "In the digital era, data has become a pivotal asset, advancing technologies such as autonomous driving. Despite this, data trading faces challenges like the absence of robust pricing methods and the lack of trustworthy trading mechanisms. To address these challenges, we introduce a traffic-oriented data trading platform named Data on The Move (DTM), integrating traffic simulation, data trading, and Artificial Intelligent (AI) agents. The DTM platform supports evident-based data value evaluation and AI-based trading mechanisms. Leveraging the common sense capabilities of Large Language Models (LLMs) to assess traffic state and data value, DTM can determine reasonable traffic data pricing through multi-round interaction and simulations. Moreover, DTM provides a pricing method validation by simulating traffic systems, multi-agent interactions, and the heterogeneity and irrational behaviors of individuals in the trading market. Within the DTM platform, entities such as connected vehicles and traffic light controllers could engage in information collecting, data pricing, trading, and decision-making. Simulation results demonstrate that our proposed AI agent-based pricing approach enhances data trading by offering rational prices, as evidenced by the observed improvement in traffic efficiency. This underscores the effectiveness and practical value of DTM, offering new perspectives for the evolution of data markets and smart cities. To the best of our knowledge, this is the first study employing LLMs in data pricing and a pioneering data trading practice in the field of intelligent vehicles and smart cities.",
     "url": "https://doi.org/10.1109/iv55156.2024.10588800",
     "authors": [
       "Yi Yu",
@@ -103871,17 +103935,24 @@
       "Ding Wang",
       "Xuhong Wang",
       "Cen Chen",
-      "Yilun Lin"
+      "Yilun Lin",
+      "D Wang"
     ],
-    "tags": [],
-    "confidence": 0.7,
+    "tags": [
+      "Common sense",
+      "Sense (electronics)",
+      "Computer science",
+      "Engineering",
+      "Electrical engineering"
+    ],
+    "confidence": 0.72,
     "sites": [
       "agent-ecosystem"
     ],
-    "publishedDate": "2024-07-15T13:19:28Z",
+    "publishedDate": "2024-06-02",
     "doi": "10.1109/iv55156.2024.10588800",
     "addedAt": "2026-08-31T06:36:45.022Z",
-    "updatedAt": "2026-08-31T06:36:45.022Z"
+    "updatedAt": "2026-08-31T14:45:11.911Z"
   },
   {
     "id": "doi:10.1016/j.ijer.2024.102323",
@@ -114847,23 +114918,31 @@
   {
     "id": "doi:10.51847/bhyi6rjara",
     "name": "Autonomous AI Agent for QSAR Modeling with Dataset Curation, Descriptor Selection, and Domain Assessment",
-    "source": "crossref",
-    "abstract": "",
+    "source": "openalex",
+    "abstract": "QSAR modeling is central to computational drug discovery because it links molecular structure to biological activity before synthesis or testing. However, the practical construction of a reliable QSAR model still depends on expert judgment across data preparation, feature design, validation, and interpretation. The QSAR workflow is difficult to reproduce because each stage can involve subjective choices about chemical standardization, activity normalization, descriptor filtering, model selection",
     "url": "https://doi.org/10.51847/bhyi6rjara",
     "authors": [
       "Chen Hao",
       "Liu Fang",
-      "Zhao Lin"
+      "Zhao Lin",
+      "Hao Chen",
+      "Fang Liu"
     ],
-    "tags": [],
-    "confidence": 0.7,
+    "tags": [
+      "Quantitative structure–activity relationship",
+      "Applicability domain",
+      "Workflow",
+      "Computer science",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
     "sites": [
       "agent-ecosystem"
     ],
-    "publishedDate": "2026-05-28T07:14:59Z",
+    "publishedDate": "2025-01-01",
     "doi": "10.51847/bhyi6rjara",
     "addedAt": "2026-08-31T06:36:47.134Z",
-    "updatedAt": "2026-08-31T06:36:47.134Z"
+    "updatedAt": "2026-08-31T14:45:11.911Z"
   },
   {
     "id": "doi:10.1145/3715336.3735823",
@@ -192187,11 +192266,12 @@
   {
     "id": "doi:10.5281/zenodo.20357731",
     "name": "Cryptographic Attestation for AI Agent Governance under the EU AI Act: A Survey of Approaches and Standards",
-    "source": "datacite",
+    "source": "openalex",
     "abstract": "Version 2.5 update. v2.5 extends v2.4 in two specific ways. First, §4 closes with a new short subsection (§4.9 Documented co-emergence) that describes OVERT 1.0 and EATF's Agent Evidence Package (AEP) v1 as a documented case of independent, royalty-free category-emergence rather than vendor-driven category invention; the two artifacts are stewarded by separable organisations in different jurisdictions (Glacis Technologies in the US; Tyche Institute MTÜ in Estonia), released under royalty-free terms, with AEP v1 carrying an OVERT 1.0 receipt in every evidence package. A new Table 10 summarises the timeline. Second, §6 gains a new subsection (§6.3 Standards-body engagement and observer posture) that names the four bodies through which this category will be ratified — CEN-CENELEC JTC 21, ETSI TC ESI, ISO/IEC JTC 1/SC 42, and IETF SCITT — and states honestly the author's and Tyche Institute's current observer posture toward each, including what has and has not been submitted at the time of writing. The competing-interest disclosure (front and back) is tightened to reflect both additions: AEP is named alongside EATF; the observer-only posture toward the four standards bodies is disclosed at the front so any future submission through those channels can be weighed accordingly; the author's unpaid status as technical advisor is restated. The argument structure and the §5 taxonomy are unchanged from v2.4. The PQC-roadmap content added in v2.4 (Recommendation (EU) 2024/1101 and Estonia ROAD2PQ in §2.9 and Table 1) remains. The American-English orthography conversion from v2.1 and the nine numbered tables introduced in v2.1 are unchanged; Table 10 is added in §4.9. Prepared as a Zenodo new-version under concept DOI 10.5281/zenodo.20185410. Version 2.3 (17 May 2026) is a typography-fix revision of v2.2 (DOI 10.5281/zenodo.20255075). Argument structure and analytical claims are unchanged from v2.1 / v2.2. v2.3 fixes residual hanging-text issues reported on v2.2: Table captions glued to tables. A Table N — Title. caption no longer floats alone at the bottom of a page while the table itself opens the next page — both are wrapped in KeepTogether at the build stage. Stronger heading orphan control. Each section / subsection heading is now bound to its next two content blocks (intro paragraph + first table or list) rather than just the first one — more aggressive page-flow keeps headings with the content they introduce. Version 2.1 (17 May 2026) is a revision of v1.0 (14 May 2026, archived under the same concept DOI). v2.1 preserves the analytical claims and argument structure of v1.0 while applying the following revisions: Switches conventional spelling to American English; quoted passages from the AI Act, eIDAS, GDPR and NIS2 remain in their verbatim British form. Reorders §7 to lead with the methodological caveat. Splits AI-gateway and AI-guard layers in §5.6 (Lakera Guard reclassified as a guard layer with policy verdicts output, distinct from the gateway layer's flow controls). Restores §2.10 (W3C Verifiable Credentials and selective disclosure), missing from the v1.0 PDF rendering. Disambiguates the Linux Foundation AAIF artifact stack in §6.1 into protocol (MCP), framework (goose) and convention (AGENTS.md) layers. Adds nine numbered tables (regulatory baseline, adversary classes, requirements, defensive primitives, OVERT design principles, GIPAMR domains, AAL ladder, taxonomy overview, open research problems). Adds clickable cross-references, bracket-numbered citations, a two-level Table of Contents and a PDF outline sidebar tree. Tightens twelve specific passages for precision and brevity. The competing-interest disclosure remains as in v1.0; see §7 and the front-matter disclosure on p. 1. Version 2.2 (17 May 2026) is a typography-only revision of v2.1 (DOI 10.5281/zenodo.20254535, also 17 May 2026). The argument structure and analytical claims are unchanged from v2.1. v2.2 applies the following presentation changes: Switches the body ",
     "url": "https://doi.org/10.5281/zenodo.20357731",
     "authors": [
-      "Sokolov, Anton"
+      "Sokolov, Anton",
+      "Anton Sokolov"
     ],
     "tags": [
       "AI Act",
@@ -192201,16 +192281,18 @@
       "trust services",
       "verifiable evidence",
       "agent governance",
-      "post-quantum cryptography"
+      "post-quantum cryptography",
+      "Table (database)",
+      "Receipt"
     ],
-    "confidence": 0.66,
+    "confidence": 0.72,
     "sites": [
       "agent-ecosystem"
     ],
     "publishedDate": "2026",
     "doi": "10.5281/zenodo.20357731",
     "addedAt": "2026-08-31T06:37:01.230Z",
-    "updatedAt": "2026-08-31T06:37:01.230Z"
+    "updatedAt": "2026-08-31T14:45:11.911Z"
   },
   {
     "id": "doi:10.5281/zenodo.20185410",
@@ -215337,5 +215419,2619 @@
     "doi": "10.12688/f1000research.169337.1",
     "addedAt": "2026-08-31T06:37:12.182Z",
     "updatedAt": "2026-08-31T06:37:12.182Z"
+  },
+  {
+    "id": "oa:W4391522328",
+    "name": "Artificial intelligence (AI), conversational agents, and generative AI: implications for adult education practice and research",
+    "source": "openalex",
+    "abstract": "The AI era is upon us, and it is still within our power to ensure it brings prosperity for all.\\n\\n(Kristalina Georgieva, International Monetary Fund)\\n\\nCoined by McCarthy et al. (Citation1955), the term ‘artificial intelligence’ (AI) refers to the ability of a digital machine to emulate human cognition and decision-making. Ever since AI has transformed production systems and other jobs and non-job-related activities. Meanwhile, a new research area has emerged: AI in Education (AIED), which studies how teaching and learning practices and program development may ‘benefit’ from applying AI technologies like intelligent tutoring systems, chatbots, and automated assessment.",
+    "url": "https://doi.org/10.1080/02601370.2024.2310448",
+    "authors": [
+      "Marcella Milana",
+      "Ulrik Brandi",
+      "Steven Hodge",
+      "Tetyana Hoggan‐Kloubert"
+    ],
+    "tags": [
+      "Generative grammar",
+      "Psychology",
+      "Adult education",
+      "Cognitive science",
+      "Pedagogy"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-01-02",
+    "doi": "https://doi.org/10.1080/02601370.2024.2310448",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W4411241548",
+    "name": "Humanoid robotics and agentic AI: reframing management theories and future research directions",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.emj.2025.06.002",
+    "authors": [
+      "Paweł Korzyński",
+      "Autumn Edwards",
+      "Mahesh Gupta",
+      "Grzegorz Mazurek",
+      "Jochen Wirtz"
+    ],
+    "tags": [
+      "Cognitive reframing",
+      "Robotics",
+      "Artificial intelligence",
+      "Humanoid robot",
+      "Cognitive science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-06-12",
+    "doi": "https://doi.org/10.1016/j.emj.2025.06.002",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W4400946644",
+    "name": "A Demonstration of Voice-Interactive AI Agents for Vehicles Utilizing Multiple LLMs",
+    "source": "openalex",
+    "abstract": "Voice user interfaces (VUIs) based on large language models (LLMs) can significantly enhance the user experience for vehicle drivers. However, relying on a single, centrally-located LLM does not ensure high-quality and diverse functionalities across different locations. In this demonstration, we propose a voice-interactive AI agent system for connected vehicles that utilizes multiple LLMs, integrated within an end-to-end infras-tructure that spans in-vehicle devices, edge data centers, and public cloud services. This proposed system enables drivers to fulfill various needs through natural conversations by selecting the most suitable AI agent for their intended purposes. AI agents are deployed in the optimal execution environment, whether in the in-vehicle device, edge data center, or cloud, based on each AI agent's characteristics. With this system, it is possible to achieve multiple scenarios that were challenging with traditional VUIs.",
+    "url": "https://doi.org/10.1109/smartcomp61445.2024.00058",
+    "authors": [
+      "Toru Furusawa",
+      "Masatoshi Saitoh"
+    ],
+    "tags": [
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-06-29",
+    "doi": "https://doi.org/10.1109/smartcomp61445.2024.00058",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W4408161355",
+    "name": "The evolution of goals in AI agents",
+    "source": "openalex",
+    "abstract": "Forced evolution has been proposed as a possible path to developing artificial general intelligence. For practical reasons, self-replicating robots are being proposed for missions where direct manufacture could be prohibitive or as a cost-effective means to maintain a stable working population of robots. If self-replication occurs in a harsh (i.e. selective) environment, the forces of evolution may distort the originally programmed objectives. Via millions of simulations of AI agents with nematode-level neural networks, this research explores the consequences of allowing replication in a hostile and competitive environment. As the selection pressures are tuned, the evolution of their neural networks and corresponding behavioral changes are tracked. As a consequence of these simulations, agents with multi-layer neural networks trained simply to retrieve resources, consume needed resources, and evade obstacles evolve behaviors that look like evasion of hostile overseers, the intended murder of enemies, and cannibalism of other agents. These simulations are intended to directly address safety concerns around creating self-replicating AI agents or robots. As designers, if we allow replication under selection pressure, regardless of initial designs, we risk allowing the emergence of unintended strategies. One solution to preventing evolution could be to enable AI agents with continuous backup– immortality.",
+    "url": "https://doi.org/10.1007/s43681-025-00691-y",
+    "authors": [
+      "Joseph L. Breeden"
+    ],
+    "tags": [
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-03-05",
+    "doi": "https://doi.org/10.1007/s43681-025-00691-y",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W4391903450",
+    "name": "Accepting the Familiar: The Effect of Perceived Similarity with AI Agents on Intention to Use and the Mediating Effect of IT Identity",
+    "source": "openalex",
+    "abstract": "With the rise and integration of AI technologies within organizations, our understanding of the impact of this technology on individuals remains limited. Although the IS use literature provides important guidance for organization to increase employees’ willingness to work with new technology, the utilitarian view of prior IS use research limits its application considering the new evolving social interaction between humans and AI agents. We contribute to the IS use literature by implementing a social view to understand the impact of AI agents on an individual’s perception and behavior. By focusing on the main design dimensions of AI agents, we propose a framework that utilizes social psychology theories to explain the impact of those design dimensions on individuals. Specifically, we build on Similarity Attraction Theory to propose an AI similarity-continuance model that aims to explain how similarity with AI agents influence individuals’ IT identity and intention to continue working with it. Through an online brainstorming experiment, we found that similarity with AI agents indeed has a positive impact on IT identity and on the intention to continue working with the AI agent.",
+    "url": "https://doi.org/10.24251/hicss.2023.025",
+    "authors": [
+      "Naif Alawi",
+      "Triparna de Vreede",
+      "Gert‐Jan de Vreede"
+    ],
+    "tags": [
+      "Brainstorming",
+      "Similarity (geometry)",
+      "Continuance",
+      "Identity (music)",
+      "Perception"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2023-01-01",
+    "doi": "https://doi.org/10.24251/hicss.2023.025",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W4393169119",
+    "name": "Evaluating the Potential and Pitfalls of AI-Powered Conversational Agents as Humanlike Virtual Health Carers in the Remote Management of Noncommunicable Diseases: Scoping Review",
+    "source": "openalex",
+    "abstract": "BACKGROUND: The rising prevalence of noncommunicable diseases (NCDs) worldwide and the high recent mortality rates (74.4%) associated with them, especially in low- and middle-income countries, is causing a substantial global burden of disease, necessitating innovative and sustainable long-term care solutions. OBJECTIVE: This scoping review aims to investigate the impact of artificial intelligence (AI)-based conversational agents (CAs)-including chatbots, voicebots, and anthropomorphic digital avatars-as human-like health caregivers in the remote management of NCDs as well as identify critical areas for future research and provide insights into how these technologies might be used effectively in health care to personalize NCD management strategies. METHODS: A broad literature search was conducted in July 2023 in 6 electronic databases-Ovid MEDLINE, Embase, PsycINFO, PubMed, CINAHL, and Web of Science-using the search terms \"conversational agents,\" \"artificial intelligence,\" and \"noncommunicable diseases,\" including their associated synonyms. We also manually searched gray literature using sources such as ProQuest Central, ResearchGate, ACM Digital Library, and Google Scholar. We included empirical studies published in English from January 2010 to July 2023 focusing solely on health care-oriented applications of CAs used for remote management of NCDs. The narrative synthesis approach was used to collate and summarize the relevant information extracted from the included studies. RESULTS: The literature search yielded a total of 43 studies that matched the inclusion criteria. Our review unveiled four significant findings: (1) higher user acceptance and compliance with anthropomorphic and avatar-based CAs for remote care; (2) an existing gap in the development of personalized, empathetic, and contextually aware CAs for effective emotional and social interaction with users, along with limited consideration of ethical concerns such as data privacy and patient safety; (3) inadequate evidence of the efficacy of CAs in NCD self-management despite a moderate to high level of optimism among health care professionals regarding CAs' potential in remote health care; and (4) CAs primarily being used for supporting nonpharmacological interventions such as behavioral or lifestyle modifications and patient education for the self-management of NCDs. CONCLUSIONS: This review makes a unique contribution to the field by not only providing a quantifiable impact analysis but also identifying the areas requiring imminent scholarly attention for the ethical, empathetic, and efficacious implementation of AI in NCD care. This serves as an academic cornerstone for future research in AI-assisted health care for NCD management. TRIAL REGISTRATION: Open Science Framework; https://doi.org/10.17605/OSF.IO/GU5PX.",
+    "url": "https://doi.org/10.2196/56114",
+    "authors": [
+      "Sadia Azmin Anisha",
+      "Arkendu Sen",
+      "Chris Bain"
+    ],
+    "tags": [
+      "Preprint",
+      "Non-communicable disease",
+      "Burden of disease",
+      "Low and middle income countries",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-03-25",
+    "doi": "https://doi.org/10.2196/56114",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W4292148537",
+    "name": "Federated learning-based AI approaches in smart healthcare: concepts, taxonomies, challenges and open issues",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s10586-022-03658-4",
+    "authors": [
+      "Anichur Rahman",
+      "Md. Sazzad Hossain",
+      "Ghulam Muhammad",
+      "Dipanjali Kundu",
+      "Tanoy Debnath",
+      "Muaz Rahman",
+      "Md. Saikat Islam Khan",
+      "Prayag Tiwari",
+      "Shahab S. Band"
+    ],
+    "tags": [
+      "Computer science",
+      "Health care",
+      "Field (mathematics)",
+      "Raw data",
+      "Healthcare system"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2022-08-17",
+    "doi": "https://doi.org/10.1007/s10586-022-03658-4",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W4379177323",
+    "name": "Case Study B: AI Agents for the Tactical Edge",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-031-29269-9_20",
+    "authors": [
+      "P. C. Trepagnier",
+      "Allan Wollaber"
+    ],
+    "tags": [
+      "Software deployment",
+      "Computer security",
+      "Resilience (materials science)",
+      "Enhanced Data Rates for GSM Evolution",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2023-01-01",
+    "doi": "https://doi.org/10.1007/978-3-031-29269-9_20",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W4406692209",
+    "name": "Beyond the Sum: Unlocking AI Agents Potential Through Market Forces",
+    "source": "openalex",
+    "abstract": "The emergence of Large Language Models has fundamentally transformed the capabilities of AI agents, enabling a new class of autonomous agents capable of interacting with their environment through dynamic code generation and execution. These agents possess the theoretical capacity to operate as independent economic actors within digital markets, offering unprecedented potential for value creation through their distinct advantages in operational continuity, perfect replication, and distributed learning capabilities. However, contemporary digital infrastructure, architected primarily for human interaction, presents significant barriers to their participation. This work presents a systematic analysis of the infrastructure requirements necessary for AI agents to function as autonomous participants in digital markets. We examine four key areas - identity and authorization, service discovery, interfaces, and payment systems - to show how existing infrastructure actively impedes agent participation. We argue that addressing these infrastructure challenges represents more than a technical imperative; it constitutes a fundamental step toward enabling new forms of economic organization. Much as traditional markets enable human intelligence to coordinate complex activities beyond individual capability, markets incorporating AI agents could dramatically enhance economic efficiency through continuous operation, perfect information sharing, and rapid adaptation to changing conditions. The infrastructure challenges identified in this work represent key barriers to realizing this potential.",
+    "url": "https://doi.org/10.48550/arxiv.2501.10388",
+    "authors": [
+      "Jordi Montes Sanabria",
+      "Pol Alvarez Vecino"
+    ],
+    "tags": [
+      "Economics",
+      "Business"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-12-19",
+    "doi": "https://doi.org/10.48550/arxiv.2501.10388",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W3167554351",
+    "name": "AI technologies for education: Recent research & future directions",
+    "source": "openalex",
+    "abstract": "From unique educational perspectives, this article reports a comprehensive review of selected empirical studies on artificial intelligence in education (AIEd) published in 1993–2020, as collected in the Web of Sciences database and selected AIEd-specialized journals. A total of 40 empirical studies met all selection criteria, and were fully reviewed using multiple methods, including selected bibliometrics, content analysis and categorical meta-trends analysis. This article reports the current state of AIEd research, highlights selected AIEd technologies and applications, reviews their proven and potential benefits for education, bridges the gaps between AI technological innovations and their educational applications, and generates practical examples and inspirations for both technological experts that create AIEd technologies and educators who spearhead AI innovations in education. It also provides rich discussions on practical implications and future research directions from multiple perspectives. The advancement of AIEd calls for critical initiatives to address AI ethics and privacy concerns, and requires interdisciplinary and transdisciplinary collaborations in large-scaled, longitudinal research and development efforts.",
+    "url": "https://doi.org/10.1016/j.caeai.2021.100025",
+    "authors": [
+      "Ke Zhang",
+      "Ayşe Aslan"
+    ],
+    "tags": [
+      "Bibliometrics",
+      "Categorical variable",
+      "Empirical research",
+      "Data science",
+      "Engineering ethics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2021-01-01",
+    "doi": "https://doi.org/10.1016/j.caeai.2021.100025",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W4388671977",
+    "name": "Building Socially Intelligent AI Systems: Evidence from the Trust Game Using Artificial Agents with Deep Learning",
+    "source": "openalex",
+    "abstract": "The trust game, a simple two-player economic exchange, is extensively used as an experimental measure for trust and trustworthiness of individuals. We construct deep neural network–based artificial intelligence (AI) agents to participate a series of experiments based upon the trust game. These artificial agents are trained by playing with one another repeatedly without any prior knowledge, assumption, or data regarding human behaviors. We find that, under certain conditions, AI agents produce actions that are qualitatively similar to decisions of human subjects reported in the trust game literature. Factors that influence the emergence and levels of cooperation by artificial agents in the game are further explored. This study offers evidence that AI agents can develop trusting and cooperative behaviors purely from an interactive trial-and-error learning process. It constitutes a first step to build multiagent-based decision support systems in which interacting artificial agents are capable of leveraging social intelligence to achieve better outcomes collectively. This paper was accepted by Yan Chen, behavioral economics and decision analysis. Funding: Y. (D.) Wu extends her gratitude for the financial support provided through the RSCA Seed [Grant 22-RSG-01-004] from the San Jose State University. Supplemental Material: Data are available at https://doi.org/10.1287/mnsc.2023.4782 .",
+    "url": "https://doi.org/10.1287/mnsc.2023.4782",
+    "authors": [
+      "Jason Xianghua Wu",
+      "Wu Yan",
+      "Kay‐Yut Chen",
+      "Lei Hua"
+    ],
+    "tags": [
+      "Artificial intelligence",
+      "Gratitude",
+      "Computer science",
+      "Construct (python library)",
+      "Intelligent agent"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2023-11-14",
+    "doi": "https://doi.org/10.1287/mnsc.2023.4782",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W4294647307",
+    "name": "Artificial intelligence (AI) applications for marketing: A literature-based study",
+    "source": "openalex",
+    "abstract": "Artificial Intelligence (AI) has vast potential in marketing. It aids in proliferating information and data sources, improving software's data management capabilities, and designing intricate and advanced algorithms. AI is changing the way brands and users interact with one another. The application of this technology is highly dependent on the nature of the website and the type of business. Marketers can now focus more on the customer and meet their needs in real time. By using AI, they can quickly determine what content to target customers and which channel to employ at what moment, thanks to the data collected and generated by its algorithms. Users feel at ease and are more inclined to buy what is offered when AI is used to personalise their experiences. AI tools can also be used to analyse the performance of a competitor's campaigns and reveal their customers' expectations. Machine Learning (ML) is a subset of AI that allows computers to analyse and interpret data without being explicitly programmed. Furthermore, ML assists humans in solving problems efficiently. The algorithm learns and improves performance and accuracy as more data is fed into the algorithm. For this research, relevant articles on AI in marketing are identified from Scopus, Google scholar, researchGate and other platforms. Then these articles were read, and the theme of the paper was developed. This paper attempts to review the role of AI in marketing. The specific applications of AI in various marketing segments and their transformations for marketing sectors are examined. Finally, critical applications of AI for marketing are recognised and analysed.",
+    "url": "https://doi.org/10.1016/j.ijin.2022.08.005",
+    "authors": [
+      "Abid Haleem",
+      "Mohd Javaid",
+      "Mohammad Asim Qadri",
+      "Ravi Pratap Singh",
+      "Rajiv Suman"
+    ],
+    "tags": [
+      "Computer science",
+      "Theme (computing)",
+      "Focus (optics)",
+      "Artificial intelligence",
+      "Marketing research"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2022-01-01",
+    "doi": "https://doi.org/10.1016/j.ijin.2022.08.005",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W3092310683",
+    "name": "Effects of Perceived Anthropomorphism on Acceptance of Voice AI Agent - Focusing on the Comparison by Gender and Age -",
+    "source": "openalex",
+    "abstract": "AI 기술의 성숙함에 따라 Voice AI 서비스에서의 인간 중심적 접근이 더욱 중요해짐에도 불구하고, 사용자의 사회 정서적 측면에 대한 이해는 부족한 실정이다. 본 연구에서는 Voice AI Agent 수용에 지각된 의인화, 유용성 및 사용 용이성이 어떻게 작용하는지 알아보고자 하였다. 또한 사용자의 성별 및 연령에 따라 이러한 영향 요인들이 Voice AI agent의 수용에 어떻게 다르게 작용하는지 알아보았다. 온라인 설문 조사가 성인 620명을 대상으로 수행되었다. 그 결과 Voice AI agent 수용에 지각된 유용성 및 사용 용이성뿐만 아니라, 지각된 의인화가 긍정적으로 작용하였으며, 성별 및 연령에 따라 수용 영향 요인이 다르게 작용하였다. 특히 남성 및 연령이 높으면 Voice AI Agent 수용에 지각된 의인화가 상대적으로 높은 영향력을 보였다. 이러한 연구 결과는 Voice AI Agent의 UX 디자인 고도화 및 서비스 차별화에 참고할 수 있을 것으로 기대된다.",
+    "url": "https://doi.org/10.17210/jhsk.2020.09.15.3.31",
+    "authors": [
+      "Euitaek Oh",
+      "Gyu Hyun Kwon"
+    ],
+    "tags": [
+      "S Voice",
+      "Psychology",
+      "Speech recognition",
+      "Computer science",
+      "Operating system"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2020-09-30",
+    "doi": "https://doi.org/10.17210/jhsk.2020.09.15.3.31",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.910Z"
+  },
+  {
+    "id": "oa:W4399425467",
+    "name": "AI Agents Under Threat: A Survey of Key Security Challenges and Future Pathways",
+    "source": "openalex",
+    "abstract": "An Artificial Intelligence (AI) agent is a software entity that autonomously performs tasks or makes decisions based on pre-defined objectives and data inputs. AI agents, capable of perceiving user inputs, reasoning and planning tasks, and executing actions, have seen remarkable advancements in algorithm development and task performance. However, the security challenges they pose remain under-explored and unresolved. This survey delves into the emerging security threats faced by AI agents, categorizing them into four critical knowledge gaps: unpredictability of multi-step user inputs, complexity in internal executions, variability of operational environments, and interactions with untrusted external entities. By systematically reviewing these threats, this paper highlights both the progress made and the existing limitations in safeguarding AI agents. The insights provided aim to inspire further research into addressing the security threats associated with AI agents, thereby fostering the development of more robust and secure AI agent applications.",
+    "url": "https://doi.org/10.48550/arxiv.2406.02630",
+    "authors": [
+      "Zehang Deng",
+      "Yongjian Guo",
+      "Changzhou Han",
+      "Wanlun Ma",
+      "Junwu Xiong",
+      "Sheng Wen",
+      "Yang Xiang"
+    ],
+    "tags": [
+      "Key (lock)",
+      "Computer security",
+      "Computer science",
+      "Business"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-06-04",
+    "doi": "https://doi.org/10.48550/arxiv.2406.02630",
+    "addedAt": "2026-08-31T14:45:11.910Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W3207232687",
+    "name": "Toddler-Guidance Learning: Impacts of Critical Period on Multimodal AI Agents",
+    "source": "openalex",
+    "abstract": "Critical periods are phases during which a toddler’s brain develops in spurts. To promote children’s cognitive development, proper guidance is critical in this stage. However, it is not clear whether such a critical period also exists for the training of AI agents. Similar to human toddlers, well-timed guidance and multimodal interactions might significantly enhance the training efficiency of AI agents as well. To validate this hypothesis, we adapt this notion of critical periods to learning in AI agents and investigate the critical period in the virtual environment for AI agents. We formalize the critical period and Toddler-guidance learning in the reinforcement learning (RL) framework. Then, we built up a toddler-like environment with VECA toolkit to mimic human toddlers’ learning characteristics. We study three discrete levels of mutual interaction: weak-mentor guidance (sparse reward), moderate mentor guidance (helper-reward), and mentor demonstration (behavioral cloning). We also introduce the EAVE dataset consisting of 30,000 real-world images to fully reflect the toddler’s viewpoint. We evaluate the impact of critical periods on AI agents from two perspectives: how and when they are guided best in both uni- and multimodal learning. Our experimental results show that both uni- and multimodal agents with moderate mentor guidance and critical period on 1 million and 2 million training steps show a noticeable improvement. We validate these results with transfer learning on the EAVE dataset and find the performance advancement on the same critical period and the guidance.",
+    "url": "https://doi.org/10.1145/3462244.3479932",
+    "authors": [
+      "Junseok Park",
+      "Kwanyoung Park",
+      "Hyun‐Seok Oh",
+      "Ganghun Lee",
+      "Minsu Lee",
+      "Youngki Lee",
+      "Byoung‐Tak Zhang"
+    ],
+    "tags": [
+      "Toddler",
+      "Period (music)",
+      "Artificial intelligence",
+      "Computer science",
+      "Reinforcement learning"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2021-10-15",
+    "doi": "https://doi.org/10.1145/3462244.3479932",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4415603109",
+    "name": "Agentic AI Systems: What It Is and Isn't",
+    "source": "openalex",
+    "abstract": "ABSTRACT The rapid adoption of artificial intelligence (AI) is shifting from tools that assist human tasks toward self‐directed, agentic AI systems capable of planning and executing complex goals with minimal oversight. However, a clear understanding of what distinguishes these systems from conventional AI agents and generative AI is lacking, obscuring their unique opportunities and risks. To this end, this article addresses that gap by defining the core concepts, technologies, and management approaches for agentic AI systems, which utilize planning, shared memory, tools, and multi‐agent teamwork to complete complex tasks autonomously. By contrasting this paradigm with its predecessors, the paper synthesizes recent technical surveys, governance proposals, and early industrial deployments to highlight that while agentic AI enables transformative applications like end‐to‐end process automation and adaptive decision support, it also introduces significant challenges, including cascading errors, goal misalignment, and regulatory gaps. Finally, this paper concludes with strategic guidance for organizations and consumers to adopt the capabilities of these systems responsibly, emphasizing the imperative of maintaining transparency, accountability, and human oversight.",
+    "url": "https://doi.org/10.1002/joe.70018",
+    "authors": [
+      "Yogesh K. Dwivedi",
+      "Mohamed Y. Helal",
+      "Ibrahim A. Elgendy",
+      "Rasha Alahmad",
+      "Paul Walton",
+      "Ayoung Suh",
+      "Vinay Singh",
+      "Il Jeon"
+    ],
+    "tags": [
+      "Transformative learning",
+      "Generative grammar",
+      "Computer science",
+      "Teamwork",
+      "Knowledge management"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-10-27",
+    "doi": "https://doi.org/10.1002/joe.70018",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W2940709072",
+    "name": "CRYSTAL: a multi-agent AI system for automated mapping of materials’ crystal structures",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1557/mrc.2019.50",
+    "authors": [
+      "Carla P. Gomes",
+      "Junwen Bai",
+      "Yexiang Xue",
+      "Johan Björck",
+      "Brendan Rappazzo",
+      "Sebastian Ament",
+      "Richard Bernstein",
+      "Shufeng Kong",
+      "Santosh K. Suram",
+      "R. B. van Dover",
+      "John M. Gregoire"
+    ],
+    "tags": [
+      "Crystal (programming language)",
+      "Intermetallic",
+      "Materials science",
+      "Phase diagram",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2019-04-24",
+    "doi": "https://doi.org/10.1557/mrc.2019.50",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4401432103",
+    "name": "Unveiling Secrets to AI Agents: Exploring the Interplay of Conversation Type, Self-Disclosure, and Privacy Insensitivity",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.20879/acr.2024.21.019",
+    "authors": [
+      "Hongjin Shim",
+      "Jaeho Cho",
+      "Yoon Hi Sung"
+    ],
+    "tags": [
+      "Conversation",
+      "Self-disclosure",
+      "Internet privacy",
+      "Psychology",
+      "Social psychology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-08-08",
+    "doi": "https://doi.org/10.20879/acr.2024.21.019",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W3046530224",
+    "name": "Historical threads, missing links, and future directions in AI in education",
+    "source": "openalex",
+    "abstract": "Artificial intelligence has become a routine presence in everyday life. Accessing information over the Web, consuming news and entertainment, the performance of financial markets, the ways surveill...",
+    "url": "https://doi.org/10.1080/17439884.2020.1798995",
+    "authors": [
+      "Ben Williamson",
+      "Rebecca Eynon"
+    ],
+    "tags": [
+      "Computer science",
+      "Data science",
+      "Mathematics education",
+      "Psychology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2020-07-02",
+    "doi": "https://doi.org/10.1080/17439884.2020.1798995",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4403584145",
+    "name": "AI agents can coordinate beyond human scale",
+    "source": "openalex",
+    "abstract": "Large language models (LLMs) are increasingly deployed in collaborative tasks involving multiple agents, forming an \"AI agent society: where agents interact and influence one another. Whether such groups can spontaneously coordinate on arbitrary decisions without external influence - a hallmark of self-organized regulation in human societies - remains an open question. Here we investigate the stability of groups formed by AI agents by applying methods from complexity science and principles from behavioral sciences. We find that LLMs can spontaneously form cohesive groups, and that their opinion dynamics is governed by a majority force coefficient, which determines whether coordination is achievable. This majority force diminishes as group size increases, leading to a critical group size beyond which coordination becomes practically unattainable and stability is lost. Notably, this critical group size grows exponentially with the language capabilities of the models, and for the most advanced LLMs, it exceeds the typical size of informal human groups. Our findings highlight intrinsic limitations in the self-organization of AI agent societies and have implications for the design of collaborative AI systems where coordination is desired or could represent a treat.",
+    "url": "https://doi.org/10.48550/arxiv.2409.02822",
+    "authors": [
+      "Giordano De Marzo",
+      "Claudio Castellano",
+      "David García"
+    ],
+    "tags": [
+      "Constraint (computer-aided design)",
+      "Political science",
+      "Psychology",
+      "Linguistics",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-09-04",
+    "doi": "https://doi.org/10.48550/arxiv.2409.02822",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W3215365854",
+    "name": "Could AI Agents Be Held Criminally Liable: Artificial Intelligence and the Challenges for Criminal Law",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://openalex.org/W3215365854",
+    "authors": [
+      "Dafni Lina"
+    ],
+    "tags": [
+      "Law",
+      "Criminal law",
+      "Political science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2018-01-01",
+    "doi": "",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4396833486",
+    "name": "How AI Processing Delays Foster Creativity: Exploring Research Question Co-Creation with an LLM-based Agent",
+    "source": "openalex",
+    "abstract": "Developing novel research questions (RQs) often requires extensive literature reviews, especially in interdisciplinary fields. To support RQ development through human-AI co-creation, we leveraged Large Language Models (LLMs) to build an LLM-based agent system named CoQuest. We conducted an experiment with 20 HCI researchers to examine the impact of two interaction designs: breadth-first and depth-first RQ generation. The findings revealed that participants perceived the breadth-first approach as more creative and trustworthy upon task completion. Conversely, during the task, participants considered the depth-first generated RQs as more creative. Additionally, we discovered that AI processing delays allowed users to reflect on multiple RQs simultaneously, leading to a higher quantity of generated RQs and an enhanced sense of control. Our work makes both theoretical and practical contributions by proposing and evaluating a mental model for human-AI co-creation of RQs. We also address potential ethical issues, such as biases and over-reliance on AI, advocating for using the system to improve human research creativity rather than automating scientific inquiry. The system’s source is available at: https://github.com/yiren-liu/coquest.",
+    "url": "https://doi.org/10.1145/3613904.3642698",
+    "authors": [
+      "Yiren Liu",
+      "Si Chen",
+      "Haocong Cheng",
+      "Mengxia Yu",
+      "Xiao Chuan Ran",
+      "Andrew Mo",
+      "Yiliu Tang",
+      "Yun Huang"
+    ],
+    "tags": [
+      "Creativity",
+      "Computer science",
+      "Knowledge management",
+      "Cognitive science",
+      "Psychology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-05-11",
+    "doi": "https://doi.org/10.1145/3613904.3642698",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4408335364",
+    "name": "SustAI-SCM: Intelligent Supply Chain Process Automation with Agentic AI for Sustainability and Cost Efficiency",
+    "source": "openalex",
+    "abstract": "Sustainable supply chain management (SCM) demands efficiency while minimizing environmental impact, yet conventional automation lacks adaptability. This paper presents SustAI-SCM, an AI-powered framework integrating agentic intelligence to automate supply chain tasks with sustainability in focus. Unlike static rule-based systems, it leverages a transformer model that continuously learns from operations, refining procurement, logistics, and inventory decisions. A diverse dataset comprising procurement records, logistics data, and carbon footprint metrics trains the model, enabling dynamic adjustments. The experimental results show a 28.4% cost reduction, 30.3% lower emissions, and 21.8% improved warehouse efficiency. While computational overhead and real-time adaptability pose challenges, future enhancements will focus on energy-efficient AI, continuous learning, and explainable decision making. The framework advances sustainable automation, balancing operational optimization with environmental responsibility.",
+    "url": "https://doi.org/10.3390/su17062453",
+    "authors": [
+      "Batin Latif Aylak"
+    ],
+    "tags": [
+      "Automation",
+      "Sustainability",
+      "Supply chain",
+      "Process (computing)",
+      "Manufacturing engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-03-11",
+    "doi": "https://doi.org/10.3390/su17062453",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4406683726",
+    "name": "AGENTIC AI: A COMPREHENSIVE FRAMEWORK FOR AUTONOMOUS DECISION-MAKING SYSTEMS IN ARTIFICIAL INTELLIGENCE",
+    "source": "openalex",
+    "abstract": "Agentic AI represents a paradigm shift in artificial intelligence systems characterized by autonomous decision-making capabilities and adaptive problem-Agentic AI: A Comprehensive Framework for Autonomous Decision-Making Systems in Artificial Intelligence",
+    "url": "https://doi.org/10.34218/ijcet_16_01_069",
+    "authors": [
+      "P. Viswanathan"
+    ],
+    "tags": [
+      "Artificial intelligence",
+      "Computer science",
+      "Cognitive science",
+      "Management science",
+      "Psychology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-01-20",
+    "doi": "https://doi.org/10.34218/ijcet_16_01_069",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4211089551",
+    "name": "Artificial Intelligence and Declined Guilt: Retailing Morality Comparison Between Human and AI",
+    "source": "openalex",
+    "abstract": "Several technological developments, such as self-service technologies and artificial intelligence (AI), are disrupting the retailing industry by changing consumption and purchase habits and the overall retail experience. Although AI represents extraordinary opportunities for businesses, companies must avoid the dangers and risks associated with the adoption of such systems. Integrating perspectives from emerging research on AI, morality of machines, and norm activation, we examine how individuals morally behave toward AI agents and self-service machines. Across three studies, we demonstrate that consumers' moral concerns and behaviors differ when interacting with technologies versus humans. We show that moral intention (intention to report an error) is less likely to emerge for AI checkout and self-checkout machines compared with human checkout. In addition, moral intention decreases as people consider the machine less humanlike. We further document that the decline in morality is caused by less guilt displayed toward new technologies. The non-human nature of the interaction evokes a decreased feeling of guilt and ultimately reduces moral behavior. These findings offer insights into how technological developments influence consumer behaviors and provide guidance for businesses and retailers in understanding moral intentions related to the different types of interactions in a shopping environment.",
+    "url": "https://doi.org/10.1007/s10551-022-05056-7",
+    "authors": [
+      "Marilyn Giroux",
+      "Jungkeun Kim",
+      "Jacob C. Lee",
+      "Jongwon Park"
+    ],
+    "tags": [
+      "Morality",
+      "Business ethics",
+      "Feeling",
+      "Consumption (sociology)",
+      "Norm (philosophy)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2022-02-12",
+    "doi": "https://doi.org/10.1007/s10551-022-05056-7",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4389071498",
+    "name": "Avoiding excessive AI service agent anthropomorphism: examining its role in delivering bad news",
+    "source": "openalex",
+    "abstract": "Purpose The aim of this paper is twofold. First, it seeks to understand how different forms of anthropomorphism, namely verbal and visual, can enhance or detract from the subjective well-being of consumers and their co-creation behaviors whilst collaborating with artificial intelligence (AI) service agents. Second, it seeks to understand if AI anxiety and trust in message, function as primary and secondary consumer appraisals of collaborating with AI service agents. Design/methodology/approach A conceptual model is developed using the theories of the uncanny valley and cognitive appraisal theory (CAT) with three hypotheses identified to guide the experimental work. The hypotheses are tested across three experimental studies which manipulate the level of anthropomorphism of AI. Findings Results demonstrate that verbal and visual anthropomorphism can assist consumer well-being and likelihood of co-creation. Further, this relationship is explained by the mediators of anxiety and trust. Originality/value The empirical results and theorizing suggest verbal anthropomorphism should be present (absent) and paired with low (high) visual anthropomorphism, which supports the “uncanny valley” effect. A moderated mediation relationship is established, which confirms AI anxiety and trust in a message as mediators of the AI service agent anthropomorphism-consumer subjective well-being/co-creation relationship. This supports the theorizing of the conceptual model based on the “uncanny valley” and CAT.",
+    "url": "https://doi.org/10.1108/jstp-04-2023-0118",
+    "authors": [
+      "Rory Mulcahy",
+      "Aimee Riedel",
+      "Byron Keating",
+      "Amanda Beatson",
+      "Kate Letheren"
+    ],
+    "tags": [
+      "Psychology",
+      "Mediation",
+      "Uncanny valley",
+      "Value (mathematics)",
+      "Anxiety"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2023-11-27",
+    "doi": "https://doi.org/10.1108/jstp-04-2023-0118",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4408220884",
+    "name": "AI agent as a simulated patient for history-taking training in clinical clerkship: an example in stomatology",
+    "source": "openalex",
+    "abstract": "Abstract Objective This study developed an AI-powered chatbot simulating a patient with acute pulpitis to enhance history-taking training in stomatology, aiming at providing a cost-effective tool that improves diagnostic and communication skills while fostering clinical competence and empathy. Methods The study involved 126 undergraduate clinical medicine students who interacted with an AI agent simulating a patient suffering acute pulpitis. The AI agent was created and optimized in a five-step process, including preliminary creation, usability testing with a Chatbot Usability Questionnaire (CUQ), analysis and optimization, retesting, and comparison of pre- and post-optimization results. The platform used was ChatGLM, and statistical analysis was performed using R software. Results The pre-optimization group’s CUQ mean score was 64.2, indicating moderate satisfaction. After optimization, the post-optimization group’s mean score improved to 79.3, showing significantly higher satisfaction. Improvements were noted in all aspects, particularly in the chatbot’s personality, user experience, error handling, and onboarding. Conclusion The optimized AI agent effectively addresses challenges in history-taking training, improving realism, engagement, and accessibility to diverse scenarios. It demonstrates the potential of AI-powered chatbots as valuable tools for enhancing medical education.",
+    "url": "https://doi.org/10.1515/gme-2024-0025",
+    "authors": [
+      "Yongxiang Yuan",
+      "Jieyu He",
+      "Fang Wang",
+      "Yaping Li",
+      "Chaxiang Guan",
+      "Canhua Jiang"
+    ],
+    "tags": [
+      "Training (meteorology)",
+      "Medical education",
+      "Computer science",
+      "Medicine",
+      "Psychology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-03-05",
+    "doi": "https://doi.org/10.1515/gme-2024-0025",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W2156869222",
+    "name": "Interactively shaping agents via human reinforcement",
+    "source": "openalex",
+    "abstract": "As computational learning agents move into domains that incur real costs (e.g., autonomous driving or financial investment), it will be necessary to learn good policies without numerous high-cost learning trials. One promising approach to reducing sample complexity of learning a task is knowledge transfer from humans to agents. Ideally, methods of transfer should be accessible to anyone with task knowledge, regardless of that person's expertise in programming and AI. This paper focuses on allowing a human trainer to interactively shape an agent's policy via reinforcement signals. Specifically, the paper introduces \"Training an Agent Manually via Evaluative Reinforcement,\" or TAMER, a framework that enables such shaping. Differing from previous approaches to interactive shaping, a TAMER agent models the human's reinforcement and exploits its model by choosing actions expected to be most highly reinforced. Results from two domains demonstrate that lay users can train TAMER agents without defining an environmental reward function (as in an MDP) and indicate that human training within the TAMER framework can reduce sample complexity over autonomous learning algorithms.",
+    "url": "https://doi.org/10.1145/1597735.1597738",
+    "authors": [
+      "W. Bradley Knox",
+      "Peter Stone"
+    ],
+    "tags": [
+      "Reinforcement learning",
+      "Computer science",
+      "Task (project management)",
+      "Artificial intelligence",
+      "Exploit"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2009-09-01",
+    "doi": "https://doi.org/10.1145/1597735.1597738",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4411136104",
+    "name": "The impact of service agent type on satisfaction in green purchasing: A comparative study of AI and human agents",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.jretconser.2025.104355",
+    "authors": [
+      "Sunhwa Choi",
+      "Youjae Yi"
+    ],
+    "tags": [
+      "Business",
+      "Purchasing",
+      "Service (business)",
+      "Marketing"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-06-09",
+    "doi": "https://doi.org/10.1016/j.jretconser.2025.104355",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W2339009915",
+    "name": "Understanding intelligence",
+    "source": "openalex",
+    "abstract": "From the Publisher:\r\nResearchers now agree that intelligence always manifests itself in behavior - thus it is behavior that we must understand. An exciting field has grown around the study of intelligence, also known as embodied cognitive science, new AI, and behavior-based AI.. Rolf Pfeifer and Christian Scheier provide a systematic introduction to this way of thinking about intelligence and computers. After discussing concepts and approaches such as subsumption architecture, Braitenberg vehicles, evolutionary robotics, artificial life, self-organization, and learning, the authors derive a set of principles and a coherent framework for the study of naturally and artificially intelligent systems, or autonomous agents. This framework is based on a synthetic methodology whose goal is understanding by designing and building.",
+    "url": "https://doi.org/10.5860/choice.29-0605",
+    "authors": [],
+    "tags": [
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "1991-09-01",
+    "doi": "https://doi.org/10.5860/choice.29-0605",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W7117745118",
+    "name": "Comparing traditional AI, agentic ai and agentic rag for dialogic online education",
+    "source": "openalex",
+    "abstract": "Online education increasingly depends on artificial intelligence (AI) for scale, personalization, and assessment. However, most deployments remain confined to one-shot, content-delivery paradigms that under-serve dialogic pedagogy, an approach centered on multi-voiced inquiry, co-construction of knowledge, and iterative, socially mediated reasoning. This paper synthesizes three paradigms of AI: Traditional AI, Agentic AI, and Agentic Retrieval-Augmented Generation (RAG), and evaluates how each can be applied to online teaching and learning organized around dialogic principles. I articulate a theory-led design space grounded in dialogic pedagogy (Freire, Bakhtin, Wegerif, Alexander) and contemporary learning science (Vygotsky’s ZPD; the Community of Inquiry framework; ICAP). I map each AI paradigm to core online education tasks (tutoring, assessment for learning, discussion orchestration, knowledge building). I propose reference architectures and governance patterns and offer implementation roadmaps, metrics, and risk mitigations. The paper argues that while traditional AI enables efficient, bounded tasks (e.g., automated grading, item generation), agentic AI introduces goal-directed orchestration across tools and actions required for authentic dialogic workflows (e.g., facilitation, critique, reflection). Agentic RAG best aligns with dialogic pedagogy by grounding agent decisions in evolving, cited knowledge; supporting multi-turn planning and verification; and maintaining memory of class discourse and norms. The paper concludes with a pragmatic recommendation: combine Agentic RAG for knowledge-intensive, discourse-heavy learning with narrowly scoped traditional AI services and agentic guards; evaluate with dialogic outcome metrics, not merely accuracy or time-on-task.",
+    "url": "https://doi.org/10.20448/edu.v11i4.7926",
+    "authors": [
+      "Vincent English"
+    ],
+    "tags": [
+      "Dialogic",
+      "Orchestration",
+      "Sociology",
+      "Pedagogy",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-12-24",
+    "doi": "https://doi.org/10.20448/edu.v11i4.7926",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4416592861",
+    "name": "AI Agents and No-Code Tools in Accounting: A Case Study",
+    "source": "openalex",
+    "abstract": "Advances in Artificial Intelligence (AI) and Large Language Models (LLMs) have transformed accounting by automating repetitive tasks and enhancing the efficiency of financial reporting. However, their implementation raises challenges related to bias, reliability, and professional adaptation. This article evaluates the comparative performance of three approaches to the vertical analysis of income statements: the traditional manual process, a specialized GPT model, and an AI agent integrating GPT with no-code automation tools. Using the Design Science Research (DSR) methodology, 150 experimental analyses were conducted to measure the execution time, variability, and process scalability. The results indicate that GPT substantially reduced execution time compared to the manual baseline, but still required significant human intervention. The AI agent achieved the greatest gains, reducing the average execution time by nearly 75%, while also demonstrating more stable performance and minimizing the repetitive workload. These findings provide empirical evidence that agent-based automation enhances both efficiency and reliability in accounting workflows, reinforcing its potential to reshape professional practice by reallocating human effort to validation and analytical tasks.",
+    "url": "https://doi.org/10.3390/fintech4040065",
+    "authors": [
+      "Miguel Resende"
+    ],
+    "tags": [
+      "Automation",
+      "Computer science",
+      "Reliability (semiconductor)",
+      "Process (computing)",
+      "Measure (data warehouse)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-11-23",
+    "doi": "https://doi.org/10.3390/fintech4040065",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4414127319",
+    "name": "Lying toward AI agent: the roles of type of lie, moral disengagement and perceived emotional ability",
+    "source": "openalex",
+    "abstract": "Purpose This paper aims to investigate the effect of artificial intelligence (AI) agent on consumers’ lying behavior. It provides novel insights into the pivotal role of lie type (material egoistic lie versus social egoistic lie) in shaping consumers’ lying behavior toward the AI agent (versus human), and the mediating roles of moral disengagement and perceived emotional ability for each type of lie. Design/methodology/approach Seven studies test the proposed theoretical framework. Based on the results of a pilot study that established the classification of lie (material egoistic lie versus social egoistic lie), six experimental studies using different designs (including an incentive-compatible study) were conducted to test the hypotheses. Study 1 (1a and 1b) and Study 2 (2a and 2b) tested the direct effect of the AI agent (versus human) on individuals’ propensity to tell material egoistic and social egoistic lie, respectively, and the mediating roles of moral disengagement and perceived emotional ability. Study 3 (3a and 3b) further enhanced the robustness and generalizability of the key findings. Findings Consumers are more likely to tell material egoistic lies in the face of the AI agent (versus human) because of increased moral disengagement. By contrast, they are less likely to tell social egoistic lies to the AI agent (versus human) due to the reduced perception of emotional ability of the AI agent. Potential alternative explanations are tested and ruled out. Research limitations/implications Consumers’ lying behavior toward the AI agent − an increasingly ubiquitous phenomenon in the marketplace − is not yet well understood. This research extends prior literature by proposing an integrated framework for understanding the impact of the AI agent (versus human) on consumer lying behavior and by highlighting the crucial moderating role of the type of lie (material egoistic lie versus social egoistic lie). Practical implications This study provides practical insights into effective implementation of AI agents to mitigate consumer lying. The results suggest that consumers are more likely to tell material egoistic lies to AI than to human. To mitigate such risks, firms should ensure that human employees are present in material-reward-related contexts, such as loan services, insurance claims and warranty claims. The results also reveal that, in contrast, consumers are less likely to tell social egoistic lies to AI than to human. Therefore, the deployment of AI agents should be encouraged in social-reward-related contexts, such as health-care diagnosis, performance assessment and the collection of private consumer data. The findings also inform the design of AI with respect to its intended purposes. Originality/value This research sheds light on the impact of the AI agent on consumer dishonesty. Specifically, this research contributes to the emerging literature on consumer lying, human–AI interaction and consumer self-control, and provides practical insights for more effective deployment of AI agents in the marketplace.",
+    "url": "https://doi.org/10.1108/ejm-01-2024-0040",
+    "authors": [
+      "Mingxia Zhu",
+      "Matthew Tingchi Liu",
+      "Allen Ding Tian"
+    ],
+    "tags": [
+      "Lying",
+      "Psychology",
+      "Disgust",
+      "Generalizability theory",
+      "Social psychology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-09-11",
+    "doi": "https://doi.org/10.1108/ejm-01-2024-0040",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W2809129829",
+    "name": "Botzone: an online multi-agent competitive platform for AI education",
+    "source": "openalex",
+    "abstract": "This paper presents Botzone, a competitive platform for game AI education and research. It aims to simplify the teaching process of game AI courses, inspire learners to self-study, and acting as a dataset for game AI research. This platform is a universal online multi-agent game AI platform, designed to evaluate different implementations of game AI by applying them to agents in a variety of games and compete with each other, featuring an ELO ranking system and a contest system for users to evaluate their AI programs. It has been successfully used in various AI competitions and courses in practice, and has the extensibility to support more games and languages, as well as further usages such as studying machine learning on game AI. In this paper, we firstly describe the structure and features of Botzone, then focus on our experience in utilizing Botzone for a programming course.",
+    "url": "https://doi.org/10.1145/3197091.3197099",
+    "authors": [
+      "Haoyu Zhou",
+      "Haifeng Zhang",
+      "Yushan Zhou",
+      "Xinchao Wang",
+      "Wenxin Li"
+    ],
+    "tags": [
+      "Computer science",
+      "CONTEST",
+      "Implementation",
+      "Game programming",
+      "Variety (cybernetics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2018-06-20",
+    "doi": "https://doi.org/10.1145/3197091.3197099",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W3081716527",
+    "name": "Embedding Values in Artificial Intelligence (AI) Systems",
+    "source": "openalex",
+    "abstract": "Abstract Organizations such as the EU High-Level Expert Group on AI and the IEEE have recently formulated ethical principles and (moral) values that should be adhered to in the design and deployment of artificial intelligence (AI). These include respect for autonomy, non-maleficence, fairness, transparency, explainability, and accountability. But how can we ensure and verify that an AI system actually respects these values? To help answer this question, I propose an account for determining when an AI system can be said to embody certain values. This account understands embodied values as the result of design activities intended to embed those values in such systems. AI systems are here understood as a special kind of sociotechnical system that, like traditional sociotechnical systems, are composed of technical artifacts, human agents, and institutions but—in addition—contain artificial agents and certain technical norms that regulate interactions between artificial agents and other elements of the system. The specific challenges and opportunities of embedding values in AI systems are discussed, and some lessons for better embedding values in AI systems are drawn.",
+    "url": "https://doi.org/10.1007/s11023-020-09537-4",
+    "authors": [
+      "Ibo van de Poel"
+    ],
+    "tags": [
+      "Sociotechnical system",
+      "Autonomy",
+      "Accountability",
+      "Transparency (behavior)",
+      "Embedding"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2020-09-01",
+    "doi": "https://doi.org/10.1007/s11023-020-09537-4",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4301184372",
+    "name": "Real-Time Exam Anomaly Detection in Moodle-based Exam Systems with an AI Agent",
+    "source": "openalex",
+    "abstract": "Online education takes a high priority in the modern world because technology is evolving so rapidly that education needs to adapt to this changing and evolving technology. However, after the COVID-19 pandemic, e-learning is the only available solution to continue teaching during the lockdown periods. The evolution of these studies also needs to adapt to the situation. One of the significant issues with this online evaluation method is the anomalies during the evaluation process. This proposed implementation mainly focuses on anomaly detection of the Moodle environment exam systems. The proposed system produces a Moodle plugin to detect the time taken for each question in the Moodle environment examination system and detect the exam anomalies using the time variations. Then analyze and calculate the time that each candidate has taken for each question and the average time. The invigilator can see the candidates who took more than average time and less than average time and get the suspicious candidate list. The plugin also contains a separate algorithm that monitors the candidate while facing the exam. This face detection algorithm will notice the unusual behaviours of the candidate and upload the created report to the database, and the invigilator can access these reports on their loggings. To guide the candidate system, they also have an AI agent who will help to understand the exam process, give pre-defined answers for the questions, and provide contact details of the relevant authorities for exceptional cases. Also, the developed plugin detects the system information and background apps that run during the exam process and automatically creates relevant reports, and uploads them into the database. After the system implementation, the system was tested using a selected audience. The developed application is an innovative initiative to support the Moodle-based examination process.",
+    "url": "https://doi.org/10.1109/scse56529.2022.9905168",
+    "authors": [
+      "P. D. A. U. Akalanka",
+      "Kalpani Manathunga"
+    ],
+    "tags": [
+      "Plug-in",
+      "Computer science",
+      "Notice",
+      "Upload",
+      "Process (computing)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2022-09-01",
+    "doi": "https://doi.org/10.1109/scse56529.2022.9905168",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4416895257",
+    "name": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+    "source": "openalex",
+    "abstract": "Agent memory systems that scale overwrite protection by a domain volatility prior V_d treat two different quantities as one number: a slow belief about how often a kind of fact changes, and a fast residual about whether this particular observation was unexpected. This paper separates them. A homeostatic law charges V_d in both the evidence score and the threshold. An allostatic law drops V_d from the score and instead scales the threshold by residual surprise — distance from predicted mismatch rather than from stored text. A composite gate uses the allostatic law only for an explicit high-mismatch correction or an unexpected residual against a learned expectation, and otherwise keeps the homeostatic insurance. On scripted probes with oracle domain and mismatch, dropping V_d from the score recovers explicit recency-shift (an entrenched career change) as a cliff at exponent p=0, not a blend. The same drop produces 20% more false updates under the classifier’s real error structure, because the double V_d charge was insurance against a mislabeled stable trait paired with weak evidence. The composite gate matches the homeostatic false-update rate (94.9%, 0.93 false updates / 18) while keeping the recency-shift win. Defining surprise as leftover mismatch after anticipation makes a predicted weak stream go quiet; catching that stream is a sleeptime job on time-decayed belief mass, not a live EMA of raw mismatch — sixteen daily weak mentions supersede overnight, while the same sixteen spread monthly do not. The overwrite law is only reached after a match. On end-to-end remember(), decision error once routed is about six points; similarity and linking dominate the error budget. Topic similarity is non-separable for must-link versus must-not-link pairs. A two-stage recall-then-verify step with a conservative local model takes irreversible errors to zero on a combined update-plus-coexist harness. We do not claim a public-benchmark win. We claim a measured decomposition: prior and residual are different jobs, a switch beats a blend, and linking sits in front of both laws. This is an empirical companion to “Volatility-Adjusted Memory Protection” (doi:10.5281/zenodo.21962419). Results use VoltMem 0.4.0. This work does not claim to implement consciousness or allostasis in Sterling’s physiological sense, and it is not a new continual-learning algorithm.",
+    "url": "https://doi.org/10.48550/arxiv.2504.19413",
+    "authors": [
+      "Prateek Chhikara",
+      "Dev Khant",
+      "Saket Aryan",
+      "Taranjeet Singh",
+      "Yadav, Deshraj"
+    ],
+    "tags": [
+      "Computer science",
+      "Scalability",
+      "Security token",
+      "Artificial intelligence",
+      "Latency (audio)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-04-28",
+    "doi": "https://doi.org/10.48550/arxiv.2504.19413",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W2953161060",
+    "name": "Stereoselective Synthesis of Pseudopeptide Microbial Agent AI-77-B",
+    "source": "openalex",
+    "abstract": "[structure: see text]. An efficient and highly stereoselective synthesis of the gastroprotective natural product AI-77-B is described. The stereocenters of the hydroxy amino acid moiety were generated by an ester-derived titanium-enolate-mediated syn-aldol reaction, a Curtius rearrangement, and application of Dondoni's aldehyde homologation. Condensation with the dihydroisocoumarin fragment and subsequent deprotecting transformations furnished optically active AI-77-B.",
+    "url": "https://doi.org/10.1021/ol0101279",
+    "authors": [
+      "Arun K. Ghosh",
+      "Alexander Bischoff",
+      "John R. Cappiello"
+    ],
+    "tags": [
+      "Stereocenter",
+      "Chemistry",
+      "Curtius rearrangement",
+      "Stereoselectivity",
+      "Moiety"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2001-08-01",
+    "doi": "https://doi.org/10.1021/ol0101279",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4405767481",
+    "name": "A Multi-AI Agent System for Autonomous Optimization of Agentic AI Solutions via Iterative Refinement and LLM-Driven Feedback Loops",
+    "source": "openalex",
+    "abstract": "Agentic AI systems use specialized agents to handle tasks within complex workflows, enabling automation and efficiency. However, optimizing these systems often requires labor-intensive, manual adjustments to refine roles, tasks, and interactions. This paper introduces a framework for autonomously optimizing Agentic AI solutions across industries, such as NLP-driven enterprise applications. The system employs agents for Refinement, Execution, Evaluation, Modification, and Documentation, leveraging iterative feedback loops powered by an LLM (Llama 3.2-3B). The framework achieves optimal performance without human input by autonomously generating and testing hypotheses to improve system configurations. This approach enhances scalability and adaptability, offering a robust solution for real-world applications in dynamic environments. Case studies across diverse domains illustrate the transformative impact of this framework, showcasing significant improvements in output quality, relevance, and actionability. All data for these case studies, including original and evolved agent codes, along with their outputs, are here: https://anonymous.4open.science/r/evolver-1D11/",
+    "url": "https://doi.org/10.48550/arxiv.2412.17149",
+    "authors": [
+      "Kamer Ali Yüksel",
+      "Hassan Sawaf"
+    ],
+    "tags": [
+      "Computer science",
+      "Control theory (sociology)",
+      "Artificial intelligence",
+      "Control (management)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-12-22",
+    "doi": "https://doi.org/10.48550/arxiv.2412.17149",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W2128754415",
+    "name": "The risk-free rate in heterogeneous-agent incomplete-insurance economies",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0165-1889(93)90024-m",
+    "authors": [
+      "Mark Huggett"
+    ],
+    "tags": [
+      "Economics",
+      "Endowment",
+      "Consumption (sociology)",
+      "Risk-free interest rate",
+      "Debt"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "1993-09-01",
+    "doi": "https://doi.org/10.1016/0165-1889(93)90024-m",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4404781196",
+    "name": "Automated test generation to evaluate tool-augmented LLMs as conversational AI agents",
+    "source": "openalex",
+    "abstract": "Tool-augmented LLMs are a promising approach to create AI agents that can have realistic conversations, follow procedures, and call appropriate functions.However, evaluating them is challenging due to the diversity of possible conversations, and existing datasets focus only on single interactions and functioncalling.We present a test generation pipeline to evaluate LLMs as conversational AI agents.Our framework uses LLMs to generate diverse tests grounded on user-defined procedures.For that, we use intermediate graphs to limit the LLM test generator's tendency to hallucinate content that is not grounded on input procedures, and enforces high coverage of the possible conversations.Additionally, we put forward ALMITA, a manually curated dataset for evaluating AI agents in customer support, and use it to evaluate existing LLMs.Our results show that while tool-augmented LLMs perform well in single interactions, they often struggle to handle complete conversations.While our focus is on customer support, our method is general and capable of AI agents for different domains.",
+    "url": "https://doi.org/10.18653/v1/2024.genbench-1.4",
+    "authors": [
+      "Samuel Arcadinho",
+      "David Aparício",
+      "Mariana Ramos Almeida"
+    ],
+    "tags": [
+      "Test (biology)",
+      "Computer science",
+      "Human–computer interaction",
+      "Biology",
+      "Paleontology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-01-01",
+    "doi": "https://doi.org/10.18653/v1/2024.genbench-1.4",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4403322813",
+    "name": "KGARevion: An AI Agent for Knowledge-Intensive Biomedical QA",
+    "source": "openalex",
+    "abstract": "Biomedical reasoning integrates structured, codified knowledge with tacit, experience-driven insights. Depending on the context, quantity, and nature of available evidence, researchers and clinicians use diverse strategies, including rule-based, prototype-based, and case-based reasoning. Effective medical AI models must handle this complexity while ensuring reliability and adaptability. We introduce KGARevion, a knowledge graph-based agent that answers knowledge-intensive questions. Upon receiving a query, KGARevion generates relevant triplets by leveraging the latent knowledge embedded in a large language model. It then verifies these triplets against a grounded knowledge graph, filtering out errors and retaining only accurate, contextually relevant information for the final answer. This multi-step process strengthens reasoning, adapts to different models of medical inference, and outperforms retrieval-augmented generation-based approaches that lack effective verification mechanisms. Evaluations on medical QA benchmarks show that KGARevion improves accuracy by over 5.2% over 15 models in handling complex medical queries. To further assess its effectiveness, we curated three new medical QA datasets with varying levels of semantic complexity, where KGARevion improved accuracy by 10.4%. The agent integrates with different LLMs and biomedical knowledge graphs for broad applicability across knowledge-intensive tasks. We evaluated KGARevion on AfriMed-QA, a newly introduced dataset focused on African healthcare, demonstrating its strong zero-shot generalization to underrepresented medical contexts.",
+    "url": "https://doi.org/10.48550/arxiv.2410.04660",
+    "authors": [
+      "Xiaorui Su",
+      "Yibo Wang",
+      "Shanghua Gao",
+      "Xiaolong Liu",
+      "Valentina Giunchiglia",
+      "Djork-Arné Clevert",
+      "Marinka Žitnik"
+    ],
+    "tags": [
+      "Knowledge management",
+      "Knowledge graph",
+      "Computer science",
+      "Business",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-10-07",
+    "doi": "https://doi.org/10.48550/arxiv.2410.04660",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4412537145",
+    "name": "Can Ai Agents Meet Beyond 5G and 6G Network Requirements?",
+    "source": "openalex",
+    "abstract": "As the requirement for flexibility in networks grows, new mechanisms are needed to enable extreme adaptability to diverse environments and the ability to react to unknown situations. The rise of AI provides a significant opportunity to enhance network efficiency, scalability, and resilience beyond what is possible with traditional policy-based approaches. However, current network architectures rely on predefined rules and event-triggered responses, insufficient to dynamically address unpredictable and diverse conditions. This paper introduces a new perspective on AI-driven autonomous network agents, capable of continuous perception, proactive decision-making, and adaptive optimization across multiple network layers. These agents automate deployment-phase tasks, optimize runtime operations, and enhance cross-layer coordination, addressing critical challenges like mobility management, resource scheduling, and dynamic service adaptation. Unlike traditional static policies, these agents learn from operational feedback, enabling networks to adjust and refine their behavior over time. With their self-learning and intent-driven automation, AI-driven agents integrated into future network architectures, including beyond 5G and 6G systems, can enable greater autonomy, adaptive optimization, and improved robustness, effectively responding to evolving communication requirements.",
+    "url": "https://doi.org/10.1109/netsoft64993.2025.11080553",
+    "authors": [
+      "Marius Corici",
+      "Pousali Chakraborty",
+      "Thomas Magedanz"
+    ],
+    "tags": [
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-06-23",
+    "doi": "https://doi.org/10.1109/netsoft64993.2025.11080553",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W3006623810",
+    "name": "Artificially intelligent device use in service delivery: a systematic review, synthesis, and research agenda",
+    "source": "openalex",
+    "abstract": "This study undertakes a systematic review of Artificial Intelligence and its applications to service encounters and the hospitality industry by reviewing publications that (1) mainly discuss AI technology, (2) are in the context of services, and (3) investigate the use or the adoption of AI technology rather than technical issues such as system design, algorithms, voice recognition modules, or psychological knowledge representations. Seven major themes are identified via a review of 63 publications. The themes are (1) current AI technology in service frontline, (2) levels of artificial intelligence, (3) AI agents, (4) human–AI service encounters, (5) theoretical frameworks of the acceptance of AI, (6) reasons for adopting AI, and (7) potential challenges of AI. This study also offers a further research agenda that highlights nine critical research areas to guide human–AI interaction and AI adoption researches.",
+    "url": "https://doi.org/10.1080/19368623.2020.1721394",
+    "authors": [
+      "Oscar Hengxuan",
+      "Gregory Denton",
+      "Doğan Gürsoy"
+    ],
+    "tags": [
+      "Hospitality",
+      "Hospitality industry",
+      "Context (archaeology)",
+      "Service delivery framework",
+      "Service (business)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2020-02-11",
+    "doi": "https://doi.org/10.1080/19368623.2020.1721394",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W7165663364",
+    "name": "The 2025 AI Agent Index: Documenting Technical and Safety Features of Deployed Agentic AI Systems",
+    "source": "openalex",
+    "abstract": "Agentic AI systems are increasingly capable of performing professional and personal tasks with limited human involvement. However, tracking these developments is difficult because the AI agent ecosystem is complex, rapidly evolving, and inconsistently documented, posing obstacles to both researchers and policymakers. To address these challenges, this paper presents the 2025 AI Agent Index. The Index documents information regarding the origins, design, capabilities, ecosystem, and safety features of 30 state-of-the-art AI agents based on publicly available information and email correspondence with developers. In addition to documenting information about individual agents, the Index illuminates broader trends in the development of agents, their capabilities, and the level of transparency of developers. Notably, we find that transparency varies substantially across agent developers and observe that most developers share little information about safety, evaluations, and societal impacts. The 2025 AI Agent Index is available online at https://aiagentindex.mit.edu.",
+    "url": "https://doi.org/10.1145/3805689.3806728",
+    "authors": [
+      "Leon Staufer",
+      "K. J. Kevin Feng",
+      "Kevin Wei",
+      "Luke Bailey",
+      "Yawen Duan",
+      "Mick Yang",
+      "A. Pinar Ozisik",
+      "Stephen Casper",
+      "Noam Kolt"
+    ],
+    "tags": [
+      "Computer science",
+      "Artificial intelligence",
+      "Feature (linguistics)",
+      "Key (lock)",
+      "Agency (philosophy)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-06-23",
+    "doi": "https://doi.org/10.1145/3805689.3806728",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4225163053",
+    "name": "Rise of the machines: Delegating decisions to autonomous AI",
+    "source": "openalex",
+    "abstract": "Delegation is an important part of organizational success and can be used to overcome personal shortcomings and draw upon the expertise and abilities of others. However, delegation comes with risks and uncertainties, as it entails a transfer of power and loss of control. Indeed, research has documented that people tend to under-delegate to other humans, often leading to poor decisions and ultimately negative economic consequences. Today, however, people are faced with a new delegation choice: Artificial Intelligence (AI). Fueled by Big Data, AI is rapidly becoming more intelligent and frequently outperforming human forecasters and decision-makers. Given this evolution of computational autonomy, researchers need to revisit the hows and whys of decision delegation and clarify not only whether people are willing to cede control to AI agents but also whether AI can reduce the under-delegation that is especially pronounced when people are faced with decisions that spur a high desire for control. By linking research on decision delegation, social risk, and control premium to the emerging field of trust in AI, we propose and find that people prefer to delegate decisions to AI as compared to human agents, especially when decisions entail losses (Studies 1–3). Results further illuminate the underlying psychological process involved (Study 1 and 2) and show that process transparency increases delegation to humans but not to AI (Study 3). These findings have important implications for research on trust in AI and the applicability of autonomous AI systems for managers and decision makers.",
+    "url": "https://doi.org/10.1016/j.chb.2022.107308",
+    "authors": [
+      "Cindy Candrian",
+      "Anne Scherer"
+    ],
+    "tags": [
+      "Delegate",
+      "Delegation",
+      "Transparency (behavior)",
+      "Control (management)",
+      "Autonomy"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2022-04-29",
+    "doi": "https://doi.org/10.1016/j.chb.2022.107308",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W2076064414",
+    "name": "Controlling cooperative problem solving in industrial multi-agent systems using joint intentions",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/0004-3702(94)00020-2",
+    "authors": [
+      "Nicholas R. Jennings"
+    ],
+    "tags": [
+      "Computer science",
+      "Joint (building)",
+      "Domain (mathematical analysis)",
+      "Core (optical fiber)",
+      "Representation (politics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "1995-06-01",
+    "doi": "https://doi.org/10.1016/0004-3702(94)00020-2",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4402440985",
+    "name": "Estimation of the Cognitive Functioning of the Elderly by AI Agents: A Comparative Analysis of the Effects of the Psychological Burden of Intervention",
+    "source": "openalex",
+    "abstract": "In recent years, an increasing number of studies have begun to use conversational data in spontaneous speech to estimate cognitive function in older people. The targets of spontaneous speech with older people used to be physicians and licensed psychologists, but it is now possible to have conversations with fully automatic AI agents. However, it has not yet been clarified what difference there is in conversational communication with older people when the examiner is a human or an AI agent. This study explored the psychological burden experienced by elderly participants during cognitive function assessments, comparing interactions with human and AI conversational partners. Thirty-four participants, averaging 78.71 years of age, were evaluated using the Mini-Mental State Examination (MMSE), the Visual Analogue Scale (VAS), and the State-Trait Anxiety Inventory (STAI). The objective was to assess the psychological impact of different conversational formats on the participants. The results indicated that the mental strain, as measured by VAS and STAI scores, was significantly higher during the MMSE sessions compared to other conversational interactions (p < 0.01). Notably, there was no significant difference in the mental burden between conversations with humans and AI agents, suggesting that AI-based systems could be as effective as human interaction in cognitive assessments.",
+    "url": "https://doi.org/10.3390/healthcare12181821",
+    "authors": [
+      "Toshiharu Igarashi",
+      "Katsuya Iijima",
+      "Kunio Nitta",
+      "Yu Chen"
+    ],
+    "tags": [
+      "Intervention (counseling)",
+      "Cognition",
+      "Psychology",
+      "Estimation",
+      "Meta-analysis"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-09-11",
+    "doi": "https://doi.org/10.3390/healthcare12181821",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4410067411",
+    "name": "Bring game characters to the social space: Developing storytelling community AI agents driven by LLMs",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.entcom.2025.100948",
+    "authors": [
+      "Yuqian Sun",
+      "Hanyi Wang",
+      "Pok Man Chan",
+      "Morteza Tabibi",
+      "Yan Zhang",
+      "Huan Lu",
+      "Yuheng Chen",
+      "Chang Hee Lee",
+      "Ali Asadipour"
+    ],
+    "tags": [
+      "Storytelling",
+      "Space (punctuation)",
+      "Multimedia",
+      "Computer science",
+      "Sociology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-05-04",
+    "doi": "https://doi.org/10.1016/j.entcom.2025.100948",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4411030516",
+    "name": "Industrial Agentic AI and generative modeling in complex systems",
+    "source": "openalex",
+    "abstract": "Manufacturing, consumer, transportation, and supply chain processes present significant challenges in monitoring, control, and design due to their inherently nonlinear nature and the difficulty of measuring critical variables in real time. The convergence of major innovations from the computer science field has the potential to revolutionize the engineering and control of complex industrial systems. Digital twinning and process simulation have been a staple of computers in process engineering for decades now. However, the advent of advanced sensor systems and big data integration, combined with generative AI and agentified AI (classic and quantum) systems, allows for much more granular and autonomous process control and real-time optimization of complex systems. Advanced process modeling, Agentic AI, and generative AI models have emerged as powerful tools to address the challenges of complex nonlinear systems. We propose here an integrated systems feedback and control architecture (SIC: Sense, Infer, Control) that leverages complementary process knowledge for enhanced real-time monitoring and decision-making, fully integrated into control system functions and the accompanying sensors. In this paper, we explore this integration of generative models in agentic AI ensembles into industrial processes through the lens of four recent industrial case studies: (1) the real-time optimization of motorsports strategy, (2) the development of indirect (soft) sensors for sustainable large-scale manufacturing operations, (3) the creation of sensor data-driven personalized health and cosmetic chemical formulations, and (4) the design of biomanufacturing systems using quantum and classic Agentic AI. These examples demonstrate how agentic and generative models, combined with full-scale process simulation and digital twinning, effectively augment process control, enabling advanced solutions for process optimization, quality improvement, and sustainable operations. The proposed SIC systems architecture serves to enhance process control automation by capturing complex nonlinear patterns and leveraging easily measurable variables. Generative models bridge gaps in process understanding, sensor technologies, control, and monitoring, offering actionable insights for efficient and informed decision-making across diverse industrial applications.",
+    "url": "https://doi.org/10.1016/j.coche.2025.101150",
+    "authors": [
+      "Mohammad Reza Boskabadi",
+      "Yudong Cao",
+      "Behnam Khadem",
+      "William R. Clements",
+      "Z. Nevin Gerek",
+      "Eric Reuthe",
+      "Abhishek Sivaram",
+      "Christopher J. Savoie",
+      "Seyed Soheil Mansouri"
+    ],
+    "tags": [
+      "Generative grammar",
+      "Computer science",
+      "Cognitive science",
+      "Systems engineering",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-06-01",
+    "doi": "https://doi.org/10.1016/j.coche.2025.101150",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W96081297",
+    "name": "Agents on stage: advancing the state of the art of AI",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://openalex.org/W96081297",
+    "authors": [
+      "Barbara Hayes‐Roth"
+    ],
+    "tags": [
+      "Computer science",
+      "State (computer science)",
+      "Stage (stratigraphy)",
+      "Artificial intelligence",
+      "Data science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "1995-08-20",
+    "doi": "",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4408581964",
+    "name": "Agentic Retrieval-Augmented Generation: Advancing AI-Driven Information Retrieval and Processing",
+    "source": "openalex",
+    "abstract": "This paper explores the emerging field of Agentic Retrieval-Augmented Generation (Agentic RAG), an advanced approach to AI-driven information retrieval and processing. Building upon traditional Retrieval-Augmented Generation, Agentic RAG incorporates goal reasoning and self-direction, enabling AI systems to make informed decisions based on user context and intent. The study examines the fundamental components of Agentic RAG, including its multi-agent hierarchical architecture, key features, and enhancements over conventional systems. Applications across various domains, such as healthcare, financial services, businesses, and education, are discussed. The paper also addresses challenges in implementation, including mitigating AI hallucinations, ethical considerations, and computational scalability. Performance evaluation methods and metrics for Agentic RAG systems are outlined, along with case studies demonstrating their effectiveness. Finally, the paper explores future directions for research and development in this rapidly evolving field, highlighting its potential to revolutionize AI-driven information retrieval and processing.",
+    "url": "https://doi.org/10.14445/22312803/ijctt-v73i1p111",
+    "authors": [
+      "Abhai Pratap Singh",
+      "Adit Jamdar",
+      "Prerna Kaul"
+    ],
+    "tags": [
+      "Computer science",
+      "Information retrieval",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-01-31",
+    "doi": "https://doi.org/10.14445/22312803/ijctt-v73i1p111",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W3185259208",
+    "name": "Explainable AI (XAI) Models Applied to the Multi-agent Environment of Financial Markets",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-030-82017-6_12",
+    "authors": [
+      "Jean Jacques Ohana",
+      "Steve Ohana",
+      "Eric Benhamou",
+      "David Saltiel",
+      "Béatrice Guez"
+    ],
+    "tags": [
+      "Computer science",
+      "Futures contract",
+      "Financial market",
+      "Contrarian",
+      "Equity (law)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2021-01-01",
+    "doi": "https://doi.org/10.1007/978-3-030-82017-6_12",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W3024044737",
+    "name": "A survey of Behavior Trees in robotics and AI",
+    "source": "openalex",
+    "abstract": "Behavior Trees (BTs) were invented as a tool to enable modular AI in computer games, but have received an increasing amount of attention in the robotics community in the last decade. With rising demands on agent AI complexity, game programmers found that the Finite State Machines (FSM) that they used scaled poorly and were difficult to extend, adapt and reuse. In BTs, the state transition logic is not dispersed across the individual states, but organized in a hierarchical tree structure, with the states as leaves. This has a significant effect on modularity, which in turn simplifies both synthesis and analysis by humans and algorithms alike. These advantages are needed not only in game AI design, but also in robotics, as is evident from the research being done. In this paper we present a comprehensive survey of the topic of BTs in Artificial Intelligence and Robotic applications. The existing literature is described and categorized based on methods, application areas and contributions, and the paper is concluded with a list of open research challenges.",
+    "url": "https://doi.org/10.1016/j.robot.2022.104096",
+    "authors": [
+      "Matteo Iovino",
+      "Edvards Scukins",
+      "Jonathan Styrud",
+      "Petter Ögren",
+      "Christian Smith"
+    ],
+    "tags": [
+      "Computer science",
+      "Robotics",
+      "Modularity (biology)",
+      "Reuse",
+      "Modular design"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2022-04-12",
+    "doi": "https://doi.org/10.1016/j.robot.2022.104096",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W7137814683",
+    "name": "ELT-Bench: An End-to-End Benchmark for Evaluating AI Agents on ELT Pipelines",
+    "source": "openalex",
+    "abstract": "Practitioners are increasingly turning to Extract-Load-Transform (ELT) pipelines with the widespread adoption of cloud data warehouses. However, designing these pipelines often involves significant manual work to ensure correctness. Recent advances in AI-based methods, which have shown strong capabilities in data tasks, such as text-to-SQL, present an opportunity to alleviate manual efforts in developing ELT pipelines. Unfortunately, current benchmarks in data engineering only evaluate isolated tasks, such as using data tools and writing data transformation queries, leaving a significant gap in evaluating AI agents for generating end-to-end ELT pipelines. To fill this gap, we introduce ELT-Bench, an end-to-end benchmark designed to assess the capabilities of AI agents to build ELT pipelines. ELT-Bench consists of 100 pipelines, including 835 source tables and 203 data models across various domains. By simulating realistic scenarios involving the integration of diverse data sources and the use of popular data tools, ELT-Bench evaluates AI agents' abilities in handling complex data engineering workflows. AI agents must interact with databases and data tools, write code and SQL queries, and orchestrate every pipeline stage. We evaluate four representative code agents with six popular Large Language Models (LLMs) on ELT-Bench. The highest-performing agent, OpenHands CodeActAgent Claude-3.5-Sonnet, correctly generates only 11.3% of data models, with an average cost of $1.41 and 72.2 steps per pipeline. Our results demonstrate the challenges of ELT-Bench and highlight the need for a more advanced AI agent to reduce manual effort in ELT workflows.",
+    "url": "https://doi.org/10.14778/3773749.3773750",
+    "authors": [
+      "Tengjun Jin",
+      "Yuxuan Zhu",
+      "Daniel Kang"
+    ],
+    "tags": [
+      "Pipeline (software)",
+      "Benchmark (surveying)",
+      "Computer science",
+      "Pipeline transport",
+      "Code (set theory)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-10-01",
+    "doi": "https://doi.org/10.14778/3773749.3773750",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W7161812956",
+    "name": "The Master-Embedded Device: Transferring Tacit Knowledge Density into AI Agent Architecture",
+    "source": "openalex",
+    "abstract": "This paper proposes the Master-Embedded Device — a PC or AI agent architecture in which the accumulated tacit knowledge of a domain expert is structurally transferred into an AI agent, enabling successors to operate at a higher baseline density of output with lower friction. We formalize this using V = N / D and connect it to the Hikari Currency moral economy. Scope: Exploratory framework proposal. Not peer-reviewed empirical research.",
+    "url": "https://doi.org/10.5281/zenodo.20317672",
+    "authors": [
+      "Yoshimitsu Katayama"
+    ],
+    "tags": [
+      "Tacit knowledge",
+      "Computer science",
+      "Domain (mathematical analysis)",
+      "Knowledge management",
+      "Architecture"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-05-21",
+    "doi": "https://doi.org/10.5281/zenodo.20317672",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4393178181",
+    "name": "CACA Agent: Capability Collaboration based AI Agent",
+    "source": "openalex",
+    "abstract": "As AI Agents based on Large Language Models (LLMs) have shown potential in practical applications across various fields, how to quickly deploy an AI agent and how to conveniently expand the application scenario of AI agents has become a challenge. Previous studies mainly focused on implementing all the reasoning capabilities of AI agents within a single LLM, which often makes the model more complex and also reduces the extensibility of AI agent functionality. In this paper, we propose CACA Agent (Capability Collaboration based AI Agent), using an open architecture inspired by service computing. CACA Agent integrates a set of collaborative capabilities to implement AI Agents, not only reducing the dependence on a single LLM, but also enhancing the extensibility of both the planning abilities and the tools available to AI agents. Utilizing the proposed system, we present a demo to illustrate the operation and the application scenario extension of CACA Agent.",
+    "url": "https://doi.org/10.48550/arxiv.2403.15137",
+    "authors": [
+      "Peng Xu",
+      "Haoran Wang",
+      "Chuang Wang",
+      "Xu Liu"
+    ],
+    "tags": [
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-03-22",
+    "doi": "https://doi.org/10.48550/arxiv.2403.15137",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W7119466769",
+    "name": "AI agent for autonomous optical networks: architectures, technologies, and prospects [Invited Tutorial]",
+    "source": "openalex",
+    "abstract": "The growing demand for high-bandwidth, zero-trouble services is imposing unprecedented challenges on optical communication networks. Traditional human-centric network management approaches are increasingly inadequate for addressing the complexity, scalability, and reliability requirements of modern optical networks. This tutorial provides a comprehensive overview of the evolution toward autonomous optical networks (AONs), where large language model (LLM)-based artificial intelligence (AI) agents are utilized. We systematically introduce the fundamental concepts and architectural frameworks for AI agent-enabled AONs. Key agentic technologies are examined, including domain adaptation strategies for LLMs, advanced prompting techniques, and the construction of agentic AI systems. Furthermore, we analyze the toolsets that support the operational effectiveness of AI agents in AONs. The monitoring and analytics toolset provides accurate awareness of the network state and predicts future changes. The digital twin (DT) construction toolset enables high-fidelity modeling of optical networks. The intelligent management and control toolset is employed for service provisioning, failure management, and continuous network optimization. By integrating these agentic technologies and toolsets, AI agents can deliver end-to-end autonomous network lifecycle management. Key challenges remain in areas such as reliability, proper utilization of the LLM reasoning capabilities, and cost-effectiveness.",
+    "url": "https://doi.org/10.1364/jocn.576017",
+    "authors": [
+      "Yihao Zhang",
+      "Qizhi Qiu",
+      "Xiaomin Liu",
+      "Xiaoshu Yu",
+      "Frank Fu",
+      "Xingyu Liu",
+      "zihang wang",
+      "Hao Lin",
+      "Yuli Chen",
+      "Lilin Yi Lilin Yi",
+      "weisheng hu",
+      "Qunbi Zhuge"
+    ],
+    "tags": [
+      "Computer science",
+      "Key (lock)",
+      "Adaptation (eye)",
+      "Analytics",
+      "Domain (mathematical analysis)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-01-08",
+    "doi": "https://doi.org/10.1364/jocn.576017",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W2567015638",
+    "name": "Learning to Navigate in Complex Environments",
+    "source": "openalex",
+    "abstract": "Learning to navigate in complex environments with dynamic elements is an important milestone in developing AI agents. In this work we formulate the navigation question as a reinforcement learning problem and show that data efficiency and task performance can be dramatically improved by relying on additional auxiliary tasks leveraging multimodal sensory inputs. In particular we consider jointly learning the goal-driven reinforcement learning problem with auxiliary depth prediction and loop closure classification tasks. This approach can learn to navigate from raw sensory input in complicated 3D mazes, approaching human-level performance even under conditions where the goal location changes frequently. We provide detailed analysis of the agent behaviour, its ability to localise, and its network activity dynamics, showing that the agent implicitly learns key navigation abilities.",
+    "url": "https://doi.org/10.48550/arxiv.1611.03673",
+    "authors": [
+      "Piotr Mirowski",
+      "Razvan Pascanu",
+      "Fabio Viola",
+      "Hubert Soyer",
+      "Andrew J. Ballard",
+      "Andrea Banino",
+      "Misha Denil",
+      "Ross Goroshin",
+      "Laurent Sifre",
+      "Koray Kavukcuoglu",
+      "Dharshan Kumaran",
+      "Raia Hadsell"
+    ],
+    "tags": [
+      "Computer science",
+      "Reinforcement learning",
+      "Task (project management)",
+      "Artificial intelligence",
+      "Key (lock)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2016-11-11",
+    "doi": "https://doi.org/10.48550/arxiv.1611.03673",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W2109611048",
+    "name": "Small Molecule Inhibitors of AI-2 Signaling in Bacteria: State-of-the-Art and Future Perspectives for Anti-Quorum Sensing Agents",
+    "source": "openalex",
+    "abstract": "Bacteria respond to different small molecules that are produced by other neighboring bacteria. These molecules, called autoinducers, are classified as intraspecies (i.e., molecules produced and perceived by the same bacterial species) or interspecies (molecules that are produced and sensed between different bacterial species). AI-2 has been proposed as an interspecies autoinducer and has been shown to regulate different bacterial physiology as well as affect virulence factor production and biofilm formation in some bacteria, including bacteria of clinical relevance. Several groups have embarked on the development of small molecules that could be used to perturb AI-2 signaling in bacteria, with the ultimate goal that these molecules could be used to inhibit bacterial virulence and biofilm formation. Additionally, these molecules have the potential to be used in synthetic biology applications whereby these small molecules are used as inputs to switch on and off AI-2 receptors. In this review, we highlight the state-of-the-art in the development of small molecules that perturb AI-2 signaling in bacteria and offer our perspective on the future development and applications of these classes of molecules.",
+    "url": "https://doi.org/10.3390/ijms140917694",
+    "authors": [
+      "Min Guo",
+      "Sonja Gamby",
+      "Yue Zheng",
+      "Herman O. Sintim"
+    ],
+    "tags": [
+      "Quorum sensing",
+      "Biofilm",
+      "Autoinducer",
+      "Bacteria",
+      "Small molecule"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2013-08-29",
+    "doi": "https://doi.org/10.3390/ijms140917694",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4410067270",
+    "name": "Teachers’ Perspectives on Chatbots and AI Agents in Primary and Secondary Education",
+    "source": "openalex",
+    "abstract": "The integration of AI tools in education is gaining momentum, yet research in Serbia remains largely limited to descriptive analyses, lacking in-depth statistical examination of factors influencing AI adoption among teachers. This study addresses this gap by employing advanced statistical methods to explore the relationships between teachers’ familiarity with AI tools, perceived challenges, and attitudes toward AI in education. A sample of 135 primary and secondary school teachers in Serbia participated in the study, with data collected via an online survey and analyzed using exploratory factor analysis, correlation tests, and non-parametric statistical methods. The results confirm that greater AI familiarity is associated with more positive attitudes toward AI adoption, while heightened concerns about AI-related challenges reduce willingness to integrate AI into teaching. However, no significant correlation was found between AI familiarity and concerns, suggesting that perceived challenges stem from broader systemic and institutional factors rather than personal experience. These findings underscore the need for professional development initiatives alongside structural reforms to facilitate AI integration in Serbian education. Future research should further examine institutional barriers and policy frameworks to support the ethical and effective adoption of AI tools in teaching.",
+    "url": "https://doi.org/10.46328/ijonse.352",
+    "authors": [
+      "Milena Škobo",
+      "Milena Šović"
+    ],
+    "tags": [
+      "Primary (astronomy)",
+      "Mathematics education",
+      "Primary education",
+      "Psychology",
+      "Pedagogy"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-04-15",
+    "doi": "https://doi.org/10.46328/ijonse.352",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4396781199",
+    "name": "Can Generative AI improve social science?",
+    "source": "openalex",
+    "abstract": "Generative AI that can produce realistic text, images, and other human-like outputs is currently transforming many different industries. Yet it is not yet known how such tools might influence social science research. I argue Generative AI has the potential to improve survey research, online experiments, automated content analyses, agent-based models, and other techniques commonly used to study human behavior. In the second section of this article, I discuss the many limitations of Generative. I examine how bias in the data used to train these tools can negatively impact social science research-as well as a range of other challenges related to ethics, replication, environmental impact, and the proliferation of low-quality research. I conclude by arguing that social scientists can address many of these limitations by creating open-source infrastructure for research on human behavior. Such infrastructure is not only necessary to ensure broad access to high-quality research tools, I argue, but also because the progress of AI will require deeper understanding of the social forces that guide human behavior.",
+    "url": "https://doi.org/10.1073/pnas.2314021121",
+    "authors": [
+      "Christopher A. Bail"
+    ],
+    "tags": [
+      "Generative grammar",
+      "Data science",
+      "Computer science",
+      "Quality (philosophy)",
+      "Replication (statistics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-05-09",
+    "doi": "https://doi.org/10.1073/pnas.2314021121",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4404452151",
+    "name": "Enhancing student engagement in online collaborative writing through a generative AI-based conversational agent",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.iheduc.2024.100979",
+    "authors": [
+      "Wanqing Hu",
+      "Jirong Tian",
+      "Yanyan Li"
+    ],
+    "tags": [
+      "Generative grammar",
+      "Computer science",
+      "Dialog system",
+      "Student engagement",
+      "Multimedia"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-11-17",
+    "doi": "https://doi.org/10.1016/j.iheduc.2024.100979",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W3100511078",
+    "name": "Ready or Not, AI Comes— An Interview Study of Organizational AI Readiness Factors",
+    "source": "openalex",
+    "abstract": "Abstract Artificial intelligence (AI) offers organizations much potential. Considering the manifold application areas, AI’s inherent complexity, and new organizational necessities, companies encounter pitfalls when adopting AI. An informed decision regarding an organization’s readiness increases the probability of successful AI adoption and is important to successfully leverage AI’s business value. Thus, companies need to assess whether their assets, capabilities, and commitment are ready for the individual AI adoption purpose. Research on AI readiness and AI adoption is still in its infancy. Consequently, researchers and practitioners lack guidance on the adoption of AI. The paper presents five categories of AI readiness factors and their illustrative actionable indicators. The AI readiness factors are deduced from an in-depth interview study with 25 AI experts and triangulated with both scientific and practitioner literature. Thus, the paper provides a sound set of organizational AI readiness factors, derives corresponding indicators for AI readiness assessments, and discusses the general implications for AI adoption. This is a first step toward conceptualizing relevant organizational AI readiness factors and guiding purposeful decisions in the entire AI adoption process for both research and practice.",
+    "url": "https://doi.org/10.1007/s12599-020-00676-7",
+    "authors": [
+      "Jan Jöhnk",
+      "Malte Weißert",
+      "Katrin Wyrtki"
+    ],
+    "tags": [
+      "Leverage (statistics)",
+      "Knowledge management",
+      "Process (computing)",
+      "Set (abstract data type)",
+      "Value (mathematics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2020-12-22",
+    "doi": "https://doi.org/10.1007/s12599-020-00676-7",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4411506437",
+    "name": "From Tools to Agents: Meta-Analytic Insights into Human Acceptance of AI",
+    "source": "openalex",
+    "abstract": "As artificial intelligence (AI) becomes more autonomous and socially present, it is critical to understand how people accept AI not just as a technological tool, but also as an agent capable of (semi)autonomous decision-making and interaction. With a meta-analysis of 287 effect sizes representing over 119,000 individuals, this research examines the factors driving human acceptance of AI. Through a dual-perspective framework, AI as a tool versus AI as an agent, the authors identify key AI characteristics, including capability, role, expertise scope, and anthropomorphism, that significantly influence acceptance. These engineerable AI characteristics, along with contextual and individual factors, form an AI–task–user framework that explains AI acceptance across different use scenarios and user groups. These findings contribute to the discourse on AI acceptance and human–AI interactions, revealing a small, decreasing reluctance to accept AI and, more importantly, directing future research to empirical testing and theory building of AI acceptance from an agentic perspective. This research also provides an actionable user-centered design roadmap for practitioners to develop and communicate AI features that align with human expectations and enhance positive responses, especially at a time when agentic AI is rapidly becoming a technological and societal reality.",
+    "url": "https://doi.org/10.1177/00222429251355266",
+    "authors": [
+      "Bingqing Li",
+      "Edward Yuhang Lai",
+      "Xin (Shane) Wang"
+    ],
+    "tags": [
+      "Scope (computer science)",
+      "Perspective (graphical)",
+      "Knowledge management",
+      "Task (project management)",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-06-21",
+    "doi": "https://doi.org/10.1177/00222429251355266",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W3021366120",
+    "name": "Unpredictability of AI: On the Impossibility of Accurately Predicting All Actions of a Smarter Agent",
+    "source": "openalex",
+    "abstract": "The young field of AI Safety is still in the process of identifying its challenges and limitations. In this paper, we formally describe one such impossibility result, namely Unpredictability of AI. We prove that it is impossible to precisely and consistently predict what specific actions a smarter-than-human intelligent system will take to achieve its objectives, even if we know the terminal goals of the system. In conclusion, the impact of Unpredictability on AI Safety is discussed.",
+    "url": "https://doi.org/10.1142/s2705078520500034",
+    "authors": [
+      "Roman V. Yampolskiy"
+    ],
+    "tags": [
+      "Impossibility",
+      "Process (computing)",
+      "Computer science",
+      "Field (mathematics)",
+      "Risk analysis (engineering)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2020-03-01",
+    "doi": "https://doi.org/10.1142/s2705078520500034",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W7117560355",
+    "name": "Reducing consumers’ resistance to AI agents in online healthcare consultations: the role of human-AI teaming from a trust transfer perspective",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.jbusres.2025.115959",
+    "authors": [
+      "Gang Du",
+      "Chuanmei Zhou",
+      "Xusen Cheng"
+    ],
+    "tags": [
+      "Resistance (ecology)",
+      "Perspective (graphical)",
+      "Health care",
+      "Affect (linguistics)",
+      "Knowledge management"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-12-30",
+    "doi": "https://doi.org/10.1016/j.jbusres.2025.115959",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4416553697",
+    "name": "A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems",
+    "source": "openalex",
+    "abstract": "Recent advances in large language models have sparked growing interest in AI agents capable of solving complex, real-world tasks. However, most existing agent systems rely on manually crafted configurations that remain static after deployment, limiting their ability to adapt to dynamic and evolving environments. To this end, recent research has explored agent evolution techniques that aim to automatically enhance agent systems based on interaction data and environmental feedback. This emerging direction lays the foundation for self-evolving AI agents, which bridge the static capabilities of foundation models with the continuous adaptability required by lifelong agentic systems. In this survey, we provide a comprehensive review of existing techniques for self-evolving agentic systems. Specifically, we first introduce a unified conceptual framework that abstracts the feedback loop underlying the design of self-evolving agentic systems. The framework highlights four key components: System Inputs, Agent System, Environment, and Optimisers, serving as a foundation for understanding and comparing different strategies. Based on this framework, we systematically review a wide range of self-evolving techniques that target different components of the agent system. We also investigate domain-specific evolution strategies developed for specialised fields such as biomedicine, programming, and finance, where optimisation objectives are tightly coupled with domain constraints. In addition, we provide a dedicated discussion on the evaluation, safety, and ethical considerations for self-evolving agentic systems, which are critical to ensuring their effectiveness and reliability. This survey aims to provide researchers and practitioners with a systematic understanding of self-evolving AI agents, laying the foundation for the development of more adaptive, autonomous, and lifelong agentic systems.",
+    "url": "https://doi.org/10.48550/arxiv.2508.07407",
+    "authors": [
+      "Jinyuan Fang",
+      "Yanwen Peng",
+      "Xi Zhang",
+      "Yingxu Wang",
+      "X. Yi",
+      "Guibin Zhang",
+      "Yi Xu",
+      "Bin Wu",
+      "Si‐Wei Liu",
+      "Zihao Li",
+      "Zhaochun Ren",
+      "Nikos Aletras",
+      "Xi Wang",
+      "Han Zhou",
+      "Zaiqiao Meng"
+    ],
+    "tags": [
+      "Bridging (networking)",
+      "Adaptability",
+      "Foundation (evidence)",
+      "Underpinning",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-08-10",
+    "doi": "https://doi.org/10.48550/arxiv.2508.07407",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4412679601",
+    "name": "Beyond simple interaction: Uncovering the perception-interaction intrinsic mechanism of generative AI agents—A multi-modal big data analysis with PLS-SEM and fsQCA",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.techsoc.2025.103020",
+    "authors": [
+      "Hao He",
+      "Shizhen Bai",
+      "Chunjia Han",
+      "Mu Yang",
+      "Weijia Fan",
+      "Brij B. Gupta"
+    ],
+    "tags": [
+      "Generative grammar",
+      "Mechanism (biology)",
+      "Simple (philosophy)",
+      "Modal",
+      "Perception"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-07-19",
+    "doi": "https://doi.org/10.1016/j.techsoc.2025.103020",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4391849646",
+    "name": "Ethical and regulatory challenges of AI technologies in healthcare: A narrative review",
+    "source": "openalex",
+    "abstract": "Over the past decade, there has been a notable surge in AI-driven research, specifically geared toward enhancing crucial clinical processes and outcomes. The potential of AI-powered decision support systems to streamline clinical workflows, assist in diagnostics, and enable personalized treatment is increasingly evident. Nevertheless, the introduction of these cutting-edge solutions poses substantial challenges in clinical and care environments, necessitating a thorough exploration of ethical, legal, and regulatory considerations. A robust governance framework is imperative to foster the acceptance and successful implementation of AI in healthcare. This article delves deep into the critical ethical and regulatory concerns entangled with the deployment of AI systems in clinical practice. It not only provides a comprehensive overview of the role of AI technologies but also offers an insightful perspective on the ethical and regulatory challenges, making a pioneering contribution to the field. This research aims to address the current challenges in digital healthcare by presenting valuable recommendations for all stakeholders eager to advance the development and implementation of innovative AI systems.",
+    "url": "https://doi.org/10.1016/j.heliyon.2024.e26297",
+    "authors": [
+      "Ciro Mennella",
+      "Umberto Maniscalco",
+      "Giuseppe De Pietro",
+      "Massimo Esposito"
+    ],
+    "tags": [
+      "Health care",
+      "Engineering ethics",
+      "Narrative",
+      "Bioethics",
+      "Medicine"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-02-01",
+    "doi": "https://doi.org/10.1016/j.heliyon.2024.e26297",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W1599908063",
+    "name": "IMPACTing SHOP: Putting an AI Planner Into a Multi-Agent Environment",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1023/a:1021560510377",
+    "authors": [
+      "Jürgen Dix",
+      "Héctor Muñoz‐Avila",
+      "Dana Nau",
+      "Lingling Zhang"
+    ],
+    "tags": [
+      "Formalism (music)",
+      "Computer science",
+      "Computation",
+      "Complex system",
+      "Theoretical computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2003-03-21",
+    "doi": "https://doi.org/10.1023/a:1021560510377",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4415997683",
+    "name": "AI Agents and Higher-Order Work",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.2139/ssrn.5713646",
+    "authors": [
+      "Suproteem Sarkar"
+    ],
+    "tags": [
+      "Computer science",
+      "Software development",
+      "Coding (social sciences)",
+      "Software engineering",
+      "Software development process"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-01-01",
+    "doi": "https://doi.org/10.2139/ssrn.5713646",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4387192549",
+    "name": "Using Linkography to Quantitatively Analyze the Design Ideation of AI Agents",
+    "source": "openalex",
+    "abstract": "Today's AI technology and tools are continuously applied to the field of design, promoting the improvement of designers' creative ability and design efficiency. The recent emergence of AI agents represented by Chat-GPT has excellent conversational and creative reasoning capabilities in many aspects, which will provide great opportunities for higher-level design collaboration between humans and machines. AI is gaining popularity in today's design creative field, yet we know very little about the creative mechanics and ideation process of AI agents. Faced with this problem, we draw on the theory of protocol analysis and propose a method to quantitatively analyze the creative ideation process of AI agents. Then, we tried Chat-GPT and GPT-4 ideation for specific design issues, and analyzed their creativity and cognitive behavior in the ideation process using linkography. Finally, we point out the advantages, difficulties, and next steps of AI agents in design ideation.",
+    "url": "https://doi.org/10.1109/ihmsc58761.2023.00063",
+    "authors": [
+      "Jiangjie Huang",
+      "Xiaoyu Zhang",
+      "Yongchuan Tang"
+    ],
+    "tags": [
+      "Ideation",
+      "Creativity",
+      "Computer science",
+      "Popularity",
+      "Process (computing)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2023-08-01",
+    "doi": "https://doi.org/10.1109/ihmsc58761.2023.00063",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4412732348",
+    "name": "Between Puppet and Actor: Reframing Authorship in This Age of AI Agents",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/978-3-031-89037-6_3",
+    "authors": [
+      "Yuqian Sun",
+      "Stefano Gualeni"
+    ],
+    "tags": [
+      "Cognitive reframing",
+      "Art",
+      "Visual arts",
+      "History",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-07-29",
+    "doi": "https://doi.org/10.1007/978-3-031-89037-6_3",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4372055459",
+    "name": "Accelerating Innovation With Generative AI: AI-Augmented Digital Prototyping and Innovation Methods",
+    "source": "openalex",
+    "abstract": "Easy-to-use generative Artificial Intelligence (AI) is democratizing the use of AI in innovation management and may significantly change the way how we work and innovate. In this article, we show how large language models such as GPT can augment the early phases of innovation, in particular, exploration, ideation, and digital prototyping. Drawing on six months of experimenting with large language models in internal and client innovation projects, we share first-hand experiences and concrete examples of AI-assisted approaches. The article highlights a large variety of use cases for generative AI ranging from user journey mapping to idea generation and prototyping and foreshadows the promising role LLMs may play in future knowledge management systems. Moreover, we argue that generative AI may become a game changer in early prototyping as the delegation of tasks to an artificial agent can result in faster iterations and reduced costs. Our experiences also provide insights into how human innovation teams purposively and effectively interact with AIs and integrate them into their workflows.",
+    "url": "https://doi.org/10.1109/emr.2023.3272799",
+    "authors": [
+      "Volker Bilgram",
+      "Felix Laarmann"
+    ],
+    "tags": [
+      "Generative grammar",
+      "Ideation",
+      "Workflow",
+      "Variety (cybernetics)",
+      "Rapid prototyping"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2023-05-04",
+    "doi": "https://doi.org/10.1109/emr.2023.3272799",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4417483116",
+    "name": "Conversational AI agents in education: an umbrella review of current utilization, challenges, and future directions for ethical and responsible use",
+    "source": "openalex",
+    "abstract": "Abstract The use of Conversational AI (CAI) agents within education has seen a rise with the rapid integration of generative AI (GenAI). The generative ability of the application combined with conversational capabilities has enhanced the perceived and actual usefulness of CAI applications. Given this development, it is critical to undertake a comprehensive review to understand the actual application domains, challenges, and efforts within this area. A range of empirical studies as well as reviews have been undertaken in recent years, but the current understanding remains fragmented. To better understand the current state-of-the-art, current trends and future implications of CAI on education, we conducted an umbrella review (UR) to systematically synthesize findings from thirty-four review articles. Articles were collected through a search across five major databases. They were screened using predefined eligibility criteria focusing on CAI agents used across educational domains and contexts. The PRISMA framework for transparent reporting is followed throughout the process and a thematic analysis has been undertaken to analyze the data. The results show that CAI utilization is concentrated in pedagogical applications such as teaching support, psychological engagement, and metacognitive development, while administrative functions, research assistance, and specialized training remain underdeveloped. Technical limitations and concerns with educational impact dominate discussions. Ethically, human-AI relationship concerns persist across all CAI generations, while academic integrity and data privacy represent emerging areas of concern. The review reveals gaps in CAI frameworks: lack of end-to-end design guidance, weak CAI specific usability methods, unclear pedagogical guidance and classroom implementation strategies, and limited AI literacy support. The article concludes by proposing a roadmap for ethical CAI implementation in education and identifying priority areas for future research.",
+    "url": "https://doi.org/10.1007/s43681-025-00916-0",
+    "authors": [
+      "Amrita Ganguly",
+      "Nafisa Mehjabin",
+      "Aqdas Malik",
+      "Aditya Johri"
+    ],
+    "tags": [
+      "Usability",
+      "Process (computing)",
+      "Computer science",
+      "Engineering ethics",
+      "Generative grammar"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-12-19",
+    "doi": "https://doi.org/10.1007/s43681-025-00916-0",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4413340479",
+    "name": "Evaluating sentiment and spatial patterns of EV charging station user experience with AI-agents",
+    "source": "openalex",
+    "abstract": "As electric vehicle charging stations (EVCSs) continue to expand in urban settings, evaluating user experiences is critical for ensuring functional, accessible, and context-sensitive infrastructure. This study applies AI-driven sentiment and spatial analysis to over 4,000 user-generated reviews collected from PlugShare in Travis County, Texas. This study compares the performance of three large language models, ChatGPT-4o, Claude 3.5, and LLaMA 3.1, in classifying sentiment and categorizing review content into six thematic dimensions: charging operation, capacity and performance, technology and network, accessibility and urban environment, parking availability, and cost and pricing. The results indicate distinct spatial patterns in user feedback. Operational and capacity-related complaints are more common in suburban areas, where infrastructure reliability and maintenance appear to lag. Conversely, issues related to accessibility and parking are clustered in dense urban and commercial districts, reflecting challenges in integrating EVCSs with existing urban functions. Cost-related concerns are particularly concentrated in consumer-heavy zones such as shopping and dining districts, highlighting the intersection between EV charging behaviour and urban economic geography. GPT-4o achieved the highest accuracy in sentiment classification (82.4%), outperforming Claude and LLaMA in capturing nuanced and context-dependent expressions of user satisfaction or dissatisfaction. These findings demonstrate the utility of AI agents not only as scalable tools for sentiment analysis but also as interpreters of spatially embedded urban experiences. The study suggests that future EVCS planning should adopt geographically differentiated strategies: improving technical reliability in peripheral zones, ensuring parking and pedestrian access in dense urban cores, and addressing pricing fairness in commercial districts. Moreover, the comparative evaluation of AI agents provides insight into model capabilities in understanding human-centred infrastructure feedback, offering a methodological foundation for real-time, AI-supported urban service monitoring and planning.",
+    "url": "https://doi.org/10.1080/12265934.2025.2547792",
+    "authors": [
+      "Junfeng Jiao",
+      "Ahyoung Chang"
+    ],
+    "tags": [
+      "Computer science",
+      "Sentiment analysis",
+      "Human–computer interaction",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-08-20",
+    "doi": "https://doi.org/10.1080/12265934.2025.2547792",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W7156104865",
+    "name": "AgentClinic: a multimodal benchmark for tool-using clinical AI agents",
+    "source": "openalex",
+    "abstract": "Evaluating large language models (LLM) in clinical scenarios is crucial to assessing their potential clinical utility. Existing benchmarks rely heavily on static question-answering, which does not accurately depict the complex, sequential nature of clinical decision-making. Here, we introduce AgentClinic, a multimodal agent benchmark for evaluating LLMs in simulated clinical environments that include patient interactions, multimodal data collection under incomplete information, and the usage of various tools, resulting in an in-depth evaluation across nine medical specialties and seven languages. We find that solving MedQA problems in the sequential decision-making format of AgentClinic is considerably more challenging, resulting in diagnostic accuracies that can drop to below a tenth of the original accuracy. Overall, we observe that agents sourced from Claude-3.5 outperform other LLM backbones in most settings. Nevertheless, we see stark differences in the LLMs' ability to make use of tools, such as experiential learning, adaptive retrieval, and reflection cycles. Strikingly, Llama-3 shows up to 92% relative improvements with the notebook tool that allows for writing and editing notes that persist across cases. To further scrutinize our clinical simulations, we leverage real-world electronic health records, perform a clinical reader study, perturb agents with biases, and explore patient-centric metrics that this interactive environment enables.",
+    "url": "https://doi.org/10.1038/s41746-026-02674-7",
+    "authors": [
+      "Samuel Schmidgall",
+      "Rojin Ziaei",
+      "Carl Harris",
+      "Jae‐Joong Kim",
+      "Eduardo Pontes Reis",
+      "Jeffrey Jopling",
+      "Michael Moor"
+    ],
+    "tags": [
+      "Leverage (statistics)",
+      "Computer science",
+      "Benchmark (surveying)",
+      "Machine learning",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-04-27",
+    "doi": "https://doi.org/10.1038/s41746-026-02674-7",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4414687526",
+    "name": "AIGN OS -AI Agents: The AI Governance Stack as a New Regulatory Infrastructure | Patrick Upmann",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.2139/ssrn.5543162",
+    "authors": [
+      "Patrick Upmann"
+    ],
+    "tags": [
+      "Corporate governance",
+      "Transformative learning",
+      "Stack (abstract data type)",
+      "Computer security",
+      "Certification"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-01-01",
+    "doi": "https://doi.org/10.2139/ssrn.5543162",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W7131652822",
+    "name": "Large language models and AI agents in disaster-resilient infrastructure: concepts, applications, pathways, and challenges",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.ress.2026.112497",
+    "authors": [
+      "Jiawei Cui",
+      "Changhai Zhai",
+      "Yong Wang",
+      "Yuhao Li"
+    ],
+    "tags": [
+      "Computer science",
+      "Workflow",
+      "Key (lock)",
+      "Task (project management)",
+      "Resilience (materials science)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-02-26",
+    "doi": "https://doi.org/10.1016/j.ress.2026.112497",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4381330160",
+    "name": "AI versus Human: Rethinking the Role of Agent Knowledge in Consumers’ Coping Mechanism Related to Influencer Marketing",
+    "source": "openalex",
+    "abstract": "Despite the exponential growth of influencer marketing, little research has examined how consumers’ coping mechanism differs with two types of influencers (AI vs. human). Drawing on the persuasion knowledge model, action identification theory, and construal-level theory, we redefined agent knowledge as a core belief that shapes different autonomy perceptions of the influencers. Employing two single-factor between-subject experiments, Study 1 revealed that consumers perceived AI (vs. human) as a heteronomous agent, which guides a low-level construal devoid of perceived superordinate intentions. Building on these findings, Study 2 showed that consumers’ agent knowledge of AI (vs. human) negatively affected attitudinal and behavioral changes, being sequentially mediated by source credibility and perceived persuasion effectiveness, respectively. Theoretical and practical implications are discussed.",
+    "url": "https://doi.org/10.1080/15252019.2023.2217830",
+    "authors": [
+      "Dongchan Lee",
+      "Chang‐Dae Ham"
+    ],
+    "tags": [
+      "Persuasion",
+      "Influencer marketing",
+      "Psychology",
+      "Credibility",
+      "Construal level theory"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2023-06-20",
+    "doi": "https://doi.org/10.1080/15252019.2023.2217830",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W1494976167",
+    "name": "Epistemic Logic for AI and Computer Science",
+    "source": "openalex",
+    "abstract": "Epistemic logic has grown from its philosophical beginnings to find diverse applications in computer science as a means of reasoning about the knowledge and belief of agents. This book, based on courses taught at universities and summer schools, provides a broad introduction to the subject; many exercises are included together with their solutions. The authors begin by presenting the necessary apparatus from mathematics and logic, including Kripke semantics and the well-known modal logics K, T, S4 and S5. Then they turn to applications in the contexts of distributed systems and artificial intelligence: topics that are addressed include the notions of common knowledge, distributed knowledge, explicit and implicit belief, the interplays between knowledge and time, and knowledge and action, as well as a graded (or numerical) variant of the epistemic operators. The problem of logical omniscience is also discussed extensively. Halpern and Moses' theory of honest formulae is covered, and a digression is made into the realm of non-monotonic reasoning and preferential entailment. Moore's autoepistemic logic is discussed, together with Levesque's related logic of 'all I know'. Furthermore, it is shown how one can base default and counterfactual reasoning on epistemic logic.",
+    "url": "https://doi.org/10.1017/cbo9780511569852",
+    "authors": [
+      "John-Jules Meyer",
+      "Wiebe van der Hoek"
+    ],
+    "tags": [
+      "Epistemic modal logic",
+      "Non-monotonic logic",
+      "Epistemology",
+      "Counterfactual thinking",
+      "Modal operator"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "1995-11-24",
+    "doi": "https://doi.org/10.1017/cbo9780511569852",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4393346483",
+    "name": "Preserving paradata for accountability of semi-autonomous AI agents in dynamic environments: An archival perspective",
+    "source": "openalex",
+    "abstract": "This paper proposes the category of real-time artificial intelligence (AI) systems as an application of computerized control systems in dynamic, time-constrained contexts normally managed by human intelligence. Noting the accountability challenges which these systems introduce, the paper posits the need for robust documentation and records capacities within these systems. The paper surveys four real-time AI systems with significant records needs: autonomous vehicles, online content targeting systems, mixed-reality tools for surgical contexts, and digital twin systems in airport facilities management. The paper identifies paradata, or the data leading up to an output in a system's operation, as a key data category necessitating preservation for full transparency in the records generated by these systems. Paradata is defined as “information about the procedure(s) and tools used to create and process information resources, along with information about the persons carrying out those procedures.” Paradata uncovers opaque technological processes underlying the production of other datasets and at a granular level must be identified and preserved to delineate the boundaries between human and system agency in semi-autonomous systems. With a basis in control theory, the paper finally offers a framework for assessing the functions of real-time AI systems' operations and their documentation and records needs.",
+    "url": "https://doi.org/10.1016/j.teler.2024.100135",
+    "authors": [
+      "Scott Cameron",
+      "Babak Hamidzadeh"
+    ],
+    "tags": [
+      "Perspective (graphical)",
+      "Accountability",
+      "Computer science",
+      "Human–computer interaction",
+      "Multimedia"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-03-30",
+    "doi": "https://doi.org/10.1016/j.teler.2024.100135",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4403588540",
+    "name": "ARIA-QA: AI-agent based requirements inspection and analysis through question answering",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1007/s11334-024-00589-8",
+    "authors": [
+      "Chitrak Biswas",
+      "Souvick Das"
+    ],
+    "tags": [
+      "Computer science",
+      "Question answering",
+      "Software engineering",
+      "Natural language processing"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-10-21",
+    "doi": "https://doi.org/10.1007/s11334-024-00589-8",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W39445351",
+    "name": "O-Plan: A Web-Based AI Planning Agent",
+    "source": "openalex",
+    "abstract": "In these demonstrations we show O-Plan, an AI planning agent working over the WWW. There are a number of demonstrations ranging from a simple “single shot” generation of Unix systems administration scripts through to comprehensive use of AI technologies across the whole planning lifecycle in military and civilian crisis situations The applications are derived from actual user requirements and domain knowledge. The AI planning technologies demonstrated include: • Domain knowledge elicitation • Rich plan representation and use • Hierarchical Task Network Planning • Detailed constraint management • Goal structure-based plan monitoring • Dynamic issue handling • Plan repair in low and high tempo situations • Interfaces for users with different roles • Management of planning and execution workflow The featured demonstrations, and others, are available at http://www.aiai.ed.ac.uk/~oplan/isd/",
+    "url": "https://openalex.org/W39445351",
+    "authors": [
+      "Austin Tate",
+      "Jeff Dalton",
+      "John Levine"
+    ],
+    "tags": [
+      "Workflow",
+      "Computer science",
+      "Automated planning and scheduling",
+      "Plan (archaeology)",
+      "Domain (mathematical analysis)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2000-07-30",
+    "doi": "",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4411244250",
+    "name": "The Hidden Dangers of Browsing AI Agents",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.2139/ssrn.5290351",
+    "authors": [
+      "Mykyta Mudryi",
+      "Markiyan Chaklosh",
+      "Grzegorz Wójcik"
+    ],
+    "tags": [
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-01-01",
+    "doi": "https://doi.org/10.2139/ssrn.5290351",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W7128163610",
+    "name": "AI agents in service experience: towards autonomous and conscious agency",
+    "source": "openalex",
+    "abstract": "Purpose Despite rapid advancements in AI and large language models (LLMs), there remains a critical gap in understanding how AI agents function as service actors and how they influence service processes and outcomes. This study addresses this gap by integrating AI agency and service experience dimensions, categorizing AI capabilities across six levels, from passive automation to fully conscious AI, and examining their impact on service workflows, human and multi-agent collaboration, and decision-making. Design/methodology/approach This research adopts a conceptual approach, drawing from literature on service experience and AI agency. It illustrates real-world applications of AI agents in service settings and outlines a future research agenda to explore the strategic and ethical implications of AI-driven service ecosystems. Findings AI agents transform service experiences by shaping action, collaboration, processes, outcomes, and learning. Automaticity AI enhances process efficiency through task automation but lacks adaptability, while Relational AI improves personalization in customer and employee engagement. Cognitive AI enables data-driven decision-making, whereas Autonomous AI optimizes workflows without human oversight. Innovator AI drives service transformation, generating novel solutions such as AI-driven drug discovery, while Conscious Organizational AI raises governance and ethical concerns for strategic decision makers. Originality/value This study advances AI agency theory in service experience, offering a structured framework to guide AI agent integration and its impact on context, process, collaboration, action, outcome and learning.",
+    "url": "https://doi.org/10.1108/josm-04-2025-0187",
+    "authors": [
+      "Mohamed Shaikh",
+      "Ashen Joseph",
+      "Helen Zhao",
+      "Abdullah Al Assadi",
+      "Jan Hendrik Bluemel",
+      "David Díaz",
+      "Mohamed Zaki"
+    ],
+    "tags": [
+      "Knowledge management",
+      "Service (business)",
+      "Agency (philosophy)",
+      "Computer science",
+      "Service design"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-02-06",
+    "doi": "https://doi.org/10.1108/josm-04-2025-0187",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W1971441460",
+    "name": "Methods for task allocation via agent coalition formation",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/s0004-3702(98)00045-9",
+    "authors": [
+      "Onn Shehory",
+      "Sarit Kraus"
+    ],
+    "tags": [
+      "Computer science",
+      "Task (project management)",
+      "Set (abstract data type)",
+      "Domain (mathematical analysis)",
+      "Order (exchange)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "1998-05-01",
+    "doi": "https://doi.org/10.1016/s0004-3702(98)00045-9",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4280654158",
+    "name": "Meaningful human control: actionable properties for AI system development",
+    "source": "openalex",
+    "abstract": "Abstract How can humans remain in control of artificial intelligence (AI)-based systems designed to perform tasks autonomously? Such systems are increasingly ubiquitous, creating benefits - but also undesirable situations where moral responsibility for their actions cannot be properly attributed to any particular person or group. The concept of meaningful human control has been proposed to address responsibility gaps and mitigate them by establishing conditions that enable a proper attribution of responsibility for humans; however, clear requirements for researchers, designers, and engineers are yet inexistent, making the development of AI-based systems that remain under meaningful human control challenging. In this paper, we address the gap between philosophical theory and engineering practice by identifying, through an iterative process of abductive thinking, four actionable properties for AI-based systems under meaningful human control, which we discuss making use of two applications scenarios: automated vehicles and AI-based hiring. First, a system in which humans and AI algorithms interact should have an explicitly defined domain of morally loaded situations within which the system ought to operate. Second, humans and AI agents within the system should have appropriate and mutually compatible representations. Third, responsibility attributed to a human should be commensurate with that human’s ability and authority to control the system. Fourth, there should be explicit links between the actions of the AI agents and actions of humans who are aware of their moral responsibility. We argue that these four properties will support practically minded professionals to take concrete steps toward designing and engineering for AI systems that facilitate meaningful human control.",
+    "url": "https://doi.org/10.1007/s43681-022-00167-3",
+    "authors": [
+      "Luciano Cavalcante Siebert",
+      "Maria Luce Lupetti",
+      "Evgeni Aizenberg",
+      "Niek Beckers",
+      "Arkady Zgonnikov",
+      "Herman Veluwenkamp",
+      "David A. Abbink",
+      "Elisa Giaccardi",
+      "Geert‐Jan Houben",
+      "Catholijn M. Jonker",
+      "Jeroen van den Hoven",
+      "Deborah Förster",
+      "Reginald L. Lagendijk"
+    ],
+    "tags": [
+      "Control (management)",
+      "Process (computing)",
+      "Computer science",
+      "Attribution",
+      "Domain (mathematical analysis)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2022-05-18",
+    "doi": "https://doi.org/10.1007/s43681-022-00167-3",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W7155014162",
+    "name": "Design and Validation of a Machine Identity Governance Framework for AI Agents in Multi-Cloud Environments",
+    "source": "openalex",
+    "abstract": "The rapid expansion of multi-cloud infrastructures and AI-driven automation has created a critical governance challenge: managing machine identities. Service accounts, APIs, and autonomous AI agents now handle sensitive data across AWS, Azure, and Google Cloud, yet traditional IAM systems cannot track or control these non-human entities effectively. This paper introduces the Machine Identity Governance Framework (MIGF), a unified model for monitoring, verifying, and governing machine identities in distributed cloud ecosystems. MIGF integrates a Lifecycle Governance Engine for automated identity lifecycle control, Autonomous Access Logging for tamper-evident audit trails, and Cross-Cloud Identity Mapping to harmonize credentials across providers. Tested on a real multi-cloud AI pipeline, MIGF reduced untracked service accounts by 52 %, improved audit response time by 41 %, and significantly enhanced lineage completeness. As machine identities are projected to vastly outnumber human ones by 2030, MIGF offers a scalable, policy-aligned solution for ensuring accountability, traceability, and security in AI-driven operations.",
+    "url": "https://doi.org/10.1109/southeastcon63549.2026.11476363",
+    "authors": [
+      "Kaushik Jangiti"
+    ],
+    "tags": [
+      "Computer science",
+      "Artificial intelligence",
+      "Identity (music)",
+      "Corporate governance",
+      "Knowledge management"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-02-20",
+    "doi": "https://doi.org/10.1109/southeastcon63549.2026.11476363",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4392248989",
+    "name": "Managing Linux Servers with Llm-Based Ai Agents: An Empirical Evaluation with Gpt4",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.2139/ssrn.4741492",
+    "authors": [
+      "Qing Cao",
+      "Feiyi Wang",
+      "Lisa C. Lindley",
+      "Zejiang Wang"
+    ],
+    "tags": [
+      "Server",
+      "Computer science",
+      "Operating system",
+      "Empirical research",
+      "Mathematics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-01-01",
+    "doi": "https://doi.org/10.2139/ssrn.4741492",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4402733290",
+    "name": "Building AI Agents for Autonomous Clouds: Challenges and Design Principles",
+    "source": "openalex",
+    "abstract": "The rapid growth in the use of Large Language Models (LLMs) and AI Agents as part of software development and deployment is revolutionizing the information technology landscape. While code generation receives significant attention, a higher-impact application lies in using AI agents for operational resilience of cloud services, which currently require significant human effort and domain knowledge. There is a growing interest in AI for IT Operations (AIOps) which aims to automate complex operational tasks, like fault localization and root cause analysis, thereby reducing human intervention and customer impact. However, achieving the vision of autonomous and self-healing clouds through AIOps is hampered by the lack of standardized frameworks for building, evaluating, and improving AIOps agents. This vision paper lays the groundwork for such a framework by first framing the requirements and then discussing design decisions that satisfy them. We also propose AIOpsLab, a prototype implementation leveraging agent-cloud-interface that orchestrates an application, injects real-time faults using chaos engineering, and interfaces with an agent to localize and resolve the faults. We report promising results and lay the groundwork to build a modular and robust framework for building, evaluating, and improving agents for autonomous clouds.",
+    "url": "https://doi.org/10.48550/arxiv.2407.12165",
+    "authors": [
+      "Manish Shetty",
+      "Yinfang Chen",
+      "Gagan Somashekar",
+      "Minghua Ma",
+      "Yogesh Simmhan",
+      "Xuchao Zhang",
+      "Jonathan Mace",
+      "Dax Vandevoorde",
+      "Pedro Las-Casas",
+      "Shachee Mishra Gupta",
+      "Suman Nath",
+      "Chetan Bansal",
+      "Saravan Rajmohan"
+    ],
+    "tags": [
+      "Computer science",
+      "Systems engineering",
+      "Data science",
+      "Engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-07-16",
+    "doi": "https://doi.org/10.48550/arxiv.2407.12165",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W7154647847",
+    "name": "Human– AI partnerships: Living and working with AI Assistants, AI Agents, and AI Companions",
+    "source": "openalex",
+    "abstract": "Abstract As the use of interactive artificial intelligence (AI) expands exponentially, it will permeate into many aspects of consumers' lives, including decision‐making and consumption. As marketers, it is important to understand how consumers currently use interactive AI and how this usage will evolve. We propose that the increased functionality of interactive AI will encourage consumers to view many interactive AI products as long‐term partners, instead of as static tools for finite tasks. Consequently, the future uses of interactive AI will be determined not only by the advancement of the underlying technology but also by consumer responses to repeated interactions with AI technology. We propose a taxonomy of human–AI partnerships (i.e., AI Assistants, AI Agents, AI Companions), provide a profile for each type of AI partner, anticipate how AI partnerships will evolve over time, and discuss how this evolution will influence AI usage. Finally, we provide an extensive agenda for future research.",
+    "url": "https://doi.org/10.1002/jcpy.70025",
+    "authors": [
+      "Ripinka Koli Patil",
+      "Dan Hamilton Rice",
+      "Chris Janiszewski"
+    ],
+    "tags": [
+      "Computer science",
+      "Artificial intelligence",
+      "Applications of artificial intelligence",
+      "Taxonomy (biology)",
+      "Human–computer interaction"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2026-04-16",
+    "doi": "https://doi.org/10.1002/jcpy.70025",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4399712723",
+    "name": "Governance in Silico: Experimental Sandbox for Policymaking over AI Agents",
+    "source": "openalex",
+    "abstract": "The concept of 'governance in silico' summarizes and questions the design and policy experiments with synthetic data and content in public policy, such as synthetic data simulations, AI agents, and digital twins. While it acknowledges the risks of hallucinations, errors, and biases, often reflected in the parameters and weights of the ML models, it focuses on the prompts. Prompts enable stakeholder negotiation and representation of diverse agendas and perspectives that support experimental and inclusive policymaking. To explore the prompts' engagement qualities, we conducted a pilot study on co-designing AI agents for negotiating contested aspects of the EU Artificial Intelligence Act (EU AI Act). The experiments highlight the value of an 'exploratory sandbox' approach, which fosters political agency through direct representation over AI agent simulations. We conclude that 'governance in silico' exploratory approach enhances public consultation and engagement and presents a valuable alternative to the frequently overstated promises of evidence-based policy.",
+    "url": "https://doi.org/10.21606/drs.2024.200",
+    "authors": [
+      "Denisa Kera",
+      "Eilat Navon",
+      "Galit Wellner",
+      "Frantisek Kalvas"
+    ],
+    "tags": [
+      "Sandbox (software development)",
+      "In silico",
+      "Corporate governance",
+      "Computer science",
+      "Computer security"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2024-06-16",
+    "doi": "https://doi.org/10.21606/drs.2024.200",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
+  },
+  {
+    "id": "oa:W4410731786",
+    "name": "AI Agents: Potential implications for IS Research?",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.jsis.2025.101906",
+    "authors": [
+      "Shan L. Pan",
+      "Rohit Nishant",
+      "Tuure Tuunanen",
+      "Jyoti Choudrie"
+    ],
+    "tags": [
+      "Data science",
+      "Psychology",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agent-ecosystem"
+    ],
+    "publishedDate": "2025-05-26",
+    "doi": "https://doi.org/10.1016/j.jsis.2025.101906",
+    "addedAt": "2026-08-31T14:45:11.911Z",
+    "updatedAt": "2026-08-31T14:45:11.911Z"
   }
 ]
