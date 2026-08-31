@@ -6,133 +6,133 @@
     {
       "metric": "freshness",
       "site": "agent-ecosystem",
-      "value": 0.002959401284677011,
+      "value": 0.0024671760587339046,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "ai4science",
-      "value": 0.002733386493259006,
+      "value": 0.0024666783735487197,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "alien-minerals",
-      "value": 0.0036874218495686847,
+      "value": 0.002466088095770942,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "biocomputing",
-      "value": 0.0036138350762261284,
+      "value": 0.00246550939489294,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "bionic-ai",
-      "value": 0.0035744607176604096,
+      "value": 0.002464872820818866,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "brain-science",
-      "value": 0.0033268837003354672,
+      "value": 0.0024643982866075303,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "deep-sea-tech",
-      "value": 0.003371234823156286,
+      "value": 0.002463726990311234,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "embodied-ai",
-      "value": 0.0029095063018798827,
+      "value": 0.0024631830116554542,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "exo-science",
-      "value": 0.003006194480613426,
+      "value": 0.0022798730412235966,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "genetech-tools",
-      "value": 0.0030491798937762227,
+      "value": 0.002462199215359158,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "life-science",
-      "value": 0.003293134256998698,
+      "value": 0.002321458723280165,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "low-altitude",
-      "value": 0.0027076114569769966,
+      "value": 0.0024612385700367116,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "new-energy",
-      "value": 0.003262208836873372,
+      "value": 0.0024608219033700448,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "nuclear-energy",
-      "value": 0.003212846213446723,
+      "value": 0.0024602894987883392,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "privacy-computing",
-      "value": 0.0026069765896267363,
+      "value": 0.0024597223691587094,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "quantum-computing",
-      "value": 0.0039016544878924335,
+      "value": 0.002459224686799226,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "robot-parts",
-      "value": 0.0031769324465151186,
+      "value": 0.002458761723836263,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "sat-6g",
-      "value": 0.002681107276633934,
+      "value": 0.0021838778601752386,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "semiconductor",
-      "value": 0.0027995196702745224,
+      "value": 0.0022227782468442563,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "spatial-computing",
-      "value": 0.002650748994615343,
+      "value": 0.002457361263699002,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "synbio-manufacturing",
-      "value": 0.002844530512491862,
+      "value": 0.0024568751525878905,
       "slo": 7
     },
     {
       "metric": "freshness",
       "site": "tcm-tools",
-      "value": 0.00312377358895761,
+      "value": 0.0024564584887469256,
       "slo": 7
     },
     {
@@ -186,7 +186,7 @@
     {
       "metric": "entities",
       "site": "exo-science",
-      "value": 9987,
+      "value": 10000,
       "slo": 500
     },
     {
@@ -198,7 +198,7 @@
     {
       "metric": "entities",
       "site": "life-science",
-      "value": 9998,
+      "value": 10000,
       "slo": 500
     },
     {
@@ -240,13 +240,13 @@
     {
       "metric": "entities",
       "site": "sat-6g",
-      "value": 9998,
+      "value": 10000,
       "slo": 500
     },
     {
       "metric": "entities",
       "site": "semiconductor",
-      "value": 9999,
+      "value": 10000,
       "slo": 500
     },
     {
@@ -277,5 +277,5 @@
     }
   ],
   "recommendations": [],
-  "timestamp": "2026-08-31T14:49:29.957Z"
+  "timestamp": "2026-08-31T20:36:50.047Z"
 }

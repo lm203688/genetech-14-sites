@@ -55049,8 +55049,27 @@
     "source": "europepmc",
     "abstract": "",
     "url": "https://doi.org/10.1038/s41586-024-07768-4",
-    "authors": [],
-    "tags": [],
+    "authors": [
+      "Néstor Espinoza",
+      "Maria E. Steinrueck",
+      "James Kirk",
+      "Ryan J. MacDonald",
+      "Arjun B. Savel",
+      "Anastasia Triantafillides",
+      "Eliza M.-R. Kempton",
+      "Matthew M. Murphy",
+      "L. Carone",
+      "Maria Zamyatina",
+      "David Lewis",
+      "Dominic Samra"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Astrobiology",
+      "Biology",
+      "Astronomy",
+      "Planet"
+    ],
     "confidence": 0.8,
     "sites": [
       "exo-science"
@@ -55058,7 +55077,7 @@
     "publishedDate": "2024",
     "doi": "10.1038/s41586-024-07768-4",
     "addedAt": "2026-08-31T06:35:58.894Z",
-    "updatedAt": "2026-08-31T06:36:14.072Z"
+    "updatedAt": "2026-08-31T20:33:32.297Z"
   },
   {
     "id": "doi:10.1073/pnas.2309312120",
@@ -229863,5 +229882,402 @@
     "doi": "10.3847/1538-4357/adf068",
     "addedAt": "2026-08-31T14:45:09.279Z",
     "updatedAt": "2026-08-31T14:45:09.279Z"
+  },
+  {
+    "id": "oa:W3091197188",
+    "name": "Haze Formation in Warm H2-rich Exoplanet Atmospheres",
+    "source": "openalex",
+    "abstract": "Abstract New observing capabilities coming online over the next few years will provide opportunities for characterization of exoplanet atmospheres. However, clouds/hazes could be present in the atmospheres of many exoplanets, muting the amplitude of spectral features. We use laboratory simulations to explore photochemical haze formation in H2-rich exoplanet atmospheres at 800 K with metallicity either 100 or 1000 times solar. We find that haze particles are produced in both simulated atmospheres with small particle size (20–140 nm) and relatively low production rate (2.4 × 10−5 to 9.7 × 10−5 mg cm−3 hr−1), but the particle size and production rate is dependent on the initial gas mixtures and the energy sources used in the simulation experiments. The gas phase mass spectra show that complex chemical processes happen in these atmospheres and generate new gas products that can further react to form larger molecules and solid haze particles. Two H2-rich atmospheres with similar C/O ratios (∼0.5) yield different haze particle size, haze production rate, and gas products, suggesting that both the elemental abundances and their bonding environments in an atmosphere can significantly affect the photochemistry. There is no methane (CH4) in our initial gas mixtures, although CH4 is often believed to be required to generate organic hazes. However, haze production rates from our experiments with different initial gas mixtures indicate that CH4 is neither required to generate organic hazes nor necessary to promote the organic haze formation. The variety and relative yield of the gas products indicate that CO and N2 enrich chemical reactions in H2-rich atmospheres.",
+    "url": "https://doi.org/10.3847/psj/abb1a4",
+    "authors": [
+      "Chao He",
+      "Sarah M. Hörst",
+      "Nikole K. Lewis",
+      "Xinting Yu",
+      "Julianne I. Moses",
+      "Patricia McGuiggan",
+      "Mark S. Marley",
+      "Eliza M.-R. Kempton",
+      "Caroline Morley",
+      "Jeff A. Valenti",
+      "V. Vuitton"
+    ],
+    "tags": [
+      "Haze",
+      "Exoplanet",
+      "Atmosphere (unit)",
+      "Yield (engineering)",
+      "Particle (ecology)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2020-09-01",
+    "doi": "https://doi.org/10.3847/psj/abb1a4",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W2153900809",
+    "name": "History of water loss and atmospheric O2 buildup on rocky exoplanets near M dwarfs",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.epsl.2015.09.051",
+    "authors": [
+      "Feng Tian"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Atmosphere (unit)",
+      "Astrobiology",
+      "Circumstellar habitable zone",
+      "Stars"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2015-11-03",
+    "doi": "https://doi.org/10.1016/j.epsl.2015.09.051",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W3101345406",
+    "name": "The \"missing link\": a 4-day period transiting exoplanet around OGLE-TR-111",
+    "source": "openalex",
+    "abstract": "4 pages, 4 figures, to be published in A&A Letters",
+    "url": "https://doi.org/10.1051/0004-6361:200400066/pdf",
+    "authors": [
+      "F. Pont",
+      "F. Bouchy",
+      "D. Queloz",
+      "N. C. Santos",
+      "C. Melo",
+      "M. Mayor",
+      "S. Udry"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Hot Jupiter",
+      "Transit (satellite)",
+      "Radial velocity",
+      "RADIUS"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2004-01-01",
+    "doi": "https://doi.org/10.1051/0004-6361:200400066/pdf",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W2968091153",
+    "name": "Tidal response of rocky and ice-rich exoplanets",
+    "source": "openalex",
+    "abstract": "The amount of detected planets with sizes comparable to that of the Earth is increasing drastically. Most of the Earth-size planet candidates orbit at close distances from their central star, and therefore are subjected to large tidal forces. Accurate determination of the tidal parameters of exoplanets taking into account their interior structure and rheology is essential to better constrain their rotational and orbital history, and hence their impact on climate stability and planetary habitability. In the present study, we compute the tidal response of rocky and ice-rich solid exoplanets for masses ranging between 0.1 and 10 Earth masses using a multilayer approach and an Andrade rheology. We show that the amplitude of tidal response, characterized by the gravitational Love number, k 2 , is mostly controlled by self-gravitation and increases as a function of planet mass. For rocky planets, k 2 depends mostly on the relative size of the iron core, and hence on the bulk iron fraction. For ice-rich planets, the presence of outer ice layers reduces the amplitude of tidal response compared to ice-free rocky planets of similar masses. For both types of planet (rocky and ice-rich), we propose relatively simple scaling laws to predict the potential Love number value as a function of radius, planet mass and composition. For the dissipation rate, characterized by the Q −1 factor, we did not find any direct control by the planet mass. The dissipation rate is mostly sensitive to the forcing frequency and to the internal viscosity, which depends on the thermal evolution of the planet, which is in turn controlled by the planet mass and composition. The methodology described in the present study can be applied to any kind of solid planet and can be easily implemented into any thermal and orbital evolution code.",
+    "url": "https://doi.org/10.1051/0004-6361/201935297",
+    "authors": [
+      "G. Tobie",
+      "O. Grasset",
+      "Caroline Dumoulin",
+      "A. Mocquet"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Planet",
+      "Physics",
+      "Tidal heating",
+      "Terrestrial planet"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2019-08-13",
+    "doi": "https://doi.org/10.1051/0004-6361/201935297",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W2064058024",
+    "name": "ESCAPING PARTICLE FLUXES IN THE ATMOSPHERES OF CLOSE-IN EXOPLANETS. I. MODEL OF HYDROGEN",
+    "source": "openalex",
+    "abstract": "A multi-fluid model for an atomic hydrogen–proton mixture in the upper atmosphere of an extrasolar planet is presented when the continuity and momentum equations of each component have already been solved with an energy equation. The particle-number density, temperature distribution, and structure of velocity can be found by using the model. I chose two special objects, HD 209458b and HD 189733b, for discussion and concluded that their predicted mass-loss rates are consistent with those observed. The most important physical process in coupling each component is the charge exchange, which couples atomic hydrogen tightly with protons. Most of the hydrogen escapes from hot Jupiters as protons, especially in the young star–planet system. I found that the single-fluid model can describe the escape of particles when the mass-loss rate is higher than a few times 10 9 g s −1 , while below 10 9 g s −1 the multi-fluid model is more suitable because of the decoupling of particles. Assuming an energy limit, I found that the predicted mass-loss rates of HD 189733b are a factor of 10 larger than those calculated by my models because of a high degree of ionization. For ionized wind, which is mainly composed of protons, assuming an energy limit is no longer effective. I fitted the mass-loss rates of the ionized wind as a function of F UV by calculating the variation of the mass-loss rates with UV fluxes.",
+    "url": "https://doi.org/10.1088/0004-637x/733/2/98",
+    "authors": [
+      "Jianheng Guo"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Planet",
+      "Physics",
+      "Ionization",
+      "Decoupling (probability)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2011-05-11",
+    "doi": "https://doi.org/10.1088/0004-637x/733/2/98",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W3105190422",
+    "name": "Accurate radius and mass of the transiting exoplanet OGLE-TR-132b",
+    "source": "openalex",
+    "abstract": "The exoplanet OGLE-TR-132b belongs to the new class of very hot giant planets, together with OGLE-TR-56b and OGLE-TR-113b, detected by their transits. Recently, radial velocity measurements provided a planetary mass estimate for OGLE-TR-132b. The planet parameters, however, were poorly cons trained, because of the very shallow transit in the OGLE light curve. In this letter, based on new VLT/FORS2 photometric follow-up of OGLE-TR-132 of unprecedented quality (1.2 millimagnitude relative photometry), we confirm the planetary nature of the orbiting object, and we derive an accurate measurement of its radius and mass: 1.13 +- 0.08 R_J and 1.19 +- 0.13 M_J. The refined ephemeris of OGLE-TR-132 transits is T_0 = 2453142.5888 and P = 1.689857 days.",
+    "url": "https://doi.org/10.1051/0004-6361:200400048/pdf",
+    "authors": [
+      "C. Moutou",
+      "F. Pont",
+      "F. Bouchy",
+      "M. Mayor"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Ephemeris",
+      "Photometry (optics)",
+      "Planet",
+      "Physics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2004-01-01",
+    "doi": "https://doi.org/10.1051/0004-6361:200400048/pdf",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W1974151594",
+    "name": "Observing Exoplanets with SOFIA",
+    "source": "openalex",
+    "abstract": "In this article we present an analysis of possible science cases for NASA's Stratospheric Observatory for Infrared Astronomy (SOFIA) in the field of extrasolar planet detection and characterization. Advantages of SOFIA and its instruments for exoplanet observations are illustrated and possible targets are introduced. Possible future instrumentation is discussed.",
+    "url": "https://doi.org/10.1086/656386",
+    "authors": [
+      "Daniel Angerhausen",
+      "A. Krabbe",
+      "C. Iserlohe"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Observatory",
+      "Instrumentation (computer programming)",
+      "Planet",
+      "Remote sensing"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2010-08-17",
+    "doi": "https://doi.org/10.1086/656386",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W4390970107",
+    "name": "Clouds and Clarity: Revisiting Atmospheric Feature Trends in Neptune-size Exoplanets",
+    "source": "openalex",
+    "abstract": "Abstract Over the last decade, precise exoplanet transmission spectroscopy has revealed the atmospheres of dozens of exoplanets, driven largely by observatories like the Hubble Space Telescope. One major discovery has been the ubiquity of atmospheric aerosols, often blocking access to exoplanet chemical inventories. Tentative trends have been identified, showing that the clarity of planetary atmospheres may depend on equilibrium temperature. Previous work has often grouped dissimilar planets together in order to increase the statistical power of any trends, but it remains unclear from observed transmission spectra whether these planets exhibit the same atmospheric physics and chemistry. We present a reanalysis of a smaller, more physically similar sample of 15 exo-Neptune transmission spectra across a wide range of temperatures (200–1000 K). Using condensation cloud and hydrocarbon haze models, we find that the exo-Neptune population is best described by low cloud sedimentation efficiency ( f sed ∼ 0.1) and high metallicity (100 × solar). There is an intrinsic scatter of ∼0.5 scale height, perhaps evidence of stochasticity in these planets’ formation processes. Observers should expect significant attenuation in transmission spectra of Neptune-size exoplanets, up to 6 scale heights for equilibrium temperatures between 500 and 800 K. With JWST's greater wavelength sensitivity, colder (<500 K) planets should be high-priority targets given their clearer atmospheres, and the need to distinguish between the “super-puffs” and more typical gas-dominated planets.",
+    "url": "https://doi.org/10.3847/2041-8213/ad1b5c",
+    "authors": [
+      "Jonathan Brande",
+      "Ian J. M. Crossfield",
+      "Laura Kreidberg",
+      "Caroline Morley",
+      "Travis Barman",
+      "Björn Benneke",
+      "Jessie L. Christiansen",
+      "Diana Dragomir",
+      "Jonathan J. Fortney",
+      "Thomas P. Greene",
+      "Kevin K. Hardegree-Ullman",
+      "Andrew W. Howard",
+      "Heather A. Knutson",
+      "Joshua D. Lothringer",
+      "T. M. Evans"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Planet",
+      "Neptune",
+      "Gas giant",
+      "Astrobiology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2024-01-01",
+    "doi": "https://doi.org/10.3847/2041-8213/ad1b5c",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W3104019727",
+    "name": "Improved modeling of the Rossiter-McLAUGHLIN effect for transiting exoplanets",
+    "source": "openalex",
+    "abstract": "We present an improved formula for the anomalous radial velocity of the star during planetary transits due to the Rossiter-McLaughlin (RM) effect. The improvement comes from a more realistic description of the stellar absorption line profiles, taking into account stellar rotation, macroturbulence, thermal broadening, pressure broadening, and instrumental broadening. Although the formula is derived for the case in which radial velocities are measured by cross-correlation, we show through numerical simulations that the formula accurately describes the cases where the radial velocities are measured with the iodine absorption-cell technique. The formula relies on prior knowledge of the parameters describing macroturbulence, instrumental broadening, and other broadening mechanisms, but even 30% errors in those parameters do not significantly change the results in typical circumstances. We show that the new analytic formula agrees with previous ones that had been computed on a case-by-case basis via numerical simulations. Finally, as one application of the new formula, we reassess the impact of the differential rotation on the RM velocity anomaly. We show that differential rotation of a rapidly rotating star may have a significant impact on future RM observations.",
+    "url": "https://openalex.org/W3104019727",
+    "authors": [
+      "Hirano, T.",
+      "Suto, Y.",
+      "Winn, J.N.",
+      "Taruya, A.",
+      "Narita, N.",
+      "Albrecht, S.",
+      "佐藤文衛",
+      "Bunei Sato"
+    ],
+    "tags": [
+      "Physics",
+      "Exoplanet",
+      "Radial velocity",
+      "Differential rotation",
+      "Rotation (mathematics)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2011-08-01",
+    "doi": "",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W3100351791",
+    "name": "Effect of the stellar absorption line centre-to-limb variation on exoplanet transmission spectrum observations",
+    "source": "openalex",
+    "abstract": "Transit spectroscopy is one of the most commonly used techniques for exoplanet atmosphere characterisation. This technique has been used to detect ionised and neutral species in exoplanet atmospheres by comparing the observed stellar lines in and out of transit. The centre-to-limb variation (CLV) of the stellar lines across the stellar disk is an important effect for transmission spectroscopy, since it results in a change of stellar line depth when the planet transits different parts of the stellar disk. We reanalysed the transit data of HD 189733b taken with the HARPS spectrograph to study the CLV effect during transit. The transmission light curve of the Na i D line so obtained shows a clear imprint of the CLV effect. We used a one-dimensional non-LTE stellar spectral model to simulate the CLV effect. After applying the correction, the measurement of the Na i absorption in the atmosphere of HD 189733b becomes better determined. We compared the CLV effect of HD 189733b to that of HD 209458b. The CLV effects are different for these two benchmark planetary systems and this is attributed to their different stellar effective temperatures and transit impact parameters. We then explored the general CLV effect that occurs during exoplanet transits. Normally, a star with a lower effective temperature exhibits a stronger CLV effect and its CLV feature extends over a relatively broad wavelength range. The transit impact parameter (b) describes the transit trajectory on the stellar disk and thus determines the actual manifestation of the CLV effect. We introduced a b-diagram which describes the behaviour of the CLV effect as the function of different impact parameters. With improving observational precision, a careful modelling and correction of the CLV effect is necessary for exoplanet atmosphere characterisation using transit spectroscopy.",
+    "url": "https://doi.org/10.1051/0004-6361/201630144/pdf",
+    "authors": [
+      "F. Yan",
+      "Ε. Πάλλη",
+      "R. A. E. Fosbury",
+      "M. G. Petr-Gotzens",
+      "Th. Henning"
+    ],
+    "tags": [
+      "Exoplanet",
+      "Physics",
+      "Transit (satellite)",
+      "Astrophysics",
+      "Starspot"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2017-01-01",
+    "doi": "https://doi.org/10.1051/0004-6361/201630144/pdf",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W2966123787",
+    "name": "Mass loss from the exoplanet WASP-12b inferred from Spitzer phase curves",
+    "source": "openalex",
+    "abstract": "ABSTRACT The exoplanet WASP-12b is the prototype for the emerging class of ultrahot, Jupiter-mass exoplanets. Past models have predicted – and near-ultraviolet observations have shown – that this planet is losing mass. We present an analysis of two sets of 3.6 and 4.5 $\\mu \\rm{m}$Spitzer phase curve observations of the system which show clear evidence of infrared radiation from gas stripped from the planet, and the gas appears to be flowing directly toward or away from the host star. This accretion signature is only seen at 4.5 $\\mu \\rm{m}$, not at 3.6 $\\mu \\rm{m}$, which is indicative either of CO emission at the longer wavelength or blackbody emission from cool, ≲600 K gas. It is unclear why WASP-12b is the only ultrahot Jupiter to exhibit this mass-loss signature, but perhaps WASP-12b’s orbit is decaying as some have claimed, while the orbits of other exoplanets may be more stable; alternatively, the high-energy irradiation from WASP-12A may be stronger than the other host stars. We also find evidence for phase offset variability at the level of 6.4σ (46.2°) at 3.6 $\\mu \\rm{m}$.",
+    "url": "https://doi.org/10.1093/mnras/stz2018",
+    "authors": [
+      "Taylor J. Bell",
+      "Michael Zhang",
+      "Patricio E. Cubillos",
+      "Lisa Dang",
+      "L. Fossati",
+      "Kamen Todorov",
+      "Nicolas B. Cowan",
+      "Drake Deming",
+      "Robert T. Zellem",
+      "Kevin B. Stevenson",
+      "Ian J. M. Crossfield",
+      "Ian Dobbs‐Dixon",
+      "Jonathan J. Fortney",
+      "Heather A. Knutson",
+      "Michael R. Line"
+    ],
+    "tags": [
+      "Physics",
+      "Exoplanet",
+      "Planet",
+      "Astrophysics",
+      "Light curve"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2019-07-24",
+    "doi": "https://doi.org/10.1093/mnras/stz2018",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W2758113238",
+    "name": "Zodiacal Exoplanets in Time (ZEIT). V. A Uniform Search for Transiting Planets in Young Clusters Observed by K2",
+    "source": "openalex",
+    "abstract": "Abstract Detection of transiting exoplanets around young stars is more difficult than for older systems owing to increased stellar variability. Nine young open cluster planets have been found in the K2 data, but no single analysis pipeline identified all planets. We have developed a transit search pipeline for young stars that uses a transit-shaped notch and quadratic continuum in a 12 or 24 hr window to fit both the stellar variability and the presence of a transit. In addition, for the most rapid rotators ( days) we model the variability using a linear combination of observed rotations of each star. To maximally exploit our new pipeline, we update the membership for four stellar populations observed by K2 (Upper Scorpius, Pleiades, Hyades, Praesepe) and conduct a uniform search of the members. We identify all known transiting exoplanets in the clusters, 17 eclipsing binaries, one transiting planet candidate orbiting a potential Pleiades member, and three orbiting unlikely members of the young clusters. Limited injection recovery testing on the known planet hosts indicates that for the older Praesepe systems we are sensitive to additional exoplanets as small as 1–2 R ⊕, and for the larger Upper Scorpius planet host (K2-33) our pipeline is sensitive to ∼4 R ⊕ transiting planets. The lack of detected multiple systems in the young clusters is consistent with the expected frequency from the original Kepler sample, within our detection limits. With a robust pipeline that detects all known planets in the young clusters, occurrence rate testing at young ages is now possible.",
+    "url": "https://doi.org/10.3847/1538-3881/aa9070",
+    "authors": [
+      "Aaron C. Rizzuto",
+      "Andrew W. Mann",
+      "Andrew Vanderburg",
+      "Adam L. Kraus",
+      "Kevin R. Covey"
+    ],
+    "tags": [
+      "Pleiades",
+      "Exoplanet",
+      "Planet",
+      "Physics",
+      "Open cluster"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2017-11-14",
+    "doi": "https://doi.org/10.3847/1538-3881/aa9070",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
+  },
+  {
+    "id": "oa:W3112097474",
+    "name": "Lava worlds: From early earth to exoplanets",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.chemer.2020.125735",
+    "authors": [
+      "Keng‐Hsien Chao",
+      "Rebecca deGraffenried",
+      "M. Lach",
+      "William Stuart Nelson",
+      "Kelly Truax",
+      "Eric Gaidos"
+    ],
+    "tags": [
+      "Astrobiology",
+      "Geology",
+      "Exoplanet",
+      "Lava",
+      "Earth science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "exo-science"
+    ],
+    "publishedDate": "2021-01-22",
+    "doi": "https://doi.org/10.1016/j.chemer.2020.125735",
+    "addedAt": "2026-08-31T20:33:32.297Z",
+    "updatedAt": "2026-08-31T20:33:32.297Z"
   }
 ]

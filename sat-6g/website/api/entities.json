@@ -214489,5 +214489,63 @@
     "doi": "10.4018/979-8-3693-6725-4.ch011",
     "addedAt": "2026-08-31T14:45:37.741Z",
     "updatedAt": "2026-08-31T14:45:37.741Z"
+  },
+  {
+    "id": "oa:W7133240358",
+    "name": "Towards 6G C-V2X Networks: A Comprehensive Survey on Mobility Management, Multi-RAT Coexistence, and Machine Learning (3M) Framework for C-ITS",
+    "source": "openalex",
+    "abstract": "The Cooperative-Intelligent Transport Systems (C-ITS) require emerging Vehicular-to-Everything (V2X) applications, such as Advanced Driving Systems (ADS) and Connected Autonomous Driving (CAD), to support efficient road safety measures. These applications often require high reliability, throughput, and low latency by exchanging a significant amount of data among End-to-End (E2E) vehicles. However, current V2X communication technologies, such as DSRC and C-V2X, are not able to meet these stringent demands. Two or more Radio Access Technologies (RATs) are essential to guarantee the required Quality of Service (QoS) in high-density vehicular environments. To address this critical gap, this survey presents the 3M Framework—a hybrid vehicular architecture approach based on Multi-Radio Access Technology (M-RAT), Mobility Management, and Machine Learning (ML). The manuscript provides a detailed overview of V2X Multi-RAT evolutions, analyzing their state-of-the-art and limitations in heterogeneous scenarios. We specifically highlight that the existing Long Term Evolution (LTE)-based mobility management fails to meet V2X handover requirements for high-speed vehicles, necessitating a comprehensive overview of Vertical Handover (VHO). Furthermore, the survey details how the integration of ML promotes the prediction of network states, enabling optimized context-aware decisions for connectivity and resource allocation, thereby reducing Handover Failures (HoFs) and enhancing reliability using techniques like Deep Reinforcement Learning (DRL). Finally, based on a comprehensive review of existing methods, the paper identifies critical research directions and challenges required to realize intelligent, hyper-fast, and ultra-reliable Beyond 5G (B5G) and Sixth Generation (6G) V2X networks, delivering a more profound understanding for future endeavors.",
+    "url": "https://doi.org/10.3390/electronics15051042",
+    "authors": [
+      "Malghalara Abdul Ali",
+      "Sajjad Ahmad Khan",
+      "Sultan Aldirmaz Colak",
+      "Selahattin Koşunalp",
+      "Teodor Iliev"
+    ],
+    "tags": [
+      "Handover",
+      "Computer science",
+      "Quality of service",
+      "Reliability (semiconductor)",
+      "Low latency (capital markets)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "sat-6g"
+    ],
+    "publishedDate": "2026-03-02",
+    "doi": "https://doi.org/10.3390/electronics15051042",
+    "addedAt": "2026-08-31T20:33:40.042Z",
+    "updatedAt": "2026-08-31T20:33:40.042Z"
+  },
+  {
+    "id": "oa:W4387702854",
+    "name": "Local 5G/6G Network Business in Europe: Regulatory Analysis and Legitimacy Considerations",
+    "source": "openalex",
+    "abstract": "Abstract Local 5G/6G mobile communication networks can be deployed by different stakeholders to serve a variety of user groups with different needs. The legal framework influencing local 5G/6G network deployments and operations, the EU Digital Legal Framework, has been recently developed and adopted by the EU, influencing network deployments, and impacting new stakeholders’ ability to become accepted and legitimate members of the mobile ecosystem. This chapter identifies and discusses relevant EU legal acts and presents the EU legal initiatives in the context of local mobile communication networks. It reviews previous research from the legitimacy challenge perspective and adds to a better understanding of how regulation currently delimits the emerging business models of the local 5G/6G networks. The chapter concludes by discussing the implications of the analysis for regulators and firms deploying local 5G/6G networks.",
+    "url": "https://doi.org/10.1007/978-3-031-33191-6_8",
+    "authors": [
+      "Oxana Gisca",
+      "Marja Matinmikko‐Blue",
+      "Petri Ahokangas",
+      "Seppo Yrjölä",
+      "Jillian Gordon"
+    ],
+    "tags": [
+      "Variety (cybernetics)",
+      "Legitimacy",
+      "Business",
+      "Context (archaeology)",
+      "Perspective (graphical)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "sat-6g"
+    ],
+    "publishedDate": "2023-10-17",
+    "doi": "https://doi.org/10.1007/978-3-031-33191-6_8",
+    "addedAt": "2026-08-31T20:33:40.042Z",
+    "updatedAt": "2026-08-31T20:33:40.042Z"
   }
 ]
