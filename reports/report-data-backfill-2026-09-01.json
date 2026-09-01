@@ -1,6 +1,6 @@
 {
   "pipeline": "data-backfill-v2",
-  "timestamp": "2026-09-01T10:59:31.144Z",
+  "timestamp": "2026-09-01T15:25:23.909Z",
   "dryRun": false,
   "limit": 800,
   "perPage": 200,
@@ -205,23 +205,27 @@
     },
     {
       "site": "ai-safety",
-      "fetched": 3632,
-      "added": 24,
-      "total": 9986,
+      "fetched": 3400,
+      "added": 14,
+      "total": 9999,
       "dryRun": false
     },
     {
       "site": "quantum-materials",
-      "fetched": 3400,
-      "added": 6,
+      "fetched": 0,
+      "added": 0,
       "total": 10000,
+      "capped": true,
+      "doiBackfilled": 0,
       "dryRun": false
     },
     {
       "site": "carbon-neutral",
-      "fetched": 2641,
-      "added": 20,
+      "fetched": 0,
+      "added": 0,
       "total": 10000,
+      "capped": true,
+      "doiBackfilled": 0,
       "dryRun": false
     },
     {
@@ -262,9 +266,11 @@
     },
     {
       "site": "agritech",
-      "fetched": 3300,
-      "added": 34,
+      "fetched": 0,
+      "added": 0,
       "total": 10000,
+      "capped": true,
+      "doiBackfilled": 0,
       "dryRun": false
     }
   ]
