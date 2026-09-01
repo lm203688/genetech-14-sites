@@ -1,6 +1,6 @@
 {
   "pipeline": "data-backfill-v2",
-  "timestamp": "2026-09-01T00:27:03.672Z",
+  "timestamp": "2026-09-01T01:48:58.849Z",
   "dryRun": false,
   "limit": 800,
   "perPage": 200,
@@ -205,74 +205,58 @@
     },
     {
       "site": "ai-safety",
-      "fetched": 18100,
+      "fetched": 18632,
       "added": 10000,
-      "total": 9901,
-      "guard_deny": true,
-      "guard_reason": "no rule matched, default: deny",
+      "total": 9868,
       "dryRun": false
     },
     {
       "site": "quantum-materials",
-      "fetched": 17072,
+      "fetched": 17408,
       "added": 10000,
-      "total": 9918,
-      "guard_deny": true,
-      "guard_reason": "no rule matched, default: deny",
+      "total": 9919,
       "dryRun": false
     },
     {
       "site": "carbon-neutral",
-      "fetched": 29354,
+      "fetched": 20183,
       "added": 10000,
-      "total": 9833,
-      "guard_deny": true,
-      "guard_reason": "no rule matched, default: deny",
+      "total": 9375,
       "dryRun": false
     },
     {
       "site": "digital-twin",
-      "fetched": 18146,
+      "fetched": 20119,
       "added": 10000,
-      "total": 9870,
-      "guard_deny": true,
-      "guard_reason": "no rule matched, default: deny",
+      "total": 9861,
       "dryRun": false
     },
     {
       "site": "biomed-ai",
-      "fetched": 12519,
+      "fetched": 17500,
       "added": 10000,
-      "total": 9953,
-      "guard_deny": true,
-      "guard_reason": "no rule matched, default: deny",
+      "total": 9911,
       "dryRun": false
     },
     {
       "site": "edge-ai",
-      "fetched": 14710,
+      "fetched": 24117,
       "added": 10000,
-      "total": 9849,
-      "guard_deny": true,
-      "guard_reason": "no rule matched, default: deny",
+      "total": 9620,
       "dryRun": false
     },
     {
       "site": "neuromorphic",
-      "fetched": 27340,
+      "fetched": 28328,
       "added": 10000,
-      "total": 9938,
-      "guard_deny": true,
-      "guard_reason": "no rule matched, default: deny",
+      "total": 9912,
       "dryRun": false
     },
     {
       "site": "agritech",
-      "fetched": 24368,
+      "fetched": 23635,
       "added": 10000,
-      "total": 9592,
-      "guard_deny": true,
-      "guard_reason": "no rule matched, default: deny",
+      "total": 9670,
       "dryRun": false
     }
   ]
