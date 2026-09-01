@@ -1036,10 +1036,13 @@ async function main() {
     await fs.writeFile(rp, JSON.stringify(report, null, 2), 'utf-8');
     console.log(`[Backfill] 报告已写入 ${rp}`);
   }
-  const totalAdded = results.reduce((s, r) => s + (r.added || 0), 0);
-  const totalNow = results.reduce((s, r) => s + (r.total || 0), 0);
-  const cappedN = results.filter(r => r.capped).length;
-  console.log(`[Backfill] 完成. 新增实体合计 ${totalAdded}, 现有合计 ${totalNow}, 涉及站点 ${results.length}, 已达容量站点 ${cappedN}/${results.length}`);
+  // 仅统计实际落库的批次：GUARD 拒绝(guard_deny) / 质量失败(quality_fail) 的站点
+  // 其 added/total 是「抓取但未写入」的候选数，计入会伪造增量（曾导致日志 +80000 误导值）。
+  const committed = results.filter(r => !r.guard_deny && !r.quality_fail);
+  const totalAdded = committed.reduce((s, r) => s + (r.added || 0), 0);
+  const totalNow = committed.reduce((s, r) => s + (r.total || 0), 0);
+  const cappedN = committed.filter(r => r.capped).length;
+  console.log(`[Backfill] 完成. 新增实体合计 ${totalAdded}, 现有合计 ${totalNow}, 涉及站点 ${results.length}, 已达容量站点 ${cappedN}/${committed.length}`);
 
   // ============================================================
   // 可观测性 SLI 采集 + SLO 评估（P1）

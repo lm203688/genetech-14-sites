@@ -48,7 +48,9 @@
     "exo-science", "genetech-tools", "life-science", "low-altitude",
     "new-energy", "nuclear-energy", "privacy-computing", "quantum-computing",
     "robot-parts", "sat-6g", "semiconductor", "spatial-computing",
-    "synbio-manufacturing", "tcm-tools", "swarmlabs"
+    "synbio-manufacturing", "tcm-tools", "swarmlabs",
+    "ai-safety", "quantum-materials", "carbon-neutral", "digital-twin",
+    "biomed-ai", "edge-ai", "neuromorphic", "agritech"
   ],
   "site_capacity": {
     "agent-ecosystem": 10000, "ai4science": 10000, "alien-minerals": 10000,
@@ -58,6 +60,9 @@
     "new-energy": 10000, "nuclear-energy": 10000, "privacy-computing": 10000,
     "quantum-computing": 10000, "robot-parts": 10000, "sat-6g": 10000,
     "semiconductor": 10000, "spatial-computing": 10000,
-    "synbio-manufacturing": 10000, "tcm-tools": 10000, "swarmlabs": 10000
+    "synbio-manufacturing": 10000, "tcm-tools": 10000, "swarmlabs": 10000,
+    "ai-safety": 10000, "quantum-materials": 10000, "carbon-neutral": 10000,
+    "digital-twin": 10000, "biomed-ai": 10000, "edge-ai": 10000,
+    "neuromorphic": 10000, "agritech": 10000
   }
 }

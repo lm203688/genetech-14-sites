@@ -1,80 +1,93 @@
 {
-  "date": "2026-08-29",
-  "total": 49879,
+  "date": "2026-09-01",
+  "total": 220000,
   "sites": 22,
   "perSite": {
-    "agent-ecosystem": 2423,
-    "ai4science": 2216,
-    "alien-minerals": 2774,
-    "biocomputing": 4767,
-    "bionic-ai": 2171,
-    "brain-science": 2504,
-    "deep-sea-tech": 2227,
-    "embodied-ai": 2961,
-    "exo-science": 2219,
-    "genetech-tools": 1581,
-    "life-science": 1974,
-    "low-altitude": 1942,
-    "new-energy": 2621,
-    "nuclear-energy": 2247,
-    "privacy-computing": 1310,
-    "quantum-computing": 2553,
-    "robot-parts": 1458,
-    "sat-6g": 1393,
-    "semiconductor": 2280,
-    "spatial-computing": 1258,
-    "synbio-manufacturing": 2711,
-    "tcm-tools": 2289
+    "agent-ecosystem": 10000,
+    "ai4science": 10000,
+    "alien-minerals": 10000,
+    "biocomputing": 10000,
+    "bionic-ai": 10000,
+    "brain-science": 10000,
+    "deep-sea-tech": 10000,
+    "embodied-ai": 10000,
+    "exo-science": 10000,
+    "genetech-tools": 10000,
+    "life-science": 10000,
+    "low-altitude": 10000,
+    "new-energy": 10000,
+    "nuclear-energy": 10000,
+    "privacy-computing": 10000,
+    "quantum-computing": 10000,
+    "robot-parts": 10000,
+    "sat-6g": 10000,
+    "semiconductor": 10000,
+    "spatial-computing": 10000,
+    "synbio-manufacturing": 10000,
+    "tcm-tools": 10000
   },
   "quality": {
-    "urlCompleteness": 99,
-    "abstractCompleteness": 47,
-    "doiTraceability": 0,
-    "dedupRate": 97,
-    "uniqueKeys": 48249,
+    "urlCompleteness": 100,
+    "abstractCompleteness": 50,
+    "doiTraceability": 92,
+    "dedupRate": 95,
+    "uniqueKeys": 209337,
     "bySource": {
-      "arxiv": 8684,
-      "openalex": 8573,
-      "crossref": 12093,
-      "pubmed": 6106,
-      "europepmc": 12679,
-      "semanticscholar": 671,
-      "datacite": 442,
-      "preprints": 631
+      "arxiv": 11431,
+      "openalex": 23835,
+      "crossref": 74356,
+      "pubmed": 31849,
+      "europepmc": 30046,
+      "preprints": 14220,
+      "datacite": 33629,
+      "semanticscholar": 634
     }
   },
-  "status": "🟡 STALL ⚠️ QUALITY",
-  "consecutiveStall": 12,
-  "frozenSinceDate": "2026-08-17",
-  "frozenDays": 12,
+  "status": "🟢 RECOVERED-TO-CAP · 🔴 GUARD_BLOCKED(8 orphan sites)",
   "delta": {
-    "total": 0,
-    "sites": 0
+    "total": 170121,
+    "vsBaselineDate": "2026-08-29",
+    "vsBaselineTotal": 49879,
+    "note": "08-31 推送层修复后 22 站冲满 10k；09-01 run 仅 8 孤儿站被 GUARD 拒，0 真实新增"
   },
   "remoteCheck": {
-    "cursorLastCommit": "75bfb8589a35",
-    "cursorLastCommitMsg": "[Bot] Intelligence update",
-    "cursorLastCommitAt": "2026-08-14T12:48:37Z",
-    "cursorFrozenDays": 14,
-    "cursorEqualsLocal": true,
-    "masterLastCommit": "6f28ccea93d1",
-    "masterLastCommitAt": "2026-08-28T04:29:55Z",
+    "masterHead": "e9fa719f5641",
+    "lastDataCommit": "e9fa719f5641",
+    "lastDataCommitMsg": "[Bot] Data backfill accumulate (+80000) [CI Skip] 2026-09-01-00:27:36 UTC",
     "masterStillActive": true,
-    "note": "游标文件自 08-14 起零变更，但 master 08-28 仍有其他提交 → 仅数据 backfill 管线停摆，非本地副本过期；远端游标内容与本地逐字节一致"
+    "note": "推送层已修复：远端 HEAD 持续推进，entities.json 真实落库(08-31 f8741af +83578 / 5a57186 +250878 / 09-01 e9fa719 +80000)。本 run +80000 为抓取未写入误导值。"
+  },
+  "guardBlocked": {
+    "sites": [
+      "ai-safety",
+      "quantum-materials",
+      "carbon-neutral",
+      "digital-twin",
+      "biomed-ai",
+      "edge-ai",
+      "neuromorphic",
+      "agritech"
+    ],
+    "reason": "no rule matched, default: deny — 不在 guards/publish.policy.json allowed_sites 白名单，且无 website/api 目录(磁盘 0 实体)。backfill SITE_QUERIES 配 30 站，仅 23 项入白名单。",
+    "fetchedButDeniedThisRun": 80000,
+    "actualWrittenThisRun": 0
+  },
+  "fiveLayer": {
+    "cron_decide": "✅ schedule run 触发，data-accumulation 执行(664s)",
+    "guard": "🔴 8 孤儿站 no rule matched default:deny（正确拦截未授权站；22 线上站此前已放行至满容）",
+    "engineCap": "✅ 22/22 线上站命中 10000 容量硬截断",
+    "quality": "✅ 门禁在码内(sanitizeBatch+dedupeById+dataQualityCheck)；22 站发布质量 doi=92%/abs=50%/url=100%/dedup=95%",
+    "gitStaging": "✅ [Commit] 暂存文件数=3(本 run 仅 cursor+report，无实体变更，符合 0 新增)",
+    "push_master": "✅ 已修复：远端的 e9fa719 推进，entities.json 真实提交（08-31 起连续落库）"
   },
   "rootCause": {
-    "confirmed": "ops.yml decide 步骤仍比对旧 cron 字符串 '*/30 * * * *'（2026-08-07 已改为 '0 * * * *'），数据涡轮分支永不命中，should_run_data 仅靠 HOUR==12 兜底，扩量频次由预期 24~48 轮/天塌缩至约 2 轮/天",
-    "suspected": "远端 state/backfill-cursor.json 自 2026-08-14T12:48Z 未变更，且 backfill 步骤 success 却零提交 —— 疑「站点×检索词」分页空间已走完（检索词/数据源饱和），需扩检索词或加源",
-    "silentFailure": "ops 每小时 run 均报 success（跳过/软失败/零新增都不算 failure），notify-on-failure 的 if: failure() 永不触发，导致 08-18 STALL 未被发现",
-    "pendingLandmine": "本地 HEAD ca85ad1 闭源 refactor 未推送；ops.yml 的 Fetch private core engine 步骤缺 ENGINE_TOKEN 即 exit 1，推送前须先配 Secrets"
+    "pushLayerFixed": "date-bug 修复(729efa7)+concurrency 组(ops.yml:89)+push 3 次重试 → 远端 HEAD 持续推进，终结 08-31 诊断的第 7 层静默失败",
+    "guardGap": "backfill SITE_QUERIES 30 站 vs allowed_sites 23 项：8 站孤儿，既无白名单也无 website/api 目录 → GUARD 默认拒绝；日志 +80000 为抓取未写入的误导值"
   },
   "alertSent": false,
   "alertChannels": {
-    "localLog": "ok",
-    "agentMail": "failed",
     "chatReply": "ok",
-    "alertFile": "docs/ALERT-2026-08-29.md"
-  },
-  "alertDeliveryFailed": "Agent Mail 授权连续第 8 天失效（08-22 ~ 08-29），GetMe 返回『授权已失效，请前往 workbuddy://agentmail 重新授权，当前请勿重试』，邮件告警发不出；使用 docs/ALERT-2026-08-29.md + present_files + 对话回复作为补偿触达",
-  "pushedRemote": false
+    "agentMail": "unavailable(no token/tool in this env)",
+    "digestFile": "ok"
+  }
 }

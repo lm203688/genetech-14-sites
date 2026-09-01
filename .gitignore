@@ -96,6 +96,8 @@ engine/
 
 # 审计日志目录（运行时生成，.gitignore 防泄漏；demo 数据在 .proposals/ .active/）
 audit/
+# 本地安全/运营审计文档（含历史明文密钥引用，脱敏后仍不入库，避免误提交）
+docs/audit-*.md
 
 # scratch scripts from prior sessions（不入库，避免混淆）
 tools/_*.mjs
