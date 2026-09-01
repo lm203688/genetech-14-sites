@@ -1,6 +1,6 @@
 {
   "pipeline": "data-backfill-v2",
-  "timestamp": "2026-09-01T06:03:02.826Z",
+  "timestamp": "2026-09-01T10:59:31.144Z",
   "dryRun": false,
   "limit": 800,
   "perPage": 200,
@@ -205,58 +205,66 @@
     },
     {
       "site": "ai-safety",
-      "fetched": 3500,
-      "added": 132,
-      "total": 9976,
+      "fetched": 3632,
+      "added": 24,
+      "total": 9986,
       "dryRun": false
     },
     {
       "site": "quantum-materials",
-      "fetched": 4600,
-      "added": 81,
-      "total": 9994,
+      "fetched": 3400,
+      "added": 6,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "carbon-neutral",
-      "fetched": 4541,
-      "added": 625,
-      "total": 9980,
+      "fetched": 2641,
+      "added": 20,
+      "total": 10000,
       "dryRun": false
     },
     {
       "site": "digital-twin",
-      "fetched": 3300,
-      "added": 139,
+      "fetched": 0,
+      "added": 0,
       "total": 10000,
+      "capped": true,
+      "doiBackfilled": 0,
       "dryRun": false
     },
     {
       "site": "biomed-ai",
-      "fetched": 3300,
-      "added": 89,
+      "fetched": 0,
+      "added": 0,
       "total": 10000,
+      "capped": true,
+      "doiBackfilled": 0,
       "dryRun": false
     },
     {
       "site": "edge-ai",
-      "fetched": 3300,
-      "added": 380,
+      "fetched": 0,
+      "added": 0,
       "total": 10000,
+      "capped": true,
+      "doiBackfilled": 0,
       "dryRun": false
     },
     {
       "site": "neuromorphic",
-      "fetched": 3052,
-      "added": 88,
+      "fetched": 0,
+      "added": 0,
       "total": 10000,
+      "capped": true,
+      "doiBackfilled": 0,
       "dryRun": false
     },
     {
       "site": "agritech",
-      "fetched": 3214,
-      "added": 330,
-      "total": 9966,
+      "fetched": 3300,
+      "added": 34,
+      "total": 10000,
       "dryRun": false
     }
   ]

@@ -32443,7 +32443,7 @@
   {
     "id": "doi:10.70062/slrj.v1i1.50",
     "name": "Systematic Literature Review on CNN and YOLO Algorithms for Detecting Plant Diseases in Precision Agriculture",
-    "source": "crossref",
+    "source": "openalex",
     "abstract": "Computer vision-based algorithms, especially Convolutional Neural Networks (CNN) and You Only Look Once (YOLO), have become the leading approaches in plant disease detection. CNN excels in extracting complex visual features for disease classification, while YOLO provides high-efficiency real-time object detection capabilities. Both algorithms have shown promising results in various studies, especially with controlled datasets. However, challenges remain in their application in real-world conditions, such as environmental diversity, overlapping symptoms, and poorly annotated data. Future research has the potential to optimize these algorithms through the development of lighter models, the use of transfer learning techniques, and multi-modal data integration. In addition, further exploration of a wider range of diseases, crops, and environmental conditions can expand the application of these algorithms. By leveraging these innovations, computer vision-based plant disease management can be improved to support sustainable precision agriculture.",
     "url": "https://doi.org/10.70062/slrj.v1i1.50",
     "authors": [
@@ -32451,15 +32451,21 @@
       "Eko Siswanto",
       "Febryantahanuji Febryantahanuji"
     ],
-    "tags": [],
-    "confidence": 0.7,
+    "tags": [
+      "Agriculture",
+      "Computer science",
+      "Artificial intelligence",
+      "Algorithm",
+      "Biology"
+    ],
+    "confidence": 0.72,
     "sites": [
       "agritech"
     ],
-    "publishedDate": "2025-04-10T12:05:21Z",
+    "publishedDate": "2025-01-30",
     "doi": "10.70062/slrj.v1i1.50",
     "addedAt": "2026-09-01T01:48:38.131Z",
-    "updatedAt": "2026-09-01T01:48:38.131Z"
+    "updatedAt": "2026-09-01T10:59:29.395Z"
   },
   {
     "id": "doi:10.1007/s11119-014-9379-0",
@@ -203919,5 +203925,1059 @@
     "doi": "10.1002/advs.202514862",
     "addedAt": "2026-09-01T06:02:30.489Z",
     "updatedAt": "2026-09-01T06:02:30.489Z"
+  },
+  {
+    "id": "oa:W7130338875",
+    "name": "Next‐Generation Microencapsulation Technologies for Probiotic Protection and Precision Delivery",
+    "source": "openalex",
+    "abstract": "Probiotics offer well-documented benefits, including improved gastrointestinal function, microbiota modulation, and immune enhancement. However, their therapeutic potential is limited by poor survival during oral delivery due to gastric acid, bile salts, and pathological gut conditions. Microencapsulation has emerged as a transformative strategy to enhance probiotic viability by shielding them from environmental stressors. This review comprehensively examines cutting-edge microencapsulation materials and innovative techniques that improve probiotic stability under thermal, oxidative, and gastrointestinal stresses. We highlight advanced delivery systems, such as pH-responsive and inflammation-targeted microcapsules, which enable precise intestinal release and enhanced colonisation. Additionally, we critically assess safety considerations and industrial scalability challenges, emphasising the need for biocompatible materials and cost-effective production. By integrating recent breakthroughs with practical applications, this review underscores the potential of next-generation microencapsulation to enable safer, more efficient, and personalised probiotic therapies.",
+    "url": "https://doi.org/10.1111/1751-7915.70305",
+    "authors": [
+      "Yixin Zhu",
+      "Longxian Lv",
+      "Bingbing Du",
+      "Mingrui Zhao"
+    ],
+    "tags": [
+      "Probiotic",
+      "Biocompatible material",
+      "Biotechnology",
+      "Inflammatory Bowel Diseases",
+      "Immune system"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2026-02-01",
+    "doi": "https://doi.org/10.1111/1751-7915.70305",
+    "addedAt": "2026-09-01T10:59:29.395Z",
+    "updatedAt": "2026-09-01T10:59:29.395Z"
+  },
+  {
+    "id": "oa:W2056872149",
+    "name": "Detection of aquifer system compaction and land subsidence using interferometric synthetic aperture radar, Antelope Valley, Mojave Desert, California",
+    "source": "openalex",
+    "abstract": "Interferometric synthetic aperture radar (InSAR) has great potential to detect and quantify land subsidence caused by aquifer system compaction. InSAR maps with high spatial detail and resolution of range displacement (±10 mm in change of land surface elevation) were developed for a groundwater basin (∼10 3 km 2 ) in Antelope Valley, California, using radar data collected from the ERS‐1 satellite. These data allow comprehensive comparison between recent (1993–1995) subsidence patterns and those detected historically (1926–1992) by more traditional methods. The changed subsidence patterns are generally compatible with recent shifts in land and water use. The InSAR‐detected patterns are generally consistent with predictions based on a coupled model of groundwater flow and aquifer system compaction. The minor inconsistencies may reflect our imperfect knowledge of the distribution and properties of compressible sediments. When used in conjunction with coincident measurements of groundwater levels and other geologic information, InSAR data may be useful for constraining parameter estimates in simulations of aquifer system compaction.",
+    "url": "https://doi.org/10.1029/98wr01285",
+    "authors": [
+      "Devin L. Galloway",
+      "K. W. Hudnut",
+      "S. E. Ingebritsen",
+      "Steven P. Phillips",
+      "G. Peltzer",
+      "F. Rogez",
+      "P. A. Rosen"
+    ],
+    "tags": [
+      "Interferometric synthetic aperture radar",
+      "Aquifer",
+      "Geology",
+      "Groundwater",
+      "Subsidence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "1998-10-01",
+    "doi": "https://doi.org/10.1029/98wr01285",
+    "addedAt": "2026-09-01T10:59:29.395Z",
+    "updatedAt": "2026-09-01T10:59:29.395Z"
+  },
+  {
+    "id": "oa:W4412055618",
+    "name": "Overview of the Application Progress of Digital Twins in Agriculture",
+    "source": "openalex",
+    "abstract": "This paper reviews and discusses the application of digital twin (DT) technology in agriculture. The article first introduces the key concepts of digital twin technology, discusses the interdisciplinary technologies required for the application of digital twin technology in agriculture, and analyzes the characteristics and challenges of digital twin implementation in different regions. After that, according to the digital twin rating evaluation system proposed by predecessors, the specific studies on several agricultural digital twins this year were analyzed and graded, and it was concluded that most of the agricultural digital twins are still in their infancy. Finally, the article looks forward to the future of digital twin technology in agriculture, indicating its potential to transform crop monitoring, environmental management, and decision-making through intelligent real-time systems.",
+    "url": "https://doi.org/10.1145/3736426.3736473",
+    "authors": [
+      "Jue Gong",
+      "Jie Chen",
+      "Zixi Chen",
+      "Hongyi Chi",
+      "Jianglong Liu"
+    ],
+    "tags": [
+      "Agriculture",
+      "Computer science",
+      "Geography",
+      "Archaeology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-03-14",
+    "doi": "https://doi.org/10.1145/3736426.3736473",
+    "addedAt": "2026-09-01T10:59:29.395Z",
+    "updatedAt": "2026-09-01T10:59:29.395Z"
+  },
+  {
+    "id": "oa:W4405926386",
+    "name": "High-Precision UAV Photogrammetry with RTK GNSS: Eliminating Ground Control Points",
+    "source": "openalex",
+    "abstract": "The advancements in Unmanned Aerial Vehicles (UAVs) have significantly enhanced the capability of the photogrammetric approaches, particularly with the integration of Real-Time Kinematic (RTK) sensors. That approach enables the operators to use the Global Navigation Satellite System (GNSS) more efficiently with the production of high-precision 3D Digital Terrain Models (DTMs). Traditionally, Ground Control Points (GCPs) are used to link those models to a ground coordinate system, but their establishment is time-consuming and labor-intensive, requiring static or rapid-static GNSS observations over two hours for each point. However, RTK-embedded UAVs offer a significant improvement by facilitating direct geo-referencing of DTMs, which includes the estimation of internal and external orientation parameters more efficiently and potentially eliminating the need for GCPs. In this study, UAV flights over a test area at various altitudes (30m, 45m, 60m) were conducted to evaluate the 3D positioning accuracy of photogrammetric models generated without using any GCP, and their locations were compared against the precise GNSS observations for 22 control points. Results indicated that UAVs with RTK ability could achieve centimeter-level accuracy in positioning, making this kind of evaluation a viable alternative to traditional methods. This study also discusses the implications of those results within the context of large-scale map production and their regulations in Türkiye. The elimination of GCPs should significantly reduce the time and effort associated with map production, suggesting a potential alternative in regulatory standards to incorporate these technological approaches.",
+    "url": "https://doi.org/10.17350/hjse19030000341",
+    "authors": [
+      "Mehmet Nurullah Alkan"
+    ],
+    "tags": [
+      "GNSS applications",
+      "Photogrammetry",
+      "Context (archaeology)",
+      "Computer science",
+      "Real Time Kinematic"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2024-12-31",
+    "doi": "https://doi.org/10.17350/hjse19030000341",
+    "addedAt": "2026-09-01T10:59:29.395Z",
+    "updatedAt": "2026-09-01T10:59:29.395Z"
+  },
+  {
+    "id": "oa:W4386786112",
+    "name": "Multilevel life cycle assessment to evaluate prospective agricultural development scenarios in a semi-arid irrigated region of Tunisia",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1016/j.agsy.2023.103766",
+    "authors": [
+      "Ludivine Pradeleix",
+      "P. Roux",
+      "Sami Bouarfa",
+      "V. Bellon-Maurel"
+    ],
+    "tags": [
+      "Agriculture",
+      "Context (archaeology)",
+      "Cropping",
+      "Life-cycle assessment",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2023-09-15",
+    "doi": "https://doi.org/10.1016/j.agsy.2023.103766",
+    "addedAt": "2026-09-01T10:59:29.395Z",
+    "updatedAt": "2026-09-01T10:59:29.395Z"
+  },
+  {
+    "id": "oa:W4409966134",
+    "name": "Application of Transformer-Based Deep Learning Models for Predicting the Suitability of Water for Agricultural Purposes",
+    "source": "openalex",
+    "abstract": "Water is the most vital component for the sustainability of living beings on Earth. From plants to human beings, every single living being on Earth needs water for its survival. In this research, a novel model has been developed in order to predict the suitability of water for agricultural purposes. This research developed the ALBERT Base v2 model for detecting water quality and suitability and a model named the ALBERT Water Potability Detection (ALBERT-WPD) model, customized from the ALBERT Base v2 transformer model. The model was tested using a dataset from Kaggle, and the performance was evaluated. The research used ten parameters. The performance of both models was measured using metrics, accuracy, precision, recall, and F1-score. In this research, traditional models (CNN and RNN) were developed and compared against the ALBERT model to measure its performance and its efficiency in water potability prediction. The findings revealed that the ALBERT models gained higher accuracies than the traditional models: the Base v2 model gained 91% and the altered ALBERT-WPD rendered 96% accuracy. The classification results (precision, recall, and F1-score) obtained for the ALBERT-WPD model for the potability class were 93%, 98%, and 96% and those for the non-potability class were 98%, 95%, and 96%, respectively. The study found that using transformer models for water potability detection procures higher accuracy with the model optimization method. The study concludes that using transformer models (BERT-based) in water potability detection procures higher accuracy (>95%) with fewer parameters in comparison with traditional models (CNN and RNN) which utilize more parameters. The findings show that the transformer models exhibit rapid data processing and handle large datasets efficiently; the handling of such datasets is complicated when using traditional models, as they have vanishing gradient and encounter temporal data loss challenges. Thus, the significance of the proposed research dwells within the use of “transformers” as an advanced machine learning model to predict water potability and quality, showing that transformers are the future of machine learning.",
+    "url": "https://doi.org/10.3390/w17091347",
+    "authors": [
+      "K. Rejini",
+      "Visumathi James",
+      "C. Heltin Genitha"
+    ],
+    "tags": [
+      "Agriculture",
+      "Transformer",
+      "Environmental science",
+      "Agricultural engineering",
+      "Engineering"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-04-30",
+    "doi": "https://doi.org/10.3390/w17091347",
+    "addedAt": "2026-09-01T10:59:29.395Z",
+    "updatedAt": "2026-09-01T10:59:29.395Z"
+  },
+  {
+    "id": "oa:W4414026802",
+    "name": "Advancements and Challenges in Allelopathy: a Global Perspective on Agricultural Practices",
+    "source": "openalex",
+    "abstract": "Abstract In plants, allelopathy refers to the positive or negative effects that one plant has on another through the release of chemical compounds into the environment, typically from roots, leaves, stems, flowers, fruits, or decaying plant matter. Allelopathy plays an important role in plant competition, crop rotation, weed suppression, and ecosystem dynamics, is now getting attention as a promising method for sustainable agriculture. This paper explains the advantages and disadvantages, as well as the differences in its application in agricultural practices between developed and developing countries. In developed countries, allelopathy application can be optimized by improved technologies, appropriate crop management practices, and careful selection of allelopathic species. Allelochemicals such as phenolics, terpenoids, alkaloids, and momilactones are potentially applied in sustainable agriculture through some marketed bioherbicides, cover crops, and crop rotation for weed and pest control. Although breeding and genetic engineering aim to enhance allelopathic traits in crops have been extensively studied, but desired allelopathic crops have not yet succeeded. In contrast, developing countries face challenges in development of commercial bioherbicides due to limited funding, poor infrastructure, and restricted access to technologies for isolating bioactive compounds and synthesizing bioherbicides from allelochemicals. Therefore, smallholder farmers have accustomed to use traditional allelopathic materials, such as neem, mustard, and garlic extracts, but these are not officially recognized because there are neither proper regulations nor scientific standardization have been approved. To solve these problems, this review suggests increasing knowledge-sharing, technology transfer, and research cooperation between developed and developing countries. Also, improving policies and regulations for bioherbicides in developing countries will aid farmers to extend the use of allelochemical-derived compounds in agricultural practices. By applying the findings from this paper, many countries can optimize their allelopathy-based farming systems according to their local conditions, contributing to sustainable agriculture, environmental protection, and food security.",
+    "url": "https://doi.org/10.1007/s10343-025-01217-6",
+    "authors": [
+      "Tran Dang Xuan",
+      "Nguyen Xuan Chien",
+      "Tran Dang Khanh",
+      "Tran Duc Viet",
+      "Tran Thi Ngoc Minh"
+    ],
+    "tags": [
+      "Allelopathy",
+      "Perspective (graphical)",
+      "Agriculture",
+      "Engineering ethics",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-09-05",
+    "doi": "https://doi.org/10.1007/s10343-025-01217-6",
+    "addedAt": "2026-09-01T10:59:29.395Z",
+    "updatedAt": "2026-09-01T10:59:29.395Z"
+  },
+  {
+    "id": "oa:W4390877753",
+    "name": "Effects of Peanut Rust Disease (Puccinia arachidis Speg.) on Agricultural Production: Current Control Strategies and Progress in Breeding for Resistance",
+    "source": "openalex",
+    "abstract": "Speg.) disease constitutes a significant global biotic stress, representing a substantial economic threat to the peanut industry by inducing noteworthy reductions in seed yields and compromising oil quality. This comprehensive review delves into the distinctive characteristics and detrimental symptoms associated with peanut rust, scrutinizing its epidemiology and the control strategies that are currently implemented. Notably, host resistance emerges as the most favored strategy due to its potential to surmount the limitations inherent in other approaches. The review further considers the recent advancements in peanut rust resistance breeding, integrating the use of molecular marker technology and the identification of rust resistance genes. Our findings indicate that the ongoing refinement of control strategies, especially through the development and application of immune or highly resistant peanut varieties, will have a profound impact on the global peanut industry.",
+    "url": "https://doi.org/10.3390/genes15010102",
+    "authors": [
+      "Yu You",
+      "Junhua Liao",
+      "Zemin He",
+      "Muhammad Khurshid",
+      "C. L. Wang",
+      "Zhenzhen Zhang",
+      "Jinxiong Mao",
+      "Youlin Xia"
+    ],
+    "tags": [
+      "Rust (programming language)",
+      "Biology",
+      "Disease control",
+      "Agronomy",
+      "Plant disease resistance"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2024-01-15",
+    "doi": "https://doi.org/10.3390/genes15010102",
+    "addedAt": "2026-09-01T10:59:29.395Z",
+    "updatedAt": "2026-09-01T10:59:29.395Z"
+  },
+  {
+    "id": "oa:W4413248198",
+    "name": "Achieving the Sustainable Agricultural Development Goals by Adopting the New Energy Electric Agricultural Machinery: An Analysis of Opportunities and Challenges of China",
+    "source": "openalex",
+    "abstract": "New energy is a type of renewable energy that has the characteristics of protecting the environment and conserving energy. Agriculture is an industry that concerns the national economy and people’s livelihood. Agricultural mechanization is a key factor in achieving high-quality agricultural development. At present, China is the world’s largest producer and user of agricultural machinery. The use of traditional agricultural machinery powered mainly by internal combustion engines is currently the main source of carbon emissions in China’s agricultural production. How to achieve effective application and sustainable development of electric new energy technology in agricultural machinery is the primary issue facing China and countries around the world. This article takes the application and development status of electric new energy technology in agricultural machinery as the research object. Firstly, we provided an overview of China’s primary energy production and utilization as well as the national agricultural mechanization situation. Secondly, the research and application status of new energy electric agricultural machinery in China were elaborated on. Finally, some major challenges and opportunities faced by China’s development of new energy electric agricultural machinery were analyzed. We firmly believe that China’s active development of new energy technologies in agricultural machinery plays an important role and practical significance in building a community with a shared future for mankind, reducing carbon emissions from agricultural production, and achieving sustainable agricultural development goals.",
+    "url": "https://doi.org/10.3390/en18164211",
+    "authors": [
+      "Hongguang Yang",
+      "Fujie Ding",
+      "Fengwei Gu",
+      "Feng Wu",
+      "Zhaoyang Yu",
+      "Peng Zhang",
+      "Jiangtao Wang",
+      "Zhichao Hu"
+    ],
+    "tags": [
+      "Agriculture",
+      "Sustainable development",
+      "Agricultural productivity",
+      "China",
+      "Renewable energy"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-08-08",
+    "doi": "https://doi.org/10.3390/en18164211",
+    "addedAt": "2026-09-01T10:59:29.395Z",
+    "updatedAt": "2026-09-01T10:59:29.395Z"
+  },
+  {
+    "id": "oa:W4403841306",
+    "name": "Maintaining Agricultural Production Profitability—A Simulation Approach to Wheat Market Dynamics",
+    "source": "openalex",
+    "abstract": "Profitability is a complex notion, intertwined with theoretical, socio-economic, and modern economic considerations. While traditionally linked to monopoly advantages, contemporary views broaden this to include shareholder value creation. In agriculture, profitability faces impediments such as rising input costs, market volatility, and economic disparities, emphasizing technological innovation, market conditions, and policy as crucial determinants. This study presents an econometric simulation model to analyze and forecast wheat production profitability in Poland from 2023 to 2027, providing insights into production efficiencies, market dynamics, and policy impacts. Using a system of recursive equations, the model forecasts profitability, integrating econometric techniques with expert insights. It examines variables like resource use, production levels, and price changes, validated through FADN data. The findings reveal that price relations and production efficiencies are the key to profitability. The model highlights market volatility, particularly through “price scissors”, as the main factor influencing profitability. Favorable price conditions significantly boost profitability and incentivize production. The model is a critical tool for analyzing wheat profitability, highlighting the influence of market and policy changes. Future work could extend the model’s use to other regions or crops, incorporating advanced technologies to improve accuracy. This study offers valuable insights for agricultural economics, aiding stakeholders in strategic decision-making.",
+    "url": "https://doi.org/10.3390/agriculture14111910",
+    "authors": [
+      "Agnieszka Bezat-Jarzębowska",
+      "Włodzimierz Rembisz",
+      "Sebastian Jarzębowski"
+    ],
+    "tags": [
+      "Profitability index",
+      "Production (economics)",
+      "Agriculture",
+      "Agricultural engineering",
+      "Agricultural productivity"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2024-10-28",
+    "doi": "https://doi.org/10.3390/agriculture14111910",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4409376493",
+    "name": "Land Inequality, Farm Size, and Productivity: Insights From Peruvian Agriculture",
+    "source": "openalex",
+    "abstract": "ABSTRACT This paper investigates the analogous land inequality and farm size‐productivity relationships, focusing on agricultural total factor productivity (TFP) rather than partial productivity measures. Using a panel of 268 Peruvian districts over a 5‐year period (2015–2019), I implement a system generalized method of moments (GMM) estimation framework, which adapts to the presumed data‐generating process and structure of the panel while tackling the critical issue of simultaneity bias. The regression output supports both relationships, with a 0.6% increase in agricultural TFP for every one‐percentage point reduction of the land Gini coefficient or a one‐hectare decrease in average farm size. Moreover, an assessment of the potential impact of land quality heterogeneity and measurement error reveals that neither issue appears to bias the results. Finally, the role of rural reform is discussed, emphasizing the need to weigh the moral considerations of equal opportunity to land of the land‐poor against the legitimate property rights of the land‐rich on a case‐by‐case basis.",
+    "url": "https://doi.org/10.1111/agec.70036",
+    "authors": [
+      "Hernán Borrero"
+    ],
+    "tags": [
+      "Productivity",
+      "Agricultural economics",
+      "Inequality",
+      "Agriculture",
+      "Economics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-04-10",
+    "doi": "https://doi.org/10.1111/agec.70036",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4404679725",
+    "name": "Internet of Things Integrated Deep‐Learning Algorithms Monitoring and Predicting Abnormalities in Agriculture Land",
+    "source": "openalex",
+    "abstract": "ABSTRACT The Internet of Things (IoT) plays an essential role in the majority of the recent real‐time applications to speed up the process of immediate actions against abnormal behavior. Surveillance monitoring systems using CCTV and web cameras were used in earlier applications; nevertheless, they could only monitor and generate videos. The data transmission rate in the surveillance monitoring systems was poor due to the less‐performance internet technologies used in the earlier systems. Since they were restricted in data transmission speed, data size carried, communication distance, and sensing range. This paper integrates the fifth‐generation Internet technology (5G) IoT devices and sensors and deep‐learning algorithms to improve the efficiency of agriculture surveillance monitoring systems. It helps monitor, generate, and analyze the IoT data that can be processed immediately and predict the abnormal activities happening in agriculture. Landowners can take immediate action to save and recover the crops and their domestic animals concerning abnormal actions. This paper implements a Convolution Neural Network (CNN) algorithm for analyzing the IoT data and predicting abnormal activities. The experiment result is verified and compared with the other state‐of‐the‐art methods to evaluate the performance of the proposed CNN.",
+    "url": "https://doi.org/10.1002/itl2.607",
+    "authors": [
+      "Prabu Selvam",
+      "N. Krishnamoorthy",
+      "S. Praveen Kumar",
+      "K. Lokeshwaran",
+      "Madineni Lokesh",
+      "Maganti Syamala",
+      "R.G. Vidhya"
+    ],
+    "tags": [
+      "Agriculture",
+      "The Internet",
+      "Computer science",
+      "Artificial intelligence",
+      "Deep learning"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2024-11-25",
+    "doi": "https://doi.org/10.1002/itl2.607",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W7134230685",
+    "name": "A review on multifunctional applications of MgO nanostructures: from material science to environmental and agricultural innovations",
+    "source": "openalex",
+    "abstract": "ions, exhibits hygroscopic properties and is a white, solid mineral with diverse technological applications. These nanoparticles demonstrate versatile applications across multiple disciplines, including agriculture, drug delivery, environmental remediation, antimicrobial treatments, and supercapacitor technologies. Previous studies describe diverse synthesis methodologies including sol-gel routes, flame synthesis, and hydrothermal methods, whereas this review focuses primarily on green synthesis approaches. The green synthesis methodology employs plant extracts that serve dual functions as both reducing agents and capping agents in the formation and stabilization of metal oxide nanoparticles. Biosynthesized MgO NPs exhibit distinctive properties, including controlled morphology, high surface area, tunable particle size distribution, and enhanced stabilization. These characteristics position MgO NPs as promising candidates for addressing contemporary environmental challenges and advancing energy storage technologies. This review critically analyzes recent developments in biosynthesized MgO NPs, highlighting the advantages of green synthesis over conventional methods and identifying key research gaps and future directions in this rapidly evolving field.",
+    "url": "https://doi.org/10.1039/d5ra07016c",
+    "authors": [
+      "G. Georgelin Jeba Mahiba",
+      "A Prabakaran",
+      "Babu Balraj"
+    ],
+    "tags": [
+      "Agriculture",
+      "Magnesium",
+      "Nanotechnology",
+      "Sustainable energy",
+      "Nanoparticle"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2026-01-01",
+    "doi": "https://doi.org/10.1039/d5ra07016c",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4411793436",
+    "name": "Sustainable Agricultural Development under the Influence of Technology: A Case Study of Bihar",
+    "source": "openalex",
+    "abstract": "Achieving “Zero Hunger,” one of the core Sustainable Development Goals (SDGs) adopted by the United Nations in 2015, necessitates transformative changes in agricultural systems through sustainable practices and resilient technologies. This study examines the influence of farm technologies and supporting infrastructure on agricultural value-added(GVA) in Bihar, a predominantly agrarian and economically underdeveloped state in India, utilizing time series data from 2000 to 2024. Employing advanced econometric models, dynamic simulations, and impulse response analyses, the research identifies key structural drivers and constraints of agricultural growth in the region. Technological advancement is shown to be a primary driver, with mechanization, improved seed varieties, multi-cropping, and agroforestry practices significantly enhancing land productivity. Capital stock investment exhibits a direct and positive elasticity (0.59%), with its impact persisting up to eight years before diminishing, underscoring the need for periodic reinvestment. Mechanization alone accounts for a 32% contribution to GVA, signalling a transition toward labour-saving technologies. Arable land expansion and sustainable practices also play a pivotal role, contributing 21% to agricultural GVA. Conversely, irrigation infrastructure and chemical fertilizers reveal mixed or negative short-term effects, likely due to inefficient application or ecological constraints. Variables such as labour, credit, forest area, and energy consumption are found to be statistically insignificant. The findings advocate for capital lifecycle management, precision farming, sustainable land use, targeted input application, and credit system reform. The study concludes that an integrated, evidence-based policy framework is essential to ensure sustained agricultural productivity, environmental stewardship, and the long-term realization of SDG-2 in Bihar.",
+    "url": "https://doi.org/10.55121/nc.v4i1.385",
+    "authors": [
+      "Jitendra Kumar Sinha",
+      "Anurodh Kumar Sinha"
+    ],
+    "tags": [
+      "Agriculture",
+      "Sustainable development",
+      "Business",
+      "Agricultural economics",
+      "Environmental planning"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-07-01",
+    "doi": "https://doi.org/10.55121/nc.v4i1.385",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4411893177",
+    "name": "Insecticide Resistance in Agricultural Pests: Mechanisms, Case Studies, and Future Directions",
+    "source": "openalex",
+    "abstract": "Pesticide resistance is an escalating global challenge that threatens agricultural productivity, food security, and the sustainability of pest control methods. Over 600 insect species have developed resistance, compromising the effectiveness of chemical controls and exacerbating pest outbreaks. Species such as Helicoverpa armigera and Bemisia tabaci serve as prominent examples of pests displaying this growing resistance problem. This study aims to explore the underlying mechanisms of pesticide resistance in key agricultural pests, identify the major contributing factors, assess the effectiveness of current management strategies, and examine potential future tools and technologies for combating resistance. The study integrates data from global case studies, specifically focusing on Helicoverpa armigera in India and Bemisia tabaci in China. It also synthesizes information on various resistance mechanisms, including metabolic, target-site, penetration, and behavioral processes. Several resistance management strategies, such as pesticide rotation, integrated pest management (IPM), and refuge policies, are evaluated for their effectiveness. Metabolic and target-site resistance mechanisms are particularly prevalent in resistant insect populations. Contributing factors include overuse of single pesticide classes, sub-lethal dosages, inadequate treatment regimens, and monoculture farming. IPM and pesticide rotation employing different modes of action are among the most effective current strategies. Emerging technologies RNA interference (RNAi) and CRISPR gene editing , offer promising new approaches. Addressing pesticide resistance requires a comprehensive, multi-faceted strategy that incorporates genetic tools, real-time monitoring, biopesticide development, and stronger regulatory frameworks. International cooperation, farmer education, and scientifically informed policies will be critical to future success.",
+    "url": "https://doi.org/10.32792/utq/utjsci/v12i1.1381",
+    "authors": [
+      "Ihsan Hameed Khudhair",
+      "Naseer Malaky Abbood",
+      "Yasser A. El‐Amier"
+    ],
+    "tags": [
+      "Integrated pest management",
+      "Biotechnology",
+      "Helicoverpa armigera",
+      "Agriculture",
+      "Sustainability"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-06-30",
+    "doi": "https://doi.org/10.32792/utq/utjsci/v12i1.1381",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4414947089",
+    "name": "Mapping the Scientific Labour Organization in Agricultural and Remote Sensing Research",
+    "source": "openalex",
+    "abstract": "Scientific labour organization is becoming relevant in the context of the rapidly changing requirements of the modern market, especially in the growing human interaction with robotic systems and artificial intelligence. The purpose of this study is to conduct a bibliometric and content analysis of scientific labour organization in agriculture, with a focus on the integration of remote sensing technologies and precision farming. The methodological basis of the work included bibliometric and content analysis of scientific articles selected from the Web of Science database for the period 1992-2025, using clusterization (CiteSpace 6.3.R1). The results showed a steady increase in publication activity: since 2017, the number of papers has increased to four per year, and the peak of citations occurred in 2022. Cluster analysis revealed two dominant areas: “Industry 4.0” (77 articles, the average publication year is 2016, S = 0.99) and “Precision Agriculture” (34 articles, the average year is 2014, S = 1.0). These clusters have shown that sustainable land use technologies and precision farming innovations are changing the organization of labor and management of agricultural enterprises. The results demonstrate the growing interest in the problems of labor organization in the context of the digitalization of the agricultural sector, the strengthening of interdisciplinary ties and the expansion of the range of applied research. In the future, it is advisable to expand databases for analysis, include more intersectoral research and develop organizational models that take into account the social and ethical aspects of the introduction of new technologies.",
+    "url": "https://doi.org/10.51176/1997-9967-2025-3-139-151",
+    "authors": [
+      "Kristina Konstantinova",
+      "Nurlan Bekmukhamedov",
+      "Nurdaulet B. Zhumabay"
+    ],
+    "tags": [
+      "Context (archaeology)",
+      "Agriculture",
+      "Work (physics)",
+      "Regional science",
+      "Bibliometrics"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-10-06",
+    "doi": "https://doi.org/10.51176/1997-9967-2025-3-139-151",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4322730773",
+    "name": "Changing the logic in agricultural extension: evidence from a demand-driven extension programme in Kenya",
+    "source": "openalex",
+    "abstract": "Developing countries have recognised the need to strengthen their agricultural extension services as an engine for improving productivity, reaching marginalised, poor and female farmers and addressing new challenges, such as environmental degradation and climate change. However, structuring effective and viable extension systems remains a major challenge in most places. This paper studies the Plantwise extension programme in Kenya, an initiative that supports and increases collaboration among actors in the national plant health system, establishes and maintains a network of plant clinics – a physical interface between farmers and crop protection experts – to address the needs of smallholders, and collects key information in the process that can be used for informing policy and for monitoring and evaluation purposes. To assess the programme in Kenya, we conducted a longitudinal mixed-methods evaluation of the programme from 2014 to 2018. Our results show that Plantwise has altered the way the Government of Kenya addresses crop protection. The programme is innovative and improves knowledge at multiple levels. At the farm level, Plantwise has contributed to improvements in the use of agricultural practices, inputs and maize productivity, a major staple crop. The results show that the Plantwise approach is a reasonable alternative to other agricultural extension systems that support smallholder farmers.",
+    "url": "https://doi.org/10.1080/19439342.2023.2181848",
+    "authors": [
+      "Juan D. Bonilla",
+      "Andrea Coombes",
+      "D.L. Romney",
+      "Paul Winters"
+    ],
+    "tags": [
+      "Extension (predicate logic)",
+      "Agricultural extension",
+      "Economics",
+      "Agriculture",
+      "Economic growth"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2023-03-01",
+    "doi": "https://doi.org/10.1080/19439342.2023.2181848",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4399485097",
+    "name": "Precision prevention in worksite health–A scoping review on research trends and gaps",
+    "source": "openalex",
+    "abstract": "OBJECTIVES: To map the current state of precision prevention research in the workplace setting, specifically to study contexts and characteristics, and to analyze the precision prevention approach in the stages of risk assessment/data monitoring, data analytics, and the health promotion interventions implemented. METHODS: Six international databases were searched for studies published between January 2010 and May 2023, using the term \"precision prevention\" or its synonyms in the context of worksite health promotion. RESULTS: After screening 3,249 articles, 129 studies were reviewed. Around three-quarters of the studies addressed an intervention (95/129, 74%). Only 14% (18/129) of the articles primarily focused on risk assessment and data monitoring, and 12% of the articles (16/129) mainly included data analytics studies. Most of the studies focused on behavioral outcomes (61/160, 38%), followed by psychological (37/160, 23%) and physiological (31/160, 19%) outcomes of health (multiple answers were possible). In terms of study designs, randomized controlled trials were used in more than a third of all studies (39%), followed by cross-sectional studies (18%), while newer designs (e.g., just-in-time-adaptive-interventions) are currently rarely used. The main data analyses of all studies were regression analyses (44% with analyses of variance or linear mixed models), whereas machine learning methods (e.g., Algorithms, Markov Models) were conducted only in 8% of the articles. DISCUSSION: Although there is a growing number of precision prevention studies in the workplace, there are still research gaps in applying new data analysis methods (e.g., machine learning) and implementing innovative study designs. In the future, it is desirable to take a holistic approach to precision prevention in the workplace that encompasses all the stages of precision prevention (risk assessment/data monitoring, data analytics and interventions) and links them together as a cycle.",
+    "url": "https://doi.org/10.1371/journal.pone.0304951",
+    "authors": [
+      "Filip Mess",
+      "Simon Blaschke",
+      "Teresa Sofie Schick",
+      "Julian Friedrich"
+    ],
+    "tags": [
+      "Psychological intervention",
+      "Health promotion",
+      "Data science",
+      "Analytics",
+      "Promotion (chess)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2024-06-10",
+    "doi": "https://doi.org/10.1371/journal.pone.0304951",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W7127636525",
+    "name": "Cropland concentration powers sustainable intensification of agriculture in China",
+    "source": "openalex",
+    "abstract": "Over the past few decades, China’s cropland configuration has changed markedly, with important implications for food security and agricultural sustainability. Here we examine how cropland spatial-temporal concentration relates to agricultural intensification across China from 2000 to 2020. We mapped cropland distribution for five benchmark years using Google Earth Engine platform and 234,804 Landsat images and quantified cropland landscape configuration. These data were combined with provincial statistics on crop yield, fertilizer application, irrigation water use, and agricultural machinery power. We find that cropland experienced a contraction phase from 2000 to 2015 followed by a recovery phase after 2015. During contraction, increases in crop production commonly coincided with rising fertilizer and machinery inputs, whereas during recovery these inputs declined in most regions, alongside increased cropland contiguity. Overall, agricultural intensification in China became more sustainable by reducing reliance on fertilizer and machinery inputs and placing greater emphasis on cropland-use efficiency and environmental protection. Agricultural intensification in China became more sustainable from 2000 to 2020 by reducing reliance on fertilizer and machinery and focusing on resource efficiency and environmental protection, based on remote sensing and landscape index analysis.",
+    "url": "https://doi.org/10.1038/s43247-026-03259-8",
+    "authors": [
+      "Shibin Liu",
+      "Long Ling",
+      "Fakun He",
+      "Jie Lei",
+      "Wenbin Huang",
+      "Jiamei Long",
+      "Jichong Han",
+      "Long Wan",
+      "Jiaguo Qi",
+      "Huaiyong Shao"
+    ],
+    "tags": [
+      "Agriculture",
+      "Environmental science",
+      "Irrigation",
+      "Fertilizer",
+      "Food security"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2026-02-04",
+    "doi": "https://doi.org/10.1038/s43247-026-03259-8",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4408502235",
+    "name": "The Farm Animal Genotype–Tissue Expression (FarmGTEx) Project",
+    "source": "openalex",
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s41588-025-02121-5",
+    "authors": [
+      "Lingzhao Fang",
+      "Jinyan Teng",
+      "Qing Lin",
+      "Zhonghao Bai",
+      "Shuli Liu",
+      "Dailu Guan",
+      "Bingjie Li",
+      "Yahui Gao",
+      "Yali Hou",
+      "Mian Gong",
+      "Zhangyuan Pan",
+      "Ying Yu",
+      "Emily L. Clark",
+      "Jacqueline Smith",
+      "Konrad Rawlik",
+      "Ruidong Xiang",
+      "Amanda J. Chamberlain",
+      "Michael E. Goddard",
+      "Mathew D. Littlejohn",
+      "Greger Larson",
+      "David E. MacHugh",
+      "John F. O’Grady",
+      "Peter Sørensen",
+      "Goutam Sahana",
+      "Mogens Sandø Lund",
+      "Zhihua Jiang",
+      "Xiangchun Pan",
+      "Wentao Gong",
+      "Haihan Zhang",
+      "Xi He",
+      "Yuebo Zhang",
+      "Ning Gao",
+      "Jun He",
+      "Guoqiang Yi",
+      "Yuwen Liu",
+      "Zhonglin Tang",
+      "Pengju Zhao",
+      "Yang Zhou",
+      "Liangliang Fu",
+      "Xiao Wang",
+      "Dan Hao",
+      "Lei Liu",
+      "Siqian Chen",
+      "Robert S. Young",
+      "Xia Shen",
+      "Charley Xia",
+      "Hao Cheng",
+      "Li Ma",
+      "John B. Cole",
+      "R.L. Baldwin",
+      "Congjun Li",
+      "Curtis P. Van Tassell",
+      "Benjamin D. Rosen",
+      "Nayan Bhowmik",
+      "Joan K. Lunney",
+      "Wansheng Liu",
+      "Leluo Guan",
+      "Xin Zhao",
+      "Eveline M. Ibeagha‐Awemu",
+      "Yonglun Luo",
+      "Lin Lin",
+      "Oriol Canela‐Xandri",
+      "Martijn F. L. Derks",
+      "R.P.M.A. Crooijmans",
+      "Marta Gòdia",
+      "Ole Madsen",
+      "Martien A. M. Groenen",
+      "James E. Koltes",
+      "Christopher K. Tuggle",
+      "Fiona McCarthy",
+      "Dominique Rocha",
+      "Elisabetta Giuffra",
+      "Marcel Amills",
+      "Alex Clop",
+      "María Ballester",
+      "Gwenola Tosser‐Klopp",
+      "Jing Li",
+      "Jing Li",
+      "Chao Fang",
+      "Qishan Wang",
+      "Qishan Wang",
+      "Zhuocheng Hou",
+      "Qin Wang",
+      "Fuping Zhao",
+      "Lin Jiang",
+      "Guiping Zhao",
+      "Zhengkui Zhou",
+      "Rong Zhou",
+      "Liu Hehe",
+      "Juan Deng",
+      "Long Jin",
+      "Mingzhou Li",
+      "Delin Mo",
+      "Xiaohong Liu",
+      "Yaosheng Chen",
+      "Xiaolong Yuan",
+      "Jiaqi Li",
+      "Jiaqi Li",
+      "Shuhong Zhao",
+      "Yi Zhang"
+    ],
+    "tags": [
+      "Biology",
+      "Genotype",
+      "Expression (computer science)",
+      "Genetics",
+      "Computational biology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-03-17",
+    "doi": "https://doi.org/10.1038/s41588-025-02121-5",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4406289929",
+    "name": "AI in agriculture: Smart greenhouses and indoor farming systems",
+    "source": "openalex",
+    "abstract": "This comprehensive article examines the transformative impact of artificial intelligence on modern indoor agriculture, focusing on key technological advancements in smart greenhouse management and controlled environment agriculture. The article explores critical areas, including precision environmental control, nutrient management in hydroponic systems, plant health monitoring and disease management, harvest optimization, quality control, and energy management with sustainability practices. AI-driven solutions have revolutionized traditional farming approaches by integrating deep learning algorithms, computer vision systems, and IoT sensor networks, enabling unprecedented levels of automation, resource efficiency, and crop yield optimization. Implementing these technologies has significantly improved agricultural metrics, from disease detection and prevention to harvest timing and quality assessment, while substantially reducing operational costs and environmental impact.",
+    "url": "https://doi.org/10.30574/ijsra.2025.14.1.0054",
+    "authors": [
+      "Praveen Payili"
+    ],
+    "tags": [
+      "Greenhouse",
+      "Agriculture",
+      "Agricultural engineering",
+      "Agroforestry",
+      "Environmental science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-01-12",
+    "doi": "https://doi.org/10.30574/ijsra.2025.14.1.0054",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4405320699",
+    "name": "A Bluetooth-Based Automated Agricultural Machinery Positioning System",
+    "source": "openalex",
+    "abstract": "With the rapid advancement of technology, precision agriculture, as a modern agricultural production model, has seen significant progress in recent years. Its widespread adoption is gradually transforming traditional farming methods, providing strong support for the modernization of global agriculture. In particular, the application of positioning technology plays a crucial role in precision agriculture. This paper focuses on an automated agricultural machinery positioning system based on Bluetooth technology. The system uses Bluetooth at the 2.4 GHz frequency for transmission, processing Constant Tone Extension (CTE) and Received Signal Strength Indicator (RSSI) signals collected from blind nodes. The Propagator Direct Data Acquisition (PDDA) algorithm is employed to calculate angle information from CTE signals, while the Two-Ray Ground Reflection Model is applied to manage the correlation between RSSI and distance, making it suitable for outdoor environments. These two types of data are fused for positioning, with an optimized objective function converting the positioning task into an optimization problem. An Adaptive Secretary Bird Optimization Algorithm (ASBOA) is introduced to enhance the accuracy and efficiency of the positioning process. In the simulation, anchor and blind nodes are deployed to simulate a real farm environment. Anchor nodes receive CTE and RSSI signals from blind nodes. Considering that the tags mounted on agricultural machinery are set at a fixed height in real scenarios, the simulation also fixes the tags at this height. We then compare the accuracy of five algorithms in both static and dynamic tracking. The final simulation results indicate that ASBOA achieves satisfactory high-precision positioning, both for static points and dynamic tracking, theoretically meeting the needs for continuous positioning and laying a solid foundation for future field trials.",
+    "url": "https://doi.org/10.3390/electronics13244902",
+    "authors": [
+      "Wentao Bian",
+      "Yanyi Liu",
+      "Yin Wu"
+    ],
+    "tags": [
+      "Bluetooth",
+      "Computer science",
+      "Embedded system",
+      "Agricultural machinery",
+      "Agriculture"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2024-12-12",
+    "doi": "https://doi.org/10.3390/electronics13244902",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4404068181",
+    "name": "Machine Learning Based Agricultural Profitability Recommendation Systems: A Paradigm Shift in Crop Cultivation.",
+    "source": "openalex",
+    "abstract": "In India, the demand for fruits and vegetables has been consistently increasing alongside the rising population, making crop production a crucial aspect of agriculture. However, despite the growing demand and potential profitability, farmers have been slow to transition from traditional food grain crops to fruits and vegetables. In this paper, we explore the changing demands of food categories in India, highlighting the shift towards increased consumption of fruits and vegetables. Despite the potential benefits, farmers face various challenges and uncertainties associated with cultivating these crops. To address this, we propose the use of Machine Learning (ML) and Deep Learning (DL) techniques to analyze historical market price data for fruits and vegetables from 2016 to 2021 and predict future prices. This accurate prediction system will aid farmers in deciding which crops to grow and when to harvest, ultimately maximizing profits.",
+    "url": "https://doi.org/10.9781/ijimai.2024.10.005",
+    "authors": [
+      "Nilesh P. Sable",
+      "Rajkumar V. Patil",
+      "Mahendra Deore",
+      "Ratnmala Bhimanpallewar",
+      "Parikshit N. Mahalle"
+    ],
+    "tags": [
+      "Computer science",
+      "Profitability index",
+      "Agricultural engineering",
+      "Agriculture",
+      "Paradigm shift"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2024-11-05",
+    "doi": "https://doi.org/10.9781/ijimai.2024.10.005",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4407145146",
+    "name": "High-Precision Multi-Class Object Detection Using Fine-Tuned YOLOv11 Architecture: A Case Study on Airborne Vehicles",
+    "source": "openalex",
+    "abstract": "The widespread adoption of airborne vehicles, including drones and UAVs, has brought significant advancements to fields such as surveillance, logistics, and disaster response. Despite these benefits, their increasing use poses substantial challenges for real-time detection and classification, particularly in multi-class scenarios where precision and scalability are essential. This paper proposes a high-performance detection framework based on YOLOv11, specifically tailored for identifying airborne vehicles. YOLOv11 integrates innovative features, such as anchor-free detection and enhanced attention mechanisms, to deliver superior accuracy and speed. The proposed framework is tested on a comprehensive airborne vehicle dataset featuring diverse conditions, including variations in altitude, occlusion, and environmental factors. Experimental results demonstrate that the fine-tuned YOLOv11 model exceeds the performance of existing models. Additionally, its ability to operate in real-time makes it ideal for critical applications like air traffic management and security monitoring.",
+    "url": "https://doi.org/10.14569/ijacsa.2025.01601113",
+    "authors": [
+      "Nasser S. Albalawi"
+    ],
+    "tags": [
+      "Computer science",
+      "Architecture",
+      "Class (philosophy)",
+      "Object detection",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-01-01",
+    "doi": "https://doi.org/10.14569/ijacsa.2025.01601113",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4401818841",
+    "name": "Weed detection in agricultural fields using machine vision",
+    "source": "openalex",
+    "abstract": "Weeds have the potential to cause significant damage to agricultural fields, so the development of weed detection and automatic weed control in these areas is very important. Weed detection based on RGB images allows more efficient management of crop fields, reducing production costs and increasing yields. Conventional weed control methods can often be time-consuming and costly. It can also cause environmental damage through overuse of chemicals. Automated weed detection and control technologies enable precision agriculture, where weeds are accurately identified and targeted, minimizing chemical use and environmental impact. Overall, weed detection and automated weed control represent a significant step forward in agriculture, helping farmers to reduce production costs, increase crop safety, and develop more sustainable agricultural practices. Thanks to technological advances, we can expect more efficient and environmentally friendly solutions for weed control in the future. Developing weed detection and automated control technologies is crucial for enhancing agricultural efficiency. Employing RGB images for weed identification not only lowers production costs but also mitigates environmental damage caused by excessive chemical use. This study explores automated weed detection systems, emphasizing their role in precision agriculture, which ensures minimal chemical use while maximizing crop safety and sustainability.",
+    "url": "https://doi.org/10.1051/bioconf/202412501004",
+    "authors": [
+      "László Moldvai",
+      "Bálint Ambrus",
+      "Gergely Teschner",
+      "Anikó Nyéki"
+    ],
+    "tags": [
+      "Weed",
+      "Agriculture",
+      "Machine vision",
+      "Field (mathematics)",
+      "Artificial intelligence"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2024-01-01",
+    "doi": "https://doi.org/10.1051/bioconf/202412501004",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4410545869",
+    "name": "Digital and Entrepreneurial Competencies for the Bioeconomy: Perceptions and Training Needs of Agricultural Professionals in Greece, Italy, Portugal, and Sweden",
+    "source": "openalex",
+    "abstract": "As the European Union advances its bioeconomy strategy, the agricultural sector emerges as a key domain requiring targeted upskilling in digital and entrepreneurial competencies. This study examines how agricultural professionals perceive the importance of these competencies and identifies related training needs, drawing on the European Commission’s Digital Competence Framework (DigComp) and Entrepreneurship Competence Framework (EntreComp). Using a quantitative survey methodology, data were collected from 140 respondents, including farmers, agronomists, consultants, entrepreneurs, and policymakers, in four European countries: Greece, Italy, Portugal, and Sweden. Descriptive and non-parametric analyses (Mann–Whitney U and Kruskal–Wallis tests) revealed strong recognition of digital competencies across all groups, with significant variation by country, while perceptions of entrepreneurial competencies differed mainly by professional role. Moreover, a significant lack of formal bioeconomy-related education was identified. The findings underscore the need for targeted, competence-based education and policy interventions to equip professionals with the skills required for a sustainable and innovation-driven agricultural sector.",
+    "url": "https://doi.org/10.3390/agriculture15101106",
+    "authors": [
+      "Dimitrios Petropoulos",
+      "Georgios A. Deirmentzoglou",
+      "Νικόλαος Αποστολόπουλος",
+      "Bas Paris",
+      "Dimitris Michas",
+      "Athanasios Τ. Balafoutis",
+      "Elena Athanasopoulou",
+      "Leonardo Nibbi",
+      "Hailong Li",
+      "Lara Carvalho",
+      "Maria Helena Moreira da Silva",
+      "Fernando Moreira da Silva"
+    ],
+    "tags": [
+      "Agriculture",
+      "Training (meteorology)",
+      "Entrepreneurship",
+      "Perception",
+      "Business"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-05-21",
+    "doi": "https://doi.org/10.3390/agriculture15101106",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4417525269",
+    "name": "Assessing the Role of Artificial Intelligence in Transforming Decision-Making Across Modern Agricultural Systems.",
+    "source": "openalex",
+    "abstract": "Artificial Intelligence (AI) is revolutionizing the agricultural sector by enhancing data-driven decision-making, improving resource utilization, and supporting sustainable food production. This review explores how AI-based tools—such as machine learning, computer vision, and predictive analytics—are reshaping decision processes across key agricultural domains including crop management, livestock monitoring, soil optimization, and supply chain logistics. It examines the integration of AI with Internet of Things (IoT) sensors, drones, and satellite imaging to enable precision agriculture and real-time adaptive strategies. Furthermore, the paper evaluates the ethical, infrastructural, and technical challenges associated with implementing AI-driven systems, particularly in developing regions. Through a synthesis of current literature and emerging case studies, this review highlights the potential of AI to reduce uncertainty, support policy formulation, and foster resilience against climate variability. The paper concludes by identifying future research directions focused on explainable AI (XAI), edge computing, and the democratization of agricultural intelligence systems to ensure inclusivity and global scalability.",
+    "url": "https://doi.org/10.47191/etj/v10i12.06",
+    "authors": [
+      "Independent Researcher, USA",
+      "Olamidotun Nurudeen Michael",
+      "Omodolapo Eunice Ogunsola"
+    ],
+    "tags": [
+      "Agriculture",
+      "Resilience (materials science)",
+      "Democratization",
+      "Business",
+      "Supply chain"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2025-12-20",
+    "doi": "https://doi.org/10.47191/etj/v10i12.06",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4404325876",
+    "name": "Wise Roles and Future Visionary Endeavors of Current Emperor: Advancing Dynamic Methods for Longitudinal Microbiome Meta‐Omics Data in Personalized and Precision Medicine",
+    "source": "openalex",
+    "abstract": "Understanding the etiological complexity of diseases requires identifying biomarkers longitudinally associated with specific phenotypes. Advanced sequencing tools generate dynamic microbiome data, providing insights into microbial community functions and their impact on health. This review aims to explore the current roles and future visionary endeavors of dynamic methods for integrating longitudinal microbiome multi-omics data in personalized and precision medicine. This work seeks to synthesize existing research, propose best practices, and highlight innovative techniques. The development and application of advanced dynamic methods, including the unified analytical frameworks and deep learning tools in artificial intelligence, are critically examined. Aggregating data on microbes, metabolites, genes, and other entities offers profound insights into the interactions among microorganisms, host physiology, and external stimuli. Despite progress, the absence of gold standards for validating analytical protocols and data resources of various longitudinal multi-omics studies remains a significant challenge. The interdependence of workflow steps critically affects overall outcomes. This work provides a comprehensive roadmap for best practices, addressing current challenges with advanced dynamic methods. The review underscores the biological effects of clinical, experimental, and analytical protocol settings on outcomes. Establishing consensus on dynamic microbiome inter-studies and advancing reliable analytical protocols are pivotal for the future of personalized and precision medicine.",
+    "url": "https://doi.org/10.1002/advs.202400458",
+    "authors": [
+      "Sunghee Oh",
+      "Robert W. Li"
+    ],
+    "tags": [
+      "Microbiome",
+      "Precision medicine",
+      "Workflow",
+      "Data science",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2024-11-13",
+    "doi": "https://doi.org/10.1002/advs.202400458",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W7133343452",
+    "name": "Quantum Computing for Precision Agriculture in Challenging Environments: A Case Study from Northern Morocco",
+    "source": "openalex",
+    "abstract": "Abstract. The legalization of medical cannabis in Morocco’s northern Rif region requires precision agriculture systems capable of supporting highly controlled, traceable and quality-driven cultivation. Medical cannabis is biologically sensitive to micro-variations in soil moisture, vapor pressure deficit (VPD), canopy temperature and nutrient levels, which makes it a demanding testbed for advanced decision-support methods. In this work, we propose and numerically evaluate an end-to-end hybrid quantum–classical framework that combines IoT sensor networks, Sentinel-2 and UAV imagery, GIS integration and quantum-enhanced analytics for regulated medical cannabis cultivation in the Al-Hoceïma region. The framework instantiates three quantum modules: (i) a variational quantum linear solver (VQLS) for Kriging-based spatial interpolation under sparse sensing, (ii) a variational quantum classifier (VQC) for early stress detection from multi-source features, and (iii) a Quantum Approximate Optimization Algorithm (QAOA) for constrained irrigation scheduling. All experiments are conducted on synthetic yet agro-ecologically calibrated data generated for a 4-hectare virtual plot; no real cannabis-field data or quantum hardware are used. In this controlled simulation setting, the quantum-inspired modules achieve moderate improvements over classical baselines (Kriging, Random Forest, neural networks, MILP), for example reducing interpolation RMSE by about 20% and improving early-stress F1-score by several percentage points. We explicitly do not claim hardware-level quantum advantage, nor do we provide a formal proof that VQLS or VQC must outper- form classical Kriging or machine learning in this regime. Instead, the contribution is a transparent formulation and simulation- based assessment of quantum-compatible workflows for precision agriculture in regulated contexts, together with a critical discus- sion of their current limitations and the conditions under which they might become competitive in practice.",
+    "url": "https://doi.org/10.5194/isprs-archives-xlviii-4-w19-2025-29-2026",
+    "authors": [
+      "Mohamed Ben Ahmed",
+      "Anouar A. Boudhir",
+      "Aziz Mahboub"
+    ],
+    "tags": [
+      "Precision agriculture",
+      "Computer science",
+      "Testbed",
+      "Quantum",
+      "Emulation"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2026-03-03",
+    "doi": "https://doi.org/10.5194/isprs-archives-xlviii-4-w19-2025-29-2026",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W7127441965",
+    "name": "Seeds of change: Mapping the landscape of precision farming technology adoption among agricultural entrepreneurs",
+    "source": "openalex",
+    "abstract": "This study focuses on identifying the application of precision farming technology in agriculture entrepreneurship by applying a systematic literature review approach. The documents in the English language available in the Scopus, Dimensions, and Web of Science, databases are considered. A total of 229 documents during the period 1995–2023 were selected through the SPAR-4-SLR protocol to understand the role and adoption of precision farming technology by agriculture entrepreneurs. The study investigates the evolution over the period to examine the evolution, factors influencing the adoption, the impact of these technologies, the contribution to sustainable development, differences in the adoption in developing and developed countries, barriers faced during the adoption, future trends in the precision farming technology adoption, and recommendations for the improvement. The major findings are; factors influence precision farming technology in agriculture entrepreneurship are; readiness for technology integration, knowledge, finance, and accessibility. The enhancement in productivity, efficiency, and sustainability is also considered a driving factors. Developed countries like the USA and the European Union countries have largely adopted the PFT compared the developing countries. Initial costs, inadequate expertise, lack of infrastructure, etc. were the major challenges encountered. This study is purely a literature review and lacks the advantages of applying a quantitative study. This study fills the existing research gap and directions for further research. The study provides managerial implications to prepare suitable policies, plans, and programs to promote precision farming technology adoption and impart awareness for enriching knowledge among agricultural entrepreneurs and farmers. The novelty of the study is based on the structured literature review.",
+    "url": "https://doi.org/10.1007/s44447-025-00101-z",
+    "authors": [
+      "T. A. Alka",
+      "Aswathy Sreenivasan",
+      "M. Suresh"
+    ],
+    "tags": [
+      "Agriculture",
+      "Precision agriculture",
+      "Entrepreneurship",
+      "Sustainability",
+      "Business"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2026-02-03",
+    "doi": "https://doi.org/10.1007/s44447-025-00101-z",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4403230401",
+    "name": "Social issues in agriculture in rural areas",
+    "source": "openalex",
+    "abstract": "Ensuring the well-being of farmers, their families, farmworkers, and that of their communities is high on the agenda of governments and policy makers in OECD countries. The quality of agricultural jobs (e.g. working conditions) and quality of life aspects such as environmental quality, health, depopulation of rural areas, isolation, crime, discrimination, and access to knowledge together determine the well-being of those active in the agricultural sector. Relevant policy design has tended to be hampered by serious data gaps. By focusing on different dimensions of well-being, this paper proposes a framework for social issues in agriculture to identify cross-cutting challenges. Seven policy examples, covering diverse social issues such as mental health, developing social connections in isolated rural areas, and inclusiveness of Indigenous Peoples and those with disabilities, confirm the need to look beyond traditional sectoral policies and to address social issues from a broader policy perspective. Only a multipronged approach can successfully remove the barriers that hinder opportunities for all farmers and their communities.",
+    "url": "https://doi.org/10.1787/fec15b38-en",
+    "authors": [
+      "Masayasu Asai",
+      "Jesús Antón"
+    ],
+    "tags": [
+      "Agriculture",
+      "Geography",
+      "Agricultural economics",
+      "Economics",
+      "Archaeology"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2024-10-08",
+    "doi": "https://doi.org/10.1787/fec15b38-en",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W4401724298",
+    "name": "Precision and bias of carbon storage estimations in wetland and mangrove sediments",
+    "source": "openalex",
+    "abstract": "Peaty sediments in coastal wetlands play an important role in the sequestration of atmospheric carbon dioxide and its belowground storage. Sediment cores are used to quantify organic matter (OM) density, estimated by multiplying the bulk density of a core segment by its OM fraction. This method can be imprecise, as repeated samples often differ widely. Recent studies have shown that sediment bulk density and OM fraction are not independent but tightly related by a function called the ideal-mixing model. Thus, the bulk density of the sediment can be directly estimated from its OM fraction. Statistical theory and simulations demonstrate that the high variance in the product estimation of OM density is the result of error propagation in the product of two functionally related variables with independent errors. Estimating OM density in wetland sediments using the ideal-mixing model is more precise than the traditionally used product estimate, especially in highly organic sediments.",
+    "url": "https://doi.org/10.1126/sciadv.adl1079",
+    "authors": [
+      "Exequiel Ezcurra"
+    ],
+    "tags": [
+      "Sediment",
+      "Environmental science",
+      "Wetland",
+      "Mixing (physics)",
+      "Fraction (chemistry)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2024-08-21",
+    "doi": "https://doi.org/10.1126/sciadv.adl1079",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W3198518056",
+    "name": "Development of High-tech Agriculture in the Context of Industrialization and Urbanization: The Case of Vietnam",
+    "source": "openalex",
+    "abstract": "The aim of this article is to assess the importance and development of high-tech agriculture in Vietnam under the context of industrialization and urbanization. Due to pressure from international economic integration and climate change in recent years, high-tech agriculture seems to be an affordable direction for Vietnam to renovate the agricultural sector. Although high-tech agriculture has existed in different locals and sub-sectors of agriculture such as crop, livestock, and aquaculture, and Vietnam has obtained initial achievements in adopting high-tech agriculture, this country has to face a number of challenges related to land, credit, information technology, and human resources in the process of developing high-tech agriculture. Lastly, policies are recommended to facilitate the development of high-tech agriculture in Vietnam.",
+    "url": "https://doi.org/10.31817/vjas.2020.3.3.01",
+    "authors": [
+      "Anh Tru Nguyen",
+      "Tran Huu Cuong",
+      "Vu Ngoc Huyen"
+    ],
+    "tags": [
+      "Agriculture",
+      "Industrialisation",
+      "Urbanization",
+      "Context (archaeology)",
+      "Business"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2021-03-05",
+    "doi": "https://doi.org/10.31817/vjas.2020.3.3.01",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
+  },
+  {
+    "id": "oa:W7125578641",
+    "name": "The intersection of artificial intelligence and food systems: exploring technological breakthroughs and data-driven agriculture",
+    "source": "openalex",
+    "abstract": "Food security is an international challenge that is constantly exposed to climate change, rapid population increases, economic inequalities and geopolitical unrest. Thus, new solutions must be developed to address these issues. Artificial intelligence (AI) has become one such solutions and it has helped to enhance different food production, processing and distribution phases. Precision farming can be improved through AI because it allows the efficient management of resources such as water or fertilizers to increase crop yields. AI helps in the monitoring of animal health and optimization of feeding in livestock farming. In addition AI technologies simplify harvesting and enhancement after harvesting with enhanced sorting and grading. AI improves food processing through enhanced quality control and safety and optimizes logistics by improving routes, reducing spoilage and ensuring timely delivery. Another area where AI can be useful in reducing waste is tracking and minimizing food waste at all levels, however AI can also be applied to personalized nutrition services to assist people in making healthier food choices. The implementation of AI in food supply chain can help countries become more efficient and sustainable, governments need to enhance technology through good policies, better infrastructure and extensive access to these technologies.",
+    "url": "https://doi.org/10.1080/23311932.2026.2615165",
+    "authors": [
+      "Naseer Ahmed",
+      "Rajvinder Kour",
+      "Tawseefa Jan",
+      "Seerat Sharma",
+      "Tajendra Pal Singh",
+      "Praneet Chauhan",
+      "Sachin Ghanghas",
+      "Imran Sheikh",
+      "Mohd Rafatullah",
+      "Hendrix Yulis Setyawan",
+      "Nurul Huda"
+    ],
+    "tags": [
+      "Food security",
+      "Agriculture",
+      "Food systems",
+      "Food processing",
+      "Computer science"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "agritech"
+    ],
+    "publishedDate": "2026-01-23",
+    "doi": "https://doi.org/10.1080/23311932.2026.2615165",
+    "addedAt": "2026-09-01T10:59:29.396Z",
+    "updatedAt": "2026-09-01T10:59:29.396Z"
   }
 ]
