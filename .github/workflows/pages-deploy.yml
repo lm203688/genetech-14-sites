@@ -12,8 +12,11 @@ on:
       - '.github/workflows/pages-deploy.yml'
   workflow_dispatch:
   schedule:
-    # 每日 03:20 UTC 兜底重建，防止 push 事件漏触发
-    - cron: '20 3 * * *'
+    # 每 4 小时兜底重建（与 ops.yml 的 4h 构建预算门对齐，≤6 次/天≈180/月，在 CF 500/月额度内）。
+    # 原因：数据流水线用 GITHUB_TOKEN push 的提交未能可靠触发本工作流的 push 事件
+    # （08-31 14:49/20:37 两次本应触发构建的 "update" 提交实际未建），仅靠每日 03:20 单次兜底
+    # 在 GitHub schedule 节流下会长期不刷新，导致线上站点陈旧。改为每 4h 兜底，保证站点至多滞后 4h。
+    - cron: '20 */4 * * *'
 
 permissions:
   contents: read
