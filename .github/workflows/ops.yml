@@ -19,6 +19,7 @@
 #       INDEXNOW_KEY        (可选，用于 IndexNow SEO 提交)
 #       INDEXNOW_KEY_LOCATION (可选)
 #       SITE_BASE_URL       (可选，默认 https://genetech.example)
+#       CORE_API_KEY        (可选，启用 CORE 开放获取数据源；未配置则 backfill 自动跳过该源)
 
 name: GeneTech Operations Automation
 
@@ -255,7 +256,7 @@ jobs:
       - name: Run Data Backfill Pipeline
         run: |
           # 扩量引擎（operations-plan/pipeline-data-backfill.js）：
-          #   10 个数据源（OpenAlex/arXiv/Crossref/SemanticScholar/EuropePMC/PubMed/DOAJ/DataCite/Zenodo/CORE）× 单页 100 条 ×
+          #   11 个数据源（OpenAlex/arXiv/Crossref/SemanticScholar/EuropePMC/PubMed/DOAJ/DataCite/Zenodo/CORE/preprints）× 单页 100 条 ×
           #   "站点×检索词"级游标 —— 30 站、每站 14 个细分子领域词，单轮单站可取数千原始候选、去重后新增数百~上千。
           #   提速靠"抓得深"而非"抓得勤"（见 operations-plan/RATE-LIMIT-BUDGET.md）：
           #   --limit=800      单轮每站新增上限（检索词在并发 3 下都能被遍历）
@@ -274,6 +275,7 @@ jobs:
           echo "本轮新增实体: ${ADDED:-0}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CORE_API_KEY: ${{ secrets.CORE_API_KEY }}
 
       - name: Upload reports and logs
         if: always()
