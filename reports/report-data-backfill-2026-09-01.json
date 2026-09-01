@@ -1,6 +1,6 @@
 {
   "pipeline": "data-backfill-v2",
-  "timestamp": "2026-09-01T15:25:23.909Z",
+  "timestamp": "2026-09-01T19:07:10.390Z",
   "dryRun": false,
   "limit": 800,
   "perPage": 200,
@@ -206,8 +206,8 @@
     {
       "site": "ai-safety",
       "fetched": 3400,
-      "added": 14,
-      "total": 9999,
+      "added": 1,
+      "total": 10000,
       "dryRun": false
     },
     {

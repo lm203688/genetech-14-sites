@@ -238226,5 +238226,33 @@
     "doi": "10.22545/2024/00244",
     "addedAt": "2026-09-01T15:25:21.124Z",
     "updatedAt": "2026-09-01T15:25:21.124Z"
+  },
+  {
+    "id": "oa:W3046653923",
+    "name": "Federated Learning: A Survey on Enabling Technologies, Protocols, and Applications",
+    "source": "openalex",
+    "abstract": "This paper provides a comprehensive study of Federated Learning (FL) with an emphasis on enabling software and hardware platforms, protocols, real-life applications and use-cases. FL can be applicable to multiple domains but applying it to different industries has its own set of obstacles. FL is known as collaborative learning, where algorithm(s) get trained across multiple devices or servers with decentralized data samples without having to exchange the actual data. This approach is radically different from other more established techniques such as getting the data samples uploaded to servers or having data in some form of distributed infrastructure. FL on the other hand generates more robust models without sharing data, leading to privacy-preserved solutions with higher security and access privileges to data. This paper starts by providing an overview of FL. Then, it gives an overview of technical details that pertain to FL enabling technologies, protocols, and applications. Compared to other survey papers in the field, our objective is to provide a more thorough summary of the most relevant protocols, platforms, and real-life use-cases of FL to enable data scientists to build better privacy-preserving solutions for industries in critical need of FL. We also provide an overview of key challenges presented in the recent literature and provide a summary of related research work. Moreover, we explore both the challenges and advantages of FL and present detailed service use-cases to illustrate how different architectures and protocols that use FL can fit together to deliver desired results.",
+    "url": "https://doi.org/10.1109/access.2020.3013541",
+    "authors": [
+      "Mohammed Aledhari",
+      "Rehma Razzak",
+      "Reza M. Parizi",
+      "Fahad Saeed"
+    ],
+    "tags": [
+      "Computer science",
+      "Upload",
+      "Server",
+      "Field (mathematics)",
+      "Key (lock)"
+    ],
+    "confidence": 0.72,
+    "sites": [
+      "ai-safety"
+    ],
+    "publishedDate": "2020-01-01",
+    "doi": "https://doi.org/10.1109/access.2020.3013541",
+    "addedAt": "2026-09-01T19:06:53.710Z",
+    "updatedAt": "2026-09-01T19:06:53.711Z"
   }
 ]
