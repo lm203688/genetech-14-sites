@@ -70815,7 +70815,7 @@
     "id": "doi:10.21203/rs.3.rs-5397033/v1",
     "name": "A holistic data-driven approach to synthesis predictions of colloidal nanocrystal shapes",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "Abstract The ability to precisely design colloidal nanocrystals (NCs) has far-reaching implications in optoelectronics, catalysis, biomedicine, and beyond. Achieving such control is generally based on a trials-and-errors approach. Data-driven synthesis holds the promise to advance both discovery and mechanistic knowledge. Herein, we contribute to advancing the current state of the art in the chemical synthesis of colloidal NCs by proposing a machine-learning toolbox which operates in a low data regime, yet comprehensive of the most typical parameters relevant for colloidal NC synthesis. The developed toolbox predicts the NC shape given the reaction conditions and proposes reaction conditions given a target NC shape, using Cu NCs as the model system. By classifying NC shapes on a continuous energy scale, we synthesize an unreported shape, which are Cu rhombic dodecahedra. This holistic approach integrates data-driven and computational tools with materials chemistry. Such development is promising to greatly accelerate materials discovery and mechanistic understanding, thus advancing the field of tailored materials with atomic scale precision tunability.",
     "url": "https://doi.org/10.21203/rs.3.rs-5397033/v1",
     "authors": [],
     "tags": [],
@@ -71291,7 +71291,7 @@
     "id": "doi:10.64898/2026.01.08.698380",
     "name": "Remote Activation of Wnt Signaling and Cell Proliferation by E-cadherin Magnetomechanical Stimulation",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "The ability to remotely and precisely manipulate intracellular signaling pathways is a powerful tool for both fundamental biological research and therapeutic applications. Among these pathways, the Wnt/β-catenin signaling cascade plays a central role in regulating cell proliferation, differentiation, and tissue regeneration. However, current methods for activating this pathway such as pharmacological agents lack spatiotemporal control and may induce severe off-target effects. In this study, we introduce a pioneering magnetogenetic toolkit to modulate the Wnt/β-catenin pathway through magnetomechanical stimulation of E-cadherin, a key cell adhesion molecule intimately linked to β-catenin dynamics. Engineered magnetic nanoparticles (MNPs) functionalized with the extracellular domain of E-cadherin (MNPs@E/EC15) are used to selectively bind cellular E-cadherins. By applying a weak intensity and low-gradient magnetic field using a custom-designed magnetic stimulator, localized mechanical forces sufficient to trigger E-cadherin-mediated mechanotransduction are produced. This stimulation leads to β-catenin release from the membrane, nuclear translocation, and activation of Wnt target gene expression, as confirmed by transcriptomic profiling and a Wnt-responsive luciferase reporter assay. These molecular changes are also translated into functional outcomes, including enhanced cell proliferation and accelerated wound closure. This work establishes an innovative non-invasive tool for probing E-cadherin mechanobiology and remotely modulating Wnt/β-catenin signaling with high spatiotemporal resolution. Unlike other tools to probe mechanotransduction, this approach enables the simultaneous modulation of many cells with precise control, using low intensity magnetic field that could be potentially translated into in vivo designs. Our findings open promising avenues for studying mechanotransduction and developing targeted regenerative therapies based on mechanical stimulation.",
     "url": "https://doi.org/10.64898/2026.01.08.698380",
     "authors": [],
     "tags": [],
@@ -225052,7 +225052,7 @@
     "id": "doi:10.1016/j.procs.2026.05.126",
     "name": "Quantum Synergy: Leveraging AI-Enabled Multi-Agent Systems for Streamlined Quantum Algorithm Innovation",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Scientists require better and optimized quantum algorithms due to the rapid evolution of quantum computing. Creating quantum algorithms is not easy, and it’s a key issue. This study offers a fresh AI platform that automates the development pipeline of quantum algorithms. The proposed system uses various specialized AI agents powered by LLMs, that focus on tasks such as analysis of the case, optimizing strategies, transforming data, and designing algorithms. SOTA assistance saves time in algorithm creation while keeping the speed of execution intact. Our findings indicate that integrating an AI-powered multi-agent system into quantum computing can lead to innovative applications and scalable algorithms.",
     "url": "https://doi.org/10.1016/j.procs.2026.05.126",
     "authors": [
       "Ram Charan Tej Grandhe"
