@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-03",
+  "date": "2026-09-04",
   "total": 300000,
   "sites": 30,
   "perSite": {
@@ -39,63 +39,35 @@
     "abstractCompleteness": 49,
     "doiTraceability": 92,
     "dedupRate": 94,
-    "uniqueKeys": 282260,
-    "bySource": {
-      "arxiv": 15865,
-      "openalex": 40887,
-      "crossref": 108967,
-      "pubmed": 36363,
-      "europepmc": 38912,
-      "preprints": 19063,
-      "datacite": 39309,
-      "semanticscholar": 634
-    }
+    "uniqueKeys": 282260
   },
-  "status": "🟢 ALL-30-SITES-AT-CAP · GUARD_RESOLVED(8 orphan sites written)",
-  "delta": {
-    "total": 80000,
-    "vsBaselineDate": "2026-09-01",
-    "vsBaselineTotal": 220000,
-    "note": "09-01 GUARD 白名单修复(23→31)后，8 孤儿站已真实落库：22 站→30 站、220k→300k。今日本轮 0 新增(30/30 满容，符合预期)。2026-09-03 每日闭环复核：状态与 09-02 基线完全一致，30/30 满容、0 新增，五层门禁因满容跳过(非失败)。提升期实际截止 2026-12-31(此前记忆误记 09-30，已纠正)。"
-  },
-  "remoteCheck": {
-    "masterHead": "17b87c654025",
-    "lastDataCommit": "17b87c654025",
-    "lastDataCommitMsg": "[Bot] Data backfill update (+0 entities) 2026-09-02-05:20:58 UTC",
-    "masterStillActive": true,
-    "note": "推送层稳定：远端 HEAD 持续推进。今日本轮 run=33594147455（05:18 定时）新增 0、30/30 满容、[Commit] 暂存文件数=2、远端 17b87c6 推进。"
-  },
-  "guardBlocked": {
-    "resolved": true,
-    "sitesNowWritten": [
-      "ai-safety",
-      "quantum-materials",
-      "carbon-neutral",
-      "digital-twin",
-      "biomed-ai",
-      "edge-ai",
-      "neuromorphic",
-      "agritech"
-    ],
-    "note": "09-01 将 8 孤儿站加入 guards/publish.policy.json 白名单(23→31)+容量表(各10k)后，已成功写入 10k/站。GUARD 默认拒绝缺口已闭环。"
-  },
+  "status": "ALL-30-SITES-AT-CAP",
+  "delta": 0,
+  "remoteCheck": "b938f10a2126",
+  "guardBlocked": false,
   "fiveLayer": {
-    "cron_decide": "✅ 05:18 定时(run 33594147455)触发，[Decide] 数据涡轮 hourly data-only → should_run_data=true",
-    "guard": "✅ 全 30 站已在白名单，无 no rule matched/default:deny（日志 GUARD 命中 0 因满容整站跳过，非被拒）",
-    "engineCap": "✅ 30/30 命中 10000 容量硬截断，新增 0，cap 严守",
-    "quality": "✅ 门禁在码内(sanitizeBatch+dedupeById+dataQualityCheck)；发布质量 doi=92%/abs=49%/url=100%/dedup=94%",
-    "gitStaging": "✅ [Commit] 暂存文件数=2(本 run 仅 cursor+state churn，无实体变更，符合 0 新增)",
-    "push_master": "✅ 远端 17b87c6 推进，entities.json 真实提交"
+    "cron": true,
+    "guard": "n/a-at-cap",
+    "capacity": true,
+    "quality": "n/a-zero-added",
+    "staging": true,
+    "push": true
   },
-  "rootCause": {
-    "pushLayerFixed": "date-bug 修复(729efa7)+concurrency 组+push 重试 → 远端 HEAD 持续推进(08-31 起连续落库)",
-    "guardGapResolved": "backfill SITE_QUERIES 30 站 vs allowed_sites 已对齐 31 项(含 8 孤儿)；8 站现已各写 10k，GUARD 缺口闭环",
-    "note": "系统进入稳态：30 站全满容。后续若需突破 300k，需提高每站容量或扩站，非当前自动化范畴。"
-  },
+  "rootCause": "30 站全部达到 10000 容量上限，增量空间耗尽，Δ=0 属预期非故障。",
   "alertSent": false,
-  "alertChannels": {
-    "chatReply": "ok",
-    "agentMail": "unavailable(no token/tool in this env)",
-    "digestFile": "ok"
+  "alertChannels": [
+    "chat",
+    "digest"
+  ],
+  "dedupNote": "dedupRate 94% 的缺口全部来自跨站重叠(17,009条/5.67%)，站内重复仅 11 条(0.004%)——非质量缺陷，此前记为偏低属误判。",
+  "abstractGap": {
+    "totalMissing": 152348,
+    "bySource": {
+      "crossref": 86932,
+      "europepmc": 36986,
+      "preprints": 18377,
+      "other": 10053
+    },
+    "note": "93% 无摘要记录集中在 crossref/europepmc/preprints 三源，且三者 DOI 可溯源度均 100%，可用 DOI 反查 OpenAlex/S2/EuropePMC 摘要接口回填。"
   }
 }
