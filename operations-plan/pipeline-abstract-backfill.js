@@ -16,11 +16,13 @@
  *   3. 分批：每轮 cap 个唯一 DOI（默认 2500），跨站配额均衡；未命中的 DOI 不记游标，
  *      下轮自然重试（429/超时视为本轮 miss，不产生错误状态）。
  *   4. 幂等：已有摘要(≥40 字符)的实体一律跳过；重跑安全。
- *   5. 只写 entities.json（序列化格式 JSON.stringify(arr,null,2) 与现存文件一致），
+ *   5. 并发：worker 池（--concurrency，默认 3）。EPMC/OA 礼貌限额远高于 3 并发
+ *      （OA polite pool 10 rps、EPMC 无严格限），3 worker × 250ms 间隔 ≈ 8 req/s，安全。
+ *   6. 只写 entities.json（序列化格式 JSON.stringify(arr,null,2) 与现存文件一致），
  *      覆盖率统计由 build-site.mjs 从实体数据重新计算，无需另改。
  *
  * 用法：
- *   node pipeline-abstract-backfill.js [--cap=2500] [--delay=120] [--dry-run] [--site=<slug>] [--max-minutes=40]
+ *   node pipeline-abstract-backfill.js [--cap=2500] [--delay=250] [--concurrency=3] [--dry-run] [--site=<slug>] [--max-minutes=40]
  *
  * 运行环境：本地或 CI 均可。本地跑完后由 push.mjs commit 走 Contents API 推送，
  * 触发 pages-deploy 重建（瘦身后的构建 + 回填数据绑定上线）。
@@ -41,7 +43,8 @@ const getArg = (k, d) => {
   return a ? a.split('=').slice(1).join('=') : d;
 };
 const CAP = parseInt(getArg('cap', '2500'), 10);
-const DELAY = parseInt(getArg('delay', '120'), 10);
+const DELAY = parseInt(getArg('delay', '250'), 10);
+const CONCURRENCY = Math.max(1, parseInt(getArg('concurrency', '3'), 10));
 const MAX_MINUTES = parseInt(getArg('max-minutes', '40'), 10);
 const DRY = args.includes('--dry-run');
 const ONLY_SITE = getArg('site', '');
@@ -53,6 +56,13 @@ const hasAbstract = (e) => {
 const normDoi = (d) =>
   d ? String(d).trim().replace(/^https?:\/\/(dx\.)?doi\.org\//i, '').replace(/^doi:/i, '').toLowerCase() : '';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// miss 台账：miss 是高度确定性的（上游真没有该文献的摘要，如图书章节/会议摘要），
+// 反复重查纯浪费。miss ≥ MISS_RETIRE 次的 DOI 退休不再查（留给未来源扩容）。
+const MISS_RETIRE = 2;
+function loadState() {
+  try { return JSON.parse(fs.readFileSync(STATE_PATH, 'utf8')); } catch (e) { return { runs: [] }; }
+}
 
 // 摘要清洗：去 HTML/JATS 标签、压空白
 const cleanAbstract = (t) =>
@@ -143,28 +153,46 @@ async function main() {
     return;
   }
 
-  // 2) 逐 DOI 反查（顺序 + 限速；跨源插值让站点覆盖更均匀）
-  const dois = [...doiMap.keys()].slice(0, CAP);
-  let fetched = 0, filledEntities = 0, epmcHits = 0, oaHits = 0, misses = 0, attempted = 0;
-  for (let i = 0; i < dois.length; i++) {
-    if (Date.now() > deadline) { console.log(`[ABS-BACKFILL] ⏰ 达到 --max-minutes=${MAX_MINUTES}，提前收尾`); break; }
-    attempted++;
-    const doi = dois[i];
-    const res = await fetchAbstract(doi);
-    if (res) {
-      fetched++;
-      if (res.via === 'europepmc') epmcHits++; else oaHits++;
-      for (const { site, e } of doiMap.get(doi)) {
-        e.abstract = res.text;
-        siteData.get(site).modified = true;
-        filledEntities++;
-      }
-    } else misses++;
-    if ((i + 1) % 100 === 0) {
-      console.log(`[ABS-BACKFILL] 进度 ${i + 1}/${dois.length}: 命中 ${fetched} (EPMC ${epmcHits}/OA ${oaHits}) miss ${misses}`);
+  // 2) worker 池并发反查（JS 单线程，计数器在 await 间隙读写是安全的）
+  const state = loadState();
+  state.missLedger = state.missLedger || {};
+  const retired = [...doiMap.keys()].filter((d) => (state.missLedger[d] || 0) >= MISS_RETIRE).length;
+  const dois = [...doiMap.keys()].filter((d) => (state.missLedger[d] || 0) < MISS_RETIRE).slice(0, CAP);
+  let fetched = 0, filledEntities = 0, epmcHits = 0, oaHits = 0, misses = 0, attempted = 0, cursor = 0;
+  const fillOne = (doi, res) => {
+    for (const { site, e } of doiMap.get(doi)) {
+      e.abstract = res.text;
+      siteData.get(site).modified = true;
+      filledEntities++;
     }
-    await sleep(DELAY);
-  }
+  };
+  const worker = async () => {
+    for (;;) {
+      if (Date.now() > deadline) return;
+      const i = cursor++;
+      if (i >= dois.length) return;
+      const doi = dois[i];
+      attempted++;
+      const res = await fetchAbstract(doi);
+      if (res) {
+        fetched++;
+        delete state.missLedger[doi];
+        if (res.via === 'europepmc') epmcHits++; else oaHits++;
+        fillOne(doi, res);
+      } else {
+        misses++;
+        state.missLedger[doi] = (state.missLedger[doi] || 0) + 1;
+      }
+      if (attempted % 100 === 0) {
+        console.log(`[ABS-BACKFILL] 进度 ${attempted}/${dois.length}: 命中 ${fetched} (EPMC ${epmcHits}/OA ${oaHits}) miss ${misses}`);
+      }
+      await sleep(DELAY);
+    }
+  };
+  console.log(`[ABS-BACKFILL] 并发 worker=${CONCURRENCY}, delay=${DELAY}ms, 台账退休 DOI=${retired}`);
+  await Promise.all(Array.from({ length: CONCURRENCY }, () => worker().catch((e) => {
+    console.error('[ABS-BACKFILL] worker 异常(不中断其他 worker):', e.message);
+  })));
 
   // 3) 写回被修改的站点
   let sitesModified = 0;
@@ -174,21 +202,20 @@ async function main() {
     sitesModified++;
   }
 
-  // 4) 状态沉淀
+  // 4) 状态沉淀（state 已在选池前加载，含 missLedger）
   const elapsed = ((Date.now() - t0) / 1000).toFixed(0);
-  let state = { runs: [] };
-  try { state = JSON.parse(fs.readFileSync(STATE_PATH, 'utf8')); } catch (e) {}
   const rec = {
     at: new Date().toISOString(),
     scannedMissing: missingEntities,
     uniqueDois: doiMap.size,
+    retiredKnownMiss: retired,
     cap: CAP,
-    attempted: dois.length,
+    attempted,
     fetched,
     filledEntities,
     sitesModified,
     misses,
-    attempted,
+    concurrency: CONCURRENCY,
     elapsedSec: Number(elapsed),
   };
   state.runs = [rec, ...(state.runs || [])].slice(0, 50);

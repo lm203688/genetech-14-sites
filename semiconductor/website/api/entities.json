@@ -44694,7 +44694,7 @@
     "id": "doi:10.3390/mi17050554",
     "name": "Reinforcement Learning-Based Optimization of Ku-Band Low-Noise Amplifier.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "In this paper, we present a study on the automated design optimization of a wideband low-noise amplifier (LNA) operating in Ku-band (12 to 18 GHz) using proximal policy optimization (PPO), one of the widely applied reinforcement learning (RL) algorithms for engineering problems. As a target microwave active circuit, we select a two-stage LNA architecture, where transmission lines (TLs) are dominantly used for impedance matching and gain/noise optimization. For simplicity, all widths of TLs were fixed so that the characteristic impedance is 50 Ω, with lengths of TLs being set as design parameters. In addition, dimension variables of capacitors were treated as design parameters and, in total, we optimized 29 parameters. For target specifications, we set both S11 and S22 to be below -10 dB over the 12-18 GHz band and the noise figure (NF) to be below 2 dB. A total of 20,140 simulations were performed for training and the overall process took about 24 h. The results show that both the reward and the loss converged appropriately, achieving the target specifications successfully. For the final results, we performed up to 25 predictions, and the prediction process was terminated early if a solution meeting all target specifications was found within the given number of attempts. The device model used was a commercial 150 nm GaN high-electron-mobility transistor (HEMT) process technology.",
     "url": "https://doi.org/10.3390/mi17050554",
     "authors": [],
     "tags": [],

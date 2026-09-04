@@ -149066,7 +149066,7 @@
     "id": "doi:10.3389/frobt.2025.1706910",
     "name": "FORMIGA: a fleet management framework for sustainable human-robot collaboration in field robotics.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Robotic fleet management systems are increasingly vital for sustainable operations in agriculture, forestry, and other field domains where labor shortages, efficiency, and environmental concerns intersect. We present FORMIGA, a fleet management framework that integrates human operators and autonomous robots into a collaborative ecosystem. FORMIGA combines standardised communication through the Robot Operating System with a user-centered interface for monitoring and intervention, while also leveraging large language models to generate executable task code from natural language prompts. The framework was deployed and validated within the FEROX project, a European initiative addressing sustainable berry harvesting in remote environments. In simulation-based trials, FORMIGA demonstrated adaptive task allocation, reduced operator workload, and faster task completion compared to semi-autonomous control, enabling dynamic labor division between humans and robots. By enhancing productivity, supporting worker safety, and promoting resource-efficient operations, FORMIGA contributes to the economic, and environmental dimensions of sustainability, offering a transferable tool for advancing human-robot collaboration in field robotics.",
     "url": "https://doi.org/10.3389/frobt.2025.1706910",
     "authors": [],
     "tags": [],
