@@ -1,6 +1,18 @@
 {
   "runs": [
     {
+      "at": "2026-09-04T03:56:41.477Z",
+      "scannedMissing": 142015,
+      "uniqueDois": 134870,
+      "cap": 2000,
+      "attempted": 2000,
+      "fetched": 785,
+      "filledEntities": 952,
+      "sitesModified": 21,
+      "misses": 332,
+      "elapsedSec": 3303
+    },
+    {
       "at": "2026-09-04T02:53:43.230Z",
       "scannedMissing": 142225,
       "uniqueDois": 135060,
@@ -13,6 +25,6 @@
       "elapsedSec": 418
     }
   ],
-  "totalFilledEntities": 210,
-  "lastRunAt": "2026-09-04T02:53:43.230Z"
+  "totalFilledEntities": 1162,
+  "lastRunAt": "2026-09-04T03:56:41.477Z"
 }

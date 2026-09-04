@@ -145,9 +145,10 @@ async function main() {
 
   // 2) 逐 DOI 反查（顺序 + 限速；跨源插值让站点覆盖更均匀）
   const dois = [...doiMap.keys()].slice(0, CAP);
-  let fetched = 0, filledEntities = 0, epmcHits = 0, oaHits = 0, misses = 0;
+  let fetched = 0, filledEntities = 0, epmcHits = 0, oaHits = 0, misses = 0, attempted = 0;
   for (let i = 0; i < dois.length; i++) {
     if (Date.now() > deadline) { console.log(`[ABS-BACKFILL] ⏰ 达到 --max-minutes=${MAX_MINUTES}，提前收尾`); break; }
+    attempted++;
     const doi = dois[i];
     const res = await fetchAbstract(doi);
     if (res) {
@@ -187,6 +188,7 @@ async function main() {
     filledEntities,
     sitesModified,
     misses,
+    attempted,
     elapsedSec: Number(elapsed),
   };
   state.runs = [rec, ...(state.runs || [])].slice(0, 50);
@@ -195,10 +197,10 @@ async function main() {
   fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2));
 
   console.log(
-    `[ABS-BACKFILL] 完成: 尝试 ${dois.length} DOI → 命中 ${fetched} (EPMC ${epmcHits}/OA ${oaHits}/miss ${misses}), 回填实体 ${filledEntities} 条, 写 ${sitesModified} 站, 耗时 ${elapsed}s`,
+    `[ABS-BACKFILL] 完成: 尝试 ${attempted} DOI → 命中 ${fetched} (EPMC ${epmcHits}/OA ${oaHits}/miss ${misses}), 回填实体 ${filledEntities} 条, 写 ${sitesModified} 站, 耗时 ${elapsed}s`,
   );
   console.log(`[ABS-BACKFILL] 剩余缺口（三源无摘要实体）约 ${missingEntities - filledEntities}`);
-  if (fetched === 0 && dois.length > 0) {
+  if (fetched === 0 && attempted > 0) {
     console.error('[ABS-BACKFILL] ⚠️ 本轮 0 命中 —— 检查上游可达性（EPMC/OpenAlex）');
     process.exitCode = 2;
   }
