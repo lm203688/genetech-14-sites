@@ -1,0 +1,18 @@
+{
+  "runs": [
+    {
+      "at": "2026-09-04T02:53:43.230Z",
+      "scannedMissing": 142225,
+      "uniqueDois": 135060,
+      "cap": 300,
+      "attempted": 300,
+      "fetched": 190,
+      "filledEntities": 210,
+      "sitesModified": 14,
+      "misses": 110,
+      "elapsedSec": 418
+    }
+  ],
+  "totalFilledEntities": 210,
+  "lastRunAt": "2026-09-04T02:53:43.230Z"
+}

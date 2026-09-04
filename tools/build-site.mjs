@@ -1468,10 +1468,8 @@ function renderDataPage(sites, stats, labels) {
 <td><a href="${BASE}/${s.slug}/">${esc(labels[s.slug] || s.slug)}</a></td>
 <td>${ents.length}</td>
 <td>${fresh}</td>
-<td><a href="${BASE}/${s.slug}/website/api/entities.json">JSON</a></td>
-<td><a href="${BASE}/${s.slug}/website/api/entities.jsonl.gz">JSONL.gz</a></td>
-<td><a href="${BASE}/${s.slug}/website/api/entities.csv">CSV</a></td>
-<td><a href="${BASE}/${s.slug}/website/api/citations.bib">BibTeX</a></td>
+<td><a href="${BASE}/${s.slug}/website/api/entities.json">JSON（完整数据）</a></td>
+<td colspan="3">其余形态自 2026-09 起不再随站分发（守 Pages 1GB 上限），可用 JSON 自行转换或经 <a href="https://github.com/lm203688/genetech-14-sites">GitHub 仓库</a>获取</td>
 <td><a href="${BASE}/${s.slug}/website/api/citations.csl.json">CSL-JSON</a></td>
 </tr>`;
     })
@@ -1479,7 +1477,7 @@ function renderDataPage(sites, stats, labels) {
 
   const body = `
 <h1>数据下载与结构化格式</h1>
-<p class="sub">GeneTech 的 <b>${stats.totalEntities.toLocaleString('en-US')}</b> 条科研实体以 <b>7 种</b>结构化形态开放：原始 JSON、行式 JSONL、表格 CSV、文献管理 BibTeX / CSL-JSON，以及派生的主题词表、作者索引与知识图谱。全部以 CC-BY 提供。</p>
+<p class="sub">GeneTech 的 <b>${stats.totalEntities.toLocaleString('en-US')}</b> 条科研实体以结构化形态开放：完整 JSON、CSL-JSON 引文交换格式，以及派生的主题词表、作者索引与知识图谱（JSONL / CSV / BibTeX 形态已收敛到 JSON 单一来源，可一行脚本转换）。全部以 CC-BY 提供。</p>
 
 <h2>全站聚合资产</h2>
 <table class="cmp">
@@ -1526,7 +1524,7 @@ function renderDataPage(sites, stats, labels) {
 <p>数据以 <strong>CC-BY</strong> 提供：可自由用于研究、商业产品与模型训练，请保留来源标注（GeneTech 知识引擎 + 原始文献链接）。需要更高调用配额、私有部署或定制领域，见 <a href="${BASE}/mcp.html">计费说明</a>。</p>`;
 
   return layout({
-    title: `数据下载 — ${stats.totalEntities.toLocaleString('en-US')} 条科研实体 / 7 种结构化格式 | GeneTech`,
+    title: `数据下载 — ${stats.totalEntities.toLocaleString('en-US')} 条科研实体 / 结构化开放数据 | GeneTech`,
     desc: `开放下载 ${stats.totalEntities.toLocaleString('en-US')} 条前沿科技科研实体：JSON / JSONL / CSV / BibTeX / CSL-JSON，以及主题词表、作者索引与知识图谱。CC-BY 许可，支持 RAG 摄取、文献管理与 AI Agent 调用。`,
     body,
     canonical,
@@ -1873,15 +1871,13 @@ async function main() {
     writeFile(`${s.slug}/website/api/index.json`, JSON.stringify(s.index));
     writeFile(`${s.slug}/website/api/entities.json`, JSON.stringify(s.entities));
 
-    // ---- 多格式导出：同一份数据以不同结构形态开放，覆盖 RAG / 数据分析 / 文献管理三类用途
-    // JSONL 与 entities.json 内容高度重复且体积最大（实测占产物 45MB / 20%），
-    // 因此只发 gzip 版：pandas / HuggingFace datasets / curl 均原生支持 .gz，
-    // 体积约为明文的 1/5，是 10 万级规模下守住 GitHub Pages 1GB 上限的关键。
-    writeGzip(`${s.slug}/website/api/entities.jsonl.gz`, toJSONL(s.entities, s.slug));
-    writeFile(`${s.slug}/website/api/entities.csv`, toCSV(s.entities, s.slug));
+    // ---- 多格式导出（2026-09-04 瘦身）：
+    // 实测产物已达 Pages 1GB 上限的 99.1%，entities.jsonl.gz(96MB)+entities.csv(85MB)+citations.bib(18MB)
+    // 合计占 19.6%。三者与 entities.json 内容高度重复，属冗余形态，剥离后零数据损失
+    // （完整数据仍由 entities.json 提供；需要其他形态可用 JSON 一行脚本转换）。
+    // 回填摘要（+~112MB）与本次瘦身绑定执行，剥离后产物 ~816MB，回填后 ~954MB，守住 1GB 上限。
     // 引文格式体积大且低频，只导出质量分最高的部分，避免产物膨胀拖慢部署
     const cites = [...s.entities].sort((a, b) => qualityScore(b) - qualityScore(a)).slice(0, CITATION_EXPORT_CAP);
-    writeFile(`${s.slug}/website/api/citations.bib`, toBibTeX(cites));
     writeFile(`${s.slug}/website/api/citations.csl.json`, JSON.stringify(toCSLJSON(cites)));
     // 站点级分面（主题/作者/年份/来源），供站内导航与第三方分析直接消费
     writeFile(`${s.slug}/website/api/facets.json`, JSON.stringify(struct.perSite[s.slug]));
@@ -2006,11 +2002,9 @@ async function main() {
     '',
     '## 每个领域提供的数据格式',
     '- `<site>/website/api/entities.json` 完整实体（JSON）',
-    '- `<site>/website/api/entities.jsonl.gz` 行式 JSON（gzip），适合 RAG 摄取与模型训练，pandas/datasets 可直读',
-    '- `<site>/website/api/entities.csv` 表格格式，Excel/pandas 直接可用',
-    '- `<site>/website/api/citations.bib` BibTeX 引文，Zotero/LaTeX 直接导入',
     '- `<site>/website/api/citations.csl.json` CSL-JSON 引文交换格式',
     '- `<site>/website/api/facets.json` 该领域的主题/作者/年份/来源分面统计',
+    '- （JSONL/CSV/BibTeX 形态自 2026-09 起不再随站分发以守住 Pages 1GB 上限，可用 entities.json 自行转换）',
     '',
     '## 数据规模与质量',
     `- 实体总量 ${struct.stats.totalEntities}，覆盖 ${struct.stats.totalSites} 个前沿科技垂直领域`,
