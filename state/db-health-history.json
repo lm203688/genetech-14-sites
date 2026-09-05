@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-04",
+  "date": "2026-09-05",
   "total": 300000,
   "sites": 30,
   "perSite": {
@@ -36,38 +36,39 @@
   },
   "quality": {
     "urlCompleteness": 100,
-    "abstractCompleteness": 49,
+    "abstractCompleteness": 52,
     "doiTraceability": 92,
     "dedupRate": 94,
     "uniqueKeys": 282260
   },
   "status": "ALL-30-SITES-AT-CAP",
   "delta": 0,
-  "remoteCheck": "b938f10a2126",
-  "guardBlocked": false,
-  "fiveLayer": {
-    "cron": true,
-    "guard": "n/a-at-cap",
-    "capacity": true,
-    "quality": "n/a-zero-added",
-    "staging": true,
-    "push": true
-  },
-  "rootCause": "30 站全部达到 10000 容量上限，增量空间耗尽，Δ=0 属预期非故障。",
-  "alertSent": false,
-  "alertChannels": [
-    "chat",
-    "digest"
-  ],
-  "dedupNote": "dedupRate 94% 的缺口全部来自跨站重叠(17,009条/5.67%)，站内重复仅 11 条(0.004%)——非质量缺陷，此前记为偏低属误判。",
   "abstractGap": {
-    "totalMissing": 152348,
+    "totalMissing": 134189,
     "bySource": {
       "crossref": 86932,
       "europepmc": 36986,
       "preprints": 18377,
       "other": 10053
     },
-    "note": "93% 无摘要记录集中在 crossref/europepmc/preprints 三源，且三者 DOI 可溯源度均 100%，可用 DOI 反查 OpenAlex/S2/EuropePMC 摘要接口回填。"
-  }
+    "note": "93% 无摘要记录集中在 crossref/europepmc/preprints 三源，且三者 DOI 可溯源度均 100%，可用 DOI 反查 OpenAlex/S2/EuropePMC 摘要接口回填。 [2026-09-05 更新] 摘要回填管道累计回填 8036 条，剩余缺口 134189，进度 5.65%。"
+  },
+  "remoteCheck": "93c845b84eb7",
+  "guardBlocked": false,
+  "history": [
+    {
+      "date": "2026-09-04",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 49,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    }
+  ]
 }
