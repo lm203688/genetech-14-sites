@@ -11127,7 +11127,7 @@
     "id": "doi:10.1021/acs.nanolett.6c00994",
     "name": "Wafer-Scale All-Silicon Self-Rectifying Memristor for Synaptic Response and Reservoir Computing.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Silicon p-n junctions have remained an indispensable building block of electronics since their invention in the Shockley days. Likewise, an abrupt p-n junction has served as a foundational model in semiconductor textbooks. In this work, we report on an p-n junction in silicon with an oxide interfacial layer, enabling memristive functions with highly rectifying resistive switching and reproducible synaptic behaviors for reservoir computing (RC). The device exhibited a rectification ratio of ∼5000 with stable endurance of 4.5 × 106 cycles, without filament formation. Charge-trapping dynamics enable key synaptic behaviors including paired-pulse facilitation, spike-timing-dependent plasticity, and transitions between short- and long-term memory. Leveraging these behaviors, the device performs RC via 4-bit pulse stimulation, achieving 86.9% accuracy in handwritten digit classification. This interface-engineered all-silicon device bridges classical diode physics with modern neuromorphic computation, providing a prospect for wafer-scale platforms for neuromorphic applications.",
     "url": "https://doi.org/10.1021/acs.nanolett.6c00994",
     "authors": [],
     "tags": [],
@@ -11995,7 +11995,7 @@
     "id": "doi:10.1038/s41467-026-74068-y",
     "name": "System-level integration of halide perovskite optoelectronics for its commercial deployment.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Halide perovskites have emerged as a compelling material for a broad range of optoelectronic applications, including light-emitting diodes, phototransistors, light-sensing and imaging systems. To enable practical application and compatibility with existing consumer electronics, they must be integrated with heterogeneous electronic platforms, such as complementary metal-oxide-semiconductor chips or thin-film transistors. Such integration is pivotal for transitioning perovskite technologies from laboratory demonstrations to commercial applications. In this perspective, we summarize recent progress in the system-level integration of perovskite optoelectronics with driving backplanes, compare key performance metrics with industrial benchmarks, discuss major challenges, and outline future directions and application prospects for perovskite optoelectronics.",
     "url": "https://doi.org/10.1038/s41467-026-74068-y",
     "authors": [],
     "tags": [],
@@ -18770,7 +18770,7 @@
     "id": "doi:10.21203/rs.3.rs-10356585/v1",
     "name": "Integrating Neuromorphic Computing and Clinical Biomarkers for Enhanced Liver Disease Detection",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Abstract Liver diseases should be detected at an early stage and accurately to avoid the development of cirrhosis, liver failure, and permanent hepatocellular damage. Nevertheless, the current diagnostic models are based on computationally intensive machine learning models which are not real-time, interpretable, and do not support low-power clinical environments. The paper presents a neuromorphic computing-based diagnostic system that combines both clinically relevant biomarker encoding and spiking neural network models trained by surrogate-gradient and hardware-conscious training. Three spike encoders, namely, latency, bounded rate and population, are evaluated systematically to find out their effectiveness in capturing discriminative biomarker information. Experimental evidence on the ILPD dataset indicates that the proposed model has high diagnostic accuracy, with the AUC of 0.94–0.96 and better sensitivity at clinically relevant specificity levels, at a much lower cost of synaptic operations than the conventional neural networks. Memristive variability: Hardware-aware training methods, such as quantization-aware optimization and noise-injection, improve robustness to neuromorphic crossbar variability, allowing them to be deployed safely on neuromorphic crossbars. Moreover, the spike-based attribution techniques offer clinically stable interpretability by emphasizing the presence of the biomarkers including ALT, AST, bilirubin, albumin, and alkaline phosphatase. All these findings make neuromorphic computing an energy-efficient, robust, and explainable solution to the next generation of liver disease diagnostics. The proposed system is executed by the end-to-end diagnostic dashboard that allows to recreate the experiment and make clinical decisions based on structured clinical biomarker data.",
     "url": "https://doi.org/10.21203/rs.3.rs-10356585/v1",
     "authors": [],
     "tags": [],
@@ -51747,7 +51747,7 @@
     "id": "doi:10.2147/jmdh.s605039",
     "name": "NeuroMimicNet: A Multimodal Neuromorphic Framework for Early Screening and Cognitive Pattern Recognition in Children with Autism.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Background Autism Spectrum Disorder (ASD) is a complex neurodevelopmental condition which is composed of social, behavioral, and communication challenges that generally require early detection. Purpose This research proposes NeuroMimicNet, a brain-like event-driven neuromorphic computing framework designed for early screening and cognitive pattern recognition in children with autism. The framework integrates audio signal and facial expression images as multimodal inputs to capture both neural and behavioral patterns. Methods The audio modality involves pre-processing steps including noise elimination and normalization, while the neuromorphic processing of audio features is done with Spike-Timing-Dependent Plasticity (STDP), Hebbian learning and a Loihi-inspired spiking neural processing model to capture temporal auditory patterns efficiently. The facial expression images are pre-processed through face alignment, resizing and normalization, and high-level visual features are extracted using a pretrained ResNet50 convolutional neural network. The extracted audio and image features are fused at the feature level to form a unified multimodal representation. The fused features are then classified into four ASD severity level such as Typical, Mild, Moderate, and Severe using a supervised classification model. Results Performance is evaluated using accuracy, F1-score, precision, recall, and computational efficiency across benchmark EEG-autism datasets. Experimental results demonstrate that NeuroMimicNet achieves higher accuracy and faster response compared to conventional deep learning models. Conclusion NeuroMimicNet highlights the potential of biologically inspired neuromorphic computing for pediatric ASD screening. By combining multimodal behavioral and neural cues with event-driven processing, the framework offers improved interpretability, scalability and clinical relevance.",
     "url": "https://doi.org/10.2147/jmdh.s605039",
     "authors": [],
     "tags": [],
@@ -52341,7 +52341,7 @@
     "id": "doi:10.1002/adma.74244",
     "name": "A Single OLED With Hybrid Synaptic Plasticity Enabling In Situ Neuromorphic Processing and Visualization.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "As the core interface for human-computer interaction, multitask intelligent display systems face increasingly stringent demands regarding precision and functional integration. However, in existing architectures, light-emitting units only act as passive display terminals. Endowing light-emitting devices with computing capabilities and realizing computing-as-display, thereby reducing transmission overhead and improving display precision, is the key to promoting the further development of this field. Inspired by the human brain, we innovatively report an organic light-emitting diode featuring both long- and short-term synaptic plasticity and synaptic weight-driven electroluminescence. By engineering charge-trapping structures and heterojunction potential wells within a single OLED device, we establish dual-tier synaptic response output channels for information processing, operating independently on second- and millisecond-level timescales under electrical and optical signal modulation, respectively. Following information processing, the processed results are visualized via a globally driven electroluminescence mechanism enabled by synaptic weight modulation. We introduce the Multi-Task Display Fidelity index as a universal metric to quantify the cooperative accuracy between processing and display, achieving a value of 90.86%. Furthermore, the processing-display coupling index of the device surpasses the corresponding index of mainstream CMOS architectures by 67.8%. This work demonstrates the immense potential of hybrid synaptic plasticity OLEDs for multitask intelligent display.",
     "url": "https://doi.org/10.1002/adma.74244",
     "authors": [],
     "tags": [],
@@ -52732,7 +52732,7 @@
     "id": "doi:10.1038/s42004-026-02122-3",
     "name": "Rapid and energy-efficient ultra-large library screening for drug discovery on a SpiNNaker2 neuromorphic chip.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "The virtual screening of make-on-demand small molecule libraries can prioritize drug candidates for rapid experimental validation to accelerate pre-clinical drug discovery. As ultra-large libraries grow to billions of compounds, exhaustive screening incurs prohibitive costs and energy consumption. We address this challenge with the neuromorphic SpiNNaker2 system, designed for massively parallel AI tasks. Here, we show the implementation of a ligand-based screening pipeline on a 152-core SpiNNaker2 chip. We adapted feed-forward neural networks trained on 2D molecular descriptors to screen 19 billion molecules from the Enamine REAL space. We benchmarked our approach against an NVIDIA Jetson Orin Nano, a GPU-accelerated low-power AI system. Inference on the SpiNNaker2 chip was approximately 4 times faster, yielding 60% higher overall throughput. Meanwhile, SpiNNaker2 consumed about 86% less energy. These results provide a foundation for the deployment of SpiNNaker2 high performance computing clusters and establish application-specific hardware as a scalable and sustainable avenue for cheminformatics.",
     "url": "https://doi.org/10.1038/s42004-026-02122-3",
     "authors": [],
     "tags": [],
@@ -58857,7 +58857,7 @@
     "id": "doi:10.21203/rs.3.rs-10012975/v1",
     "name": "HERO-SNN: A Homeostatic Eligibility-based Reward- Optimised Spiking Neural Network for Spatiotemporal Brain Representation: An EEG Case Study",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Abstract We propose a new framework for Homeostatic Eligibility-based Reward-Optimised Spiking Neural Network (HERO-SNN) that enables spiking neural networks (SNNs) to achieve an optimal refinement in internal spatiotemporal representations based on task performance. Spatiotemporal brain data exhibit complex temporal dynamics and distributed spatial activity across brain regions, which makes them challenging for modelling. Although SNNs provide a biologically plausible way to represent such dynamics through spike-based processing, popular unsupervised learning mechanisms, such as Spike-Timing-Dependent Plasticity (STDP), remain independent of the task objective. So, the internal representations formed through STDP do not necessarily support accurate decision-making, particularly for high-dimensional brain signals. To address this limitation, HERO-SNN introduces a refinement mechanism that integrates task-related feedback to guide synaptic adaptation while preserving the local spike-based learning. Implemented within the NeuCube brain-inspired SNN, this novel model combines local eligibility pathways that identify synaptic routes involved during learning, a global reward optimisation signal derived from classifier confidence to refine task-relevant pathways, and homeostatic regulation of neuronal excitability to maintain stable spiking activity. We evaluate the proposed framework using electroencephalography (EEG) data collected during a Havening-based task, in which participants underwent either a nurturing touch protocol (H+) or an identical protocol delivered without touch (H−). The results showed an improvement of 11% in classification accuracy compared with standard STDP learning without task-aware refinement and outperformed state-of-the-art machine learning models, including CNN and LSTM. These findings demonstrate that incorporating task feedback into the adaptation of internal spatiotemporal neural representations can improve both classification performance and model interpretability.",
     "url": "https://doi.org/10.21203/rs.3.rs-10012975/v1",
     "authors": [],
     "tags": [],
@@ -58908,7 +58908,7 @@
     "id": "doi:10.3390/biomimetics11070481",
     "name": "Task-State fMRI-Derived Whole-Brain Functional Topology-Constrained Spiking Neural Network with an Embedded Auditory Core Circuit for Speech Recognition.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "The topology of spiking neural networks (SNNs) plays an important role in determining their dynamic representation ability, recognition performance, and biological interpretability in speech recognition. However, most existing SNN reservoirs are constructed using random, regular, or manually designed connectivity patterns, which may not reflect the functional organization of the human brain during speech perception. In this study, we propose a task-state fMRI-constrained SNN framework for speech recognition. Human fMRI data acquired during naturalistic English audiobook listening are used offline to derive a task-state whole-brain functional topology, which serves as a biologically inspired structural prior for the recurrent connectivity of the SNN reservoir. Because the fMRI and downstream isolated-digit recognition tasks use different speech paradigms, this topology is interpreted as a general speech-listening prior rather than a digit-specific neural representation. The Schaefer-400 cortical parcellation is used to define 400 whole-brain functional nodes, all of which are retained to preserve distributed cortical interactions during speech listening. Within this topology, 7 SomMotB_Aud parcels are identified as auditory core nodes and analyzed as an embedded auditory circuit. Compared with resting-state fMRI, task-state fMRI shows enhanced functional connectivity among these auditory nodes, indicating task-related auditory-circuit activation. The resulting 400-node task-state topology is mapped onto the recurrent connectivity of the SNN reservoir. This mapping is regarded as a topology-constrained computational abstraction rather than a direct model of biological information transmission. During recognition, speech spike trains are the only external input, while fMRI data are used only for offline topology construction. Experimental comparisons with baseline SNNs show that the proposed topology improves recognition performance and biological interpretability. Resting-state topology comparison, auditory-core contribution analysis, threshold-sensitivity analysis, and statistical testing are further used to evaluate robustness. These findings suggest that speech-evoked whole-brain functional organization may provide an effective topology prior for biologically inspired speech recognition models.",
     "url": "https://doi.org/10.3390/biomimetics11070481",
     "authors": [],
     "tags": [],
@@ -95192,7 +95192,7 @@
     "id": "doi:10.1002/9781394255306.ch9",
     "name": "Disturbance Observer‐Based Neural Network Control of a Flexible Flapping‐Wing System",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This chapter develops the visualization model of the rigid-flexible coupled bionic flapping wing by the advanced system-level modeling software MapleSim. A novel neural network controller based on disturbance observer technology is proposed to compensate for the system uncertainties. The proposed method can successfully suppress the vibration of the flapping wing while accurately tracking the desired trajectory. Cosimulation results from MapleSim and MATLAB/Simulink validate the effectiveness of the proposed method.",
     "url": "https://doi.org/10.1002/9781394255306.ch9",
     "authors": [],
     "tags": [],
@@ -95690,7 +95690,7 @@
     "id": "doi:10.1201/9781003572886",
     "name": "Neural Network Analysis, Architectures and Applications",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "From the Publisher: This book describes techniques for extracting what has been learnt by a trained neural network. The book also describes some novel neural network architectures, and some sample applications of neural computing systems.",
     "url": "https://doi.org/10.1201/9781003572886",
     "authors": [
       "A Browne"
@@ -95709,7 +95709,7 @@
     "id": "doi:10.2172/2429319",
     "name": "Predicting Missing Regions in Charged Particle Tracks Using a Sparse 3D Convolutional Neural Network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The 2x2 Demonstrator is a prototype detector for the Deep Underground Neutrino Experiment (DUNE)'s Near Detector. Both the 2x2 Demonstrator and the Near Detector itself will have inactive regions wherein there is no sensitivity to charge deposition and light signals that arise from charged particle interactions with liquid argon. In the 2x2, these inactive regions are positioned in-between the active detector modules, which introduces the challenge of inferring what charge signals ought to look like in these regions. This study explores the use of a Sparse 3D Convolutional Neural Network (ConvNet) to infer missing regions in charged particle tracks. Hits corresponding to energy depositions are voxelized into a three-dimensional (3D) grid for each track. Inactive regions within the tracks are replaced with a dense, rectangular 3D grid of voxels, ensuring consistent step sizes in X, Y, and Z directions. Voxels in these dense regions are initialized with an energy value of -1, indicating nonphysical energy or charge. The model is trained to predict which voxels should activate as part of the track and which should not, with the goal of eventually inferring the missing charge or energy values in these voxels. Results indicate that the model accurately predicts track voxels within ±1 unit in X, Y, or Z directions and effectively identifies non-track voxels, despite some overprediction. The approach shows promise in prediction of missing track regions with some accuracy.",
     "url": "https://doi.org/10.2172/2429319",
     "authors": [
       "Hilary Utaegbulam"
@@ -99557,7 +99557,7 @@
     "id": "doi:10.1201/9781003572886-12",
     "name": "Image Compression using Neural Networks",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Data compression is increasingly becoming an important subject in all areas of computing and communications. While it is true that network speeds have significantly increased, and that the price of disk storage has decreased dramatically, new computer applications which include multimedia documents with very large data set requirements are constantly pushing the limits of these evolving boundaries. For this reason, data compression will always be important, regardless of the current state-of-the-art in network and storage technologies.",
     "url": "https://doi.org/10.1201/9781003572886-12",
     "authors": [
       "Christopher Cramer",
@@ -99600,7 +99600,7 @@
     "id": "doi:10.1201/9781003572886-9",
     "name": "Exploiting Local Optima in Multiversion Neural Computing",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The training of feedforward networks, such as multilayer perceptrons (MLPs) or radial basis function (RBF) nets, is well known to be highly sensitive to initial conditions. A change in the random initialization of the weights, even when all other conditions are fixed, will cause the learning process to converge on another minimum. The alternative minima on the error surface may result in drastically different generalization properties.",
     "url": "https://doi.org/10.1201/9781003572886-9",
     "authors": [
       "Derek Partridge"
@@ -107720,7 +107720,7 @@
     "id": "doi:10.1038/s41598-026-58491-1",
     "name": "Cross-attention guided explainable deep transformer model for multi-level classification of rare neurological disorders using MRI images.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Neurological disorders (ND) impact a significant number of the population all over the world, affecting the brain, spinal cord, and peripheral nerves. These disorders are classified as NeuroDegenerative, NeuroBiological, and NeuroDevelopmental disorders, which vary from common to rare disorders. Traditional deep learning methods often fail to generalize efficiently in these settings and are developed for common or single-label disease classification. Also, the insufficient interpretability in these models can decrease the medical professionals' trust and utilization. Therefore, this study introduces a Cross-Attention Guided Explainable Deep Transformer Model for Multi-Level Classification of Rare Neurological Disorders (CAXDT-MLCRND) model. The proposed model involves the integration of convolutional neural network for local feature representation with transformer-based network to capture global contextual dependencies. Besides, a new cross-attention strategy is applied for enabling dynamic interaction among local and global representations, enabling the model to effectively distinguish visually similar rare disease patterns. Moreover, the derived features are fused with complementary representations from convolutional neural networks within a soft voting-based ensemble model, which integrates a Graph Neural Network (GNN), Deep Belief Network (DBN), and Stacked Autoencoder (SAE) to boost the robustness and generalization of the classification process. Additionally, Bayesian optimization (BO) is leveraged to fine-tune the hyperparameters of the DL approach for improved performance. For assuring clinical reliability, explainability is incorporated using Eigen Class Activation Mapping (EigenCAM), offering visual understanding into model prediction and improving clinical interpretability. The experimental results of the CAXDT-MLCRND system are validated utilizing open access MRI dataset, and the results report the enhanced multi-label classification performance on the simultaneous prediction of co-existing neurological conditions. Therefore, the proposed model is found to be a robust and interpretable approach to assist clinical applications for rare neurological disorder detection in resource-limited environments. Moreover, the source code used in this study is publicly available at: https://github.com/researcher010-debug/NeurologicalDisorderClassification.git .",
     "url": "https://doi.org/10.1038/s41598-026-58491-1",
     "authors": [],
     "tags": [],
@@ -127007,7 +127007,7 @@
     "id": "doi:10.1088/0954-898x_8_2_001",
     "name": "Plasticity in adult sensory cortex: a review",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "There is growing evidence of significant plasticity in neuronal receptive fields and functional architecture in adult primary sensory cortex. Surgical lesions or rewiring of nerves in the periphery lead to large-scale changes in the corresponding cortical maps. Such changes are also seen after protracted training on sensory discrimination tasks, in a manner that reflects the subjects' improved discriminative abilities after training and is governed by their attentional state during training. More rapid and dynamic changes in cortical receptive field properties are seen with selective visual stimulation and during conditioning experiments. In the visual system, adult plasticity is clearly attributable to changes in cortex and not subcortical changes; moreover, the evidence suggests that the network of horizontal collaterals in primary visual cortex (V1) may play a significant role in V1 plasticity, both long-term and rapid. The same network is also likely to underlie some aspects of routine visual integration in V1. This leads to the speculation that plastic processes could form a part of routine cortical processing. At a cellular level, neurons in adult cortex possess the synaptic machinery that could underlie much of the observed adult plasticity. This includes short- as well as long-term activity-dependent processes for synaptic modification, as well as the modulation of such effects by the context of a task.",
     "url": "https://doi.org/10.1088/0954-898x_8_2_001",
     "authors": [
       "Aniruddha Das"
@@ -170543,7 +170543,7 @@
     "id": "doi:10.1109/icmcce48743.2019.00097",
     "name": "Comparative Study of BP Neural Network and RBF Neural Network in Surface Reconstruction",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Aiming at the surface reconstruction problem, the surface reconstruction methods based on BP and RBF neural networks are studied respectively, and the two neural network models are compared. The results show that both network models can effectively reconstruct the surface. The BP model has a short running time, but the randomness of the weights and thresholds make the model stable. The RBF model has high reconstruction stability, but the fitting time is longer than the BP model. Both have their own advantages. The specific application should be determined according to the specific research object.",
     "url": "https://doi.org/10.1109/icmcce48743.2019.00097",
     "authors": [
       "Hai-jun Wang",
@@ -170563,7 +170563,7 @@
     "id": "doi:10.1109/ijcnn.2006.246719",
     "name": "Multilayer Neural Network based on Multi-Valued Neurons and the Blur Identification Problem",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A multilayer neural network based on multi-valued neurons (MLMVN) is a neural network with a traditional feedforward architecture. At the same time this network has a number of specific properties and advantages. Its backpropagation learning algorithm does not require differentiability of the activation function. The functionality of MLMVN is higher than the ones of the traditional feedforward neural networks and a variety of kernel-based networks. Its higher flexibility and faster adaptation to the mapping implemented make possible an accomplishment of complex problems using a simpler network. The MLMVN can be used to solve those non-standard recognition and classification problems that cannot be solved using other techniques. In this paper we use the MLMVN as a tool for the blur identification problem. A prior knowledge about the distorting operator and its parameter is of crucial importance in blurred image restoration.",
     "url": "https://doi.org/10.1109/ijcnn.2006.246719",
     "authors": [
       "I. Aizenberg",
@@ -170626,7 +170626,7 @@
     "id": "doi:10.5194/amt-2018-436-rc2",
     "name": "Review of \"Neural Network Radiative Transfer for Imaging Spectroscopy\"",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The paper presents a neural network developed to calculate radiative transfer for the solar spectral region in clear sky.The model is applied to retrieve the surface spectral reflectance function from PRISM (airborne imaging spectrometer) data.As examples the retrieved surface reflectance spectra for 5 different surface types are shown to demonstrate that the method works well.The neural network method highly accelerates the atmospheric correction methodology, thus it is certainly an interesting approach which might become standard since the data to be processed increases rapidly with improvements in spatial and spectral resolution of sensors.The topic of the paper fits well in the scope of AMT, however, it needs to be revised, because the methodology needs to be described more precisely.Further the authors need to point, what makes their approach novel compared to other neural networks based approaches.I",
     "url": "https://doi.org/10.5194/amt-2018-436-rc2",
     "authors": [],
     "tags": [],
@@ -178894,7 +178894,7 @@
     "id": "doi:10.1201/9781420015454-9",
     "name": "System Identification Using Discrete-Time Neural Networks",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "System identification is the process of determining a dynamic model for an unknown system that can subsequently be used for feedback control purposes. On the other hand, state estimation involves determining the unknown internal states of a dynamic system. System identification provides one technique for estimating the states. The area of system identification has received significant attention over the past decades and now it is a fairly mature field with many powerful methods available at the disposal of control engineers. Online system identification methods to date are based on recursive methods such as least squares, for most systems that are expressed as linear in the parameters (LIP). To overcome this LIP assumption, neural networks (NNs) are now employed for system identification since these networks learn complex mappings from a set of examples. As seen in the previous chapters, due to NN approximation properties (Cybenko 1989) as well as the inherent adaptation features of these networks, NN present a potentially appealing alternative to modeling of nonlinear systems. Moreover, from a practical perspective, the massive parallelism and fast adaptability of NN implementations provide additional incentives for further investigation.",
     "url": "https://doi.org/10.1201/9781420015454-9",
     "authors": [],
     "tags": [],
@@ -178968,7 +178968,7 @@
     "id": "doi:10.1109/neurel.2010.5644086",
     "name": "Improved neural network for checking the stability of multidimensional systems",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "In this paper, the author's previous work is extended and a new neural network is utilized to solve the stability problem of multidimensional systems. In the original authors work the problem is transformed into an optimization problem. Using the DeCarlo-Strintzis Theorem one has to check if |B(Z1,..., 1, Zm)| ≠ 0 for |Z1| = ... = |Zm| = 1 or equivalently if the min |B(Z1, ..., 1, Zm)| is 0 or not, where B(Z1, Z2, ..., Zm) is the denominator of the discrete transfer funcion. Then, the problem is reduced to a minimization problem and a neural network is proposed for solving it. To improve the chance of convergence towards the global minimum, an extension of this neural network based on random noise terms is proposed in this contribution. The numerical examples illustrate the validity and the efficiency of the new neural network.",
     "url": "https://doi.org/10.1109/neurel.2010.5644086",
     "authors": [
       "Nikos E. Mastorakis",
@@ -178989,7 +178989,7 @@
     "id": "doi:10.1088/0954-898x_3_4_003",
     "name": "In defence of single-electrode recordings",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "As a physicist observing the empirical struggle of neurophysiology to penetrate the computational secrets of neo-cortex, one is struck by the coexistence of two extreme positions. One has it that the computations performed in neo-cortex are too complex to be approachable by single-electrode recordings. The other is continuously discovering single neurons which can perform such complex tasks as to recognize the individual faces of the senior staff in the laboratory.Drawing on experience gained in the study of condensed matter, I would like to reopen the discussion, pointing out that some of the single-electrode recordings which are exposing such remarkable computational features could not possibly be of great relevance for the description of 'higher brain function'. On the other hand, some single-electrode experiments, which detect rather mundane features of performance, display remarkable dynamical features, which must surely underlie cortical function.All this leads us to the conclusion that, though simultaneous electrode recordings may be required for the exposure of some complex neuro-cognitive effects, the field of single-electrode investigation is only beginning to benefit from the treasures it has always been exposing, and which are still going undervalued.",
     "url": "https://doi.org/10.1088/0954-898x_3_4_003",
     "authors": [
       "Daniel J Amit"
@@ -179028,7 +179028,7 @@
     "id": "doi:10.1080/713663221",
     "name": "A simple white noise analysis of neuronal light responses",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A white noise technique is presented for estimating the response properties of spiking visual system neurons. The technique is simple, robust, efficient and well suited to simultaneous recordings from multiple neurons. It provides a complete and easily interpretable model of light responses even for neurons that display a common form of response nonlinearity that precludes classical linear systems analysis. A theoretical justification of the technique is presented that relies only on elementary linear algebra and statistics. Implementation is described with examples. The technique and the underlying model of neural responses are validated using recordings from retinal ganglion cells, and in principle are applicable to other neurons. Advantages and disadvantages of the technique relative to classical approaches are discussed.",
     "url": "https://doi.org/10.1080/713663221",
     "authors": [
       "E. J. Chichilnisky"
@@ -179084,7 +179084,7 @@
     "id": "doi:10.1088/0954-898x/15/2/004",
     "name": "Localized activity patterns in excitatory neuronal networks",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The existence of localized activity patterns, or bumps, has been investigated in a variety of spatially distributed neuronal network models that contain both excitatory and inhibitory coupling between cells. Here we show that a neuronal network with purely excitatory synaptic coupling can exhibit localized activity. Bump formation ensues from an initial transient synchrony of a localized group of cells, followed by the emergence of desynchronized activity within the group. Transient synchrony is shown to promote recruitment of cells into the bump, while desynchrony is shown to be good for curtailing recruitment and sustaining oscillations of those cells already within the bump. These arguments are based on the geometric structure of the phase space in which solutions of the model equations evolve. We explain why bump formation and bump size are very sensitive to initial conditions and changes in parameters in this type of purely excitatory network, and we examine how short-term synaptic depression influences the characteristics of bump formation.",
     "url": "https://doi.org/10.1088/0954-898x/15/2/004",
     "authors": [
       "Jonathan Rubin",
@@ -179104,7 +179104,7 @@
     "id": "doi:10.1088/0954-898x_14_3_302",
     "name": "Statistics of natural image categories",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "In this paper we study the statistical properties of natural images belonging to different categories and their relevance for scene and object categorization tasks. We discuss how second-order statistics are correlated with image categories, scene scale and objects. We propose how scene categorization could be computed in a feedforward manner in order to provide top-down and contextual information very early in the visual processing chain. Results show how visual categorization based directly on low-level features, without grouping or segmentation stages, can benefit object localization and identification. We show how simple image statistics can be used to predict the presence and absence of objects in the scene before exploring the image.",
     "url": "https://doi.org/10.1088/0954-898x_14_3_302",
     "authors": [
       "Antonio Torralba",
@@ -179141,7 +179141,7 @@
     "id": "doi:10.21236/ada264802",
     "name": "Evolving Neural Network Architecture",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This work investigates the application of a stochastic search technique, evolutionary programming, for developing self-organizing neural networks. The chosen stochastic search method is capable of simultaneously evolving both network architecture and weights. The number of synapses and neurons are incorporated into an objective function so that network parameter optimization is done with respect to computational costs as well as mean pattern error. Experiments are conducted using feedforward networks for simple binary mapping problems.",
     "url": "https://doi.org/10.21236/ada264802",
     "authors": [
       "John R. McDonnell",
@@ -179161,7 +179161,7 @@
     "id": "doi:10.1109/ijcnn.1992.226860",
     "name": "Neural network channel equalization",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The authors present computer simulation results of the performance of conventional and perceptron-based equalizers in the presence of intersymbol interference (ISI), additive noise and co-channel interference (CCI). They show that a three-layer perceptron equalizer which is trained and updated by a complex-valued backpropagation adaptive algorithm can achieve acceptable bit error rate performance and demonstrate the effect of the perceptron configuration, size, and adaptation parameters on the equalizer performance. It is shown that the perceptron equalizer can essentially match the performance of a conventional equalizer under all noise and interference conditions. It is observed that the convergence rate of the perceptron-based equalizer is much slower than that of the conventional equalizer. With a sufficiently small adaptation step size, both of these equalizers are robust to decision-directed error propagation during data transmission.>",
     "url": "https://doi.org/10.1109/ijcnn.1992.226860",
     "authors": [
       "N.W.K. Lo",
@@ -179181,7 +179181,7 @@
     "id": "doi:10.1109/icnn.1993.298785",
     "name": "Neural network techniques for multi-user demodulation",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Adaptive methods for demodulating multi-user communication in a direct-sequence spread-spectrum multiple-access (DS/SSMA) environment are investigated. Adaptive radial basis function (RBF) networks that operate with knowledge of only a subset of the system parameters are studied. This approach is further bolstered by the fact that the optimal detector in the synchronous case can be implemented by an RBF network when all of the system parameters are known. The RBF network performance is compared with other multi-user detectors. The centers of the RBF neurons, when the system parameters are not fully known, are determined using clustering techniques. It is shown that the adaptive RBF network obtains near optimal performance and is robust in realistic communication environments.>",
     "url": "https://doi.org/10.1109/icnn.1993.298785",
     "authors": [
       "U. Mitra",
@@ -179222,7 +179222,7 @@
     "id": "doi:10.1109/ijcnn.1989.118638",
     "name": "Theory of the backpropagation neural network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The author presents a survey of the basic theory of the backpropagation neural network architecture covering architectural design, performance measurement, function approximation capability, and learning. The survey includes previously known material, as well as some new results, namely, a formulation of the backpropagation neural network architecture to make it a valid neural network (past formulations violated the locality of processing restriction) and a proof that the backpropagation mean-squared-error function exists and is differentiable. Also included is a theorem showing that any L/sub 2/ function from (0, 1)/sup n/ to R/sup m/ can be implemented to any desired degree of accuracy with a three-layer backpropagation neural network. The author presents a speculative neurophysiological model illustrating how the backpropagation neural network architecture might plausibly be implemented in the mammalian brain for corticocortical learning between nearby regions of the cerebral cortex.>",
     "url": "https://doi.org/10.1109/ijcnn.1989.118638",
     "authors": [
       "Hecht-Nielsen"
@@ -179241,7 +179241,7 @@
     "id": "doi:10.1109/icnn.1993.298591",
     "name": "A neural network that embeds its own meta-levels",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A recurrent neural network is presented which (in principle) can, besides learning to solve problems posed by the environment, also use its own weights as input data and learn new (arbitrarily complex) algorithms for modifying its own weights in response to the environmental input and evaluations. The network uses subsets of its input and output units for observing its own errors and for explicitly analysing and manipulating all of its own weights, including those weights responsible for analyzing and manipulating weights. This effectively embeds a chain of meta-networks and meta-meta-. . .-networks into the network itself.>",
     "url": "https://doi.org/10.1109/icnn.1993.298591",
     "authors": [
       "J. Schmidhuber"
@@ -179282,7 +179282,7 @@
     "id": "doi:10.3109/0954898x.2011.637606",
     "name": "On nonlinearity in neural encoding models applied to the primary visual cortex",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Within the regression framework, we show how different levels of nonlinearity influence the instantaneous firing rate prediction of single neurons. Nonlinearity can be achieved in several ways. In particular, we can enrich the predictor set with basis expansions of the input variables (enlarging the number of inputs) or train a simple but different model for each area of the data domain. Spline-based models are popular within the first category. Kernel smoothing methods fall into the second category. Whereas the first choice is useful for globally characterizing complex functions, the second is very handy for temporal data and is able to include inner-state subject variations. Also, interactions among stimuli are considered. We compare state-of-the-art firing rate prediction methods with some more sophisticated spline-based nonlinear methods: multivariate adaptive regression splines and sparse additive models. We also study the impact of kernel smoothing. Finally, we explore the combination of various local models in an incremental learning procedure. Our goal is to demonstrate that appropriate nonlinearity treatment can greatly improve the results. We test our hypothesis on both synthetic data and real neuronal recordings in cat primary visual cortex, giving a plausible explanation of the results from a biological perspective.",
     "url": "https://doi.org/10.3109/0954898x.2011.637606",
     "authors": [
       "Diego Vidaurre",
@@ -179303,7 +179303,7 @@
     "id": "doi:10.1088/0954-898x_6_3_011",
     "name": "Probable networks and plausible predictions — a review of practical Bayesian methods for supervised neural networks",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Bayesian probability theory provides a unifying framework for data modelling. In this framework the overall aims are to find models that are well-matched to the data, and to use these models to make optimal predictions. Neural network learning is interpreted as an inference of the most probable parameters for the model, given the training data. The search in model space (i.e., the space of architectures, noise models, preprocessings, regularizers and weight decay constants) can then also be treated as an inference problem, in which we infer the relative probability of alternative models, given the data. This review describes practical techniques based on Gaussian approximations for implementation of these powerful methods for controlling, comparing and using adaptive networks.",
     "url": "https://doi.org/10.1088/0954-898x_6_3_011",
     "authors": [
       "David J C Mackay"
@@ -179383,7 +179383,7 @@
     "id": "doi:10.1145/106965.105260",
     "name": "Protein classification using a neural network database system",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Neural networks are being applied to a widely expanding area of applications, including the biological applications of protein structure prediction and DNA sequence",
     "url": "https://doi.org/10.1145/106965.105260",
     "authors": [
       "Cathy H. Wu",
@@ -179425,7 +179425,7 @@
     "id": "doi:10.1109/ijcnn.2006.1716490",
     "name": "A Fuzzified Neural Fuzzy Inference Network that Learns from Linguistic Information",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A Fuzzified Takagi-Sugeno-Kang (TSK)-type Neural Fuzzy Inference Network (FTNFIN) for handling linguistic information is proposed in this paper. The inputs and outputs of FTNFIN may be fuzzy numbers with any shapes. The α-cut technique is used in input fuzzification and consequent part computation, which enables the network to handle linguistic information. There are no rules in FTNFIN initially since they are constructed on-line by concurrent structure and parameter learning. The network has been applied to the learning of fuzzy input and output data, and good simulation results are achieved.",
     "url": "https://doi.org/10.1109/ijcnn.2006.1716490",
     "authors": [
       "Chia-Feng Juang",
@@ -179446,7 +179446,7 @@
     "id": "doi:10.70729/ijser15140",
     "name": "Image Compression Using Back Propagation Neural Network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Image compression technique is used to reduce the number of bits required in representing image, which helps to reduce the storage space and transmission cost. In the present research work back propagation neural network training algorithm has been used. Back propagation neural network algorithm helps to increase the performance of the system and to decrease the convergence time for the training of the neural network. The proposed scheme has been demonstrated through several experiments including cameraman and very promising results in compression as well as in reconstructed image over convectional neural network based technique.",
     "url": "https://doi.org/10.70729/ijser15140",
     "authors": [
       "Neha Jaiswal"
@@ -179484,7 +179484,7 @@
     "id": "doi:10.1109/ijcnn.2006.1716761",
     "name": "On derivation of stagewise second-order backpropagation by invariant imbedding for multi-stage neural-network learning",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "We present a simple, intuitive argument based on \"invariant imbedding\" in the spirit of dynamic programming to derive a stagewise second-order backpropagation (BP) algorithm. The method evaluates the Hessian matrix of a general objective function efficiently by exploiting the multistage structure embedded in a given neural-network model such as a multilayer perceptron (MLP). In consequence, for instance, our stagewise BP can compute the full Hessian matrix \"faster\" than the standard method that evaluates the Gauss-Newton Hessian matrix alone by rank updates in nonlinear least squares learning. Through our derivation, we also show how the procedure serves to develop advanced learning algorithms; in particular, we explain how the introduction of \"stage costs\" leads to alternative systematic implementations of multi-task learning and weight decay.",
     "url": "https://doi.org/10.1109/ijcnn.2006.1716761",
     "authors": [
       "E. Mizutani",
@@ -179523,7 +179523,7 @@
     "id": "doi:10.1109/ijcnn.2006.1716614",
     "name": "Nonlinear System Identification Based on B-Spline Neural Network and Modified Particle Swarm Optimization",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Artificial neural networks, in particular, feedforward multilayer networks and basis function networks, have gradually established themselves as a usual tool in approximating complex nonlinear systems. B-spline networks, a type of basis function neural network, are normally trained by gradient-based methods, which may fall into local minima during the learning phase. In order to overcome the drawbacks encountered by conventional learning methods, particle swarm optimization - a swarm intelligence methodology - can provide a stochastic global search of B-spline networks for nonlinear system identification. In this paper, a modified particle swarm optimization algorithm using Gaussian and Cauchy probability distributions are applied to adjust the control points of B-spline neural networks. Simulation results for the identification of Rössler systems are provided and demonstrate the effectiveness and robustness of the proposed identification scheme.",
     "url": "https://doi.org/10.1109/ijcnn.2006.1716614",
     "authors": [
       "L. dos Santos Coelho",
@@ -179543,7 +179543,7 @@
     "id": "doi:10.1109/ijcnn.2007.4371258",
     "name": "Rotated General Regression Neural Network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A rotated general regression neural network is presented as an enhancement to the general regression neural network. A variable kernel estimate for multivariate densities is considered. A coordinate transformation is adopted which circumvent the difficulty of predicting multimodal distribution with large variance differences between modes which is associated with the general regression neural network. The proposed technique trains the network in a way that the variance differences between modes is kept small and in the same order. Further, the technique reduces the number of indispensable training parameters to two parameters and lowers the load of the computation as well as the time for conditions in which employing separate values of σ is unavoidable. The accuracy of the proposed technique is demonstrated by examining two different cases: the performance map of an axial compressor and the boundary layer profile over a flat plate. The results are compared with those by general regression neural network as well as the corresponding experimental data. Excellent improvement is obtained.",
     "url": "https://doi.org/10.1109/ijcnn.2007.4371258",
     "authors": [
       "M. Gholamrezaei",
@@ -179580,7 +179580,7 @@
     "id": "doi:10.1109/icnn.1995.487391",
     "name": "Twofold type of backpropagation neural network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Various types of neural networks have been introduced and those have been used in various areas. In some areas, those operate in a very good manner, but in another they don't. For example, Boltzmann machine and Hopfield network have better estimation and analogy abilities compared with backpropagation neural networks, but they are not accurate and are not easily convergent. On the other hand, backpropagation neural networks are very good at learning various patterns, but are bad at estimation and analogy when they are are under a very noisy condition. This means that if backpropagation neural networks can overcome estimation and analogy limitations, this can cover most of the application areas. So in this paper, an analogy and estimation method has been studied by introducing a twofold type of backpropagation neural network. A very good result has been obtained. And also, a new application field of those theories has appeared.",
     "url": "https://doi.org/10.1109/icnn.1995.487391",
     "authors": [
       "S. Sugiyama"
@@ -179599,7 +179599,7 @@
     "id": "doi:10.1007/978-3-7908-1902-1_136",
     "name": "Systolic Simulation of Hamming Neural Network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The paper describes the systolic simulation of Hamming net algorithm. Systolic arrays creation methodology is based on Data Dependence Graphs analysis. The proposed implementation is focused on completely digital circuits. Input data is passed through the neurons in a time share basis, weights are stored in digital shift registers and no separate thresholds are used. The architecture provides massive parallelism and reprogrammability. The efficiency of proposed simulation is discussed based on implementation quality criteria for array architecture.",
     "url": "https://doi.org/10.1007/978-3-7908-1902-1_136",
     "authors": [
       "Jacek Mazurkiewicz"
@@ -179637,7 +179637,7 @@
     "id": "doi:10.1109/icnn.1995.487331",
     "name": "Parallel neural network architectures",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Several parallel neural network (PNN) architectures are presented in this paper. PNNs can work parallelly and coordinately. The implementation of their training is much easier than that of a single NN. And there are many other attractive characteristics of PNNs such as a modular structure, easy implementation by hardware, high efficiency for their parallel structures (compared with sequential NN architectures), easy implementation of additional learning, etc. PNNs can be used to deal with such problems as data processing, pattern recognition, and classification. The learning and additional learning algorithms for PNNs are presented in this paper. Some simulation results are given to illustrate the advantages of all the PNNs considered.",
     "url": "https://doi.org/10.1109/icnn.1995.487331",
     "authors": [
       "Wang Guoyin",
@@ -179687,7 +179687,7 @@
     "id": "doi:10.1109/ijcnn.1992.226961",
     "name": "The projection neural network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A novel neural network model, the projection neural network, is developed to overcome three key drawbacks of backpropagation-trained neural networks (BPNN), i.e., long training times, the large number of nodes required to form closed regions for classification of high-dimensional problems and the lack of modularity. This network combines advantages of hypersphere classifiers, such as the restricted Coulomb energy (RCE) network, radial basis function methods, and BPNN. It provides the ability to initialize nodes to serve either as hyperplane separators or as spherical prototypes (radial basis functions), followed by a modified gradient descent error minimization training of the network weights and thresholds, which adjusts the prototype positions and sizes and may convert closed prototype decision boundaries to open boundaries, and vice versa. The network can provide orders of magnitude decrease in the required training time over BPNN and a reduction in the number of required nodes. Theory and examples are given.>",
     "url": "https://doi.org/10.1109/ijcnn.1992.226961",
     "authors": [
       "G.D. Wilensky",
@@ -179707,7 +179707,7 @@
     "id": "doi:10.1109/icnn.1993.298590",
     "name": "Inverse recall neural network model and feedback pattern recognition",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "An inverse recall neural network model and a feedback pattern recognition method based on the model are proposed. The inverse recall neural network model is trained by the same method as that used for a typical multilayer feedforward model. The model can produce an inverse mapping of the trained feedforward mappings to show the parts of an input pattern. The model is applied to the feedback recognition method which can extract features from input patterns and discriminates between them by the inverse recall neural network model. The feedback recognition method adjusts feature extraction parameters so as to detect the important parts shown by the neural network model in order to present them to the network, and to produce more certain recognition results. This method is examined on handwritten alpha-numerics. It is found that rejection ratio can be reduced by half at the same error ratio.>",
     "url": "https://doi.org/10.1109/icnn.1993.298590",
     "authors": [
       "K. Yamada"
@@ -179746,7 +179746,7 @@
     "id": "doi:10.1088/0954-898x_14_2_302",
     "name": "Sequence learning in differentially activated dendrites",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Differentially activated areas of a dendrite permit the existence of zones with distinct rates of synaptic modification, and such areas can be individually accessed using a reference signal which localizes synaptic plasticity and memory trace retrieval to certain subregions of the dendrite. It is proposed that the neural machinery required in such a learning/retrieval mechanism could involve the NMDA receptor, in conjunction with the ability of dendrites to maintain differentially activated regions. In particular, it is suggested that such a parcellation of the dendrite allows the neuron to participate in multiple sequences, which can be learned without suffering from the 'wash-out' of synaptic efficacy associated with superimposition of training patterns. This is a biologically plausible solution to the stability-plasticity dilemma of learning in neural networks.",
     "url": "https://doi.org/10.1088/0954-898x_14_2_302",
     "authors": [
       "Bjørn Gilbert Nielsen"
@@ -179765,7 +179765,7 @@
     "id": "doi:10.1017/9780511783692.007",
     "name": "Neural Network Models",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The most recent development in distributional semantics is represented by models based on artificial neural networks. In this chapter, we focus on the use of neural networks to build static embeddings. Like random encoding models, neural networks incrementally learn embeddings by reducing the high dimensionality of distributional data without building an explicit co-occurrence matrix. Differing from the first generation of distributional semantic models (DSMs), also termed count models, the distributional representations produced by neural DSMs are the by-product of training the network to predict neighboring words, hence the name of predict models. Since semantically similar words tend to co-occur with similar contexts, the network learns to encode similar lexemes with similar distributional vectors. After introducing the basic concepts of neural computation, we illustrate neural language models and their use to learn distributional representations. Then we pass to describe the most popular static neural DSMs, CBOW, and Skip-Gram. We conclude the chapter with a comparison between count and predict models.",
     "url": "https://doi.org/10.1017/9780511783692.007",
     "authors": [],
     "tags": [],
@@ -179816,7 +179816,7 @@
     "id": "doi:10.1109/ijcnn.2006.247362",
     "name": "Medical Image Segmentation using a Self-organizing Neural Network and Clifford Geometric Algebra",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "In this paper we present a method based on self-organizing neural networks to extract the shape of an object which is useful for segmentation tasks. For that, the method uses a set of transformations expressed as versors in the conformal geometric algebra framework. Such transformations, when applied to any geometric entity of this geometric algebra, define the shape of the object. The utility of this approach is showed with one synthetic and several medical images (computer tomography and magnetic resonance images), where the object of interest is well segmented even if there is no well defined contours in the original image. In fact, the segmentation results obtained are better than the results using the ggvf-snake, no matter if the initialization of the snake is given inside, outside or over the (blurred) contour of the object.",
     "url": "https://doi.org/10.1109/ijcnn.2006.247362",
     "authors": [
       "J. Rivera-Rovelo",
@@ -179836,7 +179836,7 @@
     "id": "doi:10.1109/ijcnn.2006.1716794",
     "name": "Designing a Muscle like System Based on PID Controller and Tuned by Neural Network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This paper presents a study on a muscle like system based on a PID controller tuned by a neural network. The approach is based on a non linear muscle model using system identification based on a NNARX (neural network autoregressive exogenous) structure. This model is used in a special configuration of an MLP in order to let the output of the closed loop formed by the motor and controller to follow that of this non linear muscle model. Two structures are compared and the robustness of the approach is tested with different models of DC motors.",
     "url": "https://doi.org/10.1109/ijcnn.2006.1716794",
     "authors": [
       "H.J. Serhan",
@@ -179857,7 +179857,7 @@
     "id": "doi:10.1109/ijcnn52387.2021.9533464",
     "name": "CM-Net: a point cloud upsampling network based on adversarial neural network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "In the real-life application scenarios, the collected point clouds are often sparse, noisy and non-uniform, especially if the application is unable to capture the local spatial layout due to the lack of points. Thus, point cloud upsampling aims to transform sparse point clouds into dense point clouds with uniform point distribution. This study proposes a generative adversarial network-based point cloud upsampling network called CM-Net (Circular Multi-Frequency Network). The model consists of two parts: a generator and a discriminator. The generator's purpose is to convert the input sparse point cloud into a dense upsampling point cloud with our specific parts, includes multi-frequency pooling module and positive polygon-based code. On the contrary, the discriminator incudes two parts; a feature extractor and a convolutional network module, which optimizes the generator's performance. Experimental results show that our network can learn the point cloud's underlying geometric information very well, and complete the even distribution points.",
     "url": "https://doi.org/10.1109/ijcnn52387.2021.9533464",
     "authors": [
       "Xiaomeng Li",
@@ -179879,7 +179879,7 @@
     "id": "doi:10.1109/ijcnn.2006.246927",
     "name": "Content-based Video Adaptation in Low/Variable Bandwidth Communication Networks Using Adaptable Neural Network Structures",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "In this paper, an adaptable neural network model is used for real time video delivery over communication networks of low and variable bandwidth, such as the wireless ones. The scheme performs video delivery in content domain in contrast to the previous approaches in which only temporal frame skipping is adopted. The proposed method requires no buffering of video frames and thus imposing no frame delay. In particular, in case of low bandwidth conditions, the proposed scheme estimates the number of frames that best represent the sequence within a time segment and transmit this number for delivery instead of a temporal frame skipping. Multiple key frames are considered by optimally approximating the real bandwidth availability with a rational fraction. Key frame estimation is accomplished using a neural network model capable of predicting the indices of the most appropriate key frames that are to be delivered without being available the video information. The model takes into account the previous information as it has been evaluated by the already delivered information. The proposed scheme is based on an efficient recursive estimation algorithm since the network weights cannot be considered constant throughout video transmission. This is due to the fact that content as well as bandwidth characteristics vary from time to time.",
     "url": "https://doi.org/10.1109/ijcnn.2006.246927",
     "authors": [
       "A. Doulamis",
@@ -179994,7 +179994,7 @@
     "id": "doi:10.1201/b10515-11",
     "name": "Intelligent Neural Network Systems and Evolutionary Learning",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Although several conventional methods (e.g., pruning techniques) exist that may be used to automatically determine neural network conguration and weights, they are often susceptible to trapping at local optima and characteristically dependent on the initial network structure (Gao et al., 1999). Overcoming these limitations would thus prove useful in the development of more intelligent neural network systems, those capable of demonstrating effective global search characteristics with fast convergence, and capable of providing alternative tools for modeling complex natural processes. The movement toward more intelligent network systems requires consideration of alternative strategies to help optimize neural network structure and aid in bringing multifaceted problems into focus. By converging on specic methodologies common to, for example, genetic algorithms, evolutionary programming, and fuzzy logic, we can begin to comprehend how when combined with neural networks, hybrid technology can impart the efciency and accuracy needed in fundamental research, where multidisciplinary and multiobjective tasks are routinely performed. The objectives of this chapter are twofold: (1) to present theoretical concepts behind unconventional methodologies and (2) showcase a variety of example hybrid techniques, including neuro-fuzzy, neuro-genetic, and neuro-fuzzy-genetic systems.",
     "url": "https://doi.org/10.1201/b10515-11",
     "authors": [],
     "tags": [],
@@ -180031,7 +180031,7 @@
     "id": "doi:10.1109/icnn.1993.298777",
     "name": "A neural network to diagnose liver cancer",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A backpropagation neural network is designed to diagnose five classifications of hepatic masses: metastatic carcinoma, hepatoma (HCC), cavernous hemangioma, abscess, and cirrhosis. BrainMaker Professional version 2.5 software is used in this research. The input submitted to the network consists of 35 numbers per patient case, which represents ultrasonographic data and laboratory tests. The network architecture has 35 elements in the input layer, two hidden layers of 35 elements each, and five elements in the output layer. After being trained to a learning tolerance of 1%, the network classifies hepatic masses correctly in 51 of 72 cases. Continued research should provide a computerized second opinion that will be especially helpful to clinicians.>",
     "url": "https://doi.org/10.1109/icnn.1993.298777",
     "authors": [
       "P.S. Maclin",
@@ -180051,7 +180051,7 @@
     "id": "doi:10.1115/1.802566.paper51",
     "name": "A Neural Network Based DTMF Decoder",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Communications systems frequently use a technique known as dual-tone multifrequency dialing (DTMF). Many possible solutions have been proposed for the design of DTMF decoders. Hardware-based solutions use filter banks to separate signals into low-band and high-band channels and to detect specific frequencies. Outputs from the filters are used to reconstruct the depressed pushbutton. These designs often increase the parts count, which results in larger circuit board space and increased costs. Software-based approaches mainly use FFT algorithms or filter banks implemented on a DSP. These designs have complex algorithms with large computational requirements. This paper discusses an approach to develop an efficient neural network based implementation of a DTMF decoder.",
     "url": "https://doi.org/10.1115/1.802566.paper51",
     "authors": [],
     "tags": [],
@@ -180087,7 +180087,7 @@
     "id": "doi:10.1201/b17332-9",
     "name": "Forms of Neural Network Learning",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "We will explain linear networks and discuss the limitations imposed by their simple structures. For our purposes, linear networks are easier to teach, they perform certain tasks very well, and their results are easy to analyze. Chapter 6 will cover the more complex nonlinear networks.",
     "url": "https://doi.org/10.1201/b17332-9",
     "authors": [],
     "tags": [],
@@ -180104,7 +180104,7 @@
     "id": "doi:10.1109/ijcnn.1991.155664",
     "name": "Analogical reasoning by neural network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Summary form only given, as follows. Analogical reasoning by neural network is discussed. The proposed method uses a template to create a network for analogical reasoning, and this can be done by an interactive activation and competition process. Computer simulation results indicate the effectiveness of the proposed analogical reasoning. >",
     "url": "https://doi.org/10.1109/ijcnn.1991.155664",
     "authors": [
       "M. Hagiwara",
@@ -180177,7 +180177,7 @@
     "id": "doi:10.17077/etd.r6q1np0x",
     "name": "Artificial neural network for studying human performance",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The vast majority of products and processes in industry and academia require human interaction. Thus, digital human models (DHMs) are becoming critical for improved designs, injury prevention, and a better understanding of human behavior. Although many capabilities in the DHM field continue to mature, there are still many opportunities for improvement, especially with respect to posture- and motion-prediction. Thus, this thesis investigates the use of artificial neural network (ANN) for improving predictive capabilities and for better understanding how and why human behave the way they do.\\nWith respect to motion prediction, one of the most challenging opportunities for improvement concerns computation speed. Especially, when considering dynamic motion prediction, the underlying optimization problems can be large and computationally complex. Even though the current optimization-based tools for predicting human posture are relatively fast and accurate and thus do not require as much improvement, posture prediction in general is a more tractable problem than motion prediction and can provide a test bead that can shed light on potential issues with motion prediction. Thus, we investigate the use of ANN with posture prediction in order to discover potential issues. In addition, directly using ANN with posture prediction provides a preliminary step towards using ANN to predict the most appropriate combination of performance measures (PMs) - what drives human behavior. The PMs, which are the cost functions that are minimized in the posture prediction problem, are typically selected manually depending on the task. This is perhaps the most significant impediment when using posture prediction. How does the user know which PMs should be used? Neural networks provide tools for solving this problem.\\nThis thesis hypothesizes that the ANN can be trained to predict human motion quickly and accurately, to predict human posture (while considering external forces), and to determine the most appropriate combination of PM(s) for posture prediction. Such capabilities will in turn provide a new tool for studying human behavior. Based on initial experimentation, the general regression neural network (GRNN) was found to be the most effective type of ANN for DHM applications. A semi-automated methodology was developed to ease network construction, training and testing processes, and network parameters. This in turn facilitates use with DHM applications.\\nWith regards to motion prediction, use of ANN was successful. The results showed that the calculation time was reduced from 1 to 40 minutes, to a fraction of a second without reducing accuracy. With regards to posture prediction, ANN was again found to be effective. However, potential issues with certain motion-prediction tasks were discovered and shed light on necessary future development with ANNs. Finally, a decision engine was developed using GRNN for automatically selecting four human PMs, and was shown to be very effective. In order to train this new approach, a novel optimization formulation was used to extract PM weights from pre-existing motion-capture data. Eventually, this work will lead to automatically and realistically driving predictive DHMs in a general virtual environment.",
     "url": "https://doi.org/10.17077/etd.r6q1np0x",
     "authors": [
       "Mohammad Hindi Bataineh"
@@ -180233,7 +180233,7 @@
     "id": "doi:10.1109/ijcnn.2006.1716662",
     "name": "Recurrent Neural Network Based Predictions of Elephant Migration in a South African Game Reserve",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A large portion of South Africa's elephant population can be found on small wildlife reserves. When confined to enclosed reserves the elephant densities are much higher than observed in the wild. The large nutritional demands and destructive foraging behavior of elephants threaten rare species of vegetation. If conservation management is to protect threatened species of vegetation, knowing how long elephants will stay in one area of the reserve as well as which area they will move to next is essential. The goal of this study is to train a recurrent neural network (RNN) to continuously predict an elephant herd's next position in the Pongola Game Reserve. Accurate predictions would provide a useful tool in assessing future impact of elephant populations on different areas of the reserve. The particle swarm optimization (PSO) algorithm is used to adapt the weights of the neural network. Results are presented to show the effectiveness of RNN-PSO for elephant migration prediction.",
     "url": "https://doi.org/10.1109/ijcnn.2006.1716662",
     "authors": [
       "P. Palangpour",
@@ -180254,7 +180254,7 @@
     "id": "doi:10.1088/0954-898x/5/2/008",
     "name": "A shape-recognition model using dynamical links",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A shape-recognition method is proposed, inspired from the dynamic-link theory of von der Malsburg (1981). The quality of a match between two images is assessed through an elastic cost functional; the minimal value reached by the cost over a suitably-defined space of maps is viewed as a distance between these two images. Experiments on nearest-neighbour classification of handwritten numerals are presented, using a computationally effective procedure for finding a reliable estimate of the matching distance.",
     "url": "https://doi.org/10.1088/0954-898x/5/2/008",
     "authors": [
       "Elie Bienenstock",
@@ -180274,7 +180274,7 @@
     "id": "doi:10.1088/0954-898x/11/4/305",
     "name": "Randomly connected sigma–pi neurons can form associator networks",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A set of sigma–pi units randomly connected to two input vectors forms a type of hetero-associator related to convolution- and matrix-based associative memories. Associations are represented as patterns of activity rather than connection strengths. Decoding the associations requires another network of sigma–pi units, with connectivity dependent on the encoding network. Learning the connectivity of the decoding network involves setting n3 parameters (where n is the size of the vectors), and can be accomplished in approximately 3e n log n presentations of random patterns. This type of network encodes information in activation values rather than in weight values, which makes the information about relationships accessible to further processing. This accessibility is essential for higher-level cognitive tasks such as analogy processing. The fact that random networks can perform useful operations makes it more plausible that these types of associative network could have arisen in the nervous systems of natural organisms during the course of evolution.",
     "url": "https://doi.org/10.1088/0954-898x/11/4/305",
     "authors": [
       "Tony Plate"
@@ -180293,7 +180293,7 @@
     "id": "doi:10.1109/ijcnn.2006.247390",
     "name": "Recurrent Neural Network Based Gating for Natural Gas Load Prediction System",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Prediction of natural gas consumption is an important element in gas load management aimed to better utilize the facilities of a gas distribution system. The major challenges faced by developers of prediction systems are the variety and volatility of consumer profiles, strong seasonal dependency and dependency on climatic conditions, and lack of extensive and reliable historical data. In this paper, the problem of seasonal dependency is tackled with a recurrent neural network used as a gate for a statistical mixture model. Historical consumption data along with climatic conditions and other auxiliary descriptors are combined with expert delineation of heating season boundaries to provide training data. The resulting gating system is capable of reliable identification of the start and end of the heating season and, combined with the statistical models, of accurate predictions of gas load.",
     "url": "https://doi.org/10.1109/ijcnn.2006.247390",
     "authors": [
       "P. Musilek",
@@ -180356,7 +180356,7 @@
     "id": "doi:10.1088/0954-898x_14_4_302",
     "name": "Detecting dynamical changes within a simulated neural ensemble using a measure of representational quality",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Technological advances allowing simultaneous recording of neuronal ensembles have led to many developments in our understanding of how the brain performs neural computations. One key technique for extracting information from neural populations has been population reconstruction. While reconstruction is a powerful tool, it only provides a value and gives no indication of the quality of the representation itself. In this paper, we present a mathematically and statistically justified measure for assessing the quality of a representation in a neuronal ensemble. Using a simulated neural network, we show that this measure can distinguish between system states and identify moments of dynamical change within the system. While the examples used in this paper all derive from a standard network model, the measure itself is very general. It requires only a representational space, measured tuning curves, and neural ensembles.",
     "url": "https://doi.org/10.1088/0954-898x_14_4_302",
     "authors": [
       "Jadin C Jackson",
@@ -180480,7 +180480,7 @@
     "id": "doi:10.15368/theses.2020.21",
     "name": "ELECTRICITY PRICE FORECASTING USING A CONVOLUTIONAL NEURAL NETWORK",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Many methods have been used to forecast real-time electricity prices in various regions around the world. The problem is difficult because of market volatility affected by a wide range of exogenous variables from weather to natural gas prices, and accurate price forecasting could help both suppliers and consumers plan effective business strategies. Statistical analysis with autoregressive moving average methods and computational intelligence approaches using artificial neural networks dominate the landscape. With the rise in popularity of convolutional neural networks to handle problems with large numbers of inputs, and convolutional neural networks conspicuously lacking from current literature in this field, convolutional neural networks are used for this time series forecasting problem and show some promising results. This document fulfills both MSEE Master's Thesis and BSCPE Senior Project requirements.",
     "url": "https://doi.org/10.15368/theses.2020.21",
     "authors": [
       "Elliott Winicki"
@@ -180499,7 +180499,7 @@
     "id": "doi:10.1088/0954-898x_1_3_004",
     "name": "On the dynamics of neural networks realizing associative memories of first and higher order",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This paper presents a new study on the dynamics of neural networks realizing associative memories of first and higher order. This is accomplished by focusing on the dynamics of a system of coupled differential equations that is shown to be equivalent to the neural network which behaves as an associative memory. This equivalence allows the assignment of a Lyapunov function to neural networks realizing associative memories of any order. This analysis provides some new interpretations for the outer product rule, or correlational learning, and also a basis for the development of more sophisticated learning schemes. A fundamental difference in the behaviour of associative memories of even and odd order is also investigated.",
     "url": "https://doi.org/10.1088/0954-898x_1_3_004",
     "authors": [
       "Nicolaos B Karayiannis",
@@ -180519,7 +180519,7 @@
     "id": "doi:10.1088/0954-898x/14/1/309",
     "name": "Analysis of neural coding through quantization with an information-based distortion measure",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "We discuss an analytical approach through which the neural symbols and corresponding stimulus space of a neuron or neural ensemble can be discovered simultaneously and quantitatively, making few assumptions about the nature of the code or relevant features. The basis for this approach is to conceptualize a neural coding scheme as a collection of stimulus-response classes akin to a dictionary or 'codebook', with each class corresponding to a spike pattern 'codeword' and its corresponding stimulus feature in the codebook. The neural codebook is derived by quantizing the neural responses into a small reproduction set, and optimizing the quantization to minimize an information-based distortion function. We apply this approach to the analysis of coding in sensory interneurons of a simple invertebrate sensory system. For a simple sensory characteristic (tuning curve), we demonstrate a case for which the classical definition of tuning does not describe adequately the performance of the cell studied. Considering a more involved sensory operation (sensory discrimination), we also show that, for some cells in this system, a significant amount of information is encoded in patterns of spikes that would not be discovered through analyses based on linear stimulus-response measures.",
     "url": "https://doi.org/10.1088/0954-898x/14/1/309",
     "authors": [
       "A.G. Dimitrov",
@@ -180559,7 +180559,7 @@
     "id": "doi:10.14711/thesis-991013098359403412",
     "name": "Multilingual document embedding with sequential neural network models",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "One of the current state-of-the-art multilingual document embedding model LASER is based on the bidirectional LSTM (BiLSTM) neural machine translation (NMT) model. This paper presents a Transformer-based Multilingual sentence/Document Embedding model, T-MDE, which makes two significant improvements. Firstly, the BiLSTM encoder is replaced by the attention-based transformer structure with an novel information bottleneck design. The new model structure is more capable of learning sequential patterns in longer texts. Moreover, it is faster both in training and embedding generation. Secondly, we augment the NMT translation loss function with an carefully designed distance constraint loss term. It will further brings the embeddings of parallel sentences close together in the vector space. We call the T-MDE model trained with distance constraint, cT-MDE. Our T-MDE model significantly outperforms BiLSTM-based LASER in the cross-lingual document classification tasks.",
     "url": "https://doi.org/10.14711/thesis-991013098359403412",
     "authors": [
       "Wei Li"
@@ -180612,7 +180612,7 @@
     "id": "doi:10.1088/0954-898x_3_2_005",
     "name": "Study of a learning algorithm for neural networks with discrete synaptic couplings",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The authors present a new learning algorithm for neural networks with discrete synaptic couplings. The main difference with respect to other previous algorithms is that it is defined in the continuous space. Its performance and features are analysed in detail.",
     "url": "https://doi.org/10.1088/0954-898x_3_2_005",
     "authors": [
       "C J Pérez Vicente",
@@ -180633,7 +180633,7 @@
     "id": "doi:10.1088/0954-898x_15_4_004",
     "name": "Multiplicative neural noise can favor an independent components representation of sensory input",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Arguments have been advanced to support the role of principal components (e.g., Karhunen-Loéve, eigenvector) and independent components transformations in early sensory processing, particularly for color and spatial vision. Although the concept of redundancy reduction has been used to justify a principal components transformation, these transformations per se do not necessarily confer benefits with respect to information transmission in information channels with additive independent identically distributed Gaussian noise. Here, it is shown that when a more realistic source of multiplicative neural noise is present in the information channel, there are quantitative benefits to a principal components or independent components representation for Gaussian and non-Gaussian inputs, respectively. Such a representation can convey a larger quantity of information despite the use of fewer spikes. The nature and extent of this benefit depend primarily on the probability distribution of the inputs and the relative power of the inputs. In the case of Gaussian input, the greater the disparity in power between dimensions, the greater the advantage of a principal components representation. For non-Gaussian input distributions with a kurtosis that is super-Gaussian, an independent components representation is similarly advantageous. This advantage holds even for input distributions with equal power since the resulting density is still rotationally asymmetric. However, sub-Gaussian input distributions can lead to situations where maximally correlated inputs are the most advantageous with respect to transmitting the greatest quantity of information with the fewest number of spikes.",
     "url": "https://doi.org/10.1088/0954-898x_15_4_004",
     "authors": [
       "Allan Gottschalk",
@@ -180673,7 +180673,7 @@
     "id": "doi:10.1109/ijcnn.2006.246746",
     "name": "A Fully CMOS Low-Cost Chaotic Neural Network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A chaotic IC is proposed and fabricated using a 0.35μm CMOS technology. The circuit iterates an N-shaped transfer function that can be modified using two external voltages, and is implemented using a three neurons network. The main advantages of the proposed circuit are based on its simplicity, small area (47 × 57μm2), and its MOS-only implementation requiring no more than 15 MOS transistors. Measurements show the suitability of the proposed system to reproduce a chaotic signal and to be used as a random number generator.",
     "url": "https://doi.org/10.1109/ijcnn.2006.246746",
     "authors": [
       "J.L. Rossello",
@@ -180716,7 +180716,7 @@
     "id": "doi:10.1088/0954-898x_6_3_009",
     "name": "Unsupervised learning for Boltzman Machines",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "An unsupervised learning algorithm for a stochastic recurrent neural network based on the Boltzmann Machine architecture is formulated in this paper. The maximization of the mutual information between the stochastic output neurons and the clamped inputs is used as an unsupervised criterion for training the network. The resulting learning rule contains two terms corresponding to Hebbian and anti-Hebbian learning. It is interesting that these two terms are weighted by the amount of information transmitted in the learning synapse, giving an information-theoretic interpretation of the proportionality constant of Hebb's biological rule. The anti-Hebbian term, which can be interpreted as a forgetting function, supports the optimal coding. In this way, optimal nonlinear and recurrent implementations of data compression of Boolean patterns are obtained. As an example, the encoder problem is simulated and trained in an unsupervised way in a one layer network. Compression of non-uniform distributed binary data is included. Unsupervised classification, even for continuous inputs, is shown for the cases of four overlapping Gaussian spots and for a real-world example of thyroid diagnosis. In comparison with other techniques, the present model requires an exponentially smaller number of weights for the classification problem.",
     "url": "https://doi.org/10.1088/0954-898x_6_3_009",
     "authors": [
       "Gustavo Deco",
@@ -180736,7 +180736,7 @@
     "id": "doi:10.1088/0954-898x/5/1/003",
     "name": "Regulating the nonlinear dynamics of olfactory cortex",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The dynamic behaviour of cortical structures can be changed significantly in character by different types of neuromodulators. We simulate such effects in a neural network model of the olfactory cortex and analyse the resulting nonlinear dynamics of this system, including during both learning and recall. The model has simple network units and realistic network connectivity. The input-output relation of populations of neurons is represented as a sigmoid function, with a single parameter determining threshold, slope and amplitude of the curve. This parameter can be thought of as corresponding to the concentration of a particular neuromodulator in the system. It can also be related to the level of arousal of an animal. By varying this ‘gain parameter’ we show that the model can give point attractor, limit cycle attractor and strange chaotic or non-chaotic attractor behaviour. We also display ‘transient chaos’ phenomena, which begin with chaos-like behaviour but eventually converge to a limit cycle. We demonstrate that the complex dynamics under neuromodulatory control can enhance weak signals and reduce recall time considerably, in particular when going from point attractor to limit cycle dynamics. Finally, we discuss the biological significance of these findings, recognizing the difficulties in characterizing the nonlinear dynamical states involved.",
     "url": "https://doi.org/10.1088/0954-898x/5/1/003",
     "authors": [
       "Xiangbao Wu",
@@ -180756,7 +180756,7 @@
     "id": "doi:10.1088/0954-898x_9_4_006",
     "name": "Evolving neurocontrollers for balancing an inverted pendulum",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This paper introduces an evolutionary algorithm that is tailored to generate recurrent neural networks functioning as nonlinear controllers. Network size and architecture, as well as network parameters like weights and bias terms, are developed simultaneously. There is no quantization of inputs, outputs or internal parameters. Different kinds of evolved networks are presented that solve the pole-balancing problem, i.e. balancing an inverted pendulum. In particular, controllers solving the problem for reduced phase space information (only angle and cart position) use a recurrent connectivity structure. Evolved controllers of 'minimal' size still have a very good benchmark performance.",
     "url": "https://doi.org/10.1088/0954-898x_9_4_006",
     "authors": [
       "F Pasemann"
@@ -180775,7 +180775,7 @@
     "id": "doi:10.21275/sr21225214136",
     "name": "Convolution Neural Network Based Image Recognition",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The identification of an image is one thorny task in computer vision problems. Using the python programming language and a few other machine learning algorithms and python libraries, this image recognition and feature extraction can be achieved. In pattern- and image-recognition problems, convolutionary neural networks (CNNs) are commonly used as they have a range of benefits compared to other techniques. The basics of CNNs are covered in this document, including a description of the different layers used. In this paper, we presented a model for cat and dog image recognition from the Convolutionary Neural Network (CNN). Before feeding it to the CNN model, the cat and dog dataset is pre-processed.",
     "url": "https://doi.org/10.21275/sr21225214136",
     "authors": [
       "Sofia Hamid",
@@ -180795,7 +180795,7 @@
     "id": "doi:10.1109/ijcnn.2006.247064",
     "name": "An ETF Trading Decision Support System by Using Neural Network and Technical Indicators",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This paper proposed a neural network based decision support system (DSS) to provide investors with suggestions on transaction timing and transaction strategies of Taiwan 50 index exchange traded funds (ETF). Various indicators were employed with corresponding application principles as the neural network underwent assigned training and learning procedures. It was revealed in the study results that the simulated transaction behavior following recommendations by the proposed system yielded better profits than solely applying Taiwan's weighted stock index.",
     "url": "https://doi.org/10.1109/ijcnn.2006.247064",
     "authors": [
       "Chih-Lung Chen",
@@ -180815,7 +180815,7 @@
     "id": "doi:10.1109/ijcnn.1992.226981",
     "name": "Controlling chaos with a neural network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Chaotic situations may occur in complex systems as a normal operating mode or may accidentally be induced due to a change in some system parameter. The author reports one approach to the use of feedforward networks to dampen chaotic oscillations in Duffing's oscillator. A catastrophic failure of the neural network controller is also studied. For networks with a single hidden layer, a point of diminishing returns was encountered as the size of the hidden layer increased. Suppression improves slightly as the hidden layer size increases. The larger networks take longer to train and are less responsive to changes in oscillator dynamics; however the larger networks recover faster after a transient disturbance in the oscillator dynamics. The majority of the tests were conducted on a network with a single hidden layer of 50 elements. The addition of more hidden layers provided only marginal improvements in suppression at the expense of much longer training times.>",
     "url": "https://doi.org/10.1109/ijcnn.1992.226981",
     "authors": [
       "T.W. Frison"
@@ -180868,7 +180868,7 @@
     "id": "doi:10.21275/v5i6.nov163985",
     "name": "Neural Network Based Detection of Melanoma Skin Cancer",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The sensitivity and specificity for diagnosis of melanoma achieved by neural network analysis of Raman spectra were 85% and 99%, respectively. We propose that neural network analysis of near-infrared Fourier transform Raman spectra could provide a novel method for rapid, automated skin cancer diagnosis on unstained skin samples.",
     "url": "https://doi.org/10.21275/v5i6.nov163985",
     "authors": [],
     "tags": [],
@@ -180885,7 +180885,7 @@
     "id": "doi:10.1109/ijcnn.2006.246782",
     "name": "A Neural Network based Technique for Automatic Classification of Road Cracks",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This paper presents a neural network based technique for the classification of segments of road images into cracks and normal images. The density and histogram features are extracted. The features are passed to a neural network for the classification of images into images with and without cracks. Once images are classified into cracks and non-cracks, they are passed to another neural network for the classification of a crack type after segmentation. Some experiments were conducted and promising results were obtained. The selected results and a comparative analysis are included in this paper.",
     "url": "https://doi.org/10.1109/ijcnn.2006.246782",
     "authors": [
       "J. Bray",
@@ -180907,7 +180907,7 @@
     "id": "doi:10.1109/ijcnn.2006.247227",
     "name": "The Modified Differential Evolution and the RBF (MDE-RBF) Neural Network for Time Series Prediction",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "We develop a modified differential evolution algorithm that produces radial basis function neural network controllers for chaotic systems. This method requires few controlling variables. We examine the result of applying the proposed algorithm to time series prediction, which illustrates the effectiveness of this technique. We apply this algorithm to several computational and real systems including Mackey-Glass time series, the Lorenz attractor, and experimental data obtained from the Henon map. Our experiments indicate that the structural differences between our approach and the other methods existing in the bibliography particularly are well suited to modeling chaotic time series data.",
     "url": "https://doi.org/10.1109/ijcnn.2006.247227",
     "authors": [
       "H. Dhahri",
@@ -180927,7 +180927,7 @@
     "id": "doi:10.1109/icit.2008.4608579",
     "name": "Comparison on Zhang neural network and gradient neural network for time-varying linear matrix equation AXB = C solving",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "For solving online the linear matrix equation AXB = C with time-varying coefficients, this paper presents a special kind of recurrent neural networks by using a design method recently proposed by Zhang et al. Compared with gradient neural networks (abbreviated as GNN, or termed as gradient-based neural networks), the resultant Zhang neural network (termed as such and abbreviated as ZNN hereafter for presentation convenience) is designed based on a matrix-valued error function, instead of a scalar-valued error function. Zhang neural network is deliberately developed in the way that its trajectory could be guaranteed to globally exponentially converge to the time-varying theoretical solution of given linear matrix equation. In addition, Zhang neural network is described by an implicit dynamics, instead of an explicit dynamics usually describing recurrent neural networks. Convergence results of Zhang neural network are presented to show the neural-network performance. In comparison, we develop and simulate the gradient neural network as well, which is exploited to solve online the time-varying linear matrix equation. Computer-simulation results substantiate the theoretical efficacy and superior performance of Zhang neural network for the online solution of time-varying linear matrix equation, especially when using a power-sigmoid activation function.",
     "url": "https://doi.org/10.1109/icit.2008.4608579",
     "authors": [
       "Yunong Zhang",
@@ -180998,7 +180998,7 @@
     "id": "doi:10.14311/nnw.2015.25.020",
     "name": "NEURAL-NETWORK-BASED GENETIC ALGORITHM FOR OPTIMAL KITCHEN FAUCET STYLES",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Artificial neural networks (ANNs) are the models of choice in many data classification tasks.In this study, ANN classification models were used to explore user perceptions about kitchen faucet styles and investigate the relations between the overall preferences and kansei word scores of users.The scores given by consumers were obtained via a two-stage questionnaire mentioned in a previous study by the authors.Through the questionnaire, consumers were asked to give scores after examining three-dimensional (3-D) drawings of new product samples created with the help of industrial product designers.Because it was neither practical nor necessary to develop a prototype or a picture of each of the alternative designs, a fractional factorial experimental design similar to Taguchi's L-16 orthogonal array was used.After completing this preparatory work to develop ANNs and obtain the necessary related data, an analysis of variance (ANOVA) was performed to identify the critical factors that affect the accuracy of the ANN model to be used and determine the best factor levels for the ANN model.A genetic algorithm (GA) was then integrated with the ANN model found to be the best and implemented to determine the optimal levels of the design parameters related to product appearance.Lastly, the product categories were classified as unfavorable or favorable, and three products were derived for each category.In comparison with the previously published papers of the authors, the GA integrated with the ANN model was found to be an effective tool for revealing user perceptions in new product development.In regard to the findings of the present work, it can be said that, this technique can be used as an alternative of several complex analytical approaches, in order to explore users' perceptions.",
     "url": "https://doi.org/10.14311/nnw.2015.25.020",
     "authors": [
       "Fehmi Burcin Ozsoydan",
@@ -181019,7 +181019,7 @@
     "id": "doi:10.1109/ijcnn.2006.247357",
     "name": "Incremental Gain Analysis of Chaotic Recurrent Neural Network and Applications in Pattern Association",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Chaotic neural networks have been successfully applied in pattern association problems in many research. However there are few in-depth theoretical analysis for such networks, such as stability issues. In this paper, we propose a new type of chaotic recurrent neural network (CRNN) which is more powerful in pattern association comparing to previous work. Furthermore robustness analysis is also presented based on circle theorem, which contributes to provide a theoretical guideline on how to choose the CRNN parameter in different cases. Simulations are also given to verify the results.",
     "url": "https://doi.org/10.1109/ijcnn.2006.247357",
     "authors": [
       "Wu Yilei",
@@ -181040,7 +181040,7 @@
     "id": "doi:10.17950/ijer/v3s6/606",
     "name": "Artificial Neural Network Model for Friction Stir Processing",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Abstract — Friction stir processing (FSP) is an effective means of refining grain size of aluminum alloys. An artificial neural network model (ANN) is made for predicting the grain size of alloys which are processed by FSP. The simulated results from the model show how grain size varies with the process parameters. Keywords—Friction stir processing, ANN, grain size, grain refinement I.",
     "url": "https://doi.org/10.17950/ijer/v3s6/606",
     "authors": [
       "Syed Muhammed Fahd"
@@ -181097,7 +181097,7 @@
     "id": "doi:10.17760/d20385573",
     "name": "DYAN-bicycleGAN",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "With the rapid development of neural networks and computer vision, video prediction has become a topic of interest. Inspired by the GAN related image-to-image translation network, this work addresses the challenge by modeling the dynamic information in a video sequence into the latent space and inferring the next frames with a domain-to-domain network. In this thesis, a novel video prediction network is presented. This DYAN-BicycleGAN hybrid model is able to predict the frames with the same length as input in one shot. The results show that the model can predict the dynamic information in videos and generate realistic frames.",
     "url": "https://doi.org/10.17760/d20385573",
     "authors": [
       "Huaiyu Zheng"
@@ -181116,7 +181116,7 @@
     "id": "doi:10.17760/d20409485",
     "name": "Supervised classification on deep neural network attack toolchains",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Deep learning, while an important machine learning technique, is susceptible to adversarial example attacks. Adversarial examples generated by adding perturbations on clean images/video frames can lead to mis-predictions of deep neural networks. Moreover, deep learning/machine learning can be used to deceive humans by generating adversarially falsified media e.g., deepfake attacks. The thesis work will study the above two attack scenarios, i.e., machine-centric adversary and human-centric adversary, with targets to fool ML decisions and human decisions, respectively.We aim to build a generalizable and scalable supervised learning system for classifying attack attributes behind the machine-centric attacks as well as the human-centric attacks. We start from building an integrated Attack Toolchain Library (ATL) with a broad coverage of both machine-centric and human-centric adversaries, as well as through an integrated user interface for greatflexibility and extensibility to serve our downstream tasks. Based on the developed ATL, we further design a meta-classifier pipeline architecture for predicting attack attributes. The proposed overall meta-classifier shows effectiveness in dealing with false alarms and data distribution shift, andgeneralization to both machine-centric and human-centric attacks.--Author's abstract",
     "url": "https://doi.org/10.17760/d20409485",
     "authors": [
       "Yize Li"
@@ -181207,7 +181207,7 @@
     "id": "doi:10.1002/2013rs005247",
     "name": "Ionospheric single-station TEC short-term forecast using RBF neural network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "In this article a radial basis function (RBF) neural network improved by Gaussian mixture model is developed to be used for forecasting ionospheric 30 min total electron content (TEC) data given the merits of its nonlinear modeling capacity. In order to understand more about the response of developed network model with respect to stations situated at different latitude, estimated TEC overhead of GPS ground stations BJFS (39.61°N, 115.89°E), WUHN (30.53°N, 114.36°E), and KUNM (25.03°N, 102.80°E) for 6 months in 2011 are used for training data set, validating data and test data set of RBF network model. The performance of the trained model is evaluated at a set of criteria. Our results show that the predicted TEC is in good agreement with observations with mean relative error of about 9% and root-mean-square error of less than 5 total electron content unit, 1 TECU = 1016 el m−2. Our comparison further indicates that RBF network offers a powerful and reliable tool for the design of ionospheric TEC forecast.",
     "url": "https://doi.org/10.1002/2013rs005247",
     "authors": [
       "Z. Huang",
@@ -181304,7 +181304,7 @@
     "id": "doi:10.1002/2050-7038.12538/v3/review1",
     "name": "Review for \"The nonlinear autoregressive network with exogenous inputs (NARX) neural network to damp power system oscillations\"",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Get your research seenMake an impact with these nine promotional tools. SEO• Use relevant keywords to make your title and abstract clear and easy to search for.• Off-page SEO strategies, like link building, can help get your paper seen. Conferences• Whether you're networking informally or presenting, think about some simple messages to promote your work.",
     "url": "https://doi.org/10.1002/2050-7038.12538/v3/review1",
     "authors": [],
     "tags": [],
@@ -181341,7 +181341,7 @@
     "id": "doi:10.1109/icece.2008.4769258",
     "name": "A comparative analysis of Feed-forward neural network &amp;#x00026; Recurrent Neural network to detect intrusion",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "As computer networks are grows exponentially security in computer system has become a foremost issue. Monitoring atypical activity can be one way to detect any violation that impedes computer systems security. Existing methods like statistical models [12] for intrusion detection not perform well whereas Neural network has been proved as an efficient method for intrusion detection [10]. In this paper Feed-forward and Recurrent Neural network is trained by Back propagation training algorithm and using normal data. Performances of these Neural Networks are compared against both normal data and intrusive data.",
     "url": "https://doi.org/10.1109/icece.2008.4769258",
     "authors": [
       "Nipa Chowdhury",
@@ -181434,7 +181434,7 @@
     "id": "doi:10.70729/ijser18741",
     "name": "Text Recognition using Multilayer Perceptron Neural Network",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This work focuses on development of an Offline Hand Written English Character Recognition algorithm based on Artificial Neural Network (ANN). The ANN implemented in this work has single output neuron which shows whether the tested character belongs to a particular cluster or not. The implementation is carried out completely in 'Java' language. Offline handwritten English character recognition is difficult due to variation in shape, slope and size of individual characters. Such variations in handwriting can be handled by better pre-processing and feature extraction techniques.Handwritten character recognition is more difficult process as compared to typed or printed characters.In this paper, we present a handwritten character recognition system in which first of all original image is converted into greyscale image.After that pre-processing steps are applied on that greyscale image.Then individual characters split from word using segmentation.Features are extracted for those characters and multilayer perceptron classifier is used for classification.At last handwritten character is recognized and converted into machine printable form, which will be easier to store and use in future.However, the result showed that the algorithm recognized English alphabet patterns with maximum accuracy of more than 80.00%.",
     "url": "https://doi.org/10.70729/ijser18741",
     "authors": [
       "Khushal Gupta"
@@ -181453,7 +181453,7 @@
     "id": "doi:10.14711/thesis-991012994404403412",
     "name": "All-optical neural network with nonlinear activation functions",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "991012994404403412 HKUST Electronic Theses All-optical neural network with nonlinear activation functions by Zuo Ying thesis 2021 1 online resource (xxiii, 130 pages) : illustrations (some color) Artificial neural networks (ANNs) have now been widely used for industrial applications and also…Read more ›",
     "url": "https://doi.org/10.14711/thesis-991012994404403412",
     "authors": [
       "Ying Zuo"
@@ -181491,7 +181491,7 @@
     "id": "doi:10.31390/gradschool_disstheses.348",
     "name": "A Neural Network Approach to Dependent  *Reliability Estimation.",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This research presents the creation of a new model for automating the generation of component and system reliability estimates from simulated field data for tightly coupled systems. The model utilizes the CMAC neural network architecture, which resembles the human cerebellum and is capable of approximating nonlinear functions. An analysis and testing of the network as a tool for reliability prediction of dependent components within an assembly has been performed. In order to evaluate the performance of the model, the network has been tested on simulated data and provided over 90% performance accuracy in learning non-linear functions that represent the dependency between components. This serves as a valuable tool for maintenance personnel faced with important and costly decisions regarding equipment maintenance policies.",
     "url": "https://doi.org/10.31390/gradschool_disstheses.348",
     "authors": [
       "Roya Javadpour"
@@ -181527,7 +181527,7 @@
     "id": "doi:10.1109/icnn.1996.549025",
     "name": "Exploiting network redundancy for low-cost neural network realizations",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A method is presented to optimize a trained neural network for physical realization styles. Target architectures are embedded microcontrollers or standard cell based ASIC designs. The approach exploits the redundancy in the network, required for successful training, to replace the synaptic weighting and the neuron transfer functions by ones that can be implemented with smaller cost. Redundancy indices are used to identify the network elements that are candidates for optimization to be performed by the judicious application of local, behaviour-invariant transformations. The usefulness of the presented approach is illustrated by a image processing application realized in our lab.",
     "url": "https://doi.org/10.1109/icnn.1996.549025",
     "authors": [
       "H. Keegstra",
