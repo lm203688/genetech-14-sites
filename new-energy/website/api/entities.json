@@ -28526,7 +28526,7 @@
     "id": "doi:10.20944/preprints202607.1082.v1",
     "name": "Voltage-Current Curve-Based Line Protection for Renewable Energy Systems with Grid-Forming Inverters",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "The increasing penetration of inverter-based renewable energy resources is reshaping transmission-line fault characteristics and weakening protection criteria designed for synchronous-generator-dominated grids. This paper proposes an internal-fault identi-fication scheme based on voltage-current coupling characteristic curves (UICs) con-structed from voltage and current measurements at both line terminals. Geometric de-scriptors of the UIC are used to build an ellipsoidal feature space representing normal operating conditions and external faults. Internal faults are identified from the nor-malized distance between the online feature vector and this space. A local volt-age-transient startup criterion is also introduced, and current-transformer (CT) satura-tion correction is incorporated to reduce distortion in the measured currents. PSCAD simulations under different fault locations, transition resistances, fault types, noise levels, and CT-saturation conditions show that the proposed scheme distinguishes in-ternal faults from external faults and normal operation reliably. Because the criterion depends on line-side coupling features rather than the short-circuit output of a specific power source, it is suitable for protection applications in renewable energy systems with grid-forming inverters.",
     "url": "https://doi.org/10.20944/preprints202607.1082.v1",
     "authors": [],
     "tags": [],
