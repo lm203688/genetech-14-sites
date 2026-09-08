@@ -203815,7 +203815,7 @@
     "id": "doi:10.21203/rs.3.rs-8893792/v1",
     "name": "Medical Image Encryption Using DNA Computing and a Bio-Inspired PRNG for Healthcare Data Privacy",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "Abstract As digital healthcare systems increasingly rely on electronic medical records, secure and high-quality encryption mechanisms are essential to prevent unauthorized access and cyber threats. This study proposes a novel Hardy–Weinberg equilibrium-inspired pseudorandom number generator (PRNG) integrated with a medical image encryption framework using nonlinear quadratic functions, DNA encoding, and substitution-box-based permutation. The proposed PRNG passed 100\\% of the NIST statistical test suite for 30 and 100 generated sequences, with an average entropy of 7.9 and no detectable periodicity. Key sensitivity analysis demonstrated near-zero correlation between sequences generated from minimally different inputs, indicating strong diffusion properties. Encryption experiments conducted on the MedPix and USC-SIPI datasets achieved an average information entropy of 7.999, near-zero correlation coefficients between adjacent pixels in all directions, and NPCR and UACI values within theoretical ranges. Comparative analysis shows that the proposed scheme provides superior randomness and resistance to statistical and differential attacks compared with state-of-the-art methods.",
     "url": "https://doi.org/10.21203/rs.3.rs-8893792/v1",
     "authors": [],
     "tags": [],

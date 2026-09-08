@@ -47644,7 +47644,7 @@
     "id": "doi:10.1126/sciadv.aec9948",
     "name": "Artificial sparse neuron dendrites for visual information inference.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "In the human brain, dendrites exhibit nonlinear integration and sparse parallel processing capabilities, which can effectively perform visual tasks by integrating only a small subset of neuronal signals and play a crucial role in high-level information inference. However, conventional neuromorphic devices often ignore these important properties and require all neurons to perceive complete information. This makes it difficult to effectively replicate the efficient spatiotemporal processing capabilities of biological neuron dendrites. In this study, we present an artificial neuron dendrite array that integrates neurons, synapses, and dendrites, emulating the spatiotemporal spike integration properties of biological dendrites for precise parallel computation. Through multigate threshold regulation, the array enables parallel sparse spiking inference with random spatial distribution. This inference process forms a sparse dendritic spiking neural network (SD-SNN) that can perform compression, depth detection, and prediction. As a result, the SD-SNN achieves high-efficiency static and dynamic object processing while using only 0.5% of neuronal activity, slashing the power consumption by 98 and 65%, respectively. Our work reduces neural activity in the perception process by 99.5% while enhancing spatiotemporal computing capabilities and computational efficiency.",
     "url": "https://doi.org/10.1126/sciadv.aec9948",
     "authors": [],
     "tags": [],

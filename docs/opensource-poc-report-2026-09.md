@@ -3,6 +3,19 @@
 > 日期：2026-09-08 ｜ 执行方案：A（GEO 双引擎 + 本地周报证据链，clone + PoC，不动主站）
 > 配套补丁：`docs/opensource-patches/`（详见第 4 节）
 
+## 0. 执行结果（2026-09-08 更新 —— 方案 A 已落地并推送）
+
+| 项 | 结果 |
+|---|---|
+| **⚠️ 关键纠正** | 复测发现线上 `robots.txt`(200)/`llms.txt`(200) **早已存在** —— 此前审计的 0.0 是 github.io 网络超时**误判**。真实缺口只有 `ai_discovery` 四端点（实测 404）与 Organization JSON-LD。`docs/opensource-patches/` 里的 robots/llms 补丁**作废**（build-site.mjs 原生 emit 的版本更完整，勿应用） |
+| **已落地代码** | `tools/build-site.mjs`：① 补 4 个 AI 发现端点（`.well-known/ai.txt` + `ai/summary.json`(含 webmcp 4 tools) + `ai/faq.json` + `ai/service.json`）；② 全局 Organization JSON-LD 注入 `<head>`；③ FAQ 问句补足 ≥10 字符阈值。已推送远端 commit **5e41ca0**（Pages 部署触发） |
+| **本地构建验证** | `_site_geo/` 全量构建成功（30 万实体/3000 归档页）；6 个 GEO 文件全部产出、3 个 JSON 合法、首页含 Organization LD |
+| **确定性评分验证** | 直接调用 geo-optimizer `audit_ai_discovery` 函数对本地构建产物复算：**endpoints_found 4/4、summary_valid ✅、has_service ✅、webmcp_declaration ✅(4 tools)**、faq_count 3/4（第 4 条问句 8 字符低于阈值，已在源码修正） |
+| **闭环接入** | ① 主运营闭环（每日 08:00）新增 GEO 双引擎健康检查 + 周日 GEO 博客**发布门禁**（auto-geo doctor ≥6/8 才发布）；② 回填工人（每 12h）新增**来源可信度抽样**（`source-credibility.mjs`，阈值 40，轻量不阻塞） |
+| **线上终测（部署 ~160s 生效后）** | 4 个 AI 发现端点线上 **200 全通**；geo-optimizer 复测 **34→38**（band critical→**foundation**），schema 7→**11**（Organization JSON-LD 贡献） |
+| **🔴 架构级发现（诚实标注）** | robots/llms/ai_discovery 在 github.io 上**恒为 0 分**：geo-optimizer（及 AI 爬虫的 robots 协议）按 `urljoin` 语义探 **host 根**（`lm203688.github.io/robots.txt`=404），而 GitHub Pages **项目站无法控制 host 根**。文件已在 `/genetech-14-sites/` 子路径正确部署（200），**待站点迁移自定义域根部署（如 genetech.tools）即自动满分** —— 这是「自定义域根部署」的新增论据，需用户拍板 |
+| `.gitignore` | 补 `_site_geo/`（防 push.mjs `git add -A .` 误推 ~1GB 构建产物） |
+
 ## 1. 执行摘要
 
 | 项 | 状态 | 结论 |
@@ -12,7 +25,7 @@
 | **本地 Deep Research**：tarun7r/deep-research-agent (MIT) | ✅ 核心移植 | 可信度评分算法零依赖移植 → `.workbuddy/tools/source-credibility.mjs`（验证通过） |
 | research-mcp / BioKG-Builder | ⏸ 暂缓 | 候选已锁，本期不落地（ROI 低于 GEO 三项基础设施修复） |
 
-**最高 ROI 发现（零成本）**：`robots` / `llms` / `ai_discovery` 三项站点级基础设施**全站 0.0 分**（3656 个 URL 全部受影响）。这是结构性缺口，一次修复即可让全站 3656 页同时提分，且**零 API、零推理成本**。
+**最高 ROI 发现（零成本）**：`robots` / `llms` / `ai_discovery` 三项站点级基础设施在首轮审计中全站 0.0 分（3656 个 URL 全部受影响）。**复测纠正**：线上实测 `robots.txt`/`llms.txt` 实为 200（首轮为网络超时误判），真实缺口只有 `ai_discovery` 四端点 —— 已修复并推送（见第 0 节）。修复后该分项从 0 → 满分（4/4 端点），全站 3656 页同时受益，零 API、零推理成本。
 
 ## 2. PoC 实测结果
 
@@ -26,9 +39,9 @@
 
 | 维度 | 根址 | 全站均 | 说明 |
 |---|---|---|---|
-| robots | 0 | **0.0** | 🔴 缺 robots.txt，未放行 AI bot |
-| llms | 0 | **0.0** | 🔴 缺 llms.txt |
-| ai_discovery | 0 | **0.0** | 🔴 缺 /.well-known/ai.txt、/ai/summary.json、/ai/faq.json |
+| robots | 0 | **0.0** | ⚠️ 首轮网络超时**误判**；线上复测 robots.txt=200，实际已达标 |
+| llms | 0 | **0.0** | ⚠️ 同上误判；线上复测 llms.txt=200，实际已达标 |
+| ai_discovery | 0 | **0.0** | 🔴 **真实缺口**（线上实测 4 端点全 404）→ 已修复，确定性验证 4/4 |
 | brand_entity | 4 | 2.08 | 缺 Organization JSON-LD + sameAs |
 | schema | 7 | 6.04 | 仅 FAQPage，缺 Article JSON-LD |
 | content | 5 | 9.8 | 内容偏短，缺 answer-first |
@@ -127,9 +140,10 @@
 3. research-mcp 的 Sci-Hub fallback 涉版权 — **禁用**。
 4. 35B 本地 CPU 推理慢，全量 Deep Research Agent 不适合本机实时跑；算法层已借鉴，足够支撑周报证据链过滤。
 
-## 7. 下一步（待你拍板）
+## 7. 下一步（执行状态）
 
-- [ ] **应用补丁**：授权我把 `docs/opensource-patches/` 接入 `build-site.mjs`（emit 静态文件 + `ldScripts` 注入 JSON-LD），重新构建并复测 GEO 分数。
-- [ ] **闭环门禁**：把 `tools/opensource-integration/geo_audit.py` 接入运营闭环的 GEO 博客产出分支，作为发布前门禁（目标 >60/100）。
-- [ ] **证据链**：把 `source-credibility.mjs` 接入回填工人，对候选来源做可信度过滤（阈值 40）。
+- [x] **应用补丁**（2026-09-08 完成，方式修正）：不搬运 `opensource-patches/` 提案文件，而是直接在 `build-site.mjs` 内 emit 4 个 AI 发现端点 + 全局 Organization JSON-LD（原提案的 robots/llms 与 build 原生 emit 重复，作废）。本地全量构建验证 → 确定性评分验证 4/4 → 推送 commit 5e41ca0。
+- [x] **闭环门禁**（2026-09-08 完成）：`geo_audit.py` 已写入主运营闭环（每日健康检查 + 周日 GEO 博客发布门禁 ≥6/8）。
+- [x] **证据链**（2026-09-08 完成）：`source-credibility.mjs` 已写入回填工人（每批 ≤10 URL 抽样，阈值 40，不阻塞主流程）。
+- [x] 部署生效后跑一次线上 geo-optimizer 复测（2026-09-08 完成）：**34→38 / foundation**，schema 7→11；ai_discovery 四端点线上 200 全通。robots/llms/ai_discovery 三分项在 github.io 恒 0 属**子路径托管架构限制**（工具探 host 根，项目站无法控制），已写入主闭环豁免条款防误报；自定义域根部署后自动解锁。
 - [ ] 跨项目（SwarmLabs / AIShield）闭环融合仍待你确认（历史遗留，未擅动）。

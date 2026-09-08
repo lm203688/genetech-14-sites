@@ -80053,7 +80053,7 @@
     "id": "doi:10.1021/acssynbio.5c00618",
     "name": "Environmental Census: Modeling Synthetic Biology Ecological Risk with Metagenomic Enzymatic Data and High-Performance Computing",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Engineered microorganisms in biotechnology present biosafety and environmental management challenges. As the synthetic biology market develops and deploys new technologies, these engineered organisms may escape into unintended environments. Improved predictive computational tools are necessary to assess the potential establishment risk and environmental location of these escaped engineered microorganisms, assisting their design and management. Here, we present EnCen , a risk assessment Python software package that predicts the environmental range of engineered microorganisms through annotated functional one-hot-encoded similarity between the engineered microorganism and resident microorganisms of a given environment. EnCen utilizes publicly available composite metagenomes as representatives of microbial environments that occur along an agriculture-water cycle and can be customized for any additional target environment. This tool was deployed against case studies reported in the literature and to reassess commercially available bacterial biopesticides, highlighting both the successful recapture of previously reported dynamics and the identification of select commercial products that pose a wider establishment risk in multiple environments. When further utilizing EnCen to investigate the receiving environments comprising the central database, key enzyme classes are mapped as characteristics to select environments, prioritizing certain modifications likely leading to a greater risk (or effectiveness) of establishment. The results demonstrate that EnCen meaningfully summarizes publicly available metagenomic data, prioritizes environments to monitor for adverse effects, and analyzes potential impacts on microbial community composition and functioning. Overall, this study demonstrates a computational approach to managing engineered microorganisms, aiding in the safe deployment and benefit of industrial synthetic biology.",
     "url": "https://doi.org/10.1021/acssynbio.5c00618",
     "authors": [
       "John Docter",
@@ -82057,7 +82057,7 @@
     "id": "doi:10.1177/03000605261425080",
     "name": "Virtual cell: Current perspectives and future prospects.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Virtual cell is an emerging technology that integrates multiple disciplines, including biology, computer science, and artificial intelligence, to simulate cellular structures and functions. Compared with traditional methods, virtual cell technology offers a more holistic approach, enabling efficient simulation of cellular dynamics and prediction of biological phenomena. This technology holds significant potential in fields such as precision medicine, drug discovery, and synthetic biology. The development of virtual cells is driven by advancements in single-cell sequencing, subcellular imaging, and computational power, with platforms such as environment for cell simulation (E-Cell) and cell packing (CellPACK) enabling simulations across multiple biological scales. However, challenges remain, including data integration, model interpretability, and computational costs. Despite these challenges, virtual cell technology has made advances in drug development, disease research, and synthetic biology, offering a promising tool for personalized medicine and improving research accuracy. In the future, virtual cell technology is expected to find broader applications in cross-species simulations, quantum computing, and interdisciplinary collaborations.",
     "url": "https://doi.org/10.1177/03000605261425080",
     "authors": [],
     "tags": [],
@@ -113614,7 +113614,7 @@
     "id": "doi:10.1007/978-1-4939-1878-2_7",
     "name": "Modular Design of Synthetic Gene Circuits with Biological Parts and Pools",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Synthetic gene circuits can be designed in an electronic fashion by displaying their basic components-Standard Biological Parts and Pools of molecules-on the computer screen and connecting them with hypothetical wires. This procedure, achieved by our add-on for the software ProMoT, was successfully applied to bacterial circuits. Recently, we have extended this design-methodology to eukaryotic cells. Here, highly complex components such as promoters and Pools of mRNA contain hundreds of species and reactions whose calculation demands a rule-based modeling approach. We showed how to build such complex modules via the joint employment of the software BioNetGen (rule-based modeling) and ProMoT (modularization). In this chapter, we illustrate how to utilize our computational tool for synthetic biology with the in silico implementation of a simple eukaryotic gene circuit that performs the logic AND operation.",
     "url": "https://doi.org/10.1007/978-1-4939-1878-2_7",
     "authors": [
       "Mario Andrea Marchisio"
