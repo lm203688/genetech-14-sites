@@ -1,0 +1,20 @@
+# GeneTech 14站 知识引擎
+
+> 覆盖 14 个科学前沿领域的结构化科研知识引擎，聚合趋势、研究空白、跨域桥接与合著网络洞察，目标积累 100k+ 结构化实体。由 SwarmLabs 数据飞轮驱动。
+
+## 核心数据接口
+- /api/catalog.json — 全站实体聚合目录
+- 各站 /website/api/index.json 与 entities.json — 单站结构化实体
+
+## 主题站点（节选）
+- /quantum-computing — 量子计算前沿趋势与跨域桥接
+- /ai-safety — AI 安全研究空白与合著网络
+- /agent-ecosystem — 智能体生态桥接洞察
+- /agritech — 农业科技创新空白
+- /microbiology — 微生物学 API（GP+UQ 引擎，63 场景）
+- /carbon-neutral — 碳中和路径
+- /brain-science — 脑科学交叉前沿
+- /biocomputing — 生物计算研究空白
+
+## 关于
+GeneTech 14站由 SwarmLabs 维护，数据飞轮持续扩展结构化科研实体，以可机器消费的 JSON/JSONL 开放接口服务。

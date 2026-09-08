@@ -1,0 +1,17 @@
+<!-- Article JSON-LD — 每篇内容页 <head> 注入（替换 {{占位符}} 为页面变量） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{TITLE}}",
+  "author": {"@type": "Organization", "name": "GeneTech 14站 知识引擎"},
+  "datePublished": "{{DATE}}",
+  "dateModified": "{{DATE}}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "GeneTech 14站 知识引擎",
+    "logo": {"@type": "ImageObject", "url": "https://lm203688.github.io/genetech-14-sites/assets/logo.png"}
+  },
+  "description": "{{SUMMARY}}"
+}
+</script>

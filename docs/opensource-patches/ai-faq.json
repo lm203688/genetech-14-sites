@@ -1,0 +1,16 @@
+{
+  "faqs": [
+    {
+      "question": "GeneTech 14站是什么？",
+      "answer": "GeneTech 14站是一个覆盖 14 个科学前沿领域的结构化科研知识引擎，聚合趋势、研究空白、跨域桥接与合著网络洞察，目标积累 100k+ 结构化实体。"
+    },
+    {
+      "question": "数据从哪里来？",
+      "answer": "数据来自 OpenAlex、Europe PMC、arXiv、bioRxiv、DOI 等开放学术基础设施，经数据飞轮持续扩展并以可信度评分过滤。"
+    },
+    {
+      "question": "和 Elicit、Consensus、Scite 有什么区别？",
+      "answer": "GeneTech 14站聚焦 14 个垂直领域的结构化实体（趋势/研究空白/跨域桥接/合著网络），以可机器消费的 JSON/JSONL 开放接口服务，而非仅做文献问答。"
+    }
+  ]
+}
