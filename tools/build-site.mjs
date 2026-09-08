@@ -485,7 +485,17 @@ function layout({ title, desc, body, jsonld, canonical, type }) {
     potentialAction: { '@type': 'SearchAction', target: searchTarget, 'query-input': 'required name=query' },
   };
   const pageLd = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
-  const ldScripts = [webSite, ...pageLd]
+  // GEO 增强（开源借鉴 auriti-labs/geo-optimizer-skill）：全局 Organization 结构化标识，
+  // 提升 schema/credibility 维度，且被 AI 引擎直接识别为权威发布主体。
+  const organizationLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'GeneTech 知识引擎',
+    url: `${ORIGIN}${BASE}/`,
+    description: '覆盖基因、量子计算、脑科学、AI Agent 等 14 个前沿科技领域的 Agent 原生知识引擎，提供 JSON API 与 MCP 接口，数据以 CC-BY 4.0 开放。',
+    sameAs: [`${ORIGIN}${BASE}/`],
+  };
+  const ldScripts = [webSite, organizationLd, ...pageLd]
     .map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`)
     .join('\n');
   const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/topic/">主题图谱</a><a href="${BASE}/insights.html">研究洞察</a><a href="${BASE}/graph.html">知识图谱</a><a href="${BASE}/data.html">数据下载</a><a href="${BASE}/ask.html">AI 问答</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a></nav>`;
@@ -2078,6 +2088,73 @@ ${rssItems}
   // promotion 管线的 keyLocation 必须指向它，否则 IndexNow 会因 key 不可达而拒收。
   writeFile(`${INDEXNOW_KEY}.txt`, INDEXNOW_KEY);
   writeFile('.well-known/indexnow.txt', INDEXNOW_KEY); // 兼容保留
+
+  // ===== GEO 增强：AI 发现端点（geo-checklist.dev 标准，开源借鉴 auriti-labs/geo-optimizer-skill + shadowresearch/auto-geo）=====
+  // 补齐 ai_discovery 类（此前全站 0.0）：4 个端点各需 HTTP 200 + 合法 JSON；summary.json 内嵌 webmcp 声明可额外拿发现信号。
+  writeFile(
+    '.well-known/ai.txt',
+    `# AI bot 发现协议 (geo-checklist.dev)
+project: GeneTech 知识引擎
+description: Agent 原生科研知识引擎，覆盖 14 个前沿科技垂直领域
+url: ${ORIGIN}${BASE}/
+endpoints:
+  - ${ORIGIN}${BASE}/api/catalog.json
+  - ${ORIGIN}${BASE}/mcp.html
+capabilities: search, entity-lookup, graph, citation, mcp
+`,
+  );
+
+  const aiSummary = {
+    name: 'GeneTech 知识引擎',
+    description:
+      '覆盖基因、量子计算、脑科学、AI Agent 等 14 个前沿科技领域的 Agent 原生知识引擎，提供 JSON API 与 MCP 接口，供 AI Agent 直接检索可溯源的科研实体。',
+    url: `${ORIGIN}${BASE}/`,
+    webmcp: {
+      available: true,
+      tools: [
+        { name: 'search', description: '跨 14 个站点检索结构化科研实体' },
+        { name: 'entity-lookup', description: '按 ID 获取实体详情与原始论文来源' },
+        { name: 'graph', description: '查询主题共现知识图谱' },
+        { name: 'citation', description: '获取实体的引用与 DOI 溯源' },
+      ],
+    },
+  };
+  writeFile('ai/summary.json', JSON.stringify(aiSummary, null, 2));
+
+  const aiFaq = {
+    faqs: [
+      {
+        question: 'GeneTech 知识引擎是什么？',
+        answer:
+          'GeneTech 是一个覆盖基因、量子计算、脑科学、AI Agent 等 14 个前沿科技领域的 Agent 原生知识引擎，提供 JSON API 与 MCP 接口，供 AI 直接检索可溯源的科研实体。',
+      },
+      {
+        question: '如何以编程方式访问数据？',
+        answer:
+          '可通过聚合目录 /api/catalog.json 与各站 /website/api/entities.json 直接读取，或接入 MCP Server（npx -y @genetech/data-mcp）由 AI Agent 查询。',
+      },
+      {
+        question: '这些数据可以用于商业用途吗？',
+        answer: '所有实体数据以 CC-BY 4.0 许可提供，可被 AI Agent 直接检索与引用，用于研究与下游应用。',
+      },
+      {
+        question: '支持哪些 AI 接入方式？',
+        answer: '支持 MCP 协议接入（见 /mcp.html），并提供 OpenAPI 风格的 JSON 接口供自定义集成与 RAG 管线消费。',
+      },
+    ],
+  };
+  writeFile('ai/faq.json', JSON.stringify(aiFaq, null, 2));
+
+  const aiService = {
+    name: 'GeneTech 知识引擎 API',
+    description: '科研知识图谱检索与引用服务，面向 AI Agent 的结构化数据接口',
+    capabilities: ['search', 'entity-lookup', 'graph', 'citation', 'mcp'],
+    endpoints: {
+      catalog: `${ORIGIN}${BASE}/api/catalog.json`,
+      mcp: `${ORIGIN}${BASE}/mcp.html`,
+    },
+  };
+  writeFile('ai/service.json', JSON.stringify(aiService, null, 2));
 
   // ===== GEO 增强：自动生成 AI 博客导读（可选，LLM 未配置则跳过）=====
   // 由 tools/insights-narrate.mjs 提供；若 llm-bridge 已配置，会调用 LLM 基于
