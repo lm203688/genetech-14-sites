@@ -103,7 +103,7 @@
     "id": "doi:10.1145/3797552.3797716",
     "name": "Construction and Empirical Research of Adaptive Learning System Empowered by Artificial Intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This paper constructs an AI-enabled adaptive learning system that integrates multimodal perception and deep reinforcement learning. This system adopts a four-layer closed-loop architecture of perception, decision, making, execution, feedback. The core modules include: the multimodal learner profiling module, which integrates eye movement physiology, learning behavior, academic performance and emotional attitude data, and outputs knowledge mastery degree, ability level and emotional state labels through a hybrid model of Bayesian network and long short-term memory network. In the domain knowledge graph module, a three-dimensional knowledge association model of “concept, relationship, difficulty” is constructed. In the reinforcement learning push strategy module based on deep Q-network (DQN), a composite reward function is designed to achieve dynamic and precise resource push. To verify the effectiveness of the system, 600 students from three different levels of universities (985 universities, regular undergraduate universities, and private undergraduate universities) were selected for an empirical study. They were randomly divided into the experimental group and the control group by random sampling. The empirical results show that the prediction accuracy rate of knowledge mastery of the multimodal portrait model reaches 89.2%, which is significantly higher than 72.5% of the single grade data model (p<0.01). The dynamic push strategy of DQN enabled the experimental group to master an average of 4.2 knowledge points per week, which was significantly better than 2.8 in the control group (p<0.01). The experimental group was significantly higher than the control group in the three core indicators of post-test scores, learning motivation and autonomous learning ability (p<0.01). This study verified the effectiveness and universality of the constructed system, providing theoretical support and practical paradigms for the engineering implementation of ALS and the promotion of educational equity.",
     "url": "https://doi.org/10.1145/3797552.3797716",
     "authors": [
       "Hui Zhang",
@@ -123,7 +123,7 @@
     "id": "doi:10.1145/3785987.3786038",
     "name": "Research Status of International Sports Artificial Intelligence: Visualization Analysis Based on the WoS Database",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Artificial intelligence (AI) technology is reshaping research paradigms and industrial practices in sports science. However, current research in sports AI exhibits fragmentation, lacks systematic interdisciplinary integration and theoretical development, and suffers from insufficient macro-level analysis of international research networks, hotspot distributions, and developmental trends. To address this gap, this study screened 1,079 papers from the Web of Science database (2015–2024). It employed VOS Viewer for multidimensional visualization analysis, including keyword co-occurrence, journal preference, and country distribution. The research aims to systematically reveal the current state of the research landscape and emerging trends in this field. Findings indicate: (1) A pronounced technology-driven trajectory, with core keywords centered on \"machine learning\" and \"deep learning,\" and application scenarios concentrated in football tactical analysis, health management, and personalized training optimization; (2) Engineering and technology journals account for over 50% of published literature, while sports science journals represent only 14.64%, indicating lagging interdisciplinary theoretical integration; (3) China holds a dominant position with 43.095% of published articles, followed by the United States (13%). Policy-driven effects are particularly pronounced in Asian countries. The study indicates that sports AI research exhibits characteristics of technology dominance and disciplinary imbalance. Therefore, efforts should be strengthened to enhance interdisciplinary integration and address humanistic and ethical concerns, promote technological standardization and cultural adaptability, and achieve a dynamic equilibrium between \"technological empowerment\" and \"humanistic value.\" Future efforts should focus on expanding multilingual data sources, establishing global collaboration mechanisms, and advancing AI applications in physical education, performance enhancement, and health management. This will ultimately foster the co-development of sports science and technology alongside human progress.",
     "url": "https://doi.org/10.1145/3785987.3786038",
     "authors": [
       "Yuehang Diao"
@@ -142,7 +142,7 @@
     "id": "doi:10.1145/3777730.3777750",
     "name": "Analysis of Vocal Training Feedback Mechanisms Assisted by Artificial Intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "With the rapid advancement of artificial intelligence (AI) and computer technologies, AI-powered systems are increasingly being integrated into vocal training to enhance the effectiveness and accuracy of lessons. This article explores how AI-driven feedback mechanisms, supported by machine learning (ML), signal processing, and cloud computing, provide real-time analysis and guidance for vocal learners. Key focus areas include pitch correction, voice range tracking, and tone quality analysis, enabled by deep learning algorithms and audio processing techniques. The study evaluates the superiority of AI-based feedback systems over traditional methods by examining their underlying computational architecture, data-driven modeling, and adaptive learning capabilities. A practical case study demonstrates the implementation of these systems in real-world scenarios, highlighting the role of neural networks, big data analytics, and real-time processing in optimizing vocal performance.",
     "url": "https://doi.org/10.1145/3777730.3777750",
     "authors": [
       "Conghe Feng",
@@ -327,7 +327,7 @@
     "id": "doi:10.1109/aaicv66571.2025.00063",
     "name": "Teaching Strategies for Improving Memory Effect of College English Vocabulary Based on Artificial Intelligence Algorithm",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "With the rapid development of artificial intelligence technology, the field of education has also ushered in a new round of change, especially in English vocabulary learning, the auxiliary role of artificial intelligence algorithms has become increasingly apparent. The purpose of this study is to explore the application of artificial intelligence algorithm in improving college English vocabulary memory, analyse its impact on students' learning effect, and propose effective teaching strategies. This paper first introduces the advantages of artificial intelligence algorithm in language learning, and then discusses its specific application in college English vocabulary teaching, including vocabulary explanation, example provision, learning suggestions, simulated dialogue and so on. Finally, through the combination of modern educational technology and traditional teaching methods, this study constructs a framework of English vocabulary memory improvement strategies assisted by artificial intelligence, and carries out experimental analysis to verify the effectiveness of these strategies.",
     "url": "https://doi.org/10.1109/aaicv66571.2025.00063",
     "authors": [
       "Zhang Yuanwei"
@@ -346,7 +346,7 @@
     "id": "doi:10.1109/icaie64856.2025.11158339",
     "name": "Empowering Geography Education with Artificial Intelligence: Exploring Application Practices and Reform Pathways",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "With the rapid development of artificial intelligence technology, the field of education is experiencing a transformative opportunity. This paper explores the application practices and reform pathways of AI in geography education. By analyzing the intersection of AI technology and the characteristics of geography teaching, this study summarizes the practical applications of intelligent teaching platforms, personalized learning data analysis, and technologies such as virtual reality and augmented reality in geography education. It demonstrates the positive roles of AI in enhancing teaching efficiency, optimizing learning experiences, and facilitating teacher-student interactions. Additionally, this paper investigates AI-driven reform pathways in geography education, including innovations in teaching models, shifts in teacher roles, optimization of curriculum content, and policy support. While the potential for AI-enhanced geography education is vast, challenges remain in areas such as technology, resources, and educational equity. This paper provides theoretical support and practical guidance for future reforms in geography education and anticipates the development trends of AI technology in this field.",
     "url": "https://doi.org/10.1109/icaie64856.2025.11158339",
     "authors": [
       "Jia Yu",
@@ -367,7 +367,7 @@
     "id": "doi:10.1109/aicit65974.2025.11282554",
     "name": "Data Security and Privacy Protection of Artificial Intelligence from the Perspective of Collaborative Governance",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This research systematically explores the issues of data privacy protection and security governance in the era of artificial intelligence (AI), revealing three core contradictions within the realm of data security: the conflict between the efficiency demands of technological innovation and the baseline requirements for security and trustworthiness; the rigid constraints of legal regulations versus the flexible dynamics of industrial development; and the mismatch between skills-oriented talent cultivation and societal expectations for ethical awareness. Through semi-structured interviews and multi-source data analysis (integrating government documents, industry white papers, and academic literature), it is found that current data security threats exhibit full-lifecycle characteristics, involving diverse risks such as unauthorized data collection, theft during transmission, tampering in storage, and leakage during analysis. The study highlights that traditional privacy protection technologies struggle to counter emerging attack methods like deepfakes and model poisoning, while legal regulations face challenges such as ambiguous data ownership determination and inadequate norms for cross-border data flows. We have developed a group of methods for managing collaboration, which mainly include four aspects: technical protection, legal regulations, standard setting, and capacity building through education. We have proposed several specific measures, such as enhancing the application of new protection technologies like \"differential privacy,\" promoting the introduction of laws specifically for artificial intelligence, establishing flexible standards for data classification and grading, as well as fostering new models of university-industry collaboration in talent development. This research provides concrete ideas and practical solutions for building a more reliable AI environment, along with useful advice for addressing the challenges of data security governance.",
     "url": "https://doi.org/10.1109/aicit65974.2025.11282554",
     "authors": [
       "Zhi Sheng"
@@ -627,7 +627,7 @@
     "id": "doi:10.1109/icaid65275.2025.11034421",
     "name": "Scientometric Analysis of Artificial Intelligence Applications in Smart City",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "With the continuous advancement of science and technology, the application of artificial intelligence (AI) in smart cities has garnered significant attention. This paper employs scientometric methods to analyze the application of AI within the context of smart cities. It explores the impact and development trends of AI on convenient services, particularly those driven by technologies such as the Internet of Things (IoT) and mobile communications. A total of 1,284 research papers published between 1975 and 2025 were retrieved from the Web of Science (WoS) database. The data from these papers were visualized and analyzed using Vosviewer and Bibliometrix software, with a focus on research hotspots, development trends, key authors and institutions, and the interdisciplinary integration across various fields. The study found that AI not only improves the level of automation in urban management but also effectively optimizes resource allocation, improves the response speed and accuracy of public services, and provides citizens with a more efficient and convenient life experience.",
     "url": "https://doi.org/10.1109/icaid65275.2025.11034421",
     "authors": [
       "Qixin Lin",
@@ -744,7 +744,7 @@
     "id": "doi:10.1109/waie67422.2025.11381049",
     "name": "The Adoption of Artificial Intelligence for Culturally Responsive Teaching and Pedagogy in South Africa",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Artificial Intelligence (AI) is increasingly shaping educational landscapes, offering new opportunities for culturally responsive teaching (CRT) and pedagogy. In South Africa, where diverse cultural, linguistic, and socio-economic backgrounds influence learning experiences. Artificial Intelligence holds significant potential to enhance culturally responsive teaching and pedagogy by integrating indigenous knowledge systems and promoting multilingual education. This study examines the role of AI in supporting CRT in South African classrooms by analyzing existing literature. Using systematic literature review methodology, it explores how AI can facilitate personalized learning, linguistic inclusivity, and content contextualization to align with South Africa’s multilingual and multicultural educational landscape. The study highlights AI’s potential to bridge educational disparities while ensuring equitable and culturally relevant learning experiences. The findings contribute to ongoing discussions on leveraging AI for transformative and inclusive education in South Africa by developing an AI adoption model for CRT and presents AI integration policy recommendations for the educational stakeholders in South Africa.",
     "url": "https://doi.org/10.1109/waie67422.2025.11381049",
     "authors": [
       "Omojokun Gabriel Aju",
@@ -886,7 +886,7 @@
     "id": "doi:10.1002/9781394242399.ch18",
     "name": "Quantum Artificial Intelligence (QAI) Paradigm for Voice‐Controlled Devices",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The study of quantum artificial intelligence (QAI) seeks to use the unique properties of research in order to construct more effective and potent learning algorithms. Because the area is still in its infancy, there are various difficulties that must be overcome before QAI can attain its full capacity. Only a few of the challenges that must be solved include the development of more dependable quantum gadgets, better correction of error algorithms, and the need for increased number of quantum software tools and programming languages. The quantum artificial intelligence (QAI) paradigm is significant because it has the ability to completely transform a range of industries by developing more effective and potent predictive algorithms. Machine learning techniques are used in a variety of applications, including image and speech recognition, medication studies, and financial modeling. Some issues, however, may be virtually impossible to tackle with traditional machine learning methods due to the speed and power of older equipment. QAI tries to overcome these limits by utilizing the unique properties of quantum computing, such as superposition and entanglement, to construct more efficient and rapid machine learning methods. This has the potential to dramatically boost prediction accuracy and speed by opening up new applications such as medication development and financial modeling. The main techniques employed in the QAI paradigm are quantum circuits, variation quantum algorithms, quantum neural networks, quantum machine learning algorithms, quantum-inspired classical algorithms, and quantum error correction techniques. These techniques are crucial for the creation of effective and trustworthy QAI algorithms and systems. This chapter comprehensively reviews the QAI paradigm, its guiding principles, and its potential applications. This chapter will go through the fundamentals of quantum mechanics, machine learning, and how QAI applies to both. This chapter also presents some of the more exciting QAI uses, like quantum-enhanced optimization and quantum machine learning for speech and image recognition. This chapter focuses on the benefits of QAI over traditional machine learning methods, how QAI can offer exponential speedups compared to traditional techniques for specific issues like simulation and optimization, and the future potential of QAI and the potential effects it might have on different businesses. This chapter includes the current research and development being done in QAI, as well as its potential for commercialization and the establishment of a brand-new sector of the economy centered on QAI technology. The advantages of QAI over traditional machine learning methods include the capacity to enable novel applications that are not possible with traditional computing and exponential speedups for some tasks. The demands on hardware and software, the need for specialized knowledge, and the creation of algorithms are all obstacles for QAI. Despite these difficulties, continuous research and development in QAI are extremely promising for the future of computers. QAI has the potential to influence numerous industries.",
     "url": "https://doi.org/10.1002/9781394242399.ch18",
     "authors": [
       "S. Aswani",
@@ -906,7 +906,7 @@
     "id": "doi:10.21608/aiis.2025.417218.1023",
     "name": "جامعات الجيل الخامس المرتكزة على الأنظمة الذكية ودورها في استقطاب فئات المتعلمين",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "تهدف ورقة العمل إلى دراسة مفهوم جامعات الجيل الخامس المرتكزة على الأنظمة الذكية، ودورها في استقطاب فئات متنوعة من المتعلمين. تستعرض ورقة العمل الخصائص المميزة لهذه الجامعات، مثل توظيف الذكاء الاصطناعي، وتحليل البيانات الضخمة، والتعليم المدمج، والتوافق مع متطلبات وظائف المستقبل، إضافة إلى التعاون الدولي وجودة التعلم. كما توضح ورقة العمل كيف تسهم الأنظمة الذكية في توفير تعليم مخصص ومرن يعزز الشمولية وتكافؤ الفرص. اعتمدت ورقة العمل على المنهج الوصفي التحليلي وتحليل الأدبيات والدراسات السابقة، مع إبراز التحديات التي تواجه تطبيق هذا النموذج في بيئات التعلم العربية. وخلصت النتائج إلى أن تبني جامعات الجيل الخامس يمثل تحولًا جوهريًا نحو منظومة تعليمية أكثر تكاملًا وقدرة على التكيف مع متغيرات العصر، وأن انشاء هذه الجامعات يتطلب تحديات كبرى في البنية الأساسية المرتبطة بطبيعة الانشاءات والمعامل والمختبرات الذكية وكابلات نقل البيانات والخوادم والأجهزة وأنظمة الادارة والسجلات الالكترونية وملفات الانجاز الالكترونية وأنظمة الاتصال والنشر والمواقع الالكترونية التي تيسر آليات التعلم ونقل المحتوى ونشره والتشارك فيه، بالإضافة الى المناهج المفتوحة التي تجعل التعلم يرتقى الى مستوى التعلم التكيفي، وهذا من شأنه أن يحدث درجات كبيرة من الرضا والقبول لدى المتقدمين والمقبلين على الدراسة.",
     "url": "https://doi.org/10.21608/aiis.2025.417218.1023",
     "authors": [
       "Ehab Mohamed Shabka"
@@ -1043,7 +1043,7 @@
     "id": "doi:10.1109/aide64228.2025.10986906",
     "name": "Ethical Frameworks for Artificial Intelligence: A Comparative Study",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The fast-paced evolution of Artificial Intelligence (AI) has given rise to critical ethical challenges leading to various frameworks proposed by government and industry leaders regarding the responsible use of Artificial Intelligence. This report compares AI ethics policies, from the European Union (EU), the United States (US), Canada and Asia, as well as the efforts of major AI companies. Whereas the EU has a regulatory-centric model with a focus on stringent oversight, the US has a more malleable, innovation-driven one. In Canada, such a direct approach on behalf of the government is missing — with an emphasis on transparency and accountability, several government directives deal with the issue of the impact on COVID-19 and on the relevant parties involved. Within, big firms of AI, such as Google, Microsoft, and IBM, have developed guidelines that spotlight fairness, transparency, accountability, and the quality of knowledge. The paper also investigates the cost of these ethics frameworks, and their adoption rates. The study investigates the different approaches and highlights international differences in the balance between innovation and ethics through a comparison of these strategies. Moreover, since quality data is essential for AI, maintaining high data quality is mentioned as one of the key factors of AI ethics standardization. With AI's insights penetrating many sectors and industries, the demand for well-planned ethics policies is more crucial than ever in determining how AI will evolve according to societal goals and mitigate risks. (Abstract)",
     "url": "https://doi.org/10.1109/aide64228.2025.10986906",
     "authors": [
       "Vaishali Mishra",
@@ -1230,7 +1230,7 @@
     "id": "doi:10.1016/j.ejrai.2025.100033",
     "name": "Perspective: AI productivity will not benefit employed radiologists",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Debates about AI in radiology typically ask whether it will augment or replace radiologists. It is less common to ask who profits from improved productivity. AI systems already interpret high-volume studies, such as screening mammograms, at expert-level accuracy: a recent Swedish trial showed AI safely reduced radiologist workloads by 44 %. Economist James Bessen shows that automation tends to shift value from labour to capital. Following Bessen, we predict that the potential labour savings of AI will primarily benefit employers, investors, and AI vendors, not salaried radiologists. Radiologists should be aware of this trend and where appropriate adopt strategies to navigate AI disruption, such as gaining equity in their practice, specialising in areas resistant to automation, or transitioning to alternative career paths. • Radiology is the main focus of medical AI, yet few debates focus on who benefits. • AI raises imaging output which could reduce the value of radiologists’ labour. • Most productivity gains will go to employers, vendors, and private-equity firms. • History shows automation boosts efficiency while reducing labour’s share of income. • As AI redefines roles, radiologists should seek equity, specialise, or pivot.",
     "url": "https://doi.org/10.1016/j.ejrai.2025.100033",
     "authors": [
       "Heathcote Ruthven",
@@ -1310,7 +1310,7 @@
     "id": "doi:10.1145/3785987.3786090",
     "name": "Research on the Path of Empowering Ideological and Political Education with Generative Artificial Intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Our study leverages advanced computer technologies, including Generative Artificial Intelligence (Generative AI) and Artificial Neural Networks (ANNs), to enhance and optimize the competency model for high school politics teachers, based on the Emotion-Behaviour Relationship (EBR) theory, to address how to actually measure emotions in the classroom and how to turn perceived emotions into a basis for teaching decisions. We improve upon existing computer techniques by introducing a four-layer structure of data, perception, cognition, and interaction to process various types of data and provide feedback, while ANNs are optimized through loss functions and backpropagation to convert multimodal signals, complemented by tools like SHAP and LIME to ensure explainability, using loss functions and backpropagation to guarantee accuracy. Using classroom videos of 23 students from a high school in Hunan as an example, the experiment group with (ANN + Generative AI) achieved much higher accuracy in emotion recognition compared to the control group, with recognition rates for emotions such as \"attention\" and \"resistance\" exceeding 90%; if students display more positive emotions, there is a strong positive correlation with teaching outcomes (correlation coefficient r≈0.72) and with the emotions exhibited by teachers (correlation coefficient r≈0.69). This model breaks the previous fixed evaluation methods while adhering to ethical guidelines, providing both a theoretical and practical template for enhancing political education using intelligent technology.",
     "url": "https://doi.org/10.1145/3785987.3786090",
     "authors": [
       "Han Cai"
@@ -1329,7 +1329,7 @@
     "id": "doi:10.1016/j.engappai.2025.111524",
     "name": "A brain-inspired projection contrastive learning network for instantaneous learning",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The biological brain can learn quickly and efficiently, while the learning of artificial neural networks is astonishing time-consuming and energy-consuming. Biosensory information is quickly projected to the memory areas to be identified or to be signed with a label through biological neural networks. Inspired by the fast learning of biological brains, a projection contrastive learning model is designed for the instantaneous learning of samples. This model is composed of an information projection module for rapid information representation and a contrastive learning module for neural manifold disentanglement. An algorithm instance of projection contrastive learning is designed to process some machinery vibration signals and is tested on several public datasets. The test on a mixed dataset containing 1426 training samples and 14,260 testing samples shows that the running time of our algorithm is approximately 37 s and that the average processing time is approximately 2.31 ms per sample, which is comparable to the processing speed of a human vision system. A prominent feature of this algorithm is that it can track the decision-making process to provide an explanation of outputs in addition to its fast running speed.",
     "url": "https://doi.org/10.1016/j.engappai.2025.111524",
     "authors": [
       "Yanli Yang"
@@ -1348,7 +1348,7 @@
     "id": "doi:10.30525/978-9934-26-598-3-6",
     "name": "Municipal law-making in the digital age: challenges and opportunities of artificial intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The Impact of Artificial Intelligence on the Development of Legal Science (August 25–29, 2025. Riga, the Republic of Latvia) : International scientific conference. Riga, Latvia : Baltija Publishing, 2025. 108 pages.",
     "url": "https://doi.org/10.30525/978-9934-26-598-3-6",
     "authors": [
       "Ye. L. Hrechkivskyi"
@@ -1429,7 +1429,7 @@
     "id": "doi:10.1016/j.engappai.2025.111457",
     "name": "Artificial neural network integrated SHapley Additive exPlanations modeling for sodium dichromate formation",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This Research has focused on optimizing metallurgical processes by integrating Artificial Neural Networks with Shapley additive explanation modeling. This approach helps understand the intricate relationships and mechanisms underlying chemical processes. Neural networks provide accurate predictions based on input parameter interactions, while Shapley values identify the relative importance of each input variable and offer detailed explanations for model predictions, enhancing transparency and interpretability. In this study on roasting and leaching processes for sodium dichromate formation, the neural network - Shapley modeling framework was employed. The goal was to uncover the intricate interplay between input variables and sodium dichromate formation, providing valuable insights for process optimization and prediction. Key factors such as temperature, roasting time, reaction time, and sulfuric acid concentration were optimized in relation to the efficacy of sodium dichromate formation under different settings. The suggested neural networks model predicted optimal yields for combined roasting and leaching settings. The optimum conditions included a roasting temperature of 1046.26 °C, roasting time of 2.7 h, Cr: NaCl ratio of 1.5, leaching time of 41 min at a temperature of 40 °C, and sulfuric acid concentration of 12M. Global sensitivity analysis revealed that the yields of different metals were directly influenced by the temperature during roasting, concentration of sulfuric acid, Cr:NaCl ratio, roasting time, leaching temperature, and leaching time. These parameters were ranked in terms of sensitivity coefficients, indicating their relative importance.",
     "url": "https://doi.org/10.1016/j.engappai.2025.111457",
     "authors": [
       "M.J. Mvita",
@@ -1535,7 +1535,7 @@
     "id": "doi:10.1145/3767052.3767092",
     "name": "Artificial Intelligence Driving the Sustainable Development of Smart Cities: A Bibliometrics Study from 2014-2025",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Driven by global urbanization and goals like the “United Nations 2030 Agenda” and “dual carbon targets,” research on AI and smart cities has emerged as a leading interdisciplinary field. This paper analyzes 950 papers from the Web of Science core database (2014–2025) using bibliometric tools like VOSviewer and CiteSpace, focusing on keyword co-occurrence, collaboration networks, and national patterns. The findings show: (1) Strong collaboration within author teams but limited cross-team interaction, focusing on AI for urban resource optimization and efficiency; (2) Diverse research orientations among institutions, with some leading in output and influence, and cross-regional collaboration driving international exchange; (3) Significant differences in research influence among countries, with a few dominating output and quality; (4) Keywords have shifted from technical themes like “big data” and “Internet of Things” to sustainable issues like “blockchain” and “carbon neutrality,” highlighting the integration of AI with sustainability goals. This study provides a comprehensive overview of field hotspots and insights into sustainable pathways for AI-driven smart cities.",
     "url": "https://doi.org/10.1145/3767052.3767092",
     "authors": [
       "Yichen Xiang"
@@ -1820,7 +1820,7 @@
     "id": "doi:10.1002/9781394301287.ch7",
     "name": "How Artificial Intelligence Affect the Role of Manpower in Biofuels Industry",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The process of digitalizing industries is gaining momentum. The advancements in digital technology have been significant. The capabilities of computing power and data transfer are consistently improved by the implementation of increasingly advanced hardware and software technologies. Due to heightened competition, technological progress, knowledge exchange, and globalization, there has been a significant surge in the demand for highly skilled individuals. Contemporary sophisticated software systems have the ability to analyze factory data to identify patterns and trends. These insights can be used to optimize manufacturing processes and reduce energy use. This study investigates the impact of artificial intelligence (AI) on enterprises and its implications for professional growth. The research primarily focuses on the preparedness of organizations to confront the challenges of the upcoming industrial revolution and the strategies for developing skilled workforces in the relevant disciplines.",
     "url": "https://doi.org/10.1002/9781394301287.ch7",
     "authors": [
       "Rajesh Singh Gurjar",
@@ -1941,7 +1941,7 @@
     "id": "doi:10.1201/9781003503385-12",
     "name": "Unlocking Effective Applications of Artificial Intelligence for Healthcare Management Systems",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Recent years have seen a tremendous advancement in Artificial Intelligence (AI) in terms of hardware implementation, software algorithms, and sector-specific applications. In this chapter, we cover most recent advancements in AI applications in healthcare (HC). This chapter systematically reviews effective models and applications of AI from the perspective of HC operations, marketing, finance, and human resource. Prior studies observed that AI can assist in streamlining business processes throughout the HC industry. Medical inventory automation can be utilized to handle forecasting, planning, managing stock-outs, overstocks, and expirations; automate the stocking and fulfillment operations; and meet the required patient demand on time. The chatbot is one of the more personalized implementations of AI technology that can assist HC marketers by boosting website engagement and pointing potential patients to online resources, thereby enhancing the patient experience. AI technology can improve the work in HC finance through medical insurance automation to improve policy management, claim processing, and regulatory compliance. AI may help with the HC industry s human resource management by assisting in recruiting potential HC workforce. Through this extensive review, this study reveals the useful considerations for building the next generation of HC using AI that have the potential to significantly advance the HC sector.",
     "url": "https://doi.org/10.1201/9781003503385-12",
     "authors": [
       "Shreyan Saha",
@@ -1981,7 +1981,7 @@
     "id": "doi:10.1504/ijaih.2025.149248",
     "name": "A literature review on artificial intelligence and healthcare management",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The purpose of artificial intelligence (AI) is to create an algorithm that functions autonomously to find the solutions to questions.However, the results that AI makes can lead to social biases and other selectivity issues.The social biases include negative statements to ethnic minority groups, gender biases, and cultural biases.Due to this reason, there is a research gap of AI and healthcare management such as AI biases and human-AI interaction.Thus, the goal of this literature review is to comprehensively examine the interaction of AI and users (patients who are in their mid or late-thirties, White, and live in the USA) specifically in the clinical healthcare environment to further enhance the usability of patients and AI.",
     "url": "https://doi.org/10.1504/ijaih.2025.149248",
     "authors": [
       "Esther Hwang",
@@ -2024,7 +2024,7 @@
     "id": "doi:10.25019/perspol/25.18.6",
     "name": "Artificial Intelligence in Romania: Romanians’ perception of Artificial Intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This study examines the perception and usage of Artificial Intelligence (AI) among Romanian citizens in the context of its global expansion and increasing integration into everyday life and industrial use.With the emergence of tools such as ChatGPT, AI has become a technological development, prompting both enthusiasm and apprehension.The research aims to assess the extent to which AI influences daily decision-making processes.A quantitative research design was employed, using an online questionnaire to collect data on public attitudes of Romanians toward AI.Although the sample does not meet the requirements for population-level representativeness, the exploratory character of the study provides valuable insights, given the limited research on this topic in Romania.Findings indicate that while AI is primarily used in personal contexts, its adoption in professional and educational settings is steadily increasing.Most respondents view AI as useful while simultaneously emphasizing the need for regulation and ethical oversight.Key concerns identified include potential job displacement, the spread of misinformation, diminished critical thinking, and social isolation.Conversely, AI is recognized for its potential to enhance productivity, creativity, and administrative efficiency.The results underscore the importance of digital literacy, equitable access, and transparent governance to ensure responsible integration of AI into Romanian society.Further research into larger, more representative samples is recommended to better understand developments in AI adoption.",
     "url": "https://doi.org/10.25019/perspol/25.18.6",
     "authors": [
       "Roxana-Mihaela NEDELCU (ZAFIU)"
@@ -2043,7 +2043,7 @@
     "id": "doi:10.1109/ictai66417.2025.00203",
     "name": "Enhancing Cloud Cost Forecasting with Explainable Artificial Intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Cloud computing enables efficient digital transformations for organizations but also raises significant challenges for cost management due to its variability and complexity. Rapid advancements in Artificial Intelligence (AI) bring promising opportunities to address these challenges, particularly in cloud cost forecasting. However, implementing AI-based models for cloud cost forecasting remains novel and challenging, as the financial domain requires high trustworthiness in AI solutions. Explainable AI (XAI) addresses this issue by developing techniques that clarify AI decisions, making models more transparent and reliable. Moreover, XAI explanations can help identify redundant features, leading to improved model performance. This paper introduces a cloud cost forecasting approach using forecasting models for time series data. The predictions are explained using the Kernel SHAP method, which highlights the impact of different features on the model's output. The forecasting model is then refined by removing low-impact features. The results demonstrate that the refined models enhanced by XAI outperform the original models due to an efficient feature selection process. Our study highlights the capability of AI and XAI to address cloud cost forecasting challenges by providing accurate predictions and clear explanations.",
     "url": "https://doi.org/10.1109/ictai66417.2025.00203",
     "authors": [
       "Ha Nhi Ngo",
@@ -2176,7 +2176,7 @@
     "id": "doi:10.1109/icaice68195.2025.11382339",
     "name": "Research on a Lithium Battery Health Management System Based on Big Data and Artificial Intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The rapid growth of electric vehicles and energy storage systems necessitates advanced lithium battery health management, as conventional BMS relying on static thresholds and single-model strategies often fail under complex dynamic conditions and multi-physics coupling effects during aging. To bridge this gap, we propose an integrated data-AI-system solution via a five-layer framework (data acquisition–feature extraction– AI modeling–multiphysics simulation–closed-loop optimization). By embedding electrochemical mechanisms into graph neural networks (GNN) combined with reinforcement learning, our system achieves precise state-of-health prediction and dynamic control. Validation results show a 1.2% MAE in SOH prediction—20% lower than traditional methods—with exceptional generalization in late aging stages, alongside <1.8% SOC deviation in multiphysics simulations and accurate thermal runaway forecasting. This work establishes a unified platform bridging AI, simulation, and control, offering a practical pathway toward full-life-cycle battery management with enhanced safety and longevity.",
     "url": "https://doi.org/10.1109/icaice68195.2025.11382339",
     "authors": [
       "Jiatao Zhou"
@@ -2369,7 +2369,7 @@
     "id": "doi:10.33545/27076571.2025.v6.i1d.278",
     "name": "Reliable requirement specification using artificial intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The reliability of Software Requirement Specifications (SRS) plays a decisive role in the success of software projects. Traditional requirement engineering practices rely heavily on manual elicitation, analysis, and validation, which are often error-prone, ambiguous, and inconsistent. With the advancement of Artificial Intelligence (AI), new opportunities have emerged to enhance the reliability, accuracy, and completeness of requirement specifications. This paper presents a comprehensive study on reliable requirement specification using AI techniques. It explores the role of Natural Language Processing (NLP), Machine Learning (ML), ontology-based reasoning, and software repository mining in improving requirement quality. A layered AI-based framework for reliable requirement specification is proposed, highlighting its benefits, challenges, and future research directions.",
     "url": "https://doi.org/10.33545/27076571.2025.v6.i1d.278",
     "authors": [
       "Sandeep Kumar Nayak"
@@ -2426,7 +2426,7 @@
     "id": "doi:10.1109/sgai64825.2025.11009597",
     "name": "Data Analysis and Intelligent Scheduling of Power Customer Service Based on Artificial Intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "With the increasing complexity of power demand forecasting, traditional methods face challenges in handling multiple influencing factors. This paper proposes a power load forecasting model based on the Temporal Fusion Transformer (TFT) to improve the accuracy and stability of power demand forecasting. By introducing a variable self-attention mechanism and gating mechanism, the TFT model effectively captures long-and short-term dependencies, while considering external factors such as weather and holidays that affect power demand. The study further enhances the model's forecasting capability and robustness through optimization strategies like multi-step forecasting, deep feature crossing, and model fusion. Experimental results show that the optimized TFT model demonstrates outstanding performance in power load forecasting, providing strong support for intelligent power scheduling.",
     "url": "https://doi.org/10.1109/sgai64825.2025.11009597",
     "authors": [
       "Yu Tian",
@@ -2513,7 +2513,7 @@
     "id": "doi:10.1145/3766557.3766585",
     "name": "Application of Artificial Intelligence Driven Mixed Reality Sandbox in Solid Waste Treatment and Disposal Teaching",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "AI-driven mixed reality sandbox has brought innovative changes to the teaching of solid waste treatment and disposal. This study designed and implemented a teaching system based on this technology, which includes multiple experimental simulation modules. The experimental simulation results show that in the simulation of solid waste collection and transportation, after students use this system, the average length of the planned transportation route is reduced by 21.7%, the transportation cost is reduced by 25.3% on average, and the transportation efficiency is significantly improved; in the landfill treatment simulation, students' ability to control key parameters of the landfill is enhanced, the garbage degradation efficiency is increased by an average of 18.5%, and the leachate treatment compliance rate is increased to 92.3%; in the site selection simulation, the comprehensive score of the site selection scheme proposed by students is increased by an average of 38.6 points (out of 100 points), and the rationality of the scheme is greatly improved. At the same time, through comparative experiments, the average score of the experimental group students in the knowledge test is 15.8 points higher than that of the control group, and the excellent rate in the problem-solving ability assessment reaches 68.2%, which is much higher than the 32.5% of the control group. The system effectively improves students' learning effect and practical ability through an immersive and interactive teaching mode, and provides a new solution for the teaching of solid waste treatment and disposal.",
     "url": "https://doi.org/10.1145/3766557.3766585",
     "authors": [
       "Ming Yuan"
@@ -2597,7 +2597,7 @@
     "id": "doi:10.4324/9781003545125-3",
     "name": "Impact of Artificial Intelligence on Tourism and Hospitality",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Smart tourism is becoming the most dynamic industry that is evolving through artificial intelligence. This chapter addresses how different AI tools and technologies are revolutionising the tourism and hospitality industry. To develop a comprehensive understanding, dynamic AI tools like big data, machine learning, speech recognition, robotics, and smart travel assistants are critically analysed in the context of the tourism and hospitality sector. Moreover, strategies for demand forecasting through time series modelling, web searching data and econometric modelling are discussed. Four key issues that shape the future of AI’s impact on the tourism and hospitality sector are presented based on the transformation of employment and workforce, data privacy and security concerns, personalisation versus standardisation, and ethical implications of AI in decision-making. Followed by recommendations for policymakers and practitioners and future insight. Finally, a case study on Accor Hotels and Marriott International is discussed to understand the operational efficiencies and practical challenges.",
     "url": "https://doi.org/10.4324/9781003545125-3",
     "authors": [
       "Sadaf Tallia"
@@ -2616,7 +2616,7 @@
     "id": "doi:10.1109/icaiihi67124.2025.11403328",
     "name": "Artificial Intelligence in Dermoscopy: A Review of Advances and Future Directions",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Skin malignancy represents one of the mainly common and deadliest diseases, and early recognition is vital for successful treatment. In this context, the review provides a complete overview of the recent artificial intelligence developments designed for automated skin malignancy identification, focusing on the primary role of the deep learning architecture, particularly CNN , in terms of the diagnostic usability increase. The numerous approaches, such as ensemble models, multimodal fusion strategies, and hybrid mechanisms combining deep learning technologies with traditional machine learning using deep features. The open-source datasets, represented by ISIC and HAM10000 opportunities, substantially contributed to the rapid model development, but even now, classification challenges related to data distribution irregularity and image variance remain. Feature extraction with traditional preprocessing methods, like normalization, augmentation, and segmentation, significantly improved the classification performance.High-quality datasets integration, the implementation of advanced feature extraction with fusion strategies, lays down the basics for the intelligent, scalable skin cancer detection systems, with ample application potential in the real-world clinical practice.",
     "url": "https://doi.org/10.1109/icaiihi67124.2025.11403328",
     "authors": [
       "Taranpreet Kaur",
@@ -2723,7 +2723,7 @@
     "id": "doi:10.1016/j.engappai.2025.111631",
     "name": "Multiobjective evolutionary algorithm based wrapper approach for hyperspectral band selection",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A hyperspectral sensor captures information from a wide range of spectral wavelengths, but the information collected is typically highly correlated. It is often challenging to obtain the pertinent bands without degrading the information content. The present work suggests a wrapper approach consisting of a decomposition-based multiobjective evolutionary algorithm. A simultaneous search is suggested for identifying significant bands and hyperparameter value of the classifier as efficacy of proposed approach is influenced by underlying classifier performance. A power distribution-based mechanism is suggested to choose and generate candidate solutions. The hyperspectral band selection problem is formulated as tri-objective optimization problem with information entropy, the percentage in band reduction, and classification accuracy as the objective functions. Entropy is employed as an objective function as a band subset with a higher entropy value can perform better in classification than another band subset with the same size. The assessment of the proposed approach on five widely referenced hyperspectral datasets demonstrates its effectiveness for band reduction while obtaining significant classification accuracy. Furthermore, the suggested approach outperforms other evolutionary multiobjective optimization strategies in obtaining fewer bands with better spectral information.",
     "url": "https://doi.org/10.1016/j.engappai.2025.111631",
     "authors": [
       "Kamal Deep",
@@ -2786,7 +2786,7 @@
     "id": "doi:10.1109/icaice68195.2025.11382427",
     "name": "Real Time Improvement Research on Deep Learning Based Artificial Intelligence Computer Vision Image Dehazing Technology",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Image dehazing technology is a crucial research direction in the field of Computer Vision (CV), whose core goal is to eliminate the impact of atmospheric scattering on image quality and restore clear scene information. Traditional dehazing algorithms, though simple in principle, lack robustness in complex foggy scenarios; AI dehazing methods based on deep learning can improve dehazing performance but are difficult to meet real-time requirements (e.g., autonomous driving, real-time monitoring) due to large model parameter size and high computational complexity. Based on the machine learning framework, this paper focuses on the real-time optimization of CV image dehazing. By designing a lightweight network structure, improving feature extraction strategies, and introducing model acceleration technologies, an AI dehazing model with both dehazing accuracy and real-time performance is constructed. Experiments are conducted based on the RESIDE dataset as the test benchmark. Compared with traditional methods and existing deep learning methods, the proposed model maintains a Peak Signal-to-Noise Ratio (PSNR) of 28.6 dB and a Structural Similarity Index (SSIM) of 0.91, while the inference speed is increased to 62 FPS (Frames Per Second), meeting the real-time processing requirements. This research provides an effective technical solution for image dehazing applications in real-time CV scenarios, and has important theoretical significance and engineering value.",
     "url": "https://doi.org/10.1109/icaice68195.2025.11382427",
     "authors": [
       "Hangyu Zhou"
@@ -2805,7 +2805,7 @@
     "id": "doi:10.1109/icaiic64266.2025.10920674",
     "name": "Artificial Intelligence in Cancer Detection: A Neural Network Approach to Differentiating Malignant and Benign Cells",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This paper explores the application of artificial intelligence in the diagnosis of cancer, specifically in making a distinction between malignant and benign cells based on neural network models. Traditional diagnostic methods include biopsies and imaging, which are generally invasive, time-consuming, and expensive. A dataset from the University of Wisconsin was applied to train and test two machine learning models: a custom neural network and a Multi-Layer Perceptron (MLP) classifier implemented in scikit-learn. The Sigmoid-Relu-Relu-Sigmoid custom neural network attained an accuracy of 92.11% with an F1 score of 0.91 and an AUC of 0.94, thereby showing a good tradeoff between accuracy and generalization. By contrast, the MLP classifier, trained on a subset of top predictive features, achieved a comparable accuracy of 92.0% with an F1 score of 0.88 and an AUC of 0.90, providing a computationally friendly alternative. Analysis revealed that features representing extreme tumor characteristics, such as radius_worst and texture_worst, contributed significantly to model performance, underscoring the importance of capturing aggressive tumor properties in cancer diagnosis.",
     "url": "https://doi.org/10.1109/icaiic64266.2025.10920674",
     "authors": [
       "Anikait Sota"
@@ -2843,7 +2843,7 @@
     "id": "doi:10.1109/icaie64856.2025.11158385",
     "name": "Enhancing Design Thinking through the Systematic Integration of Artificial Intelligence (AI) in Architectural Education",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This paper examines the implementation of Artificial Intelligence (AI) within the Human-Centred Design (HCD) methodology applied to architectural design, specifically focusing on its application in the educational environment of the Master in Architectural Design Programme at Xi'an Jiaotong-Liverpool University. Over the past six years, AI has been explored and tested in academic settings with innovative and highly compelling results across various applications. However, its role in the early phases of inspiration and creativity remains largely underexplored by experts, both in the field of architectural design and in the realms of education and pedagogy. The integration of AI with the HCD methodology in architecture, and even more so in academic contexts, is the outcome of an effort to provide an operational framework for early explorations that were initially directed towards specific objectives but have yet to follow a more systematic approach. The findings are highly compelling, and this study, in addition to offering a broader perspective on this promising interaction between HCD and AI, explores deeper into AI's role in the fundamental creative phase, where ideas are born. In this process, which may be defined as conversational between the designer and AI, the latter assumes the role of a Design Partner. The integration of AI has significantly enhanced creativity, efficiency, and user-focused design outcomes, paving the way for more inclusive and sustainable solutions. However, challenges persist, including ethical considerations and the need to balance AI's analytical capabilities with the more intuitive aspects of the design process. Reflecting on AI's evolution from an experimental tool to an integrated component of HCD, this study serves as a starting point for further research aimed at enhancing AI's predictive capabilities and its role in preparing students to tackle the complex architectural challenges of the future.",
     "url": "https://doi.org/10.1109/icaie64856.2025.11158385",
     "authors": [
       "Juan Carlos Dall’ Asta"
@@ -2881,7 +2881,7 @@
     "id": "doi:10.1088/978-0-7503-6119-4ch19",
     "name": "Artificial intelligence in clinical trials",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This chapter discusses the importance of clinical trials in healthcare, explains key trial methods, and explores how artificial intelligence (AI) is changing the way trials are designed and run. From improving participant selection to using digital twin technology for personalized trial plans, AI is making trials more accurate and responsive. The chapter also covers important ethical and regulatory issues to consider when applying AI in clinical research. With these advances, AI has the potential to improve the speed, quality, and impact of clinical trials, leading to faster and more reliable medical discoveries.",
     "url": "https://doi.org/10.1088/978-0-7503-6119-4ch19",
     "authors": [
       "Sang Ho Lee",
@@ -3065,7 +3065,7 @@
     "id": "doi:10.1109/prai67447.2025.11412511",
     "name": "Laser Holographic Image Segmentation and Recombination Processing Method Integrating Artificial Intelligence Technology",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This paper proposes a laser holographic image processing method integrating artificial intelligence technology, focusing on improving image quality through an optimized segmentation-recombination framework. The core innovation lies in the introduction of the Adaptive Genetic Algorithm (AGA), which dynamically adjusts crossover and mutation probabilities during image segmentation. Furthermore, the Otsu's method (maximum between-class variance method) is employed to determine the optimal threshold for holographic image segmentation. Finally, by combining the scale difference value with the spatial neighborhood edge energy fusion method, the image pixel sequence is extracted, and the positional difference between the processed image and the original image is corrected. The contour points with the maximum gray value are obtained, and the recombination of laser holographic images is realized through pixel information fusion. Experimental results show that compared with traditional methods and deep learning-based techniques, this method achieves better performance in segmentation accuracy (peak signal-to-noise ratio (PSNR) of 65.4 dB) and recombination efficiency (average registration error rate$<0.15 \\%)$. Computational complexity analysis indicates the core steps have a time complexity of$\\mathrm{O}(\\mathrm{N})$, and GPU acceleration enables real-time processing (33 frames/s). Dataset validation (500 images covering medical, industrial, and natural scenes) confirms generalizability. These advancements verify the effectiveness of the proposed method in laser holographic imaging applications.",
     "url": "https://doi.org/10.1109/prai67447.2025.11412511",
     "authors": [
       "Zhou Hong",
@@ -4093,7 +4093,7 @@
     "id": "doi:10.2196/84695",
     "name": "The Role of Multimodal Generative AI in Older Adults' Health Management: Systematic Scoping Review.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Background The issue of population aging has emerged as a critical global challenge, driving the imperative for effective self-care and scalable health management solutions for older adults. Against the backdrop of the accelerating application of generative artificial intelligence (GenAI) in health care, a systematic evaluation is necessary to investigate how multimodal GenAI can support older adults in maintaining health and managing well-being. Objective This study aimed to systematically evaluate the role, application contexts, empirical impacts, and developmental potential of diverse GenAI tools across critical geriatric health domains. Methods A comprehensive search was executed across 11 major databases, including Web of Science, Scopus, PubMed, Medline, CINAHL, Cochrane, ACM Digital Library, IEEE Xplore, ScienceDirect, APA PsycInfo, and Google Scholar, with search transparency adhering to the PRISMA-S (Preferred Reporting Items for Systematic Reviews and Meta-Analyses extension for Scoping Reviews) extension. Results A total of 28 studies met the inclusion criteria. Of the total, 82% (n=23) of the included publications were released within the last 2 years (2024-2025). Analysis of technology revealed that over half (n=14) of the applications were based on text-driven conversational agents, while multimodal systems, leveraging generated audio, images, and sensor data, are rapidly emerging. GenAI applications were validated to support cognitive function maintenance, mental health, and chronic condition management through personalized content generation and multimodal interaction. However, current validation is primarily limited to cognitively normal, low-risk older adult populations. Persistent technical challenges include overreliance on text-based interaction, barriers in voice recognition accuracy, and suboptimal user interface adaptability. Conclusions Preliminary evidence suggests a promising role for GenAI in enhancing older adults' health self-management through highly personalized and multimodal interventions, particularly in cognitive and mental health support. To realize this potential and ensure equitable access, future efforts must prioritize strengthening interdisciplinary collaboration to integrate wearable technologies and edge computing, alongside establishing robust ethical frameworks to address data privacy, algorithmic bias, and the digital divide, which will be critical to building a safe, equitable, and effective environment for active aging.",
     "url": "https://doi.org/10.2196/84695",
     "authors": [],
     "tags": [],
@@ -5287,7 +5287,7 @@
     "id": "doi:10.1007/s44445-026-00160-0",
     "name": "Artificial intelligence in periodontal disease research: a bibliometric and visualized analysis of global research trends (2007-2025).",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Periodontal disease is one of the most common diseases in stomatology. With the continuous development of artificial intelligence (AI), its integration with periodontology is rapidly evolving. However, a comprehensive bibliometric analysis mapping this interdisciplinary field is currently lacking. We conducted a bibliometric analysis by retrieving publications related to AI and periodontal disease from the Web of Science Core Collection (WoSCC) for the period January 2007 to July 2025. Data processing and visualization were performed using R (Bibliometrix), VOSviewer, and CiteSpace. A total of 496 relevant articles (437 research papers; 59 reviews) were included. Annual publication output has shown sustained growth, particularly since 2021. China contributed the most publications (153 articles), followed by the United States. Among institutions, Pusan National University, South Korea (32 articles), and Saveetha Institute of Medical and Technical Science, India (31 articles) were the most productive. BMC Oral Health published the highest number of articles (n = 23). The co-authorship network involved 2,604 authors, with Pradeep Kumar Yadalam being the most prolific (15 articles). Co-citation analysis identified Orhan Kaan, Abu Patricia Angela R., and Falk Schwendicke as the most cited authors. Keyword analysis revealed \"periodontitis,\" \"machine learning,\" and \"artificial intelligence\" as core research foci, while burst detection indicated \"progression\" and \"expression\" as emerging thematic directions. This study provides a systematic overview of the research landscape, highlighting evolving trends, key contributors, and knowledge structure in AI applications for periodontal disease. The findings offer valuable insights to help dentists and researchers understand current applications, identify frontiers, and potentially guide the future clinical translation of AI technologies in periodontology.",
     "url": "https://doi.org/10.1007/s44445-026-00160-0",
     "authors": [],
     "tags": [],
@@ -7667,7 +7667,7 @@
     "id": "doi:10.22541/au.176659897.77719715/v1",
     "name": "Precision Oncology: Targeting  Genomic Alterations and Cancer Signaling with Integrative Multi-Omics, Deep  Learning and Network Biology in Medical Oncology                 ",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "Cancer is a complex genetic disease involving uncontrolled cell growth and proliferation, and necessitates effective targeting of dysregulated cellular pathways underlying cancer progression. Multiple genetic and epigenetic alterations characterize tumor progression and define hallmarks of cancer. It may result in dysregulation of growth factors, regulatory proteins, cell adhesion molecules, and molecules of immune system driven by alterations in the expression profile of tumor suppressor genes and oncogenes that may vary among different cancer types. Importantly, patients with the same cancer type respond differently to available cancer treatments, likely due to tumor-specific DNA, RNA, and proteins, indicating the need for patient-specific treatment options. Precision oncology has evolved as a form of cancer therapy that is focused on genetic and molecular profiling of tumors to identify specific molecular alterations involved in carcinogenesis for tailored individualized cancer treatment. Advances in high-throughput technologies, that include next-generation sequencing, have enabled gene expression profiling, providing detailed molecular characterization of various tumors. Moreover, the application of multiomic technologies, including genomics, proteomics, metabolomics, and single-cell multiomics, constitutes a novel approach for the identification and quantification of a comprehensive set of biological molecules to study how they translate into cellular functions and tissue pathologies. Integration and analysis of various multiomic sequencing data are crucial in this regard, as they can reveal critical molecular changes, such as cancer-driving mutations, post-translational modifications, gene fusions, amplifications, and alterations in signaling networks within tumors. Furthermore, the role of computational techniques such as artificial intelligence and deep learning, in analyzing complex data and identifying patterns of disease development for better outcomes is now well established in precision medicine. Additionally, AI-powered multi-omics and network biology have been harnessed to integrate and analyze biological data through networks, which may prove crucial in solving key problems facing precision oncology. This article aims to briefly explain the foundations and frontiers of precision oncology in the context of cutting-edge developments in tools and techniques associated with it, and try to assess its scope and importance in achieving the intended goals over time.",
     "url": "https://doi.org/10.22541/au.176659897.77719715/v1",
     "authors": [],
     "tags": [],
@@ -8963,7 +8963,7 @@
     "id": "doi:10.1101/2025.03.28.646019",
     "name": "A canonical cortical electronic circuit for neuromorphic intelligence",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "Cortical microcircuits play a fundamental role in natural intelligence. While they inspired a wide range neural computation models and artificial intelligence algorithms, few attempts have been made to directly emulate them with an electronic computational substrate that uses the same physics of computation. Here we present a heterogeneous canonical microcircuit architecture compatible with analog neuromorphic electronic circuits that faithfully reproduce the properties of real synapses and neurons. The architecture comprises populations of interacting excitatory and inhibitory neurons, disinhibition pathways, and spike-driven multi-compartment dendritic learning mechanisms. By co-designing the computational model with its neuromorphic hardware implementation, we developed a neural processing system that can perform complex signal processing functions, learning, and classification tasks robustly and reliably, despite the inherent variability of the analog circuits, using ultra-low power energy consumption features comparable to those of their biological counterparts. We demonstrate how both the model architecture and its hardware implementation seamlessly capture the hallmarks of neural computation: attractor dynamics, adaptation, winner-take-all behavior, and resilience to variability, within a compact, low-power computing substrate. We validate the model’s learning performance both from the algorithmic perspective and with detailed electronic circuit simulation experiments and characterize its robustness to noise. Our results illustrate how local, biologically plausible rules for plasticity and gating can overcome challenges like catastrophic forgetting and parameter variability, enabling effective always-on adaptation. Beyond offering insights into the nature of computation in neural systems, our approach introduces a foundation for ultra-low power, fault-tolerant architectures capable of complex signal processing at the edge. By embracing -rather than mitigating-variability, these neuromorphic circuits exhibit a powerful synergy with emerging memory technologies, suggesting a new paradigm for sophisticated “in-memory” computing. Through such tight integration of neuroscience principles and analog circuit design, we pave the way toward a class of brain-inspired processors that can learn continuously and respond dynamically to real-world inputs.",
     "url": "https://doi.org/10.1101/2025.03.28.646019",
     "authors": [],
     "tags": [],
@@ -9915,7 +9915,7 @@
     "id": "doi:10.21203/rs.3.rs-9271553/v1",
     "name": "Shell digitisation for disease control: creating a digital collection of schistosomiasis host snail shells",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "Abstract The gastropod shell collection at the Natural History Museum (NHM) in London houses a wealth of gastropod specimens from around the world. Many snail species are relevant to human health due to their role as hosts for medically important parasites. This includes blood flukes of the genus Schistosoma , which cause human schistosomiasis. Schistosomiasis control programmes often rely on efficient and precise identification of host snail species, but traditional resources available to these efforts are limited both in scope and accuracy, hindering the progress of control programs. To bridge this gap, we present a digitisation effort using the African snail shell collections housed in NHM London. Shells were digitised using traditional photography and micro computed tomography (µCT). µCT scans were used to produce 3D models optimised for digital visualisation and 3D printing. To ensure full accessibility, models were uploaded to the Sketchfab online public repository with registration numbers and links to the NHM data portal. To further aid identification efforts, we present a detailed pipeline to create 3D-printed shell replicas, accompanied by short 3D animations showcasing key morphological characters of snail shells. 3D models and 3D-printed replicas can also be used as teaching tools, contributing to the dissemination of knowledge of tropical diseases critical to the efforts of endemic countries. Further, we showcase how digitisation approaches can be applied to similar museum collections.",
     "url": "https://doi.org/10.21203/rs.3.rs-9271553/v1",
     "authors": [],
     "tags": [],
@@ -10408,7 +10408,7 @@
     "id": "doi:10.1101/2025.11.27.690210",
     "name": "Predicting functional topography of the human visual cortex from cortical anatomy at scale",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "Topographic organization, whereby neighboring cortical locations encode neighboring features in sensory or cognitive space, is a fundamental principle of brain function. Existing approaches for obtaining individual-specific topographic maps either require resource-intensive functional neuroimaging or, when relying on population atlases, lack precision for individual-level inference. Here, we introduce deepRetinotopy toolbox , a deep learning-based application for predicting the functional topographic organization of human visual cortex from cortical anatomy alone. DeepRetinotopy toolbox produces accurate retinotopic maps across diverse experimental conditions, imaging sites, and scanner types. We demonstrate how predicted maps can be utilized to automatically generate individual-specific visual area boundaries, overcoming common biases in manual annotations. Finally, we applied our method to 11,060 anatomical scans, which allowed us to quantify age-related changes in the functional organization of visual cortex predictable from anatomy alone, underscoring the method’s broad utility for scalable, anatomy-based functional brain mapping.",
     "url": "https://doi.org/10.1101/2025.11.27.690210",
     "authors": [],
     "tags": [],
@@ -10558,7 +10558,7 @@
     "id": "doi:10.4324/9781003468615-25",
     "name": "Altruistic collective intelligence for the betterment of artificial intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This chapter explores the potential of altruistic collective intelligence (CI) in advancing artificial intelligence (AI) technologies. It emphasizes the interplay of cooperation and competition – coopetition – in fostering CI among developers. Drawing empirical evidence from AIcrowd, a platform that leverages community-based development, the study illustrates how a risky “trial-and-fail” strategy can drive AI innovation through peer production. It highlights how diversity of perspectives enhances development, suggesting that CI contributes to more ethical and robust AI systems. This approach democratizes AI development and integrates a strong culture of altruism, encouraging sharing and transparency. The findings suggest that altruistic CI could reshape the future of AI, making it more inclusive, innovative, and ethically grounded.",
     "url": "https://doi.org/10.4324/9781003468615-25",
     "authors": [
       "Thomas Maillart",
@@ -10602,7 +10602,7 @@
     "id": "doi:10.21608/aiis.2024.415848",
     "name": "Factors affecting the acceptance of faculty members in Saudi universities to use artificial intelligence technologies in light of the Unified Theory of Acceptance and Use of Technology (UTAUT)",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The study relied mainly on the unified theory of acceptance and use of technology (UTAUT) in the theoretical background. To achieve this, the descriptive survey approach was used, and the study tool, represented by the questionnaire, was presented to a sample of (196) faculty members. The results also revealed a statistically significant effect of the factors of the unified theory of acceptance and use of technology (UTAUT) (expected performance, expected effort, social impact, and available facilities) on the intention to use the technology. (ChatGPT), and the results showed that there is an indirect effect of the unified theory of acceptance and use of technology UTAUT with its factors (expected performance, expected effort, social impact, and available facilities) on the relationship between the intention to use and the usage behavior of (ChatGPT) technology among faculty members in some Saudi universities. The study recommended promoting the expansion of the use of (ChatGPT) technology among faculty members in some Saudi universities, by holding seminars and workshops, providing the necessary resources to employ this technology in university education.",
     "url": "https://doi.org/10.21608/aiis.2024.415848",
     "authors": [
       "Faeeq Faeeqsaeed Al-Ghamdi"
@@ -10621,7 +10621,7 @@
     "id": "doi:10.21608/aiis.2024.407065",
     "name": "“\"Pronominal reference and its importance in textual cohesion” and an applied model for discourse analysis on an article by Sheikh Ali Al-Tantawi using generative artificial intelligence technology “ChatGPT”",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The study relied on discourse analysis, which is considered a rich and fertile specialty that has gained its cognitive merit and scientific sovereignty because it provides the researcher with different methodological approaches to analyzing different texts and discourses in view of the different linguistic and critical schools and their cognitive references. It has become an established science on its own with its own theories, cognitive foundations, subject matter, methods, means of analysis, and results. It has dealt with the concept of Consistency and its elements, the most important of which is referral and its meaning linguistically and idiomatically Its types and the effect of pronominal referral in particular on the cohesion of the text through the use of the generative artificial intelligence application ChatGPT. This is a first experience to present an applied model for analyzing discourse on an article by Sheikh Ali Al-Tantawi using the generative artificial intelligence technology ChatGPT, as the application presents the concept of coherence and its most important elements and contains a theoretical clarification of the referral. And everything related to it and the application of discourse analysis to pronominal reference, which is one of Tools that contribute, along with others, to achieving text cohesion and consistency. The referral tool, which plays a fundamental role in linking the parts of a single sentence on the one hand, and linking several sentences with each other in such a way that a comprehensive text or discourse is formed, as the role of textual referral in the cohesion of texts is explained based on an article. By Sheikh Ali Al-Tantawi. The researcher reviewed, revised and discussed the results of the analysis provided by ChatGPT and then presented it again through. The results concluded that: internal reference alone performs the function of cohesion, and that the correspondence between the pronoun and its referent helps to connect parts of the text and its flow. Therefore, there appears to be an urgent need to search for a way to remove confusion in the reference of the pronoun. The study also found that cohesion does not depend on the presence of reference or other means of textual cohesion alone. Rather, the reality of the matter is that these means - despite their importance - may not alone be sufficient in giving The coherence of the text.",
     "url": "https://doi.org/10.21608/aiis.2024.407065",
     "authors": [
       "KAMERAA AL SAIED"
@@ -10678,7 +10678,7 @@
     "id": "doi:10.62919/lkfj8763",
     "name": "Artificial Intelligence for Online Career Guidance: A Comprehensive Framework",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The International Conference on Cutting-Edge Developments in Engineering Technology and Science (ICCDETS-24) serves as a premier platform for researchers, academicians, engineers, and industry professionals to exchange ideas, present their latest research findings, and discuss the most recent advancements in engineering, technology, and science. ICCDETS-24 aims to foster collaboration and innovation across various disciplines by bringing together experts from around the world.",
     "url": "https://doi.org/10.62919/lkfj8763",
     "authors": [],
     "tags": [],
@@ -10695,7 +10695,7 @@
     "id": "doi:10.36315/2024v2end021",
     "name": "Artificial Intelligence revolutionizing online education",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The recent COVID-19 pandemic forced universities to move to online education, many of which would not have considered online courses without that impetus.Subsequently there has been a surge in online courses.Online courses take a long time to prepare and frequently the delivery and execution is of low quality.One way to overcome both limitations is to use the powerful paradigm of Artificial Intelligence, especially Large Language Models, to develop and deliver online courses.In this paper, we introduce \"AI Lecturer\", an innovative solution powered by a Large Language Model that is designed to improve the quality and delivery of lessons in educational institutions.The paper discusses related work in online course delivery and locates our solution in this space.The AI Lecturer functionality is presented and includes AI-powered automated lesson preparation, interactive teaching through AI avatars, and personalized homework generation and evaluation.A survey was carried out to evaluate student satisfaction and learning using AI Lecturer.The survey results will be presented.Respondents expressed a high degree of satisfaction with the user interface and overall experience, found the lifelike avatars engaging, and indicated they would recommend the platform to others.Finally, we will discuss the advantages and disadvantages of our platform and the challenges students faced when using it.",
     "url": "https://doi.org/10.36315/2024v2end021",
     "authors": [],
     "tags": [],
@@ -10797,7 +10797,7 @@
     "id": "doi:10.1201/9781003399292-7",
     "name": "Gender Disparity in Artificial Intelligence: Creating Awareness of Unconscious Bias",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The field of Artificial Intelligence (AI) has shown an exponential growth over the past few years [ 1 ]. With the growth occurring at a rapid rate, AI has delved deep down into the lives of people, thereby influencing their behavior and opinion [ 2 ] at the individual and collective level [ 3 ]. Being a general-purpose technology, AI highly mediates the socio-cultural, economic, and political relationships of people [ 4 ]. AI holds enormous pot e strides made over decades to achieve gender equality have been stealthily reversed by gender-biased algorithms [ 2 ]. Technically AI system is not biased, instead it is shaped by biased people. So, it is the value of creators that is presented in the AI algorithms [ 7 ]. If observed closely, the gender biasness in the AI system isn’t intentional; it is just the reflection of human nature. As AI is created by humans, it is obvious that it will embody some of the biases upheld by humans themselves. Being in a male-dominated arena, AI relies on the implicit genderbiased inputs [ 8 ]; resulting in the promotion of gender inequality [ 9 ]. Therefore, the prime reason for gender-biased algorithm is the lack of gender diversity in the AI workforce [ 10 ].",
     "url": "https://doi.org/10.1201/9781003399292-7",
     "authors": [
       "Sugyanta Priyadarshini",
@@ -10817,7 +10817,7 @@
     "id": "doi:10.1201/9781003483571-13",
     "name": "The Transformative Role of Artificial Intelligence in Finance and Economics",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "In this chapter, we explore the profound influence of artificial intelligence (AI) in the areas of finance and economics. We focus on the forefront sectors of applying AI in finance and economics, including algorithmic trading, risk management, credit scoring, fraud detection, customer service, portfolio management, sentiment analysis, supply chain finance, and economic forecasting. By disclosure of the optimized trading strategies generated by applying AI and machine learning and illustrating the influences they brought to the market efficiency, we get a closer view on how AI works in finance. We further investigate deeply into the alternative way of applying AI in risk assessment, creditworthiness evaluation, and real-time fraud detection. During the chapter, we fully discussed related ethical concerns AI enthusiast should take care when they are working on these sectors. We listed the biases human may have when they are working with AI and present how important data privacy is. In addition, the regulatory matters AI practitioner cannot ignore are listed. In the final synthesis, we once again summarize the transformation AI brings to finance and economics and point out the possible challenges to this area. Eventually, we are looking forward to the future research direction on this topic.",
     "url": "https://doi.org/10.1201/9781003483571-13",
     "authors": [
       "Yasin Murat Kadioglu",
@@ -10837,7 +10837,7 @@
     "id": "doi:10.4324/9781003453901-1",
     "name": "Introducing Artificial Intelligence, Co-Creation and Creativity",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The emergence and proliferation of artificial intelligence (AI) tools for creative tasks is deeply impacting and rapidly transforming various creative sectors, allowing for a permanent state of innovation across different domains. Such fast-changing scenario challenges established assumptions and calls for a constant critical reflection among scholars and practitioners. This first edition of Artificial Intelligence, Co-creation and Creativity: The New Frontier for Innovation aims to explore the interlinks between humans, AI and creativity and the potential for innovative co-creative processes. It also aims to contribute to the current debate by providing a holistic insight on the topic, covering various issues and perspectives and enabling an accessible read to a broad audience.",
     "url": "https://doi.org/10.4324/9781003453901-1",
     "authors": [
       "Francisco Tigre Moura"
@@ -10988,7 +10988,7 @@
     "id": "doi:10.34218/ijaird_02_02_013",
     "name": "THE ROLE OF ARTIFICIAL INTELLIGENCE IN CYBER THREAT DETECTION",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The continued advancement in AI calls for its application in different sectors, including cyber threat detection.The use of AI provides a remarkable step to enable critical growth and adjustment to help in attaining meaningful engagement with cyber threat detection.This article analyzes the application of AI in cyber security, models applied to help with cyber threat detection, advantages, and directions followed to remarkably ensure the best modeling of AI integration in cyber security.Notably, the article details that the application of AI for cyber threat detection comes with real-time monitoring and automated functionalities that enable critical adjustments to address the value and needs of AI adjustment to the desired level.More to the point, the application of AI demands vital information, bringing the challenge of privacy and confidentiality.This remarkable aspect helps to structure AI and place it in the best direction to achieve sustainable cyber security protection.A future direction for handling AI use in threat detection would include adversarial machine learning to enhance management and achievement of the proper detection and management of adversarial attacks on the AI framework.",
     "url": "https://doi.org/10.34218/ijaird_02_02_013",
     "authors": [
       "Anirudh Khanna"
@@ -11024,7 +11024,7 @@
     "id": "doi:10.1515/9781501519307",
     "name": "Applying Artificial Intelligence to Project Management",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This book describes the AI tools in concept and how they apply directly to project success. It also demonstrates the strategy and methods used to purchase and implement AI tools for project management. You will understand the difference between automating a task and changing it by using AI. Discover how AI uses data and the importance of data maintenance. Learn why projects fail and how using artificial intelligence for project management improves project success rates. The book features project management success stories and demonstrates how to leave behind that low project success rate for one that is 95 percent or higher. Supplemental teaching materials are available for use as a textbook.",
     "url": "https://doi.org/10.1515/9781501519307",
     "authors": [
       "Paul Boudreau"
@@ -11079,7 +11079,7 @@
     "id": "doi:10.4337/9781800889972.00018",
     "name": "Artificial intelligence for professional learning",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Artificial Intelligence (AI) is increasingly impacting on all organisations. It has also been proposed as a way to scale professional learning. However, while much professional learning is informal (it includes ‘on the job’ training such as observing how an expert colleague carries out a task or engaging in strategic discussions), current applications of AI in professional learning draw on AI applications developed for schools and universities to focus on formal professional learning (training courses with prespecified content and outcomes). Informal professional learning, or ‘workplace learning,’ has yet to be addressed by AI. Accordingly, in this chapter, we explore the characteristics and requisite skills of workplace learning, such as self-regulation, before considering the potential of AI for workplace learning.",
     "url": "https://doi.org/10.4337/9781800889972.00018",
     "authors": [
       "Wayne Holmes",
@@ -11118,7 +11118,7 @@
     "id": "doi:10.1016/j.aichem.2024.100053",
     "name": "Advances in machine-learning approaches to RNA-targeted drug design",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "RNA molecules play multifaceted functional and regulatory roles within cells and have garnered significant attention in recent years as promising therapeutic targets. With remarkable successes achieved by artificial intelligence (AI) in different fields such as computer vision and natural language processing, there is a growing imperative to harness AI's potential in computer-aided drug design (CADD) to discover novel drug compounds that target RNA. Although machine-learning (ML) approaches have been widely adopted in the discovery of small molecules targeting proteins, the application of ML approaches to model interactions between RNA and small molecule is still in its infancy. Compared to protein-targeted drug discovery, the major challenges in ML-based RNA-targeted drug discovery stem from the scarcity of available data resources. With the growing interest and the development of curated databases focusing on interactions between RNA and small molecule, the field anticipates a rapid growth and the opening of a new avenue for disease treatment. In this review, we aim to provide an overview of recent advancements in computationally modeling RNA-small molecule interactions within the context of RNA-targeted drug discovery, with a particular emphasis on methodologies employing ML techniques.",
     "url": "https://doi.org/10.1016/j.aichem.2024.100053",
     "authors": [
       "Yuanzhe Zhou",
@@ -11412,7 +11412,7 @@
     "id": "doi:10.1201/9781003589273-40",
     "name": "Advancements in artificial intelligence for thyroid cancer detection",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "In times there has been a rise, in the use of artificial intelligence (AI) in healthcare systems especially in the early detection of diseases. One key focus area is the identification of thyroid diseases, including cancer, which s crucial for effective treatment and improved patient outcomes. This study aims to conduct a review and analysis of literature on AI techniques used to detect and characterize thyroid gland related cancers. The significance of datasets related to thyroid cancer (TCDs) is emphasized in uncovering characteristics and methods for creating systems driven by AI. This study delves into the results of an evaluation that sheds light on both the advantages and constraints as possible progressions, in utilizing artificial intelligence for the detection of thyroid cancer.",
     "url": "https://doi.org/10.1201/9781003589273-40",
     "authors": [
       "K.T. Anil Kumar",
@@ -11466,7 +11466,7 @@
     "id": "doi:10.1109/aiars63200.2024.00128",
     "name": "An Interpersonal Communication Analysis Model for Privacy Protection Systems in the Era of Artificial Intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "With the advancement of science and technology, artificial intelligence technology has penetrated into all aspects of our lives, especially in the field of online privacy protection dissemination, and its application research has received more and more attention. Artificial intelligence technology, with its excellent information processing capabilities, provides new possibilities for the dissemination of online health knowledge. The article provides an overview of the main technologies and methods adopted in this field, and points out their important significance in engineering practice. Firstly, research key technologies such as data encryption, access control, and user consent to ensure the security and privacy of data during storage and transmission. On this basis, research was conducted on techniques such as data anonymity. At the same time, this article also points out the important role of the principle of minimizing information, transparency in establishing user trust, and compliance with relevant regulations. Through the application of artificial intelligence technology, the dissemination of online privacy protection will be able to be carried out more effectively.",
     "url": "https://doi.org/10.1109/aiars63200.2024.00128",
     "authors": [
       "Yiming Wang"
@@ -14032,7 +14032,7 @@
     "id": "doi:10.1007/s10278-026-02126-4",
     "name": "LCRE-Net: A Lightweight Cross-Scale Residual Enhancement Network for Lung Segmentation in CT Images.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Accurate segmentation of lung and lesion regions from CT images is crucial for the diagnosis and quantitative assessment of lung diseases. Existing methods for lung CT segmentation suffer from limitations such as insufficient effective receptive field, limited cross-scale feature interaction, unstable boundary delineation, and high complexity, restricting their practical application. To address these challenges, we propose a lightweight cross-scale residual enhancement network (LCRE-Net) designed to segment lung and lesion regions from lung CT images. LCRE-Net adopts a pre-trained Pyramid Vision Transformer v2 as the encoder backbone. To alleviate the information dilution problem caused by small lesions, we embed zero-initialized residual paths at deep pyramid stages of the encoder to enhance the stability of feature representation. Simultaneously, we propose a novel module called the cross-scale attention pyramid module, which adaptively fuses high-level semantic features with mid-level spatial details through learnable weights. Furthermore, we construct a lightweight feature enhancement path consisting of efficient receptive field blocks and edge enhancers, effectively suppressing artifact boundary interference while enhancing multi-scale context modeling capabilities. Experimental results show that LCRE-Net achieves competitive segmentation performance on three publicly available lung CT datasets, achieving average Dice similarity coefficients of 0.9845, 0.8544, and 0.8611, respectively. The proposed LCRE-Net maintains low model complexity and stable performance across datasets.",
     "url": "https://doi.org/10.1007/s10278-026-02126-4",
     "authors": [],
     "tags": [],
@@ -14049,7 +14049,7 @@
     "id": "doi:10.1016/j.ortho.2026.101205",
     "name": "The accuracy of artificial intelligence in identifying cephalometric landmarks: A scoping review.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Background Accurate identification of cephalometric landmarks is essential for orthodontic diagnosis and treatment planning. Manual landmarking is time-consuming, requires clinical expertise, and is susceptible to intra- and inter-examiner variability. Artificial intelligence (AI) has emerged as a potential tool to automate this process, improving efficiency and consistency. Aims To map the current evidence on the use of AI for cephalometric landmark detection, identify trends in the AI methodologies employed, and highlight gaps in the literature requiring further research. Methods This scoping review was conducted in accordance with the PRISMA-ScR guidelines. PubMed, EMBASE, and Medline were searched up to April 2024, and identified 68 eligible studies. Data extracted included datasets used, numbers of landmarks assessed and expert examiners involved, AI algorithms employed, and reported performance outcomes. Results The included studies analysed approximately 450,000 lateral cephalograms, frequently using the IEEE ISBI Grand Challenge 2015 dataset. Convolutional neural networks (CNNs) were the most common AI architecture. Several AI systems achieved landmark localisation comparable to expert clinicians, with mean errors within 2mm, although performance varied between studies and landmarks. Heterogeneity in study design, datasets, validation methods, and reporting standards limited comparison of the findings. Conclusions AI may have a role in supporting cephalometric landmark detection. However, considerable variation in reported performance outcomes was observed across studies, potentially reflecting differences in landmark identification protocols, algorithm design, and dataset characteristics. The evidence remains heterogeneous, and further research using standardised methodologies and diverse datasets is needed to evaluate the applicability of these systems in routine clinical practice. DOI registration link on OSF: https://doi.org/10.17605/OSF.IO/CGVSU (accessed on June 29, 2026).",
     "url": "https://doi.org/10.1016/j.ortho.2026.101205",
     "authors": [],
     "tags": [],
@@ -16106,7 +16106,7 @@
     "id": "doi:10.20944/preprints202407.0938.v1",
     "name": "Advancements and Challenges in Artificial Intelligence Applications in Healthcare Delivery Systems",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "The integration of Artificial Intelligence (AI) in healthcare has transformed clinical practices by improving the accuracy of diagnosis, optimizing surgical procedures, improving the patient experience, and accelerating drug development. This article provides a comprehensive overview of the many applications of artificial intelligence (AI) across several industries, including fast diagnostics, where ML algorithms greatly enhance the accuracy and velocity of disease diagnosis. State-of-the-art robotic-assisted minimally invasive surgical procedures that shorten patients&#039; hospitalization and improve their chances of recovery, cutting-edge AI applications in healthcare monitoring, and medication development. The article also looks at the primary challenges that AI in healthcare will inevitably encounter, such as differences in product quality, a shortage of skilled workers, privacy and ethical issues, and the need for improved regulatory frameworks. Despite the challenges, AI contributes significant advantages to the healthcare industry, providing novel and remarkable contributions to the efficiency of medical procedures and the progress of medical outcomes. The paper emphasizes the importance of cooperation in overcoming current challenges and enhancing the acceptability of AI technology in clinical settings. This will ensure that AI-driven innovations continue to enhance the standards of patient care.",
     "url": "https://doi.org/10.20944/preprints202407.0938.v1",
     "authors": [],
     "tags": [],
@@ -16140,7 +16140,7 @@
     "id": "doi:10.20944/preprints202407.0551.v1",
     "name": "The Contribution of Federated Learning to AI Development",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "With the widespread application of artificial intelligence technology in various industries, users' attention to privacy and data security has increased significantly. Federated learning, as a new technology paradigm combining privacy-enhanced computing and artificial intelligence, resolves the contradiction between data security and open sharing. This paper presents the benefits of federated learning in terms of privacy, real-time processing, model robustness, compliance and cross-industry applications. At the same time, when combined with Edge AI technology, federated learning promotes the decentralisation of intelligent systems, improving data privacy protection and model accuracy. This paper also discusses the application cases of federated learning in the medical field, through local data processing and model training, effectively protecting user privacy, realizing medical data sharing and model optimization, and promoting the development of artificial intelligence.",
     "url": "https://doi.org/10.20944/preprints202407.0551.v1",
     "authors": [],
     "tags": [],
@@ -19322,7 +19322,7 @@
     "id": "doi:10.1080/08839514.2020.1826146",
     "name": "Enterprise AI Canvas Integrating Artificial Intelligence into Business",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Artificial Intelligence (AI) and Machine Learning have enormous potential to transform businesses and disrupt entire industry sectors. However, companies wishing to integrate algorithmic decisions into their organization face multiple challenges: They have to identify use-cases in which artificial intelligence can create value, as well as decisions that can be supported or executed automatically. Furthermore, the organization will need to be transformed to be able to integrate AI-based systems into their human work-force. In addition, the more technical aspects of the underlying machine learning model have to be discussed in terms of how they impact the various units of a business: Where do the relevant data come from, which constraints have to be considered, how is the quality of the data and the prediction evaluated? The Enterprise AI canvas is designed to bring data scientist and business expert together to discuss and define all relevant aspects which need to be clarified in order to integrate AI-based systems into a digital enterprise. It consists of two parts, where part one focuses on the business view and organizational aspects, whereas part two focuses on the underlying machine learning model and the data it uses.",
     "url": "https://doi.org/10.1080/08839514.2020.1826146",
     "authors": [
       "Ulrich Kerzel"
@@ -19554,7 +19554,7 @@
     "id": "doi:10.18638/dialogo.2017.3.2.12",
     "name": "Artificial Consciousness or Artificial Intelligence",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Artificial intelligence is a tool designed by people for the gratification of their own creative ego, so we can not confuse conscience with intelligence and not even intelligence in its human representation with conscience. They are all different concepts and they have different uses. Philosophically, there are differences between autonomous people and automatic artificial intelligence. This is the difference between intelligence and artificial intelligence, autonomous versus automatic. But conscience is above these differences because it is neither conditioned by the self-preservation of autonomy, because a conscience is something that you use to help your neighbor, nor automatic, because one’s conscience is tested by situations which are not similar or subject to routine. So, artificial intelligence is only in science-fiction literature similar to an autonomous conscience-endowed being. In real life, religion with its notions of redemption, sin, expiation, confession and communion will not have any meaning for a machine which cannot make a mistake on its own.",
     "url": "https://doi.org/10.18638/dialogo.2017.3.2.12",
     "authors": [
       "Florin Spanache"
@@ -19779,7 +19779,7 @@
     "id": "doi:10.1017/9781108164085.002",
     "name": "Artificial Intelligence and Agents",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Artificial intelligence, including machine learning, has emerged as a transformational science and engineering discipline. Artificial Intelligence: Foundations of Computational Agents presents AI using a coherent framework to study the design of intelligent computational agents. By showing how the basic approaches fit into a multidimensional design space, readers learn the fundamentals without losing sight of the bigger picture. The new edition also features expanded coverage on machine learning material, as well as on the social and ethical consequences of AI and ML. The book balances theory and experiment, showing how to link them together, and develops the science of AI together with its engineering applications. Although structured as an undergraduate and graduate textbook, the book's straightforward, self-contained style will also appeal to an audience of professionals, researchers, and independent learners. The second edition is well-supported by strong pedagogical features and online resources to enhance student comprehension.",
     "url": "https://doi.org/10.1017/9781108164085.002",
     "authors": [],
     "tags": [],
@@ -19915,7 +19915,7 @@
     "id": "doi:10.1201/9781003624165-13",
     "name": "Artificial Intelligence in Marine Tribology",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Marine tribology plays a crucial role in ensuring that ship equipment is more durable, efficient, and dependable when it is required to operate in harsh maritime environments. Sometimes, the traditional method of monitoring friction, wear, and lubrication can be inefficient enough to predict breakdowns, and this would be expensive in terms of time and money to fix and to put the machines out of commission. Artificial intelligence (AI) can be used to address these issues in an entirely different manner. In marine systems, AI and machine learning algorithms can be used to monitor the conditions in real time, predictively maintain, and control intelligent lubrication in bearings, propeller shafts, and engines. Using large datasets of sensor measurements of vibration, temperature, and oil quality, AI has the capacity to predict wear patterns and optimize maintenance schedules. This will help enhance fuel economy and extend the life of parts. AI-based data analytics have also been used to develop superior lubricants and surface finishes that are maritime-friendly. This chapter provides an introduction to AI in marine tribology, discusses the issues with their implementation such as the availability of data and integration of systems, and identifies future research directions to produce marine systems that are sustainable and capable of learning.",
     "url": "https://doi.org/10.1201/9781003624165-13",
     "authors": [
       "Vikas Sharma"
@@ -20004,7 +20004,7 @@
     "id": "doi:10.1787/f1498c02-en",
     "name": "Regulatory approaches to Artificial Intelligence in finance",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The use of Artificial Intelligence (AI) in finance has increased rapidly in recent years, with the potential to deliver important benefits to market participants and to improve customer welfare. At the same time, AI in finance could also amplify existing risks in financial markets and create new ones. This report analyses different regulatory approaches to the use of AI in finance in 49 OECD and non-OECD jurisdictions based on the Survey on Regulatory Approaches to AI in Finance.",
     "url": "https://doi.org/10.1787/f1498c02-en",
     "authors": [],
     "tags": [],
@@ -20333,7 +20333,7 @@
     "id": "doi:10.1201/9781003590767-5",
     "name": "Artificial Intelligence in Calibrations",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Conventional calibrations are highly effective in the calibration of single or a small number of devices. The application of artificial intelligence (AI) broadens the calibration practices to thousands of operational devices. In this chapter, the fundamental principles of AI techniques open used in calibrations are explained. The use of AI necessitates a novel way of collecting and processing of data required by the AI models. In this chapter, the AI-related computer and computing requirements are explained in detail.",
     "url": "https://doi.org/10.1201/9781003590767-5",
     "authors": [
       "Halit Eren"
@@ -20581,7 +20581,7 @@
     "id": "doi:10.1201/9781003646716",
     "name": "Intelligent User Interface",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This book aims to mainstream UI/UX design process by explaining latest AI/ML models in a comprehensible way and highlighting case studies on developing intelligent user interfaces for XR systems, human robot interaction, cockpit design and trajectory prediction. The book also discusses the latest standards and guidelines relevant to UI/UX design, layout and equipment list for setting up a lab on intelligent interaction design involving robots, drones and XR systems. Features: Covers a wide array of topics ranging from human factors, computer vision, AR/VR systems, large language models (LLMs) and usability evaluation techniques including statistical hypothesis techniques Discusses latest AI systems such as vision transformers, LLM-based human robot interface and virtual reality-based spacecraft simulation systems Provides a list of freely downloadable software on the covered topics Contains graphical illustrations and a list of quick facts for easy review and recall of basic concepts in each chapter Gives new project ideas on intelligent user interfaces that can be explored by students and early career rsearchers The intended audience of this book is engineering and design students and faculty members, user interface designers, and product managers who would like to be aware of latest AI/ML without diving into too many theoretical details, and use it for their project or product development.",
     "url": "https://doi.org/10.1201/9781003646716",
     "authors": [
       "Pradipta Biswas"
@@ -20838,7 +20838,7 @@
     "id": "doi:10.21608/aiis.2024.389966",
     "name": "Applications of Artificial Intelligence in Scientific Research (Opportunities and Challenges)",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The current research attempted to reveal the reality of using artificial intelligence, the mechanisms for developing scientific research skills, the challenges researchers face when using artificial intelligence, and the threats that educational researchers should be cautious of. The research addresses the following questions: To what extent are educational researchers familiar with AI applications? What opportunities does AI offer to improve the performance of academic researchers? What threats should educational researchers be wary of in scientific research? What are the ethical implications of using AI in scientific research? The research methodology is based on a descriptive survey method that reviews related previous studies and research, as well as an analytical descriptive method to identify weaknesses and challenges in using AI applications in scientific research and the ethical implications of AI use. The study concluded with several recommendations, most notably the introduction of smart applications that assist in scientific research.",
     "url": "https://doi.org/10.21608/aiis.2024.389966",
     "authors": [
       "shimaa Emad Ramadan"
@@ -58288,7 +58288,7 @@
     "id": "doi:10.64898/2026.07.28.26359117",
     "name": "Genetic decoding reveals druggable biology implicitly learned by a medical-history foundation model",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "ABSTRACT Foundation models trained on electronic healthcare records (EHRs) have gained traction with the aim to transform personalised medicine. However, their interpretability is bound to redescribing the records the models were trained on, missing implicitly learned concepts and biases. Here, we show that human genetics provides an orthogonal layer to surface implicitly learned biological concepts and otherwise hidden risk factors. Re-implementing the generative transformer Delphi-2M in >500,000 UK Biobank participants, we performed genome-wide association testing on its 120 learned embeddings and identified 434 genome-wide-significant signals across 151 independent loci and 98 embeddings, revealing a heritable structure that feature-attribution methods cannot recover. Effector-gene mapping implicated cholesterol metabolism and an IL-1-family epithelial-alarmin pathway, supported by strong (>50-fold) enrichment for variants previously associated with blood lipids, body-mass index, and asthma. Loci recovered the targets of essentially all approved lipid-lowering and severe-asthma therapies, and another twelve drugs not obvious from genetic results based on single ICD-10 GWAS. Yet, embeddings poorly explained variation in pleiotropic risk factors, while still retaining most of their predictive value. Substantial improvements in predictive performance were hence confined to a minority of common diseases by adding specific diagnostic or organ-derived markers. Our findings suggest that human genetics might be most powerful as an orthogonal explanatory or regularising layer to train the next generation of EHR-based foundation models that likely benefit most from the addition of targeted biomarkers to advance personalised medicine.",
     "url": "https://doi.org/10.64898/2026.07.28.26359117",
     "authors": [],
     "tags": [],
@@ -62415,7 +62415,7 @@
     "id": "doi:10.3390/ma19153234",
     "name": "Flexible Neuromorphic Memristors: From Mechanisms to Applications.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "The von Neumann architecture, due to the physical separation between memory and processor, has limited the development of data-intensive applications. Neuromorphic computing technologies inspired by the brain's parallel and event-driven operation mechanisms have enabled low-power in-memory computing. Memristors with tunable conductance can emulate biological synapses, while flexible memristors further offer mechanical flexibility, making them suitable for wearable electronics and intelligent sensing systems. This review systematically summarizes the switching mechanisms of flexible neuromorphic memristors, including conductive filaments, interface effects, ferroelectricity, phase change, and multiple synergistic mechanisms. It categorically discusses natural and bio-derived materials, synthetic organic/polymer materials, and inorganic functional materials, and introduces strategies for enhancing flexibility. The article also covers device architectures such as sandwich structures, crossbar arrays, and fiber-based textile structures, along with low-temperature fabrication techniques. Finally, it reviews recent advances in neuromorphic computing, in-memory computing, biomimetic sensing, and biomedical wearable systems. Challenges related to mechanical stability and device uniformity are analyzed, and future directions toward self-healing materials and integrated sensing-storage-computing systems are outlined. This comprehensive review bridges the gap between material innovation and system-level integration in flexible neuromorphic memristors, providing a valuable roadmap for accelerating the development of next-generation wearable artificial intelligence, edge computing, and bio-integrated electronic technologies.",
     "url": "https://doi.org/10.3390/ma19153234",
     "authors": [],
     "tags": [],
