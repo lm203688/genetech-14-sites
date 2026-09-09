@@ -68472,7 +68472,7 @@
     "id": "doi:10.7507/1001-5515.202512069",
     "name": "[Multi-modal tumor boundary clustering recognition based on artificial intelligence virtual cells and near-infrared surgical field].",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "In order to accurately identify tumor boundaries and improve diagnostic efficiency, this study proposes a multi-modal tumor boundary identification method based on artificial intelligence virtual cells and saliency near-infrared spectrum imaging, and uses this to construct the \"Golden Eyes 3.0\" intelligent navigation system. The system integrates the artificial intelligence virtual cell model constructed by the graph convolution network and introduces a loop iterative calibration mechanism to improve prediction accuracy. At the same time, this study also uses adaptive spectral discrimination weighted to optimize spectral feature extraction, realizes multi-modal data fusion through a gated attention mechanism, and finally builds a tumor boundary recognition model based on recurrent neural networks. The test results showed that on the intraoperative data sets of glioma and thyroid cancer, the prediction accuracy of artificial intelligence virtual cells was 98.8% and 98.9% respectively, the sensitivity of saliency detection is 0.1 pmol/L, and the \"Golden Eyes 3.0\" system's recognition accuracy of tumor boundaries could reach 96.2%. The above results prove that the multi-modal tumor boundary identification method proposed in this study can accurately identify tumor boundaries in patients and improve the accuracy of early tumor diagnosis.",
     "url": "https://doi.org/10.7507/1001-5515.202512069",
     "authors": [],
     "tags": [],
