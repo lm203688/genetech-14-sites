@@ -124,3 +124,46 @@
 - **GEO 资产存量**：7 篇长文 + llms.txt / JSON-LD / RSS / IndexNow 全链路在线，被引概率未退化；本周 +2 篇补生命科学 / 合成生物制造最相关前沿环节，仍默认带 X 算法排名信号结构。
 - **数据飞轮仍冻结（GEO 选题 blocker）**：49,879 连续 13+ 天无变化，上游无新实体 → GEO 选题缺新料；根因 `sites/` 零暂存修复（commit `410bff4`）此前已部署于远端 `6220c82`（本次推送仅推文档即印证），但冻结在部署后仍持续、残留阻断待诊断（见 strategy-weekly.md W3 P0-1）→ GEO 选题料恢复取决于该阻断解除。
 - **渠道现状**：Glama / Smithery 认领仍待用户登录（P2）；远端 open issue 仅 `#1 🚀 GEO 自动推广状态`。
+
+## GEO 双引擎审计 · 2026-09-09 00:02 UTC
+- 目标站点：https://lm203688.github.io/genetech-14-sites/
+
+### 1) auriti-labs/geo-optimizer-skill（0–100 八类评分）
+  - **总分：38/100 · band = foundation**
+  - 八类分项（score）：
+    - robots: 0
+    - llms: 0
+    - schema: 11
+    - meta: 14
+    - content: 5
+    - signals: 5
+    - ai_discovery: 0
+    - brand_entity: 4
+    - negative_penalty: -1
+  - 优先级修复：
+    - Create robots.txt with Allow rules for AI bots (GPTBot, ClaudeBot, PerplexityBot)
+    - Create /llms.txt for AI indexing: geo llms --base-url https://lm203688.github.io/genetech-14-sites. Note: llms.txt is an organizational signal, not a proven ranking factor. It helps structure content for AI systems.
+    - Expand content to 300+ words — AI engines need substance to cite
+    - Add H2/H3 subheadings to structure content for AI extraction
+    - Add sameAs links in Organization schema to Wikipedia, Wikidata, LinkedIn, or Crunchbase for Knowledge Graph disambiguation
+    - Add a visible /about or /chi-siamo link to build trust signals for AI
+    - Add address, telephone or contactPoint to Organization schema for entity validation
+    - Cite authoritative sources with external links (increase AI credibility)
+    - Create /.well-known/ai.txt to define AI crawler permissions
+    - Create /ai/summary.json with site name and description for AI engines
+
+### 2) shadowresearch/auto-geo（七段式架构 doctor）
+  [FAIL]  TL;DR present                   Lead text is 80 words (target 40-60)
+  [FAIL]  Question-format H2 headings     0 of 1 are question-format; SOP §3 targets all
+  [FAIL]  Article JSON-LD present         No Article JSON-LD block detected
+  [OK]    FAQPage JSON-LD present         Schema.org/FAQPage JSON-LD found
+  [OK]    Entity density                  168.0/1k words (21 entities in 125 words)
+  [FAIL]  Image cadence                   0 images for 125 words (target ~1, 1 per 500 words)
+  [FAIL]  Answer-first first paragraph    First paragraph is 4 words (too short — target 20-120)
+  [OK]    No self-link in related guides  No self-links detected in related section
+  Top 3 fixes (citation lift):
+  1. Add a 40-60 word TL;DR block immediately after the H1. Label it 'TL;DR' for explicit extraction.
+  2. Convert 1 statement-form H2 heading to question form (the questions a user would ask an AI engine).
+  3. Emit a Schema.org/Article JSON-LD block with @type 'Article', headline, author, datePublished, and publisher.
+
+---

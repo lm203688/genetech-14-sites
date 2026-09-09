@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-08",
+  "date": "2026-09-09",
   "total": 300000,
   "sites": 30,
   "perSite": {
@@ -36,7 +36,7 @@
   },
   "quality": {
     "urlCompleteness": 100,
-    "abstractCompleteness": 54,
+    "abstractCompleteness": 56,
     "doiTraceability": 92,
     "dedupRate": 94,
     "uniqueKeys": 282260
@@ -44,16 +44,16 @@
   "status": "ALL-30-SITES-AT-CAP",
   "delta": 0,
   "abstractGap": {
-    "totalMissing": 129774,
+    "totalMissing": 123334,
     "bySource": {
       "crossref": 86932,
       "europepmc": 36986,
       "preprints": 18377,
       "other": 10053
     },
-    "note": "93% 无摘要记录集中在 crossref/europepmc/preprints 三源，且三者 DOI 可溯源度均 100%，可用 DOI 反查 OpenAlex/S2/EuropePMC 摘要接口回填。 [2026-09-08 更新] 摘要回填管道累计回填 15515 条，剩余缺口 ~126710，进度 ~10.9%（独立自动化 1c7a2464 每 12h 批，cap=3000/轮）。构建体积 ~840MB/82%，距 60% 复测阈值尚远。P0 端点仍 DOWN（license/api 自定义域 NXDOMAIN）连续 3 日未解。"
+    "note": "93% 无摘要记录集中在 crossref/europepmc/preprints 三源，且三者 DOI 可溯源度均 100%，可用 DOI 反查 OpenAlex/S2/EuropePMC 摘要接口回填。 [2026-09-09 更新] 摘要回填管道累计回填 18891 条，剩余缺口 123334，进度 13.28%。"
   },
-  "remoteCheck": "a955ac37cb1b",
+  "remoteCheck": "e64fb2cc8bab",
   "guardBlocked": false,
   "history": [
     {
@@ -77,6 +77,20 @@
       "quality": {
         "urlCompleteness": 100,
         "abstractCompleteness": 52,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-08",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 54,
         "doiTraceability": 92,
         "dedupRate": 94,
         "uniqueKeys": 282260
