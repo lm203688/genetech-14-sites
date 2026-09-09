@@ -1,0 +1,281 @@
+{
+  "status": "OK",
+  "breaches": [],
+  "degraded": [],
+  "checks": [
+    {
+      "metric": "freshness",
+      "site": "agent-ecosystem",
+      "value": 0.00015750552424678097,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "ai4science",
+      "value": 0.00015527170251916956,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "alien-minerals",
+      "value": 0.0001546235458939164,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "biocomputing",
+      "value": 0.00015391751889829282,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "bionic-ai",
+      "value": 0.00015278324551052516,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "brain-science",
+      "value": 0.00015230870282208477,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "deep-sea-tech",
+      "value": 0.0001509660961009838,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "embodied-ai",
+      "value": 0.00014948459766529225,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "exo-science",
+      "value": 0.0001489174595585576,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "genetech-tools",
+      "value": 0.00014848921599211517,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "life-science",
+      "value": 0.0001480030992296007,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "low-altitude",
+      "value": 0.0001475285565411603,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "new-energy",
+      "value": 0.0001467878073233145,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "nuclear-energy",
+      "value": 0.00014626696551287615,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "privacy-computing",
+      "value": 0.0001456419598614728,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "quantum-computing",
+      "value": 0.00014515584309895833,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "robot-parts",
+      "value": 0.00014406786600748697,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "sat-6g",
+      "value": 0.00014362804836697048,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "semiconductor",
+      "value": 0.00014316507975260415,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "spatial-computing",
+      "value": 0.00014265581484194156,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "synbio-manufacturing",
+      "value": 0.0001421349730315032,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "tcm-tools",
+      "value": 0.00014174145168728298,
+      "slo": 7
+    },
+    {
+      "metric": "entities",
+      "site": "agent-ecosystem",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "ai4science",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "alien-minerals",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "biocomputing",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "bionic-ai",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "brain-science",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "deep-sea-tech",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "embodied-ai",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "exo-science",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "genetech-tools",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "life-science",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "low-altitude",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "new-energy",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "nuclear-energy",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "privacy-computing",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "quantum-computing",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "robot-parts",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "sat-6g",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "semiconductor",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "spatial-computing",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "synbio-manufacturing",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "tcm-tools",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "source_avail",
+      "value": 97
+    },
+    {
+      "metric": "api_p95",
+      "value": 380
+    }
+  ],
+  "recommendations": [],
+  "timestamp": "2026-09-09T01:00:09.331Z"
+}
