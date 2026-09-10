@@ -111061,7 +111061,7 @@
     "id": "doi:10.34133/cbsystems.0536",
     "name": "Soft Multiaxial Strain Mapping Interface with AI-Driven Decoding for Silent Speech in Noise.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Silent speech interfaces (SSIs) offer a viable alternative to traditional microphones in capturing clear audio in noisy environments. We propose a reconceptualized SSI that reproduces voice by monitoring continuous multiaxial strain maps induced by throat muscle movements. The system integrates a computer vision-based optical strain (CVOS) sensor with deep learning-based voice reconstruction, enabling clear alphabetic communication under extreme noise conditions. The CVOS sensor-comprising a soft silicone substrate with micromarkers and a tiny camera-achieves high-sensitivity marker detection and captures complex strain patterns with higher scalability and reliability compared to conventional wearable sensors. The inference pipeline of the CVOS-based SSI incorporates physics-based automated baseline calibration and content-adaptive temporal attention, enabling robust analysis of the captured strain patterns. Based on the inference results, a personalized text-to-speech model subsequently reconstructs the speaker's voice. These algorithmic features ensure robustness under dynamic conditions by employing real-time adaptive signal processing that compensates for inter- and intrasubject anatomical variability. Alphabet-based communication is achieved through the synergy between optimized algorithms and interface design. The performance of the CVOS-based SSI was validated in real-world noisy scenarios, confirming its practical applicability.",
     "url": "https://doi.org/10.34133/cbsystems.0536",
     "authors": [],
     "tags": [],
