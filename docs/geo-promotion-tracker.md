@@ -253,3 +253,35 @@
   3. Emit a Schema.org/Article JSON-LD block with @type 'Article', headline, author, datePublished, and publisher.
 
 ---
+
+## GEO 双引擎审计 · 2026-09-12 00:02 UTC
+- 目标站点：https://lm203688.github.io/genetech-14-sites/
+
+### 1) auriti-labs/geo-optimizer-skill（0–100 八类评分）
+  - **总分：38/100 · band = foundation**
+  - 八类分项（score）：
+    - robots: 0
+    - llms: 0
+    - schema: 11
+    - meta: 14
+    - content: 5
+    - signals: 5
+    - ai_discovery: 0
+    - brand_entity: 4
+    - negative_penalty: -1
+  - 优先级修复：
+    - Create robots.txt with Allow rules for AI bots (GPTBot, ClaudeBot, PerplexityBot)
+    - Create /llms.txt for AI indexing: geo llms --base-url https://lm203688.github.io/genetech-14-sites. Note: llms.txt is an organizational signal, not a proven ranking factor. It helps structure content for AI systems.
+    - Expand content to 300+ words — AI engines need substance to cite
+    - Add H2/H3 subheadings to structure content for AI extraction
+    - Add sameAs links in Organization schema to Wikipedia, Wikidata, LinkedIn, or Crunchbase for Knowledge Graph disambiguation
+    - Add a visible /about or /chi-siamo link to build trust signals for AI
+    - Add address, telephone or contactPoint to Organization schema for entity validation
+    - Cite authoritative sources with external links (increase AI credibility)
+    - Create /.well-known/ai.txt to define AI crawler permissions
+    - Create /ai/summary.json with site name and description for AI engines
+
+### 2) shadowresearch/auto-geo（七段式架构 doctor）
+  ⚠️ AUTO_GEO_MISSING: 未找到 auto-geo 命令（先 npm i -g auto-geo）
+
+---
