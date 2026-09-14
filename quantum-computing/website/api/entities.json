@@ -217553,7 +217553,7 @@
     "id": "doi:10.1201/9781003637400-6",
     "name": "Quantum Machine Learning",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Quantum Machine Learning (QML) is the convergence of two cutting-edge technologies—quantum computing and artificial intelligence—dedicated to rewriting computational horizons of pattern recognition, optimization, and prediction based on data. The present chapter is an introductory tutorial and cutting-edge coverage of theory foundations, algorithmic developments, and pedagogical models needed to bring QML into secondary and undergraduate classrooms. We then dispel magic from fundamental quantum-computing concepts such as qubits, superposition, entanglement, and quantum gates and demonstrate how they enable quantum algorithms such as the Quantum Fourier Transform, amplitude amplification, variational circuits, and quantum support-vector machines. From these building blocks, the chapter follows classical machine-learning pipelines—data encoding, feature extraction, model training, inference, and evaluation—and demonstrates how they map to their quantum equivalents, with emphasis on hybrid quantum-classical paradigms that are implementable on near-term noisy intermediate-scale quantum (NISQ) devices.",
     "url": "https://doi.org/10.1201/9781003637400-6",
     "authors": [
       "Iti Batra"
@@ -221786,7 +221786,7 @@
     "id": "doi:10.20944/preprints202605.0108.v1",
     "name": "AI-Driven Design of Quantum Dots for Drug Delivery and Pharmacological Applications: A Comprehensive Review",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Quantum dots (QDs) are tiny semiconductor particles with unique light and electronic properties that can be adjusted by changing their size. They are widely usedin drug delivery, bioimaging, and theranostic applications. However, designing the best QDs is difficult because there are many possible combinations, makingtraditional trial-and-error methods slow and inefficient. Artificial intelligence (AI) and machine learning (ML) have improved this process by helping scientistspredict properties, design better QDs, and automate experiments. This review explains how various AI methods, including supervised learning, graph neuralnetworks, generative models, Bayesian optimisation, and active learning, are applied to QD-based drug delivery. These approaches have helped improve QDsynthesis, control drug release, and target specific areas such as tumours and the brain. AI has also supported applications in cancer treatment, neurological diseases,infections, and gene delivery. Despite these benefits, there are still challenges, such as a lack of reliable data, difficulty applying models to real-world conditions,and a limited understanding of how AI models make decisions. New technologies such as self-driving labs, advanced AI models, and quantum computing areexpected to further advance this field. Overall, combining AI with nanotechnology is making drug delivery faster, smarter, and more precise.",
     "url": "https://doi.org/10.20944/preprints202605.0108.v1",
     "authors": [],
     "tags": [],
@@ -231211,7 +231211,7 @@
     "id": "doi:10.2139/ssrn.4144333",
     "name": "Nanophotonic Reservoir Computing for COVID-19 Pandemic Forecasting",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "The coronavirus disease 2019 (COVID-19) has spread worldwide in unprecedented speed, and diverse negative impacts have seriously endangered human society. Accurately forecasting the number of COVID-19 cases can help governments and public health organizations develop the right prevention strategies in advance to contain outbreaks. In this work, a long-term six-month COVID-19 pandemic forecast in second half of 2021 and a short-term 30-day daily ahead COVID-19 forecast in December 2021 are successfully implemented via a novel nanophotonic reservoir computing (RC) based on silicon optomechanical oscillators (OMO) with photonic crystal (PhC) cavities. The testing-dataset forecast results of new cases, new deaths, cumulative cases, and cumulative deaths for six countries demonstrate that the forecasted blue curves are awfully close to the real red curves with exceedingly small forecast errors. Moreover, the forecast results commendably reflect the variations of the actual case data, revealing the different epidemic transmission laws in developed and developing countries. More importantly, the daily ahead forecast results during December 2021 of four kinds of cases for six countries illustrate that the daily forecasted values are highly coincident with the real values, while the relevant forecast errors are tiny enough to verify the good forecasting competence of COVID-19 pandemic dominanted by Omicron strain. Therefore, the implemented nanophotonic reservoir computing can provide some foreknowledge on prevention strategy and healthcare management for COVID-19 pandemic.",
     "url": "https://doi.org/10.2139/ssrn.4144333",
     "authors": [],
     "tags": [],
