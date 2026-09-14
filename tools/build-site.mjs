@@ -498,7 +498,7 @@ function layout({ title, desc, body, jsonld, canonical, type }) {
   const ldScripts = [webSite, organizationLd, ...pageLd]
     .map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`)
     .join('\n');
-  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/topic/">主题图谱</a><a href="${BASE}/insights.html">研究洞察</a><a href="${BASE}/graph.html">知识图谱</a><a href="${BASE}/data.html">数据下载</a><a href="${BASE}/ask.html">AI 问答</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a></nav>`;
+  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/topic/">主题图谱</a><a href="${BASE}/insights.html">研究洞察</a><a href="${BASE}/graph.html">知识图谱</a><a href="${BASE}/data.html">数据下载</a><a href="${BASE}/ask.html">AI 问答</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a><a href="${BASE}/point-guide.html">指向演示</a></nav>`;
   return `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -521,6 +521,7 @@ ${GSC_VERIFICATION ? `<meta name="google-site-verification" content="${esc(GSC_V
 ${BING_VERIFICATION ? `<meta name="msvalidate.01" content="${esc(BING_VERIFICATION)}">` : ''}
 ${ldScripts}
 <style>${CSS}</style>
+<script src="${BASE}/assets/point-guide.js" defer></script>
 </head>
 <body>
 <header class="top"><div class="wrap"><a class="brand" href="${BASE}/">GeneTech 知识引擎<span>${localizeSiteCount('14 个前沿科技垂直领域')}</span></a></div></header>
@@ -1329,6 +1330,54 @@ ${samples.map((q) => `<button type="button" class="card sample" data-q="${esc(q)
 }
 
 /**
+ * 指向式引导演示页 —— 借鉴 heyclicky（farzaa/clicky, MIT）的 Visual Cursor Pointing：
+ * 用动画光标「飞过去指着」教用户使用知识引擎，而非纯文字「点这里」。
+ */
+function renderPointGuideDemo() {
+  const demoCSS = `
+    .pg-demo{max-width:760px;margin:24px auto}
+    .pg-mock{border:1px solid #e2e8f0;border-radius:14px;padding:22px;background:linear-gradient(180deg,#f7faff,#eef4ff)}
+    .pg-field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+    .pg-field label{font-weight:600;color:#0b62d6}
+    .pg-field input{border:1px solid #cdd9ec;border-radius:10px;padding:10px 12px;font-size:15px;background:#fff}
+    .pg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .pg-card{border:1px solid #dbe6f7;border-radius:12px;padding:14px;background:#fff;display:flex;flex-direction:column;gap:4px}
+    .pg-card b{color:#0b3b85}
+    .pg-card span{font-size:13px;color:#5b6b85}
+    .pg-note{margin-top:16px;color:#5b6b85;font-size:14px}
+  `;
+  const body = `<style>${demoCSS}</style>
+<h1>指向式引导 · GeneTech 知识引擎</h1>
+<p class="sub">借鉴开源项目 <a href="https://github.com/farzaa/clicky" target="_blank" rel="noopener">heyclicky</a>（MIT）的 Visual Cursor Pointing：把「该看哪里」用光标飞过去指着，而不是用文字写「点这里」。本组件已全站注入，默认零副作用。</p>
+<section class="pg-demo">
+  <div class="pg-mock">
+    <div class="pg-field" id="pg-search">
+      <label>🔍 全局搜索</label>
+      <input type="text" placeholder="例如：2026 量子计算" readonly>
+    </div>
+    <div class="pg-cards">
+      <div class="pg-card" id="pg-ask"><b>AI 问答</b><span>基于 47,000+ 实体生成带来源的答案</span></div>
+      <div class="pg-card" id="pg-data"><b>数据下载</b><span>导出 JSON / CSV / BibTeX</span></div>
+      <div class="pg-card" id="pg-topic"><b>主题图谱</b><span>按研究方向钻取聚合事实</span></div>
+    </div>
+  </div>
+  <div class="point-guide" data-auto="true">
+    <button data-target="#pg-search" data-label="在这里输入关键词，回车后做 BM25 + RRF 混合检索，取最相关 6 条实体。">① 搜索框</button>
+    <button data-target="#pg-ask" data-label="点这里进入 AI 问答，系统基于知识库实体生成 200-400 字中文答案并标注参考来源。">② AI 问答</button>
+    <button data-target="#pg-data" data-label="需要批量研究？从数据页导出结构化实体，直接喂给自己的 Agent。">③ 数据下载</button>
+    <button data-target="#pg-topic" data-label="按研究方向钻取，AI 引擎可直接引用聚合事实，避免幻觉。">④ 主题图谱</button>
+  </div>
+  <p class="pg-note">点击上方「▶ 开始引导」，光标会自动飞到每个核心入口并讲解。这就是「AI 来到你身边，而不是你去找 AI」的 Web 实现——也是 heyclicky 最核心的交互范式。</p>
+</section>`;
+  return layout({
+    title: '指向式引导演示 — GeneTech 知识引擎',
+    desc: '借鉴 heyclicky 的 Visual Cursor Pointing，用动画光标飞过去指着教用户如何使用 GeneTech 知识引擎。',
+    body,
+    canonical: `${ORIGIN}${BASE}/point-guide.html`,
+  });
+}
+
+/**
  * 站点数量在文案里曾被硬编码为 14，扩域后（22 站及以后）会全站失真。
  * 站点数是运行期才知道的，而 BLOG/常量在模块加载期就已求值，逐处改易漏，
  * 因此统一在输出层做一次收口替换（只针对确定性的量词搭配，避免误伤论文标题）。
@@ -1957,6 +2006,13 @@ async function main() {
   writeFile('blog/index.html', renderBlogIndex());
   for (const a of BLOG_POSTS) writeFile(`blog/${a.slug}.html`, renderArticle(a));
   writeFile('assets/ask.js', ASK_PAGE_JS);
+  // 指向式引导组件（借鉴 heyclicky 的 Visual Cursor Pointing）：默认 no-op，无标记页面零副作用
+  try {
+    writeFile('assets/point-guide.js', fs.readFileSync(path.join(ROOT, 'tools/static/point-guide.js'), 'utf8'));
+  } catch (e) {
+    console.error('[point-guide] 源文件缺失，跳过输出:', e.message);
+  }
+  writeFile('point-guide.html', renderPointGuideDemo());
 
   // 聚合目录，方便 Agent 一次拿到全量站点清单
   writeFile(
