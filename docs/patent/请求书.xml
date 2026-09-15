@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.cnipa.gov.cn/patent/xml/standard" version="1.0">
+  <header>
+    <sender>申请人</sender>
+    <file-name>请求书</file-name>
+    <file-type>request</file-type>
+  </header>
+  <body>
+    <request>
+      <application-type code="11">发明专利</application-type>
+      <invention-title>一种基于DMTL闭环和Arrhenius方程的化学实验优化方法及系统</invention-title>
+      <applicant>
+        <name>________</name>
+        <nationality>CN</nationality>
+        <id-type>身份证</id-type>
+        <id-number>________</id-number>
+        <address>________</address>
+        <phone>________</phone>
+        <email>________</email>
+      </applicant>
+      <inventor>
+        <name>________</name>
+        <nationality>CN</nationality>
+      </inventor>
+      <priority-claim>N</priority-claim>
+      <agency>N</agency>
+      <fee-reduction>Y</fee-reduction>
+    </request>
+  </body>
+</package>

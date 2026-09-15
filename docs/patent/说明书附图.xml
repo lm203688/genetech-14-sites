@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.cnipa.gov.cn/patent/xml/standard" version="1.0">
+  <header>
+    <sender>申请人</sender>
+    <file-name>说明书附图</file-name>
+    <file-type>drawings</file-type>
+  </header>
+  <body>
+    <drawings>
+      <drawing id="1" file="附图1_整体流程图.jpg" format="JPEG" dpi="300">
+        <figure-number>图1</figure-number>
+        <description>整体流程图</description>
+      </drawing>
+      <drawing id="2" file="附图2_3轮DMTL迭代示意图.jpg" format="JPEG" dpi="300">
+        <figure-number>图2</figure-number>
+        <description>3轮DMTL闭环迭代示意图</description>
+      </drawing>
+      <drawing id="3" file="附图3_收敛折线图.jpg" format="JPEG" dpi="300">
+        <figure-number>图3</figure-number>
+        <description>3轮迭代收敛折线图</description>
+      </drawing>
+      <drawing id="4" file="附图4_Arrhenius计算流程图.jpg" format="JPEG" dpi="300">
+        <figure-number>图4</figure-number>
+        <description>Arrhenius方程计算流程图</description>
+      </drawing>
+      <drawing id="5" file="附图5_系统架构图.jpg" format="JPEG" dpi="300">
+        <figure-number>图5</figure-number>
+        <description>系统架构图</description>
+      </drawing>
+    </drawings>
+  </body>
+</package>

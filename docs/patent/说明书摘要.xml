@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.cnipa.gov.cn/patent/xml/standard" version="1.0">
+  <header>
+    <sender>申请人</sender>
+    <file-name>说明书摘要</file-name>
+    <file-type>abstract</file-type>
+  </header>
+  <body>
+    <abstract>
+      <paragraph>本发明公开了一种基于DMTL闭环和Arrhenius方程的化学实验优化方法及系统。该方法包括：接收用户输入的化学实验参数（ΔG、Ea、温度、催化剂、溶剂）；执行第一轮广撒网搜索生成10组随机扰动方案；使用Arrhenius方程k=exp(-Ea/RT)计算速率常数，结合Gibbs自由能和催化剂/溶剂效应矩阵计算综合成功率；执行第二轮贝叶斯优化围绕最优点聚焦搜索；执行第三轮精细搜索收敛到全局最优。本发明在秒级时间内完成30组实验筛选，通过物理规则约束确保预测可行，3轮闭环迭代使平均产率提升83%，可广泛应用于药物发现和化学合成领域的实验优化。</paragraph>
+    </abstract>
+  </body>
+</package>

@@ -2212,6 +2212,62 @@ capabilities: search, entity-lookup, graph, citation, mcp
   };
   writeFile('ai/service.json', JSON.stringify(aiService, null, 2));
 
+  // ===== Agent 发现清单 agent-discovery.json =====
+  // 旧版 12 站架构时每站手写一份 agent-discovery.json（agent-native 发现标准），v3 构建器
+  // 未迁移，导致 closed-loop-engine.js 把它列为待办。此处按同一 schema 自动生成，
+  // 避免人工维护漂移；schema_version 1.1 相对旧版 1.0 新增 license / quality / per-site 计数。
+  let entityGraphSeed = null;
+  try {
+    entityGraphSeed = JSON.parse(
+      fs.readFileSync(path.join(ROOT, 'data/knowledge-graph-entities.json'), 'utf8'),
+    );
+  } catch {
+    /* 旧版实体图可选，缺失不影响构建 */
+  }
+  const crossDomainLinks = Array.isArray(entityGraphSeed?.edges) ? entityGraphSeed.edges.slice(0, 50) : [];
+  const agentDiscovery = {
+    schema_version: '1.1',
+    site_name: 'GeneTech 知识引擎',
+    domain: ORIGIN.replace(/^https?:\/\//, ''),
+    tagline: `Agent 原生科研知识底座 · ${struct.stats.totalSites} 个前沿科技垂直领域 · ${struct.stats.totalEntities} 条结构化实体`,
+    last_updated: new Date().toISOString(),
+    total_entities: struct.stats.totalEntities,
+    total_sites: struct.stats.totalSites,
+    sites: Object.fromEntries(sites.map((s) => [s.slug, { label: SITE_LABELS[s.slug] || s.slug, entities: s.entities.length, api: `${ORIGIN}${BASE}/${s.slug}/website/api/entities.json` }])),
+    api_endpoints: {
+      catalog: `${ORIGIN}${BASE}/api/catalog.json`,
+      topics: `${ORIGIN}${BASE}/api/topics.json`,
+      graph: `${ORIGIN}${BASE}/api/graph.json`,
+      authors: `${ORIGIN}${BASE}/api/authors.json`,
+      timeline: `${ORIGIN}${BASE}/api/timeline.json`,
+      insights: `${ORIGIN}${BASE}/api/insights.json`,
+      stats: `${ORIGIN}${BASE}/api/stats.json`,
+      webmcp: `${ORIGIN}${BASE}/ai/summary.json`,
+      faq: `${ORIGIN}${BASE}/ai/faq.json`,
+      service: `${ORIGIN}${BASE}/ai/service.json`,
+      llms_txt: `${ORIGIN}${BASE}/llms.txt`,
+      sitemap: `${ORIGIN}${BASE}/sitemap.xml`,
+      rss: `${ORIGIN}${BASE}/rss.xml`,
+      license: `${ORIGIN}${BASE}/license.html`,
+      mcp_install: 'npx -y @genetech/data-mcp',
+    },
+    quality: struct.stats.coverage,
+    sources: Object.keys(struct.stats.bySource),
+    data_license: 'CC-BY-4.0',
+    ai_agent_instructions:
+      `Use ${ORIGIN}${BASE}/api/catalog.json to enumerate the ${struct.stats.totalSites} domains, then query ` +
+      `<site>/website/api/entities.json for full entity records (id, title, authors, year, doi, abstract, sources). ` +
+      `All data is freely accessible via GET without authentication and licensed CC-BY-4.0. ` +
+      `${ORIGIN}${BASE}/ai/summary.json exposes the same capabilities as a webmcp tool manifest.`,
+    cross_domain_links: crossDomainLinks,
+    cross_domain_links_note:
+      crossDomainLinks.length
+        ? `来自 data/knowledge-graph-entities.json（旧版 12 站实体图，${crossDomainLinks.length} 条跨域桥接关系）。` +
+          '注意：该图的节点 URL 指向旧架构页面，在现行 v3 站点上不可达；请只把 relation/label 当作跨域桥接设计参考，实体定位改用 api/topics.json。'
+        : '暂无。',
+  };
+  writeFile('agent-discovery.json', JSON.stringify(agentDiscovery, null, 2));
+
   // ===== GEO 增强：自动生成 AI 博客导读（可选，LLM 未配置则跳过）=====
   // 由 tools/insights-narrate.mjs 提供；若 llm-bridge 已配置，会调用 LLM 基于
   // trends.trending 生成 8 篇 200 字以内的中文导读，写入 content/blog/insights-narrated.md。
