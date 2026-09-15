@@ -29919,7 +29919,7 @@
     "id": "doi:10.1109/qccl65142.2025.11157983",
     "name": "Limitations of Quantum Advantage in Unsupervised Machine Learning",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Machine learning models are used for pattern recognition analysis of big data, without direct human intervention. The task of unsupervised learning is to find the probability distribution that would best describe the available data, and then use it to make predictions for observables of interest. Classical models generally fit the data to Boltzmann distribution of Hamiltonians with a large number of tunable parameters. Quantum extensions of these models replace classical probability distributions with quantum density matrices. An advantage can be obtained only when features of density matrices that are absent in classical probability distributions are exploited. Such situations depend on the input data as well as the targeted observables. Explicit examples are discussed that bring out the constraints limiting possible quantum advantage. The problemdependent extent of quantum advantage has implications for both data analysis and sensing applications.",
     "url": "https://doi.org/10.1109/qccl65142.2025.11157983",
     "authors": [
       "Apoorva D. Patel"
@@ -184686,7 +184686,7 @@
     "id": "doi:10.1002/9781394347070.ch21",
     "name": "A Systematic Introduction to Quantum Computing and Quantum Machine Learning for IoT Applications",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "This chapter provides a beginner-friendly introduction to quantum machine learning (QML). We begin by exploring basic principles of quantum computing and its practical implementation using quantum circuits. We also look at creating and visualizing the quantum circuit using PennyLane. The core focus then shifts to data encoding and processing using variational quantum algorithms including hybrid quantum–classical algorithms. This chapter includes examples of PennyLane pseudo code, guiding readers through implementing basic QML algorithms. The chapter concludes with a discussion on how quantum technologies can play a pivotal role in advancing future IoT systems.",
     "url": "https://doi.org/10.1002/9781394347070.ch21",
     "authors": [
       "Mathew Vincent",
