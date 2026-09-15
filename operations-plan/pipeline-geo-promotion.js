@@ -255,6 +255,23 @@ async function maybeGeneratePost(allEntities, state, dryRun) {
 
   if (!dryRun) {
     await fs.mkdir(CONTENT_BLOG_DIR, { recursive: true });
+    // patch-never-regenerate：slug 按日期生成，同日重跑不得整篇重写。
+    // 文件已存在 → 跳过创建（保留原文），仅推进游标，避免覆盖已发布内容。
+    // 规范见 operations-plan/UPDATE_DISCIPLINE.md
+    if (fss.existsSync(filePath)) {
+      return {
+        generated: false,
+        skipped: true,
+        reason: '文章已存在（同日重跑不重写）',
+        slug,
+        title,
+        filePath: `content/blog/${slug}.md`,
+        entityCount: picked.length,
+        siteCount: siteList.length,
+        cursor: maxAdded,
+        newCount: newOnes.length,
+      };
+    }
     await fs.writeFile(filePath, md, 'utf8');
   }
 

@@ -10,6 +10,7 @@
 #   - rollout-verify 部署后抽样验证 + 回退触发
 #   - mcp-publish    校验并标记 MCP 发布
 #   - api-guard-check 校验鉴权 Worker 语法与配置
+#   - cite-check     引文完整性核验（URL 存活/DOI 撤回/逐条核验，产 reports/cite-check-*.json+.md）
 #
 # 与 operations-plan/github-actions-ops.yml 的 ops.yml 错峰：ops.yml 18:00 UTC 采集，
 # 本工作流 19:00 UTC 衔接，避免同一时刻多 job 推送冲突（统一单次提交）。
@@ -24,7 +25,7 @@ on:
         required: true
         default: 'all'
         type: choice
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard]
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite]
   schedule:
     # ===== 临时提升期（2026-08-05 ~ 2026-12-31）：每日 12:30 UTC(20:30 CST) 一次全量运行 =====
     # 提升期到期判定在 ops.yml 的 decide 步骤（$TODAY > 2026-12-31），此处仅跟随其节奏；
@@ -83,6 +84,7 @@ jobs:
           if [[ "$TASK" == "all" || "$TASK" == "verify" ]]; then run_one rollout-verify; fi
           if [[ "$TASK" == "all" || "$TASK" == "mcp" ]]; then run_one mcp-publish; fi
           if [[ "$TASK" == "all" || "$TASK" == "geo" ]]; then run_one geo-promotion; fi
+          if [[ "$TASK" == "all" || "$TASK" == "cite" ]]; then run_one cite-check; fi
           if [[ "$TASK" == "all" || "$TASK" == "guard" ]]; then
             node --check api-guard/worker.js && echo "[guard] worker.js 语法 OK"
             grep -q "addEventListener('fetch'" api-guard/worker.js || { echo "::error::worker.js 缺少 fetch 事件监听"; exit 1; }
