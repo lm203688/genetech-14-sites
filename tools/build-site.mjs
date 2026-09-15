@@ -46,7 +46,11 @@ const BASE = (process.env.SITE_BASE ?? getArg('--base', '')).replace(/\/$/, '');
 const SITE_ORIGIN = process.env.SITE_ORIGIN || '';
 // 生产环境绝对地址（用于 canonical / og:url / JSON-LD；CI 会通过 SITE_ORIGIN 覆盖）
 const PROD_ORIGIN = 'https://lm203688.github.io';
-const ORIGIN = SITE_ORIGIN || PROD_ORIGIN;
+// GitHub Pages 的 pages.outputs.origin 恒回 http://（不含 scheme 升级），直接采用会让
+// robots.txt 的 Sitemap、llms.txt、canonical、og:url、JSON-LD 全变 http —— 搜索引擎与
+// GEO 抓取器优先收录 https。此处对非 localhost 的 http:// 统一升级为 https://。
+const upgradeToHttps = (u) => (u && u.startsWith('http://') && !/^http:\/\/(localhost|127\.0\.0\.1)/.test(u) ? `https://${u.slice(7)}` : u);
+const ORIGIN = upgradeToHttps(SITE_ORIGIN || PROD_ORIGIN);
 // IndexNow 密钥：公开托管于 .well-known/indexnow.txt；CI 端需在仓库 Secrets 配置同名 INDEXNOW_KEY 才能向 Bing/Yandex 提交
 // 优先用 CI 注入的真实密钥（仓库 Secrets: INDEXNOW_KEY），缺省回退占位值（需替换）
 // IndexNow 密钥：默认用仓库内置稳定 key（state/indexnow-key.txt，已随仓库提交，零外部账号），
@@ -696,7 +700,7 @@ ${
       {
         '@type': 'DataDownload',
         encodingFormat: 'application/json',
-        contentUrl: `${SITE_ORIGIN}${BASE}/${site.slug}/website/api/entities.json`,
+        contentUrl: `${ORIGIN}${BASE}/${site.slug}/website/api/entities.json`,
       },
     ],
   };

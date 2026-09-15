@@ -75,7 +75,30 @@ Merchant of Record 完整指南（订阅 / 税务合规 / 拒付 / 结算，`api
 
 ---
 
-## 三、安全发现（需你处理）
+## 三、引用过程中发现的全站级缺陷（已修复）
+
+验证 `agent-discovery.json` 线上产物时发现：`catalog` 端点是 `http://data.swarmlabs.tools/api/catalog.json`（HTTP，非 HTTPS）。
+
+**根因**：GitHub Actions 的 `pages.outputs.origin` 恒返回 `http://` 且不做 scheme 升级，`build-site.mjs:49` 原样采用。
+
+**影响面（D1 自定义域上线后一直存在，此前未被发现）**：`robots.txt` 的 `Sitemap:` 与 `LLMs.txt:`、`llms.txt` 内 89 处 URL、每站 `canonical` / `og:url` / JSON-LD `DataDownload.contentUrl`、`sitemap.xml`、`ai/summary.json` —— 全站绝对 URL 均为 `http://`。搜索引擎与 GEO 抓取器优先收录 https，这直接压制 D1 期望的「GEO 38 → 60+」提升。
+
+**修复**：`build-site.mjs` 新增 `upgradeToHttps()`，对非 localhost 的 `http://` 统一升级为 `https://`；并把 `contentUrl` 从直接用 `SITE_ORIGIN` 改为用 `ORIGIN`（消除双源）。
+
+**验证**（用 CI 实际传入的 `SITE_ORIGIN=http://data.swarmlabs.tools` 模拟构建 818MB 全量产物）：
+
+| 产物 | 结果 |
+|---|---|
+| `robots.txt` | 2 处 URL 全 https |
+| `llms.txt` | 89 处 URL 全 https |
+| `index.html` canonical | `https://data.swarmlabs.tools/` |
+| `sitemap.xml` `<loc>` | 全 https |
+| `agent-discovery.json` | 14 个 URL 端点全 https |
+| 全量产物 `http://data.swarmlabs.tools` 残留 | **0 个文件** |
+
+---
+
+## 四、安全发现（需你处理）
 
 扫描发现该 zip 内含 **3 处明文凭证**，**均未**被引用进项目：
 
