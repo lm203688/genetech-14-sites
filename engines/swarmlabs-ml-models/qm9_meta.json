@@ -1,0 +1,14 @@
+{
+  "qm9_training_data_size": 20000,
+  "qm9_data_source": "QM9 DFT B3LYP/6-31G(2df,p) (20000分子×10属性)",
+  "qm9_features": [
+    "n_atoms",
+    "n_C",
+    "n_H",
+    "n_N",
+    "n_O",
+    "n_F"
+  ],
+  "total_qm9_available": 130831,
+  "validation": "5-fold CV"
+}

@@ -1,0 +1,13 @@
+{
+  "engine_id": "perovskite",
+  "target": "efficiency_pct",
+  "features": [
+    "bandgap"
+  ],
+  "physics_mae": 1.4388,
+  "corrected_mae": 0.9133,
+  "improvement_pct": 36.5,
+  "training_samples": 100,
+  "model_type": "GradientBoostingRegressor",
+  "method": "物理方程基线 + ML残差校正"
+}

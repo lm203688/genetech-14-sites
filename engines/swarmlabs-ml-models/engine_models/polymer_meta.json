@@ -1,0 +1,14 @@
+{
+  "engine_id": "polymer",
+  "target": "tensile_MPa",
+  "features": [
+    "mn",
+    "tacticity"
+  ],
+  "physics_mae": 4.6854,
+  "corrected_mae": 2.7239,
+  "improvement_pct": 41.9,
+  "training_samples": 100,
+  "model_type": "GradientBoostingRegressor",
+  "method": "物理方程基线 + ML残差校正"
+}

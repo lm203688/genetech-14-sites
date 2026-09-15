@@ -1,0 +1,13 @@
+{
+  "model": "MPNN v3 (5层 h=128 + LayerNorm + Dropout 0.15)",
+  "train": "8,000分子 (6,000 train + 2,000 test)",
+  "targets": [
+    "dipole",
+    "HOMO",
+    "LUMO",
+    "gap",
+    "alpha",
+    "zpve"
+  ],
+  "advantage": "v3加入LayerNorm正则化,训练更稳定"
+}

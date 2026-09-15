@@ -1,0 +1,41 @@
+{
+  "qm9_full_training_size": 130831,
+  "qm9_data_source": "QM9 DFT B3LYP/6-31G(2df,p) 全集130831分子",
+  "model_type": "RandomForest (100 trees, max_depth=15)",
+  "features": [
+    "n",
+    "C",
+    "H",
+    "N",
+    "O",
+    "F"
+  ],
+  "targets": {
+    "dipole": {
+      "mae": 0.9499956383215522,
+      "rel_err": 3.2141791230378267
+    },
+    "homo": {
+      "mae": 0.3876503102495385,
+      "rel_err": 4.357873847713858
+    },
+    "lumo": {
+      "mae": 0.74211086509581,
+      "rel_err": 7.400830375728604
+    },
+    "gap": {
+      "mae": 0.797357003368591,
+      "rel_err": 4.9041565390348065
+    },
+    "alpha": {
+      "mae": 2.0234240503104943,
+      "rel_err": 1.0632252904789525
+    },
+    "zpve": {
+      "mae": 0.0365983515152972,
+      "rel_err": 0.5213182698134039
+    }
+  },
+  "validation": "80/20 train-test split",
+  "training_time": "3s"
+}

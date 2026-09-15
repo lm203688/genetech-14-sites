@@ -188042,7 +188042,7 @@
     "id": "doi:10.1109/iscas45731.2020.9180682",
     "name": "Live Demonstration: Low-Power and High-Speed Deep FPGA Inference Engines for Weed Classification at the Edge",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "In Low-Power and High-Speed Deep FPGA Inference Engines for Weed Classification at the Edge [1] we implemented GPU- and FPGA-accelerated deterministically binarized Deep Neural Networks (DNNs), tailored toward weed species classification for robotic weed control. The dataset used consisted of 17,508 unique 256×256 color images in 9 classes, collected in situ from eight rangeland areas across Northern Australia [2]. For this live demonstration, we have designed a weed classification game. We first provide the visitor with a printed sheet showing several examples of each of the 9 various weed species classes in our dataset, to learn and memorize the weed names. This learning process can take for as long as the visitor wishes. For the game to start, five weed images from our test set are randomly selected. We then measure the interference times and accuracies for our optimized GPUand FPGA-accelerated binarized DNNs, alongside the visitors' performance. Are low-resolution, low-power, binarized DNNs able to outperform humans at categorizing weed species?",
     "url": "https://doi.org/10.1109/iscas45731.2020.9180682",
     "authors": [
       "Corey Lammie",
@@ -188062,7 +188062,7 @@
     "id": "doi:10.1109/icc52391.2025.11161292",
     "name": "Oaci: Online Adaptive Collaborative Inference Among Edge Devices Under Resource-Constrained Conditions",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Under resource-constrained conditions, the performance level of edge devices, including limited device memory and the ability to load models, significantly impacts inference on these devices. Additionally, network fluctuations further exacerbate inference delays during collaborative inference across multiple devices. Therefore, to effectively utilize the resources of edge devices and address the impact of network fluctuations on collaborative inference, this paper proposes an Online Adaptive Collaborative Inference among edge devices under resource-constrained conditions (OACI)method, which splits lightweight ONNX models for deployment across multiple edge devices. Notably, the model's accuracy is not affected after partitioning. Our enhanced$\\lambda$LinUCB algorithm dynamically predicts inference delays and optimizes partition points for cooperative inference. Experiments on real and simulated data show that OACI achieves 97.71 % accuracy in predicting inference delays and reduces CPU utilization to one-third of that required for single-device inference. This significantly alleviates the inference pressure on edge devices under resource-constrained conditions.",
     "url": "https://doi.org/10.1109/icc52391.2025.11161292",
     "authors": [
       "Chao Yang",
@@ -188147,7 +188147,7 @@
     "id": "doi:10.1109/siitme53254.2021.9663723",
     "name": "Efficient Unaligned Memory Access of Tightly Packed Weights for Deep Neural Network Inference on Edge Devices",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The increase in computational power enabled complex problems to be solved by employing new techniques from the field of Artificial Intelligence (AI) based on Deep Neural Networks (DNN) and Deep Learning (DL). A recent trend is to apply these techniques that have proven to generate excellent results to Edge computing. However, Edge computing is based on simple low power devices, which are severely restricted in terms of computational power and especially by the available memory size. Being able to pack the Neural Network parameters in the available memory efficiently is a must. Normally, memory systems expect transactions to be aligned to the bus size for maximum performance. This can result in inefficient memory utilization, as the groups of parameters required to be read in parallel need to be stored aligned in memory. In this paper, I present a memory controller to provide unaligned memory transfers at full bus width. When using this controller, the memory efficiency can be increased by 25%, while preserving the memory access time.",
     "url": "https://doi.org/10.1109/siitme53254.2021.9663723",
     "authors": [
       "Ciprian Seiculescu"
@@ -188187,7 +188187,7 @@
     "id": "doi:10.1109/iscas.1997.622101",
     "name": "Block-edge reduction in MPEG-1 coded images using statistical inference",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "A method is proposed in this paper to filter the block-edge artifact which is a common problem in block-based coding mechanisms used in various digital image and video coding standards. In this method, an algorithm for post-filtering is proposed, based on local statistical characteristics of a video image. This algorithm makes the filtering process adaptive when filtering the block-edge artifacts at different quantisation levels using a linear filter. In the filtering process, the proposed method first determines the blocks causing high block-edge artifacts and then a linear filter is applied along the edges to reduce the block-edge artifacts.",
     "url": "https://doi.org/10.1109/iscas.1997.622101",
     "authors": [
       "S. Suthaharan"
@@ -188206,7 +188206,7 @@
     "id": "doi:10.1109/gcwkshps58843.2023.10464411",
     "name": "Privacy-Aware Adaptive Model Splitting for Device-Edge Co Inference",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The device-edge co-inference has emerged as a promising enabling technology for edge intelligence, which bal-ances the computational workload and communication overhead through model splitting. However, device-edge co-inference will expose the users' intermediate feature information to potential adversaries, and the adversaries may obtain the users' original data and location information through various possible means. In this paper, we present a privacy-aware adaptive model splitting approach to balance privacy preservation and communication-computation performance in device-edge co-inference. First, we use the reconstruction image similarity to evaluate the influence of reconstruction attacks on original data privacy under different splitting points. Second, we design an entropy-based location privacy evaluation metric to evaluate the location privacy of different splitting points, and propose a differential privacy-based transmit power perturbation mechanism to protect location privacy. Third, to balance the performance of privacy and communication-computation, we aim to solve the tradeoff problem of data privacy, location privacy, latency and energy consumption by optimizing the splitting point. Furthermore, we propose a deep reinforcement learning (DRL) based Adaptive Splitting Point Selection (DRL-ASPS) algorithm to solve the tradeoff problem. Simulations show that our proposed DRL-ASPS can effectively protect data and location privacy while maintaining the latency and energy consumption performance of co- inference.",
     "url": "https://doi.org/10.1109/gcwkshps58843.2023.10464411",
     "authors": [
       "Guanwu Jiang",
@@ -188228,7 +188228,7 @@
     "id": "doi:10.1109/gcce59613.2023.10315549",
     "name": "Evaluation of Membership Inference Attack Against Federated Learning With Differential Privacy on Edge Devices",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Federated learning (FL) is a distributed deep learning technique in which training parties are split into a server and clients. Each client trains a model with its own training data and only sends the model to the server. Here, the clients do not share training data with each other, including private information. While this may be beneficial for data privacy, there is the growing threat of membership inference attacks (MIAs), which reveal private information in the training data from the model. FL with differential privacy (DP) is one of the countermeasures against MIAs. In this paper, we evaluated the relationship between the robustness against an MIA and the amount of noise added by DP in FL with varying calculation precisions, i.e., IEEE754 32-bit floating-point, IEEE754 16-bit (half-precision) floating-point, and bfloat16. The latter two conditions were implemented assuming that the training process of the client is performed on edge devices with limited computational resources. Our experimental results showed that there was a trade-off between defense and model accuracy. Furthermore, we found that the half-precision floating-point calculations do not cause significant degradation in the model accuracy even when used with DP.",
     "url": "https://doi.org/10.1109/gcce59613.2023.10315549",
     "authors": [
       "Rei Ueda",
@@ -188250,7 +188250,7 @@
     "id": "doi:10.1109/acdsa67686.2026.11467761",
     "name": "An Implementation of Secure Split Inference for Large Language Models on Resource-Constrained Edge Devices",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Large Language Models (LLMs) are increasingly deployed on edge devices to improve latency, reduce costs, and increase privacy, compared to cloud-only inference. However, resource constraints often require computation to be done on nearby servers, which introduces new privacy risks. This paper addresses that challenge by designing and implementing a secure, two-party computation system for LLM inference using a clientserver architecture. The protocol is based on additive secret sharing: a Raspberry Pi client masks activation tensors with onetime random keys before sending them to a server, which performs blind linear computations and returns encrypted results. The client then decrypts the results and performs all non-linear computations locally. The research demonstrates the viability of this approach through a complete implementation of private DistilGPT-2 inference, offloading all 37 linear layers to a Mac server while preserving the privacy of the user's input. The analysis highlights an important trade-off: while the system provides strong privacy guarantees, it accumulates significant performance overhead with 74 network messages per inference. The proposed research proposes that secure split inference is feasible, but its practicality depends on optimizing communication and integrating acceleration techniques. The experiments have been made available in GitHub.",
     "url": "https://doi.org/10.1109/acdsa67686.2026.11467761",
     "authors": [
       "Nada Hameed",
@@ -188270,7 +188270,7 @@
     "id": "doi:10.1109/globecom52923.2024.10901548",
     "name": "Enabling Collaborative and Green Generative AI Inference in Edge Networks",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Recent advances in the diffusion model mark a significant leap in AI-generated image technology while extending its application to the Internet of Things (IoT). However, deploying these models on resource-constrained edge devices presents considerable challenges, primarily due to their high computational energy demands and stringent quality requirements. In response to these challenges, we introduce a collaborative inference system tailored for green edge networks. First, we propose a multi-exit U-ViT model that achieves the balance between inference quality and processing speed by allowing adaptive selection of exit points during diffusion for efficient processing. Next, we develop a novel generative AI-assisted reinforcement learning algorithm that controls the exit selections and offloading decisions of the device to achieve maximum global gain. Furthermore, we design a novel policy network incorporating an attention-based state-embedded policy network to enhance the algorithm’s ability to perceive and make decisions about the state of the environment. Experimental results demonstrate that our system achieves energy-efficient inference while ensuring the quality of the generated content.",
     "url": "https://doi.org/10.1109/globecom52923.2024.10901548",
     "authors": [
       "Meng Tian",
@@ -188294,7 +188294,7 @@
     "id": "doi:10.1109/cscwd61410.2024.10580144",
     "name": "MACA: Memory-aware convolution accelerating for CNN inference on edge devices",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Deep learning inference tasks develop towards the edge due to their latency requirements and privacy issues. However, edge devices are limited by their power consumption and size, and generally have limited resources. The convolutional neural networks (CNN) is commonly used in image processing tasks which contains a large number of convolutional layers, accounting for more than 95% of the calculation time in most general used CNN model. This paper proposes a general convolutional layer optimization method called MACA, we implement and optimize a variety of convolution operators and design a memory-aware convolution operator automatic selection strategy to select appropriate operator, without modifying user code. Finally, we integrate MACA into PyTorch and conduct extensive experiments. The results show that when memory resources are sufficient, MACA can effectively increase the inference by 36.10% on average, and can reduce memory usage by an average of 29.14% to complete inference when resources are tight. This paper provides an effective solution for deploying deep learning models on resource-constrained edge devices.",
     "url": "https://doi.org/10.1109/cscwd61410.2024.10580144",
     "authors": [
       "Chaoxiong Yi",
@@ -188316,7 +188316,7 @@
     "id": "doi:10.1109/milcom58377.2023.10356302",
     "name": "Failure-Resilient ML Inference at the Edge through Graceful Service Degradation",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "With recent innovations in machine learning (ML) technologies, especially deep learning, many IoT applications have increasingly relied on ML models for various tasks, such as classification, detection, and decision-making. Most of these tasks are latency-sensitive and depend on models deployed at the edge of the network. Network and edge devices are prone to various kinds of failures, such as transient, crash, or Byzantine failures. Such failures can impact the IoT device’s ability to offload tasks, affecting the system’s reliability. A traditional solution involves replicating the underlying resources and deploying a failover replica of the ML model. However, edge resources are typically limited, and increasing their size incurs significant computational and infrastructure cost overheads.This paper proposes a range of failover strategies for resource-constrained edge environments, leveraging the flexibility offered by ML models. We explore various approaches for graceful service degradation, such as degraded accuracy, latency, and sampling rate, and highlight their potential benefits and trade-offs. Furthermore, we discuss the challenges associated with these techniques and outline future directions.",
     "url": "https://doi.org/10.1109/milcom58377.2023.10356302",
     "authors": [
       "Walid A. Hanafy",
@@ -188339,7 +188339,7 @@
     "id": "doi:10.1109/icecs46596.2019.8965079",
     "name": "Optimal Input-Dependent Edge-Cloud Partitioning for RNN Inference",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Recurrent Neural Networks (RNNs) such as those based on the Long-Short Term Memory (LSTM) architecture are state-of-the-art deep learning models for sequence analysis. Given the complexity of RNN-based inference, IoT devices typically offload this task to a cloud server. However, the complexity of RNN inference strongly depends on the length of the processed input sequence. Therefore, when communication time is taken into account, it may be more convenient to process short input sequences locally and only offload long ones to the cloud. In this paper, we propose a low-overhead runtime tool that performs this decision automatically. Results based on performance profiling of real edge and cloud devices show that our method is able to reduce the total execution time of the system by up to 20% compared to solutions that execute the RNN inference fully locally or fully in the cloud.",
     "url": "https://doi.org/10.1109/icecs46596.2019.8965079",
     "authors": [
       "Daniele Jahier Pagliari",
@@ -188362,7 +188362,7 @@
     "id": "doi:10.23919/vlsit.2019.8776525",
     "name": "Energy-Efficient Edge Inference on Multi-Channel Streaming Data in 28nm HKMG FeFET Technology",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "We present a system implementing extremely energy-efficient inference on multi-channel biomedical-sensor data. We leverage Ferroelectric FET (FeFET) to perform classification directly on analog sensor signals. We demonstrate: (i) voltage-controlled multi-domain ferroelectric polarization switching to obtain 8 distinct transconductance (gm) states in a 28nm HKMG FeFET technology [1], (ii) 30× tunable range in gmover the bandwidth of interest, (iii) successful implementation of artifact removal, feature extraction and classification for seizure detection from CHB-MIT EEG dataset with 98.46% accuracy and . false alarm rate for two patients, (iv) ultra-low energy of 47 fJ/MAC with 1,000× improvement in area compared to alternative mixed-signal MAC.",
     "url": "https://doi.org/10.23919/vlsit.2019.8776525",
     "authors": [
       "S. Dutta",
@@ -188407,7 +188407,7 @@
     "id": "doi:10.1109/asp-dac58780.2024.10473987",
     "name": "Adaptive Workload Distribution for Accuracy-aware DNN Inference on Collaborative Edge Platforms",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "DNN inference can be accelerated by distributing the workload among a cluster of collaborative edge nodes. Heterogeneity among edge devices and accuracy-performance trade-offs of DNN models present a complex exploration space while catering to the inference performance requirements. In this work, we propose adaptive workload distribution for DNN inference, jointly considering node-level heterogeneity of edge devices, and application-specific accuracy and performance requirements. Our proposed approach combinatorially optimizes heterogeneity-aware workload partitioning and dynamic accuracy configuration of DNN models to ensure performance and accuracy guarantees. We tested our approach on an edge cluster of Odroid XU4, Raspberry Pi4, and Jetson Nano boards and achieved an average gain of 41.52% in performance and 5.2% in output accuracy as compared to state-of-the-art workload distribution strategies.",
     "url": "https://doi.org/10.1109/asp-dac58780.2024.10473987",
     "authors": [
       "Zain Taufique",
@@ -188450,7 +188450,7 @@
     "id": "doi:10.1109/icassp43922.2022.9747152",
     "name": "A Simple Hybrid Filter Pruning for Efficient Edge Inference",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Convolutional Neural Networks have been extensively used for solving many vision problems. However, due to high memory and computational requirements, deployment of these models on edge devices is limited. Many embedded friendly models such as MobileNet, ShuffleNet, SqueezeNet, and many more are proposed to serve this purpose. But these models are still not compact enough to deploy on edge devices. The popular metric-based pruning methods (which are aimed at pruning insignificant and redundant filters) could achieve limited compression for embedded friendly models such as MobileNet. In this paper, we propose a novel hybrid filter pruning method that prunes both redundant and insignificant filters at the same time. Additionally, we have designed custom regularizers that enable us to prune additional filters from convolutional layers. Pruning experiments are conducted on MobileNetv1 based Single-Shot Object Detector (SSD) for face detection problem. Through our experiments, we could prune 40.11% of parameters and reduce 67.03% of FLOPs from MobileNetv1 with a little drop in model performance (1.67 mAP on MS COCO). On an ARM-based edge device, the inference time is reduced from 198ms to 84ms.",
     "url": "https://doi.org/10.1109/icassp43922.2022.9747152",
     "authors": [
       "S. H. Shabbeer Basha",
@@ -188471,7 +188471,7 @@
     "id": "doi:10.1109/induscon66435.2025.11241539",
     "name": "Portable Neural Inference via WebAssembly on Resource-Constrained Edge Devices: A Case Study on ESP32-CAM",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "The increasing demand for artificial intelligence (AI) inference at the edge introduces a significant challenge: achieving true portability across heterogeneous hardware architectures with minimal overhead. This paper presents a modular and low-footprint solution based entirely on WebAssembly (WASM), enabling convolutional neural networks (CNNs) to execute directly on microcontrollers such as the ESP32-CAM. All neural logic is manually implemented in WebAssembly Text Format (WAT), compiled to. wasm, and executed using the WebAssembly Micro Runtime (WAMR). The proposed firmware supports image acquisition, RGB565 decoding, and preliminary convolution routines. Experimental results confirm that the same binary runs unmodified on x86, ARM64 (Raspberry Pi), and Xtensa (ESP32) architectures without recompilation. These findings validate WebAssembly as a viable abstraction layer for AI portability and transparency on resource-constrained edge devices.",
     "url": "https://doi.org/10.1109/induscon66435.2025.11241539",
     "authors": [
       "Rafael Costa Braga",
@@ -188491,7 +188491,7 @@
     "id": "doi:10.1109/ccnc65079.2026.11366473",
     "name": "SPICE: Structured Pruning for Inference on Constrained Edge Devices",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "To address the challenge of deploying large AI models on resource-constrained edge devices, we propose SPICE, a systematic three-stage pipeline for model selection, optimization, and deployment. For a real-world animal ecology task requiring on-device image segmentation, we introduce our novel TaLK-Structure Pruning algorithm. TaLK intelligently allocates layer-wise pruning quotas based on first-order Taylor sensitivity and computational cost, preventing layer collapse while maximizing efficiency. We achieved significant reductions in model size, parameter count and computational overhead with pruning ratios ranging from 0.5 to 0.9. Knowledge distillation–assisted fine-tuning recovered the performance of the compressed models, achieving an mIoU of 0.54±0.07 and an accuracy of 63±8% (at a pruning ratio of 0.5) over our downstream task. Deployed on a Raspberry Pi, the optimized models meet strict operational constraints, demonstrating low latency (wall time < 30s), minimal energy consumption of ∼4±2W (for multiple inferences within a 60-second window) ensuring high inference confidence across all test cases. Our end-to-end pipeline provides a simple framework for effectively deploying complex vision models on niche edge devices. Alongside, our pipeline is fully reproducible, open-source, and available on GitHub at https://github.com/sdasosu/SPICE",
     "url": "https://doi.org/10.1109/ccnc65079.2026.11366473",
     "authors": [
       "Subhransu Das",

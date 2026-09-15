@@ -1,0 +1,20 @@
+{
+  "training_data_size": 271,
+  "training_data_source": "271分子(NIST WebBook真实实验值)",
+  "features": [
+    "molecular_weight",
+    "xlogp",
+    "tpsa",
+    "h_donors",
+    "h_acceptors",
+    "rotatable_bonds",
+    "n_atoms",
+    "n_heavy_atoms",
+    "n_rings",
+    "n_aromatic",
+    "n_halogens",
+    "n_oxygens",
+    "n_nitrogens"
+  ],
+  "validation": "5-fold CV"
+}

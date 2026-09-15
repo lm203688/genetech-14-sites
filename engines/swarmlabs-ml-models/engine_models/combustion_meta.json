@@ -1,0 +1,13 @@
+{
+  "engine_id": "combustion",
+  "target": "adiabatic_temp_C",
+  "features": [
+    "equivalence_ratio"
+  ],
+  "physics_mae": 138.1492,
+  "corrected_mae": 93.2847,
+  "improvement_pct": 32.5,
+  "training_samples": 100,
+  "model_type": "GradientBoostingRegressor",
+  "method": "物理方程基线 + ML残差校正"
+}
