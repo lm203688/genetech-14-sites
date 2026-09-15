@@ -1,0 +1,14 @@
+{
+  "engine_id": "photocatalysis",
+  "target": "quantum_efficiency",
+  "features": [
+    "bandgap",
+    "surface_area"
+  ],
+  "physics_mae": 0.0227,
+  "corrected_mae": 0.0131,
+  "improvement_pct": 42.3,
+  "training_samples": 100,
+  "model_type": "GradientBoostingRegressor",
+  "method": "物理方程基线 + ML残差校正"
+}

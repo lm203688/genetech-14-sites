@@ -1,0 +1,14 @@
+{
+  "engine_id": "corrosion",
+  "target": "corrosion_rate_mmy",
+  "features": [
+    "temperature",
+    "ph"
+  ],
+  "physics_mae": 0.0183,
+  "corrected_mae": 0.0104,
+  "improvement_pct": 43.3,
+  "training_samples": 100,
+  "model_type": "GradientBoostingRegressor",
+  "method": "物理方程基线 + ML残差校正"
+}

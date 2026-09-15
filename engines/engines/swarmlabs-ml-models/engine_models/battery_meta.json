@@ -1,0 +1,14 @@
+{
+  "engine_id": "battery",
+  "target": "energy_density_Whkg",
+  "features": [
+    "voltage",
+    "capacity"
+  ],
+  "physics_mae": 3.6653,
+  "corrected_mae": 2.4156,
+  "improvement_pct": 34.1,
+  "training_samples": 100,
+  "model_type": "GradientBoostingRegressor",
+  "method": "物理方程基线 + ML残差校正"
+}

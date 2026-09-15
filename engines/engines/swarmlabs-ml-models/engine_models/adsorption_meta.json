@@ -1,0 +1,14 @@
+{
+  "engine_id": "adsorption",
+  "target": "capacity_mmol_g",
+  "features": [
+    "surface_area",
+    "pressure"
+  ],
+  "physics_mae": 0.5446,
+  "corrected_mae": 0.2734,
+  "improvement_pct": 49.8,
+  "training_samples": 100,
+  "model_type": "GradientBoostingRegressor",
+  "method": "物理方程基线 + ML残差校正"
+}

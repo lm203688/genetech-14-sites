@@ -1,0 +1,11 @@
+{
+  "model_type": "Message Passing Neural Network (3 layers, hidden=64)",
+  "training_data": "QM9 10,000分子 (8,000 train + 2,000 test)",
+  "targets": [
+    "dipole",
+    "HOMO",
+    "LUMO",
+    "gap"
+  ],
+  "results": {
+    "dipole": 

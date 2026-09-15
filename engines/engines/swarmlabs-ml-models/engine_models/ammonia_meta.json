@@ -1,0 +1,14 @@
+{
+  "engine_id": "ammonia",
+  "target": "conversion_pct",
+  "features": [
+    "temperature",
+    "pressure"
+  ],
+  "physics_mae": 0.1618,
+  "corrected_mae": 0.1053,
+  "improvement_pct": 34.9,
+  "training_samples": 100,
+  "model_type": "GradientBoostingRegressor",
+  "method": "物理方程基线 + ML残差校正"
+}

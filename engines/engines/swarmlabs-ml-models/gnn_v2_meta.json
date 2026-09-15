@@ -1,0 +1,15 @@
+{
+  "model": "MPNN v2 (5层, hidden=128, dropout=0.1)",
+  "train": "8,000 train + 2,000 test (QM9)",
+  "targets": [
+    "dipole",
+    "HOMO",
+    "LUMO",
+    "gap",
+    "alpha",
+    "zpve"
+  ],
+  "n_targets": 6,
+  "advantage": "5层消息传递 + 128维隐藏 + Dropout正则化, vs v1的3层64维",
+  "features": "atomic one-hot(H,C,N,O,F) + bond distance"
+}

@@ -1,0 +1,26 @@
+{
+  "bio_chem_data_size": 17085,
+  "data_sources": {
+    "ChEMBL_Lipophilicity": 4200,
+    "FreeSolv": 642,
+    "BACE": 1513,
+    "Tox21": 7823,
+    "ClinTox": 1480,
+    "SIDER": 1427
+  },
+  "ml_models": {
+    "logD": "MAE=0.689",
+    "hydration": "MAE=0.689",
+    "bace_pIC50": "MAE=0.689",
+    "tox21": "12 classifiers"
+  },
+  "features": [
+    "molecular_weight",
+    "xlogp",
+    "tpsa",
+    "h_donors",
+    "h_acceptors",
+    "n_atoms",
+    "n_rings"
+  ]
+}
