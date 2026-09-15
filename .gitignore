@@ -113,3 +113,7 @@ __test_push__.txt
 
 # OpenCode / agent local files
 .opencode/
+
+# Python 编译产物（py_compile / 验证脚本运行时生成，不入库）
+__pycache__/
+*.pyc
