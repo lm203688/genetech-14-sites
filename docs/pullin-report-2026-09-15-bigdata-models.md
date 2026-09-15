@@ -104,3 +104,31 @@ engines/swarmlabs-compute-engines/   7 py + README.md          680KB
 engines/swarmlabs-ml-models/          12 meta + 8 pkl + 2 json + 2 脚本   11MB
 docs/pullin-report-2026-09-15-bigdata-models.md                                    本文件
 ```
+
+### 4.1 落地位置：为什么从 external-projects/ 改到 engines/
+
+原计划放在 `external-projects/swarmlabs-*`，实测发现 `.gitignore` 第 74 行 `external-projects/`
+把整个目录排除在外（该目录定位是「外来项目资料暂存区，不进本仓库」），42 个文件全部无法入库。
+故整体迁至仓库根 `engines/`（未被忽略），并在 `.gitignore` 追加 `__pycache__/` 与 `*.pyc`。
+
+### 4.2 远端复核（Git Trees API，非本地 ref）
+
+远端 `master` → `e7d8b651a779`，全树 714 条，其中 `engines/` 41 条：
+
+| 检查项 | 结果 |
+|---|---|
+| `engines/` 条目数 | 41 |
+| `*.pyc` / `__pycache__` | 0 |
+| `engines/engines/` 重复子树 | 0 |
+| 11 个计算引擎 .py + README | 全部在库 |
+| 8 个 pkl + 12 份 meta + 2 份训练集 | 全部在库 |
+| `verify_models.py` | 在库 |
+
+清理走了两轮：自动化 `abstract-backfill daily batch` 把 `py_compile` 产物一并推上远端，
+而 `tools/api-push.mjs` 只比对「本地 HEAD 树 vs 远端树」的文件差异、不删远端多余路径；
+第一次清理又因保留了目录节点自身，产生 `engines/engines/` 自引用重复子树。
+最终 `.workbuddy/tools/delete-remote-pycache.mjs` 走 Git Database API，只重建受影响顶层目录的子树
+（丢弃目录节点自身），其余顶层条目保留原 sha，一次删净 42 个路径，幂等可重跑。
+
+⚠️ 该工具是一次性运维脚本，位于 `.workbuddy/tools/`（不入库）。**不要再跑无 `--dry-run` 的盲删**——
+它按正则匹配删除，改动文件前请先 `--dry-run` 确认命中列表。
