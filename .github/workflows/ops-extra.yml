@@ -63,6 +63,9 @@ jobs:
       DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_REPOSITORY: ${{ github.repository }}
+      # cite-check 并发与超时：默认 5/15s，143 条引文最坏 ~7 分钟；提到 8 更稳
+      CITE_CONCURRENCY: '8'
+      CITE_CURL_TIMEOUT: '15'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
