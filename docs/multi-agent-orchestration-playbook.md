@@ -239,7 +239,7 @@ operations-plan/agents/
 - OpenAI 编排模式：https://platform.openai.com/docs/guides/agents/orchestration
 - Agents SDK 实战：https://blog.csdn.net/baidu_32885171/article/details/159758225
 - ElizaOS Runtime：https://deepwiki.com/elizaOS/docs
-- SoL-Pi：https://nvlabs.github.io/SoL-Pi/
+- SoL-Pi：<https://github.com/NVlabs/SoL-Pi>（原 nvlabs.github.io/SoL-Pi/ 整域 404，改指 GitHub 仓库）
 - OpenMausBot：https://github.com/milind-soni/OpenMausBot
 - Karpathy nanochat：https://github.com/karpathy/nanochat
 - Godogen：https://github.com/htdt/godogen
