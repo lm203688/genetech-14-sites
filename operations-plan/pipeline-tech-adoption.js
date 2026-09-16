@@ -88,6 +88,77 @@ const ADOPTION_THRESHOLD = {
   minScore: 0.70,          // 综合采纳得分 >= 0.70
 };
 
+// ==================== Tech Radar 自主权分级（L1-L5，对齐 Theseus Labs RSI 框架） ====================
+// 参考：docs/tech-radar-autonomy-l1-l5.md
+// L1 执行：仅按预定义规则执行，无决策权（最保守，可全自动）
+// L2 策略：在固定规则内选择子路径（需门禁审核 + 独立 reviewer）
+// L3 经验：从历史结果学习、调整自身参数（需 STRICT_AUDIT + 独立评估）
+// L4 环境：主动感知环境并调整行为边界（需安全沙盒 + 人工监督）
+// L5 递归：可修改自身代码并自主迭代（需 STRICT_AUDIT + 双重 reviewer + 回滚预案）
+const AUTONOMY_LEVELS = {
+  L1: { id: 'L1', name: '执行', description: '仅按预定义规则执行，无决策权', ciGate: 'default', reviewer: 'none' },
+  L2: { id: 'L2', name: '策略', description: '在固定规则内选择子路径', ciGate: 'default', reviewer: 'single' },
+  L3: { id: 'L3', name: '经验', description: '从历史结果学习、调整自身参数', ciGate: 'STRICT_AUDIT', reviewer: 'single-indep' },
+  L4: { id: 'L4', name: '环境', description: '主动感知环境并调整行为边界', ciGate: 'STRICT_AUDIT', reviewer: 'dual' },
+  L5: { id: 'L5', name: '递归', description: '可修改自身代码并自主迭代', ciGate: 'STRICT_AUDIT', reviewer: 'dual+rollback' },
+};
+
+// L1-L5 门禁判定：autonomyLevel 越高，PoC 通过的硬门槛越严
+const AUTONOMY_GATES = {
+  L1: { minScore: 0.60, minPassed: 2, needRollback: false },
+  L2: { minScore: 0.70, minPassed: 3, needRollback: false },
+  L3: { minScore: 0.80, minPassed: 3, needRollback: true },
+  L4: { minScore: 0.85, minPassed: 4, needRollback: true },
+  L5: { minScore: 0.90, minPassed: 4, needRollback: true },
+};
+
+/**
+ * 根据候选技术的类别与关键词判定其自主权级别（L1-L5）
+ *
+ * 判定逻辑（对齐 docs/tech-radar-autonomy-l1-l5.md 的 classifyAutonomy()）：
+ * - 命中「学习/优化/自我/迭代/recurrent/adapt/reflect」→ L3+
+ * - 命中「修改/进化/self-modif/rewrite/evolve」→ L5
+ * - 命中「感知/环境/自适应/context」→ L4
+ * - 命中「策略/选择/route/dispatch/plan」→ L2
+ * - 其余 → L1
+ */
+function classifyAutonomy(candidate) {
+  const text = `${candidate.title || ''} ${candidate.description || ''} ${candidate.summary || ''} ${(candidate.techKeywords || []).join(' ')}`.toLowerCase();
+
+  // L5：可修改自身代码
+  if (/(self-modif|rewrite|evolv|进化|自我修改|自修改|递归自主|rsi)/.test(text)) return 'L5';
+  // L4：感知环境并调整
+  if (/(perceiv|sensor|环境感知|context-aware|自适应|adaptable)/.test(text)) return 'L4';
+  // L3：从历史学习
+  if (/(learn|optimi|self-improv|reflect|fine-tun|迭代优化|强化学习|rlhf)/.test(text)) return 'L3';
+  // L2：策略选择
+  if (/(strateg|routing|dispatch|plan|选择|策略|编排|orchestrat)/.test(text)) return 'L2';
+
+  return 'L1';
+}
+
+/**
+ * 按 autonomyLevel 附加的门禁检查候选技术是否达标
+ * 结果附加到 evaluation.autonomyGate 上，不覆盖原有 overall 判定
+ */
+function checkAutonomyGate(autonomyLevel, evaluation) {
+  const gate = AUTONOMY_GATES[autonomyLevel] || AUTONOMY_GATES.L1;
+  const scoreOk = evaluation.score >= gate.minScore;
+  const passedOk = evaluation.passedCount >= gate.minPassed;
+  return {
+    level: autonomyLevel,
+    gate: AUTONOMY_LEVELS[autonomyLevel],
+    requiredMinScore: gate.minScore,
+    requiredMinPassed: gate.minPassed,
+    needRollback: gate.needRollback,
+    scoreOk,
+    passedOk,
+    autonomyPassed: scoreOk && passedOk,
+    ciGate: AUTONOMY_LEVELS[autonomyLevel].ciGate,
+    reviewer: AUTONOMY_LEVELS[autonomyLevel].reviewer,
+  };
+}
+
 // ==================== 工具函数 ====================
 
 function getTimestamp() {
@@ -363,6 +434,7 @@ function classifyAndScore(candidates) {
       ...c,
       category,
       preliminaryScore: round2((heatScore + noveltyScore) / 2),
+      autonomyLevel: classifyAutonomy(c),
     });
   }
 
@@ -416,6 +488,8 @@ async function runPoc(candidate, dryRun) {
     status: passed.overall ? 'passed' : 'failed',
     metrics,
     evaluation: passed,
+    autonomyLevel: candidate.autonomyLevel || 'L1',
+    autonomyGate: checkAutonomyGate(candidate.autonomyLevel || 'L1', passed),
     workDir: pocWorkDir,
     testedAt: getISOTime(),
   };
@@ -656,7 +730,7 @@ async function main() {
   // ---------- Phase 5: 生成报告 ----------
   const report = {
     pipeline: 'tech-adoption',
-    version: '1.0',
+    version: '1.1',  // L1-L5 自主权分级落地
     timestamp: getISOTime(),
     dryRun,
     durationMs: Date.now() - startTime,
@@ -665,6 +739,10 @@ async function main() {
       candidatesTested: topCandidates.length,
       passedCount: pocResults.filter(r => r.result.status === 'passed').length,
       integrationsInitiated: integrations.length,
+      autonomyBreakdown: topCandidates.reduce((acc, c) => {
+        acc[c.autonomyLevel] = (acc[c.autonomyLevel] || 0) + 1;
+        return acc;
+      }, {}),
     },
     candidates: topCandidates.map(c => ({
       id: c.id,
@@ -673,6 +751,7 @@ async function main() {
       category: c.category,
       preliminaryScore: c.preliminaryScore,
       techKeywords: c.techKeywords,
+      autonomyLevel: c.autonomyLevel,
     })),
     pocResults: pocResults.map(({ candidate, result }) => ({
       candidateId: candidate.id,
@@ -680,6 +759,8 @@ async function main() {
       status: result.status,
       metrics: result.metrics,
       evaluation: result.evaluation,
+      autonomyLevel: result.autonomyLevel,
+      autonomyGate: result.autonomyGate,
     })),
     integrations: integrations.map(({ candidate, integration }) => ({
       candidateId: candidate.id,

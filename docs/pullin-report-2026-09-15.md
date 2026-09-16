@@ -12,7 +12,7 @@
 | 项 | 内容 |
 |---|---|
 | 发明名称 | 一种基于 DMTL 闭环和 Arrhenius 方程的化学实验优化方法及系统 |
-| 官方格式 XML | 6 个，全部通过 `xml.etree` 解析校验，根节点 `http://www.cnipa.gov.cn/patent/xml/standard...`（国知局标准） |
+| 官方格式 XML | 6 个，全部通过 `xml.etree` 解析校验，根节点为国知局专利 XML 标准命名空间（`cnipa.gov.cn / patent / xml / standard` 路径，非可访问 URL） |
 | 附图 | 5 张 JPG（整体流程 / 3 轮 DMTL 迭代 / 收敛折线 / Arrhenius 计算 / 系统架构） |
 | 申报指南 | 完整流程 + 费用表（申请 ¥900 / 实审 ¥2500，个人可减缴 85% 至 ¥142.5）+ 时间线 + 检查清单 |
 | 排错 | `XML格式问题解答.doc` |

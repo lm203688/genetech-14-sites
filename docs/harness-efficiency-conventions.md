@@ -1,6 +1,6 @@
 # Harness 效率约定（基于 NVIDIA SoL-Pi）
 
-> 来源：NVIDIA NVLabs SoL-Pi（https://nvlabs.github.io/SoL-Pi/，MIT，2026-09 开源）
+> 来源：NVIDIA NVLabs SoL-Pi（<https://github.com/NVlabs/SoL-Pi>，MIT，2026-09 开源）
 > 应用：本项目所有长跑 pipeline + `.workbuddy/tools/` 脚本 + `scripts/gh_push.py` 推送链路
 > 状态：v0.1 团队约定稿
 
@@ -161,7 +161,6 @@ for (const citation of summary.citations) {
 
 ## 六、参考
 
-- SoL-Pi 项目页：https://nvlabs.github.io/SoL-Pi/
-- SoL-Pi GitHub：https://github.com/NVlabs/SoL-Pi
+- SoL-Pi GitHub：<https://github.com/NVlabs/SoL-Pi>（原 nvlabs.github.io/SoL-Pi/ 页面 404，改指 GitHub 仓库）
 - 综述 1：https://bayesiansapien.github.io/cere-bro/agentic-systems/2026-09-11-sol-pi-harness-auto-research
 - 综述 2：https://agihunt.info/en/e/1a08d0ca498af04ef82cb3d2c45

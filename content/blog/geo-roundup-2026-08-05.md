@@ -10,11 +10,11 @@ keywords: GeneTech, 前沿科技, 知识引擎, GEO, agent-ecosystem, exo-scienc
 ## AI Agent 生态
 - **[From single-agent to multi-agent: a comprehensive review of LLM-based legal agents](https://doi.org/10.20517/aiagent.2025.06)** · 来源 crossref · 置信度 0.70 — With the growing application of artificial intelligence (AI) in the legal domain, large language model (LLM)-based legal…
 - **[Accelerating multimetallic catalyst discovery with robotics and agentic AI](https://doi.org/10.20517/aiagent.2025.07)** · 来源 crossref · 置信度 0.70 — The design space of catalyst materials spans composition, processing, atomistic structure, and microstructure. As materi…
-- **[Control Overlays for Securing AI Systems: Using Agentic AI—Single Agent and Multi-Agent](https://doi.org/10.6028/nist.ir.8605d)** · 来源 crossref · 置信度 0.70
+- **[Control Overlays for Securing AI Systems: Using Agentic AI—Single Agent and Multi-Agent](https://www.nist.gov/artificial-intelligence)** · 来源 NIST AI 官方页 · 置信度 0.70
 
 ## 地外科学
 - **[7th European Workshop on Astrobiology](https://doi.org/10.1017/s1473550407003965)** · 来源 crossref · 置信度 0.70
-- **[Just Add Data: Automated Predictive Modeling and BioSignature Discovery](https://doi.org/10.37473/dac/10.1101/2020.05.04.075747)** · 来源 crossref · 置信度 0.70
+- **[Just Add Data: Automated Predictive Modeling and BioSignature Discovery](https://www.biorxiv.org/lookup/doi/10.1101/2020.05.04.075747)** · 来源 bioRxiv 预印本 · 置信度 0.70
 - **[Biosignature](https://doi.org/10.1007/978-3-642-11274-4_2167)** · 来源 crossref · 置信度 0.70
 
 ## 基因技术工具

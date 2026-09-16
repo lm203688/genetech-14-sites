@@ -369,9 +369,9 @@ LazyCat：NPM 式版本控制，更新失败可一键回滚到任意历史版本
 - AgentMesh: https://github.com/repomesh/AgentMesh
 - repo-mesh (npm): https://socket.dev/npm/package/repo-mesh
 - Agent Chronos 2.0: https://github.com/Bcy2020/agent-chronos-arch
-- LazyCat (OS-style agent): https://dev.to/lcmd007/...one-click-rollback
+- LazyCat (OS-style agent): https://github.com/topics/os-agent （原 dev.to 帖子 404，改指 GitHub 分类目录）
 - OpenClaw hooks: https://club.ugnas.com/forum.php?...OpenClaw
 - pr-pilot: https://github.com/nimula/pr-pilot
-- HPE Agentic Tool Mesh: https://developer.hpe.com/blog/llm-agentic-tool-mesh
+- HPE Agentic Tool Mesh: https://developer.hpe.com/ （原 developer.hpe.com/blog/llm-agentic-tool-mesh 404，改指 HPE Developer 首页）
 - OPA/Rego guardrails: https://jumpcloud.com/?p=143962, https://www.tacticaledgeai.com/company/insights/deterministic-guardrails-stochastic-agents
 - Data versioning: https://beefed.ai/en/dataset-versioning-lineage-reproducibility, https://ai-solutions.wiki/patterns/data-versioning
