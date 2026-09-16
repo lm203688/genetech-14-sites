@@ -198320,7 +198320,7 @@
     "id": "doi:10.21203/rs.3.rs-3314854/v1",
     "name": "Multimodal system for recording individual-level behaviors in songbird groups",
     "source": "preprints",
-    "abstract": "",
+    "abstract": "In longitudinal observations of animal groups, the goal is to identify individuals and to reliably detect their interactive behaviors, including their vocalizations. However, to reliably extract individual vocalizations from their mixtures and other environmental sounds remains a serious challenge. Promising approaches are multimodal systems that exploit signal redundancy and make use of animal-borne wireless sensors. In this vein, we designed a modular recording system (BirdPark) that yields synchronized data streams. We recorded groups of songbirds with multiple cameras and microphones and recorded their body vibrations with custom low-power frequency-modulated (FM) radio transmitters. We developed a custom software-defined radio receiver with a multi-antenna demodulation technique that increased the signal-to-noise ratio of the received radio signals by 6.5 dB and reduced the signal loss rate due to fading by a factor of 63 to only 0.01% of the recording time compared to single-antenna demodulation. Nevertheless, neither a single vibration sensor nor a single microphone is sufficient by itself to detect the complete vocal output of an individual. Even in the minimal setting of an animal pair, an average of about 3.7% of vocalizations remain undetected within each sensor modality. Our work emphasizes the need for high-quality recording systems and for multimodal analysis of social behavior.",
     "url": "https://doi.org/10.21203/rs.3.rs-3314854/v1",
     "authors": [],
     "tags": [],
