@@ -1,0 +1,30 @@
+# SwarmLabs Data Gateway — CF Worker 配置
+# 部署：wrangler deploy  →  https://swarm-labs-gateway.<account>.workers.dev
+# 数据源：SwarmLabs 主站 GitHub Pages（同源 CDN，30 领域 × 10K 实体 ≈ 300K）
+# 独立性：本 worker 与 api-guard / unified-license 完全解耦，吊销不影响 Pro 用户
+
+name = "swarm-labs-gateway"
+main = "worker.js"
+compatibility_date = "2024-09-23"
+
+[vars]
+# 数据源根 URL（默认 GitHub Pages 主站；上游更新数据本 worker 自动同步，无需 redeploy）
+GATEWAY_UPSTREAM = "https://lm203688.github.io/genetech-14-sites"
+# 每 key 每分钟请求上限（可调；120 是保守默认，供单个 partner 项目足够）
+GW_QUOTA_PER_MIN = "120"
+
+# 限流 KV（在 Cloudflare Dashboard → R2 → KV → 新建一个 gw-rate KV 命名空间，
+# 把 UUID 填下面 id；若没有 KV 则限流降级为放行）
+[[kv_namespaces]]
+binding = "GW_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+# 密钥（不要写进文件，走 Secret）：
+#   wrangler secret put GATEWAY_SECRET
+#
+# 生成 GATEWAY_SECRET：
+#   node genkey.mjs secret
+#
+# 生成 partner key：
+#   node genkey.mjs issue --client swarm-buzz-2026 --project "蜂群科研数据" \
+#     --scopes entities:read,domains:read --exp-days 365 --quota 120

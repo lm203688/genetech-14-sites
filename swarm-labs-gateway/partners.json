@@ -1,0 +1,19 @@
+{
+  "gateway": "swarm-labs-gateway",
+  "version": "1.0.0",
+  "issued": [
+    {
+      "clientId": "swarm-buzz-2026",
+      "projectName": "蜂群科研数据 (Bee Swarm Science Data)",
+      "scopes": [
+        "entities:read",
+        "domains:read"
+      ],
+      "quota": 120,
+      "issuedAt": "2026-09-16",
+      "expiresAt": "2027-09-16",
+      "status": "active",
+      "keyPrefix": "slb_eyJjbGllbnQiOiJzd2Fy…"
+    }
+  ]
+}
