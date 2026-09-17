@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-16",
+  "date": "2026-09-17",
   "total": 300000,
   "sites": 30,
   "perSite": {
@@ -36,7 +36,7 @@
   },
   "quality": {
     "urlCompleteness": 100,
-    "abstractCompleteness": 62,
+    "abstractCompleteness": 63,
     "doiTraceability": 92,
     "dedupRate": 94,
     "uniqueKeys": 282260
@@ -44,16 +44,16 @@
   "status": "ALL-30-SITES-AT-CAP",
   "delta": 0,
   "abstractGap": {
-    "totalMissing": 102999,
+    "totalMissing": 99765,
     "bySource": {
       "crossref": 86932,
       "europepmc": 36986,
       "preprints": 18377,
       "other": 10053
     },
-    "note": "93% 无摘要记录集中在 crossref/europepmc/preprints 三源，且三者 DOI 可溯源度均 100%，可用 DOI 反查 OpenAlex/S2/EuropePMC 摘要接口回填。 [2026-09-16 更新] 摘要回填管道累计回填 39226 条，剩余缺口 102999，进度 27.58%。"
+    "note": "93% 无摘要记录集中在 crossref/europepmc/preprints 三源，且三者 DOI 可溯源度均 100%，可用 DOI 反查 OpenAlex/S2/EuropePMC 摘要接口回填。 [2026-09-17 更新] 摘要回填管道累计回填 42460 条，剩余缺口 99765，进度 29.85%。"
   },
-  "remoteCheck": "5ca0e516268d",
+  "remoteCheck": "6dc24a1",
   "guardBlocked": false,
   "history": [
     {
@@ -189,6 +189,20 @@
       "quality": {
         "urlCompleteness": 100,
         "abstractCompleteness": 61,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-16",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 62,
         "doiTraceability": 92,
         "dedupRate": 94,
         "uniqueKeys": 282260
