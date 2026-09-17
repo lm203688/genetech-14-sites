@@ -112,6 +112,13 @@ const AUTONOMY_GATES = {
   L5: { minScore: 0.90, minPassed: 4, needRollback: true },
 };
 
+// 回滚方案 schema：L3+ 候选必须提供有效回滚方案，否则门禁不通过
+const ROLLBACK_SCHEMA = {
+  required: ['trigger', 'action', 'target', 'verification'],
+  triggerTypes: ['metric-degradation', 'error-rate-spike', 'manual', 'scheduled-check'],
+  actionTypes: ['revert-deploy', 'rollback-pipeline', 'disable-feature-flag', 'revert-config'],
+};
+
 /**
  * 根据候选技术的类别与关键词判定其自主权级别（L1-L5）
  *
@@ -141,21 +148,87 @@ function classifyAutonomy(candidate) {
  * 按 autonomyLevel 附加的门禁检查候选技术是否达标
  * 结果附加到 evaluation.autonomyGate 上，不覆盖原有 overall 判定
  */
-function checkAutonomyGate(autonomyLevel, evaluation) {
+function checkAutonomyGate(autonomyLevel, evaluation, rollbackPlan) {
   const gate = AUTONOMY_GATES[autonomyLevel] || AUTONOMY_GATES.L1;
   const scoreOk = evaluation.score >= gate.minScore;
   const passedOk = evaluation.passedCount >= gate.minPassed;
+
+  // L3+ 必须有有效回滚方案，否则门禁不通过
+  let rollbackOk = true;
+  let rollbackReason = '';
+  if (gate.needRollback) {
+    const rv = verifyRollbackPlan(rollbackPlan);
+    rollbackOk = rv.valid;
+    rollbackReason = rv.reason || '';
+  }
+
   return {
     level: autonomyLevel,
     gate: AUTONOMY_LEVELS[autonomyLevel],
     requiredMinScore: gate.minScore,
     requiredMinPassed: gate.minPassed,
     needRollback: gate.needRollback,
+    rollbackPlan: rollbackPlan || null,
+    rollbackOk,
+    rollbackReason,
     scoreOk,
     passedOk,
-    autonomyPassed: scoreOk && passedOk,
+    autonomyPassed: scoreOk && passedOk && rollbackOk,
     ciGate: AUTONOMY_LEVELS[autonomyLevel].ciGate,
     reviewer: AUTONOMY_LEVELS[autonomyLevel].reviewer,
+  };
+}
+
+/**
+ * 验证回滚方案是否符合 schema
+ * 返回 { valid: boolean, reason: string }
+ */
+function verifyRollbackPlan(plan) {
+  if (!plan || typeof plan !== 'object') {
+    return { valid: false, reason: 'no-rollback-plan-provided' };
+  }
+  // 检查必填字段
+  for (const field of ROLLBACK_SCHEMA.required) {
+    if (!plan[field] || typeof plan[field] !== 'string' || !plan[field].trim()) {
+      return { valid: false, reason: `missing-required-field:${field}` };
+    }
+  }
+  // 检查 trigger 类型
+  if (ROLLBACK_SCHEMA.triggerTypes.length && !ROLLBACK_SCHEMA.triggerTypes.includes(plan.triggerType)) {
+    return { valid: false, reason: `invalid-trigger-type:${plan.triggerType}` };
+  }
+  // 检查 action 类型
+  if (ROLLBACK_SCHEMA.actionTypes.length && !ROLLBACK_SCHEMA.actionTypes.includes(plan.actionType)) {
+    return { valid: false, reason: `invalid-action-type:${plan.actionType}` };
+  }
+  // 检查 trigger 描述有实质内容
+  if (plan.trigger.length < 5) {
+    return { valid: false, reason: 'trigger-description-too-short' };
+  }
+  // 检查 verification 描述有实质内容
+  if (plan.verification.length < 5) {
+    return { valid: false, reason: 'verification-description-too-short' };
+  }
+  return { valid: true, reason: '' };
+}
+
+/**
+ * 为候选技术生成回滚方案模板（L3+ 候选自动生成，人可覆写）
+ */
+function generateRollbackTemplate(candidate) {
+  const isL5 = candidate.autonomyLevel === 'L5';
+  return {
+    trigger: `指标退化超过 ${candidate.autonomyLevel === 'L5' ? 20 : 10}% 或错误率 > 5%`,
+    triggerType: 'metric-degradation',
+    action: isL5
+      ? `回滚到上一个已验证版本（${candidate.pocId || 'previous-stable'}），并冻结后续自迭代`
+      : `回滚到 PoC 前状态，撤销 ${candidate.pocId || ''} 的变更`,
+    actionType: isL5 ? 'revert-config' : 'revert-deploy',
+    target: candidate.id || candidate.title || 'unknown-candidate',
+    verification: '回滚后验证：CI 全绿 + 指标恢复至阈值内 + 人工确认无副作用',
+    reviewer: isL5 ? 'dual' : 'single',
+    createdAt: getISOTime(),
+    notes: isL5 ? 'L5 递归候选需双重 reviewer 确认回滚结果' : '',
   };
 }
 
@@ -460,6 +533,7 @@ async function runPoc(candidate, dryRun) {
       candidateId: candidate.id,
       status: 'simulated',
       dryRun: true,
+      autonomyLevel: candidate.autonomyLevel || 'L1',
       metrics: simulateMetrics(candidate.category),
     };
   }
@@ -468,6 +542,14 @@ async function runPoc(candidate, dryRun) {
 
   // 写入候选技术描述（供后续人工复核或自动脚本使用）
   await writeJson(path.join(pocWorkDir, 'candidate.json'), candidate);
+
+  // L3+ 候选自动生成回滚方案模板
+  let rollbackPlan = null;
+  if ((candidate.autonomyLevel || 'L1') >= 'L3') {
+    rollbackPlan = generateRollbackTemplate(candidate);
+    await writeJson(path.join(pocWorkDir, 'rollback-plan.json'), rollbackPlan);
+    console.log(`[PoC] 已生成回滚方案: ${rollbackPlan.actionType} → ${rollbackPlan.target}`);
+  }
 
   // 创建模拟测试脚本模板
   const testScript = generateTestScript(candidate);
@@ -489,7 +571,8 @@ async function runPoc(candidate, dryRun) {
     metrics,
     evaluation: passed,
     autonomyLevel: candidate.autonomyLevel || 'L1',
-    autonomyGate: checkAutonomyGate(candidate.autonomyLevel || 'L1', passed),
+    autonomyGate: checkAutonomyGate(candidate.autonomyLevel || 'L1', passed, rollbackPlan),
+    rollbackPlan,
     workDir: pocWorkDir,
     testedAt: getISOTime(),
   };
@@ -730,7 +813,7 @@ async function main() {
   // ---------- Phase 5: 生成报告 ----------
   const report = {
     pipeline: 'tech-adoption',
-    version: '1.1',  // L1-L5 自主权分级落地
+    version: '1.2',  // L1-L5 自主权分级 + 回滚验证逻辑
     timestamp: getISOTime(),
     dryRun,
     durationMs: Date.now() - startTime,
@@ -741,6 +824,16 @@ async function main() {
       integrationsInitiated: integrations.length,
       autonomyBreakdown: topCandidates.reduce((acc, c) => {
         acc[c.autonomyLevel] = (acc[c.autonomyLevel] || 0) + 1;
+        return acc;
+      }, {}),
+      rollbackSummary: pocResults.reduce((acc, { result }) => {
+        if (!result.autonomyGate) return acc;
+        const g = result.autonomyGate;
+        if (g.needRollback) {
+          acc.totalNeedRollback = (acc.totalNeedRollback || 0) + 1;
+          acc.rollbackOk = (acc.rollbackOk || 0) + (g.rollbackOk ? 1 : 0);
+          acc.rollbackFail = (acc.rollbackFail || 0) + (g.rollbackOk ? 0 : 1);
+        }
         return acc;
       }, {}),
     },
@@ -761,6 +854,7 @@ async function main() {
       evaluation: result.evaluation,
       autonomyLevel: result.autonomyLevel,
       autonomyGate: result.autonomyGate,
+      rollbackPlan: result.rollbackPlan || null,
     })),
     integrations: integrations.map(({ candidate, integration }) => ({
       candidateId: candidate.id,
