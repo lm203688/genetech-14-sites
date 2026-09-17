@@ -29,6 +29,9 @@ const REPORTS_DIR = path.join(PROJECT_ROOT, 'reports');
 const CITE_CHECKER = path.join(PROJECT_ROOT, 'tools', 'cite-checker.mjs');
 
 const STRICT = process.env.STRICT_CITE === '1';
+// Cloudflare Worker 默认域兜底（*.workers.dev）：已知国内被墙、海外 runner 直连返回 404，
+// 属基础设施 URL 而非对外引文，不计入 STRICT 门禁（避免误杀 license/api 兜底端点文档）。
+const INFRA_URL_ALLOW = /\.workers\.dev$/;
 const SCAN_TARGETS = [
   path.join(PROJECT_ROOT, 'content', 'blog'),
   path.join(PROJECT_ROOT, 'docs'),
@@ -72,7 +75,9 @@ async function main() {
   console.log(`[cite-check] 文件 ${S.filesChecked} / 引文 ${S.totalCitations} → ok ${S.ok} · redirect ${S.redirect} · dead ${S.dead} · blocked ${S.blocked} · unresolved ${S.unresolved} · server-error ${S.serverError} · unreachable ${S.unreachable} · retracted ${S.retracted}`);
   console.log(`[cite-check] 逐条核验 ${S.claimsChecked} → verified ${S.claimsVerified} · mismatch ${S.claimsFailed} · unverified ${S.claimsUnverified}`);
 
-  const problems = report.items.filter((r) => r.status === 'dead' || r.status === 'retracted');
+  const problems = report.items.filter(
+    (r) => (r.status === 'dead' || r.status === 'retracted') && !INFRA_URL_ALLOW.test(r.target)
+  );
   if (problems.length) {
     for (const p of problems.slice(0, 20)) {
       console.log(`[cite-check] ⚠ ${p.file} :: ${p.kind} ${p.target} → ${p.status}${p.httpStatus ? ` (HTTP ${p.httpStatus})` : ''}`);
@@ -81,7 +86,7 @@ async function main() {
   }
 
   // 门禁判定先于 dry-run 计算：dry-run 也反映 STRICT 结论，便于 CI 试跑验证门禁本身
-  const gateBlocked = S.dead > 0 || S.retracted > 0;
+  const gateBlocked = problems.length > 0;
   if (STRICT) {
     console.log(`[cite-check] STRICT 门禁判定：${gateBlocked ? '❌ FAIL' : '✅ PASS'}（dead=${S.dead} retracted=${S.retracted}）`);
   }
