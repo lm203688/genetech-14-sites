@@ -245,14 +245,14 @@ const product = await creem.products.create({
 
 ```bash
 # CLI
-creem checkouts create --product prod_XXXXX --success-url https://www.app.com/welcome
+creem checkouts create --product prod_XXXXX --success-url https://example.com
 ```
 
 ```typescript
 // SDK
 const checkout = await creem.checkouts.create({
   productId: "prod_XXXXX",
-  successUrl: "https://www.app.com/welcome",
+  successUrl: "https://example.com",
   customer: { email: "user@example.com" },
   metadata: { userId: "user_123" },
   discountCode: "LAUNCH20",
@@ -391,7 +391,7 @@ const discount = await creem.discounts.create({
 const checkout = await creem.checkouts.create({
   productId: "prod_XXXXX",
   discountCode: "LAUNCH20",
-  successUrl: "https://www.app.com/welcome",
+  successUrl: "https://example.com",
 });
 ```
 
