@@ -188,12 +188,36 @@ function extractFromFile(filePath) {
     // DOI
     for (const mm of line.matchAll(RE_DOI)) dois.add(mm[0].replace(/[.,;:!?)]+$/, ''));
     // 引号 → 用于逐条核验（每行只核验首个引号，避免同一句反复报告）
+    // 假阳性过滤：跳过内部域名 URL、配置字段名、占位符 URL、纯中文描述短语
     if (lineUrls.length && claims.length < CLAIM_LIMIT_PER_FILE) {
       for (const mm of line.matchAll(RE_QUOTE)) {
         const q = (mm[1] || mm[2] || '').trim();
         if (q.length >= 8) {
+          // 过滤 1：跳过内部域名（自己的站点不是外部引文来源）
+          const INTERNAL_DOMAINS = ['lm203688.github.io', 'genetech.tools', 'swarmlabs.tools', 'roboparts.cc', 'healthlens.cc', 'aishield.tools', 'oraclemind.cc', 'genetech14-sites'];
+          const isInternalUrl = lineUrls.some(u => INTERNAL_DOMAINS.some(d => u.includes(d)));
+          if (isInternalUrl) break;
+          // 过滤 2：跳过配置字段名/JSON key（snake_case、@context 等）
+          if (/^[a-zA-Z_][a-zA-Z0-9_.]*$/.test(q) && q.length <= 30) break;
+          // 过滤 3：跳过纯 URL（引号里包的是 URL）
+          if (/^https?:\/\//.test(q)) break;
+          // 过滤 4：跳过 @context / @type 等 JSON-LD schema 字段
+          if (/^@[\w-]+/.test(q)) break;
+          // 过滤 5：跳过中文描述短语（自述性分析，不是引用）
+          // 判断依据：含中文字符 + 无标点引用标记 + 长度 > 4 → 大概率是我们的描述
+          // 也覆盖中英混合短语（如「可学习、可 benchmark、可复现」），学术来源极少含中文
+          const hasChinese = /[\u4e00-\u9fff]/.test(q);
+          const isChineseDesc = hasChinese && q.length > 4;
+          if (isChineseDesc) break;
+
           for (const u of lineUrls) {
             if (claims.length >= CLAIM_LIMIT_PER_FILE) break;
+            // 跳过占位符 URL（Wxxxx、example.com 等）
+            if (/xxxx+|<your|your[_-]|placeholder|localhost|127\.0\.0\.1|app\.com/i.test(u)) continue;
+            // 跳过 schema.org 等 schema 标准页面
+            if (/schema\.org$/i.test(u)) continue;
+            // 跳过 export.arxiv.org/api/query 等 API 端点
+            if (/export\.arxiv\.org\/api\/query/i.test(u)) continue;
             claims.push({ file: filePath, url: u, claim: q, line: i + 1 });
           }
           break;
