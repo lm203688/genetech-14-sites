@@ -121,7 +121,7 @@ const entity = await client.getEntity('arxiv-2607.29617v1', 'robot-parts');
 
 1. Cloudflare Dashboard → Workers & Pages → 新建 Worker → 命名 `swarm-labs-gateway`
 2. `wrangler deploy`
-3. `wrangler secret put GATEWAY_SECRET`（值见下方）
+3. `wrangler secret put GATEWAY_SECRET`（**值在本机生成，绝不写入本仓库任何文件**）
 4. 新建 KV 命名空间 `gw-rate`（用于限流桶；不建也可，限流降级为放行）
 5. 更新 `wrangler.toml` 里的 `id = "..."` 为 KV UUID
 6. 再 `wrangler deploy`
@@ -131,20 +131,45 @@ const entity = await client.getEntity('arxiv-2607.29617v1', 'robot-parts');
 
 ```bash
 node genkey.mjs secret
-# → GATEWAY_SECRET=c62ff6680c5002f1ee7d82d2300578453c976d455556eb6a4f0226cd4b54d51c
+# → 屏幕打印 GATEWAY_SECRET=<64 hex>
+#   ⚠️ 只经 wrangler secret put / 环境变量传递，**绝不复制进本仓库任何文件**（本仓为 public）
 ```
 
 ### 签发 partner key
 
 ```bash
+# 密钥只经环境变量传递，不落盘、不进命令行参数（--secret 会把密钥写进进程列表）
+export GATEWAY_SECRET=<64 hex>          # PowerShell: $env:GATEWAY_SECRET="<64 hex>"
 node genkey.mjs issue \
   --client swarm-buzz-2026 \
   --project "蜂群科研数据 (Bee Swarm Science Data)" \
   --scopes entities:read,domains:read \
   --exp-days 365 \
-  --quota 120 \
-  --secret c62ff6680c5002f1ee7d82d2300578453c976d455556eb6a4f0226cd4b54d51c
+  --quota 120
+# key 只在本次 stdout 打印一次 → 走私密渠道交付 partner，勿写入仓库/文档/工单
 ```
+
+### ⚠️ 密钥卫生（2026-09-18 事故复盘）
+
+本仓库是 **public** 仓库。此前 `swarm-labs-gateway/README.md` 与 `swarm-labs-gateway/_test.mjs`
+把**真实 `GATEWAY_SECRET` 写成明文**，任何人（无需登录）都能从 GitHub 读到，并据此自签任意
+`client` / `scopes` / `exp` 的 `slb_` key —— `worker.js` 的 `hasScope()` 对**空 scopes 直接放行**，
+吊销又只按持钥人**自填的 `client`** 生效，因此吊销拦不住伪造者。
+
+处置状态：
+
+| 项 | 状态 |
+|---|---|
+| 从仓库文件移除明文 | ✅ 已改（README / _test.mjs 改为环境变量） |
+| **轮换旧 `GATEWAY_SECRET`** | ⛔ **待执行**（旧值必须视为已泄漏作废，见上「生成新 secret」） |
+| 用新 secret 重发 蜂群 key | ⛔ 待执行（旧 key 随旧 secret 一起作废） |
+| 清理 git 历史中的旧值 | 可选（轮换后旧值失效，历史留存风险归零） |
+
+硬规则（新增文件一律对照）：
+
+1. 仓库里只允许占位符（`<hex>` / `替换为新值`）；真实密钥走 Secret / 环境变量 / `.secrets/`（已 gitignore）。
+2. 交付 partner key 走私密渠道，不贴 issue / 文档 / 提交记录。
+3. 同仓 `unified-license/DEPLOY-SECRETS.md` 早有相同告诫，本次是**没遵守**——说明「写在文档里」不足以防住，需在 review/CI 上加密钥扫描。
 
 ### 吊销 partner key
 

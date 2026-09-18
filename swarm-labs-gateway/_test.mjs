@@ -9,7 +9,17 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const SECRET = 'c62ff6680c5002f1ee7d82d2300578453c976d455556eb6a4f0226cd4b54d51c';
+
+// 签名密钥只从环境变量读取，**绝不写入源码**：
+// 本仓（genetech-14-sites）是 public 仓库，把 secret 写进文件即等于公开泄漏
+// （曾发生：本行原为明文常量，导致 GATEWAY_SECRET 被公网匿名读取 → 密钥已轮换）。
+const SECRET = process.env.GATEWAY_SECRET || '';
+if (!SECRET) {
+  console.error('ERROR: 需要 GATEWAY_SECRET 环境变量。');
+  console.error('  例：GATEWAY_SECRET=<hex> node _test.mjs');
+  console.error('  生成：node genkey.mjs secret');
+  process.exit(2);
+}
 
 async function hmacSign(msg, secret) {
   const enc = new TextEncoder();
