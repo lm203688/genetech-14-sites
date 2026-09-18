@@ -186,7 +186,9 @@ python -c "import hashlib;print(hashlib.sha256(open('.secrets/gateway_secret.txt
 
 1. 仓库里只允许占位符（`<hex>` / `替换为新值`）；真实密钥走 Secret / 环境变量 / `.secrets/`（已 gitignore）。
 2. 交付 partner key 走私密渠道，不贴 issue / 文档 / 提交记录。
-3. 同仓 `unified-license/DEPLOY-SECRETS.md` 早有相同告诫，本次是**没遵守**——说明「写在文档里」不足以防住，需在 review/CI 上加密钥扫描。
+3. 同仓 `unified-license/DEPLOY-SECRETS.md` 早有相同告诫，本次是**没遵守**——说明「写在文档里」不足以防住。
+   ✅ 已落地为机制：`tools/scan-secrets.mjs` + `.github/workflows/secret-scan.yml`（扫到即红，fail-closed）。
+   本地复跑：`node tools/scan-secrets.mjs`（只扫 git 跟踪文件）或 `--all`（含未跟踪）。
 
 ### 吊销 partner key
 
