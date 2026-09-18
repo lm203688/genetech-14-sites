@@ -171,15 +171,35 @@ node genkey.mjs issue \
 | 从仓库文件移除明文 | ✅ 已改（README / `_test.mjs` 改为环境变量，commit `30b3e835`） |
 | **轮换旧 `GATEWAY_SECRET`** | ✅ 已完成 2026-09-18（旧值作废；新值仅存 `.secrets/gateway_secret.txt`，已 gitignore） |
 | 用新 secret 重发 蜂群 key | ✅ 已完成 2026-09-18（旧 key 在新 secret 下验签已失败，实测确认） |
-| 部署时下发新 secret | ⛔ **待执行**：`wrangler secret put GATEWAY_SECRET` 必须在部署本 worker 前完成，否则网关会用旧值起服 |
+| **key 本体落盘** | ✅ 已修：上一轮只打印到 stdout、未持久化（等于丢 key）。现存 `.secrets/gateway_keys/swarm-buzz-2026.key`（已验证 gitignore 命中、不在任何跟踪文件中） |
+| 部署时下发新 secret | ⏸ **暂无对象**：见下方「部署状态」——本 worker 从未部署，故无旧值在服 |
 | 清理 git 历史中的旧值 | 可选（旧值已作废，历史留存风险归零；如需彻底清除需 force-push + 联系 GitHub 清缓存/分支） |
+
+#### 部署状态：**从未部署**（2026-09-18 实测确认）
+
+这条决定事故的实际严重级别，故用 API 实测而非推断：
+
+```bash
+# 用带 Account:Read 的 CF token 直接列 worker（不依赖 workers.dev 可达性——
+# *.workers.dev 在中国大陆 TCP 层被阻断，本机探测会得到 WinError 10060，不可作为判据）
+GET /client/v4/accounts/<account_id>/workers/scripts
+```
+
+结果：可见 3 个账号（`3678972365@qq.com` / `463102527@qq.com` / `61960005@qq.com`）
+全部 worker 列表为 `genetech-api-guard`、`genetech-license`、`oraclemind-manifold-proxy` ——
+**`swarm-labs-gateway` 不在任一账号中**。与 `wrangler.toml` 的 KV id 仍为
+`REPLACE_WITH_YOUR_KV_NAMESPACE_ID` 互相印证：本 worker 停在「写好了没部署」状态。
+
+**因此：陈旧密钥从未保护过任何在线服务，泄漏期间不存在可被利用的活体网关。**
+处置仍然执行（轮换 + fail-closed），因为密钥形状有效——一旦将来部署，旧值即刻成为后门。
 
 轮换后的自检（可本地复跑）：
 
 ```bash
 # 新 secret 指纹（不打印明文）
 python -c "import hashlib;print(hashlib.sha256(open('.secrets/gateway_secret.txt').read().strip().encode()).hexdigest()[:12])"
-# 旧 key 用新 secret 验签必须失败；新 key 必须通过 —— genkey 不含校验子命令，用 tmp/rotate_gateway_secret.py 的 §4 复核
+# 交叉验签 + key 落盘 + git 跟踪扫描：一键复跑
+python tmp/reissue_and_persist.py
 ```
 
 硬规则（新增文件一律对照）：
