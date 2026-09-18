@@ -153,17 +153,34 @@ node genkey.mjs issue \
 
 本仓库是 **public** 仓库。此前 `swarm-labs-gateway/README.md` 与 `swarm-labs-gateway/_test.mjs`
 把**真实 `GATEWAY_SECRET` 写成明文**，任何人（无需登录）都能从 GitHub 读到，并据此自签任意
-`client` / `scopes` / `exp` 的 `slb_` key —— `worker.js` 的 `hasScope()` 对**空 scopes 直接放行**，
-吊销又只按持钥人**自填的 `client`** 生效，因此吊销拦不住伪造者。
+`client` / `scopes` / `exp` 的 `slb_` key。暴露窗口：提交 `95caf35`（2026-09-16 17:22）→
+`30b3e835`（2026-09-18 移除明文），约 2 天。
+
+放大影响的两个设计弱点（第 1 个已修）：
+
+1. **`hasScope()` 曾对空 scopes 默认放行** —— 伪造者只要省略 `scopes` 字段即获全部权限，
+   使 scope 机制形同虚设。**已改为 fail-closed（空/非法 scopes → 拒绝）**。
+2. **吊销只按持钥人自填的 `client` 生效** —— 伪造者换个 `client` 名即可绕开 `revoked:` 名单。
+   ⛔ **未修**（属结构性缺口）。根治方向：worker 侧维护已知 client 白名单（KV 或 `[vars]`），
+   未在册的 `client` 一律拒绝；轮换 secret 后风险已大幅降低，故未强改。
 
 处置状态：
 
 | 项 | 状态 |
 |---|---|
-| 从仓库文件移除明文 | ✅ 已改（README / _test.mjs 改为环境变量） |
-| **轮换旧 `GATEWAY_SECRET`** | ⛔ **待执行**（旧值必须视为已泄漏作废，见上「生成新 secret」） |
-| 用新 secret 重发 蜂群 key | ⛔ 待执行（旧 key 随旧 secret 一起作废） |
-| 清理 git 历史中的旧值 | 可选（轮换后旧值失效，历史留存风险归零） |
+| 从仓库文件移除明文 | ✅ 已改（README / `_test.mjs` 改为环境变量，commit `30b3e835`） |
+| **轮换旧 `GATEWAY_SECRET`** | ✅ 已完成 2026-09-18（旧值作废；新值仅存 `.secrets/gateway_secret.txt`，已 gitignore） |
+| 用新 secret 重发 蜂群 key | ✅ 已完成 2026-09-18（旧 key 在新 secret 下验签已失败，实测确认） |
+| 部署时下发新 secret | ⛔ **待执行**：`wrangler secret put GATEWAY_SECRET` 必须在部署本 worker 前完成，否则网关会用旧值起服 |
+| 清理 git 历史中的旧值 | 可选（旧值已作废，历史留存风险归零；如需彻底清除需 force-push + 联系 GitHub 清缓存/分支） |
+
+轮换后的自检（可本地复跑）：
+
+```bash
+# 新 secret 指纹（不打印明文）
+python -c "import hashlib;print(hashlib.sha256(open('.secrets/gateway_secret.txt').read().strip().encode()).hexdigest()[:12])"
+# 旧 key 用新 secret 验签必须失败；新 key 必须通过 —— genkey 不含校验子命令，用 tmp/rotate_gateway_secret.py 的 §4 复核
+```
 
 硬规则（新增文件一律对照）：
 

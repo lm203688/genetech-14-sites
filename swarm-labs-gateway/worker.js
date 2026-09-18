@@ -123,7 +123,11 @@ async function checkRate(env, clientId) {
 }
 
 function hasScope(scopes, required) {
-  if (!scopes || !scopes.length) return true; // 空 scopes = 默认放行
+  // 空/缺失 scopes = **拒绝**（fail-closed）。2026-09-18 由「默认放行」改为「默认拒绝」：
+  // 原先空 scopes 直接 return true，意味着任何能自签 key 的人只要省略 scope 字段即可获得
+  // 全部权限，使 scope 机制形同虚设。合法 key 均由 genkey.mjs 签发且显式带 scopes
+  // （当前partner 为 entities:read,domains:read），故此变更不影响正常调用。
+  if (!Array.isArray(scopes) || scopes.length === 0) return false;
   return scopes.includes(required);
 }
 
