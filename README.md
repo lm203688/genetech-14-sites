@@ -9,6 +9,17 @@
 
 GeneTech 14站是一个**多智能体知识运营平台（Multi-Agent Knowledge Operations Platform）**：用一组职责分离的智能体，把分散在学术 / 产业 / 政策多源的数据，持续转化为**可审计、可溯源、可复现**的结构化知识资产。
 
+## 基础设施能力（2026-09-19 更新）
+
+- **OpenAPI 3.1**：[`openapi.yaml`](openapi.yaml)（9 端点 + 5 schema，三档 API key）
+- **消费者上手**：[`docs/consumer-onboarding.md`](docs/consumer-onboarding.md)（快速开始 / 端点 / 错误码）
+- **战略定位**：[`docs/strategy-infrastructure.md`](docs/strategy-infrastructure.md)（信息收集 + 结构化基础设施）
+- **语义搜索端点**：`POST /v1/search/semantic`（Pro only，13k 高置信实体 token 匹配）
+- **OSS 扫描管道**：`operations-plan/pipeline-oss-scan.js`（GitHub/HF/PWC 每日快照）
+- **搜索索引管道**：`operations-plan/pipeline-search-index.js`（每日构建 6.58MB 索引）
+
+> **项目身份**：本仓库 `lm203688/genetech-14-sites`；SwarmLabs / RoboParts 为独立项目，共用 CF 账号但代码/密钥/部署完全解耦。
+
 ## 为什么不是「又一个爬虫 / 又一个 RAG」
 
 | 常见做法 | 我们的差异 |
