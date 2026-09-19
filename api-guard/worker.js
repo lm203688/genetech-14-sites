@@ -145,6 +145,115 @@ async function checkLlmRate(env, ip) {
 }
 
 // ---------------------------------------------------------------------------
+// 语义搜索（/v1/search/semantic）
+// 依赖：data/search-index.json（由 pipeline-search-index.js 每日构建，
+//       每站 top-500 高置信实体，合计 ~13k 实体 / ~6.5MB）
+// 鉴权：必须 Pro Key（`gtk_` 前缀）
+// ---------------------------------------------------------------------------
+
+const SEARCH_INDEX_URL = 'https://lm203688.github.io/genetech-14-sites/data/search-index.json';
+const SEARCH_INDEX_CACHE_KEY = '__SEARCH_INDEX_CACHE__';
+const SEARCH_INDEX_TTL_MS = 10 * 60 * 1000; // 10 分钟
+
+function tokenize(s) {
+  if (!s) return [];
+  return String(s).toLowerCase()
+    .replace(/[^\p{L}\p{N}\s-]/gu, ' ')
+    .split(/\s+/)
+    .filter((t) => t.length >= 2 && !/^(the|and|for|with|from|that|this|are|was|were|have|has|had|into|over|upon|than|which|their|their|their)$/.test(t));
+}
+
+async function getSearchIndex(request) {
+  try {
+    const cached = globalThis[SEARCH_INDEX_CACHE_KEY];
+    if (cached && Date.now() - cached.fetchedAt < SEARCH_INDEX_TTL_MS) return cached.data;
+    const cacheCf = await caches.open('search-index-v1');
+    const cachedR = await cacheCf.match(SEARCH_INDEX_URL);
+    if (cachedR) {
+      const data = await cachedR.json();
+      globalThis[SEARCH_INDEX_CACHE_KEY] = { data, fetchedAt: Date.now() };
+      return data;
+    }
+    const res = await fetch(SEARCH_INDEX_URL, { cache: 'force-cache' });
+    if (!res.ok) throw new Error(`fetch ${res.status}`);
+    const data = await res.json();
+    globalThis[SEARCH_INDEX_CACHE_KEY] = { data, fetchedAt: Date.now() };
+    return data;
+  } catch (e) {
+    return null;
+  }
+}
+
+async function handleSemanticSearch(request) {
+  const started = Date.now();
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'bad_request', message: 'Body 必须是 JSON' }, 400);
+  }
+  const query = (body.query || '').trim();
+  if (!query || query.length < 2) {
+    return json({ error: 'bad_request', message: 'query 至少 2 字符' }, 400);
+  }
+  const limit = Math.min(parseInt(body.limit, 10) || 20, 50);
+  const sites = Array.isArray(body.sites) ? body.sites : (typeof body.sites === 'string' ? [body.sites] : null);
+  const source = body.source || null;
+
+  const index = await getSearchIndex(request);
+  if (!index || !index.entities) {
+    return json({ error: 'index_unavailable', message: '搜索索引不可用，请稍后重试' }, 503);
+  }
+
+  const qTokens = tokenize(query);
+  if (qTokens.length === 0) {
+    return json({ error: 'bad_request', message: 'query 无可搜索 token' }, 400);
+  }
+
+  // 打分：name 命中权重最高，tag 次之，snippet 最低；confidence 加权
+  const scored = [];
+  for (const e of index.entities) {
+    if (sites && !sites.includes(e.site)) continue;
+    if (source && e.source && e.source !== source) continue;
+    const nameTokens = new Set(tokenize(e.name));
+    const tagTokens = new Set(e.tags.flatMap((t) => tokenize(t)));
+    const snippetTokens = new Set(tokenize(e.snippet));
+    let hit = 0;
+    for (const qt of qTokens) {
+      if (nameTokens.has(qt)) hit += 3;
+      else if (tagTokens.has(qt)) hit += 2;
+      else if (snippetTokens.has(qt)) hit += 1;
+    }
+    if (hit === 0) continue;
+    const coverage = hit / (qTokens.length * 3);
+    const score = coverage * 0.7 + (e.confidence || 0) * 0.3;
+    scored.push({
+      id: e.id, name: e.name, site: e.site, source: e.source,
+      url: e.url, snippet: e.snippet, tags: e.tags,
+      publishedDate: e.publishedDate, confidence: e.confidence,
+      score: Math.round(score * 10000) / 10000,
+    });
+  }
+
+  scored.sort((a, b) => b.score - a.score || (b.confidence || 0) - (a.confidence || 0));
+  const top = scored.slice(0, limit);
+
+  return json({
+    results: top,
+    total: scored.length,
+    returned: top.length,
+    query,
+    meta: {
+      indexGeneratedAt: index.generatedAt,
+      entityCount: index.totalEntities,
+      sourceSites: index.sourceSites,
+      elapsedMs: Date.now() - started,
+      tokenCount: qTokens.length,
+    },
+  });
+}
+
+// ---------------------------------------------------------------------------
 // 主处理器
 // ---------------------------------------------------------------------------
 
@@ -161,8 +270,8 @@ async function handleRequest(request) {
   const path = url.pathname;
   const ip = getClientIp(request);
 
-  // ---- 付费层：/api/pro/* 必须鉴权 ----
-  if (path.startsWith('/api/pro/')) {
+  // ---- 付费层：/api/pro/* 和 /v1/search/semantic 必须鉴权 ----
+  if (path.startsWith('/api/pro/') || path.startsWith('/v1/search/')) {
     const auth = request.headers.get('Authorization') || '';
     const token = auth.replace(/^Bearer\s+/i, '').trim();
     const site = url.searchParams.get('site') || '';
@@ -172,6 +281,15 @@ async function handleRequest(request) {
       const msg = { invalid_format: 'Key 格式无效', bad_signature: 'Key 签名验证失败', expired: 'Key 已过期', bad_payload: 'Key 负载无效', remote_unreachable: '许可证服务不可达', server_misconfigured: '服务端未配置' };
       return json({ error: 'forbidden', message: msg[v.error] || 'Pro Key 校验失败' }, 403);
     }
+
+    // 语义搜索端点：内部处理，不走代理转发
+    if (path === '/v1/search/semantic' || path === '/api/pro/search/semantic') {
+      if (request.method !== 'POST') {
+        return json({ error: 'method_not_allowed', message: '仅支持 POST' }, 405);
+      }
+      return handleSemanticSearch(request);
+    }
+
     const req = new Request(request);
     req.headers.set('X-GeneTech-Tier', 'pro');
     req.headers.set('X-GeneTech-Site', v.site || site);
@@ -179,14 +297,41 @@ async function handleRequest(request) {
   }
 
   // ---- 免费层：静态知识 JSON 限流放行 ----
-  if (path.includes('/website/api/') || path.endsWith('.json')) {
+  if (path.includes('/website/api/') || path.endsWith('.json') || path.startsWith('/v1/')) {
     const rl = await checkFreeRate(env, ip);
     if (!rl.allowed) {
       return json({ error: 'rate_limited', message: `免费层限流：每 IP 每分钟 ${env.PRO_FREE_RATE || DEFAULT_FREE_RATE} 次。升级 Pro 获取更高配额与语义检索/引用导出能力。` }, 429, { 'Retry-After': '60' });
     }
-    const req = new Request(request);
+
+    // /v1/* OpenAPI 路径映射到实际静态文件
+    let targetPath = path;
+    if (path === '/v1/domains' || path === '/v1/entities/meta') {
+      targetPath = '/api/catalog.json';
+    } else if (path === '/v1/oss/registry') {
+      targetPath = '/data/oss-registry.json';
+    } else if (path === '/v1/entities') {
+      targetPath = '/api/catalog.json'; // 聚合视图走 catalog（各站 entities 由 catalog.index/entities 字段指向）
+    } else if (path.startsWith('/v1/domains/')) {
+      const slug = path.slice('/v1/domains/'.length);
+      targetPath = `/${slug}/website/api/index.json`;
+    }
+
+    const req = new Request(request, { headers: request.headers });
+    if (targetPath !== path) {
+      // 用改写后的 URL 转发
+      const newUrl = new URL(targetPath, request.url);
+      const proxyReq = new Request(newUrl, { method: request.method, headers: req.headers });
+      proxyReq.headers.set('X-GeneTech-Tier', 'free');
+      proxyReq.headers.set('X-GeneTech-OriginalPath', path);
+      return fetch(proxyReq);
+    }
     req.headers.set('X-GeneTech-Tier', 'free');
     return fetch(req);
+  }
+
+  // ---- /health 端点 ----
+  if (path === '/health' || path === '/api/health') {
+    return json({ ok: true, service: 'genetech-api-guard', time: new Date().toISOString() });
   }
 
   // ---- LLM 桥接：/api/llm/* 转发到上游 OpenAI 兼容网关 ----

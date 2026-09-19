@@ -251,8 +251,11 @@ paths:
   /v1/search/semantic:
     post:
       tags: [Search]
-      summary: 语义搜索（Pro only）
-      description: 基于实体 abstract 向量化后的语义检索。需要 `gtk_` Pro key。
+      summary: 关键词语义搜索（Pro only）
+      description: |
+        基于实体 name / tags / snippet 的加权 token 匹配（name 3 分 / tag 2 分 / snippet 1 分 + confidence 加权）。
+        当前实现为 token-based（13k 高置信实体，索引每日构建），非 embedding 向量化；
+        W3-W4 计划接入 embedding 向量化。需要 `gtk_` Pro key。
       operationId: semanticSearch
       security:
         - ApiKeyAuth: []
@@ -266,17 +269,26 @@ paths:
               properties:
                 query:
                   type: string
-                  example: 最新 embodied AI 机器人操作进展
-                domain:
+                  example: reinforcement learning safety
+                  minLength: 2
+                sites:
+                  description: 按子站过滤（可选，数组或单字符串）
+                  oneOf:
+                    - type: array
+                      items: { type: string }
+                    - type: string
+                  example: [embodied-ai]
+                source:
+                  description: 按数据来源过滤（arxiv / crossref / europepmc）
                   type: string
-                  example: embodied-ai
                 limit:
                   type: integer
-                  default: 10
+                  default: 20
+                  minimum: 1
                   maximum: 50
       responses:
         '200':
-          description: 语义匹配结果
+          description: 匹配结果
           content:
             application/json:
               schema:
@@ -287,13 +299,37 @@ paths:
                     items:
                       type: object
                       properties:
-                        entity:
-                          $ref: '#/components/schemas/Entity'
-                        score:
-                          type: number
-                          format: float
+                        id: { type: string }
+                        name: { type: string }
+                        site: { type: string }
+                        source: { type: string }
+                        url: { type: string }
+                        snippet: { type: string }
+                        tags:
+                          type: array
+                          items: { type: string }
+                        publishedDate: { type: string, format: date }
+                        confidence: { type: number }
+                        score: { type: number, format: float }
+                  total: { type: integer, description: 命中总数 }
+                  returned: { type: integer, description: 本次返回条数 }
+                  query: { type: string }
+                  meta:
+                    type: object
+                    properties:
+                      indexGeneratedAt: { type: string, format: date-time }
+                      entityCount: { type: integer }
+                      sourceSites: { type: integer }
+                      elapsedMs: { type: integer }
+                      tokenCount: { type: integer }
+        '400':
+          description: 参数错误
+        '401':
+          description: 缺少 Authorization
         '403':
-          description: 需要 Pro key
+          description: Pro key 校验失败
+        '503':
+          description: 搜索索引不可用
 
   /v1/license/verify:
     post:
