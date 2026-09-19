@@ -1,11 +1,15 @@
 openapi: 3.1.0
 info:
-  title: SwarmLabs Scientific Knowledge Infrastructure API
+  title: GeneTech 14-Sites Knowledge Infrastructure API
   version: 1.0.0
   description: |
-    SwarmLabs 是「信息收集 + 结构化」的基础设施项目，覆盖 30 领域 300K+ 结构化实体，
-    同时提供开源平台扫描（GitHub / HuggingFace / Papers with Code）每日快照，
-    供下游消费者（小模型专业 KB / 蜂群科技数据基础 / 机器人项目路线建议 / 对外付费 API）消费。
+    GeneTech 14-Sites 知识引擎是「信息收集 + 结构化」的基础设施项目：
+    30 个科技主题子站（agritech / ai-safety / ai4science / embodied-ai ...），
+    当前约 47.6k 结构化实体（摘要完整度 ~49%），目标扩至 100k+；
+    叠加开源平台每日扫描（GitHub / HuggingFace / Papers with Code）作为广度层。
+
+    下游消费者：小模型专业 KB / 蜂群科研数据（另项目，独立 slb_ key）/ 机器人项目路线建议 / 对外付费 API。
+    注意：与 SwarmLabs（另一独立项目）无隶属关系，仅共用同一 CF 账号与数据 CDN。
 
     ## 三档 API Key 商业模式
     | Key 前缀 | 档位 | 速率限制 | 范围 | 价格 |
@@ -34,7 +38,7 @@ info:
   license:
     name: MIT
   contact:
-    name: SwarmLabs Infra
+    name: GeneTech 14-Sites Infra
     url: https://swarmlabs.tools
 servers:
   - url: https://api.swarmlabs.tools
@@ -50,7 +54,7 @@ security:
 
 tags:
   - name: Entities
-    description: 实体读取（30 领域 300K+ 实体）
+    description: 实体读取（30 个子站，当前 ~47.6k，目标 100k+）
   - name: Domains
     description: 领域元数据
   - name: OSS
@@ -151,7 +155,7 @@ paths:
         - {}
       responses:
         '200':
-          description: 30 领域元数据
+          description: 30 站元数据
           content:
             application/json:
               schema:
@@ -487,7 +491,7 @@ components:
       properties:
         id:
           type: string
-          example: gh:lm203688/swarmlabs-engine-kit
+          example: gh:lm203688/genetech-14-sites
         source:
           type: string
           enum: [github, hf-model, hf-dataset, pwc]

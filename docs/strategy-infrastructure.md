@@ -1,16 +1,18 @@
-# SwarmLabs 基础设施战略定位（2026-09-19）
+# 14站 知识引擎基础设施战略定位（2026-09-19）
 
 ## 一句话
 
-SwarmLabs 从「30 领域知识引擎」升级为「**信息收集 + 结构化**的基础设施项目」——**广度做深**（持续开源平台扫描 + 结构化入库），**接口做规范**（OpenAPI 3.1 + 三档 API key），**边界做清晰**（不与下游项目混合，通过规范接口输出价值），**护城河做厚**（数据规模 100k → 1M → 10M 实体）。
+**GeneTech 14站知识引擎**（本工作区，30 个子站，当前 ~47.6k 实体）升级为「**信息收集 + 结构化**的基础设施项目」——**广度做深**（持续开源平台扫描 + 结构化入库），**接口做规范**（OpenAPI 3.1 + 三档 API key），**边界做清晰**（不与下游项目混合，通过规范接口输出价值），**护城河做厚**（数据规模 100k → 1M → 10M 实体）。
 
-## 三条下游消费者（价值锚点）
+> 注：本工作区（`lm203688/genetech-14-sites`）与 SwarmLabs（`lm203688/swarmlabs`，独立项目）无隶属关系，只是共享同一 CF 账号和数据 CDN 的部署环境。本文档只描述 14站自身战略。
+
+## 四条下游消费者（价值锚点）
 
 | 消费者 | 需要什么 | 我们提供什么 | 数据源 |
 |---|---|---|---|
 | 小模型（ornith-1.5:35b 等） | 专业领域知识库，避免幻觉 | 结构化实体 + 摘要 + 引用链 | `entities.json` + `oss-registry.json` |
-| 蜂群科技（SwarmLabs） | 30 领域趋势 / 研究空白 / 跨域桥接 | 全量结构化数据 + API 网关 | 同源 CDN 30 站 + `slb_` key |
-| 机器人项目（RoboParts） | 最新发展 + 路线建议 | embodied-ai 领域 + OSS 项目扫描 + 维护状态 | `oss-registry.json` 中 `domain_tags=embodied-ai` |
+| 蜂群项目（独立项目，用 `slb_` key） | 结构化科研数据订阅 | 全量结构化数据 + 独立网关 | 同源 CDN 30 站 + `swarm-labs-gateway` |
+| 机器人项目（RoboParts，独立项目） | 最新发展 + 路线建议 | embodied-ai 子站 + OSS 项目扫描 | `oss-registry.json` 中 `domain_tags=embodied-ai` |
 | 外部付费客户 | 结构化数据订阅 | REST API + OpenAPI 规范 + SLA | `gtk_` Pro key |
 
 **共同点**：下游不需要训练/推理能力，也不需要我们承担业务逻辑——**我们只做信息收集与结构化**，价值随数据规模线性增长。
@@ -68,8 +70,9 @@ SwarmLabs 从「30 领域知识引擎」升级为「**信息收集 + 结构化**
 | 数据趋势报告（跨轮 delta） | 项目特定业务逻辑 |
 
 **边界的技术实现**：
-- 独立仓库：`genetech-14-sites`（本站） + `swarmlabs-engine-kit`（MIT 开源） + `roboparts`（机器人项目独立仓）
-- 独立 API key 前缀：`gtk_` / `slb_` / 无 key（三档不共享 HMAC 密钥）
+- 独立仓库：`lm203688/genetech-14-sites`（本站，本基础设施）
+- 独立 API key 前缀：`gtk_`（14站 Pro，走 api-guard） / `slb_`（Partner 独立网关，走 swarm-labs-gateway） / 无 key（Free）
+- 三档 HMAC 密钥各自独立：`PRO_SECRET` / `GATEWAY_SECRET` / 无
 - 独立限流桶：`free:<ip>:<min>` / `gw:<clientId>:<min>` / `pro:<key>:<min>`
 - 独立部署：`genetech-api-guard` Worker / `swarm-labs-gateway` Worker / `roboparts-api`（待建）
 
@@ -89,9 +92,9 @@ SwarmLabs 从「30 领域知识引擎」升级为「**信息收集 + 结构化**
 ```
     当前（2026-09）       中期（2027）        长期（2028+）
     ─────────────        ─────────────       ─────────────
-    30 站 300k 实体       30 站 1M 实体        50 站 10M 实体
-    + 100k OSS 项目       + 500k OSS 项目      + 5M OSS 项目
-    + 47k 结构化实体      + 200k 结构化实体     + 5M 结构化实体
+    30 站 47.6k 实体      30 站 200k 实体      50 站 5M 实体
+    + 100 OSS 项目/日      + 500 OSS 项目/日    + 5k OSS 项目/日
+    摘要完整度 49%       摘要完整度 80%       摘要完整度 95%
     ─────────────        ─────────────       ─────────────
     支付链路（虎皮椒）     三档 API key 全通    Enterprise 定制
     Free/Partner/Pro     + Glama / Smithery    + 行业垂直订阅
@@ -103,7 +106,7 @@ SwarmLabs 从「30 领域知识引擎」升级为「**信息收集 + 结构化**
 1. **数据规模**：10M+ 实体是别人短期无法复制的
 2. **结构化字段**：30+ 字段的规范化比纯爬虫数据价值高 10x
 3. **规范接口**：OpenAPI 3.1 + 三档 key 让任何 agent 都能自助接入
-4. **开源生态**：MIT 许可证 + `swarmlabs-engine-kit` 开源工具，形成开发者生态
+4. **开源生态**：MIT 许可证 + `genetech-14-sites` 开源仓库，形成开发者生态（工具类 SDK 未来可拆到 `genetech-engine-kit` 之类）
 5. **每日增量**：`oss-scan` 每日扫描 + 趋势报告，数据是"活的"不是"死的"
 
 ## 后续 6 周路线图
@@ -114,7 +117,7 @@ SwarmLabs 从「30 领域知识引擎」升级为「**信息收集 + 结构化**
 | W2 (09-26~10-02) | 部署 `swarm-labs-gateway` + `PRO_SECRET` 补齐 + `genetech.tools` CNAME 补建 | Partner 网关可用 |
 | W3 (10-03~10-09) | OSS 扫描扩源：arXiv trending + Semantic Scholar 每日 | 5 源每日自动扫描 |
 | W4 (10-10~10-16) | 为 `embodied-ai` / `llm-frontier` / `agent-ecosystem` 3 个重点领域加深度采集 | 3 领域数据完整度提升 |
-| W5 (10-17~10-23) | SDK 补：Python + TypeScript 双语言 SDK（基于 OpenAPI 生成） | `swarmlabs-engine-kit` 加 SDK |
+| W5 (10-17~10-23) | SDK 补：Python + TypeScript 双语言 SDK（基于 OpenAPI 生成） | 新建 `genetech-engine-kit`（14站专属） |
 | W6 (10-24~10-30) | Glama / Smithery 平台登记 + GSC 搜索验证 + 官网更新 | 对外品牌全通 |
 
 ## 商业模式（三档 API key + 数据护城河）
@@ -133,12 +136,12 @@ SwarmLabs 从「30 领域知识引擎」升级为「**信息收集 + 结构化**
 
 | 风险 | 影响 | 对冲 |
 |---|---|---|
-| 国内网络被墙（`*.workers.dev` 全 502） | 国内支付/API 不可用 | 走 `swarmlabs.tools` CNAME（已生效，海外用户可用）；如需国内可用，需自建国内 CDN + Worker 回源 |
+| 国内网络被墙（`*.workers.dev` 全 502） | 国内支付/API 不可用 | 走 `swarmlabs.tools` CNAME（部署 DNS 名，海外可用）；如需国内可用，需自建国内 CDN + Worker 回源 |
 | 数据规模超 Pages 1GB 上限 | 无法继续增长 | 归档分页懒加载（`data/` 分片 + `reports/` 增量）；`oss-registry.json` 独立于站点，不受 Pages 约束 |
 | API key 泄露 | 未授权访问 | HMAC + 独立密钥 + KV 吊销（`revoked:<clientId>` 写入即生效） |
 | 上游 API 限流 | 数据采集不完整 | 单源失败不阻断其他源（`STRICT_OSS_SCAN=1` 可选）；cursor 幂等，miss 自然重试 |
-| 竞品（Scite / Semantic Scholar / Papers with Code） | 用户选择竞品 | 差异化：跨域桥接 + 30 领域结构化 + 蜂群/机器人垂直数据，非通用学术搜索 |
+| 竞品（Scite / Semantic Scholar / Papers with Code） | 用户选择竞品 | 差异化：跨域桥接 + 30 站结构化 + 蜂群/机器人垂直数据，非通用学术搜索 |
 
 ## 一句话总结
 
-**SwarmLabs 现在是「30 领域 + 100k OSS 项目」的结构化信息基础设施；随数据规模增长，护城河线性加厚，通过 OpenAPI 3.1 + 三档 API key 规范接口服务下游，永不与消费者项目混合——这是数据规模型基础设施项目的标准打法，也是唯一能形成"无法替代"护城河的路径。**
+**GeneTech 14站知识引擎正在升级为「30 站 + 100k+ 结构化实体」的信息收集基础设施；随数据规模增长，护城河线性加厚，通过 OpenAPI 3.1 + 三档 API key 规范接口服务下游（小模型 / 蜂群项目 / 机器人项目 / 付费客户），永不与消费者项目混合——这是数据规模型基础设施项目的标准打法，也是唯一能形成"无法替代"护城河的路径。**

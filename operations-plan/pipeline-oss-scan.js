@@ -98,7 +98,7 @@ const writeJson = (p, obj) => { fs.writeFileSync(p, JSON.stringify(obj, null, 2)
 function httpGet(url, headers = {}, timeoutMs = 20000) {
   return new Promise((resolve, reject) => {
     const mod = url.startsWith('https') ? require('https') : require('http');
-    const req = mod.get(url, { headers: { 'User-Agent': 'SwarmLabs-InfraBot/1.0', ...headers }, timeout: timeoutMs }, (res) => {
+    const req = mod.get(url, { headers: { 'User-Agent': 'Genetech14-InfraBot/1.0', ...headers }, timeout: timeoutMs }, (res) => {
       let body = '';
       res.on('data', (c) => (body += c));
       res.on('end', () => {
