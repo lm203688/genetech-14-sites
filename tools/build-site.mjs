@@ -502,7 +502,7 @@ function layout({ title, desc, body, jsonld, canonical, type }) {
   const ldScripts = [webSite, organizationLd, ...pageLd]
     .map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`)
     .join('\n');
-  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/topic/">主题图谱</a><a href="${BASE}/insights.html">研究洞察</a><a href="${BASE}/graph.html">知识图谱</a><a href="${BASE}/data.html">数据下载</a><a href="${BASE}/ask.html">AI 问答</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/blog/">博客</a><a href="${BASE}/point-guide.html">指向演示</a></nav>`;
+  const nav = `<nav class="nav"><a href="${BASE}/">首页</a><a href="${BASE}/search.html">全局搜索</a><a href="${BASE}/topic/">主题图谱</a><a href="${BASE}/insights.html">研究洞察</a><a href="${BASE}/graph.html">知识图谱</a><a href="${BASE}/data.html">数据下载</a><a href="${BASE}/ask.html">AI 问答</a><a href="${BASE}/mcp.html">MCP 接入</a><a href="${BASE}/pricing.html">定价</a><a href="${BASE}/license.html">购买 License</a><a href="${BASE}/blog/">博客</a><a href="${BASE}/point-guide.html">指向演示</a></nav>`;
   return `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -2010,6 +2010,16 @@ async function main() {
   writeFile('blog/index.html', renderBlogIndex());
   for (const a of BLOG_POSTS) writeFile(`blog/${a.slug}.html`, renderArticle(a));
   writeFile('assets/ask.js', ASK_PAGE_JS);
+  // 对外定价页（pricing.html）：仓库根目录的静态 HTML，原样复制到 _site/
+  // 供 https://<origin>/pricing.html 访问，与 license.html 并列为付费入口
+  try {
+    const pricingSrc = path.join(ROOT, 'pricing.html');
+    if (fs.existsSync(pricingSrc)) {
+      writeFile('pricing.html', fs.readFileSync(pricingSrc, 'utf8'));
+    }
+  } catch (e) {
+    console.warn('[build-site] 跳过 pricing.html:', e.message);
+  }
   // 指向式引导组件（借鉴 heyclicky 的 Visual Cursor Pointing）：默认 no-op，无标记页面零副作用
   try {
     writeFile('assets/point-guide.js', fs.readFileSync(path.join(ROOT, 'tools/static/point-guide.js'), 'utf8'));
