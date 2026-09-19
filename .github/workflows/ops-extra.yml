@@ -25,7 +25,7 @@ on:
         required: true
         default: 'all'
         type: choice
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite]
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan]
   schedule:
     # ===== 临时提升期（2026-08-05 ~ 2026-12-31）：每日 12:30 UTC(20:30 CST) 一次全量运行 =====
     # 提升期到期判定在 ops.yml 的 decide 步骤（$TODAY > 2026-12-31），此处仅跟随其节奏；

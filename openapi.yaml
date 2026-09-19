@@ -1,0 +1,564 @@
+openapi: 3.1.0
+info:
+  title: SwarmLabs Scientific Knowledge Infrastructure API
+  version: 1.0.0
+  description: |
+    SwarmLabs 是「信息收集 + 结构化」的基础设施项目，覆盖 30 领域 300K+ 结构化实体，
+    同时提供开源平台扫描（GitHub / HuggingFace / Papers with Code）每日快照，
+    供下游消费者（小模型专业 KB / 蜂群科技数据基础 / 机器人项目路线建议 / 对外付费 API）消费。
+
+    ## 三档 API Key 商业模式
+    | Key 前缀 | 档位 | 速率限制 | 范围 | 价格 |
+    |---|---|---|---|---|
+    | 无 key | Free | 60 req/min | 仅元数据（domain 列表 / entity 摘要 / 前 100 条） | 免费 |
+    | `slb_` | Partner | 120 req/min | 实体 + 领域读权限 | 协商 |
+    | `gtk_` | Pro | 600 req/min | 全字段 + 语义搜索 + 引用导出 | ¥39.9 / Pro，¥199 终身 |
+
+    ## 独立性边界
+    本项目专注**信息收集与结构化**，不承接：
+    - 模型训练 / 推理（消费者自行负责）
+    - 商业数据加工（数据脱敏/合规在消费者侧）
+    - 其他项目的鉴权（partner 走独立 `slb_` key，Pro 走独立 `gtk_` key）
+
+    ## 端点清单
+    - `GET /v1/entities`        实体列表（分页 + 领域过滤 + 关键词）
+    - `GET /v1/entities/{id}`  实体详情
+    - `GET /v1/domains`        领域元数据（30 站）
+    - `GET /v1/domains/{slug}` 领域详情（含最新信号）
+    - `GET /v1/oss/registry`   开源项目注册表（GitHub / HF / PWC）
+    - `POST /v1/search/semantic` 语义搜索（Pro only）
+    - `POST /v1/license/verify` 许可校验
+    - `GET /v1/license/quota`  配额查询
+    - `GET /health`            健康检查（无需 key）
+
+  license:
+    name: MIT
+  contact:
+    name: SwarmLabs Infra
+    url: https://swarmlabs.tools
+servers:
+  - url: https://api.swarmlabs.tools
+    description: 生产主端点（Worker Custom Domain via CF CNAME）
+  - url: https://genetech-api-guard.61960005.workers.dev
+    description: Worker 直连兜底（国内被墙，海外可用）
+  - url: https://swarm-labs-gateway.61960005.workers.dev
+    description: Partner 网关（`slb_` key 专用）
+
+security:
+  - ApiKeyAuth: []
+  - {}
+
+tags:
+  - name: Entities
+    description: 实体读取（30 领域 300K+ 实体）
+  - name: Domains
+    description: 领域元数据
+  - name: OSS
+    description: 开源平台扫描结构化数据
+  - name: Search
+    description: 语义 / 关键词搜索
+  - name: License
+    description: 许可校验与配额
+  - name: System
+    description: 系统级端点
+
+paths:
+  /v1/entities:
+    get:
+      tags: [Entities]
+      summary: 列出实体
+      description: |
+        按领域 / 关键词 / 类型分页查询实体。免费层限 100 条，Partner/Pro 层限 1000 条。
+        完整字段仅 Pro 可访问；免费层仅返回 `id / name / abstract / tags` 四字段。
+      operationId: listEntities
+      security:
+        - ApiKeyAuth: []
+        - {}
+      parameters:
+        - name: domain
+          in: query
+          required: false
+          schema:
+            type: string
+            example: embodied-ai
+          description: 领域 slug（30 个之一，见 `/v1/domains`）
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+            maxLength: 200
+            example: robot manipulation
+          description: 关键词过滤（作用于 name + abstract + tags）
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 1000
+            default: 50
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: string
+          description: 分页游标（由上一页响应 `next_cursor` 提供）
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityListResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+
+  /v1/entities/{id}:
+    get:
+      tags: [Entities]
+      summary: 实体详情
+      operationId: getEntity
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: robot-parts:708
+          description: 实体 ID（格式 `<domain>:<sequence>` 或 OSS `<source>:<url>`）
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+        '404':
+          description: 实体不存在
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /v1/domains:
+    get:
+      tags: [Domains]
+      summary: 领域元数据列表
+      operationId: listDomains
+      security:
+        - ApiKeyAuth: []
+        - {}
+      responses:
+        '200':
+          description: 30 领域元数据
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  domains:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Domain'
+
+  /v1/domains/{slug}:
+    get:
+      tags: [Domains]
+      summary: 领域详情（含最新信号与实体统计）
+      operationId: getDomain
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+            example: embodied-ai
+      responses:
+        '200':
+          description: 领域详情
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DomainDetail'
+
+  /v1/oss/registry:
+    get:
+      tags: [OSS]
+      summary: 开源项目注册表
+      description: |
+        GitHub / HuggingFace / Papers with Code 三类开源实体的结构化数据。
+        字段包含 stars / license / maintenance_status / domain_tags 等，
+        供下游做「小模型 KB」和「机器人路线建议」消费。
+      operationId: listOssRegistry
+      parameters:
+        - name: source
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [github, hf-model, hf-dataset, pwc]
+        - name: domain
+          in: query
+          required: false
+          schema:
+            type: string
+            description: 领域标签过滤（`domainTags` 字段）
+        - name: min_stars
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+        - name: maintenance
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [active, stale, dormant, abandoned, unknown]
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 100
+            maximum: 500
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 开源实体列表
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  entities:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/OssProject'
+                  next_cursor:
+                    type: string
+                    nullable: true
+
+  /v1/search/semantic:
+    post:
+      tags: [Search]
+      summary: 语义搜索（Pro only）
+      description: 基于实体 abstract 向量化后的语义检索。需要 `gtk_` Pro key。
+      operationId: semanticSearch
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [query]
+              properties:
+                query:
+                  type: string
+                  example: 最新 embodied AI 机器人操作进展
+                domain:
+                  type: string
+                  example: embodied-ai
+                limit:
+                  type: integer
+                  default: 10
+                  maximum: 50
+      responses:
+        '200':
+          description: 语义匹配结果
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        entity:
+                          $ref: '#/components/schemas/Entity'
+                        score:
+                          type: number
+                          format: float
+        '403':
+          description: 需要 Pro key
+
+  /v1/license/verify:
+    post:
+      tags: [License]
+      summary: 校验 License Key
+      operationId: verifyLicense
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [license_key]
+              properties:
+                license_key:
+                  type: string
+                  example: gtk_eyJ...
+      responses:
+        '200':
+          description: 校验结果
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  valid:
+                    type: boolean
+                  expires_at:
+                    type: string
+                    format: date-time
+                  tier:
+                    type: string
+                    enum: [free, partner, pro, lifetime]
+                  scopes:
+                    type: array
+                    items:
+                      type: string
+
+  /v1/license/quota:
+    get:
+      tags: [License]
+      summary: 查询当前 key 配额
+      operationId: getLicenseQuota
+      responses:
+        '200':
+          description: 配额信息
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  limit:
+                    type: integer
+                    description: 每分钟请求上限
+                  used:
+                    type: integer
+                    description: 本分钟已用
+                  reset_at:
+                    type: string
+                    format: date-time
+
+  /health:
+    get:
+      tags: [System]
+      summary: 健康检查
+      operationId: healthCheck
+      security:
+        - {}
+      responses:
+        '200':
+          description: 服务正常
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [ok]
+                  timestamp:
+                    type: string
+                    format: date-time
+                  version:
+                    type: string
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: |
+        Bearer 前缀 + API key。前缀区分档位：
+        - `Bearer gtk_<hmac>` → Pro（付费）
+        - `Bearer slb_<hmac>` → Partner（合作）
+        - 无 header → Free（受限）
+
+  schemas:
+    Entity:
+      type: object
+      properties:
+        id:
+          type: string
+          example: embodied-ai:42
+        domain:
+          type: string
+          example: embodied-ai
+        name:
+          type: string
+        abstract:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        doi:
+          type: string
+          nullable: true
+        source:
+          type: string
+          example: europepmc
+        published_at:
+          type: string
+          format: date-time
+        authors:
+          type: array
+          items:
+            type: string
+        citations:
+          type: integer
+        url:
+          type: string
+          format: uri
+    EntityListResponse:
+      type: object
+      properties:
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        next_cursor:
+          type: string
+          nullable: true
+        total:
+          type: integer
+          description: 匹配总数（Partner/Pro 返回精确值，Free 层可能截断）
+    Domain:
+      type: object
+      properties:
+        slug:
+          type: string
+          example: embodied-ai
+        name:
+          type: string
+          example: 具身智能
+        entity_count:
+          type: integer
+        description:
+          type: string
+    DomainDetail:
+      allOf:
+        - $ref: '#/components/schemas/Domain'
+        - type: object
+          properties:
+            latest_signals:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum: [github_trending, arxiv_new, hf_model, pwc_paper]
+                  title:
+                    type: string
+                  url:
+                    type: string
+                    format: uri
+                  ingested_at:
+                    type: string
+                    format: date-time
+            data_coverage:
+              type: object
+              properties:
+                with_abstract_pct:
+                  type: number
+                  format: float
+                with_doi_pct:
+                  type: number
+                  format: float
+                with_citations_pct:
+                  type: number
+                  format: float
+    OssProject:
+      type: object
+      properties:
+        id:
+          type: string
+          example: gh:lm203688/swarmlabs-engine-kit
+        source:
+          type: string
+          enum: [github, hf-model, hf-dataset, pwc]
+        name:
+          type: string
+        url:
+          type: string
+          format: uri
+        description:
+          type: string
+        license:
+          type: string
+          example: MIT
+        stars:
+          type: integer
+        forks:
+          type: integer
+        watchers:
+          type: integer
+        downloads:
+          type: integer
+          description: HF models/datasets 特有
+        language:
+          type: string
+          nullable: true
+        topics:
+          type: array
+          items:
+            type: string
+        domain_tags:
+          type: array
+          items:
+            type: string
+          description: 自动分类的领域标签（agent-ecosystem / embodied-ai / llm-frontier 等）
+        first_seen_at:
+          type: string
+          format: date-time
+        last_seen_at:
+          type: string
+          format: date-time
+        maintenance_status:
+          type: string
+          enum: [active, stale, dormant, abandoned, unknown]
+
+  responses:
+    Unauthorized:
+      description: 未授权或 key 无效
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: invalid_or_expired_key
+    RateLimited:
+      description: 速率超限
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+          description: 距下次可用秒数
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: rate_limit_exceeded
+              retry_after:
+                type: integer
+              tier:
+                type: string

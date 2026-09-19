@@ -1,0 +1,104 @@
+{
+  "updatedAt": "2026-09-19T01:50:40.226Z",
+  "trend": {
+    "totalEntities": 116,
+    "prevTotal": 86,
+    "added": 30,
+    "topStarsGainers": [
+      {
+        "id": "gh:affaan-m/ECC",
+        "delta": 262095,
+        "current": 262095
+      },
+      {
+        "id": "gh:NousResearch/hermes-agent",
+        "delta": 246927,
+        "current": 246927
+      },
+      {
+        "id": "gh:n8n-io/n8n",
+        "delta": 205290,
+        "current": 205290
+      },
+      {
+        "id": "gh:Significant-Gravitas/AutoGPT",
+        "delta": 187440,
+        "current": 187440
+      },
+      {
+        "id": "gh:firecrawl/firecrawl",
+        "delta": 182023,
+        "current": 182023
+      },
+      {
+        "id": "gh:ollama/ollama",
+        "delta": 181233,
+        "current": 181233
+      },
+      {
+        "id": "gh:f/prompts.chat",
+        "delta": 170695,
+        "current": 170695
+      },
+      {
+        "id": "gh:huggingface/transformers",
+        "delta": 166306,
+        "current": 166306
+      },
+      {
+        "id": "gh:Snailclimb/JavaGuide",
+        "delta": 158673,
+        "current": 158673
+      },
+      {
+        "id": "gh:langgenius/dify",
+        "delta": 156359,
+        "current": 156359
+      },
+      {
+        "id": "gh:open-webui/open-webui",
+        "delta": 152503,
+        "current": 152503
+      },
+      {
+        "id": "gh:langchain-ai/langchain",
+        "delta": 146616,
+        "current": 146616
+      },
+      {
+        "id": "gh:DietrichGebert/ponytail",
+        "delta": 142044,
+        "current": 142044
+      },
+      {
+        "id": "gh:farion1231/cc-switch",
+        "delta": 133572,
+        "current": 133572
+      },
+      {
+        "id": "gh:harry0703/MoneyPrinterTurbo",
+        "delta": 124596,
+        "current": 124596
+      }
+    ],
+    "bySource": {
+      "github": 116
+    },
+    "byDomain": {
+      "agent-ecosystem": 44,
+      "mcp": 27,
+      "llm-frontier": 48,
+      "embodied-ai": 39,
+      "edge-ai": 10,
+      "biomed-ai": 16,
+      "semiconductor": 9,
+      "quantum-computing": 1,
+      "ai-safety": 20
+    },
+    "maintenanceBreakdown": {
+      "active": 116
+    }
+  },
+  "prevTotal": 86,
+  "currentTotal": 116
+}
