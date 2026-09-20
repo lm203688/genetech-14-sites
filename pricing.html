@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>定价 · GeneTech 14站知识引擎</title>
-  <meta name="description" content="14站知识引擎 API 定价 — 三档灵活方案，从免费浏览到专业订阅。30 个科技主题子站，47.6k+ 结构化实体，每日更新。" />
-  <meta name="keywords" content="API定价, 知识引擎, 结构化数据, 科学数据, arXiv, Semantic Scholar, 付费API" />
+  <title>API Pricing · GeneTech 14-Sites Knowledge Engine</title>
+  <meta name="description" content="GeneTech 14-Sites Knowledge Engine API pricing — three flexible plans from free browsing to pro subscription. 30 science topic sites, 47.6k+ structured entities, updated daily." />
+  <meta name="keywords" content="API pricing, knowledge engine, structured data, scientific data, arXiv, Semantic Scholar, structured API, paywalled API" />
   <style>
     :root {
       --brand: #667eea;
@@ -25,7 +25,7 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -49,7 +49,7 @@
       margin-bottom: 16px;
     }
     header.hero h1 { font-size: 2.4em; margin-bottom: 12px; font-weight: 700; }
-    header.hero p { opacity: 0.92; font-size: 1.1em; max-width: 640px; margin: 0 auto; }
+    header.hero p { opacity: 0.92; font-size: 1.1em; max-width: 720px; margin: 0 auto; }
     header.hero .stats {
       display: flex;
       justify-content: center;
@@ -87,15 +87,16 @@
     .tier-card.partner { border-top: 4px solid var(--warning); }
     .tier-card.pro { border-top: 4px solid var(--brand); background: linear-gradient(180deg, #fff 0%, var(--brand-light) 100%); }
     .tier-card.pro::after {
-      content: "推荐";
+      content: "RECOMMENDED";
       position: absolute;
       top: -12px; right: 20px;
       background: var(--brand);
       color: #fff;
       padding: 4px 12px;
       border-radius: 12px;
-      font-size: 0.75em;
+      font-size: 0.72em;
       font-weight: 600;
+      letter-spacing: 0.05em;
     }
     .tier-card h3 { font-size: 1.3em; margin-bottom: 6px; }
     .tier-card .tier-desc { color: var(--text-muted); font-size: 0.9em; margin-bottom: 20px; }
@@ -161,7 +162,7 @@
       color: #555;
       white-space: nowrap;
     }
-    th:first-child { width: 30%; }
+    th:first-child { width: 34%; }
     td.yes { color: var(--success); font-weight: 600; }
     td.no { color: var(--danger); }
     td.partial { color: var(--warning); font-weight: 500; }
@@ -341,16 +342,17 @@
     }
     .method.get { background: #e3f2fd; color: #1565c0; }
     .method.post { background: #e8f5e9; color: #2e7d32; }
-    .endpoint path {
+    .endpoint .path {
       font-family: 'SF Mono', Consolas, monospace;
       font-size: 0.92em;
       flex-shrink: 0;
     }
-    .endpoint desc {
+    .endpoint .desc {
       color: var(--text-muted);
       font-size: 0.88em;
+      flex: 1;
     }
-    .endpoint tier {
+    .endpoint .tier {
       margin-left: auto;
       font-size: 0.8em;
       padding: 2px 10px;
@@ -359,7 +361,7 @@
       color: var(--text-muted);
       flex-shrink: 0;
     }
-    .endpoint tier.pro { background: #eef0ff; color: var(--brand-dark); font-weight: 600; }
+    .endpoint .tier.pro { background: #eef0ff; color: var(--brand-dark); font-weight: 600; }
 
     footer {
       text-align: center;
@@ -384,217 +386,217 @@
 <body>
   <header class="hero">
     <div class="container">
-      <div class="badge">GeneTech 14站 · 知识引擎基础设施</div>
-      <h1>API 定价方案</h1>
-      <p>三档灵活方案，从免费浏览到专业订阅。<br>30 个科技主题子站，每日自动更新的结构化科学知识数据。</p>
+      <div class="badge">GeneTech 14-Sites · Knowledge Infrastructure</div>
+      <h1>API Pricing Plans</h1>
+      <p>Three flexible plans, from free browsing to professional subscription.<br>30 science topic sites with structured scientific knowledge data, updated daily.</p>
       <div class="stats">
-        <div class="stat"><div class="stat-num">30</div><div class="stat-label">科技主题子站</div></div>
-        <div class="stat"><div class="stat-num">47.6k+</div><div class="stat-label">结构化实体</div></div>
-        <div class="stat"><div class="stat-num">100k+</div><div class="stat-label">目标规模</div></div>
-        <div class="stat"><div class="stat-num">每日</div><div class="stat-label">数据更新</div></div>
+        <div class="stat"><div class="stat-num">30</div><div class="stat-label">Science Topic Sites</div></div>
+        <div class="stat"><div class="stat-num">47.6k+</div><div class="stat-label">Structured Entities</div></div>
+        <div class="stat"><div class="stat-num">100k+</div><div class="stat-label">Target Scale</div></div>
+        <div class="stat"><div class="stat-num">Daily</div><div class="stat-label">Data Updates</div></div>
       </div>
     </div>
   </header>
 
-  <!-- 套餐卡片 -->
+  <!-- Tier cards -->
   <section>
     <div class="container">
       <div class="tiers">
         <!-- Free -->
         <div class="tier-card free">
-          <h3>Free 免费版</h3>
-          <div class="tier-desc">无需注册，直接浏览元数据</div>
-          <div class="price">¥0<small>永久</small></div>
-          <div class="price-alt">无需 API Key</div>
+          <h3>Free</h3>
+          <div class="tier-desc">No registration, browse metadata directly</div>
+          <div class="price">¥0<small>forever</small></div>
+          <div class="price-alt">No API key required</div>
           <ul>
-            <li>60 次/分钟 速率限制</li>
-            <li>领域列表 + 实体元数据</li>
-            <li>开源项目注册表访问</li>
-            <li>健康检查端点</li>
-            <li class="no">语义搜索</li>
-            <li class="no">全字段实体数据</li>
+            <li>60 requests per minute</li>
+            <li>Domain list + entity metadata</li>
+            <li>Open-source project registry</li>
+            <li>Health check endpoint</li>
+            <li class="no">Semantic search</li>
+            <li class="no">Full-field entity data</li>
           </ul>
-          <a href="#endpoints" class="cta cta-free">直接开始 →</a>
+          <a href="#endpoints" class="cta cta-free">Get Started →</a>
         </div>
 
         <!-- Partner -->
         <div class="tier-card partner">
-          <h3>Partner 合作方</h3>
-          <div class="tier-desc">独立网关，`slb_` 前缀 Key</div>
-          <div class="price">协商<small>年费</small></div>
-          <div class="price-alt">面向科研合作 / 生态伙伴</div>
+          <h3>Partner</h3>
+          <div class="tier-desc">Dedicated gateway, <code>slb_</code>-prefixed key</div>
+          <div class="price">Custom<small>annual</small></div>
+          <div class="price-alt">For research collaborators / ecosystem partners</div>
           <ul>
-            <li>120 次/分钟 速率限制</li>
-            <li>全量实体读权限</li>
-            <li>领域读权限</li>
-            <li>独立网关，与 Pro 隔离</li>
-            <li class="partial">语义搜索</li>
-            <li>生态合作通道</li>
+            <li>120 requests per minute</li>
+            <li>Full entity read access</li>
+            <li>Domain read access</li>
+            <li>Isolated gateway, separate from Pro</li>
+            <li class="partial">Semantic search</li>
+            <li>Ecosystem collaboration channel</li>
           </ul>
-          <a href="#contact" class="cta cta-partner">洽谈合作 →</a>
+          <a href="#contact" class="cta cta-partner">Contact Us →</a>
         </div>
 
         <!-- Pro -->
         <div class="tier-card pro">
-          <h3>Pro 专业版</h3>
-          <div class="tier-desc">全字段 + 语义搜索 + 高配额</div>
-          <div class="price">¥39.9<small>/年</small></div>
-          <div class="price-alt">或 ¥199 终身授权</div>
+          <h3>Pro</h3>
+          <div class="tier-desc">Full fields + semantic search + high quota</div>
+          <div class="price">¥39.9<small>/year</small></div>
+          <div class="price-alt">or ¥199 lifetime license</div>
           <ul>
-            <li>600 次/分钟 速率限制</li>
-            <li>全字段实体 + 引用导出</li>
-            <li>语义搜索（13k 高置信实体）</li>
-            <li>数据更新通知</li>
-            <li>优先技术支持</li>
-            <li>SLA 保障</li>
+            <li>600 requests per minute</li>
+            <li>Full-field entities + citation export</li>
+            <li>Semantic search (13k high-confidence entities)</li>
+            <li>Data update notifications</li>
+            <li>Priority technical support</li>
+            <li>SLA guarantee</li>
           </ul>
-          <a href="#how" class="cta cta-pro">立即购买 →</a>
+          <a href="#how" class="cta cta-pro">Buy Now →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 功能对比 -->
+  <!-- Feature comparison -->
   <section>
     <div class="container">
-      <h2>功能对比</h2>
+      <h2>Feature Comparison</h2>
       <div class="comparison">
         <table>
           <thead>
             <tr>
-              <th>功能</th>
+              <th>Feature</th>
               <th>Free</th>
               <th>Partner</th>
               <th>Pro</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>速率限制</td><td>60/分钟</td><td>120/分钟</td><td>600/分钟</td></tr>
-            <tr><td>领域元数据</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>实体元数据</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>全字段实体数据</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>开源项目注册表</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>语义搜索 /v1/search/semantic</td><td class="no">✕</td><td class="partial">部分</td><td class="yes">✓</td></tr>
-            <tr><td>引用导出</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td></tr>
-            <tr><td>独立网关</td><td class="no">✕</td><td class="yes">✓ (slb_)</td><td class="yes">✓ (gtk_)</td></tr>
-            <tr><td>数据更新通知</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td></tr>
-            <tr><td>技术支持</td><td>社区</td><td>专属渠道</td><td>优先响应</td></tr>
-            <tr><td>价格</td><td>免费</td><td>协商</td><td>¥39.9/年 · ¥199 终身</td></tr>
+            <tr><td>Rate limit</td><td>60/min</td><td>120/min</td><td>600/min</td></tr>
+            <tr><td>Domain metadata</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Entity metadata</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Full-field entity data</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Open-source project registry</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Semantic search <code>/v1/search/semantic</code></td><td class="no">✕</td><td class="partial">Partial</td><td class="yes">✓</td></tr>
+            <tr><td>Citation export</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td></tr>
+            <tr><td>Dedicated gateway</td><td class="no">✕</td><td class="yes">✓ (<code>slb_</code>)</td><td class="yes">✓ (<code>gtk_</code>)</td></tr>
+            <tr><td>Data update notifications</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td></tr>
+            <tr><td>Technical support</td><td>Community</td><td>Dedicated channel</td><td>Priority response</td></tr>
+            <tr><td>Price</td><td>Free</td><td>Custom</td><td>¥39.9/yr · ¥199 lifetime</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- 数据规模 -->
+  <!-- Data scale -->
   <section>
     <div class="container">
-      <h2>数据规模 <small>每日自动同步，无需重连</small></h2>
+      <h2>Data Scale <small>Auto-synced daily, no reconnection needed</small></h2>
       <div class="scale-grid">
         <div class="scale-card">
           <div class="num">30</div>
-          <div class="label">科技主题子站</div>
+          <div class="label">Science Topic Sites</div>
         </div>
         <div class="scale-card">
           <div class="num">47.6k</div>
-          <div class="label">当前结构化实体</div>
+          <div class="label">Current Structured Entities</div>
         </div>
         <div class="scale-card">
           <div class="num">13k</div>
-          <div class="label">搜索索引实体</div>
+          <div class="label">Search Index Entities</div>
         </div>
         <div class="scale-card">
           <div class="num">100+</div>
-          <div class="label">每日 OSS 项目快照</div>
+          <div class="label">OSS Project Snapshots / Day</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 速率限制 -->
+  <!-- Rate limits -->
   <section>
     <div class="container">
       <div class="rate-limits">
-        <h2>速率限制说明</h2>
+        <h2>Rate Limits</h2>
         <div class="limit-item">
-          <span class="limit-label">Free 免费版（无 key）</span>
-          <span class="limit-value">60 requests / 分钟</span>
+          <span class="limit-label">Free (no key)</span>
+          <span class="limit-value">60 requests / minute</span>
         </div>
         <div class="limit-item">
-          <span class="limit-label">Partner 合作方（slb_ key）</span>
-          <span class="limit-value">120 requests / 分钟</span>
+          <span class="limit-label">Partner (<code>slb_</code> key)</span>
+          <span class="limit-value">120 requests / minute</span>
         </div>
         <div class="limit-item">
-          <span class="limit-label">Pro 专业版（gtk_ key）</span>
-          <span class="limit-value">600 requests / 分钟</span>
+          <span class="limit-label">Pro (<code>gtk_</code> key)</span>
+          <span class="limit-value">600 requests / minute</span>
         </div>
         <p style="margin-top:16px; color:#888; font-size:0.9em;">
-          速率限制基于滑动窗口计算。超出限制时 API 返回 HTTP 429，响应头含 <code>Retry-After</code> 指示重试间隔。
+          Rate limits use a sliding window. When exceeded, the API returns HTTP 429 with a <code>Retry-After</code> response header indicating the retry interval.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- 端点 -->
+  <!-- Endpoints -->
   <section id="endpoints">
     <div class="container">
-      <h2>API 端点 <small>OpenAPI 3.1 规范，见下方 Quick Start</small></h2>
+      <h2>API Endpoints <small>OpenAPI 3.1 spec, see Quick Start below</small></h2>
       <div class="endpoints">
         <div class="endpoint">
           <span class="method get">GET</span>
           <span class="path">/v1/domains</span>
-          <span class="desc">30 站领域元数据</span>
+          <span class="desc">Metadata for 30 science topic sites</span>
           <span class="tier">Free</span>
         </div>
         <div class="endpoint">
           <span class="method get">GET</span>
           <span class="path">/v1/entities</span>
-          <span class="desc">实体聚合索引（含各站 URL）</span>
+          <span class="desc">Entity aggregation index (includes per-site URLs)</span>
           <span class="tier">Free</span>
         </div>
         <div class="endpoint">
           <span class="method get">GET</span>
           <span class="path">/v1/oss/registry</span>
-          <span class="desc">开源项目注册表（GitHub / HF / PWC 每日快照）</span>
+          <span class="desc">Open-source project registry (daily GitHub / HF / PWC snapshot)</span>
           <span class="tier">Free</span>
         </div>
         <div class="endpoint">
           <span class="method get">GET</span>
           <span class="path">/health</span>
-          <span class="desc">服务健康检查</span>
+          <span class="desc">Service health check</span>
           <span class="tier">Free</span>
         </div>
         <div class="endpoint">
           <span class="method post">POST</span>
           <span class="path">/v1/search/semantic</span>
-          <span class="desc">语义搜索（13k 高置信实体加权匹配）</span>
+          <span class="desc">Semantic search (13k high-confidence entities, weighted match)</span>
           <span class="tier pro">Pro</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 如何开始 -->
+  <!-- How to start -->
   <section id="how">
     <div class="container">
-      <h2>如何开始</h2>
+      <h2>How It Works</h2>
       <div class="how-it-works">
         <div class="steps">
           <div class="step">
-            <strong>选择套餐</strong>
-            <p>根据需求选择 Free / Partner / Pro。Free 无需注册直接使用；Partner 联系运营方洽谈；Pro 走虎皮椒支付。</p>
+            <strong>Choose a plan</strong>
+            <p>Pick Free / Partner / Pro based on your needs. Free requires no registration; Partner is discussed with our ops team; Pro is billed through Hipiaomoney.</p>
           </div>
           <div class="step">
-            <strong>获取 API Key</strong>
-            <p>Free 无 key 直接调用；Partner 获发 <code>slb_...</code>；Pro 付款后获发 <code>gtk_...</code>（HMAC 签名，无状态可验证）。</p>
+            <strong>Get an API key</strong>
+            <p>Free needs no key; Partner receives a <code>slb_...</code> key; Pro receives a <code>gtk_...</code> key (HMAC-signed, statelessly verifiable) after payment.</p>
           </div>
           <div class="step">
-            <strong>调用 API</strong>
-            <p>请求头添加 <code>Authorization: Bearer &lt;your_key&gt;</code>。生产端点 <code>https://api.swarmlabs.tools</code>。</p>
+            <strong>Call the API</strong>
+            <p>Add <code>Authorization: Bearer &lt;your_key&gt;</code> to your request header. Production endpoint: <code>https://api.swarmlabs.tools</code>.</p>
           </div>
           <div class="step">
-            <strong>数据自动同步</strong>
-            <p>实体数据每日累积，搜索索引每日重建，OSS 注册表每日扫描。你的 key 独立，数据更新无需重连。</p>
+            <strong>Auto data sync</strong>
+            <p>Entities accumulate daily, the search index is rebuilt daily, and the OSS registry is scanned daily. Your key is isolated — data updates need no reconnection.</p>
           </div>
         </div>
       </div>
@@ -604,44 +606,44 @@
   <!-- Quick Start -->
   <section>
     <div class="container">
-      <h2>Quick Start <small>三行代码接入</small></h2>
-      <pre><code><span class="c"># 1. 免费浏览领域（无 key）</span>
+      <h2>Quick Start <small>Three lines to get going</small></h2>
+      <pre><code><span class="c"># 1. Browse domains for free (no key)</span>
 <span class="k">curl</span> -s <span class="s">https://api.swarmlabs.tools/v1/domains</span> | jq <span class="s">'.sites[:5]'</span>
 
-<span class="c"># 2. Pro 语义搜索</span>
+<span class="c"># 2. Pro semantic search</span>
 <span class="k">curl</span> -s -X POST <span class="s">https://api.swarmlabs.tools/v1/search/semantic</span> \
   -H <span class="s">"Authorization: Bearer gtk_..."</span> \
   -H <span class="s">"Content-Type: application/json"</span> \
   -d <span class="s">'{"query": "reinforcement learning safety", "sites": ["ai-safety"]}'</span>
 
-<span class="c"># 3. Partner 全量数据（slb_ key）</span>
+<span class="c"># 3. Partner full data (<code>slb_</code> key)</span>
 <span class="k">curl</span> -s -H <span class="s">"Authorization: Bearer slb_..."</span> \
   <span class="s">https://swarm-labs-gateway.61960005.workers.dev/v1/entities</span></code></pre>
     </div>
   </section>
 
-  <!-- 独立性承诺 -->
+  <!-- Independence -->
   <section id="independence">
     <div class="container">
-      <h2>独立性承诺</h2>
+      <h2>Independence Guarantee</h2>
       <div class="independence">
-        <h3>14站专注信息收集与结构化，不做这些：</h3>
+        <h3>14-Sites focuses on information gathering and structuring. We do NOT:</h3>
         <div class="promise-grid">
           <div class="promise-item">
             <div class="promise-icon">✕</div>
-            <div class="promise-text"><strong>不承担模型训练 / 推理</strong><span>消费者自行负责</span></div>
+            <div class="promise-text"><strong>Model training / inference</strong><span>Consumers handle this themselves</span></div>
           </div>
           <div class="promise-item">
             <div class="promise-icon">✕</div>
-            <div class="promise-text"><strong>不做商业数据加工 / 合规</strong><span>合规责任在消费者侧</span></div>
+            <div class="promise-text"><strong>Commercial data processing / compliance</strong><span>Compliance responsibility stays with the consumer</span></div>
           </div>
           <div class="promise-item">
             <div class="promise-icon">✕</div>
-            <div class="promise-text"><strong>不与其他项目混合鉴权</strong><span>各消费者走独立 key 前缀</span></div>
+            <div class="promise-text"><strong>Mixed authentication with other projects</strong><span>Each consumer uses its own key prefix</span></div>
           </div>
           <div class="promise-item">
             <div class="promise-icon">✓</div>
-            <div class="promise-text"><strong>三档 HMAC 密钥完全隔离</strong><span>Free / Partner / Pro 互不影响</span></div>
+            <div class="promise-text"><strong>Three HMAC keys fully isolated</strong><span>Free / Partner / Pro do not affect each other</span></div>
           </div>
         </div>
       </div>
@@ -651,39 +653,39 @@
   <!-- FAQ -->
   <section id="faq">
     <div class="container">
-      <h2>常见问题</h2>
+      <h2>Frequently Asked Questions</h2>
       <div class="faq">
         <div class="faq-item">
-          <h4>免费额度用完怎么办？</h4>
-          <p>Free tier 是 60 次/分钟（不是按天/月配额），正常使用不会触及。如果确实需要更高配额，升级 Pro 到 600/分钟。</p>
+          <h4>What if I hit the free tier limit?</h4>
+          <p>The free tier is 60 requests per minute (not a daily or monthly quota) — normal usage rarely triggers it. If you need more headroom, upgrade to Pro for 600 requests per minute.</p>
         </div>
         <div class="faq-item">
-          <h4>数据是实时的吗？</h4>
-          <p>实体数据每日累积（每小时批处理），搜索索引每日重建，OSS 注册表每日扫描。数据新鲜度见 <code>/v1/domains</code> 返回的 <code>lastUpdated</code> 字段。</p>
+          <h4>Is the data real-time?</h4>
+          <p>Entities accumulate daily (hourly batch processing). The search index is rebuilt daily and the OSS registry is scanned daily. Freshness is exposed via the <code>lastUpdated</code> field in <code>/v1/domains</code> responses.</p>
         </div>
         <div class="faq-item">
-          <h4>数据覆盖哪些领域？</h4>
-          <p>30 个科技主题子站：agent-ecosystem / agritech / ai-safety / ai4science / biomed-ai / brain-science / carbon-neutral / deep-sea-tech / embodied-ai / quantum-computing / robot-parts / semiconductor 等。完整列表见 <code>/v1/domains</code>。</p>
+          <h4>Which domains does the data cover?</h4>
+          <p>30 science topic sites including agent-ecosystem / agritech / ai-safety / ai4science / biomed-ai / brain-science / carbon-neutral / deep-sea-tech / embodied-ai / quantum-computing / robot-parts / semiconductor, and more. Full list at <code>/v1/domains</code>.</p>
         </div>
         <div class="faq-item">
-          <h4>数据源来自哪里？</h4>
-          <p>arXiv / Semantic Scholar / Crossref / EuropePMC / Papers with Code / GitHub / HuggingFace。所有来源均为公开学术 / 开源数据。</p>
+          <h4>Where does the data come from?</h4>
+          <p>arXiv / Semantic Scholar / Crossref / EuropePMC / Papers with Code / GitHub / HuggingFace. All sources are public academic or open-source data.</p>
         </div>
         <div class="faq-item">
-          <h4>Pro 买错了能退吗？</h4>
-          <p>终身授权 ¥199 一次付费，不退不换。年订阅 ¥39.9 到期后不续费自动降级为 Free。付款前请确认套餐。</p>
+          <h4>Can I get a refund on Pro?</h4>
+          <p>The ¥199 lifetime license is a one-time payment and is non-refundable. The ¥39.9 annual subscription auto-downgrades to Free when it expires without renewal. Please confirm your plan before purchasing.</p>
         </div>
         <div class="faq-item">
-          <h4>国内网络能用吗？</h4>
-          <p>生产端点 <code>api.swarmlabs.tools</code> 走 Cloudflare Worker，海外可用；国内网络需自建 CDN 回源或走代理。Worker 直连兜底端点 <code>https://genetech-api-guard.61960005.workers.dev</code>。</p>
+          <h4>Does it work inside China?</h4>
+          <p>The production endpoint <code>api.swarmlabs.tools</code> runs on Cloudflare Workers and is available overseas. Inside China, you may need your own CDN with origin pull or a proxy. Direct Worker fallback endpoint: <code>https://genetech-api-guard.61960005.workers.dev</code>.</p>
         </div>
         <div class="faq-item">
-          <h4>数据能用于训练吗？</h4>
-          <p>可以。数据来自公开学术 / 开源来源，MIT 许可证。消费者自行负责下游合规（如 GDPR、CC 协议等）。</p>
+          <h4>Can I use the data for training?</h4>
+          <p>Yes. The data comes from public academic and open-source sources under the MIT license. Consumers are responsible for their own downstream compliance (e.g. GDPR, CC licensing).</p>
         </div>
         <div class="faq-item">
-          <h4>如何联系运营方？</h4>
-          <p>合作洽谈见下方联系方式。技术问题通过 GitHub Issues：<code>lm203688/genetech-14-sites</code>。</p>
+          <h4>How do I contact the ops team?</h4>
+          <p>See the contact section below for partnership inquiries. For technical issues, use GitHub Issues at <code>lm203688/genetech-14-sites</code>.</p>
         </div>
       </div>
     </div>
@@ -692,12 +694,12 @@
   <!-- Contact -->
   <section id="contact">
     <div class="container">
-      <h2>联系我们</h2>
+      <h2>Contact Us</h2>
       <div class="independence">
         <div class="promise-grid">
           <div class="promise-item">
             <div class="promise-icon">📧</div>
-            <div class="promise-text"><strong>合作洽谈</strong><span>email@example.com</span></div>
+            <div class="promise-text"><strong>Partnership</strong><span>email@example.com</span></div>
           </div>
           <div class="promise-item">
             <div class="promise-icon">📦</div>
@@ -705,11 +707,11 @@
           </div>
           <div class="promise-item">
             <div class="promise-icon">📄</div>
-            <div class="promise-text"><strong>OpenAPI 规范</strong><span>openapi.yaml（9 端点 + 5 schema）</span></div>
+            <div class="promise-text"><strong>OpenAPI spec</strong><span>openapi.yaml (9 endpoints + 5 schemas)</span></div>
           </div>
           <div class="promise-item">
             <div class="promise-icon">📚</div>
-            <div class="promise-text"><strong>消费者上手</strong><span>docs/consumer-onboarding.md</span></div>
+            <div class="promise-text"><strong>Consumer onboarding</strong><span>docs/consumer-onboarding.md</span></div>
           </div>
         </div>
       </div>
@@ -718,10 +720,10 @@
 
   <footer>
     <div class="container">
-      <p>GeneTech 14站知识引擎 · 信息收集 + 结构化的基础设施项目</p>
+      <p>GeneTech 14-Sites Knowledge Engine · An information-gathering and structuring infrastructure</p>
       <p style="margin-top:8px;">
-        数据源：arXiv · Semantic Scholar · Crossref · EuropePMC · Papers with Code · GitHub · HuggingFace<br>
-        部署：Cloudflare Workers · GitHub Pages · MIT License
+        Data sources: arXiv · Semantic Scholar · Crossref · EuropePMC · Papers with Code · GitHub · HuggingFace<br>
+        Deployment: Cloudflare Workers · GitHub Pages · MIT License
       </p>
     </div>
   </footer>
