@@ -65,7 +65,7 @@ async function deploy(acct, kvId) {
       { type: 'kv_namespace', name: 'GW_KV', namespace_id: kvId },
     ],
     vars: {
-      GATEWAY_UPSTREAM: 'https://lm203688.github.io/genetech-14-sites',
+      GATEWAY_UPSTREAM: 'https://data.swarmlabs.tools',
       GW_QUOTA_PER_MIN: '120',
     },
   };

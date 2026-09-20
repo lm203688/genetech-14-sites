@@ -5,7 +5,7 @@ info:
   description: |
     GeneTech 14-Sites 知识引擎是「信息收集 + 结构化」的基础设施项目：
     30 个科技主题子站（agritech / ai-safety / ai4science / embodied-ai ...），
-    当前约 47.6k 结构化实体（摘要完整度 ~49%），目标扩至 100k+；
+    当前约 30 万结构化实体（30 子站 × 每站 1 万，去重后 28.4 万唯一 ID，摘要完整度 66.2%），目标扩至 1M+；
     叠加开源平台每日扫描（GitHub / HuggingFace / Papers with Code）作为广度层。
 
     下游消费者：小模型专业 KB / 蜂群科研数据（另项目，独立 slb_ key）/ 机器人项目路线建议 / 对外付费 API。
@@ -54,7 +54,7 @@ security:
 
 tags:
   - name: Entities
-    description: 实体读取（30 个子站，当前 ~47.6k，目标 100k+）
+    description: 实体读取（30 个子站，当前 ~30 万，每站 1 万，目标 1M+）
   - name: Domains
     description: 领域元数据
   - name: OSS

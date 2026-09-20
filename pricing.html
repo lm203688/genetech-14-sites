@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>API Pricing · GeneTech 14-Sites Knowledge Engine</title>
-  <meta name="description" content="GeneTech 14-Sites Knowledge Engine API pricing — three flexible plans from free browsing to pro subscription. 30 science topic sites, 47.6k+ structured entities, updated daily." />
+  <meta name="description" content="GeneTech 14-Sites Knowledge Engine API pricing — three flexible plans from free browsing to pro subscription. 30 science topic sites, 300k+ structured entities (10k per site), updated daily." />
   <meta name="keywords" content="API pricing, knowledge engine, structured data, scientific data, arXiv, Semantic Scholar, structured API, paywalled API" />
   <style>
     :root {
@@ -391,8 +391,8 @@
       <p>Three flexible plans, from free browsing to professional subscription.<br>30 science topic sites with structured scientific knowledge data, updated daily.</p>
       <div class="stats">
         <div class="stat"><div class="stat-num">30</div><div class="stat-label">Science Topic Sites</div></div>
-        <div class="stat"><div class="stat-num">47.6k+</div><div class="stat-label">Structured Entities</div></div>
-        <div class="stat"><div class="stat-num">100k+</div><div class="stat-label">Target Scale</div></div>
+        <div class="stat"><div class="stat-num">300k+</div><div class="stat-label">Structured Entities</div></div>
+        <div class="stat"><div class="stat-num">1M+</div><div class="stat-label">Target Scale</div></div>
         <div class="stat"><div class="stat-num">Daily</div><div class="stat-label">Data Updates</div></div>
       </div>
     </div>
@@ -498,7 +498,7 @@
           <div class="label">Science Topic Sites</div>
         </div>
         <div class="scale-card">
-          <div class="num">47.6k</div>
+          <div class="num">300k</div>
           <div class="label">Current Structured Entities</div>
         </div>
         <div class="scale-card">
@@ -607,18 +607,26 @@
   <section>
     <div class="container">
       <h2>Quick Start <small>Three lines to get going</small></h2>
-      <pre><code><span class="c"># 1. Browse domains for free (no key)</span>
-<span class="k">curl</span> -s <span class="s">https://api.swarmlabs.tools/v1/domains</span> | jq <span class="s">'.sites[:5]'</span>
+      <pre><code><span class="c"># 1. Full dataset, no key required (live now)</span>
+<span class="k">curl</span> -s <span class="s">https://data.swarmlabs.tools/embodied-ai/website/api/entities.json</span> \
+  | jq <span class="s">'.[0:3]'</span>
 
-<span class="c"># 2. Pro semantic search</span>
+<span class="c"># 2. Semantic search — Pro tier (requires gtk_ key)</span>
 <span class="k">curl</span> -s -X POST <span class="s">https://api.swarmlabs.tools/v1/search/semantic</span> \
   -H <span class="s">"Authorization: Bearer gtk_..."</span> \
   -H <span class="s">"Content-Type: application/json"</span> \
   -d <span class="s">'{"query": "reinforcement learning safety", "sites": ["ai-safety"]}'</span>
 
-<span class="c"># 3. Partner full data (<code>slb_</code> key)</span>
+<span class="c"># 3. Partner full pull via gateway (requires slb_ key)</span>
 <span class="k">curl</span> -s -H <span class="s">"Authorization: Bearer slb_..."</span> \
-  <span class="s">https://swarm-labs-gateway.61960005.workers.dev/v1/entities</span></code></pre>
+  <span class="s">https://api.swarmlabs.tools/v1/entities</span></code></pre>
+      <p class="status-note">
+        <strong>Endpoint status:</strong> the static dataset at
+        <code>data.swarmlabs.tools</code> is live and needs no key.
+        The JSON API at <code>api.swarmlabs.tools</code> is deployed but its
+        custom-domain binding is pending — it will serve the endpoints above
+        once bound. Static access works either way.
+      </p>
     </div>
   </section>
 
@@ -677,7 +685,7 @@
         </div>
         <div class="faq-item">
           <h4>Does it work inside China?</h4>
-          <p>The production endpoint <code>api.swarmlabs.tools</code> runs on Cloudflare Workers and is available overseas. Inside China, you may need your own CDN with origin pull or a proxy. Direct Worker fallback endpoint: <code>https://genetech-api-guard.61960005.workers.dev</code>.</p>
+          <p>The JSON API at <code>api.swarmlabs.tools</code> runs on Cloudflare Workers; its custom-domain binding is currently pending, so the verified-working path today is the static dataset at <code>https://data.swarmlabs.tools/&lt;site&gt;/website/api/entities.json</code>. Inside China, <code>*.workers.dev</code> is blocked at the network layer — use the GitHub Pages origin (<code>data.swarmlabs.tools</code>) or your own proxy.</p>
         </div>
         <div class="faq-item">
           <h4>Can I use the data for training?</h4>

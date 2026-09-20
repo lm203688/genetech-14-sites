@@ -53,7 +53,7 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 
 ## 闭环与知识累积
 
-- **数据飞轮**：6 源 backfill → 47k+ 结构化实体（趋势 / 研究空白 / 跨域桥接 / 合著网络）→ 双端点 License 故障转移
+- **数据飞轮**：6 源 backfill → 300k+ 结构化实体（30 站 × 1 万/站，去重后 28.4 万，摘要完整度 66.2%）→ 双端点 License 故障转移
 - **时间机器**：每个实体带 `provenance`，支持任意时间点知识重放（[`docs/competition-2026/TIME-MACHINE.md`](docs/competition-2026/TIME-MACHINE.md)）
 - **受控演化**：明确的准入 / 降级 / 淘汰策略（[`docs/competition-2026/EVOLUTION-POLICY.md`](docs/competition-2026/EVOLUTION-POLICY.md)）
 - **串行 PR 闭环**：新数据源 / 新 Agent / 新内容先入 `.proposals/`，由 Validator Agent 审计后流转（[`docs/competition-2026/PROPOSALS.md`](docs/competition-2026/PROPOSALS.md)）

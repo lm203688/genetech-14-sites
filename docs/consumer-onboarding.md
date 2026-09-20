@@ -43,10 +43,21 @@ curl -s -X POST https://api.swarmlabs.tools/v1/search/semantic \
 
 ### Partner tier — 全量数据拉取
 
+> **状态（2026-09-20）**：`swarm-labs-gateway` Worker 已部署并注入 `GATEWAY_SECRET`
+> 与 `gw-rate` 限流桶，但绑定自定义域需要 `Workers Routes:Edit` 权限，当前**尚未绑定**，
+> 因此 `*.workers.dev` 与 `api.swarmlabs.tools` 两端目前均不可达。
+> 绑定完成前，Partner 直接走下方静态端点即可拉全量（免 key），网关恢复后无感切换。
+
 ```bash
-# 用 swarm-labs-gateway 的 slb_ key
+# 已验证可用（2026-09-20 实测 200 / 20,265,240 字节 / Last-Modified 当日）
+curl -s https://data.swarmlabs.tools/embodied-ai/website/api/entities.json | head -c 2000
+```
+
+网关绑定完成后的等价调用（`slb_` key）：
+
+```bash
 curl -s -H "Authorization: Bearer slb_..." \
-  https://swarm-labs-gateway.61960005.workers.dev/v1/entities
+  https://api.swarmlabs.tools/v1/entities
 ```
 
 ## 数据源与更新

@@ -1262,7 +1262,7 @@ function renderAskPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'GeneTech AI 问答',
-    description: '在 GeneTech 14 站知识引擎上做自然语言提问：基于 47000+ 结构化实体的 AI 问答，答案带参考来源。',
+    description: '在 GeneTech 14 站知识引擎上做自然语言提问：基于 300000+ 结构化实体的 AI 问答，答案带参考来源。',
     url: `${ORIGIN}${BASE}/ask.html`,
     author: { '@type': 'Organization', name: 'GeneTech' },
     potentialAction: {
@@ -1279,7 +1279,7 @@ function renderAskPage() {
     '类脑芯片和神经形态计算的研究热点',
   ];
   const body = `<h1>GeneTech AI 问答</h1>
-<p class="sub">用自然语言向 ${SITE_COUNT || 14} 个前沿科技垂直领域的 47,000+ 结构化实体提问 · 答案带参考来源</p>
+<p class="sub">用自然语言向 ${SITE_COUNT || 14} 个前沿科技垂直领域的 300,000+ 结构化实体提问 · 答案带参考来源</p>
 
 <section class="hero">
 <h1 style="font-size:20px">怎么用？</h1>
@@ -1326,7 +1326,7 @@ ${samples.map((q) => `<button type="button" class="card sample" data-q="${esc(q)
 <script src="${BASE}/assets/ask.js" defer></script>`;
   return layout({
     title: 'GeneTech AI 问答 — 14 站知识引擎的自然语言接口',
-    desc: 'GeneTech AI 问答：基于 14 个前沿科技垂直领域 47000+ 结构化实体的中文问答，每次回答都附参考来源。',
+    desc: 'GeneTech AI 问答：基于 14 个前沿科技垂直领域 300000+ 结构化实体的中文问答，每次回答都附参考来源。',
     body,
     jsonld,
     canonical: `${ORIGIN}${BASE}/ask.html`,
@@ -1360,7 +1360,7 @@ function renderPointGuideDemo() {
       <input type="text" placeholder="例如：2026 量子计算" readonly>
     </div>
     <div class="pg-cards">
-      <div class="pg-card" id="pg-ask"><b>AI 问答</b><span>基于 47,000+ 实体生成带来源的答案</span></div>
+      <div class="pg-card" id="pg-ask"><b>AI 问答</b><span>基于 300,000+ 实体生成带来源的答案</span></div>
       <div class="pg-card" id="pg-data"><b>数据下载</b><span>导出 JSON / CSV / BibTeX</span></div>
       <div class="pg-card" id="pg-topic"><b>主题图谱</b><span>按研究方向钻取聚合事实</span></div>
     </div>
