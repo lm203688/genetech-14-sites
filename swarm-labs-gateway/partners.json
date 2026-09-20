@@ -1,20 +1,19 @@
 {
- "gateway": "swarm-labs-gateway",
- "version": "1.0.0",
- "issued": [
-  {
-   "clientId": "swarm-buzz-2026",
-   "projectName": "蜂群科研数据 (Bee Swarm Science Data)",
-   "scopes": [
-    "entities:read",
-    "domains:read"
-   ],
-   "quota": 120,
-   "issuedAt": "2026-09-18",
-   "expiresAt": "2027-09-18",
-   "status": "active",
-   "keyPrefix": "slb_eyJjbGllbnQiOiJzd2Fy…",
-   "keySha256_12": "9c74def71df5"
-  }
- ]
+  "gateway": "swarm-labs-gateway",
+  "version": "1.0.0",
+  "issued": [
+    {
+      "clientId": "swarm-buzz-2026",
+      "projectName": "蜂群科研数据",
+      "scopes": [
+        "entities:read",
+        "domains:read"
+      ],
+      "quota": 120,
+      "issuedAt": "2026-09-20",
+      "expiresAt": "2027-09-20",
+      "status": "active",
+      "keyPrefix": "slb_eyJjbGllbnQiOiJzd2Fy…"
+    }
+  ]
 }
