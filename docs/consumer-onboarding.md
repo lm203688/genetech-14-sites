@@ -3,19 +3,25 @@
 > 面向下游项目（小模型 KB / 蜂群科研数据 / 机器人项目 / 付费客户）的接入说明。
 > 完整规范见 [`../openapi.yaml`](../openapi.yaml)；战略定位见 [`strategy-infrastructure.md`](strategy-infrastructure.md)。
 
-## 三档 API Key
+## 五档 API Key
 
-| 档位 | Key 前缀 | 速率 | 数据范围 | 价格 |
-|---|---|---|---|---|
-| Free | 无 key | 60 req/min | 元数据（`/v1/domains` `/v1/entities` 聚合视图 `/v1/oss/registry` `/health`） | 免费 |
-| Partner | `slb_` | 120 req/min | 全量实体 + 领域读 | 与运营方协商 |
-| Pro | `gtk_` | 600 req/min | 全字段 + `/v1/search/semantic` 语义搜索 + 引用导出 | ¥39.9 / 年 或 ¥199 终身 |
+| 档位 | Key 前缀 | 速率 | 席位 | 数据范围 | 价格 |
+|---|---|---|---|---|---|
+| Free | 无 key | 60 req/min | 1 | 元数据（`/v1/domains` `/v1/entities` 聚合视图 `/v1/oss/registry` `/health`） | 免费 |
+| Partner | `slb_` | 120 req/min | 1 | 全量实体 + 领域读，独立网关 | 与运营方协商 |
+| Pro | `gtk_` | 600 req/min | 1 | 全字段 + `/v1/search/semantic` 语义搜索 + 引用导出 | ¥39.9 / 年 或 ¥199 终身 |
+| Team | `gtk_` × 5 | 300 req/min（池化） | 5 | Pro 全部能力，席位共享配额池 + 用量面板 | ¥199 / 年 |
+| Enterprise | `gtk_` 或独立网关 | 无硬上限 | 不限 | 时间机器重放 / 审计日志导出 / 本地镜像交付 / DPA + 合规证据包 | 议价 |
+
+> Team 与 Enterprise 沿用 `gtk_` 签名体系，按席位签发；Enterprise 可另行部署独立网关。
 
 ## 端点
 
-- **生产主端点**（海外可用）：`https://api.swarmlabs.tools`
-- **Worker 兜底**（海外可用）：`https://genetech-api-guard.61960005.workers.dev`
-- **Partner 独立网关**：`https://swarm-labs-gateway.61960005.workers.dev`
+- **静态数据集**（已上线，免 key，全球可访问）：`https://data.swarmlabs.tools`
+- **JSON API**（已部署，自定义域绑定中）：`https://api.swarmlabs.tools`
+- **License 校验**（已部署，自定义域绑定中）：`https://license.swarmlabs.tools`
+
+> `api.` 与 `license.` 两条自定义域绑定完成后即刻可用；绑定期间请走 `data.swarmlabs.tools` 静态端点，无需切换调用方配置。
 
 ## Quick Start
 

@@ -11,12 +11,17 @@ info:
     下游消费者：小模型专业 KB / 蜂群科研数据（另项目，独立 slb_ key）/ 机器人项目路线建议 / 对外付费 API。
     注意：与 SwarmLabs（另一独立项目）无隶属关系，仅共用同一 CF 账号与数据 CDN。
 
-    ## 三档 API Key 商业模式
-    | Key 前缀 | 档位 | 速率限制 | 范围 | 价格 |
-    |---|---|---|---|---|
-    | 无 key | Free | 60 req/min | 仅元数据（domain 列表 / entity 摘要 / 前 100 条） | 免费 |
-    | `slb_` | Partner | 120 req/min | 实体 + 领域读权限 | 协商 |
-    | `gtk_` | Pro | 600 req/min | 全字段 + 语义搜索 + 引用导出 | ¥39.9 / Pro，¥199 终身 |
+    ## 五档 API Key 商业模式
+    | Key 前缀 | 档位 | 速率限制 | 席位 | 范围 | 价格 |
+    |---|---|---|---|---|---|
+    | 无 key | Free | 60 req/min | 1 | 仅元数据（domain 列表 / entity 摘要 / 前 100 条） | 免费 |
+    | `slb_` | Partner | 120 req/min | 1 | 实体 + 领域读权限，独立网关 | 协商 |
+    | `gtk_` | Pro | 600 req/min | 1 | 全字段 + 语义搜索 + 引用导出 | ¥39.9 / 年，¥199 终身 |
+    | `gtk_` × 5 | Team | 300 req/min 池化 | 5 | Pro 全部能力 + 席位共享配额池 | ¥199 / 年 |
+    | `gtk_` 或独立网关 | Enterprise | 无硬上限 | 不限 | + 时间机器重放 / 审计日志导出 / 本地镜像交付 / DPA | 议价 |
+
+    端点可用性：静态数据集 `data.swarmlabs.tools` 已上线（免 key）；
+    `api.swarmlabs.tools` 与 `license.swarmlabs.tools` 已部署，自定义域绑定完成后生效。
 
     ## 独立性边界
     本项目专注**信息收集与结构化**，不承接：
@@ -42,11 +47,13 @@ info:
     url: https://swarmlabs.tools
 servers:
   - url: https://api.swarmlabs.tools
-    description: 生产主端点（Worker Custom Domain via CF CNAME）
-  - url: https://genetech-api-guard.61960005.workers.dev
-    description: Worker 直连兜底（国内被墙，海外可用）
-  - url: https://swarm-labs-gateway.61960005.workers.dev
-    description: Partner 网关（`slb_` key 专用）
+    description: 生产主端点（Worker Custom Domain 绑定中，已部署待生效）
+  - url: https://data.swarmlabs.tools
+    description: 静态数据集（已上线，免 key，全球可访问）
+  - url: https://license.swarmlabs.tools
+    description: License 校验端点（已部署，Custom Domain 绑定中）
+
+x-endpoint-availability: 静态数据集已可用；api. 与 license. 依赖 Worker Custom Domain 绑定（需 Account:Workers Routes:Edit），CNAME 回源 workers.dev 已实测确认无效（522）。
 
 security:
   - ApiKeyAuth: []
