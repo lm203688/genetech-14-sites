@@ -31,7 +31,9 @@ const CITE_CHECKER = path.join(PROJECT_ROOT, 'tools', 'cite-checker.mjs');
 const STRICT = process.env.STRICT_CITE === '1';
 // Cloudflare Worker 默认域兜底（*.workers.dev）：已知国内被墙、海外 runner 直连返回 404，
 // 属基础设施 URL 而非对外引文，不计入 STRICT 门禁（避免误杀 license/api 兜底端点文档）。
-const INFRA_URL_ALLOW = /\.workers\.dev$/;
+// 注意：URL 常带路径（如 /v1/entities），故正则须匹配「host 即 workers.dev 结尾」而非整串结尾，
+// 否则路径后缀的 Worker 默认域会被漏放、误判为 dead 触发门禁。
+const INFRA_URL_ALLOW = /\.workers\.dev(\/|$)/;
 const SCAN_TARGETS = [
   path.join(PROJECT_ROOT, 'content', 'blog'),
   path.join(PROJECT_ROOT, 'docs'),
