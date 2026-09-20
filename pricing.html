@@ -66,11 +66,46 @@
     section h2 { font-size: 1.8em; margin-bottom: 24px; text-align: center; }
     section h2 small { display: block; font-size: 0.55em; color: var(--text-muted); font-weight: 400; margin-top: 6px; }
 
+    /* Endpoint availability banner */
+    .avail-banner {
+      margin: 28px auto 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .avail-row {
+      display: grid;
+      grid-template-columns: 140px 240px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9em;
+    }
+    .avail-row:last-child { border-bottom: none; }
+    .avail-row code { font-size: 0.9em; }
+    .avail-state {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.78em;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .avail-state.live { background: #e3f6e8; color: #1a7f37; }
+    .avail-state.pending { background: #fff5e0; color: #9a6b00; }
+    .avail-detail { color: var(--text-muted); }
+
     /* Tier Cards */
     .tiers {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 20px;
+      align-items: stretch;
       margin-top: 20px;
     }
     .tier-card {
@@ -85,6 +120,11 @@
     .tier-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
     .tier-card.free { border-top: 4px solid var(--success); }
     .tier-card.partner { border-top: 4px solid var(--warning); }
+    .tier-card.team { border-top: 4px solid var(--brand); opacity: 0.96; }
+    .tier-card.enterprise { border-top: 4px solid #6b46c1; background: linear-gradient(180deg, #fff 0%, #f3efff 100%); }
+    .tier-card.team, .tier-card.enterprise { padding: 26px 20px; }
+    .tier-card.team .price, .tier-card.enterprise .price { font-size: 1.9em; }
+    .tier-card.team ul li, .tier-card.enterprise ul li { padding: 8px 0 8px 22px; font-size: 0.86em; }
     .tier-card.pro { border-top: 4px solid var(--brand); background: linear-gradient(180deg, #fff 0%, var(--brand-light) 100%); }
     .tier-card.pro::after {
       content: "RECOMMENDED";
@@ -374,12 +414,16 @@
     footer a { color: var(--brand); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
+    @media (max-width: 1200px) {
+      .tiers { grid-template-columns: repeat(3, 1fr); }
+    }
     @media (max-width: 900px) {
       .tiers { grid-template-columns: 1fr; }
       .tier-card .price { font-size: 2em; }
       .scale-grid { grid-template-columns: repeat(2, 1fr); }
       .independence .promise-grid { grid-template-columns: 1fr; }
       header.hero .stats { gap: 24px; }
+      .avail-row { grid-template-columns: 1fr; gap: 6px; text-align: left; }
     }
   </style>
 </head>
@@ -388,7 +432,7 @@
     <div class="container">
       <div class="badge">GeneTech 14-Sites · Knowledge Infrastructure</div>
       <h1>API Pricing Plans</h1>
-      <p>Three flexible plans, from free browsing to professional subscription.<br>30 science topic sites with structured scientific knowledge data, updated daily.</p>
+      <p>Five flexible plans, from free browsing to enterprise contracts.<br>30 science topic sites with structured scientific knowledge data, updated daily.</p>
       <div class="stats">
         <div class="stat"><div class="stat-num">30</div><div class="stat-label">Science Topic Sites</div></div>
         <div class="stat"><div class="stat-num">300k+</div><div class="stat-label">Structured Entities</div></div>
@@ -397,6 +441,27 @@
       </div>
     </div>
   </header>
+
+  <!-- Endpoint availability banner -->
+  <div class="container">
+    <div class="avail-banner">
+      <div class="avail-row">
+        <span class="avail-state live">Live now</span>
+        <span class="avail-target"><code>data.swarmlabs.tools</code></span>
+        <span class="avail-detail">Full static dataset — 30 sites × 10,000 entities. No API key required.</span>
+      </div>
+      <div class="avail-row">
+        <span class="avail-state pending">Coming online</span>
+        <span class="avail-target"><code>api.swarmlabs.tools</code></span>
+        <span class="avail-detail">Search + metadata JSON API. Backend deployed; custom-domain binding in progress.</span>
+      </div>
+      <div class="avail-row">
+        <span class="avail-state pending">Coming online</span>
+        <span class="avail-target"><code>license.swarmlabs.tools</code></span>
+        <span class="avail-detail">License verification endpoint for paid tiers.</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Tier cards -->
   <section>
@@ -452,6 +517,40 @@
           </ul>
           <a href="#how" class="cta cta-pro">Buy Now →</a>
         </div>
+
+        <!-- Team -->
+        <div class="tier-card team">
+          <h3>Team</h3>
+          <div class="tier-desc">For research groups and small teams</div>
+          <div class="price">¥199<small>/year</small></div>
+          <div class="price-alt">up to 5 seats, shared quota pool</div>
+          <ul>
+            <li>300 requests per minute (pooled)</li>
+            <li>Everything in Pro, per seat</li>
+            <li>5 independent <code>gtk_</code> keys</li>
+            <li>Shared usage dashboard</li>
+            <li class="partial">Priority support</li>
+            <li class="no">Dedicated gateway</li>
+          </ul>
+          <a href="#contact" class="cta cta-partner">Contact Us →</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="tier-card enterprise">
+          <h3>Enterprise</h3>
+          <div class="tier-desc">Compliance-sensitive and regulated buyers</div>
+          <div class="price">Custom<small>annual</small></div>
+          <div class="price-alt">Unlimited seats, negotiated terms</div>
+          <ul>
+            <li>Unlimited request quota</li>
+            <li>Dedicated gateway + DPA</li>
+            <li>Point-in-time replay / audit log export</li>
+            <li>Mirrored delivery for on-prem storage</li>
+            <li>Named SLA + support window</li>
+            <li>Compliance evidence pack</li>
+          </ul>
+          <a href="#contact" class="cta cta-pro">Talk to Sales →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -468,20 +567,26 @@
               <th>Free</th>
               <th>Partner</th>
               <th>Pro</th>
+              <th>Team</th>
+              <th>Enterprise</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Rate limit</td><td>60/min</td><td>120/min</td><td>600/min</td></tr>
-            <tr><td>Domain metadata</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Entity metadata</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Full-field entity data</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Open-source project registry</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Semantic search <code>/v1/search/semantic</code></td><td class="no">✕</td><td class="partial">Partial</td><td class="yes">✓</td></tr>
-            <tr><td>Citation export</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td></tr>
-            <tr><td>Dedicated gateway</td><td class="no">✕</td><td class="yes">✓ (<code>slb_</code>)</td><td class="yes">✓ (<code>gtk_</code>)</td></tr>
-            <tr><td>Data update notifications</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td></tr>
-            <tr><td>Technical support</td><td>Community</td><td>Dedicated channel</td><td>Priority response</td></tr>
-            <tr><td>Price</td><td>Free</td><td>Custom</td><td>¥39.9/yr · ¥199 lifetime</td></tr>
+            <tr><td>Rate limit</td><td>60/min</td><td>120/min</td><td>600/min</td><td>300/min pooled</td><td>Unlimited</td></tr>
+            <tr><td>Seats</td><td>1</td><td>1</td><td>1</td><td>5</td><td>Unlimited</td></tr>
+            <tr><td>Domain metadata</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Entity metadata</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Full-field entity data</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Open-source project registry</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Semantic search <code>/v1/search/semantic</code></td><td class="no">✕</td><td class="partial">Partial</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Citation export</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Point-in-time replay / audit log</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td></tr>
+            <tr><td>Dedicated gateway</td><td class="no">✕</td><td class="yes">✓ <code>slb_</code></td><td class="yes">✓ <code>gtk_</code></td><td class="no">✕</td><td class="yes">✓</td></tr>
+            <tr><td>On-prem mirrored delivery</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td></tr>
+            <tr><td>Data update notifications</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>DPA / compliance evidence pack</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td></tr>
+            <tr><td>Technical support</td><td>Community</td><td>Dedicated channel</td><td>Priority</td><td>Priority</td><td>Named SLA</td></tr>
+            <tr><td>Price</td><td>Free</td><td>Custom</td><td>¥39.9/yr · ¥199 lifetime</td><td>¥199/yr</td><td>Custom</td></tr>
           </tbody>
         </table>
       </div>
@@ -529,6 +634,14 @@
         <div class="limit-item">
           <span class="limit-label">Pro (<code>gtk_</code> key)</span>
           <span class="limit-value">600 requests / minute</span>
+        </div>
+        <div class="limit-item">
+          <span class="limit-label">Team (5 pooled keys)</span>
+          <span class="limit-value">300 requests / minute</span>
+        </div>
+        <div class="limit-item">
+          <span class="limit-label">Enterprise</span>
+          <span class="limit-value">Negotiated, no hard cap</span>
         </div>
         <p style="margin-top:16px; color:#888; font-size:0.9em;">
           Rate limits use a sliding window. When exceeded, the API returns HTTP 429 with a <code>Retry-After</code> response header indicating the retry interval.
@@ -584,7 +697,7 @@
         <div class="steps">
           <div class="step">
             <strong>Choose a plan</strong>
-            <p>Pick Free / Partner / Pro based on your needs. Free requires no registration; Partner is discussed with our ops team; Pro is billed through Hipiaomoney.</p>
+            <p>Pick Free / Partner / Pro / Team / Enterprise based on your needs. Free requires no registration; Pro is self-serve; Partner, Team and Enterprise are quoted by our ops team.</p>
           </div>
           <div class="step">
             <strong>Get an API key</strong>
@@ -651,7 +764,7 @@
           </div>
           <div class="promise-item">
             <div class="promise-icon">✓</div>
-            <div class="promise-text"><strong>Three HMAC keys fully isolated</strong><span>Free / Partner / Pro do not affect each other</span></div>
+            <div class="promise-text"><strong>HMAC key prefixes fully isolated</strong><span>Free / <code>slb_</code> Partner / <code>gtk_</code> Pro do not affect each other</span></div>
           </div>
         </div>
       </div>
