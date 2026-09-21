@@ -1,28 +1,25 @@
 {
   "_meta": {
     "pipeline": "intel-state-dump",
-    "generated_at": "2026-09-21T12:58:40.883Z",
+    "generated_at": "2026-09-21T15:15:05.473Z",
     "source": "https://api.swarmlabs.tools/v1/intel/admin/state",
     "sprint": "2-prep",
     "note": "Worker memory 状态快照。Sprint 2 会在 Worker 启动时加载此文件恢复状态。"
   },
   "admin": "gtk-intel-ad",
-  "timestamp": "2026-09-21T12:58:37.221Z",
+  "timestamp": "2026-09-21T15:15:05.424Z",
   "demands": [],
   "consumer_lists": [],
-  "consumers": [
-    {
-      "cid": "csm_213670011022",
-      "project_name": "test-consumer",
-      "tier": "free",
-      "has_key": true,
-      "created_at": "2026-09-21T12:54:58.926Z"
-    }
-  ],
+  "consumers": [],
   "counts": {
     "demands": 0,
     "lists": 0,
-    "consumers": 1
+    "consumers": 0
   },
-  "_storage": "memory_only_kv_quota_exhausted"
+  "_storage": "memory_only_kv_quota_exhausted",
+  "_state_restore": {
+    "last_load_at": null,
+    "restored_demands": 0,
+    "restored_consumers": 0
+  }
 }
