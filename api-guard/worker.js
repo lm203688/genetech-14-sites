@@ -20,6 +20,7 @@
  */
 
 const DEFAULT_FREE_RATE = 60;
+const UPSTREAM_BASE = 'https://data.swarmlabs.tools';
 
 // 把 Cloudflare 注入的绑定整理成统一的 env 对象（缺失时按 undefined 处理，不抛错）
 function getEnv() {
@@ -293,7 +294,8 @@ async function handleRequest(request) {
     const req = new Request(request);
     req.headers.set('X-GeneTech-Tier', 'pro');
     req.headers.set('X-GeneTech-Site', v.site || site);
-    return fetch(req);
+    const proxyUrl = new URL(path + url.search, UPSTREAM_BASE);
+    return fetch(new Request(proxyUrl, { method: request.method, headers: req.headers }));
   }
 
   // ---- 免费层：静态知识 JSON 限流放行 ----
@@ -318,15 +320,20 @@ async function handleRequest(request) {
 
     const req = new Request(request, { headers: request.headers });
     if (targetPath !== path) {
-      // 用改写后的 URL 转发
-      const newUrl = new URL(targetPath, request.url);
+      const newUrl = new URL(targetPath + url.search, UPSTREAM_BASE);
       const proxyReq = new Request(newUrl, { method: request.method, headers: req.headers });
       proxyReq.headers.set('X-GeneTech-Tier', 'free');
       proxyReq.headers.set('X-GeneTech-OriginalPath', path);
       return fetch(proxyReq);
     }
-    req.headers.set('X-GeneTech-Tier', 'free');
-    return fetch(req);
+    // 未映射的 /v1/* 路径返回 404（避免自指循环）
+    if (path.startsWith('/v1/')) {
+      return json({ error: 'not_found', message: `OpenAPI 端点 ${path} 不存在。可用端点：/v1/domains, /v1/entities, /v1/oss/registry, /v1/search/semantic` }, 404);
+    }
+    const upstreamUrl = new URL(path + url.search, UPSTREAM_BASE);
+    const proxyReq = new Request(upstreamUrl, { method: request.method, headers: request.headers });
+    proxyReq.headers.set('X-GeneTech-Tier', 'free');
+    return fetch(proxyReq);
   }
 
   // ---- /health 端点 ----
@@ -391,8 +398,20 @@ async function handleRequest(request) {
     }
   }
 
-  // 其他路径直接转发
-  return fetch(request);
+  // 根路径：欢迎页
+  if (path === '/' || path === '') {
+    return json({
+      ok: true,
+      service: 'genetech-api-guard',
+      endpoints: ['/health', '/v1/domains', '/v1/entities', '/v1/oss/registry', '/v1/search/semantic'],
+      docs: 'https://data.swarmlabs.tools/',
+      openapi: 'https://data.swarmlabs.tools/openapi.yaml',
+    });
+  }
+
+  // 其他路径：转发到上游（避免自指循环）
+  const upstreamUrl = new URL(path + url.search, UPSTREAM_BASE);
+  return fetch(new Request(upstreamUrl, { method: request.method, headers: request.headers }));
 }
 
 addEventListener('fetch', (event) => {
