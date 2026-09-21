@@ -152,7 +152,7 @@ async function checkLlmRate(env, ip) {
 // 鉴权：必须 Pro Key（`gtk_` 前缀）
 // ---------------------------------------------------------------------------
 
-const SEARCH_INDEX_URL = 'https://lm203688.github.io/genetech-14-sites/data/search-index.json';
+const SEARCH_INDEX_URL = `${UPSTREAM_BASE}/data/search-index.json`;
 const SEARCH_INDEX_CACHE_KEY = '__SEARCH_INDEX_CACHE__';
 const SEARCH_INDEX_TTL_MS = 10 * 60 * 1000; // 10 分钟
 

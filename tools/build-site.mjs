@@ -2020,6 +2020,17 @@ async function main() {
   } catch (e) {
     console.warn('[build-site] 跳过 pricing.html:', e.message);
   }
+  // 对外数据 JSON（供 api.swarmlabs.tools/v1/oss/registry 与 /v1/search/semantic 使用）：
+  // 原样复制到 _site/data/，与 /api/catalog.json 同域
+  for (const rel of ['data/oss-registry.json', 'data/search-index.json', 'data/knowledge-graph.json', 'data/knowledge-graph-entities.json']) {
+    try {
+      const src = path.join(ROOT, rel);
+      if (fs.existsSync(src)) writeFile(rel, fs.readFileSync(src, 'utf8'));
+      else console.warn(`[build-site] 跳过 ${rel}：源文件不存在`);
+    } catch (e) {
+      console.warn(`[build-site] 复制 ${rel} 失败：`, e.message);
+    }
+  }
   // 指向式引导组件（借鉴 heyclicky 的 Visual Cursor Pointing）：默认 no-op，无标记页面零副作用
   try {
     writeFile('assets/point-guide.js', fs.readFileSync(path.join(ROOT, 'tools/static/point-guide.js'), 'utf8'));
