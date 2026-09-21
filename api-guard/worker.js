@@ -35,8 +35,12 @@ function getEnv() {
     LLM_BRIDGE_MODEL: typeof LLM_BRIDGE_MODEL !== 'undefined' ? LLM_BRIDGE_MODEL : undefined,
     LLM_FREE_RATE: typeof LLM_FREE_RATE !== 'undefined' ? LLM_FREE_RATE : undefined,
     INTEL_KV: typeof INTEL_KV !== 'undefined' ? INTEL_KV : undefined,
+    INTEL_ADMIN_KEY: typeof INTEL_ADMIN_KEY !== 'undefined' ? INTEL_ADMIN_KEY : null,
   };
 }
+
+// Admin fallback（仅用于 /v1/intel/consumer/create 和 list）。生产建议通过 CF Secret 覆盖。
+const INTEL_ADMIN_FALLBACK = 'gtk-intel-admin-3f7b9e2a1c4d8f5e';
 
 // ---------------------------------------------------------------------------
 // 工具：HMAC / 常量时间比较
@@ -70,7 +74,9 @@ function b64urlDecode(s) {
 
 async function validateProKeyLocal(token, env) {
   if (!env.PRO_SECRET) return { ok: false, error: 'server_misconfigured' };
-  const parts = token.split('.');
+  // 接受完整 token（含 gtk_ 前缀）或裸 payload.sig
+  const bare = token.replace(/^gtk_/, '');
+  const parts = bare.split('.');
   if (parts.length !== 2) return { ok: false, error: 'invalid_format' };
   const [payloadB64, sig] = parts;
   const expected = await hmacSign(payloadB64, env.PRO_SECRET);
@@ -268,6 +274,46 @@ const INTEL_DEMAND_TTL = 60 * 60 * 24 * 30; // 30 天
 const INTEL_LIST_TTL = 60 * 60 * 24 * 90;   // 90 天
 const INTEL_MEMORY_FALLBACK = new Map();
 
+// Consumer Key (ckn_) —— 独立于站点 Pro Key (gtk_)，只用于 /v1/intel/* 端点
+// 格式：ckn_<base64urlPayload>.<hexHmac>
+// payload = { cid: consumer_id, tier, exp, rate }
+const INTEL_CONSUMER_PREFIX = 'intel:consumer:';
+const INTEL_CONSUMER_TTL = 60 * 60 * 24 * 365; // 1 年
+const INTEL_ADMIN_PREFIX = 'intel:admin:';
+const INTEL_CONSUMER_KEY_PREFIX = 'ckn_';
+
+function genConsumerId() {
+  const r = (crypto.getRandomValues(new Uint8Array(6)) || new Uint8Array(6));
+  return 'csm_' + Array.from(r).map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function signConsumerKey(env, payload) {
+  const p = JSON.stringify(payload);
+  const pB64 = btoa(p).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+  const sig = await hmacSign(pB64, env.PRO_SECRET);
+  return INTEL_CONSUMER_KEY_PREFIX + pB64 + '.' + sig;
+}
+
+async function validateConsumerKey(token, env) {
+  if (!env.PRO_SECRET || !token) return { ok: false, error: 'server_misconfigured' };
+  if (!token.startsWith(INTEL_CONSUMER_KEY_PREFIX)) return { ok: false, error: 'invalid_format' };
+  const parts = token.slice(INTEL_CONSUMER_KEY_PREFIX.length).split('.');
+  if (parts.length !== 2) return { ok: false, error: 'invalid_format' };
+  const [pB64, sig] = parts;
+  const expected = await hmacSign(pB64, env.PRO_SECRET);
+  if (!constantTimeEqual(expected, sig)) return { ok: false, error: 'bad_signature' };
+  let payload;
+  try {
+    const padded = pB64.replace(/-/g, '+').replace(/_/g, '/');
+    const pad = (4 - (padded.length % 4)) % 4;
+    payload = JSON.parse(atob(padded + '='.repeat(pad)));
+  } catch {
+    return { ok: false, error: 'bad_payload' };
+  }
+  if (!payload.exp || Date.now() > payload.exp) return { ok: false, error: 'expired' };
+  return { ok: true, ...payload };
+}
+
 function getIntelStore(env) {
   // 优先级：INTEL_KV > PRO_KV（用 intel: 前缀避免与 rate limit key 冲突） > memory fallback
   if (env.INTEL_KV) return env.INTEL_KV;
@@ -325,7 +371,7 @@ function searchEntities(index, spec) {
   return matches.slice(0, cap);
 }
 
-async function handleIntelDemandPost(request, env) {
+async function handleIntelDemandPost(request, env, identity) {
   try {
   let body;
   try { body = await request.json(); }
@@ -438,6 +484,170 @@ async function handleIntelDemandGet(env, demandId) {
 // 主处理器
 // ---------------------------------------------------------------------------
 
+// ============ Consumer Application (申请 → 派 Key) ============
+
+async function handleIntelApply(request, env) {
+  try {
+    let body;
+    try { body = await request.json(); }
+    catch { return json({ error: 'bad_request', message: 'Body 必须是 JSON' }, 400); }
+
+    const name = (body.project_name || body.project || '').toString().trim();
+    const owner = (body.contact || body.owner || '').toString().trim();
+    const purpose = (body.purpose || body.use_case || '').toString().trim();
+    if (!name || !owner || !purpose) {
+      return json({ error: 'bad_request', message: 'project_name / contact / purpose 三项必填' }, 400);
+    }
+
+    const cid = genConsumerId();
+    const exp = Date.now() + 365 * 86400 * 1000;
+    const application = {
+      id: cid,
+      project_name: name,
+      contact: owner,
+      purpose,
+      priority: ['high', 'medium', 'low'].includes(body.priority) ? body.priority : 'medium',
+      status: 'pending_review',
+      created_at: new Date().toISOString(),
+      _next: {
+        message: '申请已登记，等待管理员分配 consumer key',
+        hint: '把这份 application JSON 发给管理员（GitHub issue / 邮件），管理员用 POST /v1/intel/consumer/create 生成 key',
+      },
+    };
+
+    // 尝试写入 KV（限额可能失败，不致命）
+    const store = getIntelStore(env);
+    let persisted = false;
+    try {
+      await store.put(INTEL_CONSUMER_PREFIX + cid, JSON.stringify({
+        ...application,
+        application_body: body,
+      }), { expirationTtl: INTEL_CONSUMER_TTL });
+      persisted = true;
+    } catch (e) {
+      console.log(`[intel:apply] KV put failed: ${e.message}`);
+    }
+
+    return json({
+      application_id: cid,
+      status: 'pending_review',
+      persisted,
+      _note: persisted
+        ? '申请已入库，等待管理员派 Key'
+        : '申请已受理，但 KV 存储临时不可用（日写入限额）；application_id 仍可用，请管理员凭 application_id + application JSON 派 Key',
+    }, 201);
+  } catch (e) {
+    return json({ error: 'internal_error', message: '申请处理失败：' + (e && e.message ? e.message : String(e)) }, 500);
+  }
+}
+
+async function handleIntelVerify(request) {
+  const auth = request.headers.get('Authorization') || '';
+  const token = auth.replace(/^Bearer\s+/i, '').trim();
+  if (!token) return json({ error: 'unauthorized', message: '需要 Authorization: Bearer <ckn_ 或 gtk_ key>' }, 401);
+
+  // 优先尝试 consumer key
+  if (token.startsWith(INTEL_CONSUMER_KEY_PREFIX)) {
+    const v = await validateConsumerKey(token, getEnv());
+    if (v.ok) {
+      return json({
+        valid: true, key_type: 'consumer', cid: v.cid, tier: v.tier,
+        consumer_name: v.name, expires_at: new Date(v.exp).toISOString(),
+        rate_per_min: v.rate,
+      }, 200);
+    }
+    return json({ valid: false, key_type: 'consumer', error: v.error }, 401);
+  }
+
+  // 回退到 Pro Key：完整传 token（含 gtk_ 前缀），validateProKeyLocal 内部会 split
+  const v = await validateProKey(token, '', getEnv());
+  if (v.ok) {
+    return json({ valid: true, key_type: 'pro', site: v.site }, 200);
+  }
+  return json({ valid: false, key_type: 'pro', error: v.error }, 401);
+}
+
+// Admin only: 用 admin key 从 application 生成 consumer key
+async function handleIntelCreateConsumer(request, env, adminToken) {
+  let body;
+  try { body = await request.json(); }
+  catch { return json({ error: 'bad_request', message: 'Body 必须是 JSON' }, 400); }
+
+  const cid = (body.application_id || '').toString().trim();
+  const name = (body.project_name || '').toString().trim();
+  const tier = ['free', 'pro', 'enterprise'].includes(body.tier) ? body.tier : 'pro';
+  if (!cid || !name) {
+    return json({ error: 'bad_request', message: 'application_id + project_name 必填' }, 400);
+  }
+
+  const rate = body.rate_per_min || (tier === 'enterprise' ? 600 : tier === 'pro' ? 120 : 30);
+  const ttlDays = tier === 'enterprise' ? 365 : tier === 'pro' ? 180 : 30;
+  const exp = Date.now() + ttlDays * 86400 * 1000;
+
+  const payload = { cid, name, tier, exp, rate, admin: adminToken.slice(0, 12) };
+  const key = await signConsumerKey(env, payload);
+
+  const record = {
+    cid, project_name: name, tier,
+    rate_per_min: rate,
+    created_at: new Date().toISOString(),
+    expires_at: new Date(exp).toISOString(),
+    application_body: body.application_body || null,
+    created_by_admin: adminToken.slice(0, 12),
+  };
+
+  const store = getIntelStore(env);
+  let persisted = false;
+  try {
+    await store.put(INTEL_CONSUMER_PREFIX + cid, JSON.stringify({ ...record, key }), { expirationTtl: INTEL_CONSUMER_TTL });
+    persisted = true;
+  } catch (e) {
+    console.log(`[intel:create] KV put failed: ${e.message}`);
+  }
+
+  return json({
+    application_id: cid,
+    consumer_key: key,
+    tier,
+    rate_per_min: rate,
+    expires_at: record.expires_at,
+    persisted,
+    _note: persisted
+      ? 'Consumer 已入库。请把 consumer_key 发给申请方，之后所有 /v1/intel/* 请求用 Authorization: Bearer <consumer_key>'
+      : 'Consumer 已签发。KV 存储暂不可用（日写入限额），但 key 可直接使用——档案会由 memory fallback 保存（单实例）',
+  }, 200);
+}
+
+async function handleIntelListConsumers(env, adminToken) {
+  const store = getIntelStore(env);
+  if (!store || typeof store.list !== 'function') {
+    return json({
+      admin: (adminToken || '').slice(0, 12),
+      consumers: [],
+      count: 0,
+      _note: 'KV list() 不可用（memory fallback）。用 GET /v1/intel/consumer/{cid} 单点查询。',
+    }, 200);
+  }
+  try {
+    const res = await store.list({ prefix: INTEL_CONSUMER_PREFIX });
+    const items = (res && Array.isArray(res.list)) ? res.list : (Array.isArray(res) ? res : []);
+    const out = [];
+    for (const item of items) {
+      try {
+        const r = JSON.parse(item.value);
+        out.push({
+          cid: r.cid, project_name: r.project_name, tier: r.tier,
+          created_at: r.created_at, expires_at: r.expires_at,
+          has_key: !!r.key,
+        });
+      } catch { /* skip */ }
+    }
+    return json({ admin: (adminToken || '').slice(0, 12), consumers: out, count: out.length }, 200);
+  } catch (e) {
+    return json({ error: 'list_failed', message: e.message, admin: (adminToken || '').slice(0, 12) }, 500);
+  }
+}
+
 function json(data, status, extra = {}) {
   return new Response(JSON.stringify(data), {
     status,
@@ -458,24 +668,77 @@ async function handleRequest(request) {
         status: 'ok',
         service: 'GeneTech Intel API',
         version: '1.0.0-sprint1',
-        endpoints: ['/v1/intel/demand (POST)', '/v1/intel/demand/{id} (GET)'],
-        auth: 'Pro Key (gtk_) required except /v1/intel/health',
+        endpoints: {
+          apply: 'POST /v1/intel/apply (免鉴权，登记申请)',
+          verify: 'GET /v1/intel/verify (免鉴权，验 key)',
+          demand: 'POST /v1/intel/demand (需 ckn_ 或 gtk_)',
+          demandGet: 'GET /v1/intel/demand/{id} (需 ckn_ 或 gtk_)',
+          adminCreate: 'POST /v1/intel/consumer/create (需 admin key)',
+          adminList: 'GET /v1/intel/consumer (需 admin key)',
+        },
+        auth: 'Consumer Key (ckn_) 或 Pro Key (gtk_)；admin key 仅用于 consumer 管理端点',
       }, 200);
     }
+
     const auth = request.headers.get('Authorization') || '';
-    const token = auth.replace(/^Bearer\s+/i, '').trim().replace(/^gtk_/, '');
-    if (!token) return json({ error: 'unauthorized', message: 'Intel API 需要 Pro Key：Authorization: Bearer gtk_...' }, 401);
-    const v = await validateProKey(token, '', env);
-    if (!v.ok) {
-      const msg = { invalid_format: 'Key 格式无效', bad_signature: 'Key 签名验证失败', expired: 'Key 已过期', bad_payload: 'Key 负载无效', remote_unreachable: '许可证服务不可达', server_misconfigured: '服务端未配置' };
-      return json({ error: 'forbidden', detail: v.error, message: msg[v.error] || 'Pro Key 校验失败' }, 403);
+    const token = auth.replace(/^Bearer\s+/i, '').trim();
+
+    // 免鉴权：申请入口（任何项目都可以登记）
+    if (path === '/v1/intel/apply') {
+      if (request.method !== 'POST') return json({ error: 'method_not_allowed', message: '仅支持 POST' }, 405);
+      return handleIntelApply(request, env);
     }
+    // 免鉴权：Key 验真（消费方自检用）
+    if (path === '/v1/intel/verify') {
+      return handleIntelVerify(request);
+    }
+    // Admin only：从申请生成 consumer key / 列出所有 consumer
+    if (path === '/v1/intel/consumer/create') {
+      if (request.method !== 'POST') return json({ error: 'method_not_allowed', message: '仅支持 POST' }, 405);
+      const adminKey = env.INTEL_ADMIN_KEY || INTEL_ADMIN_FALLBACK;
+      if (!token || token !== adminKey) {
+        return json({ error: 'forbidden', message: '需要 admin key（X-Admin-Key 或 Authorization: Bearer <admin_key>）' }, 403);
+      }
+      const xAdmin = request.headers.get('X-Admin-Key') || '';
+      const finalAdmin = (xAdmin || token) === adminKey ? adminKey : '';
+      return handleIntelCreateConsumer(request, env, finalAdmin);
+    }
+    if (path === '/v1/intel/consumer') {
+      if (request.method !== 'GET') return json({ error: 'method_not_allowed', message: '仅支持 GET' }, 405);
+      const adminKey = env.INTEL_ADMIN_KEY || INTEL_ADMIN_FALLBACK;
+      if (!token || token !== adminKey) {
+        return json({ error: 'forbidden', message: '需要 admin key' }, 403);
+      }
+      return handleIntelListConsumers(env, token);
+    }
+
+    // 数据端点：接受 consumer key (ckn_) 或 Pro Key (gtk_)
+    if (!token) return json({ error: 'unauthorized', message: 'Intel API 需要 Consumer Key (ckn_...) 或 Pro Key (gtk_...)' }, 401);
+
+    let identity;
+    if (token.startsWith(INTEL_CONSUMER_KEY_PREFIX)) {
+      const v = await validateConsumerKey(token, env);
+      if (!v.ok) {
+        const msg = { invalid_format: 'Key 格式无效', bad_signature: 'Key 签名验证失败', expired: 'Key 已过期', bad_payload: 'Key 负载无效', server_misconfigured: '服务端未配置' };
+        return json({ error: 'forbidden', detail: v.error, message: msg[v.error] || 'Consumer Key 校验失败' }, 403);
+      }
+      identity = { type: 'consumer', cid: v.cid, tier: v.tier, name: v.name };
+    } else {
+      // Pro Key：validateProKeyLocal 期望完整 token（含 gtk_ 前缀，HMAC 覆盖完整字符串）
+      const v = await validateProKey(token, '', env);
+      if (!v.ok) {
+        const msg = { invalid_format: 'Key 格式无效', bad_signature: 'Key 签名验证失败', expired: 'Key 已过期', bad_payload: 'Key 负载无效', remote_unreachable: '许可证服务不可达', server_misconfigured: '服务端未配置' };
+        return json({ error: 'forbidden', detail: v.error, message: msg[v.error] || 'Pro Key 校验失败' }, 403);
+      }
+      identity = { type: 'pro', site: v.site };
+    }
+
     if (path === '/v1/intel/demand') {
       if (request.method !== 'POST') return json({ error: 'method_not_allowed', message: '仅支持 POST' }, 405);
-      return handleIntelDemandPost(request, env);
+      return handleIntelDemandPost(request, env, identity);
     }
     const m = path.match(/^\/v1\/intel\/demand\/([a-f0-9_]+)$/);
-    if (m && request.method === 'GET') return handleIntelDemandGet(env, m[1]);
+    if (m && request.method === 'GET') return handleIntelDemandGet(env, m[1], identity);
     return json({ error: 'not_found', message: `Intel 端点 ${path} 不存在` }, 404);
   }
 
