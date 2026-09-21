@@ -1,0 +1,60 @@
+# GeneTech Intel State Dump
+# Sprint 2 准备：每小时从 Worker 导出 memory 状态到 data/intel_state.json
+# 用途：为 Sprint 2 的外部状态文件持久化做准备
+# 
+# 触发方式：
+#   1. 定时：每小时整点（与 data-accumulation 错峰 5 分钟，避免 GitHub Actions 限流）
+#   2. 手动：GitHub → Actions → Intel State Dump → Run workflow
+#
+name: Intel State Dump
+
+on:
+  schedule:
+    - cron: '5 * * * *'  # 每小时 :05
+  workflow_dispatch:
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Dump state from Worker
+        env:
+          INTEL_ADMIN_KEY: ${{ secrets.INTEL_ADMIN_KEY }}
+        run: |
+          echo "Fetching intel state from Worker..."
+          node operations-plan/pipeline-intel-state-dump.mjs
+
+      - name: Check if state changed
+        id: changed
+        run: |
+          if git diff --quiet -- data/intel_state.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes to intel_state.json"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "intel_state.json changed:"
+            git diff --stat -- data/intel_state.json
+          fi
+
+      - name: Commit and push
+        if: steps.changed.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add data/intel_state.json
+          git commit -m "chore(intel): dump state at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push

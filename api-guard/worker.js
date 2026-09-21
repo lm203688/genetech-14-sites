@@ -433,7 +433,18 @@ async function handleIntelDemandPost(request, env, identity) {
     list.updated_at = new Date().toISOString();
     await store.put(listKey, JSON.stringify(list), { expirationTtl: INTEL_LIST_TTL });
   } catch (e) {
-    console.log(`[intel] KV put failed: ${e.message}`);
+    // KV 写入失败：降级到 memory fallback（跨实例不可见，但同一实例可查）
+    console.log(`[intel] KV put failed (${e.message}), falling back to memory`);
+    try {
+      INTEL_MEMORY_FALLBACK.set(INTEL_KEY_PREFIX + demand.id, JSON.stringify(demand));
+      const listKey = INTEL_LIST_PREFIX + consumer;
+      const listRaw = INTEL_MEMORY_FALLBACK.get(listKey);
+      const list = listRaw ? JSON.parse(listRaw) : { consumer, count: 0, recent: [] };
+      list.recent = [demand.id, ...(list.recent || [])].slice(0, 50);
+      list.count = (list.count || 0) + 1;
+      list.updated_at = new Date().toISOString();
+      INTEL_MEMORY_FALLBACK.set(listKey, JSON.stringify(list));
+    } catch {}
   }
 
   if (persisted) {
@@ -445,9 +456,10 @@ async function handleIntelDemandPost(request, env, identity) {
       results_total: results && results.total ? results.total : 0,
       delivery_mode: mode,
       created_at: demand.created_at,
+      _full_demand: demand,
       _next: {
         fetch_full: `https://api.swarmlabs.tools/v1/intel/demand/${demand.id}`,
-        note: '完整结果通过 GET 拉取（pull 模式）；push/subscribe 模式 Sprint 2 上线',
+        note: '完整结果通过 GET 拉取（pull 模式）；push/subscribe 模式 Sprint 2 上线。若 GET 404，用 _full_demand 本地保存。',
       },
     }, 200);
   }
@@ -461,8 +473,9 @@ async function handleIntelDemandPost(request, env, identity) {
     results_total: results && results.total ? results.total : 0,
     delivery_mode: mode,
     created_at: demand.created_at,
-    _persistence: 'unavailable_kv_limit',
-    _note: 'KV 存储暂不可用（日写入限额），本次结果已直接返回。demand_id 无法持久化，GET 将返回 404。',
+    _full_demand: demand,
+    _persistence: 'memory_only',
+    _note: '存储暂不可用（PRO_KV 日写入限额）。本次结果已直接返回。GET demand/{id} 可能 404——请用 _full_demand 本地持久化。Sprint 2 引入外部状态文件解决。',
   }, 200);
   } catch (e) {
     return json({ error: 'internal_error', message: 'Intel demand 处理失败：' + (e && e.message ? e.message : String(e)), stack: e && e.stack ? String(e.stack).slice(0, 500) : null }, 500);
@@ -475,9 +488,50 @@ async function handleIntelDemandGet(env, demandId) {
   }
   const store = getIntelStore(env);
   const raw = await store.get(INTEL_KEY_PREFIX + demandId);
-  if (!raw) return json({ error: 'not_found', message: `demand ${demandId} 不存在或已过期（30d TTL）` }, 404);
+  if (!raw) {
+    // 检查 memory fallback 是否有（跨实例可能丢失）
+    const memRaw = INTEL_MEMORY_FALLBACK.get(INTEL_KEY_PREFIX + demandId);
+    if (memRaw) {
+      try { return json(JSON.parse(memRaw), 200); } catch {}
+    }
+    return json({
+      error: 'not_found',
+      message: `demand ${demandId} 不存在或已过期`,
+      _hint: 'Sprint 1 存储限于单 Worker 实例 memory。如果 POST 之后 Worker 实例重启/迁移，GET 会 404。请改用 POST 响应里的 _full_demand 字段做本地持久化。Sprint 2 将引入外部状态文件。',
+    }, 404);
+  }
   try { return json(JSON.parse(raw), 200); }
   catch { return json({ error: 'corrupted', message: 'demand 记录损坏' }, 500); }
+}
+
+// Admin only: dump 当前 memory 状态，用于 Sprint 2 外部持久化
+async function handleIntelAdminState(env, adminToken) {
+  const demands = [];
+  const lists = [];
+  const consumers = [];
+  for (const [k, v] of INTEL_MEMORY_FALLBACK) {
+    try {
+      if (k.startsWith(INTEL_KEY_PREFIX)) {
+        const d = JSON.parse(v);
+        demands.push({ id: d.id, consumer: d.consumer, status: d.status, created_at: d.created_at, results_total: d.results?.total || 0 });
+      } else if (k.startsWith(INTEL_LIST_PREFIX)) {
+        const l = JSON.parse(v);
+        lists.push({ consumer: l.consumer, count: l.count, recent: (l.recent || []).slice(0, 10) });
+      } else if (k.startsWith(INTEL_CONSUMER_PREFIX)) {
+        const c = JSON.parse(v);
+        consumers.push({ cid: c.cid, project_name: c.project_name, tier: c.tier, has_key: !!c.key, created_at: c.created_at });
+      }
+    } catch {}
+  }
+  return json({
+    admin: (adminToken || '').slice(0, 12),
+    timestamp: new Date().toISOString(),
+    demands: demands,
+    consumer_lists: lists,
+    consumers: consumers,
+    counts: { demands: demands.length, lists: lists.length, consumers: consumers.length },
+    _storage: env.PRO_KV ? 'memory_only_kv_quota_exhausted' : 'memory_only_no_kv',
+  }, 200);
 }
 
 // ---------------------------------------------------------------------------
@@ -515,7 +569,7 @@ async function handleIntelApply(request, env) {
       },
     };
 
-    // 尝试写入 KV（限额可能失败，不致命）
+    // 尝试写入 KV（限额可能失败，降级到 memory）
     const store = getIntelStore(env);
     let persisted = false;
     try {
@@ -525,7 +579,10 @@ async function handleIntelApply(request, env) {
       }), { expirationTtl: INTEL_CONSUMER_TTL });
       persisted = true;
     } catch (e) {
-      console.log(`[intel:apply] KV put failed: ${e.message}`);
+      console.log(`[intel:apply] KV put failed (${e.message}), falling back to memory`);
+      try {
+        INTEL_MEMORY_FALLBACK.set(INTEL_CONSUMER_PREFIX + cid, JSON.stringify({ ...application, application_body: body }));
+      } catch {}
     }
 
     return json({
@@ -602,7 +659,10 @@ async function handleIntelCreateConsumer(request, env, adminToken) {
     await store.put(INTEL_CONSUMER_PREFIX + cid, JSON.stringify({ ...record, key }), { expirationTtl: INTEL_CONSUMER_TTL });
     persisted = true;
   } catch (e) {
-    console.log(`[intel:create] KV put failed: ${e.message}`);
+    console.log(`[intel:create] KV put failed (${e.message}), falling back to memory`);
+    try {
+      INTEL_MEMORY_FALLBACK.set(INTEL_CONSUMER_PREFIX + cid, JSON.stringify({ ...record, key }));
+    } catch {}
   }
 
   return json({
@@ -667,7 +727,7 @@ async function handleRequest(request) {
       return json({
         status: 'ok',
         service: 'GeneTech Intel API',
-        version: '1.0.0-sprint1',
+        version: '1.0.0-sprint1.1',
         endpoints: {
           apply: 'POST /v1/intel/apply (免鉴权，登记申请)',
           verify: 'GET /v1/intel/verify (免鉴权，验 key)',
@@ -675,8 +735,10 @@ async function handleRequest(request) {
           demandGet: 'GET /v1/intel/demand/{id} (需 ckn_ 或 gtk_)',
           adminCreate: 'POST /v1/intel/consumer/create (需 admin key)',
           adminList: 'GET /v1/intel/consumer (需 admin key)',
+          adminState: 'GET /v1/intel/admin/state (需 admin key，导出 memory 状态)',
         },
         auth: 'Consumer Key (ckn_) 或 Pro Key (gtk_)；admin key 仅用于 consumer 管理端点',
+        storage: 'PRO_KV (日写入限额) + memory fallback. POST 响应含 _full_demand 字段，消费方应自行持久化。',
       }, 200);
     }
 
@@ -710,6 +772,15 @@ async function handleRequest(request) {
         return json({ error: 'forbidden', message: '需要 admin key' }, 403);
       }
       return handleIntelListConsumers(env, token);
+    }
+    // Admin only：导出当前 memory 状态（供 Sprint 2 外部持久化脚本消费）
+    if (path === '/v1/intel/admin/state') {
+      if (request.method !== 'GET') return json({ error: 'method_not_allowed', message: '仅支持 GET' }, 405);
+      const adminKey = env.INTEL_ADMIN_KEY || INTEL_ADMIN_FALLBACK;
+      if (!token || token !== adminKey) {
+        return json({ error: 'forbidden', message: '需要 admin key' }, 403);
+      }
+      return handleIntelAdminState(env, token);
     }
 
     // 数据端点：接受 consumer key (ckn_) 或 Pro Key (gtk_)
