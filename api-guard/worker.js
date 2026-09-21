@@ -34,6 +34,7 @@ function getEnv() {
     LLM_BRIDGE_KEY: typeof LLM_BRIDGE_KEY !== 'undefined' ? LLM_BRIDGE_KEY : undefined,
     LLM_BRIDGE_MODEL: typeof LLM_BRIDGE_MODEL !== 'undefined' ? LLM_BRIDGE_MODEL : undefined,
     LLM_FREE_RATE: typeof LLM_FREE_RATE !== 'undefined' ? LLM_FREE_RATE : undefined,
+    INTEL_KV: typeof INTEL_KV !== 'undefined' ? INTEL_KV : undefined,
   };
 }
 
@@ -175,7 +176,7 @@ async function getSearchIndex(request) {
       globalThis[SEARCH_INDEX_CACHE_KEY] = { data, fetchedAt: Date.now() };
       return data;
     }
-    const res = await fetch(SEARCH_INDEX_URL, { cache: 'force-cache' });
+    const res = await fetch(SEARCH_INDEX_URL, { signal: AbortSignal.timeout(30000) });
     if (!res.ok) throw new Error(`fetch ${res.status}`);
     const data = await res.json();
     globalThis[SEARCH_INDEX_CACHE_KEY] = { data, fetchedAt: Date.now() };
@@ -255,6 +256,185 @@ async function handleSemanticSearch(request) {
 }
 
 // ---------------------------------------------------------------------------
+// Intel API (Sprint 1)：共享情报服务
+// 职责：消费方提交 DemandSpec → 引擎匹配现有 30 站索引 → 返回结构化结果
+// 鉴权：Pro Key（gtk_ 前缀），/v1/intel/health 免鉴权
+// 存储：INTEL_KV 优先；未绑定时降级到 memory（单实例、重启丢失）
+// ---------------------------------------------------------------------------
+
+const INTEL_KEY_PREFIX = 'intel:demand:';
+const INTEL_LIST_PREFIX = 'intel:list:';
+const INTEL_DEMAND_TTL = 60 * 60 * 24 * 30; // 30 天
+const INTEL_LIST_TTL = 60 * 60 * 24 * 90;   // 90 天
+const INTEL_MEMORY_FALLBACK = new Map();
+
+function getIntelStore(env) {
+  // 优先级：INTEL_KV > PRO_KV（用 intel: 前缀避免与 rate limit key 冲突） > memory fallback
+  if (env.INTEL_KV) return env.INTEL_KV;
+  if (env.PRO_KV) return env.PRO_KV;
+  return {
+    get: async (k) => INTEL_MEMORY_FALLBACK.get(k) || null,
+    put: async (k, v) => { INTEL_MEMORY_FALLBACK.set(k, v); },
+    delete: async (k) => { INTEL_MEMORY_FALLBACK.delete(k); },
+  };
+}
+
+function parseWindowDays(w) {
+  if (!w) return 30;
+  const m = String(w).match(/^(\d+)\s*d$/);
+  return m ? Math.min(parseInt(m[1], 10), 365) : 30;
+}
+
+function genDemandId() {
+  return 'dm_' + Date.now().toString(16) + '_' + Math.random().toString(16).slice(2, 10);
+}
+
+function searchEntities(index, spec) {
+  const { sites, keywords = [], sources = [], minConfidence = 0, maxEntities = 500 } = spec || {};
+  const kwTokens = keywords.flatMap((k) => tokenize(String(k)));
+  if (kwTokens.length === 0) return [];
+  const cap = Math.min(parseInt(maxEntities, 10) || 500, 5000);
+
+  const matches = [];
+  for (const e of index.entities || []) {
+    if (sites && !sites.includes(e.site)) continue;
+    if (sources.length && e.source && !sources.includes(e.source)) continue;
+    if ((e.confidence || 0) < (minConfidence || 0)) continue;
+
+    const nameTokens = new Set(tokenize(e.name));
+    const tagTokens = new Set((e.tags || []).flatMap((t) => tokenize(t)));
+    const snippetTokens = new Set(tokenize(e.snippet));
+    let hits = 0;
+    for (const qt of kwTokens) {
+      if (nameTokens.has(qt)) hits += 3;
+      else if (tagTokens.has(qt)) hits += 2;
+      else if (snippetTokens.has(qt)) hits += 1;
+    }
+    if (hits === 0) continue;
+
+    const coverage = hits / (kwTokens.length * 3);
+    const score = coverage * 0.7 + (e.confidence || 0) * 0.3;
+    matches.push({
+      id: e.id, name: e.name, site: e.site, source: e.source,
+      url: e.url, snippet: e.snippet, tags: e.tags,
+      publishedDate: e.publishedDate, confidence: e.confidence,
+      score: Math.round(score * 10000) / 10000,
+    });
+  }
+  matches.sort((a, b) => b.score - a.score || (b.confidence || 0) - (a.confidence || 0));
+  return matches.slice(0, cap);
+}
+
+async function handleIntelDemandPost(request, env) {
+  try {
+  let body;
+  try { body = await request.json(); }
+  catch { return json({ error: 'bad_request', message: 'Body 必须是 JSON' }, 400); }
+
+  const consumer = (body.consumer || '').toString().trim();
+  if (!consumer) return json({ error: 'bad_request', message: 'consumer 字段必填（消费方标识）' }, 400);
+
+  const q = body.query || {};
+  const delivery = body.delivery || {};
+  const mode = ['pull', 'push', 'subscribe'].includes(delivery.mode) ? delivery.mode : 'pull';
+  const timeWindowDays = parseWindowDays(q.time_window);
+
+  const index = await getSearchIndex(request);
+  const coverage = index
+    ? { local: true, entityCount: index.totalEntities, generatedAt: index.generatedAt, sourceSites: index.sourceSites }
+    : { local: false, reason: '搜索索引暂不可用' };
+
+  let results = null;
+  const started = Date.now();
+  if (index) {
+    try {
+      const matches = searchEntities(index, {
+        sites: q.sites,
+        keywords: q.keywords,
+        sources: q.sources,
+        minConfidence: q.min_confidence || 0,
+        maxEntities: q.max_entities || 500,
+      });
+      results = { matches, total: matches.length, scanned: index.totalEntities, elapsedMs: Date.now() - started };
+    } catch (e) {
+      results = { error: e && e.message ? e.message : String(e) };
+    }
+  }
+
+  const demand = {
+    id: genDemandId(),
+    consumer,
+    priority: ['high', 'medium', 'low'].includes(body.priority) ? body.priority : 'medium',
+    query: { ...q, time_window_days: timeWindowDays },
+    delivery: { ...delivery, mode },
+    coverage,
+    results,
+    status: results && results.matches ? 'completed' : 'index_unavailable',
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  };
+
+  const store = getIntelStore(env);
+  let persisted = false;
+  try {
+    await store.put(INTEL_KEY_PREFIX + demand.id, JSON.stringify(demand), { expirationTtl: INTEL_DEMAND_TTL });
+    persisted = true;
+    const listKey = INTEL_LIST_PREFIX + consumer;
+    const listRaw = await store.get(listKey);
+    const list = listRaw ? JSON.parse(listRaw) : { consumer, count: 0, recent: [] };
+    list.recent = [demand.id, ...(list.recent || [])].slice(0, 50);
+    list.count = (list.count || 0) + 1;
+    list.updated_at = new Date().toISOString();
+    await store.put(listKey, JSON.stringify(list), { expirationTtl: INTEL_LIST_TTL });
+  } catch (e) {
+    console.log(`[intel] KV put failed: ${e.message}`);
+  }
+
+  if (persisted) {
+    return json({
+      demand_id: demand.id,
+      status: demand.status,
+      coverage: demand.coverage,
+      results_preview: results && results.matches ? results.matches.slice(0, 5) : null,
+      results_total: results && results.total ? results.total : 0,
+      delivery_mode: mode,
+      created_at: demand.created_at,
+      _next: {
+        fetch_full: `https://api.swarmlabs.tools/v1/intel/demand/${demand.id}`,
+        note: '完整结果通过 GET 拉取（pull 模式）；push/subscribe 模式 Sprint 2 上线',
+      },
+    }, 200);
+  }
+
+  // KV 不可用：降级为无持久化模式，结果直接返回
+  return json({
+    demand_id: demand.id,
+    status: demand.status,
+    coverage: demand.coverage,
+    results: results && results.matches ? results.matches.slice(0, 200) : null,
+    results_total: results && results.total ? results.total : 0,
+    delivery_mode: mode,
+    created_at: demand.created_at,
+    _persistence: 'unavailable_kv_limit',
+    _note: 'KV 存储暂不可用（日写入限额），本次结果已直接返回。demand_id 无法持久化，GET 将返回 404。',
+  }, 200);
+  } catch (e) {
+    return json({ error: 'internal_error', message: 'Intel demand 处理失败：' + (e && e.message ? e.message : String(e)), stack: e && e.stack ? String(e.stack).slice(0, 500) : null }, 500);
+  }
+}
+
+async function handleIntelDemandGet(env, demandId) {
+  if (!demandId || !/^[a-f0-9_]+$/.test(demandId)) {
+    return json({ error: 'bad_request', message: 'demand_id 格式无效' }, 400);
+  }
+  const store = getIntelStore(env);
+  const raw = await store.get(INTEL_KEY_PREFIX + demandId);
+  if (!raw) return json({ error: 'not_found', message: `demand ${demandId} 不存在或已过期（30d TTL）` }, 404);
+  try { return json(JSON.parse(raw), 200); }
+  catch { return json({ error: 'corrupted', message: 'demand 记录损坏' }, 500); }
+}
+
+// ---------------------------------------------------------------------------
 // 主处理器
 // ---------------------------------------------------------------------------
 
@@ -270,6 +450,34 @@ async function handleRequest(request) {
   const url = new URL(request.url);
   const path = url.pathname;
   const ip = getClientIp(request);
+
+  // ---- Intel API (Sprint 1)：共享情报服务，独立路由 ----
+  if (path.startsWith('/v1/intel/')) {
+    if (path === '/v1/intel/health') {
+      return json({
+        status: 'ok',
+        service: 'GeneTech Intel API',
+        version: '1.0.0-sprint1',
+        endpoints: ['/v1/intel/demand (POST)', '/v1/intel/demand/{id} (GET)'],
+        auth: 'Pro Key (gtk_) required except /v1/intel/health',
+      }, 200);
+    }
+    const auth = request.headers.get('Authorization') || '';
+    const token = auth.replace(/^Bearer\s+/i, '').trim().replace(/^gtk_/, '');
+    if (!token) return json({ error: 'unauthorized', message: 'Intel API 需要 Pro Key：Authorization: Bearer gtk_...' }, 401);
+    const v = await validateProKey(token, '', env);
+    if (!v.ok) {
+      const msg = { invalid_format: 'Key 格式无效', bad_signature: 'Key 签名验证失败', expired: 'Key 已过期', bad_payload: 'Key 负载无效', remote_unreachable: '许可证服务不可达', server_misconfigured: '服务端未配置' };
+      return json({ error: 'forbidden', detail: v.error, message: msg[v.error] || 'Pro Key 校验失败' }, 403);
+    }
+    if (path === '/v1/intel/demand') {
+      if (request.method !== 'POST') return json({ error: 'method_not_allowed', message: '仅支持 POST' }, 405);
+      return handleIntelDemandPost(request, env);
+    }
+    const m = path.match(/^\/v1\/intel\/demand\/([a-f0-9_]+)$/);
+    if (m && request.method === 'GET') return handleIntelDemandGet(env, m[1]);
+    return json({ error: 'not_found', message: `Intel 端点 ${path} 不存在` }, 404);
+  }
 
   // ---- 付费层：/api/pro/* 和 /v1/search/semantic 必须鉴权 ----
   if (path.startsWith('/api/pro/') || path.startsWith('/v1/search/')) {
@@ -328,7 +536,7 @@ async function handleRequest(request) {
     }
     // 未映射的 /v1/* 路径返回 404（避免自指循环）
     if (path.startsWith('/v1/')) {
-      return json({ error: 'not_found', message: `OpenAPI 端点 ${path} 不存在。可用端点：/v1/domains, /v1/entities, /v1/oss/registry, /v1/search/semantic` }, 404);
+      return json({ error: 'not_found', message: `OpenAPI 端点 ${path} 不存在。可用端点：/v1/domains, /v1/entities, /v1/oss/registry, /v1/search/semantic, /v1/intel/demand` }, 404);
     }
     const upstreamUrl = new URL(path + url.search, UPSTREAM_BASE);
     const proxyReq = new Request(upstreamUrl, { method: request.method, headers: request.headers });
@@ -403,7 +611,7 @@ async function handleRequest(request) {
     return json({
       ok: true,
       service: 'genetech-api-guard',
-      endpoints: ['/health', '/v1/domains', '/v1/entities', '/v1/oss/registry', '/v1/search/semantic'],
+      endpoints: ['/health', '/v1/domains', '/v1/entities', '/v1/oss/registry', '/v1/search/semantic', '/v1/intel/demand', '/v1/intel/health'],
       docs: 'https://data.swarmlabs.tools/',
       openapi: 'https://data.swarmlabs.tools/openapi.yaml',
     });
@@ -415,5 +623,13 @@ async function handleRequest(request) {
 }
 
 addEventListener('fetch', (event) => {
-  event.respondWith(handleRequest(event.request));
+  event.respondWith(handleRequest(event.request).catch(async (err) => {
+    const body = JSON.stringify({
+      error: 'internal_error',
+      message: err && err.message ? err.message : String(err),
+      path: event.request.url,
+      stack: err && err.stack ? String(err.stack).slice(0, 800) : null,
+    });
+    return new Response(body, { status: 500, headers: { 'Content-Type': 'application/json' } });
+  }));
 });
