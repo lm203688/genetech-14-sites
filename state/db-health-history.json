@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-20",
+  "date": "2026-09-21",
   "total": 300000,
   "sites": 30,
   "perSite": {
@@ -245,6 +245,20 @@
       "quality": {
         "urlCompleteness": 100,
         "abstractCompleteness": 65,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-20",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 66,
         "doiTraceability": 92,
         "dedupRate": 94,
         "uniqueKeys": 282260
