@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Intel Demand Board · SwarmLabs Knowledge Engine</title>
+<meta name="description" content="Real-time operations dashboard for the SwarmLabs shared intel service — consumers, demand throughput, and state restore health." />
+<style>
+  :root {
+    --brand: #667eea;
+    --brand-2: #764ba2;
+    --bg: #0b1020;
+    --panel: #131a2e;
+    --panel-2: #1a2340;
+    --text: #e6e8f0;
+    --muted: #8a93ab;
+    --border: #26304a;
+    --ok: #4caf50;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --radius: 12px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; min-height: 100vh; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
+  header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand .dot { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); display: grid; place-items: center; font-weight: 700; }
+  .brand h1 { font-size: 1.15rem; font-weight: 600; letter-spacing: 0.02em; }
+  .brand .sub { font-size: 0.78rem; color: var(--muted); }
+  .controls { display: flex; gap: 8px; flex-wrap: wrap; }
+  .controls input[type=password], .controls input[type=text] {
+    background: var(--panel); color: var(--text); border: 1px solid var(--border);
+    padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; width: 260px;
+  }
+  .controls button {
+    background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #fff;
+    border: 0; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.85rem;
+  }
+  .controls button.ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+  .controls .url { font-size: 0.78rem; color: var(--muted); align-self: center; }
+
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+  @media (max-width: 800px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+  .card .lbl { color: var(--muted); font-size: 0.78rem; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .card .val { font-size: 1.9rem; font-weight: 700; }
+  .card .sub { color: var(--muted); font-size: 0.75rem; margin-top: 4px; }
+  .card.ok .val { color: var(--ok); }
+  .card.warn .val { color: var(--warn); }
+  .card.danger .val { color: var(--danger); }
+
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; margin-bottom: 16px; }
+  .panel h2 { font-size: 0.95rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .panel h2 .tag { font-size: 0.7rem; background: var(--panel-2); color: var(--muted); padding: 2px 8px; border-radius: 6px; font-weight: 400; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  tr:hover td { background: rgba(102, 126, 234, 0.05); }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600; }
+  .pill.free { background: rgba(76, 175, 80, 0.15); color: var(--ok); }
+  .pill.pro { background: rgba(102, 126, 234, 0.18); color: #a9b6ff; }
+  .pill.enterprise { background: rgba(255, 183, 77, 0.18); color: var(--warn); }
+  .pill.pending { background: rgba(255, 183, 77, 0.18); color: var(--warn); }
+  .pill.active { background: rgba(76, 175, 80, 0.18); color: var(--ok); }
+  .pill.error { background: rgba(239, 83, 80, 0.18); color: var(--danger); }
+
+  .flow { display: flex; gap: 8px; align-items: center; margin: 8px 0 16px; flex-wrap: wrap; font-size: 0.82rem; color: var(--muted); }
+  .flow .step { padding: 6px 12px; background: var(--panel-2); border-radius: 8px; border: 1px solid var(--border); color: var(--text); }
+  .flow .arrow { color: var(--brand); font-weight: 700; }
+
+  .log { background: #05080f; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; max-height: 200px; overflow: auto; }
+  .log .line { padding: 2px 0; }
+  .log .ok { color: var(--ok); }
+  .log .err { color: var(--danger); }
+  .log .info { color: var(--muted); }
+
+  .empty { text-align: center; padding: 32px; color: var(--muted); font-size: 0.85rem; }
+  .hidden { display: none !important; }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.75rem; margin-top: 24px; padding-bottom: 16px; }
+  code { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.82em; color: #a9b6ff; background: rgba(102,126,234,0.08); padding: 1px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="dot">IN</div>
+      <div>
+        <h1>Intel Demand Board</h1>
+        <div class="sub">SwarmLabs Knowledge Engine · Shared Intelligence Service</div>
+      </div>
+    </div>
+    <div class="controls">
+      <span class="url" id="endpointUrl">https://api.swarmlabs.tools</span>
+      <input type="password" id="adminKey" placeholder="admin key (gtk-...)" />
+      <button id="connectBtn">Connect</button>
+      <button class="ghost" id="refreshBtn">Refresh</button>
+    </div>
+  </header>
+
+  <div class="flow">
+    <span class="step">1 · Apply</span><span class="arrow">→</span>
+    <span class="step">2 · Admin assigns key</span><span class="arrow">→</span>
+    <span class="step">3 · Submit DemandSpec</span><span class="arrow">→</span>
+    <span class="step">4 · Retrieve Results</span><span class="arrow">→</span>
+    <span class="step">5 · Hourly State Dump</span>
+  </div>
+
+  <div class="grid" id="kpiGrid">
+    <div class="card"><div class="lbl">Consumers</div><div class="val" id="kpiConsumers">—</div><div class="sub" id="subConsumers">not loaded</div></div>
+    <div class="card"><div class="lbl">Demands (in-flight)</div><div class="val" id="kpiDemands">—</div><div class="sub" id="subDemands">in current window</div></div>
+    <div class="card"><div class="lbl">Restore Health</div><div class="val" id="kpiRestore">—</div><div class="sub" id="subRestore">state-load status</div></div>
+    <div class="card"><div class="lbl">Storage</div><div class="val" id="kpiStorage" style="font-size:0.95rem">—</div><div class="sub" id="subStorage">persistence mode</div></div>
+  </div>
+
+  <div class="panel">
+    <h2>Consumers <span class="tag">admin list</span></h2>
+    <div id="consumersBody">
+      <div class="empty">Not connected. Paste your admin key above and hit Connect.</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Recent Demands <span class="tag">state snapshot</span></h2>
+    <div id="demandsBody">
+      <div class="empty">Awaiting state dump (cron runs every hour).</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Activity Log <span class="tag">this session</span></h2>
+    <div class="log" id="activityLog"><div class="line info">— waiting for connect —</div></div>
+  </div>
+
+  <footer>
+    Board refreshes on demand. State dump cron: <code>.github/workflows/intel-state-dump.yml</code> every hour.
+    Live API: <code>api.swarmlabs.tools</code> · Static snapshot: <code>data.swarmlabs.tools/data/intel_state.json</code>
+  </footer>
+</div>
+
+<script>
+  const state = {
+    adminKey: null,
+    baseUrl: 'https://api.swarmlabs.tools',
+    lastData: null,
+  };
+  document.getElementById('endpointUrl').textContent = state.baseUrl;
+
+  const $ = (id) => document.getElementById(id);
+
+  function logLine(msg, cls='info') {
+    const el = $('activityLog');
+    const line = document.createElement('div');
+    line.className = 'line ' + cls;
+    const t = new Date().toLocaleTimeString();
+    line.textContent = `[${t}] ${msg}`;
+    el.appendChild(line);
+    el.scrollTop = el.scrollHeight;
+  }
+
+  async function fetchJSON(url, opts={}) {
+    const res = await fetch(url, {
+      ...opts,
+      headers: {
+        'Accept': 'application/json',
+        'User-Agent': 'swarmlabs-intel-board/1.0',
+        ...(opts.headers||{}),
+      },
+    });
+    let body = null;
+    try { body = await res.json(); } catch { body = { _raw: 'unparsable' }; }
+    return { ok: res.ok, status: res.status, body };
+  }
+
+  async function fetchAdminState() {
+    if (!state.adminKey) { logLine('No admin key — cannot fetch state', 'err'); return; }
+    logLine('fetching /v1/intel/admin/state ...');
+    const r = await fetchJSON(`${state.baseUrl}/v1/intel/admin/state?force=1`, {
+      headers: { Authorization: `Bearer ${state.adminKey}` },
+    });
+    if (!r.ok) {
+      logLine(`admin/state failed: HTTP ${r.status} — ${JSON.stringify(r.body).slice(0,120)}`, 'err');
+      return null;
+    }
+    logLine(`state loaded @ ${r.body.timestamp}`, 'ok');
+    return r.body;
+  }
+
+  async function fetchConsumers() {
+    if (!state.adminKey) return null;
+    const r = await fetchJSON(`${state.baseUrl}/v1/intel/consumer`, {
+      headers: { Authorization: `Bearer ${state.adminKey}` },
+    });
+    if (!r.ok) { logLine(`consumer list failed: HTTP ${r.status}`, 'err'); return null; }
+    logLine(`consumer list: ${r.body.count} entries`, 'ok');
+    return r.body;
+  }
+
+  function renderKPIs(data) {
+    if (!data) return;
+    $('kpiConsumers').textContent = data.counts?.consumers ?? 0;
+    $('subConsumers').textContent = data.timestamp ? `as of ${new Date(data.timestamp).toLocaleString()}` : 'n/a';
+    $('kpiDemands').textContent = data.counts?.demands ?? 0;
+    $('subDemands').textContent = data.counts?.lists ?? 0 + ' lists in state';
+    $('kpiStorage').textContent = data._storage || 'unknown';
+    $('subStorage').textContent = data._storage?.includes('kv') ? 'backed by KV' : 'memory-only, restored from dump';
+
+    const restoreCard = document.getElementById('kpiRestore');
+    const restoreSub = document.getElementById('subRestore');
+    if (data.counts?.consumers > 0 || data.counts?.demands > 0) {
+      restoreCard.textContent = 'healthy';
+      restoreCard.parentElement.className = 'card ok';
+      restoreSub.textContent = `${data.counts.consumers} consumers, ${data.counts.demands} demands in snapshot`;
+    } else {
+      restoreCard.textContent = 'empty';
+      restoreCard.parentElement.className = 'card warn';
+      restoreSub.textContent = 'state dump has no data yet — first run in progress';
+    }
+  }
+
+  function renderConsumers(list) {
+    const el = $('consumersBody');
+    if (!list || !list.consumers || list.consumers.length === 0) {
+      el.innerHTML = '<div class="empty">No consumers registered. Post to /v1/intel/apply to start.</div>';
+      return;
+    }
+    const rows = list.consumers.map(c => `
+      <tr>
+        <td><code>${c.cid || c.application_id || '?'}</code></td>
+        <td>${c.project_name || '?'}</td>
+        <td><span class="pill ${c.tier || 'free'}">${c.tier || 'free'}</span></td>
+        <td>${c.has_key ? '✓' : '—'}</td>
+        <td>${c.created_at ? new Date(c.created_at).toLocaleString() : '?'}</td>
+      </tr>
+    `).join('');
+    el.innerHTML = `<table>
+      <thead><tr><th>Consumer ID</th><th>Project</th><th>Tier</th><th>Key</th><th>Created</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  }
+
+  function renderDemands(data) {
+    const el = $('demandsBody');
+    if (!data || !data.demands || data.demands.length === 0) {
+      el.innerHTML = '<div class="empty">No demand records in the current snapshot. Submit one via POST /v1/intel/demand.</div>';
+      return;
+    }
+    const rows = data.demands.map(d => `
+      <tr>
+        <td><code>${d.id}</code></td>
+        <td>${d.consumer || '?'}</td>
+        <td><span class="pill ${d.status === 'active' ? 'active' : d.status === 'error' ? 'error' : 'pending'}">${d.status || '?'}</span></td>
+        <td>${d.results_total ?? 0}</td>
+        <td>${d.created_at ? new Date(d.created_at).toLocaleString() : '?'}</td>
+      </tr>
+    `).join('');
+    el.innerHTML = `<table>
+      <thead><tr><th>Demand ID</th><th>Consumer</th><th>Status</th><th>Results</th><th>Created</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  }
+
+  async function connect() {
+    const key = $('adminKey').value.trim();
+    if (!key) { logLine('admin key is empty', 'err'); return; }
+    state.adminKey = key;
+    logLine('admin key set, loading state...', 'info');
+    const data = await fetchAdminState();
+    state.lastData = data;
+    renderKPIs(data);
+    renderDemands(data);
+    const consumers = await fetchConsumers();
+    if (consumers) renderConsumers(consumers);
+    else if (data) {
+      // Fallback: synthesize consumers from state dump
+      renderConsumers({ consumers: (data.consumers || []).map(c => ({
+        cid: c.cid, project_name: c.project_name, tier: c.tier, has_key: c.has_key, created_at: c.created_at
+      }))});
+    }
+  }
+
+  $('connectBtn').addEventListener('click', connect);
+  $('refreshBtn').addEventListener('click', async () => {
+    if (!state.adminKey) { logLine('connect first', 'err'); return; }
+    const data = await fetchAdminState();
+    state.lastData = data;
+    renderKPIs(data);
+    renderDemands(data);
+    const consumers = await fetchConsumers();
+    if (consumers) renderConsumers(consumers);
+  });
+
+  // If user opens the board with an admin key in localStorage (auto-filled by earlier session)
+  if (localStorage.getItem('intel_admin_key')) {
+    $('adminKey').value = localStorage.getItem('intel_admin_key');
+    // Don't auto-connect — user should press Connect to explicitly grant
+    logLine('admin key found in localStorage — hit Connect to authorize', 'info');
+  }
+  // Save on connect
+  const origConnect = $('connectBtn');
+  origConnect.addEventListener('click', () => localStorage.setItem('intel_admin_key', $('adminKey').value.trim()));
+
+  // Initial empty-state render
+  $('kpiRestore').parentElement.className = 'card';
+  logLine('board ready. paste admin key → connect.', 'info');
+</script>
+</body>
+</html>

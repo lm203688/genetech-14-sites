@@ -274,6 +274,68 @@ const INTEL_DEMAND_TTL = 60 * 60 * 24 * 30; // 30 天
 const INTEL_LIST_TTL = 60 * 60 * 24 * 90;   // 90 天
 const INTEL_MEMORY_FALLBACK = new Map();
 
+// Sprint 2: 冷启动从 data/intel_state.json 恢复状态（cron 每小时 dump 一次）
+// 用 data.swarmlabs.tools（GitHub Pages 上游），不走 api.swarmlabs.tools 避免 Worker 自指
+const INTEL_STATE_URL = 'https://data.swarmlabs.tools/data/intel_state.json';
+const INTEL_STATE_TTL_MS = 60 * 1000; // 单实例内 1 分钟缓存
+let INTEL_STATE_PROMISE = null;
+let INTEL_STATE_LAST_LOAD = 0;
+let INTEL_STATE_HAS_CONSUMERS = 0;
+let INTEL_STATE_HAS_DEMANDS = 0;
+
+async function ensureIntelStateLoaded(force) {
+  const now = Date.now();
+  if (!force && INTEL_STATE_PROMISE && now - INTEL_STATE_LAST_LOAD < INTEL_STATE_TTL_MS) {
+    try { await INTEL_STATE_PROMISE; } catch {}
+    return;
+  }
+  if (!INTEL_STATE_PROMISE || force) {
+    INTEL_STATE_PROMISE = (async () => {
+      try {
+        const resp = await fetch(INTEL_STATE_URL, { cache: 'no-store' });
+        if (!resp.ok) return;
+        const state = await resp.json();
+        let restoredDemands = 0, restoredConsumers = 0, restoredLists = 0;
+        for (const d of state.demands || []) {
+          if (d.id) {
+            INTEL_MEMORY_FALLBACK.set(INTEL_KEY_PREFIX + d.id, JSON.stringify(d));
+            restoredDemands++;
+          }
+        }
+        for (const c of state.consumers || []) {
+          if (c.cid) {
+            INTEL_MEMORY_FALLBACK.set(INTEL_CONSUMER_PREFIX + c.cid, JSON.stringify(c));
+            restoredConsumers++;
+          }
+        }
+        for (const l of state.consumer_lists || []) {
+          if (l.consumer) {
+            INTEL_MEMORY_FALLBACK.set(INTEL_LIST_PREFIX + l.consumer, JSON.stringify(l));
+            restoredLists++;
+          }
+        }
+        INTEL_STATE_HAS_DEMANDS = restoredDemands;
+        INTEL_STATE_HAS_CONSUMERS = restoredConsumers;
+        INTEL_STATE_LAST_LOAD = Date.now();
+        if (restoredDemands + restoredConsumers + restoredLists > 0) {
+          console.log(`[intel] state restored: ${restoredDemands} demands, ${restoredConsumers} consumers, ${restoredLists} lists`);
+        }
+      } catch (e) {
+        // silent — 网络抖动/上游未就绪都不阻塞业务
+      }
+    })();
+  }
+  try { await INTEL_STATE_PROMISE; } catch {}
+}
+
+function intelStateRestoreInfo() {
+  return {
+    last_load_at: INTEL_STATE_LAST_LOAD ? new Date(INTEL_STATE_LAST_LOAD).toISOString() : null,
+    restored_demands: INTEL_STATE_HAS_DEMANDS,
+    restored_consumers: INTEL_STATE_HAS_CONSUMERS,
+  };
+}
+
 // Consumer Key (ckn_) —— 独立于站点 Pro Key (gtk_)，只用于 /v1/intel/* 端点
 // 格式：ckn_<base64urlPayload>.<hexHmac>
 // payload = { cid: consumer_id, tier, exp, rate }
@@ -486,10 +548,12 @@ async function handleIntelDemandGet(env, demandId) {
   if (!demandId || !/^[a-f0-9_]+$/.test(demandId)) {
     return json({ error: 'bad_request', message: 'demand_id 格式无效' }, 400);
   }
+  // Sprint 2: 冷启动先拉一次外部状态，避免跨实例 404
+  await ensureIntelStateLoaded(false);
   const store = getIntelStore(env);
   const raw = await store.get(INTEL_KEY_PREFIX + demandId);
   if (!raw) {
-    // 检查 memory fallback 是否有（跨实例可能丢失）
+    // 兜底：直接从 memory fallback 找
     const memRaw = INTEL_MEMORY_FALLBACK.get(INTEL_KEY_PREFIX + demandId);
     if (memRaw) {
       try { return json(JSON.parse(memRaw), 200); } catch {}
@@ -497,7 +561,7 @@ async function handleIntelDemandGet(env, demandId) {
     return json({
       error: 'not_found',
       message: `demand ${demandId} 不存在或已过期`,
-      _hint: 'Sprint 1 存储限于单 Worker 实例 memory。如果 POST 之后 Worker 实例重启/迁移，GET 会 404。请改用 POST 响应里的 _full_demand 字段做本地持久化。Sprint 2 将引入外部状态文件。',
+      _state_restore: intelStateRestoreInfo(),
     }, 404);
   }
   try { return json(JSON.parse(raw), 200); }
@@ -505,7 +569,9 @@ async function handleIntelDemandGet(env, demandId) {
 }
 
 // Admin only: dump 当前 memory 状态，用于 Sprint 2 外部持久化
-async function handleIntelAdminState(env, adminToken) {
+async function handleIntelAdminState(env, adminToken, force) {
+  // Sprint 2: dump 前先确保从外部 state 恢复过，避免"新实例空数据"假象
+  await ensureIntelStateLoaded(!!force);
   const demands = [];
   const lists = [];
   const consumers = [];
@@ -531,6 +597,7 @@ async function handleIntelAdminState(env, adminToken) {
     consumers: consumers,
     counts: { demands: demands.length, lists: lists.length, consumers: consumers.length },
     _storage: env.PRO_KV ? 'memory_only_kv_quota_exhausted' : 'memory_only_no_kv',
+    _state_restore: intelStateRestoreInfo(),
   }, 200);
 }
 
@@ -626,6 +693,8 @@ async function handleIntelVerify(request) {
 
 // Admin only: 用 admin key 从 application 生成 consumer key
 async function handleIntelCreateConsumer(request, env, adminToken) {
+  // Sprint 2: 冷启动先拉一次外部状态，避免同一 application_id 被重复签发新 key
+  await ensureIntelStateLoaded(false);
   let body;
   try { body = await request.json(); }
   catch { return json({ error: 'bad_request', message: 'Body 必须是 JSON' }, 400); }
@@ -780,7 +849,9 @@ async function handleRequest(request) {
       if (!token || token !== adminKey) {
         return json({ error: 'forbidden', message: '需要 admin key' }, 403);
       }
-      return handleIntelAdminState(env, token);
+      // ?force=1 强制绕过单实例内 1 分钟缓存，立即重新拉 state
+      const force = url.searchParams.get('force') === '1';
+      return handleIntelAdminState(env, token, force);
     }
 
     // 数据端点：接受 consumer key (ckn_) 或 Pro Key (gtk_)

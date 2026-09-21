@@ -2020,9 +2020,18 @@ async function main() {
   } catch (e) {
     console.warn('[build-site] 跳过 pricing.html:', e.message);
   }
+  // Intel Demand Board（内部运维看板）：admin key 才能查看，不进 nav，直接 URL 访问
+  try {
+    const boardSrc = path.join(ROOT, 'intel-dashboard.html');
+    if (fs.existsSync(boardSrc)) {
+      writeFile('intel-dashboard.html', fs.readFileSync(boardSrc, 'utf8'));
+    }
+  } catch (e) {
+    console.warn('[build-site] 跳过 intel-dashboard.html:', e.message);
+  }
   // 对外数据 JSON（供 api.swarmlabs.tools/v1/oss/registry 与 /v1/search/semantic 使用）：
   // 原样复制到 _site/data/，与 /api/catalog.json 同域
-  for (const rel of ['data/oss-registry.json', 'data/search-index.json', 'data/knowledge-graph.json', 'data/knowledge-graph-entities.json']) {
+  for (const rel of ['data/oss-registry.json', 'data/search-index.json', 'data/knowledge-graph.json', 'data/knowledge-graph-entities.json', 'data/intel_state.json']) {
     try {
       const src = path.join(ROOT, rel);
       if (fs.existsSync(src)) writeFile(rel, fs.readFileSync(src, 'utf8'));
