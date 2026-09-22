@@ -179,14 +179,20 @@ async function getArxivHot(request) {
   try {
     const cached = globalThis[ARXIV_HOT_CACHE_KEY];
     if (cached && Date.now() - cached.fetchedAt < ARXIV_HOT_TTL_MS) return cached.data;
-    const cacheCf = await caches.open('arxiv-hot-v1');
-    const cachedR = await cacheCf.match(ARXIV_HOT_URL);
-    if (cachedR) {
-      const data = await cachedR.json();
-      globalThis[ARXIV_HOT_CACHE_KEY] = { data, fetchedAt: Date.now() };
-      return data;
-    }
-    const res = await fetch(ARXIV_HOT_URL, { signal: AbortSignal.timeout(15000) });
+    // Try Workers Cache API first (bypass if stale/empty)
+    try {
+      const cacheCf = await caches.open('arxiv-hot-v2');
+      const cachedR = await cacheCf.match(ARXIV_HOT_URL);
+      if (cachedR) {
+        const data = await cachedR.json();
+        if (data && Array.isArray(data.papers) && data.papers.length > 0) {
+          globalThis[ARXIV_HOT_CACHE_KEY] = { data, fetchedAt: Date.now() };
+          return data;
+        }
+      }
+    } catch {}
+    // Fetch fresh
+    const res = await fetch(ARXIV_HOT_URL, { signal: AbortSignal.timeout(15000), headers: { 'Cache-Control': 'no-cache' } });
     if (!res.ok) return null;
     const data = await res.json();
     globalThis[ARXIV_HOT_CACHE_KEY] = { data, fetchedAt: Date.now() };
