@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GeneTech Intel · Consumer Console</title>
+<style>
+  :root {
+    --bg: #0b0f17; --panel: #131824; --panel-2: #1a2030; --border: #232b3d;
+    --text: #e6ecf5; --muted: #8794ad; --accent: #6ea8fe; --ok: #4ade80;
+    --warn: #fbbf24; --err: #f87171; --code: #182030;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 24px 20px 60px; }
+  header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+  h1 { margin: 0; font-size: 20px; font-weight: 600; }
+  h1 .sub { color: var(--muted); font-weight: 400; font-size: 14px; margin-left: 8px; }
+  .controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  input, button { font-size: 14px; padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--panel); color: var(--text); font-family: inherit; }
+  input { min-width: 280px; }
+  button { cursor: pointer; background: var(--accent); color: #0b0f17; border: none; font-weight: 600; }
+  button:hover { filter: brightness(1.1); }
+  button.secondary { background: var(--panel-2); color: var(--text); border: 1px solid var(--border); }
+  .status { font-size: 12px; color: var(--muted); }
+  .status.ok { color: var(--ok); } .status.err { color: var(--err); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .stat { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .stat .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .stat .value { font-size: 26px; font-weight: 600; }
+  .stat .hint { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .card > h2 { margin: 0; padding: 14px 16px; font-size: 15px; border-bottom: 1px solid var(--border); background: var(--panel-2); display: flex; justify-content: space-between; align-items: center; }
+  .card > h2 .count { font-size: 12px; color: var(--muted); font-weight: 400; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: var(--panel-2); color: var(--muted); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(110, 168, 254, 0.05); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 500; }
+  .badge.ok { background: rgba(74, 222, 128, 0.15); color: var(--ok); }
+  .badge.err { background: rgba(248, 113, 113, 0.15); color: var(--err); }
+  .badge.pending { background: rgba(251, 191, 36, 0.15); color: var(--warn); }
+  .badge.info { background: rgba(110, 168, 254, 0.15); color: var(--accent); }
+  code, .mono { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 12px; }
+  .mono { color: var(--accent); }
+  .empty { padding: 40px 20px; text-align: center; color: var(--muted); font-size: 14px; }
+  .kv-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .kv-bar .chip { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 4px 10px; font-size: 12px; color: var(--muted); }
+  .kv-bar .chip b { color: var(--text); }
+  footer { margin-top: 32px; text-align: center; color: var(--muted); font-size: 12px; }
+  footer a { color: var(--accent); text-decoration: none; }
+  .row-expand { cursor: pointer; }
+  .row-detail { background: var(--code); padding: 10px 14px; font-size: 12px; color: var(--muted); }
+  .row-detail code { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>GeneTech Intel Console <span class="sub">Consumer · Subscription · Demand</span></h1>
+    <div class="controls">
+      <input id="admin-key" type="password" placeholder="Admin Key (gtk-intel-admin-...)" value="">
+      <button onclick="loadAll()">Load</button>
+      <button class="secondary" onclick="clearKey()">Clear</button>
+    </div>
+  </header>
+
+  <div class="kv-bar">
+    <span class="chip">Storage: <b id="chip-storage">—</b></span>
+    <span class="chip">Updated: <b id="chip-updated">—</b></span>
+    <span class="chip" id="chip-api"></span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="label">Consumers</div><div class="value" id="st-consumers">—</div><div class="hint">active consumer accounts</div></div>
+    <div class="stat"><div class="label">Subscriptions</div><div class="value" id="st-subs">—</div><div class="hint">push/subscribe deliveries</div></div>
+    <div class="stat"><div class="label">Demands</div><div class="value" id="st-demands">—</div><div class="hint">total queries registered</div></div>
+    <div class="stat"><div class="label">Result Hits</div><div class="value" id="st-hits">—</div><div class="hint">sum of results across demands</div></div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Active Subscriptions <span class="count" id="subs-count"></span></h2>
+      <div id="subs-list"><div class="empty">Load to populate</div></div>
+    </div>
+    <div class="card">
+      <h2>Recent Demands <span class="count" id="demands-count"></span></h2>
+      <div id="demands-list"><div class="empty">Load to populate</div></div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;">
+    <div class="card">
+      <h2>Consumer Directory <span class="count" id="cons-count"></span></h2>
+      <div id="cons-list"><div class="empty">Load to populate</div></div>
+    </div>
+  </div>
+
+  <footer>
+    <div>Status: <span class="status" id="status-line">Idle</span></div>
+    <div style="margin-top:8px;">API: <a href="https://api.swarmlabs.tools/v1/intel/health" target="_blank">health</a> · <a href="/intel-dashboard.html" target="_blank">Demand Board</a></div>
+  </footer>
+</div>
+
+<script>
+const API_BASE = 'https://api.swarmlabs.tools/v1/intel';
+let ADMIN_KEY = '';
+
+function clearKey() {
+  document.getElementById('admin-key').value = '';
+  ADMIN_KEY = '';
+  localStorage.removeItem('intel_admin_key');
+}
+
+async function api(path, opts = {}) {
+  if (!ADMIN_KEY) { ADMIN_KEY = document.getElementById('admin-key').value.trim() || localStorage.getItem('intel_admin_key') || ''; }
+  if (!ADMIN_KEY) { setStatus('err', 'Admin key required'); throw new Error('no admin key'); }
+  const r = await fetch(API_BASE + path, {
+    ...opts,
+    headers: { 'Authorization': 'Bearer ' + ADMIN_KEY, 'Content-Type': 'application/json', ...opts.headers },
+  });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return await r.json();
+}
+
+function setStatus(kind, msg) {
+  const el = document.getElementById('status-line');
+  el.className = 'status ' + kind;
+  el.textContent = msg;
+}
+
+function fmtTime(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  return isNaN(d) ? '—' : d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+
+function badge(text, kind) {
+  return `<span class="badge ${kind}">${text}</span>`;
+}
+
+function renderConsumers(data) {
+  const el = document.getElementById('cons-list');
+  const consumers = data.consumers || [];
+  document.getElementById('cons-count').textContent = consumers.length;
+  if (!consumers.length) { el.innerHTML = '<div class="empty">No consumers registered yet</div>'; return; }
+  el.innerHTML = `<table><thead><tr>
+    <th>CID</th><th>Project</th><th>Tier</th><th>Key</th><th>Created</th>
+  </tr></thead><tbody>` +
+    consumers.map(c => `<tr>
+      <td class="mono">${c.cid}</td>
+      <td>${c.project_name || '—'}</td>
+      <td>${badge(c.tier || 'free', c.tier === 'pro' ? 'ok' : 'info')}</td>
+      <td>${c.has_key ? badge('issued', 'ok') : badge('pending', 'pending')}</td>
+      <td>${fmtTime(c.created_at)}</td>
+    </tr>`).join('') +
+    '</tbody></table>';
+}
+
+function renderSubscriptions(data) {
+  const el = document.getElementById('subs-list');
+  const subs = data.subscriptions || [];
+  document.getElementById('subs-count').textContent = subs.length;
+  if (!subs.length) { el.innerHTML = '<div class="empty">No subscriptions. Register one via POST /v1/intel/demand with mode=subscribe + delivery.callback</div>'; return; }
+  el.innerHTML = `<table><thead><tr>
+    <th>Sub ID</th><th>Consumer</th><th>Callback</th><th>Interval</th><th>Deliveries</th><th>Last Status</th>
+  </tr></thead><tbody>` +
+    subs.map(s => {
+      const status = s.last_delivery_status === 'ok' ? badge('ok', 'ok') : badge(s.last_delivery_status || 'unknown', 'err');
+      const cb = s.callback ? `<span class="mono" style="font-size:11px">${new URL(s.callback).hostname}</span>` : '—';
+      return `<tr>
+        <td class="mono">${s.sub_id}</td>
+        <td class="mono">${s.consumer}</td>
+        <td>${cb}</td>
+        <td>${s.interval_min}m</td>
+        <td>${s.delivery_count || 1}</td>
+        <td>${status}<div style="font-size:10px;color:var(--muted);margin-top:2px">last ${fmtTime(s.last_delivery_at)}</div></td>
+      </tr>`;
+    }).join('') +
+    '</tbody></table>';
+}
+
+function renderDemands(data) {
+  const el = document.getElementById('demands-list');
+  const demands = data.demands || [];
+  document.getElementById('demands-count').textContent = demands.length;
+  if (!demands.length) { el.innerHTML = '<div class="empty">No demands yet</div>'; return; }
+  el.innerHTML = `<table><thead><tr>
+    <th>Demand ID</th><th>Consumer</th><th>Status</th><th>Results</th><th>Created</th>
+  </tr></thead><tbody>` +
+    demands.slice(0, 30).map(d => `<tr>
+      <td class="mono" style="font-size:11px">${d.id}</td>
+      <td class="mono">${d.consumer}</td>
+      <td>${d.status === 'completed' ? badge('done', 'ok') : badge(d.status, 'pending')}</td>
+      <td><b>${d.results_total || 0}</b></td>
+      <td>${fmtTime(d.created_at)}</td>
+    </tr>`).join('') +
+    '</tbody></table>';
+}
+
+async function loadAll() {
+  setStatus('', 'Loading...');
+  document.getElementById('chip-updated').textContent = fmtTime(new Date().toISOString());
+  try {
+    const [state, subs] = await Promise.all([
+      api('/admin/state'),
+      api('/admin/subscriptions'),
+    ]);
+    localStorage.setItem('intel_admin_key', ADMIN_KEY);
+    renderConsumers(state);
+    renderDemands(state);
+    renderSubscriptions(subs);
+    document.getElementById('st-consumers').textContent = state.counts?.consumers ?? '—';
+    document.getElementById('st-demands').textContent = state.counts?.demands ?? '—';
+    document.getElementById('st-subs').textContent = subs.counts?.subscriptions ?? '—';
+    const hits = (state.demands || []).reduce((sum, d) => sum + (d.results_total || 0), 0);
+    document.getElementById('st-hits').textContent = hits.toLocaleString();
+    document.getElementById('chip-storage').textContent = state._storage || '—';
+    document.getElementById('chip-api').textContent = 'API: ' + new URL(API_BASE).host;
+    setStatus('ok', `OK · ${state.counts?.demands || 0} demands · ${subs.counts?.subscriptions || 0} subs · ${state.counts?.consumers || 0} consumers`);
+  } catch (e) {
+    setStatus('err', 'Error: ' + e.message);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('intel_admin_key');
+  if (saved) {
+    document.getElementById('admin-key').value = saved;
+    ADMIN_KEY = saved;
+    loadAll();
+  }
+});
+</script>
+</body>
+</html>

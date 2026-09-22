@@ -343,6 +343,9 @@ function intelStateRestoreInfo() {
 // 格式：ckn_<base64urlPayload>.<hexHmac>
 // payload = { cid: consumer_id, tier, exp, rate }
 const INTEL_CONSUMER_PREFIX = 'intel:consumer:';
+// Sprint 2 subscribe 模式：订阅记录 + 按 consumer 索引
+const INTEL_SUB_PREFIX = 'intel:sub:';
+const INTEL_SUB_INDEX_PREFIX = 'intel:subidx:';
 const INTEL_CONSUMER_TTL = 60 * 60 * 24 * 365; // 1 年
 const INTEL_ADMIN_PREFIX = 'intel:admin:';
 const INTEL_CONSUMER_KEY_PREFIX = 'ckn_';
@@ -436,6 +439,34 @@ function searchEntities(index, spec) {
   return matches.slice(0, cap);
 }
 
+// Sprint 2 push/subscribe: 投递结果到消费方 callback URL。
+// 校验：仅 https、非自身域名（防 SSRF 到 Worker 自循环）、10s 超时。
+async function deliverPush(callback, payload, hmac) {
+  let u;
+  try { u = new URL(callback); }
+  catch { return { ok: false, error: 'callback URL 格式无效' }; }
+  if (u.protocol !== 'https:') {
+    return { ok: false, error: 'callback 必须是 https URL' };
+  }
+  const host = u.hostname.toLowerCase();
+  if (host === 'api.swarmlabs.tools' || host === 'data.swarmlabs.tools' || host.endsWith('.swarmlabs.tools')) {
+    return { ok: false, error: 'callback 不允许指向 swarmlabs.tools 自身' };
+  }
+  try {
+    const body = JSON.stringify(payload);
+    const t0 = Date.now();
+    const r = await fetch(u.toString(), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-GeneTech-Intel-Signature': hmac || '' },
+      body,
+      signal: AbortSignal.timeout(10000),
+    });
+    return { ok: r.ok, status: r.status, elapsedMs: Date.now() - t0 };
+  } catch (e) {
+    return { ok: false, error: e.message || 'fetch failed' };
+  }
+}
+
 async function handleIntelDemandPost(request, env, identity) {
   try {
   let body;
@@ -513,6 +544,62 @@ async function handleIntelDemandPost(request, env, identity) {
   }
 
   if (persisted) {
+    // Sprint 2: push / subscribe 模式投递
+    let pushDelivery = null;
+    if (mode === 'push' || mode === 'subscribe') {
+      const callback = delivery.callback;
+      if (!callback) {
+        return json({ error: 'bad_request', message: `${mode} 模式必须在 delivery.callback 提供 https 回调 URL`, demand_id: demand.id }, 400);
+      }
+      const hmac = await hmacSign(demand.id, env.PRO_SECRET || '').catch(() => '');
+      pushDelivery = await deliverPush(callback, {
+        event: mode === 'subscribe' ? 'subscription_registered' : 'demand_result',
+        demand_id: demand.id,
+        consumer: demand.consumer,
+        delivery_mode: mode,
+        query: demand.query,
+        results_total: results && results.total ? results.total : 0,
+        results_preview: results && results.matches ? results.matches.slice(0, 5) : [],
+        coverage: demand.coverage,
+        created_at: demand.created_at,
+        _next: { fetch_full: `https://api.swarmlabs.tools/v1/intel/demand/${demand.id}` },
+      }, hmac);
+
+      if (mode === 'subscribe') {
+        const intervalMin = Math.max(5, Math.min(1440, parseInt(delivery.interval_min, 10) || 60));
+        const sub = {
+          sub_id: demand.id,
+          consumer,
+          callback,
+          query: demand.query,
+          delivery: demand.delivery,
+          interval_min: intervalMin,
+          last_delivery_at: new Date().toISOString(),
+          last_delivery_status: pushDelivery.ok ? 'ok' : 'error',
+          last_delivery_status_code: pushDelivery.status || 0,
+          next_delivery_at: new Date(Date.now() + intervalMin * 60 * 1000).toISOString(),
+          created_at: demand.created_at,
+          delivery_count: 1,
+          last_error: pushDelivery.error || null,
+        };
+        try {
+          await store.put(INTEL_SUB_PREFIX + sub.sub_id, JSON.stringify(sub), { expirationTtl: 90 * 24 * 3600 });
+          // 索引：consumer -> 该 consumer 的所有 sub_id
+          const idxKey = INTEL_SUB_INDEX_PREFIX + consumer;
+          const idxRaw = await store.get(idxKey);
+          const idx = idxRaw ? JSON.parse(idxRaw) : { consumer, sub_ids: [], updated_at: '' };
+          if (!idx.sub_ids.includes(sub.sub_id)) {
+            idx.sub_ids.unshift(sub.sub_id);
+            idx.sub_ids = idx.sub_ids.slice(0, 20);
+          }
+          idx.updated_at = new Date().toISOString();
+          await store.put(idxKey, JSON.stringify(idx), { expirationTtl: 90 * 24 * 3600 });
+        } catch (e) {
+          console.log(`[intel] subscribe register failed: ${e.message}`);
+        }
+      }
+    }
+
     return json({
       demand_id: demand.id,
       status: demand.status,
@@ -520,11 +607,12 @@ async function handleIntelDemandPost(request, env, identity) {
       results_preview: results && results.matches ? results.matches.slice(0, 5) : null,
       results_total: results && results.total ? results.total : 0,
       delivery_mode: mode,
+      push_delivery: pushDelivery,
       created_at: demand.created_at,
       _full_demand: demand,
       _next: {
         fetch_full: `https://api.swarmlabs.tools/v1/intel/demand/${demand.id}`,
-        note: '完整结果通过 GET 拉取（pull 模式）；push/subscribe 模式 Sprint 2 上线。若 GET 404，用 _full_demand 本地保存。',
+        note: 'pull: GET 拉取；push: 结果已同步投递 callback；subscribe: 已登记定时投递。',
       },
     }, 200);
   }
@@ -619,6 +707,56 @@ async function handleIntelAdminState(env, adminToken, force) {
     counts: { demands: kvDemands || demands.length, lists: lists.length, consumers: kvConsumers || consumers.length },
     _storage: env.INTEL_KV ? 'intel_kv' : (env.PRO_KV ? 'pro_kv_fallback' : 'memory_only'),
     _state_restore: intelStateRestoreInfo(),
+  }, 200);
+}
+
+// Sprint 2: Admin - 订阅列表
+async function handleIntelAdminSubscriptions(env) {
+  const subscriptions = [];
+  let kvSubCount = 0;
+  if (env.INTEL_KV) {
+    try {
+      const list = await env.INTEL_KV.list({ prefix: INTEL_SUB_PREFIX, limit: 200 });
+      const keys = Array.isArray(list.keys) ? list.keys : [];
+      kvSubCount = keys.length;
+      const got = await Promise.all(keys.slice(0, 100).map(async (k) => {
+        const raw = await env.INTEL_KV.get(k.name);
+        if (!raw) return null;
+        try { return JSON.parse(raw); } catch { return null; }
+      }));
+      for (const s of got) {
+        if (s) subscriptions.push({
+          sub_id: s.sub_id, consumer: s.consumer, callback: s.callback,
+          interval_min: s.interval_min, query: s.query,
+          created_at: s.created_at, last_delivery_at: s.last_delivery_at,
+          last_delivery_status: s.last_delivery_status, delivery_count: s.delivery_count,
+          next_delivery_at: s.next_delivery_at,
+        });
+      }
+    } catch {}
+  }
+  // 从 memory fallback 补
+  for (const [k, v] of INTEL_MEMORY_FALLBACK) {
+    if (k.startsWith(INTEL_SUB_PREFIX)) {
+      try {
+        const s = JSON.parse(v);
+        if (!subscriptions.find((x) => x.sub_id === s.sub_id)) {
+          subscriptions.push({
+            sub_id: s.sub_id, consumer: s.consumer, callback: s.callback,
+            interval_min: s.interval_min, query: s.query,
+            created_at: s.created_at, last_delivery_at: s.last_delivery_at,
+            last_delivery_status: s.last_delivery_status, delivery_count: s.delivery_count,
+            next_delivery_at: s.next_delivery_at,
+          });
+        }
+      } catch {}
+    }
+  }
+  return json({
+    timestamp: new Date().toISOString(),
+    subscriptions,
+    counts: { subscriptions: kvSubCount || subscriptions.length },
+    _storage: env.INTEL_KV ? 'intel_kv' : 'memory_only',
   }, 200);
 }
 
@@ -873,6 +1011,16 @@ async function handleRequest(request) {
       // ?force=1 强制绕过单实例内 1 分钟缓存，立即重新拉 state
       const force = url.searchParams.get('force') === '1';
       return handleIntelAdminState(env, token, force);
+    }
+
+    // Admin only：订阅管理列表（Sprint 2 push/subscribe 可观测）
+    if (path === '/v1/intel/admin/subscriptions') {
+      if (request.method !== 'GET') return json({ error: 'method_not_allowed', message: '仅支持 GET' }, 405);
+      const adminKey = env.INTEL_ADMIN_KEY || INTEL_ADMIN_FALLBACK;
+      if (!token || token !== adminKey) {
+        return json({ error: 'forbidden', message: '需要 admin key' }, 403);
+      }
+      return handleIntelAdminSubscriptions(env);
     }
 
     // 数据端点：接受 consumer key (ckn_) 或 Pro Key (gtk_)
