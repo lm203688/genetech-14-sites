@@ -210,14 +210,13 @@ curl -X POST https://api.swarmlabs.tools/v1/intel/demand \
 | `priority` | string | ❌ | `high` / `medium` / `low`，默认 `medium` |
 | `query.sites` | string[] | ❌ | 限定站点（30 站 slug，见[第六节](#六30-站领域列表)） |
 | `query.keywords` | string[] | ❌ | 关键词（至少 1 个才有结果） |
-| `query.sources` | string[] | ❌ | 限定来源（`arxiv`, `pubmed`, `github` 等） |
+| `query.sources` | string[] | ❌ | 限定来源（`swarmlabs-30sites`, `arxiv-hot`；留空=两者都查） |
 | `query.time_window` | string | ❌ | `1d`/`7d`/`14d`/`30d`/`90d`/`180d`/`365d`，默认 `30d` |
 | `query.min_confidence` | number | ❌ | 最低置信度（0.0-1.0），默认 0 |
 | `query.max_entities` | number | ❌ | 最大返回数（1-5000），默认 500 |
 | `delivery.mode` | string | ❌ | `pull`/`push`/`subscribe`，默认 `pull` |
-| `delivery.format` | string | ❌ | `json`/`markdown`/`csv`，默认 `json` |
-| `delivery.webhook` | string | ❌ | push/subscribe 模式的回调 URL（Sprint 2） |
-| `delivery.frequency` | string | ❌ | `daily`/`weekly`/`once`，默认 `daily` |
+| `delivery.callback` | string | ❌ | push/subscribe 回调 URL（必须 HTTPS，不能指向 swarmlabs.tools） |
+| `delivery.interval_min` | number | ❌ | subscribe 投递间隔（分钟，5-1440），默认 60 |
 
 ---
 
@@ -391,10 +390,12 @@ Sprint 1 存储限于单 Worker 实例 memory（PRO_KV 日写入限额已满）�
 
 | 版本 | 日期 | 变更 |
 |------|------|------|
+| 版本 | 日期 | 变更 |
+|------|------|------|
 | 1.0.0-sprint1 | 2026-09-21 | 初版：POST/GET demand，pull 模式，本地索引查询 |
 | 1.0.0-sprint1.1 | 2026-09-21 | POST 响应含 `_full_demand`，新增 admin/state 端点，memory fallback 修复 |
-| 1.1.0-sprint2 | 待上线 | push 模式，arXiv/GitHub 外部源扫描，外部状态文件持久化 |
-| 1.2.0-sprint3 | 待上线 | subscribe 模式，消费方管理面板 |
+| 1.1.0-sprint2 | 2026-09-22 | push 模式（同步回调），KV 持久化，路由正则修复 dm_ 前缀，admin/subscriptions 端点，消费方 dashboard |
+| 1.2.0-sprint3 | 2026-09-22 | subscribe 调度器（admin/deliver + GitHub Actions cron 每 30 分钟），arXiv 热榜融合到 searchEntities，consumer-sdk 新增 subscribe/push_once/verify_signature |
 
 ---
 

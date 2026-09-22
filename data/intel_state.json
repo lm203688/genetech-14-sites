@@ -1,236 +1,28 @@
 {
   "_meta": {
     "pipeline": "intel-state-dump",
-    "generated_at": "2026-09-22T07:39:00.891Z",
+    "generated_at": "2026-09-21T12:58:40.883Z",
     "source": "https://api.swarmlabs.tools/v1/intel/admin/state",
     "sprint": "2-prep",
     "note": "Worker memory 状态快照。Sprint 2 会在 Worker 启动时加载此文件恢复状态。"
   },
   "admin": "gtk-intel-ad",
-  "timestamp": "2026-09-22T07:39:00.818Z",
-  "demands": [
+  "timestamp": "2026-09-21T12:58:37.221Z",
+  "demands": [],
+  "consumer_lists": [],
+  "consumers": [
     {
-      "id": "dm_1a0c6e7b6ca_039d7a8d",
-      "consumer": "csm_e2etest",
-      "status": "completed",
-      "created_at": "2026-09-22T02:17:49.514Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c6e97d9a_b1ed41ea",
-      "consumer": "csm_diag",
-      "status": "completed",
-      "created_at": "2026-09-22T02:19:45.946Z",
-      "results_total": 38
-    },
-    {
-      "id": "dm_1a0c6eca1d5_12ad15a3",
-      "consumer": "csm_e2ev2",
-      "status": "completed",
-      "created_at": "2026-09-22T02:23:11.829Z",
-      "results_total": 43
-    },
-    {
-      "id": "dm_1a0c6f28da9_755fff9f",
-      "consumer": "csm_poll",
-      "status": "completed",
-      "created_at": "2026-09-22T02:29:39.881Z",
-      "results_total": 197
-    },
-    {
-      "id": "dm_1a0c6f837ed_75fbe000",
-      "consumer": "csm_e2ev2",
-      "status": "completed",
-      "created_at": "2026-09-22T02:35:51.149Z",
-      "results_total": 43
-    },
-    {
-      "id": "dm_1a0c6f97ceb_5209b410",
-      "consumer": "csm_poll2",
-      "status": "completed",
-      "created_at": "2026-09-22T02:37:14.347Z",
-      "results_total": 197
-    },
-    {
-      "id": "dm_1a0c6fb624b_6aec0a40",
-      "consumer": "csm_e2ev2",
-      "status": "completed",
-      "created_at": "2026-09-22T02:39:18.603Z",
-      "results_total": 43
-    },
-    {
-      "id": "dm_1a0c7007b4f_77c96427",
-      "consumer": "csm_e2ev2",
-      "status": "completed",
-      "created_at": "2026-09-22T02:44:52.687Z",
-      "results_total": 43
-    },
-    {
-      "id": "dm_1a0c7043013_c30667a0",
-      "consumer": "csm_e2ev2",
-      "status": "completed",
-      "created_at": "2026-09-22T02:48:55.571Z",
-      "results_total": 43
-    },
-    {
-      "id": "dm_1a0c7055272_849db6b1",
-      "consumer": "csm_e2ev2",
-      "status": "completed",
-      "created_at": "2026-09-22T02:50:09.906Z",
-      "results_total": 43
-    },
-    {
-      "id": "dm_1a0c70600ec_9e51bba5",
-      "consumer": "csm_fresh",
-      "status": "completed",
-      "created_at": "2026-09-22T02:50:54.572Z",
-      "results_total": 197
-    },
-    {
-      "id": "dm_1a0c70719be_63965716",
-      "consumer": "csm_e2ev2",
-      "status": "completed",
-      "created_at": "2026-09-22T02:52:06.462Z",
-      "results_total": 43
-    },
-    {
-      "id": "dm_1a0c70a3f0d_dc09fbb3",
-      "consumer": "csm_e2ev2",
-      "status": "completed",
-      "created_at": "2026-09-22T02:55:32.621Z",
-      "results_total": 43
-    },
-    {
-      "id": "dm_1a0c70a590e_b8263b6e",
-      "consumer": "csm_e2ev2",
-      "status": "completed",
-      "created_at": "2026-09-22T02:55:39.278Z",
-      "results_total": 43
-    },
-    {
-      "id": "dm_1a0c70a71a3_52394394",
-      "consumer": "csm_e2ev2",
-      "status": "completed",
-      "created_at": "2026-09-22T02:55:45.571Z",
-      "results_total": 43
-    },
-    {
-      "id": "dm_1a0c70d6e6d_3a278423",
-      "consumer": "csm_smoke",
-      "status": "completed",
-      "created_at": "2026-09-22T02:59:01.357Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c753470a_63ac279c",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:15:18.794Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c753a04a_3f1a3718",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:15:41.642Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c753a195_8e08022f",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:15:41.973Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c753a390_db0d0ef3",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:15:42.480Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c753a4ae_e53f6593",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:15:42.766Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c753a61a_83e86d57",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:15:43.130Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c754d04f_e54cd4f9",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:16:59.471Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c754d191_0d1dcbd6",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:16:59.793Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c754d29d_a3342310",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:17:00.061Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c754d3b8_a31cad86",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:17:00.344Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c754d4d5_ae0e374c",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:17:00.629Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c754d5e1_de2680c1",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:17:00.897Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c754d6f5_8626b444",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:17:01.173Z",
-      "results_total": 0
-    },
-    {
-      "id": "dm_1a0c7550785_519cc945",
-      "consumer": "csm_regtest2",
-      "status": "completed",
-      "created_at": "2026-09-22T04:17:13.605Z",
-      "results_total": 0
+      "cid": "csm_213670011022",
+      "project_name": "test-consumer",
+      "tier": "free",
+      "has_key": true,
+      "created_at": "2026-09-21T12:54:58.926Z"
     }
   ],
-  "consumer_lists": [],
-  "consumers": [],
   "counts": {
-    "demands": 39,
+    "demands": 0,
     "lists": 0,
-    "consumers": 8
+    "consumers": 1
   },
-  "_storage": "intel_kv",
-  "_state_restore": {
-    "last_load_at": null,
-    "restored_demands": 0,
-    "restored_consumers": 0
-  }
+  "_storage": "memory_only_kv_quota_exhausted"
 }

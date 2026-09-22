@@ -171,6 +171,71 @@ function tokenize(s) {
     .filter((t) => t.length >= 2 && !/^(the|and|for|with|from|that|this|are|was|were|have|has|had|into|over|upon|than|which|their|their|their)$/.test(t));
 }
 
+// Sprint 3: arXiv 热榜缓存（30 分钟内复用），供 demand 搜索融合新鲜论文
+const ARXIV_HOT_URL = 'https://data.swarmlabs.tools/data/arxiv-hot.json';
+const ARXIV_HOT_CACHE_KEY = '__arxiv_hot_cache__';
+const ARXIV_HOT_TTL_MS = 30 * 60 * 1000;
+async function getArxivHot(request) {
+  try {
+    const cached = globalThis[ARXIV_HOT_CACHE_KEY];
+    if (cached && Date.now() - cached.fetchedAt < ARXIV_HOT_TTL_MS) return cached.data;
+    const cacheCf = await caches.open('arxiv-hot-v1');
+    const cachedR = await cacheCf.match(ARXIV_HOT_URL);
+    if (cachedR) {
+      const data = await cachedR.json();
+      globalThis[ARXIV_HOT_CACHE_KEY] = { data, fetchedAt: Date.now() };
+      return data;
+    }
+    const res = await fetch(ARXIV_HOT_URL, { signal: AbortSignal.timeout(15000) });
+    if (!res.ok) return null;
+    const data = await res.json();
+    globalThis[ARXIV_HOT_CACHE_KEY] = { data, fetchedAt: Date.now() };
+    return data;
+  } catch { return null; }
+}
+
+// Sprint 3: 对 arxiv-hot 论文做关键词命中打分（title/abstract/authors 加权）
+function searchArxivHot(arxivData, keywords) {
+  if (!arxivData || !Array.isArray(arxivData.papers)) return [];
+  const kwTokens = keywords.flatMap((k) => tokenize(String(k)));
+  if (!kwTokens.length) return [];
+  const out = [];
+  for (const p of arxivData.papers) {
+    if (!p || !p.title) continue;
+    const titleTokens = new Set(tokenize(p.title));
+    const abstractTokens = new Set(tokenize(p.abstract));
+    const authorTokens = new Set((p.authors || []).flatMap((a) => tokenize(a)));
+    const categoryTokens = new Set(tokenize(p.primaryCategory || ''));
+    let hits = 0;
+    const matched = [];
+    for (const qt of kwTokens) {
+      let found = false;
+      if (titleTokens.has(qt)) { hits += 3; found = true; }
+      else if (abstractTokens.has(qt)) { hits += 1; found = true; }
+      else if (authorTokens.has(qt)) { hits += 2; found = true; }
+      else if (categoryTokens.has(qt)) { hits += 2; found = true; }
+      if (found) matched.push(qt);
+    }
+    if (hits === 0) continue;
+    out.push({
+      id: p.id,
+      name: p.title,
+      site: 'arxiv-hot',
+      source: 'arxiv-hot',
+      tags: [p.primaryCategory || 'arxiv'].concat((p.matched_keywords || []).slice(0, 3)),
+      snippet: (p.abstract || '').slice(0, 240),
+      url: p.url,
+      authors: p.authors ? p.authors.slice(0, 5) : [],
+      publishedAt: p.publishedAt,
+      hits,
+      matched_tokens: matched,
+      confidence: 0.9,
+    });
+  }
+  out.sort((a, b) => b.hits - a.hits);
+  return out;
+}
+
 async function getSearchIndex(request) {
   try {
     const cached = globalThis[SEARCH_INDEX_CACHE_KEY];
@@ -488,6 +553,8 @@ async function handleIntelDemandPost(request, env, identity) {
 
   let results = null;
   const started = Date.now();
+  const localMatches = [];
+  const arxivMatches = [];
   if (index) {
     try {
       const matches = searchEntities(index, {
@@ -497,10 +564,33 @@ async function handleIntelDemandPost(request, env, identity) {
         minConfidence: q.min_confidence || 0,
         maxEntities: q.max_entities || 500,
       });
-      results = { matches, total: matches.length, scanned: index.totalEntities, elapsedMs: Date.now() - started };
+      for (const m of matches) localMatches.push({ ...m, site: m.site || 'swarmlabs', source: 'swarmlabs-30sites' });
     } catch (e) {
       results = { error: e && e.message ? e.message : String(e) };
     }
+  }
+  // Sprint 3: 融合 arXiv 热榜（新鲜度优先）—— 除非 query.sources 明确排除 arxiv-hot
+  {
+    const srcs = Array.isArray(q.sources) ? q.sources.map((s) => String(s).toLowerCase()) : [];
+    const wantArxiv = srcs.length === 0 || srcs.includes('arxiv-hot');
+    if (wantArxiv && Array.isArray(q.keywords) && q.keywords.length > 0) {
+      const arxivData = await getArxivHot(request);
+      const arX = searchArxivHot(arxivData, q.keywords).slice(0, 30);
+      arxivMatches.push(...arX);
+    }
+  }
+  if (!results || !results.error) {
+    const merged = localMatches.concat(arxivMatches).slice(0, 500);
+    const arxivData = await getArxivHot(request);
+    results = {
+      matches: merged,
+      total: merged.length,
+      local_total: localMatches.length,
+      arxiv_total: arxivMatches.length,
+      scanned: index ? index.totalEntities : 0,
+      arxiv_scan: Array.isArray(arxivData && arxivData.papers) ? arxivData.papers.length : 0,
+      elapsedMs: Date.now() - started,
+    };
   }
 
   const demand = {
@@ -759,6 +849,128 @@ async function handleIntelAdminSubscriptions(env) {
     _storage: env.INTEL_KV ? 'intel_kv' : 'memory_only',
   }, 200);
 }
+
+// Sprint 3: 订阅调度器 —— 扫描所有订阅，对 next_delivery_at <= now 的执行投递并刷新状态
+// 由 GitHub Actions cron 每 30 分钟触发；也可 admin 手动 POST /v1/intel/admin/deliver
+async function handleIntelAdminDeliver(env, force) {
+  if (!env.INTEL_KV) {
+    return json({ error: 'no_storage', message: 'INTEL_KV 未配置，无法扫描订阅' }, 503);
+  }
+  const now = Date.now();
+  const nowIso = new Date(now).toISOString();
+  const summary = { scanned: 0, due: 0, delivered: 0, failed: 0, skipped: 0, results: [] };
+
+  try {
+    const list = await env.INTEL_KV.list({ prefix: INTEL_SUB_PREFIX, limit: 200 });
+    const keys = Array.isArray(list.keys) ? list.keys : [];
+    summary.scanned = keys.length;
+    const subs = await Promise.all(keys.map(async (k) => {
+      try {
+        const raw = await env.INTEL_KV.get(k.name);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch { return null; }
+    }));
+
+    const dueSubs = [];
+    for (const s of subs) {
+      if (!s || !s.sub_id || !s.callback || !s.query) continue;
+      const nd = s.next_delivery_at ? new Date(s.next_delivery_at).getTime() : 0;
+      if (force || nd <= now) dueSubs.push(s);
+    }
+    summary.due = dueSubs.length;
+
+    for (const s of dueSubs) {
+      try {
+        // 重新搜索
+        let localMatches = [], arxivMatches = [];
+        const index = await getSearchIndex(null);
+        if (index) {
+          const matches = searchEntities(index, {
+            sites: s.query.sites,
+            keywords: s.query.keywords,
+            sources: s.query.sources,
+            minConfidence: s.query.min_confidence || 0,
+            maxEntities: s.query.max_entities || 500,
+          });
+          for (const m of matches) localMatches.push({ ...m, site: m.site || 'swarmlabs', source: 'swarmlabs-30sites' });
+        }
+        const srcs = Array.isArray(s.query.sources) ? s.query.sources.map((x) => String(x).toLowerCase()) : [];
+        const wantArxiv = srcs.length === 0 || srcs.includes('arxiv-hot');
+        if (wantArxiv && Array.isArray(s.query.keywords) && s.query.keywords.length > 0) {
+          const arxivData = await getArxivHot(null);
+          arxivMatches.push(...searchArxivHot(arxivData, s.query.keywords).slice(0, 30));
+        }
+        const matches = localMatches.concat(arxivMatches).slice(0, 500);
+
+        const demandId = 'dm_' + Math.random().toString(36).slice(2, 12) + '_' + Date.now().toString(36);
+        const payload = {
+          event: 'subscription_delivery',
+          subscription_id: s.sub_id,
+          demand_id: demandId,
+          consumer: s.consumer,
+          delivery_mode: 'subscribe',
+          delivery_number: (s.delivery_count || 0) + 1,
+          query: s.query,
+          results_total: matches.length,
+          local_total: localMatches.length,
+          arxiv_total: arxivMatches.length,
+          results_preview: matches.slice(0, 10),
+          delivered_at: nowIso,
+          interval_min: s.interval_min,
+          next_delivery_at: new Date(now + (s.interval_min || 60) * 60 * 1000).toISOString(),
+        };
+
+        const hmac = await hmacSign(payload.subscription_id + '|' + nowIso, env.PRO_SECRET || '').catch(() => '');
+        const pushRes = await deliverPush(s.callback, payload, hmac);
+
+        const updated = {
+          ...s,
+          last_delivery_at: nowIso,
+          last_delivery_status: pushRes.ok ? 'ok' : 'error',
+          last_delivery_status_code: pushRes.status || 0,
+          delivery_count: (s.delivery_count || 0) + 1,
+          last_error: pushRes.error || null,
+          last_delivery_ms: pushRes.elapsedMs || null,
+          next_delivery_at: payload.next_delivery_at,
+          last_payload: { demand_id: demandId, results_total: matches.length },
+        };
+
+        // 更新 KV
+        try {
+          await env.INTEL_KV.put(INTEL_SUB_PREFIX + s.sub_id, JSON.stringify(updated), { expirationTtl: 90 * 24 * 3600 });
+          // 同步 memory fallback 保持单实例一致
+          INTEL_MEMORY_FALLBACK.set(INTEL_SUB_PREFIX + s.sub_id, JSON.stringify(updated));
+        } catch (e) {
+          console.log(`[intel] sub update failed ${s.sub_id}: ${e.message}`);
+        }
+
+        if (pushRes.ok) summary.delivered++; else summary.failed++;
+        summary.results.push({
+          sub_id: s.sub_id, consumer: s.consumer, ok: pushRes.ok,
+          status: pushRes.status, elapsedMs: pushRes.elapsedMs,
+          total: matches.length, arxiv: arxivMatches.length,
+          delivery_count: updated.delivery_count, next_delivery_at: payload.next_delivery_at,
+          error: pushRes.error || null,
+        });
+      } catch (e) {
+        summary.failed++;
+        summary.results.push({ sub_id: s.sub_id, consumer: s.consumer, ok: false, error: e.message || String(e) });
+      }
+    }
+    summary.skipped = summary.scanned - summary.due;
+  } catch (e) {
+    summary.error = e.message || String(e);
+  }
+
+  return json({
+    timestamp: nowIso,
+    summary,
+    _storage: 'intel_kv',
+  }, 200);
+}
+
+// Sprint 3: HMAC 签名在 handleIntelAdminDeliver 中通过 hmacSign() 生成（Web Crypto）。
 
 // ---------------------------------------------------------------------------
 // 主处理器
@@ -1021,6 +1233,19 @@ async function handleRequest(request) {
         return json({ error: 'forbidden', message: '需要 admin key' }, 403);
       }
       return handleIntelAdminSubscriptions(env);
+    }
+
+    // Sprint 3: 订阅调度器触发（GitHub Actions cron 或 admin 手动）
+    if (path === '/v1/intel/admin/deliver') {
+      if (request.method !== 'POST' && request.method !== 'GET') {
+        return json({ error: 'method_not_allowed', message: '支持 POST 或 GET（POST 更规范）' }, 405);
+      }
+      const adminKey = env.INTEL_ADMIN_KEY || INTEL_ADMIN_FALLBACK;
+      if (!token || token !== adminKey) {
+        return json({ error: 'forbidden', message: '需要 admin key' }, 403);
+      }
+      const force = url.searchParams.get('force') === '1';
+      return handleIntelAdminDeliver(env, force);
     }
 
     // 数据端点：接受 consumer key (ckn_) 或 Pro Key (gtk_)

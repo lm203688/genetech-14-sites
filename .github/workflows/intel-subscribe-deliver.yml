@@ -1,0 +1,38 @@
+name: Intel Subscribe Deliver Scheduler
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Trigger Intel subscription delivery
+        run: |
+          set -e
+          ADMIN_KEY="gtk-intel-admin-3f7b9e2a1c4d8f5e"
+          ENDPOINT="https://api.swarmlabs.tools/v1/intel/admin/deliver"
+          echo "Triggering $ENDPOINT at $(date -u +%FT%TZ)"
+
+          HTTP_CODE=$(curl -sS --ssl-no-revoke --tlsv1.3 \
+            -o /tmp/deliver.json -w "%{http_code}" \
+            -X POST "$ENDPOINT" \
+            -H "Authorization: Bearer $ADMIN_KEY" \
+            -H "User-Agent: intel-scheduler/1.0" \
+            --max-time 240)
+
+          echo "HTTP $HTTP_CODE"
+          echo "--- response ---"
+          cat /tmp/deliver.json
+
+          # Fail if delivery endpoint returned non-2xx
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "Deliver endpoint returned non-200: $HTTP_CODE"
+            exit 1
+          fi
+
+          # Extract summary for visibility
+          node -e "const d = JSON.parse(require('fs').readFileSync('/tmp/deliver.json','utf8')); const s = d.summary || {}; console.log('scanned='+s.scanned+' due='+s.due+' delivered='+s.delivered+' failed='+s.failed);" 2>&1 || true

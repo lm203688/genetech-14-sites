@@ -1,7 +1,7 @@
 """
 SwarmLabs Intel Client — 零依赖 Python SDK (>=3.8)
 
-Usage:
+Usage (pull):
     from intel_client import IntelClient
 
     client = IntelClient(base_url="https://api.swarmlabs.tools", key="ckn_...")
@@ -9,12 +9,36 @@ Usage:
         "consumer": "csm_...",
         "query": {
             "keywords": ["CRISPR", "gene editing"],
-            "sites": ["quantum", "tcm"],
+            "sites": [],          # empty = all 30 sites + arxiv-hot
             "time_window": "90d",
         },
-        "delivery": {"top_n": 50, "format": "json"},
+        "delivery": {"top_n": 50, "mode": "pull"},
     })
     print(result["results"]["total"])
+    # result["results"]["local_total"]  = hits from 30-site index
+    # result["results"]["arxiv_total"]  = hits from fresh arxiv-hot papers
+
+Usage (push — one-shot delivery to your callback):
+    r = client.push_once(
+        consumer="csm_...",
+        keywords=["LLM agent", "MCP"],
+        callback="https://your-service.example.com/webhook",
+        time_window="30d",
+    )
+    # server will POST results + X-GeneTech-Intel-Signature header
+
+Usage (subscribe — recurring delivery):
+    r = client.subscribe(
+        consumer="csm_...",
+        keywords=["CRISPR"],
+        callback="https://your-service.example.com/intel",
+        interval_min=60,  # 5..1440 minutes
+    )
+
+Verifying the HMAC on your callback server:
+    from intel_client import IntelClient
+    import hashlib
+    ok = IntelClient.verify_signature(request.body, request.headers["X-GeneTech-Intel-Signature"], SECRET)
 
 Key types:
     ckn_  = consumer key (for /v1/intel/* endpoints, per-project)
@@ -22,8 +46,10 @@ Key types:
 
 Design notes:
 - Pure stdlib. urllib + json + hashlib. No pip install.
-- 6 endpoint surface mirrors docs/intel-service.md exactly.
+- 8 endpoint surface mirrors docs/intel-service.md exactly.
 - Rate limit is enforced by the server; client does local soft-throttle.
+- arxiv-hot papers (freshness-first) are merged into every demand by default;
+  pass query.sources=['swarmlabs-30sites'] to opt out.
 """
 
 from __future__ import annotations
@@ -93,6 +119,15 @@ class IntelClient:
         """Admin only: GET /v1/intel/consumer — list all consumer keys."""
         return self._request("GET", "/v1/intel/consumer")
 
+    def list_subscriptions(self) -> Dict[str, Any]:
+        """Admin only: GET /v1/intel/admin/subscriptions — list all active subscriptions."""
+        return self._request("GET", "/v1/intel/admin/subscriptions")
+
+    def trigger_deliver(self, force: bool = False) -> Dict[str, Any]:
+        """Admin only: POST /v1/intel/admin/deliver — force-scan subscriptions and deliver due ones."""
+        qs = "?force=1" if force else ""
+        return self._request("POST", "/v1/intel/admin/deliver" + qs)
+
     def admin_state(self, force: bool = False) -> Dict[str, Any]:
         """Admin only: GET /v1/intel/admin/state — full state snapshot."""
         qs = "?force=1" if force else ""
@@ -101,6 +136,93 @@ class IntelClient:
     def health(self) -> Dict[str, Any]:
         """GET /v1/intel/health — cheap liveness probe."""
         return self._request("GET", "/v1/intel/health")
+
+    # ---------------- push/subscribe helpers ----------------
+
+    @staticmethod
+    def verify_signature(payload_bytes: bytes, header_sig: str, secret: str) -> bool:
+        """
+        Verify HMAC-SHA256 signature for push/subscribe callback payload.
+
+        Args:
+            payload_bytes : raw request body bytes (do not re-serialize)
+            header_sig    : value of X-GeneTech-Intel-Signature header
+            secret        : your consumer secret (used by server to sign)
+
+        Returns:
+            True if signature matches (constant-time compare).
+        """
+        if not header_sig or not secret:
+            return False
+        mac = hmac.new(secret.encode("utf-8"), payload_bytes, hashlib.sha256).hexdigest()
+        try:
+            return hmac.compare_digest(mac, header_sig)
+        except Exception:
+            return False
+
+    def subscribe(
+        self,
+        consumer: str,
+        keywords: List[str],
+        callback: str,
+        interval_min: int = 60,
+        sites: Optional[List[str]] = None,
+        time_window: str = "30d",
+        **extra,
+    ) -> Dict[str, Any]:
+        """
+        Convenience helper: register a recurring subscription.
+
+        The server will POST results to `callback` at least every `interval_min` minutes.
+        To receive the callback, run any HTTPS server; verify the HMAC signature with
+        `IntelClient.verify_signature(...)` using the body bytes and the
+        `X-GeneTech-Intel-Signature` header.
+        """
+        spec = {
+            "consumer": consumer,
+            "query": {
+                "keywords": keywords,
+                "sites": sites or [],
+                "time_window": time_window,
+            },
+            "delivery": {
+                "mode": "subscribe",
+                "callback": callback,
+                "interval_min": max(5, min(1440, int(interval_min))),
+                **extra,
+            },
+        }
+        return self.submit_demand(spec)
+
+    def push_once(
+        self,
+        consumer: str,
+        keywords: List[str],
+        callback: str,
+        sites: Optional[List[str]] = None,
+        time_window: str = "30d",
+        **extra,
+    ) -> Dict[str, Any]:
+        """
+        Convenience helper: one-shot push delivery to `callback`.
+
+        The server runs the search immediately and POSTs results to `callback`
+        with an HMAC signature in the `X-GeneTech-Intel-Signature` header.
+        """
+        spec = {
+            "consumer": consumer,
+            "query": {
+                "keywords": keywords,
+                "sites": sites or [],
+                "time_window": time_window,
+            },
+            "delivery": {
+                "mode": "push",
+                "callback": callback,
+                **extra,
+            },
+        }
+        return self.submit_demand(spec)
 
     # ---------------- internals ----------------
 
