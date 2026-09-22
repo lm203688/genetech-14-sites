@@ -107,7 +107,7 @@ curl -X POST https://api.swarmlabs.tools/v1/intel/consumer/create \
 ```json
 {
   "application_id": "csm_02989781cbf0",
-  "consumer_key": "ckn_eyJjaWQiOi...5ae0f820efc4fb58c73522ff2c825f0941375ce02348cca1a6930cce2932f3fe",
+  "consumer_key": "ckn_eyJjaWQiOi...<hmac_signature>",
   "tier": "pro",
   "rate_per_min": 120,
   "expires_at": "2027-03-20T04:17:16.333Z",
