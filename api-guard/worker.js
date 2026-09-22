@@ -221,7 +221,7 @@ async function handleSemanticSearch(request) {
   // 打分：name 命中权重最高，tag 次之，snippet 最低；confidence 加权
   const scored = [];
   for (const e of index.entities) {
-    if (sites && !sites.includes(e.site)) continue;
+    if (sites && sites.length && !sites.includes(e.site)) continue;
     if (source && e.source && e.source !== source) continue;
     const nameTokens = new Set(tokenize(e.name));
     const tagTokens = new Set(e.tags.flatMap((t) => tokenize(t)));
@@ -278,6 +278,9 @@ const INTEL_MEMORY_FALLBACK = new Map();
 // 用 data.swarmlabs.tools（GitHub Pages 上游），不走 api.swarmlabs.tools 避免 Worker 自指
 const INTEL_STATE_URL = 'https://data.swarmlabs.tools/data/intel_state.json';
 const INTEL_STATE_TTL_MS = 60 * 1000; // 单实例内 1 分钟缓存
+
+// 强一致回退：Worker KV 绑定走边缘缓存，写后立读（跨边缘）不可靠。
+// Sprint 2: 冷启动状态 + KV 持久化由 INTEL_KV 承担；不再经 REST 硬编码 token 直读 KV。
 let INTEL_STATE_PROMISE = null;
 let INTEL_STATE_LAST_LOAD = 0;
 let INTEL_STATE_HAS_CONSUMERS = 0;
@@ -405,7 +408,7 @@ function searchEntities(index, spec) {
 
   const matches = [];
   for (const e of index.entities || []) {
-    if (sites && !sites.includes(e.site)) continue;
+    if (sites && sites.length && !sites.includes(e.site)) continue;
     if (sources.length && e.source && !sources.includes(e.source)) continue;
     if ((e.confidence || 0) < (minConfidence || 0)) continue;
 
@@ -545,19 +548,19 @@ async function handleIntelDemandPost(request, env, identity) {
 }
 
 async function handleIntelDemandGet(env, demandId) {
-  if (!demandId || !/^[a-f0-9_]+$/.test(demandId)) {
+  if (!demandId || !/^[a-zA-Z0-9_-]+$/.test(demandId)) {
     return json({ error: 'bad_request', message: 'demand_id 格式无效' }, 400);
   }
   // Sprint 2: 冷启动先拉一次外部状态，避免跨实例 404
   await ensureIntelStateLoaded(false);
   const store = getIntelStore(env);
-  const raw = await store.get(INTEL_KEY_PREFIX + demandId);
+  let raw = await store.get(INTEL_KEY_PREFIX + demandId);
   if (!raw) {
-    // 兜底：直接从 memory fallback 找
+    // 兜底：直接从 memory fallback 找（同实例）
     const memRaw = INTEL_MEMORY_FALLBACK.get(INTEL_KEY_PREFIX + demandId);
-    if (memRaw) {
-      try { return json(JSON.parse(memRaw), 200); } catch {}
-    }
+    if (memRaw) { try { return json(JSON.parse(memRaw), 200); } catch {} }
+  }
+  if (!raw) {
     return json({
       error: 'not_found',
       message: `demand ${demandId} 不存在或已过期`,
@@ -589,14 +592,32 @@ async function handleIntelAdminState(env, adminToken, force) {
       }
     } catch {}
   }
+  // 从 KV 后端读全量数据（强一致），让需求看板显示全量而非单实例 memory
+  let kvDemands = 0, kvConsumers = 0;
+  if (env.INTEL_KV) {
+    try {
+      const kList = await env.INTEL_KV.list({ prefix: INTEL_KEY_PREFIX, limit: 100 });
+      const keys = (Array.isArray(kList.keys) ? kList.keys : []).map((x) => x.name);
+      kvDemands = keys.length;
+      const recent = keys.slice(0, 30);
+      const got = await Promise.all(recent.map(async (k) => {
+        const raw = await env.INTEL_KV.get(k);
+        if (!raw) return null;
+        try { const d = JSON.parse(raw); return { id: d.id, consumer: d.consumer, status: d.status, created_at: d.created_at, results_total: d.results?.total || 0 }; } catch { return null; }
+      }));
+      for (const g of got) if (g) demands.push(g);
+      const cList = await env.INTEL_KV.list({ prefix: INTEL_CONSUMER_PREFIX, limit: 100 });
+      kvConsumers = Array.isArray(cList.keys) ? cList.keys.length : 0;
+    } catch {}
+  }
   return json({
     admin: (adminToken || '').slice(0, 12),
     timestamp: new Date().toISOString(),
     demands: demands,
     consumer_lists: lists,
     consumers: consumers,
-    counts: { demands: demands.length, lists: lists.length, consumers: consumers.length },
-    _storage: env.PRO_KV ? 'memory_only_kv_quota_exhausted' : 'memory_only_no_kv',
+    counts: { demands: kvDemands || demands.length, lists: lists.length, consumers: kvConsumers || consumers.length },
+    _storage: env.INTEL_KV ? 'intel_kv' : (env.PRO_KV ? 'pro_kv_fallback' : 'memory_only'),
     _state_restore: intelStateRestoreInfo(),
   }, 200);
 }
@@ -879,7 +900,7 @@ async function handleRequest(request) {
       if (request.method !== 'POST') return json({ error: 'method_not_allowed', message: '仅支持 POST' }, 405);
       return handleIntelDemandPost(request, env, identity);
     }
-    const m = path.match(/^\/v1\/intel\/demand\/([a-f0-9_]+)$/);
+    const m = path.match(/^\/v1\/intel\/demand\/([a-zA-Z0-9_-]+)$/);
     if (m && request.method === 'GET') return handleIntelDemandGet(env, m[1], identity);
     return json({ error: 'not_found', message: `Intel 端点 ${path} 不存在` }, 404);
   }
