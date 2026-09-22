@@ -1129,12 +1129,15 @@ async function handleIntelListConsumers(env, adminToken) {
     }, 200);
   }
   try {
-    const res = await store.list({ prefix: INTEL_CONSUMER_PREFIX });
-    const items = (res && Array.isArray(res.list)) ? res.list : (Array.isArray(res) ? res : []);
+    const res = await store.list({ prefix: INTEL_CONSUMER_PREFIX, limit: 100 });
+    // KV binding returns { keys: [{ name, expiration, metadata }] }; memory fallback may return array
+    const keys = Array.isArray(res?.keys) ? res.keys.map((k) => k.name) : (Array.isArray(res) ? res : []);
     const out = [];
-    for (const item of items) {
+    for (const key of keys.slice(0, 100)) {
       try {
-        const r = JSON.parse(item.value);
+        const raw = await store.get(key);
+        if (!raw) continue;
+        const r = JSON.parse(raw);
         out.push({
           cid: r.cid, project_name: r.project_name, tier: r.tier,
           created_at: r.created_at, expires_at: r.expires_at,
