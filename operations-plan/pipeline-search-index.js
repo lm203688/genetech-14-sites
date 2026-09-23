@@ -44,23 +44,34 @@ function extractIndex(entities, site, { limit = 500, snippetLen = 120 } = {}) {
   for (const e of sorted.slice(0, limit)) {
     if (!e || !e.id) continue;
     const tags = Array.isArray(e.tags) ? e.tags : (typeof e.tags === 'string' ? [e.tags] : []);
-    const name = typeof e.name === 'string' ? e.name : '';
+    const name = typeof e.name === 'string' ? e.name : (typeof e.title === 'string' ? e.title : '');
     const abstract = typeof e.abstract === 'string' ? e.abstract : '';
-    if (!abstract) continue;
-    const snippet = abstract.length > snippetLen ? abstract.slice(0, snippetLen) + '…' : abstract;
+    if (!abstract && !name) continue;
+    const snippet = abstract.length > snippetLen ? abstract.slice(0, snippetLen) + '…' : (abstract || name.slice(0, snippetLen));
+    const sites = Array.isArray(e.sites) ? e.sites : (site ? [site] : []);
     out.push({
       id: e.id,
       name,
-      site,
+      site: sites[0] || site || 'papers',
+      sites,
       tags: tags.slice(0, 8),
       snippet,
       url: e.url || '',
       source: e.source || '',
-      publishedDate: (e.publishedDate || '').slice(0, 10),
+      doi: e.doi || '',
+      publishedDate: (e.publishedDate || (e.year ? String(e.year) : '')).slice(0, 10),
+      year: typeof e.year === 'number' ? e.year : null,
       confidence: typeof e.confidence === 'number' ? e.confidence : 0,
+      citedBy: typeof e.citedBy === 'number' ? e.citedBy : (typeof e.referencedBy === 'number' ? e.referencedBy : 0),
     });
   }
   return out;
+}
+
+// 提取 data/ 下学术数据集（OpenAlex/PubMed/Crossref/S2）进索引
+// 与 per-site 不同：无 limit 截断（量级远小于 30 站），但需做 DOI/paperId 去重避免与 per-site 重复
+function extractAcademic(entities, { snippetLen = 120 } = {}) {
+  return extractIndex(entities, null, { limit: 100000, snippetLen });
 }
 
 function tokenize(s) {
@@ -99,6 +110,40 @@ function main() {
     }
   }
 
+  // 合并 data/ 下学术数据集（OpenAlex/PubMed/Crossref/S2）进索引
+  // 这些是 per-site 30 站已 ALL-AT-CAP 之外的独立扩展，体积受控
+  const academicFiles = [
+    'data/academic-entities.json',
+    'data/pubmed-entities.json',
+    'data/crossref-entities.json',
+    'data/s2-entities.json',
+  ];
+  let academicAdded = 0;
+  for (const rel of academicFiles) {
+    const p = path.join(ROOT, rel);
+    try {
+      const raw = fs.readFileSync(p, 'utf8');
+      const entities = JSON.parse(raw);
+      if (!Array.isArray(entities) || entities.length === 0) continue;
+      const extracted = extractAcademic(entities);
+      let n = 0;
+      for (const e of extracted) {
+        if (seen.has(e.id)) { dropped++; continue; }
+        // 用 DOI 也做一次去重（避免与 per-site 同 DOI 重复）
+        if (e.doi && seen.has('doi:' + e.doi)) { dropped++; continue; }
+        seen.add(e.id);
+        if (e.doi) seen.add('doi:' + e.doi);
+        index.push(e);
+        n++;
+      }
+      academicAdded += n;
+      console.log(`  [academic:${rel}] +${n} (total in file: ${entities.length})`);
+    } catch (e) {
+      // 文件可能不存在（如 s2-entities.json 尚未生成），静默跳过
+    }
+  }
+  console.log(`[search-index] 学术数据集合并：+${academicAdded}`);
+
   // 排序：confidence desc → publishedDate desc
   index.sort((a, b) => {
     if (b.confidence !== a.confidence) return b.confidence - a.confidence;
@@ -111,9 +156,10 @@ function main() {
     generatedAt: new Date().toISOString(),
     totalEntities: index.length,
     sourceSites: sites.length,
+    academicDatasets: academicAdded,
     entitiesRead: totalRead,
     dedupDropped: dropped,
-    version: 'v1',
+    version: 'v2',
     entities: index,
   };
 
