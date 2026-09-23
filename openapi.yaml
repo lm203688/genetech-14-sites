@@ -255,6 +255,61 @@ paths:
                     type: string
                     nullable: true
 
+  /v1/academic/entities:
+    get:
+      tags: [Academic]
+      summary: 学术实体库（OpenAlex）
+      description: |
+        OpenAlex 学术著作结构化数据（标题 / 摘要 / 作者 / 年份 / DOI / 站点标签），
+        与 30 站 per-site 实体库互补的独立数据集（30 站已 ALL-AT-CAP 各 10,000），
+        供下游做「科研前沿」检索与知识库消费。体积受控、每日增量扩库。
+      operationId: listAcademicEntities
+      responses:
+        '200':
+          description: 学术实体数组（紧凑 JSON）
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AcademicEntity'
+
+  /v1/academic/pubmed:
+    get:
+      tags: [Academic]
+      summary: 学术实体库（PubMed）
+      description: |
+        PubMed/NCBI E-utilities 生物医学文献结构化数据（PMID / DOI / 标题 / 摘要 / 作者 / 站点标签）。
+        偏生命科学与临床，与 OpenAlex 广度互补。
+      operationId: listPubmedEntities
+      responses:
+        '200':
+          description: 生物医学文献实体数组（紧凑 JSON）
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AcademicEntity'
+
+  /v1/academic/crossref:
+    get:
+      tags: [Academic]
+      summary: 学术实体库（Crossref）
+      description: |
+        Crossref 出版级元数据（DOI 可溯源 / 期刊 / 被引数 / 主题分类 / 摘要）。
+        免费无 key，是摘要回填链路的关键配套源。
+      operationId: listCrossrefEntities
+      responses:
+        '200':
+          description: Crossref 实体数组（紧凑 JSON）
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AcademicEntity'
+
   /v1/search/semantic:
     post:
       tags: [Search]
@@ -578,6 +633,65 @@ components:
         maintenance_status:
           type: string
           enum: [active, stale, dormant, abandoned, unknown]
+
+    AcademicEntity:
+      type: object
+      description: 学术实体（OpenAlex / PubMed / Crossref 三源统一结构）
+      properties:
+        id:
+          type: string
+          example: pm:36123456
+        source:
+          type: string
+          enum: [openalex, pubmed, crossref]
+        doi:
+          type: string
+          nullable: true
+        pmid:
+          type: string
+          nullable: true
+          description: PubMed 特有
+        title:
+          type: string
+        abstract:
+          type: string
+          description: 摘要（Crossref 覆盖约 21%，PubMed/OpenAlex 较高）
+        url:
+          type: string
+          format: uri
+        authors:
+          type: array
+          items:
+            type: string
+        year:
+          type: integer
+          nullable: true
+        container:
+          type: string
+          nullable: true
+          description: 期刊 / 会议名（Crossref）
+        subject:
+          type: array
+          items:
+            type: string
+          description: 主题分类（Crossref）
+        citedBy:
+          type: integer
+        tags:
+          type: array
+          items:
+            type: string
+        sites:
+          type: array
+          items:
+            type: string
+          description: 归类的站点 slug（多标签）
+        confidence:
+          type: number
+          format: float
+        fetchedAt:
+          type: string
+          format: date-time
 
   responses:
     Unauthorized:

@@ -1327,6 +1327,12 @@ async function handleRequest(request) {
       targetPath = '/api/catalog.json';
     } else if (path === '/v1/oss/registry') {
       targetPath = '/data/oss-registry.json';
+    } else if (path === '/v1/academic/entities' || path === '/v1/academic/openalex') {
+      targetPath = '/data/academic-entities.json';
+    } else if (path === '/v1/academic/pubmed') {
+      targetPath = '/data/pubmed-entities.json';
+    } else if (path === '/v1/academic/crossref') {
+      targetPath = '/data/crossref-entities.json';
     } else if (path === '/v1/entities') {
       targetPath = '/api/catalog.json'; // 聚合视图走 catalog（各站 entities 由 catalog.index/entities 字段指向）
     } else if (path.startsWith('/v1/domains/')) {
@@ -1344,7 +1350,7 @@ async function handleRequest(request) {
     }
     // 未映射的 /v1/* 路径返回 404（避免自指循环）
     if (path.startsWith('/v1/')) {
-      return json({ error: 'not_found', message: `OpenAPI 端点 ${path} 不存在。可用端点：/v1/domains, /v1/entities, /v1/oss/registry, /v1/search/semantic, /v1/intel/demand` }, 404);
+      return json({ error: 'not_found', message: `OpenAPI 端点 ${path} 不存在。可用端点：/v1/domains, /v1/entities, /v1/oss/registry, /v1/academic/entities, /v1/academic/pubmed, /v1/academic/crossref, /v1/search/semantic, /v1/intel/demand` }, 404);
     }
     const upstreamUrl = new URL(path + url.search, UPSTREAM_BASE);
     const proxyReq = new Request(upstreamUrl, { method: request.method, headers: request.headers });

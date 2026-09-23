@@ -2040,7 +2040,7 @@ async function main() {
   }
   // 对外数据 JSON（供 api.swarmlabs.tools/v1/oss/registry 与 /v1/search/semantic 使用）：
   // 原样复制到 _site/data/，与 /api/catalog.json 同域
-  for (const rel of ['data/oss-registry.json', 'data/search-index.json', 'data/knowledge-graph.json', 'data/knowledge-graph-entities.json', 'data/intel_state.json', 'data/arxiv-hot.json', 'data/academic-entities.json']) {
+  for (const rel of ['data/oss-registry.json', 'data/search-index.json', 'data/knowledge-graph.json', 'data/knowledge-graph-entities.json', 'data/intel_state.json', 'data/arxiv-hot.json', 'data/academic-entities.json', 'data/pubmed-entities.json', 'data/crossref-entities.json']) {
     try {
       const src = path.join(ROOT, rel);
       if (fs.existsSync(src)) writeFile(rel, fs.readFileSync(src, 'utf8'));
