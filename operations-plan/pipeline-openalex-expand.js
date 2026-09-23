@@ -52,6 +52,20 @@ const TERMS = [
   ['deep-sea-tech', 'deep sea technology'],
   ['exo-science', 'exobiology'],
   ['alien-minerals', 'astrobiology mineral'],
+  ['synthetic-biology', 'synthetic biology'],
+  ['crispr', 'CRISPR gene editing'],
+  ['protein-design', 'protein design'],
+  ['materials-genome', 'materials genome'],
+  ['autonomous-lab', 'autonomous laboratory'],
+  ['foundation-models', 'foundation model'],
+  ['graph-neural-networks', 'graph neural network'],
+  ['climate-modeling', 'climate modeling'],
+  ['ocean-observatory', 'ocean observation'],
+  ['space-biology', 'space biology'],
+  ['neuromorphic', 'neuromorphic computing'],
+  ['nanomedicine', 'nanomedicine'],
+  ['ai-drug', 'AI drug discovery'],
+  ['robotics-control', 'robot learning control'],
 ];
 
 // 简易归类（与 TERMS 站名对齐，命中即归入对应站）
