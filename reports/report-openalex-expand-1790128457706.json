@@ -1,0 +1,27 @@
+{
+  "pipeline": "openalex-expand",
+  "timestamp": "2026-09-23T02:04:06.267Z",
+  "dryRun": false,
+  "added": 3922,
+  "updated": 490,
+  "total": 5320,
+  "bySite": {
+    "mcp": 2822,
+    "quantum-computing": 407,
+    "brain-science": 492,
+    "deep-sea-tech": 665,
+    "digital-twin": 676,
+    "embodied-ai": 651,
+    "papers": 376,
+    "edge-ai": 1452,
+    "ai-agents": 468,
+    "carbon-neutral": 695,
+    "biomed-ai": 616,
+    "bionic-ai": 32,
+    "agritech": 287,
+    "exo-science": 355,
+    "alien-minerals": 193,
+    "biocomputing": 461
+  },
+  "maxTotal": 5000
+}
