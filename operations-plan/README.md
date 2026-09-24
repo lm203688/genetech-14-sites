@@ -4,6 +4,74 @@
 
 ---
 
+## DataFlow-Agent 风格框架（2026-09-24 新增）
+
+从 2026-09-24 起，新增 `flow.mjs` 作为 pipeline 基础设施层，**借鉴 GOAI 2026 Agent Infra 冠军 DataFlow-Agent**（OpenDCAI/DataFlow）的算子+DAG+Ledger+Checkpoint 模式，同时吸收亚军 RepoMesh 的 append-only ledger 思想。
+
+### 核心组件
+
+| 组件 | 职责 |
+|------|------|
+| `Operator` | 一个纯函数式算子 `{ name, run(items, ctx) → items, batchSize?, parallelism? }` |
+| `Dag` | 算子组合，线性顺序执行，每步记录到 Ledger |
+| `Ledger` | JSONL append-only 账本（`state/flow/ledger.jsonl`），每次运行留可追溯记录 |
+| `RunContext` | 一次 DAG 运行的上下文（runId / dryRun / args / checkpoint / ledger） |
+| `Checkpoint` | 增量持久化（`state/flow/checkpoint-<pipeline>-<runId>.json`），长任务可断点续跑 |
+
+### 预制算子
+
+- `makeDedupeOperator(keyFn)` — 按 key 去重，保留最后一条
+- `makeCapOperator(maxTotal)` — 截断到 maxTotal
+- `makeUpsertOperator(outPath, keyFn)` — 读已有文件 + 合并新数据 + 去重
+- `makePersistOperator(outPath)` — 原子写（tmp+rename）到磁盘
+
+### 使用范例（3 行搭一个 pipeline）
+
+```js
+import { Dag, makeDedupeOperator, makeCapOperator, makePersistOperator } from './flow.mjs';
+
+const dag = new Dag()
+  .add(new Operator({ name: 'fetch', run: async (items, ctx) => fetchFromApi(items, ctx) }))
+  .add(makeDedupeOperator((x) => x.id))
+  .add(makeCapOperator(5000))
+  .add(makePersistOperator('data/target.json'));
+
+const report = await dag.run(inputItems, { pipelineName: 'my-pipeline', dryRun: false });
+// report: { pipeline, runId, elapsedMs, steps: [{op, in, out, elapsedMs, status}], ... }
+```
+
+### v2 pipeline 列表（v1 保留做对照）
+
+| v2 脚本 | v1 脚本 | 输出 | 关键升级 |
+|---------|---------|------|---------|
+| `pipeline-openalex-expand.v2.mjs` | `pipeline-openalex-expand.js` | `data/academic-entities.json` | Ledger 追溯每个 term 的 status；原子写 |
+| `pipeline-s2-expand.v2.mjs` | `pipeline-s2-expand.js` | `data/s2-entities.json` | 查询预算保护 + 增量落盘（每 3 个 query 存一次）+ Cap 算子 |
+| `pipeline-search-index.v2.mjs` | `pipeline-search-index.js` | `data/search-index.json` | 分片算子化（seed→merge→sort→persist），可独立测 |
+
+v1 与 v2 完全 API 兼容（CLI 参数、输出路径、字段结构），v2 只是内部实现改用 flow.mjs。
+
+### 自检
+
+```bash
+# 框架自测（21 项）
+node operations-plan/test-flow.mjs
+
+# 单个 pipeline dry-run
+node operations-plan/pipeline-openalex-expand.v2.mjs --dry-run --max-total=2 --pages=1
+node operations-plan/pipeline-search-index.v2.mjs --dry-run
+```
+
+### 账本查看
+
+```bash
+# 最近 20 条账本
+tail -n 20 state/flow/ledger.jsonl
+
+# 每个事件的类型：run-start / step-start / step-ok / step-error / term-ok / term-error / query-ok / query-error / site-read / academic-merged / persist / checkpoint
+```
+
+---
+
 ## 目录结构
 
 ```
