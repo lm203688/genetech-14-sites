@@ -28,6 +28,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
 import { SearchIndex } from './search.mjs';
+import { KnowledgeGraph, GraphRAG } from './graphrag.mjs';
 import { runAsk } from '../../tools/lib/ask.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -46,6 +47,8 @@ let _cacheTs = 0;
 const CACHE_TTL_MS = 5 * 60 * 1000;
 let _searchIndex = null;
 let _searchTs = 0;
+let _graph = null;
+let _rag = null;
 
 async function fetchJson(url, tryLocalPath) {
   if (API_BASE && url.startsWith('http')) {
@@ -105,9 +108,46 @@ async function loadSites(force = false) {
   }
   _searchIndex = idx;
   _searchTs = now;
+
+  // 惰性初始化 KnowledgeGraph + GraphRAG（不阻塞主流程）
+  try {
+    if (!_graph) _graph = KnowledgeGraph.fromPathOrDefault(path.join(DATA_DIR, 'data'));
+    _rag = new GraphRAG(_graph, idx);
+  } catch (e) {
+    console.error(`[graphrag] 初始化失败（图检索不可用）: ${e.message}`);
+    _graph = null;
+    _rag = null;
+  }
+
   // 暴露给 ask 工具使用（避免其内部重建索引）
   globalThis.__geneTechSearchIndex = idx;
+  globalThis.__geneTechGraphRAG = _rag;
   return sites;
+}
+
+function ensureGraphRAG() {
+  if (_rag) return _rag;
+  // 兜底：loadSites 未跑过时，尝试用 knowledge-graph-entities.json 独立初始化
+  try {
+    if (!_graph) _graph = KnowledgeGraph.fromPathOrDefault(path.join(DATA_DIR, 'data'));
+    if (!_graph || _graph.nodes.size === 0) {
+      return { unavailable: '无实体数据或图数据未加载，请先调用 semantic_search' };
+    }
+    // 用 knowledge-graph-entities.json 的 nodes 单独构造一个 SearchIndex 作为 anchor 检索器
+    if (!_searchIndex) {
+      const kgPath = path.join(DATA_DIR, 'data', 'knowledge-graph-entities.json');
+      if (fs.existsSync(kgPath)) {
+        const j = JSON.parse(fs.readFileSync(kgPath, 'utf-8'));
+        const entities = (j.nodes || []).map((n) => ({ ...n, _site: n.domain }));
+        if (entities.length) _searchIndex = new SearchIndex(entities);
+      }
+    }
+    _rag = _searchIndex ? new GraphRAG(_graph, _searchIndex) : null;
+    if (!_rag) return { unavailable: '图数据为空或实体检索器未就绪' };
+  } catch (e) {
+    return { unavailable: e.message };
+  }
+  return _rag;
 }
 
 function allEntities(sites, siteFilter) {
@@ -281,27 +321,89 @@ server.tool(
 
 server.tool(
   'semantic_search',
-  '对知识库做混合检索（BM25 倒排 + 字段加权 + RRF 融合，可选向量语义），返回最相关实体。比纯关键词更抗噪声、召回更稳。',
+  '对知识库做混合检索（BM25 倒排 + 字段加权 + RRF 融合，可选向量语义）。可选 graph_hop 开启图遍历扩召回。',
   {
     query: z.string().describe('检索词（中英文均可）'),
     site: z.string().optional().describe('限定站点'),
     limit: z.number().min(1).max(100).default(10).describe('返回条数'),
+    graphHop: z.boolean().default(false).describe('启用后从 top-5 anchor 出发做 1 跳图遍历扩召回'),
+    hops: z.number().min(1).max(3).default(1).describe('图遍历跳数（graphHop=true 时生效）'),
   },
   async (args) => {
     await loadSites();
     const ranked = await _searchIndex.hybridSearch(args.query, { limit: args.limit, site: args.site });
+    const rag = ensureGraphRAG();
+    let graphExtensions = [];
+    if (args.graphHop && rag && !rag.unavailable) {
+      const res = await rag.search(args.query, { anchorLimit: 5, hops: args.hops, maxReached: 20, site: args.site });
+      graphExtensions = (res.reached || []).map((r) => ({
+        entity: r.entity,
+        hop: r.hop,
+        path: r.path,
+      }));
+    }
     return {
       content: [
         {
           type: 'text',
           text: JSON.stringify(
-            { query: args.query, mode: 'hybrid(bm25+field' + (_searchIndex.vectors ? '+vector' : '') + ')', results: ranked },
+            {
+              query: args.query,
+              mode: 'hybrid(bm25+field' + (_searchIndex.vectors ? '+vector' : '') + ')' + (args.graphHop ? '+graph' : ''),
+              results: ranked,
+              graphExtensions,
+              graphStatus: args.graphHop ? (rag?.unavailable || 'ok') : null,
+            },
             null,
             2
           ),
         },
       ],
     };
+  }
+);
+
+server.tool(
+  'graph_search',
+  '图遍历检索：先 hybridSearch 找 anchor 节点，再沿实体关系边做 BFS 多跳遍历，返回完整路径解释。适合跨域桥接 / 合著网络 / 上下游关系问题。',
+  {
+    query: z.string().describe('检索词，用于找 anchor（中英文均可）'),
+    site: z.string().optional().describe('限定 anchor 站点'),
+    anchorLimit: z.number().min(1).max(20).default(5).describe('anchor 数量'),
+    hops: z.number().min(1).max(3).default(2).describe('图遍历跳数'),
+    maxReached: z.number().min(1).max(200).default(50).describe('最多返回的 reached 节点数'),
+    directed: z.boolean().default(false).describe('是否只用有向边（默认双向）'),
+    includeHubs: z.boolean().default(true).describe('启用后自动把高 degree 节点也当 anchor（保证图中心节点被遍历到）'),
+  },
+  async (args) => {
+    await loadSites();
+    const rag = ensureGraphRAG();
+    if (!rag || rag.unavailable) {
+      return { content: [{ type: 'text', text: `graph_search 不可用：${rag?.unavailable || '图数据未加载'}` }], isError: true };
+    }
+    const r = await rag.search(args.query, {
+      anchorLimit: args.anchorLimit,
+      hops: args.hops,
+      maxReached: args.maxReached,
+      directed: args.directed,
+      site: args.site,
+      includeHubs: args.includeHubs,
+    });
+    const payload = {
+      query: args.query,
+      anchorIds: r.anchorIds,
+      anchors: r.anchors.map((a) => ({ id: a.id, name: a.name, category: a.category, domain: a.domain })),
+      reached: r.reached.map((n) => ({
+        id: n.entity?.id,
+        name: n.entity?.name,
+        category: n.entity?.category,
+        domain: n.entity?.domain,
+        hop: n.hop,
+        path: n.path,
+      })),
+      meta: r.meta,
+    };
+    return { content: [{ type: 'text', text: JSON.stringify(payload, null, 2) }] };
   }
 );
 
