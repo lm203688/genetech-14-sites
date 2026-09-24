@@ -544,6 +544,10 @@ ${body}
 /** 单站页面 */
 /** 每个归档分页承载的实体条数 */
 const ARCHIVE_PAGE_SIZE = 100;
+// 归档页数硬上限（防止 Pages 存储溢出）：每站最多生成 10 页 = 1000 条实体的静态表面
+// 完整数据仍由 website/api/entities.json 提供，前端按需翻页只影响"HTML 静态可抓取表面"
+// 09-24：从 totalPages=100 降到 10，30 站 × 100 页 × 100KB ≈ 300MB → 30MB，释放 ~270MB
+const ARCHIVE_MAX_PAGES = 10;
 /** 每站导出的引文条数上限（BibTeX / CSL-JSON 按质量分取头部，控制产物体积） */
 const CITATION_EXPORT_CAP = 1500;
 
@@ -1950,7 +1954,8 @@ async function main() {
     // 归档分页：让全部实体都拥有可被搜索/AI 引擎抓取的 HTML 表面
     const ordered = sortedEntities(s);
     const totalPages = Math.max(1, Math.ceil(ordered.length / ARCHIVE_PAGE_SIZE));
-    for (let p = 1; p <= totalPages; p++) {
+    const cappedPages = Math.min(totalPages, ARCHIVE_MAX_PAGES);
+    for (let p = 1; p <= cappedPages; p++) {
       const slice = ordered.slice((p - 1) * ARCHIVE_PAGE_SIZE, p * ARCHIVE_PAGE_SIZE);
       writeFile(`${s.slug}/page/${p}.html`, renderArchivePage(s, p, totalPages, slice));
       archivePaths.push(`${s.slug}/page/${p}.html`);
