@@ -298,26 +298,29 @@ function getClientIp(request) {
  * 检查速率限制。基于 KV 的近似限流（最终一致性，突发场景可能略超）。
  * @returns {{ allowed: boolean, retryAfter?: number }}
  */
+// 2026-09-23: KV 限流改为内存限流。免费版 KV 全账户 1,000 写/天，每请求一次
+// rl:<ip>:<min> put 会把配额吃光，导致后续订单/签发写失败（实测 create-order 因此 1101）。
+// 限流语义降级为 per-isolate（10 次/分/IP），不再消耗 KV 配额。已在生产验证。
+const _rlMem = new Map();
 async function checkRateLimit(env, ip) {
-  if (!env.UNIFIED_LICENSES || !ip || ip === 'unknown') {
-    // KV 不可用时不阻塞请求（降级放行，由 Cloudflare 原生限流兜底）
+  if (!ip || ip === 'unknown') {
     return { allowed: true };
   }
   const minuteBucket = Math.floor(Date.now() / 60000);
-  const rlKey = `rl:${ip}:${minuteBucket}`;
+  const rlKey = ip + ':' + minuteBucket;
   try {
-    const raw = await env.UNIFIED_LICENSES.get(rlKey);
-    const count = raw ? parseInt(raw, 10) : 0;
+    const count = _rlMem.get(rlKey) || 0;
     if (count >= CONFIG.RATE_LIMIT_PER_MINUTE) {
       return { allowed: false, retryAfter: 60 };
     }
-    // 写入递增后的计数（TTL 覆盖跨分钟边界）
-    await env.UNIFIED_LICENSES.put(rlKey, String(count + 1), {
-      expirationTtl: CONFIG.RATE_LIMIT_TTL,
-    });
+    _rlMem.set(rlKey, count + 1);
+    if (_rlMem.size > 10000) {
+      const first = _rlMem.keys().next().value;
+      _rlMem.delete(first);
+    }
     return { allowed: true };
   } catch (e) {
-    console.warn('[ratelimit] KV 读写失败，降级放行:', e.message);
+    console.warn('[ratelimit] 内存限流异常，降级放行:', e.message);
     return { allowed: true };
   }
 }
@@ -661,19 +664,24 @@ async function handleHupijiaoCreateOrder(request, rawBody, body, env, corsH) {
   const returnUrl = body.return_url || env.HUPIJIAO_RETURN_URL || `${origin}/pay/success`;
 
   // 持久化待支付订单（30 分钟过期，避免 KV 无限增长）
+  // 2026-09-23: 加守卫——KV 写配额耗尽时不得阻断下单（回调可用 attach 重建）
   if (env.UNIFIED_LICENSES) {
-    await env.UNIFIED_LICENSES.put(
-      `hupijiao:${tradeOrderId}`,
-      JSON.stringify({
-        plan,
-        email,
-        channel: channel.key,
-        status: 'pending',
-        license_key: null,
-        created: new Date().toISOString(),
-      }),
-      { expirationTtl: 1800 }
-    );
+    try {
+      await env.UNIFIED_LICENSES.put(
+        `hupijiao:${tradeOrderId}`,
+        JSON.stringify({
+          plan,
+          email,
+          channel: channel.key,
+          status: 'pending',
+          license_key: null,
+          created: new Date().toISOString(),
+        }),
+        { expirationTtl: 1800 }
+      );
+    } catch (e) {
+      console.warn('[hupijiao] 待支付订单写入失败（KV 配额?），回调将以 attach 重建:', e && e.message);
+    }
   }
 
   try {
@@ -732,27 +740,57 @@ async function handleHupijiaoCallback(request, env, corsH) {
   if (!tradeOrderId || !env.UNIFIED_LICENSES) {
     return new Response('success', { status: 200 });
   }
+  let order = null;
   const orderRaw = await env.UNIFIED_LICENSES.get(`hupijiao:${tradeOrderId}`);
-  if (!orderRaw) {
-    return new Response('success', { status: 200 });
+  if (orderRaw) {
+    order = JSON.parse(orderRaw);
+  } else {
+    // 2026-09-23: 待支付记录缺失（下单时 KV 配额耗尽被守卫跳过）时，
+    // 从虎皮椒原样回传的 attach 重建订单，保证已付款用户仍能拿到许可证。
+    let att = {};
+    try { att = JSON.parse(params.attach || '{}'); } catch (e) { att = {}; }
+    if (att && att.plan && PLANS[att.plan]) {
+      order = {
+        plan: att.plan,
+        email: att.email || null,
+        channel: channel.key || 'default',
+        status: 'pending',
+        license_key: null,
+        created: new Date().toISOString(),
+      };
+      console.warn('[hupijiao] 待支付记录缺失，已从 attach 重建:', tradeOrderId);
+    } else {
+      return new Response('success', { status: 200 });
+    }
   }
-  const order = JSON.parse(orderRaw);
 
   if (params.status === 'OD') {
     if (!order.license_key) {
-      const { license, key } = await issueLicense(env, {
-        plan: order.plan,
-        email: order.email,
-        hupijiao_order_id: tradeOrderId,
-        source: 'hupijiao',
-      });
-      order.license_key = key;
-      order.status = 'paid';
-      // 支付成功后保留 24 小时，便于查询/排障
-      await env.UNIFIED_LICENSES.put(`hupijiao:${tradeOrderId}`, JSON.stringify(order), {
-        expirationTtl: 86400,
-      });
-      console.log(`[hupijiao] 统一许可证已发放: ${order.plan} -> ${key.slice(0, 12)}...`);
+      // 2026-09-23: 签发含多次 KV 写；配额耗尽时必须返回非 success，
+      // 让虎皮椒按官方语义重试（最多 6 次），宁可重试不可吞单。
+      try {
+        const issued = await issueLicense(env, {
+          plan: order.plan,
+          email: order.email,
+          hupijiao_order_id: tradeOrderId,
+          source: 'hupijiao',
+        });
+        const key = issued.key;
+        order.license_key = key;
+        order.status = 'paid';
+        // 支付成功后保留 24 小时，便于查询/排障
+        try {
+          await env.UNIFIED_LICENSES.put(`hupijiao:${tradeOrderId}`, JSON.stringify(order), {
+            expirationTtl: 86400,
+          });
+        } catch (e) {
+          console.warn('[hupijiao] 订单状态回写失败（许可证本身已签发）:', e && e.message);
+        }
+        console.log(`[hupijiao] 统一许可证已发放: ${order.plan} -> ${key.slice(0, 12)}...`);
+      } catch (e) {
+        console.error('[hupijiao] 签发失败，等待虎皮椒重试:', e && (e.stack || e.message));
+        return new Response('issue_failed_retry', { status: 500 });
+      }
     }
   } else if (params.status === 'CD') {
     // 退款：吊销已签发的许可证

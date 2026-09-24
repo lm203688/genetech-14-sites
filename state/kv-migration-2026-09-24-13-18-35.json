@@ -1,0 +1,204 @@
+{
+  "ts": "2026-09-24T13:15:52.390Z",
+  "dryRun": false,
+  "namespace": "2ff4966803cc47389dbdf862216bf9ac",
+  "namespaceTitle": "GENETECH_ENTITIES",
+  "stations": [
+    {
+      "station": "agent-ecosystem",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:agent-ecosystem:entities"
+    },
+    {
+      "station": "agritech",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:agritech:entities"
+    },
+    {
+      "station": "ai",
+      "exists": false,
+      "action": "skipped-no-file"
+    },
+    {
+      "station": "ai-safety",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:ai-safety:entities"
+    },
+    {
+      "station": "ai4science",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:ai4science:entities"
+    },
+    {
+      "station": "alien-minerals",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:alien-minerals:entities"
+    },
+    {
+      "station": "biocomputing",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:biocomputing:entities"
+    },
+    {
+      "station": "biomed-ai",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:biomed-ai:entities"
+    },
+    {
+      "station": "bionic-ai",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:bionic-ai:entities"
+    },
+    {
+      "station": "brain-science",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:brain-science:entities"
+    },
+    {
+      "station": "carbon-neutral",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:carbon-neutral:entities"
+    },
+    {
+      "station": "data",
+      "exists": false,
+      "action": "skipped-no-file"
+    },
+    {
+      "station": "deep-sea-tech",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:deep-sea-tech:entities"
+    },
+    {
+      "station": "digital-twin",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:digital-twin:entities"
+    },
+    {
+      "station": "edge-ai",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:edge-ai:entities"
+    },
+    {
+      "station": "embodied-ai",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:embodied-ai:entities"
+    },
+    {
+      "station": "exo-science",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:exo-science:entities"
+    },
+    {
+      "station": "genetech-tools",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:genetech-tools:entities"
+    },
+    {
+      "station": "life-science",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:life-science:entities"
+    },
+    {
+      "station": "low-altitude",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:low-altitude:entities"
+    },
+    {
+      "station": "neuromorphic",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:neuromorphic:entities"
+    },
+    {
+      "station": "new-energy",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:new-energy:entities"
+    },
+    {
+      "station": "nuclear-energy",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:nuclear-energy:entities"
+    },
+    {
+      "station": "privacy-computing",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:privacy-computing:entities"
+    },
+    {
+      "station": "quantum-computing",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:quantum-computing:entities"
+    },
+    {
+      "station": "quantum-materials",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:quantum-materials:entities"
+    },
+    {
+      "station": "robot-parts",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:robot-parts:entities"
+    },
+    {
+      "station": "sat-6g",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:sat-6g:entities"
+    },
+    {
+      "station": "semiconductor",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:semiconductor:entities"
+    },
+    {
+      "station": "spatial-computing",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:spatial-computing:entities"
+    },
+    {
+      "station": "synbio-manufacturing",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:synbio-manufacturing:entities"
+    },
+    {
+      "station": "tcm-tools",
+      "action": "error",
+      "error": "HTTP 429: {\"result\":null,\"errors\":[{\"code\":10048,\"message\":\"your account has reached the free usage limit for this operation for today\"}],\"messages\":[],\"success\":false}",
+      "key": "site:tcm-tools:entities"
+    }
+  ],
+  "totals": {
+    "uploaded": 0,
+    "bytesUploaded": 0,
+    "errors": 30,
+    "skipped": 2
+  }
+}

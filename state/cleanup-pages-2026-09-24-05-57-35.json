@@ -1,0 +1,228 @@
+{
+  "ts": "2026-09-24T05:57:35.042Z",
+  "dryRun": true,
+  "maxPages": 10,
+  "stations": [
+    {
+      "station": "agent-ecosystem",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 11136
+    },
+    {
+      "station": "agritech",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 10621
+    },
+    {
+      "station": "ai",
+      "deleted": 0,
+      "errors": 0,
+      "freedKB": 0
+    },
+    {
+      "station": "ai-safety",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 10996
+    },
+    {
+      "station": "ai4science",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 10796
+    },
+    {
+      "station": "alien-minerals",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 10407
+    },
+    {
+      "station": "api",
+      "deleted": 0,
+      "errors": 0,
+      "freedKB": 0
+    },
+    {
+      "station": "assets",
+      "deleted": 0,
+      "errors": 0,
+      "freedKB": 0
+    },
+    {
+      "station": "biocomputing",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 10498
+    },
+    {
+      "station": "biomed-ai",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 10956
+    },
+    {
+      "station": "bionic-ai",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 11337
+    },
+    {
+      "station": "blog",
+      "deleted": 0,
+      "errors": 0,
+      "freedKB": 0
+    },
+    {
+      "station": "brain-science",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 10073
+    },
+    {
+      "station": "carbon-neutral",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 11125
+    },
+    {
+      "station": "data",
+      "deleted": 0,
+      "errors": 0,
+      "freedKB": 0
+    },
+    {
+      "station": "deep-sea-tech",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 10599
+    },
+    {
+      "station": "digital-twin",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 11410
+    },
+    {
+      "station": "edge-ai",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9808
+    },
+    {
+      "station": "embodied-ai",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 10932
+    },
+    {
+      "station": "exo-science",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 10543
+    },
+    {
+      "station": "genetech-tools",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9856
+    },
+    {
+      "station": "life-science",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9403
+    },
+    {
+      "station": "low-altitude",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 10285
+    },
+    {
+      "station": "neuromorphic",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 8427
+    },
+    {
+      "station": "new-energy",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 8982
+    },
+    {
+      "station": "nuclear-energy",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9505
+    },
+    {
+      "station": "privacy-computing",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9507
+    },
+    {
+      "station": "quantum-computing",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9474
+    },
+    {
+      "station": "quantum-materials",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9934
+    },
+    {
+      "station": "robot-parts",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9492
+    },
+    {
+      "station": "sat-6g",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9479
+    },
+    {
+      "station": "semiconductor",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9058
+    },
+    {
+      "station": "spatial-computing",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9283
+    },
+    {
+      "station": "synbio-manufacturing",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9554
+    },
+    {
+      "station": "tcm-tools",
+      "deleted": 90,
+      "errors": 0,
+      "freedKB": 9154
+    },
+    {
+      "station": "topic",
+      "deleted": 0,
+      "errors": 0,
+      "freedKB": 0
+    }
+  ],
+  "totals": {
+    "filesDeleted": 2700,
+    "bytesFreed": 309891871,
+    "errors": 0
+  }
+}

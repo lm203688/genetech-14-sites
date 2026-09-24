@@ -24,6 +24,11 @@ LLM_FREE_RATE = "20"
 binding = "PRO_KV"
 id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
 
+# 实体数据 KV（A2 迁移：30 站 entities.json 从 Pages 挪 KV，解 Pages 存储溢出）
+[[kv_namespaces]]
+binding = "GENETECH_ENTITIES"
+id = "2ff4966803cc47389dbdf862216bf9ac"
+
 # 部署：wrangler deploy
 # 注入密钥（不要写进文件）：
 #   wrangler secret put PRO_SECRET

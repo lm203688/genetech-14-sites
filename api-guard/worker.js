@@ -115,16 +115,23 @@ async function validateProKey(token, site, env) {
 // 免费层限流（KV 近似）
 // ---------------------------------------------------------------------------
 
+// 2026-09-23: KV 限流改内存限流。免费版 KV 全账户 1,000 写/天，免费层每请求一次
+// free:<ip>:<min> put 会把配额烧光，导致全账户（含用户注册、许可证签发）写失败。
+// 语义降级为 per-isolate 限流（60 次/分/IP），不再消耗任何 KV 配额。已在生产验证。
+const _freeRateMem = new Map();
 async function checkFreeRate(env, ip) {
   const limit = parseInt(env.PRO_FREE_RATE || String(DEFAULT_FREE_RATE), 10);
-  if (!env.PRO_KV || !ip || ip === 'unknown') return { allowed: true };
+  if (!ip || ip === 'unknown') return { allowed: true };
   const bucket = Math.floor(Date.now() / 60000);
   const key = `free:${ip}:${bucket}`;
   try {
-    const raw = await env.PRO_KV.get(key);
-    const count = raw ? parseInt(raw, 10) : 0;
+    const count = _freeRateMem.get(key) || 0;
     if (count >= limit) return { allowed: false };
-    await env.PRO_KV.put(key, String(count + 1), { expirationTtl: 120 });
+    _freeRateMem.set(key, count + 1);
+    if (_freeRateMem.size > 10000) {
+      const first = _freeRateMem.keys().next().value;
+      _freeRateMem.delete(first);
+    }
     return { allowed: true };
   } catch {
     return { allowed: true }; // 降级放行
@@ -136,16 +143,21 @@ function getClientIp(request) {
 }
 
 // ---- LLM 免费层限流（独立桶，避免污染知识 JSON 限流统计） ----
+// 2026-09-23: 同上，LLM 免费层限流改内存，不消耗 KV 配额。
+const _llmRateMem = new Map();
 async function checkLlmRate(env, ip) {
   const limit = parseInt(env.LLM_FREE_RATE || '20', 10);
-  if (!env.PRO_KV || !ip || ip === 'unknown') return { allowed: true };
+  if (!ip || ip === 'unknown') return { allowed: true };
   const bucket = Math.floor(Date.now() / 60000);
   const key = `llm:${ip}:${bucket}`;
   try {
-    const raw = await env.PRO_KV.get(key);
-    const count = raw ? parseInt(raw, 10) : 0;
+    const count = _llmRateMem.get(key) || 0;
     if (count >= limit) return { allowed: false };
-    await env.PRO_KV.put(key, String(count + 1), { expirationTtl: 120 });
+    _llmRateMem.set(key, count + 1);
+    if (_llmRateMem.size > 10000) {
+      const first = _llmRateMem.keys().next().value;
+      _llmRateMem.delete(first);
+    }
     return { allowed: true };
   } catch {
     return { allowed: true };
@@ -1319,6 +1331,29 @@ async function handleRequest(request) {
     const rl = await checkFreeRate(env, ip);
     if (!rl.allowed) {
       return json({ error: 'rate_limited', message: `免费层限流：每 IP 每分钟 ${env.PRO_FREE_RATE || DEFAULT_FREE_RATE} 次。升级 Pro 获取更高配额与语义检索/引用导出能力。` }, 429, { 'Retry-After': '60' });
+    }
+
+    // A2 迁移：entities.json 从 KV 读（已迁离 Pages，解 1GB 存储上限）
+    // key 格式：site:<station>:entities，由 pipeline-entities-to-kv.mjs 上传
+    if (path.includes('/website/api/entities.json') && env.GENETECH_ENTITIES) {
+      const m = path.match(/\/([^/]+)\/website\/api\/entities\.json$/);
+      if (m) {
+        const key = `site:${m[1]}:entities`;
+        const val = await env.GENETECH_ENTITIES.get(key, 'json');
+        if (val !== null) {
+          return new Response(JSON.stringify(val), {
+            status: 200,
+            headers: {
+              'Content-Type': 'application/json; charset=utf-8',
+              'Access-Control-Allow-Origin': '*',
+              'Cache-Control': 'public, max-age=300',
+              'X-GeneTech-Source': 'kv',
+              'X-GeneTech-Key': key,
+            },
+          });
+        }
+        // KV 未命中时回落到 upstream（Pages 静态文件，迁移过渡期用）
+      }
     }
 
     // /v1/* OpenAPI 路径映射到实际静态文件

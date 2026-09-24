@@ -1,0 +1,264 @@
+{
+  "ts": "2026-09-24T13:15:39.465Z",
+  "dryRun": true,
+  "namespace": "2ff4966803cc47389dbdf862216bf9ac",
+  "namespaceTitle": "GENETECH_ENTITIES",
+  "stations": [
+    {
+      "station": "agent-ecosystem",
+      "action": "would-upload",
+      "size": 20470874,
+      "sizeMB": "19.52",
+      "key": "site:agent-ecosystem:entities",
+      "sha256": "78424c459f82a039"
+    },
+    {
+      "station": "agritech",
+      "action": "would-upload",
+      "size": 16980895,
+      "sizeMB": "16.19",
+      "key": "site:agritech:entities",
+      "sha256": "16f7f587bd7b72c4"
+    },
+    {
+      "station": "ai",
+      "exists": false,
+      "action": "skipped-no-file"
+    },
+    {
+      "station": "ai-safety",
+      "action": "would-upload",
+      "size": 19219528,
+      "sizeMB": "18.33",
+      "key": "site:ai-safety:entities",
+      "sha256": "1f3ec1b464e05d67"
+    },
+    {
+      "station": "ai4science",
+      "action": "would-upload",
+      "size": 19112617,
+      "sizeMB": "18.23",
+      "key": "site:ai4science:entities",
+      "sha256": "0aa098bd94b5a1c8"
+    },
+    {
+      "station": "alien-minerals",
+      "action": "would-upload",
+      "size": 15954151,
+      "sizeMB": "15.22",
+      "key": "site:alien-minerals:entities",
+      "sha256": "35c19de3462f5729"
+    },
+    {
+      "station": "biocomputing",
+      "action": "would-upload",
+      "size": 18497016,
+      "sizeMB": "17.64",
+      "key": "site:biocomputing:entities",
+      "sha256": "6d3d02344a60c9f5"
+    },
+    {
+      "station": "biomed-ai",
+      "action": "would-upload",
+      "size": 18500261,
+      "sizeMB": "17.64",
+      "key": "site:biomed-ai:entities",
+      "sha256": "4eef8bcf7589654b"
+    },
+    {
+      "station": "bionic-ai",
+      "action": "would-upload",
+      "size": 19157514,
+      "sizeMB": "18.27",
+      "key": "site:bionic-ai:entities",
+      "sha256": "c73214b08b59baf3"
+    },
+    {
+      "station": "brain-science",
+      "action": "would-upload",
+      "size": 16275627,
+      "sizeMB": "15.52",
+      "key": "site:brain-science:entities",
+      "sha256": "d610d38cf3f12ab5"
+    },
+    {
+      "station": "carbon-neutral",
+      "action": "would-upload",
+      "size": 17442410,
+      "sizeMB": "16.63",
+      "key": "site:carbon-neutral:entities",
+      "sha256": "cf9e05f91e2b6ba8"
+    },
+    {
+      "station": "data",
+      "exists": false,
+      "action": "skipped-no-file"
+    },
+    {
+      "station": "deep-sea-tech",
+      "action": "would-upload",
+      "size": 17716496,
+      "sizeMB": "16.90",
+      "key": "site:deep-sea-tech:entities",
+      "sha256": "20ce2b695f5c1ceb"
+    },
+    {
+      "station": "digital-twin",
+      "action": "would-upload",
+      "size": 18530517,
+      "sizeMB": "17.67",
+      "key": "site:digital-twin:entities",
+      "sha256": "045016aafa1d8873"
+    },
+    {
+      "station": "edge-ai",
+      "action": "would-upload",
+      "size": 15643109,
+      "sizeMB": "14.92",
+      "key": "site:edge-ai:entities",
+      "sha256": "6de540c60bdf342d"
+    },
+    {
+      "station": "embodied-ai",
+      "action": "would-upload",
+      "size": 20265240,
+      "sizeMB": "19.33",
+      "key": "site:embodied-ai:entities",
+      "sha256": "103e5a3133643eed"
+    },
+    {
+      "station": "exo-science",
+      "action": "would-upload",
+      "size": 18816911,
+      "sizeMB": "17.95",
+      "key": "site:exo-science:entities",
+      "sha256": "50a86d23956088b7"
+    },
+    {
+      "station": "genetech-tools",
+      "action": "would-upload",
+      "size": 17509254,
+      "sizeMB": "16.70",
+      "key": "site:genetech-tools:entities",
+      "sha256": "79aeb8c0d5dfeefc"
+    },
+    {
+      "station": "life-science",
+      "action": "would-upload",
+      "size": 16951142,
+      "sizeMB": "16.17",
+      "key": "site:life-science:entities",
+      "sha256": "a72460a6e9859fa3"
+    },
+    {
+      "station": "low-altitude",
+      "action": "would-upload",
+      "size": 17355846,
+      "sizeMB": "16.55",
+      "key": "site:low-altitude:entities",
+      "sha256": "c4e3a65850636885"
+    },
+    {
+      "station": "neuromorphic",
+      "action": "would-upload",
+      "size": 8942111,
+      "sizeMB": "8.53",
+      "key": "site:neuromorphic:entities",
+      "sha256": "4bddb3e24eb4b552"
+    },
+    {
+      "station": "new-energy",
+      "action": "would-upload",
+      "size": 12085177,
+      "sizeMB": "11.53",
+      "key": "site:new-energy:entities",
+      "sha256": "c039ce75d1e70ba4"
+    },
+    {
+      "station": "nuclear-energy",
+      "action": "would-upload",
+      "size": 14684793,
+      "sizeMB": "14.00",
+      "key": "site:nuclear-energy:entities",
+      "sha256": "4fedf69d08a15ebf"
+    },
+    {
+      "station": "privacy-computing",
+      "action": "would-upload",
+      "size": 13539605,
+      "sizeMB": "12.91",
+      "key": "site:privacy-computing:entities",
+      "sha256": "03269eeb903f887d"
+    },
+    {
+      "station": "quantum-computing",
+      "action": "would-upload",
+      "size": 13230690,
+      "sizeMB": "12.62",
+      "key": "site:quantum-computing:entities",
+      "sha256": "f74e202f4ca71bf8"
+    },
+    {
+      "station": "quantum-materials",
+      "action": "would-upload",
+      "size": 14997812,
+      "sizeMB": "14.30",
+      "key": "site:quantum-materials:entities",
+      "sha256": "82a7f1c4db2d15b2"
+    },
+    {
+      "station": "robot-parts",
+      "action": "would-upload",
+      "size": 12930064,
+      "sizeMB": "12.33",
+      "key": "site:robot-parts:entities",
+      "sha256": "9c90e748b2367d15"
+    },
+    {
+      "station": "sat-6g",
+      "action": "would-upload",
+      "size": 12948396,
+      "sizeMB": "12.35",
+      "key": "site:sat-6g:entities",
+      "sha256": "1da8f649a00eaf37"
+    },
+    {
+      "station": "semiconductor",
+      "action": "would-upload",
+      "size": 12389487,
+      "sizeMB": "11.82",
+      "key": "site:semiconductor:entities",
+      "sha256": "8da91b5735375168"
+    },
+    {
+      "station": "spatial-computing",
+      "action": "would-upload",
+      "size": 15016162,
+      "sizeMB": "14.32",
+      "key": "site:spatial-computing:entities",
+      "sha256": "ac4b588360b94659"
+    },
+    {
+      "station": "synbio-manufacturing",
+      "action": "would-upload",
+      "size": 14330288,
+      "sizeMB": "13.67",
+      "key": "site:synbio-manufacturing:entities",
+      "sha256": "fc5f7d58bf555530"
+    },
+    {
+      "station": "tcm-tools",
+      "action": "would-upload",
+      "size": 11450168,
+      "sizeMB": "10.92",
+      "key": "site:tcm-tools:entities",
+      "sha256": "27a0e48ec1a1d8ce"
+    }
+  ],
+  "totals": {
+    "uploaded": 30,
+    "bytesUploaded": 480944161,
+    "errors": 0,
+    "skipped": 2
+  }
+}
