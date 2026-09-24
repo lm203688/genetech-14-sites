@@ -1,13 +1,13 @@
 {
   "_meta": {
     "pipeline": "intel-state-dump",
-    "generated_at": "2026-09-24T19:01:50.539Z",
+    "generated_at": "2026-09-24T22:16:36.575Z",
     "source": "https://api.swarmlabs.tools/v1/intel/admin/state",
     "sprint": "2-prep",
     "note": "Worker memory 状态快照。Sprint 2 会在 Worker 启动时加载此文件恢复状态。"
   },
   "admin": "gtk-intel-ad",
-  "timestamp": "2026-09-24T19:01:50.444Z",
+  "timestamp": "2026-09-24T22:16:36.498Z",
   "demands": [
     {
       "id": "dm_1a0c6e7b6ca_039d7a8d",
