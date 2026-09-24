@@ -25,7 +25,7 @@ on:
         required: true
         default: 'all'
         type: choice
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex]
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, abstractbackfill]
   schedule:
     # ===== 临时提升期（2026-08-05 ~ 2026-12-31）：每日 12:30 UTC(20:30 CST) 一次全量运行 =====
     # 提升期到期判定在 ops.yml 的 decide 步骤（$TODAY > 2026-12-31），此处仅跟随其节奏；
@@ -54,7 +54,7 @@ env:
 jobs:
   extra-ops:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 70
     env:
       SITE_BASE_URL: ${{ secrets.SITE_BASE_URL || 'https://lm203688.github.io/genetech-14-sites' }}
       CREEM_API_KEY: ${{ secrets.CREEM_API_KEY }}
@@ -94,6 +94,12 @@ jobs:
           if [[ "$TASK" == "all" || "$TASK" == "cite" ]]; then run_one cite-check; fi
           if [[ "$TASK" == "all" || "$TASK" == "ossscan" ]]; then run_one oss-scan; fi
           if [[ "$TASK" == "all" || "$TASK" == "searchindex" ]]; then run_one search-index; fi
+          # 摘要回填（09-24 补入调度，之前未进任何 workflow 导致 09-20 后停摆）：
+          # 默认 cap=1500 / max-minutes=20 保持单轮 ≤20 分钟，与 45 分钟 job timeout 留余量。
+          # cap 与 min 参数化以便 CI 内 override；本地默认（cap=2500）保持不变。
+          if [[ "$TASK" == "all" || "$TASK" == "abstractbackfill" ]]; then
+            node "$SCRIPTS_DIR/pipeline-abstract-backfill.js" --cap=1500 --max-minutes=20
+          fi
           if [[ "$TASK" == "all" || "$TASK" == "guard" ]]; then
             node --check api-guard/worker.js && echo "[guard] worker.js 语法 OK"
             grep -q "addEventListener('fetch'" api-guard/worker.js || { echo "::error::worker.js 缺少 fetch 事件监听"; exit 1; }
