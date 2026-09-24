@@ -226,3 +226,67 @@ Pro 订阅(¥39.9/¥199 HMAC配额) ─┤→ MCP 分发层
 - §D 产品发布（ProductHunt / Hacker News / 稀土掘金）
 
 > 文案统一话术（护城河四句，务必每篇都带）：**Agent 原生 · 垂直策展 30 域 · 微信/支付宝买断（¥9.9 起）· 开放结构化数据可被 AI 直接调用**。
+
+---
+
+## 13. 2026-09 竞品商业模式重扫（一手数据锚定）
+
+> 数据源：Elicit 官方定价页（2026-08-19 抓取）；Scite.ai/pricing（现行）+ scite.ai/mcp 官方博客（2026-02-26 发布）；Consensus.app/SciSpace 2026 定价（RF P.wiki/AI Agent Index 2026-06 与 09 双验）；Manufact 融资稿（VentureBeat 2026-03-11、Enterprise DNA 2026-02 报道）。**未使用任何未核实的第三方估值**。
+
+### 13.1 定价阶梯与容量单位（2026-09 一手核对）
+
+| 产品 | Free | 入门 | 主力 | 高阶 | 企业 | 计费单位 |
+|---|---|---|---|---|---|---|
+| **Elicit** | Free（2 报告/月，无限搜索） | Plus $7/月年付 | Pro $49/月年付（$29/月年付年付价，$588/年） | Scale $169/月年付（$2,028/年） | Custom（SSO/SAML，$22M A 轮，估值 $100M） | 报告数 + 报告源数 + 表格列数 |
+| **Scite** | Basic $20/月（250 MCP credits） | Pro $50/月（2500 credits） | Org Custom | — | Research Solutions (NASDAQ: RSSS) | **MCP credits（credit-based API）** |
+| **Consensus** | Free（100 摘要 + 50 查询/月） | Pro $10/月年付 | Deep $45/月年付（$65/月单月） | Team $30/座/月（最少 3 座） | Custom | Deep reviews/月 数量 |
+| **SciSpace** | 100 credits/月 | Premium $12/月年付（1200 credits） | Advanced $70/月年付（10k credits） | Max $160/月年付（40k credits） | Enterprise SSO/SCIM | **AI credits（月度清空不结转）** |
+| **GeneTech 14（我们）** | ¥0 开放数据 | ¥9.9 GUX 入门 | ¥39.9 专业 | **¥199 终身（无月费）** | 企业 ¥1999-9999/年 | 令牌 + 配额（买断无月费） |
+
+**关键新观察**：
+- **Elicit Plus 被撤了**（2026 官方页已无 $12/月 学生档），免费→ $49/月是断崖，学生群体被挤压——这正是「国内买断层」和「¥9.9 入门」的市场空档。
+- **Scite 是 credit-based MCP**（Basic 250 / Pro 2500 credits/月），且 **MCP 免费层是钩子，credit 用完才付费**——这是「MCP 分发层 + 高频调用付费」的范式，验证 §9.2 判断。
+- **SciSpace 是重度 credits**（1200→10000→40000，¥12→70→160），价格跳崖比 Elicit 更大，学生/轻量用户被挤压。
+- **Consensus 有公开 API 单价**：**$0.10/次**（在 Teams 及以上）——这是目前市场上最透明、可对标、可复制的「科研 API 单次计价」。
+
+### 13.2 融资与商业化里程碑（2026 一手）
+
+| 事件 | 金额/规模 | 时间 | 对我们的信号 |
+|---|---|---|---|
+| Elicit A 轮 | **$22M**（Spark Capital + Footwork，估值 $100M，累计 $31M） | 2025-02 | 学术 AI 赛道资本还在下注，但估值天花板已被 Elicit/Perplexity 占 |
+| Research Solutions 上市 | **NASDAQ: RSSS** | 2026 已上市 | Scite 母公司 IPO 化，Smart Citations 变成企业合规产品，非个人工具 |
+| **Scite MCP GA** | **官方 MCP Server 2026-02-26 发布**（250M+ 文章、25 家出版商付费墙内容谈判中） | 2026-02 | **MCP 已成行业默认入口**；我们 `npx @genetech/data-mcp` 与之同赛 |
+| **Manufact 种子轮** | **$6.3M**（Peak XV 领投 + YC）；SDK 5M+ 下载；MCP 服务器 700 万/月 | 2026-02/03 | **MCP 基础设施层成为新战场**——Vercel for MCP 位置空缺 |
+| Claude Connectors marketplace 上线 | MCP UI 发布后 Manufact 保留率 2x | 2026-Q1 | **MCP 客户端商店是新的分发入口**（同 App Store 位置） |
+| Cochrane 独立评估 Elicit | 检索敏感度 39.5% vs 传统搜索 94.5% | 2025 | 学术 AI 的**可复现性**是硬伤；**我们的开放数据+完整 URL+可溯源**在此是差异化优势 |
+
+### 13.3 商业模式借鉴的三条具体新路径
+
+**（a）企业数据授权（§9.1 已提，量化校准）**：
+- 目标买方已具名：Elicit 客户清单公开列出 **NASA、NIH、CDC、Harvard、Stanford、Yale、Google、J&J、Takeda、Unilever、Gates Foundation**——**其中 30+ 家都在 GeneTech 14 垂直域内**。
+- 定价锚点：**$20-500 万/年**（§9.1 沿用），但可再加一条「按 API 调用计费」锚点：**$0.10/次**（Consensus 公开锚）→ 我们可推出 **$0.05/次 企业 API 档** 做价格锚定。
+- 落地动作：在 `mcp.html` 与 `data.html` 加「Enterprise Data License」询价入口（**已备但需商务拓展**），准备 1 份样本数据集（14 域 × 3 千条，Parquet/JSONL + 数据字典）用于商务对接。
+
+**（b）MCP 商店分发层（新）**：
+- **Claude Connectors marketplace 是新的 App Store**——上架 = 分发；上架后 Manufact 报告 2x 保留率。
+- 我们 `@genetech/data-mcp` 应该：①上架 Claude Connectors（需官方申请）→ ②上架 ChatGPT Plugin Store → ③上架 Anthropic 官方 MCP registry。
+- **这是当前最被低估的免费获客通道**（对比 GEO 的自然流量）。落地优先级 P1。
+
+**（c）Smart Citations 类差异化功能（新）**：
+- Scite 的核心是「引用方向」（支持/对比/提及），是学术 AI 的**质量判据**。我们 `cite-checker.mjs` 已有死链/死文判别（strict 模式阻断 CI），可扩展为「学术实体被引次数 + 引用方向分类」。
+- 但 Scite 有 250M 文章底座，我们 4.7 万实体正面打不过——**差异化路径 = 垂直域的 Smart Citations**（比如「quantum-materials 领域 100 篇核心论文的引用方向」）。这是 Scite 因广度而做不深的地方。
+
+### 13.4 定价建议修订（基于 2026-09 一手数据）
+
+| 层级 | 旧价 | 新价 | 依据 |
+|---|---|---|---|
+| 免费钩子 | ¥0 开放数据 | ¥0 开放数据 | 不变，GEO 资产 |
+| 入门（100 配额 / 30 天） | ¥9.9 | **¥9.9 保留**（对标 Elicit Free→$49 断崖下的空档） | 学生/轻量用户 |
+| 专业（500 配额 / 365 天） | ¥39.9 | **¥39.9 保留**（对标 Consensus Pro $10、SciSpace Premium $12） | 个体研究者 |
+| 终身 | ¥199 | **¥199 保留**（对标 Elicit Pro $49×月费，年付 $588 相当于 ¥4250/年） | 加 ¥160 买断的锚定冲动 |
+| **API 按次** | 未定 | **新增：$0.05/次 企业 API** | Consensus $0.10 锚点下压 50% |
+| 企业版 | ¥1999-9999/年 | ¥1999-9999/年（+ 数据授权 $20 万起谈） | 未变，需商务拓展 |
+
+### 13.5 一句话总结
+
+**2026 学术 AI 赛道三条新共识**：① **MCP 分发层（Claude Connectors / ChatGPT Plugin Store）取代传统 App Store**；② **MCP credits（Scite）+ API 单价（Consensus $0.10/次） 是新的付费范式**；③ **学术 AI 的可复现性硬伤（Elicit 39.5% vs 传统 94.5%）是垂直域深度玩家的差异化机会**。GeneTech 14 应把「开放数据」升级为「MCP 分发 + 企业 API + 垂直深度」三条腿——前两条是分发与变现，第三条是护城河。
