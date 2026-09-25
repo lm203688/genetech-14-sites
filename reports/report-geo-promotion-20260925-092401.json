@@ -1,0 +1,49 @@
+{
+  "pipeline": "geo-promotion",
+  "timestamp": "2026-09-25T09:24:01.237Z",
+  "dryRun": false,
+  "siteBaseUrl": "https://lm203688.github.io/genetech-14-sites",
+  "summary": {
+    "entityCount": 300000,
+    "geoPostGenerated": true,
+    "indexNowSubmitted": 36,
+    "searchEnginePings": 2,
+    "gitHubTopicsSet": false,
+    "devtoPublished": false
+  },
+  "geoPost": {
+    "generated": true,
+    "slug": "geo-roundup-2026-09-25",
+    "title": "GeneTech 前沿速览（2026-09-25）：ai-safety、agritech、carbon-neutral 等 10 条新增实体",
+    "filePath": "content/blog/geo-roundup-2026-09-25.md",
+    "entityCount": 10,
+    "siteCount": 4,
+    "cursor": "2026-09-01T19:06:53.710Z",
+    "newCount": 297547
+  },
+  "indexNow": {
+    "submitted": 36,
+    "statusCode": 200
+  },
+  "pings": [
+    {
+      "engine": "www.google.com",
+      "statusCode": 404
+    },
+    {
+      "engine": "www.bing.com",
+      "statusCode": 410
+    }
+  ],
+  "topics": {
+    "ok": false,
+    "statusCode": 403
+  },
+  "devto": {
+    "ok": false,
+    "statusCode": 422
+  },
+  "issue": {
+    "ok": true
+  }
+}
