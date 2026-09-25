@@ -49,10 +49,8 @@ curl -s -X POST https://api.swarmlabs.tools/v1/search/semantic \
 
 ### Partner tier — 全量数据拉取
 
-> **状态（2026-09-20）**：`swarm-labs-gateway` Worker 已部署并注入 `GATEWAY_SECRET`
-> 与 `gw-rate` 限流桶，但绑定自定义域需要 `Workers Routes:Edit` 权限，当前**尚未绑定**，
-> 因此 `*.workers.dev` 与 `api.swarmlabs.tools` 两端目前均不可达。
-> 绑定完成前，Partner 直接走下方静态端点即可拉全量（免 key），网关恢复后无感切换。
+> **状态（2026-09-25）**：Partner 全量数据可通过下方静态端点免 key 拉取，已验证可用（2026-09-20 实测 200）。
+> 自定义域绑定（`api.swarmlabs.tools` / `license.swarmlabs.tools`）待完成，绑定后 Partner 无感切换至 `slb_` key 网关。
 
 ```bash
 # 已验证可用（2026-09-20 实测 200 / 20,265,240 字节 / Last-Modified 当日）

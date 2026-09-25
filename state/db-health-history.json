@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-21",
+  "date": "2026-09-25",
   "total": 300000,
   "sites": 30,
   "perSite": {
@@ -44,14 +44,14 @@
   "status": "ALL-30-SITES-AT-CAP",
   "delta": 0,
   "abstractGap": {
-    "totalMissing": 93104,
+    "totalMissing": 87929,
     "bySource": {
       "crossref": 86932,
       "europepmc": 36986,
       "preprints": 18377,
       "other": 10053
     },
-    "note": "93% 无摘要记录集中在 crossref/europepmc/preprints 三源，且三者 DOI 可溯源度均 100%，可用 DOI 反查 OpenAlex/S2/EuropePMC 摘要接口回填。 [2026-09-21 更新] 摘要回填管道累计回填 52430 条，剩余缺口约 89795（filled+gap 口径），进度约 36.8%；距 60% 体积复测阈值尚远，构建约 823MB/80.4%，安全。"
+    "note": "[2026-09-25 更新] 摘要回填管道累计回填 54296 条，剩余缺口约 87929（filled+gap 口径），进度约 38.1%；全站摘要完整度 67.5%（202411/300000），本轮（第 40 轮）1500 DOI → 命中 1066（EPMC 584 + OA 482），回填 1159 实体 / 10 站，耗时 528s；回填为实体侧唯一正向增量来源（已满容 Δ=0）；距 60% 体积复测阈值尚远，构建约 820MB，安全。"
   },
   "remoteCheck": "01202eae340e3080ae8d1f4b3a8dd2bf349cf249",
   "guardBlocked": false,
@@ -268,6 +268,20 @@
     },
     {
       "date": "2026-09-21",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 67,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-25",
       "total": 300000,
       "sites": 30,
       "quality": {

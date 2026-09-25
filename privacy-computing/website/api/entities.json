@@ -25183,7 +25183,7 @@
     "id": "doi:10.1038/s41598-025-27691-6",
     "name": "Hybrid GNN-LSTM defense with differential privacy and secure multi-party computation for edge-optimized neuromorphic autonomous systems.",
     "source": "europepmc",
-    "abstract": "",
+    "abstract": "Neuromorphic computing, which is based on spiking neural networks (SNNs) and event cameras, can provide energy-efficient autonomous vehicle (AV) perception, yet is exceedingly susceptible to adversarial perturbations, fault injections, and data poisoning. Conventional defences may prove inadequate on the spot scenarios with a small amount of edge resources. The systemic security solution proposed in the paper consists of a Hybrid Graph Neural Network-Long Short-Term Memory (GNN-LSTM) attack detection model with a Differential Privacy (DP) and Secure Multi-Party Computation (SMPC) solution to privacy and threat-reduction respectively. Quantization and pruning are also used to optimise the framework to support edge deployment. KITTI multimodal experiment results indicate 94.3 percent accuracy and lower the attack success rate by 30 percent. The neuromorphic N-Caltech101 experiments reach an accuracy of 92.4 percent with a drop of 27 percent. These results confirm that the proposed solution can offer substantial, privacy-conscious and resource-efficient security of next-generation neuromorphic autonomous systems against trained adversarial attacks.",
     "url": "https://doi.org/10.1038/s41598-025-27691-6",
     "authors": [],
     "tags": [],
@@ -53654,7 +53654,7 @@
     "id": "doi:10.1201/9781003532323-7",
     "name": "Federated Learning in Heterogeneous Unmanned Aerial Vehicle",
     "source": "crossref",
-    "abstract": "",
+    "abstract": "Unmanned aerial vehicles (UAVs) have been extensively utilized across various domains, including product delivery, rescue operations, inspection of inaccessible areas, and security and surveillance of territory. As UAVs are steadily in demand, they require technical progress to increase their performance and the sphere of their application. Federated learning (FL) is an enhanced machine learning technique in which several devices are coordinated to learn the global model, but the data are not centralized. The integration of UAVs with FL is a novel addition to autonomous systems as well as data protection. The upgraded FL allows UAVs to provide decision-making support and improve their performance. FL can provide UAVs with the capability to refine their models on the fly without the disadvantages of either latency or bandwidth experienced in centralized systems. The role of FL in the advancement of heterogeneous UAVs, along with associated problems, opportunities, privacy concerns, and case studies illustrating the enhancement of UAV applications in disaster recovery, monitoring, and surveillance, is examined. Ultimately, this chapter will define the topic by discussing future potential and several research problems.",
     "url": "https://doi.org/10.1201/9781003532323-7",
     "authors": [
       "N. Sathish",
