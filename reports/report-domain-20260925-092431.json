@@ -1,0 +1,373 @@
+{
+  "pipeline": "domain-expansion",
+  "version": "1.0",
+  "timestamp": "2026-09-25T09:24:31.177Z",
+  "dryRun": false,
+  "durationMs": 34914,
+  "summary": {
+    "signalsCollected": 23,
+    "domainsEvaluated": 11,
+    "domainsExpanded": 0
+  },
+  "signals": [
+    {
+      "source": "arxiv",
+      "category": "cs.AI",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.CL",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.CV",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.LG",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.IR",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.RO",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.SE",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.DB",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.CR",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.HC",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.CY",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "arxiv",
+      "category": "cs.NE",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "ai",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "agent",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "llm",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "rag",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "multimodal",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "mcp",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "github",
+      "category": "safety",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "intelligence-report",
+      "category": "agent",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "intelligence-report",
+      "category": "mcp",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "intelligence-report",
+      "category": "rag",
+      "isHot": false,
+      "_dryRun": false
+    },
+    {
+      "source": "intelligence-report",
+      "category": "llm",
+      "isHot": false,
+      "_dryRun": false
+    }
+  ],
+  "domains": [
+    {
+      "domainName": "github-topic-ai",
+      "displayName": "领域: ai",
+      "compositeScore": 0.34,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 1,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.33,
+        "relatednessToExisting": 0.4
+      },
+      "relatedKeywords": [
+        "ai"
+      ]
+    },
+    {
+      "domainName": "github-topic-agent",
+      "displayName": "领域: agent",
+      "compositeScore": 0.34,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 1,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.33,
+        "relatednessToExisting": 0.4
+      },
+      "relatedKeywords": [
+        "agent"
+      ]
+    },
+    {
+      "domainName": "github-topic-llm",
+      "displayName": "领域: llm",
+      "compositeScore": 0.32,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 1,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.33,
+        "relatednessToExisting": 0.2
+      },
+      "relatedKeywords": [
+        "llm",
+        "accessibility-service",
+        "android",
+        "chat-assistant",
+        "llm",
+        "qq"
+      ]
+    },
+    {
+      "domainName": "github-topic-mcp",
+      "displayName": "领域: mcp",
+      "compositeScore": 0.28,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0.92,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.18,
+        "relatednessToExisting": 0.2
+      },
+      "relatedKeywords": [
+        "mcp",
+        "ai-agents",
+        "chatgpt",
+        "codex",
+        "mcp",
+        "model-context-protocol",
+        "oauth"
+      ]
+    },
+    {
+      "domainName": "github-topic-rag",
+      "displayName": "领域: rag",
+      "compositeScore": 0.13,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0.17,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.03,
+        "relatednessToExisting": 0.8
+      },
+      "relatedKeywords": [
+        "rag",
+        "agent",
+        "large-language-models",
+        "llm",
+        "llm-learning",
+        "llm-tutorial",
+        "rag"
+      ]
+    },
+    {
+      "domainName": "github-topic-multimodal",
+      "displayName": "领域: multimodal",
+      "compositeScore": 0.1,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0.13,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.03,
+        "relatednessToExisting": 0.6
+      },
+      "relatedKeywords": [
+        "multimodal",
+        "multimodal",
+        "multimodal-ai",
+        "multimodal-data",
+        "multimodal-fusion",
+        "multimodal-llm",
+        "physical-ai",
+        "robotics",
+        "robotics-algorithms",
+        "robotics-control",
+        "robotics-libraries",
+        "robotics-programming",
+        "robotics-simulation",
+        "search",
+        "search-api",
+        "search-engine",
+        "search-interface",
+        "vision",
+        "vision-ai",
+        "visual-language-models"
+      ]
+    },
+    {
+      "domainName": "market-gap-agent",
+      "displayName": "agent",
+      "compositeScore": 0.04,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0,
+        "relatednessToExisting": 0.4
+      },
+      "relatedKeywords": [
+        "agent"
+      ]
+    },
+    {
+      "domainName": "github-topic-safety",
+      "displayName": "领域: safety",
+      "compositeScore": 0.03,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0.05,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0.01,
+        "relatednessToExisting": 0.2
+      },
+      "relatedKeywords": [
+        "safety",
+        "ai-course",
+        "ai-engineering",
+        "ai-engineering-course",
+        "ai-engineering-curriculum",
+        "large-language-models"
+      ]
+    },
+    {
+      "domainName": "market-gap-mcp",
+      "displayName": "mcp",
+      "compositeScore": 0.02,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0,
+        "relatednessToExisting": 0.2
+      },
+      "relatedKeywords": [
+        "mcp"
+      ]
+    },
+    {
+      "domainName": "market-gap-rag",
+      "displayName": "rag",
+      "compositeScore": 0.02,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0,
+        "relatednessToExisting": 0.2
+      },
+      "relatedKeywords": [
+        "rag"
+      ]
+    },
+    {
+      "domainName": "market-gap-llm",
+      "displayName": "llm",
+      "compositeScore": 0.02,
+      "shouldExpand": false,
+      "scores": {
+        "paperVolume": 0,
+        "repoVelocity": 0,
+        "searchTrendGrowth": 0,
+        "communityHeat": 0,
+        "relatednessToExisting": 0.2
+      },
+      "relatedKeywords": [
+        "llm"
+      ]
+    }
+  ],
+  "expanded": [],
+  "techRequirements": []
+}
