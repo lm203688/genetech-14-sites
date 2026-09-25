@@ -192,8 +192,8 @@ data.swarmlabs.tools (Pages，只留 HTML 壳)
 ## 九、参考资料
 
 - [Cloudflare R2 文档](https://developers.cloudflare.com/r2/)
-- [R2 with Workers](https://developers.cloudflare.com/workers/learning/how-workers-works/r2)
-- [R2 计费](https://developers.cloudflare.com/r2/analytics/) — 10GB 存储 + 1000 万请求/月免费
+- [R2 with Workers](https://developers.cloudflare.com/r2/get-started/workers-api/)
+- [R2 计费](https://developers.cloudflare.com/r2/pricing) — 10GB 存储 + 1000 万请求/月免费
 - [Wrangler R2 命令](https://developers.cloudflare.com/workers/wrangler/commands/#r2)
 
 ---

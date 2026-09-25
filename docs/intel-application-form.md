@@ -306,6 +306,6 @@ for r in results.get("results", [])[:5]:
 ## 八、联系
 
 - 申请入口：**`POST https://api.swarmlabs.tools/v1/intel/apply`**（免鉴权，直接调用）
-- 审批：**GitHub issue → https://github.com/lm203688/genetech-14-sites/issues**（标签 `intel-application`）
+- 审批：**[GitHub issue](https://github.com/lm203688/genetech-14-sites/issues)**（标签 `intel-application`）
 - 技术文档：**`docs/intel-consumer-onboarding.md`**（本仓库）
 - API 文档：**`openapi.yaml`**（v1 完整 schema）

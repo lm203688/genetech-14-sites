@@ -62,7 +62,7 @@ const TLS_ARGS = [
 /** 提取 markdown 中的 markdown 链接 */
 const RE_MD_LINK = /\[([^\]]{1,200})\]\((https?:\/\/[^\s)\]]+)\)/g;
 /** 提取裸 URL */
-const RE_BARE_URL = /https?:\/\/[^\s<>"')\]`}]+/g;
+const RE_BARE_URL = /https?:\/\/[^\s<>"')*\]`}]+/g;
 /** 提取 DOI */
 const RE_DOI = /\b10\.\d{4,9}\/[-._;()\/:?=@A-Za-z0-9]+\b/g;
 /** 行内引号（中文直角引号 / 西文双引号） */

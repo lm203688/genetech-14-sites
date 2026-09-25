@@ -402,6 +402,6 @@ Sprint 1 存储限于单 Worker 实例 memory（PRO_KV 日写入限额已满）�
 ## 十四、联系
 
 - **申请入口**：`POST https://api.swarmlabs.tools/v1/intel/apply`（免鉴权）
-- **审批**：GitHub issue → https://github.com/lm203688/genetech-14-sites/issues（标签 `intel-application`）
+- **审批**：[GitHub issue](https://github.com/lm203688/genetech-14-sites/issues)（标签 `intel-application`）
 - **API 文档**：`openapi.yaml`（v1 完整 schema）
 - **技术栈**：Cloudflare Workers + PRO_KV + 本地索引 `data/search-index.json`
