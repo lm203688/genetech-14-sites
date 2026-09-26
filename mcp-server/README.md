@@ -89,3 +89,49 @@ node src/index.mjs
 
 由 `.github/workflows/ops-extra.yml` 的 `mcp-publish` job 定期校验并（在版本变更时）提交
 `glama.json` 与 `package.json`，随仓库推送自动上线。
+
+## 新增工具（v1.1.0）
+
+| 工具 | 作用 |
+|------|------|
+| `submit_request` | 提交数据需求（下游项目申请定向采集） |
+| `retrieve_requests` | 浏览/筛选/统计需求队列 |
+| `intake_health` | 检查数据需求队列健康状态 |
+
+### 使用示例
+
+```typescript
+// 提交数据需求
+const result = await submitRequest({
+  project_name: "swarmlabs",
+  contact: "lm203688",
+  purpose: "为 Embodied AI 模块检索触觉反馈论文",
+  priority: "high",
+  spec: {
+    domains: ["robotics", "embodied-ai"],
+    keywords: ["haptic feedback", "tactile sensing"],
+    time_range: { from: "2025-01-01", to: "2026-09-25" },
+    min_confidence: 0.6,
+    target_count: 50,
+    formats: ["json", "bibtex"]
+  }
+});
+console.log(result.request_id); // req_xxx_xxx
+```
+
+```typescript
+// 查询需求列表
+const requests = await retrieveRequests({
+  status_filter: "pending_review",
+  limit: 10
+});
+console.log(requests.summary); // { byStatus, byPriority, byProject }
+```
+
+## API 端点
+
+- `POST /api/v1/requests` — 提交数据需求（免鉴权）
+- `GET /api/v1/requests` — 查询需求列表（匿名限 20 条）
+- `GET /api/v1/requests/:id` — 查询单个需求详情
+
+数据落点：`state/data-requests.json`（与 Gateway Worker 共享）

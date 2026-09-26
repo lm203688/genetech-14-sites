@@ -1,0 +1,43 @@
+# GeneTech 14站知识引擎 — 知识图谱边自动刷新
+# 每日触发，从实体数据集重建 knowledge-graph-entities.json 的 edges
+name: Knowledge Graph Edge Refresh
+
+on:
+  schedule:
+    # 每日 03:00 UTC（07:00 CST）运行，与数据积累错峰
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  edge-refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run edge builder
+        run: |
+          python3 tools/edge-builder.py --min-cooccurrence 3 --max-edges 5000
+          echo "=== KG stats ==="
+          node -e "const d=require('./data/knowledge-graph-entities.json'); console.log('nodes:',d.nodes.length,'edges:',d.edges.length,'builtAt:',d.builtAt);"
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "ops-bot@genetech.example"
+          git config --local user.name "GeneTech Ops Bot"
+          git add data/knowledge-graph-entities.json
+          if git diff --cached --quiet; then
+            echo "No edge changes to commit"
+          else
+            git commit -m "[Bot] Knowledge graph edges refreshed $(date -u +'%Y-%m-%d %H:%M UTC')"
+            for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
+          fi

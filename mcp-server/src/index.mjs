@@ -30,6 +30,7 @@ import { z } from 'zod';
 import { SearchIndex } from './search.mjs';
 import { KnowledgeGraph, GraphRAG } from './graphrag.mjs';
 import { runAsk } from '../../tools/lib/ask.mjs';
+import { submitRequest, retrieveRequests, healthCheck as requestHealth } from './mcp-request.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
@@ -467,6 +468,75 @@ server.tool(
       2
     );
     return { content: [{ type: 'text', text: body }] };
+  }
+);
+
+// ============================================================================
+// submit_request — 下游项目提交数据需求（intake 入口）
+// ============================================================================
+server.tool(
+  'submit_request',
+  '为 GeneTech 14 站知识引擎提交结构化数据需求。下游独立项目（蜂群科研数据 / RoboParts / AIShield / 付费客户）通过此工具申请定向采集：指定领域、关键词、时间范围、数量目标与交付格式。返回 request_id，状态默认为 pending_review。幂等：7 天内相同项目 + 相同规格指纹不重复提交。',
+  {
+    project_name: z.string().describe('需求方项目标识，例如 swarmlabs / roboparts / aishield'),
+    contact: z.string().describe('联系人邮箱或 GitHub 用户名'),
+    purpose: z.string().describe('需求用途说明（一句话，用于审批审计）'),
+    priority: z.enum(['low', 'medium', 'high', 'urgent']).default('medium').describe('紧急度'),
+    spec: z.object({
+      domains: z.array(z.string()).optional().describe('目标领域，例如 ["robotics", "embodied-ai"]'),
+      keywords: z.array(z.string()).optional().describe('检索关键词列表'),
+      time_range: z.object({
+        from: z.string().describe('起始日期，ISO 8601'),
+        to: z.string().describe('截止日期，ISO 8601'),
+      }).optional().describe('时间窗口'),
+      min_confidence: z.number().min(0).max(1).default(0.5).describe('最低置信度阈值'),
+      target_count: z.number().min(1).max(500).default(50).describe('期望返回实体数'),
+      formats: z.array(z.enum(['json', 'bibtex', 'csv'])).default(['json']).describe('交付格式'),
+      delivery_preference: z.enum(['pull', 'push', 'subscribe']).default('pull').describe('交付模式'),
+    }).describe('需求规格，指定领域/关键词/时间/数量'),
+  },
+  async (args) => {
+    const result = submitRequest(args);
+    if (!result.ok) {
+      return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }], isError: true };
+    }
+    return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
+  }
+);
+
+// ============================================================================
+// retrieve_requests — 浏览 / 筛选 / 统计数据需求队列
+// ============================================================================
+server.tool(
+  'retrieve_requests',
+  '浏览 GeneTech 14 站数据需求队列：按状态 / 项目名筛选，返回统计摘要与分页结果。管理员与需求方均可调用。',
+  {
+    status_filter: z.enum(['pending_review', 'in_progress', 'fulfilled', 'rejected']).optional().describe('按状态过滤'),
+    project_name: z.string().optional().describe('按项目名过滤'),
+    limit: z.number().min(1).max(100).default(20).describe('返回条数'),
+    offset: z.number().min(0).default(0).describe('分页偏移'),
+  },
+  async (args) => {
+    const result = retrieveRequests({
+      status_filter: args.status_filter,
+      project_name: args.project_name,
+      limit: args.limit,
+      offset: args.offset,
+    });
+    return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
+  }
+);
+
+// ============================================================================
+// intake_health — 数据需求系统自检
+// ============================================================================
+server.tool(
+  'intake_health',
+  '检查数据需求队列的健康状态：文件路径、大小、条目数。',
+  {},
+  async () => {
+    const result = requestHealth();
+    return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
   }
 );
 

@@ -1,29 +1,298 @@
 {
-  "date": "2026-08-17",
-  "total": 49879,
-  "sites": 22,
+  "date": "2026-09-25",
+  "total": 300000,
+  "sites": 30,
   "perSite": {
-    "agent-ecosystem": 2423,
-    "ai4science": 2216,
-    "alien-minerals": 2774,
-    "biocomputing": 4767,
-    "bionic-ai": 2171,
-    "brain-science": 2504,
-    "deep-sea-tech": 2227,
-    "embodied-ai": 2961,
-    "exo-science": 2219,
-    "genetech-tools": 1581,
-    "life-science": 1974,
-    "low-altitude": 1942,
-    "new-energy": 2621,
-    "nuclear-energy": 2247,
-    "privacy-computing": 1310,
-    "quantum-computing": 2553,
-    "robot-parts": 1458,
-    "sat-6g": 1393,
-    "semiconductor": 2280,
-    "spatial-computing": 1258,
-    "synbio-manufacturing": 2711,
-    "tcm-tools": 2289
-  }
+    "agent-ecosystem": 10000,
+    "agritech": 10000,
+    "ai-safety": 10000,
+    "ai4science": 10000,
+    "alien-minerals": 10000,
+    "biocomputing": 10000,
+    "biomed-ai": 10000,
+    "bionic-ai": 10000,
+    "brain-science": 10000,
+    "carbon-neutral": 10000,
+    "deep-sea-tech": 10000,
+    "digital-twin": 10000,
+    "edge-ai": 10000,
+    "embodied-ai": 10000,
+    "exo-science": 10000,
+    "genetech-tools": 10000,
+    "life-science": 10000,
+    "low-altitude": 10000,
+    "neuromorphic": 10000,
+    "new-energy": 10000,
+    "nuclear-energy": 10000,
+    "privacy-computing": 10000,
+    "quantum-computing": 10000,
+    "quantum-materials": 10000,
+    "robot-parts": 10000,
+    "sat-6g": 10000,
+    "semiconductor": 10000,
+    "spatial-computing": 10000,
+    "synbio-manufacturing": 10000,
+    "tcm-tools": 10000
+  },
+  "quality": {
+    "urlCompleteness": 100,
+    "abstractCompleteness": 68,
+    "doiTraceability": 92,
+    "dedupRate": 94,
+    "uniqueKeys": 282260
+  },
+  "status": "ALL-30-SITES-AT-CAP",
+  "delta": 0,
+  "abstractGap": {
+    "totalMissing": 86936,
+    "bySource": {
+      "crossref": 86932,
+      "europepmc": 36986,
+      "preprints": 18377,
+      "other": 10053
+    },
+    "note": "[2026-09-25 更新] 摘要回填管道累计回填 55289 条，剩余缺口约 86936（filled+gap 口径），进度约 38.8%；全站摘要完整度 67.8%（203404/300000），回填为实体侧唯一正向增量来源（已满容 Δ=0）；距 60% 体积复测阈值尚远，构建约 650MB，安全。"
+  },
+  "remoteCheck": "01202eae340e3080ae8d1f4b3a8dd2bf349cf249",
+  "guardBlocked": false,
+  "history": [
+    {
+      "date": "2026-09-04",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 49,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-05",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 52,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-08",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 54,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-09",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 56,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-10",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 57,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-11",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 58,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-12",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 59,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-13",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 59,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-14",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 60,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-15",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 61,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-16",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 62,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-17",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 63,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-18",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 64,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-19",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 65,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-20",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 66,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-21",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 67,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    },
+    {
+      "date": "2026-09-25",
+      "total": 300000,
+      "sites": 30,
+      "quality": {
+        "urlCompleteness": 100,
+        "abstractCompleteness": 68,
+        "doiTraceability": 92,
+        "dedupRate": 94,
+        "uniqueKeys": 282260
+      },
+      "status": "ALL-30-SITES-AT-CAP",
+      "delta": 0
+    }
+  ]
 }
