@@ -1902,6 +1902,31 @@ function writeGzip(rel, content) {
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, zlib.gzipSync(Buffer.from(content), { level: 9 }));
 }
+/**
+ * 同步聚合数据产物到 _site/data/（详见本会话实施说明）。
+ */
+const AGGREGATED_DATA_FILES = [
+  'knowledge-graph.json',
+  'knowledge-graph-entities.json',
+  'search-index.json',
+  'oss-registry.json',
+  'data-requests.json',
+];
+function syncAggregatedData() {
+  const srcDir = path.join(ROOT, 'data');
+  const destDir = path.join(OUT, 'data');
+  fs.mkdirSync(destDir, { recursive: true });
+  if (!fs.existsSync(srcDir)) return;
+  for (const f of AGGREGATED_DATA_FILES) {
+    const src = path.join(srcDir, f);
+    if (!fs.existsSync(src)) { console.warn(`[data][WARN] 源 data/${f} 缺失，跳过复制`); continue; }
+    fs.copyFileSync(src, path.join(destDir, f));
+  }
+  const missing = AGGREGATED_DATA_FILES.filter((f) => !fs.existsSync(path.join(destDir, f)));
+  if (missing.length) console.warn(`[data][CONTRACT] 部署目录缺少关键聚合文件: ${missing.join(', ')}`);
+  else console.log(`[data] 已同步 ${AGGREGATED_DATA_FILES.length} 个聚合数据文件 → ${OUT}/data/`);
+}
+
 
 async function main() {
   const sites = discoverSites();
@@ -2330,6 +2355,8 @@ capabilities: search, entity-lookup, graph, citation, mcp
   } catch (e) {
     console.warn(`[narrate] 异常，已跳过：${e.message}`);
   }
+
+  syncAggregatedData();
 
   console.log(`[ok] 生成 ${sites.length} 个站点 / ${totalEntities} 条实体 → ${OUT}`);
 }
