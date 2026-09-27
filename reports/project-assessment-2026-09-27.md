@@ -117,11 +117,30 @@
 1. `.github/workflows/ops-extra.yml` — 新增 `kgbuild` 任务（最后写入者）+ `workflow_dispatch` 选项，注释留档三写入者回退风险。
 2. `.github/workflows/pages-deploy.yml` — `push.paths` 增加 `data/*.json`；契约校验扩展到 5 个 `_site/data/*.json` 聚合文件（缺失即 fail）。
 3. `tools/build-knowledge-graph.mjs` — 新增 `co_topic` 实体↔实体直接边（限幅 3,000）；修 `--limit-nodes` 不生效（跨站集无条件塞入）；修 `argNum` 假零回落（`Number('0')||3000`）；`MAX_BYTES` 9→12MB 并写明真实容量依据；新增退化图谱回归护栏（`exit 3`）。
-4. `tools/build-site.mjs` — `syncAggregatedData()` 增加 `data/export/*.json` 发布。
+4. `tools/build-site.mjs` — `syncAggregatedData()` 增加 `data/export/*.json` 发布；遗留数据复制循环补 `data/data-requests.json`（双保险，见第 4.1 节）。
 5. `mcp-server/src/mcp-request.mjs` — 重写为信封格式（兼容裸数组）、容量护栏、静态交付 `export_url`。
 6. `mcp-server/src/index.mjs` — `submit_request` 描述补充 `export_url` 语义。
 7. `state/data-requests.md` — 更正存储格式、交付机制、自动化状态三处不实描述。
 8. `data/knowledge-graph.json` / `data/knowledge-graph-entities.json` — 重建为 14,355 节点 / 71,857 边。
+9. `tools/insights-narrate.mjs` — 修 P0：模块顶层无条件 `main()` 导致 build 进程被 `process.exit(0)` 杀死（详见第 4.1 节）。
+
+### 4.1 契约校验揪出的隐藏 P0（2026-09-27，重要）
+
+第 2 项的契约校验上线后 **CI #229 立即失败**，报 `缺失聚合数据产物 _site/data/data-requests.json`。定位过程值得留档：
+
+- 构建 `exit=0`，但日志末尾**只有 12 行且戛然而止于 `[insights-narrate] 跳过：no_topics`**；`[data] 已同步`、`[ok] 生成` 两行**完全缺失**。
+- 根因：`tools/insights-narrate.mjs` 在模块顶层无条件执行 `main()`（第 178 行），**没有 ESM CLI 守卫**。`build-site.mjs` 第 2367 行 `await import('./insights-narrate.mjs')` 时，CLI 的 `main()` 随即执行并在第 170 行 `process.exit(0)`——**直接终止了整个构建进程**。
+- 后果：`await import` 之后的所有代码（即 `syncAggregatedData()` 与收尾日志）永远不执行。因为 `process.exit(0)` 返回成功码，GitHub Actions 判 `Build static site` **success**，问题被完全掩盖。
+- 之所以 4 个数据文件仍能上线，是因为遗留复制循环位于第 2089 行（**早于** narrate 步骤），只有 `data-requests.json` 依赖被杀死的 `syncAggregatedData()`。
+- 这是**长期静默存在**的缺陷：只要 narrate 步骤位于构建末尾，后续任何新增逻辑都不会被执行，且日志与退出码都表现正常。
+
+修复：加 ESM CLI 守卫（`process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)`），被 import 时保持纯库行为；并在遗留复制循环补 `data/data-requests.json` 作双保险。
+
+本地验证：`[narrate] 跳过（no_topics）` → `[data] 已同步 5 个聚合数据文件` → `[ok] 生成 30 个站点 / 300000 条实体`，三行齐出，`_site/data/` 齐 5 个文件。
+
+推送远端 `e18caf4`（仅 2 文件，先经 `push-now.mjs --dry-run` 核对，未触及 11 个 EOL-only 无关文件），**CI #230 转绿**。线上实测 5 个契约文件全部 `200`：`data-requests.json` 144B、`knowledge-graph.json` 12,307,296B、`search-index.json` 6,904,138B、`oss-registry.json` 134,493B。
+
+**教训**：「构建成功」不等于「构建完整执行」。`exit 0` 可能被上游子模块的 `process.exit(0)` 伪造。凡是「被 import 复用」的脚本，CLI 入口必须有守卫——本次是契约校验（而非任何日志告警）在第一次运行时就抓住了它。
 
 ---
 
