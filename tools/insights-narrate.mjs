@@ -175,4 +175,12 @@ function main() {
     });
 }
 
-main();
+// ===== CLI 入口守卫（2026-09-27 P0 修复）=====
+// 本文件被 tools/build-site.mjs 动态 import 复用 runNarrate()。若此处无条件 main()，
+// main() 内的 process.exit(0) 会**杀掉整个 build 进程**——表现为 exit=0 但构建日志
+// 在 narrate 步骤戛然而止、其后的 syncAggregatedData() 与 [ok] 收尾行全部缺失，
+// 进而导致 _site/data/data-requests.json 从未发布、pages-deploy 契约校验失败。
+// 正确做法：仅当作为入口脚本直接执行时才跑 CLI，被 import 时保持纯库行为。
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main();
+}
