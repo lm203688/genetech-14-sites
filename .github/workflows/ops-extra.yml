@@ -25,7 +25,7 @@ on:
         required: true
         default: 'all'
         type: choice
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, abstractbackfill, edge_refresh]
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, abstractbackfill, edge_refresh, kgbuild]
   schedule:
     # ===== 临时提升期（2026-08-05 ~ 2026-12-31）：每日 12:30 UTC(20:30 CST) 一次全量运行 =====
     # 提升期到期判定在 ops.yml 的 decide 步骤（$TODAY > 2026-12-31），此处仅跟随其节奏；
@@ -102,6 +102,17 @@ jobs:
           fi
           if [[ "$TASK" == "all" || "$TASK" == "edge_refresh" ]]; then
             python3 tools/edge-builder.py --min-cooccurrence 3 --max-edges 5000
+          fi
+          # ===== 知识图谱：三个写入者的回退风险（2026-09-27 修复）=====
+          # knowledge-graph.json / knowledge-graph-entities.json 此前有三个写入者，
+          # 且后两者会把好图谱回退成玩具图谱：
+          #   selfdb        → data/knowledge-graph.json     （pipeline-self-db-build.js，边数硬限幅 5000）
+          #   edge_refresh  → data/knowledge-graph-entities.json（edge-builder.py，tag-tag 共现 ≤5000）
+          # 本次新增 kgbuild 作为**最后写入者**，聚合 30 站 + 学术数据集重建
+          # 「实体↔站 / 实体↔标签」枢纽型图谱（14k 节点 / 37k 边），覆盖前两者的降级产物。
+          # 保持 selfdb / edge_refresh 不动：它们各自产出独立报告，且 kgbuild 失败时可作降级兜底。
+          if [[ "$TASK" == "all" || "$TASK" == "kgbuild" ]]; then
+            node tools/build-knowledge-graph.mjs
           fi
           if [[ "$TASK" == "all" || "$TASK" == "guard" ]]; then
             node --check api-guard/worker.js && echo "[guard] worker.js 语法 OK"

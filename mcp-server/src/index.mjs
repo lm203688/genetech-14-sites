@@ -476,7 +476,7 @@ server.tool(
 // ============================================================================
 server.tool(
   'submit_request',
-  '为 GeneTech 14 站知识引擎提交结构化数据需求。下游独立项目（蜂群科研数据 / RoboParts / AIShield / 付费客户）通过此工具申请定向采集：指定领域、关键词、时间范围、数量目标与交付格式。返回 request_id，状态默认为 pending_review。幂等：7 天内相同项目 + 相同规格指纹不重复提交。',
+  '为 GeneTech 14 站知识引擎提交结构化数据需求。下游独立项目（蜂群科研数据 / RoboParts / AIShield / 付费客户）通过此工具申请定向采集：指定领域、关键词、时间范围、数量目标与交付格式。返回 request_id（状态默认 pending_review）与 export_url（pull 模式下可直接拉取的交付地址，未履约时该 URL 返回 404）。幂等：7 天内相同项目 + 相同规格指纹不重复提交。',
   {
     project_name: z.string().describe('需求方项目标识，例如 swarmlabs / roboparts / aishield'),
     contact: z.string().describe('联系人邮箱或 GitHub 用户名'),

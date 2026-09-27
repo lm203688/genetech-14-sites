@@ -1,0 +1,17 @@
+{
+  "pipeline": "build-knowledge-graph",
+  "timestamp": "2026-09-27T00:34:03.874Z",
+  "dryRun": false,
+  "stations": 55,
+  "uniqueEntities": 284073,
+  "crossSiteEntities": 12862,
+  "tagKinds": 50065,
+  "nodes": 14355,
+  "edges": 71857,
+  "crossSiteEdges": 29927,
+  "sharedTagEdges": 38930,
+  "coTopicEdges": 3000,
+  "entityEntityEdges": 3000,
+  "pairCandidates": 299274,
+  "bytes": 12300942
+}

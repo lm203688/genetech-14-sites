@@ -7,6 +7,7 @@ on:
     branches: [master]
     paths:
       - '*/website/api/*.json'
+      - 'data/*.json'
       - 'tools/build-site.mjs'
       - 'content/blog/**'
       - '.github/workflows/pages-deploy.yml'
@@ -76,8 +77,23 @@ jobs:
               fi
             done
           done
+          # 聚合数据产物：Worker（api.swarmlabs.tools）把上游映射到
+          # data.swarmlabs.tools/data/*.json。缺失会让 /v1/oss/registry 与
+          # /v1/search/semantic 全部哑火。build-site.mjs 的 syncAggregatedData()
+          # 负责把 data/*.json 复制到 _site/data/，这里对产物做硬校验防回归。
+          for f in \
+            data/knowledge-graph.json \
+            data/knowledge-graph-entities.json \
+            data/search-index.json \
+            data/oss-registry.json \
+            data/data-requests.json; do
+            if [ ! -s "_site/$f" ]; then
+              echo "::error::缺失聚合数据产物 _site/$f（Worker 上游依赖，会导致语义检索与 OSS 注册表 404）"
+              missing=1
+            fi
+          done
           [ "$missing" = "0" ] || exit 1
-          echo "数据契约校验通过"
+          echo "数据契约校验通过（站点契约 + 聚合产物）"
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1925,6 +1925,22 @@ function syncAggregatedData() {
   const missing = AGGREGATED_DATA_FILES.filter((f) => !fs.existsSync(path.join(destDir, f)));
   if (missing.length) console.warn(`[data][CONTRACT] 部署目录缺少关键聚合文件: ${missing.join(', ')}`);
   else console.log(`[data] 已同步 ${AGGREGATED_DATA_FILES.length} 个聚合数据文件 → ${OUT}/data/`);
+
+  // 数据需求交付产物：data/export/<request_id>.json → _site/data/export/
+  // 消费方经 data.swarmlabs.tools/data/export/<request_id>.json 直接拉取（pull 模式）。
+  // 该 URL 在提交需求时即写入 export_url，未交付时返回 404 即为「尚未履约」信号。
+  const exportSrc = path.join(srcDir, 'export');
+  const exportDest = path.join(destDir, 'export');
+  if (fs.existsSync(exportSrc)) {
+    fs.mkdirSync(exportDest, { recursive: true });
+    let n = 0;
+    for (const f of fs.readdirSync(exportSrc)) {
+      if (!f.endsWith('.json')) continue;
+      fs.copyFileSync(path.join(exportSrc, f), path.join(exportDest, f));
+      n++;
+    }
+    console.log(`[data] 已同步 ${n} 个交付产物 → ${OUT}/data/export/`);
+  }
 }
 
 
