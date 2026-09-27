@@ -49,6 +49,17 @@ jobs:
           # 若仓库尚未开启 Pages，自动启用（无需人工进设置页）
           enablement: true
 
+      # ── 编译期契约校验（2026-09-27 新增）──────────────────────────────
+      # 把「部署期发现问题」前移到「构建开始之前」。直接动因：
+      # insights-narrate.mjs 曾在模块顶层无条件执行 main()，其 process.exit(0)
+      # 在 build-site.mjs 里 import 时杀掉整个构建 —— exit=0、Actions 判
+      # success、[data]/[ok] 日志全缺、_site/data/data-requests.json 从未发布。
+      # 部署期的 Verify data contract 是第一次抓住它的，但那已跑完整个构建。
+      # 纯 AST 静态分析、零执行、不 import 任何 tools 模块，因此 Actions 缺
+      # 任何构建依赖也不会误判。只有 P0/P1 才阻断（exit 2），P2 建议不阻断。
+      - name: Compile-time contract check
+        run: node tools/check-build-contract.mjs
+
       - name: Build static site
         env:
           SITE_BASE: ${{ steps.pages.outputs.base_path }}

@@ -12,6 +12,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, 'data');
@@ -274,4 +275,10 @@ function main() {
   console.log(`[kg] 耗时 ${((Date.now() - t0) / 1000).toFixed(1)}s`);
 }
 
-main();
+
+// CLI 守卫：本脚本被 ops-extra.yml 的 kgbuild 任务直接执行，但也可能被其他
+// 脚本 import 复用。与 insights-narrate.mjs 同类风险 —— 若无守卫，被 import
+// 时顶层 main() 会杀掉宿主进程（tools/check-build-contract.mjs 的 cli-guard 检查）。
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main();
+}
