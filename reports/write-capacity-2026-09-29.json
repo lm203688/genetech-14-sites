@@ -1,0 +1,319 @@
+{
+  "generatedAt": "2026-09-29T07:57:29.479Z",
+  "source": "operations-plan/estimate-write-capacity.js",
+  "params": {
+    "threshold": 0.35,
+    "maxTags": 8,
+    "calibCap": 30000
+  },
+  "assumptions": [
+    "增量按 build-site 的 minified 输出（JSON.stringify 无缩进）计量，而非源文件的缩进格式",
+    "写回只补无标签实体，已标注实体不动（pipeline 第 232 行）",
+    "写入字段固定为 tags / tagConfidence / tagSource 三个（pipeline 第 235-237 行）",
+    "假设 build 副产物（citations.csl.json / facets.json / HTML 页面）体积不变——新标签不会改变这些"
+  ],
+  "limits": {
+    "pagesLimitMb": 1014.7,
+    "safeRatio": 0.9,
+    "safeCeilingMb": 913.2
+  },
+  "current": {
+    "siteTotalMb": 649.96,
+    "siteFiles": 1104,
+    "entitiesSourceTotalMb": 487.56,
+    "utilizationNow": "64.1%"
+  },
+  "projection": {
+    "entitiesAfterMb": 477.26,
+    "deltaMb": 8.093,
+    "deltaPct": 1.72,
+    "siteAfterMb": 658.05,
+    "utilizationAfter": "64.9%",
+    "headroomMb": 356.65,
+    "headroomAboveSafeWaterMb": 255.15
+  },
+  "outcome": {
+    "filled": 103829,
+    "abstained": 5728,
+    "noProposal": 0,
+    "entities": 300000,
+    "fillRate": 34.61
+  },
+  "verdict": "OK 有足够余量，可以写回",
+  "elapsedMs": {
+    "calibrate": 8493,
+    "total": 29372
+  },
+  "perSite": [
+    {
+      "site": "sat-6g",
+      "entities": 10000,
+      "filledHere": 6063,
+      "beforeMb": 12.546,
+      "afterMb": 13.064,
+      "deltaMb": 0.518,
+      "deltaPct": 4.12
+    },
+    {
+      "site": "neuromorphic",
+      "entities": 10000,
+      "filledHere": 6782,
+      "beforeMb": 10.754,
+      "afterMb": 11.254,
+      "deltaMb": 0.5,
+      "deltaPct": 4.65
+    },
+    {
+      "site": "semiconductor",
+      "entities": 10000,
+      "filledHere": 5645,
+      "beforeMb": 12.123,
+      "afterMb": 12.586,
+      "deltaMb": 0.464,
+      "deltaPct": 3.83
+    },
+    {
+      "site": "privacy-computing",
+      "entities": 10000,
+      "filledHere": 5296,
+      "beforeMb": 13.195,
+      "afterMb": 13.651,
+      "deltaMb": 0.456,
+      "deltaPct": 3.45
+    },
+    {
+      "site": "life-science",
+      "entities": 10000,
+      "filledHere": 5736,
+      "beforeMb": 16.395,
+      "afterMb": 16.85,
+      "deltaMb": 0.455,
+      "deltaPct": 2.78
+    },
+    {
+      "site": "synbio-manufacturing",
+      "entities": 10000,
+      "filledHere": 5016,
+      "beforeMb": 13.973,
+      "afterMb": 14.421,
+      "deltaMb": 0.448,
+      "deltaPct": 3.21
+    },
+    {
+      "site": "tcm-tools",
+      "entities": 10000,
+      "filledHere": 5484,
+      "beforeMb": 11.12,
+      "afterMb": 11.545,
+      "deltaMb": 0.425,
+      "deltaPct": 3.82
+    },
+    {
+      "site": "new-energy",
+      "entities": 10000,
+      "filledHere": 5398,
+      "beforeMb": 11.735,
+      "afterMb": 12.148,
+      "deltaMb": 0.412,
+      "deltaPct": 3.51
+    },
+    {
+      "site": "genetech-tools",
+      "entities": 10000,
+      "filledHere": 4954,
+      "beforeMb": 16.946,
+      "afterMb": 17.343,
+      "deltaMb": 0.397,
+      "deltaPct": 2.34
+    },
+    {
+      "site": "spatial-computing",
+      "entities": 10000,
+      "filledHere": 5430,
+      "beforeMb": 14.637,
+      "afterMb": 15.025,
+      "deltaMb": 0.388,
+      "deltaPct": 2.65
+    },
+    {
+      "site": "low-altitude",
+      "entities": 10000,
+      "filledHere": 4785,
+      "beforeMb": 18.136,
+      "afterMb": 18.494,
+      "deltaMb": 0.358,
+      "deltaPct": 1.97
+    },
+    {
+      "site": "nuclear-energy",
+      "entities": 10000,
+      "filledHere": 4214,
+      "beforeMb": 14.252,
+      "afterMb": 14.549,
+      "deltaMb": 0.296,
+      "deltaPct": 2.08
+    },
+    {
+      "site": "robot-parts",
+      "entities": 10000,
+      "filledHere": 4272,
+      "beforeMb": 12.565,
+      "afterMb": 12.859,
+      "deltaMb": 0.295,
+      "deltaPct": 2.34
+    },
+    {
+      "site": "quantum-computing",
+      "entities": 10000,
+      "filledHere": 3943,
+      "beforeMb": 12.927,
+      "afterMb": 13.213,
+      "deltaMb": 0.286,
+      "deltaPct": 2.21
+    },
+    {
+      "site": "edge-ai",
+      "entities": 10000,
+      "filledHere": 3371,
+      "beforeMb": 15.1,
+      "afterMb": 15.364,
+      "deltaMb": 0.265,
+      "deltaPct": 1.75
+    },
+    {
+      "site": "quantum-materials",
+      "entities": 10000,
+      "filledHere": 3525,
+      "beforeMb": 14.597,
+      "afterMb": 14.847,
+      "deltaMb": 0.25,
+      "deltaPct": 1.71
+    },
+    {
+      "site": "brain-science",
+      "entities": 10000,
+      "filledHere": 2477,
+      "beforeMb": 15.76,
+      "afterMb": 15.958,
+      "deltaMb": 0.198,
+      "deltaPct": 1.26
+    },
+    {
+      "site": "agritech",
+      "entities": 10000,
+      "filledHere": 2366,
+      "beforeMb": 16.385,
+      "afterMb": 16.567,
+      "deltaMb": 0.182,
+      "deltaPct": 1.11
+    },
+    {
+      "site": "biocomputing",
+      "entities": 10000,
+      "filledHere": 1918,
+      "beforeMb": 17.869,
+      "afterMb": 18.031,
+      "deltaMb": 0.162,
+      "deltaPct": 0.9
+    },
+    {
+      "site": "biomed-ai",
+      "entities": 10000,
+      "filledHere": 1909,
+      "beforeMb": 17.843,
+      "afterMb": 18.003,
+      "deltaMb": 0.159,
+      "deltaPct": 0.89
+    },
+    {
+      "site": "deep-sea-tech",
+      "entities": 10000,
+      "filledHere": 1912,
+      "beforeMb": 17.134,
+      "afterMb": 17.286,
+      "deltaMb": 0.152,
+      "deltaPct": 0.88
+    },
+    {
+      "site": "ai4science",
+      "entities": 10000,
+      "filledHere": 1790,
+      "beforeMb": 18.437,
+      "afterMb": 18.582,
+      "deltaMb": 0.145,
+      "deltaPct": 0.79
+    },
+    {
+      "site": "exo-science",
+      "entities": 10000,
+      "filledHere": 1971,
+      "beforeMb": 18.165,
+      "afterMb": 18.304,
+      "deltaMb": 0.139,
+      "deltaPct": 0.77
+    },
+    {
+      "site": "agent-ecosystem",
+      "entities": 10000,
+      "filledHere": 1519,
+      "beforeMb": 19.78,
+      "afterMb": 19.906,
+      "deltaMb": 0.126,
+      "deltaPct": 0.64
+    },
+    {
+      "site": "embodied-ai",
+      "entities": 10000,
+      "filledHere": 1536,
+      "beforeMb": 19.546,
+      "afterMb": 19.66,
+      "deltaMb": 0.114,
+      "deltaPct": 0.58
+    },
+    {
+      "site": "alien-minerals",
+      "entities": 10000,
+      "filledHere": 1542,
+      "beforeMb": 15.463,
+      "afterMb": 15.576,
+      "deltaMb": 0.113,
+      "deltaPct": 0.73
+    },
+    {
+      "site": "digital-twin",
+      "entities": 10000,
+      "filledHere": 1298,
+      "beforeMb": 17.901,
+      "afterMb": 18.014,
+      "deltaMb": 0.113,
+      "deltaPct": 0.63
+    },
+    {
+      "site": "carbon-neutral",
+      "entities": 10000,
+      "filledHere": 1444,
+      "beforeMb": 16.882,
+      "afterMb": 16.986,
+      "deltaMb": 0.104,
+      "deltaPct": 0.61
+    },
+    {
+      "site": "bionic-ai",
+      "entities": 10000,
+      "filledHere": 1210,
+      "beforeMb": 18.47,
+      "afterMb": 18.561,
+      "deltaMb": 0.09,
+      "deltaPct": 0.49
+    },
+    {
+      "site": "ai-safety",
+      "entities": 10000,
+      "filledHere": 1023,
+      "beforeMb": 18.529,
+      "afterMb": 18.611,
+      "deltaMb": 0.082,
+      "deltaPct": 0.44
+    }
+  ]
+}

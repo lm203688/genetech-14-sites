@@ -11,7 +11,12 @@
  *   const data = await breaker.execute(() => fetchArxiv(query));
  *
  * 与 resilience4j / Hystrix 语义对齐，零外部依赖。
+ *
+ * 注意：被 import 时不执行任何副作用（下方冒烟测试有 ESM 主入口守卫）。
  */
+
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 export class CircuitBreaker {
   constructor(options = {}) {
@@ -136,7 +141,10 @@ export async function runWithBreakers(breakers, sources) {
 }
 
 // 冒烟测试
-if (import.meta.url === `file://${process.argv[1]}`) {
+// 守卫用 path.resolve 双侧对比：旧写法 `import.meta.url === 'file://' + argv[1]`
+// 在非 ASCII 工作目录（如 C:\Users\xing\Desktop\知识引擎14站）下永不匹配，
+// 导致直接 `node tools/circuit-breaker.mjs` 静默不跑任何测试。
+if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url))) {
   const cb = new CircuitBreaker({name: 'test', threshold: 3, cooldownMs: 1000});
   let calls = 0;
 

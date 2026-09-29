@@ -6,7 +6,12 @@
  * 与 Great Expectations / dbt tests 语义对齐，零外部依赖。
  *
  * 与 TECH-DEEP-DIVE v2 E6 对应。
+ *
+ * 注意：被 import 时不执行任何副作用（下方冒烟测试有 ESM 主入口守卫）。
  */
+
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 /** 默认校验规则（各站可覆盖） */
 const DEFAULT_EXPECTATIONS = {
@@ -151,7 +156,10 @@ export function summary(result) {
 }
 
 // 冒烟测试
-if (import.meta.url === `file://${process.argv[1]}`) {
+// 守卫用 path.resolve 双侧对比：旧写法 `import.meta.url === 'file://' + argv[1]`
+// 在非 ASCII 工作目录（如 C:\Users\xing\Desktop\知识引擎14站）下永不匹配，
+// 导致直接 `node tools/data-quality.mjs` 静默不跑任何测试。
+if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url))) {
   const good = [
     {id:'a', title:'Good Title', domain:'swarmlabs', abstract:'x', authors:['Alice'], provenance:{source_url:'http://x'}},
     {id:'b', title:'Another', domain:'genetech', authors:['Bob'], provenance:{source_url:'http://y'}}

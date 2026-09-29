@@ -19,6 +19,9 @@ const path = require('path');
 const https = require('https');
 const http = require('http');
 
+// UA 单一真源：同一上游身份不一致会切碎按-UA 限流配额
+const UA = require('./lib/user-agent.cjs').USER_AGENT;
+
 // ==================== 配置区 ====================
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
@@ -297,7 +300,7 @@ async function monitorReddit(dryRun) {
 
     try {
       const res = await withRetry(() => httpGet(url, {
-        headers: { 'User-Agent': 'GeneTechBot/1.0' },
+        headers: { 'User-Agent': UA },
       }), 2, 2000);
       if (res.statusCode !== 200) {
         console.warn(`[Intel] Reddit r/${sub} HTTP ${res.statusCode}`);

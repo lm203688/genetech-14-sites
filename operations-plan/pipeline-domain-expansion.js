@@ -20,6 +20,9 @@ const https = require('https');
 const http = require('http');
 const { execSync } = require('child_process');
 
+// UA 单一真源：同一上游身份不一致会切碎按-UA 限流配额
+const UA = require('./lib/user-agent.cjs').USER_AGENT;
+
 // ==================== 配置区 ====================
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
@@ -233,7 +236,7 @@ async function collectGitHubSignals(dryRun) {
 
   const token = process.env.GITHUB_TOKEN || '';
   const headers = {
-    'User-Agent': 'GeneTechBot/1.0',
+    'User-Agent': UA,
     'Accept': 'application/vnd.github.v3+json',
   };
   if (token) headers['Authorization'] = `token ${token}`;

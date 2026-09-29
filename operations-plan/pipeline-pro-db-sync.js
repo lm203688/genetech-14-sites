@@ -41,7 +41,7 @@ async function main() {
   }
   report.fetched = dois.size;
 
-  const ua = { 'User-Agent': 'GeneTechBot/1.0 (mailto:ops@genetech.example)' };
+  const ua = { 'User-Agent': require('./lib/user-agent.cjs').USER_AGENT };
   let done = 0;
   for (const doi of dois) {
     if (mapping.dois[doi]) { done++; continue; } // 已映射，跳过

@@ -19,6 +19,9 @@ const path = require('path');
 const https = require('https');
 const http = require('http');
 
+// UA 单一真源：对同一上游（OpenAlex/Crossref/GitHub）身份不一致会切碎对方的按-UA 限流配额
+const UA = require('./lib/user-agent.cjs').USER_AGENT;
+
 // ==================== 配置区 ====================
 
 /** 项目根目录 */
@@ -443,7 +446,7 @@ async function fetchOpenAlex(dryRun, state) {
     }
 
     try {
-      const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': 'GeneTechBot/1.0 (mailto:ops@genetech.example)' } }), 3, 2000);
+      const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': UA } }), 3, 2000);
       if (res.statusCode !== 200) {
         console.error(`[OpenAlex] 请求失败: HTTP ${res.statusCode}`);
         continue;
@@ -505,7 +508,7 @@ async function fetchCrossref(dryRun, state) {
   }
 
   try {
-    const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': 'GeneTechBot/1.0 (mailto:ops@genetech.example)' } }), 3, 2000);
+    const res = await withRetry(() => httpGet(url, { headers: { 'User-Agent': UA } }), 3, 2000);
     if (res.statusCode !== 200) {
       console.error(`[Crossref] 请求失败: HTTP ${res.statusCode}`);
       return results;
@@ -550,7 +553,7 @@ async function fetchGitHub(dryRun, state) {
   // 设置 token 后为认证请求，速率限制提升至 5000 次/小时
   const token = process.env.GITHUB_TOKEN || '';
   const headers = {
-    'User-Agent': 'GeneTechBot/1.0',
+    'User-Agent': UA,
     'Accept': 'application/vnd.github.v3+json',
   };
   if (token) {

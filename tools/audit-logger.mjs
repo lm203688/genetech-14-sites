@@ -113,7 +113,8 @@ export class AuditLogger {
 }
 
 // 方便 script 入口
-if (import.meta.url === `file://${process.argv[1]}`) {
+// 守卫用 path.resolve 双侧对比：旧写法在非 ASCII 工作目录（知识引擎14站）下永不匹配。
+if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url))) {
   const log = new AuditLogger({actor: 'cli_test'});
   log.emit({stage:'fetch', action:'test', status:'ok', site:'swarmlabs'});
   log.emit({stage:'publish', action:'write', status:'error', error:'EACCES'});

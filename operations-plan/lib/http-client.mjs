@@ -22,11 +22,16 @@
 
 import { fileURLToPath } from 'url';
 import path from 'path';
+// 注：用 default import 而非 named import——Node 的 cjs-module-lexer 对本文件的
+// module.exports 静态分析不稳定，会报 "Named export not found"。default import
+// 是 Node 文档给出的可靠写法。
+import uaCjs from './user-agent.cjs';
 
 // ============================================================
-// 唯一 UA 来源（此前 3 处不一致，此为单一真源）
+// 唯一 UA 来源（此前 4 种并存值，已收敛到 ./user-agent.cjs）
+// 这里 re-export 仅为向后兼容 lib/http-client.mjs 的既有调用方
 // ============================================================
-export const USER_AGENT = 'GeneTechBot/2.0 (+https://swarmlabs.tools/; mailto:ops@swarmlabs.tools)';
+export const USER_AGENT = uaCjs.USER_AGENT;
 
 export const DEFAULT_TIMEOUT_MS = 30_000;
 export const DEFAULT_CONCURRENCY = 3;
@@ -148,6 +153,23 @@ export async function withRetry(fn, opts = {}) {
     }
   }
   throw lastErr;
+}
+
+/**
+ * 向后兼容桥接：签名与 operations-plan/pipeline-*.js 里各自的那 6 份本地
+ * withRetry(fn, maxRetries, baseDelayMs) 完全一致（位置参数、返回裸值而非
+ * {value, attempts}）。
+ *
+ * 存在的意义是降低收口成本：迁移一个 pipeline 时，只需删掉本地定义、
+ * 把 import 指过来，调用点零改动。等所有调用点迁完再删掉它。
+ *
+ * @param {Function} fn
+ * @param {number}   maxRetries   旧签名第 2 位（0 表示不重试）
+ * @param {number}   baseDelayMs  旧签名第 3 位
+ */
+export async function withRetryValue(fn, maxRetries = 3, baseDelayMs = 1000) {
+  const { value } = await withRetry(fn, { maxRetries, baseDelayMs });
+  return value;
 }
 
 export function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }

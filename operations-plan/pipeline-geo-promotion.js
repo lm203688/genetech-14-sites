@@ -24,6 +24,10 @@ const https = require('https');
 const http = require('http');
 const { execSync } = require('child_process');
 
+// UA 单一真源：此前本站专用 'genetech-geo-bot' 与其他 pipeline 不一致，
+// 对 IndexNow / sitemap ping / GitHub API 均无功能要求，统一到全局 UA
+const UA = require('./lib/user-agent.cjs').USER_AGENT;
+
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const STATE_DIR = path.join(PROJECT_ROOT, 'state');
 const REPORTS_DIR = path.join(PROJECT_ROOT, 'reports');
@@ -95,7 +99,7 @@ function httpReq(urlStr, { method = 'GET', headers = {}, body } = {}) {
         path: url.pathname + url.search,
         method,
         headers: {
-          'User-Agent': 'genetech-geo-bot',
+          'User-Agent': UA,
           ...(body ? { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) } : {}),
           ...headers,
         },

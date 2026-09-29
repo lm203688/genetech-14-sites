@@ -338,7 +338,7 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 async function readJsonSafe(p) { try { return JSON.parse(await fs.readFile(p, 'utf-8')); } catch { return null; } }
 async function ensureDir(d) { try { await fs.mkdir(d, { recursive: true }); } catch {} }
 
-const UA = 'GeneTechBot/2.0 (mailto:ops@genetech.example)';
+const UA = require('./lib/user-agent.cjs').USER_AGENT;
 
 function stripTags(s) {
   if (!s) return '';
