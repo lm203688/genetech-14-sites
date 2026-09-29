@@ -58,10 +58,10 @@
 
 | 文件 | 行数 | 作用 |
 |---|---|---|
-| `operations-plan/lib/labeling-functions.mjs` | ~640 | 15 个 LF + 标定 + 相关度估计 + LabelModel |
-| `operations-plan/lib/adaptive-fields.mjs` | ~230 | 候选路径降级 + JATS/倒排摘要还原 + 漂移指纹 |
-| `operations-plan/lib/http-client.mjs` | ~250 | 统一 UA / 重试 / 429 感知 / 自动节流 / 并发批处理 / 熔断 |
-| `operations-plan/pipeline-label-program.js` | ~290 | 主流水线，默认 dry-run，`--write` 显式写回 |
+| `operations-plan/lib/labeling-functions.mjs` | 746 | 15 个 LF + 标定 + 相关度估计 + LabelModel |
+| `operations-plan/lib/adaptive-fields.mjs` | 282 | 候选路径降级 + JATS/倒排摘要还原 + 漂移指纹 |
+| `operations-plan/lib/http-client.mjs` | 331 | 统一 UA / 重试 / 429 感知 / 自动节流 / 并发批处理 / 熔断 |
+| `operations-plan/pipeline-label-program.js` | 264 | 主流水线，默认 dry-run，`--write` 显式写回 |
 
 **为什么 http-client 是 CommonJS 生态里的 ESM**：pipeline 用 `await import()` 加载，所以 `.mjs` 可被 `.js` pipeline 复用，而纯 `.js` CJS 无法被 `.mjs` 静态 `import`。
 
