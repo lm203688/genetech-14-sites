@@ -9,8 +9,9 @@
 
 | 来源 | 判断 | 落地形式 |
 |---|---|---|
-| **Snorkel 的 Labeling Functions + LabelModel** | ✅ 直接落地 | `operations-plan/lib/labeling-functions.mjs`（15 个 LF + LabelModel），300k 实体全量跑通 |
+| **Snorkel 的 Labeling Functions + LabelModel** | ✅ 直接落地 | `operations-plan/lib/labeling-functions.mjs`（16 个 LF + LabelModel），300k 实体全量跑通 |
 | **Snorkel 的 validation split 标定法** | ✅ 直接落地 | 用已标注的 63.5% 实体标定 LF 准确率，替代无 ground truth 的盲估 |
+| **Snorkel 的可靠性估计（往上一层）** | ✅ 落地并见效 | 逐标签标定 phrase→概念 的可靠性，词表 LF 准确率 0.061 → 0.375，见第十节 |
 | **Snorkel 的 Data-as-a-Service 商业模式** | ⚪ 观察，不跟进 | 本项目护城河是 30 站结构化实体，不在训练数据赛道 |
 | **Scrapling 的 Adaptive Parsing** | ✅ 移植思路 | `operations-plan/lib/adaptive-fields.mjs`（候选路径降级 + 漂移指纹） |
 | **Scrapling 的 StealthyFetcher / 反爬** | ❌ 明确不引入 | 11 个数据源均为开放学术 JSON API，无反爬需求；伦理与 ToS 均不应碰 |
@@ -19,6 +20,8 @@
 | **Scrapy / Scrapling 本体** | ❌ 不引入 | 同上，Node 栈 + JSON API 场景下 Selector/Stealth 收益≈0 |
 
 **一句话**：借的是**方法论**（规则投票 + 统计加权、字段自适应、统一请求层），不是框架本体。上一轮已论证过 Python 生态不该引入，本轮在同一个判断上补了两个具体实现。
+
+**当日追加（第十节）**：词表 LF 准确率 0.061 → **0.375**，全量跑 204.6s → **89.0s**。关键发现是"短语在标题里出现 ≠ OpenAlex 指派了该概念"，这层可靠性差异**可测且跨样本稳定**，因而可标定。
 
 ---
 
@@ -58,7 +61,11 @@
 
 | 文件 | 行数 | 作用 |
 |---|---|---|
-| `operations-plan/lib/labeling-functions.mjs` | 746 | 15 个 LF + 标定 + 相关度估计 + LabelModel |
+| `operations-plan/lib/labeling-functions.mjs` | 871 | 16 个 LF + 标定 + 相关度估计 + LabelModel |
+| `operations-plan/lib/vocab.json` | 411.8 KB | 受控词表 2,200 标签 + 逐标签可靠性标定（LF-16 的数据源） |
+| `operations-plan/build-vocab.js` | 232 | 词表生成：df 筛选 + guarded 短语规则 + 可靠性标定 |
+| `operations-plan/experiment-vocab-scope.js` | 157 | 定向实验：匹配作用域对 precision 的影响 |
+| `operations-plan/experiment-vocab-exact.js` | 244 | 定向实验：短语构造与逐标签可靠性（含留一评估） |
 | `operations-plan/lib/adaptive-fields.mjs` | 282 | 候选路径降级 + JATS/倒排摘要还原 + 漂移指纹 |
 | `operations-plan/lib/http-client.mjs` | 331 | 统一 UA / 重试 / 429 感知 / 自动节流 / 并发批处理 / 熔断 |
 | `operations-plan/pipeline-label-program.js` | 264 | 主流水线，默认 dry-run，`--write` 显式写回 |
@@ -194,14 +201,18 @@ conf        = base·likelihoodR / (base·likelihoodR + (1-base))
 
 ## 八、局限（不掩盖）
 
-1. **词表太窄是硬伤**。产出仅 11 个标签，而语料有 8,418 个。`emerging-2024+` 覆盖 68%、`computer science` 覆盖 61%，本质是 era/粗领域标签通吃；`biology`、`quantum computing`、`materials science` 等具体领域标签大多过不了阈值。**LF 框架是对的，词表是当前瓶颈。**
-2. **准确率普遍偏低**（0.14–0.30，除无法校验的 LF）。部分原因是词表窄——窄词表的 LF 在宽语料上必然低命中率。这不等于 LF 错，等于**当前词表不足以评判 LF**。
+> ⚠️ 第 1、2 条已被**第十节**推翻并重写。当时的判断"LF 框架是对的，词表是当前瓶颈"方向对了但**定位错了**——瓶颈不在词表宽度，在单个标签的可靠性差异。以下为当时原文，保留以记录推理路径。
+
+1. ~~**词表太窄是硬伤**~~ → 见第十节，真因是标签可靠性不可标定。
+2. ~~**准确率普遍偏低**~~ → 同上，词表宽度不是原因。
 3. **30.1% 错路由率偏高**，虽已抽样验证为真阳性，但需要人工复核清单才能动作。报告里只留了 50 条样本，全量清单需另外产出。
 4. **未写回任何实体**。90,179 条错路由与 489,114 个标签提案都还在报告里，没有进 `entities.json`。这是刻意的——Pages 容量 99.1%，未做容量核算前不碰生产数据。
 
 ---
 
 ## 九、下一步（按杠杆排序）
+
+> 第 1 项已由第十节完成（词表标定，非扩宽）。剩余项重新排序：
 
 | # | 事项 | 说明 |
 |---|---|---|
@@ -214,19 +225,156 @@ conf        = base·likelihoodR / (base·likelihoodR + (1-base))
 
 ---
 
+## 十、词表瓶颈的三轮定位与修复（同日追加）
+
+第七、八节把瓶颈归因于"词表太窄"。这个方向对了一半——**但定位错了**。用两个定向实验把它钉死后，词表 LF 的标定准确率从 0.061 提到 0.375（6.1 倍），全量跑时间从 204.6s 降到 89.0s。
+
+### 10.0 先修一个让第一批实验作废的 bug
+
+`experiment-vocab-scope.js` 里写着 `if (gold.has(tag)) continue;`——把真实标签整体剔出候选预测空间，而 TP 又按「预测 ∩ gold」算。两者自相矛盾，5 组配置的 TP **结构性恒为 0**、precision 全 0.0000。
+
+那一批发出来的表格里只有**覆盖率与耗时两列是真的**（与预测无关），已被本节复算取代。教训：**指标脚本里的过滤条件必须和判定条件分开审查**——"只看预测"这个直觉在算 precision 时是自杀。
+
+### 10.1 第一轮：作用域（`experiment-vocab-scope.js`，30,000 条已标注实体）
+
+| 配置 | pred | TP | precision | recall | 覆盖率 | 耗时 |
+|---|---|---|---|---|---|---|
+| A 线上（多词=标题+摘要 / 单词=标题） | 185,370 | 11,082 | 0.0598 | 0.0881 | 92.6% | 151.8s |
+| **B 全部仅标题** | **69,575** | 5,729 | **0.0823** | 0.0455 | 77.5% | **20.3s** |
+| C 全部仅标题前 80 字 | 52,576 | 4,329 | 0.0823 | 0.0344 | 68.9% | 19.2s |
+| D 标题+摘要前 300 字 | 168,335 | 10,650 | 0.0633 | 0.0847 | 95.3% | 68.8s |
+| E 全部标题+摘要 | 365,770 | 16,574 | 0.0453 | 0.1318 | 98.8% | 191.3s |
+
+结论明确：**只匹配标题**。precision +38%，预测量 −63%，耗时 151.8s → 20.3s（7.5 倍）。C 与 B precision **完全相同**（0.0823），说明标题前 80 字之后没有边际信息。
+
+但 0.0823 仍然很低。同一次实验的逐标签表暴露了下一个问题。
+
+### 10.2 第二轮：短语扩展自污染（`experiment-vocab-exact.js`）
+
+`build-vocab.js` 的 `phrasesOf()` 会给每个标签追加「最长 3 词子串」。于是：
+
+| 标签 | A 配置预测 | TP | precision |
+|---|---|---|---|
+| `artificial intelligence`（规范形） | 6,467 | 2,354 | **0.364** |
+| `artificial intelligence and image processing` | 6,610 | 0 | 0.000 |
+| `artificial intelligence and robotics` | 6,548 | 4 | 0.0006 |
+| `generative artificial intelligence` | 6,468 | 0 | 0.000 |
+| `artificial intelligence (cs.ai)` | 6,467 | 3 | 0.0005 |
+| `applications of artificial intelligence` | 6,467 | 17 | 0.0026 |
+| `edge artificial intelligence` | 6,467 | 1 | 0.0002 |
+| `frugal artificial intelligence` | 6,467 | 0 | 0.000 |
+
+这 8 个变体**预测次数几乎完全相同**（6,467–6,610）却只有规范形有 TP。不是语料特性，是 `artificial intelligence and image processing` 展开出的子短语 `artificial intelligence` **本身就是一个词表标签**——子短语命中却把功劳记给更长的标签，等于偷走短标签的证据。
+
+修法规则（guarded）：**子短语若本身也是词表标签，则剔除**。同时先做掉一个必须先排除的干扰——那 30k 样本是按站点字母序顺序取的，某些标签在样本内 gold 可能为 0，TP=0 就无信息量。所以逐标签都报 gold，只把 gold ≥ 20 的列为可评判对象（样本内 359 个）。
+
+30k 样本（含 22,500 标定 / 7,500 留一）：
+
+| 短语集（均仅标题） | pred | TP | precision | recall |
+|---|---|---|---|---|
+| variants（线上，含子串扩展） | 63,513 | 5,560 | 0.0875 | 0.0443 |
+| exact（仅标签串本身） | 43,815 | 5,262 | **0.1201** | 0.0419 |
+| guarded（子串扩展但剔除自指子短语） | 46,494 | 5,530 | 0.1189 | 0.0441 |
+
+**但这一轮说明问题主要不在这儿**：24 个高频标签里 20 个三种模式结果完全相同，子短语盗用只污染了 **3 个标签、2,340 次预测、2 次命中**。
+
+### 10.3 第三轮：真因是标签可靠性不可标定（主菜）
+
+同一张表里，precision 差异是结构性的：
+
+| 高可靠标签 | 标定 precision | 低可靠标签 | 标定 precision |
+|---|---|---|---|
+| `cancer` | 0.547 | `precision agriculture` | 0.014 |
+| `agriculture` | 0.481 | `smart farming` | 0.009 |
+| `reinforcement learning` | 0.450 | `control` | 0.051 |
+| `robotics` | 0.448 | `generative ai` | 0.004 |
+| `workflow` | 0.419 | `architecture` | 0.070 |
+
+**根因不是文本匹配失败，而是「短语在标题里出现 ≠ OpenAlex 指派了该概念」。** `precision agriculture` 在标题里出现 943 次，只有 13 篇真的被指派了这个概念——OpenAlex 用自己的 NLP 做归属判定，正文提两个词不等于被指派复合概念。
+
+这是可修的，因为**该差异可测且跨样本稳定**。用 22,500 标定 / 7,500 留一验证：
+
+| 标签 | 标定 precision | 留一 precision |
+|---|---|---|
+| `agriculture` | 0.481 | 0.375 |
+| `cancer` | 0.547 | 0.489 |
+| `robotics` | 0.448 | 0.421 |
+| `systematic review` | 0.259 | 0.349 |
+| `workflow` | 0.419 | 0.316 |
+| `precision agriculture`（被筛掉） | 0.014 | 0.000 |
+| `smart farming`（被筛掉） | 0.009 | 0.000 |
+| `machine learning`（被筛掉） | 0.187 | 0.107 |
+
+保留的都在，剔除的继续坏——**不是过拟合**。
+
+### 10.4 落地与全量结果
+
+改动两处：
+- `operations-plan/build-vocab.js`（232 行）：加 guarded 短语规则 + 逐标签可靠性标定，只保留 `support ≥ 50 且 precision ≥ 0.2` 的标签，其余清空 `phrases`（LF 侧天然安全）但保留 `reliability` 供审计
+- `operations-plan/lib/labeling-functions.mjs`（871 行）：LF-16 改为纯标题域，`buildVocabIndex()` 加硬守卫（`keep === false` 或 `phrases` 为空的标签绝不进索引）
+
+全量 190,443 条已标注实体标定：
+
+| | pred | TP | precision |
+|---|---|---|---|
+| 全词表 2,200 标签 | 319,898 | 53,244 | 0.1664 |
+| **筛选后 245 标签** | 92,043 | 37,691 | **0.4095** |
+
+precision **2.46 倍**，预测量 −71%，TP 保留 71%。
+
+全量 pipeline 重跑（`--threshold=0.35`）：
+
+| 指标 | 修前 | 修后 |
+|---|---|---|
+| `lf_corpus_vocab` 标定准确率 | 0.061 | **0.375**（6.1 倍） |
+| `lf_corpus_vocab` 权重 | 全场垫底 | **0.291，全场第 2** |
+| distinctTags | 11 | **91** |
+| 平均置信度 | 0.5214 | 0.5281 |
+| 全量耗时 | 204.6s | **89.0s**（2.3 倍） |
+| 填充 / 弃权 | — | 283,763 / 16,237 |
+| 产出标签 | — | 495,273 |
+| 错路由 | — | 88,889 |
+
+distinctTags 从上一轮未筛选时的 698 降到 91，**这是刻意的不是回退**——那 698 里有大量低置信度噪声被阈值滤掉了，distinctTags 从来不是成功指标，precision 才是。
+
+### 10.5 方法论收获（比数字更重要）
+
+**Snorkel 的可靠性估计可以往上一层用。** 标准用法是估计 LF 的准确率并加权合并；这里把同一套思路用在 LF **自己的特征**上——一个词表 LF 的准确率上限被它每个标签的可靠性约束，必须先标定特征再谈 LF 加权。逐标签 precision 是稳定的、可标定的、跨样本可迁移的，所以它是一个可以直接算出来的量，不需要人工判断。
+
+这也是一次**负向归因的完整链路**：先怀疑作用域（成立但非主因）→ 再怀疑短语构造（成立但只占 3 个标签）→ 最后定位到标签可靠性（主因）。前两轮各自都把 precision 从 0.06 提到 0.09 左右，看起来"改进了"，但都不是真因。
+
+### 10.6 新发现：`vocab.json` 从未进远端
+
+查远端树时发现 `operations-plan/lib/vocab.json` 一直是 MISS——上一轮推送漏了它。远端 LF-16 的 `buildVocabIndex()` 因文件不存在**静默返回 null、整个 LF 空跑**，没有报错、没有日志。`labeling-functions.mjs` 里那行 `if (!idx) return votes([]);` 是防御性正确的，但代价是**一个 LF 可以在生产上彻底失效而不留痕迹**。
+
+本轮一并推送。教训：**"优雅降级"在离线脚本里是优点，在生产上是静默故障**。这类 LF 至少应该在报告里报一句 `vocabIndex: null`，否则只能靠人肉核对远端树发现。
+
+---
+
 ## 附：可复现命令
 
 ```bash
-# 全量（89.6s）
-node operations-plan/pipeline-label-program.js --threshold=0.3
+# 重建受控词表（含可靠性标定，11.3s）
+node operations-plan/build-vocab.js --min-df=20 --max-tags=2200 --min-support=50 --pr-th=0.2
+
+# 全量（89.0s，2026-09-29 第十节修正后）
+node operations-plan/pipeline-label-program.js --threshold=0.35
 
 # 限定站点 + 更保守阈值
 node operations-plan/pipeline-label-program.js --sites=biomed-ai,quantum-computing --threshold=0.35
+
+# 两个定向实验（第十节）
+node operations-plan/experiment-vocab-scope.js    # 作用域对照，30k 实体 338s
+node operations-plan/experiment-vocab-exact.js    # 短语构造 + 留一评估，30k 实体 1s
 
 # 三个 lib 的自检
 node operations-plan/lib/labeling-functions.mjs
 node operations-plan/lib/adaptive-fields.mjs
 node operations-plan/lib/http-client.mjs
+
+# 远端核查（推送漏件排查）
+node .workbuddy/probe/check-remote-head.mjs "operations-plan/lib/vocab.json"
+node .workbuddy/probe/show-lf-report.mjs
 ```
 
 回归验证方式：把某个 LF 替换为恒投错标签的函数，观察其权重是否被标定压下去。实测注入后权重从 0.158 降到 0.032（降 5 倍），独立 LF 支持的标签置信度仍稳定在 0.743，而假标签仅到 0.6——**标定真的在起作用，不是装饰**。

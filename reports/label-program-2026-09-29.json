@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-29T04:52:01.029Z",
+  "generatedAt": "2026-09-29T05:48:43.569Z",
   "mode": "dry-run",
-  "threshold": 0.3,
+  "threshold": 0.35,
   "maxTags": 8,
   "engine": {
-    "lfs": 15,
+    "lfs": 16,
     "calibrationSet": 30000,
     "calibrationMethod": "已标注子集上的 LF 命中率（Snorkel validation split）",
     "correlationSamples": 4000
@@ -199,13 +199,13 @@
     ]
   },
   "labelProgram": {
-    "abstained": 16095,
-    "filled": 283905,
-    "abstainRate": 0.0537,
-    "totalLabels": 489114,
-    "avgConfidence": 0.5214,
-    "avgLabelsPerEntity": 1.723,
-    "distinctTags": 11,
+    "abstained": 16237,
+    "filled": 283763,
+    "abstainRate": 0.0541,
+    "totalLabels": 495273,
+    "avgConfidence": 0.5281,
+    "avgLabelsPerEntity": 1.745,
+    "distinctTags": 91,
     "topTags": [
       {
         "tag": "emerging-2024+",
@@ -214,8 +214,8 @@
       },
       {
         "tag": "computer science",
-        "count": 182309,
-        "share": 0.6077
+        "count": 168998,
+        "share": 0.5633
       },
       {
         "tag": "recent-2020s",
@@ -238,9 +238,39 @@
         "share": 0.058
       },
       {
+        "tag": "artificial intelligence",
+        "count": 7296,
+        "share": 0.0243
+      },
+      {
         "tag": "randomized-controlled-trial",
         "count": 2929,
         "share": 0.0098
+      },
+      {
+        "tag": "biomanufacturing",
+        "count": 967,
+        "share": 0.0032
+      },
+      {
+        "tag": "acupuncture",
+        "count": 767,
+        "share": 0.0026
+      },
+      {
+        "tag": "metabolic engineering",
+        "count": 717,
+        "share": 0.0024
+      },
+      {
+        "tag": "qubit",
+        "count": 464,
+        "share": 0.0015
+      },
+      {
+        "tag": "quantum key distribution",
+        "count": 430,
+        "share": 0.0014
       },
       {
         "tag": "中文文献",
@@ -248,19 +278,84 @@
         "share": 0.0014
       },
       {
-        "tag": "interdisciplinary",
-        "count": 36,
-        "share": 0.0001
+        "tag": "electrode",
+        "count": 287,
+        "share": 0.001
       },
       {
-        "tag": "cross-domain-bridge",
-        "count": 36,
-        "share": 0.0001
+        "tag": "medicinal plants",
+        "count": 239,
+        "share": 0.0008
       },
       {
-        "tag": "medicine",
-        "count": 10,
-        "share": 0
+        "tag": "methane",
+        "count": 211,
+        "share": 0.0007
+      },
+      {
+        "tag": "dna computing",
+        "count": 204,
+        "share": 0.0007
+      },
+      {
+        "tag": "energy transition",
+        "count": 200,
+        "share": 0.0007
+      },
+      {
+        "tag": "propulsion",
+        "count": 199,
+        "share": 0.0007
+      },
+      {
+        "tag": "wastewater",
+        "count": 195,
+        "share": 0.0006
+      },
+      {
+        "tag": "air pollution",
+        "count": 194,
+        "share": 0.0006
+      },
+      {
+        "tag": "hydrogen production",
+        "count": 186,
+        "share": 0.0006
+      },
+      {
+        "tag": "photon",
+        "count": 177,
+        "share": 0.0006
+      },
+      {
+        "tag": "subsea",
+        "count": 175,
+        "share": 0.0006
+      },
+      {
+        "tag": "zinc",
+        "count": 171,
+        "share": 0.0006
+      },
+      {
+        "tag": "carbonate",
+        "count": 162,
+        "share": 0.0005
+      },
+      {
+        "tag": "sulfur",
+        "count": 158,
+        "share": 0.0005
+      },
+      {
+        "tag": "arctic",
+        "count": 158,
+        "share": 0.0005
+      },
+      {
+        "tag": "coal",
+        "count": 156,
+        "share": 0.0005
       }
     ]
   },
@@ -273,6 +368,15 @@
       "abstainRate": 0.703,
       "novelty": 0.967,
       "weight": 0.363
+    },
+    {
+      "id": "lf_corpus_vocab",
+      "desc": "受控词表精确短语匹配（标题域 + 逐标签可靠性筛选）",
+      "accuracy": 0.375,
+      "negReliability": 1,
+      "abstainRate": 0.707,
+      "novelty": 0.769,
+      "weight": 0.291
     },
     {
       "id": "lf_source_prior",
@@ -402,55 +506,55 @@
     }
   ],
   "misroutes": {
-    "count": 90179,
+    "count": 88889,
     "byTag": [
       {
         "tag": "materials science",
-        "count": 15721
+        "count": 15767
       },
       {
         "tag": "environmental science",
-        "count": 14813
+        "count": 14831
       },
       {
         "tag": "computer science",
-        "count": 13391
+        "count": 12247
       },
       {
         "tag": "psychology",
-        "count": 11753
+        "count": 11780
       },
       {
         "tag": "artificial intelligence",
-        "count": 9759
+        "count": 9563
       },
       {
         "tag": "biology",
-        "count": 9410
+        "count": 9373
       },
       {
         "tag": "neuroscience",
-        "count": 3123
+        "count": 3126
       },
       {
         "tag": "medicine",
-        "count": 3099
+        "count": 3107
       },
       {
         "tag": "robotics",
-        "count": 2562
+        "count": 2559
       },
       {
         "tag": "machine learning",
-        "count": 2486
+        "count": 2500
       },
       {
         "tag": "biotechnology",
-        "count": 2448
+        "count": 2420
       },
       {
         "tag": "quantum computing",
-        "count": 991
+        "count": 993
       },
       {
         "tag": "natural language processing",
@@ -460,7 +564,7 @@
     "bySite": [
       {
         "site": "genetech-tools",
-        "count": 9176
+        "count": 8730
       },
       {
         "site": "ai-safety",
@@ -468,75 +572,75 @@
       },
       {
         "site": "digital-twin",
-        "count": 5118
+        "count": 5091
       },
       {
         "site": "low-altitude",
-        "count": 4909
-      },
-      {
-        "site": "biocomputing",
-        "count": 4770
+        "count": 4913
       },
       {
         "site": "carbon-neutral",
-        "count": 4738
+        "count": 4770
       },
       {
         "site": "brain-science",
-        "count": 4624
+        "count": 4631
       },
       {
         "site": "deep-sea-tech",
-        "count": 4528
+        "count": 4558
       },
       {
         "site": "neuromorphic",
         "count": 4338
       },
       {
+        "site": "biocomputing",
+        "count": 4291
+      },
+      {
         "site": "nuclear-energy",
-        "count": 3890
+        "count": 3896
       },
       {
         "site": "bionic-ai",
-        "count": 3843
+        "count": 3869
       },
       {
         "site": "exo-science",
-        "count": 3608
+        "count": 3618
       },
       {
         "site": "life-science",
-        "count": 3012
+        "count": 3014
       },
       {
         "site": "biomed-ai",
         "count": 2976
       },
       {
+        "site": "tcm-tools",
+        "count": 2923
+      },
+      {
         "site": "agritech",
         "count": 2912
       },
       {
-        "site": "tcm-tools",
-        "count": 2892
-      },
-      {
         "site": "synbio-manufacturing",
-        "count": 2830
-      },
-      {
-        "site": "semiconductor",
-        "count": 2641
+        "count": 2653
       },
       {
         "site": "alien-minerals",
-        "count": 2300
+        "count": 2317
+      },
+      {
+        "site": "semiconductor",
+        "count": 2315
       },
       {
         "site": "ai4science",
-        "count": 1978
+        "count": 1980
       },
       {
         "site": "new-energy",
@@ -544,7 +648,7 @@
       },
       {
         "site": "quantum-computing",
-        "count": 1522
+        "count": 1544
       },
       {
         "site": "agent-ecosystem",
@@ -552,11 +656,11 @@
       },
       {
         "site": "sat-6g",
-        "count": 1188
+        "count": 1178
       },
       {
         "site": "quantum-materials",
-        "count": 958
+        "count": 962
       },
       {
         "site": "embodied-ai",
@@ -564,7 +668,7 @@
       },
       {
         "site": "privacy-computing",
-        "count": 532
+        "count": 514
       },
       {
         "site": "robot-parts",
@@ -925,7 +1029,7 @@
       }
     ]
   },
-  "elapsedMs": 89600,
+  "elapsedMs": 88962,
   "samples": [
     {
       "id": "arxiv-2607.29677v1",
@@ -935,7 +1039,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -946,7 +1050,7 @@
           "confidence": 0.418,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.224,
+          "coverage": 0.194,
           "prior": 0.345,
           "sources": [
             "lf_abstract_keywords",
@@ -963,7 +1067,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -974,7 +1078,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -985,7 +1089,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -996,7 +1100,7 @@
           "confidence": 0.418,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.224,
+          "coverage": 0.194,
           "prior": 0.345,
           "sources": [
             "lf_abstract_keywords",
@@ -1013,7 +1117,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1024,7 +1128,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -1035,7 +1139,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -1046,7 +1150,7 @@
           "confidence": 0.418,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.224,
+          "coverage": 0.194,
           "prior": 0.345,
           "sources": [
             "lf_abstract_keywords",
@@ -1063,7 +1167,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1074,7 +1178,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -1085,7 +1189,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -1096,7 +1200,7 @@
           "confidence": 0.463,
           "support": 3,
           "oppose": 0,
-          "coverage": 0.328,
+          "coverage": 0.283,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1114,7 +1218,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1125,7 +1229,7 @@
           "confidence": 0.418,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.224,
+          "coverage": 0.194,
           "prior": 0.345,
           "sources": [
             "lf_abstract_keywords",
@@ -1142,7 +1246,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1153,7 +1257,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -1164,7 +1268,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -1175,7 +1279,7 @@
           "confidence": 0.418,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.224,
+          "coverage": 0.194,
           "prior": 0.345,
           "sources": [
             "lf_abstract_keywords",
@@ -1192,7 +1296,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1203,7 +1307,7 @@
           "confidence": 0.418,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.224,
+          "coverage": 0.194,
           "prior": 0.345,
           "sources": [
             "lf_abstract_keywords",
@@ -1220,7 +1324,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1231,7 +1335,7 @@
           "confidence": 0.418,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.224,
+          "coverage": 0.194,
           "prior": 0.345,
           "sources": [
             "lf_abstract_keywords",
@@ -1248,7 +1352,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1259,7 +1363,7 @@
           "confidence": 0.463,
           "support": 3,
           "oppose": 0,
-          "coverage": 0.328,
+          "coverage": 0.283,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1277,7 +1381,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1288,7 +1392,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -1299,7 +1403,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -1310,7 +1414,7 @@
           "confidence": 0.463,
           "support": 3,
           "oppose": 0,
-          "coverage": 0.328,
+          "coverage": 0.283,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1328,7 +1432,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1339,7 +1443,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -1350,7 +1454,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.011,
+          "coverage": 0.009,
           "prior": 0.6,
           "sources": [
             "lf_interdisciplinary"
@@ -1361,7 +1465,7 @@
           "confidence": 0.418,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.224,
+          "coverage": 0.194,
           "prior": 0.345,
           "sources": [
             "lf_abstract_keywords",
@@ -1378,7 +1482,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1389,7 +1493,7 @@
           "confidence": 0.42,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.203,
+          "coverage": 0.175,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1406,7 +1510,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1417,7 +1521,7 @@
           "confidence": 0.458,
           "support": 3,
           "oppose": 0,
-          "coverage": 0.306,
+          "coverage": 0.264,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1435,7 +1539,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1446,7 +1550,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1463,7 +1567,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1480,7 +1584,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1491,7 +1595,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1508,7 +1612,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1519,7 +1623,7 @@
           "confidence": 0.458,
           "support": 3,
           "oppose": 0,
-          "coverage": 0.306,
+          "coverage": 0.264,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1537,7 +1641,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1548,7 +1652,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1565,7 +1669,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1576,7 +1680,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1593,7 +1697,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1604,7 +1708,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1621,7 +1725,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1632,7 +1736,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.023,
+          "coverage": 0.02,
           "prior": 0.6,
           "sources": [
             "lf_review_type"
@@ -1643,7 +1747,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1660,7 +1764,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1671,7 +1775,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1688,7 +1792,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1699,7 +1803,7 @@
           "confidence": 0.385,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords"
@@ -1715,7 +1819,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1726,7 +1830,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1743,7 +1847,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1754,7 +1858,7 @@
           "confidence": 0.385,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords"
@@ -1770,7 +1874,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1781,7 +1885,7 @@
           "confidence": 0.385,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords"
@@ -1797,7 +1901,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1808,7 +1912,7 @@
           "confidence": 0.385,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords"
@@ -1824,7 +1928,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1835,7 +1939,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1852,7 +1956,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1863,7 +1967,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -1880,7 +1984,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1891,7 +1995,7 @@
           "confidence": 0.385,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords"
@@ -1907,7 +2011,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1918,7 +2022,7 @@
           "confidence": 0.385,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords"
@@ -1934,7 +2038,7 @@
           "confidence": 0.676,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.6,
           "sources": [
             "lf_title_keywords",
@@ -1946,7 +2050,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1962,7 +2066,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1978,7 +2082,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -1989,7 +2093,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.023,
+          "coverage": 0.02,
           "prior": 0.6,
           "sources": [
             "lf_review_type"
@@ -2005,7 +2109,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2021,7 +2125,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2037,7 +2141,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2048,7 +2152,7 @@
           "confidence": 0.385,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords"
@@ -2064,7 +2168,7 @@
           "confidence": 0.636,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.6,
           "sources": [
             "lf_abstract_keywords"
@@ -2075,7 +2179,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2086,7 +2190,7 @@
           "confidence": 0.378,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.099,
+          "coverage": 0.086,
           "prior": 0.345,
           "sources": [
             "lf_doi_prefix"
@@ -2102,7 +2206,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2113,7 +2217,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -2130,7 +2234,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2141,7 +2245,7 @@
           "confidence": 0.458,
           "support": 3,
           "oppose": 0,
-          "coverage": 0.306,
+          "coverage": 0.264,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -2159,7 +2263,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2170,7 +2274,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -2187,7 +2291,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2198,7 +2302,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -2215,7 +2319,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2226,7 +2330,7 @@
           "confidence": 0.385,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords"
@@ -2242,7 +2346,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2253,7 +2357,7 @@
           "confidence": 0.385,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords"
@@ -2269,7 +2373,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2280,7 +2384,7 @@
           "confidence": 0.385,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords"
@@ -2296,7 +2400,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2307,7 +2411,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -2324,7 +2428,7 @@
           "confidence": 0.636,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.6,
           "sources": [
             "lf_abstract_keywords"
@@ -2335,7 +2439,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2346,7 +2450,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -2363,7 +2467,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2374,7 +2478,7 @@
           "confidence": 0.422,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.206,
+          "coverage": 0.178,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -2391,7 +2495,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2402,7 +2506,7 @@
           "confidence": 0.42,
           "support": 2,
           "oppose": 0,
-          "coverage": 0.203,
+          "coverage": 0.175,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords",
@@ -2419,7 +2523,7 @@
           "confidence": 0.6,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.019,
+          "coverage": 0.016,
           "prior": 0.6,
           "sources": [
             "lf_era_marker"
@@ -2430,7 +2534,7 @@
           "confidence": 0.385,
           "support": 1,
           "oppose": 0,
-          "coverage": 0.103,
+          "coverage": 0.089,
           "prior": 0.345,
           "sources": [
             "lf_title_keywords"

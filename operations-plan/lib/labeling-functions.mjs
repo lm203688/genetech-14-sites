@@ -28,6 +28,7 @@
 
 import { fileURLToPath } from 'url';
 import path from 'path';
+import fs from 'node:fs';
 
 // ============================================================
 // 标签词表基线（取自 search-index.json 实测 965 去重标签的 Top 分布）
@@ -441,6 +442,129 @@ export const lfMultiSource = {
   },
 };
 
+// ============================================================
+// LF-16 受控词表匹配（data-driven，2026-09-29 新增）
+//
+// 为什么需要
+//   手写 KW_MAP 只产出 11 个标签，而语料有 46,025 个去重标签。
+//   但 tags-audit 实测：**85.1%（39,157 个）标签只挂在 ≤5 条实体上**，
+//   仅 2,124 个标签有 >20 条可统计样本。
+//   稀有标签既无足够正例可学、也无足够样本可校验准确率——
+//   这才是"LF 产出词表窄"的真因，不是 LF 写得不够多。
+//   本 LF 把目标空间收窄到 operations-plan/lib/vocab.json（2,200 个可统计标签），
+//   用标签串本身作精确短语匹配：高精确率、且每个标签都可用真实标签校验。
+//
+// 为什么不用 LLR 词元提升
+//   实测从语料自举词元会捞到作者姓（caldin/awdeh），因为标签体系混入了
+//   OpenAlex 把人名当 concept 的噪声；词元级提升召回收益远小于误判风险。
+//
+// ⚠️ 三轮修正，每轮都由定向实验逼出来（experiment-vocab-scope/exact.js）
+//
+//   ① 单词标签陷阱（acc 0.047）
+//     920 个单词标签（human/technology/efficiency/impact）在摘要里普遍出现却
+//     极少是真实标签——"human" 匹配到 25,098 条实体，其中 95% 真实标签里没有它。
+//     修法：单词标签只认标题（"human" 25,098 → 4,985）。
+//
+//   ② 作用域（scope 实验）
+//     仅标题 precision 0.0823，标题+摘要 0.0598，标题+摘要全量 0.0453；
+//     仅标题前 80 字 precision 与全标题**完全相同**（0.0823），80 字后无边际信息。
+//     修法：**一律只匹配标题**。顺带把 30k 条评估耗时从 151.8s 压到 20.3s（7.5x）。
+//
+//   ③ 标签可靠性标定（主菜，真正的主因）
+//     去掉摘要后 precision 仍只有 0.1664，因为**逐标签可靠性差异极大**：
+//       agriculture 0.481 / cancer 0.547 / reinforcement learning 0.450
+//       precision agriculture 0.014 / smart farming 0.009 / control 0.051
+//     根因不是文本匹配失败，而是「短语在标题里出现 ≠ OpenAlex 指派了该概念」。
+//     OpenAlex 用自己的 NLP 做归属判定，正文提两个词不等于被指派复合概念。
+//     这层差异**可测且跨样本稳定**（标定 22,500 → 留一 7,500：agriculture
+//     0.481→0.375、cancer 0.547→0.489、robotics 0.448→0.421），
+//     故 build-vocab.js 逐标签标定 precision，只保留
+//     support>=50 且 precision>=0.2 的标签，其余清空 phrases。
+//     全量标定：2,200 全词表 precision 0.1664 → 245 个筛选标签 0.4095（2.46x）。
+//     这是 Snorkel 可靠性估计往上一层的应用：LF 的准确率上限被它自己的
+//     特征（标签）可靠性约束，必须先标定特征再谈 LF 加权。
+//
+// 性能
+//   标签数 × 实体数暴力匹配不可行。用"首词索引 + 编译正则 + 实体级缓存"：
+//   只对实体中实际出现的词做候选查表，每个实体的短语检查次数很小。
+// ============================================================
+const _vocabState = { idx: null, tried: false };
+
+function buildVocabIndex() {
+  if (_vocabState.tried) return _vocabState.idx;
+  _vocabState.tried = true;
+  const p = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'vocab.json');
+  if (!fs.existsSync(p)) return null;
+  let j;
+  try { j = JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return null; }
+  const byFirst = new Map();
+  let phrases = 0, kept = 0, skipped = 0;
+  for (const [tag, meta] of Object.entries(j.vocabulary || {})) {
+    // build-vocab.js 标定后会给不可靠标签置 keep:false 并清空 phrases。
+    // 这里再做一次硬守卫：keep 为 false 或 phrases 为空的标签绝不进索引。
+    if (!meta || meta.keep === false || !meta.phrases || !meta.phrases.length) { skipped++; continue; }
+    kept++;
+    for (const ph of meta.phrases) {
+      const head = String(ph).split(/\s+/)[0];
+      if (!head) continue;
+      if (!byFirst.has(head)) byFirst.set(head, []);
+      byFirst.get(head).push({
+        re: new RegExp('(?:^|[^a-z0-9])' + ph.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?:[^a-z0-9]|$)'),
+        tag,
+      });
+      phrases++;
+    }
+  }
+  _vocabState.idx = {
+    byFirst, phrases,
+    tags: Object.keys(j.vocabulary || {}).length,
+    tagsKept: kept, tagsSkipped: skipped,
+    calibration: j.calibration || null,
+    generatedAt: j.generatedAt || null,
+  };
+  return _vocabState.idx;
+}
+
+const _vocabCache = new Map();
+// 标定集 30,000 + 相关度采样 4,000 足以覆盖主要重复调用点；
+// 主循环每条实体只调一次，缓存收益有限，故不上探更大以免反复 clear 抖动。
+const _VOCAB_CACHE_CAP = 40000;
+
+/** LF-16 受控词表精确短语匹配（标题域，可靠性筛选后） */
+export const lfCorpusVocab = {
+  id: 'lf_corpus_vocab',
+  desc: '受控词表精确短语匹配（标题域 + 逐标签可靠性筛选）',
+  run(e) {
+    const idx = buildVocabIndex();
+    if (!idx) return votes([]);
+    // 只匹配标题。scope 实验：仅标题 precision 0.0823 vs 标题+摘要 0.0598 / 0.0453；
+    // 且仅标题前 80 字与全标题 precision 完全相同，说明标题后段无边际信息。
+    const title = (textOf(e, 'name') || textOf(e, 'title')).toLowerCase();
+    if (title.length < 8) return votes([]);
+
+    // 实体级缓存：同一实体在标定/相关度/主循环中会被反复 run()
+    const key = e.id != null ? e.id : null;
+    if (key != null && _vocabCache.has(key)) return _vocabCache.get(key);
+
+    const out = [];
+    const seen = new Set();
+    for (const tok of title.matchAll(/[a-z0-9\-]{3,}/g)) {
+      const cands = idx.byFirst.get(tok[0]);
+      if (!cands) continue;
+      for (const c of cands) {
+        if (seen.has(c.tag)) continue;
+        if (c.re.test(title)) { seen.add(c.tag); out.push([c.tag, VOTE_POS]); }
+      }
+    }
+    const m = votes(out);
+    if (key != null) {
+      if (_vocabCache.size >= _VOCAB_CACHE_CAP) _vocabCache.clear();
+      _vocabCache.set(key, m);
+    }
+    return m;
+  },
+};
+
 /** 全部 LF 注册表 */
 export const LABELING_FUNCTIONS = [
   lfSiteDomain,
@@ -458,6 +582,7 @@ export const LABELING_FUNCTIONS = [
   lfInterdisciplinary,
   lfReviewType,
   lfMultiSource,
+  lfCorpusVocab,
 ];
 
 // ============================================================
