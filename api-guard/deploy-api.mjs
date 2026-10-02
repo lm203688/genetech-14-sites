@@ -58,8 +58,56 @@ async function cf(method, p, body, isJson = true) {
 // 于是 Worker 绑到一个空命名空间上，比不绑更难查）。
 const NAMESPACES = ['PRO_KV', 'INTEL_KV'];
 
+// ★ 权威账户指认：谁持有 swarmlabs.tools 这个 zone。
+// 2026-10-02 第 5 轮踩到的坑（前四轮全被它骗过去）：
+//   Cloudflare 允许**不同账户下有同名 Worker 脚本**，各自独立、互不覆盖。
+//   实测三账户各有一份 genetech-api-guard：
+//     3678972365@qq.com → 61,107B / 9 端点 / build=d84981a7 ← 我们每轮 PUT 的目标
+//     463102527@qq.com → 10,375B / 0 端点
+//     61960005@qq.com  → 59,146B / 5 端点 ← **线上真正在跑的旧版**（5 端点 404 文案的来源）
+//   线上流量按 zone 路由走，而 zone 归 61960005，于是：新代码一直 PUT 成功、一直 2xx、
+//   一直「部署成功」，但那条路由服务的是另一个账户里的同名旧脚本。
+//   判断一个 Worker 在哪儿生效，唯一可靠的信号是**它所属 zone 的归属账户**，
+//   不是「谁有 KV 命名空间」，也不是 accounts[0]。
+const SERVE_ZONE = process.env.SERVE_ZONE || 'swarmlabs.tools';
+
 async function resolveAccount() {
-  if (process.env.CLOUDFLARE_ACCOUNT_ID) return process.env.CLOUDFLARE_ACCOUNT_ID;
+  if (process.env.CLOUDFLARE_ACCOUNT_ID) {
+    say(`→ 使用显式 CLOUDFLARE_ACCOUNT_ID=${process.env.CLOUDFLARE_ACCOUNT_ID}`);
+    if (!process.env.SKIP_ZONE_CHECK) {
+      const z = await cf('GET', `/zones?name=${SERVE_ZONE}&per_page=1`);
+      const zone = z.json?.result?.[0];
+      if (zone?.account?.id && process.env.CLOUDFLARE_ACCOUNT_ID !== zone.account.id) {
+        say(`⚠ 你指定的账户并不是持有 ${SERVE_ZONE} 的账户（该 zone 归 ${zone.account.id}）。`);
+        say(`  同名 Worker 在不同账户下是**互相独立**的：PUT 到别的账户不会改变线上行为，`);
+        say(`  而且上传依旧返回 2xx、脚本依旧打印「部署成功」——这是纯粹的静默失败。`);
+        say(`  本轮已强制改用 zone 归属账户，确保部署的是线上真正在跑的那份。`);
+        return zone.account.id;
+      }
+    }
+    return process.env.CLOUDFLARE_ACCOUNT_ID;
+  }
+  // 没有显式指认：先按 zone 归属指认，_zone 查询失败才回退到 OLD 逻辑（并告警）。
+  try {
+    const z = await cf('GET', `/zones?name=${SERVE_ZONE}&per_page=1`);
+    const zone = z.json?.result?.[0];
+    if (zone?.account?.id) {
+      say(`→ 按 zone 归属指认账户：${zone.account.id}（持有 ${SERVE_ZONE}，status=${zone.status}）`);
+      return zone.account.id;
+    }
+    // zone 查询成功但查不到 → token 没有 zones:read（或该 zone 在别的账户）。
+    // 静默回退到「谁有 KV」会很危险：那正是第 5 轮部署落错账户的成因，
+    // 而唯一的兜底（线上 build 探测）要跑完 6 次轮询才发现 —— 这里先说清楚。
+    if (z.status === 200) {
+      say(`⚠ token 可见 zones 里查不到 ${SERVE_ZONE}（HTTP 200 但无结果）→ 无法按 zone 指认，`);
+      say(`  下面回退到「谁有 KV 命名空间」的老逻辑，它有落错账户的风险。`);
+    } else {
+      say(`⚠ 查询 zone ${SERVE_ZONE} 失败（HTTP ${z.status}：${(z.json?.errors?.[0]?.message || z.t || '').slice(0, 160)}）`);
+      say(`  多半是 token 缺 Zones:Read。回退到 KV 指认逻辑，并保持末尾的线上 build 探测兜底。`);
+    }
+  } catch (e) {
+    say(`⚠ 查询 zone ${SERVE_ZONE} 异常（${e && e.message}），回退到 KV 指认逻辑`);
+  }
   const r = await cf('GET', '/accounts?per_page=10');
   if (!r.json?.success || !r.json.result?.length) { console.error('✗ 无法反查 Account ID（响应：', r.text, '）'); process.exit(1); }
   // 优先选「已经同时含 PRO_KV 与 INTEL_KV」的账户，避免把命名空间建到空账户里
@@ -84,10 +132,16 @@ async function resolveAccount() {
 async function ensureKV(acct, title) {
   const list = await cf('GET', `/accounts/${acct}/storage/kv/namespaces`);
   const found = list.json?.result?.find((n) => n.title === title);
-  if (found) { console.log(`✓ 复用 ${title}:`, found.id); return found.id; }
+  if (found) { say(`✓ 复用 ${title}: ${found.id}`); return found.id; }
   const create = await cf('POST', `/accounts/${acct}/storage/kv/namespaces`, { title });
-  if (!create.json?.success) { console.error(`✗ 创建 ${title} 失败:`, create.text); process.exit(1); }
-  console.log(`✓ 新建 ${title}:`, create.json.result.id);
+  if (!create.json?.success) { say(`✗ 创建 ${title} 失败: ${create.text}`); process.exit(1); }
+  // ★ 无脑新建要出声（2026-10-02 第 5 轮）：zone 账户下没有同名 INTEL_KV 时脚本会
+  //   默默新建一个空命名空间并绑上去。PUT 依旧 2xx、依旧打印「部署成功」，
+  //   但线上从此写进一个空柜子。这里必须把「新建 = 空存储」这句话明说。
+  say(`⚠ 新建（空）${title}: ${create.json.result.id}`);
+  say(`   注意：这是**空命名空间**。若旧线上用的是另一个账户里的同名 ${title}，`);
+  say(`   PUT 的整体替换语义会把 Worker 绑到这里，旧数据会「看不见」（不是被删，是换了柜子）。`);
+  say(`   判定有无存量：读旧命名空间 keys 数，为 0 才是无损失。`);
   return create.json.result.id;
 }
 
@@ -140,36 +194,80 @@ async function deploy(acct, proKvId, intelKvId) {
     // 上线验证反复对不上（线上 404 里却已经出现新清单里的端点名），说明线上跑的可能
     // 根本不是我们 PUT 的那个 script（路由绑的是另一个），所以先把账户下所有 Worker 打出来。
     try {
-      const wl = await cf('GET', `/accounts/${acct}/workers`);
-      const names = (wl.json?.result || []).map((w) => w.script_name).filter(Boolean);
-      say(`  [诊断] 账户下 Worker 脚本：${names.join(', ') || '(无)'}`);
       const rl = await cf('GET', `/accounts/${acct}/workers/routes`);
       const rs = (rl.json?.result || []).map((r) => `${r.script_name}→${r.pattern || (r.zone_name || '') + (r.path || '')}`);
       say(`  [诊断] Worker 路由：${rs.join(' | ') || '(无)'}`);
     } catch (e) {
-      say(`  [诊断] 列 Worker/路由失败（${e && e.message}，权限不足就跳过）：`);
+      say(`  [诊断] 列 Worker 路由失败（${e && e.message}，权限不足就跳过）：`);
     }
+    // ★ 跨账户同名脚本取证（2026-10-02 第 5 轮的真凶复盘）。
+    // 不能用 `/accounts/{id}/workers` 清单来判断"这个账户有没有我们的脚本" ——
+    // 实测目标账户下这个清单返回空数组，而 GET /workers/scripts/{name} 照样 200、照样有全文。
+    // 照清单判断会得出「账户下没有脚本」，于是下一轮又把部署当成了新动作，继续绿灯。
+    // 唯一可靠的做法：对每个可见账户直接拉同名脚本全文，比代码指纹（长度 + 端点数）。
     try {
-      const vs = await cf('GET', `/accounts/${acct}/workers/scripts/${SCRIPT}/versions`);
-      const vj = vs.json?.result;
-      // 返回形状不是数组：实测 result 是对象（{versions:[...]}）时 `(result||[]).map` 直接抛
-      // "((intermediate value) || []).map is not a function"。
-      const ids0 = Array.isArray(vj) ? vj : (vj?.versions || vj?.items || vj?.workers || []);
-      const ids = (ids0 || []).map((v) => (typeof v === 'string' ? v : v.id)).filter(Boolean);
-      if (ids.length) {
-        const dep = await cf('POST', `/accounts/${acct}/workers/scripts/${SCRIPT}/deployments`, { versions: [ids[ids.length - 1]] });
-        if (dep.status >= 200 && dep.status < 300 && (!dep.json || dep.json.success !== false)) {
-          say('✓ Worker ' + SCRIPT + ' 已显式发布 deployment（versions 流程）');
-        } else {
-          say(`⚠ 显式发布未生效（status=${dep.status}，老账户 PUT 本身即上生产，继续）：${dep.text.slice(0, 200)}`);
+      const accts = (await cf('GET', '/accounts?per_page=50')).json?.result || [];
+      const seen = [];
+      for (const a of accts) {
+        const g = await fetch(`${CF_API}/accounts/${a.id}/workers/scripts/${SCRIPT}`, {
+          headers: { Authorization: `Bearer ${CF}`, Accept: 'text/javascript' },
+        }).catch(() => null);
+        if (!g) continue;
+        if (!g.ok) continue;
+        const src = await g.text();
+        // 端点数取自「可用端点」自报文案（worker 404/清单里那串），
+        // 而不是全文里所有 /v1/ 出现次数 —— 后者会把 /v1/domains/{slug} 这类
+        // 变量路径下的子片段全算成独立端点，报出 25 这种没法用来比较的数字。
+        const eps = [...new Set(((src.match(/可用端点[:：][^\n"'`]{0,400}/) || [''])[0].match(/\/v1\/[\w/-]+/g) || []))];
+        const b = (src.match(/BUILD_ID\s*[:=]\s*['"]([0-9a-f]{8})['"]/) || [])[1] || null;
+        seen.push({ name: a.name, id: a.id, len: src.length, eps: eps.length, build: b, isTarget: a.id === acct });
+      }
+      for (const s of seen) {
+        const tag = s.isTarget ? '★目标账户' : '  幽灵副本';
+        say(`  [诊断] ${tag}  ${s.name}: ${s.len}B / ${s.eps} 端点 / build=${s.build || '(无)'}`);
+      }
+      if (!seen.length) say(`  [诊断] 任何账户下都取不到 ${SCRIPT}（token 权限不足？）`);
+      // 反指认：如果有幽灵副本的端点数**多于**目标账户，说明PUT 极大概率落到了错账户
+      // （新代码在那个账户里、线上这份是旧的），这正是第 5 轮的症状。
+      for (const s of seen) {
+        if (s.isTarget || !s.eps) continue;
+        const tgt = seen.find((x) => x.isTarget);
+        if (tgt && s.eps > tgt.eps) {
+          say(`  [诊断] ⚠ 其他账户下的同名脚本比目标账户的还新（${s.eps} vs ${tgt.eps} 端点）`);
+          say(`           → 线上跑的很可能是 ${s.name} 里那份旧版，请核对 ${SERVE_ZONE} 的 zone 归属账户。`);
         }
-      } else {
-        await cf('POST', `/accounts/${acct}/workers/scripts/${SCRIPT}/deployments`, {});
-        say('✓ Worker ' + SCRIPT + ' 已提交 deployment 请求');
       }
     } catch (e) {
-      say(`⚠ 显式发布步骤异常（忽略，改由线上探测兜底）：${e && e.message}`);
+      say(`  [诊断] 跨账户同名脚本取证失败（${e && e.message}）：`);
     }
+    // 显式发布（publish）不是 PUT 的必经步骤，而是**补救手段**：
+    // 这个账户形态下 PUT 本身即切流，publish 每次都返 400（10210 invalid deployment），
+    // 若放在 PUT 后面无条件执行，日志里就永远挂着一段红色「未生效」，
+    // 真出问题时这段噪音会盖住真正的失败信号。
+    // 正确顺序：PUT → 先探测线上 → 线上 build 不对，才尝试 publish → 再探测。
+    const publishNow = async () => {
+      try {
+        const vs = await cf('GET', `/accounts/${acct}/workers/scripts/${SCRIPT}/versions`);
+        const vj = vs.json?.result;
+        // 返回形状不是数组：实测 result 是对象（{versions:[...]}）时 `(result||[]).map` 直接抛
+        // "((intermediate value) || []).map is not a function"。
+        const ids0 = Array.isArray(vj) ? vj : (vj?.versions || vj?.items || vj?.workers || []);
+        const ids = (ids0 || []).map((v) => (typeof v === 'string' ? v : v.id)).filter(Boolean);
+        if (ids.length) {
+          const dep = await cf('POST', `/accounts/${acct}/workers/scripts/${SCRIPT}/deployments`, { versions: [ids[ids.length - 1]] });
+          if (dep.status >= 200 && dep.status < 300 && (!dep.json || dep.json.success !== false)) {
+            say('✓ Worker ' + SCRIPT + ' 已显式发布 deployment（versions 流程）');
+          } else {
+            say(`⚠ 显式发布未生效（status=${dep.status}）：${dep.text.slice(0, 200)}`);
+          }
+        } else {
+          await cf('POST', `/accounts/${acct}/workers/scripts/${SCRIPT}/deployments`, {});
+          say('✓ Worker ' + SCRIPT + ' 已提交 deployment 请求');
+        }
+      } catch (e) {
+        say(`⚠ 显式发布步骤异常（忽略，改由线上探测兜底）：${e && e.message}`);
+      }
+    };
     say('✓ Worker ' + SCRIPT + ' 上传完成（脚本 + PRO_SECRET + PRO_KV + INTEL_KV + vars 已注入）');
 
     // ===== 上线验证：看线上行为，不看 CF 元数据 =====
@@ -215,9 +313,25 @@ async function deploy(acct, proKvId, intelKvId) {
       return false;
     }
     if (!routed) {
+      // 补救优先于报错：先试 publish（可能只是边缘传播慢 / pending deployment 没切），
+      // 试完再探一轮，仍然对不上才是真失败 —— 真失败要给出**可执行的**下一步。
+      say('  线上还是旧版本，尝试显式 publish 补救（PUT 已成功，问题在没切流）：');
+      await publishNow();
+      for (let i = 0; i < 3; i += 1) {
+        await new Promise((x) => setTimeout(x, 5000));
+        const r = await fetch(probeUrl, { method: 'GET' }).catch((e) => ({ status: null, err: e.message }));
+        const b = r.status === null ? '' : await r.text();
+        const lb = (b.match(/build=([0-9a-f]{8})/) || [])[1] || null;
+        say(`  [补救探测 ${i + 1}/3] → ${r.status} 线上 build=${lb || '(无)'} 期望 ${workerHash}`);
+        if (r.status === 200 || lb === workerHash) { say('✓ 补救 publish 后线上已是新版本'); return true; }
+      }
       say(`✗ 上线验证失败：轮询结束仍未看到新版本：${probeUrl} 最后返回 ${live.status}，`
         + `响应体前 300B：${String(live.body || '').slice(0, 300)}`);
-      say('  常见原因：账户开了 deployment 门禁没切流（去 CF 控制台 publish），或流量走了别的 script。');
+      say('  常见原因（按概率排序）：');
+      say('   1) 流量被**另一个账户下的同名 Worker**接走（2026-10-02 真实踩过，详见 SERVE_ZONE 注释）'
+        + '→ 用 .workbuddy/probe/diag-worker-route.mjs 核对 zone 归属账户；');
+      say('   2) 账户开了 deployment 门禁没切流（去 CF 控制台 publish）；');
+      say('   3) 边缘传播延迟（多探几次，别急着重跑部署）。');
       process.exitCode = 1;
       return false;
     }

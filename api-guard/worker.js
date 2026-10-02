@@ -78,8 +78,17 @@ function b64urlDecode(s) {
 //   payload = base64url(JSON{ site, exp })
 // ---------------------------------------------------------------------------
 
+// ★ 占位密钥必须 fail-closed（2026-10-02 第 5 轮）。
+// 为把新代码先推上生产（救活 3 个学术端点 + citation 端点），部署时会临时注入
+// `DEPLOY_PENDING_PRO_ROTATION_…` 占位值。若让 HMAC 拿着占位值去签，会签出一串
+// 「格式完全合法、签名完全自洽」的 Pro Key —— 表面上全部通过，实际上密钥是错的，
+// 而且事后无法区分「真密钥签的」和「占位值签的」。
+// 判据：以 DEPLOY_PENDING_ 开头的一律视为未配置，返回 server_misconfigured，
+// 端点照常可用（只是 Pro 相关路径直接拒绝)，错误可观测、可回滚、不会被误认成有效签发。
+const isPlaceholderSecret = (s) => typeof s === 'string' && s.startsWith('DEPLOY_PENDING_');
+
 async function validateProKeyLocal(token, env) {
-  if (!env.PRO_SECRET) return { ok: false, error: 'server_misconfigured' };
+  if (!env.PRO_SECRET || isPlaceholderSecret(env.PRO_SECRET)) return { ok: false, error: 'server_misconfigured' };
   // 接受完整 token（含 gtk_ 前缀）或裸 payload.sig
   const bare = token.replace(/^gtk_/, '');
   const parts = bare.split('.');
@@ -445,6 +454,9 @@ function genConsumerId() {
 }
 
 async function signConsumerKey(env, payload) {
+  // 占位密钥不可签发（见 isPlaceholderSecret 注释）：签出来的 key 自洽但密钥是错的，
+  // 事后无法与真密钥签发的区分。宁可这里不签、上层返回 503，也不污染签发体系。
+  if (!env.PRO_SECRET || isPlaceholderSecret(env.PRO_SECRET)) return null;
   const p = JSON.stringify(payload);
   const pB64 = btoa(p).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
   const sig = await hmacSign(pB64, env.PRO_SECRET);
@@ -452,7 +464,7 @@ async function signConsumerKey(env, payload) {
 }
 
 async function validateConsumerKey(token, env) {
-  if (!env.PRO_SECRET || !token) return { ok: false, error: 'server_misconfigured' };
+  if (!env.PRO_SECRET || isPlaceholderSecret(env.PRO_SECRET) || !token) return { ok: false, error: 'server_misconfigured' };
   if (!token.startsWith(INTEL_CONSUMER_KEY_PREFIX)) return { ok: false, error: 'invalid_format' };
   const parts = token.slice(INTEL_CONSUMER_KEY_PREFIX.length).split('.');
   if (parts.length !== 2) return { ok: false, error: 'invalid_format' };
@@ -1107,6 +1119,9 @@ async function handleIntelCreateConsumer(request, env, adminToken) {
 
   const payload = { cid, name, tier, exp, rate, admin: adminToken.slice(0, 12) };
   const key = await signConsumerKey(env, payload);
+  if (!key) {
+    return json({ error: 'server_misconfigured', message: 'Pro 签名密钥未配置（或仍是占位值），无法签发 Consumer Key' }, 503);
+  }
 
   const record = {
     cid, project_name: name, tier,
