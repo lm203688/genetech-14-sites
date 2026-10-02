@@ -138,9 +138,11 @@ async function deploy(acct, proKvId, intelKvId) {
     // （2026-10-02 实测：api-guard-deploy 就是因为这条假阴性连续红，线上 Worker 一直跑旧脚本。）
     // 所以这里只对 kv_namespace 做硬校验；secret_text 只打印线上实际绑定清单供人工核对，
     // 真正的验证靠部署请求本身返回 2xx（CF 对绑定格式错误会直接 400/200+errors）。
+    // 诊断必须在循环之前打印：校验失败会立刻 exit，放在后面等于永远看不到。
     for (const need of ['PRO_KV', 'INTEL_KV']) {
       if (!names.has(need)) {
         console.error(`✗ 回读校验失败：${need} 不在线上绑定里。线上绑定：${[...names].join(', ') || '(空)'}`);
+        console.error(`  [诊断] 原始返回键：${Object.keys(res0).join(', ')}；result=${JSON.stringify(res0).slice(0, 1200)}`);
         process.exit(1);
       }
     }
