@@ -117,3 +117,7 @@ __test_push__.txt
 # Python 编译产物（py_compile / 验证脚本运行时生成，不入库）
 __pycache__/
 *.pyc
+
+# 语义检索分片（按需 --shards 生成，实测 149MB；ops-extra 会 git add data/，
+# 不忽略会直接把 149MB 塞进 git 历史）。接好 worker 分片加载器后可解封。
+data/search-index/

@@ -232,16 +232,42 @@ function main() {
     console.error(`[kg][WARN] 产物 ${(json.length/1024/1024).toFixed(2)}MB 超过 ${MAX_BYTES/1024/1024}MB 上限，请下调 LIMIT 后重试（保护 Pages 容量）。`);
   }
 
-  // ---- 回归护栏（2026-09-27 新增）----
+  // ---- 回归护栏（2026-09-27 新增，2026-10-02 修复自锁）----
   // CI runner 若拉取到的站点数据不完整（部分 */website/api/entities.json 缺失或为空），
   // 会产出退化图谱。必须保留旧图谱，避免把 14k/37k 的好图谱回退成 98/0 的空壳。
   // 判定：新图谱节点或边数低于旧图谱的 50%（旧图谱 ≥1000 节点时生效）即拒绝写入。
-  const existing = readJsonSafe(path.join(DATA_DIR, 'knowledge-graph.json'));
-  const oldNodes = Array.isArray(existing?.nodes) ? existing.nodes.length : 0;
-  const oldEdges = Array.isArray(existing?.edges) ? existing.edges.length : 0;
-  if (!DRY && oldNodes >= 1000 && (nodes.length < oldNodes * 0.5 || edges.length < oldEdges * 0.5)) {
+  //
+  // ⚠️ 自锁 bug 与修复（2026-10-02 实测复现）：
+  //   旧实现把 data/knowledge-graph.json 自己当基线读。该文件有多个写入者，
+  //   其中 pipeline-self-db-build.js 产出的是**另一个 schema** 的玩具图
+  //   （每实体一节点 = 284,073 节点 / ≤5,000 边），edge_builder.py 又覆盖
+  //   knowledge-graph-entities.json。于是：
+  //     新图谱 14,351 节点 < 284,073×0.5=142,036 → 必然命中护栏 →
+  //     process.exit(3)，本脚本永远写不进去 →
+  //     data/knowledge-graph.json 停在旧图 → 下一天照样读同一个旧图 → 死循环。
+  //   宿日志实证：exit code 3，ABORT 行打印"低于旧图谱 284073 节点 / 16548 边"。
+  //   修复：基线改读**本脚本自己成功写入后留下的基线元数据**，
+  //   路径 data/knowledge-graph-baseline.json，只有本脚本会写它，
+  //   selfdb / edge_refresh 都碰不到；且强制校验 schema 一致，
+  //   跨 schema 的旧图（如玩具图）一律不作为基线。
+  const BASELINE_FILE = path.join(DATA_DIR, 'knowledge-graph-baseline.json');
+  const base = readJsonSafe(BASELINE_FILE);
+  const sameSchema = base && base.schema === graph.schema;
+  const oldNodes = sameSchema && Number.isFinite(base.nodes) ? base.nodes : 0;
+  const oldEdges = sameSchema && Number.isFinite(base.edges) ? base.edges : 0;
+
+  if (!sameSchema) {
+    // 无同 schema 基线（首次运行 / 基线文件缺失）：
+    // 绝不拿别的 schema 的图当基线，否则护栏必然误杀（上面的自锁根因）。
+    // 此时放行并显式告警 —— 宁可短期漏放一次退化，也不能让 CI 天天红。
+    console.warn(
+      `[kg][GUARD] 无同 schema 基线（${sameSchema ? 'schema 不匹配' : '基线文件缺失/损坏'}），跳过退化比对，允许写入。` +
+      (sameSchema ? '' : ' 若这是首次运行属正常；否则检查 data/knowledge-graph-baseline.json 是否被误删。')
+    );
+  } else if (!DRY && oldNodes >= 1000 && (nodes.length < oldNodes * 0.5 || edges.length < oldEdges * 0.5)) {
     console.error(
-      `[kg][ABORT] 新图谱 ${nodes.length} 节点 / ${edges.length} 边，低于旧图谱 ${oldNodes} 节点 / ${oldEdges} 边的 50%。\n` +
+      `[kg][ABORT] 新图谱 ${nodes.length} 节点 / ${edges.length} 边，低于基线 ${oldNodes} 节点 / ${oldEdges} 边的 50%。\n` +
+      `[kg][ABORT] 基线来自 data/knowledge-graph-baseline.json（仅本脚本写入）。\n` +
       `[kg][ABORT] 判定为站点数据不全导致的退化图谱，拒绝写入 data/knowledge-graph.json。请检查 runner 上 */website/api/entities.json 的完整性后重跑。`
     );
     process.exit(3);
@@ -253,6 +279,14 @@ function main() {
     fs.writeFileSync(path.join(DATA_DIR, 'knowledge-graph.json'), json);
     // 部署副本（与旧文件名保持一致，供下游消费）
     fs.writeFileSync(path.join(DATA_DIR, 'knowledge-graph-entities.json'), json);
+    // 退化护栏基线（本脚本独占写入者）：只记录同 schema 的规模，
+    // 让下一轮拿得到「昨天本脚本自己产出的量」，而非 selfdb 的玩具图。
+    fs.writeFileSync(BASELINE_FILE, JSON.stringify({
+      schema: graph.schema,
+      nodes: graph.stats.nodes,
+      edges: graph.stats.edges,
+      builtAt: graph.builtAt,
+    }));
     const report = { pipeline: 'build-knowledge-graph', timestamp: graph.builtAt, dryRun: false, ...graph.stats, bytes: json.length };
     fs.writeFileSync(path.join(REPORTS_DIR, `report-knowledge-graph-${Date.now()}.json`), JSON.stringify(report, null, 2));
     // 保留策略：本脚本已接入每日 CI（ops-extra.yml 的 kgbuild 任务），

@@ -1,725 +1,318 @@
-openapi: 3.1.0
+# GeneTech / SwarmLabs Data API
+# ---------------------------------------------------------------------------
+# 本文件是 api.swarmlabs.tools（Cloudflare Worker `genetech-api-guard`）的规范。
+#
+# ⚠️ 状态说明（2026-10-02 实测，逐端点 curl 校验，非文档推测）：
+#   - `/v1/academic/entities`、`/v1/academic/pubmed`、`/v1/academic/crossref`
+#     目前**全部返回 404**。原因：data/academic-entities.json、data/pubmed-entities.json、
+#     data/crossref-entities.json 尚未生成落盘（ops-extra 的 copy 清单里有名字，
+#     但生成这些数据的 pipeline 尚未跑出产物）。worker.js 的 404 提示里仍列着它们。
+#     这一段保留在规范里，待数据集生成后即可启用，调用方无需改动。
+#   - 其余端点实测 200 / 401 / 404 正常。
+#
+# 鉴权分三档：
+#   free   —— 免鉴权，按 IP 限流（默认 60 次/分钟）
+#   pro    —— Authorization: Bearer <gtk_...>，走签名校验 + 站点授权
+#   intel  —— ckn_ / gtk_ key（情报 demand 接口），admin_ 为管理端点
+#
+# 错误响应统一为 { error, message }，HTTP 语义：
+#   200 成功 / 401 缺鉴权 / 403 key 无效 / 404 端点或数据不存在 /
+#   405 方法不允许 / 429 限流（带 Retry-After）/ 502 上游不可达
+openapi: 3.0.3
 info:
-  title: GeneTech 14-Sites Knowledge Infrastructure API
-  version: 1.0.0
-  description: |
-    GeneTech 14-Sites 知识引擎是「信息收集 + 结构化」的基础设施项目：
-    30 个科技主题子站（agritech / ai-safety / ai4science / embodied-ai ...），
-    当前约 30 万结构化实体（30 子站 × 每站 1 万，去重后 28.4 万唯一 ID，摘要完整度 66.2%），目标扩至 1M+；
-    叠加开源平台每日扫描（GitHub / HuggingFace / Papers with Code）作为广度层。
-
-    下游消费者：小模型专业 KB / 蜂群科研数据（另项目，独立 slb_ key）/ 机器人项目路线建议 / 对外付费 API。
-    注意：与 SwarmLabs（另一独立项目）无隶属关系，仅共用同一 CF 账号与数据 CDN。
-
-    ## 五档 API Key 商业模式
-    | Key 前缀 | 档位 | 速率限制 | 席位 | 范围 | 价格 |
-    |---|---|---|---|---|---|
-    | 无 key | Free | 60 req/min | 1 | 仅元数据（domain 列表 / entity 摘要 / 前 100 条） | 免费 |
-    | `slb_` | Partner | 120 req/min | 1 | 实体 + 领域读权限，独立网关 | 协商 |
-    | `gtk_` | Pro | 600 req/min | 1 | 全字段 + 语义搜索 + 引用导出 | ¥39.9 / 年，¥199 终身 |
-    | `gtk_` × 5 | Team | 300 req/min 池化 | 5 | Pro 全部能力 + 席位共享配额池 | ¥199 / 年 |
-    | `gtk_` 或独立网关 | Enterprise | 无硬上限 | 不限 | + 时间机器重放 / 审计日志导出 / 本地镜像交付 / DPA | 议价 |
-
-    端点可用性：静态数据集 `data.swarmlabs.tools` 已上线（免 key）；
-    `api.swarmlabs.tools` 与 `license.swarmlabs.tools` 已部署，自定义域绑定完成后生效。
-
-    ## 独立性边界
-    本项目专注**信息收集与结构化**，不承接：
-    - 模型训练 / 推理（消费者自行负责）
-    - 商业数据加工（数据脱敏/合规在消费者侧）
-    - 其他项目的鉴权（partner 走独立 `slb_` key，Pro 走独立 `gtk_` key）
-
-    ## 端点清单
-    - `GET /v1/entities`        实体列表（分页 + 领域过滤 + 关键词）
-    - `GET /v1/entities/{id}`  实体详情
-    - `GET /v1/domains`        领域元数据（30 站）
-    - `GET /v1/domains/{slug}` 领域详情（含最新信号）
-    - `GET /v1/oss/registry`   开源项目注册表（GitHub / HF / PWC）
-    - `POST /v1/search/semantic` 语义搜索（Pro only）
-    - `POST /v1/license/verify` 许可校验
-    - `GET /v1/license/quota`  配额查询
-    - `GET /health`            健康检查（无需 key）
-
-  license:
-    name: MIT
+  title: GeneTech Data API
+  version: 2.0.0
+  description: >
+    面向 LLM / Agent 消费者的结构化科研数据接口：30 个前沿科技站点的 300,000 条
+    实体（论文、项目、工具、数据集），每条均带可追溯来源（DOI / URL / 来源站）。
+    设计为「信息收集 + 结构化基础设施」：只经规范接口输出数据价值，
+    不承接训练、推理与合规判定。
+  servers:
+    - url: https://api.swarmlabs.tools
   contact:
-    name: GeneTech 14-Sites Infra
-    url: https://swarmlabs.tools
-servers:
-  - url: https://api.swarmlabs.tools
-    description: 生产主端点（Worker Custom Domain 绑定中，已部署待生效）
-  - url: https://data.swarmlabs.tools
-    description: 静态数据集（已上线，免 key，全球可访问）
-  - url: https://license.swarmlabs.tools
-    description: License 校验端点（已部署，Custom Domain 绑定中）
-
-x-endpoint-availability: 静态数据集已可用；api. 与 license. 依赖 Worker Custom Domain 绑定（需 Account:Workers Routes:Edit），CNAME 回源 workers.dev 已实测确认无效（522）。
-
-security:
-  - ApiKeyAuth: []
-  - {}
+    name: GeneTech Ops
+    url: https://data.swarmlabs.tools
 
 tags:
-  - name: Entities
-    description: 实体读取（30 个子站，当前 ~30 万，每站 1 万，目标 1M+）
-  - name: Domains
-    description: 领域元数据
-  - name: OSS
-    description: 开源平台扫描结构化数据
-  - name: Search
-    description: 语义 / 关键词搜索
-  - name: License
-    description: 许可校验与配额
-  - name: System
-    description: 系统级端点
+  - name: meta
+    description: 健康与元信息
+  - name: free
+    description: 免鉴权数据读取（限流）
+  - name: pro
+    description: 需 Pro Key 的高级检索
+  - name: intel
+    description: 共享情报接口（免鉴权登记 / key 鉴权查询）
 
 paths:
-  /v1/entities:
+  /health:
     get:
-      tags: [Entities]
-      summary: 列出实体
-      description: |
-        按领域 / 关键词 / 类型分页查询实体。免费层限 100 条，Partner/Pro 层限 1000 条。
-        完整字段仅 Pro 可访问；免费层仅返回 `id / name / abstract / tags` 四字段。
-      operationId: listEntities
-      security:
-        - ApiKeyAuth: []
-        - {}
-      parameters:
-        - name: domain
-          in: query
-          required: false
-          schema:
-            type: string
-            example: embodied-ai
-          description: 领域 slug（30 个之一，见 `/v1/domains`）
-        - name: q
-          in: query
-          required: false
-          schema:
-            type: string
-            maxLength: 200
-            example: robot manipulation
-          description: 关键词过滤（作用于 name + abstract + tags）
-        - name: limit
-          in: query
-          required: false
-          schema:
-            type: integer
-            minimum: 1
-            maximum: 1000
-            default: 50
-        - name: cursor
-          in: query
-          required: false
-          schema:
-            type: string
-          description: 分页游标（由上一页响应 `next_cursor` 提供）
+      tags: [meta]
+      summary: 服务健康检查
+      operationId: health
+      security: []
       responses:
         '200':
-          description: 成功
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EntityListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-  /v1/entities/{id}:
-    get:
-      tags: [Entities]
-      summary: 实体详情
-      operationId: getEntity
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-            example: robot-parts:708
-          description: 实体 ID（格式 `<domain>:<sequence>` 或 OSS `<source>:<url>`）
-      responses:
-        '200':
-          description: 成功
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Entity'
-        '404':
-          description: 实体不存在
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-
-  /v1/domains:
-    get:
-      tags: [Domains]
-      summary: 领域元数据列表
-      operationId: listDomains
-      security:
-        - ApiKeyAuth: []
-        - {}
-      responses:
-        '200':
-          description: 30 站元数据
+          description: OK
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  domains:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Domain'
+                  ok: { type: boolean, example: true }
+                  service: { type: string, example: genetech-api-guard }
+                  time: { type: string, format: date-time }
+
+  /v1/oss/registry:
+    get:
+      tags: [free]
+      summary: 开源注册表（每日扫描 GitHub / HuggingFace / Papers-with-Code 的产物）
+      operationId: ossRegistry
+      security: []
+      responses:
+        '200':
+          description: registry JSON（约 134 KB）
+        '429': { $ref: '#/components/responses/RateLimited' }
+
+  /v1/entities:
+    get:
+      tags: [free]
+      summary: 聚合实体目录（30 站 / 300k 实体的索引视图）
+      operationId: entityCatalog
+      security: []
+      parameters:
+        - { name: site, in: query, description: '按站点过滤 slug', schema: { type: string } }
+        - { name: q, in: query, description: '关键词（服务端过滤）', schema: { type: string } }
+        - { name: limit, in: query, schema: { type: integer, default: 50 } }
+        - { name: offset, in: query, schema: { type: integer, default: 0 } }
+      responses:
+        '200': { description: catalog JSON（对齐 /api/catalog.json） }
+        '429': { $ref: '#/components/responses/RateLimited' }
+
+  /v1/domains:
+    get:
+      tags: [free]
+      summary: 站点（域）清单
+      operationId: domainList
+      security: []
+      responses:
+        '200':
+          description: 30 站元数据
 
   /v1/domains/{slug}:
     get:
-      tags: [Domains]
-      summary: 领域详情（含最新信号与实体统计）
-      operationId: getDomain
+      tags: [free]
+      summary: 单站实体索引
+      operationId: domainIndex
+      security: []
       parameters:
         - name: slug
           in: path
           required: true
-          schema:
-            type: string
-            example: embodied-ai
+          schema: { type: string }
+          example: quantum-computing
       responses:
-        '200':
-          description: 领域详情
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DomainDetail'
-
-  /v1/oss/registry:
-    get:
-      tags: [OSS]
-      summary: 开源项目注册表
-      description: |
-        GitHub / HuggingFace / Papers with Code 三类开源实体的结构化数据。
-        字段包含 stars / license / maintenance_status / domain_tags 等，
-        供下游做「小模型 KB」和「机器人路线建议」消费。
-      operationId: listOssRegistry
-      parameters:
-        - name: source
-          in: query
-          required: false
-          schema:
-            type: string
-            enum: [github, hf-model, hf-dataset, pwc]
-        - name: domain
-          in: query
-          required: false
-          schema:
-            type: string
-            description: 领域标签过滤（`domainTags` 字段）
-        - name: min_stars
-          in: query
-          required: false
-          schema:
-            type: integer
-            minimum: 0
-        - name: maintenance
-          in: query
-          required: false
-          schema:
-            type: string
-            enum: [active, stale, dormant, abandoned, unknown]
-        - name: limit
-          in: query
-          required: false
-          schema:
-            type: integer
-            default: 100
-            maximum: 500
-        - name: cursor
-          in: query
-          required: false
-          schema:
-            type: string
-      responses:
-        '200':
-          description: 开源实体列表
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  entities:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/OssProject'
-                  next_cursor:
-                    type: string
-                    nullable: true
+        '200': { description: 该站 website/api/index.json }
+        '404': { $ref: '#/components/responses/NotFound' }
 
   /v1/academic/entities:
     get:
-      tags: [Academic]
-      summary: 学术实体库（OpenAlex）
-      description: |
-        OpenAlex 学术著作结构化数据（标题 / 摘要 / 作者 / 年份 / DOI / 站点标签），
-        与 30 站 per-site 实体库互补的独立数据集（30 站已 ALL-AT-CAP 各 10,000），
-        供下游做「科研前沿」检索与知识库消费。体积受控、每日增量扩库。
-      operationId: listAcademicEntities
+      tags: [free]
+      summary: 学术实体集（OpenAlex 扩库产物）
+      description: >
+        **实测 404（2026-10-02）**：上游 data/academic-entities.json 尚未生成。
+        保留端点定义，数据集落地后无需改动调用方。
+      operationId: academicEntities
+      security: []
       responses:
-        '200':
-          description: 学术实体数组（紧凑 JSON）
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/AcademicEntity'
+        '200': { description: academic-entities.json }
+        '404': { $ref: '#/components/responses/NotFound' }
 
   /v1/academic/pubmed:
     get:
-      tags: [Academic]
-      summary: 学术实体库（PubMed）
-      description: |
-        PubMed/NCBI E-utilities 生物医学文献结构化数据（PMID / DOI / 标题 / 摘要 / 作者 / 站点标签）。
-        偏生命科学与临床，与 OpenAlex 广度互补。
-      operationId: listPubmedEntities
-      responses:
-        '200':
-          description: 生物医学文献实体数组（紧凑 JSON）
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/AcademicEntity'
+      tags: [free]
+      summary: PubMed 实体集
+      description: '**实测 404（2026-10-02）**：data/pubmed-entities.json 尚未生成。'
+      operationId: academicPubmed
+      security: []
 
   /v1/academic/crossref:
     get:
-      tags: [Academic]
-      summary: 学术实体库（Crossref）
-      description: |
-        Crossref 出版级元数据（DOI 可溯源 / 期刊 / 被引数 / 主题分类 / 摘要）。
-        免费无 key，是摘要回填链路的关键配套源。
-      operationId: listCrossrefEntities
-      responses:
-        '200':
-          description: Crossref 实体数组（紧凑 JSON）
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/AcademicEntity'
+      tags: [free]
+      summary: Crossref 实体集
+      description: '**实测 404（2026-10-02）**：data/crossref-entities.json 尚未生成。'
+      operationId: academicCrossref
+      security: []
 
   /v1/search/semantic:
     post:
-      tags: [Search]
-      summary: 关键词语义搜索（Pro only）
-      description: |
-        基于实体 name / tags / snippet 的加权 token 匹配（name 3 分 / tag 2 分 / snippet 1 分 + confidence 加权）。
-        当前实现为 token-based（13k 高置信实体，索引每日构建），非 embedding 向量化；
-        W3-W4 计划接入 embedding 向量化。需要 `gtk_` Pro key。
+      tags: [pro]
+      summary: 语义检索（Pro Key 必需）
       operationId: semanticSearch
       security:
-        - ApiKeyAuth: []
+        - proKey: []
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [query]
+              required: [q]
               properties:
-                query:
-                  type: string
-                  example: reinforcement learning safety
-                  minLength: 2
+                q: { type: string, example: 'photosynthesis quantum efficiency' }
                 sites:
-                  description: 按子站过滤（可选，数组或单字符串）
-                  oneOf:
-                    - type: array
-                      items: { type: string }
-                    - type: string
-                  example: [embodied-ai]
-                source:
-                  description: 按数据来源过滤（arxiv / crossref / europepmc）
-                  type: string
-                limit:
-                  type: integer
-                  default: 20
-                  minimum: 1
-                  maximum: 50
+                  type: array
+                  items: { type: string }
+                  description: '限定的站点 slug；不给则全局检索'
+                limit: { type: integer, default: 10 }
+                min_confidence: { type: number, format: float, default: 0 }
+              additionalProperties: false
       responses:
         '200':
-          description: 匹配结果
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  results:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id: { type: string }
-                        name: { type: string }
-                        site: { type: string }
-                        source: { type: string }
-                        url: { type: string }
-                        snippet: { type: string }
-                        tags:
-                          type: array
-                          items: { type: string }
-                        publishedDate: { type: string, format: date }
-                        confidence: { type: number }
-                        score: { type: number, format: float }
-                  total: { type: integer, description: 命中总数 }
-                  returned: { type: integer, description: 本次返回条数 }
-                  query: { type: string }
-                  meta:
-                    type: object
-                    properties:
-                      indexGeneratedAt: { type: string, format: date-time }
-                      entityCount: { type: integer }
-                      sourceSites: { type: integer }
-                      elapsedMs: { type: integer }
-                      tokenCount: { type: integer }
-        '400':
-          description: 参数错误
-        '401':
-          description: 缺少 Authorization
-        '403':
-          description: Pro key 校验失败
-        '503':
-          description: 搜索索引不可用
+          description: 命中结果（name/tags/snippet/url/confidence 加权打分）
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '405': { description: 仅支持 POST }
+        '429': { $ref: '#/components/responses/RateLimited' }
 
-  /v1/license/verify:
+  /api/pro/search/semantic:
     post:
-      tags: [License]
-      summary: 校验 License Key
-      operationId: verifyLicense
+      tags: [pro]
+      summary: 语义检索（/api/pro/ 等价路径）
+      operationId: semanticSearchPro
+      security:
+        - proKey: []
+      responses:
+        '200': { description: 同 /v1/search/semantic }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+
+  /v1/intel/apply:
+    post:
+      tags: [intel]
+      summary: 登记情报申请（免鉴权）
+      operationId: intelApply
+      security: []
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [license_key]
               properties:
-                license_key:
-                  type: string
-                  example: gtk_eyJ...
+                name: { type: string }
+                email: { type: string }
+                use_case: { type: string }
       responses:
-        '200':
-          description: 校验结果
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  valid:
-                    type: boolean
-                  expires_at:
-                    type: string
-                    format: date-time
-                  tier:
-                    type: string
-                    enum: [free, partner, pro, lifetime]
-                  scopes:
-                    type: array
-                    items:
-                      type: string
+        '200': { description: 受理回执，返回申请 id }
+        '400': { description: 参数缺失或非法 }
 
-  /v1/license/quota:
+  /v1/intel/verify:
     get:
-      tags: [License]
-      summary: 查询当前 key 配额
-      operationId: getLicenseQuota
+      tags: [intel]
+      summary: 校验 key（免鉴权）
+      operationId: intelVerify
+      security: []
+      parameters:
+        - { name: k, in: query, schema: { type: string } }
       responses:
-        '200':
-          description: 配额信息
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  limit:
-                    type: integer
-                    description: 每分钟请求上限
-                  used:
-                    type: integer
-                    description: 本分钟已用
-                  reset_at:
-                    type: string
-                    format: date-time
+        '200': { description: key 有效 }
+        '401': { description: key 无效 }
 
-  /health:
-    get:
-      tags: [System]
-      summary: 健康检查
-      operationId: healthCheck
+  /v1/intel/demand:
+    post:
+      tags: [intel]
+      summary: 提交情报需求（需 ckn_ 或 gtk_）
+      operationId: intelDemand
       security:
-        - {}
+        - intelKey: []
       responses:
-        '200':
-          description: 服务正常
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                    enum: [ok]
-                  timestamp:
-                    type: string
-                    format: date-time
-                  version:
-                    type: string
+        '200': { description: 需求受理，返回 id }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+
+  /v1/intel/demand/{id}:
+    get:
+      tags: [intel]
+      summary: 查询情报需求状态与结果
+      operationId: intelDemandGet
+      security:
+        - intelKey: []
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        '200': { description: 需求详情（含产出） }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /v1/intel/consumer:
+    get:
+      tags: [intel]
+      summary: 消费者名单（admin）
+      operationId: intelConsumerList
+      security:
+        - intelKey: []
+      responses:
+        '200': { description: 消费者列表 }
+
+  /v1/intel/consumer/create:
+    post:
+      tags: [intel]
+      summary: 创建消费者（admin）
+      operationId: intelConsumerCreate
+      security:
+        - intelKey: []
+      responses:
+        '200': { description: 创建成功，返回 key }
+        '400': { description: 参数非法 }
+
+  /v1/intel/admin/state:
+    get:
+      tags: [intel]
+      summary: 导出 intel 系统状态（admin）
+      operationId: intelAdminState
+      security:
+        - intelKey: []
+      responses:
+        '200': { description: memory 状态快照 }
 
 components:
   securitySchemes:
-    ApiKeyAuth:
+    proKey:
+      type: http
+      scheme: bearer
+      description: 'Pro Key，前缀 gtk_（密钥在服务端签发，明文仅存于签发端）'
+    intelKey:
       type: apiKey
       in: header
-      name: Authorization
-      description: |
-        Bearer 前缀 + API key。前缀区分档位：
-        - `Bearer gtk_<hmac>` → Pro（付费）
-        - `Bearer slb_<hmac>` → Partner（合作）
-        - 无 header → Free（受限）
-
-  schemas:
-    Entity:
-      type: object
-      properties:
-        id:
-          type: string
-          example: embodied-ai:42
-        domain:
-          type: string
-          example: embodied-ai
-        name:
-          type: string
-        abstract:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-        doi:
-          type: string
-          nullable: true
-        source:
-          type: string
-          example: europepmc
-        published_at:
-          type: string
-          format: date-time
-        authors:
-          type: array
-          items:
-            type: string
-        citations:
-          type: integer
-        url:
-          type: string
-          format: uri
-    EntityListResponse:
-      type: object
-      properties:
-        entities:
-          type: array
-          items:
-            $ref: '#/components/schemas/Entity'
-        next_cursor:
-          type: string
-          nullable: true
-        total:
-          type: integer
-          description: 匹配总数（Partner/Pro 返回精确值，Free 层可能截断）
-    Domain:
-      type: object
-      properties:
-        slug:
-          type: string
-          example: embodied-ai
-        name:
-          type: string
-          example: 具身智能
-        entity_count:
-          type: integer
-        description:
-          type: string
-    DomainDetail:
-      allOf:
-        - $ref: '#/components/schemas/Domain'
-        - type: object
-          properties:
-            latest_signals:
-              type: array
-              items:
-                type: object
-                properties:
-                  type:
-                    type: string
-                    enum: [github_trending, arxiv_new, hf_model, pwc_paper]
-                  title:
-                    type: string
-                  url:
-                    type: string
-                    format: uri
-                  ingested_at:
-                    type: string
-                    format: date-time
-            data_coverage:
-              type: object
-              properties:
-                with_abstract_pct:
-                  type: number
-                  format: float
-                with_doi_pct:
-                  type: number
-                  format: float
-                with_citations_pct:
-                  type: number
-                  format: float
-    OssProject:
-      type: object
-      properties:
-        id:
-          type: string
-          example: gh:lm203688/genetech-14-sites
-        source:
-          type: string
-          enum: [github, hf-model, hf-dataset, pwc]
-        name:
-          type: string
-        url:
-          type: string
-          format: uri
-        description:
-          type: string
-        license:
-          type: string
-          example: MIT
-        stars:
-          type: integer
-        forks:
-          type: integer
-        watchers:
-          type: integer
-        downloads:
-          type: integer
-          description: HF models/datasets 特有
-        language:
-          type: string
-          nullable: true
-        topics:
-          type: array
-          items:
-            type: string
-        domain_tags:
-          type: array
-          items:
-            type: string
-          description: 自动分类的领域标签（agent-ecosystem / embodied-ai / llm-frontier 等）
-        first_seen_at:
-          type: string
-          format: date-time
-        last_seen_at:
-          type: string
-          format: date-time
-        maintenance_status:
-          type: string
-          enum: [active, stale, dormant, abandoned, unknown]
-
-    AcademicEntity:
-      type: object
-      description: 学术实体（OpenAlex / PubMed / Crossref 三源统一结构）
-      properties:
-        id:
-          type: string
-          example: pm:36123456
-        source:
-          type: string
-          enum: [openalex, pubmed, crossref]
-        doi:
-          type: string
-          nullable: true
-        pmid:
-          type: string
-          nullable: true
-          description: PubMed 特有
-        title:
-          type: string
-        abstract:
-          type: string
-          description: 摘要（Crossref 覆盖约 21%，PubMed/OpenAlex 较高）
-        url:
-          type: string
-          format: uri
-        authors:
-          type: array
-          items:
-            type: string
-        year:
-          type: integer
-          nullable: true
-        container:
-          type: string
-          nullable: true
-          description: 期刊 / 会议名（Crossref）
-        subject:
-          type: array
-          items:
-            type: string
-          description: 主题分类（Crossref）
-        citedBy:
-          type: integer
-        tags:
-          type: array
-          items:
-            type: string
-        sites:
-          type: array
-          items:
-            type: string
-          description: 归类的站点 slug（多标签）
-        confidence:
-          type: number
-          format: float
-        fetchedAt:
-          type: string
-          format: date-time
+      name: X-GeneTech-Key
+      description: '情报接口 key，前缀 ckn_（消费者）或 admin_（管理）'
 
   responses:
     Unauthorized:
-      description: 未授权或 key 无效
+      description: 缺少 Authorization 头
       content:
         application/json:
           schema:
             type: object
             properties:
-              error:
-                type: string
-                example: invalid_or_expired_key
+              error: { type: string, example: unauthorized }
+              message: { type: string }
+    Forbidden:
+      description: Key 签名校验失败 / 已过期 / 站点未授权
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error: { type: string, example: forbidden }
+              message: { type: string }
+    NotFound:
+      description: 端点或数据不存在
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error: { type: string, example: not_found }
+              message: { type: string }
     RateLimited:
-      description: 速率超限
+      description: 免费层限流
       headers:
-        Retry-After:
-          schema:
-            type: integer
-          description: 距下次可用秒数
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              error:
-                type: string
-                example: rate_limit_exceeded
-              retry_after:
-                type: integer
-              tier:
-                type: string
+        Retry-After: { schema: { type: integer } }

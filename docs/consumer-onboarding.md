@@ -1,97 +1,87 @@
-# 14站知识引擎 · 消费者上手指南
+# GeneTech Data API — 消费者接入指南
 
-> 面向下游项目（小模型 KB / 蜂群科研数据 / 机器人项目 / 付费客户）的接入说明。
-> 完整规范见 [`../openapi.yaml`](../openapi.yaml)；战略定位见 [`strategy-infrastructure.md`](strategy-infrastructure.md)。
+> 面向把本 API 接进 RAG / Agent / 内容管线的工程方。
+> 规范以 [`openapi.yaml`](../openapi.yaml) 为准（逐端点 curl 实测，2026-10-02）。
+> 对外展示一律英文，本文件为中文内部版。
 
-## 五档 API Key
+## 0. 这个 API 是什么，不是什么
 
-| 档位 | Key 前缀 | 速率 | 席位 | 数据范围 | 价格 |
-|---|---|---|---|---|---|
-| Free | 无 key | 60 req/min | 1 | 元数据（`/v1/domains` `/v1/entities` 聚合视图 `/v1/oss/registry` `/health`） | 免费 |
-| Partner | `slb_` | 120 req/min | 1 | 全量实体 + 领域读，独立网关 | 与运营方协商 |
-| Pro | `gtk_` | 600 req/min | 1 | 全字段 + `/v1/search/semantic` 语义搜索 + 引用导出 | ¥39.9 / 年 或 ¥199 终身 |
-| Team | `gtk_` × 5 | 300 req/min（池化） | 5 | Pro 全部能力，席位共享配额池 + 用量面板 | ¥199 / 年 |
-| Enterprise | `gtk_` 或独立网关 | 无硬上限 | 不限 | 时间机器重放 / 审计日志导出 / 本地镜像交付 / DPA + 合规证据包 | 议价 |
+**是什么**：30 个前沿科技站点、300,000 条结构化科研实体的**只读数据出口**。
+每条实体都带可追溯来源（`id` / `url` / `source` / `publishedDate` / `confidence`），
+可直接作为 RAG 的 grounding 片段。
 
-> Team 与 Enterprise 沿用 `gtk_` 签名体系，按席位签发；Enterprise 可另行部署独立网关。
+**不是什么**：
 
-## 端点
+- 不是推理/训练服务——不做 embedding、不做微调、不做合规判定。
+- 不是通用搜索——只暴露 9 个既定端点，没有开放 SQL/表达式。
+- 不是实时数据源——数据由每日定时流水线构建（OpenAlex / Crossref / GitHub / HuggingFace / arXiv 等 11 个开放源）。
 
-- **静态数据集**（已上线，免 key，全球可访问）：`https://data.swarmlabs.tools`
-- **JSON API**（已部署，自定义域绑定中）：`https://api.swarmlabs.tools`
-- **License 校验**（已部署，自定义域绑定中）：`https://license.swarmlabs.tools`
+**按域读数据的正确姿势**：`/v1/domains/{slug}` 拿单站索引，
+`/v1/entities` 拿聚合目录。要某站全量实体，走 `<slug>/website/api/entities.json`
+（经 `/v1/*` 同源代理，按 IP 限流）。
 
-> `api.` 与 `license.` 两条自定义域绑定完成后即刻可用；绑定期间请走 `data.swarmlabs.tools` 静态端点，无需切换调用方配置。
+## 1. 三档鉴权
 
-## Quick Start
-
-### Free tier — 浏览领域
-
-```bash
-curl -s https://api.swarmlabs.tools/v1/domains | jq '.sites[] | {site, label, totalEntities}'
-```
-
-### Free tier — 查看开源项目注册表
+| 档位 | 凭证 | 端点 | 限流 |
+|---|---|---|---|
+| Free | 无 | `/health`、`/v1/oss/registry`、`/v1/entities`、`/v1/domains/*` | 按 IP，默认 60 次/分钟，429 带 `Retry-After` |
+| Pro | `Authorization: Bearer gtk_...` | `/v1/search/semantic`、`/api/pro/*` | 更高配额 + 语义检索、跨域导出 |
+| Intel | header `X-GeneTech-Key`（`ckn_` 消费者 / `admin_` 管理） | `/v1/intel/*` | 按 key |
 
 ```bash
-curl -s https://api.swarmlabs.tools/v1/oss/registry | jq '.projects[:5]'
+# Free：直接读
+curl https://api.swarmlabs.tools/v1/oss/registry
+
+# Pro：语义检索（必须 POST）
+curl -X POST https://api.swarmlabs.tools/v1/search/semantic \
+  -H 'Authorization: Bearer gtk_xxx' \
+  -H 'Content-Type: application/json' \
+  -d '{"q":"photosynthesis quantum efficiency","limit":10}'
+
+# 限定站点
+curl -X POST https://api.swarmlabs.tools/v1/search/semantic \
+  -H 'Authorization: Bearer gtk_xxx' -H 'Content-Type: application/json' \
+  -d '{"q":"federated learning","sites":["biomed-ai","ai-safety"],"limit":5}'
 ```
 
-### Pro tier — 语义搜索
+## 2. 错误约定
 
-```bash
-curl -s -X POST https://api.swarmlabs.tools/v1/search/semantic \
-  -H "Authorization: Bearer gtk_..." \
-  -H "Content-Type: application/json" \
-  -d '{"query": "reinforcement learning safety", "limit": 10, "sites": ["ai-safety"]}' \
-  | jq '.results[] | {name, site, score, snippet: .snippet[0:80]}'
-```
+统一 `{error, message}`：
 
-### Partner tier — 全量数据拉取
-
-> **状态（2026-09-25）**：Partner 全量数据可通过下方静态端点免 key 拉取，已验证可用（2026-09-20 实测 200）。
-> 自定义域绑定（`api.swarmlabs.tools` / `license.swarmlabs.tools`）待完成，绑定后 Partner 无感切换至 `slb_` key 网关。
-
-```bash
-# 已验证可用（2026-09-20 实测 200 / 20,265,240 字节 / Last-Modified 当日）
-curl -s https://data.swarmlabs.tools/embodied-ai/website/api/entities.json | head -c 2000
-```
-
-网关绑定完成后的等价调用（`slb_` key）：
-
-```bash
-curl -s -H "Authorization: Bearer slb_..." \
-  https://api.swarmlabs.tools/v1/entities
-```
-
-## 数据源与更新
-
-- **上游**：arXiv / Semantic Scholar / Crossref / EuropePMC / Papers with Code / GitHub / HuggingFace
-- **30 个子站**：`agent-ecosystem` `agritech` `ai-safety` `ai4science` `alien-minerals` `biocomputing` `biomed-ai` `bionic-ai` `brain-science` `carbon-neutral` `deep-sea-tech` `digital-twin` `edge-ai` `embodied-ai` `exo-science` `genetech-tools` `life-science` `low-altitude` `neuromorphic` `new-energy` `nuclear-energy` `privacy-computing` `quantum-computing` `quantum-materials` `robot-parts` `sat-6g` `semiconductor` `spatial-computing` `synbio-manufacturing` `tcm-tools`
-- **更新频率**：知识实体每日累积（每小时批处理），搜索索引每日重建，OSS 注册表每日扫描
-- **数据新鲜度**：`/v1/domains` 返回的 `lastUpdated` 字段为各站最新构建时间；`/v1/search/semantic` 返回的 `meta.indexGeneratedAt` 为搜索索引构建时间
-
-## 错误码
-
-| HTTP | error 字段 | 说明 |
+| code | 含义 | 处理建议 |
 |---|---|---|
-| 400 | `bad_request` | 参数错误（如 query 太短） |
-| 401 | `unauthorized` | 缺少 Authorization |
-| 403 | `forbidden` | Key 校验失败（invalid_format / bad_signature / expired） |
-| 405 | `method_not_allowed` | 方法不支持（如 `/v1/search/semantic` 用 GET） |
-| 429 | `rate_limited` | 限流，`Retry-After` 头指示重试间隔 |
-| 503 | `index_unavailable` / `llm_not_configured` / `upstream_unreachable` | 服务暂不可用 |
+| 200 | 成功 | — |
+| 401 | 缺 `Authorization` | 加 header |
+| 403 | key 格式错 / 签名失败 / 过期 / 站点未授权 | 换 key 或换 `site` 参数 |
+| 404 | 端点或数据集不存在 | **注意 `/v1/academic/*` 三端点当前实测 404**（数据集未生成），勿依赖 |
+| 405 | 方法不允许（`/v1/search/semantic` 仅 POST） | 改方法 |
+| 429 | 免费层限流 | 尊重 `Retry-After`，或升 Pro |
+| 502 | 上游不可达 | 重试 + 退避 |
 
-## 独立性承诺
+## 3. 接进 Agent 的两条实用建议
 
-14站只承担**信息收集与结构化**，不承接：
+1. **先 Free 后 Pro**：Free 端点已能拿到全量实体索引与 OSS 注册表。只有需要
+   「跨站语义召回」时才上 Pro——语义索引覆盖率受 Worker 内存限制（见下），
+   长期方案是把检索迁到向量库，短期别指望它对 30 万实体 100% 召回。
+2. **用 `confidence` 做阈值**：实体带 `confidence` 字段（0-1），RAG 侧建议
+   `min_confidence ≥ 0.5` 再入上下文，否则噪声摘要会稀释检索质量。
 
-- ❌ 模型训练 / 推理
-- ❌ 商业数据加工 / 合规
-- ❌ 消费者项目鉴权（各消费者走各自独立 key 前缀，HMAC 密钥不共享）
+## 4. 已知边界（诚实披露，别踩）
 
-## 联系
+- **语义检索覆盖不全**：`/v1/search/semantic` 索引受 Cloudflare Worker 128MB 内存
+  约束，单文件索引只能装下语料的一部分（重建后约 6%，即 18,000 / 300,000）。
+  全量（149MB）在 Workers 上是架构级不可行的，需要分片 + 外部索引服务。
+  若你的用例要求全召回，请走 Free 端点直接读 `entities.json`，不要用 `semantic`。
+- **数据时效**：每 4 小时重建一次聚合目录；学术数据集按日更新。
+- **引用关系**：知识图谱的 71,857 条边目前 100% 是标签共现/跨站桥接，
+  **引用关系边正在建设**（`operations-plan/pipeline-openalex-citation.js`，
+  语料含 276,683 个合法 DOI）。需要引用图的消费者请走 `gtk_` Pro 通道或联系运营。
+- **`/v1/academic/*` 三端点 404**：上游 `data/academic-entities.json` 等尚未生成，
+  规范里保留定义，落地后无需改调用方。
 
-- 项目仓库：`lm203688/genetech-14-sites`（MIT）
-- 战略文档：`docs/strategy-infrastructure.md`
-- 部署状态：见 `_site/api/catalog.json` 的 `generatedAt`
+## 5. 环境与承诺
+
+- 基址：`https://api.swarmlabs.tools`（Worker 侧），
+  数据同源：`https://data.swarmlabs.tools`（GitHub Pages 直出）。
+- 消费者文档与定价页：`docs/consumer-onboarding.md`、`_site/pricing.html`。
+- 申请 Intel key：POST `/v1/intel/apply`（免鉴权）。
