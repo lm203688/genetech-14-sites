@@ -19,6 +19,7 @@
  *   而部署本身依然打印「部署成功」——典型的优雅降级变成生产静默故障。
  *   worker.js 里 INTEL_KV 是主存储（PRO_KV 只是 fallback），漏绑不是一个可选优化。
  */
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -91,7 +92,16 @@ async function ensureKV(acct, title) {
 }
 
 async function deploy(acct, proKvId, intelKvId) {
-  const workerSrc = fs.readFileSync(path.join(__dirname, 'worker.js'), 'utf8');
+  // 注入 build id：把本地 worker.js 的指纹写进脚本，线上任何响应都能自报身份。
+  // 同时把探针判定从「路径名出现与否」改成「build id 是否对得上」，避免再被
+  // 404 文案里的端点清单自证清白式地骗过去。
+  const workerRaw = fs.readFileSync(path.join(__dirname, 'worker.js'), 'utf8');
+  const workerHash = crypto.createHash('sha256').update(workerRaw).digest('hex').slice(0, 8);
+  if (!workerRaw.includes('__GENETECH_BUILD__')) {
+    say(`⚠ worker.js 里没有 __GENETECH_BUILD__ 占位符，build id 注入会失效（本地指纹 ${workerHash}）`);
+  }
+  const workerSrc = workerRaw.replace(/__GENETECH_BUILD__/g, workerHash);
+  say(`  [build] 本地 worker.js sha256=${workerHash}（已注入脚本）`);
   const boundary = '----genetech' + Date.now();
   const meta = {
     body_part: 'worker.js',
@@ -186,9 +196,11 @@ async function deploy(acct, proKvId, intelKvId) {
       live = r.status === null ? r : { status: r.status, body: await r.text() };
       if (live.status === null) { await new Promise((x) => setTimeout(x, 3000)); continue; }
       const b = live.body || '';
+      // 判定条件是 build id，不是「路径名出现过」——后者被 404 文案里的端点清单骗过一次。
+      const liveBuild = (b.match(/build=([0-9a-f]{8})/) || [])[1] || null;
       const hit = live.status === 200
-        || (!isCFErr(b) && live.status === 404 && b.includes('可用端点') && b.includes('/v1/citation/edges'));
-      say(`  [探测 ${i + 1}/6] ${probeUrl} → ${live.status}${hit ? '（已是新版本）' : ''}`);
+        || (!isCFErr(b) && live.status === 404 && liveBuild === workerHash);
+      say(`  [探测 ${i + 1}/6] ${probeUrl} → ${live.status}，线上 build=${liveBuild || '(无)'}，期望 ${workerHash}`);
       if (hit) { routed = true; break; }
       await new Promise((x) => setTimeout(x, 5000));
     }
