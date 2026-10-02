@@ -19,6 +19,12 @@
  *   LICENSE_API_SECRET   可选：调用上述端点的共享密钥（X-Admin-Secret）
  */
 
+// 部署时由 deploy-api.mjs 把 __GENETECH_BUILD__ 替换成本地 worker.js 的 sha256 前 8 位。
+// 存在的理由：2026-10-02 排查「PUT 返回 2xx 但线上仍是旧代码」时，没有任何手段能问出
+// "线上跑的是哪一版"——CF 的 GET script 在只读权限下返回 result={}，versions 接口也拿不到。
+// 让 worker 自报版本后，任何 404/401 响应都能直接读出线上代码指纹。
+const BUILD_ID = '__GENETECH_BUILD__';
+
 const DEFAULT_FREE_RATE = 60;
 const UPSTREAM_BASE = 'https://data.swarmlabs.tools';
 
@@ -1391,7 +1397,7 @@ async function handleRequest(request) {
     }
     // 未映射的 /v1/* 路径返回 404（避免自指循环）
     if (path.startsWith('/v1/')) {
-      return json({ error: 'not_found', message: `OpenAPI 端点 ${path} 不存在。可用端点：/v1/domains, /v1/entities, /v1/oss/registry, /v1/academic/entities, /v1/academic/pubmed, /v1/academic/crossref, /v1/citation/edges, /v1/search/semantic, /v1/intel/demand` }, 404);
+      return json({ error: 'not_found', message: `OpenAPI 端点 ${path} 不存在。可用端点：/v1/domains, /v1/entities, /v1/oss/registry, /v1/academic/entities, /v1/academic/pubmed, /v1/academic/crossref, /v1/citation/edges, /v1/search/semantic, /v1/intel/demand。线上 build=${BUILD_ID}` }, 404);
     }
     const upstreamUrl = new URL(path + url.search, UPSTREAM_BASE);
     const proxyReq = new Request(upstreamUrl, { method: request.method, headers: request.headers });
