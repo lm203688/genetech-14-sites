@@ -1,0 +1,22 @@
+{
+ "generatedAt": "2026-10-02T01:57:40.954Z",
+ "scope": {
+  "sites": 30,
+  "poolDois": 249689,
+  "batch": 50,
+  "concurrency": 5
+ },
+ "stats": {
+  "corpusEntities": 300000,
+  "uniqueDois": 260689,
+  "noDoi": 23231,
+  "worksFetched": 0,
+  "abstractsRecovered": 0,
+  "crossSiteEdges": 0,
+  "estPayloadMb": 0,
+  "elapsedSec": 4
+ },
+ "sampleEdges": [],
+ "sampleAbstracts": [],
+ "byTargetSite": {}
+}

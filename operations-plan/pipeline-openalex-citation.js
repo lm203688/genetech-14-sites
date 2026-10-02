@@ -51,16 +51,33 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const DATA_DIR = path.join(ROOT, 'data');
 const STATE_DIR = path.join(ROOT, 'state');
-const CURSOR_FILE = path.join(STATE_DIR, 'openalex-citation-cursor.json');
 
 const UA = (() => {
   try { return require('./lib/user-agent.cjs').USER_AGENT; }
   catch { return 'GeneTechBot/2.0 (+https://swarmlabs.tools/; mailto:ops@swarmlabs.tools)'; }
 })();
 
+// ---- 数据源 ----
+// 2026-10-02 实测：OpenAlex 的免费额度是**本 IP 全网共享的每日美元预算**，
+// 实测某日耗到 $0 后所有请求（含单条）一律 429，retryAfter ≈ 79445s（22 小时），
+// 退避重试毫无意义。所以必须有第二条不依赖 key 的通路。
+//   openalex（默认）：批量 DOI OR，50/请求，快，但受共享预算约束
+//   crossref        ：单 DOI 直查，无 key 无每日预算，但**不支持 doi 批量 OR**
+//                     （filter=doi:a|b 实测 total-results=0），只能一 DOI 一请求
+const SOURCE = (() => {
+  const a = process.argv.find((x) => typeof x === 'string' && x.startsWith('--source='));
+  return a ? a.slice('--source='.length) : 'openalex';
+})();
+// 游标按源分开：两条源的「批」不是一个单位（openalex 一批发 50 个 DOI，crossref 一个 DOI 一批），
+// 共用一个游标会让 openalex 续跑把 crossref 的批号当成自己已完成，直接跳掉几千批。
+const CURSOR_FILE = path.join(STATE_DIR, `openalex-citation-cursor-${SOURCE}.json`);
+
 const OPENALEX = 'https://api.openalex.org/works';
 const SELECT = ['id', 'doi', 'publication_year', 'cited_by_count',
   'referenced_works', 'referenced_works_count', 'abstract_inverted_index'].join(',');
+const CROSSREF = 'https://api.crossref.org/works';
+const CROSSREF_MAILTO = 'ops@swarmlabs.tools'; // 礼貌池凭据：Crossref 按 mailto 提高限额
+
 const BATCH = 50;          // 每请求 DOI 数（pipe OR）
 // 2026-10-02 实测：并发 8 时稳定触发 429（每次要退避 2s/4s/6s/8s 后仍失败），
 // 实际吞吐反而比并发 4 更低——把 10 req/s 的礼貌池打满会被限流节流。
@@ -72,13 +89,35 @@ const SAVE_EVERY = 10;     // 每 N 批落一次进度（原 20，中断时丢�
 const MAX_OUT_EDGES = 12;  // 每实体保留的跨站引用边上限（控体积）
 
 // ---- 命令行参数 ----
+// 2026-10-02 修复（P0，静默失效）：
+//   原实现写的是 `a.slice('--' + name + '='.length)`。`.` 的优先级高于 `+`，
+//   这行被解析成 `('-' '-' + name) + ('='.length)` = `'--limit' + 1` = `'--limit1'`，
+//   于是 slice 的下标是个字符串 → 转 NaN → 0 → 返回**整串 "--limit=5000"** 而不是 "5000"。
+//   后果：`Number('--limit=5000')` = NaN → `NaN || 1` → 1，--limit 永远像没传；
+//   同理 --sites / --stride 也全是错的。而「命令没生效又不报错」是最难查的那种失败——
+//   它看上去跑完了，其实一直在跑全量。
+//   现在显式构造前缀字符串，并加一条启动自检，防止再退化回去。
 function arg(name, dflt) {
-  const a = process.argv.find((x) => x.startsWith('--' + name + '='));
-  return a ? a.slice('--' + name + '='.length) : dflt;
+  const prefix = '--' + name + '=';
+  const a = process.argv.find((x) => typeof x === 'string' && x.startsWith(prefix));
+  if (!a) return dflt;
+  const v = a.slice(prefix.length);
+  if (v === '') return dflt;
+  return v;
 }
 const LIMIT = arg('limit', 0);
+// 跨站均匀抽样步长。DOI 池按站点顺序排列，不加步长的话「跑到一半」只覆盖前 1-2 个站，
+// 拿不到任何跨站边——而跨站边恰恰是本 pipeline 唯一的产品。
+// --stride=13 表示从 26 万池里等距取 1/13，各站点占比与全集一致。
+const STRIDE = Math.max(1, Number(arg('stride', '1')) || 1);
 const SITES = arg('sites', '').split(',').map((s) => s.trim()).filter(Boolean);
 const DRY_RUN = process.argv.includes('--dry-run');
+
+// 启动自检：命令行参数写错在本项目里会静默退化成「跑全量」，
+// 既慢又看不出哪里不对。这里把解析结果摊开打一遍，一眼可证。
+if (process.env.GENECH_ARG_TRACE !== '0') {
+  console.log(`[args] source=${SOURCE} limit=${LIMIT} stride=${STRIDE} sites=${SITES.length ? SITES.join(',') : '(all)'}`);
+}
 
 // ---- DOI 规范化 ----
 // 实测语料：276,769 条有 doi，其中 32,071 条是 https://doi.org/ 前缀形式。
@@ -197,16 +236,32 @@ function firstTodoIndex(poolLen, doneBatches) {
 }
 
 // ---- HTTP（含 429 退避）----
+// 上游「今日预算耗尽」的可判定特征。OpenAlex 免费额度是**本 IP 全网共享的每日美元预算**
+// （无 key 时），被同出口 IP 的其他人跑光后，本进程所有请求一律 429 且 retryAfter 约 22 小时。
+// 这跟「瞬时限流」是两件事：退避重试毫无意义，必须换源或换 key，否则整轮抓取空转。
+const BUDGET_EXHAUSTED = /insufficient budget|budget is used up|dailyRemainingUsd|no API key/i;
+
 async function fetchBatch(dois, cursor) {
   const url = `${OPENALEX}?filter=doi:${dois.join('|')}&per-page=${dois.length}&select=${SELECT}`;
-  let lastErr;
+  let lastErr = new Error('未发起任何请求（不应发生）');
   let throttled = false;
   for (let attempt = 0; attempt < RETRY_MAX; attempt++) {
     if (throttled) await new Promise((rs) => setTimeout(rs, Math.min(1500 * 2 ** attempt, 20000)));
+    let r;
     try {
-      const r = await fetch(url, { headers: { 'User-Agent': UA } });
+      r = await fetch(url, { headers: { 'User-Agent': UA } });
       if (r.status === 429) {
-        // 记一次限流并重新进入循环，退避已在循环开头按指数放大
+        const body = await r.text().catch(() => '');
+        // 先判预算耗尽：这类 429 退避再多次也是同样的结果
+        if (BUDGET_EXHAUSTED.test(body)) {
+          const m = /retryAfter["\s:]+(\d+)/.exec(body);
+          cursor.budgetExhausted = {
+            at: new Date().toISOString(),
+            retryAfterSec: m ? Number(m[1]) : null,
+            remaining: (/"dailyRemainingUsd"\s*:\s*([-\d.]+)/.exec(body) || [])[1] ?? null,
+          };
+          return null; // 不是失败，是「上游没额度了」——用 null 显式区分
+        }
         throttled = true;
         cursor.throttled = (cursor.throttled || 0) + 1;
         continue;
@@ -216,9 +271,42 @@ async function fetchBatch(dois, cursor) {
       cursor.fetched++;
       return j.results || [];
     } catch (e) {
-      lastErr = e;
+      lastErr = e instanceof Error ? e : new Error(String(e && e.message || e));
       throttled = false;
       await new Promise((rs) => setTimeout(rs, Math.min(800 * 2 ** attempt, 10000)));
+    }
+  }
+  // 2026-10-02 修复：原实现在「每次都命中 429 的 continue 分支」时 `throw lastErr`，
+  // 而 lastErr 从未被赋值 → `throw undefined` → 崩溃日志只有一行 "ERR undefined"，
+  // 连是网络问题还是限流都看不出来，排查时会被带偏到「并发太高」上去。
+  throw lastErr;
+}
+
+// Crossref 单 DOI 直查：取出 reference 里的 DOI 列表。
+// 不传 select（`select` 在 /works/{doi} 路由上会 400 parameter-not-allowed），
+// 全量记录解析后只取 reference，体积问题由 Node 的 GC 兜（单条 <200KB）。
+async function fetchCrossref(doi, cursor) {
+  const url = `${CROSSREF}/${encodeURIComponent(doi)}?mailto=${CROSSREF_MAILTO}`;
+  let lastErr = new Error('未发起任何请求（不应发生）');
+  for (let attempt = 0; attempt < RETRY_MAX; attempt++) {
+    try {
+      const r = await fetch(url, { headers: { 'User-Agent': UA } });
+      if (r.status === 429 || r.status === 503) {
+        cursor.throttled = (cursor.throttled || 0) + 1;
+        await new Promise((rs) => setTimeout(rs, Math.min(1200 * 2 ** attempt, 15000)));
+        continue;
+      }
+      if (r.status === 404) { cursor.miss404 = (cursor.miss404 || 0) + 1; return { missing: true }; }
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const j = await r.json();
+      cursor.fetched++;
+      const refs = ((j && j.message && j.message.reference) || [])
+        .map((x) => String(x && x.DOI || '').replace(/^https?:\/\/(dx\.)?doi\.org\//i, '').replace(/^doi:/i, '').toLowerCase())
+        .filter(Boolean);
+      return { refs };
+    } catch (e) {
+      lastErr = e instanceof Error ? e : new Error(String(e && e.message || e));
+      await new Promise((rs) => setTimeout(rs, Math.min(800 * 2 ** attempt, 8000)));
     }
   }
   throw lastErr;
@@ -235,7 +323,15 @@ async function fetchBatch(dois, cursor) {
   console.log(`无 DOI 实体：${orphans.length.toLocaleString()} 条`);
 
   const cursor0 = loadCursor();
+  // 每轮抓取一个独立落盘文件，避免续跑／重跑把上一轮的引用列表和这一轮混在一起
+  const cursorRunId = String(Date.now());
   const poolFull = [...byDoi.keys()];
+  if (STRIDE > 1) {
+    const sampled = poolFull.filter((_, idx) => idx % STRIDE === 0);
+    console.log(`[stride] 步长 ${STRIDE}：${poolFull.length.toLocaleString()} → 抽样 ${sampled.length.toLocaleString()} 个 DOI（各站占比与全集一致）`);
+    poolFull.length = 0;
+    for (const d of sampled) poolFull.push(d);
+  }
   let doneBatches = cursor0.doneBatches.slice();
   // 迁移：旧字典里连续存在的前缀长度（pool 顺序两边完全一致，可直接数）
   if (cursor0.legacy && cursor0.legacy.done) {
@@ -261,29 +357,92 @@ async function fetchBatch(dois, cursor) {
   const pool = LIMIT > 0 ? todo.slice(0, LIMIT) : todo;
   console.log(`本次抓取：${pool.length.toLocaleString()} 个 DOI（${Math.ceil(pool.length / BATCH)} 批）`);
 
-  // 工作集：DOI → work
+  // 2026-10-02 修复（P0，进程被 OOM 杀）：
+  //   原实现把 `{doi → {oa, year, citedBy, refs: [...]}}` 全量留在 works Map 里。
+  //   249,689 条工作 × 平均每篇 ~100 条 referenced_works（OpenAlex 单篇上限 500）
+  //   ≈ 2,500 万个 id 串 ≈ 1GB+ 常驻，进程在跑到十几批时 heap 直接被杀，
+  //   且 catch 打印 "ERR undefined"（非 Error 对象），日志里看不到任何线索。
+  //   现在引用的全量列表**逐批追加写盘**（JSONL），内存里只留摘要级字段；
+  //   oa→doi 映射只有 26 万条键，约 20MB，完全安全。边在收尾时流式算。
+  const refsDir = path.join(STATE_DIR, 'openalex-refs');
+  fs.mkdirSync(refsDir, { recursive: true });
+  const refsFile = path.join(refsDir, `refs-${cursorRunId}.jsonl`);
+  const refsW = fs.createWriteStream(refsFile);
+
+  // 工作集：DOI → 摘要级字段（不含引用列表）
   const works = new Map();
+  const seen = new Set();
   // 摘要池（只留语料缺失的）
   const abstracts = new Map();
   // 站点归属（用于判断跨站）
   const siteOf = new Map();
   for (const [k, v] of byDoi) siteOf.set(k, v.site);
 
+  const refLine = (doiKey, oaId, refs) => refsW.write(JSON.stringify([doiKey, oaId, refs, refs.length]) + '\n');
+
+  // ---- Crossref 通路（无需 key、无每日预算，但只能一 DOI 一请求）----
+  if (SOURCE === 'crossref') {
+    const t1 = Date.now();
+    console.log(`源=crossref（单 DOI 直查，并发 ${CONCURRENCY}）`);
+    for (let i = 0; i < pool.length; i += CONCURRENCY) {
+      const group = pool.slice(i, i + CONCURRENCY);
+      const out = await Promise.all(group.map(async (d) => {
+        try { return [d, await fetchCrossref(d, cursor)]; }
+        catch { cursor.errors = (cursor.errors || 0) + 1; return [d, { error: true }]; }
+      }));
+      for (const [d, r] of out) {
+        if (!r || r.error || r.missing) continue;
+        if (!seen.has(d)) { seen.add(d); works.set(d, { oa: null, doi: d, year: null, citedBy: 0 }); refLine(d, null, r.refs); }
+      }
+      if ((i / CONCURRENCY) % 50 === 0) {
+        const done = i + CONCURRENCY;
+        console.log(`  [${(done / pool.length * 100).toFixed(1)}%] ${done.toLocaleString()}/${pool.length.toLocaleString()} DOI / works ${works.size.toLocaleString()} / 限流 ${cursor.throttled || 0} / 404 ${cursor.miss404 || 0} / ${((Date.now() - t1) / 1000).toFixed(0)}s`);
+        cursor.doneBatches = [done];
+        saveCursor(cursor);
+      }
+      if (BATCH_GAP_MS > 0) await new Promise((rs) => setTimeout(rs, BATCH_GAP_MS));
+    }
+    refsW.end();
+    await new Promise((rs) => refsW.on('close', rs));
+    cursor.doneBatches = [pool.length];
+    cursor.completed = true;
+    cursor.source = 'crossref';
+    saveCursor(cursor);
+    finish('crossref');
+    return;
+  }
+
   let batches = 0;
+  let abortedByBudget = false;
   for (let i = 0; i < pool.length; i += BATCH) {
     const chunk = pool.slice(i, i + BATCH);
     const results = await fetchBatch(chunk, cursor);
+    if (results === null) {
+      // 上游当日预算耗尽：立刻停手，别把剩下的几千批白撞一遍墙。
+      // 已完成的部分已经在游标里，明晚（或换 key 后）续跑即可。
+      abortedByBudget = true;
+      cursor.doneBatches = cursor.doneBatches || [];
+      if (!cursor.doneBatches.includes(i)) cursor.doneBatches.push(i);
+      saveCursor(cursor);
+      console.log('\n[ABORT] OpenAlex 免费预算耗尽，停止抓取（已完成部分已落游标）。');
+      break;
+    }
     for (const w of results) {
       const doi = normDoi(w.doi);
       if (!doi) continue;
       const key = doi.toLowerCase();
-      works.set(key, {
-        oa: w.id,
-        doi,
-        year: w.publication_year,
-        citedBy: w.cited_by_count || 0,
-        refs: w.referenced_works || [],
-      });
+      if (!seen.has(key)) {
+        seen.add(key);
+        works.set(key, {
+          oa: w.id,
+          doi,
+          year: w.publication_year,
+          citedBy: w.cited_by_count || 0,
+        });
+        // 引用列表落盘：一行一条（换行出现在 base64/url-safe id 里没有风险，
+        // OpenAlex id 形如 https://openalex.org/W123，不含换行）
+        refsW.write(JSON.stringify([key, w.id, w.referenced_works || [], w.referenced_works_count ?? 0]) + '\n');
+      }
       const abs = reconstructAbstract(w.abstract_inverted_index);
       if (abs) abstracts.set(key, { site: byDoi.get(key)?.site || null, text: abs, oa: w.id, year: w.publication_year });
     }
@@ -298,9 +457,14 @@ async function fetchBatch(dois, cursor) {
     }
     if (BATCH_GAP_MS > 0) await new Promise((rs) => setTimeout(rs, BATCH_GAP_MS));
   }
+  refsW.end();
+  await new Promise((rs) => refsW.on('close', rs));
 
-  // ---- 构建跨站引用边 ----
-  // 双向索引：openalex id → 语料 DOI
+  // ---- 构建跨站引用边（流式扫盘，内存里只有 oa→doi 映射）----
+  // 声明成函数而不是内联：crossref 通路与 openalex 通路都要跑同一段收尾，
+  // 抽出来才能只维护一份边构建逻辑（两份迟早会算出不同的边）。
+  // 函数声明在外层 async IIFE 里会提升，所以下方 `finish('crossref')` 可以先调后定义。
+  async function finish() {
   const oaToDoi = new Map();
   for (const [k, w] of works) if (w.oa) oaToDoi.set(w.oa, k);
 
@@ -308,24 +472,33 @@ async function fetchBatch(dois, cursor) {
   const perEntity = new Map(); // doi → {citedBy, refCount, inEdges, outEdges, refSameSite, refCrossSite, refOutside}
   const crossSet = new Set();
 
-  for (const [doiKey, w] of works) {
+  const rl = fs.createReadStream(refsFile, { encoding: 'utf8' });
+  let lineNo = 0;
+  for await (const line of rl) {
+    if (!line) continue;
+    lineNo++;
+    const [doiKey, oaId, refs, refCount] = JSON.parse(line);
     const srcSite = siteOf.get(doiKey);
-    if (!srcSite) continue;
+    const w = works.get(doiKey);
+    if (!srcSite || !w) { perEntity.set(doiKey, null); continue; }
+    // 引用计数用 OpenAlex 自报的 referenced_works_count，避免每次解析 100+ 个 id
     const rec = {
       citedBy: w.citedBy,
-      refCount: w.refs.length,
+      refCount: refCount || refs.length,
       refSameSite: 0,
       refCrossSite: 0,
       refOutside: 0,
       outEdges: 0,
       inEdges: 0,
     };
-    for (const refOa of w.refs) {
-      const targetDoi = oaToDoi.get(refOa);
+    for (const refOa of refs) {
+      // oa 模式：refOa 是 OpenAlex id，走 oaToDoi；
+      // crossref 模式：refOa 是裸 DOI，直接查 siteOf（两边都小写归一化过）。
+      let targetDoi = oaToDoi.get(refOa);
+      if (!targetDoi && siteOf.has(refOa)) targetDoi = refOa;
       if (!targetDoi) { rec.refOutside++; continue; }
       const tgtSite = siteOf.get(targetDoi);
       if (!tgtSite || tgtSite === srcSite) { rec.refSameSite++; continue; }
-      // 跨站边
       rec.refCrossSite++;
       if (rec.outEdges < MAX_OUT_EDGES) {
         const eid = `${doiKey}=>${targetDoi}`;
@@ -338,8 +511,10 @@ async function fetchBatch(dois, cursor) {
     }
     perEntity.set(doiKey, rec);
   }
+  // 没抓到工作记录（OpenAlex 无此 DOI）的池条目也要占位，否则下游 inEdges 统计会漏
+  for (const [k] of works) if (!perEntity.has(k)) perEntity.set(k, null);
 
-  // 入度
+  // 入度（跨站入边）
   for (const e of edges) {
     const tgt = perEntity.get(e.t);
     if (tgt) tgt.inEdges++;
@@ -357,10 +532,16 @@ async function fetchBatch(dois, cursor) {
   console.log(`跨站引用边：${edges.toLocaleString()} 条`);
   console.log(`体积估算：${estTotalMB.toFixed(1)} MB（边 ${(edgeBytes / 1048576).toFixed(1)} + 实体级 ${(estEntPayload / 1048576).toFixed(1)}）`);
 
+  // 2026-10-02 修复：tsCnt 原先只在 `if (edges.length > 0)` 里声明，
+  // 而下面写产物时的 `Object.entries(tsCnt)` 在另一作用域 → ReferenceError，
+  // 让「已经算完、也写了产物」的流程以非零码退出（CI 判红的典型成因）。
+  const tsSites = new Set();
+  for (const e of edges) { tsSites.add(e.ss); tsSites.add(e.ts); }
+  const tsCnt = {};
+  for (const e of edges) tsCnt[e.ts] = (tsCnt[e.ts] || 0) + 1;
+  console.log(`\n涉及站点：${tsSites.size} / ${sites.length}`);
   if (edges.length > 0) {
     console.log('\n跨站边 Top（按目标站点）：');
-    const tsCnt = {};
-    for (const e of edges) tsCnt[e.ts] = (tsCnt[e.ts] || 0) + 1;
     Object.entries(tsCnt).sort((a, b) => b[1] - a[1]).slice(0, 10).forEach(([k, v]) => console.log(`  → ${k.padEnd(24)} ${v.toLocaleString()}`));
   }
 
@@ -369,7 +550,7 @@ async function fetchBatch(dois, cursor) {
   fs.mkdirSync(path.dirname(out), { recursive: true });
   const sample = {
     generatedAt: new Date().toISOString(),
-    scope: { sites: sites.length, poolDois: pool.length, batch: BATCH, concurrency: CONCURRENCY },
+    scope: { source: SOURCE, sites: sites.length, poolDois: pool.length, batch: BATCH, concurrency: CONCURRENCY },
     stats: {
       corpusEntities: total,
       uniqueDois: byDoi.size,
@@ -379,6 +560,7 @@ async function fetchBatch(dois, cursor) {
       crossSiteEdges: edges.length,
       estPayloadMb: +estTotalMB.toFixed(2),
       elapsedSec: +((Date.now() - t0) / 1000).toFixed(1),
+      budgetExhausted: cursor.budgetExhausted || null,
     },
     sampleEdges: edges.slice(0, 25),
     sampleAbstracts: [...abstracts.entries()].slice(0, 5).map(([k, v]) => ({ doi: k, site: v.site, year: v.year, len: v.text.length, text: v.text.slice(0, 300) })),
@@ -395,4 +577,26 @@ async function fetchBatch(dois, cursor) {
   cursor.completed = true;
   cursor.updatedAt = new Date().toISOString();
   saveCursor(cursor);
-})().catch((e) => { console.error('ERR', e); process.exit(1); });
+  if (cursor.budgetExhausted) console.log('[note] 本次是「上游预算耗尽」的部分结果，不是失败；明晚续跑即可。');
+  }   // ---- end finish() ----
+
+  await finish();
+})().catch((e) => {
+  // 2026-10-02：原写法 `console.error('ERR', e)` 在进程被 OOM 杀死时打印 "ERR undefined"。
+  // 被 heap 杀掉时 catch 拿到的是非 Error 对象（或已被销毁），光看 "undefined" 完全定位不了。
+  // 这里把类型 + code + 堆栈都打出来，并给一个明确的 OOM 判据，免得下次再靠猜。
+  const kind = e == null ? String(e) : (typeof e === 'object' ? `object(code=${e.code ?? 'none'}, type=${e.type ?? 'none'}, reason=${e.reason ?? 'none'})` : String(e));
+  console.error('ERR', kind);
+  try { console.error(e?.stack || '(no stack)'); } catch { /* 对象可能已被销毁 */ }
+  constUsage();
+  process.exit(1);
+});
+
+// Node 的堆上限在 64 位上默认 ≈ 2GB（--max-old-space-size 未设时）。
+// 抓取 26 万条工作 × 每条上百个引用 id 是典型能撑爆的量级，这里给一个可判定的阈值。
+function constUsage() {
+  const m = process.memoryUsage().heapUsed / 1048576;
+  const limit = (require('v8').getHeapStatistics().heap_size_limit) / 1048576;
+  console.error(`heapUsed=${m.toFixed(0)}MB / limit=${limit.toFixed(0)}MB`);
+  if (m > limit * 0.75) console.error('判据：接近堆上限，几乎可以确定是 OOM（应把引用列表改落盘）');
+}
