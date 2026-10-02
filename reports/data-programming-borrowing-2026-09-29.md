@@ -212,28 +212,16 @@ conf        = base·likelihoodR / (base·likelihoodR + (1-base))
 
 ## 九、下一步（按杠杆排序）
 
-> **更新（2026-09-29 晚）**：第 1、2、4、5、6 项已处理，第 10 节有对应小节。原表保留以便对照。
-
-| # | 事项 | 状态 |
-|---|---|---|
-| 1 | 扩 LF 词表到 Top-100 语料标签 | ✅ 完成（第十节）：不是扩宽而是**标定**，precision 0.061→0.375 |
-| 2 | 人工复核清单 | ✅ 完成（10.7）：`misroute-review-top500.md`，候选池 93,267 条 |
-| 3 | 摘要回填走源 API | ⏳ 未做：需要 OpenAlex/PubMed 配额，属运营任务，与本轮无耦合 |
-| 4 | pipeline 收口 | 🟡 部分（10.9）：UA 单点化已做；函数收口因返回结构不一致**有意不做** |
-| 5 | 修 tools 旧式守卫 | ✅ 完成：`circuit-breaker.mjs`、`data-quality.mjs`、`audit-logger.mjs` 冒烟测试均实际触发 |
-| 6 | 容量核算后才能 --write | ✅ 完成（10.8）：实测增量仅 +8.09 MB，当前 64.1%，**可以写** |
-
-原始排序（历史记录）：
+> 第 1 项已由第十节完成（词表标定，非扩宽）。剩余项重新排序：
 
 | # | 事项 | 说明 |
 |---|---|---|
-| 1 | ~~扩 LF 词表到 Top-100 语料标签~~ | 当前 11 个产出标签是硬瓶颈。词表扩上去后，第 6.3 节的准确率判断才有意义 |
-| 2 | ~~人工复核清单~~ | 从 90,179 条错路由里按置信度排序导出前 500 条，人工过一遍验证精确率，再决定批量重路由 |
+| 1 | **扩 LF 词表到 Top-100 语料标签** | 当前 11 个产出标签是硬瓶颈。词表扩上去后，第 6.3 节的准确率判断才有意义 |
+| 2 | **人工复核清单** | 从 90,179 条错路由里按置信度排序导出前 500 条，人工过一遍验证精确率，再决定批量重路由 |
 | 3 | **摘要回填走源 API** | 第七节的负结果已经明确：字段解析救不了，只能从 OpenAlex/PubMed 回填 |
-| 4 | ~~pipeline 收口~~ | `withRetry` 6 份 / `httpGet` 9 份 / UA 3 种并存 → 迁到 `lib/http-client.mjs`，UA 单点收敛 |
-| 5 | ~~修 tools 旧式守卫~~ | `tools/circuit-breaker.mjs`、`tools/data-quality.mjs` 的冒烟测试在本机永不触发 |
-| 6 | ~~容量核算后才能 --write~~ | Pages 99.1%，写回前必须先算增量，否则整站下线 |
-
+| 4 | **pipeline 收口** | `withRetry` 6 份 / `httpGet` 9 份 / UA 3 种并存 → 迁到 `lib/http-client.mjs`，UA 单点收敛 |
+| 5 | **修 tools 旧式守卫** | `tools/circuit-breaker.mjs`、`tools/data-quality.mjs` 的冒烟测试在本机永不触发 |
+| 6 | **容量核算后才能 --write** | Pages 99.1%，写回前必须先算增量，否则整站下线 |
 
 ---
 
@@ -361,73 +349,6 @@ distinctTags 从上一轮未筛选时的 698 降到 91，**这是刻意的不是
 
 本轮一并推送。教训：**"优雅降级"在离线脚本里是优点，在生产上是静默故障**。这类 LF 至少应该在报告里报一句 `vocabIndex: null`，否则只能靠人肉核对远端树发现。
 
-### 10.7 错路由清单：第一版排序键是错的
-
-上节说的 88,889 条错路由需要人工复核才能动作，所以这轮产出了清单（`reports/misroute-review-top500.md` / `.json`）。第一版排序键写成了「正交簇越多越可疑」，跑完 top500 **全部是跨 3 个以上学科簇的实体**——这本身就暴露了问题：摘要横跨 3 个以上簇的实体，恰好是**跨学科论文**，是最典型的误报，不是错路由。真正的错路由信号是**证据集中在一个特定的正交簇**（站点是量子计算、摘要从头到尾讲临床），而不是证据分散。
-
-修正后的排序键：
-
-```
-concentration = 主簇证据标签数 / 全部正交证据标签数
-purity        = 1 / 正交簇数
-strength      = round(主簇标签数 × concentration × purity × 100 + topConfidence × 10)
-```
-
-候选池 93,267 条的三类分布，这是估算误报率的基础：
-
-| 类型 | 条数 | 占比 | 含义 |
-|---|---|---|---|
-| `cross-domain` | 40,160 | 43.1% | 只有 1 个正交簇，最可能是真错路由 |
-| `mixed` | 37,298 | 40.0% | 2 个正交簇 |
-| `cross-cutting` | 15,809 | 17.0% | ≥3 个正交簇，最可能是跨学科论文 |
-
-修正后 top500 全部落在 `cross-domain`（证据主簇 cs 418 条 / med 82 条），被否决最多的站点标签是 `psychology` 128 条、`biology` 108 条。清单每条带主簇、集中度、正交标签明细、labelModel top-3 提案、来源与 DOI 链接，可直接拿去抽查。
-
-**一个口径差异值得记**：`pipeline-label-program.js` 报的 88,889 是**偏低估计**。它的循环里 `if (r.abstained) { abstained++; continue; }` 在错路由检测**之前**，弃权实体根本不进检测。本次清单覆盖全部 141,459 条有摘要实体，得 93,267。弃权实体的标签置信度本就不足，其站点路由恰恰更值得复核——所以本清单的口径更合理，不是口径变松了。
-
-### 10.8 `--write` 容量核算：可以写，前提是记忆里的"99.1%"已经过时
-
-`--write` 一直被 `Pages 容量 99.1%，不能写` 挡住。写回会往每个无标签实体注入 `tags` / `tagConfidence` / `tagSource` 三个字段，所以先做了一次纯内存的增量测算（`operations-plan/estimate-write-capacity.js`，不落盘、不动 entities.json）：
-
-| 项 | 值 |
-|---|---|
-| 当前 `_site` | 649.96 MB（**64.1%** / 1014.7 MB 上限） |
-| 写回后预估 | 658.05 MB（**64.9%**） |
-| 增量 | **+8.09 MB**（占 entities 部分的 +1.72%） |
-| 距硬上限余量 | 356.65 MB |
-| 距 90% 安全水位余量 | 255.15 MB |
-| 判定 | **OK，可以写** |
-
-填充 103,829 个实体、弃权 5,728 个、无提案 0。单站最大增幅 sat-6g +0.52 MB（+4.12%）、neuromorphic +0.50 MB（+4.65%，增幅比最高）。
-
-三条必须记住的前提：
-1. 只补 `tagsOf(e).length === 0` 的实体，已有标签的实体一个字节都不动——所以增量只有 8 MB，不是"把 30 万条都加了标签"。
-2. 增量按 build-site 的 minified 输出计量（源文件 entities.json 是缩进格式，不能拿源文件大小外推）。
-3. `facets.json` 的 tags 分面会因新标签微增，未计入 8 MB——量级远小于 255 MB 安全余量，但写回后应当复测一次实际构建体积。
-
-结论：**记忆里的「99.1% 满、绝不 --write」是瘦身前的旧结论，已经失效**。现在可以放心写回。
-
-### 10.9 HTTP 层收口：只做了一半，另一半是有意不做
-
-**已做：UA 单点化。** 此前 operations-plan 下 4 种 UA 并存（`GeneTechBot/1.0`、`GeneTechBot/2.0 (mailto:ops@genetech.example)`、`GeneTechBot/2.0 (mailto:ops@swarmlabs.tools)`、`genetech-geo-bot`），散在 7 个 pipeline 里。这不只是代码不整洁，有实际危害：上游的限流是按 UA 分桶的，同一个 OpenAlex / Crossref / GitHub 被用四个身份访问，等于**把自己的配额自己切成四份，每份更容易触顶**。
-
-新增 `operations-plan/lib/user-agent.cjs` 作为单一真源（做成 `.cjs` 是因为 pipeline-*.js 是 CJS、lib/*.mjs 是 ESM，两种模块系统都要读同一个 named export），7 个 pipeline 全部接入，`lib/http-client.mjs` 改为从它 re-export。换 UA 以后只改一处。
-
-**有意不做：withRetry / httpGet 全量迁移。** 报告第九节 #4 写的是「6 份 withRetry + 9 份 httpGet 迁到 lib」。实际动手前先盘了返回结构，发现**不能直接迁**：
-
-| 文件 | 本地 httpGet 返回 |
-|---|---|
-| 6 个 pipeline | `{statusCode, headers, body}` |
-| `pipeline-pro-db-sync.js` | `{status, body}` ← 字段名不同 |
-| `pipeline-rollout-verify.js` | 直接返回 `res.statusCode` ← 裸数字 |
-| `lib/http-client.mjs` | `{statusCode, headers, body, ms}` |
-
-全量迁移会**静默破坏** pro-db-sync 和 rollout-verify 的调用点，而这两个是每日运营脚本、没有测试覆盖，改坏只能等运营跑挂了才发现。风险收益比不佳。
-
-折中做法：在 `lib/http-client.mjs` 加了 `withRetryValue(fn, maxRetries, baseDelayMs)` 桥接，签名与 6 份本地 withRetry 完全一致（位置参数、返回裸值而非 `{value, attempts}`）。以后要迁某个 pipeline，只需删本地定义、把 import 指过来，**调用点零改动**。等真需要一个统一行为的地方（比如新的采集源）再迁，而不是为了整洁去动生产脚本。
-
-验证：7 个改动文件 `node --check` 全过；`lib/http-client.mjs` 自检正常；`pipeline-intelligence.js --dry-run` 端到端跑通、退出码 0。
-
 ---
 
 ## 附：可复现命令
@@ -445,12 +366,6 @@ node operations-plan/pipeline-label-program.js --sites=biomed-ai,quantum-computi
 # 两个定向实验（第十节）
 node operations-plan/experiment-vocab-scope.js    # 作用域对照，30k 实体 338s
 node operations-plan/experiment-vocab-exact.js    # 短语构造 + 留一评估，30k 实体 1s
-
-# 错路由人工复核清单（10.7，71s，产出前 500 条 + 候选池三类分布）
-node operations-plan/export-misroute-review.js --limit=500 --threshold=0.35
-
-# --write 容量核算（10.8，30s，纯内存不落盘）
-node operations-plan/estimate-write-capacity.js --threshold=0.35
 
 # 三个 lib 的自检
 node operations-plan/lib/labeling-functions.mjs
