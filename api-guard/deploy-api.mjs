@@ -139,15 +139,19 @@ async function deploy(acct, proKvId, intelKvId) {
     // 所以这里只对 kv_namespace 做硬校验；secret_text 只打印线上实际绑定清单供人工核对，
     // 真正的验证靠部署请求本身返回 2xx（CF 对绑定格式错误会直接 400/200+errors）。
     // 诊断必须在循环之前打印：校验失败会立刻 exit，放在后面等于永远看不到。
+    // 全部走 stderr：CI 里 stdout 是 pipe，process.exit() 会截断还没 flush 的
+    // console.log（stderr 在 Node 里是同步写，留得住）。诊断行因此"凭空消失"过一轮。
+    const say = (s) => process.stderr.write(s + '\n');
+    say(`  [诊断] GET script 返回键：${Object.keys(res0).join(', ')}；解析到 ${binds.length} 条绑定`);
+    if (!binds.length) say(`  [诊断] GET script 原始返回（截断 1200B）：${JSON.stringify(res0).slice(0, 1200)}`);
     for (const need of ['PRO_KV', 'INTEL_KV']) {
       if (!names.has(need)) {
-        console.error(`✗ 回读校验失败：${need} 不在线上绑定里。线上绑定：${[...names].join(', ') || '(空)'}`);
-        console.error(`  [诊断] 原始返回键：${Object.keys(res0).join(', ')}；result=${JSON.stringify(res0).slice(0, 1200)}`);
-        process.exit(1);
+        say(`✗ 回读校验失败：${need} 不在线上绑定里。线上绑定：${[...names].join(', ') || '(空)'}`);
+        say(`  [诊断] 原始返回键：${Object.keys(res0).join(', ')}；result=${JSON.stringify(res0).slice(0, 1200)}`);
+        process.exitCode = 1;
+        return false;
       }
     }
-    console.log(`  [诊断] GET script 返回键：${Object.keys(res0).join(', ')}；解析到 ${binds.length} 条绑定`);
-    if (!binds.length) console.log(`  [诊断] GET script 原始返回（截断 800B）：${JSON.stringify(res0).slice(0, 800)}`);
     console.log(`✓ 绑定回读一致：${['PRO_KV', 'INTEL_KV'].filter((n) => names.has(n)).join(' / ')} 均在；`
       + `PRO_SECRET 为 secret_text，CF GET script 不回显，本次以 2xx 为准。线上绑定清单：${[...names].join(', ') || '(空)'}`);
     return true;
@@ -160,6 +164,7 @@ async function deploy(acct, proKvId, intelKvId) {
   const acct = await resolveAccount();
   const proKvId = await ensureKV(acct, 'PRO_KV');
   const intelKvId = await ensureKV(acct, 'INTEL_KV');
-  await deploy(acct, proKvId, intelKvId);
+  const ok = await deploy(acct, proKvId, intelKvId);
+  if (!ok) process.exit(1); // 只设 exitCode 不 exit：留时间把 stderr 冲出去
   console.log('=== api-guard 部署完成 ===');
 })().catch((e) => { console.error('ERR', e); process.exit(1); });
