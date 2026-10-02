@@ -97,9 +97,13 @@ jobs:
             data/knowledge-graph-entities.json \
             data/search-index.json \
             data/oss-registry.json \
-            data/data-requests.json; do
+            data/data-requests.json \
+            data/academic-entities.json \
+            data/crossref-entities.json \
+            data/pubmed-entities.json \
+            data/citation-edges.json; do
             if [ ! -s "_site/$f" ]; then
-              echo "::error::缺失聚合数据产物 _site/$f（Worker 上游依赖，会导致语义检索与 OSS 注册表 404）"
+              echo "::error::缺失聚合数据产物 _site/$f（Worker 上游依赖，会导致对应 /v1 端点 404）"
               missing=1
             fi
           done

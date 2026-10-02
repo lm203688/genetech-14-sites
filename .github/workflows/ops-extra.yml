@@ -94,6 +94,24 @@ jobs:
           if [[ "$TASK" == "all" || "$TASK" == "cite" ]]; then run_one cite-check; fi
           if [[ "$TASK" == "all" || "$TASK" == "ossscan" ]]; then run_one oss-scan; fi
           if [[ "$TASK" == "all" || "$TASK" == "searchindex" ]]; then run_one search-index; fi
+          # ===== 学术数据集补齐（2026-10-02 补入）=====
+          # pipeline-academic-datasets.js 产出 crossref-entities / pubmed-entities / academic-entities，
+          # 对应 worker.js 的 /v1/academic/entities|pubmed|crossref 三个端点。
+          # 此前这三个端点**天天 404**（数据文件从未落盘）而 CI 全绿——原因是 build-site.mjs
+          # 对缺失的数据文件只 warn 不报错，缺文件永远不会让流水线变红。
+          # 本任务把它接进「采集 → commit（git add data/）→ pages-deploy 复制 → 端点 200」的链路。
+          if [[ "$TASK" == "all" || "$TASK" == "academic" ]]; then
+            node "$SCRIPTS_DIR/pipeline-academic-datasets.js"
+          fi
+          # ===== 跨站引用边（2026-10-02 补入）=====
+          # pipeline-openalex-citation.js 产出 data/citation-edges.json → /v1/citation/edges。
+          # 此前这批边只活在 reports/ 的 POC JSON 里：没有数据文件、没有端点、没有消费方，
+          # 等于把算出来的一套壁垒资产直接扔了。stride 保证 DOI 池跨到所有站点
+          # （不带步长时池按站点排列，一半只覆盖前 1-2 站，算出来的边恒为 0）。
+          # 引用列表已全量落盘（游标 completed），本任务不产生上游请求，只重算边。
+          if [[ "$TASK" == "all" || "$TASK" == "citations" ]]; then
+            node "$SCRIPTS_DIR/pipeline-openalex-citation.js" --source=crossref --stride=13
+          fi
           # 摘要回填（09-24 补入调度，之前未进任何 workflow 导致 09-20 后停摆）：
           # 默认 cap=1500 / max-minutes=20 保持单轮 ≤20 分钟，与 45 分钟 job timeout 留余量。
           # cap 与 min 参数化以便 CI 内 override；本地默认（cap=2500）保持不变。

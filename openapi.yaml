@@ -117,10 +117,12 @@ paths:
   /v1/academic/entities:
     get:
       tags: [free]
-      summary: 学术实体集（OpenAlex 扩库产物）
+      summary: 学术实体集（Crossref + Europe PMC 双源 upsert）
       description: >
-        **实测 404（2026-10-02）**：上游 data/academic-entities.json 尚未生成。
-        保留端点定义，数据集落地后无需改动调用方。
+        由 operations-plan/pipeline-academic-datasets.js 每日产出（ops-extra.yml 的 academic 任务）。
+        2026-10-02 数据已落地：658 条 / 847 KB，30/30 站覆盖。
+        此前该端点长期 404 的根因不是端点缺失，而是**数据文件从未生成**
+        （build-site.mjs 对缺失文件只 warn 不报错，所以缺文件永远不会让 CI 变红）。
       operationId: academicEntities
       security: []
       responses:
@@ -130,8 +132,12 @@ paths:
   /v1/academic/pubmed:
     get:
       tags: [free]
-      summary: PubMed 实体集
-      description: '**实测 404（2026-10-02）**：data/pubmed-entities.json 尚未生成。'
+      summary: PubMed / Europe PMC 实体集
+      description: >
+        2026-10-02 数据已落地：222 条 / 425 KB，30/30 站覆盖（有 PMCID 119 / 有摘要 207）。
+        数据源是 Europe PMC（EMBL-EBI 维护的 PubMed 开放镜像）而非 NCBI E-utilities：
+        本网络下 NCBI 对机器人 UA 返回 HTTP 200 + HTML 封锁页，
+        唯一能通的方式是伪装浏览器 UA（违反对方政策），因此改走免密钥、bot UA 放行的 Europe PMC。
       operationId: academicPubmed
       security: []
 
@@ -139,9 +145,27 @@ paths:
     get:
       tags: [free]
       summary: Crossref 实体集
-      description: '**实测 404（2026-10-02）**：data/crossref-entities.json 尚未生成。'
+      description: >
+        2026-10-02 数据已落地：621 条 / 794 KB，30/30 站覆盖（有摘要 282 / 有作者 553 / 有 venue 515）。
+        单 DOI 直查 Crossref /works/{doi} 可一次拿到完整 reference[]，是跨站引用边的主要来源。
       operationId: academicCrossref
       security: []
+
+  /v1/citation/edges:
+    get:
+      tags: [free]
+      summary: 跨站引用边（cross-site citation edges）
+      description: >
+        data/citation-edges.json，实测 25,398 条 / 2.17 MB，30/30 站覆盖。
+        每条边形如 [s, t, ss, ts]：实体 s（所属站 ss）引用了实体 t（所属站 ts），且 ss !== ts。
+        只保留跨站边是刻意的——单域引用在 arXiv / Google Scholar 一查就有，
+        跨站边（A 站实体引用了 B 站实体）才是本项目 30 站整合视角的可交付落点。
+        域内引用以计数形式留在实体级统计里，不建边。
+      operationId: citationEdges
+      security: []
+      responses:
+        '200': { description: citation-edges.json }
+        '404': { $ref: '#/components/responses/NotFound' }
 
   /v1/search/semantic:
     post:

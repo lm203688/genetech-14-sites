@@ -47,6 +47,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const readline = require('node:readline');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA_DIR = path.join(ROOT, 'data');
@@ -226,12 +227,20 @@ function saveCursor(c) {
 // pool 里第一个「还没抓完」的下标。doneBatches 是递增的批结束下标序列，
 // 用二分找上界即可，避免每次重建 26 万键的 Set。
 // 注：这里刻意不用二分。doneBatches 是「已完成前缀长度」的列表，语义上
-// 只需要取其中 < poolLen 的最大值（列表最长 5,214 项，线性扫比二分更好懂也更好验）。
+// 只需要取其中 ≤ poolLen 的最大值（列表最长 5,214 项，线性扫比二分更好懂也更好验）。
 // 早期写成二分时边界判错（空数组返回 poolLen、单个 11000 也返回 poolLen），
 // 会直接把「已完成 11,000 条」误判成「全部完成」——断点续跑静默失效，比不续跑更危险。
+//
+// 2026-10-02 第二次修同一个函数（这次是另一半边界）：
+// 条件写的是 `v < poolLen`，而 doneBatches 的**合法终态就是 v === poolLen**
+// （跑完最后一个批，push(i + BATCH) 正好等于池长）。严格小于把终态排除掉，
+// 于是「上一轮已经全跑完」被判成「一个都没跑」→ 下一轮把 20,053 条全部重抓一遍。
+// 这是 stride 模式下**断点续跑从来没真正生效过**的直接原因。
+// 仍然保留 `v <= poolLen` 的上界过滤：脏数据里出现 > poolLen 的值（换过一次池会被
+// 写进去）不该被当成进度，否则起点会越界到 slice 之外、静默返回空 todo。
 function firstTodoIndex(poolLen, doneBatches) {
   let best = 0;
-  for (const v of doneBatches) if (v > best && v < poolLen) best = v;
+  for (const v of doneBatches) if (v > best && v <= poolLen) best = v;
   return best;
 }
 
@@ -357,6 +366,11 @@ async function fetchCrossref(doi, cursor) {
   const pool = LIMIT > 0 ? todo.slice(0, LIMIT) : todo;
   console.log(`本次抓取：${pool.length.toLocaleString()} 个 DOI（${Math.ceil(pool.length / BATCH)} 批）`);
 
+  // finish() 要往外带的两条状态（详见下方 finish 内注释）。
+  // 放在 IIFE 顶部：finish 是函数声明会提前到调用点，而这两个绑定要能被赋值。
+  let badLineCount = 0;
+  let badLineSample = [];
+
   // 2026-10-02 修复（P0，进程被 OOM 杀）：
   //   原实现把 `{doi → {oa, year, citedBy, refs: [...]}}` 全量留在 works Map 里。
   //   249,689 条工作 × 平均每篇 ~100 条 referenced_works（OpenAlex 单篇上限 500）
@@ -367,7 +381,22 @@ async function fetchCrossref(doi, cursor) {
   const refsDir = path.join(STATE_DIR, 'openalex-refs');
   fs.mkdirSync(refsDir, { recursive: true });
   const refsFile = path.join(refsDir, `refs-${cursorRunId}.jsonl`);
-  const refsW = fs.createWriteStream(refsFile);
+  // 写侧：串行 append，绝不在同一 fd 上并发 write。
+  // 原实现是 `refsW.write(str + '\n')` 被并发 worker 调用 —— Node 不保证同一个
+  // WriteStream 的并发 write 原子/保序（Windows 上 fs.write 走 async 路径，两个
+  // 在飞的 write 会争抢内部 position），结果出现过「两个逻辑记录粘成一行」的
+  // JSONL，收尾解析时抛 `Unexpected non-whitespace character after JSON`，
+  // 整轮 18,005 条抓取成果在 finish() 阶段全废。
+  // appendFileSync 是同步调用，调用序 = 落盘序，且 O_APPEND 下单次写入原子。
+  // 注意 stub 的 on('close') 必须**真的触发回调**：收尾处 await 的就是它。
+  // 第一版写成 `on() { return this; }`（永不当真），导致 pool 为空、抓取循环
+  // 不执行时整个 async IIFE 卡在一个永不 resolve 的 Promise 上，进程随后因
+  // 没有 pending handle 而静默 exit 0 —— 一条 POC 报告都没写出来，CI 还是绿的。
+  const refsW = {
+    write(chunk) { fs.appendFileSync(refsFile, chunk); return true; },
+    end() {},
+    on(ev, cb) { if (ev === 'close') setImmediate(cb); return this; },
+  };
 
   // 工作集：DOI → 摘要级字段（不含引用列表）
   const works = new Map();
@@ -397,14 +426,23 @@ async function fetchCrossref(doi, cursor) {
       if ((i / CONCURRENCY) % 50 === 0) {
         const done = i + CONCURRENCY;
         console.log(`  [${(done / pool.length * 100).toFixed(1)}%] ${done.toLocaleString()}/${pool.length.toLocaleString()} DOI / works ${works.size.toLocaleString()} / 限流 ${cursor.throttled || 0} / 404 ${cursor.miss404 || 0} / ${((Date.now() - t1) / 1000).toFixed(0)}s`);
-        cursor.doneBatches = [done];
+        // 必须是**累积**，不能 `= [done]` 覆盖。
+        // 原写法每 50 个批就把整个 doneBatches 换成一个新值 —— 一轮跑 400 批，
+        // 中途被 kill / 上游断流时，游标里只剩最后那一批的进度，前面 350 批
+        // 白跑且下次要全部重来。这也是上面 firstTodoIndex 的 `v <= poolLen`
+        // 必须能吃到「多个递增值」的前提：doneBatches 从来就是累积列表。
+        if (!cursor.doneBatches.includes(done)) cursor.doneBatches.push(done);
+        cursor.doneBatches.sort((a, b) => a - b);
         saveCursor(cursor);
       }
       if (BATCH_GAP_MS > 0) await new Promise((rs) => setTimeout(rs, BATCH_GAP_MS));
     }
     refsW.end();
     await new Promise((rs) => refsW.on('close', rs));
-    cursor.doneBatches = [pool.length];
+    // 终态合并，不是覆盖；而且 pool 为空（上游已跑完、本轮只是重算边）时
+    // **绝不能写 [0]** —— 原写法 `= [pool.length]` 在 pool=0 时把 [20053] 抹成 [0]，
+    // 下一轮立刻把 2 万条全部重抓，且日志上看不出任何异常。
+    cursor.doneBatches = [...new Set([...cursor.doneBatches, pool.length])].filter((x) => x > 0).sort((a, b) => a - b);
     cursor.completed = true;
     cursor.source = 'crossref';
     saveCursor(cursor);
@@ -463,7 +501,10 @@ async function fetchCrossref(doi, cursor) {
   // ---- 构建跨站引用边（流式扫盘，内存里只有 oa→doi 映射）----
   // 声明成函数而不是内联：crossref 通路与 openalex 通路都要跑同一段收尾，
   // 抽出来才能只维护一份边构建逻辑（两份迟早会算出不同的边）。
-  // 函数声明在外层 async IIFE 里会提升，所以下方 `finish('crossref')` 可以先调后定义。
+  // 函数声明会提升，所以下方 `finish('crossref')` 可以先调后定义 ——
+  // 但 `let` 不会提升，只会被提升成 TDZ。这两条声明必须放在 IIFE 顶部
+  // （早于第一次 finish() 调用），否则 finish 里一读就抛
+  // `Cannot access 'badLineCount' before initialization`。
   async function finish() {
   const oaToDoi = new Map();
   for (const [k, w] of works) if (w.oa) oaToDoi.set(w.oa, k);
@@ -472,15 +513,48 @@ async function fetchCrossref(doi, cursor) {
   const perEntity = new Map(); // doi → {citedBy, refCount, inEdges, outEdges, refSameSite, refCrossSite, refOutside}
   const crossSet = new Set();
 
-  const rl = fs.createReadStream(refsFile, { encoding: 'utf8' });
+  // 多文件合并：续跑会把新记录写进【新的】refs-<runId>.jsonl（runId = 启动时间戳）。
+  // 只算当前这一个文件的话，之前几轮已经抓到的 2 万多条引用一条都进不了边计算 ——
+  // 症状是「跑了好几天、跨站边永远是 0」，而日志完全正常，无从察觉。
+  // 所以按文件名升序（= 时间序）把 refsDir 下所有 jsonl 一起扫。
+  const refsFiles = fs.readdirSync(refsDir).filter((x) => x.endsWith('.jsonl')).sort().map((x) => path.join(refsDir, x));
+  console.log(`  引用列表来源：${refsFiles.length} 个 JSONL 文件（含历史轮次）`);
   let lineNo = 0;
+  // 坏行必须计数、必须上报、必须让退出码非零。
+  // 原实现直接 JSON.parse(line)，一条坏行就让整个 finish() 抛掉 ——
+  // 结果是「18,005 条数据已经落盘、计算也基本跑完」，却因为一行坏记录
+  // 什么产物都没写出来，且错误信息里没有任何 DOI 线索。
+  // 正确形状是：跳过坏行、把坏行记下来、最后 fail-loud，而不是整块崩。
+  const badLines = [];
+  for (const rf of refsFiles) {
+  // 必须走 readline，**不能**用 `for await (const line of rl)`。
+  // 后者对非对象模式的可读流是按 **64KB chunk** 迭代，不是按行 —— 一行 640 字节的
+  // JSONL 会被切碎成十几个 chunk，每个 chunk 都 JSON.parse 失败，
+  // 结果「扫了 39,000 行数据，一条边没算出来」，而且日志一切正常。
+  // 实测证据：jsonlLines 只有 644（= 644 个 64KB chunk），坏行样本 len 全是 65536，
+  // 恰好等于 highWaterMark。用 readline 才是按 \n 切行。
+  const rl = readline.createInterface({ input: fs.createReadStream(rf, { encoding: 'utf8' }), crlfDelay: Infinity });
   for await (const line of rl) {
     if (!line) continue;
     lineNo++;
-    const [doiKey, oaId, refs, refCount] = JSON.parse(line);
+    let parsed;
+    try {
+      parsed = JSON.parse(line);
+    } catch (e) {
+      if (badLines.length < 5) badLines.push({ line: lineNo, len: line.length, head: line.slice(0, 80) });
+      continue;
+    }
+    if (!parsed) continue;
+    const [doiKey, oaId, refs, refCount] = parsed;
     const srcSite = siteOf.get(doiKey);
-    const w = works.get(doiKey);
-    if (!srcSite || !w) { perEntity.set(doiKey, null); continue; }
+    // 只要求「这个 DOI 在语料里有站点归属」，**不要求它本轮被抓到过**。
+    // 原写法额外要求 `works.get(doiKey)` 存在，而 works 只装本轮 pool 抓到的工作：
+    // 于是「游标已跑完 → 本轮 pool 为空 → works 全空」时，即使 JSONL 里有 39,000 行
+    // 引用记录，每一行都会在这里被跳过，边数恒为 0、涉及站点恒为 0/30，
+    // 而日志看起来完全正常。这正是「跑了几天跨站边还是 0」的直接成因之一。
+    // citedBy 缺失时按 0 兜底（下游本来就把它当可选指标）。
+    const w = works.get(doiKey) || { oa: null, citedBy: 0 };
+    if (!srcSite) { perEntity.set(doiKey, null); continue; }
     // 引用计数用 OpenAlex 自报的 referenced_works_count，避免每次解析 100+ 个 id
     const rec = {
       citedBy: w.citedBy,
@@ -511,6 +585,7 @@ async function fetchCrossref(doi, cursor) {
     }
     perEntity.set(doiKey, rec);
   }
+  }   // end: for (const rf of refsFiles)
   // 没抓到工作记录（OpenAlex 无此 DOI）的池条目也要占位，否则下游 inEdges 统计会漏
   for (const [k] of works) if (!perEntity.has(k)) perEntity.set(k, null);
 
@@ -529,7 +604,12 @@ async function fetchCrossref(doi, cursor) {
   console.log('\n=== 结果 ===');
   console.log(`抓取到 works：${works.size.toLocaleString()} / ${pool.length.toLocaleString()} 请求 DOI`);
   console.log(`可还原摘要：${abstracts.size.toLocaleString()} 条`);
-  console.log(`跨站引用边：${edges.toLocaleString()} 条`);
+  // 2026-10-02 修复（显示 bug 级 P0）：原先写的是 edges.toLocaleString()。
+  // 那是 Array.prototype.toLocaleString()，会把 25,000 条边逐条 toString() 之后
+  // 用逗号拼成一个几十 KB 的 `[object Object],[object Object],…` 字符串塞进日志。
+  // 症状：日志「看得出是在跑」但永远看不到边数，且输出体积几十 KB 像被卡住；
+  // 而真正的边数只能去翻 POC JSON 才能拿到。要数的是长度，不是数组。
+  console.log(`跨站引用边：${edges.length.toLocaleString()} 条`);
   console.log(`体积估算：${estTotalMB.toFixed(1)} MB（边 ${(edgeBytes / 1048576).toFixed(1)} + 实体级 ${(estEntPayload / 1048576).toFixed(1)}）`);
 
   // 2026-10-02 修复：tsCnt 原先只在 `if (edges.length > 0)` 里声明，
@@ -543,6 +623,31 @@ async function fetchCrossref(doi, cursor) {
   if (edges.length > 0) {
     console.log('\n跨站边 Top（按目标站点）：');
     Object.entries(tsCnt).sort((a, b) => b[1] - a[1]).slice(0, 10).forEach(([k, v]) => console.log(`  → ${k.padEnd(24)} ${v.toLocaleString()}`));
+  }
+
+  // ---- 落盘 1：跨站引用边数据集（真正的消费方是 /v1/citation/edges 与 MCP）----
+  // 2026-10-02 新增。此前 finish() 只写 reports/ 下的 POC 报告，
+  // 25,012 条边只活在一次性的 JSON 里 —— 没有文件、没有端点、没有消费方，
+  // 等于「算了一套壁垒资产然后扔掉」。这里把它落成 data/citation-edges.json。
+  // 用紧凑数组 [s, t, ss, ts] 而不是对象：同样信息体积约减半（25k 边 ~2.7MB vs ~5MB）。
+  if (edges.length > 0) {
+    const edgeDataset = {
+      generatedAt: new Date().toISOString(),
+      scope: { source: SOURCE, sites: sites.length, uniqueDois: byDoi.size, jsonlLines: lineNo },
+      stats: { edgeCount: edges.length, siteCount: tsSites.size, estPayloadMb: +estTotalMB.toFixed(2) },
+      // 边定义：实体 s（所在站 ss）引用了实体 t（所在站 ts），且 ss !== ts。
+      // 域内引用以计数形式保留在实体级统计里，不建边（见文件头注释 1）。
+      edgeFormat: '[s, t, ss, ts]',
+      edges: edges.map((e) => [e.s, e.t, e.ss, e.ts]),
+    };
+    const edgesOut = path.join(ROOT, 'data', 'citation-edges.json');
+    fs.mkdirSync(path.dirname(edgesOut), { recursive: true });
+    fs.writeFileSync(edgesOut, JSON.stringify(edgeDataset));
+    console.log(`引用边数据集：${path.relative(ROOT, edgesOut)}（${edges.length.toLocaleString()} 条，${(fs.statSync(edgesOut).size / 1048576).toFixed(2)} MB）`);
+  } else {
+    console.error('[FATAL] 本次没算出任何跨站引用边，拒绝用空数据集覆盖已有的 data/citation-edges.json');
+    badLineCount = badLines.length;
+    process.exit(4);
   }
 
   // ---- 落盘（POC 模式：只写报告，不写数据集）----
@@ -561,11 +666,16 @@ async function fetchCrossref(doi, cursor) {
       estPayloadMb: +estTotalMB.toFixed(2),
       elapsedSec: +((Date.now() - t0) / 1000).toFixed(1),
       budgetExhausted: cursor.budgetExhausted || null,
+      jsonlLines: lineNo,
+      jsonlBadLines: badLines.length,
+      badLineSample: badLines.slice(0, 5),
     },
     sampleEdges: edges.slice(0, 25),
     sampleAbstracts: [...abstracts.entries()].slice(0, 5).map(([k, v]) => ({ doi: k, site: v.site, year: v.year, len: v.text.length, text: v.text.slice(0, 300) })),
     byTargetSite: Object.fromEntries(Object.entries(tsCnt || {}).sort((a, b) => b[1] - a[1])),
   };
+  badLineCount = badLines.length;
+  badLineSample = badLines.slice(0, 5);
   fs.writeFileSync(out, JSON.stringify(sample, null, 1));
   console.log(`\nPOC 报告：${path.relative(ROOT, out)}`);
 
@@ -581,6 +691,15 @@ async function fetchCrossref(doi, cursor) {
   }   // ---- end finish() ----
 
   await finish();
+
+  // 坏行 fail-loud：JSONL 里任何一条解析不了的记录都必须让流水线变红。
+  // 「跳过坏行继续算」本身是对的（总比整轮产物写不出来强），但**必须有出口**，
+  // 否则坏行会被静默吞掉，下一次读到脏数据只是换个地方炸。
+  if (badLineCount > 0) {
+    console.error(`[FATAL] JSONL 有 ${badLineCount} 条坏行（共 ${lineNo} 行），拒绝输出干净的产物：`);
+    for (const b of badLineSample) console.error(`  line ${b.line} len=${b.len} head=${b.head}`);
+    process.exit(4);
+  }
 })().catch((e) => {
   // 2026-10-02：原写法 `console.error('ERR', e)` 在进程被 OOM 杀死时打印 "ERR undefined"。
   // 被 heap 杀掉时 catch 拿到的是非 Error 对象（或已被销毁），光看 "undefined" 完全定位不了。
