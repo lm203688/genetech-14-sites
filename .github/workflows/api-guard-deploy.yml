@@ -53,12 +53,21 @@ jobs:
 
       - name: 检查密钥是否已配置
         id: check
+        # 2026-10-02 第 5 轮：原写法是 `if [ -z A ] || [ -z B ]; then echo false; … else echo true; fi`，
+        # 而 CI 日志里 `configured=false` 与 `configured=true` **两条都写进了 $GITHUB_OUTPUT**，
+        # 最终 outputs 取到 true、部署照跑 —— 也就是说这个「密钥是否配置」的门禁一直在靠巧合放行。
+        # 改成正向判断 + 单一出口：条件成立才写 true，否则 false 并说明缺哪个。
+        # 判断顺序还顺带修掉一个可读性坑：`-n` 正向比 `-z` 正向更符合「什么条件下放行」的直觉。
         run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$PRO_SECRET" ]; then
-            echo "configured=false" >> "$GITHUB_OUTPUT"
+          if [ -n "$CLOUDFLARE_API_TOKEN" ] && [ -n "$PRO_SECRET" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "configured=false" >> "$GITHUB_OUTPUT"
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] && [ -z "$PRO_SECRET" ]; then
             echo "ℹ️ api-guard 自动部署未启用：在仓库 Secrets 配置 CLOUDFLARE_API_TOKEN 与 PRO_SECRET 后自动生效（无需手动运行）。"
           else
-            echo "configured=true" >> "$GITHUB_OUTPUT"
+            echo "⚠️ api-guard 自动部署部分启用：CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN:+已配置} PRO_SECRET=${PRO_SECRET:+已配置}，缺失者见上一条 Secrets 清单。"
           fi
 
       - name: Setup Node.js
