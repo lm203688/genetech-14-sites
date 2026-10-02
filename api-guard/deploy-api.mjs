@@ -129,7 +129,11 @@ async function deploy(acct, proKvId, intelKvId) {
     // 真正的上线判定交给下面的「线上行为探测」。
     try {
       const vs = await cf('GET', `/accounts/${acct}/workers/scripts/${SCRIPT}/versions`);
-      const ids = (vs.json?.result || []).map((v) => v.id).filter(Boolean);
+      const vj = vs.json?.result;
+      // 返回形状不是数组：实测 result 是对象（{versions:[...]}）时 `(result||[]).map` 直接抛
+      // "((intermediate value) || []).map is not a function"。
+      const ids0 = Array.isArray(vj) ? vj : (vj?.versions || vj?.items || vj?.workers || []);
+      const ids = (ids0 || []).map((v) => (typeof v === 'string' ? v : v.id)).filter(Boolean);
       if (ids.length) {
         const dep = await cf('POST', `/accounts/${acct}/workers/scripts/${SCRIPT}/deployments`, { versions: [ids[ids.length - 1]] });
         if (dep.status >= 200 && dep.status < 300 && (!dep.json || dep.json.success !== false)) {
@@ -153,23 +157,32 @@ async function deploy(acct, proKvId, intelKvId) {
     // 这里用只有新版本才认得 /v1/citation/edges 这一点做探针：
     // 404 但响应体里点名了这个路径 = 新路由已上；404 且不点名 = 线上还是旧版。
     const probeUrl = process.env.PROBE_URL || 'https://api.swarmlabs.tools/v1/citation/edges';
+    // 第一次版本**假绿过**：CF 自己的 404 错误页 body 里带着请求 URL 全文，
+    // 于是 `body.includes('/v1/citation/edges')` 被 CF 页面自己命中了，
+    // 明明线上还是旧 worker 也判成「新路由已就位」。
+    // 判定必须排除 CF 错误页，并且要求命中的是我们自己的端点形状（含「可用端点」字样）。
+    const isCFErrorPage = (b) => /cf-browser-verification|cloudflare|attention required|error code: ?\d+|access denied|nghtml|charset=utf-8/i.test(b);
     let live = null;
-    for (let i = 0; i < 3 && (!live || live.ok === null); i += 1) {
-      // eslint-disable-next-line no-await-in-loop
-      live = await fetch(probeUrl, { method: 'GET' }).catch((e) => ({ ok: null, err: e.message }));
-      if (live && live.ok === null && i < 2) {
-        // eslint-disable-next-line no-await-in-loop
-        await new Promise((r) => setTimeout(r, 2000));
-      }
+    for (let i = 0; i < 3 && (!live || live.status === null); i += 1) {
+      const r = await fetch(probeUrl, { method: 'GET' }).catch((e) => ({ status: null, err: e.message }));
+      live = r.status === null ? r : { status: r.status, body: await r.text() };
+      if (live.status === null && i < 2) await new Promise((r2) => setTimeout(r2, 2000));
     }
-    if (!live || live.ok === null) {
+    if (!live || live.status === null) {
       say(`⚠ 无法探测线上（${live ? live.err : 'no response'}），本次不做上线判定。`);
       return true;
     }
-    const body = await live.text();
-    const routed = live.status === 200 || (live.status === 404 && body.includes('/v1/citation/edges'));
+    const body = live.body || '';
+    const ours = body.includes('可用端点');
+    const routed = live.status === 200
+      || (!isCFErrorPage(body) && live.status === 404 && ours && body.includes('/v1/citation/edges'));
+    if (live.status !== 200 && live.status !== 404) {
+      say(`✗ 上线验证失败：${probeUrl} 返回 ${live.status}（既非 200 也非我们自己的 404）→ 线上没有我们的 Worker。`);
+      process.exitCode = 1;
+      return false;
+    }
     if (!routed) {
-      say(`✗ 上线验证失败：${probeUrl} 返回 ${live.status}，响应体不含 /v1/citation/edges —— 线上仍在跑旧版本。`);
+      say(`✗ 上线验证失败：${probeUrl} 返回 ${live.status}，响应体不是我们的新路由（ ours=${ours} ）—— 线上仍在跑旧版本。`);
       say('  常见原因：账户开启了 deployment 门禁但没切流（去 CF 控制台手动 publish）。');
       process.exitCode = 1;
       return false;
