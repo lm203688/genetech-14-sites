@@ -25,7 +25,10 @@ on:
         required: true
         default: 'all'
         type: choice
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, abstractbackfill, edge_refresh, kgbuild]
+        # academic / citations 是 2026-10-02 新增的两个任务：
+        # 漏加进 options 的话，workflow_dispatch 直接拒收（choice 类型只接受已列选项），
+        # 手动触发补位会「命令发了没反应」。
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, abstractbackfill, edge_refresh, kgbuild, academic, citations]
   schedule:
     # ===== 临时提升期（2026-08-05 ~ 2026-12-31）：每日 12:30 UTC(20:30 CST) 一次全量运行 =====
     # 提升期到期判定在 ops.yml 的 decide 步骤（$TODAY > 2026-12-31），此处仅跟随其节奏；
