@@ -126,7 +126,12 @@ async function deploy(acct, proKvId, intelKvId) {
     // 只读 result.bindings 会得到空数组 → 误判「所有绑定都丢了」→ 部署永远失败。
     // 2026-10-02 实测踩过第一次（PRO_SECRET 假阴性），第二次（PRO_KV 假阴性，线上绑定打印为空）。
     const res0 = after.json?.result || {};
-    const binds = res0.bindings || res0.env?.bindings || [];
+    // 顺序不能反过来：空数组是 truthy，`res0.bindings || res0.env?.bindings` 遇到
+    // result.bindings 为 [] 时会直接短路到空数组，env.bindings 永远读不到。
+    // 2026-10-02 第三次部署失败就是这条短路造成的（报「线上绑定：(空)」）。
+    const binds = (Array.isArray(res0.bindings) && res0.bindings.length
+      ? res0.bindings
+      : (res0.env?.bindings || []));
     const names = new Set(binds.map((b) => b.name));
     // 关键：Cloudflare 的 GET script **不回显 secret_text 绑定**（只返回 kv_namespaces / vars / 等可序列化项）。
     // 把 PRO_SECRET 当回读对象 = 必现假阴性 → exit 1 → 部署永远失败 → 线上代码停在旧版本。
@@ -140,6 +145,7 @@ async function deploy(acct, proKvId, intelKvId) {
       }
     }
     console.log(`  [诊断] GET script 返回键：${Object.keys(res0).join(', ')}；解析到 ${binds.length} 条绑定`);
+    if (!binds.length) console.log(`  [诊断] GET script 原始返回（截断 800B）：${JSON.stringify(res0).slice(0, 800)}`);
     console.log(`✓ 绑定回读一致：${['PRO_KV', 'INTEL_KV'].filter((n) => names.has(n)).join(' / ')} 均在；`
       + `PRO_SECRET 为 secret_text，CF GET script 不回显，本次以 2xx 为准。线上绑定清单：${[...names].join(', ') || '(空)'}`);
     return true;
