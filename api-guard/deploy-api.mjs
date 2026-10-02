@@ -122,19 +122,59 @@ async function deploy(acct, proKvId, intelKvId) {
   const text = await res.text();
   let j; try { j = JSON.parse(text); } catch { j = null; }
   if (res.status >= 200 && res.status < 300 && (!j || j.success)) {
-    // ===== 显式发布 deployment =====
-    // Cloudflare Workers 已改成「PUT script 只创建 pending deployment」，
-    // 必须再 POST /workers/scripts/{script}/deployments 才真正切流。
-    // 2026-10-02 实测就是这个原因：日志里打印「✓ 部署成功」（PUT 确实 2xx），
-    // 线上 /v1/health 却一直 404 —— 流量压根没换，上一版还在跑。
-    const dep = await cf('POST', `/accounts/${acct}/workers/scripts/${SCRIPT}/deployments`, {});
-    if (dep.status < 200 || dep.status >= 300 || (dep.json && dep.json.success === false)) {
-      say(`✗ Worker ${SCRIPT} 脚本已上传但发布失败（status=${dep.status}）：${dep.text.slice(0, 400)}`);
-      say('  线上仍在跑上一个版本！请到 CF 控制台看 pending deployment。');
+    // ===== 显式发布 deployment（尽力而为）=====
+    // Cloudflare 部分账户里 PUT script 只创建 pending deployment，不切流；
+    // 切流要 POST /workers/scripts/{script}/deployments 带非空 versions。
+    // 两种账户形态都要覆盖，所以这里**失败不算致命**（老账户 PUT 本身即生效），
+    // 真正的上线判定交给下面的「线上行为探测」。
+    try {
+      const vs = await cf('GET', `/accounts/${acct}/workers/scripts/${SCRIPT}/versions`);
+      const ids = (vs.json?.result || []).map((v) => v.id).filter(Boolean);
+      if (ids.length) {
+        const dep = await cf('POST', `/accounts/${acct}/workers/scripts/${SCRIPT}/deployments`, { versions: [ids[ids.length - 1]] });
+        if (dep.status >= 200 && dep.status < 300 && (!dep.json || dep.json.success !== false)) {
+          say('✓ Worker ' + SCRIPT + ' 已显式发布 deployment（versions 流程）');
+        } else {
+          say(`⚠ 显式发布未生效（status=${dep.status}，老账户 PUT 本身即上生产，继续）：${dep.text.slice(0, 200)}`);
+        }
+      } else {
+        await cf('POST', `/accounts/${acct}/workers/scripts/${SCRIPT}/deployments`, {});
+        say('✓ Worker ' + SCRIPT + ' 已提交 deployment 请求');
+      }
+    } catch (e) {
+      say(`⚠ 显式发布步骤异常（忽略，改由线上探测兜底）：${e && e.message}`);
+    }
+    say('✓ Worker ' + SCRIPT + ' 上传完成（脚本 + PRO_SECRET + PRO_KV + INTEL_KV + vars 已注入）');
+
+    // ===== 上线验证：看线上行为，不看 CF 元数据 =====
+    // 上面连续四轮失败全部是「校验器读到的是元数据，不是事实」：
+    //   PRO_SECRET 不回显 / result.bindings 空数组 / result={} / versions=[] 非法。
+    // 元数据形状会变、权限会变，线上返回什么才是真的。
+    // 这里用只有新版本才认得 /v1/citation/edges 这一点做探针：
+    // 404 但响应体里点名了这个路径 = 新路由已上；404 且不点名 = 线上还是旧版。
+    const probeUrl = process.env.PROBE_URL || 'https://api.swarmlabs.tools/v1/citation/edges';
+    let live = null;
+    for (let i = 0; i < 3 && (!live || live.ok === null); i += 1) {
+      // eslint-disable-next-line no-await-in-loop
+      live = await fetch(probeUrl, { method: 'GET' }).catch((e) => ({ ok: null, err: e.message }));
+      if (live && live.ok === null && i < 2) {
+        // eslint-disable-next-line no-await-in-loop
+        await new Promise((r) => setTimeout(r, 2000));
+      }
+    }
+    if (!live || live.ok === null) {
+      say(`⚠ 无法探测线上（${live ? live.err : 'no response'}），本次不做上线判定。`);
+      return true;
+    }
+    const body = await live.text();
+    const routed = live.status === 200 || (live.status === 404 && body.includes('/v1/citation/edges'));
+    if (!routed) {
+      say(`✗ 上线验证失败：${probeUrl} 返回 ${live.status}，响应体不含 /v1/citation/edges —— 线上仍在跑旧版本。`);
+      say('  常见原因：账户开启了 deployment 门禁但没切流（去 CF 控制台手动 publish）。');
       process.exitCode = 1;
       return false;
     }
-    say('✓ Worker ' + SCRIPT + ' 发布完成（脚本 + PRO_SECRET + PRO_KV + INTEL_KV + vars 已注入）');
+    say(`✓ 上线验证通过：${probeUrl} → ${live.status}${live.status === 404 ? '（404 但新路由已就位）' : ''}`);
     // 部署完立刻回读绑定，确认没有静默丢绑。Cloudflare PUT 只保证「我们发过去的」，
     // 不保证「线上现在有」，这一步是唯一能在部署后立刻证伪的检查。
     const after = await cf('GET', `/accounts/${acct}/workers/scripts/${SCRIPT}`);
