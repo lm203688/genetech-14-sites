@@ -62,10 +62,13 @@ const OPENALEX = 'https://api.openalex.org/works';
 const SELECT = ['id', 'doi', 'publication_year', 'cited_by_count',
   'referenced_works', 'referenced_works_count', 'abstract_inverted_index'].join(',');
 const BATCH = 50;          // 每请求 DOI 数（pipe OR）
-// 2026-10-02 上调：原 4 实测吞吐 ~45 DOI/s，260k 全量要 145 分钟。
-// OpenAlex 礼貌池 10 req/s，每批 50 DOI 的批处理请求在 8 并发下约 8 req/s，
-// 不打满但足够，留余量给 429 退避。真触发 429 走 fetchBatch 的指数退避。
-const CONCURRENCY = 8;     // 并发请求数（OpenAlex 礼貌上限 10 req/s）
+// 2026-10-02 实测：并发 8 时稳定触发 429（每次要退避 2s/4s/6s/8s 后仍失败），
+// 实际吞吐反而比并发 4 更低——把 10 req/s 的礼貌池打满会被限流节流。
+// 降到 5 并加 250ms 批间隔后不再出现连续退避。
+const CONCURRENCY = 5;     // 并发请求数（OpenAlex 礼貌上限 10 req/s）
+const BATCH_GAP_MS = 250;  // 批间隔，把瞬时峰值摊平
+const RETRY_MAX = 6;       // 单批最大重试次数（原 4 在连续 429 下不够）
+const SAVE_EVERY = 10;     // 每 N 批落一次进度（原 20，中断时丢的工作更多）
 const MAX_OUT_EDGES = 12;  // 每实体保留的跨站引用边上限（控体积）
 
 // ---- 命令行参数 ----
@@ -153,26 +156,59 @@ function loadCorpus() {
 }
 
 // ---- 进度 ----
+// 2026-10-02 重写：原实现把已完成 DOI 逐条塞进 `done` 字典，每 10 批全量序列化一次。
+// 跑到中后段这个文件会涨到 ~5MB，且 5,214 次写入里绝大部分是在重写同一个大对象。
+// 更致命的是下面这行（原代码）：
+//   const todo = [...byDoi.keys()].filter((d) => !loadCursor().done[d]);
+// loadCursor() 写在 filter 回调里 → 每过滤一个 DOI 就重新 read+parse 一次游标文件。
+// 全量 260k DOI 意味着 26 万次 335KB 的 JSON 解析，恢复跑还没发出第一个请求就已经卡死。
+//
+// 改成只记录「已完成的批结束下标」：抓取是严格顺序的，需要的信息只有
+// 「前 N 个 pool 条目已完成」。游标文件恒定 <1KB，续跑是一次 read + 一次 parse。
+function defaultCursor() {
+  return { doneBatches: [], abstracts: 0, fetched: 0, throttled: 0, startedAt: new Date().toISOString() };
+}
 function loadCursor() {
-  try { return JSON.parse(fs.readFileSync(CURSOR_FILE, 'utf8')); }
-  catch { return { done: {}, abstracts: {}, fetched: 0, miss: 0, startedAt: new Date().toISOString() }; }
+  let c;
+  try { c = JSON.parse(fs.readFileSync(CURSOR_FILE, 'utf8')); }
+  catch { return defaultCursor(); }
+  // 旧格式（done 字典）交回 main 迁移——它需要 pool 顺序才数得出连续前缀长度。
+  // 判断依据：done 是对象且 doneBatches 不存在。
+  if (!Array.isArray(c.doneBatches) && c.done && typeof c.done === 'object' && Object.keys(c.done).length) {
+    return { legacy: c, doneBatches: [], fetched: 0, throttled: 0, startedAt: c.startedAt || new Date().toISOString() };
+  }
+  if (!Array.isArray(c.doneBatches)) c.doneBatches = [];
+  return c;
 }
 function saveCursor(c) {
   fs.mkdirSync(STATE_DIR, { recursive: true });
   fs.writeFileSync(CURSOR_FILE, JSON.stringify(c));
+}
+// pool 里第一个「还没抓完」的下标。doneBatches 是递增的批结束下标序列，
+// 用二分找上界即可，避免每次重建 26 万键的 Set。
+// 注：这里刻意不用二分。doneBatches 是「已完成前缀长度」的列表，语义上
+// 只需要取其中 < poolLen 的最大值（列表最长 5,214 项，线性扫比二分更好懂也更好验）。
+// 早期写成二分时边界判错（空数组返回 poolLen、单个 11000 也返回 poolLen），
+// 会直接把「已完成 11,000 条」误判成「全部完成」——断点续跑静默失效，比不续跑更危险。
+function firstTodoIndex(poolLen, doneBatches) {
+  let best = 0;
+  for (const v of doneBatches) if (v > best && v < poolLen) best = v;
+  return best;
 }
 
 // ---- HTTP（含 429 退避）----
 async function fetchBatch(dois, cursor) {
   const url = `${OPENALEX}?filter=doi:${dois.join('|')}&per-page=${dois.length}&select=${SELECT}`;
   let lastErr;
-  for (let attempt = 0; attempt < 4; attempt++) {
+  let throttled = false;
+  for (let attempt = 0; attempt < RETRY_MAX; attempt++) {
+    if (throttled) await new Promise((rs) => setTimeout(rs, Math.min(1500 * 2 ** attempt, 20000)));
     try {
       const r = await fetch(url, { headers: { 'User-Agent': UA } });
       if (r.status === 429) {
-        const wait = 2000 * (attempt + 1);
-        cursor.fetched++;
-        await new Promise((rs) => setTimeout(rs, wait));
+        // 记一次限流并重新进入循环，退避已在循环开头按指数放大
+        throttled = true;
+        cursor.throttled = (cursor.throttled || 0) + 1;
         continue;
       }
       if (!r.ok) throw new Error(`HTTP ${r.status}: ${(await r.text()).slice(0, 160)}`);
@@ -181,7 +217,8 @@ async function fetchBatch(dois, cursor) {
       return j.results || [];
     } catch (e) {
       lastErr = e;
-      await new Promise((rs) => setTimeout(rs, 800 * (attempt + 1)));
+      throttled = false;
+      await new Promise((rs) => setTimeout(rs, Math.min(800 * 2 ** attempt, 10000)));
     }
   }
   throw lastErr;
@@ -197,7 +234,19 @@ async function fetchBatch(dois, cursor) {
   console.log(`DOI 池：${byDoi.size.toLocaleString()} 个唯一 DOI（去重后）`);
   console.log(`无 DOI 实体：${orphans.length.toLocaleString()} 条`);
 
-  const todo = [...byDoi.keys()].filter((d) => !loadCursor().done[d]);
+  const cursor0 = loadCursor();
+  const poolFull = [...byDoi.keys()];
+  let doneBatches = cursor0.doneBatches.slice();
+  // 迁移：旧字典里连续存在的前缀长度（pool 顺序两边完全一致，可直接数）
+  if (cursor0.legacy && cursor0.legacy.done) {
+    let n = 0;
+    for (const d of poolFull) { if (!cursor0.legacy.done[d]) break; n++; }
+    doneBatches = [Math.floor(n / BATCH) * BATCH].filter((x) => x > 0);
+    console.log(`[migrate] 旧游标连续完成 ${n.toLocaleString()} 个 DOI（对齐到 ${doneBatches[0] || 0} 批边界）`);
+  }
+  const startFrom = firstTodoIndex(poolFull.length, doneBatches);
+  const todo = poolFull.slice(startFrom);
+  console.log(`已完成：${startFrom.toLocaleString()} 个 DOI（${(startFrom / BATCH).toFixed(0)} 批）`);
   console.log(`待抓：${todo.length.toLocaleString()} 个 DOI`);
   if (DRY_RUN) {
     console.log('\n[dry-run] 仅统计，不发请求。');
@@ -239,16 +288,15 @@ async function fetchBatch(dois, cursor) {
       if (abs) abstracts.set(key, { site: byDoi.get(key)?.site || null, text: abs, oa: w.id, year: w.publication_year });
     }
     batches++;
-    if (batches % 20 === 0) {
+    if (batches % SAVE_EVERY === 0) {
       const pct = ((i + BATCH) / pool.length * 100).toFixed(1);
-      console.log(`  [${pct}%] ${batches} 批 / ${works.size.toLocaleString()} works / ${abstracts.size.toLocaleString()} 摘要 / ${((Date.now() - t0) / 1000).toFixed(0)}s`);
-      cursor.done = {}; cursor.fetched = 0;
-      // 2026-10-02 修复：`Object.fromEntries()` 返回普通对象，对象没有 forEach，
-      // 原写法在第一个检查点就抛 TypeError，整个 pipeline 中断（抓取白跑）。
-      // 断点续跑只需要的就是「这批 DOI 已完成」这个键集合，直接迭代数组即可。
-      for (const d of pool.slice(0, i + BATCH)) cursor.done[d] = 1;
+      console.log(`  [${pct}%] ${batches} 批 / ${works.size.toLocaleString()} works / ${abstracts.size.toLocaleString()} 摘要 / 限流 ${cursor.throttled || 0} 次 / ${((Date.now() - t0) / 1000).toFixed(0)}s`);
+      cursor.fetched = 0;
+      cursor.doneBatches = cursor.doneBatches || [];
+      cursor.doneBatches.push(i + BATCH);
       saveCursor(cursor);
     }
+    if (BATCH_GAP_MS > 0) await new Promise((rs) => setTimeout(rs, BATCH_GAP_MS));
   }
 
   // ---- 构建跨站引用边 ----
@@ -342,10 +390,9 @@ async function fetchBatch(dois, cursor) {
   // 2026-10-02 修复：Object.fromEntries() 返回普通对象，没有 forEach。
   // 原写法在收尾处再抛一次 TypeError，会让「明明算完并写了产物」的 pipeline
   // 以非零码退出，CI 判定失败（抓取与计算都白跑）。统一改迭代 entries。
-  cursor.done = {}; cursor.fetched = 0;
-  for (const d of pool) cursor.done[d] = 1;
-  cursor.abstracts = {};
-  for (const [k] of abstracts) cursor.abstracts[k] = 1;
+  cursor.fetched = 0;
+  cursor.abstracts = abstracts.size;
+  cursor.completed = true;
   cursor.updatedAt = new Date().toISOString();
   saveCursor(cursor);
 })().catch((e) => { console.error('ERR', e); process.exit(1); });

@@ -62,7 +62,7 @@ const TAG = {
 
 // 领域簇：标签归属的学科簇。用于"正交证据"判定——
 // 只有当摘要出现另一簇的正向信号时，否定本站点标签才是有据可依的。
-const DOMAIN_CLUSTERS = {
+export const DOMAIN_CLUSTERS = {
   'computer science': 'cs',
   'artificial intelligence': 'cs',
   'cs.ai': 'cs',
@@ -92,10 +92,10 @@ const DOMAIN_CLUSTERS = {
   'legacy-pre2010': 'meta',
   'review-article': 'meta',
 };
-const clusterOf = t => DOMAIN_CLUSTERS[String(t).toLowerCase()] || 'other';
+export const clusterOf = t => DOMAIN_CLUSTERS[String(t).toLowerCase()] || 'other';
 
 // 14 站站点名 → 领域标签映射（站点路由是最高信号来源）
-const SITE_DOMAIN = {
+export const SITE_DOMAIN = {
   'quantum-computing': [TAG.QUANTUM, TAG.ML],
   'quantum-materials': [TAG.QUANTUM, TAG.MATERIALS],
   'brain-science': [TAG.NEURO, TAG.PSYCH],
