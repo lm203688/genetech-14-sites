@@ -124,10 +124,19 @@ async function deploy(acct, proKvId, intelKvId) {
     const after = await cf('GET', `/accounts/${acct}/workers/scripts/${SCRIPT}`);
     const binds = after.json?.result?.bindings || [];
     const names = new Set(binds.map((b) => b.name));
-    for (const need of ['PRO_SECRET', 'PRO_KV', 'INTEL_KV']) {
-      if (!names.has(need)) { console.error(`✗ 回读校验失败：${need} 不在线上绑定里`); process.exit(1); }
+    // 关键：Cloudflare 的 GET script **不回显 secret_text 绑定**（只返回 kv_namespaces / vars / 等可序列化项）。
+    // 把 PRO_SECRET 当回读对象 = 必现假阴性 → exit 1 → 部署永远失败 → 线上代码停在旧版本。
+    // （2026-10-02 实测：api-guard-deploy 就是因为这条假阴性连续红，线上 Worker 一直跑旧脚本。）
+    // 所以这里只对 kv_namespace 做硬校验；secret_text 只打印线上实际绑定清单供人工核对，
+    // 真正的验证靠部署请求本身返回 2xx（CF 对绑定格式错误会直接 400/200+errors）。
+    for (const need of ['PRO_KV', 'INTEL_KV']) {
+      if (!names.has(need)) {
+        console.error(`✗ 回读校验失败：${need} 不在线上绑定里。线上绑定：${[...names].join(', ') || '(空)'}`);
+        process.exit(1);
+      }
     }
-    console.log('✓ 绑定回读一致：PRO_SECRET / PRO_KV / INTEL_KV 三者均在');
+    console.log(`✓ 绑定回读一致：${['PRO_KV', 'INTEL_KV'].filter((n) => names.has(n)).join(' / ')} 均在；`
+      + `PRO_SECRET 为 secret_text，CF GET script 不回显，本次以 2xx 为准。线上绑定清单：${[...names].join(', ') || '(空)'}`);
     return true;
   }
   console.error('✗ 部署失败:', text.slice(0, 600));
