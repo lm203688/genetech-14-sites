@@ -174,32 +174,41 @@ async function deploy(acct, proKvId, intelKvId) {
     // 明明线上还是旧 worker 也判成「新路由已就位」。
     // 判定必须排除 CF 错误页，并且要求命中的是我们自己的端点形状（含「可用端点」字样）。
     const isCFErrorPage = (b) => /cf-browser-verification|cloudflare|attention required|error code: ?\d+|access denied|nghtml|charset=utf-8/i.test(b);
+    // 必须**轮询到超时**而不是探一次就判定：CF 边缘缓存 worker 脚本，
+    // PUT 返回 2xx 之后全球传播有延迟（2026-10-02 实测：CI 里刚探到新 worker，
+    // 一分钟后再 curl 还是旧 body，两个边缘节点答的还不一样）。
+    // 一次判定会出现「CI 绿 / 线上旧」这种最难查的假象。
     let live = null;
-    for (let i = 0; i < 3 && (!live || live.status === null); i += 1) {
+    let routed = false;
+    const isCFErr = (b) => /cf-browser-verification|cloudflare|attention required|error code: ?\d+|access denied/i.test(b);
+    for (let i = 0; i < 6; i += 1) {
       const r = await fetch(probeUrl, { method: 'GET' }).catch((e) => ({ status: null, err: e.message }));
       live = r.status === null ? r : { status: r.status, body: await r.text() };
-      if (live.status === null && i < 2) await new Promise((r2) => setTimeout(r2, 2000));
+      if (live.status === null) { await new Promise((x) => setTimeout(x, 3000)); continue; }
+      const b = live.body || '';
+      const hit = live.status === 200
+        || (!isCFErr(b) && live.status === 404 && b.includes('可用端点') && b.includes('/v1/citation/edges'));
+      say(`  [探测 ${i + 1}/6] ${probeUrl} → ${live.status}${hit ? '（已是新版本）' : ''}`);
+      if (hit) { routed = true; break; }
+      await new Promise((x) => setTimeout(x, 5000));
     }
+    if (routed) { say(`✓ 上线验证通过：${probeUrl} 已是新版本`); return true; }
     if (!live || live.status === null) {
       say(`⚠ 无法探测线上（${live ? live.err : 'no response'}），本次不做上线判定。`);
       return true;
     }
-    const body = live.body || '';
-    const ours = body.includes('可用端点');
-    const routed = live.status === 200
-      || (!isCFErrorPage(body) && live.status === 404 && ours && body.includes('/v1/citation/edges'));
     if (live.status !== 200 && live.status !== 404) {
       say(`✗ 上线验证失败：${probeUrl} 返回 ${live.status}（既非 200 也非我们自己的 404）→ 线上没有我们的 Worker。`);
       process.exitCode = 1;
       return false;
     }
     if (!routed) {
-      say(`✗ 上线验证失败：${probeUrl} 返回 ${live.status}，响应体不是我们的新路由（ ours=${ours} ）—— 线上仍在跑旧版本。`);
-      say('  常见原因：账户开启了 deployment 门禁但没切流（去 CF 控制台手动 publish）。');
+      say(`✗ 上线验证失败：轮询结束仍未看到新版本：${probeUrl} 最后返回 ${live.status}，`
+        + `响应体前 300B：${String(live.body || '').slice(0, 300)}`);
+      say('  常见原因：账户开了 deployment 门禁没切流（去 CF 控制台 publish），或流量走了别的 script。');
       process.exitCode = 1;
       return false;
     }
-    say(`✓ 上线验证通过：${probeUrl} → ${live.status}${live.status === 404 ? '（404 但新路由已就位）' : ''}`);
     // 部署完立刻回读绑定，确认没有静默丢绑。Cloudflare PUT 只保证「我们发过去的」，
     // 不保证「线上现在有」，这一步是唯一能在部署后立刻证伪的检查。
     const after = await cf('GET', `/accounts/${acct}/workers/scripts/${SCRIPT}`);
