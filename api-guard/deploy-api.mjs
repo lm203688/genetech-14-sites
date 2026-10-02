@@ -122,7 +122,11 @@ async function deploy(acct, proKvId, intelKvId) {
     // 部署完立刻回读绑定，确认没有静默丢绑。Cloudflare PUT 只保证「我们发过去的」，
     // 不保证「线上现在有」，这一步是唯一能在部署后立刻证伪的检查。
     const after = await cf('GET', `/accounts/${acct}/workers/scripts/${SCRIPT}`);
-    const binds = after.json?.result?.bindings || [];
+    // CF 两种返回形状都要能吃下：旧/常规是 result.bindings，部分账户路径是 result.env.bindings。
+    // 只读 result.bindings 会得到空数组 → 误判「所有绑定都丢了」→ 部署永远失败。
+    // 2026-10-02 实测踩过第一次（PRO_SECRET 假阴性），第二次（PRO_KV 假阴性，线上绑定打印为空）。
+    const res0 = after.json?.result || {};
+    const binds = res0.bindings || res0.env?.bindings || [];
     const names = new Set(binds.map((b) => b.name));
     // 关键：Cloudflare 的 GET script **不回显 secret_text 绑定**（只返回 kv_namespaces / vars / 等可序列化项）。
     // 把 PRO_SECRET 当回读对象 = 必现假阴性 → exit 1 → 部署永远失败 → 线上代码停在旧版本。
@@ -135,6 +139,7 @@ async function deploy(acct, proKvId, intelKvId) {
         process.exit(1);
       }
     }
+    console.log(`  [诊断] GET script 返回键：${Object.keys(res0).join(', ')}；解析到 ${binds.length} 条绑定`);
     console.log(`✓ 绑定回读一致：${['PRO_KV', 'INTEL_KV'].filter((n) => names.has(n)).join(' / ')} 均在；`
       + `PRO_SECRET 为 secret_text，CF GET script 不回显，本次以 2xx 为准。线上绑定清单：${[...names].join(', ') || '(空)'}`);
     return true;
