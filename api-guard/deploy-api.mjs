@@ -127,6 +127,18 @@ async function deploy(acct, proKvId, intelKvId) {
     // 切流要 POST /workers/scripts/{script}/deployments 带非空 versions。
     // 两种账户形态都要覆盖，所以这里**失败不算致命**（老账户 PUT 本身即生效），
     // 真正的上线判定交给下面的「线上行为探测」。
+    // 上线验证反复对不上（线上 404 里却已经出现新清单里的端点名），说明线上跑的可能
+    // 根本不是我们 PUT 的那个 script（路由绑的是另一个），所以先把账户下所有 Worker 打出来。
+    try {
+      const wl = await cf('GET', `/accounts/${acct}/workers`);
+      const names = (wl.json?.result || []).map((w) => w.script_name).filter(Boolean);
+      say(`  [诊断] 账户下 Worker 脚本：${names.join(', ') || '(无)'}`);
+      const rl = await cf('GET', `/accounts/${acct}/workers/routes`);
+      const rs = (rl.json?.result || []).map((r) => `${r.script_name}→${r.pattern || (r.zone_name || '') + (r.path || '')}`);
+      say(`  [诊断] Worker 路由：${rs.join(' | ') || '(无)'}`);
+    } catch (e) {
+      say(`  [诊断] 列 Worker/路由失败（${e && e.message}，权限不足就跳过）：`);
+    }
     try {
       const vs = await cf('GET', `/accounts/${acct}/workers/scripts/${SCRIPT}/versions`);
       const vj = vs.json?.result;
