@@ -118,6 +118,10 @@ __test_push__.txt
 __pycache__/
 *.pyc
 
-# 语义检索分片（按需 --shards 生成，实测 149MB；ops-extra 会 git add data/，
-# 不忽略会直接把 149MB 塞进 git 历史）。接好 worker 分片加载器后可解封。
-data/search-index/
+# 语义检索分片（2026-10-03 起进 git）
+#   原始 JSON 149.28 MB 太大 → 已改为 gzip 输出 35.39 MB（23.7%），单片 1.47 MB。
+#   分片被 worker.js 的 getShardedIndex 消费，是 /v1/search/semantic 覆盖率 100% 的唯一路径。
+#   ops-extra 每日 --shards 会 git add data/，Pages 直接托管，Worker 走 data.swarmlabs.tools 拉。
+#   若某天要关掉分片（比如 Worker 内存约束再次收紧），把 worker.js 的 getShardedIndex 分支
+#   注释掉、pipeline 去掉 --shards、这里再加回 data/search-index/ 即可。
+# data/search-index/   # 已解封，见上

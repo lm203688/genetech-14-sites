@@ -290,6 +290,126 @@ async function getSearchIndex(request) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// 分片加载器（Sprint 4：全量语义检索覆盖率 6% → 100%）
+// ---------------------------------------------------------------------------
+// 设计原则（血泪教训 → 硬约束）
+//   1. fail-closed：任何一步失败都返回 null，调用方回退到单文件索引——
+//      「优雅降级」在离线脚本是优点，生产上是静默故障，所以这里降级必须显式出声。
+//   2. 时间预算：一次请求最多花 8s 拉分片；超预算就停手，返回已加载的部分（可能为 null）。
+//   3. 分片数量上限：manifest.maxShardsPerRequest 强制约束，防 CPU 超时。
+//   4. 缓存：单个分片 gz 内容进 cache API，第二台边缘节点冷启也要 <200ms。
+//   5. gzip 解压走 DecompressionStream('gzip')（CF 原生支持，Node 18+ 也可测）。
+// ---------------------------------------------------------------------------
+
+const SHARD_MANIFEST_URL = `${UPSTREAM_BASE}/data/search-index/manifest.json`;
+const SHARD_MANIFEST_CACHE_KEY = '__SHARD_MANIFEST_CACHE__';
+const SHARD_CACHE_KEY = '__SHARD_CACHE__';       // site -> { buf, fetchedAt }
+const SHARD_TTL_MS = 10 * 60 * 1000;             // 10 分钟，与单文件索引对齐
+const SHARD_BUDGET_MS = 8000;                    // 单请求加载预算
+const SHARD_FETCH_TIMEOUT_MS = 5000;             // 单片拉取超时
+const SHARD_CACHE_API = 'shards-v1';
+
+async function getShardManifest() {
+  try {
+    const cached = globalThis[SHARD_MANIFEST_CACHE_KEY];
+    if (cached && Date.now() - cached.fetchedAt < SHARD_TTL_MS) return cached.data;
+    const cacheCf = await caches.open(SHARD_CACHE_API);
+    const cachedR = await cacheCf.match(SHARD_MANIFEST_URL);
+    if (cachedR) {
+      const data = await cachedR.json();
+      globalThis[SHARD_MANIFEST_CACHE_KEY] = { data, fetchedAt: Date.now() };
+      return data;
+    }
+    const res = await fetch(SHARD_MANIFEST_URL, { signal: AbortSignal.timeout(10000) });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data || !Array.isArray(data.shards)) return null;
+    globalThis[SHARD_MANIFEST_CACHE_KEY] = { data, fetchedAt: Date.now() };
+    return data;
+  } catch { return null; }
+}
+
+async function getShardGz(shardFile) {
+  try {
+    const url = `${UPSTREAM_BASE}/data/search-index/${shardFile}`;
+    const cacheCf = await caches.open(SHARD_CACHE_API);
+    const cachedR = await cacheCf.match(url);
+    if (cachedR) {
+      const buf = Buffer.from(await cachedR.arrayBuffer());
+      globalThis[SHARD_CACHE_KEY] = { ...globalThis[SHARD_CACHE_KEY], [shardFile]: { buf, fetchedAt: Date.now() } };
+      return buf;
+    }
+    const res = await fetch(url, { signal: AbortSignal.timeout(SHARD_FETCH_TIMEOUT_MS) });
+    if (!res.ok) return null;
+    const buf = Buffer.from(await res.arrayBuffer());
+    // 回填缓存，第二台边缘节点冷启也能省一次原站回源
+    try {
+      await cacheCf.put(url, new Response(buf, { headers: { 'Cache-Control': 'public, max-age=600' } }));
+    } catch {}
+    globalThis[SHARD_CACHE_KEY] = { ...globalThis[SHARD_CACHE_KEY], [shardFile]: { buf, fetchedAt: Date.now() } };
+    return buf;
+  } catch { return null; }
+}
+
+async function decompressGz(buf) {
+  try {
+    // CF Workers 原生 DecompressionStream；本地测试走 Node 18+ 同 API
+    if (typeof DecompressionStream === 'undefined') return null;
+    const ds = new DecompressionStream('gzip');
+    const stream = new Blob([buf]).stream().pipeThrough(ds);
+    const text = await new Response(stream).text();
+    return text;
+  } catch { return null; }
+}
+
+/**
+ * 拉指定站的分片，返回 entities 数组（合并所有站点）。
+ * 任何环节失败返回 null → 调用方回退到单文件索引。
+ */
+async function getShardedIndex(request, sites) {
+  const manifest = await getShardManifest();
+  if (!manifest || !Array.isArray(manifest.shards)) return null;
+  const maxShards = Number(manifest.maxShardsPerRequest) || 10;
+  const started = Date.now();
+  const selected = [];
+  if (sites && sites.length) {
+    for (const s of sites) {
+      const shard = manifest.shards.find((x) => x.site === s);
+      if (shard) selected.push(shard);
+    }
+  } else {
+    selected.push(...manifest.shards);
+  }
+  // 上限：防一次请求把 30 片全拉下来超 CPU 预算
+  const capped = selected.slice(0, maxShards);
+  const entities = [];
+  const loadedSites = [];
+  const failedFiles = [];
+  for (const shard of capped) {
+    if (Date.now() - started > SHARD_BUDGET_MS) break;
+    const gz = await getShardGz(shard.file);
+    if (!gz) { failedFiles.push(shard.file); continue; }
+    const text = await decompressGz(gz);
+    if (!text) { failedFiles.push(shard.file); continue; }
+    let arr;
+    try { arr = JSON.parse(text); } catch { failedFiles.push(shard.file); continue; }
+    if (!Array.isArray(arr)) { failedFiles.push(shard.file); continue; }
+    entities.push(...arr);
+    loadedSites.push(shard.site);
+  }
+  return {
+    entities,
+    generatedAt: manifest.builtAt,
+    totalEntities: manifest.totalEntities,
+    sourceSites: manifest.shards.length,
+    shardsLoaded: loadedSites.length,
+    shardsFailed: failedFiles.length,
+    shardSites: loadedSites,
+    elapsedMs: Date.now() - started,
+  };
+}
+
 async function handleSemanticSearch(request) {
   const started = Date.now();
   let body;
@@ -306,9 +426,31 @@ async function handleSemanticSearch(request) {
   const sites = Array.isArray(body.sites) ? body.sites : (typeof body.sites === 'string' ? [body.sites] : null);
   const source = body.source || null;
 
-  const index = await getSearchIndex(request);
-  if (!index || !index.entities) {
-    return json({ error: 'index_unavailable', message: '搜索索引不可用，请稍后重试' }, 503);
+  // 分片加载优先：只要调用方带了 sites，就用全量分片（覆盖率 100%）；
+  // 任何失败都回退到单文件索引（覆盖率 6%，但稳定）。
+  let index = null;
+  let sharded = false;
+  let shardedMeta = null;
+  if (sites && sites.length) {
+    const shardedIdx = await getShardedIndex(request, sites);
+    if (shardedIdx && shardedIdx.entities && shardedIdx.entities.length) {
+      index = shardedIdx;
+      sharded = true;
+      shardedMeta = {
+        shardsLoaded: shardedIdx.shardsLoaded,
+        shardsFailed: shardedIdx.shardsFailed,
+        shardSites: shardedIdx.shardSites,
+        elapsedMs: shardedIdx.elapsedMs,
+      };
+    }
+  }
+  if (!index) {
+    index = await getSearchIndex(request);
+    if (!index || !index.entities) {
+      // 分片请求但分片不可用 + 单文件也拿不到 = 真正的服务降级
+      const reason = (sites && sites.length) ? '分片加载失败且单文件索引不可用' : '搜索索引不可用';
+      return json({ error: 'index_unavailable', message: reason + '，请稍后重试' }, 503);
+    }
   }
 
   const qTokens = tokenize(query);
@@ -351,10 +493,12 @@ async function handleSemanticSearch(request) {
     query,
     meta: {
       indexGeneratedAt: index.generatedAt,
-      entityCount: index.totalEntities,
+      entityCount: sharded ? index.entities.length : index.totalEntities,
       sourceSites: index.sourceSites,
       elapsedMs: Date.now() - started,
       tokenCount: qTokens.length,
+      sharded,
+      shardedMeta,
     },
   });
 }

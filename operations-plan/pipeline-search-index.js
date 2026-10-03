@@ -17,16 +17,20 @@
  *   所以「全量语义检索」在 Workers 上是架构级不可行的，不是参数没调好。
  *
  * 因此产出两级索引：
- *   A. data/search-index.json             —— 单文件精简索引，走 Worker 原有路径（安全、低延迟）
- *   B. data/search-index/site-<站>.json   —— 按站分片的全量索引，Worker 可做分片渐进加载
+ *   A. data/search-index.json              —— 单文件精简索引，Worker 默认路径（安全、低延迟）
+ *   B. data/search-index/site-<站>.json.gz  —— 按站分片的全量索引（gzip 压缩，供 Worker 按需加载）
  *      data/search-index/manifest.json
  *   A 是 B 的投影（每站取 top-N），保证任何 Worker 版本都能跑；
- *   B 供后续把 /v1/search/semantic 改成分片加载器后用，覆盖率从 4.4% 提到 100%。
+ *   B 供 worker.js 的分片加载器消费，覆盖率从 6% 提到 100%。
+ *
+ *   分片压缩：149.28 MB 原始 → 35.39 MB gzip（23.7%），单片最大 1.47 MB gz，
+ *   Worker 用 DecompressionStream('gzip') 解压；单片解压后 ≈5MB，远低于 128MB 内存预算。
  *
  * 用法
- *   node operations-plan/pipeline-search-index.js                 # 默认 top=600/站
+ *   node operations-plan/pipeline-search-index.js                 # 默认 top=600/站，只产出 A
+ *   node operations-plan/pipeline-search-index.js --shards        # 同时产出 B（gzip）
+ *   node operations-plan/pipeline-search-index.js --shards --no-gzip  # 调试用：不压缩
  *   node operations-plan/pipeline-search-index.js --top=444       # 复刻旧索引规模
- *   node operations-plan/pipeline-search-index.js --no-shards     # 只产出 A
  *   node operations-plan/pipeline-search-index.js --dry-run       # 只统计，不写
  */
 
@@ -34,6 +38,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA_DIR = path.join(ROOT, 'data');
@@ -44,11 +49,13 @@ const MANIFEST = path.join(SHARD_DIR, 'manifest.json');
 
 const argv = process.argv.slice(2);
 const DRY = argv.includes('--dry-run');
-// 分片默认**关闭**：全量分片实测 149.28MB（30 片 / 300k 实体），
-// 而 Cloudflare Worker 内存 128MB 根本装不下，必须配一套分片渐进加载器才有消费方。
-// 没有消费方就写进去 = 白占 Pages 配额（_site 已 654MB / 64%）且永远走不到。
-// 所以 shards 默认不生成；接好 worker.js 的分片加载器后，用 --shards 显式产出。
+// 分片产物：149.28MB 原始 JSON → 35.39MB gzip（压缩比 23.7%，单片最大 1.47MB gz）。
+// 从 Pages 直出 .json.gz，Worker 用 DecompressionStream('gzip') 解压——CF 原生支持。
+// --shards 默认关闭：只有接好 Worker 侧加载器（api-guard/worker.js getShardedIndex）后才启用，
+// 否则写了也没消费方，白占 Pages 配额。
 const SHARDS = argv.includes('--shards');
+// --no-gzip 关闭分片压缩（仅用于本地调试，生产不要关）
+const GZ = !argv.includes('--no-gzip');
 
 function argNum(prefix, fallback) {
   const hit = argv.find((a) => a.startsWith(prefix));
@@ -193,30 +200,52 @@ async function main() {
     fs.mkdirSync(SHARD_DIR, { recursive: true });
     // 清掉上一轮分片，避免改名/删站后残留幽灵分片
     for (const f of fs.readdirSync(SHARD_DIR)) {
-      if (/^site-.*\.json$/.test(f)) fs.unlinkSync(path.join(SHARD_DIR, f));
+      if (/^site-.*\.json(\.gz)?$/.test(f)) fs.unlinkSync(path.join(SHARD_DIR, f));
     }
     const shards = [];
     let totalBytes = 0;
+    let totalGzBytes = 0;
     for (const s of sites) {
       const list = (bySite.get(s) || []).slice().sort((a, b) => scoreFor(b) - scoreFor(a));
       const body = JSON.stringify(list);
-      const file = `site-${s}.json`;
-      fs.writeFileSync(path.join(SHARD_DIR, file), body);
-      totalBytes += Buffer.byteLength(body);
-      shards.push({ site: s, file, count: list.length, bytes: Buffer.byteLength(body) });
+      const raw = Buffer.from(body);
+      let gz;
+      if (GZ) {
+        gz = zlib.gzipSync(raw, { level: 6 });
+        fs.writeFileSync(path.join(SHARD_DIR, `site-${s}.json.gz`), gz);
+      } else {
+        gz = raw;
+        fs.writeFileSync(path.join(SHARD_DIR, `site-${s}.json`), raw);
+      }
+      totalBytes += raw.length;
+      totalGzBytes += gz.length;
+      shards.push({
+        site: s,
+        file: GZ ? `site-${s}.json.gz` : `site-${s}.json`,
+        count: list.length,
+        bytes: raw.length,
+        gzipped: !!GZ,
+        compressedBytes: gz.length,
+      });
     }
     const manifest = {
-      version: 2,
+      version: 3,
       builtAt,
       mode: 'site-shards',
       base: '/data/search-index/',
       totalEntities: deduped.length,
       coverage: 1,
+      gzipped: !!GZ,
+      // Worker 端一次请求最多拉 N 片，防止超 CPU 预算
+      maxShardsPerRequest: 10,
       shards,
       totalBytes,
+      totalCompressedBytes: totalGzBytes,
     };
     fs.writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2));
-    console.log(`[search-index] 分片索引: ${shards.length} 片 / ${deduped.length} 实体 / ${(totalBytes / 1024 / 1024).toFixed(2)} MB`);
+    const ratio = totalBytes ? (totalGzBytes / totalBytes * 100).toFixed(1) : '0';
+    console.log(`[search-index] 分片索引: ${shards.length} 片 / ${deduped.length} 实体 / `
+      + `${(totalBytes / 1024 / 1024).toFixed(2)} MB 原始 → ${GZ ? (totalGzBytes / 1024 / 1024).toFixed(2) + ' MB gzip (' + ratio + '%)' : '未压缩'}`);
   }
 
   // ---- 关键告警：覆盖率受 Worker 内存限制，不是脚本参数能解决的 ----

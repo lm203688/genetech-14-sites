@@ -1,0 +1,254 @@
+{
+  "version": 3,
+  "builtAt": "2026-10-03T07:42:45.096Z",
+  "mode": "site-shards",
+  "base": "/data/search-index/",
+  "totalEntities": 300000,
+  "coverage": 1,
+  "gzipped": true,
+  "maxShardsPerRequest": 10,
+  "shards": [
+    {
+      "site": "agent-ecosystem",
+      "file": "site-agent-ecosystem.json.gz",
+      "count": 10000,
+      "bytes": 6044807,
+      "gzipped": true,
+      "compressedBytes": 1450130
+    },
+    {
+      "site": "agritech",
+      "file": "site-agritech.json.gz",
+      "count": 10000,
+      "bytes": 5451424,
+      "gzipped": true,
+      "compressedBytes": 1329838
+    },
+    {
+      "site": "ai-safety",
+      "file": "site-ai-safety.json.gz",
+      "count": 10000,
+      "bytes": 5722506,
+      "gzipped": true,
+      "compressedBytes": 1517839
+    },
+    {
+      "site": "ai4science",
+      "file": "site-ai4science.json.gz",
+      "count": 10000,
+      "bytes": 5761602,
+      "gzipped": true,
+      "compressedBytes": 1401173
+    },
+    {
+      "site": "alien-minerals",
+      "file": "site-alien-minerals.json.gz",
+      "count": 10000,
+      "bytes": 5272540,
+      "gzipped": true,
+      "compressedBytes": 1423185
+    },
+    {
+      "site": "biocomputing",
+      "file": "site-biocomputing.json.gz",
+      "count": 10000,
+      "bytes": 5525155,
+      "gzipped": true,
+      "compressedBytes": 1431837
+    },
+    {
+      "site": "biomed-ai",
+      "file": "site-biomed-ai.json.gz",
+      "count": 10000,
+      "bytes": 5682645,
+      "gzipped": true,
+      "compressedBytes": 1342193
+    },
+    {
+      "site": "bionic-ai",
+      "file": "site-bionic-ai.json.gz",
+      "count": 10000,
+      "bytes": 5939904,
+      "gzipped": true,
+      "compressedBytes": 1450126
+    },
+    {
+      "site": "brain-science",
+      "file": "site-brain-science.json.gz",
+      "count": 10000,
+      "bytes": 5184357,
+      "gzipped": true,
+      "compressedBytes": 1245137
+    },
+    {
+      "site": "carbon-neutral",
+      "file": "site-carbon-neutral.json.gz",
+      "count": 10000,
+      "bytes": 5606483,
+      "gzipped": true,
+      "compressedBytes": 1537179
+    },
+    {
+      "site": "deep-sea-tech",
+      "file": "site-deep-sea-tech.json.gz",
+      "count": 10000,
+      "bytes": 5482850,
+      "gzipped": true,
+      "compressedBytes": 1427562
+    },
+    {
+      "site": "digital-twin",
+      "file": "site-digital-twin.json.gz",
+      "count": 10000,
+      "bytes": 5861439,
+      "gzipped": true,
+      "compressedBytes": 1486659
+    },
+    {
+      "site": "edge-ai",
+      "file": "site-edge-ai.json.gz",
+      "count": 10000,
+      "bytes": 5242940,
+      "gzipped": true,
+      "compressedBytes": 1224092
+    },
+    {
+      "site": "embodied-ai",
+      "file": "site-embodied-ai.json.gz",
+      "count": 10000,
+      "bytes": 5895975,
+      "gzipped": true,
+      "compressedBytes": 1427701
+    },
+    {
+      "site": "exo-science",
+      "file": "site-exo-science.json.gz",
+      "count": 10000,
+      "bytes": 5655317,
+      "gzipped": true,
+      "compressedBytes": 1327187
+    },
+    {
+      "site": "genetech-tools",
+      "file": "site-genetech-tools.json.gz",
+      "count": 10000,
+      "bytes": 5270216,
+      "gzipped": true,
+      "compressedBytes": 1233750
+    },
+    {
+      "site": "life-science",
+      "file": "site-life-science.json.gz",
+      "count": 10000,
+      "bytes": 5051051,
+      "gzipped": true,
+      "compressedBytes": 1228240
+    },
+    {
+      "site": "low-altitude",
+      "file": "site-low-altitude.json.gz",
+      "count": 10000,
+      "bytes": 5649759,
+      "gzipped": true,
+      "compressedBytes": 1362554
+    },
+    {
+      "site": "neuromorphic",
+      "file": "site-neuromorphic.json.gz",
+      "count": 10000,
+      "bytes": 4345634,
+      "gzipped": true,
+      "compressedBytes": 963313
+    },
+    {
+      "site": "new-energy",
+      "file": "site-new-energy.json.gz",
+      "count": 10000,
+      "bytes": 4421221,
+      "gzipped": true,
+      "compressedBytes": 916254
+    },
+    {
+      "site": "nuclear-energy",
+      "file": "site-nuclear-energy.json.gz",
+      "count": 10000,
+      "bytes": 4841242,
+      "gzipped": true,
+      "compressedBytes": 1095929
+    },
+    {
+      "site": "privacy-computing",
+      "file": "site-privacy-computing.json.gz",
+      "count": 10000,
+      "bytes": 4891143,
+      "gzipped": true,
+      "compressedBytes": 940494
+    },
+    {
+      "site": "quantum-computing",
+      "file": "site-quantum-computing.json.gz",
+      "count": 10000,
+      "bytes": 4749566,
+      "gzipped": true,
+      "compressedBytes": 1059280
+    },
+    {
+      "site": "quantum-materials",
+      "file": "site-quantum-materials.json.gz",
+      "count": 10000,
+      "bytes": 5179553,
+      "gzipped": true,
+      "compressedBytes": 1238231
+    },
+    {
+      "site": "robot-parts",
+      "file": "site-robot-parts.json.gz",
+      "count": 10000,
+      "bytes": 4685359,
+      "gzipped": true,
+      "compressedBytes": 1039440
+    },
+    {
+      "site": "sat-6g",
+      "file": "site-sat-6g.json.gz",
+      "count": 10000,
+      "bytes": 4594914,
+      "gzipped": true,
+      "compressedBytes": 959247
+    },
+    {
+      "site": "semiconductor",
+      "file": "site-semiconductor.json.gz",
+      "count": 10000,
+      "bytes": 4468264,
+      "gzipped": true,
+      "compressedBytes": 967260
+    },
+    {
+      "site": "spatial-computing",
+      "file": "site-spatial-computing.json.gz",
+      "count": 10000,
+      "bytes": 4741710,
+      "gzipped": true,
+      "compressedBytes": 1033501
+    },
+    {
+      "site": "synbio-manufacturing",
+      "file": "site-synbio-manufacturing.json.gz",
+      "count": 10000,
+      "bytes": 4805624,
+      "gzipped": true,
+      "compressedBytes": 1054177
+    },
+    {
+      "site": "tcm-tools",
+      "file": "site-tcm-tools.json.gz",
+      "count": 10000,
+      "bytes": 4501850,
+      "gzipped": true,
+      "compressedBytes": 993977
+    }
+  ],
+  "totalBytes": 156527050,
+  "totalCompressedBytes": 37107485
+}

@@ -8,6 +8,7 @@ on:
     paths:
       - '*/website/api/*.json'
       - 'data/*.json'
+      - 'data/search-index/**'
       - 'tools/build-site.mjs'
       - 'content/blog/**'
       - '.github/workflows/pages-deploy.yml'
@@ -96,6 +97,7 @@ jobs:
             data/knowledge-graph.json \
             data/knowledge-graph-entities.json \
             data/search-index.json \
+            data/search-index/manifest.json \
             data/oss-registry.json \
             data/data-requests.json \
             data/academic-entities.json \
@@ -107,8 +109,23 @@ jobs:
               missing=1
             fi
           done
+          # 分片目录：manifest 声明多少片就必须有几片 .json.gz，缺一即缺一片覆盖率。
+          # 缺片不会让契约失败（Worker 会 fail-safe 回退单文件索引），但覆盖率会掉——
+          # 所以要单独出声告警而不是硬失败（构建期数据波动是可容忍的）。
+          if [ -s "_site/data/search-index/manifest.json" ]; then
+            expected=$(node -e "const m=require('./_site/data/search-index/manifest.json');console.log(m.shards?m.shards.length:0)")
+            actual=$(ls _site/data/search-index/site-*.json.gz 2>/dev/null | wc -l)
+            if [ "$actual" -ge "$expected" ]; then
+              echo "分片契约通过：$actual/$expected 片"
+            else
+              echo "::error::分片目录不完整：manifest 声明 $expected 片，实际只 $actual 片（/v1/search/semantic 覆盖率将退化）"
+              missing=1
+            fi
+          else
+            echo "::warning::缺失 data/search-index/manifest.json，分片加载不可用（Worker 会回退单文件索引，覆盖率 6%）"
+          fi
           [ "$missing" = "0" ] || exit 1
-          echo "数据契约校验通过（站点契约 + 聚合产物）"
+          echo "数据契约校验通过（站点契约 + 聚合产物 + 分片目录）"
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -2099,6 +2099,29 @@ async function main() {
       console.warn(`[build-site] 复制 ${rel} 失败：`, e.message);
     }
   }
+  // 语义检索分片（gzip 二进制）：整目录递归复制，供 Worker 分片加载器按需 fetch + DecompressionStream 解压。
+  // 30 片 × ~1.5MB gz = 35.39 MB，占 Pages 配额极小；不上则 /v1/search/semantic 覆盖率封顶 6%。
+  try {
+    const shardSrc = path.join(ROOT, 'data', 'search-index');
+    const shardDst = path.join(OUT, 'data', 'search-index');
+    if (fs.existsSync(shardSrc)) {
+      fs.mkdirSync(shardDst, { recursive: true });
+      const files = fs.readdirSync(shardSrc);
+      let count = 0, total = 0;
+      for (const f of files) {
+        const s = path.join(shardSrc, f);
+        if (!fs.statSync(s).isFile()) continue;
+        fs.copyFileSync(s, path.join(shardDst, f));
+        count++; total += fs.statSync(s).size;
+      }
+      if (count === 0) console.warn('[build-site] data/search-index/ 空目录，跳过');
+      else console.log(`[build-site] 分片索引已复制：${count} 文件 / ${(total / 1024 / 1024).toFixed(2)} MB → _site/data/search-index/`);
+    } else {
+      console.warn('[build-site] 跳过 data/search-index/：源目录不存在（若未跑 pipeline-search-index --shards 是正常现象）');
+    }
+  } catch (e) {
+    console.warn(`[build-site] 复制 data/search-index/ 失败：`, e.message);
+  }
   // 指向式引导组件（借鉴 heyclicky 的 Visual Cursor Pointing）：默认 no-op，无标记页面零副作用
   try {
     writeFile('assets/point-guide.js', fs.readFileSync(path.join(ROOT, 'tools/static/point-guide.js'), 'utf8'));

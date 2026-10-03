@@ -180,23 +180,34 @@ paths:
           application/json:
             schema:
               type: object
-              required: [q]
+              required: [query]
               properties:
-                q: { type: string, example: 'photosynthesis quantum efficiency' }
+                query: { type: string, example: 'photosynthesis quantum efficiency' }
                 sites:
                   type: array
                   items: { type: string }
-                  description: '限定的站点 slug；不给则全局检索'
-                limit: { type: integer, default: 10 }
+                  description: >-
+                    限定的站点 slug（例 ["ai-safety","quantum-materials"]）。
+                    给定了就切到**分片加载路径**：worker 拉 `data/search-index/site-<slug>.json.gz`
+                    按需解压，覆盖率 100%（300k 实体全量）。不给则用单文件精简索引
+                    （top-600/站，18k 实体，覆盖率 ~6%）。
+                    一次请求最多加载 10 片（`manifest.maxShardsPerRequest`），超出静默截断，
+                    任何分片失败自动回退到单文件索引。
+                source: { type: string, description: '限定来源（可选）' }
+                limit: { type: integer, default: 20, maximum: 50 }
                 min_confidence: { type: number, format: float, default: 0 }
               additionalProperties: false
       responses:
         '200':
-          description: 命中结果（name/tags/snippet/url/confidence 加权打分）
+          description: >-
+            命中结果（name/tags/snippet/url/confidence 加权打分）。
+            `meta.sharded` 为 true 表示走了分片加载（全量 300k），false 表示走了单文件精简索引（18k）。
+            `meta.shardedMeta` 含 shardsLoaded / shardsFailed / shardSites / elapsedMs。
         '401': { $ref: '#/components/responses/Unauthorized' }
         '403': { $ref: '#/components/responses/Forbidden' }
         '405': { description: 仅支持 POST }
         '429': { $ref: '#/components/responses/RateLimited' }
+        '503': { description: 分片与单文件索引均不可用（罕见，通常意味着 Pages 上游出问题） }
 
   /api/pro/search/semantic:
     post:

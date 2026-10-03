@@ -96,7 +96,12 @@ jobs:
           if [[ "$TASK" == "all" || "$TASK" == "geo" ]]; then run_one geo-promotion; fi
           if [[ "$TASK" == "all" || "$TASK" == "cite" ]]; then run_one cite-check; fi
           if [[ "$TASK" == "all" || "$TASK" == "ossscan" ]]; then run_one oss-scan; fi
-          if [[ "$TASK" == "all" || "$TASK" == "searchindex" ]]; then run_one search-index; fi
+          if [[ "$TASK" == "all" || "$TASK" == "searchindex" ]]; then
+            # --shards 产出 30 片 gzip 分片（35.39 MB / 149.28 MB 原始），
+            # 供 worker.js 的 getShardedIndex 消费，把语义检索覆盖率从 6% 提到 100%。
+            # 单文件索引 search-index.json 仍然产出，作为分片不可用时的兜底路径。
+            node "$SCRIPTS_DIR/pipeline-search-index.js" --shards;
+          fi
           # ===== 学术数据集补齐（2026-10-02 补入）=====
           # pipeline-academic-datasets.js 产出 crossref-entities / pubmed-entities / academic-entities，
           # 对应 worker.js 的 /v1/academic/entities|pubmed|crossref 三个端点。
