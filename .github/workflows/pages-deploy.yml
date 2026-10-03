@@ -103,7 +103,8 @@ jobs:
             data/academic-entities.json \
             data/crossref-entities.json \
             data/pubmed-entities.json \
-            data/citation-edges.json; do
+            data/citation-edges.json \
+            data/citation-gaps.json; do
             if [ ! -s "_site/$f" ]; then
               echo "::error::缺失聚合数据产物 _site/$f（Worker 上游依赖，会导致对应 /v1 端点 404）"
               missing=1

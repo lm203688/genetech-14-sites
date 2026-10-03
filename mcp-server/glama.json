@@ -2,9 +2,9 @@
   "$schema": "https://glama.ai/mcp/servers/schema.json",
   "name": "GeneTech Data Engine",
   "displayName": "GeneTech 数据引擎 — 14 站前沿科技知识库 MCP",
-  "description": "Real-time knowledge-base MCP server for the GeneTech 14-site science engine. Lets external AI agents query, search, filter and cite curated entities across 14 vertical domains (genetics, quantum computing, brain science, AI agents, new energy, nuclear energy, TCM tools, and more). Data is continuously collected from PubMed, arXiv, OpenAlex, Crossref, GitHub and HuggingFace and refreshed by an automated ops pipeline.",
-  "shortDescription": "Query, search and cite 14 vertical science knowledge bases from any AI agent.",
-  "version": "1.0.0",
+  "description": "Real-time knowledge-base MCP server for the GeneTech 14-site science engine. Lets external AI agents query, search, filter and cite curated entities across 30 vertical domains (genetics, quantum computing, brain science, AI agents, new energy, nuclear energy, TCM tools, and more). Data is continuously collected from PubMed, arXiv, OpenAlex, Crossref, GitHub and HuggingFace and refreshed by an automated ops pipeline.",
+  "shortDescription": "Query, search, cite and map research gaps across 30 vertical science knowledge bases from any AI agent.",
+  "version": "1.2.0",
   "license": "MIT",
   "homepage": "https://lm203688.github.io/genetech-14-sites",
   "repository": {
@@ -34,7 +34,11 @@
     "ai-agent",
     "pubmed",
     "arxiv",
-    "openalex"
+    "openalex",
+    "citation-gaps",
+    "research-gap",
+    "cross-domain",
+    "30-sites"
   ],
   "capabilities": {
     "tools": [
@@ -52,12 +56,35 @@
       },
       {
         "name": "semantic_search",
-        "description": "Hybrid retrieval across the knowledge base: BM25 inverted index + field-weighted scoring + Reciprocal Rank Fusion (RRF). Optional vector embedding via GENETECH_EMBED_URL (env-gated). Returns the most relevant entities for a query (Chinese/English)."
-
+        "description": "Hybrid retrieval across the knowledge base: BM25 inverted index + field-weighted scoring + Reciprocal Rank Fusion (RRF). Optional vector embedding via GENETECH_EMBED_URL (env-gated). Optional graph_hop expands recall via graph traversal."
+      },
+      {
+        "name": "graph_search",
+        "description": "Graph traversal retrieval: find anchor nodes via hybridSearch, then BFS multi-hop along entity relation edges, returning the full path explanation. Useful for cross-domain bridging / co-authorship / upstream-downstream questions."
       },
       {
         "name": "export_citation",
         "description": "Export any entity as an academic citation in BibTeX, APA or RIS format."
+      },
+      {
+        "name": "citation_gaps",
+        "description": "Cross-domain citation gap matrix: which site pairs have ZERO citations between them (research-gap candidates), which pairs bridge strongest, and per-site in/out degree. Derived from 25,635 cross-site citation edges; currently 140 gap pairs out of 870 directed pairs (16.1%). Always read gaps together with siteScale to distinguish a genuine research gap from insufficient corpus coverage."
+      },
+      {
+        "name": "ask",
+        "description": "Ask a natural-language question against the knowledge engine: internal hybrid retrieval + LLM bridge, returns an answer with cited sources. Degrades to an entity digest list when no LLM is configured."
+      },
+      {
+        "name": "submit_request",
+        "description": "Submit a structured data request so downstream projects can request targeted collection."
+      },
+      {
+        "name": "retrieve_requests",
+        "description": "Browse / filter / aggregate the data-request queue."
+      },
+      {
+        "name": "intake_health",
+        "description": "Check the health of the data-request intake queue."
       }
     ]
   },
@@ -80,9 +107,9 @@
         "limits": {
           "rateLimit": "local",
           "features": [
-            "All 5 tools available",
+            "All 11 tools available",
             "Self-hosted on your infrastructure",
-            "Full 14-site knowledge base"
+            "Full 30-site knowledge base (300,000 entities) + cross-domain citation gap matrix"
           ]
         }
       },
@@ -120,7 +147,10 @@
         "mcpServers": {
           "genetech-data": {
             "command": "npx",
-            "args": ["-y", "@genetech/data-mcp"],
+            "args": [
+              "-y",
+              "@genetech/data-mcp"
+            ],
             "env": {
               "GENETECH_DATA_DIR": "/absolute/path/to/genetech-14-sites"
             }
@@ -131,7 +161,10 @@
         "mcpServers": {
           "genetech-data": {
             "command": "npx",
-            "args": ["-y", "@genetech/data-mcp"]
+            "args": [
+              "-y",
+              "@genetech/data-mcp"
+            ]
           }
         }
       }
@@ -140,7 +173,10 @@
   "trust": {
     "score": 78,
     "standard": "OWASP MCP Top 10 (2025 v0.1)",
-    "compliance": ["MIT-licensed", "Self-hostable"]
+    "compliance": [
+      "MIT-licensed",
+      "Self-hostable"
+    ]
   },
   "isVerified": false,
   "isOfficial": false

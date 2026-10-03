@@ -3,7 +3,7 @@
  * GeneTech 数据引擎 MCP Server
  * ----------------------------------------------------------------------------
  * 让外部 AI Agent（Claude / Cursor / LangChain / 自研 Agent）实时查询 GeneTech
- * 14 站知识引擎的实体数据：检索论文/工具/数据集、按标准标识符过滤、导出引用。
+ * 14 站知识引擎的实体数据：检索论文/工具/数据集、按标准标识符过滤、导出引用、分析跨域引用缺口。
  *
  * 数据来源（默认）：本地仓库中每个站点的 <site>/website/api/entities.json
  * 也可通过环境变量指向已部署的 Pages URL（见下方 GENETECH_API_BASE）。
@@ -428,6 +428,100 @@ server.tool(
 );
 
 // ============================================================================
+// citation_gaps — 跨域引用缺口矩阵（2026-10-03 新增）
+// ============================================================================
+// 为什么要单独加工具：graph_search 回答的是「已存在的引用路径是什么」，
+// 但科研场景里更值钱的问题是「**哪两个域之间一条引用都没有**」——
+// 那是研究空白候选（也可能是本项目在该两域语料不足，必须结合 totalEntities 一起读）。
+// 原始边列表（25,635 条 [doi,doi,site,site]）没法直接回答这个问题，
+// 消费方得自己遍历聚合；本工具直接给结论。
+//
+// 数据源：data/citation-gaps.json（由 pipeline-citation-gaps.js 从
+// data/citation-edges.json 纯派生，本 MCP 侧只读，不重算 —— 避免两处算出口径不一致）。
+let _gapsCache = null;
+let _gapsTs = 0;
+const GAPS_TTL_MS = 10 * 60 * 1000;
+
+async function loadCitationGaps(force = false) {
+  const now = Date.now();
+  if (_gapsCache && !force && now - _gapsTs < GAPS_TTL_MS) return _gapsCache;
+  const local = path.join(DATA_DIR, 'data', 'citation-gaps.json');
+  let doc = null;
+  if (API_BASE) {
+    // 走已部署的 Worker 端点（顺带验证 API 可用性），失败则回退本地文件
+    for (const base of [API_BASE.replace(/\/$/, ''), 'https://api.swarmlabs.tools']) {
+      try {
+        const res = await fetch(`${base}/v1/citation/gaps`, {
+          headers: API_KEY ? { Authorization: `Bearer ${API_KEY}` } : {},
+        });
+        if (res.ok) { doc = await res.json(); break; }
+      } catch { /* 试下一个 base */ }
+    }
+  }
+  if (!doc && fs.existsSync(local)) {
+    try { doc = JSON.parse(fs.readFileSync(local, 'utf-8')); } catch (e) {
+      console.error(`[citation-gaps] 本地文件解析失败: ${e.message}`);
+    }
+  }
+  _gapsCache = doc;
+  _gapsTs = now;
+  return doc;
+}
+
+server.tool(
+  'citation_gaps',
+  '跨域引用缺口矩阵：哪些站点之间零引用（研究空白候选）、哪些桥接最强（跨学科枢纽）、各站入/出度。适合「找未被桥接的跨域」「评估跨学科机会」类问题。',
+  {
+    mode: z.enum(['gaps', 'bridges', 'degrees', 'stats']).default('gaps')
+      .describe('gaps=零引用站对（默认）｜bridges=最强桥接｜degrees=各站入出度｜stats=总览统计'),
+    site: z.string().optional().describe('只看涉及该站的条目，例：quantum-computing'),
+    limit: z.number().min(1).max(200).default(20).describe('返回条数（gaps/bridges 模式）'),
+    includeInterpretation: z.boolean().default(true)
+      .describe('是否带上 interpretation 字段（提醒 LLM gapPairs 可能是语料不足而非真空白）'),
+  },
+  async (args) => {
+    const doc = await loadCitationGaps();
+    if (!doc || !Array.isArray(doc.gapPairs)) {
+      return {
+        content: [{ type: 'text', text: '503: 引用缺口数据不可用。需先跑 operations-plan/pipeline-openalex-citation.js --source=crossref 再跑 pipeline-citation-gaps.js。' }],
+        isError: true,
+      };
+    }
+
+    let payload;
+    if (args.mode === 'stats') {
+      payload = { stats: doc.stats, derivedFrom: doc.derivedFrom, builtAt: doc.builtAt };
+    } else if (args.mode === 'degrees') {
+      const rows = doc.degrees.filter((d) => !args.site || d.site === args.site);
+      payload = { mode: 'degrees', degrees: rows, stats: doc.stats };
+    } else if (args.mode === 'bridges') {
+      const rows = doc.bridges
+        .filter((b) => !args.site || b.from === args.site || b.to === args.site)
+        .slice(0, args.limit);
+      payload = { mode: 'bridges', bridges: rows, returned: rows.length, total: doc.bridges.length };
+    } else {
+      const rows = doc.gapPairs
+        .filter((g) => !args.site || g.from === args.site || g.to === args.site)
+        .slice(0, args.limit);
+      payload = {
+        mode: 'gaps',
+        gaps: rows,
+        returned: rows.length,
+        totalGapPairs: doc.stats.gapPairs,
+        // 明确带上被涉及站点的实体规模，让调用方能区分「真空白」与「我们没抓到」
+        siteScale: Object.fromEntries(
+          doc.degrees
+            .filter((d) => rows.some((r) => r.from === d.site || r.to === d.site))
+            .map((d) => [d.site, d.totalEntities])
+        ),
+      };
+    }
+    if (args.includeInterpretation && doc.interpretation) payload.interpretation = doc.interpretation;
+    return { content: [{ type: 'text', text: JSON.stringify(payload, null, 2) }] };
+  }
+);
+
+// ============================================================================
 // ask — 自然语言问题 → 混合检索 → LLM 桥接 → 带参考来源的答案
 // ============================================================================
 //
@@ -438,7 +532,7 @@ server.tool(
 // 让模型基于参考片段生成中文答案并标注来源。LLM 未配置时退化为"实体浓缩列表"。
 server.tool(
   'ask',
-  '对 GeneTech 14 站知识引擎做自然语言提问：内部混合检索 + LLM 桥接，生成带参考来源的答案。LLM 未配置时退化为实体浓缩列表。',
+  '对 GeneTech 30 站知识引擎做自然语言提问：内部混合检索 + LLM 桥接，生成带参考来源的答案。LLM 未配置时退化为实体浓缩列表。',
   {
     question: z.string().describe('自然语言问题（中文/英文均可）'),
     site: z.string().optional().describe('限定站点，例如 quantum-computing'),

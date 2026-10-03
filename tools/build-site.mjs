@@ -1915,6 +1915,7 @@ const AGGREGATED_DATA_FILES = [
   // 25k+ 条「A 站实体引用 B 站实体」的边，服务 /v1/citation/edges 与 MCP 图检索）。
   // 此前这份产物只活在 reports/ 的 POC JSON 里，没有文件、没有端点、没有消费方。
   'citation-edges.json',
+  'citation-gaps.json',
 ];
 function syncAggregatedData() {
   const srcDir = path.join(ROOT, 'data');
@@ -2090,7 +2091,7 @@ async function main() {
   }
   // 对外数据 JSON（供 api.swarmlabs.tools/v1/oss/registry 与 /v1/search/semantic 使用）：
   // 原样复制到 _site/data/，与 /api/catalog.json 同域
-  for (const rel of ['data/oss-registry.json', 'data/search-index.json', 'data/knowledge-graph.json', 'data/knowledge-graph-entities.json', 'data/intel_state.json', 'data/arxiv-hot.json', 'data/academic-entities.json', 'data/pubmed-entities.json', 'data/crossref-entities.json', 'data/s2-entities.json', 'data/citation-edges.json', 'state/data-requests.json', 'data/data-requests.json']) {
+  for (const rel of ['data/oss-registry.json', 'data/search-index.json', 'data/knowledge-graph.json', 'data/knowledge-graph-entities.json', 'data/intel_state.json', 'data/arxiv-hot.json', 'data/academic-entities.json', 'data/pubmed-entities.json', 'data/crossref-entities.json', 'data/s2-entities.json', 'data/citation-edges.json', 'data/citation-gaps.json', 'state/data-requests.json', 'data/data-requests.json']) {
     try {
       const src = path.join(ROOT, rel);
       if (fs.existsSync(src)) writeFile(rel, fs.readFileSync(src, 'utf8'));

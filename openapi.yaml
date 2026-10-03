@@ -156,7 +156,7 @@ paths:
       tags: [free]
       summary: 跨站引用边（cross-site citation edges）
       description: >
-        data/citation-edges.json，实测 25,398 条 / 2.17 MB，30/30 站覆盖。
+        data/citation-edges.json，实测 25,635 条 / 2.09 MB，30/30 站覆盖。
         每条边形如 [s, t, ss, ts]：实体 s（所属站 ss）引用了实体 t（所属站 ts），且 ss !== ts。
         只保留跨站边是刻意的——单域引用在 arXiv / Google Scholar 一查就有，
         跨站边（A 站实体引用了 B 站实体）才是本项目 30 站整合视角的可交付落点。
@@ -165,6 +165,28 @@ paths:
       security: []
       responses:
         '200': { description: citation-edges.json }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /v1/citation/gaps:
+    get:
+      tags: [free]
+      summary: 跨域引用缺口矩阵（研究空白候选 + 跨域枢纽）
+      description: >
+        data/citation-gaps.json（43.8 KB），由 pipeline-citation-gaps.js 从
+        citation-edges.json 纯派生（只读输入，不改上游）。全量一次 GET 拿完，不分页。
+        响应结构：
+          stats      —— 30 站 / 870 有向站对 / gapPairs 140（16.1%）
+          degrees    —— 每站 inDegree / outDegree / totalEntities
+          pairMatrix —— [from, to, count] × 870，完整矩阵（含 0）
+          gapPairs   —— 零引用站对，按两站实体规模之和降序（规模大却零引用最值得看）
+          bridges    —— 引用最强的 Top 30 站对，跨学科桥接种子
+        interpretation 字段是给消费方（含 LLM）看的：
+        gapPairs 可能是真实研究空白（两域尚未打通），也可能只是本项目在该两域语料不足，
+        必须结合 degrees[].totalEntities 一起读，否则会把「我们没抓到」误当「没人研究」。
+      operationId: citationGaps
+      security: []
+      responses:
+        '200': { description: citation-gaps.json }
         '404': { $ref: '#/components/responses/NotFound' }
 
   /v1/search/semantic:

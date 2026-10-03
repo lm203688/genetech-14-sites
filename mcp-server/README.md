@@ -78,7 +78,9 @@ node src/index.mjs
 | `list_sites` | 列出全部站点及实体数 / 更新时间 |
 | `query_entities` | 按站点 / 数据源 / 标签 / 关键词 / 置信度过滤 |
 | `get_entity` | 按 ID 取详情并可导出引用 |
-| `semantic_search` | 关键词相关性检索（标题/标签加权 + 置信度加权） |
+| `semantic_search` | 混合检索（BM25 倒排 + 字段加权 + RRF 融合，可选向量语义），`graph_hop` 开图遍历扩召回 |
+| `graph_search` | 图遍历检索：先找 anchor 节点再沿关系边 BFS 多跳，返回完整路径解释 |
+| `ask` | 自然语言提问：内部混合检索 + LLM 桥接，生成带参考来源的答案（未配 LLM 时退化为实体浓缩列表） |
 | `export_citation` | 导出 BibTeX / APA / RIS 引用 |
 
 ## 已注册的 Glama 清单
@@ -97,6 +99,35 @@ node src/index.mjs
 | `submit_request` | 提交数据需求（下游项目申请定向采集） |
 | `retrieve_requests` | 浏览/筛选/统计需求队列 |
 | `intake_health` | 检查数据需求队列健康状态 |
+
+## 新增工具（v1.2.0）
+
+| 工具 | 作用 |
+|------|------|
+| `citation_gaps` | 跨域引用缺口矩阵：零引用站对（研究空白候选）/ 最强桥接 / 各站入出度 |
+
+### 为什么需要 `citation_gaps`
+
+`graph_search` 回答的是「**已存在**的引用路径是什么」，但科研场景里更值钱的问题是
+「**哪两个域之间一条引用都没有**」—— 那是研究空白候选。
+
+数据源是 `data/citation-gaps.json`（由 `operations-plan/pipeline-citation-gaps.js`
+从 `data/citation-edges.json` 纯派生，本 MCP 侧只读不重算，避免两处算出口径不一致）。
+当前实测：30 站 / 870 有向站对 / **140 个零引用站对（16.1%）**。
+
+```typescript
+// 找未被桥接的跨域（附各站实体规模，便于区分「真空白」与「我们没抓到」）
+await citation_gaps({ mode: 'gaps', site: 'quantum-computing', limit: 20 });
+// → { gaps: [{from,to,combinedSize}], siteScale: {...}, interpretation: "..." }
+
+// 找跨学科桥接种子
+await citation_gaps({ mode: 'bridges', limit: 10 });
+// → { bridges: [{from:'alien-minerals', to:'exo-science', edges:2125}, ...] }
+```
+
+⚠️ **读 `gaps` 时必须同时看 `siteScale`**：零引用可能是真实研究空白（两域尚未打通），
+也可能只是本项目在该两域语料不足。只看 `gaps` 会把「我们没抓到」误当「没人研究」。
+`interpretation` 字段就是给 LLM 看的这句提醒，`includeInterpretation: false` 可关。
 
 ### 使用示例
 

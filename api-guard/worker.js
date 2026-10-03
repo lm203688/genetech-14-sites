@@ -1582,6 +1582,13 @@ async function handleRequest(request) {
       // 只保留跨站边是刻意的：单域引用在 arXiv/Google Scholar 一查就有，
       // 跨站边（A 站的实体引用了 B 站的实体）才是本项目 30 站整合视角的落点。
       targetPath = '/data/citation-edges.json';
+    } else if (path === '/v1/citation/gaps' || path === '/v1/citation/bridges' || path === '/v1/citation/matrix') {
+      // 2026-10-03 新增：跨域引用缺口矩阵（data/citation-gaps.json，由
+      // pipeline-citation-gaps.js 从 citation-edges.json 纯派生）。
+      // 内含 gapPairs（零引用站对 = 未桥接的跨域 = 研究空白候选）、
+      // bridges（跨域枢纽）、degrees（入/出度）、pairMatrix（870 有向站对全矩阵）。
+      // 全量 43.8KB，一次 GET 拿完，不做服务端分页（分页会让缓存命中率和调用方复杂度都变差）。
+      targetPath = '/data/citation-gaps.json';
     } else if (path === '/v1/entities') {
       targetPath = '/api/catalog.json'; // 聚合视图走 catalog（各站 entities 由 catalog.index/entities 字段指向）
     } else if (path.startsWith('/v1/domains/')) {
@@ -1599,7 +1606,7 @@ async function handleRequest(request) {
     }
     // 未映射的 /v1/* 路径返回 404（避免自指循环）
     if (path.startsWith('/v1/')) {
-      return json({ error: 'not_found', message: `OpenAPI 端点 ${path} 不存在。可用端点：/v1/domains, /v1/entities, /v1/oss/registry, /v1/academic/entities, /v1/academic/pubmed, /v1/academic/crossref, /v1/citation/edges, /v1/search/semantic, /v1/intel/demand。线上 build=${BUILD_ID}` }, 404);
+      return json({ error: 'not_found', message: `OpenAPI 端点 ${path} 不存在。可用端点：/v1/domains, /v1/entities, /v1/oss/registry, /v1/academic/entities, /v1/academic/pubmed, /v1/academic/crossref, /v1/citation/edges, /v1/citation/gaps, /v1/search/semantic, /v1/intel/demand。线上 build=${BUILD_ID}` }, 404);
     }
     const upstreamUrl = new URL(path + url.search, UPSTREAM_BASE);
     const proxyReq = new Request(upstreamUrl, { method: request.method, headers: request.headers });
@@ -1674,7 +1681,7 @@ async function handleRequest(request) {
     return json({
       ok: true,
       service: 'genetech-api-guard',
-      endpoints: ['/health', '/v1/domains', '/v1/entities', '/v1/oss/registry', '/v1/search/semantic', '/v1/intel/demand', '/v1/intel/health'],
+      endpoints: ['/health', '/v1/domains', '/v1/entities', '/v1/oss/registry', '/v1/academic/entities', '/v1/academic/pubmed', '/v1/academic/crossref', '/v1/citation/edges', '/v1/citation/gaps', '/v1/search/semantic', '/v1/intel/demand', '/v1/intel/health'],
       docs: 'https://data.swarmlabs.tools/',
       openapi: 'https://data.swarmlabs.tools/openapi.yaml',
     });

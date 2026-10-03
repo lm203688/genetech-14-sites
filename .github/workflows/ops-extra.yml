@@ -119,6 +119,11 @@ jobs:
           # 引用列表已全量落盘（游标 completed），本任务不产生上游请求，只重算边。
           if [[ "$TASK" == "all" || "$TASK" == "citations" ]]; then
             node "$SCRIPTS_DIR/pipeline-openalex-citation.js" --source=crossref --stride=13
+            # 边产完后立刻派生缺口矩阵：gapPairs（零引用站对 = 未桥接的跨域 = 研究空白候选）
+            # + bridges（跨域枢纽）+ degrees（入/出度）。没有这一步，边只是一堆 [doi,doi,site,site]，
+            # 消费方要自己遍历 25k 条边才能问出「哪两个域之间一条引用都没有」。
+            # 顺序不可颠倒：gaps 是 edges 的纯下游，edges 没写成功就不能产出矩阵。
+            node "$SCRIPTS_DIR/pipeline-citation-gaps.js"
           fi
           # 摘要回填（09-24 补入调度，之前未进任何 workflow 导致 09-20 后停摆）：
           # 默认 cap=1500 / max-minutes=20 保持单轮 ≤20 分钟，与 45 分钟 job timeout 留余量。
