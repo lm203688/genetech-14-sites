@@ -309,6 +309,8 @@ const SHARD_TTL_MS = 10 * 60 * 1000;             // 10 分钟，与单文件索�
 const SHARD_BUDGET_MS = 8000;                    // 单请求加载预算
 const SHARD_FETCH_TIMEOUT_MS = 5000;             // 单片拉取超时
 const SHARD_CACHE_API = 'shards-v1';
+// 诊断通道：每次 getShardedIndex 调用先重置，失败时往里写具体错误
+// 最终透出到响应 meta.shardedMeta.errors，让消费方能自查"到底哪一步挂了"
 
 async function getShardManifest() {
   try {
@@ -341,7 +343,7 @@ async function getShardGz(shardFile) {
       return buf;
     }
     const res = await fetch(url, { signal: AbortSignal.timeout(SHARD_FETCH_TIMEOUT_MS) });
-    if (!res.ok) return null;
+    if (!res.ok) throw new Error(`fetch status ${res.status}`);
     const buf = Buffer.from(await res.arrayBuffer());
     // 回填缓存，第二台边缘节点冷启也能省一次原站回源
     try {
@@ -349,18 +351,29 @@ async function getShardGz(shardFile) {
     } catch {}
     globalThis[SHARD_CACHE_KEY] = { ...globalThis[SHARD_CACHE_KEY], [shardFile]: { buf, fetchedAt: Date.now() } };
     return buf;
-  } catch { return null; }
+  } catch (e) {
+    globalThis[SHARD_LAST_ERR] = globalThis[SHARD_LAST_ERR] || {};
+    globalThis[SHARD_LAST_ERR][shardFile] = String(e && e.message || e).slice(0, 200);
+    return null;
+  }
 }
 
 async function decompressGz(buf) {
   try {
     // CF Workers 原生 DecompressionStream；本地测试走 Node 18+ 同 API
-    if (typeof DecompressionStream === 'undefined') return null;
+    if (typeof DecompressionStream === 'undefined') {
+      globalThis[SHARD_LAST_ERR] = globalThis[SHARD_LAST_ERR] || { decompress: 'DecompressionStream undefined' };
+      return null;
+    }
     const ds = new DecompressionStream('gzip');
     const stream = new Blob([buf]).stream().pipeThrough(ds);
     const text = await new Response(stream).text();
     return text;
-  } catch { return null; }
+  } catch (e) {
+    globalThis[SHARD_LAST_ERR] = globalThis[SHARD_LAST_ERR] || {};
+    globalThis[SHARD_LAST_ERR].decompress = String(e && e.message || e).slice(0, 200);
+    return null;
+  }
 }
 
 /**
@@ -368,15 +381,21 @@ async function decompressGz(buf) {
  * 任何环节失败返回 null → 调用方回退到单文件索引。
  */
 async function getShardedIndex(request, sites) {
+  globalThis[SHARD_LAST_ERR] = {};
   const manifest = await getShardManifest();
-  if (!manifest || !Array.isArray(manifest.shards)) return null;
+  if (!manifest || !Array.isArray(manifest.shards)) {
+    globalThis[SHARD_LAST_ERR].manifest = 'unavailable';
+    return null;
+  }
   const maxShards = Number(manifest.maxShardsPerRequest) || 10;
   const started = Date.now();
   const selected = [];
+  const unmatched = [];
   if (sites && sites.length) {
     for (const s of sites) {
       const shard = manifest.shards.find((x) => x.site === s);
       if (shard) selected.push(shard);
+      else unmatched.push(s);
     }
   } else {
     selected.push(...manifest.shards);
@@ -387,14 +406,14 @@ async function getShardedIndex(request, sites) {
   const loadedSites = [];
   const failedFiles = [];
   for (const shard of capped) {
-    if (Date.now() - started > SHARD_BUDGET_MS) break;
+    if (Date.now() - started > SHARD_BUDGET_MS) { globalThis[SHARD_LAST_ERR].budgetExceeded = true; break; }
     const gz = await getShardGz(shard.file);
     if (!gz) { failedFiles.push(shard.file); continue; }
     const text = await decompressGz(gz);
     if (!text) { failedFiles.push(shard.file); continue; }
     let arr;
-    try { arr = JSON.parse(text); } catch { failedFiles.push(shard.file); continue; }
-    if (!Array.isArray(arr)) { failedFiles.push(shard.file); continue; }
+    try { arr = JSON.parse(text); } catch (e) { globalThis[SHARD_LAST_ERR].jsonParse = String(e && e.message).slice(0, 100); failedFiles.push(shard.file); continue; }
+    if (!Array.isArray(arr)) { globalThis[SHARD_LAST_ERR].notArray = shard.file; failedFiles.push(shard.file); continue; }
     entities.push(...arr);
     loadedSites.push(shard.site);
   }
@@ -406,6 +425,9 @@ async function getShardedIndex(request, sites) {
     shardsLoaded: loadedSites.length,
     shardsFailed: failedFiles.length,
     shardSites: loadedSites,
+    unmatchedSites: unmatched,
+    failedFiles,
+    errors: globalThis[SHARD_LAST_ERR],
     elapsedMs: Date.now() - started,
   };
 }
@@ -443,6 +465,9 @@ async function handleSemanticSearch(request) {
         shardsLoaded: 0,
         shardsFailed: shardedIdx.shardsFailed,
         shardSites: [],
+        unmatchedSites: shardedIdx.unmatchedSites || [],
+        failedFiles: shardedIdx.failedFiles || [],
+        errors: shardedIdx.errors || {},
         elapsedMs: shardedIdx.elapsedMs,
         error: 'empty_entities',
       };
@@ -454,6 +479,8 @@ async function handleSemanticSearch(request) {
         shardsLoaded: shardedIdx.shardsLoaded,
         shardsFailed: shardedIdx.shardsFailed,
         shardSites: shardedIdx.shardSites,
+        unmatchedSites: shardedIdx.unmatchedSites || [],
+        errors: shardedIdx.errors || {},
         elapsedMs: shardedIdx.elapsedMs,
       };
     }
