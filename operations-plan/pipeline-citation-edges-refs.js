@@ -1,0 +1,163 @@
+#!/usr/bin/env node
+/**
+ * 从**真实引用声明**重建跨站引用边：pipeline-citation-edges-refs.js
+ *
+ * 背景（2026-10-04 修的漏存）
+ *   pipeline-academic-datasets.js 原先只把 referenceCount（一个数字）存进产物，
+ *   引用列表数组本身被丢掉。于是 /v1/citation/edges 只能靠
+ *   pipeline-openalex-citation.js --stride=13 的抽样重抓来喂 —— 25,635 条边，
+ *   方向还是抽样推断出来的，不是论文实际声明的。
+ *   本脚本读的是**已经抓回来的真实 references[]**：1,139 篇论文声明的 59,623 条
+ *   被引 DOI（说明见 state/academic-refs-cache.json 那次 --rebuild-references）。
+ *
+ * 边语义（与 pipeline-citation-gaps.js 保持一致）
+ *   [ doiA, doiB, siteA, siteB ] = siteA 的某篇论文**引用了** siteB 的一篇论文。
+ *   方向必须可信：方向反了，「谁在给谁供养分」这个卖点就是错的。
+
+ * 与旧边合并不覆盖
+ *   pipeline-openalex-citation.js（stride 抽样）的 25,635 条边是另一种覆盖
+ *   （源论文更多、方向是抽样推断的），本脚本的 1,139 篇论文是另一种（方向真实）。
+ *   两者互补，去重后合并，任何一条都不会丢。
+ *
+ * fail-loud：引用边 0 条时退出 3，不写一个「全零矩阵」出去糊弄下游。
+ *
+ * 用法：node operations-plan/pipeline-citation-edges-refs.js [--out=<file>] [--no-merge]
+ */
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = path.resolve(__dirname, '..');
+const DATA_DIR = path.join(ROOT, 'data');
+const ARGV = process.argv.slice(2);
+const DRY = ARGV.includes('--dry-run');
+const NO_MERGE = ARGV.includes('--no-merge');
+const OUT = path.join(
+  DATA_DIR,
+  (ARGV.find((a) => a.startsWith('--out=')) || '').slice(6) || 'citation-edges.json'
+);
+
+const normDoi = (v) => {
+  if (v == null) return '';
+  let s = String(v).trim();
+  s = s.replace(/^https?:\/\/(dx\.)?doi\.org\//i, '').replace(/^doi:/i, '').replace(/\s+/g, '').toLowerCase();
+  return s;
+};
+
+// ---- DOI → 站点集合（全库映射，用于把被引 DOI 归到站）----
+function buildDoiSiteMap() {
+  const map = new Map();
+  const siteDirs = fs
+    .readdirSync(ROOT)
+    .filter((d) => {
+      try { return fs.statSync(path.join(ROOT, d)).isDirectory(); } catch { return false; }
+    })
+    .filter((d) => fs.existsSync(path.join(ROOT, d, 'website/api/entities.json')));
+  let scanned = 0;
+  for (const site of siteDirs) {
+    let wrap;
+    try { wrap = JSON.parse(fs.readFileSync(path.join(ROOT, site, 'website/api/entities.json'), 'utf8')); } catch { continue; }
+    const list = Array.isArray(wrap) ? wrap : (wrap.entities || []);
+    scanned += list.length;
+    for (const e of list) {
+      const d = normDoi(e && e.doi);
+      if (!d) continue;
+      if (!map.has(d)) map.set(d, new Set());
+      map.get(d).add(site);
+    }
+  }
+  return { map, siteDirs, scanned };
+}
+
+(async () => {
+  const t0 = Date.now();
+  const { map: doiSite, siteDirs, scanned } = buildDoiSiteMap();
+  console.log(`DOI→站映射：${siteDirs.length} 站 / 扫 ${scanned} 实体 / 去重后 ${doiSite.size} 个 DOI`);
+
+  const academicPath = path.join(DATA_DIR, 'academic-entities.json');
+  if (!fs.existsSync(academicPath)) {
+    console.error('[GATE] 缺 data/academic-entities.json，没有引用声明可展开');
+    process.exit(3);
+  }
+  const wrap = JSON.parse(fs.readFileSync(academicPath, 'utf8'));
+  const records = Array.isArray(wrap) ? wrap : (wrap.entities || []);
+  const withRefs = records.filter((e) => Array.isArray(e.references) && e.references.length);
+  if (!withRefs.length) {
+    console.error('[GATE] academic-entities.json 里没有任何 references[]。没有引用边可建，拒绝产出空边集。');
+    process.exit(3);
+  }
+  console.log(`引用声明源：${records.length} 条记录，其中 ${withRefs.length} 条带 references[]`);
+
+  // ---- 展开边 ----
+  const edgeMap = new Map();
+  let srcLinks = 0;   // 源→被引 的声明总数（能归到站的）
+  let unresolved = 0; // 被引 DOI 不在本站库里（正常，学术库只收录一部分）
+  let selfSite = 0;   // 同站自引
+  for (const e of withRefs) {
+    const siteFrom = (e.sites && e.sites[0]) || null;
+    if (!siteFrom || !e.doi) continue;
+    for (const refDoi of e.references) {
+      const d = normDoi(refDoi);
+      if (!d) continue;
+      const targets = doiSite.get(d);
+      if (!targets) { unresolved++; continue; }
+      for (const siteTo of targets) {
+        if (siteTo === siteFrom) { selfSite++; continue; }
+        srcLinks++;
+        edgeMap.set(`${normDoi(e.doi)}|${d}|${siteFrom}|${siteTo}`, [normDoi(e.doi), d, siteFrom, siteTo]);
+      }
+    }
+  }
+
+  // ---- 与旧边合并（不覆盖）----
+  let mergedFrom = 0;
+  if (!NO_MERGE && fs.existsSync(OUT)) {
+    let old = [];
+    try { const o = JSON.parse(fs.readFileSync(OUT, 'utf8')); old = Array.isArray(o) ? o : (o.edges || []); } catch { old = []; }
+    for (const edge of old) {
+      if (!Array.isArray(edge) || edge.length < 4) continue;
+      const [a, b, sa, sb] = edge;
+      const key = `${normDoi(a)}|${normDoi(b)}|${sa}|${sb}`;
+      if (!edgeMap.has(key)) { edgeMap.set(key, [normDoi(a), normDoi(b), sa, sb]); mergedFrom++; }
+    }
+  }
+
+  const allEdges = Array.from(edgeMap.values());
+  if (!allEdges.length) {
+    console.error('[GATE] 展开后引用边 0 条 —— 不写一个空边文件出去。');
+    process.exit(3);
+  }
+
+  // 排序键必须显式比较，否则 Map 插入序受上游遍历顺序影响，同一份输入两天跑出两份文件
+  allEdges.sort((x, y) => (x[2] < y[2] ? -1 : x[2] > y[2] ? 1 : x[3] < y[3] ? -1 : x[3] > y[3] ? 1 : x[0] < y[0] ? -1 : x[0] > y[0] ? 1 : 0));
+
+  if (DRY) {
+    console.log(`[dry-run] 将写入 ${path.relative(ROOT, OUT)}：边 ${allEdges.length} 条（新展开 ${srcLinks}，合并旧边 ${mergedFrom}）`);
+    return;
+  }
+
+  const payload = {
+    generatedAt: new Date().toISOString(),
+    scope: 'cross-site citation edges (references[] expanded from academic-entities.json)',
+    stats: {
+      sourceRecords: records.length,
+      withReferences: withRefs.length,
+      declarations: withRefs.reduce((s, e) => s + e.references.length, 0),
+      resolvedEdges: srcLinks,
+      unresolvedRefDoi: unresolved,
+      selfSiteEdgesSkipped: selfSite,
+      mergedFromOldEdges: mergedFrom,
+      totalEdges: allEdges.length,
+      sites: new Set(allEdges.flatMap((e) => [e[2], e[3]])).size,
+    },
+    edgeFormat: '[doiFrom, doiTo, siteFrom, siteTo]  siteFrom 的论文引用了 siteTo 的论文',
+    edges: allEdges,
+  };
+  fs.writeFileSync(OUT, JSON.stringify(payload), 'utf-8');
+  console.log(
+    `\n[citation-edges] 边 ${allEdges.length} 条（新展开 ${srcLinks} / 合并旧边 ${mergedFrom} / 库内未命中 ${unresolved} / 同站自引跳过 ${selfSite}）` +
+    ` · 涉及 ${payload.stats.sites} 站 · ${((Date.now() - t0) / 1000).toFixed(1)}s`
+  );
+})().catch((e) => {
+  console.error('[FATAL]', e && e.message ? e.message : e);
+  process.exit(1);
+});

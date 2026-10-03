@@ -130,6 +130,13 @@ jobs:
           # 引用列表已全量落盘（游标 completed），本任务不产生上游请求，只重算边。
           if [[ "$TASK" == "all" || "$TASK" == "citations" ]]; then
             node "$SCRIPTS_DIR/pipeline-openalex-citation.js" --source=crossref --stride=13
+            # 引用边补源（2026-10-04 补入）。放在 openalex-citation **之后**而不是之前：
+            # 前者会整体重写 data/citation-edges.json，先跑的话它的 25k 抽样边会把这一层的
+            # 合并结果冲掉。放在它后面，本脚本读全量边 → 叠加 references[] 展开的真实方向边 → 去重合并写回。
+            # 为什么值得加这一层：pipeline-academic-datasets 此前只存 referenceCount 不存
+            # 引用列表，引用图谱等于没有原料，全靠抽样重抓推断方向。现在 --rebuild-references
+            # 把真实 references[] 补回来了（1,139 篇论文 / 59,623 条声明），边才有「论文实际声明」的语义。
+            node "$SCRIPTS_DIR/pipeline-citation-edges-refs.js"
             # 边产完后立刻派生缺口矩阵：gapPairs（零引用站对 = 未桥接的跨域 = 研究空白候选）
             # + bridges（跨域枢纽）+ degrees（入/出度）。没有这一步，边只是一堆 [doi,doi,site,site]，
             # 消费方要自己遍历 25k 条边才能问出「哪两个域之间一条引用都没有」。
