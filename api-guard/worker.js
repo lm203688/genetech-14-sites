@@ -340,13 +340,13 @@ async function getShardGz(shardFile) {
     const cacheCf = await caches.open(SHARD_CACHE_API);
     const cachedR = await cacheCf.match(url);
     if (cachedR) {
-      const buf = Buffer.from(await cachedR.arrayBuffer());
+      const buf = new Uint8Array(await cachedR.arrayBuffer());
       globalThis[SHARD_CACHE_KEY] = { ...globalThis[SHARD_CACHE_KEY], [shardFile]: { buf, fetchedAt: Date.now() } };
       return buf;
     }
     const res = await fetch(url, { signal: AbortSignal.timeout(SHARD_FETCH_TIMEOUT_MS) });
     if (!res.ok) throw new Error(`fetch status ${res.status}`);
-    const buf = Buffer.from(await res.arrayBuffer());
+    const buf = new Uint8Array(await res.arrayBuffer());
     // 回填缓存，第二台边缘节点冷启也能省一次原站回源
     try {
       await cacheCf.put(url, new Response(buf, { headers: { 'Cache-Control': 'public, max-age=600' } }));
