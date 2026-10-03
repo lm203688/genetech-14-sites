@@ -309,8 +309,10 @@ const SHARD_TTL_MS = 10 * 60 * 1000;             // 10 分钟，与单文件索�
 const SHARD_BUDGET_MS = 8000;                    // 单请求加载预算
 const SHARD_FETCH_TIMEOUT_MS = 5000;             // 单片拉取超时
 const SHARD_CACHE_API = 'shards-v1';
-// 诊断通道：每次 getShardedIndex 调用先重置，失败时往里写具体错误
-// 最终透出到响应 meta.shardedMeta.errors，让消费方能自查"到底哪一步挂了"
+const SHARD_LAST_ERR = '__shard_last_err__';
+// 诊断通道：每次 getShardedIndex 调用先重置 globalThis[SHARD_LAST_ERR]，
+// 失败时往里写具体错误；最终透出到响应 meta.shardedMeta.errors，让消费方自查
+// "到底哪一步挂了"（分片拿不到 / 解压失败 / JSON parse 失败 / 预算耗尽）。
 
 async function getShardManifest() {
   try {
