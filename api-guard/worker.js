@@ -428,15 +428,29 @@ async function handleSemanticSearch(request) {
 
   // 分片加载优先：只要调用方带了 sites，就用全量分片（覆盖率 100%）；
   // 任何失败都回退到单文件索引（覆盖率 6%，但稳定）。
+  // 诊断原则：即便走回退，也把分片诊断塞进 meta.shardedMeta，让消费方看到失败原因
+  // （否则「sharded:false」永远说不清是分片拉不到、解压失败、还是超时）。
   let index = null;
   let sharded = false;
   let shardedMeta = null;
   if (sites && sites.length) {
     const shardedIdx = await getShardedIndex(request, sites);
-    if (shardedIdx && shardedIdx.entities && shardedIdx.entities.length) {
+    if (!shardedIdx) {
+      shardedMeta = { attempt: true, shardsLoaded: 0, shardsFailed: 0, error: 'manifest_unavailable' };
+    } else if (!shardedIdx.entities || shardedIdx.entities.length === 0) {
+      shardedMeta = {
+        attempt: true,
+        shardsLoaded: 0,
+        shardsFailed: shardedIdx.shardsFailed,
+        shardSites: [],
+        elapsedMs: shardedIdx.elapsedMs,
+        error: 'empty_entities',
+      };
+    } else {
       index = shardedIdx;
       sharded = true;
       shardedMeta = {
+        attempt: true,
         shardsLoaded: shardedIdx.shardsLoaded,
         shardsFailed: shardedIdx.shardsFailed,
         shardSites: shardedIdx.shardSites,
@@ -449,7 +463,7 @@ async function handleSemanticSearch(request) {
     if (!index || !index.entities) {
       // 分片请求但分片不可用 + 单文件也拿不到 = 真正的服务降级
       const reason = (sites && sites.length) ? '分片加载失败且单文件索引不可用' : '搜索索引不可用';
-      return json({ error: 'index_unavailable', message: reason + '，请稍后重试' }, 503);
+      return json({ error: 'index_unavailable', message: reason + '，请稍后重试', shardedMeta }, 503);
     }
   }
 
