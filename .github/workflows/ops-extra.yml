@@ -28,7 +28,9 @@ on:
         # academic / citations 是 2026-10-02 新增的两个任务：
         # 漏加进 options 的话，workflow_dispatch 直接拒收（choice 类型只接受已列选项），
         # 手动触发补位会「命令发了没反应」。
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, abstractbackfill, edge_refresh, kgbuild, academic, citations]
+        # shardverify 是 2026-10-04 从 searchindex 拆出的门禁分支：只跑分片端到端验证，
+        # 不重跑整条 pipeline。排查「线上检索是不是悄悄回退了」时用它能 20 秒内出结论。
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, shardverify, abstractbackfill, edge_refresh, kgbuild, academic, citations]
   schedule:
     # ===== 临时提升期（2026-08-05 ~ 2026-12-31）：每日 12:30 UTC(20:30 CST) 一次全量运行 =====
     # 提升期到期判定在 ops.yml 的 decide 步骤（$TODAY > 2026-12-31），此处仅跟随其节奏；
@@ -101,6 +103,15 @@ jobs:
             # 供 worker.js 的 getShardedIndex 消费，把语义检索覆盖率从 6% 提到 100%。
             # 单文件索引 search-index.json 仍然产出，作为分片不可用时的兜底路径。
             node "$SCRIPTS_DIR/pipeline-search-index.js" --shards;
+          fi
+          # ===== 分片端到端门禁（2026-10-04 补入）=====
+          # 紧跟在 searchindex 之后：刚产出的分片必须先证明「线上能下载 + 能 gzip + 能解压 +
+          # 实体字段完整」，才允许往下走。放在这里而不是等 pages-deploy，是因为分片是
+          # Pages 复制出来的，copy 本身 200 不代表内容完整（截断的 gzip 一样 200）。
+          # 不接这一步的后果：worker.js 静默回退单文件 → 端点全 200、CI 全绿、
+          # 而真实覆盖率悄悄掉回 6%，要等消费者抱怨才被发现。
+          if [[ "$TASK" == "all" || "$TASK" == "searchindex" || "$TASK" == "shardverify" ]]; then
+            node "$SCRIPTS_DIR/verify-shard-live.mjs"
           fi
           # ===== 学术数据集补齐（2026-10-02 补入）=====
           # pipeline-academic-datasets.js 产出 crossref-entities / pubmed-entities / academic-entities，
