@@ -107,6 +107,34 @@ for (const s of sites) {
   siteSize.set(s, n);
 }
 
+// ---- 推断通道（如果 edges 文档里带了 edgesInferred）----
+// 放在 siteSize 之后：缺口排序要用「两站规模之和」。
+// 这两组绝不能合并成一个 gapPairs：
+//   native  = 被引文档确实是某站实体 → 边是事实
+//   inferred= 被引文档靠 concept 推给了某站 → 边是候选，错了整个结论就反了
+// 我们对外卖的第一结论是「哪些跨域还没被引用打通」，把候选混进事实里，
+// 等于用未经审计的匹配度去下科研结论。所以分列，并各自给 interpretation。
+const edgesInferred = edgesDoc && Array.isArray(edgesDoc.edgesInferred) ? edgesDoc.edgesInferred : null;
+const gapPairsInferred = [];
+let inferredEdgesUsed = 0;
+if (edgesInferred && edgesInferred.length) {
+  const mi = new Map();
+  for (const row of edgesInferred) {
+    if (!Array.isArray(row) || row.length < 4) continue;
+    const src = row[2], tgt = row[3];
+    if (typeof src !== 'string' || typeof tgt !== 'string' || !src || !tgt || src === tgt) continue;
+    inferredEdgesUsed++;
+    mi.set(src + '|' + tgt, (mi.get(src + '|' + tgt) || 0) + 1);
+  }
+  for (const a of sites) {
+    for (const b of sites) {
+      if (a === b) continue;
+      if (!mi.get(a + '|' + b)) gapPairsInferred.push({ from: a, to: b, combinedSize: (siteSize.get(a) || 1) + (siteSize.get(b) || 1) });
+    }
+  }
+  gapPairsInferred.sort((x, y) => (y.combinedSize - x.combinedSize) || x.from.localeCompare(y.from) || x.to.localeCompare(y.to));
+}
+
 // ---- 聚合三张表 ----
 const pairMatrix = [];
 const gapPairs = [];
@@ -157,18 +185,29 @@ const out = {
     gapPairs: gapCount,
     gapRatio: Number((gapCount / pairTotal).toFixed(4)),
     badRowsSkipped: badRows,
+    // 推断通道单独一套数（不进上面那组）
+    inferred: edgesInferred && edgesInferred.length ? {
+      edgesUsed: inferredEdgesUsed,
+      gapPairs: gapPairsInferred.length,
+      gapRatio: Number((gapPairsInferred.length / pairTotal).toFixed(4)),
+      caveat: 'inferred 通道的被引文档不是任何站的实体，由 concept 匹配推给了一个站。可信度显著低于 native，只当候选，别当结论。',
+    } : null,
   },
   // 语义说明：给消费方（含 LLM）看，避免把 gapPairs 误解成「数据缺失」
   interpretation: {
     gapPairs: '零跨域引用的有向站对。可能是真实的研究空白（两域尚未打通），也可能是本项目语料在该两域的覆盖不足——需结合 totalEntities 一起读。',
     bridges: '跨域引用最强的站对，可作为跨学科桥接的种子。',
     degrees: 'inDegree 高 = 被别的域大量引用（该域是知识输出方）；outDegree 高 = 大量引用别域（吸收方）。两者严重失衡值得复核。',
+    inferred: '【低可信度】带 inferred 的那组：被引文档不是任何站实体，靠 concepts 推给了某个站。用来看「如果归属推断足够准，缺口会缩到多少」，不能直接当研究空白结论用。',
   },
   sites,
   degrees,
   pairMatrix,
   gapPairs,
   bridges,
+  // 只有推断通道存在时才输出，避免下游误以为默认就带
+  ...(gapPairsInferred.length ? [{ gapPairsInferred: true }][0] : {}),
+  gapPairsInferred,
 };
 
 console.log(`[citation-gaps] ${sites.length} 站 / ${pairTotal} 有向站对`);
@@ -176,6 +215,10 @@ console.log(`[citation-gaps] 有边站对 ${pairTotal - gapCount}，零引用站
 console.log(`[citation-gaps] Top5 桥接：${bridges.slice(0, 5).map((b) => `${b.from}→${b.to}(${b.edges})`).join(', ')}`);
 console.log(`[citation-gaps] 最大缺口（按两站规模之和）：${gapPairs.slice(0, 5).map((g) => `${g.from}↔${g.to}(${g.combinedSize})`).join(', ')}`);
 if (badRows) console.warn(`[citation-gaps][WARN] 跳过 ${badRows} 条坏行`);
+if (gapPairsInferred.length) {
+  console.log(`[citation-gaps] 推断通道（低可信度）：边 ${inferredEdgesUsed} 条 → 零引用站对 ${gapPairsInferred.length}（${(gapPairsInferred.length / pairTotal * 100).toFixed(1)}%）`);
+  console.log(`[citation-gaps] 注意：inferred ≠ 事实，只当候选。native 缺口仍是上面那 ${gapCount} 对。`);
+}
 
 if (DRY) {
   console.log('[citation-gaps] --dry-run：未写盘');

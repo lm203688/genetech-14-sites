@@ -30,7 +30,7 @@ on:
         # 手动触发补位会「命令发了没反应」。
         # shardverify 是 2026-10-04 从 searchindex 拆出的门禁分支：只跑分片端到端验证，
         # 不重跑整条 pipeline。排查「线上检索是不是悄悄回退了」时用它能 20 秒内出结论。
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, shardverify, abstractbackfill, edge_refresh, kgbuild, academic, citations]
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, shardverify, abstractbackfill, edge_refresh, kgbuild, academic, citations, cited]
   schedule:
     # ===== 临时提升期（2026-08-05 ~ 2026-12-31）：每日 12:30 UTC(20:30 CST) 一次全量运行 =====
     # 提升期到期判定在 ops.yml 的 decide 步骤（$TODAY > 2026-12-31），此处仅跟随其节奏；
@@ -113,6 +113,16 @@ jobs:
           if [[ "$TASK" == "all" || "$TASK" == "searchindex" || "$TASK" == "shardverify" ]]; then
             node "$SCRIPTS_DIR/verify-shard-live.mjs"
           fi
+          # ===== 分片保真度（2026-10-04 补入，紧接上面那条）=====
+          # verify-shard-live.mjs 只查「每片自己炸没炸、字段齐不齐」，查不出索引和站点实体库是不是同一代数据。
+          # 实测（2026-10-04）：库 260,689 个真 DOI，30 片只含 198,114 —— 62,575 个（24.0%）没进索引；
+          # 分片里的 DOI 则 100% 在库内。线上语义检索对这 24% 的实体搜不到，但任何既有门禁都不报告。
+          # 阈值先放到 0.30：今天实测 24%，放严会让 CI 天天红；一旦漏进分片的比例突破 30%，
+          # 说明索引在继续漂移，必须失败并触发「用权威站点实体重建分片」。
+          # 双向回归测试（本地实测）：--lib-miss=0.10 → exit 2（阻断）；默认 0.30 → exit 0（放行）。
+          if [[ "$TASK" == "all" || "$TASK" == "searchindex" || "$TASK" == "shardverify" ]]; then
+            node "$SCRIPTS_DIR/verify-shard-fidelity.mjs" --lib-miss=0.30
+          fi
           # ===== 学术数据集补齐（2026-10-02 补入）=====
           # pipeline-academic-datasets.js 产出 crossref-entities / pubmed-entities / academic-entities，
           # 对应 worker.js 的 /v1/academic/entities|pubmed|crossref 三个端点。
@@ -142,6 +152,20 @@ jobs:
             # 消费方要自己遍历 25k 条边才能问出「哪两个域之间一条引用都没有」。
             # 顺序不可颠倒：gaps 是 edges 的纯下游，edges 没写成功就不能产出矩阵。
             node "$SCRIPTS_DIR/pipeline-citation-gaps.js"
+          fi
+          # ===== 被引文档补齐（2026-10-04 补入）=====
+          # pipeline-cited-backfill.js 用 OpenAlex 的 filter=doi:<a>|<b>（多值 OR）批量补「被引文档」：
+          # 引用边数不由「我们抓了多少引用声明」决定，由「被引文档有多少在库」决定 ——
+          # 实测 59,623 条声明 / 57,764 个 unique 被引 DOI 里只有 2,170 个在库（3.8%）。
+          # Crossref 的 filter=doi:a,b,c 会被拒（pair-list-form-invalid），只有 OpenAlex 能批量。
+          # 默认 --limit=3000 分批推进；真实进度在 state/cited-backfill-state.json（断点续跑，不重打上游）。
+          if [[ "$TASK" == "all" || "$TASK" == "cited" ]]; then
+            node "$SCRIPTS_DIR/pipeline-cited-backfill.js" --limit=3000
+            # 把补齐的被引文档推断归属到站（低可信度，只作候选；产物进 data/cited-site-assign.json）
+            node "$SCRIPTS_DIR/pipeline-cited-site-assign.js" --write
+            # 补齐产物 → 扩库候选清单 + 分片保真度快报。纯离线（OpenAlex 免费层按 IP 日预算，
+            # 补齐任务自己就能把当天预算打光，所以这一步绝不能联网）。
+            node "$SCRIPTS_DIR/pipeline-cited-gap-ranked.js" --write
           fi
           # 摘要回填（09-24 补入调度，之前未进任何 workflow 导致 09-20 后停摆）：
           # 默认 cap=1500 / max-minutes=20 保持单轮 ≤20 分钟，与 45 分钟 job timeout 留余量。

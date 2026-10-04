@@ -1,0 +1,1146 @@
+{
+  "version": 1,
+  "builtAt": "2026-10-04T07:26:51.529Z",
+  "derivedFrom": {
+    "siteDois": "data/search-index/site-*.json.gz (30 站全量实体)",
+    "citedEntities": "data/cited-entities.json",
+    "academicEntities": "data/academic-entities.json",
+    "citedSiteAssign": "data/cited-site-assign.json"
+  },
+  "stats": {
+    "sourceRecords": 1634,
+    "declarations": 59623,
+    "uniqueCitedDois": 57764,
+    "inLibrary": 2170,
+    "assignedToSite": 117,
+    "unknownExternal": 48643,
+    "missingUpstream": 6834,
+    "knownNodes": 50930,
+    "knownShare": 0.8817,
+    "sites": 30,
+    "libEntities": 300000,
+    "missingUpstreamShare": 0.1183
+  },
+  "indexFidelity": {
+    "note": "分片检索索引 vs 站点实体库，两边是不是同一代数据。verify-shard-live.mjs 只查每片内部字段完整度，查不出这条。",
+    "shardDois": 198114,
+    "shardNotInLibrary": 0,
+    "libraryNotInShards": 62575,
+    "libraryNotInShardShare": 0.24,
+    "shards": 30
+  },
+  "interpretation": {
+    "headline": "这是对「我们引了谁、而那些人不在库里」的直接统计。unknownExternal 就是扩库目标池：把它们在库，引用边才会变多、缺口矩阵才会变准。",
+    "caveats": [
+      "本脚本离线运行，不查上游；unknownExternal 的 DOI 只有 metadata（来自 cited-entities.json），没有站点归属。",
+      "“上游缺”（missingUpstream）是 OpenAlex 确认过没有该 DOI 的，不需要再补，属于可永久放弃的部分。",
+      "venue 来自 OpenAlex 的 primary_location.source.display_name，可能为空（记 unknown），也可能一家期刊多个写法。",
+      "扩库优先级建议按 uniqueDois 排，而不是 declarations：一个 DOI 被反复引用只说明它热，不代表需要一篇新文档。"
+    ]
+  },
+  "coverage": {
+    "note": "knownShare = 在库 + 已归属 / unique 被引 DOI。这是“被引侧覆盖度”，与 citation-gaps.json 的“站对缺口”是两个维度。",
+    "knownShare": 0.8817,
+    "unknownShare": 0.8421
+  },
+  "topVenues": [
+    {
+      "venue": "conference-paper",
+      "uniqueDois": 1790,
+      "declarations": 1845,
+      "citingRecords": 330,
+      "avgCitedBy": 675.1,
+      "yearMin": 1966,
+      "yearMax": 2026
+    },
+    {
+      "venue": "Nature",
+      "uniqueDois": 777,
+      "declarations": 880,
+      "citingRecords": 280,
+      "avgCitedBy": 1434.5,
+      "yearMin": 1936,
+      "yearMax": 2026
+    },
+    {
+      "venue": "Nature Communications",
+      "uniqueDois": 706,
+      "declarations": 732,
+      "citingRecords": 224,
+      "avgCitedBy": 259.9,
+      "yearMin": 2011,
+      "yearMax": 2026
+    },
+    {
+      "venue": "Science",
+      "uniqueDois": 704,
+      "declarations": 780,
+      "citingRecords": 274,
+      "avgCitedBy": 1498.9,
+      "yearMin": 1888,
+      "yearMax": 2026
+    },
+    {
+      "venue": "Proceedings of the National Academy of Sciences",
+      "uniqueDois": 485,
+      "declarations": 507,
+      "citingRecords": 213,
+      "avgCitedBy": 729.9,
+      "yearMin": 1952,
+      "yearMax": 2026
+    },
+    {
+      "venue": "Scientific Reports",
+      "uniqueDois": 419,
+      "declarations": 424,
+      "citingRecords": 241,
+      "avgCitedBy": 117.7,
+      "yearMin": 2011,
+      "yearMax": 2026
+    },
+    {
+      "venue": "Physical Review Letters",
+      "uniqueDois": 362,
+      "declarations": 388,
+      "citingRecords": 83,
+      "avgCitedBy": 1454.3,
+      "yearMin": 1959,
+      "yearMax": 2026
+    },
+    {
+      "venue": "Advanced Materials",
+      "uniqueDois": 326,
+      "declarations": 338,
+      "citingRecords": 87,
+      "avgCitedBy": 433.8,
+      "yearMin": 1998,
+      "yearMax": 2026
+    },
+    {
+      "venue": "Journal of the American Chemical Society",
+      "uniqueDois": 289,
+      "declarations": 297,
+      "citingRecords": 80,
+      "avgCitedBy": 448,
+      "yearMin": 1920,
+      "yearMax": 2026
+    },
+    {
+      "venue": "PLoS ONE",
+      "uniqueDois": 257,
+      "declarations": 262,
+      "citingRecords": 154,
+      "avgCitedBy": 261.6,
+      "yearMin": 2007,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Angewandte Chemie International Edition",
+      "uniqueDois": 253,
+      "declarations": 255,
+      "citingRecords": 73,
+      "avgCitedBy": 353.7,
+      "yearMin": 1998,
+      "yearMax": 2026
+    },
+    {
+      "venue": "IEEE Access",
+      "uniqueDois": 206,
+      "declarations": 215,
+      "citingRecords": 110,
+      "avgCitedBy": 206.4,
+      "yearMin": 2015,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Cell",
+      "uniqueDois": 193,
+      "declarations": 205,
+      "citingRecords": 79,
+      "avgCitedBy": 1942.1,
+      "yearMin": 1980,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Nucleic Acids Research",
+      "uniqueDois": 191,
+      "declarations": 208,
+      "citingRecords": 76,
+      "avgCitedBy": 2523,
+      "yearMin": 1986,
+      "yearMax": 2026
+    },
+    {
+      "venue": "NeuroImage",
+      "uniqueDois": 189,
+      "declarations": 202,
+      "citingRecords": 39,
+      "avgCitedBy": 734.2,
+      "yearMin": 1996,
+      "yearMax": 2026
+    },
+    {
+      "venue": "ACS Nano",
+      "uniqueDois": 182,
+      "declarations": 185,
+      "citingRecords": 63,
+      "avgCitedBy": 304.1,
+      "yearMin": 2008,
+      "yearMax": 2026
+    },
+    {
+      "venue": "Advanced Functional Materials",
+      "uniqueDois": 178,
+      "declarations": 180,
+      "citingRecords": 60,
+      "avgCitedBy": 189.6,
+      "yearMin": 2006,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Geochimica et Cosmochimica Acta",
+      "uniqueDois": 169,
+      "declarations": 175,
+      "citingRecords": 35,
+      "avgCitedBy": 301,
+      "yearMin": 1951,
+      "yearMax": 2024
+    },
+    {
+      "venue": "Lecture notes in computer science",
+      "uniqueDois": 168,
+      "declarations": 174,
+      "citingRecords": 94,
+      "avgCitedBy": 898.4,
+      "yearMin": 1995,
+      "yearMax": 2026
+    },
+    {
+      "venue": "ACS Applied Materials & Interfaces",
+      "uniqueDois": 161,
+      "declarations": 166,
+      "citingRecords": 65,
+      "avgCitedBy": 136.9,
+      "yearMin": 2011,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Sensors",
+      "uniqueDois": 159,
+      "declarations": 166,
+      "citingRecords": 84,
+      "avgCitedBy": 133.4,
+      "yearMin": 2002,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Journal of Power Sources",
+      "uniqueDois": 155,
+      "declarations": 155,
+      "citingRecords": 15,
+      "avgCitedBy": 202.1,
+      "yearMin": 1983,
+      "yearMax": 2022
+    },
+    {
+      "venue": "The Astrophysical Journal",
+      "uniqueDois": 153,
+      "declarations": 154,
+      "citingRecords": 23,
+      "avgCitedBy": 409,
+      "yearMin": 1956,
+      "yearMax": 2025
+    },
+    {
+      "venue": "book",
+      "uniqueDois": 149,
+      "declarations": 151,
+      "citingRecords": 109,
+      "avgCitedBy": 3068,
+      "yearMin": 1735,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Journal of Neuroscience",
+      "uniqueDois": 148,
+      "declarations": 149,
+      "citingRecords": 47,
+      "avgCitedBy": 438.7,
+      "yearMin": 1982,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Science Advances",
+      "uniqueDois": 145,
+      "declarations": 155,
+      "citingRecords": 92,
+      "avgCitedBy": 347.7,
+      "yearMin": 2015,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Nano Letters",
+      "uniqueDois": 136,
+      "declarations": 140,
+      "citingRecords": 63,
+      "avgCitedBy": 436.2,
+      "yearMin": 2004,
+      "yearMax": 2025
+    },
+    {
+      "venue": "book-chapter",
+      "uniqueDois": 136,
+      "declarations": 136,
+      "citingRecords": 89,
+      "avgCitedBy": 143.1,
+      "yearMin": 1970,
+      "yearMax": 2025
+    },
+    {
+      "venue": "International Journal of Molecular Sciences",
+      "uniqueDois": 136,
+      "declarations": 136,
+      "citingRecords": 72,
+      "avgCitedBy": 135.4,
+      "yearMin": 2010,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Nature Methods",
+      "uniqueDois": 135,
+      "declarations": 167,
+      "citingRecords": 48,
+      "avgCitedBy": 3131,
+      "yearMin": 2005,
+      "yearMax": 2026
+    },
+    {
+      "venue": "Bioinformatics",
+      "uniqueDois": 134,
+      "declarations": 165,
+      "citingRecords": 44,
+      "avgCitedBy": 4374.4,
+      "yearMin": 1998,
+      "yearMax": 2025
+    },
+    {
+      "venue": "arXiv (Cornell University)",
+      "uniqueDois": 128,
+      "declarations": 133,
+      "citingRecords": 50,
+      "avgCitedBy": 1348.9,
+      "yearMin": 2009,
+      "yearMax": 2026
+    },
+    {
+      "venue": "The Science of The Total Environment",
+      "uniqueDois": 124,
+      "declarations": 125,
+      "citingRecords": 50,
+      "avgCitedBy": 284.7,
+      "yearMin": 1983,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Chemical Engineering Journal",
+      "uniqueDois": 123,
+      "declarations": 124,
+      "citingRecords": 45,
+      "avgCitedBy": 137.1,
+      "yearMin": 2006,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Sustainability",
+      "uniqueDois": 119,
+      "declarations": 119,
+      "citingRecords": 52,
+      "avgCitedBy": 87.4,
+      "yearMin": 2014,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Nature Materials",
+      "uniqueDois": 117,
+      "declarations": 120,
+      "citingRecords": 52,
+      "avgCitedBy": 1168.1,
+      "yearMin": 2003,
+      "yearMax": 2025
+    },
+    {
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "uniqueDois": 114,
+      "declarations": 117,
+      "citingRecords": 48,
+      "avgCitedBy": 117,
+      "yearMin": 2015,
+      "yearMax": 2026
+    },
+    {
+      "venue": "Physical Review A",
+      "uniqueDois": 113,
+      "declarations": 126,
+      "citingRecords": 34,
+      "avgCitedBy": 1161.5,
+      "yearMin": 1970,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Chemical Reviews",
+      "uniqueDois": 106,
+      "declarations": 112,
+      "citingRecords": 65,
+      "avgCitedBy": 1154.4,
+      "yearMin": 1971,
+      "yearMax": 2025
+    },
+    {
+      "venue": "Applied Physics Letters",
+      "uniqueDois": 106,
+      "declarations": 106,
+      "citingRecords": 47,
+      "avgCitedBy": 246.2,
+      "yearMin": 1969,
+      "yearMax": 2025
+    }
+  ],
+  "venueTotal": 7762,
+  "topYears": [
+    {
+      "year": 2026,
+      "uniqueDois": 222
+    },
+    {
+      "year": 2025,
+      "uniqueDois": 2258
+    },
+    {
+      "year": 2024,
+      "uniqueDois": 3669
+    },
+    {
+      "year": 2023,
+      "uniqueDois": 3474
+    },
+    {
+      "year": 2022,
+      "uniqueDois": 3296
+    },
+    {
+      "year": 2021,
+      "uniqueDois": 3219
+    },
+    {
+      "year": 2020,
+      "uniqueDois": 3113
+    },
+    {
+      "year": 2019,
+      "uniqueDois": 2754
+    },
+    {
+      "year": 2018,
+      "uniqueDois": 2470
+    },
+    {
+      "year": 2017,
+      "uniqueDois": 2093
+    },
+    {
+      "year": 2016,
+      "uniqueDois": 1893
+    },
+    {
+      "year": 2015,
+      "uniqueDois": 1771
+    },
+    {
+      "year": 2014,
+      "uniqueDois": 1580
+    },
+    {
+      "year": 2013,
+      "uniqueDois": 1459
+    },
+    {
+      "year": 2012,
+      "uniqueDois": 1312
+    },
+    {
+      "year": 2011,
+      "uniqueDois": 1150
+    },
+    {
+      "year": 2010,
+      "uniqueDois": 1110
+    },
+    {
+      "year": 2009,
+      "uniqueDois": 975
+    },
+    {
+      "year": 2008,
+      "uniqueDois": 902
+    },
+    {
+      "year": 2007,
+      "uniqueDois": 841
+    },
+    {
+      "year": 2006,
+      "uniqueDois": 754
+    },
+    {
+      "year": 2005,
+      "uniqueDois": 736
+    },
+    {
+      "year": 2004,
+      "uniqueDois": 671
+    },
+    {
+      "year": 2003,
+      "uniqueDois": 604
+    },
+    {
+      "year": 2002,
+      "uniqueDois": 611
+    },
+    {
+      "year": 2001,
+      "uniqueDois": 513
+    },
+    {
+      "year": 2000,
+      "uniqueDois": 544
+    },
+    {
+      "year": 1999,
+      "uniqueDois": 435
+    },
+    {
+      "year": 1998,
+      "uniqueDois": 385
+    },
+    {
+      "year": 1997,
+      "uniqueDois": 330
+    },
+    {
+      "year": 1996,
+      "uniqueDois": 288
+    },
+    {
+      "year": 1995,
+      "uniqueDois": 272
+    },
+    {
+      "year": 1994,
+      "uniqueDois": 218
+    },
+    {
+      "year": 1993,
+      "uniqueDois": 188
+    },
+    {
+      "year": 1992,
+      "uniqueDois": 179
+    },
+    {
+      "year": 1991,
+      "uniqueDois": 193
+    },
+    {
+      "year": 1990,
+      "uniqueDois": 174
+    },
+    {
+      "year": 1989,
+      "uniqueDois": 159
+    },
+    {
+      "year": 1988,
+      "uniqueDois": 145
+    },
+    {
+      "year": 1987,
+      "uniqueDois": 119
+    },
+    {
+      "year": 1986,
+      "uniqueDois": 123
+    },
+    {
+      "year": 1985,
+      "uniqueDois": 99
+    },
+    {
+      "year": 1984,
+      "uniqueDois": 81
+    },
+    {
+      "year": 1983,
+      "uniqueDois": 83
+    },
+    {
+      "year": 1982,
+      "uniqueDois": 80
+    },
+    {
+      "year": 1981,
+      "uniqueDois": 62
+    },
+    {
+      "year": 1980,
+      "uniqueDois": 63
+    },
+    {
+      "year": 1979,
+      "uniqueDois": 60
+    },
+    {
+      "year": 1978,
+      "uniqueDois": 47
+    },
+    {
+      "year": 1977,
+      "uniqueDois": 69
+    },
+    {
+      "year": 1976,
+      "uniqueDois": 60
+    },
+    {
+      "year": 1975,
+      "uniqueDois": 40
+    },
+    {
+      "year": 1974,
+      "uniqueDois": 47
+    },
+    {
+      "year": 1973,
+      "uniqueDois": 37
+    },
+    {
+      "year": 1972,
+      "uniqueDois": 34
+    },
+    {
+      "year": 1971,
+      "uniqueDois": 37
+    },
+    {
+      "year": 1970,
+      "uniqueDois": 37
+    },
+    {
+      "year": 1969,
+      "uniqueDois": 28
+    },
+    {
+      "year": 1968,
+      "uniqueDois": 27
+    },
+    {
+      "year": 1967,
+      "uniqueDois": 35
+    },
+    {
+      "year": 1966,
+      "uniqueDois": 33
+    },
+    {
+      "year": 1965,
+      "uniqueDois": 31
+    },
+    {
+      "year": 1964,
+      "uniqueDois": 24
+    },
+    {
+      "year": 1963,
+      "uniqueDois": 21
+    },
+    {
+      "year": 1962,
+      "uniqueDois": 16
+    },
+    {
+      "year": 1961,
+      "uniqueDois": 21
+    },
+    {
+      "year": 1960,
+      "uniqueDois": 16
+    },
+    {
+      "year": 1959,
+      "uniqueDois": 17
+    },
+    {
+      "year": 1958,
+      "uniqueDois": 17
+    },
+    {
+      "year": 1957,
+      "uniqueDois": 14
+    },
+    {
+      "year": 1956,
+      "uniqueDois": 9
+    },
+    {
+      "year": 1955,
+      "uniqueDois": 9
+    },
+    {
+      "year": 1954,
+      "uniqueDois": 17
+    },
+    {
+      "year": 1953,
+      "uniqueDois": 10
+    },
+    {
+      "year": 1952,
+      "uniqueDois": 8
+    },
+    {
+      "year": 1951,
+      "uniqueDois": 14
+    },
+    {
+      "year": 1950,
+      "uniqueDois": 8
+    },
+    {
+      "year": 1949,
+      "uniqueDois": 7
+    },
+    {
+      "year": 1948,
+      "uniqueDois": 3
+    },
+    {
+      "year": 1947,
+      "uniqueDois": 7
+    },
+    {
+      "year": 1946,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1945,
+      "uniqueDois": 6
+    },
+    {
+      "year": 1944,
+      "uniqueDois": 2
+    },
+    {
+      "year": 1943,
+      "uniqueDois": 4
+    },
+    {
+      "year": 1942,
+      "uniqueDois": 4
+    },
+    {
+      "year": 1941,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1940,
+      "uniqueDois": 5
+    },
+    {
+      "year": 1939,
+      "uniqueDois": 8
+    },
+    {
+      "year": 1938,
+      "uniqueDois": 6
+    },
+    {
+      "year": 1937,
+      "uniqueDois": 7
+    },
+    {
+      "year": 1936,
+      "uniqueDois": 4
+    },
+    {
+      "year": 1935,
+      "uniqueDois": 6
+    },
+    {
+      "year": 1934,
+      "uniqueDois": 4
+    },
+    {
+      "year": 1933,
+      "uniqueDois": 3
+    },
+    {
+      "year": 1932,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1931,
+      "uniqueDois": 3
+    },
+    {
+      "year": 1930,
+      "uniqueDois": 4
+    },
+    {
+      "year": 1929,
+      "uniqueDois": 3
+    },
+    {
+      "year": 1928,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1927,
+      "uniqueDois": 2
+    },
+    {
+      "year": 1926,
+      "uniqueDois": 4
+    },
+    {
+      "year": 1925,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1924,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1922,
+      "uniqueDois": 3
+    },
+    {
+      "year": 1921,
+      "uniqueDois": 2
+    },
+    {
+      "year": 1920,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1915,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1914,
+      "uniqueDois": 2
+    },
+    {
+      "year": 1913,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1911,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1910,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1909,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1907,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1906,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1905,
+      "uniqueDois": 2
+    },
+    {
+      "year": 1904,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1903,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1902,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1901,
+      "uniqueDois": 2
+    },
+    {
+      "year": 1897,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1894,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1893,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1891,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1888,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1881,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1865,
+      "uniqueDois": 1
+    },
+    {
+      "year": 1859,
+      "uniqueDois": 1
+    }
+  ],
+  "sampleUnknownDois": [
+    {
+      "doi": "10.3390/machines11080838",
+      "title": "Human–Machine Shared Steering Control for Vehicle Lane Changing Using Adaptive Game Strategy",
+      "year": 2023,
+      "venue": "Machines",
+      "citedByCount": 8,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/smc52423.2021.9659077",
+      "title": "Shared Decision-Making Forward an Autonomous Navigation for Intelligent Vehicles",
+      "year": 2021,
+      "venue": "2021 IEEE International Conference on Systems, Man, and Cybernetics (SMC)",
+      "citedByCount": 4,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1080/00423114.2017.1337915",
+      "title": "A predictive control framework for torque-based steering assistance to improve safety in highway driving",
+      "year": 2017,
+      "venue": "Vehicle System Dynamics",
+      "citedByCount": 53,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/amc51637.2022.9729253",
+      "title": "Motion Control for Aerial and Ground Vehicle Autonomous Platooning",
+      "year": 2022,
+      "venue": "conference-paper",
+      "citedByCount": 4,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/thms.2020.3017748",
+      "title": "A Review of Shared Control for Automated Vehicles: Theory and Applications",
+      "year": 2020,
+      "venue": "IEEE Transactions on Human-Machine Systems",
+      "citedByCount": 256,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/itsc.2017.8317913",
+      "title": "An LSTM network for highway trajectory prediction",
+      "year": 2017,
+      "venue": "conference-paper",
+      "citedByCount": 93,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1016/j.aap.2020.105937",
+      "title": "A comparative study of state-of-the-art driving strategies for autonomous vehicles",
+      "year": 2020,
+      "venue": "Accident Analysis & Prevention",
+      "citedByCount": 127,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1007/978-1-4613-2173-6_19",
+      "title": "A Critical View of Driver Behavior Models: What Do We Know, What Should We Do?",
+      "year": 1985,
+      "venue": "book-chapter",
+      "citedByCount": 1235,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/tits.2007.909239",
+      "title": "A Low-Cost Pedestrian-Detection System With a Single Optical Camera",
+      "year": 2008,
+      "venue": "IEEE Transactions on Intelligent Transportation Systems",
+      "citedByCount": 80,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1512/iumj.1957.6.56038",
+      "title": "A Markovian Decision Process",
+      "year": 1957,
+      "venue": "Indiana University Mathematics Journal",
+      "citedByCount": 2442,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/70.143350",
+      "title": "A new approach to visual servoing in robotics",
+      "year": 1992,
+      "venue": "IEEE Transactions on Robotics and Automation",
+      "citedByCount": 1364,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/lra.2018.2805314",
+      "title": "A Recurrent Neural Network Solution for Predicting Driver Intention at Unsignalized Intersections",
+      "year": 2018,
+      "venue": "IEEE Robotics and Automation Letters",
+      "citedByCount": 196,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/icsmc.2009.5346350",
+      "title": "A sensorimotor driver model for steering control",
+      "year": 2009,
+      "venue": "conference-paper",
+      "citedByCount": 116,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1002/rob.21918",
+      "title": "A survey of deep learning techniques for autonomous driving",
+      "year": 2019,
+      "venue": "Journal of Field Robotics",
+      "citedByCount": 1820,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1186/s40648-014-0001-z",
+      "title": "A survey on motion prediction and risk assessment for intelligent vehicles",
+      "year": 2014,
+      "venue": "ROBOMECH Journal",
+      "citedByCount": 1140,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/thms.2018.2791570",
+      "title": "A Topology of Shared Control Systems—Finding Common Ground in Diversity",
+      "year": 2018,
+      "venue": "IEEE Transactions on Human-Machine Systems",
+      "citedByCount": 304,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/itsc.2014.6957725",
+      "title": "A Visual Servoing approach for road lane following with obstacle avoidance",
+      "year": 2014,
+      "venue": "conference-paper",
+      "citedByCount": 18,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1201/9781410607775.ch8",
+      "title": "Adaptive Automation",
+      "year": 2003,
+      "venue": "Human factors and ergonomics",
+      "citedByCount": 183,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/iros45743.2020.9340927",
+      "title": "Adaptive Dynamic Window Approach for Local Navigation",
+      "year": 2020,
+      "venue": "conference-paper",
+      "citedByCount": 47,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/jas.2018.7511063",
+      "title": "Advances in Vision-Based Lane Detection: Algorithms, Integration, Assessment, and Perspectives on ACP-Based Parallel Vision",
+      "year": 2018,
+      "venue": "IEEE/CAA Journal of Automatica Sinica",
+      "citedByCount": 178,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1016/j.iatssr.2017.02.001",
+      "title": "Application of proximal surrogate indicators for safety evaluation: A review of recent developments and research needs",
+      "year": 2017,
+      "venue": "IATSS Research",
+      "citedByCount": 463,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1109/smc.2016.7844641",
+      "title": "Authority transfer method from automated to manual driving via haptic shared control",
+      "year": 2016,
+      "venue": "conference-paper",
+      "citedByCount": 39,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1016/j.conengprac.2013.11.015",
+      "title": "Automation-driver cooperative driving in presence of undetected obstacles",
+      "year": 2013,
+      "venue": "Control Engineering Practice",
+      "citedByCount": 76,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1016/b978-0-323-85659-1.00001-x",
+      "title": "Dynamic behavior and stability of an articulated vehicle carrying fluid",
+      "year": 2021,
+      "venue": "Elsevier eBooks",
+      "citedByCount": 3,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    },
+    {
+      "doi": "10.1016/j.robot.2019.03.003",
+      "title": "Cobot programming for collaborative industrial tasks: An overview",
+      "year": 2019,
+      "venue": "Robotics and Autonomous Systems",
+      "citedByCount": 481,
+      "declarations": 1,
+      "citingFrom": "10.70675/dd5a5e8eza160z4f94za5d1z8b9637cb49d6"
+    }
+  ]
+}

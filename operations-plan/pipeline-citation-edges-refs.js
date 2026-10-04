@@ -31,6 +31,15 @@ const DATA_DIR = path.join(ROOT, 'data');
 const ARGV = process.argv.slice(2);
 const DRY = ARGV.includes('--dry-run');
 const NO_MERGE = ARGV.includes('--no-merge');
+// --with-inferred：把「按 concepts 推断归属到站」的被引文档也算进边。
+// 推断边**单独成数组**（edgesInferred），绝不并进 edges ——
+// 那是两种可信度完全不同的东西：edges 是「被引文档确实是某个站的实体」，
+// edgesInferred 是「被引文档不是任何站实体，靠概念匹配推给了一个站」。
+// 混在一起 = 把低精度结论当事实分发，而我们对外卖的第一结论恰恰是「缺口」。
+const WITH_INFERRED = ARGV.includes('--with-inferred');
+const INFERRED_CONF =
+  (ARGV.find((a) => typeof a === 'string' && a.startsWith('--inferred-confidence=')) || '')
+    .slice('--inferred-confidence='.length) || 'high';
 const OUT = path.join(
   DATA_DIR,
   (ARGV.find((a) => a.startsWith('--out=')) || '').slice(6) || 'citation-edges.json'
@@ -73,6 +82,31 @@ function buildDoiSiteMap() {
   const { map: doiSite, siteDirs, scanned } = buildDoiSiteMap();
   console.log(`DOI→站映射：${siteDirs.length} 站 / 扫 ${scanned} 实体 / 去重后 ${doiSite.size} 个 DOI`);
 
+  // ---- 推断归属表（仅在 --with-inferred 时启用）----
+  const inferredDoiSite = new Map();
+  let inferredRows = 0, inferredAssigned = 0;
+  if (WITH_INFERRED) {
+    const p = path.join(DATA_DIR, 'cited-site-assign.json');
+    if (!fs.existsSync(p)) {
+      console.error('[GATE] 指定了 --with-inferred 但缺 data/cited-site-assign.json —— 先跑 pipeline-cited-site-assign.js --write');
+      process.exit(3);
+    }
+    let doc = {};
+    try { doc = JSON.parse(fs.readFileSync(p, 'utf8')); } catch { doc = {}; }
+    const list = Array.isArray(doc.assignments) ? doc.assignments : [];
+    inferredRows = list.length;
+    for (const a of list) {
+      if (!a || !a.doi || !a.site) continue;
+      if (a.confidence && a.confidence !== INFERRED_CONF) continue;
+      const d = normDoi(a.doi);
+      // 只在原生表里**查不到**时才用推断 —— 原生归属是硬事实，不能被推断顶掉
+      if (!d || doiSite.has(d)) continue;
+      inferredDoiSite.set(d, a.site);
+      inferredAssigned++;
+    }
+    console.log(`推断归属：候选 ${inferredRows} 条，取 ${INFERRED_CONF} 置信且原生表查不到的 ${inferredAssigned} 个 DOI`);
+  }
+
   const academicPath = path.join(DATA_DIR, 'academic-entities.json');
   if (!fs.existsSync(academicPath)) {
     console.error('[GATE] 缺 data/academic-entities.json，没有引用声明可展开');
@@ -92,20 +126,35 @@ function buildDoiSiteMap() {
   let srcLinks = 0;   // 源→被引 的声明总数（能归到站的）
   let unresolved = 0; // 被引 DOI 不在本站库里（正常，学术库只收录一部分）
   let selfSite = 0;   // 同站自引
+  const inferredEdgeMap = new Map();
+  let inferredLinks = 0;
   for (const e of withRefs) {
     const siteFrom = (e.sites && e.sites[0]) || null;
     if (!siteFrom || !e.doi) continue;
     for (const refDoi of e.references) {
       const d = normDoi(refDoi);
       if (!d) continue;
-      const targets = doiSite.get(d);
+      let targets = doiSite.get(d);
+      let byInferred = false;
+      if (!targets && WITH_INFERRED) {
+        const s = inferredDoiSite.get(d);
+        if (s) { targets = new Set([s]); byInferred = true; }
+      }
       if (!targets) { unresolved++; continue; }
       for (const siteTo of targets) {
         if (siteTo === siteFrom) { selfSite++; continue; }
+        if (byInferred) {
+          inferredLinks++;
+          inferredEdgeMap.set(`${normDoi(e.doi)}|${d}|${siteFrom}|${siteTo}`, [normDoi(e.doi), d, siteFrom, siteTo]);
+          continue;
+        }
         srcLinks++;
         edgeMap.set(`${normDoi(e.doi)}|${d}|${siteFrom}|${siteTo}`, [normDoi(e.doi), d, siteFrom, siteTo]);
       }
     }
+  }
+  if (inferredEdgeMap.size) {
+    console.log(`  其中 ${inferredEdgeMap.size} 条边来自**推断归属**（原生表查不到、靠 concepts 推的站）—— 单独放在 edgesInferred，不进 edges`);
   }
 
   // ---- 与旧边合并（不覆盖）----
@@ -135,6 +184,9 @@ function buildDoiSiteMap() {
     return;
   }
 
+  const allInferred = Array.from(inferredEdgeMap.values())
+    .sort((x, y) => (x[2] < y[2] ? -1 : x[2] > y[2] ? 1 : x[3] < y[3] ? -1 : x[3] > y[3] ? 1 : x[0] < y[0] ? -1 : x[0] > y[0] ? 1 : 0));
+
   const payload = {
     generatedAt: new Date().toISOString(),
     scope: 'cross-site citation edges (references[] expanded from academic-entities.json)',
@@ -148,9 +200,19 @@ function buildDoiSiteMap() {
       mergedFromOldEdges: mergedFrom,
       totalEdges: allEdges.length,
       sites: new Set(allEdges.flatMap((e) => [e[2], e[3]])).size,
+      // 推断通道：单独计数，互不影响
+      inferredEnabled: WITH_INFERRED,
+      inferredConfidence: WITH_INFERRED ? INFERRED_CONF : null,
+      inferredResolvedEdges: inferredLinks,
+      inferredTotalEdges: allInferred.length,
+      inferredShare: Number(((100 * allInferred.length) / Math.max(1, allEdges.length + allInferred.length)).toFixed(1)),
     },
     edgeFormat: '[doiFrom, doiTo, siteFrom, siteTo]  siteFrom 的论文引用了 siteTo 的论文',
+    // ⚠️ edges 与 edgesInferred 是两种可信度完全不同的东西，下游不要混用：
+    //   edges         = 被引文档确实是某个站的实体（硬事实）
+    //   edgesInferred = 被引文档不是任何站实体，由 concept 匹配推给了某一站（推断，精度未审计到可用水平前只当候选）
     edges: allEdges,
+    edgesInferred: allInferred,
   };
   fs.writeFileSync(OUT, JSON.stringify(payload), 'utf-8');
   console.log(

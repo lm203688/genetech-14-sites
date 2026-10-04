@@ -30,6 +30,7 @@ const REPORT_DIR = path.join(ROOT, 'reports');
 
 const ARGV = process.argv.slice(2);
 const DRY = ARGV.includes('--dry-run');
+const REBUILD_REFS = ARGV.includes('--rebuild-references');
 const getArg = (k, d) => {
   const a = ARGV.find((x) => typeof x === 'string' && x.startsWith(`--${k}=`));
   return a ? a.slice(`--${k}=`.length) : d;
@@ -221,6 +222,15 @@ function crossrefRecord(msg, site) {
     .filter(Boolean)
     .slice(0, 20);
   const abstract = msg.abstract ? String(msg.abstract).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 1200) : '';
+  // **必须把引用列表本身存下来，不能只存 referenceCount**（2026-10-04 实测发现的漏存）：
+  // 只存计数的话，产物里「这篇论文references 条」是个死数字，
+  // 引用图谱（/v1/citation/edges、缺口矩阵）完全没原料可建——
+  // 之前 25,635 条边只能靠 --stride=13 抽样重抓一遍，就是因为这里没留数组。
+  // reference 条目里 DOI 可能在 r.DOI，也可能是 r.id 形式的 doi.org URL。
+  const references = (msg.reference || [])
+    .map((r) => normDoi(r && (r.DOI || (r.id ? String(r.id) : ''))))
+    .filter(Boolean)
+    .slice(0, 300);
   return {
     id: `crossref:${doi}`,
     source: 'crossref',
@@ -234,7 +244,8 @@ function crossrefRecord(msg, site) {
     venue: msg['container-title'] ? msg['container-title'][0] : null,
     type: msg.type || null,
     publisher: msg.publisher || null,
-    referenceCount: (msg.reference || []).length,
+    references,
+    referenceCount: references.length,
     tags: [site],
     sites: [site],
     referencedBy: null,
@@ -324,10 +335,15 @@ async function pubmedFor(doi, site) {
   // 注意：这个早退必须排在推导逻辑**之前**，但它自己也要能回答「推导得出多少」，
   // 所以先算一遍磁盘侧可推导量，不能等到 PubMed 分支里才算（那里已经进不去了）。
   const onDiskCrossref = SOURCES.includes('pubmed') ? readCrossrefRecordsOnDisk() : [];
-  if (!todo.length && !SOURCES.includes('pubmed')) { console.log('无待抓，退出'); return; }
+  // ⚠️ 带 `!REBUILD_REFS`：--rebuild-references 是**对已有数据集的回填模式**，不是一轮抓取。
+  // 此时 todo 恒为空（历史 DOI 早已标 done），早退条件会先 `return`，
+  // 直接把后面的 rebuild 分支跳过去 —— 结果是「命令跑了、打印了日志、但一条引用都没补」。
+  // 上一版就有这个形状：补到 1,139 条后崩在写盘前，重跑时早退，补回来的引用永远落不了盘。
+  const canReturn = !REBUILD_REFS;
+  if (!todo.length && !SOURCES.includes('pubmed')) { console.log('无待抓，退出'); if (canReturn) return; }
   if (!todo.length && !onDiskCrossref.length) {
     console.log('无待抓、也无已落盘的 crossref 记录可推导，退出');
-    return;
+    if (canReturn) return;
   }
 
   const stats = { ok: 0, crossref404: 0, crossrefFail: 0, pubmedHit: 0, pubmedNull: 0, pubmedFail: 0, crossrefRate: 0, pubmedRate: 0, pubmedSnippetShown: 0 };
@@ -346,7 +362,8 @@ async function pubmedFor(doi, site) {
   };
 
   // --- Crossref 轮 ---
-  if (SOURCES.includes('crossref')) {
+  // rebuild 模式下整段短路：回填只针对「已抓好的记录」补 references，不该再打一遍上游。
+  if (SOURCES.includes('crossref') && !REBUILD_REFS) {
     console.log('\n--- Crossref 单 DOI 直查 ---');
     const last = { t: Date.now() };
     const { results } = await mapLimit(todo, CONCURRENCY, async (item, i) => {
@@ -374,7 +391,7 @@ async function pubmedFor(doi, site) {
 
   // --- PubMed 轮（Europe PMC）---
   let pubmedRecords = [];
-  if (SOURCES.includes('pubmed')) {
+  if (SOURCES.includes('pubmed') && !REBUILD_REFS) {
     let pmTodo = todo.slice(0, Math.max(1, Math.ceil(todo.length / 2)));
     if (!pmTodo.length && onDiskCrossref.length) {
       // 必须按 pubmed 自己的游标过滤：上一轮跑过的 DOI 再查一遍是纯浪费上游配额
@@ -420,6 +437,78 @@ async function pubmedFor(doi, site) {
     return;
   }
 
+  // ---- --rebuild-references：给「已抓好但没留引用列表」的记录补回 references ----
+  // 为什么需要它而不直接重跑：续跑游标已经把这些 DOI 标成 done，再跑一次
+  // （todo=0）会早退；而 Crossref 侧的历史数据又不可能凭空长回数组里。
+  // 于是产物里 referenceCount>0 但 references 缺失 —— 引用图谱永远没原料。
+  // 这个开关只对缺引用的记录发请求，抓一条补一条，且受同一套 fail-loud 门禁约束。
+  if (REBUILD_REFS) {
+    // **回填结果必须落缓存再写产物**，不能「抓完直接写」。
+    // 上一版就是抓完 1139 条后崩在写盘前（引用了尚未初始化的 academicAll，TDZ），
+    // 结果上游请求白打一遍、数据还是没落盘，而且没有任何痕迹表明「已经抓过 1139 条了」。
+    // 缓存让重跑变成「读缓存 → 应用 → 写盘」，零上游请求，且可增量补齐。
+    const CACHE = path.join(STATE_DIR, 'academic-refs-cache.json');
+    fs.mkdirSync(STATE_DIR, { recursive: true });
+    let cache = {};
+    try { cache = JSON.parse(fs.readFileSync(CACHE, 'utf8')).map || {}; } catch { cache = {}; }
+
+    const records = (() => { try { return JSON.parse(fs.readFileSync(OUT_ACADEMIC, 'utf8')); } catch { return []; } })();
+    const list = Array.isArray(records) ? records : (records.entities || []);
+    const need = list.filter(
+      (e) => e && e.doi && (e.referenceCount || (e.references && e.references.length) || 0) > 0 &&
+             !(Array.isArray(e.references) && e.references.length)
+    );
+    const fromCache = need.filter((e) => cache[normDoi(e.doi)] && cache[normDoi(e.doi)].length);
+    const toFetch = need.filter((e) => !(cache[normDoi(e.doi)] && cache[normDoi(e.doi)].length));
+    console.log(`\n--- rebuild-references：磁盘 ${list.length} 条，缺 references ${need.length} 条` +
+      `（缓存可直接用 ${fromCache.length} 条，需打上游 ${toFetch.length} 条）---`);
+
+    const fetched = {};
+    await mapLimit(toFetch, CONCURRENCY, async (item) => {
+      const r = await getJson(`https://api.crossref.org/works/${encodeURIComponent(item.doi)}?mailto=${MAILTO}`);
+      if (r.ok && r.json && r.json.message) {
+        const refs = (r.json.message.reference || [])
+          .map((x) => normDoi(x && (x.DOI || (x.id ? String(x.id) : ''))))
+          .filter(Boolean)
+          .slice(0, 300);
+        if (refs.length) fetched[normDoi(item.doi)] = refs;
+      }
+      return null;
+    });
+    const gotNow = Object.keys(fetched).length;
+    for (const k of Object.keys(fetched)) cache[k] = fetched[k];
+    if (gotNow) {
+      fs.writeFileSync(CACHE, JSON.stringify({
+        updatedAt: new Date().toISOString(), count: Object.keys(cache).length, map: cache,
+      }), 'utf-8');
+      console.log(`  本轮新抓 ${gotNow} 条引用列表，缓存累计 ${Object.keys(cache).length} 条（已落 state/ 缓存）`);
+    }
+
+    // 应用：缓存里有的直接赋给记录，不再发请求
+    let applied = 0;
+    for (const e of list) {
+      if (Array.isArray(e.references) && e.references.length) continue;
+      const refs = cache[normDoi(e.doi)];
+      if (refs && refs.length) { e.references = refs; e.referenceCount = refs.length; applied++; }
+    }
+    console.log(`  rebuild: 补回引用列表 ${applied} 条（其中本轮新抓 ${gotNow} 条）`);
+    // 门禁：明明缺引用却一条都没补回来 —— 与 PubMed 那条同款逻辑，是失败不是跑完
+    if (need.length && !applied) {
+      console.error('[GATE] rebuild-references 一条都没补到。这是失败，不是「已经跑完」。');
+      process.exit(3);
+    }
+    // 落盘：本分支必须写 academic-entities.json —— 引用列表是**就地补在磁盘读出来的对象上**的，
+    // 而主流程的 `existing` 会重新读一遍这个文件；本轮 crossrefRecords 为空，主流程不会写盘，
+    // 不在这里写，补回来的 references 就全丢（上一次就是这么丢的：补了 1,139 条，产物没变）。
+    // crossref-entities.json 一并同步（academic 里的记录全部 source=crossref）。
+    // ✅ 安全的前提：主流程改成 upsert 后，本轮 crossrefRecords 为空 → `added=0` → 不写，
+    // 所以不会像上一版那样被主流程的空数组盖成 []。两次写入的顺序现在是有保证的。
+    if (applied) {
+      fs.writeFileSync(OUT_ACADEMIC, JSON.stringify(list, null, 2), 'utf-8');
+      fs.writeFileSync(OUT_CROSSREF, JSON.stringify(list.filter((e) => e.source === 'crossref'), null, 2), 'utf-8');
+    }
+  }
+
   // ---- 写盘：academic-entities.json 与 openalex-expand 同文件 upsert 合并 ----
   fs.mkdirSync(DATA_DIR, { recursive: true });
   fs.mkdirSync(STATE_DIR, { recursive: true });
@@ -433,28 +522,59 @@ async function pubmedFor(doi, site) {
     if (!r.doi) continue;
     if (!merged.has(r.doi)) { merged.set(r.doi, r); added++; }
   }
-  const academicAll = Array.from(merged.values());
+  // let 而非 const：--rebuild-references 分支会按补完引用的结果重建它
+  let academicAll = Array.from(merged.values());
 
-  // ⚠️ 写盘必须带源守卫：单独跑 pubmed 时 crossrefRecords 恒为空，
-  // 无条件写会把已抓好的 623 条 crossref-entities.json 覆盖成 `[]`
-  // ——记录直接丢，而且不会有任何报错（这就是本次实际发生过的数据丢失）。
-  // academic-entities.json 同理：只在本轮真的产出了记录时才落盘。
+  // ---- 写盘：三个产物统一走 upsert（读磁盘 + 合并本轮 + 写），绝不「本轮没产出就覆盖成 []」 ----
+  // 2026-10-04 回归复盘：上一版的守卫条件写的是 `SOURCES.includes('crossref') || crossrefRecords.length`，
+  // 前者 **恒为 true**（默认 sources 就是 crossref,pubmed），所以那个「带源守卫」从来没拦住过任何一次写。
+  // 结果：rebuild 分支补好的 crossref-entities.json（1,634 条）被主流程本轮的空 crossrefRecords
+  // 覆盖成 `[]`，文件 2 字节、无报错 —— 注释里写「会把已抓好的 623 条覆盖成 []」是对的，
+  // 但判断条件是错的，注释救不了数据。
+  // 根因不在「加个 if」，而在「产物只有一个写入者、写入方式是全量替换」。
+  // 改成 upsert 后，本轮没产出某个源就保留磁盘内容，谁都不会被静默清空。
+  const upsert = (filePath, records) => {
+    let disk = [];
+    try {
+      const d = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      disk = Array.isArray(d) ? d : (d.entities || []);
+    } catch { disk = []; }
+    const byKey = new Map();
+    for (const e of disk) if (e && e.doi) byKey.set(normDoi(e.doi), e);
+    let added = 0;
+    for (const r of records) {
+      if (!r || !r.doi) continue;
+      const k = normDoi(r.doi);
+      if (!byKey.has(k)) { byKey.set(k, r); added++; }
+    }
+    if (!added) return { count: disk.length, added: 0 };
+    fs.writeFileSync(filePath, JSON.stringify(Array.from(byKey.values()), null, 2), 'utf-8');
+    return { count: byKey.size, added };
+  };
+  const crU = upsert(OUT_CROSSREF, crossrefRecords);
+  const pmU = upsert(OUT_PUBMED, pubmedRecords);
+  if (crossrefRecords.length) {
+    console.log(`  crossref-entities.json：+${crU.added} 新记录 / 磁盘共 ${crU.count} 条`);
+  } else {
+    console.warn(`  [guard] 本轮 crossref 记录 0 条 → 保留磁盘已有 ${crU.count} 条，不覆盖`);
+  }
+  if (pubmedRecords.length) {
+    console.log(`  pubmed-entities.json：+${pmU.added} 新记录 / 磁盘共 ${pmU.count} 条`);
+  } else {
+    console.warn(`  [guard] 本轮 pubmed 记录 0 条 → 保留磁盘已有 ${pmU.count} 条，不覆盖`);
+  }
+  // academic-entities.json 由上面的 merged/academicAll 承载：本轮没产出 crossref 记录时
+  // 只在磁盘已有内容上原地保留（引用列表的补回已经就地改在 existing 对象上了）。
   if (crossrefRecords.length) {
     fs.writeFileSync(OUT_ACADEMIC, JSON.stringify(academicAll, null, 2), 'utf-8');
   } else if (existing.length) {
-    console.warn(`  [guard] 本轮 crossref 记录 0 条，保留磁盘上已有的 ${existing.length} 条，不覆盖`);
+    console.warn(`  [guard] 本轮 crossref 记录 0 条，保留磁盘上已有的 ${existing.length} 条（引用补回已在内存中就地生效，重建后再跑一次即可落盘）`);
   }
-  if (SOURCES.includes('crossref') || crossrefRecords.length) {
-    fs.writeFileSync(OUT_CROSSREF, JSON.stringify(crossrefRecords, null, 2), 'utf-8');
-  } else {
-    console.warn('  [guard] 本轮未执行 crossref 轮，保留磁盘上的 crossref-entities.json 不动');
-  }
-  fs.writeFileSync(OUT_PUBMED, JSON.stringify(pubmedRecords, null, 2), 'utf-8');
 
   // 门禁（fail-loud）：跑了 PubMed 却一条都没产出 —— 不管原因是什么，
   // 退出码必须非零。空产物 + exit 0 = 上游以为成功了，数据其实永远是空数组，
   // 这正是前面「crossref 跑完单独跑 pubmed 空转退出」那次事故的形状。
-  if (SOURCES.includes('pubmed') && !pubmedRecords.length) {
+  if (!REBUILD_REFS && SOURCES.includes('pubmed') && !pubmedRecords.length) {
     console.error('[GATE] PubMed 轮产出 0 条记录。这是失败，不是「已经跑完」。');
     process.exit(3);
   }

@@ -125,3 +125,12 @@ __pycache__/
 #   若某天要关掉分片（比如 Worker 内存约束再次收紧），把 worker.js 的 getShardedIndex 分支
 #   注释掉、pipeline 去掉 --shards、这里再加回 data/search-index/ 即可。
 # data/search-index/   # 已解封，见上
+
+# 被引文档补齐（2026-10-04 补入）
+#   data/cited-entities.json 是**工作资产**不是交付资产：55,594 条记录带 abstract +
+#   concepts，实测 75.9 MB / 7,000 条时 30 MB → 全量约 235 MB。
+#   它只被 pipeline-cited-backfill.js 自己续跑使用（断点在 state/cited-backfill-state.json），
+#   真正对外交付的是它派生的 data/cited-site-assign.json（已瘦身，只留分数三元组）。
+#   进仓库 = 每次 push 多搬 200 MB + Pages 配额被吃，所以跳过。
+#   想重建：node operations-plan/pipeline-cited-backfill.js（从 state 续跑，零重打）。
+data/cited-entities.json
