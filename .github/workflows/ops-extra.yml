@@ -131,6 +131,12 @@ jobs:
           # 本任务把它接进「采集 → commit（git add data/）→ pages-deploy 复制 → 端点 200」的链路。
           if [[ "$TASK" == "all" || "$TASK" == "academic" ]]; then
             node "$SCRIPTS_DIR/pipeline-academic-datasets.js"
+            # --rebuild-references 从 state/academic-refs-cache.json 回填 references[]（本地零网络）。
+            # 为什么必须放在 CI 里跑：这个缓存此前**没进版本库**，CI 每次 checkout 都是空缓存 →
+            # 跑出来的 academic-entities.json 没有 references[] → 下游 citations / cited 全链空转
+            # （实测：派发 cited 时「引用声明涉及的 unique 被引 DOI：0」，边只剩抽样那一份）。
+            # 缓存本体 1.68MB，入库比让引用图谱在无人值守链路里悄悄退化便宜得多。
+            node "$SCRIPTS_DIR/pipeline-academic-datasets.js" --rebuild-references
           fi
           # ===== 跨站引用边（2026-10-02 补入）=====
           # pipeline-openalex-citation.js 产出 data/citation-edges.json → /v1/citation/edges。
@@ -154,6 +160,11 @@ jobs:
             node "$SCRIPTS_DIR/pipeline-citation-gaps.js"
           fi
           # ===== 被引文档补齐（2026-10-04 补入）=====
+          # ⚠️ 本段**只在手动派发 cited 时跑，不进 all**。三个原因，每个都足以让每日 CI 变红：
+          #   1) OpenAlex 免费层按 IP 的日美元预算，补齐 48k 条约 1,150 次请求，一天就打光；
+          #   2) 产物 data/cited-entities.json（78MB）是工作资产、不入库，CI 上必然缺失；
+          #   3) 断点 state/cited-backfill-state.json 不入库，CI 上一律「从零待补」。
+          # 想跑：手动 dispatch task=cited（预算充足时）。扩库清单这类派生指标改由本地产出后入库。
           # pipeline-cited-backfill.js 用 OpenAlex 的 filter=doi:<a>|<b>（多值 OR）批量补「被引文档」：
           # 引用边数不由「我们抓了多少引用声明」决定，由「被引文档有多少在库」决定 ——
           # 实测 59,623 条声明 / 57,764 个 unique 被引 DOI 里只有 2,170 个在库（3.8%）。

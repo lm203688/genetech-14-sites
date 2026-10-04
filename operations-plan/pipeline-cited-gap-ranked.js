@@ -128,8 +128,15 @@ function main() {
     `[i] 分片：${shardDois.size} 个 DOI / 库内没有的 ${shardMissingFromLib} / 库内有但没进分片的 ${libMissingFromShard}\n`
   );
 
-  const cited = readJson(CITED);
-  const citedArr = Array.isArray(cited) ? cited : (cited && cited.entities) || [];
+  const cited = fs.existsSync(CITED) ? readJson(CITED) : null;
+  // 2026-10-04：cited-entities.json 是 78MB 工作资产、不入库，CI / 新机器上天然缺席。
+  // 缺它只是「扩库清单这次算不出来」，不是错误 —— 退出 0 并留一条明确说明，
+  // 否则「手动跑一次补充任务」就会被这个假红打断。
+  if (!Array.isArray(cited)) {
+    process.stderr.write(`[skip] 没有 ${path.relative(ROOT, CITED)}（工作资产，不入库）→ 跳过扩库清单，先跑 pipeline-cited-backfill.js\n`);
+    return;
+  }
+  const citedArr = cited;
   const byCited = new Map();
   for (const e of citedArr) {
     const d = normDoi(e && e.doi);

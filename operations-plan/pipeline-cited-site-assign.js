@@ -98,8 +98,11 @@ async function main() {
 
   const citedPath = path.join(DATA, 'cited-entities.json');
   if (!fs.existsSync(citedPath)) {
-    console.error('缺少 data/cited-entities.json —— 先跑 pipeline-cited-backfill.js');
-    process.exit(2);
+    // 2026-10-04：这个文件 78MB 是工作资产、不入库，CI（以及换了台机器的任何人）上必然没有。
+    // 缺它就跳过并退出 0 —— 它不是门禁（真门禁是 verify-shard-fidelity.mjs），
+    // 在这里 exit 2 只会让「手动派发一次补充任务」这种正常用法永远红。
+    console.warn('[skip] 没有 data/cited-entities.json（78MB 工作资产，不入库）→ 跳过归属推算，先跑 pipeline-cited-backfill.js');
+    return;
   }
   const wrap = JSON.parse(fs.readFileSync(citedPath, 'utf8'));
   const items = Array.isArray(wrap) ? wrap : (wrap.entities || []);
