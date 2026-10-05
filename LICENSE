@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Li Xing (SwarmLabs)
+Copyright (c) 2026 lm203688 (GeneTech Knowledge Engine)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+数据资产使用条款（与代码许可分离）
+
+本仓库的**代码**以 MIT 许可授权。仓库内的**数据产物**（`data/`、`*/website/api/*.json`、
+`reports/` 下由本项目管道生成的数据集）不随 MIT 一并授权，而是按以下条款提供：
+
+1. 数据均来自公开学术源（Crossref、OpenAlex、Europe PMC 等），每条记录带
+   DOI / URL / 来源 / `publishedDate` / `confidence`，**版权归原出版方所有**。
+2. 本项目仅承诺「可核验」：任何一条都能沿DOI 回到原始出处独立复核。
+3. 商业使用、批量再分发、企业数据授权，请通过 <https://swarmlabs.tools> 联系获取许可。
