@@ -2520,11 +2520,18 @@ async function fetchWorker(path, opts) {
   for (var i = 0; i < WORKERS.length; i++) {
     try {
       var r = await fetch(WORKERS[i] + path, opts);
-      if (r.ok || (r.status >= 200 && r.status < 500)) return r;
+      // 2026-10-05 修正：原来判据是「2xx–4xx 一律返回」，等于把 404 也当成功，
+      // 于是第一个端点若是旧版 Worker（返 404），故障转移永远不会走到后面的端点。
+      // 正确判据：2xx 算成功；4xx 只有「带 JSON」才算业务错误（要能显示给用户）。
+      if (r.ok || (r.status >= 400 && r.status < 500 && isJson(r))) return r;
       lastErr = new Error('HTTP ' + r.status);
     } catch (e) { lastErr = e; }
   }
   throw lastErr || new Error('所有许可证端点均不可达');
+}
+function isJson(r){
+  try { return ((r.headers && r.headers.get('content-type')) || '').indexOf('json') >= 0; }
+  catch (e) { return false; }
 }
 var timer = null;
 function pay(plan){
@@ -2539,7 +2546,16 @@ function pay(plan){
       document.getElementById('paybox').style.display = 'block';
       document.getElementById('qr').src = d.qrcode;
       var link = document.getElementById('paylink'); link.href = d.pay_url; link.style.display = 'inline';
-      document.getElementById('status').textContent = '请使用微信或支付宝扫码支付（二维码 5 分钟内有效）…';
+      var s = document.getElementById('status');
+      if (d.confirm_mode === 'async') {
+        // 2026-10-05：订单未落 KV（写配额耗尽）。付款后由回调异步签发，
+        // 必须明确告知「别重复下单」，否则用户看到拿不到密钥会重复付款。
+        s.innerHTML = '请扫码支付。支付完成后密钥将<strong>由支付回调异步签发并发送到你填写的邮箱</strong>，'
+          + '页面可能不会自动显示，请稍候片刻（1–2 分钟）。<br><strong>请勿重复下单付款。</strong>'
+          + (d.persist_error ? '<br><span style="opacity:.7;font-size:.9em">诊断：' + d.persist_error + '</span>' : '');
+      } else {
+        s.textContent = '请使用微信或支付宝扫码支付（二维码 5 分钟内有效）…';
+      }
       poll(d.trade_order_id);
     })
     .catch(function(e){ alert('请求失败：' + e.message); })
@@ -2559,17 +2575,32 @@ function bookBiz(){
 }
 function poll(tid){
   if(timer) clearInterval(timer);
+  var told = false;
   timer = setInterval(function(){
     fetchWorker('/api/hupijiao/order?trade_order_id=' + encodeURIComponent(tid))
-      .then(function(r){ return r.json(); })
-      .then(function(d){
+      .then(function(r){ return r.json().then(function(d){ return {status:r.status, d:d}; }); })
+      .then(function(res){
+        var d = res.d || {};
         if(d.success && d.license_key){
           clearInterval(timer);
           document.getElementById('status').innerHTML = '✅ 支付成功！您的统一许可证密钥：<br><code>' + d.license_key + '</code><br>复制后可在 14 站任意站点「兑换」获取站点 API Key。';
           document.getElementById('qr').style.display = 'none';
           document.getElementById('paylink').style.display = 'none';
+          return;
         }
-      }).catch(function(){});
+        // 2026-10-05：202 = 订单没落库（KV 写失败），付款后靠回调异步签发。
+        // 这里必须出声提示，且要「只提示一次」——重复刷屏会让用户以为系统在报错。
+        if (res.status === 202 && d.reason === 'no_record' && !told) {
+          told = true;
+          document.getElementById('status').innerHTML =
+            '⏳ 已进入<strong>异步确认</strong>模式：本笔订单记录未能落库，密钥将由支付回调直接签发。<br>'
+            + '完成付款后请等待 1–2 分钟；若未收到，请查邮箱或联系 <a href="mailto:bd@genetech.tools">bd@genetech.tools</a>，'
+            + '并提供订单号 <code>' + tid + '</code>。<br><strong>请勿重复下单付款。</strong>';
+        }
+      })
+      .catch(function(){
+        // 网络抖动不视为支付失败，静默重试；只有 202 那条才出声。
+      });
   }, 3000);
 }
 </script>

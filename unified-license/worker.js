@@ -663,8 +663,14 @@ async function handleHupijiaoCreateOrder(request, rawBody, body, env, corsH) {
   const notifyUrl = env.HUPIJIAO_NOTIFY_URL || `${origin}/api/hupijiao/callback`;
   const returnUrl = body.return_url || env.HUPIJIAO_RETURN_URL || `${origin}/pay/success`;
 
-  // 持久化待支付订单（30 分钟过期，避免 KV 无限增长）
-  // 2026-09-23: 加守卫——KV 写配额耗尽时不得阻断下单（回调可用 attach 重建）
+  // 持久化待支付订单（避免 KV 无限增长）
+  //
+  // 2026-10-05 实测修：原来 KV 写失败只 console.warn 静默吞掉，前端轮询会一直拿到
+  // 404，用户以为支付失败 → 重复下单（真金白银的重复收款风险）。
+  // 现在把「订单是否落库」如实回传给前端，由前端决定提示文案；
+  // 付款后仍由回调的 attach 重建兜底（钱不会丢，只是确认异步）。
+  let orderPersisted = false;
+  let persistError = null;
   if (env.UNIFIED_LICENSES) {
     try {
       await env.UNIFIED_LICENSES.put(
@@ -677,11 +683,18 @@ async function handleHupijiaoCreateOrder(request, rawBody, body, env, corsH) {
           license_key: null,
           created: new Date().toISOString(),
         }),
-        { expirationTtl: 1800 }
+        // TTL 与二维码有效期（5 分钟）对齐并留余量：记录比码活得久一点，
+        // 避免用户在码过期瞬间付款，回调重建时又找不到任何上下文。
+        { expirationTtl: 3600 }
       );
+      orderPersisted = true;
     } catch (e) {
-      console.warn('[hupijiao] 待支付订单写入失败（KV 配额?），回调将以 attach 重建:', e && e.message);
+      persistError = String((e && e.message) || e);
+      console.error('[hupijiao] 待支付订单写入失败（KV 配额?），回调将以 attach 重建:', persistError);
     }
+  } else {
+    persistError = 'UNIFIED_LICENSES 绑定缺失';
+    console.error('[hupijiao] UNIFIED_LICENSES 绑定不存在，订单无法落库，仅靠回调重建');
   }
 
   try {
@@ -704,6 +717,11 @@ async function handleHupijiaoCreateOrder(request, rawBody, body, env, corsH) {
         plan,
         total_fee: totalFee,
         expires_in: 300,
+        // 订单是否已落 KV。false = 前端必须改用「付款后异步确认」文案，
+        // 不能让用户因为轮询 404 误判支付失败而重复下单。
+        order_persisted: orderPersisted,
+        confirm_mode: orderPersisted ? 'poll' : 'async',
+        ...(orderPersisted ? {} : { persist_error: persistError }),
       },
       200,
       corsH
@@ -810,7 +828,25 @@ async function handleHupijiaoOrderQuery(request, url, env, corsH) {
   if (!tradeOrderId) return err('missing_trade_order_id', '请提供 trade_order_id', 400, corsH);
   if (!env.UNIFIED_LICENSES) return err('server_misconfigured', 'KV 不可用', 500, corsH);
   const raw = await env.UNIFIED_LICENSES.get(`hupijiao:${tradeOrderId}`);
-  if (!raw) return json({ success: false, status: 'not_found' }, 404, corsH);
+  if (!raw) {
+    // 2026-10-05：这里原来返 404，前端 poll() 的 .then 直接忽略 status，
+    // 于是「订单没落库」和「支付失败」在用户眼里完全一样 → 重复下单。
+    // 现在用 202 + status:'unknown' 明说「还没确认，可能尚未支付，
+    // 也可能订单未落库（KV 配额），付款后由回调异步签发，请勿重复下单」。
+    return json(
+      {
+        success: false,
+        status: 'unknown',
+        // pending  = 已落库、尚未收到支付回调
+        // no_record = 订单没落库（KV 写失败），只能靠回调重建
+        reason: 'no_record',
+        message: '订单记录未落库，付款后由回调异步签发许可证，请勿重复下单。',
+        license_key: null,
+      },
+      202,
+      corsH
+    );
+  }
   const order = JSON.parse(raw);
   return json(
     {

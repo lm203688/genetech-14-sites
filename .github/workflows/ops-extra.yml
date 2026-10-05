@@ -30,7 +30,7 @@ on:
         # 手动触发补位会「命令发了没反应」。
         # shardverify 是 2026-10-04 从 searchindex 拆出的门禁分支：只跑分片端到端验证，
         # 不重跑整条 pipeline。排查「线上检索是不是悄悄回退了」时用它能 20 秒内出结论。
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, shardverify, abstractbackfill, edge_refresh, kgbuild, academic, citations, cited]
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, shardverify, paytest, abstractbackfill, edge_refresh, kgbuild, academic, citations, cited]
   schedule:
     # ===== 临时提升期（2026-08-05 ~ 2026-12-31）：每日 12:30 UTC(20:30 CST) 一次全量运行 =====
     # 提升期到期判定在 ops.yml 的 decide 步骤（$TODAY > 2026-12-31），此处仅跟随其节奏；
@@ -122,6 +122,16 @@ jobs:
           # 双向回归测试（本地实测）：--lib-miss=0.10 → exit 2（阻断）；默认 0.30 → exit 0（放行）。
           if [[ "$TASK" == "all" || "$TASK" == "searchindex" || "$TASK" == "shardverify" ]]; then
             node "$SCRIPTS_DIR/verify-shard-fidelity.mjs" --lib-miss=0.30
+          fi
+          # ===== 支付链路状态机回归（2026-10-05 补入）=====
+          # 为什么必须有：2026-10-05 实测发现 UNIFIED_LICENSES KV 有绑定但 0 keys，
+          # 下单时的 put 失败被 try/catch 静默吞掉 → 轮询端点一直返 404 →
+          # 前端 poll() 又忽略 status → 用户以为支付失败 → **重复下单重复收款**。
+          # 修法把 404 改成 202 + reason=no_record + 防重复下单文案，但「修过了」不等于
+          # 「下次没人改回去」——所以把四态做成注入式双向回归，接进 CI。
+          # 判据：注入旧行为（404）必须 exit 1，恢复后必须 exit 0。
+          if [[ "$TASK" == "all" || "$TASK" == "paytest" ]]; then
+            node unified-license/_test_pay_states.mjs
           fi
           # ===== 学术数据集补齐（2026-10-02 补入）=====
           # pipeline-academic-datasets.js 产出 crossref-entities / pubmed-entities / academic-entities，
