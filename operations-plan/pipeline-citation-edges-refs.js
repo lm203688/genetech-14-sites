@@ -53,7 +53,12 @@ const normDoi = (v) => {
 };
 
 // ---- DOI → 站点集合（全库映射，用于把被引 DOI 归到站）----
-function buildDoiSiteMap() {
+// overlayPath：可选。data/library-expand.json 里的 fills 本身就带「DOI → 该选哪个站」
+// 的归属（打分+margin 选出来的），它可以当**覆盖层**直接喂进映射表 ——
+// 这样产出的边和「真把 905 条写进 30 个站点实体文件」完全一致，
+// 但不用推 487MB 的实体 blob。真扩库（--write）随时可以再做，边不会因此漂移
+// —— 因为覆盖层归属和写盘归属是同一份打分算出来的。
+function buildDoiSiteMap(overlayPath) {
   const map = new Map();
   const siteDirs = fs
     .readdirSync(ROOT)
@@ -74,12 +79,34 @@ function buildDoiSiteMap() {
       map.get(d).add(site);
     }
   }
-  return { map, siteDirs, scanned };
+
+  let overlay = 0, overlaySkipped = 0;
+  if (overlayPath && fs.existsSync(overlayPath)) {
+    let ov = {};
+    try { ov = JSON.parse(fs.readFileSync(overlayPath, 'utf8')); } catch { ov = {}; }
+    for (const [site, list] of Object.entries(ov.fills || {})) {
+      if (!siteDirs.includes(site) || !Array.isArray(list)) continue;
+      for (const t of list) {
+        const d = normDoi(t && t.doi);
+        if (!d) continue;
+        if (!map.has(d)) map.set(d, new Set());
+        const set = map.get(d);
+        // 原生表已经把这条 DOI 归给本站 → 覆盖层不必再加，加了只会重复计同一条边
+        if (set.has(site)) { overlaySkipped++; continue; }
+        set.add(site);
+        overlay++;
+      }
+    }
+    console.log(`  覆盖层（${path.basename(overlayPath)} 填充清单）：+${overlay} 条 DOI→站 归属${overlaySkipped ? `，${overlaySkipped} 条与原生表重复已跳过` : ''}`);
+  }
+  return { map, siteDirs, scanned, overlay };
 }
 
 (async () => {
   const t0 = Date.now();
-  const { map: doiSite, siteDirs, scanned } = buildDoiSiteMap();
+  const ovArg = ARGV.find((a) => typeof a === 'string' && a.startsWith('--lib-expand='));
+  const OVERLAY = ovArg ? ovArg.slice('--lib-expand='.length) : path.join(DATA_DIR, 'library-expand.json');
+  const { map: doiSite, siteDirs, scanned, overlay } = buildDoiSiteMap(OVERLAY);
   console.log(`DOI→站映射：${siteDirs.length} 站 / 扫 ${scanned} 实体 / 去重后 ${doiSite.size} 个 DOI`);
 
   // ---- 推断归属表（仅在 --with-inferred 时启用）----
