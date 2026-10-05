@@ -132,6 +132,9 @@ jobs:
           # 判据：注入旧行为（404）必须 exit 1，恢复后必须 exit 0。
           if [[ "$TASK" == "all" || "$TASK" == "paytest" ]]; then
             node unified-license/_test_pay_states.mjs
+            # 退避重试单独一个文件：它要打桩真实 handler，构造比四态复杂，
+            # 分开跑失败时更容易定位是哪一层坏了。
+            node unified-license/_test_pay_retry.mjs
           fi
           # ===== 学术数据集补齐（2026-10-02 补入）=====
           # pipeline-academic-datasets.js 产出 crossref-entities / pubmed-entities / academic-entities，

@@ -672,25 +672,42 @@ async function handleHupijiaoCreateOrder(request, rawBody, body, env, corsH) {
   let orderPersisted = false;
   let persistError = null;
   if (env.UNIFIED_LICENSES) {
-    try {
-      await env.UNIFIED_LICENSES.put(
-        `hupijiao:${tradeOrderId}`,
-        JSON.stringify({
-          plan,
-          email,
-          channel: channel.key,
-          status: 'pending',
-          license_key: null,
-          created: new Date().toISOString(),
-        }),
-        // TTL 与二维码有效期（5 分钟）对齐并留余量：记录比码活得久一点，
-        // 避免用户在码过期瞬间付款，回调重建时又找不到任何上下文。
-        { expirationTtl: 3600 }
-      );
-      orderPersisted = true;
-    } catch (e) {
-      persistError = String((e && e.message) || e);
-      console.error('[hupijiao] 待支付订单写入失败（KV 配额?），回调将以 attach 重建:', persistError);
+    const payload = JSON.stringify({
+      plan,
+      email,
+      channel: channel.key,
+      status: 'pending',
+      license_key: null,
+      created: new Date().toISOString(),
+    });
+    // KV 写失败多数是**瞬时**的（写配额按秒级窗口抖动、KV 节点刚扩容）。
+    // 直接放弃会让用户白等一个回调周期，所以做有限退避重试：
+    // 3 次（0 / 150 / 450ms），总代价<1s，远小于用户感知。
+    // 注意：只对「像是限流/暂时性」的错误重试，格式类错误立刻放弃。
+    const RETRYABLE = /429|rate|limit|timeout|unavailable|internal|reset|try again/i;
+    const delays = [0, 150, 450];
+    for (let attempt = 0; attempt < delays.length; attempt++) {
+      if (delays[attempt]) await new Promise((r) => setTimeout(r, delays[attempt]));
+      try {
+        await env.UNIFIED_LICENSES.put(`hupijiao:${tradeOrderId}`, payload, {
+          // TTL 与二维码有效期（5 分钟）对齐并留余量：记录比码活得久一点，
+          // 避免用户在码过期瞬间付款，回调重建时又找不到任何上下文。
+          expirationTtl: 3600,
+        });
+        orderPersisted = true;
+        persistError = null;
+        break;
+      } catch (e) {
+        persistError = String((e && e.message) || e);
+        if (!RETRYABLE.test(persistError)) {
+          console.error('[hupijiao] 待支付订单写入失败（非瞬时错误，不重试）:', persistError);
+          break;
+        }
+        console.warn(
+          `[hupijiao] 待支付订单写入失败（第 ${attempt + 1} 次，退避重试）:`,
+          persistError
+        );
+      }
     }
   } else {
     persistError = 'UNIFIED_LICENSES 绑定缺失';
