@@ -2123,6 +2123,35 @@ async function main() {
   } catch (e) {
     console.warn(`[build-site] 复制 data/search-index/ 失败：`, e.message);
   }
+  // 对外文档（消费者自助接入）：精选「面向外部」的文档原样复制到 _site，由
+  // data.swarmlabs.tools（Pages）直接托管。解决 §5.3 ③「文档推到对外域」——此前
+  // consumer-onboarding.md / openapi.yaml 只躺在仓库里，线上 /docs/... 一律 404。
+  // 注意：docs/ 下还有大量内部文档（ALERT/audit/strategy/competitor 等），
+  // 绝不可整目录公开，这里用显式白名单，新增对外文档必须手动加进此列表。
+  try {
+    const PUBLIC_DOCS = [
+      'consumer-onboarding.md',
+      'openapi.yaml',
+      'enterprise-data-license-kit.md',   // 已被定价页 bookBiz 区块链接，此前 404
+      'profitable-model-alignment.md',    // 已被定价页商业模式区块链接，此前 404
+    ];
+    const docsSrc = path.join(ROOT, 'docs');
+    let dcount = 0;
+    if (fs.existsSync(docsSrc)) {
+      for (const f of PUBLIC_DOCS) {
+        const s = path.join(docsSrc, f);
+        if (!fs.existsSync(s)) { console.warn(`[build-site] 跳过对外文档（仓库缺失）：${f}`); continue; }
+        writeFile(path.join('docs', f), fs.readFileSync(s));
+        dcount++;
+      }
+    }
+    // openapi.yaml 在仓库根，单独处理
+    const oasSrc = path.join(ROOT, 'openapi.yaml');
+    if (fs.existsSync(oasSrc)) { writeFile('openapi.yaml', fs.readFileSync(oasSrc)); dcount++; }
+    console.log(`[build-site] 对外文档已复制：${dcount} 文件 → _site/docs/ 与 _site/openapi.yaml`);
+  } catch (e) {
+    console.warn('[build-site] 复制对外文档失败：', e.message);
+  }
   // 指向式引导组件（借鉴 heyclicky 的 Visual Cursor Pointing）：默认 no-op，无标记页面零副作用
   try {
     writeFile('assets/point-guide.js', fs.readFileSync(path.join(ROOT, 'tools/static/point-guide.js'), 'utf8'));
