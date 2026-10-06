@@ -9,7 +9,7 @@
 
 | 项| 值 |
 |---|---|
-| Worker 名 | `genetech-license`（**注意：不是** `wrangler.toml` 里写的 `unified-license`） |
+| Worker 名 | `genetech-license`（`wrangler.toml` **已预置同名**，无需再改） |
 | 账户 | `61960005@qq.com` / `8162aa3b2241c132e43a81f526d7f758` |
 | 线上域名 | `https://license.swarmlabs.tools` |
 | 绑定 | 6 个（3 个 secret_text + 2 个 plain_text + 1 个 KV）**齐全** |
@@ -51,25 +51,11 @@ npx wrangler login
 
 浏览器会弹出授权页 → 选**61960005@qq.com** 那个账户（重要：另两个账户没有这个 Worker）。
 
-### 步骤 2—改脚本名（必须，否则会部署出一个"幽灵副本"）
+### 步骤 2—部署（脚本名已预置，会自动带上 3 个已有 secret）
 
-`wrangler.toml` 第 15 行现在是 `name = "unified-license"`，
-而线上真名是 `genetech-license`。**不改会新建一个永远没人访问的脚本**，
-而且这正是本项目 10-02 那次「PUT 每轮 2xx、日志每次部署成功、线上却跑着另一个账户的旧脚本」的同一个坑。
-
-打开 `unified-license/wrangler.toml`，把：
-
-```toml
-name = "unified-license"
-```
-
-改成：
-
-```toml
-name = "genetech-license"
-```
-
-### 步骤 3—部署（会自动带上 3 个已有 secret）
+> 前几版手册要求你先把 `wrangler.toml` 的 `name` 从 `unified-license` 改成 `genetech-license`，
+> 否则会部署出一个没人访问的「幽灵副本」。这一步我已经替你在仓库里改好了，你不用动。
+> 如果哪天你从零 clone 了这个仓库，记得确认 `wrangler.toml` 里是 `name = "genetech-license"`。
 
 ```bash
 npx wrangler deploy
@@ -78,7 +64,7 @@ npx wrangler deploy
 看到 `Uploaded genetech-license (37.4 KB / 3.55 ms)` 且 **Total Upload 成功**即完成。
 `wrangler deploy` 对已存在的 secret_text 绑定会**原样保留**，不会清空（我已用一次性测试脚本验证过这个行为，见下）。
 
-### 步骤 4—验收（两条命令，必须都过）
+### 步骤 3—验收（两条命令，必须都过）
 
 ```bash
 curl -s -X POST https://license.swarmlabs.tools/api/hupijiao/create-order \
