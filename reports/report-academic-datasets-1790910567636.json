@@ -1,0 +1,27 @@
+{
+  "pipeline": "academic-datasets",
+  "timestamp": "2026-10-02T03:09:27.636Z",
+  "dryRun": false,
+  "poolSize": 750,
+  "todoSize": 0,
+  "crossrefRecords": 0,
+  "pubmedRecords": 7,
+  "academicTotal": 658,
+  "academicAdded": 0,
+  "stats": {
+    "ok": 0,
+    "crossref404": 0,
+    "crossrefFail": 0,
+    "pubmedHit": 7,
+    "pubmedNull": 17,
+    "pubmedFail": 0,
+    "crossrefRate": 0,
+    "pubmedRate": 7,
+    "pubmedSnippetShown": 0
+  },
+  "bySite": {},
+  "sources": [
+    "pubmed"
+  ],
+  "elapsedSec": 5
+}

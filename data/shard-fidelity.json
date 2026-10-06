@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-05T02:30:56.501Z",
+  "library": {
+    "entities": 300000,
+    "sites": 30,
+    "dois": 260689
+  },
+  "shards": {
+    "files": 30,
+    "dois": 198114
+  },
+  "shardNotInLibrary": 0,
+  "shardNotInLibraryShare": 0,
+  "libraryNotInShards": 62575,
+  "libraryNotInShardsShare": 0.24,
+  "thresholds": {
+    "libMissMax": 0.3,
+    "shardExtraMax": 0.01
+  },
+  "verdict": "OK",
+  "reason": "分片是库的子集，且漏进分片的比例在阈值内。"
+}

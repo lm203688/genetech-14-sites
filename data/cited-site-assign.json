@@ -1,0 +1,833 @@
+{
+  "generatedAt": "2026-10-04T07:19:03.021Z",
+  "method": "SITE_DOMAIN 标签 × (标题/概念/主题) 词边界匹配，概念按 OpenAlex score 加权",
+  "thresholds": {
+    "minScore": 2,
+    "minMargin": 1
+  },
+  "sampled": 1200,
+  "assigned": 117,
+  "rate": 9.8,
+  "auditSampleSize": 8,
+  "assignments": [
+    {
+      "doi": "10.1142/s2424862221300040",
+      "site": "genetech-tools",
+      "score": 4.05,
+      "margin": 1.05,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.procir.2021.03.005",
+      "site": "genetech-tools",
+      "score": 4.13,
+      "margin": 1.13,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1007/s13735-024-00334-8",
+      "site": "privacy-computing",
+      "score": 2.33,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1111/1471-0528.17929",
+      "site": "biomed-ai",
+      "score": 2.28,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1007/s00330-020-06946-y",
+      "site": "biomed-ai",
+      "score": 5.63,
+      "margin": 1.63,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1145/3313831.3376590",
+      "site": "genetech-tools",
+      "score": 6.52,
+      "margin": 1.52,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1038/s41566-023-01167-3",
+      "site": "quantum-materials",
+      "score": 7.03,
+      "margin": 2.38,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1002/adma.201902765",
+      "site": "privacy-computing",
+      "score": 6,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.pss.2009.06.022",
+      "site": "neuromorphic",
+      "score": 6.53,
+      "margin": 3,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1007/s00449-011-0659-z",
+      "site": "life-science",
+      "score": 5.46,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1126/science.1200520",
+      "site": "biocomputing",
+      "score": 2.99,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1021/acssynbio.1c00608",
+      "site": "life-science",
+      "score": 8.61,
+      "margin": 1.75,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.neucom.2023.01.049",
+      "site": "quantum-computing",
+      "score": 11.08,
+      "margin": 3.74,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1177/09567976211013045",
+      "site": "brain-science",
+      "score": 5.31,
+      "margin": 2.31,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1016/j.jneumeth.2022.109736",
+      "site": "privacy-computing",
+      "score": 9.74,
+      "margin": 2.95,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1016/0006-8993(94)91782-5",
+      "site": "brain-science",
+      "score": 2.55,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.biopsych.2010.04.020",
+      "site": "brain-science",
+      "score": 4.27,
+      "margin": 1.72,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.biopsych.2007.05.031",
+      "site": "brain-science",
+      "score": 5.77,
+      "margin": 1.77,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1002/syn.890050104",
+      "site": "brain-science",
+      "score": 2.48,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/s0091-3057(96)00344-9",
+      "site": "brain-science",
+      "score": 2,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1177/0956797621989730",
+      "site": "brain-science",
+      "score": 2.26,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1002/jlcr.726",
+      "site": "brain-science",
+      "score": 2,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.3390/biology12091241",
+      "site": "brain-science",
+      "score": 5.73,
+      "margin": 2.73,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1093/molbev/mst010",
+      "site": "biocomputing",
+      "score": 6.27,
+      "margin": 1.17,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1109/cogsima.2014.6816556",
+      "site": "sat-6g",
+      "score": 7.88,
+      "margin": 1.31,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/0147-619x(91)90025-r",
+      "site": "life-science",
+      "score": 5.52,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1093/jxb/ery379",
+      "site": "biocomputing",
+      "score": 5.31,
+      "margin": 1.1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/s1364-6613(02)01904-6",
+      "site": "brain-science",
+      "score": 5.22,
+      "margin": 1.74,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.janxdis.2020.102193",
+      "site": "brain-science",
+      "score": 2.44,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.microc.2024.110701",
+      "site": "quantum-computing",
+      "score": 8.27,
+      "margin": 1.92,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.3389/fpls.2022.1024405",
+      "site": "agent-ecosystem",
+      "score": 3,
+      "margin": 1.06,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1021/acsanm.4c02194",
+      "site": "brain-science",
+      "score": 5,
+      "margin": 2,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1016/j.orgel.2023.106818",
+      "site": "privacy-computing",
+      "score": 2,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1002/adfm.202309378",
+      "site": "privacy-computing",
+      "score": 3.45,
+      "margin": 1.1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1109/tnnls.2021.3119238",
+      "site": "privacy-computing",
+      "score": 7.99,
+      "margin": 1.18,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1007/s12274-023-5900-y",
+      "site": "privacy-computing",
+      "score": 7.54,
+      "margin": 2,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.3390/foods9091210",
+      "site": "life-science",
+      "score": 2,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1107/s0907444912001308",
+      "site": "privacy-computing",
+      "score": 2.21,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1109/tai.2021.3088084",
+      "site": "genetech-tools",
+      "score": 5.99,
+      "margin": 1.13,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1103/physrevresearch.4.l022060",
+      "site": "quantum-computing",
+      "score": 2.99,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1039/c9cp06869d",
+      "site": "quantum-computing",
+      "score": 4.81,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1142/s0217979292000840",
+      "site": "quantum-materials",
+      "score": 7.58,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1002/adfm.201906615",
+      "site": "quantum-materials",
+      "score": 9.38,
+      "margin": 4.57,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1109/icbaie52039.2021.9389995",
+      "site": "genetech-tools",
+      "score": 6.24,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.jlumin.2024.120657",
+      "site": "quantum-materials",
+      "score": 8.3,
+      "margin": 4,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1039/c8ee02469c",
+      "site": "quantum-materials",
+      "score": 5.74,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1146/annurev.micro.53.1.217",
+      "site": "life-science",
+      "score": 2.71,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1073/pnas.0730515100",
+      "site": "life-science",
+      "score": 3.63,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1128/aem.70.4.2508-2513.2004",
+      "site": "life-science",
+      "score": 6.81,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1038/s41467-022-29889-y",
+      "site": "life-science",
+      "score": 9.87,
+      "margin": 4.67,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1038/nmeth.3970",
+      "site": "life-science",
+      "score": 6.13,
+      "margin": 1.33,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1111/j.1574-6976.2010.00229.x",
+      "site": "life-science",
+      "score": 7.05,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.resinv.2024.04.006",
+      "site": "tcm-tools",
+      "score": 2.24,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1128/aem.01634-13",
+      "site": "life-science",
+      "score": 5.64,
+      "margin": 1.64,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1109/iedm.2018.8614549",
+      "site": "neuromorphic",
+      "score": 2.09,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.3389/fmed.2022.913287",
+      "site": "bionic-ai",
+      "score": 8,
+      "margin": 2,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1016/j.tra.2006.09.006",
+      "site": "digital-twin",
+      "score": 2.12,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1039/c6qm00240d",
+      "site": "privacy-computing",
+      "score": 2,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1126/sciadv.abe4458",
+      "site": "semiconductor",
+      "score": 2.34,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1007/978-3-540-48507-0_24",
+      "site": "genetech-tools",
+      "score": 3.24,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1007/978-3-642-17283-0",
+      "site": "biocomputing",
+      "score": 3.21,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.infoandorg.2018.02.005",
+      "site": "genetech-tools",
+      "score": 6.09,
+      "margin": 1.45,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.jretconser.2025.104451",
+      "site": "embodied-ai",
+      "score": 4,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1038/s41598-017-04402-4",
+      "site": "brain-science",
+      "score": 6.29,
+      "margin": 1.19,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1093/oso/9780192845290.001.0001",
+      "site": "genetech-tools",
+      "score": 5.07,
+      "margin": 1.07,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1145/3636243.3636256",
+      "site": "genetech-tools",
+      "score": 4.7,
+      "margin": 1.7,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1162/jocn_a_00051",
+      "site": "brain-science",
+      "score": 3.4,
+      "margin": 1.62,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1021/acs.chemmater.2c03095",
+      "site": "quantum-materials",
+      "score": 6.08,
+      "margin": 1.5,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1038/s41467-024-50613-5",
+      "site": "biocomputing",
+      "score": 6.51,
+      "margin": 1.15,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1093/bioinformatics/bts480",
+      "site": "biocomputing",
+      "score": 4.78,
+      "margin": 1.78,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1101/2024.01.31.572110",
+      "site": "bionic-ai",
+      "score": 5.18,
+      "margin": 1.53,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1242/jcs.263801",
+      "site": "biocomputing",
+      "score": 7.04,
+      "margin": 1.49,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1038/s41928-018-0054-8",
+      "site": "privacy-computing",
+      "score": 7.6,
+      "margin": 2,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1021/acs.analchem.2c02978",
+      "site": "bionic-ai",
+      "score": 4,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.nicl.2017.12.005",
+      "site": "privacy-computing",
+      "score": 4.47,
+      "margin": 1.01,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1021/acsnano.1c00085",
+      "site": "biomed-ai",
+      "score": 8.27,
+      "margin": 3,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1016/j.teln.2024.04.007",
+      "site": "biomed-ai",
+      "score": 8.89,
+      "margin": 3.5,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1109/tnnls.2023.3265730",
+      "site": "brain-science",
+      "score": 5.41,
+      "margin": 1.08,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1109/i2mtc.2014.6860944",
+      "site": "privacy-computing",
+      "score": 8.64,
+      "margin": 1.9,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1038/nmat2334",
+      "site": "privacy-computing",
+      "score": 2,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.biopsych.2005.11.005",
+      "site": "brain-science",
+      "score": 3.63,
+      "margin": 1.57,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1097/00001756-200410050-00013",
+      "site": "brain-science",
+      "score": 3.93,
+      "margin": 1.93,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.neuroimage.2013.06.007",
+      "site": "brain-science",
+      "score": 4.63,
+      "margin": 1.53,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1016/j.neuroimage.2015.01.036",
+      "site": "brain-science",
+      "score": 4.89,
+      "margin": 1.3,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1146/annurev.bi.41.070172.000515",
+      "site": "life-science",
+      "score": 2.67,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1080/17538068.2021.1994825",
+      "site": "embodied-ai",
+      "score": 10.97,
+      "margin": 4.89,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1007/s11222-016-9699-1",
+      "site": "privacy-computing",
+      "score": 2.04,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.3389/fpubh.2020.00117",
+      "site": "tcm-tools",
+      "score": 5.47,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1111/1567-1364.12188",
+      "site": "life-science",
+      "score": 10.16,
+      "margin": 3.86,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1109/mdat.2018.2890221",
+      "site": "privacy-computing",
+      "score": 8.01,
+      "margin": 1.58,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1109/iscc61673.2024.10733703",
+      "site": "privacy-computing",
+      "score": 5.07,
+      "margin": 1.38,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1111/j.1749-6632.2011.05965.x",
+      "site": "brain-science",
+      "score": 10,
+      "margin": 4,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1016/s0896-6273(02)01091-7",
+      "site": "brain-science",
+      "score": 4.3,
+      "margin": 1.84,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1049/el:19950331",
+      "site": "biocomputing",
+      "score": 3.05,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1146/annurev-clinpsy-080621-045153",
+      "site": "brain-science",
+      "score": 9.7,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1128/aem.01210-10",
+      "site": "life-science",
+      "score": 2.51,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1038/s44335-024-00008-y",
+      "site": "privacy-computing",
+      "score": 3.82,
+      "margin": 1.89,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1002/adfm.202200959",
+      "site": "privacy-computing",
+      "score": 4.07,
+      "margin": 1.51,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.3390/nano11071773",
+      "site": "privacy-computing",
+      "score": 3,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1109/jproc.2015.2496679",
+      "site": "privacy-computing",
+      "score": 6.29,
+      "margin": 3.1,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1038/s41586-021-04223-6",
+      "site": "privacy-computing",
+      "score": 10.48,
+      "margin": 2.02,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1109/isscc49657.2024.10454480",
+      "site": "semiconductor",
+      "score": 2.2,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1039/c3nr03472k",
+      "site": "privacy-computing",
+      "score": 3.53,
+      "margin": 1.51,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1002/9783527635566.ch1",
+      "site": "privacy-computing",
+      "score": 3.46,
+      "margin": 1.46,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1063/1.3553868",
+      "site": "privacy-computing",
+      "score": 2,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1021/jacs.8b07424",
+      "site": "quantum-materials",
+      "score": 5.67,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1158/1078-0432.ccr-18-0385",
+      "site": "biomed-ai",
+      "score": 7.61,
+      "margin": 2,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1038/s41598-023-50554-x",
+      "site": "privacy-computing",
+      "score": 8.21,
+      "margin": 3.08,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1038/s41746-023-00753-7",
+      "site": "biomed-ai",
+      "score": 5.94,
+      "margin": 1.03,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1017/s1355838201002515",
+      "site": "life-science",
+      "score": 2.51,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1002/chem.201100298",
+      "site": "bionic-ai",
+      "score": 6.39,
+      "margin": 3,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1002/adom.202301093",
+      "site": "privacy-computing",
+      "score": 5.09,
+      "margin": 1.09,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1103/physrevlett.81.2312",
+      "site": "quantum-materials",
+      "score": 3,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1088/2631-8695/ac1fc6",
+      "site": "sat-6g",
+      "score": 2.13,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1038/s41928-020-0390-3",
+      "site": "privacy-computing",
+      "score": 8.85,
+      "margin": 2.24,
+      "confidence": "high"
+    },
+    {
+      "doi": "10.1002/jobm.201600510",
+      "site": "life-science",
+      "score": 5.11,
+      "margin": 1,
+      "confidence": "medium"
+    },
+    {
+      "doi": "10.1109/iedm13553.2020.9371966",
+      "site": "privacy-computing",
+      "score": 2,
+      "margin": 1,
+      "confidence": "medium"
+    }
+  ]
+}

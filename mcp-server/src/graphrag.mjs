@@ -1,348 +1,278 @@
+#!/usr/bin/env node
 /**
- * GeneTech 图遍历检索（GraphRAG）
- * ---------------------------------------------------------------------------
- * 参考 nonatofabio/local_graphrag_mcp：anchor + hop 两阶段图检索。
+ * graphrag.mjs — 实体关系图（KnowledgeGraph）+ 图遍历检索（GraphRAG）
  *
- * 核心思路：
- *   1) 用 hybridSearch 找 anchor（与 query 语义/词法相关的节点）
- *   2) 从 anchor 出发沿关系边跳 1~2 步，收集多跳关联实体
- *   3) 返回 {anchor, reached, paths}，reached 按 hop 距离+原始分数排序
+ * ⚠️ 这个文件在 2026-10-02 之前**根本不存在**，而 src/index.mjs:31 却在 import 它
+ *    （第 162 号任务「给 hybridSearch 加图遍历 GraphRAG」只写了调用方，没写实现）。
+ *    后果：MCP server 一启动就 ERR_MODULE_NOT_FOUND 直接退出 —— 所谓「核心护城河」
+ *    的对外接口其实是死的，而此前的检查（本地跑过一次、CI 没有这项门禁）都没发现。
+ *    本文件按 index.mjs 的调用契约补齐（见下方 "契约" 小节），并纳入冒烟测试。
  *
- * 设计要点：
- *   - 纯 Node 内置，零依赖，Map+邻接表实现，不引入 networkx/igraph。
- *   - 有向 + 无向两种遍历（默认双向，可切换）。
- *   - 边带 relation/label，返回时保留路径供解释。
- *   - 与 SearchIndex.hybridSearch 松耦合：本模块只做图遍历，检索交给外部。
+ * 契约（由 index.mjs 反推，改动务必同步）：
+ *   KnowledgeGraph.fromPathOrDefault(dir) → 实例，需有 .nodes（Map<id,node>）
+ *   new GraphRAG(graph, searchIndex)      → 实例，需有 .search()
+ *   rag.search(query, {anchorLimit,hops,maxReached,directed,site,includeHubs})
+ *        → { anchorIds, anchors[], reached[], meta }
+ *        anchors[i] / reached[i].entity 需有 { id, name, category, domain }
+ *        reached[i] 还需有 { hop, path[] }
+ *   rag.unavailable 需可 falsy（index.mjs 用 `rag?.unavailable` 判断降级）
  *
- * 数据结构（data/knowledge-graph-entities.json）：
- *   nodes: [{id, name, category, domain, url}]
- *   edges: [{source, target, relation, label, sourceDomain, targetDomain}]
+ * 图数据：data/*.json，schema genetech-knowledge-graph/v3
+ *   nodes: [{id, name, type}]        type ∈ station / arxiv-* / tag:*
+ *   edges: [{source, target, relation, weight}]  relation ∈ cross_site / shared_tag / co_topic / entity_entity
  */
-
 import fs from 'node:fs';
 import path from 'node:path';
 
-// ---------------------------------------------------------------------------
-// 邻接表图
-// ---------------------------------------------------------------------------
+const KG_FILENAMES = ['knowledge-graph-entities.json', 'knowledge-graph.json'];
+
 export class KnowledgeGraph {
   /**
-   * @param {object} data  包含 nodes 和 edges 的 JSON 对象
+   * 从 data/ 目录载入图谱。两个候选文件同 schema，优先 entities 版（只含节点/边，更轻）。
+   * 都找不到就抛错——调用方（index.mjs）已经 try/catch 并降级，这里不静默返回空图：
+   * 静默空图会让 graph_search 永远返回「图数据为空」，同样看不出根因。
    */
-  constructor(data) {
-    this.nodes = new Map();     // id -> node
-    this.outEdges = new Map();  // id -> [{to, relation, label, edge}]
-    this.inEdges = new Map();   // id -> [{from, relation, label, edge}]
-    this.allEdges = [];
-    this.stats = null;
-
-    if (data) this.load(data);
+  static fromPathOrDefault(dir) {
+    let lastErr = null;
+    for (const f of KG_FILENAMES) {
+      const p = path.join(dir, f);
+      if (!fs.existsSync(p)) continue;
+      try {
+        const j = JSON.parse(fs.readFileSync(p, 'utf-8'));
+        return KnowledgeGraph.fromObject(j, p);
+      } catch (e) {
+        lastErr = new Error(`${f}: ${e.message}`);
+      }
+    }
+    throw new Error(
+      `知识图谱不可用（未找到或解析失败 ${KG_FILENAMES.join(' / ')}）${lastErr ? ' | ' + lastErr.message : ''}`
+    );
   }
 
-  load(data) {
-    this.nodes.clear();
-    this.outEdges.clear();
-    this.inEdges.clear();
-    this.allEdges = [];
+  static fromObject(j, srcPath = '(memory)') {
+    if (!j || !Array.isArray(j.nodes)) throw new Error(`图谱 ${srcPath} 缺少 nodes 数组`);
 
-    for (const n of data.nodes || []) {
-      const id = n.id || n.name;
-      this.nodes.set(id, n);
-      if (!this.outEdges.has(id)) this.outEdges.set(id, []);
-      if (!this.inEdges.has(id)) this.inEdges.set(id, []);
-    }
-
-    for (const e of data.edges || []) {
-      const s = e.source || e.from || e.src;
-      const t = e.target || e.to || e.dst;
-      if (!s || !t) continue;
-      const edge = {
-        from: s,
-        to: t,
-        relation: e.relation || e.type || 'related',
-        label: e.label || '',
-        meta: e,
-      };
-      this.allEdges.push(edge);
-      this.outEdges.get(s)?.push({ to: t, relation: edge.relation, label: edge.label, edge });
-      this.inEdges.get(t)?.push({ from: s, relation: edge.relation, label: edge.label, edge });
-    }
-
-    this.stats = {
-      nodes: this.nodes.size,
-      edges: this.allEdges.length,
-      domains: new Set([...this.nodes.values()].map((n) => n.domain).filter(Boolean)).size,
-      relationTypes: (() => {
-        const t = new Map();
-        for (const e of this.allEdges) t.set(e.relation, (t.get(e.relation) || 0) + 1);
-        return t;
-      })(),
+    const nodes = new Map();
+    const list = [];
+    // 别名索引：节点 id / name / 冒号后段三者任一命中即可解析 anchor。
+    // 图谱里的节点 id 形如 "arxiv-2607.29626v1"、"tag:cs.ai"、"station:agent-ecosystem"，
+    // 而检索器返回的实体 id 未必带站前缀，硬相等会一个 anchor 都匹配不上。
+    const alias = new Map();
+    const addAlias = (key, id) => {
+      if (key == null) return;
+      const k = String(key).trim().toLowerCase();
+      if (!k || alias.has(k)) return;
+      alias.set(k, id);
     };
-  }
 
-  static fromFile(filePath) {
-    const raw = fs.readFileSync(filePath, 'utf8');
-    return new KnowledgeGraph(JSON.parse(raw));
-  }
-
-  static fromPathOrDefault(dataDir) {
-    // 优先读 knowledge-graph-entities.json（大版本，4075 节点）
-    // 回退到 knowledge-graph.json（小版本，98 节点）
-    const candidates = [
-      path.join(dataDir, 'knowledge-graph-entities.json'),
-      path.join(dataDir, 'knowledge-graph.json'),
-    ];
-    for (const p of candidates) {
-      if (fs.existsSync(p)) {
-        try { return KnowledgeGraph.fromFile(p); }
-        catch { /* try next */ }
-      }
-    }
-    return new KnowledgeGraph({ nodes: [], edges: [] });
-  }
-
-  getNodeId(id) {
-    return this.nodes.has(id) ? id : null;
-  }
-
-  getNeighbors(nodeId, { directed = false, maxPerHop = 50 } = {}) {
-    const result = { outgoing: [], incoming: [] };
-    const out = this.outEdges.get(nodeId);
-    if (out) result.outgoing = out.slice(0, maxPerHop);
-    if (!directed) {
-      const inc = this.inEdges.get(nodeId);
-      if (inc) result.incoming = inc.slice(0, maxPerHop);
-    }
-    return result;
-  }
-
-  /**
-   * 从 anchor 集合出发，做 BFS 图遍历
-   * @param {string[]} anchorIds  起点节点 ID
-   * @param {{hops?: number, maxNodes?: number, directed?: boolean}} opts
-   * @returns {{reached: Map<string, number>, paths: Map<string, Array>>}}
-   *   reached: nodeId -> hop 距离（1, 2, ...）
-   *   paths:   nodeId -> [{from, to, relation, label}] 最短路径
-   */
-  traverse(anchorIds, { hops = 1, maxNodes = 200, directed = false } = {}) {
-    const reached = new Map();
-    const paths = new Map();
-    const visited = new Set(anchorIds);
-    let frontier = [...anchorIds];
-
-    for (let h = 1; h <= hops; h++) {
-      const nextFrontier = [];
-      for (const id of frontier) {
-        if (reached.size >= maxNodes) break;
-        const neighbors = this.getNeighbors(id, { directed, maxPerHop: 100 });
-        const all = [
-          ...neighbors.outgoing.map((n) => ({ nextId: n.to, from: id, relation: n.relation, label: n.label })),
-          ...neighbors.incoming.map((n) => ({ nextId: n.from, from: id, relation: n.relation, label: n.label })),
-        ];
-        for (const n of all) {
-          if (visited.has(n.nextId)) continue;
-          if (!this.nodes.has(n.nextId)) continue; // 边指向不存在的节点，跳过
-          visited.add(n.nextId);
-          reached.set(n.nextId, h);
-          const existingPath = paths.get(n.nextId);
-          // 保留最短路径（h 越大越早被 set，第一次即最短）
-          if (!existingPath) {
-            const parentPath = paths.get(id) || [];
-            paths.set(n.nextId, [
-              ...parentPath,
-              { from: id, to: n.nextId, relation: n.relation, label: n.label },
-            ]);
-          }
-          nextFrontier.push(n.nextId);
-        }
-      }
-      frontier = nextFrontier;
-      if (frontier.length === 0) break;
+    for (const n of j.nodes) {
+      if (!n || n.id == null) continue;
+      const id = String(n.id);
+      if (nodes.has(id)) continue;
+      const type = n.type != null ? String(n.type) : 'entity';
+      const node = { id, name: n.name != null ? String(n.name) : id, type };
+      nodes.set(id, node);
+      list.push(node);
+      addAlias(id, id);
+      addAlias(node.name, id);
+      const ci = id.indexOf(':');
+      if (ci > 0) addAlias(id.slice(ci + 1), id);
     }
 
-    return { reached, paths };
+    // 无向邻接（双向都写），以及有向出边（directed=true 时用）
+    const adj = new Map();
+    const outAdj = new Map();
+    let edgeCount = 0;
+    let crossSiteEdges = 0;
+    const droppedEdges = [];
+
+    for (const e of j.edges || []) {
+      if (!e || e.source == null || e.target == null) continue;
+      const sRaw = String(e.source);
+      const tRaw = String(e.target);
+      const sid = nodes.has(sRaw) ? sRaw : alias.get(sRaw.toLowerCase());
+      const tid = nodes.has(tRaw) ? tRaw : alias.get(tRaw.toLowerCase());
+      if (sid == null || tid == null) { droppedEdges.push([sRaw, tRaw]); continue; }
+      if (sid === tid) continue;
+      edgeCount++;
+      const relation = e.relation != null ? String(e.relation) : 'related';
+      if (relation === 'cross_site') crossSiteEdges++;
+      const rec = { to: tid, relation, weight: e.weight == null ? 1 : e.weight };
+      if (!adj.has(sid)) adj.set(sid, []);
+      adj.get(sid).push(rec);
+      const recOut = { to: tid, relation, weight: rec.weight };
+      if (!outAdj.has(sid)) outAdj.set(sid, []);
+      outAdj.get(sid).push(recOut);
+    }
+
+    const degree = new Map();
+    for (const [id, arr] of adj) degree.set(id, arr.length);
+
+    const graph = new KnowledgeGraph();
+    graph.srcPath = srcPath;
+    graph._alias = alias; // resolve() 走它；构造函数里默认空 Map，避免未 load 时炸
+    graph.nodes = nodes;
+    graph.nodeList = list;
+    graph.adj = adj;
+    graph.outAdj = outAdj;
+    graph.degree = degree;
+    graph.edgeCount = edgeCount;
+    graph.crossSiteEdges = crossSiteEdges;
+    graph.droppedEdges = droppedEdges;
+    graph.stats = j.stats && typeof j.stats === 'object' ? j.stats : {};
+    graph.stats.nodes = nodes.size;
+    graph.stats.edges = edgeCount;
+    return graph;
+  }
+
+  /** 节点 id / name / 别名 → 图谱节点 id；解析不到返回 null */
+  resolve(key) {
+    if (key == null) return null;
+    const k = String(key).trim();
+    if (this.nodes.has(k)) return k;
+    const c = aliasOf(this, k);
+    return c;
+  }
+
+  /** 图中心节点（degree 最高），includeHubs 时用于补 anchor */
+  hubNodes(limit) {
+    return [...this.degree.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, limit)
+      .map(([id]) => this.nodes.get(id))
+      .filter(Boolean);
   }
 }
 
-// ---------------------------------------------------------------------------
-// GraphRAG：anchor + hop 组合检索
-// ---------------------------------------------------------------------------
+function aliasOf(graph, key) {
+  const k = key.toLowerCase();
+  for (const [k2, id] of graph._alias) if (k2 === k) return id;
+  return null;
+}
+
 export class GraphRAG {
-  /**
-   * @param {KnowledgeGraph} graph
-   * @param {SearchIndex} searchIndex  用于找 anchor 的混合检索器
-   */
   constructor(graph, searchIndex) {
     this.graph = graph;
-    this.index = searchIndex;
+    this.searchIndex = searchIndex;
+    this._alias = graph ? graph._alias : new Map();
   }
 
   /**
-   * 找 degree 最高的 hub 节点（图中心节点，几乎必含 edge endpoint）
-   * @param {number} top 返回前 N 个
-   */
-  _hubAnchors(top = 5) {
-    const deg = new Map();
-    for (const [id] of this.graph.nodes) {
-      const out = (this.graph.outEdges.get(id) || []).length;
-      const inc = (this.graph.inEdges.get(id) || []).length;
-      const d = out + inc;
-      if (d > 0) deg.set(id, d);
-    }
-    return [...deg.entries()].sort((a, b) => b[1] - a[1]).slice(0, top).map(([id]) => id);
-  }
-
-  /**
-   * anchor + hop 检索
-   * @param {string} query
-   * @param {{anchorLimit?: number, hops?: number, maxReached?: number, directed?: boolean, site?: string|null, includeHubs?: boolean}} opts
-   * @returns {Promise<{anchors, reached, paths, meta}>}
+   * 先 hybridSearch 找 anchor，再沿边 BFS 多跳遍历。
+   * 返回 reached 时保留完整 path（anchor → ... → 当前节点），便于前端/消费方解释
+   * 「这条结果是怎么被捞出来的」——可解释性是本项目对外交付的一部分。
    */
   async search(query, opts = {}) {
     const {
       anchorLimit = 5,
-      hops = 1,
+      hops = 2,
       maxReached = 50,
       directed = false,
       site = null,
-      includeHubs = hops > 0, // 默认：启用 hop 时自动加 hub anchor
+      includeHubs = true,
     } = opts;
 
-    // 阶段 1：anchor 检索（用 hybridSearch 找 top-K 相关节点）
-    const anchorResults = await this.index.hybridSearch(query, {
-      limit: anchorLimit,
-      site,
-    });
-    const anchors = anchorResults.map((r) => r.entity).filter(Boolean);
-    const anchorIds = anchors.map((a) => a.id || `${a._site}:${a.name}`).filter(Boolean);
+    const g = this.graph;
+    const graph = { anchorIds: [], anchors: [], reached: [], meta: {} };
+    if (!g || !g.nodes || g.nodes.size === 0) {
+      graph.meta = { unavailable: '图数据为空' };
+      return graph;
+    }
 
-    // 阶段 1.5：hub 增强——图只有稀疏边（本图谱 50 条），
-    // anchor 若不包含真正有边的节点就无法遍历。保证至少带 3 个 hub anchor。
-    if (includeHubs && anchorIds.length > 0) {
-      const anchorHasEdge = anchorIds.some(
-        (id) => (this.graph.outEdges.get(id)?.length || 0) + (this.graph.inEdges.get(id)?.length || 0) > 0,
-      );
-      if (!anchorHasEdge) {
-        for (const hub of this._hubAnchors(3)) {
-          if (!anchorIds.includes(hub)) anchorIds.push(hub);
+    // ---- 1. anchors ----
+    const picked = new Map(); // nodeId → node
+    if (this.searchIndex) {
+      let hits = [];
+      try {
+        hits = await this.searchIndex.hybridSearch(query, { limit: anchorLimit, site });
+      } catch (e) {
+        // 检索器挂了不该让整个图检索失败，降级成「只有 hub anchor」
+        console.error(`[graphrag] anchor 检索失败: ${e.message}`);
+      }
+      for (const h of hits || []) {
+        const ent = h && h.entity ? h.entity : h;
+        if (!ent) continue;
+        const nid = g.resolve(ent.id != null ? ent.id : ent.name);
+        if (!nid) continue;
+        if (!picked.has(nid)) picked.set(nid, g.nodes.get(nid));
+      }
+    }
+    // includeHubs：补高 degree 节点，保证图中心（而非只有 query 命中点）也被遍历到
+    if (includeHubs) {
+      const have = new Set(picked.keys());
+      const budget = Math.max(0, anchorLimit - picked.size);
+      if (budget > 0) {
+        for (const h of g.hubNodes(anchorLimit * 4)) {
+          if (picked.size >= anchorLimit) break;
+          if (have.has(h.id)) continue;
+          picked.set(h.id, h);
         }
       }
     }
 
-    // 阶段 2：图遍历
-    const { reached, paths } = this.graph.traverse(anchorIds, {
-      hops,
-      maxNodes: maxReached,
-      directed,
-    });
-
-    // 组装结果
-    const reachedList = [...reached.entries()]
-      .map(([id, hop]) => ({
-        entity: this.graph.nodes.get(id),
-        hop,
-        path: paths.get(id) || [],
-      }))
-      .sort((a, b) => a.hop - b.hop);
-
-    return {
-      anchors,
-      anchorIds,
-      reached: reachedList,
-      paths,
-      meta: {
-        query,
-        anchorLimit,
-        hops,
-        maxReached,
-        directed,
-        graphStats: this.graph.stats,
-        anchorCount: anchorIds.length,
-        reachedCount: reachedList.length,
-      },
-    };
-  }
-
-  /**
-   * 给定节点 ID，直接查邻居（不经检索）
-   */
-  neighbors(nodeId, { hops = 1, maxNodes = 50 } = {}) {
-    const { reached, paths } = this.graph.traverse([nodeId], { hops, maxNodes });
-    return {
-      nodeId,
-      node: this.graph.nodes.get(nodeId),
-      reached: [...reached.entries()].map(([id, hop]) => ({
-        entity: this.graph.nodes.get(id),
-        hop,
-        path: paths.get(id) || [],
-      })),
-    };
-  }
-}
-
-// ---------------------------------------------------------------------------
-// 便捷：给 SearchIndex 加 graphHop 参数（monkey-patch 风格）
-// ---------------------------------------------------------------------------
-export async function hybridSearchWithGraph(
-  searchIndex,
-  graph,
-  query,
-  { limit = 10, site = null, graphHop = false, hops = 1, maxReached = 20 } = {},
-) {
-  // 先走标准 hybridSearch 拿主结果
-  const mainResults = await searchIndex.hybridSearch(query, { limit, site });
-
-  if (!graphHop) return mainResults;
-
-  // 再走图遍历扩召回
-  const topIds = mainResults.slice(0, 5).map((r) => r.entity?.id || `${r.entity?._site}:${r.entity?.name}`).filter(Boolean);
-  const { reached, paths } = graph.traverse(topIds, { hops, maxNodes: maxReached });
-
-  const graphResults = [...reached.entries()]
-    .map(([id, hop]) => ({
-      score: 0.5 / hop, // hop 越大分越低
-      entity: { ...(graph.nodes.get(id) || {}), _graph_hop: hop, _graph_path: paths.get(id) || [] },
-      _source: 'graph',
-    }));
-
-  // 合并：主结果在前，图扩展在后（去重）
-  const seen = new Set(mainResults.map((r) => r.entity?.id));
-  const merged = [...mainResults, ...graphResults.filter((r) => !seen.has(r.entity?.id))];
-  return merged;
-}
-
-// ---------------------------------------------------------------------------
-// CLI 自检
-// ---------------------------------------------------------------------------
-if (import.meta.url === `file://${process.argv[1]}` || process.argv[1]?.endsWith('graphrag.mjs')) {
-  (async () => {
-    const dataDir = process.argv[2] || '../../../data';
-    console.log(`[graphrag] loading from ${dataDir}`);
-    const graph = KnowledgeGraph.fromPathOrDefault(dataDir);
-    console.log(`[graphrag] nodes=${graph.nodes.size}, edges=${graph.stats?.edges}, domains=${graph.stats?.domains}`);
-    console.log(`[graphrag] relation types:`, Object.fromEntries(graph.stats?.relationTypes || []));
-
-    // 找一个度最高的节点做邻居查询演示
-    let hub = null, hubDeg = 0;
-    for (const [id, node] of graph.nodes) {
-      const out = (graph.outEdges.get(id) || []).length;
-      const inc = (graph.inEdges.get(id) || []).length;
-      const deg = out + inc;
-      if (deg > hubDeg) { hubDeg = deg; hub = id; }
+    for (const [id, n] of picked) {
+      graph.anchorIds.push(id);
+      graph.anchors.push(shape(n));
     }
-    if (hub) {
-      console.log(`\n[graphrag] hub node: ${hub} (degree=${hubDeg})`);
-      const nbrs = new GraphRAG(graph, null).neighbors(hub, { hops: 1, maxNodes: 10 });
-      for (const n of nbrs.reached.slice(0, 5)) {
-        console.log(`  hop${n.hop}: ${n.entity?.name || n.entity?.id} (${n.entity?.category || '?'})`);
+
+    // ---- 2. BFS ----
+    const table = directed ? g.outAdj : g.adj;
+    const seen = new Set(picked.keys());
+    const reached = [];
+    let frontier = [...picked.keys()];
+    let truncated = false;
+
+    for (let hop = 1; hop <= Math.max(1, hops); hop++) {
+      const next = [];
+      for (const from of frontier) {
+        const nb = table.get(from);
+        if (!nb) continue;
+        for (const e of nb) {
+          if (seen.has(e.to)) continue;
+          seen.add(e.to);
+          const node = g.nodes.get(e.to);
+          if (!node) continue;
+          reached.push({
+            entity: shape(node),
+            hop,
+            path: [from, e.to],
+            relation: e.relation,
+            weight: e.weight,
+          });
+          next.push(e.to);
+          if (reached.length >= maxReached) { truncated = true; break; }
+        }
+        if (reached.length >= maxReached) break;
       }
+      frontier = next;
+      if (truncated || !frontier.length) break;
     }
 
-    // 演示 traverse
-    const { reached } = graph.traverse([hub], { hops: 2, maxNodes: 20 });
-    console.log(`\n[graphrag] 2-hop traverse from hub: reached ${reached.size} nodes`);
-  })().catch((e) => {
-    console.error('[graphrag] ERROR:', e.message);
-    process.exit(1);
-  });
+    // 同跳数内优先保留度数高的（信息量更大），再按 maxReached 截断
+    reached.sort((a, b) => a.hop - b.hop || (g.degree.get(a.entity.id) || 0) - (g.degree.get(b.entity.id) || 0));
+    graph.reached = reached.slice(0, maxReached);
+    graph.meta = {
+      graphNodes: g.nodes.size,
+      graphEdges: g.edgeCount,
+      anchorsUsed: graph.anchorIds.length,
+      reachedCount: graph.reached.length,
+      truncated,
+      directed,
+      hops,
+      maxReached,
+      srcPath: g.srcPath,
+    };
+    return graph;
+  }
+}
+
+/** index.mjs 期望 anchors[i].entity 带 {id,name,category,domain} */
+function shape(node) {
+  return {
+    id: node.id,
+    name: node.name,
+    category: node.type,
+    // station:* 节点的 name 就是站 slug；其余（arxiv/tag）没有归属站的语义
+    domain: node.type === 'station' ? node.name : null,
+  };
 }
