@@ -1,0 +1,28 @@
+name = "genetech-api-gateway"
+main = "worker.js"
+compatibility_date = "2026-07-01"
+
+# KV Namespace 绑定
+# 需要先创建：wrangler kv:namespace create KB_KV
+[[kv_namespaces]]
+binding = "KB_KV"
+id = "替换为你的 KV namespace ID"
+
+# Secrets（通过 wrangler secret put 设置）：
+# - API_GATEWAY_ADMIN_KEY
+
+# 路由配置：将所有 *.genetech.tools/api/* 流量指向此 Worker
+# 需要在 Cloudflare Dashboard 中手动添加路由，或在 wrangler.toml 中配置：
+# [[routes]]
+# pattern = "genetech.tools/api/*"
+# zone_name = "genetech.tools"
+
+# 环境变量（非敏感）
+[vars]
+CORS_ORIGIN = "*"
+
+# 注意事项：
+# 1. 部署前必须运行：wrangler secret put API_GATEWAY_ADMIN_KEY
+# 2. 必须创建 KV namespace 并替换上面的 ID
+# 3. 对于 14 个站点，可以共享一个 Worker（通过路由规则覆盖所有子域名）
+# 4. 或为每个站点部署独立 Worker（更隔离，但成本更高）

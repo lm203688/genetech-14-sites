@@ -1,0 +1,30 @@
+name: Security Scan Only
+# 轻量级安全扫描，每次 PR 都运行
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  secret-scan:
+    name: Secret Detection
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: TruffleHog OSS
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: .
+          extra_args: --only-verified
+
+      - name: Check CREDENTIALS.md absent
+        run: |
+          if git log --all --full-history -- CREDENTIALS.md | grep -q "CREDENTIALS.md"; then
+            echo "::error::CREDENTIALS.md 仍在 Git 历史中！请运行 git filter-repo 清理。"
+            exit 1
+          fi
