@@ -243,7 +243,7 @@ function stageDevelop(plan, dryRun) {
     if (feature.status === '已有工具包，需部署') {
       devResult.completed.push({
         ...feature,
-        action: '使用 genetech14-fixes/api-gateway/ 部署',
+        action: '使用 archive/genetech14-fixes/api-gateway/ 部署',
       });
       log(`✓ ${feature.name} — 工具包已就绪`);
     } else if (feature.priority === 'P1') {
