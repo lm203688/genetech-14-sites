@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-10-06T10:03:24.818281Z",
+  "builtAt": "2026-10-07T10:06:43.697319Z",
   "version": "2.0",
   "schema": "genetech-knowledge-graph/v3",
   "stats": {
@@ -719026,13 +719026,1741 @@
       "relation": "co-occurrence",
       "label": "共现 3 次",
       "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "quantum-computing",
+      "targetDomain": "quantum-computing",
+      "relation": "co-occurrence",
+      "label": "共现 8 次",
+      "weight": 8
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "quantum",
+      "targetDomain": "quantum",
+      "relation": "co-occurrence",
+      "label": "共现 7 次",
+      "weight": 7
+    },
+    {
+      "source": "new-energy",
+      "sourceDomain": "new-energy",
+      "target": "solid",
+      "targetDomain": "solid",
+      "relation": "co-occurrence",
+      "label": "共现 5 次",
+      "weight": 5
+    },
+    {
+      "source": "privacy-computing",
+      "sourceDomain": "privacy-computing",
+      "target": "artificial",
+      "targetDomain": "artificial",
+      "relation": "co-occurrence",
+      "label": "共现 5 次",
+      "weight": 5
+    },
+    {
+      "source": "self",
+      "sourceDomain": "self",
+      "target": "for",
+      "targetDomain": "for",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "new-energy",
+      "sourceDomain": "new-energy",
+      "target": "state",
+      "targetDomain": "state",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "genetech-tools",
+      "sourceDomain": "genetech-tools",
+      "target": "target",
+      "targetDomain": "target",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "low-altitude",
+      "sourceDomain": "low-altitude",
+      "target": "address",
+      "targetDomain": "address",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "low-altitude",
+      "sourceDomain": "low-altitude",
+      "target": "challenges",
+      "targetDomain": "challenges",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "neuromorphic",
+      "sourceDomain": "neuromorphic",
+      "target": "rapid",
+      "targetDomain": "rapid",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "neuromorphic",
+      "sourceDomain": "neuromorphic",
+      "target": "advancement",
+      "targetDomain": "advancement",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "advancement",
+      "sourceDomain": "advancement",
+      "target": "with",
+      "targetDomain": "with",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "new-energy",
+      "sourceDomain": "new-energy",
+      "target": "recent",
+      "targetDomain": "recent",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "organic",
+      "sourceDomain": "organic",
+      "target": "a",
+      "targetDomain": "a",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "nuclear-energy",
+      "sourceDomain": "nuclear-energy",
+      "target": "deep",
+      "targetDomain": "deep",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "nuclear-energy",
+      "sourceDomain": "nuclear-energy",
+      "target": "as",
+      "targetDomain": "as",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "quantum-computing",
+      "sourceDomain": "quantum-computing",
+      "target": "circuit",
+      "targetDomain": "circuit",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "[{'pubType': ['Review', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['Review', 'Journal Article']}]",
+      "target": "for",
+      "targetDomain": "for",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "networks",
+      "targetDomain": "networks",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "[{'pubType': ['Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['Journal Article']}]",
+      "target": "life-science",
+      "targetDomain": "life-science",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "low-altitude",
+      "targetDomain": "low-altitude",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "nuclear-energy",
+      "targetDomain": "nuclear-energy",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "privacy-computing",
+      "targetDomain": "privacy-computing",
+      "relation": "co-occurrence",
+      "label": "共现 4 次",
+      "weight": 4
+    },
+    {
+      "source": "internet",
+      "sourceDomain": "internet",
+      "target": "a",
+      "targetDomain": "a",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "micropollutants",
+      "sourceDomain": "micropollutants",
+      "target": "organic",
+      "targetDomain": "organic",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "driving",
+      "sourceDomain": "driving",
+      "target": "self",
+      "targetDomain": "self",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "their",
+      "sourceDomain": "their",
+      "target": "life",
+      "targetDomain": "life",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "feature",
+      "sourceDomain": "feature",
+      "target": "to",
+      "targetDomain": "to",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "all",
+      "sourceDomain": "all",
+      "target": "an",
+      "targetDomain": "an",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "algorithm",
+      "sourceDomain": "algorithm",
+      "target": "in",
+      "targetDomain": "in",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "based",
+      "sourceDomain": "based",
+      "target": "with",
+      "targetDomain": "with",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "genetic",
+      "sourceDomain": "genetic",
+      "target": "genome",
+      "targetDomain": "genome",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "hydrogen",
+      "sourceDomain": "hydrogen",
+      "target": "as",
+      "targetDomain": "as",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "address",
+      "sourceDomain": "address",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "work",
+      "sourceDomain": "work",
+      "target": "we",
+      "targetDomain": "we",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "beyond",
+      "sourceDomain": "beyond",
+      "target": "are",
+      "targetDomain": "are",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "programmable",
+      "sourceDomain": "programmable",
+      "target": "the",
+      "targetDomain": "the",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "development",
+      "sourceDomain": "development",
+      "target": "on",
+      "targetDomain": "on",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "earth",
+      "sourceDomain": "earth",
+      "target": "and",
+      "targetDomain": "and",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "potential",
+      "sourceDomain": "potential",
+      "target": "a",
+      "targetDomain": "a",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "genetech-tools",
+      "sourceDomain": "genetech-tools",
+      "target": "genome",
+      "targetDomain": "genome",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "species",
+      "sourceDomain": "species",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "genomics",
+      "sourceDomain": "genomics",
+      "target": "a",
+      "targetDomain": "a",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "engineering",
+      "sourceDomain": "engineering",
+      "target": "dual",
+      "targetDomain": "dual",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "combat",
+      "sourceDomain": "combat",
+      "target": "to",
+      "targetDomain": "to",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "effectiveness",
+      "sourceDomain": "effectiveness",
+      "target": "life-science",
+      "targetDomain": "life-science",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "effectiveness",
+      "sourceDomain": "effectiveness",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "low-altitude",
+      "sourceDomain": "low-altitude",
+      "target": "ground",
+      "targetDomain": "ground",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "low-altitude",
+      "sourceDomain": "low-altitude",
+      "target": "time",
+      "targetDomain": "time",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "analyses",
+      "sourceDomain": "analyses",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "analyses",
+      "sourceDomain": "analyses",
+      "target": "this",
+      "targetDomain": "this",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "networks",
+      "sourceDomain": "networks",
+      "target": "in",
+      "targetDomain": "in",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "neuromorphic",
+      "sourceDomain": "neuromorphic",
+      "target": "voltage",
+      "targetDomain": "voltage",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "nuclear-energy",
+      "sourceDomain": "nuclear-energy",
+      "target": "new",
+      "targetDomain": "new",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "different",
+      "sourceDomain": "different",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "paper",
+      "sourceDomain": "paper",
+      "target": "we",
+      "targetDomain": "we",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "reactor",
+      "sourceDomain": "reactor",
+      "target": "and",
+      "targetDomain": "and",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "privacy-computing",
+      "sourceDomain": "privacy-computing",
+      "target": "introduction",
+      "targetDomain": "introduction",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "privacy-computing",
+      "sourceDomain": "privacy-computing",
+      "target": "via",
+      "targetDomain": "via",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "federated",
+      "sourceDomain": "federated",
+      "target": "via",
+      "targetDomain": "via",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "learning",
+      "sourceDomain": "learning",
+      "target": "via",
+      "targetDomain": "via",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "intelligence",
+      "sourceDomain": "intelligence",
+      "target": "federated",
+      "targetDomain": "federated",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "privacy-computing",
+      "sourceDomain": "privacy-computing",
+      "target": "powered",
+      "targetDomain": "powered",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "privacy-computing",
+      "sourceDomain": "privacy-computing",
+      "target": "is",
+      "targetDomain": "is",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "quantum-computing",
+      "sourceDomain": "quantum-computing",
+      "target": "lt",
+      "targetDomain": "lt",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "quantum-computing",
+      "sourceDomain": "quantum-computing",
+      "target": "gt",
+      "targetDomain": "gt",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "earth",
+      "sourceDomain": "earth",
+      "target": "deep",
+      "targetDomain": "deep",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "detection",
+      "sourceDomain": "detection",
+      "target": "is",
+      "targetDomain": "is",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "are",
+      "sourceDomain": "are",
+      "target": "via",
+      "targetDomain": "via",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "metamaterials",
+      "sourceDomain": "metamaterials",
+      "target": "for",
+      "targetDomain": "for",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "metamaterials",
+      "sourceDomain": "metamaterials",
+      "target": "printed",
+      "targetDomain": "printed",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "printed",
+      "sourceDomain": "printed",
+      "target": "for",
+      "targetDomain": "for",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "federated",
+      "sourceDomain": "federated",
+      "target": "edge",
+      "targetDomain": "edge",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "environments",
+      "sourceDomain": "environments",
+      "target": "in",
+      "targetDomain": "in",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "theory",
+      "sourceDomain": "theory",
+      "target": "for",
+      "targetDomain": "for",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "traditional",
+      "sourceDomain": "traditional",
+      "target": "tcm",
+      "targetDomain": "tcm",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "chinese",
+      "sourceDomain": "chinese",
+      "target": "tcm",
+      "targetDomain": "tcm",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "medicine",
+      "sourceDomain": "medicine",
+      "target": "tcm",
+      "targetDomain": "tcm",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "erratum",
+      "sourceDomain": "erratum",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "chinese",
+      "sourceDomain": "chinese",
+      "target": "and",
+      "targetDomain": "and",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "organic",
+      "sourceDomain": "organic",
+      "target": "for",
+      "targetDomain": "for",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "new-energy",
+      "sourceDomain": "new-energy",
+      "target": "an",
+      "targetDomain": "an",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "solid",
+      "sourceDomain": "solid",
+      "target": "all",
+      "targetDomain": "all",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "state",
+      "sourceDomain": "state",
+      "target": "all",
+      "targetDomain": "all",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "photovoltaic",
+      "sourceDomain": "photovoltaic",
+      "target": "the",
+      "targetDomain": "the",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "hematopoietic",
+      "sourceDomain": "hematopoietic",
+      "target": "1",
+      "targetDomain": "1",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "progenitor",
+      "sourceDomain": "progenitor",
+      "target": "1",
+      "targetDomain": "1",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "engine",
+      "sourceDomain": "engine",
+      "target": "the",
+      "targetDomain": "the",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "hierarchical",
+      "sourceDomain": "hierarchical",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "uav",
+      "sourceDomain": "uav",
+      "target": "to",
+      "targetDomain": "to",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "water",
+      "sourceDomain": "water",
+      "target": "a",
+      "targetDomain": "a",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "yield",
+      "sourceDomain": "yield",
+      "target": "the",
+      "targetDomain": "the",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "yield",
+      "sourceDomain": "yield",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "retraction",
+      "sourceDomain": "retraction",
+      "target": "notice",
+      "targetDomain": "notice",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "background",
+      "sourceDomain": "background",
+      "target": "s",
+      "targetDomain": "s",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "background",
+      "sourceDomain": "background",
+      "target": "has",
+      "targetDomain": "has",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "developments",
+      "sourceDomain": "developments",
+      "target": "recent",
+      "targetDomain": "recent",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "materials",
+      "sourceDomain": "materials",
+      "target": "and",
+      "targetDomain": "and",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "emerging",
+      "sourceDomain": "emerging",
+      "target": "genetic",
+      "targetDomain": "genetic",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "ultra",
+      "sourceDomain": "ultra",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "background",
+      "sourceDomain": "background",
+      "target": "rapid",
+      "targetDomain": "rapid",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "resistant",
+      "sourceDomain": "resistant",
+      "target": "to",
+      "targetDomain": "to",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "fluorescence",
+      "sourceDomain": "fluorescence",
+      "target": "a",
+      "targetDomain": "a",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "background",
+      "sourceDomain": "background",
+      "target": "years",
+      "targetDomain": "years",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "age",
+      "sourceDomain": "age",
+      "target": "in",
+      "targetDomain": "in",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "capture",
+      "sourceDomain": "capture",
+      "target": "the",
+      "targetDomain": "the",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "recurrent",
+      "sourceDomain": "recurrent",
+      "target": "neural",
+      "targetDomain": "neural",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "digital",
+      "sourceDomain": "digital",
+      "target": "s",
+      "targetDomain": "s",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "predicting",
+      "sourceDomain": "predicting",
+      "target": "in",
+      "targetDomain": "in",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "artificial",
+      "sourceDomain": "artificial",
+      "target": "large",
+      "targetDomain": "large",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "intelligence",
+      "sourceDomain": "intelligence",
+      "target": "large",
+      "targetDomain": "large",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "erratum",
+      "sourceDomain": "erratum",
+      "target": "the",
+      "targetDomain": "the",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "article",
+      "sourceDomain": "article",
+      "target": "erratum",
+      "targetDomain": "erratum",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "sustained",
+      "sourceDomain": "sustained",
+      "target": "with",
+      "targetDomain": "with",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "collaborative",
+      "sourceDomain": "collaborative",
+      "target": "background",
+      "targetDomain": "background",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "multimodal",
+      "sourceDomain": "multimodal",
+      "target": "language",
+      "targetDomain": "language",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "evolution",
+      "sourceDomain": "evolution",
+      "target": "in",
+      "targetDomain": "in",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "distribution",
+      "sourceDomain": "distribution",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "genetech-tools",
+      "sourceDomain": "genetech-tools",
+      "target": "genetics",
+      "targetDomain": "genetics",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "genetics",
+      "sourceDomain": "genetics",
+      "target": "and",
+      "targetDomain": "and",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "genetics",
+      "sourceDomain": "genetics",
+      "target": "genomics",
+      "targetDomain": "genomics",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "genetics",
+      "sourceDomain": "genetics",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "genetech-tools",
+      "sourceDomain": "genetech-tools",
+      "target": "this",
+      "targetDomain": "this",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "genomics",
+      "sourceDomain": "genomics",
+      "target": "for",
+      "targetDomain": "for",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "analyses",
+      "sourceDomain": "analyses",
+      "target": "in",
+      "targetDomain": "in",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "life-science",
+      "sourceDomain": "life-science",
+      "target": "molecular",
+      "targetDomain": "molecular",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "sciences",
+      "sourceDomain": "sciences",
+      "target": "in",
+      "targetDomain": "in",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "assessing",
+      "sourceDomain": "assessing",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "due",
+      "sourceDomain": "due",
+      "target": "the",
+      "targetDomain": "the",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "biology",
+      "sourceDomain": "biology",
+      "target": "has",
+      "targetDomain": "has",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "low-altitude",
+      "sourceDomain": "low-altitude",
+      "target": "trajectory",
+      "targetDomain": "trajectory",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "trajectory",
+      "sourceDomain": "trajectory",
+      "target": "the",
+      "targetDomain": "the",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "urban",
+      "sourceDomain": "urban",
+      "target": "in",
+      "targetDomain": "in",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "enhanced",
+      "sourceDomain": "enhanced",
+      "target": "an",
+      "targetDomain": "an",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "detection",
+      "sourceDomain": "detection",
+      "target": "enhanced",
+      "targetDomain": "enhanced",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "enhanced",
+      "sourceDomain": "enhanced",
+      "target": "is",
+      "targetDomain": "is",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "estimation",
+      "sourceDomain": "estimation",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "differential",
+      "sourceDomain": "differential",
+      "target": "the",
+      "targetDomain": "the",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "neuromorphic",
+      "sourceDomain": "neuromorphic",
+      "target": "low",
+      "targetDomain": "low",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "neuromorphic",
+      "sourceDomain": "neuromorphic",
+      "target": "synaptic",
+      "targetDomain": "synaptic",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "neuromorphic",
+      "sourceDomain": "neuromorphic",
+      "target": "devices",
+      "targetDomain": "devices",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "devices",
+      "sourceDomain": "devices",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "review",
+      "sourceDomain": "review",
+      "target": "with",
+      "targetDomain": "with",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "networks",
+      "sourceDomain": "networks",
+      "target": "with",
+      "targetDomain": "with",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "programmable",
+      "sourceDomain": "programmable",
+      "target": "with",
+      "targetDomain": "with",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "photonic",
+      "sourceDomain": "photonic",
+      "target": "with",
+      "targetDomain": "with",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "photonic",
+      "sourceDomain": "photonic",
+      "target": "the",
+      "targetDomain": "the",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "neuromorphic",
+      "sourceDomain": "neuromorphic",
+      "target": "recurrent",
+      "targetDomain": "recurrent",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "recurrent",
+      "sourceDomain": "recurrent",
+      "target": "with",
+      "targetDomain": "with",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "new-energy",
+      "sourceDomain": "new-energy",
+      "target": "as",
+      "targetDomain": "as",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "new-energy",
+      "sourceDomain": "new-energy",
+      "target": "despite",
+      "targetDomain": "despite",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "new-energy",
+      "sourceDomain": "new-energy",
+      "target": "progress",
+      "targetDomain": "progress",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "new-energy",
+      "sourceDomain": "new-energy",
+      "target": "clean",
+      "targetDomain": "clean",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "new-energy",
+      "sourceDomain": "new-energy",
+      "target": "metal",
+      "targetDomain": "metal",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "adhesive",
+      "sourceDomain": "adhesive",
+      "target": "and",
+      "targetDomain": "and",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "solid",
+      "sourceDomain": "solid",
+      "target": "and",
+      "targetDomain": "and",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "state",
+      "sourceDomain": "state",
+      "target": "and",
+      "targetDomain": "and",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "new-energy",
+      "sourceDomain": "new-energy",
+      "target": "dual",
+      "targetDomain": "dual",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "microfluidic",
+      "sourceDomain": "microfluidic",
+      "target": "for",
+      "targetDomain": "for",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "changes",
+      "sourceDomain": "changes",
+      "target": "and",
+      "targetDomain": "and",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "nuclear-energy",
+      "sourceDomain": "nuclear-energy",
+      "target": "non",
+      "targetDomain": "non",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "nuclear-energy",
+      "sourceDomain": "nuclear-energy",
+      "target": "electron",
+      "targetDomain": "electron",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "new",
+      "sourceDomain": "new",
+      "target": "non",
+      "targetDomain": "non",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "thin",
+      "sourceDomain": "thin",
+      "target": "a",
+      "targetDomain": "a",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "pathological",
+      "sourceDomain": "pathological",
+      "target": "of",
+      "targetDomain": "of",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "via",
+      "sourceDomain": "via",
+      "target": "a",
+      "targetDomain": "a",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "privacy-computing",
+      "sourceDomain": "privacy-computing",
+      "target": "research",
+      "targetDomain": "research",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "healthcare",
+      "sourceDomain": "healthcare",
+      "target": "research",
+      "targetDomain": "research",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "privacy-computing",
+      "sourceDomain": "privacy-computing",
+      "target": "personalized",
+      "targetDomain": "personalized",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "image",
+      "sourceDomain": "image",
+      "target": "a",
+      "targetDomain": "a",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "encryption",
+      "sourceDomain": "encryption",
+      "target": "a",
+      "targetDomain": "a",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "image",
+      "sourceDomain": "image",
+      "target": "in",
+      "targetDomain": "in",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "privacy-computing",
+      "sourceDomain": "privacy-computing",
+      "target": "edge",
+      "targetDomain": "edge",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "quantum-materials",
+      "sourceDomain": "quantum-materials",
+      "target": "enhances",
+      "targetDomain": "enhances",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['Journal Article']}]",
+      "target": "model",
+      "targetDomain": "model",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "an",
+      "targetDomain": "an",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['Journal Article']}]",
+      "target": "lt",
+      "targetDomain": "lt",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "computing",
+      "targetDomain": "computing",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "enhancing",
+      "targetDomain": "enhancing",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "objectives",
+      "targetDomain": "objectives",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['Review', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['Review', 'Journal Article']}]",
+      "target": "artificial",
+      "targetDomain": "artificial",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['Journal Article']}]",
+      "target": "learning",
+      "targetDomain": "learning",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "lt",
+      "sourceDomain": "lt",
+      "target": "i",
+      "targetDomain": "i",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "gt",
+      "sourceDomain": "gt",
+      "target": "i",
+      "targetDomain": "i",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['review-article', 'Review', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['review-article', 'Review', 'Journal Article']}]",
+      "target": "to",
+      "targetDomain": "to",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['Journal Article']}]",
+      "target": "two",
+      "targetDomain": "two",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "recent",
+      "targetDomain": "recent",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "digital",
+      "targetDomain": "digital",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['Journal Article']}]",
+      "target": "has",
+      "targetDomain": "has",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['research-article', 'Journal Article']}]",
+      "target": "genetech-tools",
+      "targetDomain": "genetech-tools",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['Journal Article']}]",
+      "target": "low-altitude",
+      "targetDomain": "low-altitude",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
+    },
+    {
+      "source": "[{'pubType': ['Journal Article']}]",
+      "sourceDomain": "[{'pubType': ['Journal Article']}]",
+      "target": "solid",
+      "targetDomain": "solid",
+      "relation": "co-occurrence",
+      "label": "共现 3 次",
+      "weight": 3
     }
   ],
   "edge_builder_stats": {
-    "entities_scanned": 1796,
-    "cooccurrence_pairs": 44503,
-    "new_edges_added": 0,
-    "total_edges": 78628,
+    "entities_scanned": 1877,
+    "cooccurrence_pairs": 46042,
+    "new_edges_added": 192,
+    "total_edges": 78820,
     "min_cooccurrence": 3,
     "max_edges": 5000
   }
