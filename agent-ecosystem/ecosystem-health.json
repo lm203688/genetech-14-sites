@@ -1,0 +1,73 @@
+{
+  "generatedAt": "2026-10-08T00:23:12.089Z",
+  "layers": {
+    "model": {
+      "status": "external-consumer",
+      "note": "使用外部 LLM API，仓库内无需托管模型"
+    },
+    "runtime": {
+      "apiGuard": true,
+      "unifiedLicense": true,
+      "deployDoc": true,
+      "status": "ready-source",
+      "deployPending": true
+    },
+    "orchestration": {
+      "present": true,
+      "actionable": 101,
+      "blocked": 0,
+      "totalGaps": 101,
+      "status": "ready"
+    },
+    "agentApp": {
+      "status": "ready",
+      "note": "30 站 + 数据飞轮 + guards"
+    },
+    "memory": {
+      "status": "ready",
+      "aoci": true
+    },
+    "tools": {
+      "present": true,
+      "name": "@genetech/data-mcp",
+      "version": "1.2.0",
+      "license": "MIT",
+      "status": "ready-source",
+      "publishPending": true
+    },
+    "governance": {
+      "expected": 3,
+      "present": 3,
+      "engineLoadable": true,
+      "status": "ready"
+    },
+    "observability": {
+      "status": "ready-baseline",
+      "note": "本模块 = 零依赖本地聚合基线"
+    },
+    "distribution": {
+      "status": "pending-user",
+      "note": "npm/Glama/Smithery 需用户账号"
+    }
+  },
+  "pipeline": {
+    "scanned": 68,
+    "ok": 0,
+    "fail": 0,
+    "lastRunTs": 1791098228585
+  },
+  "score": {
+    "selfDevelopableComplete": [
+      "orchestration",
+      "observability",
+      "memory",
+      "tools-source",
+      "governance",
+      "agentApp"
+    ],
+    "pendingUserAction": [
+      "runtime-deploy",
+      "distribution-publish"
+    ]
+  }
+}

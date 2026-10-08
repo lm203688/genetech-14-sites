@@ -1,0 +1,281 @@
+{
+  "generatedAt": "2026-10-08T00:19:32.799Z",
+  "cognition": {
+    "available": true,
+    "project": "知识引擎14站",
+    "hasMeta": true,
+    "hasCode": true,
+    "bytes": 296
+  },
+  "policy": {
+    "id": "publish-guard",
+    "version": 2,
+    "default": "deny"
+  },
+  "stats": {
+    "sites": 30,
+    "directedPairs": 870,
+    "pairsWithEdges": 769,
+    "gapPairs": 101,
+    "gapRatio": 0.1161,
+    "badRowsSkipped": 0,
+    "inferred": null
+  },
+  "summary": {
+    "totalGaps": 101,
+    "actionable": 101,
+    "blocked": 0,
+    "notManaged": 0,
+    "capacityBlocked": 0,
+    "topBridges": [
+      {
+        "from": "alien-minerals",
+        "to": "exo-science",
+        "edges": 2143
+      },
+      {
+        "from": "ai4science",
+        "to": "biocomputing",
+        "edges": 1204
+      },
+      {
+        "from": "ai-safety",
+        "to": "biomed-ai",
+        "edges": 1129
+      },
+      {
+        "from": "ai4science",
+        "to": "biomed-ai",
+        "edges": 766
+      },
+      {
+        "from": "ai-safety",
+        "to": "biocomputing",
+        "edges": 541
+      }
+    ]
+  },
+  "actionableTargets": [
+    {
+      "from": "agent-ecosystem",
+      "to": "low-altitude",
+      "target_site": "agent-ecosystem",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "agent-ecosystem",
+      "to": "neuromorphic",
+      "target_site": "agent-ecosystem",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "agent-ecosystem",
+      "to": "semiconductor",
+      "target_site": "agent-ecosystem",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "biomed-ai",
+      "to": "exo-science",
+      "target_site": "biomed-ai",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "bionic-ai",
+      "to": "exo-science",
+      "target_site": "bionic-ai",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "bionic-ai",
+      "to": "low-altitude",
+      "target_site": "bionic-ai",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "bionic-ai",
+      "to": "nuclear-energy",
+      "target_site": "bionic-ai",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "brain-science",
+      "to": "low-altitude",
+      "target_site": "brain-science",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "brain-science",
+      "to": "new-energy",
+      "target_site": "brain-science",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "brain-science",
+      "to": "nuclear-energy",
+      "target_site": "brain-science",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "brain-science",
+      "to": "privacy-computing",
+      "target_site": "brain-science",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "brain-science",
+      "to": "quantum-computing",
+      "target_site": "brain-science",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "brain-science",
+      "to": "quantum-materials",
+      "target_site": "brain-science",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "brain-science",
+      "to": "sat-6g",
+      "target_site": "brain-science",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "brain-science",
+      "to": "semiconductor",
+      "target_site": "brain-science",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "brain-science",
+      "to": "synbio-manufacturing",
+      "target_site": "brain-science",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "carbon-neutral",
+      "to": "sat-6g",
+      "target_site": "carbon-neutral",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "deep-sea-tech",
+      "to": "tcm-tools",
+      "target_site": "deep-sea-tech",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "edge-ai",
+      "to": "low-altitude",
+      "target_site": "edge-ai",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    },
+    {
+      "from": "embodied-ai",
+      "to": "carbon-neutral",
+      "target_site": "embodied-ai",
+      "combinedSize": 20000,
+      "managed": true,
+      "capacity": "unknown-assumed-ok",
+      "decision": "allow",
+      "reason": "常规批次：站点在白名单、有新增、未超容量、三道守卫齐备",
+      "rule_id": "allow-normal-batch"
+    }
+  ],
+  "blockedTargets": []
+}
