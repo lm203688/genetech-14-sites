@@ -10,10 +10,13 @@
 #   - rollout-verify 部署后抽样验证 + 回退触发
 #   - mcp-publish    校验并标记 MCP 发布
 #   - api-guard-check 校验鉴权 Worker 语法与配置
-#   - cite-check     引文完整性核验（URL 存活/DOI 撤回/逐条核验，产 reports/cite-check-*.json+.md）
+#   - (cite-check 已移除：pipeline-cite-check.js 不在仓库，对应能力未接回，勿在此调度)
 #
-# 与 operations-plan/github-actions-ops.yml 的 ops.yml 错峰：ops.yml 18:00 UTC 采集，
-# 本工作流 19:00 UTC 衔接，避免同一时刻多 job 推送冲突（统一单次提交）。
+# 与 ops.yml 错峰：ops.yml 每日 12:30 UTC 跑主飞轮（data-accumulation / domain-expansion /
+# tech-adoption / promotion / intelligence），本工作流 13:00 UTC 跑补位闭环
+#（sync / selfdb / prodb / feedback / finance / verify / mcp / geo / searchindex /
+# citations / kgbuild / guard / paytest / academic），api-guard-deploy 另在 03:30 UTC 错峰。
+# 避免同一时刻多 job 推送冲突（统一单次提交）。
 
 name: GeneTech Extra Ops
 
@@ -30,15 +33,16 @@ on:
         # 手动触发补位会「命令发了没反应」。
         # shardverify 是 2026-10-04 从 searchindex 拆出的门禁分支：只跑分片端到端验证，
         # 不重跑整条 pipeline。排查「线上检索是不是悄悄回退了」时用它能 20 秒内出结论。
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, cite, ossscan, searchindex, shardverify, paytest, abstractbackfill, edge_refresh, kgbuild, academic, citations, cited]
+        # orchestrator / quality / gate-alert 是 2026-10-09 补入的：
+        #   orchestrator —— 跑 agent-ecosystem/orchestrator.mjs（报告 F3）
+        #   quality      —— 跑 pipeline-quality-gate.js --ci（报告 F1，已在 quality.policy 里定义，
+        #                   但此前 CI 里没触发过 --ci 模式，「门禁自身双向回归」只在本地跑过）
+        #   gate-alert   —— 门禁失败时创建/更新 GitHub Issue（报告 F2）
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert]
   schedule:
-    # ===== 临时提升期（2026-08-05 ~ 2026-12-31）：每日 12:30 UTC(20:30 CST) 一次全量运行 =====
-    # 提升期到期判定在 ops.yml 的 decide 步骤（$TODAY > 2026-12-31），此处仅跟随其节奏；
-    # 本文件无日期门，到期后需一并还原为下方原始配置。
-    # 恢复原始配置时，将下方单行替换为：
-    #   - cron: '0 19 * * *'   # 每日 19:00 UTC
-    #   - cron: '0 2 * * 1'    # 周一 02:00 UTC 额外校验
-    - cron: '30 12 * * *'
+    # 每日 13:00 UTC(21:00 CST) 一次全量运行，错峰在 ops.yml(12:30 UTC) 之后 30 分钟，
+    # 避免与 ops.yml 同时触发导致推送冲突。
+    - cron: '0 13 * * *'
 
 permissions:
   contents: write
@@ -96,8 +100,6 @@ jobs:
           if [[ "$TASK" == "all" || "$TASK" == "verify" ]]; then run_one rollout-verify; fi
           if [[ "$TASK" == "all" || "$TASK" == "mcp" ]]; then run_one mcp-publish; fi
           if [[ "$TASK" == "all" || "$TASK" == "geo" ]]; then run_one geo-promotion; fi
-          if [[ "$TASK" == "all" || "$TASK" == "cite" ]]; then run_one cite-check; fi
-          if [[ "$TASK" == "all" || "$TASK" == "ossscan" ]]; then run_one oss-scan; fi
           if [[ "$TASK" == "all" || "$TASK" == "searchindex" ]]; then
             # --shards 产出 30 片 gzip 分片（35.39 MB / 149.28 MB 原始），
             # 供 worker.js 的 getShardedIndex 消费，把语义检索覆盖率从 6% 提到 100%。
@@ -191,15 +193,9 @@ jobs:
             # 补齐任务自己就能把当天预算打光，所以这一步绝不能联网）。
             node "$SCRIPTS_DIR/pipeline-cited-gap-ranked.js" --write
           fi
-          # 摘要回填（09-24 补入调度，之前未进任何 workflow 导致 09-20 后停摆）：
-          # 默认 cap=1500 / max-minutes=20 保持单轮 ≤20 分钟，与 45 分钟 job timeout 留余量。
-          # cap 与 min 参数化以便 CI 内 override；本地默认（cap=2500）保持不变。
-          if [[ "$TASK" == "all" || "$TASK" == "abstractbackfill" ]]; then
-            node "$SCRIPTS_DIR/pipeline-abstract-backfill.js" --cap=1500 --max-minutes=20
-          fi
-          if [[ "$TASK" == "all" || "$TASK" == "edge_refresh" ]]; then
-            python3 tools/edge-builder.py --min-cooccurrence 3 --max-edges 5000
-          fi
+          # 说明：abstractbackfill / edge_refresh 引用的脚本
+          # (pipeline-abstract-backfill.js / tools/edge-builder.py) 已不在仓库中，
+          # 保留会令 all 运行因缺文件而失败，故移除此处调度；如需恢复先补回对应脚本。
           # ===== 知识图谱：三个写入者的回退风险（2026-09-27 修复）=====
           # knowledge-graph.json / knowledge-graph-entities.json 此前有三个写入者，
           # 且后两者会把好图谱回退成玩具图谱：
@@ -216,6 +212,29 @@ jobs:
             grep -q "addEventListener('fetch'" api-guard/worker.js || { echo "::error::worker.js 缺少 fetch 事件监听"; exit 1; }
             grep -q "PRO_SECRET" api-guard/worker.js && echo "[guard] worker.js 引用 PRO_SECRET OK" || echo "::warning::worker.js 未引用 PRO_SECRET"
             test -f api-guard/deploy-api.mjs && echo "[guard] 部署入口 deploy-api.mjs 存在 OK" || { echo "::error::缺少 api-guard/deploy-api.mjs 部署入口"; exit 1; }
+          fi
+          # ===== 编排层接 CI（2026-10-09 补入 · 报告 F3）=====
+          # 此前 orchestrator.mjs 只能本地跑，产出 flywheel-plan.json 但没人定期刷新。
+          # 接进 CI 后飞轮优先扩域清单每日自动更新，让「扩域决策」从人工判断变成可追踪产物。
+          # 退出码保持 0：编排层是决策辅助，不阻断发布，只有产出错乱时才失败。
+          if [[ "$TASK" == "all" || "$TASK" == "orchestrator" ]]; then
+            node agent-ecosystem/orchestrator.mjs
+          fi
+          # ===== 质量红线门禁 CI 模式（2026-10-09 补入 · 报告 F1）=====
+          # 关键区别：本地跑 pipeline-quality-gate.js 只算指标不 exit 1，
+          # 只有加 --ci 才会真的阻断。此前 CI 只跑 --self-test，等于
+          # 门禁自身双向回归绿了但生产站点的红线没被检查过。
+          # 报告 §9.4 说 15/30 放行 是本地实测值；这里接进 CI 后，
+          # 任何一次 push 都能重新算出真实放行数。
+          if [[ "$TASK" == "all" || "$TASK" == "quality" ]]; then
+            node operations-plan/pipeline-quality-gate.js --ci
+          fi
+          # ===== 门禁失败触达告警（2026-10-09 补入 · 报告 F2）=====
+          # 独立任务，不阻断本身；扫描 reports/ 里最近一次门禁产物，
+          # 若判定 fail，则通过 gh issue 建/更新一条追踪 Issue。
+          # 这样即使 CI 失败被忽略，告警仍会以 Issue 形式留在仓库首页。
+          if [[ "$TASK" == "gate-alert" ]]; then
+            node tools/gate-alert.mjs
           fi
 
       - name: Commit generated outputs

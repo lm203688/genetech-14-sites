@@ -1,0 +1,42 @@
+# GeneTech 14 站 gitleaks 配置
+# 位置: .gitleaks.toml
+#
+# 说明：默认继承 gitleaks 内置规则集（GitHub / AWS / Slack / OpenAI / Anthropic /
+# Stripe 等 60+ 常见格式）。本项目额外配置：
+#   1. paths allowlist：让 gitleaks 跳过明显的示例文件与 fixtures，降低误报；
+#   2. entropy rule：对随机字符串阈值收紧一档（4.5 → 5.0），避免把长 base64 数据段
+#      当 secret；
+#   3. customIgnore 段（在 .gitleaks.toml 之外）：允许 .gitignore 已挡住的路径。
+#
+# 为什么不用仓库级 .gitleaksignore 单独一个文件
+#   gitleaks 2.x 已经不再推荐 .gitleaksignore（旧文件名），统一配置项在 .gitleaks.toml
+#   的 paths.allowlist 里。历史项目里那些 .gitleaksignore 是 1.x 时代的写法，不迁移会
+#   让 CI 报"配置无效"而假绿。
+
+title = "Genetech 14 Sites gitleaks config"
+
+[allowlist]
+description = "允许通过的路径与模式（示例文件、fixtures、docs 片段）"
+# 例：docs 里作为展示用途粘贴的 base64、fixture key
+paths = [
+  '''\.env\.example$''',
+  '''\.env\.template$''',
+  '''package-lock\.json$''',
+  '''node_modules/''',
+  '''\.git/''',
+  '''dist/''',
+  '''build/''',
+  '''_site''',
+  '''fixtures?/''',
+  '''\.workbuddy/''',
+  '''\.backups/''',
+]
+
+# entropy rule 收紧一档：gitleaks 默认对 4.5 熵的长串判为可疑，但项目里
+# base64 分片索引（每站 gzip shard 的 sha256）大量出现，会被误判。提到 5.0。
+[[rules.entropy]]
+entropy = "5.0"
+minSpan = "20"
+
+# 保留 gitleaks 默认规则集（自动导入 gitleaks.toml 内置规则），这里不再重复声明。
+# 项目自定义规则可加在此处（未来如需专门针对虎皮椒 app_id 之类）。

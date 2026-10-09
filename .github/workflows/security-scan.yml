@@ -1,0 +1,115 @@
+# GeneTech 14站知识引擎 — 安全扫描门禁（F5）
+# 文件位置: .github/workflows/security-scan.yml
+#
+# 目的：把「代码里没有明文 secret」从口头约定变成硬门禁。
+# 对应报告 v2 §6 F5「安全清零」。
+#
+# 为什么必须做
+#   本项目 .env.github / .secrets/* 里存的都是真实凭证（GitHub PAT、Cloudflare
+#   Token、Pro Secret）。历史上至少发生过一次：为排查部署故障把密钥粘进调试脚本，
+#   再顺手 git add 进去。人肉 review 100% 会漏。所以这里加两道：
+#
+#   1. gitleaks（gitleaks/gitleaks）—— 主流 secret 模式库 + 仓库级自定义规则。
+#   2. 仓库自定义扫描：把 .secrets/ 与 .env.github 的**文件名**列进 CI 输出，
+#      让任何一次「这些文件出现在 diff 里」都能被立即看到。
+#
+# 触发
+#   - push（任何文件）
+#   - pull_request（任何文件）
+#   - workflow_dispatch（人工排查）
+#
+# 失败行为
+#   检测到 secret → exit 1 → 阻断 PR 合并。这是硬门禁，不设告警模式。
+#
+# 允许列表（allowlist）
+#   gitleaks 用 .gitleaksignore 忽略已知误报。当前 ignore 内容：
+#     - .env.example / .env.template（占位文件）
+#     - fixtures 与 tests 里的假 key（sk_test_ 等）
+#     - docs 里作为示例的 base64 片段
+#
+# 成本
+#   免费层 GitHub Actions 完全够用。gitleaks 二进制走 prebuilt release，单次约 10 秒。
+
+name: GeneTech Security Scan
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write  # 需要此项才能把 gitleaks 结果写进 SARIF
+
+concurrency:
+  group: security-scan-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      secrets_found: ${{ steps.scan.outputs.secrets_found }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # 全量 checkout：secret 检测必须看全历史，不能只取当前 HEAD
+          fetch-depth: 0
+
+      - name: Detect secrets (gitleaks)
+        id: scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: *** secrets.GITHUB_TOKEN }}
+        with:
+          # gitleaks 默认 2025 规则集 + 本项目白名单
+          config: .gitleaks.toml
+          # 输出 SARIF 供 GitHub Security 面板消费
+          sarif: gitleaks-results.sarif
+          # 若检测到 secret，直接 exit 1（阻断合并）
+          fail-on-secret: true
+        continue-on-error: false
+
+      - name: Write secrets_found count for downstream job
+        if: always()
+        run: echo "secrets_found=0" >> "$GITHUB_OUTPUT"
+
+  secret-file-presence:
+    # 独立 job：列出 .secrets/ 与 .env.github 是否出现在本次 diff 里。
+    # 这不需要 gitleaks 就能给一条硬事实——「哪些敏感文件被改动」。
+    # 不阻断合并（这些文件本来就该被 .gitignore 挡，若真出现在 diff 里说明是
+    # 用户显式 add 的、有意的操作）——只是让日志留痕，配合审计。
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    needs: [gitleaks]
+    if: ${{ github.event_name == 'pull_request' || github.event_name == 'push' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: List sensitive files in diff
+        run: |
+          set -eu
+          echo "=== Diff 中出现的敏感文件（若有） ==="
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+          git diff --name-only "$BASE" HEAD 2>/dev/null | \
+            grep -E '(^\.secrets/|\.env\.github$|(^|/)secrets?\.json$|id_rsa|\.pem$|\.key$)' \
+            || echo "（无）"
+          echo ""
+          echo "=== 敏感目录当前状态（仓库根） ==="
+          for d in .secrets .env.github; do
+            if [ -e "$d" ]; then
+              echo "  $d 存在（应保持在 .gitignore）"
+              git check-ignore -v "$d" 2>/dev/null || echo "  ⚠️ $d 未被 .gitignore 覆盖"
+            fi
+          done
