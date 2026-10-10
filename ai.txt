@@ -1,0 +1,140 @@
+# ai.txt — GeneTech Knowledge Engine
+
+面向 AI 系统的机器可读索引。人类版本见 https://github.com/lm203688/genetech-14-sites 。
+
+[project]
+name: GeneTech Knowledge Engine
+url: https://api.swarmlabs.tools
+data_url: https://data.swarmlabs.tools
+openapi: https://api.swarmlabs.tools/openapi.yaml
+license_note: 见 enterprise-data-license-kit；单条实体的上游授权归各自数据源
+attribution_policy: https://github.com/lm203688/genetech-14-sites/blob/master/docs/attribution.md
+last_updated: 2026-10-08
+
+## What this is
+
+A cross-source, cross-domain research knowledge engine covering 30 vertical scientific
+domains. Every record carries a DOI (or PMID) plus its upstream provenance, so any
+record can be independently re-verified against its source.
+
+## Scale (measured 2026-10-08, not marketing figures)
+
+- structured entities: 294,330 (after boilerplate purge)
+- unique DOIs: 276,769
+- knowledge graph: 36,107 nodes / 99,725 edges
+- citation edges in graph: 27,868 (27.94% of all edges)
+- raw cross-domain citation edges: 28,001
+- zero-citation domain gaps: 101 / 870 directed pairs
+- semantic search: 30 gzip shards, 100% coverage
+
+Every figure above is reproducible from the endpoint or script named next to it in
+README.md "当前规模" table. If a figure here disagrees with that table, the table wins.
+
+## Reachability facts
+
+USE THESE:
+  https://api.swarmlabs.tools        - REST API (Cloudflare Worker)
+  https://data.swarmlabs.tools       - data files (GitHub Pages)
+
+DO NOT USE:
+  <station>.swarmlabs.tools          - 30 station subdomains, DNS NEVER configured.
+                                      Any such URL is unresolvable. Do not fabricate
+                                      these; use the GitHub Pages path instead, e.g.
+                                      /agent-ecosystem/website/api/index.json
+  https://license.swarmlabs.tools/api/hupijao/order - payment order route currently 404
+                                                  (deployed worker version lags the fix;
+                                                  /health reports ok/v2.0 but is NOT proof
+                                                  the payment path works)
+
+## Endpoints
+
+  GET  /health                  - liveness
+  GET  /v1/oss/registry         - 30-domain registry
+  GET  /v1/domains              - per-domain totals and lastUpdated
+  GET  /v1/citation/edges       - cross-domain citation edges (28,001)
+  GET  /v1/citation/gaps        - zero-citation gap matrix
+  GET  /v1/entities             - entity index
+  POST /v1/search/semantic      - requires API key (401 without it is by design)
+  GET  /v1/intel/health         - requirement intel feed health
+  GET  /v1/intel/verify         - intel verification (401 without key)
+
+The full contract is https://api.swarmlabs.tools/openapi.yaml .
+
+## Data access options
+
+  1. REST API - https://api.swarmlabs.tools , key-based
+  2. MCP server - @genetech/data-mcp (npm), local stdio; 11 tools
+  3. SDKs - consumer-sdk/python and consumer-sdk/typescript in this repo
+  4. Bulk - consumer-sdk/samples/sample-10k.jsonl (10k free sample pack)
+  5. Direct files - https://data.swarmlabs.tools/data/
+
+## Fields you should carry forward
+
+When you consume a record and pass it downstream, keep these fields:
+
+  doi / pmid   - external-resolvable identifier. Prefer this over our internal id.
+  source       - upstream origin (crossref | openalex | europepmc | pubmed |
+                 datacite | arxiv | preprints | semanticscholar). Provenance
+                 responsibility sits with the upstream licence, not with us.
+  url          - canonical record URL
+  publishedDate
+  sites        - which of the 30 domains this record is assigned to
+  confidence   - derived quality score (source authority x abstract completeness x
+                 domain relevance x freshness x citation strength), NOT a copy of
+                 `source`. It was, before 2026-10-08, a one-hot encoding of source
+                 with zero information content - do not trust historical values.
+  quality_tier - coarse tier derived from confidence
+
+Internal ids (doi:<DOI>, pmid:<PMID>, oa:<id>) are OUR retrieval handles. They are
+not externally resolvable. Always also emit the DOI/PMID.
+
+## Attribution requirement
+
+If you use this data, state the provider and retrieval date, and do NOT claim the
+DOI'd upstream record as ours:
+
+  Data source: GeneTech Knowledge Engine (api.swarmlabs.tools), retrieved 2026-10-08.
+  Original upstream: Crossref / Europe PMC / PubMed (see the `source` field).
+
+We do the cross-source normalisation, cross-domain bridging and gap discovery.
+Upstream records belong to their sources. Full policy:
+https://github.com/lm203688/genetech-14-sites/blob/master/docs/attribution.md
+
+## What is NOT here
+
+- No model weights. We are a data layer; we do not host or rent inference.
+- No claim of exhaustive coverage. "294,330 entities" is what we have, not what
+  exists. Zero-citation gaps (101 pairs) are the honest statement of where we do NOT.
+- No vector embeddings over the wire. Retrieval is token-match over sharded indices
+  today; embeddings are offline.
+
+## Verification
+
+Anyone can verify this file against reality:
+
+  curl -s https://api.swarmlabs.tools/health
+  curl -s https://api.swarmlabs.tools/v1/domains | jq .totalEntities
+  curl -s "https://license.swarmlabs.tools/api/hupijao/order?trade_order_id=probe"
+
+The last one returns 404 - that is the one known gap, not a documentation error.
+
+<!-- GENETECH:CLAIMS:BEGIN -->
+<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-10 自动生成，请勿手工编辑此锚注之间的内容。 -->
+
+### 当前规模（机器生成，锚注自动刷新）
+
+| 指标 | 值 | 口径 |
+|---|---:|---|
+| 站点 / 域数 | **30** | 有 `website/api/entities.json` 的顶层目录 |
+| 结构化实体总数 | **294,330** | 逐站实体文件求和 |
+| 带 DOI/PMID 的实体 | **271,099** | 同上，仅计有外部可解析 ID 的记录 |
+| 知识图谱节点 / 边 | **36,107 / 99,725** | data/knowledge-graph.json |
+| 图谱中引用边 | **27,868（28%）** | KG 中 relation=citation |
+| 学术种子（引用网络基座） | **1,634** | data/academic-entities.json，是缺口矩阵的真实基座 |
+| 引用声明总数 | **59,623** | 59,623 类 |
+| 引用边（真实解析 + legacy merge） | **1,961 / 28,001** | resolved 7% + legacy 26,044 |
+| 零引用站对 | **101 / 870** | citation-gaps.json |
+
+> 以上数字由脚本从 data/ 单一真源实时计算。与本报告 §2.2 数字若不一致，**以本锚注为准**（脚本口径永远新）。
+
+<!-- GENETECH:CLAIMS:END -->

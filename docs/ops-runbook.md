@@ -1,4 +1,4 @@
-# GeneTech 14 站知识引擎 · 运维手册（Ops Runbook）
+# GeneTech 30 站知识引擎 · 运维手册（Ops Runbook）
 
 > 配套 `project-comprehensive-review.md` §4。目的：把"哪些 AI 自动做、哪些你本机做"钉死，定义告警阈值与升级路径，降低单人 ops 依赖。
 

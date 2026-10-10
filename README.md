@@ -19,15 +19,60 @@ curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩�
 > 因此本项目的验收标准从来不是「抓得更多」，而是「**每一条都能被解释、被反驳、被替换**」——
 > 上游源挂了要能换源续跑，门禁红了必须阻断发布，而不是让错误数据悄悄上线。
 
-**当前规模（实测，非宣称）**
+**当前规模（实测，非宣称；每个数字都带来源，2026-10-08 复核）**
 
-| 资产 | 规模 | 门禁 |
+| 资产 | 规模 | 来源 / 门禁 |
 |---|---|---|
-| 结构化实体 | 300,000（30 域 × 10,000） | 产物契约门禁 |
-| 唯一 DOI | 276,769（23,231 个是重复占位） | `verify-shard-fidelity.mjs` |
-| 跨域引用边 | 27,340（751 个有向域对） | 缺口矩阵 119/870 零引用（13.7%） |
+| 结构化实体 | 294,330（清理前置页噪声后） | `pipeline-quality-gate.js` |
+| 唯一 DOI | 276,769 | `verify-shard-fidelity.mjs` |
+| 知识图谱 | 36,107 节点 / 99,725 边 | `build-knowledge-graph.mjs` |
+| └ 其中引用边 | **27,868 条（占边总数 27.94%）** | 本次并入，验收判据 ≥20% |
+| 跨域引用边（原始） | 28,001 | `GET /v1/citation/edges` 线上实测 |
+| 零引用域缺口 | 101 / 870 有向域对 | `GET /v1/citation/gaps` 线上实测 |
 | 语义检索 | 30 个 gzip 分片 / 覆盖率 100% | `verify-shard-live.mjs`（exit 2/3） |
 | 扩库候选池 | 48,643 个被引DOI / 7,762 个期刊 | `pipeline-cited-gap-ranked.js` |
+
+> **为什么每个数字都带来源**：v1/v2 两轮全量扫描的三个 P0（飞轮冻结、支付未部署、对外宣称偏离）
+> 根因是同一个——**对外数字没有可复现的来源**。今后任何对外数字都必须写明"由哪个端点或哪个脚本产出"。
+> 复核入口：[`reports/verify-online.md`](reports/verify-online.md)。
+
+### 能力声明与事实边界（2026-10-10 硬锚定，勿改口径）
+
+以下**是我们**对外常提到的三条差异化能力，但截至 2026-10-10 实测**并未真正落地**，或建立在一个非常薄的基座上。任何对外物料、评审问答、BD 提案都必须**同时**呈现这两列，不能只挑左边讲。
+
+| 宣称的能力 | 实测状态 | 事实锚点 |
+|---|---|---|
+| 跨源实体解析（同一篇论文在 OpenAlex / Crossref / PubMed 的不同 ID 合并） | ❌ **未实现** | 仅站内 `dedupeKey = doi:` / `标题#作者`；跨源 ER 无产出。参见 `data/claims.json` 与 v2 报告 §5.1 |
+| 引用立场抽取（"支持 / 反驳 / 提及"三分类） | ❌ **无** | 引用网络只到"引用了谁"，无"如何引用"。对照 Scite（1.2B 引用陈述）。参见 v2 报告 §4.1 |
+| 向量检索（RAG 混合召回） | ❌ **无** | 目前 BM25 + 字段加权 + RRF token 匹配，无 embedding。参见 v2 报告 §4.1 |
+| 引用网络基座厚度 | 🟠 **1,634 条学术种子** | `data/academic-entities.json`。引用边 28,001 中真正由引用声明解析出的**仅 1,961 条（7%）**，其余 26,044 条来自 legacy merge。参见 `data/citation-edges.json` `stats` 段 |
+| 零引用站对（研究空白候选） | 🟠 **101 / 870，建立在薄网络上** | `data/citation-gaps.json`。**"零引用可能是我们没抓到"**——见 `citation_gaps` 工具返回的 `interpretation` 字段与 v2 报告 §5.2 |
+| 跨源归一 | ❌ **未落地**（站内去重 0.00%） | 8 源记录几乎不重叠，无跨源归一可做。参见 v2 报告 §5.1 |
+| 中文政产学融合 | ❌ **未落地** | 全部实体来自英文源，无 CNKI / 万方 / CSCD。参见 v2 报告 §5.1 |
+
+> **判定**：本项目的"平台侧"接近完整（API / 治理 / 编排 / 可观测），"知识侧"（ER / 立场 / 向量 / 证据抽取）**尚未开工**。详见 [`reports/项目全面评估与硬科技深度提升综合报告-2026-10-10.md`](reports/项目全面评估与硬科技深度提升综合报告-2026-10-10.md) §5（技术壁垒的真相）与 §8（Tier 1 硬科技路线图）。
+
+**可达性事实（哪些地址真的存在，别写错）**
+
+| 地址 | 状态 |
+|---|---|
+| `https://api.swarmlabs.tools` | ✅ 在线（Worker） |
+| `https://data.swarmlabs.tools` | ✅ 在线（GitHub Pages 直出） |
+| `https://license.swarmlabs.tools` | ✅ 在线（Worker，但 `/api/hupijiao/order` 仍 404，见下） |
+| `<站>.swarmlabs.tools`（30 个站点子域，如 `quantum-computing.swarmlabs.tools`） | ❌ **DNS 无记录，从未配置** |
+
+30 个站点的**站点子域从未配置 DNS**。对外文案一律用 `api.swarmlabs.tools` / `data.swarmlabs.tools`，
+**不要写 `<站>.swarmlabs.tools`**——那是 10 秒可证伪的宣称。
+`operations-plan/pipeline-domain-claim-guard.js` 会在 CI 里扫出任何这类文案并让门禁变红。
+
+站点本身通过 GitHub Pages **路径**可达（`/agent-ecosystem/website/api/index.json` 等），
+见 `GET /v1/domains` 返回的 `index` / `entities` 相对路径。
+
+> **支付状态（唯一仍在流血的 P0）**：`license.swarmlabs.tools/health` 返回
+> `{"status":"ok","version":"2.0"}`，但 `/api/hupijao/order?trade_order_id=x` 返回
+> `404 {"status":"not_found"}` —— 健康检查通过 ≠ 支付链路可用，这是"部署版本落后"，不是服务故障。
+> 该路由 404 会让用户以为"查不到订单"从而重复下单。修复代码已在仓库并通过 CI，
+> 上线需 `npx wrangler deploy`（浏览器 OAuth，无法代跑）。步骤见 `unified-license/DEPLOY-NOW.md`。
 
 **许可**：代码 MIT（见 [`LICENSE`](LICENSE)）；数据产物版权归原出版方，商业使用需授权。
 
@@ -126,7 +171,7 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 
 ## 当前真实状态（诚实标注）
 
-- ✅ 全量上线 GitHub Pages，14 站可访问
+- ✅ 全量上线 GitHub Pages，30 站可访问
 - ✅ 数据飞轮修复完成，SEO 14/14 文章完成
 - ✅ License 双端点故障转移上线（虎皮椒支付）
 - ⚠️ CI 偶发 break（数据契约校验 + 看门狗）—— 已知待修
@@ -134,3 +179,24 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 - 🔲 企业付费全链路 demo（P2）—— 需真实客户，模板已备
 
 > 引擎目录（`operations-plan/`、`shared/`、`unified-license/`、`api-guard/`、`tools/build-site.mjs`）按 2026-08-21「混合回退模式」**保留入库作为 CI 公开兜底引擎**；私有仓 `genetech-14-engine` 可用时优先，不可用时回退本仓副本，确保 Secrets 未配时不致全线停摆。
+
+<!-- GENETECH:CLAIMS:BEGIN -->
+<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-10 自动生成，请勿手工编辑此锚注之间的内容。 -->
+
+### 当前规模（机器生成，锚注自动刷新）
+
+| 指标 | 值 | 口径 |
+|---|---:|---|
+| 站点 / 域数 | **30** | 有 `website/api/entities.json` 的顶层目录 |
+| 结构化实体总数 | **294,330** | 逐站实体文件求和 |
+| 带 DOI/PMID 的实体 | **271,099** | 同上，仅计有外部可解析 ID 的记录 |
+| 知识图谱节点 / 边 | **36,107 / 99,725** | data/knowledge-graph.json |
+| 图谱中引用边 | **27,868（28%）** | KG 中 relation=citation |
+| 学术种子（引用网络基座） | **1,634** | data/academic-entities.json，是缺口矩阵的真实基座 |
+| 引用声明总数 | **59,623** | 59,623 类 |
+| 引用边（真实解析 + legacy merge） | **1,961 / 28,001** | resolved 7% + legacy 26,044 |
+| 零引用站对 | **101 / 870** | citation-gaps.json |
+
+> 以上数字由脚本从 data/ 单一真源实时计算。与本报告 §2.2 数字若不一致，**以本锚注为准**（脚本口径永远新）。
+
+<!-- GENETECH:CLAIMS:END -->

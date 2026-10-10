@@ -1,7 +1,7 @@
 {
   "$schema": "https://glama.ai/mcp/servers/schema.json",
   "name": "GeneTech Data Engine",
-  "displayName": "GeneTech 数据引擎 — 14 站前沿科技知识库 MCP",
+  "displayName": "GeneTech 数据引擎 — 30 站前沿科技知识库 MCP",
   "description": "Real-time knowledge-base MCP server for the GeneTech 14-site science engine. Lets external AI agents query, search, filter and cite curated entities across 30 vertical domains (genetics, quantum computing, brain science, AI agents, new energy, nuclear energy, TCM tools, and more). Data is continuously collected from PubMed, arXiv, OpenAlex, Crossref, GitHub and HuggingFace and refreshed by an automated ops pipeline.",
   "shortDescription": "Query, search, cite and map research gaps across 30 vertical science knowledge bases from any AI agent.",
   "version": "1.2.0",

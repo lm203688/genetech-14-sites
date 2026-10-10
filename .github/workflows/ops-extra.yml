@@ -38,7 +38,15 @@ on:
         #   quality      —— 跑 pipeline-quality-gate.js --ci（报告 F1，已在 quality.policy 里定义，
         #                   但此前 CI 里没触发过 --ci 模式，「门禁自身双向回归」只在本地跑过）
         #   gate-alert   —— 门禁失败时创建/更新 GitHub Issue（报告 F2）
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert]
+        # gapsbriefing   —— 2026-10-09 补入，跑 pipeline-citation-gaps-briefing.js（报告 B4，
+        #                   把 gapPairs 数学事实转成「假设+反驳条件」候选清单，月度自动出报告）
+        # docsclaims    —— 2026-10-10 补入（v2 报告 §9.3 / M4 治理），
+        #                   跑 pipeline-docs-claims.js --verify 阻断 anchor 漂移：
+        #                   凡是在 README.md / ai.txt / mcp-server/README.md 的
+        #                   GENETECH:CLAIMS:BEGIN/END 锚注之间的内容必须与
+        #                   data/claims.json（从 data/ 单一真源实时算出）逐字一致，
+        #                   否则 CI 变红，从机制上防止"人工文案漂移"复发。
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims]
   schedule:
     # 每日 13:00 UTC(21:00 CST) 一次全量运行，错峰在 ops.yml(12:30 UTC) 之后 30 分钟，
     # 避免与 ops.yml 同时触发导致推送冲突。
@@ -173,6 +181,12 @@ jobs:
             # 消费方要自己遍历 25k 条边才能问出「哪两个域之间一条引用都没有」。
             # 顺序不可颠倒：gaps 是 edges 的纯下游，edges 没写成功就不能产出矩阵。
             node "$SCRIPTS_DIR/pipeline-citation-gaps.js"
+            # ===== 跨域空白月度简报（2026-10-09 补入 · 报告 B4）=====
+            # 直接跑在 citations 之后：pipeline-citation-gaps.js 产出 data/citation-gaps.json
+            # 本脚本把 gapPairs 从"零引用数学事实"转成"假设+反驳条件"候选清单，
+            # 产出 reports/cross-domain-gaps-<YYYY-MM>.{md,json}。
+            # 顺序不能颠倒：本脚本强依赖 citation-gaps.json，跑在前面会读到旧文件。
+            node "$SCRIPTS_DIR/pipeline-citation-gaps-briefing.js"
           fi
           # ===== 被引文档补齐（2026-10-04 补入）=====
           # ⚠️ 本段**只在手动派发 cited 时跑，不进 all**。三个原因，每个都足以让每日 CI 变红：
@@ -235,6 +249,21 @@ jobs:
           # 这样即使 CI 失败被忽略，告警仍会以 Issue 形式留在仓库首页。
           if [[ "$TASK" == "gate-alert" ]]; then
             node tools/gate-alert.mjs
+          fi
+          # ===== 跨域空白月度简报（2026-10-09 补入 · 报告 B4）=====
+          # 独立任务，可在手动派发 task=gapsbriefing 时单独跑（跳过 citation pipeline）。
+          # 与 all 模式里 citations 分支的简报产出同脚本，此处保证"只刷新简报、不重跑引用边"的场景可用。
+          if [[ "$TASK" == "gapsbriefing" ]]; then
+            node "$SCRIPTS_DIR/pipeline-citation-gaps-briefing.js"
+          fi
+          # ===== 对外数字自动化门禁（2026-10-10 补入 · 报告 §9.3 / M4 治理）=====
+          # 治「对外口径偏离模式化复发」的根：README.md / ai.txt / mcp-server/README.md
+          # 三个对外文档都有 GENETECH:CLAIMS:BEGIN/END 锚注，锚注之间的内容**必须由**
+          # pipeline-docs-claims.js 从 data/ 单一真源实时算出、逐字一致。
+          # 漂移即 CI 变红，杜绝人工文案再漂（M4 三处偏离：4.9 万 / 14 站 / 22 域）。
+          # 独立任务，不阻断本身；每日 all 模式也会跑，保证产物持续刷新。
+          if [[ "$TASK" == "all" || "$TASK" == "docsclaims" ]]; then
+            node "$SCRIPTS_DIR/pipeline-docs-claims.js" --verify
           fi
 
       - name: Commit generated outputs

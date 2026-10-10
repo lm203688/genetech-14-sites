@@ -1,7 +1,7 @@
 # GeneTech 数据引擎 MCP Server
 
 让任何外部 AI Agent（Claude / Cursor / LangChain / 自研 Agent）实时查询、检索、引用
-GeneTech 14 站知识引擎的实体数据。这是项目从"给人看的内容站"升级为"给 Agent 消费的
+GeneTech 30 站知识引擎的实体数据。这是项目从"给人看的内容站"升级为"给 Agent 消费的
 知识 API"的**核心护城河**——别人无法一键复制的实时知识接口。
 
 ## 数据契约
@@ -14,7 +14,7 @@ GeneTech 14 站知识引擎的实体数据。这是项目从"给人看的内容�
 
 ## 30 秒上手（零安装，推荐）
 
-无需 clone、无需 `npm install`——一条命令让任意支持 MCP 的 AI 客户端（Claude Desktop / Cursor / Cline）实时查询全部 22 域数据：
+无需 clone、无需 `npm install`——一条命令让任意支持 MCP 的 AI 客户端（Claude Desktop / Cursor / Cline）实时查询全部 30 域数据：
 
 ```bash
 npx -y @genetech/data-mcp
@@ -113,7 +113,8 @@ node src/index.mjs
 
 数据源是 `data/citation-gaps.json`（由 `operations-plan/pipeline-citation-gaps.js`
 从 `data/citation-edges.json` 纯派生，本 MCP 侧只读不重算，避免两处算出口径不一致）。
-当前实测：30 站 / 870 有向站对 / **140 个零引用站对（16.1%）**。
+当前实测（2026-10-10）：30 站 / 870 有向站对 / **101 个零引用站对（11.6%）**。
+⚠️ 该结论建立在引用网络基座上——`data/citation-edges.json` 的 `stats.resolvedEdges=1961 / totalEdges=28001`，其中真实解析出仅 1,961 条边（7%），其余 26,044 条来自 legacy merge；`data/academic-entities.json` 种子仅 1,634 条。缺口矩阵的可信度因此受限，详见 `reports/项目全面评估与硬科技深度提升综合报告-2026-10-10.md` §5.2。
 
 ```typescript
 // 找未被桥接的跨域（附各站实体规模，便于区分「真空白」与「我们没抓到」）
@@ -166,3 +167,24 @@ console.log(requests.summary); // { byStatus, byPriority, byProject }
 - `GET /api/v1/requests/:id` — 查询单个需求详情
 
 数据落点：`state/data-requests.json`（与 Gateway Worker 共享）
+
+<!-- GENETECH:CLAIMS:BEGIN -->
+<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-10 自动生成，请勿手工编辑此锚注之间的内容。 -->
+
+### 当前规模（机器生成，锚注自动刷新）
+
+| 指标 | 值 | 口径 |
+|---|---:|---|
+| 站点 / 域数 | **30** | 有 `website/api/entities.json` 的顶层目录 |
+| 结构化实体总数 | **294,330** | 逐站实体文件求和 |
+| 带 DOI/PMID 的实体 | **271,099** | 同上，仅计有外部可解析 ID 的记录 |
+| 知识图谱节点 / 边 | **36,107 / 99,725** | data/knowledge-graph.json |
+| 图谱中引用边 | **27,868（28%）** | KG 中 relation=citation |
+| 学术种子（引用网络基座） | **1,634** | data/academic-entities.json，是缺口矩阵的真实基座 |
+| 引用声明总数 | **59,623** | 59,623 类 |
+| 引用边（真实解析 + legacy merge） | **1,961 / 28,001** | resolved 7% + legacy 26,044 |
+| 零引用站对 | **101 / 870** | citation-gaps.json |
+
+> 以上数字由脚本从 data/ 单一真源实时计算。与本报告 §2.2 数字若不一致，**以本锚注为准**（脚本口径永远新）。
+
+<!-- GENETECH:CLAIMS:END -->

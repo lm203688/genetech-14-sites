@@ -1,0 +1,209 @@
+{
+  "generatedAt": "2026-10-10",
+  "generator": "operations-plan/pipeline-docs-claims.js",
+  "sourceFiles": [
+    "data/citation-edges.json",
+    "data/academic-entities.json",
+    "data/citation-gaps.json",
+    "data/knowledge-graph.json",
+    "<site>/website/api/entities.json (×siteCount)"
+  ],
+  "claims": {
+    "siteCount": 30,
+    "totalEntities": 294330,
+    "entitiesWithDoiOrPmid": 271099,
+    "academicSeedCount": 1634,
+    "citationDeclarations": 59623,
+    "citationResolvedEdges": 1961,
+    "citationTotalEdges": 28001,
+    "citationMergedFromLegacy": 26044,
+    "citationResolvedRate": 0.07,
+    "knowledgeGraphNodes": 36107,
+    "knowledgeGraphEdges": 99725,
+    "knowledgeGraphCitationEdges": 27868,
+    "knowledgeGraphCitationShare": 0.2794,
+    "zeroCitationGapPairs": 101,
+    "directedSitePairs": 870
+  },
+  "prose": {
+    "entitiesShort": "294,330 实体",
+    "sitesShort": "30 站 / 30 域",
+    "citationShort": "1,961 / 28,001 边（真实解析率 7%）",
+    "gapsShort": "101 / 870 站对零引用",
+    "seedShort": "引用网络基座仅 1,634 条学术种子"
+  },
+  "perSite": [
+    {
+      "site": "robot-parts",
+      "entities": 9987,
+      "withDoiOrPmid": 9485
+    },
+    {
+      "site": "bionic-ai",
+      "entities": 9978,
+      "withDoiOrPmid": 9328
+    },
+    {
+      "site": "agent-ecosystem",
+      "entities": 9974,
+      "withDoiOrPmid": 9136
+    },
+    {
+      "site": "low-altitude",
+      "entities": 9968,
+      "withDoiOrPmid": 9298
+    },
+    {
+      "site": "ai4science",
+      "entities": 9965,
+      "withDoiOrPmid": 9005
+    },
+    {
+      "site": "embodied-ai",
+      "entities": 9964,
+      "withDoiOrPmid": 8961
+    },
+    {
+      "site": "digital-twin",
+      "entities": 9958,
+      "withDoiOrPmid": 9721
+    },
+    {
+      "site": "neuromorphic",
+      "entities": 9956,
+      "withDoiOrPmid": 9952
+    },
+    {
+      "site": "privacy-computing",
+      "entities": 9951,
+      "withDoiOrPmid": 9810
+    },
+    {
+      "site": "ai-safety",
+      "entities": 9950,
+      "withDoiOrPmid": 7562
+    },
+    {
+      "site": "quantum-materials",
+      "entities": 9947,
+      "withDoiOrPmid": 9075
+    },
+    {
+      "site": "semiconductor",
+      "entities": 9943,
+      "withDoiOrPmid": 9166
+    },
+    {
+      "site": "sat-6g",
+      "entities": 9940,
+      "withDoiOrPmid": 9650
+    },
+    {
+      "site": "spatial-computing",
+      "entities": 9940,
+      "withDoiOrPmid": 9820
+    },
+    {
+      "site": "tcm-tools",
+      "entities": 9924,
+      "withDoiOrPmid": 9368
+    },
+    {
+      "site": "exo-science",
+      "entities": 9917,
+      "withDoiOrPmid": 9208
+    },
+    {
+      "site": "quantum-computing",
+      "entities": 9912,
+      "withDoiOrPmid": 8157
+    },
+    {
+      "site": "carbon-neutral",
+      "entities": 9884,
+      "withDoiOrPmid": 9139
+    },
+    {
+      "site": "alien-minerals",
+      "entities": 9855,
+      "withDoiOrPmid": 7402
+    },
+    {
+      "site": "synbio-manufacturing",
+      "entities": 9808,
+      "withDoiOrPmid": 9073
+    },
+    {
+      "site": "nuclear-energy",
+      "entities": 9804,
+      "withDoiOrPmid": 8930
+    },
+    {
+      "site": "new-energy",
+      "entities": 9766,
+      "withDoiOrPmid": 8762
+    },
+    {
+      "site": "biomed-ai",
+      "entities": 9674,
+      "withDoiOrPmid": 9529
+    },
+    {
+      "site": "deep-sea-tech",
+      "entities": 9669,
+      "withDoiOrPmid": 9076
+    },
+    {
+      "site": "genetech-tools",
+      "entities": 9598,
+      "withDoiOrPmid": 9094
+    },
+    {
+      "site": "edge-ai",
+      "entities": 9595,
+      "withDoiOrPmid": 9405
+    },
+    {
+      "site": "agritech",
+      "entities": 9509,
+      "withDoiOrPmid": 9309
+    },
+    {
+      "site": "biocomputing",
+      "entities": 9416,
+      "withDoiOrPmid": 8281
+    },
+    {
+      "site": "life-science",
+      "entities": 9405,
+      "withDoiOrPmid": 8469
+    },
+    {
+      "site": "brain-science",
+      "entities": 9173,
+      "withDoiOrPmid": 7928
+    }
+  ],
+  "citations": {
+    "sourceRecords": 1634,
+    "withReferences": 1139,
+    "declarations": 59623,
+    "resolvedEdges": 1961,
+    "mergedFromOldEdges": 26044,
+    "totalEdges": 28001,
+    "unresolvedRefDoi": 7171,
+    "selfSiteEdgesSkipped": 50686,
+    "selfSiteEdgesSkippedRate": 0.8501
+  },
+  "knowledgeGraph": {
+    "nodeCount": 36107,
+    "edgeCount": 99725,
+    "byRelation": {
+      "cross_site": 29927,
+      "shared_tag": 38930,
+      "co_topic": 3000,
+      "citation": 27868
+    },
+    "citationShare": 0.2794
+  }
+}

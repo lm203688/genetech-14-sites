@@ -1,4 +1,4 @@
-# GeneTech 14 站 · AI 引述率探针问题集（Citation Probe）
+# GeneTech 30 站 · AI 引述率探针问题集（Citation Probe）
 
 > 用途：量化「免费开放数据 → 被 AI 引擎引述」的 GEO 成效（投资人视角护城河指标盘的输入，见 `project-comprehensive-review.md` §2.3 / P2 §5）。
 > 方法：把下列问题分别丢给 ChatGPT / Perplexity / 豆包 / DeepSeek / Claude，统计回答中**是否引用或提及 GeneTech / 具体实体名 / 具体站点域**。目标核心词首屏引述率 ≥ 60%。
