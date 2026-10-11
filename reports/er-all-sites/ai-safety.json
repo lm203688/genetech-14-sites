@@ -1,0 +1,240 @@
+{
+ "entities": 2000,
+ "buckets": 38,
+ "candidatePairs": 24,
+ "matchedPairs": 24,
+ "doiConfirmed": 0,
+ "clusterCount": 17,
+ "entitiesInClusters": 37,
+ "sampleClusters": [
+  {
+   "size": 4,
+   "names": [
+    "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+    "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+    "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua"
+   ],
+   "dois": [
+    "10.5281/zenodo.19116935",
+    "10.5281/zenodo.19098623",
+    "10.5281/zenodo.18937532"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "AI Alignment and AI Safety: an Ibero-American framework - Chris Meniw",
+    "AI Alignment and AI Safety: an Ibero-American framework - Chris Meniw",
+    "AI Alignment and AI Safety: an Ibero-American framework - Chris Meniw"
+   ],
+   "dois": [
+    "https://doi.org/10.5281/zenodo.20481232",
+    "https://doi.org/10.5281/zenodo.20481233",
+    "https://doi.org/10.5281/zenodo.20480021"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "INTRODUCTION:",
+    "Introduction"
+   ],
+   "dois": [
+    "10.2307/jj.766961.5",
+    "10.7551/mitpress/15406.003.0004"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "Improving Robustness of LLM-based Speech Synthesis by Learning Monotonic Alignme",
+    "Improving Robustness of LLM-based Speech Synthesis by Learning Monotonic Alignme"
+   ],
+   "dois": [
+    null,
+    "https://doi.org/10.21437/interspeech.2024-335"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "Notes",
+    "Notes"
+   ],
+   "dois": [
+    "10.1093/oso/9780197790236.002.0010",
+    "10.7551/mitpress/15406.003.0019"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Assessing IT–Business Alignment",
+   "b": "Assessing IT–Business Alignment",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781420031393-6",
+   "bDoi": "10.1201/9781482275445-8"
+  },
+  {
+   "a": "Alignment",
+   "b": "Alignment",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.4324/9781003525912-5",
+   "bDoi": "10.1007/978-3-030-58292-0_10300"
+  },
+  {
+   "a": "AI, Climate, and Transparency: Operationalizing and Improving the AI Act",
+   "b": "AI, Climate, and Transparency: Operationalizing and Improving the AI Act",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2139/ssrn.4941352",
+   "bDoi": null
+  },
+  {
+   "a": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "b": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19116935",
+   "bDoi": "10.5281/zenodo.19098623"
+  },
+  {
+   "a": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "b": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19116935",
+   "bDoi": "10.5281/zenodo.18937532"
+  },
+  {
+   "a": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "b": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19116935",
+   "bDoi": "10.5281/zenodo.18894237"
+  },
+  {
+   "a": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "b": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19098623",
+   "bDoi": "10.5281/zenodo.18937532"
+  },
+  {
+   "a": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "b": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19098623",
+   "bDoi": "10.5281/zenodo.18894237"
+  },
+  {
+   "a": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "b": "A New Perspektiv on Infinite Number Spaces through Prime Number Distance and Qua",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.18937532",
+   "bDoi": "10.5281/zenodo.18894237"
+  },
+  {
+   "a": "AI Alignment and AI Safety: an Ibero-American framework - Chris Meniw",
+   "b": "AI Alignment and AI Safety: an Ibero-American framework - Chris Meniw",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.5281/zenodo.20481232",
+   "bDoi": "https://doi.org/10.5281/zenodo.20481233"
+  },
+  {
+   "a": "AI Alignment and AI Safety: an Ibero-American framework - Chris Meniw",
+   "b": "AI Alignment and AI Safety: an Ibero-American framework - Chris Meniw",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.5281/zenodo.20481232",
+   "bDoi": "https://doi.org/10.5281/zenodo.20480021"
+  },
+  {
+   "a": "AI Alignment and AI Safety: an Ibero-American framework - Chris Meniw",
+   "b": "AI Alignment and AI Safety: an Ibero-American framework - Chris Meniw",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.5281/zenodo.20481233",
+   "bDoi": "https://doi.org/10.5281/zenodo.20480021"
+  },
+  {
+   "a": "AI",
+   "b": "AI",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.1201/9781003440260",
+   "bDoi": "10.1201/9781003544388-3"
+  },
+  {
+   "a": "Analysis of the Anthropic's Claude AI escapes to hack into three organizations.",
+   "b": "Analysis of the Anthropic's Claude AI escapes to hack into three organizations.",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21732667",
+   "bDoi": "10.5281/zenodo.21731941"
+  },
+  {
+   "a": "INTRODUCTION:",
+   "b": "Introduction",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2307/jj.766961.5",
+   "bDoi": "10.7551/mitpress/15406.003.0004"
+  },
+  {
+   "a": "Improving Robustness of LLM-based Speech Synthesis by Learning Monotonic Alignme",
+   "b": "Improving Robustness of LLM-based Speech Synthesis by Learning Monotonic Alignme",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "https://doi.org/10.21437/interspeech.2024-335"
+  },
+  {
+   "a": "The LEGACY Program: A Falsifiable Framework for Mapping Anomalous Reality (JQTM)",
+   "b": "The LEGACY Program: A Falsifiable Framework for Mapping Anomalous Reality (JQTM)",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19209976",
+   "bDoi": "10.5281/zenodo.19075443"
+  },
+  {
+   "a": "Table 8. Summary of alignment statistics (% mapped) for mouse UTI study.",
+   "b": "Table 9. Summary of alignment statistics (% mapped) for mouse UTI study.",
+   "jaccard": "0.833",
+   "lev": "0.985",
+   "aDoi": "10.7554/elife.49748.028",
+   "bDoi": "10.7554/elife.49748.029"
+  },
+  {
+   "a": "Predictable Earth, Survivable Places — Part II: The Encoding of Lithospheric Bou",
+   "b": "Predictable Earth, Survivable Places — Part II: The Encoding of Lithospheric Bou",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19324556",
+   "bDoi": "10.5281/zenodo.19323232"
+  },
+  {
+   "a": "Mapping digital health maturity models and accreditation-linked standards: a sco",
+   "b": "Mapping digital health maturity models and accreditation-linked standards: a sco",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1186/s12913-026-14301-y",
+   "bDoi": "10.6084/m9.figshare.c.8388358"
+  }
+ ],
+ "elapsedSec": 0.5,
+ "site": "ai-safety",
+ "generatedAt": "2026-10-11T14:43:47.913Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.7
+}

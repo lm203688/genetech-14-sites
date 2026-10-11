@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 42,
+ "candidatePairs": 37,
+ "matchedPairs": 37,
+ "doiConfirmed": 0,
+ "clusterCount": 21,
+ "entitiesInClusters": 49,
+ "sampleClusters": [
+  {
+   "size": 4,
+   "names": [
+    "MH370: Mathematical Proof of the Survival of All Passengers Within a Tensorial C",
+    "MH370: Mathematical Proof of the Survival of All Passengers Within a Tensorial C",
+    "MH370: Mathematical Proof of the Survival of All Passengers Within a Tensorial C"
+   ],
+   "dois": [
+    "10.5281/zenodo.18203365",
+    "10.5281/zenodo.18237334",
+    "10.5281/zenodo.18215664"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Reviewer #1 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+    "Reviewer #3 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+    "Reviewer #2 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si"
+   ],
+   "dois": [
+    "10.7554/elife.88294.3.sa3",
+    "10.7554/elife.88294.2.sa0",
+    "10.7554/elife.88294.4.sa2"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Coccolith Stratigraphy, Leg XI, Deep Sea Drilling Project",
+    "Coccolith Stratigraphy, Leg 8, Deep Sea Drilling Project",
+    "Coccolith Stratigraphy Leg 13, Deep Sea Drilling Project"
+   ],
+   "dois": [
+    "10.2973/dsdp.proc.11.113.1972",
+    "10.2973/dsdp.proc.8.114.1971",
+    "10.2973/dsdp.proc.13.133-1.1973"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Review for \"Applying Industrial Ecology to Identify Comparative Impacts of Deep ",
+    "Review for \"Applying Industrial Ecology to Identify Comparative Impacts of Deep ",
+    "Review for \"Applying Industrial Ecology to Identify Comparative Impacts of Deep "
+   ],
+   "dois": [
+    "10.1039/d6va00013d/v1/review1",
+    "10.1039/d6va00013d/v4/review1",
+    "10.1039/d6va00013d/v3/review2"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Underwater Visual and Visual-Inertial Datasets (UVVID)",
+    "Underwater Visual and Visual-Inertial Datasets (UVVID)",
+    "Underwater Visual and Visual-Inertial Datasets (UVVID)"
+   ],
+   "dois": [
+    "10.11583/dtu.27694068.v5",
+    "10.11583/dtu.27694068.v3",
+    "10.11583/dtu.27694068.v2"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Deep Sea Coral Research and Technology Program: Alaska Coral and Sponge Initiati",
+   "b": "Deep-Sea Coral Research and Technology Program: Alaska Deep-Sea Coral and Sponge",
+   "jaccard": "0.714",
+   "lev": "0.825",
+   "aDoi": "10.25923/4k40-3s21",
+   "bDoi": "https://doi.org/10.13140/rg.2.2.22470.98888"
+  },
+  {
+   "a": "Coccolith Stratigraphy, Leg XI, Deep Sea Drilling Project",
+   "b": "Coccolith Stratigraphy, Leg 8, Deep Sea Drilling Project",
+   "jaccard": "0.778",
+   "lev": "0.964",
+   "aDoi": "10.2973/dsdp.proc.11.113.1972",
+   "bDoi": "10.2973/dsdp.proc.8.114.1971"
+  },
+  {
+   "a": "Coccolith Stratigraphy, Leg XI, Deep Sea Drilling Project",
+   "b": "Coccolith Stratigraphy Leg 13, Deep Sea Drilling Project",
+   "jaccard": "0.778",
+   "lev": "0.964",
+   "aDoi": "10.2973/dsdp.proc.11.113.1972",
+   "bDoi": "10.2973/dsdp.proc.13.133-1.1973"
+  },
+  {
+   "a": "Cretaceous Radiolaria, Leg 7, Deep Sea Drilling Project",
+   "b": "Cretaceous Radiolaria, Leg 7, Deep Sea Drilling Project",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2973/dsdp.proc.07.133.1971",
+   "bDoi": "10.2973/dsdp.proc.7.133.1971"
+  },
+  {
+   "a": "Coccolith Stratigraphy, Leg 8, Deep Sea Drilling Project",
+   "b": "Coccolith Stratigraphy Leg 13, Deep Sea Drilling Project",
+   "jaccard": "0.778",
+   "lev": "0.964",
+   "aDoi": "10.2973/dsdp.proc.8.114.1971",
+   "bDoi": "10.2973/dsdp.proc.13.133-1.1973"
+  },
+  {
+   "a": "Coccolith Age Determinations Leg 3, Deep Sea Drilling Project",
+   "b": "Coccolith Age Determinations Leg 5, Deep Sea Drilling Project",
+   "jaccard": "0.800",
+   "lev": "0.983",
+   "aDoi": "10.2973/dsdp.proc.3.119.1970",
+   "bDoi": "10.2973/dsdp.proc.5.118.1970"
+  },
+  {
+   "a": "Underwater Robots",
+   "b": "Underwater Robots",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "https://doi.org/10.1007/978-3-030-44184-5_100029"
+  },
+  {
+   "a": "Underwater Visual and Visual-Inertial Datasets (UVVID)",
+   "b": "Underwater Visual and Visual-Inertial Datasets (UVVID)",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.11583/dtu.27694068.v5",
+   "bDoi": "10.11583/dtu.27694068.v3"
+  },
+  {
+   "a": "Underwater Visual and Visual-Inertial Datasets (UVVID)",
+   "b": "Underwater Visual and Visual-Inertial Datasets (UVVID)",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.11583/dtu.27694068.v5",
+   "bDoi": "10.11583/dtu.27694068.v2"
+  },
+  {
+   "a": "Underwater Visual and Visual-Inertial Datasets (UVVID)",
+   "b": "Underwater Visual and Visual-Inertial Datasets (UVVID)",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.11583/dtu.27694068.v3",
+   "bDoi": "10.11583/dtu.27694068.v2"
+  },
+  {
+   "a": "Radiolaria, Leg 4, Deep Sea Drilling Project",
+   "b": "Radiolaria, Leg 4, Deep Sea Drilling Project",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2973/dsdp.proc.04.124.1970",
+   "bDoi": "10.2973/dsdp.proc.4.124.1970"
+  },
+  {
+   "a": "Reviewer #1 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "b": "Reviewer #3 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "jaccard": "0.833",
+   "lev": "0.990",
+   "aDoi": "10.7554/elife.88294.3.sa3",
+   "bDoi": "10.7554/elife.88294.2.sa0"
+  },
+  {
+   "a": "Reviewer #1 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "b": "Reviewer #2 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "jaccard": "0.833",
+   "lev": "0.990",
+   "aDoi": "10.7554/elife.88294.3.sa3",
+   "bDoi": "10.7554/elife.88294.4.sa2"
+  },
+  {
+   "a": "Reviewer #1 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "b": "Reviewer #3 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "jaccard": "0.833",
+   "lev": "0.990",
+   "aDoi": "10.7554/elife.88294.3.sa3",
+   "bDoi": "10.7554/elife.88294.3.sa1"
+  },
+  {
+   "a": "Reviewer #3 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "b": "Reviewer #2 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "jaccard": "0.833",
+   "lev": "0.990",
+   "aDoi": "10.7554/elife.88294.2.sa0",
+   "bDoi": "10.7554/elife.88294.4.sa2"
+  },
+  {
+   "a": "Reviewer #3 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "b": "Reviewer #3 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.7554/elife.88294.2.sa0",
+   "bDoi": "10.7554/elife.88294.3.sa1"
+  },
+  {
+   "a": "Reviewer #2 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "b": "Reviewer #3 (Public Review): Deciphering deep-sea chemosynthetic symbiosis by si",
+   "jaccard": "0.833",
+   "lev": "0.990",
+   "aDoi": "10.7554/elife.88294.4.sa2",
+   "bDoi": "10.7554/elife.88294.3.sa1"
+  },
+  {
+   "a": "Review for \"Applying Industrial Ecology to Identify Comparative Impacts of Deep ",
+   "b": "Review for \"Applying Industrial Ecology to Identify Comparative Impacts of Deep ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d6va00013d/v1/review1",
+   "bDoi": "10.1039/d6va00013d/v4/review1"
+  },
+  {
+   "a": "Review for \"Applying Industrial Ecology to Identify Comparative Impacts of Deep ",
+   "b": "Review for \"Applying Industrial Ecology to Identify Comparative Impacts of Deep ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d6va00013d/v1/review1",
+   "bDoi": "10.1039/d6va00013d/v3/review2"
+  },
+  {
+   "a": "Review for \"Applying Industrial Ecology to Identify Comparative Impacts of Deep ",
+   "b": "Review for \"Applying Industrial Ecology to Identify Comparative Impacts of Deep ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d6va00013d/v4/review1",
+   "bDoi": "10.1039/d6va00013d/v3/review2"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "deep-sea-tech",
+ "generatedAt": "2026-10-11T14:43:54.052Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

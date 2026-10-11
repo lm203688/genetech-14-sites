@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 41,
+ "candidatePairs": 107,
+ "matchedPairs": 107,
+ "doiConfirmed": 0,
+ "clusterCount": 37,
+ "entitiesInClusters": 98,
+ "sampleClusters": [
+  {
+   "size": 7,
+   "names": [
+    "Introduction",
+    "INTRODUCTION",
+    "Introduction"
+   ],
+   "dois": [
+    "10.2307/jj.6407877.5",
+    "10.2307/jj.3385990.6",
+    "10.1093/acprof:oso/9780199680207.003.0001"
+   ]
+  },
+  {
+   "size": 6,
+   "names": [
+    "Canadian minerals yearbook, 2000: review and outlook",
+    "Canadian minerals yearbook, 1993: review and outlook",
+    "Canadian minerals yearbook, 1990: review and outlook"
+   ],
+   "dois": [
+    "10.4095/213666",
+    "10.4095/247691",
+    "10.4095/247694"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "Museum Notes",
+    "Museum Notes",
+    "Museum Notes"
+   ],
+   "dois": [
+    "10.1080/00357529.2025.2476916",
+    "10.1080/00357529.2025.2451594",
+    "10.1080/00357529.2025.2500878"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Extraterrestrial intelligence",
+    "Extraterrestrial Intelligence",
+    "Extraterrestrial Intelligence"
+   ],
+   "dois": [
+    "10.1036/1097-8542.249350",
+    "10.1126/science.475-a",
+    "10.1126/science.260.5107.475"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "SETI (Search for Extraterrestrial Intelligence)",
+    "Search for Extraterrestrial Intelligence",
+    "Search for Extraterrestrial Intelligence"
+   ],
+   "dois": [
+    "10.1007/978-981-13-3639-3_30",
+    "10.1007/978-3-642-11274-4_3182",
+    "10.1007/978-3-662-44185-5_101026"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Lunar meteorite Yamato-86032: Mineralogical, petrological, and geochemical studi",
+   "b": "Lunar meteorite Yamato-86032 - Mineralogical, petrological, and geochemical stud",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "https://doi.org/10.15094/00004505"
+  },
+  {
+   "a": "Continuous-Flow Extraction of Adjacent Metals-A Disruptive Economic Window for I",
+   "b": "Continuous-Flow Extraction of Adjacent Metals-A Disruptive Economic Window for I",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/anie.201912205",
+   "bDoi": null
+  },
+  {
+   "a": "Coming Events",
+   "b": "Coming Events",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/00357529.2025.2451597",
+   "bDoi": "10.1080/00357529.2024.2281189"
+  },
+  {
+   "a": "Coming Events",
+   "b": "Coming Events",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/00357529.2025.2451597",
+   "bDoi": "10.1080/00357529.2026.2578976"
+  },
+  {
+   "a": "Coming Events",
+   "b": "Coming Events",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/00357529.2025.2451597",
+   "bDoi": "10.1080/00357529.2026.2582437"
+  },
+  {
+   "a": "Coming Events",
+   "b": "Coming Events",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/00357529.2024.2281189",
+   "bDoi": "10.1080/00357529.2026.2578976"
+  },
+  {
+   "a": "Coming Events",
+   "b": "Coming Events",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/00357529.2024.2281189",
+   "bDoi": "10.1080/00357529.2026.2582437"
+  },
+  {
+   "a": "Chips from the Quarry",
+   "b": "Chips from the Quarry",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/00357529.2024.2331411",
+   "bDoi": "10.1080/00357529.2025.2532329"
+  },
+  {
+   "a": "Chips from the Quarry",
+   "b": "Chips from the Quarry",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/00357529.2024.2331411",
+   "bDoi": "10.1080/00357529.2026.2614912"
+  },
+  {
+   "a": "Chips from the Quarry",
+   "b": "Chips from the Quarry",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/00357529.2025.2532329",
+   "bDoi": "10.1080/00357529.2026.2614912"
+  },
+  {
+   "a": "Coming Events",
+   "b": "Coming Events",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/00357529.2026.2578976",
+   "bDoi": "10.1080/00357529.2026.2582437"
+  },
+  {
+   "a": "Canadian minerals yearbook, 2000: review and outlook",
+   "b": "Canadian minerals yearbook, 1993: review and outlook",
+   "jaccard": "0.750",
+   "lev": "0.920",
+   "aDoi": "10.4095/213666",
+   "bDoi": "10.4095/247691"
+  },
+  {
+   "a": "Canadian minerals yearbook, 2000: review and outlook",
+   "b": "Canadian minerals yearbook, 1990: review and outlook",
+   "jaccard": "0.750",
+   "lev": "0.940",
+   "aDoi": "10.4095/213666",
+   "bDoi": "10.4095/247694"
+  },
+  {
+   "a": "Canadian minerals yearbook, 2000: review and outlook",
+   "b": "Canadian minerals yearbook, 2008: review and outlook",
+   "jaccard": "0.750",
+   "lev": "0.980",
+   "aDoi": "10.4095/213666",
+   "bDoi": "10.4095/297907"
+  },
+  {
+   "a": "Canadian minerals yearbook, 2000: review and outlook",
+   "b": "Canadian minerals yearbook, 1985: review and outlook",
+   "jaccard": "0.750",
+   "lev": "0.920",
+   "aDoi": "10.4095/213666",
+   "bDoi": "10.4095/247699"
+  },
+  {
+   "a": "Canadian minerals yearbook, 2000: review and outlook",
+   "b": "Canadian minerals yearbook, 2005: review and outlook",
+   "jaccard": "0.750",
+   "lev": "0.980",
+   "aDoi": "10.4095/213666",
+   "bDoi": "10.4095/247686"
+  },
+  {
+   "a": "Canadian minerals yearbook, 1993: review and outlook",
+   "b": "Canadian minerals yearbook, 1990: review and outlook",
+   "jaccard": "0.750",
+   "lev": "0.980",
+   "aDoi": "10.4095/247691",
+   "bDoi": "10.4095/247694"
+  },
+  {
+   "a": "Canadian minerals yearbook, 1993: review and outlook",
+   "b": "Canadian minerals yearbook, 2008: review and outlook",
+   "jaccard": "0.750",
+   "lev": "0.920",
+   "aDoi": "10.4095/247691",
+   "bDoi": "10.4095/297907"
+  },
+  {
+   "a": "Canadian minerals yearbook, 1993: review and outlook",
+   "b": "Canadian minerals yearbook, 1985: review and outlook",
+   "jaccard": "0.750",
+   "lev": "0.960",
+   "aDoi": "10.4095/247691",
+   "bDoi": "10.4095/247699"
+  },
+  {
+   "a": "Canadian minerals yearbook, 1993: review and outlook",
+   "b": "Canadian minerals yearbook, 2005: review and outlook",
+   "jaccard": "0.750",
+   "lev": "0.920",
+   "aDoi": "10.4095/247691",
+   "bDoi": "10.4095/247686"
+  }
+ ],
+ "elapsedSec": 0.3,
+ "site": "alien-minerals",
+ "generatedAt": "2026-10-11T14:43:49.431Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 37,
+ "candidatePairs": 200,
+ "matchedPairs": 200,
+ "doiConfirmed": 0,
+ "clusterCount": 57,
+ "entitiesInClusters": 164,
+ "sampleClusters": [
+  {
+   "size": 7,
+   "names": [
+    "github.com/broadinstitute/warp/HLAGenotyping",
+    "github.com/broadinstitute/warp/HLAGenotyping",
+    "github.com/broadinstitute/warp/HLAGenotyping"
+   ],
+   "dois": [
+    "10.5281/zenodo.20210862",
+    "10.5281/zenodo.21725051",
+    "10.5281/zenodo.20213291"
+   ]
+  },
+  {
+   "size": 6,
+   "names": [
+    "github.com/broadinstitute/warp/run_sample_outlier_qc_plotting",
+    "github.com/broadinstitute/warp/run_sample_outlier_qc_plotting",
+    "github.com/broadinstitute/warp/run_sample_outlier_qc_plotting"
+   ],
+   "dois": [
+    "10.5281/zenodo.21345941",
+    "10.5281/zenodo.20934293",
+    "10.5281/zenodo.21343400"
+   ]
+  },
+  {
+   "size": 6,
+   "names": [
+    "github.com/broadinstitute/warp/FilterandQCVariants",
+    "github.com/broadinstitute/warp/FilterandQCVariants",
+    "github.com/broadinstitute/warp/FilterandQCVariants"
+   ],
+   "dois": [
+    "10.5281/zenodo.21341683",
+    "10.5281/zenodo.21730183",
+    "10.5281/zenodo.20818376"
+   ]
+  },
+  {
+   "size": 6,
+   "names": [
+    "github.com/broadinstitute/warp/TestPairedTag",
+    "github.com/broadinstitute/warp/TestPairedTag",
+    "github.com/broadinstitute/warp/TestPairedTag"
+   ],
+   "dois": [
+    "10.5281/zenodo.21732489",
+    "10.5281/zenodo.21727499",
+    "10.5281/zenodo.21725179"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "github.com/broadinstitute/warp/UltimaGenomicsWholeGenomeCramOnly",
+    "github.com/broadinstitute/warp/UltimaGenomicsWholeGenomeCramOnly",
+    "github.com/broadinstitute/warp/UltimaGenomicsWholeGenomeCramOnly"
+   ],
+   "dois": [
+    "10.5281/zenodo.21727926",
+    "10.5281/zenodo.20818537",
+    "10.5281/zenodo.21362978"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "DNA Sequencing",
+   "b": "DNA sequencing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1385/0-89603-248-5:1",
+   "bDoi": "10.1093/oso/9780199634774.003.0007"
+  },
+  {
+   "a": "DNA Sequencing",
+   "b": "DNA Sequencing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1385/0-89603-248-5:1",
+   "bDoi": "10.1007/978-3-032-34667-4_3"
+  },
+  {
+   "a": "DNA sequencing",
+   "b": "DNA Sequencing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1093/oso/9780199634774.003.0007",
+   "bDoi": "10.1007/978-3-032-34667-4_3"
+  },
+  {
+   "a": "Decision Revise: Genome of Trichoderma gamsii strain T035 a promising beneficial",
+   "b": "Decision Revise: Genome of Trichoderma gamsii strain T035 a promising beneficial",
+   "jaccard": "0.875",
+   "lev": "0.991",
+   "aDoi": "10.24072/pci.genomics.100458.d1",
+   "bDoi": "10.24072/pci.genomics.100458.d2"
+  },
+  {
+   "a": "Figure 4 in Genomics-Based taxonomic refinement of Emesis FaBricius (Lepidoptera",
+   "b": "Figure 3 in Genomics-Based taxonomic refinement of Emesis FaBricius (Lepidoptera",
+   "jaccard": "0.833",
+   "lev": "0.989",
+   "aDoi": "10.5281/zenodo.20336467",
+   "bDoi": "10.5281/zenodo.20336462"
+  },
+  {
+   "a": "Figures 7–16 in Genomics-Based taxonomic refinement of Emesis FaBricius (Lepidop",
+   "b": "Figures 33–52 in Genomics-Based taxonomic refinement of Emesis FaBricius (Lepido",
+   "jaccard": "0.833",
+   "lev": "0.957",
+   "aDoi": "10.5281/zenodo.20336474",
+   "bDoi": "10.5281/zenodo.20336480"
+  },
+  {
+   "a": "Figures 7–16 in Genomics-Based taxonomic refinement of Emesis FaBricius (Lepidop",
+   "b": "Figures 69–94 in Genomics-Based taxonomic refinement of Emesis FaBricius (Lepido",
+   "jaccard": "0.833",
+   "lev": "0.957",
+   "aDoi": "10.5281/zenodo.20336474",
+   "bDoi": "10.5281/zenodo.20336487"
+  },
+  {
+   "a": "Figures 33–52 in Genomics-Based taxonomic refinement of Emesis FaBricius (Lepido",
+   "b": "Figures 69–94 in Genomics-Based taxonomic refinement of Emesis FaBricius (Lepido",
+   "jaccard": "0.833",
+   "lev": "0.957",
+   "aDoi": "10.5281/zenodo.20336480",
+   "bDoi": "10.5281/zenodo.20336487"
+  },
+  {
+   "a": "Figure 6 in An Irish cocktail of flatworm, earthworm and parasite DNAs: genomics",
+   "b": "Figure 8 in An Irish cocktail of flatworm, earthworm and parasite DNAs: genomics",
+   "jaccard": "0.923",
+   "lev": "0.995",
+   "aDoi": "10.5281/zenodo.20242449",
+   "bDoi": "10.5281/zenodo.20242453"
+  },
+  {
+   "a": "Figure 6 in An Irish cocktail of flatworm, earthworm and parasite DNAs: genomics",
+   "b": "Figure 9 in An Irish cocktail of flatworm, earthworm and parasite DNAs: genomics",
+   "jaccard": "0.923",
+   "lev": "0.995",
+   "aDoi": "10.5281/zenodo.20242449",
+   "bDoi": "10.5281/zenodo.20242455"
+  },
+  {
+   "a": "Figure 8 in An Irish cocktail of flatworm, earthworm and parasite DNAs: genomics",
+   "b": "Figure 9 in An Irish cocktail of flatworm, earthworm and parasite DNAs: genomics",
+   "jaccard": "0.923",
+   "lev": "0.995",
+   "aDoi": "10.5281/zenodo.20242453",
+   "bDoi": "10.5281/zenodo.20242455"
+  },
+  {
+   "a": "Andampindambrahmandam (APB): Universal Research Database Engine for Cross-Scale ",
+   "b": "Andampindambrahmandam (APB): Universal Research Database Engine for Cross-Scale ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.18512296",
+   "bDoi": "10.5281/zenodo.20418517"
+  },
+  {
+   "a": "Review of: Draft genome and transcriptomic sequence data of three invasive insec",
+   "b": "Review of: Draft genome and transcriptomic sequence data of three invasive insec",
+   "jaccard": "0.857",
+   "lev": "0.990",
+   "aDoi": "10.24072/pci.genomics.100425.rev11",
+   "bDoi": "10.24072/pci.genomics.100425.rev12"
+  },
+  {
+   "a": "Review of: Draft genome and transcriptomic sequence data of three invasive insec",
+   "b": "Review of: Draft genome and transcriptomic sequence data of three invasive insec",
+   "jaccard": "0.857",
+   "lev": "0.981",
+   "aDoi": "10.24072/pci.genomics.100425.rev11",
+   "bDoi": "10.24072/pci.genomics.100425.rev22"
+  },
+  {
+   "a": "Review of: Draft genome and transcriptomic sequence data of three invasive insec",
+   "b": "Recommendation of: Draft genome and transcriptomic sequence data of three invasi",
+   "jaccard": "0.733",
+   "lev": "0.808",
+   "aDoi": "10.24072/pci.genomics.100425.rev12",
+   "bDoi": "10.24072/pci.genomics.100425"
+  },
+  {
+   "a": "Review of: Draft genome and transcriptomic sequence data of three invasive insec",
+   "b": "Review of: Draft genome and transcriptomic sequence data of three invasive insec",
+   "jaccard": "0.857",
+   "lev": "0.990",
+   "aDoi": "10.24072/pci.genomics.100425.rev12",
+   "bDoi": "10.24072/pci.genomics.100425.rev22"
+  },
+  {
+   "a": "Review of: Sexual reproduction is controlled by successive transcriptomic waves ",
+   "b": "Recommendation of: Sexual reproduction is controlled by successive transcriptomi",
+   "jaccard": "0.750",
+   "lev": "0.828",
+   "aDoi": "10.24072/pci.genomics.100427.rev12",
+   "bDoi": "10.24072/pci.genomics.100427"
+  },
+  {
+   "a": "Reviewer #1 (Public Review): Systems genomics of salinity stress response in ric",
+   "b": "Reviewer #5 (Public review): Systems genomics of salinity stress response in ric",
+   "jaccard": "0.846",
+   "lev": "0.987",
+   "aDoi": "10.7554/elife.99352.1.sa4",
+   "bDoi": "10.7554/elife.99352.3.sa4"
+  },
+  {
+   "a": "Reviewer #1 (Public Review): Systems genomics of salinity stress response in ric",
+   "b": "Reviewer #2 (Public review): Systems genomics of salinity stress response in ric",
+   "jaccard": "0.846",
+   "lev": "0.987",
+   "aDoi": "10.7554/elife.99352.1.sa4",
+   "bDoi": "10.7554/elife.99352.2.sa4"
+  },
+  {
+   "a": "Review of: Genomic changes are varied across congeneric species pairs of animals",
+   "b": "Review of: Genomic changes are varied across congeneric species pairs of animals",
+   "jaccard": "0.846",
+   "lev": "0.979",
+   "aDoi": "10.24072/pci.genomics.100415.rev33",
+   "bDoi": "10.24072/pci.genomics.100415.rev24"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "genetech-tools",
+ "generatedAt": "2026-10-11T14:43:58.155Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

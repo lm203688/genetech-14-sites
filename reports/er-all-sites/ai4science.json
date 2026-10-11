@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 44,
+ "candidatePairs": 71,
+ "matchedPairs": 71,
+ "doiConfirmed": 0,
+ "clusterCount": 40,
+ "entitiesInClusters": 93,
+ "sampleClusters": [
+  {
+   "size": 5,
+   "names": [
+    "Experiment ended",
+    "Experiment ended",
+    "Experiment ended"
+   ],
+   "dois": [
+    "10.31219/osf.io/baj2g",
+    "10.31219/osf.io/286yg",
+    "10.31219/osf.io/d7rfq"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+    "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+    "The Nature of Reality: The Quantum Narrative Matrix Hypothesis"
+   ],
+   "dois": [
+    "10.5281/zenodo.20311912",
+    "10.5281/zenodo.20433323",
+    "10.5281/zenodo.20453943"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Review for \"Driving force of atomic ordering in Fe-Pt alloys, investigated by de",
+    "Review for \"Driving force of atomic ordering in Fe-Pt alloys, investigated by de",
+    "Review for \"Driving force of atomic ordering in Fe-Pt alloys, investigated by de"
+   ],
+   "dois": [
+    "10.1088/1361-648x/adbba5/v2/review3",
+    "10.1088/1361-648x/adbba5/v1/review2",
+    "10.1088/1361-648x/adbba5/v1/review1"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Review for \"Developing a Machine-Learning Interatomic Potential for Non-Covalent",
+    "Review for \"Developing a Machine-Learning Interatomic Potential for Non-Covalent",
+    "Review for \"Developing a Machine-Learning Interatomic Potential for Non-Covalent"
+   ],
+   "dois": [
+    "10.1039/d6dd00056h/v1/review2",
+    "10.1039/d6dd00056h/v3/review1",
+    "10.1039/d6dd00056h/v2/review1"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Discrete 3D+3D Temporal Geometry: A Single-Axiom Unified Framework for Galactic ",
+    "Discrete 3D+3D Temporal Geometry: A Single-Axiom Unified Framework for Galactic ",
+    "Discrete 3D+3D Temporal Geometry: A Single-Axiom Unified Framework for Galactic "
+   ],
+   "dois": [
+    "10.5281/zenodo.19592234",
+    "10.5281/zenodo.19436090",
+    "10.5281/zenodo.20261762"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "An Accurate Charge-Aware Machine-Learning Interatomic Potential for the Reductio",
+   "b": "An Accurate Charge-Aware Machine-Learning Interatomic Potential for the Reductio",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acs.jctc.5c01735.s001",
+   "bDoi": "10.1021/acs.jctc.5c01735"
+  },
+  {
+   "a": "Adolescents in the Age of Generative AI: A Half-Decade Systematic Review",
+   "b": "Adolescents in the Age of Generative AI: A Half-Decade Systematic Review",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.31234/osf.io/fxbtp_v2",
+   "bDoi": "10.31234/osf.io/fxbtp_v1"
+  },
+  {
+   "a": "AI Literacy Under the AI Act:  Tracing the Evolution of a Weakened Norm",
+   "b": "AI Literacy Under the AI Act:  Tracing the Evolution of a Weakened Norm",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.31219/osf.io/th7c8_v1",
+   "bDoi": "10.31219/osf.io/th7c8_v2"
+  },
+  {
+   "a": "Application of Machine Learning Interatomic Potentials in Heterogeneous Catalysi",
+   "b": "Application of Machine Learning Interatomic Potentials in Heterogeneous Catalysi",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.26434/chemrxiv-2025-vt9qc",
+   "bDoi": "10.2139/ssrn.5168152"
+  },
+  {
+   "a": "One to Rule Them All: A Universal Interatomic Potential Learning across Quantum ",
+   "b": "One To Rule Them All: A Universal Interatomic Potential Learning Across Quantum ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acs.jctc.5c00858",
+   "bDoi": "10.26434/chemrxiv-2024-ng3ws-v2"
+  },
+  {
+   "a": "On phase separation and crystallization of Ge-rich GeSbTe alloys from atomistic ",
+   "b": "On phase separation and crystallization of Ge-rich GeSbTe alloys from atomistic ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d6tc01214k",
+   "bDoi": "10.24435/materialscloud:3j-n2"
+  },
+  {
+   "a": "Introduction to Protein Structure Prediction",
+   "b": "Introduction to Protein Structure Prediction",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.1002/9780470882207.ch1"
+  },
+  {
+   "a": "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems",
+   "b": "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.22161595",
+   "bDoi": "10.5281/zenodo.22153747"
+  },
+  {
+   "a": "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems",
+   "b": "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.22161595",
+   "bDoi": "10.5281/zenodo.22135446"
+  },
+  {
+   "a": "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems",
+   "b": "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.22153747",
+   "bDoi": "10.5281/zenodo.22135446"
+  },
+  {
+   "a": "Isurwars/Correlation: Correlation 3.8.6",
+   "b": "Isurwars/Correlation: Correlation 3.8.6",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21796715",
+   "bDoi": "10.5281/zenodo.21797322"
+  },
+  {
+   "a": "Review for \"Developing a Machine-Learning Interatomic Potential for Non-Covalent",
+   "b": "Review for \"Developing a Machine-Learning Interatomic Potential for Non-Covalent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d6dd00056h/v1/review2",
+   "bDoi": "10.1039/d6dd00056h/v3/review1"
+  },
+  {
+   "a": "Review for \"Developing a Machine-Learning Interatomic Potential for Non-Covalent",
+   "b": "Review for \"Developing a Machine-Learning Interatomic Potential for Non-Covalent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d6dd00056h/v1/review2",
+   "bDoi": "10.1039/d6dd00056h/v2/review1"
+  },
+  {
+   "a": "Revealing cobalt-induced Li-ion trapping at the LATP/LCO interface with a fine-t",
+   "b": "Review for \"Revealing cobalt-induced Li-ion trapping at the LATP/LCO interface w",
+   "jaccard": "0.882",
+   "lev": "0.915",
+   "aDoi": "10.1039/d5cc03941j",
+   "bDoi": "10.1039/d5cc03941j/v2/review1"
+  },
+  {
+   "a": "Review for \"Accelerating AI for science: open data science for science\"",
+   "b": "Review for \"Accelerating AI for science: open data science for science\"",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1098/rsos.231130/v2/review1",
+   "bDoi": "10.1098/rsos.231130/v1/review1"
+  },
+  {
+   "a": "Review for \"Open Science at the Generative AI Turn: An Exploratory Analysis of C",
+   "b": "Review for \"Open Science at the Generative AI Turn: An Exploratory Analysis of C",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1162/qss_a_00337/v1/review1",
+   "bDoi": "10.1162/qss_a_00337/v1/review2"
+  },
+  {
+   "a": "Review for \"Questioning the impact of AI and interdisciplinarity in science: Les",
+   "b": "Review for \"Questioning the impact of AI and interdisciplinarity in science: Les",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1162/qss_a_00329/v2/review2",
+   "bDoi": "10.1162/qss_a_00329/v1/review1"
+  },
+  {
+   "a": "Review for \"Questioning the impact of AI and interdisciplinarity in science: Les",
+   "b": "Review for \"Questioning the impact of AI and interdisciplinarity in science: Les",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1162/qss_a_00329/v2/review2",
+   "bDoi": "10.1162/qss_a_00329/v2/review1"
+  },
+  {
+   "a": "Review for \"Developing a Machine-Learning Interatomic Potential for Non-Covalent",
+   "b": "Review for \"Developing a Machine-Learning Interatomic Potential for Non-Covalent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d6dd00056h/v3/review1",
+   "bDoi": "10.1039/d6dd00056h/v2/review1"
+  },
+  {
+   "a": "Review for \"Machine learning interatomic potentials for amorphous zeolitic imida",
+   "b": "Review for \"Machine learning interatomic potentials for amorphous zeolitic imida",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d3dd00236e/v1/review1",
+   "bDoi": "10.1039/d3dd00236e/v2/review2"
+  }
+ ],
+ "elapsedSec": 0.5,
+ "site": "ai4science",
+ "generatedAt": "2026-10-11T14:43:48.763Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.6
+}

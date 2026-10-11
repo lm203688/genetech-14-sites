@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 47,
+ "candidatePairs": 137,
+ "matchedPairs": 137,
+ "doiConfirmed": 0,
+ "clusterCount": 40,
+ "entitiesInClusters": 107,
+ "sampleClusters": [
+  {
+   "size": 10,
+   "names": [
+    "Issue Publication Information",
+    "Issue Publication Information",
+    "Issue Publication Information"
+   ],
+   "dois": [
+    "10.1021/sbv013i005_1802893",
+    "10.1021/sbv013i003_1781259",
+    "10.1021/sbv013i002_1771268"
+   ]
+  },
+  {
+   "size": 7,
+   "names": [
+    "Issue Editorial Masthead",
+    "Issue Editorial Masthead",
+    "Issue Editorial Masthead"
+   ],
+   "dois": [
+    "10.1021/sbv013i010_1857618",
+    "10.1021/sbv013i004_1793158",
+    "10.1021/sbv013i009_1847287"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "Synthetic biology",
+    "Synthetic Biology",
+    "Synthetic Biology"
+   ],
+   "dois": [
+    "10.1036/1097-8542.675430",
+    "10.1039/2052-899x",
+    "10.1007/978-3-030-51206-4_2"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Lean 4 Confirmation and Approval Proof for Hamzah Equation. (11)",
+    "Lean 4 Confirmation and Approval Proof for Hamzah Equation. (8)",
+    "Lean 4 Confirmation and Approval Proof for Hamzah Equation. (7)"
+   ],
+   "dois": [
+    "10.5281/zenodo.22167610",
+    "10.5281/zenodo.22158312",
+    "10.5281/zenodo.22158216"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Aero Shadow",
+    "Aero Shadow",
+    "Aero Shadow"
+   ],
+   "dois": [
+    "10.5281/zenodo.20291565",
+    "10.5281/zenodo.20687603",
+    "10.5281/zenodo.20935667"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Meta-Genesis. Towards a Biology without Matter, based on Pure Logic.  Multi-Scal",
+   "b": "Meta-Genesis. Towards a Biology without Matter, based on Pure Logic.  Multi-Scal",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.17380150",
+   "bDoi": "10.5281/zenodo.17525084"
+  },
+  {
+   "a": "MH370: Mathematical Proof of the Survival of All Passengers Within a Plasma Tens",
+   "b": "MH370: Mathematical Proof of the Survival of All Passengers Within a Tensorial C",
+   "jaccard": "0.897",
+   "lev": "0.929",
+   "aDoi": "10.5281/zenodo.18213579",
+   "bDoi": "10.5281/zenodo.18212487"
+  },
+  {
+   "a": "MH370: Mathematical Proof of the Survival of All Passengers Within a Plasma Tens",
+   "b": "MH370: Mathematical Proof of the Survival of All Passengers Within a Tensorial C",
+   "jaccard": "0.897",
+   "lev": "0.929",
+   "aDoi": "10.5281/zenodo.18213579",
+   "bDoi": "10.5281/zenodo.18213392"
+  },
+  {
+   "a": "MH370: Mathematical Proof of the Survival of All Passengers Within a Tensorial C",
+   "b": "MH370: Mathematical Proof of the Survival of All Passengers Within a Tensorial C",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.18212487",
+   "bDoi": "10.5281/zenodo.18213392"
+  },
+  {
+   "a": "Synthetic biology",
+   "b": "Synthetic Biology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1036/1097-8542.675430",
+   "bDoi": "10.1039/2052-899x"
+  },
+  {
+   "a": "Synthetic biology",
+   "b": "Synthetic Biology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1036/1097-8542.675430",
+   "bDoi": "10.1007/978-3-030-51206-4_2"
+  },
+  {
+   "a": "Synthetic biology",
+   "b": "Synthetic Biology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1036/1097-8542.675430",
+   "bDoi": "10.1021/sb300001c"
+  },
+  {
+   "a": "Synthetic biology",
+   "b": "Synthetic biology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1036/1097-8542.675430",
+   "bDoi": "10.3929/ethz-b-000001875"
+  },
+  {
+   "a": "Synthetic Biology",
+   "b": "Synthetic Biology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/2052-899x",
+   "bDoi": "10.1007/978-3-030-51206-4_2"
+  },
+  {
+   "a": "Synthetic Biology",
+   "b": "Synthetic Biology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/2052-899x",
+   "bDoi": "10.1021/sb300001c"
+  },
+  {
+   "a": "Synthetic Biology",
+   "b": "Synthetic biology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/2052-899x",
+   "bDoi": "10.3929/ethz-b-000001875"
+  },
+  {
+   "a": "Synthetic Biology",
+   "b": "Synthetic Biology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-030-51206-4_2",
+   "bDoi": "10.1021/sb300001c"
+  },
+  {
+   "a": "Synthetic Biology",
+   "b": "Synthetic biology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-030-51206-4_2",
+   "bDoi": "10.3929/ethz-b-000001875"
+  },
+  {
+   "a": "Synthetic Biology",
+   "b": "Synthetic biology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/sb300001c",
+   "bDoi": "10.3929/ethz-b-000001875"
+  },
+  {
+   "a": "Single-Step Extrusion Printing of Microgrooved Annulus Fibrosus Scaffolds via Pa",
+   "b": "Single-Step Extrusion Printing of Microgrooved Annulus Fibrosus Scaffolds via Pa",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.48620/96581",
+   "bDoi": "10.3929/ethz-c-000798199"
+  },
+  {
+   "a": "Systematic Evaluation of Signal Peptide-Driven Protein Secretion in the Fast-Gro",
+   "b": "Systematic Evaluation of Signal Peptide-Driven Protein Secretion in the Fast-Gro",
+   "jaccard": "0.875",
+   "lev": "0.984",
+   "aDoi": "10.64898/2026.05.20.726548",
+   "bDoi": "10.3390/biom16060870"
+  },
+  {
+   "a": "Self-Repairing Lipid Node Architecture for Weightless AGI Substrates: Patent Blo",
+   "b": "Self-Repairing Lipid Node Architecture for Weightless AGI Substrates: Patent Blo",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20060099",
+   "bDoi": "10.5281/zenodo.20060377"
+  },
+  {
+   "a": "Formalizzazione avanzata e rigorosa di un sistema di Rappresentazione della Cono",
+   "b": "Formalizzazione avanzata e rigorosa di un sistema di Rappresentazione della Cono",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20680980",
+   "bDoi": "10.5281/zenodo.20806790"
+  },
+  {
+   "a": "The Kayser–Cuny Mathematical Tables in Molecular and Synthetic Biology: A Molecu",
+   "b": "The Kayser–Cuny Mathematical Tables in Molecular and Synthetic Biology: A Molecu",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21001828",
+   "bDoi": "10.5281/zenodo.21860869"
+  },
+  {
+   "a": "The Kayser–Cuny Mathematical Tables in Molecular and Synthetic Biology: A Molecu",
+   "b": "The Kayser–Cuny Mathematical Tables in Molecular and Synthetic Biology: A Molecu",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21001828",
+   "bDoi": "10.5281/zenodo.21131611"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "synbio-manufacturing",
+ "generatedAt": "2026-10-11T14:44:07.885Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

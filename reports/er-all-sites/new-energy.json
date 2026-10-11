@@ -1,0 +1,240 @@
+{
+ "entities": 2000,
+ "buckets": 37,
+ "candidatePairs": 30,
+ "matchedPairs": 30,
+ "doiConfirmed": 0,
+ "clusterCount": 20,
+ "entitiesInClusters": 44,
+ "sampleClusters": [
+  {
+   "size": 4,
+   "names": [
+    "Renewable energy",
+    "Renewable Energy",
+    "Renewable Energy"
+   ],
+   "dois": [
+    "10.1787/414608067302",
+    "10.1007/978-3-031-77185-9",
+    "10.1093/9780198951117.001.0001"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "EUBCE",
+    "EUBCE",
+    "EUBCE"
+   ],
+   "dois": [
+    "10.1016/s0960-1481(18)31550-7",
+    "10.1016/s0960-1481(19)30502-6",
+    "10.1016/s0960-1481(19)30181-8"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "Lithium-ion battery operation",
+    "Lithium-Ion Battery Operation"
+   ],
+   "dois": [
+    "10.1016/b978-0-12-814778-8.00003-x",
+    "10.1201/9781003387879-24"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "From Screening to Site Control: Phytic-Acid Mediated P-Tuning of M-N Coordinatio",
+    "From Screening to Site Control: Phytic-Acid Mediated P-Tuning of M-N Coordinatio"
+   ],
+   "dois": [
+    null,
+    "10.1007/s40820-026-02321-6"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "Renewable Energy Resources",
+    "RENEWABLE ENERGY RESOURCES"
+   ],
+   "dois": [
+    "10.4324/9780203989302",
+    "10.58532/nbennuaretb1c12"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21505200",
+   "bDoi": "10.5281/zenodo.21505239"
+  },
+  {
+   "a": "Synergistic Interfacial Blocking and Water Activity Suppression in Water-in-Salt",
+   "b": "Synergistic Interfacial Blocking and Water Activity Suppression in Water-in-Salt",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acs.jpclett.6c01726",
+   "bDoi": null
+  },
+  {
+   "a": "Stabilizing Solid-State Battery Interfaces with a Polyelectrolyte Complex Nanoco",
+   "b": "Stabilizing Solid-State Battery Interfaces with a Polyelectrolyte Complex Nanoco",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acsnano.6c05725.s001",
+   "bDoi": "10.1021/acsnano.6c05725"
+  },
+  {
+   "a": "Renewable Energy Resources",
+   "b": "RENEWABLE ENERGY RESOURCES",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.4324/9780203989302",
+   "bDoi": "10.58532/nbennuaretb1c12"
+  },
+  {
+   "a": "Renewable energy project monitor",
+   "b": "Renewable energy project monitor",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s1755-0084(11)70145-4",
+   "bDoi": "10.1016/s1755-0084(12)70008-x"
+  },
+  {
+   "a": "Renewable energy",
+   "b": "Renewable Energy",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1787/414608067302",
+   "bDoi": "10.1007/978-3-031-77185-9"
+  },
+  {
+   "a": "Renewable energy",
+   "b": "Renewable Energy",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1787/414608067302",
+   "bDoi": "10.1093/9780198951117.001.0001"
+  },
+  {
+   "a": "Renewable energy",
+   "b": "Renewable Energy",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1787/414608067302",
+   "bDoi": "10.5281/zenodo.21394617"
+  },
+  {
+   "a": "Renewable Energy",
+   "b": "Renewable Energy",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-031-77185-9",
+   "bDoi": "10.1093/9780198951117.001.0001"
+  },
+  {
+   "a": "Renewable Energy",
+   "b": "Renewable Energy",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-031-77185-9",
+   "bDoi": "10.5281/zenodo.21394617"
+  },
+  {
+   "a": "Renewable Energy",
+   "b": "Renewable Energy",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1093/9780198951117.001.0001",
+   "bDoi": "10.5281/zenodo.21394617"
+  },
+  {
+   "a": "Review for \"Highly salt concentrated ethylene carbonate-based self-standing copo",
+   "b": "Review for \"Highly salt concentrated ethylene carbonate-based self-standing copo",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d4ta03543g/v1/review1",
+   "bDoi": "10.1039/d4ta03543g/v2/review2"
+  },
+  {
+   "a": "EUBCE",
+   "b": "EUBCE",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0960-1481(18)31550-7",
+   "bDoi": "10.1016/s0960-1481(19)30502-6"
+  },
+  {
+   "a": "EUBCE",
+   "b": "EUBCE",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0960-1481(18)31550-7",
+   "bDoi": "10.1016/s0960-1481(19)30181-8"
+  },
+  {
+   "a": "EUBCE",
+   "b": "EUBCE",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0960-1481(18)31550-7",
+   "bDoi": "10.1016/s0960-1481(18)30500-7"
+  },
+  {
+   "a": "EUBCE",
+   "b": "EUBCE",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0960-1481(19)30502-6",
+   "bDoi": "10.1016/s0960-1481(19)30181-8"
+  },
+  {
+   "a": "EUBCE",
+   "b": "EUBCE",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0960-1481(19)30502-6",
+   "bDoi": "10.1016/s0960-1481(18)30500-7"
+  },
+  {
+   "a": "EUBCE",
+   "b": "EUBCE",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0960-1481(19)30181-8",
+   "bDoi": "10.1016/s0960-1481(18)30500-7"
+  },
+  {
+   "a": "Improved Rate Capability in Composite Solid-State Battery Electrodes Using 3D Ar",
+   "b": "Improved Rate Capability in Composite Solid-State Battery Electrodes Using 3D Ar",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acsenergylett.3c00528.s005",
+   "bDoi": "10.1021/acsenergylett.3c00528.s001"
+  },
+  {
+   "a": "PLANtoACT Task 2.1: Hourly profiles - Wind power",
+   "b": "PLANtoACT Task 2.1: Hourly profiles - Hydro power",
+   "jaccard": "0.750",
+   "lev": "0.889",
+   "aDoi": "10.5281/zenodo.21825804",
+   "bDoi": "10.5281/zenodo.21834203"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "new-energy",
+ "generatedAt": "2026-10-11T14:44:01.184Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 36,
+ "candidatePairs": 127,
+ "matchedPairs": 127,
+ "doiConfirmed": 0,
+ "clusterCount": 35,
+ "entitiesInClusters": 87,
+ "sampleClusters": [
+  {
+   "size": 13,
+   "names": [
+    "Issue Information",
+    "Issue Information",
+    "Issue Information"
+   ],
+   "dois": [
+    "10.1002/sen2.70015",
+    "10.1002/jdn.10344",
+    "10.1111/ejn.16008"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "Correspondence",
+    "Correspondence",
+    "Correspondence"
+   ],
+   "dois": [
+    "10.1016/s0306-4522(97)00074-2",
+    "10.1016/s0306-4522(96)00590-8",
+    "10.1016/s0306-4522(97)00021-3"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Images in neuroscience",
+    "Images in neuroscience: 2",
+    "Images in neuroscience"
+   ],
+   "dois": [
+    "10.1054/jocn.2002.1123",
+    "10.1054/jocn.2001.1025",
+    "10.1016/j.jocn.2003.07.004"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Zenetist Symbol Key Charts: Compiled Canonical Registry",
+    "Zenetist Symbol Key Charts: Compiled Canonical Registry",
+    "Zenetist Symbol Key Charts: Compiled Canonical Registry"
+   ],
+   "dois": [
+    "10.5281/zenodo.22102948",
+    "10.5281/zenodo.22087078",
+    "10.5281/zenodo.21728690"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "IntelliCage Place Learning Toolkit: A Python toolkit for analyzing place learnin",
+    "IntelliCage Place Learning Toolkit: A Python toolkit for analyzing place learnin",
+    "IntelliCage Place Learning Toolkit: A Python toolkit for analyzing place learnin"
+   ],
+   "dois": [
+    "10.5281/zenodo.22181525",
+    "10.5281/zenodo.22181791",
+    "10.5281/zenodo.22181592"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "The Cognitive Neurosciences",
+   "b": "The Cognitive Neurosciences",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.7551/mitpress/11442.001.0001",
+   "bDoi": "https://doi.org/10.7551/mitpress/9504.001.0001"
+  },
+  {
+   "a": "The Cognitive Neuroscience of Memory Distortion",
+   "b": "The cognitive neuroscience of memory representations.",
+   "jaccard": "0.714",
+   "lev": "0.808",
+   "aDoi": "10.1016/j.neuron.2004.08.017",
+   "bDoi": "10.1016/j.neubiorev.2025.106417"
+  },
+  {
+   "a": "The Cerebellar Connectome.",
+   "b": "The Cerebellar Connectome.",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/s12311-026-02042-x",
+   "bDoi": null
+  },
+  {
+   "a": "The Influence of Kant's Philosophy on the Advancement of Neuroscience",
+   "b": "The Influence of Kant's Philosophy on the Advancement of Neuroscience",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.22541/au.172114875.51319767/v2",
+   "bDoi": "10.22541/au.172114875.51319767/v1"
+  },
+  {
+   "a": "Additional file 4 of Choroidal imaging features of KIF11-associated retinopathy:",
+   "b": "Additional file 1 of Choroidal imaging features of KIF11-associated retinopathy:",
+   "jaccard": "0.857",
+   "lev": "0.991",
+   "aDoi": "10.6084/m9.figshare.33391029.v1",
+   "bDoi": "10.6084/m9.figshare.33391020"
+  },
+  {
+   "a": "Artificial Neural Networks and Machine Learning – ICANN 2025",
+   "b": "Artificial Neural Networks and Machine Learning – ICANN 2025",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.1007/978-3-032-04555-3",
+   "bDoi": "https://doi.org/10.1007/978-3-032-04546-1"
+  },
+  {
+   "a": "A perspective on neuroscience data standardization with Neurodata Without Border",
+   "b": "A Perspective on Neuroscience Data Standardization with Neurodata Without Border",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.48550/arxiv.2310.04317",
+   "bDoi": "https://doi.org/10.1523/jneurosci.0381-24.2024"
+  },
+  {
+   "a": "Neural Encoding of Attachment-Relevant Mental States in Adult Social Cognition: ",
+   "b": "Neural Encoding of Attachment-Relevant Mental States in Adult Social Cognition: ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.17605/osf.io/7v3xg",
+   "bDoi": "10.17605/osf.io/gcyj3"
+  },
+  {
+   "a": "Correction",
+   "b": "Correction",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/17470919.2024.2385855",
+   "bDoi": "10.1080/23273798.2025.2473167"
+  },
+  {
+   "a": "Correspondence",
+   "b": "Correspondence",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0306-4522(97)00074-2",
+   "bDoi": "10.1016/s0306-4522(96)00590-8"
+  },
+  {
+   "a": "Correspondence",
+   "b": "Correspondence",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0306-4522(97)00074-2",
+   "bDoi": "10.1016/s0306-4522(97)00021-3"
+  },
+  {
+   "a": "Correspondence",
+   "b": "Correspondence",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0306-4522(97)00074-2",
+   "bDoi": "10.1016/s0306-4522(97)00182-6"
+  },
+  {
+   "a": "Correspondence",
+   "b": "Correspondence",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0306-4522(97)00074-2",
+   "bDoi": "10.1016/0306-4522(96)00348-x"
+  },
+  {
+   "a": "Correspondence",
+   "b": "Correspondence",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0306-4522(96)00590-8",
+   "bDoi": "10.1016/s0306-4522(97)00021-3"
+  },
+  {
+   "a": "Correspondence",
+   "b": "Correspondence",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0306-4522(96)00590-8",
+   "bDoi": "10.1016/s0306-4522(97)00182-6"
+  },
+  {
+   "a": "Correspondence",
+   "b": "Correspondence",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0306-4522(96)00590-8",
+   "bDoi": "10.1016/0306-4522(96)00348-x"
+  },
+  {
+   "a": "Correspondence",
+   "b": "Correspondence",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0306-4522(97)00021-3",
+   "bDoi": "10.1016/s0306-4522(97)00182-6"
+  },
+  {
+   "a": "Correspondence",
+   "b": "Correspondence",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0306-4522(97)00021-3",
+   "bDoi": "10.1016/0306-4522(96)00348-x"
+  },
+  {
+   "a": "Correspondence",
+   "b": "Correspondence",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0306-4522(97)00182-6",
+   "bDoi": "10.1016/0306-4522(96)00348-x"
+  },
+  {
+   "a": "Handbook of Developmental Cognitive Neuroscience",
+   "b": "Handbook of developmental cognitive neuroscience",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.7551/mitpress/7437.001.0001",
+   "bDoi": null
+  }
+ ],
+ "elapsedSec": 0.3,
+ "site": "brain-science",
+ "generatedAt": "2026-10-11T14:43:52.521Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 47,
+ "candidatePairs": 93,
+ "matchedPairs": 93,
+ "doiConfirmed": 0,
+ "clusterCount": 63,
+ "entitiesInClusters": 138,
+ "sampleClusters": [
+  {
+   "size": 5,
+   "names": [
+    "Astrobiology",
+    "Astrobiology",
+    "Astrobiology"
+   ],
+   "dois": [
+    "10.1201/9781003294276-1",
+    "10.1036/1097-8542.800960",
+    "10.1201/b17880"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Early Release Science of the exoplanet WASP-39b with JWST NIRSpec G395H",
+    "Early Release Science of the exoplanet WASP-39b with JWST NIRCam.",
+    "Early Release Science of the exoplanet WASP-39b with JWST NIRISS."
+   ],
+   "dois": [
+    "10.1038/s41586-022-05591-3",
+    "10.1038/s41586-022-05590-4",
+    "10.1038/s41586-022-05674-1"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Meta-Genesis. Towards a Biology without Matter, based on Pure Logic.  Multi-Scal",
+    "Meta-Genesis. Towards a Biology without Matter, based on Pure Logic.  Multi-Scal",
+    "Meta-Genesis. Towards a Biology without Matter, based on Pure Logic.  Multi-Scal"
+   ],
+   "dois": [
+    "10.5281/zenodo.21863017",
+    "10.5281/zenodo.21002033",
+    "10.5281/zenodo.18632853"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Supplementary Figure S4 from The Stat3/5 Signaling Biosignature in Hematopoietic",
+    "Supplementary Table S1 from The Stat3/5 Signaling Biosignature in Hematopoietic ",
+    "Supplementary Figure S3 from The Stat3/5 Signaling Biosignature in Hematopoietic"
+   ],
+   "dois": [
+    "10.1158/1078-0432.22460825.v1",
+    "10.1158/1078-0432.22460813.v1",
+    "10.1158/1078-0432.22460828.v1"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Characterizing Exoplanet Habitability",
+    "Characterizing Exoplanet Habitability",
+    "Characterizing Exoplanet Habitability"
+   ],
+   "dois": [
+    null,
+    "10.2458/azu_uapress_9780816540068-ch017",
+    "10.1007/978-3-319-30648-3_67-1"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Transiting Exoplanet Survey Satellite",
+   "b": "The Transiting Exoplanet Survey Satellite",
+   "jaccard": "0.800",
+   "lev": "0.902",
+   "aDoi": "10.1117/1.jatis.1.1.014003",
+   "bDoi": null
+  },
+  {
+   "a": "The First Remotely Detected Biosignature May Not Be the Most Common: Implication",
+   "b": "The First Remotely Detected Biosignature May Not Be the Most Common: Implication",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.3847/2041-8213/ae84cc"
+  },
+  {
+   "a": "The effect of spectral resolution on biosignature detection via reflected light ",
+   "b": "The Effect of Spectral Resolution on Biosignature Detection via Reflected-light ",
+   "jaccard": "0.813",
+   "lev": "0.992",
+   "aDoi": null,
+   "bDoi": "10.3847/1538-4357/ae6647"
+  },
+  {
+   "a": "Target Selection for SETI. I. A Catalog of Nearby Habitable Stellar Systems",
+   "b": "Target Selection for SETI: 1. A Catalog of Nearby Habitable Stellar Systems",
+   "jaccard": "0.846",
+   "lev": "0.986",
+   "aDoi": "10.1086/345779",
+   "bDoi": null
+  },
+  {
+   "a": "Transatlantic Exoplanet Survey",
+   "b": "Transatlantic Exoplanet Survey",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-662-65093-6_301320",
+   "bDoi": "10.1007/978-3-642-11274-4_3196"
+  },
+  {
+   "a": "The Enpsychlopedia Mathemadicus",
+   "b": "The Enpsychlopedia Mathemadicus",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21961124",
+   "bDoi": "10.5281/zenodo.21957381"
+  },
+  {
+   "a": "Transiting Exoplanet Atmospheres in the Era of JWST",
+   "b": "Transiting Exoplanet Atmospheres in the Era of JWST",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2138/rmg.2024.90.12",
+   "bDoi": "10.48550/arxiv.2404.15430"
+  },
+  {
+   "a": "The Eternal Relativity: The Projects Beyond Time v1.9.15",
+   "b": "The Eternal Relativity: The Projects Beyond Time v1.9.13",
+   "jaccard": "0.750",
+   "lev": "0.981",
+   "aDoi": "10.5281/zenodo.22091179",
+   "bDoi": "10.5281/zenodo.22091155"
+  },
+  {
+   "a": "The Eternal Relativity: The Projects Beyond Time v1.9.15",
+   "b": "The Eternal Relativity: The Projects Beyond Time v1.9.14",
+   "jaccard": "0.750",
+   "lev": "0.981",
+   "aDoi": "10.5281/zenodo.22091179",
+   "bDoi": "10.5281/zenodo.22053127"
+  },
+  {
+   "a": "The Origin of Life Is not Darwinian nor Chemical Evolution of Neurons But Indeed",
+   "b": "The Origin of Life Is not Darwinian nor Chemical Evolution of Neurons But Indeed",
+   "jaccard": "0.810",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19405973",
+   "bDoi": "10.5281/zenodo.19410709"
+  },
+  {
+   "a": "The Lunar Gravity Plough (Part I): How Extreme Tidal Mechanics Faceted Earth's B",
+   "b": "The Lunar Gravity Plough: How Extreme Tidal Mechanics Faceted Earth's Biological",
+   "jaccard": "0.857",
+   "lev": "0.925",
+   "aDoi": "10.5281/zenodo.19820262",
+   "bDoi": "10.5281/zenodo.19672977"
+  },
+  {
+   "a": "The Eternal Relativity: The Projects Beyond Time v1.9.13",
+   "b": "The Eternal Relativity: The Projects Beyond Time v1.9.14",
+   "jaccard": "0.750",
+   "lev": "0.981",
+   "aDoi": "10.5281/zenodo.22091155",
+   "bDoi": "10.5281/zenodo.22053127"
+  },
+  {
+   "a": "TWO TYPES OF CATASTROPHE Sumerian Evidence for the Distinction Between 14,400-Ye",
+   "b": "TWO TYPES OF CATASTROPHE Sumerian Evidence for the Distinction Between 14,400-Ye",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.18674635",
+   "bDoi": "10.5281/zenodo.18671748"
+  },
+  {
+   "a": "The Stellar Death Clock: Thermodynamic Constrains on Civilizational Survival",
+   "b": "The Stellar Death Clock: Thermodynamic Constrains on Civilizational Survival",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20682215",
+   "bDoi": "10.5281/zenodo.20575577"
+  },
+  {
+   "a": "The Hypothesis of a “Living Pulse” in Cells",
+   "b": "The Hypothesis of a \"Living Pulse\" in Cells.",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.14279/depositonce-18549",
+   "bDoi": "10.3390/life13071506"
+  },
+  {
+   "a": "Enhanced Resolution of Chiral Amino Acids with Capillary Electrophoresis for Bio",
+   "b": "Enhanced Resolution of Chiral Amino Acids with Capillary Electrophoresis for Bio",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acs.analchem.6b04338",
+   "bDoi": "10.1021/acs.analchem.6b04338.s001"
+  },
+  {
+   "a": "Evolutionary Catastrophes and the Goldilocks Problem",
+   "b": "Evolutionary catastrophes and the Goldilocks problem",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.1017/s1473550407003916"
+  },
+  {
+   "a": "Early Release Science of the exoplanet WASP-39b with JWST NIRSpec G395H",
+   "b": "Early Release Science of the exoplanet WASP-39b with JWST NIRCam.",
+   "jaccard": "0.750",
+   "lev": "0.871",
+   "aDoi": "10.1038/s41586-022-05591-3",
+   "bDoi": "10.1038/s41586-022-05590-4"
+  },
+  {
+   "a": "Early Release Science of the exoplanet WASP-39b with JWST NIRSpec G395H",
+   "b": "Early Release Science of the exoplanet WASP-39b with JWST NIRISS.",
+   "jaccard": "0.750",
+   "lev": "0.857",
+   "aDoi": "10.1038/s41586-022-05591-3",
+   "bDoi": "10.1038/s41586-022-05674-1"
+  },
+  {
+   "a": "Early Release Science of the exoplanet WASP-39b with JWST NIRSpec G395H",
+   "b": "Early Release Science of the exoplanet WASP-39b with JWST NIRSpec PRISM",
+   "jaccard": "0.833",
+   "lev": "0.929",
+   "aDoi": "10.1038/s41586-022-05591-3",
+   "bDoi": "10.48550/arxiv.2211.10487"
+  }
+ ],
+ "elapsedSec": 0.3,
+ "site": "exo-science",
+ "generatedAt": "2026-10-11T14:43:57.453Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

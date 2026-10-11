@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 42,
+ "candidatePairs": 114,
+ "matchedPairs": 114,
+ "doiConfirmed": 0,
+ "clusterCount": 48,
+ "entitiesInClusters": 117,
+ "sampleClusters": [
+  {
+   "size": 8,
+   "names": [
+    "AIAA Manuscript Review Process",
+    "AIAA Manuscript Review Process",
+    "AIAA Manuscript Review Process"
+   ],
+   "dois": [
+    "10.2514/1.15735",
+    "10.2514/3.56813",
+    "10.2514/1.10197"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "La mobilité urbaine / Urban Mobility",
+    "La mobilité urbaine / Urban Mobility",
+    "La mobilité urbaine / Urban Mobility"
+   ],
+   "dois": [
+    "10.3917/bru.rende.2020.01.0259",
+    "10.3917/bru.rende.2020.01.0027",
+    "10.3917/bru.rende.2020.01.0155"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "India ISIN Database, by Nemo",
+    "India ISIN Database, by Nemo",
+    "India ISIN Database, by Nemo"
+   ],
+   "dois": [
+    "10.5281/zenodo.18750191",
+    "10.5281/zenodo.14990926",
+    "10.5281/zenodo.10819201"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "Aerial survey of Hound Bay, South Georgia, elephant seal colony during the 2024/",
+    "Aerial survey of St Andrews Bay, South Georgia, elephant seal colony during the ",
+    "Aerial survey of Hound Bay, South Georgia, elephant seal colony during the 2024/"
+   ],
+   "dois": [
+    "10.5285/6ecb7be8-6b68-44a7-8aac-abbbb591b4e5",
+    "10.5285/5224ff55-e347-4d26-9cd5-28c9bb52a805",
+    "10.5285/463ea06f-6c49-4d6e-a80b-21c88a71c3da"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "Aerial images collected by an Unmanned Aerial Vehicle in St-Leu, Réunion - 2024-",
+    "Aerial images collected by an Unmanned Aerial Vehicle in Hermitage, Réunion - 20",
+    "Aerial images collected by an Unmanned Aerial Vehicle in St-Leu, Réunion - 2024-"
+   ],
+   "dois": [
+    "10.5281/zenodo.15831175",
+    "10.5281/zenodo.15831086",
+    "10.5281/zenodo.15830898"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Urban Mobility",
+   "b": "Urban Mobility",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.3138/9781487553678"
+  },
+  {
+   "a": "Urban Air Mobility (UAM)",
+   "b": "Urban Air Mobility",
+   "jaccard": "0.750",
+   "lev": "0.818",
+   "aDoi": "10.3390/books978-3-0365-9162-9",
+   "bDoi": "10.4018/979-8-3373-4277-1.ch005"
+  },
+  {
+   "a": "Unmanned aerial vehicle safety bubble simulation results",
+   "b": "Unmanned aerial vehicle safety bubble simulation results",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.22019128",
+   "bDoi": "10.5281/zenodo.21343131"
+  },
+  {
+   "a": "Stacked Intelligent Metasurfaces-Aided eVTOL Delay Sensitive Communications",
+   "b": "Stacked Intelligent Metasurfaces-Aided eVTOL Delay Sensitive Communications",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.48550/arxiv.2507.06632"
+  },
+  {
+   "a": "Secure and Intelligent Low-Altitude Infrastructures: Synergistic Integration of ",
+   "b": "Secure and Intelligent Low-Altitude Infrastructures: Synergistic Integration of ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.3390/s25216751",
+   "bDoi": null
+  },
+  {
+   "a": "Study on the standardization method of radiotelephony communication in low-altit",
+   "b": "Study on the standardization method of radiotelephony communication in low-altit",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.3389/fnbot.2025.1482327",
+   "bDoi": null
+  },
+  {
+   "a": "Alpha-Fair Routing in Urban Air Mobility with Risk-Aware Constraints",
+   "b": "Alpha-Fair Routing in Urban Air Mobility with Risk-Aware Constraints",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.23919/acc60939.2024.10644367"
+  },
+  {
+   "a": "Associations between the physical and social urban environment and older adults'",
+   "b": "Associations between the physical and social urban environment and older adults’",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1093/geront/gnag105",
+   "bDoi": "10.26187/deakin.32353155"
+  },
+  {
+   "a": "An Unmanned Aerial Vehicle for Parking Slot Availability",
+   "b": "An Unmanned Aerial Vehicle for Parking Slot Availability",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.36227/techrxiv.12053733",
+   "bDoi": "10.36227/techrxiv.12053733.v1"
+  },
+  {
+   "a": "A bayesian network approach for systemic risk analysis in unmanned aerial vehicl",
+   "b": "A Bayesian Network Approach for Systemic Risk Analysis in Unmanned Aerial Vehicl",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1038/s41598-026-43333-x",
+   "bDoi": "10.21203/rs.3.rs-7605133/v1"
+  },
+  {
+   "a": "AIAA Manuscript Review Process",
+   "b": "AIAA Manuscript Review Process",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2514/1.15735",
+   "bDoi": "10.2514/3.56813"
+  },
+  {
+   "a": "AIAA Manuscript Review Process",
+   "b": "AIAA Manuscript Review Process",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2514/1.15735",
+   "bDoi": "10.2514/1.10197"
+  },
+  {
+   "a": "AIAA Manuscript Review Process",
+   "b": "AIAA Manuscript Review Process",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2514/1.15735",
+   "bDoi": "10.2514/1.22703"
+  },
+  {
+   "a": "AIAA Manuscript Review Process",
+   "b": "AIAA Manuscript Review Process",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2514/1.15735",
+   "bDoi": "10.2514/2.2918"
+  },
+  {
+   "a": "AIAA Manuscript Review Process",
+   "b": "AIAA Manuscript Review Process",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2514/1.15735",
+   "bDoi": "10.2514/3.56850"
+  },
+  {
+   "a": "AIAA Manuscript Review Process",
+   "b": "AIAA Manuscript Review Process",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2514/1.15735",
+   "bDoi": "10.2514/2.3086"
+  },
+  {
+   "a": "AIAA Manuscript Review Process",
+   "b": "AIAA Manuscript Review Process",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2514/1.15735",
+   "bDoi": "10.2514/1.c032786"
+  },
+  {
+   "a": "AIAA Manuscript Review Process",
+   "b": "AIAA Manuscript Review Process",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2514/3.56813",
+   "bDoi": "10.2514/1.10197"
+  },
+  {
+   "a": "AIAA Manuscript Review Process",
+   "b": "AIAA Manuscript Review Process",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2514/3.56813",
+   "bDoi": "10.2514/1.22703"
+  },
+  {
+   "a": "AIAA Manuscript Review Process",
+   "b": "AIAA Manuscript Review Process",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2514/3.56813",
+   "bDoi": "10.2514/2.2918"
+  }
+ ],
+ "elapsedSec": 0.5,
+ "site": "low-altitude",
+ "generatedAt": "2026-10-11T14:43:59.689Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.6
+}

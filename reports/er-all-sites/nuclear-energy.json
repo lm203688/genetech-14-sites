@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 49,
+ "candidatePairs": 100,
+ "matchedPairs": 100,
+ "doiConfirmed": 0,
+ "clusterCount": 60,
+ "entitiesInClusters": 135,
+ "sampleClusters": [
+  {
+   "size": 6,
+   "names": [
+    "Nuclear Fusion",
+    "Nuclear fusion",
+    "Nuclear Fusion"
+   ],
+   "dois": [
+    "10.1088/issn.0029-5515",
+    "10.29172/047c9d16-460f-4d03-b991-42f412b9c272",
+    "10.1007/springerreference_206054"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "Nuclear Fission",
+    "Nuclear Fission",
+    "Nuclear fission"
+   ],
+   "dois": [
+    null,
+    "10.1146/annurev.ns.09.120159.001333",
+    "10.1103/revmodphys.46.773"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "List of referees",
+    "List of referees",
+    "List of referees"
+   ],
+   "dois": [
+    "10.1088/0029-5515/53/1/010401",
+    "10.1088/0029-5515/49/1/010401",
+    "10.1088/0029-5515/51/1/010406"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "2015 Nuclear Fusion Prize acceptance speech",
+    "2025 Nuclear Fusion prize acceptance speech",
+    "2024 Nuclear Fusion prize acceptance speech"
+   ],
+   "dois": [
+    "10.1088/1741-4326/aa509c",
+    "10.1088/1741-4326/ae1fa1",
+    "10.1088/1741-4326/ae20a3"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Lean 4 Confirmation and Approval Proof for Hamzah Equation. (10)",
+    "Lean 4 Confirmation and Approval Proof for Hamzah Equation. (9)",
+    "Lean 4 Confirmation and Approval Proof for Hamzah Equation. (7)"
+   ],
+   "dois": [
+    "10.5281/zenodo.22166889",
+    "10.5281/zenodo.22166360",
+    "10.5281/zenodo.22155495"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Turbulence-Driven Edge-Localized-Mode-Free High-Confinement Mode with Divertor D",
+   "b": "Turbulence-Driven Edge-Localized-Mode-Free High-Confinement Mode with Divertor D",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1103/7r3f-dqft",
+   "bDoi": null
+  },
+  {
+   "a": "Turbulence-generated stepped safety factor profiles in tokamaks with low magneti",
+   "b": "Turbulence-generated stepped safety factor profiles in tokamaks with low magneti",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1103/958f-qzjf",
+   "bDoi": null
+  },
+  {
+   "a": "Thurmondian Physics: A Theory on the Unified Geometric Substrate of Reality",
+   "b": "Thurmondian Physics: A Theory on the Unified Geometric Substrate of Reality",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19667820",
+   "bDoi": "10.5281/zenodo.19672600"
+  },
+  {
+   "a": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21505227",
+   "bDoi": "10.5281/zenodo.21505226"
+  },
+  {
+   "a": "The 2026 Tensorial Civilizational Leap and Its Triangular Correlation of MH17, M",
+   "b": "The 2026 Tensorial Civilizational Leap and Its Triangular Correlation of MH17, M",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.18706609",
+   "bDoi": "10.5281/zenodo.18704077"
+  },
+  {
+   "a": "The Role of Pakistan in Co-developing JF-17 Thunder with China",
+   "b": "The Role of Pakistan in Co-developing JF-17 Thunder with China",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.18630498",
+   "bDoi": "10.5281/zenodo.18630499"
+  },
+  {
+   "a": "THE SAMAXYOM THEOREM : A QUANTUM OF COSMOS",
+   "b": "THE SAMAXYOM THEOREM : A QUANTUM OF COSMOS",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20528339",
+   "bDoi": "10.5281/zenodo.19122061"
+  },
+  {
+   "a": "THE SAMAXYOM THEOREM : A QUANTUM OF COSMOS",
+   "b": "THE SAMAXYOM THEOREM : A QUANTUM OF COSMOS",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20528339",
+   "bDoi": "10.5281/zenodo.19098281"
+  },
+  {
+   "a": "THE SAMAXYOM THEOREM : A QUANTUM OF COSMOS",
+   "b": "THE SAMAXYOM THEOREM : A QUANTUM OF COSMOS",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19122061",
+   "bDoi": "10.5281/zenodo.19098281"
+  },
+  {
+   "a": "The Samaxyom Theorem : Universal Logic and the Coherent Architecture of the Cosm",
+   "b": "The Samaxyom Hypothesis: Universal Logic and the Coherent Architecture of the Co",
+   "jaccard": "0.818",
+   "lev": "0.904",
+   "aDoi": "10.5281/zenodo.18735449",
+   "bDoi": "10.5281/zenodo.18726837"
+  },
+  {
+   "a": "The Coherence Signature: Six Criteria for Identifying Systems in Resonance with ",
+   "b": "The Coherence Signature: Six Criteria for Identifying Systems in Resonance with ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19258695",
+   "bDoi": "10.5281/zenodo.19152995"
+  },
+  {
+   "a": "Plasma Physics and Controlled Nuclear Fusion Research",
+   "b": "Plasma physics and controlled nuclear fusion",
+   "jaccard": "0.857",
+   "lev": "0.830",
+   "aDoi": null,
+   "bDoi": "10.1007/3-540-28097-9"
+  },
+  {
+   "a": "Plasma Physics for Nuclear Fusion",
+   "b": "Plasma Physics for Nuclear Fusion",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.13182/fst82-a20755"
+  },
+  {
+   "a": "Palladium-Catalyzed Cross-Coupling of Iodocarboranes with B(2)pin(2).",
+   "b": "Palladium-Catalyzed Cross-Coupling of Iodocarboranes with B2pin2.",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.1021/acs.inorgchem.6c02922"
+  },
+  {
+   "a": "PROJECT HCT-LH - Hybrid Compact Tokamak with Hybrid Lasers",
+   "b": "PROJECT HCT-LH - Hybrid Compact Tokamak with Hybrid Lasers",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20529026",
+   "bDoi": "10.5281/zenodo.19441840"
+  },
+  {
+   "a": "Postmodern Physics of Hamzah Information.(284)",
+   "b": "Postmodern Physics of Hamzah Information.(284)",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.22122548",
+   "bDoi": "10.5281/zenodo.22122549"
+  },
+  {
+   "a": "Phmamm-16 (Wild type <i>Phallusia mammillata</i> embryo, live SPIM imaging, stag",
+   "b": "Phmamm-16 (Wild type <i>Phallusia mammillata</i> embryo, live SPIM imaging, stag",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.6084/m9.figshare.23992869.v3",
+   "bDoi": "10.6084/m9.figshare.23992869.v2"
+  },
+  {
+   "a": "Peer Review Report For: Spontaneity of nuclear fusion: a qualitative analysis vi",
+   "b": "Peer Review Report For: Spontaneity of nuclear fusion: a qualitative analysis vi",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.21956/openreseurope.15122.r27335",
+   "bDoi": "10.21956/openreseurope.15122.r27546"
+  },
+  {
+   "a": "Peer Review Report For: Spontaneity of nuclear fusion: a qualitative analysis vi",
+   "b": "Peer Review Report For: Spontaneity of nuclear fusion: a qualitative analysis vi",
+   "jaccard": "0.762",
+   "lev": "0.871",
+   "aDoi": "10.21956/openreseurope.15122.r27335",
+   "bDoi": "10.21956/openreseurope.14814.r27103"
+  },
+  {
+   "a": "Peer Review Report For: Spontaneity of nuclear fusion: a qualitative analysis vi",
+   "b": "Peer Review Report For: Spontaneity of nuclear fusion: a qualitative analysis vi",
+   "jaccard": "0.762",
+   "lev": "0.871",
+   "aDoi": "10.21956/openreseurope.15122.r27546",
+   "bDoi": "10.21956/openreseurope.14814.r27103"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "nuclear-energy",
+ "generatedAt": "2026-10-11T14:44:01.906Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

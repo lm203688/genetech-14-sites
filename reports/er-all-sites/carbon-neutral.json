@@ -1,0 +1,244 @@
+{
+ "entities": 2000,
+ "buckets": 53,
+ "candidatePairs": 39,
+ "matchedPairs": 39,
+ "doiConfirmed": 0,
+ "clusterCount": 25,
+ "entitiesInClusters": 56,
+ "sampleClusters": [
+  {
+   "size": 4,
+   "names": [
+    "FY 2026 Malaysia Country Opinion Survey Report",
+    "FY 2026 Türkiye Country Opinion Survey Report",
+    "FY 2026 Armenia Country Opinion Survey Report"
+   ],
+   "dois": [
+    "10.1596/45306",
+    "10.1596/45308",
+    "10.1596/45437"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Contents",
+    "Contents",
+    "Contents"
+   ],
+   "dois": [
+    "10.54946/wilm.12216",
+    "10.54946/wilm.12200",
+    "10.54946/wilm.12255"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Introduction",
+    "Introduction",
+    "Introduction"
+   ],
+   "dois": [
+    "10.1016/b978-0-443-24042-3.00014-x",
+    "10.1002/9783527850860.ch01",
+    "10.1136/jnis-2026-snis.introduction"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Two-stage Planning for Electricity-Gas Coupled Integrated Energy System with CCU",
+    "Two-stage Planning for Electricity-Gas Coupled Integrated Energy System with CCU",
+    "Two-stage Planning for Electricity-Gas Coupled Integrated Energy System with CCU"
+   ],
+   "dois": [
+    "10.6084/m9.figshare.14906655",
+    "10.6084/m9.figshare.14906655.v2",
+    "10.48550/arxiv.2107.09127"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "Performance analysis of coal-fired power plant with carbon capture integrated wi",
+    "Performance Analysis of Coal-Fired Power Plant with Carbon Capture Integrated wi"
+   ],
+   "dois": [
+    "https://doi.org/10.1016/j.energy.2025.138342",
+    "10.2139/ssrn.5288208"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Geotechnical Frontiers 2025",
+   "b": "Geotechnical Frontiers 2025",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1061/9780784485989",
+   "bDoi": "10.1061/9780784485996"
+  },
+  {
+   "a": "Geo-Congress 2024",
+   "b": "Geo-Congress 2024",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1061/9780784485347",
+   "bDoi": "10.1061/9780784485316"
+  },
+  {
+   "a": "GLOBECOM 2024 - 2024 IEEE Global Communications Conference",
+   "b": "GLOBECOM 2025 - 2025 IEEE Global Communications Conference",
+   "jaccard": "0.714",
+   "lev": "0.964",
+   "aDoi": "10.1109/globecom52923.2024",
+   "bDoi": "10.1109/globecom59602.2025"
+  },
+  {
+   "a": "Carbon Capture, Use, and Storage",
+   "b": "Carbon Capture and Storage",
+   "jaccard": "0.800",
+   "lev": "0.867",
+   "aDoi": "10.1002/9781394330294.ch10",
+   "bDoi": "10.1007/978-1-4471-4385-7_17"
+  },
+  {
+   "a": "CO2 Capture and Storage",
+   "b": "CO2 capture and storage",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.69894/20240117",
+   "bDoi": "https://doi.org/10.1051/refdp/2024s078"
+  },
+  {
+   "a": "Contents",
+   "b": "Contents",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.54946/wilm.12216",
+   "bDoi": "10.54946/wilm.12200"
+  },
+  {
+   "a": "Contents",
+   "b": "Contents",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.54946/wilm.12216",
+   "bDoi": "10.54946/wilm.12255"
+  },
+  {
+   "a": "Contents",
+   "b": "Contents",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.54946/wilm.12216",
+   "bDoi": "https://doi.org/10.1039/9781837676873-fp009"
+  },
+  {
+   "a": "Contents",
+   "b": "Contents",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.54946/wilm.12200",
+   "bDoi": "10.54946/wilm.12255"
+  },
+  {
+   "a": "Contents",
+   "b": "Contents",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.54946/wilm.12200",
+   "bDoi": "https://doi.org/10.1039/9781837676873-fp009"
+  },
+  {
+   "a": "Companion April 2026: full issue PDF",
+   "b": "Companion May 2026: full issue PDF",
+   "jaccard": "0.714",
+   "lev": "0.857",
+   "aDoi": "10.22233/20412495.0426.1",
+   "bDoi": "10.22233/20412495.0526.1"
+  },
+  {
+   "a": "Contents",
+   "b": "Contents",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.54946/wilm.12255",
+   "bDoi": "https://doi.org/10.1039/9781837676873-fp009"
+  },
+  {
+   "a": "Introduction",
+   "b": "Introduction",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/b978-0-443-24042-3.00014-x",
+   "bDoi": "10.1002/9783527850860.ch01"
+  },
+  {
+   "a": "Introduction",
+   "b": "Introduction",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/b978-0-443-24042-3.00014-x",
+   "bDoi": "10.1136/jnis-2026-snis.introduction"
+  },
+  {
+   "a": "Introduction",
+   "b": "Introduction",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/9783527850860.ch01",
+   "bDoi": "10.1136/jnis-2026-snis.introduction"
+  },
+  {
+   "a": "FY 2026 Malaysia Country Opinion Survey Report",
+   "b": "FY 2026 Türkiye Country Opinion Survey Report",
+   "jaccard": "0.750",
+   "lev": "0.848",
+   "aDoi": "10.1596/45306",
+   "bDoi": "10.1596/45308"
+  },
+  {
+   "a": "FY 2026 Malaysia Country Opinion Survey Report",
+   "b": "FY 2026 Armenia Country Opinion Survey Report",
+   "jaccard": "0.750",
+   "lev": "0.891",
+   "aDoi": "10.1596/45306",
+   "bDoi": "10.1596/45437"
+  },
+  {
+   "a": "FY 2026 Malaysia Country Opinion Survey Report",
+   "b": "FY 2026 Bulgaria Country Opinion Survey Report",
+   "jaccard": "0.750",
+   "lev": "0.891",
+   "aDoi": "10.1596/45306",
+   "bDoi": "10.1596/45112"
+  },
+  {
+   "a": "FY 2026 Türkiye Country Opinion Survey Report",
+   "b": "FY 2026 Armenia Country Opinion Survey Report",
+   "jaccard": "0.750",
+   "lev": "0.867",
+   "aDoi": "10.1596/45308",
+   "bDoi": "10.1596/45437"
+  },
+  {
+   "a": "FY 2026 Türkiye Country Opinion Survey Report",
+   "b": "FY 2026 Bulgaria Country Opinion Survey Report",
+   "jaccard": "0.750",
+   "lev": "0.826",
+   "aDoi": "10.1596/45308",
+   "bDoi": "10.1596/45112"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "carbon-neutral",
+ "generatedAt": "2026-10-11T14:43:53.323Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.6
+}

@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 36,
+ "candidatePairs": 95,
+ "matchedPairs": 95,
+ "doiConfirmed": 0,
+ "clusterCount": 25,
+ "entitiesInClusters": 70,
+ "sampleClusters": [
+  {
+   "size": 7,
+   "names": [
+    "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+    "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+    "The Nature of Reality: The Quantum Narrative Matrix Hypothesis"
+   ],
+   "dois": [
+    "10.5281/zenodo.20290323",
+    "10.5281/zenodo.21531254",
+    "10.5281/zenodo.19432713"
+   ]
+  },
+  {
+   "size": 7,
+   "names": [
+    "Review of: \"Analytical Study and Amelioration of Plastic Pavement Material Quali",
+    "Review of: \"Analytical Study and Amelioration of Plastic Pavement Material Quali",
+    "Review of: \"Analytical Study and Amelioration of Plastic Pavement Material Quali"
+   ],
+   "dois": [
+    "10.32388/6ciynj",
+    "10.32388/pmpw1y",
+    "10.32388/4v8vy3"
+   ]
+  },
+  {
+   "size": 7,
+   "names": [
+    "Unearth Heritage Foundry Notice of Forensic Indebtedness & Threshold Breach: Met",
+    "Unearth Heritage Foundry Notice of Forensic Indebtedness & Threshold Breach: Alp",
+    "Unearth Heritage Foundry Notice of Forensic Indebtedness & Threshold Breach: Ope"
+   ],
+   "dois": [
+    "10.5281/zenodo.21126245",
+    "10.5281/zenodo.20932481",
+    "10.5281/zenodo.20834989"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Review of: \"Quantum Theory of Soul\"",
+    "Review of: \"Quantum Theory of Soul\"",
+    "Review of: \"Quantum Theory of Soul\""
+   ],
+   "dois": [
+    "10.32388/2ze8i7",
+    "10.32388/dt4r43",
+    "10.32388/tmvk3g"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Yu et al. supplementary material",
+    "Yu et al. supplementary material",
+    "Yu et al. supplementary material"
+   ],
+   "dois": [
+    "10.1017/s0033291726103328.sm001",
+    "10.1017/s2977905726100511.sm001",
+    "10.1017/s1092852926100911.sm001"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Quantum and Classical Bayesian Agents",
+   "b": "Quantum and Classical Bayesian Agents",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.22331/q-2022-05-16-713",
+   "bDoi": null
+  },
+  {
+   "a": "Advances in Space Quantum Communications",
+   "b": "Advances in space quantum communications",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "https://doi.org/10.1049/qtc2.12015"
+  },
+  {
+   "a": "Aitomia: Your Intelligent Assistant for AI-Driven Atomistic and Quantum Chemical",
+   "b": "Aitomia: Your Intelligent Assistant for AI-Driven Atomistic and Quantum Chemical",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.26434/chemrxiv-2025-gnf13-v2",
+   "bDoi": "https://doi.org/10.48550/arxiv.2505.08195"
+  },
+  {
+   "a": "Towards an Infinity Economy: Designing Post-Scarcity Economic Systems in the Age",
+   "b": "Towards an Infinity Economy: Designing Post-Scarcity Economic Systems in the Age",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.20944/preprints202506.0414.v2",
+   "bDoi": "10.20944/preprints202506.0414.v1"
+  },
+  {
+   "a": "The True Nature of Quantum Tunneling, Non-Signal Control Theory, and the PQ (Per",
+   "b": "The True Nature of Quantum Tunneling, Non-Signal Control Theory, and the PQ (Per",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.17767939",
+   "bDoi": "10.5281/zenodo.17761887"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20290323",
+   "bDoi": "10.5281/zenodo.21531254"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20290323",
+   "bDoi": "10.5281/zenodo.19432713"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20290323",
+   "bDoi": "10.5281/zenodo.20562952"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20290323",
+   "bDoi": "10.5281/zenodo.20680466"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20290323",
+   "bDoi": "10.5281/zenodo.18240031"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20290323",
+   "bDoi": "10.5281/zenodo.21204396"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21531254",
+   "bDoi": "10.5281/zenodo.19432713"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21531254",
+   "bDoi": "10.5281/zenodo.20562952"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21531254",
+   "bDoi": "10.5281/zenodo.20680466"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21531254",
+   "bDoi": "10.5281/zenodo.18240031"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21531254",
+   "bDoi": "10.5281/zenodo.21204396"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19432713",
+   "bDoi": "10.5281/zenodo.20562952"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19432713",
+   "bDoi": "10.5281/zenodo.20680466"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19432713",
+   "bDoi": "10.5281/zenodo.18240031"
+  },
+  {
+   "a": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "b": "The Nature of Reality: The Quantum Narrative Matrix Hypothesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19432713",
+   "bDoi": "10.5281/zenodo.21204396"
+  }
+ ],
+ "elapsedSec": 0.3,
+ "site": "quantum-materials",
+ "generatedAt": "2026-10-11T14:44:04.126Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.4
+}

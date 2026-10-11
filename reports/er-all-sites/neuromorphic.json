@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 36,
+ "candidatePairs": 56,
+ "matchedPairs": 56,
+ "doiConfirmed": 0,
+ "clusterCount": 33,
+ "entitiesInClusters": 75,
+ "sampleClusters": [
+  {
+   "size": 5,
+   "names": [
+    "Neuro-Ophthalmic Literature Review",
+    "Neuro-Ophthalmic Literature Review",
+    "Neuro-Ophthalmic Literature Review"
+   ],
+   "dois": [
+    "10.3109/01658107.2015.1019760",
+    "10.1080/01658107.2024.2431470",
+    "10.3109/01658107.2011.585278"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "SC-NeuroCore: Universal Stochastic Computing Framework for Neuromorphic Hardware",
+    "SC-NeuroCore: Universal Stochastic Computing Framework for Neuromorphic Hardware",
+    "SC-NeuroCore: Universal Stochastic Computing Framework for Neuromorphic Hardware"
+   ],
+   "dois": [
+    "10.5281/zenodo.20931819",
+    "10.5281/zenodo.20560390",
+    "10.5281/zenodo.20559746"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+    "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+    "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided"
+   ],
+   "dois": [
+    "10.5281/zenodo.20393091",
+    "10.5281/zenodo.20392809",
+    "10.5281/zenodo.20392548"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Computational Vision and Bio-Inspired Computing",
+    "Computational Vision and Bio-Inspired Computing",
+    "Computational Vision and Bio-Inspired Computing"
+   ],
+   "dois": [
+    "10.1007/978-3-030-37218-7",
+    "10.1007/978-981-19-9819-5",
+    "10.1007/978-981-33-6862-0"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Review for \"Novel circular fractal-inspired compact EBG for wireless capsule end",
+    "Review for \"Novel circular fractal-inspired compact EBG for wireless capsule end",
+    "Review for \"Novel circular fractal-inspired compact EBG for wireless capsule end"
+   ],
+   "dois": [
+    "10.1088/1402-4896/ae7ac7/v2/review1",
+    "10.1088/1402-4896/ae7ac7/v2/review2",
+    "10.1088/1402-4896/ae7ac7/v1/review1"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "A bio-inspired spiking neural network with adaptive spatiotemporal filtering and",
+   "b": "A bio-inspired spiking neural network with adaptive spatiotemporal filtering and",
+   "jaccard": "0.889",
+   "lev": "0.960",
+   "aDoi": "10.2139/ssrn.5445962",
+   "bDoi": "10.1016/j.neunet.2026.108829"
+  },
+  {
+   "a": "A Practical Tutorial on Spiking Neural Networks: Comprehensive Review, Models, E",
+   "b": "A Practical Tutorial on Spiking Neural Networks: Comprehensive Review, Models, E",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.20944/preprints202509.2072.v1",
+   "bDoi": "10.3390/eng6110304"
+  },
+  {
+   "a": "A hybrid spiking neural network - quantum framework for spatio-temporal data cla",
+   "b": "A hybrid spiking neural network - quantum framework for spatio-temporal data cla",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.6084/m9.figshare.c.8142680",
+   "bDoi": "10.1140/epjqt/s40507-025-00443-1"
+  },
+  {
+   "a": "Adult-neurogenesis allows for representational stability and flexibility in earl",
+   "b": "Adult-neurogenesis allows for representational stability and flexibility in earl",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.7554/elife.107905",
+   "bDoi": "10.1101/2024.07.02.601573"
+  },
+  {
+   "a": "IO Pad Integrity in Energy-Efficient Neuromorphic Chips",
+   "b": "I/O pad integrity in energy-efficient neuromorphic chips",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.48550/arxiv.2606.01181",
+   "bDoi": "10.1201/9781003687924-10"
+  },
+  {
+   "a": "Cavity solitons as a nonlinear substrate for photonic neuromorphic computing.",
+   "b": "Cavity Solitons as a Nonlinear Substrate for Photonic Neuromorphic Computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1364/oe.595963",
+   "bDoi": "10.48550/arxiv.2602.18110"
+  },
+  {
+   "a": "Computational Vision and Bio-Inspired Computing",
+   "b": "Computational Vision and Bio-Inspired Computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-030-37218-7",
+   "bDoi": "10.1007/978-981-19-9819-5"
+  },
+  {
+   "a": "Computational Vision and Bio-Inspired Computing",
+   "b": "Computational Vision and Bio-Inspired Computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-030-37218-7",
+   "bDoi": "10.1007/978-981-33-6862-0"
+  },
+  {
+   "a": "Computational Vision and Bio-Inspired Computing",
+   "b": "Computational Vision and Bio-Inspired Computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-981-19-9819-5",
+   "bDoi": "10.1007/978-981-33-6862-0"
+  },
+  {
+   "a": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "b": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20393091",
+   "bDoi": "10.5281/zenodo.20392809"
+  },
+  {
+   "a": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "b": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20393091",
+   "bDoi": "10.5281/zenodo.20392548"
+  },
+  {
+   "a": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "b": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20393091",
+   "bDoi": "10.5281/zenodo.20392278"
+  },
+  {
+   "a": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "b": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20392809",
+   "bDoi": "10.5281/zenodo.20392548"
+  },
+  {
+   "a": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "b": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20392809",
+   "bDoi": "10.5281/zenodo.20392278"
+  },
+  {
+   "a": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "b": "Biomimetic Co-Inference Learning: Bypassing Backpropagation via Telemetry-Guided",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20392548",
+   "bDoi": "10.5281/zenodo.20392278"
+  },
+  {
+   "a": "Event-driven LiDAR with dynamic neuromorphic processing",
+   "b": "Event-Driven LiDAR with Dynamic Neuromorphic Processing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1117/12.3039478",
+   "bDoi": "10.1364/cosi.2024.cm2b.4"
+  },
+  {
+   "a": "Estimating orientation in natural scenes: A spiking neural network model of the ",
+   "b": "Estimating orientation in Natural scenes: A Spiking Neural Network Model of the ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1371/journal.pcbi.1011913",
+   "bDoi": "10.1101/2024.02.13.580047"
+  },
+  {
+   "a": "Editorial: Introducing the Collection on Physics-Inspired Computing",
+   "b": "Editorial: Closing the Collection on Physics-Inspired Computing",
+   "jaccard": "0.750",
+   "lev": "0.892",
+   "aDoi": "10.1103/physrevapplied.23.030001",
+   "bDoi": "10.1103/physrevapplied.25.030001"
+  },
+  {
+   "a": "Review for \"Controlling the phase transition dynamics of GeTe by Sn substitution",
+   "b": "Review for \"Controlling the phase transition dynamics of GeTe by Sn substitution",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d5ma01008j/v2/review2",
+   "bDoi": "10.1039/d5ma01008j/v1/review1"
+  },
+  {
+   "a": "Review for \"Combined resistive switching memory and multi-state operation in Ter",
+   "b": "Review for \"Combined resistive switching memory and multi-state operation in Ter",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d5nr05022g/v2/review1",
+   "bDoi": "10.1039/d5nr05022g/v1/review1"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "neuromorphic",
+ "generatedAt": "2026-10-11T14:44:00.450Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.6
+}

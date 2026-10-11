@@ -1,0 +1,219 @@
+{
+  "generatedAt": "2026-10-11T22:44:26.452418",
+  "totalEntities": 60000,
+  "totalClusters": 1058,
+  "totalInClusters": 2574,
+  "overallDupPct": 4.29,
+  "perSite": [
+    {
+      "site": "genetech-tools",
+      "entities": 2000,
+      "clusterCount": 57,
+      "entitiesInClusters": 164,
+      "dupPct": 8.2
+    },
+    {
+      "site": "exo-science",
+      "entities": 2000,
+      "clusterCount": 63,
+      "entitiesInClusters": 138,
+      "dupPct": 6.9
+    },
+    {
+      "site": "nuclear-energy",
+      "entities": 2000,
+      "clusterCount": 60,
+      "entitiesInClusters": 135,
+      "dupPct": 6.75
+    },
+    {
+      "site": "low-altitude",
+      "entities": 2000,
+      "clusterCount": 48,
+      "entitiesInClusters": 117,
+      "dupPct": 5.85
+    },
+    {
+      "site": "robot-parts",
+      "entities": 2000,
+      "clusterCount": 53,
+      "entitiesInClusters": 114,
+      "dupPct": 5.7
+    },
+    {
+      "site": "bionic-ai",
+      "entities": 2000,
+      "clusterCount": 44,
+      "entitiesInClusters": 110,
+      "dupPct": 5.5
+    },
+    {
+      "site": "edge-ai",
+      "entities": 2000,
+      "clusterCount": 46,
+      "entitiesInClusters": 108,
+      "dupPct": 5.4
+    },
+    {
+      "site": "synbio-manufacturing",
+      "entities": 2000,
+      "clusterCount": 40,
+      "entitiesInClusters": 107,
+      "dupPct": 5.35
+    },
+    {
+      "site": "privacy-computing",
+      "entities": 2000,
+      "clusterCount": 34,
+      "entitiesInClusters": 104,
+      "dupPct": 5.2
+    },
+    {
+      "site": "alien-minerals",
+      "entities": 2000,
+      "clusterCount": 37,
+      "entitiesInClusters": 98,
+      "dupPct": 4.9
+    },
+    {
+      "site": "semiconductor",
+      "entities": 2000,
+      "clusterCount": 37,
+      "entitiesInClusters": 95,
+      "dupPct": 4.75
+    },
+    {
+      "site": "sat-6g",
+      "entities": 2000,
+      "clusterCount": 43,
+      "entitiesInClusters": 94,
+      "dupPct": 4.7
+    },
+    {
+      "site": "ai4science",
+      "entities": 2000,
+      "clusterCount": 40,
+      "entitiesInClusters": 93,
+      "dupPct": 4.65
+    },
+    {
+      "site": "life-science",
+      "entities": 2000,
+      "clusterCount": 29,
+      "entitiesInClusters": 93,
+      "dupPct": 4.65
+    },
+    {
+      "site": "agent-ecosystem",
+      "entities": 2000,
+      "clusterCount": 41,
+      "entitiesInClusters": 87,
+      "dupPct": 4.35
+    },
+    {
+      "site": "brain-science",
+      "entities": 2000,
+      "clusterCount": 35,
+      "entitiesInClusters": 87,
+      "dupPct": 4.35
+    },
+    {
+      "site": "quantum-computing",
+      "entities": 2000,
+      "clusterCount": 34,
+      "entitiesInClusters": 86,
+      "dupPct": 4.3
+    },
+    {
+      "site": "embodied-ai",
+      "entities": 2000,
+      "clusterCount": 40,
+      "entitiesInClusters": 82,
+      "dupPct": 4.1
+    },
+    {
+      "site": "neuromorphic",
+      "entities": 2000,
+      "clusterCount": 33,
+      "entitiesInClusters": 75,
+      "dupPct": 3.75
+    },
+    {
+      "site": "biocomputing",
+      "entities": 2000,
+      "clusterCount": 27,
+      "entitiesInClusters": 73,
+      "dupPct": 3.65
+    },
+    {
+      "site": "quantum-materials",
+      "entities": 2000,
+      "clusterCount": 25,
+      "entitiesInClusters": 70,
+      "dupPct": 3.5
+    },
+    {
+      "site": "tcm-tools",
+      "entities": 2000,
+      "clusterCount": 24,
+      "entitiesInClusters": 60,
+      "dupPct": 3.0
+    },
+    {
+      "site": "spatial-computing",
+      "entities": 2000,
+      "clusterCount": 22,
+      "entitiesInClusters": 57,
+      "dupPct": 2.85
+    },
+    {
+      "site": "carbon-neutral",
+      "entities": 2000,
+      "clusterCount": 25,
+      "entitiesInClusters": 56,
+      "dupPct": 2.8
+    },
+    {
+      "site": "biomed-ai",
+      "entities": 2000,
+      "clusterCount": 23,
+      "entitiesInClusters": 54,
+      "dupPct": 2.7
+    },
+    {
+      "site": "deep-sea-tech",
+      "entities": 2000,
+      "clusterCount": 21,
+      "entitiesInClusters": 49,
+      "dupPct": 2.45
+    },
+    {
+      "site": "agritech",
+      "entities": 2000,
+      "clusterCount": 20,
+      "entitiesInClusters": 46,
+      "dupPct": 2.3
+    },
+    {
+      "site": "new-energy",
+      "entities": 2000,
+      "clusterCount": 20,
+      "entitiesInClusters": 44,
+      "dupPct": 2.2
+    },
+    {
+      "site": "digital-twin",
+      "entities": 2000,
+      "clusterCount": 20,
+      "entitiesInClusters": 41,
+      "dupPct": 2.05
+    },
+    {
+      "site": "ai-safety",
+      "entities": 2000,
+      "clusterCount": 17,
+      "entitiesInClusters": 37,
+      "dupPct": 1.85
+    }
+  ]
+}

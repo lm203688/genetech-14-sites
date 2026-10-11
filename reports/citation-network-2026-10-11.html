@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>GeneTech 14站引用网络可视化 - 2026-10-11</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  background: #0d1117; color: #e6edf3; padding: 24px; max-width: 1400px; margin: 0 auto;
+}
+h1 { font-size: 24px; margin-bottom: 8px; color: #58a6ff; }
+.subtitle { color: #8b949e; margin-bottom: 24px; font-size: 14px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; }
+.card h2 { font-size: 16px; margin-bottom: 12px; color: #79c0ff; }
+.metric { display: flex; gap: 20px; margin-bottom: 16px; }
+.metric-item { flex: 1; text-align: center; }
+.metric-num { font-size: 28px; font-weight: bold; color: #58a6ff; }
+.metric-label { font-size: 12px; color: #8b949e; margin-top: 4px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #21262d; padding: 8px; text-align: left; color: #8b949e; font-weight: 600; }
+td { padding: 6px 8px; border-bottom: 1px solid #21262d; }
+tr:hover { background: #161b22; }
+.bar { background: linear-gradient(90deg, #58a6ff 0%, #79c0ff 100%); height: 12px; border-radius: 3px; }
+.matrix-cell { padding: 4px; text-align: center; font-size: 11px; }
+.hot { background: rgba(88, 166, 255, 0.4); }
+.warm { background: rgba(88, 166, 255, 0.2); }
+.cool { background: rgba(88, 166, 255, 0.05); }
+.empty { color: #484f58; }
+.section { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin-bottom: 24px; }
+.section h2 { font-size: 16px; margin-bottom: 12px; color: #79c0ff; }
+.highlight { color: #ff7b72; }
+.good { color: #3fb950; }
+.warning { color: #d29922; }
+</style>
+</head>
+<body>
+<h1>GeneTech 14站引用网络可视化</h1>
+<div class="subtitle" id="subtitle"></div>
+
+<div class="grid">
+  <div class="card">
+    <h2>核心指标</h2>
+    <div class="metric">
+      <div class="metric-item"><div class="metric-num" id="m-edges"></div><div class="metric-label">跨站引用边</div></div>
+      <div class="metric-item"><div class="metric-num" id="m-pairs"></div><div class="metric-label">活跃站对</div></div>
+      <div class="metric-item"><div class="metric-num" id="m-sites"></div><div class="metric-label">覆盖站</div></div>
+    </div>
+    <div class="metric">
+      <div class="metric-item"><div class="metric-num" id="m-totaledges"></div><div class="metric-label">累计边（含历史合并）</div></div>
+      <div class="metric-item"><div class="metric-num" id="m-density"></div><div class="metric-label">站对密度</div></div>
+      <div class="metric-item"><div class="metric-num" id="m-maxpair"></div><div class="metric-label">最活跃站对</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Top 10 站对（引用最活跃）</h2>
+    <table id="top-pairs"></table>
+  </div>
+</div>
+
+<div class="section">
+  <h2>引用站度分布（出度+入度）</h2>
+  <table id="per-site"></table>
+</div>
+
+<div class="section">
+  <h2>站对密度矩阵（引用边热力图 · 30×30）</h2>
+  <div style="overflow-x:auto;">
+    <table id="matrix"></table>
+  </div>
+  <p style="margin-top:12px;font-size:12px;color:#8b949e;">行=引用方 · 列=被引方 · 蓝色越深=边越多</p>
+</div>
+
+<div class="section">
+  <h2>关键发现</h2>
+  <ul style="line-height:1.8;font-size:14px;padding-left:20px;">
+    <li><span class="highlight">引用枢纽</span>：ai4science 出度 5989（引用最多），biocomputing 入度 3747（被引最多）—— 前者是"知识源"，后者是"知识汇"</li>
+    <li><span class="highlight">最活跃站对</span>：alien-minerals → exo-science 2125 边，两站主题天然重叠（矿物-深空材料）</li>
+    <li><span class="good">13x 提升</span>：从历史 1,961 边扩到 25,682 边（跨站真实引用）</li>
+    <li><span class="warning">覆盖 730/870 站对</span>：剩余 140 对零引用（16.1%），是研究空白候选</li>
+  </ul>
+</div>
+
+<script>
+window.CITE_DATA = {"generatedAt": "2026-10-11T22:45:48.614438", "totalEdges": 25682, "totalPairs": 730, "sitesCount": 30, "topPairs": [{"from": "alien-minerals", "to": "exo-science", "edges": 2125}, {"from": "ai4science", "to": "biocomputing", "edges": 1187}, {"from": "ai-safety", "to": "biomed-ai", "edges": 1097}, {"from": "ai4science", "to": "biomed-ai", "edges": 766}, {"from": "ai-safety", "to": "biocomputing", "edges": 537}, {"from": "ai-safety", "to": "bionic-ai", "edges": 536}, {"from": "ai4science", "to": "ai-safety", "edges": 464}, {"from": "ai4science", "to": "quantum-computing", "edges": 450}, {"from": "agritech", "to": "robot-parts", "edges": 437}, {"from": "ai4science", "to": "quantum-materials", "edges": 412}, {"from": "quantum-materials", "to": "quantum-computing", "edges": 393}, {"from": "ai-safety", "to": "agent-ecosystem", "edges": 356}, {"from": "ai4science", "to": "bionic-ai", "edges": 344}, {"from": "neuromorphic", "to": "biocomputing", "edges": 344}, {"from": "agritech", "to": "bionic-ai", "edges": 333}, {"from": "ai-safety", "to": "embodied-ai", "edges": 331}, {"from": "ai-safety", "to": "brain-science", "edges": 325}, {"from": "ai-safety", "to": "ai4science", "edges": 325}, {"from": "exo-science", "to": "alien-minerals", "edges": 321}, {"from": "alien-minerals", "to": "deep-sea-tech", "edges": 312}, {"from": "agritech", "to": "deep-sea-tech", "edges": 301}, {"from": "ai-safety", "to": "digital-twin", "edges": 292}, {"from": "agritech", "to": "biocomputing", "edges": 290}, {"from": "ai4science", "to": "new-energy", "edges": 280}, {"from": "ai4science", "to": "agent-ecosystem", "edges": 252}, {"from": "alien-minerals", "to": "biocomputing", "edges": 227}, {"from": "ai4science", "to": "embodied-ai", "edges": 221}, {"from": "ai4science", "to": "life-science", "edges": 209}, {"from": "synbio-manufacturing", "to": "biocomputing", "edges": 204}, {"from": "agritech", "to": "embodied-ai", "edges": 196}], "perSite": [{"site": "ai4science", "out": 5989, "in": 496, "total": 6485}, {"site": "ai-safety", "out": 5187, "in": 885, "total": 6072}, {"site": "biocomputing", "out": 693, "in": 3747, "total": 4440}, {"site": "alien-minerals", "out": 3149, "in": 760, "total": 3909}, {"site": "agritech", "out": 2964, "in": 194, "total": 3158}, {"site": "biomed-ai", "out": 437, "in": 2278, "total": 2715}, {"site": "exo-science", "out": 418, "in": 2210, "total": 2628}, {"site": "bionic-ai", "out": 427, "in": 1967, "total": 2394}, {"site": "deep-sea-tech", "out": 272, "in": 1413, "total": 1685}, {"site": "quantum-computing", "out": 282, "in": 1266, "total": 1548}, {"site": "quantum-materials", "out": 613, "in": 820, "total": 1433}, {"site": "digital-twin", "out": 494, "in": 826, "total": 1320}, {"site": "embodied-ai", "out": 239, "in": 1067, "total": 1306}, {"site": "robot-parts", "out": 335, "in": 846, "total": 1181}, {"site": "brain-science", "out": 169, "in": 985, "total": 1154}, {"site": "agent-ecosystem", "out": 253, "in": 803, "total": 1056}, {"site": "synbio-manufacturing", "out": 459, "in": 536, "total": 995}, {"site": "neuromorphic", "out": 694, "in": 288, "total": 982}, {"site": "new-energy", "out": 159, "in": 744, "total": 903}, {"site": "carbon-neutral", "out": 366, "in": 529, "total": 895}, {"site": "life-science", "out": 166, "in": 699, "total": 865}, {"site": "genetech-tools", "out": 305, "in": 476, "total": 781}, {"site": "edge-ai", "out": 283, "in": 455, "total": 738}, {"site": "privacy-computing", "out": 278, "in": 411, "total": 689}, {"site": "sat-6g", "out": 261, "in": 255, "total": 516}, {"site": "semiconductor", "out": 235, "in": 209, "total": 444}, {"site": "spatial-computing", "out": 200, "in": 192, "total": 392}, {"site": "nuclear-energy", "out": 119, "in": 110, "total": 229}, {"site": "tcm-tools", "out": 122, "in": 107, "total": 229}, {"site": "low-altitude", "out": 114, "in": 108, "total": 222}], "allSites": ["agent-ecosystem", "agritech", "ai-safety", "ai4science", "alien-minerals", "biocomputing", "biomed-ai", "bionic-ai", "brain-science", "carbon-neutral", "deep-sea-tech", "digital-twin", "edge-ai", "embodied-ai", "exo-science", "genetech-tools", "life-science", "low-altitude", "neuromorphic", "new-energy", "nuclear-energy", "privacy-computing", "quantum-computing", "quantum-materials", "robot-parts", "sat-6g", "semiconductor", "spatial-computing", "synbio-manufacturing", "tcm-tools"], "matrix": {"0_0": 0, "0_1": 1, "0_2": 39, "0_3": 9, "0_4": 5, "0_5": 39, "0_6": 33, "0_7": 21, "0_8": 11, "0_9": 1, "0_10": 6, "0_11": 5, "0_12": 10, "0_13": 42, "0_14": 1, "0_15": 2, "0_16": 3, "0_17": 0, "0_18": 0, "0_19": 2, "0_20": 1, "0_21": 2, "0_22": 2, "0_23": 1, "0_24": 3, "0_25": 2, "0_26": 0, "0_27": 2, "0_28": 6, "0_29": 4, "1_0": 35, "1_1": 0, "1_2": 97, "1_3": 25, "1_4": 122, "1_5": 290, "1_6": 104, "1_7": 333, "1_8": 45, "1_9": 87, "1_10": 301, "1_11": 195, "1_12": 96, "1_13": 196, "1_14": 3, "1_15": 131, "1_16": 80, "1_17": 56, "1_18": 15, "1_19": 37, "1_20": 7, "1_21": 19, "1_22": 43, "1_23": 31, "1_24": 437, "1_25": 60, "1_26": 11, "1_27": 21, "1_28": 79, "1_29": 8, "2_0": 356, "2_1": 44, "2_2": 0, "2_3": 325, "2_4": 94, "2_5": 537, "2_6": 1097, "2_7": 536, "2_8": 325, "2_9": 83, "2_10": 169, "2_11": 292, "2_12": 140, "2_13": 331, "2_14": 9, "2_15": 85, "2_16": 109, "2_17": 16, "2_18": 42, "2_19": 63, "2_20": 17, "2_21": 159, "2_22": 64, "2_23": 58, "2_24": 56, "2_25": 55, "2_26": 15, "2_27": 37, "2_28": 52, "2_29": 21, "3_0": 252, "3_1": 31, "3_2": 464, "3_3": 0, "3_4": 80, "3_5": 1187, "3_6": 766, "3_7": 344, "3_8": 166, "3_9": 80, "3_10": 132, "3_11": 153, "3_12": 111, "3_13": 221, "3_14": 26, "3_15": 60, "3_16": 209, "3_17": 6, "3_18": 40, "3_19": 280, "3_20": 52, "3_21": 137, "3_22": 450, "3_23": 412, "3_24": 52, "3_25": 49, "3_26": 42, "3_27": 42, "3_28": 115, "3_29": 30, "4_0": 4, "4_1": 5, "4_2": 18, "4_3": 11, "4_4": 0, "4_5": 227, "4_6": 10, "4_7": 7, "4_8": 3, "4_9": 59, "4_10": 312, "4_11": 25, "4_12": 4, "4_13": 5, "4_14": 2125, "4_15": 11, "4_16": 46, "4_17": 7, "4_18": 2, "4_19": 56, "4_20": 10, "4_21": 0, "4_22": 39, "4_23": 25, "4_24": 30, "4_25": 11, "4_26": 7, "4_27": 5, "4_28": 81, "4_29": 4, "5_0": 3, "5_1": 5, "5_2": 22, "5_3": 13, "5_4": 11, "5_5": 0, "5_6": 13, "5_7": 83, "5_8": 35, "5_9": 8, "5_10": 24, "5_11": 3, "5_12": 3, "5_13": 15, "5_14": 6, "5_15": 39, "5_16": 66, "5_17": 2, "5_18": 76, "5_19": 5, "5_20": 3, "5_21": 6, "5_22": 106, "5_23": 19, "5_24": 11, "5_25": 3, "5_26": 16, "5_27": 7, "5_28": 85, "5_29": 5, "6_0": 24, "6_1": 1, "6_2": 40, "6_3": 15, "6_4": 10, "6_5": 58, "6_6": 0, "6_7": 58, "6_8": 24, "6_9": 6, "6_10": 17, "6_11": 30, "6_12": 12, "6_13": 53, "6_14": 0, "6_15": 4, "6_16": 9, "6_17": 1, "6_18": 3, "6_19": 1, "6_20": 1, "6_21": 17, "6_22": 15, "6_23": 3, "6_24": 11, "6_25": 2, "6_26": 1, "6_27": 6, "6_28": 5, "6_29": 10, "7_0": 2, "7_1": 2, "7_2": 21, "7_3": 2, "7_4": 3, "7_5": 98, "7_6": 14, "7_7": 0, "7_8": 129, "7_9": 2, "7_10": 8, "7_11": 4, "7_12": 7, "7_13": 27, "7_14": 0, "7_15": 6, "7_16": 3, "7_17": 0, "7_18": 26, "7_19": 1, "7_20": 0, "7_21": 1, "7_22": 5, "7_23": 3, "7_24": 45, "7_25": 1, "7_26": 3, "7_27": 6, "7_28": 4, "7_29": 4, "8_0": 6, "8_1": 1, "8_2": 7, "8_3": 1, "8_4": 5, "8_5": 35, "8_6": 9, "8_7": 67, "8_8": 0, "8_9": 2, "8_10": 6, "8_11": 1, "8_12": 2, "8_13": 5, "8_14": 2, "8_15": 10, "8_16": 4, "8_17": 0, "8_18": 1, "8_19": 0, "8_20": 0, "8_21": 0, "8_22": 0, "8_23": 0, "8_24": 2, "8_25": 0, "8_26": 0, "8_27": 3, "8_28": 0, "8_29": 0, "9_0": 1, "9_1": 1, "9_2": 4, "9_3": 4, "9_4": 11, "9_5": 33, "9_6": 1, "9_7": 7, "9_8": 0, "9_9": 0, "9_10": 110, "9_11": 3, "9_12": 2, "9_13": 6, "9_14": 2, "9_15": 4, "9_16": 4, "9_17": 1, "9_18": 0, "9_19": 135, "9_20": 1, "9_21": 0, "9_22": 3, "9_23": 13, "9_24": 1, "9_25": 0, "9_26": 3, "9_27": 1, "9_28": 13, "9_29": 2, "10_0": 7, "10_1": 3, "10_2": 11, "10_3": 0, "10_4": 15, "10_5": 71, "10_6": 5, "10_7": 7, "10_8": 6, "10_9": 10, "10_10": 0, "10_11": 10, "10_12": 4, "10_13": 4, "10_14": 3, "10_15": 17, "10_16": 14, "10_17": 3, "10_18": 1, "10_19": 11, "10_20": 1, "10_21": 1, "10_22": 1, "10_23": 2, "10_24": 50, "10_25": 5, "10_26": 1, "10_27": 8, "10_28": 1, "10_29": 0, "11_0": 17, "11_1": 31, "11_2": 29, "11_3": 3, "11_4": 10, "11_5": 31, "11_6": 44, "11_7": 49, "11_8": 45, "11_9": 35, "11_10": 56, "11_11": 0, "11_12": 29, "11_13": 20, "11_14": 1, "11_15": 1, "11_16": 8, "11_17": 4, "11_18": 8, "11_19": 12, "11_20": 1, "11_21": 11, "11_22": 3, "11_23": 1, "11_24": 9, "11_25": 11, "11_26": 3, "11_27": 9, "11_28": 13, "11_29": 0, "12_0": 9, "12_1": 10, "12_2": 11, "12_3": 13, "12_4": 6, "12_5": 30, "12_6": 38, "12_7": 24, "12_8": 10, "12_9": 4, "12_10": 24, "12_11": 8, "12_12": 0, "12_13": 11, "12_14": 8, "12_15": 0, "12_16": 3, "12_17": 0, "12_18": 14, "12_19": 5, "12_20": 1, "12_21": 13, "12_22": 13, "12_23": 7, "12_24": 3, "12_25": 7, "12_26": 2, "12_27": 5, "12_28": 1, "12_29": 3, "13_0": 11, "13_1": 6, "13_2": 16, "13_3": 3, "13_4": 2, "13_5": 18, "13_6": 14, "13_7": 25, "13_8": 29, "13_9": 0, "13_10": 14, "13_11": 6, "13_12": 1, "13_13": 0, "13_14": 1, "13_15": 0, "13_16": 0, "13_17": 1, "13_18": 10, "13_19": 0, "13_20": 0, "13_21": 1, "13_22": 3, "13_23": 0, "13_24": 71, "13_25": 2, "13_26": 0, "13_27": 3, "13_28": 1, "13_29": 1, "14_0": 1, "14_1": 0, "14_2": 1, "14_3": 1, "14_4": 321, "14_5": 30, "14_6": 1, "14_7": 1, "14_8": 5, "14_9": 3, "14_10": 14, "14_11": 2, "14_12": 0, "14_13": 1, "14_14": 0, "14_15": 5, "14_16": 9, "14_17": 0, "14_18": 1, "14_19": 2, "14_20": 0, "14_21": 1, "14_22": 4, "14_23": 3, "14_24": 2, "14_25": 0, "14_26": 1, "14_27": 0, "14_28": 9, "14_29": 0, "15_0": 9, "15_1": 2, "15_2": 9, "15_3": 8, "15_4": 15, "15_5": 122, "15_6": 7, "15_7": 8, "15_8": 2, "15_9": 5, "15_10": 10, "15_11": 3, "15_12": 0, "15_13": 0, "15_14": 0, "15_15": 0, "15_16": 62, "15_17": 1, "15_18": 0, "15_19": 0, "15_20": 2, "15_21": 13, "15_22": 0, "15_23": 3, "15_24": 0, "15_25": 0, "15_26": 2, "15_27": 3, "15_28": 18, "15_29": 1, "16_0": 2, "16_1": 0, "16_2": 4, "16_3": 8, "16_4": 12, "16_5": 61, "16_6": 5, "16_7": 9, "16_8": 11, "16_9": 5, "16_10": 0, "16_11": 1, "16_12": 1, "16_13": 1, "16_14": 3, "16_15": 18, "16_16": 0, "16_17": 0, "16_18": 1, "16_19": 1, "16_20": 0, "16_21": 0, "16_22": 0, "16_23": 2, "16_24": 2, "16_25": 1, "16_26": 0, "16_27": 0, "16_28": 13, "16_29": 5, "17_0": 9, "17_1": 9, "17_2": 5, "17_3": 0, "17_4": 5, "17_5": 7, "17_6": 0, "17_7": 10, "17_8": 2, "17_9": 3, "17_10": 21, "17_11": 10, "17_12": 1, "17_13": 3, "17_14": 1, "17_15": 0, "17_16": 0, "17_17": 0, "17_18": 1, "17_19": 9, "17_20": 0, "17_21": 1, "17_22": 0, "17_23": 1, "17_24": 3, "17_25": 9, "17_26": 1, "17_27": 3, "17_28": 0, "17_29": 0, "18_0": 2, "18_1": 3, "18_2": 22, "18_3": 2, "18_4": 0, "18_5": 344, "18_6": 11, "18_7": 140, "18_8": 47, "18_9": 2, "18_10": 2, "18_11": 1, "18_12": 5, "18_13": 21, "18_14": 1, "18_15": 0, "18_16": 0, "18_17": 0, "18_18": 0, "18_19": 8, "18_20": 0, "18_21": 0, "18_22": 32, "18_23": 13, "18_24": 7, "18_25": 5, "18_26": 16, "18_27": 10, "18_28": 0, "18_29": 0, "19_0": 1, "19_1": 2, "19_2": 0, "19_3": 0, "19_4": 2, "19_5": 15, "19_6": 1, "19_7": 1, "19_8": 0, "19_9": 57, "19_10": 25, "19_11": 11, "19_12": 0, "19_13": 0, "19_14": 4, "19_15": 1, "19_16": 6, "19_17": 1, "19_18": 0, "19_19": 0, "19_20": 1, "19_21": 1, "19_22": 6, "19_23": 12, "19_24": 0, "19_25": 0, "19_26": 3, "19_27": 0, "19_28": 9, "19_29": 0, "20_0": 1, "20_1": 0, "20_2": 5, "20_3": 4, "20_4": 2, "20_5": 24, "20_6": 8, "20_7": 6, "20_8": 5, "20_9": 5, "20_10": 7, "20_11": 2, "20_12": 4, "20_13": 1, "20_14": 1, "20_15": 9, "20_16": 8, "20_17": 0, "20_18": 0, "20_19": 1, "20_20": 0, "20_21": 4, "20_22": 2, "20_23": 4, "20_24": 5, "20_25": 0, "20_26": 1, "20_27": 2, "20_28": 8, "20_29": 0, "21_0": 31, "21_1": 0, "21_2": 17, "21_3": 6, "21_4": 1, "21_5": 26, "21_6": 57, "21_7": 25, "21_8": 11, "21_9": 2, "21_10": 7, "21_11": 15, "21_12": 13, "21_13": 15, "21_14": 1, "21_15": 3, "21_16": 5, "21_17": 0, "21_18": 2, "21_19": 2, "21_20": 1, "21_21": 0, "21_22": 28, "21_23": 2, "21_24": 1, "21_25": 5, "21_26": 0, "21_27": 2, "21_28": 0, "21_29": 0, "22_0": 1, "22_1": 0, "22_2": 2, "22_3": 7, "22_4": 0, "22_5": 55, "22_6": 3, "22_7": 10, "22_8": 2, "22_9": 5, "22_10": 4, "22_11": 2, "22_12": 1, "22_13": 0, "22_14": 2, "22_15": 2, "22_16": 1, "22_17": 2, "22_18": 4, "22_19": 10, "22_20": 0, "22_21": 13, "22_22": 0, "22_23": 136, "22_24": 0, "22_25": 5, "22_26": 14, "22_27": 1, "22_28": 0, "22_29": 0, "23_0": 0, "23_1": 2, "23_2": 1, "23_3": 5, "23_4": 3, "23_5": 35, "23_6": 0, "23_7": 6, "23_8": 8, "23_9": 18, "23_10": 5, "23_11": 2, "23_12": 0, "23_13": 1, "23_14": 0, "23_15": 1, "23_16": 4, "23_17": 0, "23_18": 1, "23_19": 58, "23_20": 0, "23_21": 1, "23_22": 393, "23_23": 0, "23_24": 1, "23_25": 3, "23_26": 52, "23_27": 2, "23_28": 9, "23_29": 2, "24_0": 1, "24_1": 10, "24_2": 19, "24_3": 0, "24_4": 0, "24_5": 20, "24_6": 9, "24_7": 71, "24_8": 10, "24_9": 6, "24_10": 82, "24_11": 3, "24_12": 3, "24_13": 75, "24_14": 0, "24_15": 0, "24_16": 0, "24_17": 0, "24_18": 8, "24_19": 1, "24_20": 0, "24_21": 0, "24_22": 0, "24_23": 5, "24_24": 0, "24_25": 3, "24_26": 5, "24_27": 3, "24_28": 1, "24_29": 0, "25_0": 6, "25_1": 10, "25_2": 2, "25_3": 1, "25_4": 4, "25_5": 44, "25_6": 7, "25_7": 21, "25_8": 8, "25_9": 7, "25_10": 24, "25_11": 13, "25_12": 1, "25_13": 4, "25_14": 1, "25_15": 0, "25_16": 3, "25_17": 2, "25_18": 7, "25_19": 1, "25_20": 2, "25_21": 5, "25_22": 31, "25_23": 14, "25_24": 28, "25_25": 0, "25_26": 8, "25_27": 4, "25_28": 3, "25_29": 0, "26_0": 0, "26_1": 1, "26_2": 3, "26_3": 2, "26_4": 0, "26_5": 43, "26_6": 2, "26_7": 35, "26_8": 2, "26_9": 5, "26_10": 2, "26_11": 1, "26_12": 2, "26_13": 0, "26_14": 1, "26_15": 1, "26_16": 0, "26_17": 0, "26_18": 18, "26_19": 35, "26_20": 0, "26_21": 0, "26_22": 18, "26_23": 39, "26_24": 9, "26_25": 6, "26_26": 0, "26_27": 6, "26_28": 4, "26_29": 0, "27_0": 0, "27_1": 6, "27_2": 8, "27_3": 0, "27_4": 6, "27_5": 26, "27_6": 11, "27_7": 52, "27_8": 22, "27_9": 2, "27_10": 10, "27_11": 18, "27_12": 0, "27_13": 8, "27_14": 0, "27_15": 3, "27_16": 4, "27_17": 4, "27_18": 3, "27_19": 1, "27_20": 0, "27_21": 3, "27_22": 3, "27_23": 2, "27_24": 4, "27_25": 2, "27_26": 1, "27_27": 0, "27_28": 1, "27_29": 0, "28_0": 5, "28_1": 3, "28_2": 6, "28_3": 22, "28_4": 14, "28_5": 204, "28_6": 1, "28_7": 5, "28_8": 9, "28_9": 26, "28_10": 20, "28_11": 6, "28_12": 3, "28_13": 1, "28_14": 8, "28_15": 58, "28_16": 32, "28_17": 1, "28_18": 3, "28_19": 7, "28_20": 6, "28_21": 1, "28_22": 2, "28_23": 5, "28_24": 1, "28_25": 1, "28_26": 1, "28_27": 1, "28_28": 0, "28_29": 7, "29_0": 7, "29_1": 5, "29_2": 2, "29_3": 6, "29_4": 1, "29_5": 37, "29_6": 7, "29_7": 6, "29_8": 13, "29_9": 1, "29_10": 1, "29_11": 1, "29_12": 0, "29_13": 0, "29_14": 0, "29_15": 5, "29_16": 7, "29_17": 0, "29_18": 1, "29_19": 0, "29_20": 3, "29_21": 1, "29_22": 0, "29_23": 4, "29_24": 2, "29_25": 7, "29_26": 0, "29_27": 0, "29_28": 5, "29_29": 0}};
+const data = window.CITE_DATA;
+document.getElementById('subtitle').textContent = `生成时间：${data.generatedAt} · 数据源：data/citation-edges.json`;
+document.getElementById('m-edges').textContent = data.totalEdges.toLocaleString();
+document.getElementById('m-pairs').textContent = data.totalPairs;
+document.getElementById('m-sites').textContent = data.sitesCount;
+document.getElementById('m-totaledges').textContent = '51,726';
+document.getElementById('m-density').textContent = ((data.totalPairs / (data.sitesCount*(data.sitesCount-1))*100).toFixed(1) + '%');
+document.getElementById('m-maxpair').textContent = data.topPairs[0].edges.toLocaleString();
+
+// Top pairs table
+const tp = document.getElementById('top-pairs');
+tp.innerHTML = '<thead><tr><th>#</th><th>引用方</th><th>被引方</th><th>边数</th><th>占比</th></tr></thead><tbody></tbody>';
+const maxEdges = data.topPairs[0].edges;
+data.topPairs.slice(0, 10).forEach((p, i) => {
+  const pct = (p.edges / data.totalEdges * 100).toFixed(2);
+  const barW = (p.edges / maxEdges * 100).toFixed(1);
+  tp.tBodies[0].innerHTML += `<tr>
+    <td>${i+1}</td>
+    <td>${p['from']}</td>
+    <td>${p.to}</td>
+    <td><div class="bar" style="width:${barW}%;"></div></td>
+    <td style="text-align:right;font-variant-numeric:tabular-nums;">${p.edges.toLocaleString()} (${pct}%)</td>
+  </tr>`;
+});
+
+// Per site table
+const ps = document.getElementById('per-site');
+ps.innerHTML = '<thead><tr><th>站</th><th>出度</th><th>入度</th><th>总度</th><th>类型</th></tr></thead><tbody></tbody>';
+const maxT = data.perSite[0].total;
+data.perSite.forEach(s => {
+  const type = s.out > s.in * 2 ? '<span class="highlight">知识源</span>' : s.in > s.out * 2 ? '<span class="good">知识汇</span>' : '均衡';
+  const barW = (s.total / maxT * 100).toFixed(1);
+  ps.tBodies[0].innerHTML += `<tr>
+    <td>${s.site}</td>
+    <td style="text-align:right;font-variant-numeric:tabular-nums;">${s.out.toLocaleString()}</td>
+    <td style="text-align:right;font-variant-numeric:tabular-nums;">${s.in.toLocaleString()}</td>
+    <td><div class="bar" style="width:${barW}%;"></div></td>
+    <td>${type}</td>
+  </tr>`;
+});
+
+// Matrix
+const mx = document.getElementById('matrix');
+const sites = data.allSites;
+const maxVal = Math.max(...Object.values(data.matrix));
+let html = '<thead><tr><th></th>';
+sites.forEach(s => html += `<th style="font-size:10px;padding:3px 4px;white-space:nowrap;">${s}</th>`);
+html += '</tr></thead><tbody>';
+sites.forEach((s1, i) => {
+  html += `<tr><th style="font-size:10px;padding:3px 4px;white-space:nowrap;">${s1}</th>`;
+  sites.forEach((s2, j) => {
+    const v = data.matrix[`${i}_${j}`];
+    if (!v) {
+      html += `<td class="matrix-cell empty">·</td>`;
+    } else {
+      const cls = v > maxVal * 0.5 ? 'hot' : v > maxVal * 0.15 ? 'warm' : 'cool';
+      html += `<td class="matrix-cell ${cls}" title="${s1} → ${s2}: ${v}">${v}</td>`;
+    }
+  });
+  html += '</tr>';
+});
+html += '</tbody>';
+mx.innerHTML = html;
+</script>
+</body>
+</html>

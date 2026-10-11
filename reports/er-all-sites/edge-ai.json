@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 40,
+ "candidatePairs": 87,
+ "matchedPairs": 87,
+ "doiConfirmed": 0,
+ "clusterCount": 46,
+ "entitiesInClusters": 108,
+ "sampleClusters": [
+  {
+   "size": 6,
+   "names": [
+    "Machine learning",
+    "Machine Learning",
+    "Machine Learning"
+   ],
+   "dois": [
+    "10.29172/5f042072-e281-48f0-8092-ea2fe2c29c26",
+    "10.1007/978-3-030-83098-4_2",
+    "10.1002/9781119654834.ch7"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Introduction",
+    "Introduction",
+    "Introduction"
+   ],
+   "dois": [
+    "10.4324/9781003744856-1",
+    "10.1007/978-3-032-01336-1_1",
+    "10.1386/9781835952009_2"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Review of: \"Generative Artificial Intelligence Using Machine Learning on Wireles",
+    "Review of: \"Generative Artificial Intelligence Using Machine Learning on Wireles",
+    "Review of: \"Generative Artificial Intelligence Using Machine Learning on Wireles"
+   ],
+   "dois": [
+    "10.32388/fxv2yi",
+    "10.32388/2yb221",
+    "10.32388/x3rakr"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Review of: \"Tweeting AI: A Machine Learning Approach for Bird Species Detection ",
+    "Review of: \"Tweeting AI: A Machine Learning Approach for Bird Species Detection ",
+    "Review of: \"Tweeting AI: A Machine Learning Approach for Bird Species Detection "
+   ],
+   "dois": [
+    "10.32388/3z5czq",
+    "10.32388/jl6u1a",
+    "10.32388/ik7vlq"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Annals of Mathematics and Artificial Intelligence",
+    "Annals of Mathematics and Artificial Intelligence",
+    "Annals of Mathematics and Artificial Intelligence"
+   ],
+   "dois": [
+    "10.1023/a:1016372016367",
+    "10.1023/a:1022954111167",
+    "10.1023/a:1016813008900"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Marking the Boundary of Knowledge: Four Centuries of Information Provenance",
+   "b": "Marking the Boundary of Knowledge: Four Centuries of Information Provenance",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21200157",
+   "bDoi": "10.5281/zenodo.21923366"
+  },
+  {
+   "a": "Machine learning",
+   "b": "Machine Learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.29172/5f042072-e281-48f0-8092-ea2fe2c29c26",
+   "bDoi": "10.1007/978-3-030-83098-4_2"
+  },
+  {
+   "a": "Machine learning",
+   "b": "Machine Learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.29172/5f042072-e281-48f0-8092-ea2fe2c29c26",
+   "bDoi": "10.1002/9781119654834.ch7"
+  },
+  {
+   "a": "Machine learning",
+   "b": "Machine Learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.29172/5f042072-e281-48f0-8092-ea2fe2c29c26",
+   "bDoi": "10.1002/9781119010258.ch4"
+  },
+  {
+   "a": "Machine learning",
+   "b": "Machine learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.29172/5f042072-e281-48f0-8092-ea2fe2c29c26",
+   "bDoi": "10.1017/cbo9780511975509.007"
+  },
+  {
+   "a": "Machine learning",
+   "b": "Machine learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.29172/5f042072-e281-48f0-8092-ea2fe2c29c26",
+   "bDoi": "10.1017/cbo9780511804779.017"
+  },
+  {
+   "a": "Machine Learning",
+   "b": "Machine Learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-030-83098-4_2",
+   "bDoi": "10.1002/9781119654834.ch7"
+  },
+  {
+   "a": "Machine Learning",
+   "b": "Machine Learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-030-83098-4_2",
+   "bDoi": "10.1002/9781119010258.ch4"
+  },
+  {
+   "a": "Machine Learning",
+   "b": "Machine learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-030-83098-4_2",
+   "bDoi": "10.1017/cbo9780511975509.007"
+  },
+  {
+   "a": "Machine Learning",
+   "b": "Machine learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-030-83098-4_2",
+   "bDoi": "10.1017/cbo9780511804779.017"
+  },
+  {
+   "a": "Machine Learning",
+   "b": "Machine Learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/9781119654834.ch7",
+   "bDoi": "10.1002/9781119010258.ch4"
+  },
+  {
+   "a": "Machine Learning",
+   "b": "Machine learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/9781119654834.ch7",
+   "bDoi": "10.1017/cbo9780511975509.007"
+  },
+  {
+   "a": "Machine Learning",
+   "b": "Machine learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/9781119654834.ch7",
+   "bDoi": "10.1017/cbo9780511804779.017"
+  },
+  {
+   "a": "Machine Learning",
+   "b": "Machine learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/9781119010258.ch4",
+   "bDoi": "10.1017/cbo9780511975509.007"
+  },
+  {
+   "a": "Machine Learning",
+   "b": "Machine learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/9781119010258.ch4",
+   "bDoi": "10.1017/cbo9780511804779.017"
+  },
+  {
+   "a": "Machine learning",
+   "b": "Machine learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1017/cbo9780511975509.007",
+   "bDoi": "10.1017/cbo9780511804779.017"
+  },
+  {
+   "a": "Deep Learning",
+   "b": "Deep Learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9780429448782-8",
+   "bDoi": "10.1007/978-3-032-05562-0_9"
+  },
+  {
+   "a": "The Metaphysics of Computation: Topological Relaxation, the Sarrus Isomorphism, ",
+   "b": "The Metaphysics of Computation: Topological Relaxation, the Sarrus Isomorphism, ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20818975",
+   "bDoi": "10.5281/zenodo.20818976"
+  },
+  {
+   "a": "tinyHLS - A template-based, layer-oriented High Level Synthesis Tool for AI algo",
+   "b": "tinyHLS - A template-based, layer-oriented High Level Synthesis Tool for AI algo",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.14205318",
+   "bDoi": "10.5281/zenodo.13785840"
+  },
+  {
+   "a": "Foreword",
+   "b": "Foreword",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2174/9789815305128124010001",
+   "bDoi": "10.1136/lupus-2024-la.foreword"
+  }
+ ],
+ "elapsedSec": 0.5,
+ "site": "edge-ai",
+ "generatedAt": "2026-10-11T14:43:56.025Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.7
+}

@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 42,
+ "candidatePairs": 356,
+ "matchedPairs": 356,
+ "doiConfirmed": 0,
+ "clusterCount": 29,
+ "entitiesInClusters": 93,
+ "sampleClusters": [
+  {
+   "size": 25,
+   "names": [
+    "Cover Picture: Engineering in Life Sciences 6'19",
+    "Cover Picture: Engineering in Life Sciences 1'24",
+    "Cover Picture: Engineering in Life Sciences 11'24"
+   ],
+   "dois": [
+    "10.1002/elsc.201970061",
+    "10.1002/elsc.202470011",
+    "10.1002/elsc.202470111"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "IFC - Editorial Board",
+    "IFC - Editorial Board",
+    "IFC - Editorial Board"
+   ],
+   "dois": [
+    "10.1016/s2214-5524(24)00102-0",
+    "10.1016/s2214-5524(25)00117-8",
+    "10.1016/s2214-5524(26)00037-4"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "The Secondary Signature of Immune System  - [ Molecular Blueprint] -The Architec",
+    "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+    "The Secondary Signature of Immune System  - The Architecture of Secondary Stage "
+   ],
+   "dois": [
+    "10.5281/zenodo.21505162",
+    "10.5281/zenodo.21505201",
+    "10.5281/zenodo.21505227"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Contents – Engineering in Life Sciences",
+    "Contents – Engineering in Life Sciences",
+    "Contents – Engineering in Life Sciences"
+   ],
+   "dois": [
+    "10.1002/elsc.201190013",
+    "10.1002/elsc.200990000",
+    "10.1002/elsc.201090022"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Contents page",
+    "Contents page",
+    "Contents page"
+   ],
+   "dois": [
+    "10.1016/s2452-3100(17)30213-5",
+    "10.1016/s2452-3100(17)30178-6",
+    "10.1016/s2452-3100(17)30231-7"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "The Secondary Signature of Immune System  - [ Molecular Blueprint] -The Architec",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "0.846",
+   "lev": "0.820",
+   "aDoi": "10.5281/zenodo.21505162",
+   "bDoi": "10.5281/zenodo.21505201"
+  },
+  {
+   "a": "The Secondary Signature of Immune System  - [ Molecular Blueprint] -The Architec",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "0.846",
+   "lev": "0.820",
+   "aDoi": "10.5281/zenodo.21505162",
+   "bDoi": "10.5281/zenodo.21505227"
+  },
+  {
+   "a": "The Secondary Signature of Immune System  - [ Molecular Blueprint] -The Architec",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "0.846",
+   "lev": "0.820",
+   "aDoi": "10.5281/zenodo.21505162",
+   "bDoi": "10.5281/zenodo.21505226"
+  },
+  {
+   "a": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21505201",
+   "bDoi": "10.5281/zenodo.21505227"
+  },
+  {
+   "a": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21505201",
+   "bDoi": "10.5281/zenodo.21505226"
+  },
+  {
+   "a": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21505227",
+   "bDoi": "10.5281/zenodo.21505226"
+  },
+  {
+   "a": "Author and subject index to Life Sciences Volume 17",
+   "b": "Author and subject index to life sciences volume 13",
+   "jaccard": "0.800",
+   "lev": "0.980",
+   "aDoi": "10.1016/0024-3205(75)90541-x",
+   "bDoi": "10.1016/0024-3205(73)90016-7"
+  },
+  {
+   "a": "Announcement",
+   "b": "Announcement",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/0888-7543(91)90475-t",
+   "bDoi": "10.1016/0024-3205(77)90148-5"
+  },
+  {
+   "a": "Agentic AI integrated with scientific knowledge: laboratory validation in system",
+   "b": "Agentic AI Integrated with Scientific Knowledge: Laboratory Validation in System",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1098/rsif.2026.0043",
+   "bDoi": "10.1101/2025.06.24.661378"
+  },
+  {
+   "a": "A Review of <i>Ostracism: A Social and Biological Phenomenon</i>",
+   "b": "A Review of <i>Ostracism: A Social and Biological Phenomenon</i>",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1017/s0730938400003440",
+   "bDoi": "10.1017/s0730938400003427"
+  },
+  {
+   "a": "Lessons from the equator: a window on the future of vibriosis in a warming Earth",
+   "b": "Lessons from the equator: a window on the future of vibriosis in a warming Earth",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.64898/2026.03.03.709458",
+   "bDoi": "10.21203/rs.3.rs-8937943/v1"
+  },
+  {
+   "a": "Computational systems biology",
+   "b": "Computational Cancer Systems Biology",
+   "jaccard": "0.750",
+   "lev": "0.806",
+   "aDoi": "10.1038/nature01254",
+   "bDoi": "10.12688/f1000research.channels.888"
+  },
+  {
+   "a": "Computational systems biology",
+   "b": "Computational Systems Biology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1038/nature01254",
+   "bDoi": "10.1016/b978-0-12-088786-6.x5019-9"
+  },
+  {
+   "a": "Cover Picture: Engineering in Life Sciences 6'19",
+   "b": "Cover Picture: Engineering in Life Sciences 1'24",
+   "jaccard": "0.750",
+   "lev": "0.935",
+   "aDoi": "10.1002/elsc.201970061",
+   "bDoi": "10.1002/elsc.202470011"
+  },
+  {
+   "a": "Cover Picture: Engineering in Life Sciences 6'19",
+   "b": "Cover Picture: Engineering in Life Sciences 11'24",
+   "jaccard": "0.750",
+   "lev": "0.936",
+   "aDoi": "10.1002/elsc.201970061",
+   "bDoi": "10.1002/elsc.202470111"
+  },
+  {
+   "a": "Cover Picture: Engineering in Life Sciences 6'19",
+   "b": "Cover Picture: Engineering in Life Sciences 5'24",
+   "jaccard": "0.750",
+   "lev": "0.935",
+   "aDoi": "10.1002/elsc.201970061",
+   "bDoi": "10.1002/elsc.202470041"
+  },
+  {
+   "a": "Cover Picture: Engineering in Life Sciences 6'19",
+   "b": "Cover Picture: Engineering in Life Sciences 2'24",
+   "jaccard": "0.750",
+   "lev": "0.935",
+   "aDoi": "10.1002/elsc.201970061",
+   "bDoi": "10.1002/elsc.202470021"
+  },
+  {
+   "a": "Cover Picture: Engineering in Life Sciences 6'19",
+   "b": "Cover Picture: Engineering in Life Sciences 4'13",
+   "jaccard": "0.750",
+   "lev": "0.957",
+   "aDoi": "10.1002/elsc.201970061",
+   "bDoi": "10.1002/elsc.201370041"
+  },
+  {
+   "a": "Cover Picture: Engineering in Life Sciences 6'19",
+   "b": "Cover Picture: Engineering in Life Sciences 9'23",
+   "jaccard": "0.750",
+   "lev": "0.935",
+   "aDoi": "10.1002/elsc.201970061",
+   "bDoi": "10.1002/elsc.202370091"
+  },
+  {
+   "a": "Cover Picture: Engineering in Life Sciences 6'19",
+   "b": "Cover Picture: Engineering in Life Sciences 4'18",
+   "jaccard": "0.750",
+   "lev": "0.957",
+   "aDoi": "10.1002/elsc.201970061",
+   "bDoi": "10.1002/elsc.201870041"
+  }
+ ],
+ "elapsedSec": 0.3,
+ "site": "life-science",
+ "generatedAt": "2026-10-11T14:43:58.831Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

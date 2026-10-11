@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 37,
+ "candidatePairs": 70,
+ "matchedPairs": 70,
+ "doiConfirmed": 0,
+ "clusterCount": 53,
+ "entitiesInClusters": 114,
+ "sampleClusters": [
+  {
+   "size": 4,
+   "names": [
+    "Natural Rubber-Based Soft Robotic Gripper with Tunable Performance",
+    "Natural Rubber-Based Soft Robotic Gripper with Tunable Performance",
+    "Natural Rubber-Based Soft Robotic Gripper with Tunable Performance"
+   ],
+   "dois": [
+    "10.1021/acsapm.6c00858.s003",
+    "10.1021/acsapm.6c00858.s002",
+    "10.1021/acsapm.6c00858.s004"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "3D-Printed High-Frequency Dielectric Elastomer Actuator toward Insect-Scale Ultr",
+    "3D-Printed High-Frequency Dielectric Elastomer Actuator toward Insect-Scale Ultr",
+    "3D-Printed High-Frequency Dielectric Elastomer Actuator toward Insect-Scale Ultr"
+   ],
+   "dois": [
+    "10.1021/acsmaterialslett.2c00991.s006",
+    "10.1021/acsmaterialslett.2c00991.s007",
+    "10.1021/acsmaterialslett.2c00991.s003"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Review of: \"Can artificial jellyfish be the next pragmatic autonomous self-deplo",
+    "Review of: \"[Commentary] Can artificial jellyfish be the next pragmatic autonomo",
+    "Review of: \"[Commentary] Can artificial jellyfish be the next pragmatic autonomo"
+   ],
+   "dois": [
+    "10.32388/mnwiye",
+    "10.32388/vq3ref",
+    "10.32388/hcji1j"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Ultrafast Laser Fabrication of a Flexible Sensor by Selective Ablation for a Dyn",
+    "Ultrafast Laser Fabrication of a Flexible Sensor by Selective Ablation for a Dyn",
+    "Ultrafast Laser Fabrication of a Flexible Sensor by Selective Ablation for a Dyn"
+   ],
+   "dois": [
+    "10.1021/acsami.5c07670",
+    "10.1021/acsami.5c07670.s001",
+    "10.1021/acsami.5c07670.s003"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "High Sensitivity Triboelectric Based Flexible Self-Powered Tactile Sensor with B",
+    "High Sensitivity Triboelectric Based Flexible Self-Powered Tactile Sensor with B",
+    "High Sensitivity Triboelectric Based Flexible Self-Powered Tactile Sensor with B"
+   ],
+   "dois": [
+    "10.1021/acssensors.4c00009.s006",
+    "10.1021/acssensors.4c00009.s002",
+    "10.1021/acssensors.4c00009"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Sensor fusion of touch &amp; vision in soft manipulators for fruit picking.",
+   "b": "Sensor fusion of touch & vision in soft manipulators for fruit picking.",
+   "jaccard": "0.917",
+   "lev": "0.944",
+   "aDoi": "10.1038/s41467-026-70588-9",
+   "bDoi": null
+  },
+  {
+   "a": "Structural integrity assessment of an amphibious spider robot's flapping fin usi",
+   "b": "Structural integrity assessment of an amphibious spider robot's flapping fin usi",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.1038/s41598-025-20546-0"
+  },
+  {
+   "a": "Spider Web-like Flexible Tactile Sensor for Pressure-Strain Simultaneous Detecti",
+   "b": "Spider Web-like Flexible Tactile Sensor for Pressure-Strain Simultaneous Detecti",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acsami.0c21960.s001",
+   "bDoi": "10.1021/acsami.0c21960.s003"
+  },
+  {
+   "a": "Self-Powered Flexible Hydrogel Sensor with Unbreakable Compressible Tolerance fo",
+   "b": "Self-Powered Flexible Hydrogel Sensor with Unbreakable Compressible Tolerance fo",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acs.nanolett.6c01190.s003",
+   "bDoi": "10.1021/acs.nanolett.6c01190.s001"
+  },
+  {
+   "a": "Fracture-based grasping: dynamic impact enables predictable robotic anchoring to",
+   "b": "Fracture-based grasping: dynamic impact enables predictable robotic anchoring to",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1038/s44182-026-00085-0",
+   "bDoi": null
+  },
+  {
+   "a": "Feasibility and Operational Limits of a Low-Cost Indirect UAV Thermal Sensing Sy",
+   "b": "Feasibility and Operational Limits of a Minimum-Cost Indirect UAV Thermal Sensin",
+   "jaccard": "0.789",
+   "lev": "0.887",
+   "aDoi": "10.20944/preprints202606.0679.v1",
+   "bDoi": null
+  },
+  {
+   "a": "Fractional-order electromagnetic modeling and identification for PMSM servo syst",
+   "b": "Fractional-order electromagnetic modeling and identification for PMSM servo syst",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.1016/j.isatra.2024.01.036"
+  },
+  {
+   "a": "Flexible Organic Molecular Single Crystal-Based Triboelectric Device as a Self-P",
+   "b": "Flexible Organic Molecular Single Crystal-Based Triboelectric Device as a Self-P",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/jacs.4c07370.s008",
+   "bDoi": "10.1021/jacs.4c07370.s009"
+  },
+  {
+   "a": "Approximations to optimal sequences in single-gripper and dual-gripper robotic c",
+   "b": "Approximations to optimal sequences in single-gripper and dual-gripper robotic c",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/0740817x.2014.937019",
+   "bDoi": "10.6084/m9.figshare.1182605.v3"
+  },
+  {
+   "a": "An integrated tomato harvesting framework using a hybrid soft-rigid gripper with",
+   "b": "An integrated tomato harvesting framework using a hybrid soft-rigid gripper with",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1038/s41598-026-42227-2",
+   "bDoi": null
+  },
+  {
+   "a": "An Open-Source, Three-Dimensionally Printed, Motorized (\"Breathing\") Nasotracheo",
+   "b": "An Open-Source, Three-Dimensionally Printed, Motorized (\"Breathing\") Nasotracheo",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/oto2.70269",
+   "bDoi": null
+  },
+  {
+   "a": "A Proximity and Tactile Sensor with Visual Multiresponse",
+   "b": "A Proximity and Tactile Sensor with Visual Multiresponse.",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acsami.4c22244.s001",
+   "bDoi": "10.1021/acsami.4c22244"
+  },
+  {
+   "a": "All MoS2Based Large Area, Skin-Attachable Active-Matrix Tactile Sensor",
+   "b": "All MoS2Based Large Area, Skin-Attachable Active-Matrix Tactile Sensor",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acsnano.8b07995.s001",
+   "bDoi": "10.1021/acsnano.8b07995.s004"
+  },
+  {
+   "a": "Anand Kumar Mishra Thesis",
+   "b": "Anand Kumar Mishra Thesis",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.2528587",
+   "bDoi": "10.5281/zenodo.2572011"
+  },
+  {
+   "a": "Android端末上でのHybrid LLM向け Physical AI Runtime OS の設計と実装ーDesign and Implementation",
+   "b": "Android端末上でのHybrid LLM向け Physical AI Runtime OS の設計と実装ーDesign and Implementation",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20319924",
+   "bDoi": "10.5281/zenodo.21784389"
+  },
+  {
+   "a": "ALFA: A Dataset for UAV Fault and Anomaly Detection",
+   "b": "ALFA: A Dataset for UAV Fault and Anomaly Detection",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1184/r1/12707963.v1",
+   "bDoi": "10.1184/r1/12707963"
+  },
+  {
+   "a": "A Look at the Different Types of Servo Motors and Their Applications",
+   "b": "A Look at the Different Types of Servo Motors and Their Applications",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.6529859",
+   "bDoi": "10.5281/zenodo.6554945"
+  },
+  {
+   "a": "A Smart Finger for Soft Material Identification Based on a Multimodal Tactile Se",
+   "b": "A Smart Finger for Soft Material Identification Based on a Multimodal Tactile Se",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acsami.5c17508",
+   "bDoi": "10.1021/acsami.5c17508.s001"
+  },
+  {
+   "a": "Anticreep and Antiswelling Sensor Hydrogel Inspired by Human Pressure Tactile fo",
+   "b": "Anticreep and Antiswelling Sensor Hydrogel Inspired by Human Pressure Tactile fo",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acs.chemmater.5c01053.s009",
+   "bDoi": "10.1021/acs.chemmater.5c01053.s008"
+  },
+  {
+   "a": "A Flexible and Ultra-Highly Sensitive Tactile Sensor through a Parallel Circuit ",
+   "b": "A Flexible and Ultra-Highly Sensitive Tactile Sensor through a Parallel Circuit ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acsnano.1c08273",
+   "bDoi": "10.1021/acsnano.1c08273.s003"
+  }
+ ],
+ "elapsedSec": 0.6,
+ "site": "robot-parts",
+ "generatedAt": "2026-10-11T14:44:05.043Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.7
+}

@@ -1,0 +1,244 @@
+{
+ "entities": 2000,
+ "buckets": 34,
+ "candidatePairs": 45,
+ "matchedPairs": 45,
+ "doiConfirmed": 0,
+ "clusterCount": 23,
+ "entitiesInClusters": 54,
+ "sampleClusters": [
+  {
+   "size": 5,
+   "names": [
+    "Review of: \"Artificial Intelligence and Organizational Change\"",
+    "Review of: \"Artificial Intelligence and Organizational Change\"",
+    "Review of: \"Artificial Intelligence and Organizational Change\""
+   ],
+   "dois": [
+    "10.32388/84r9i6",
+    "10.32388/nq1gp8",
+    "10.32388/xcav8n"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "Review of: \"Artificial Intelligence and Digital Technologies in the Future Educa",
+    "Review of: \"Artificial Intelligence and Digital Technologies in the Future Educa",
+    "Review of: \"Artificial Intelligence and Digital Technologies in the Future Educa"
+   ],
+   "dois": [
+    "10.32388/h2h46m",
+    "10.32388/th14nc",
+    "10.32388/pklq3u"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Artificial intelligence in medicine",
+    "Artificial Intelligence in Medicine",
+    "Artificial Intelligence in Medicine Market"
+   ],
+   "dois": [
+    "https://doi.org/10.24875/rmu.m23000076",
+    "https://doi.org/10.1007/978-3-030-77211-6",
+    "10.5281/zenodo.20731629"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Review of: \"Metacognition and Pedagogy in the Era of Artificial Intelligence\"",
+    "Review of: \"Metacognition and Pedagogy in the Era of Artificial Intelligence\"",
+    "Review of: \"Metacognition and Pedagogy in the Era of Artificial Intelligence\""
+   ],
+   "dois": [
+    "10.32388/yjqe6p",
+    "10.32388/jv2mk8",
+    "10.32388/nd4x65"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "2024 International Conference on Future Telecommunications and Artificial Intell",
+    "2025 International Conference on Future Telecommunications and Artificial Intell"
+   ],
+   "dois": [
+    "10.1109/ic-ftai62324.2024",
+    "10.1109/ic-ftai67960.2025"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Designing Psychometric Measures for LLMs: Framework and Application to Racial Bi",
+   "b": "Designing Psychometric Measures for LLMs: Framework and Application to Racial Bi",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.31234/osf.io/ctk7j_v3",
+   "bDoi": "10.31234/osf.io/ctk7j_v1"
+  },
+  {
+   "a": "Artificial intelligence in medicine",
+   "b": "Artificial Intelligence in Medicine",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.24875/rmu.m23000076",
+   "bDoi": "https://doi.org/10.1007/978-3-030-77211-6"
+  },
+  {
+   "a": "Artificial intelligence in medicine",
+   "b": "Artificial Intelligence in Medicine Market",
+   "jaccard": "0.800",
+   "lev": "0.833",
+   "aDoi": "https://doi.org/10.24875/rmu.m23000076",
+   "bDoi": "10.5281/zenodo.20731629"
+  },
+  {
+   "a": "Artificial Intelligence in Medicine",
+   "b": "Artificial Intelligence in Medicine Market",
+   "jaccard": "0.800",
+   "lev": "0.833",
+   "aDoi": "https://doi.org/10.1007/978-3-030-77211-6",
+   "bDoi": "10.5281/zenodo.20731629"
+  },
+  {
+   "a": "Artificial intelligence tools for automating assessments of reporting guideline ",
+   "b": "Artificial intelligence tools for automating assessments of reporting guideline ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.12688/f1000research.179775.2",
+   "bDoi": "10.12688/f1000research.179775.1"
+  },
+  {
+   "a": "Artificial intelligence in mathematics education: A systematic literature review",
+   "b": "Artificial Intelligence Applications in K-12 Education: A Systematic Literature ",
+   "jaccard": "0.727",
+   "lev": "0.810",
+   "aDoi": "https://doi.org/10.29333/iejme/12132",
+   "bDoi": "https://doi.org/10.1109/access.2022.3179356"
+  },
+  {
+   "a": "Artificial Intelligence",
+   "b": "Artificial Intelligence",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.1007/978-3-031-36678-9_14",
+   "bDoi": "https://doi.org/10.1007/978-3-031-50605-5"
+  },
+  {
+   "a": "Psychometric evaluation of Persian version of medical artificial intelligence re",
+   "b": "Psychometric properties of the persian version of the Medical Artificial Intelli",
+   "jaccard": "0.733",
+   "lev": "0.815",
+   "aDoi": "10.1186/s12909-023-04516-6",
+   "bDoi": "10.1186/s12909-023-04553-1"
+  },
+  {
+   "a": "Protocol for a systematic review of wearable devices for antenatal fetal monitor",
+   "b": "Protocol for a systematic review of wearable devices for antenatal fetal monitor",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.12688/wellcomeopenres.24335.2",
+   "bDoi": "10.12688/wellcomeopenres.24335.1"
+  },
+  {
+   "a": "ICAIM 2026 Cover Page",
+   "b": "ICAIM 2026 Cover Page",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/icaim69488.2026.11601704",
+   "bDoi": "10.1109/icaim69488.2026.11601244"
+  },
+  {
+   "a": "Use of Generative Artificial Intelligence for Consultation Preparation in Shared",
+   "b": "Use of Generative Artificial Intelligence for Consultation Preparation in Shared",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.22000544",
+   "bDoi": "10.5281/zenodo.18452046"
+  },
+  {
+   "a": "Exploring the use of AI-generated counterfactual chest X-rays to enhance diagnos",
+   "b": "Exploring the use of AI-generated counterfactual chest X-rays to enhance diagnos",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.6084/m9.figshare.c.8659425",
+   "bDoi": "10.1186/s12909-026-09597-7"
+  },
+  {
+   "a": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "b": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.32388/84r9i6",
+   "bDoi": "10.32388/nq1gp8"
+  },
+  {
+   "a": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "b": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.32388/84r9i6",
+   "bDoi": "10.32388/xcav8n"
+  },
+  {
+   "a": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "b": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.32388/84r9i6",
+   "bDoi": "10.32388/is8hqi"
+  },
+  {
+   "a": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "b": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.32388/84r9i6",
+   "bDoi": "10.32388/up9jkh"
+  },
+  {
+   "a": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "b": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.32388/nq1gp8",
+   "bDoi": "10.32388/xcav8n"
+  },
+  {
+   "a": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "b": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.32388/nq1gp8",
+   "bDoi": "10.32388/is8hqi"
+  },
+  {
+   "a": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "b": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.32388/nq1gp8",
+   "bDoi": "10.32388/up9jkh"
+  },
+  {
+   "a": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "b": "Review of: \"Artificial Intelligence and Organizational Change\"",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.32388/xcav8n",
+   "bDoi": "10.32388/is8hqi"
+  }
+ ],
+ "elapsedSec": 0.6,
+ "site": "biomed-ai",
+ "generatedAt": "2026-10-11T14:43:51.055Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.7
+}

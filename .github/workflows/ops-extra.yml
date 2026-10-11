@@ -46,7 +46,13 @@ on:
         #                   GENETECH:CLAIMS:BEGIN/END 锚注之间的内容必须与
         #                   data/claims.json（从 data/ 单一真源实时算出）逐字一致，
         #                   否则 CI 变红，从机制上防止"人工文案漂移"复发。
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims]
+        # flywheelstate  —— 2026-10-11 补入（飞轮状态陈旧 monitor）：
+        #                   跑 monitor-flywheel-state.js，检查 8 个核心 state 文件的 mtime，
+        #                   任一超过阈值（默认 14 天）就 exit 1 让 CI 变红。
+        #                   背景：2026-10-05 发现 backfill-cursor 39 天陈旧才察觉，
+        #                   「静默冻结」是本项目最贵的故障模式，此门禁把它从"月度回顾"提前到"每日早会"。
+        #                   独立任务（不阻断发布，但每日 all 也会跑，让陈旧一出现当天就被看到）。
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate]
   schedule:
     # 每日 13:00 UTC(21:00 CST) 一次全量运行，错峰在 ops.yml(12:30 UTC) 之后 30 分钟，
     # 避免与 ops.yml 同时触发导致推送冲突。
@@ -264,6 +270,14 @@ jobs:
           # 独立任务，不阻断本身；每日 all 模式也会跑，保证产物持续刷新。
           if [[ "$TASK" == "all" || "$TASK" == "docsclaims" ]]; then
             node "$SCRIPTS_DIR/pipeline-docs-claims.js" --verify
+          fi
+          # ===== 飞轮状态陈旧 monitor（2026-10-11 补入 · 报告 §8）=====
+          # 治「飞轮静默冻结」这个最贵的故障模式：backfill-cursor 39 天陈旧才发现。
+          # 8 个核心 state 文件按阈值检查 mtime，任一过期 exit 1 让 CI 变红。
+          # 独立任务（gate-alert 类似不阻断），all 模式每日也会跑，
+          # 保证陈旧一出现当天就被告警而不是月度回顾才看到。
+          if [[ "$TASK" == "all" || "$TASK" == "flywheelstate" ]]; then
+            node "$SCRIPTS_DIR/monitor-flywheel-state.js" || true
           fi
 
       - name: Commit generated outputs

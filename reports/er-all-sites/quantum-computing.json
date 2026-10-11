@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 42,
+ "candidatePairs": 113,
+ "matchedPairs": 113,
+ "doiConfirmed": 0,
+ "clusterCount": 34,
+ "entitiesInClusters": 86,
+ "sampleClusters": [
+  {
+   "size": 11,
+   "names": [
+    "Quantum Computing",
+    "Quantum computing",
+    "Quantum Computing"
+   ],
+   "dois": [
+    "10.1201/9781420012293",
+    "https://doi.org/10.1038/463441a",
+    "10.1007/978-3-030-41753-6_2"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "Introduction to Quantum Computing",
+    "Introduction to Quantum Computing",
+    "Introduction to quantum computing"
+   ],
+   "dois": [
+    "10.1007/978-1-4842-9985-2_1",
+    "10.5772/intechopen.94103",
+    "10.1016/b978-0-443-34193-9.01002-4"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "Quantum Error Correction",
+    "Quantum Error Correction",
+    "Quantum Error Correction"
+   ],
+   "dois": [
+    "10.1093/acrefore/9780190871994.013.35",
+    "10.1017/9781009548519.016",
+    "10.1017/9781009099974.009"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Copyright Page",
+    "Copyright Page",
+    "Copyright Page"
+   ],
+   "dois": [
+    "10.1109/aiqc64330.2024.00003",
+    "10.1109/qce60285.2024.10233",
+    "10.1109/ccpqt64497.2024.00003"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Quantum cryptography",
+    "Quantum Cryptography",
+    "Quantum Cryptography"
+   ],
+   "dois": [
+    "10.1103/revmodphys.74.145",
+    "10.1201/9781003440239-2",
+    "10.1007/978-1-4471-0839-9_13"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Quantum computing with neutral atoms",
+   "b": "Quantum computing with neutral atoms",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.22331/q-2020-09-21-327",
+   "bDoi": "https://doi.org/10.1093/nsr/nwy088"
+  },
+  {
+   "a": "Quantum Error Correction",
+   "b": "Quantum Error Correction",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1093/acrefore/9780190871994.013.35",
+   "bDoi": "10.1017/9781009548519.016"
+  },
+  {
+   "a": "Quantum Error Correction",
+   "b": "Quantum Error Correction",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1093/acrefore/9780190871994.013.35",
+   "bDoi": "10.1017/9781009099974.009"
+  },
+  {
+   "a": "Quantum Error Correction",
+   "b": "Quantum Error Correction",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1093/acrefore/9780190871994.013.35",
+   "bDoi": "10.1142/9789814366335_0015"
+  },
+  {
+   "a": "Quantum Error Correction",
+   "b": "Quantum Error Correction",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1093/acrefore/9780190871994.013.35",
+   "bDoi": "10.1142/9789812773883_0014"
+  },
+  {
+   "a": "Quantum error correction with the toric code",
+   "b": "Quantum error correction with the toric code",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.21203/rs.3.rs-9918258/v1",
+   "bDoi": null
+  },
+  {
+   "a": "Quantum Computing",
+   "b": "Quantum computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781420012293",
+   "bDoi": "https://doi.org/10.1038/463441a"
+  },
+  {
+   "a": "Quantum Computing",
+   "b": "Quantum Computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781420012293",
+   "bDoi": "10.1007/978-3-030-41753-6_2"
+  },
+  {
+   "a": "Quantum Computing",
+   "b": "Quantum Computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781420012293",
+   "bDoi": "10.1007/springerreference_60601"
+  },
+  {
+   "a": "Quantum Computing",
+   "b": "Quantum Computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781420012293",
+   "bDoi": "10.1093/acprof:oso/9780198795131.003.0015"
+  },
+  {
+   "a": "Quantum Computing",
+   "b": "Quantum computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781420012293",
+   "bDoi": "https://doi.org/10.1073/pnas.95.19.11032"
+  },
+  {
+   "a": "Quantum Computing",
+   "b": "Quantum computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781420012293",
+   "bDoi": "10.1093/oso/9780198566724.003.0013"
+  },
+  {
+   "a": "Quantum Computing",
+   "b": "Quantum computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781420012293",
+   "bDoi": "https://doi.org/10.4171/dms/1-1/16"
+  },
+  {
+   "a": "Quantum Computing",
+   "b": "Quantum Computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781420012293",
+   "bDoi": "10.56831/psen-03-065"
+  },
+  {
+   "a": "Quantum Computing",
+   "b": "Quantum computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781420012293",
+   "bDoi": "10.1109/isacc.2015.7377352"
+  },
+  {
+   "a": "Quantum Computing",
+   "b": "Quantum computing",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781420012293",
+   "bDoi": "10.1201/9781003597414-11"
+  },
+  {
+   "a": "Quantum Computing and Communications",
+   "b": "Quantum Computing and Communications",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/9780470869048",
+   "bDoi": "https://doi.org/10.1007/978-1-4471-0839-9"
+  },
+  {
+   "a": "QUANTUM WALKS AND THEIR ALGORITHMIC APPLICATIONS",
+   "b": "Quantum walks and their algorithmic applications",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1142/s0219749903000383",
+   "bDoi": null
+  },
+  {
+   "a": "Quantum cryptography",
+   "b": "Quantum Cryptography",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1103/revmodphys.74.145",
+   "bDoi": "10.1201/9781003440239-2"
+  },
+  {
+   "a": "Quantum cryptography",
+   "b": "Quantum Cryptography",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1103/revmodphys.74.145",
+   "bDoi": "10.1007/978-1-4471-0839-9_13"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "quantum-computing",
+ "generatedAt": "2026-10-11T14:44:03.472Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

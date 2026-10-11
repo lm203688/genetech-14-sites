@@ -1,0 +1,238 @@
+{
+ "entities": 2000,
+ "buckets": 37,
+ "candidatePairs": 22,
+ "matchedPairs": 22,
+ "doiConfirmed": 0,
+ "clusterCount": 20,
+ "entitiesInClusters": 41,
+ "sampleClusters": [
+  {
+   "size": 3,
+   "names": [
+    "Video-Based Cattle Behavior Detection for Digital Twin Development in Precision ",
+    "Video-Based Cattle Behavior Detection for Digital Twin Development in Precision ",
+    "Video-based cattle behaviour detection for digital twin development in precision"
+   ],
+   "dois": [
+    "10.21203/rs.3.rs-8032374/v1",
+    "10.1101/2025.11.13.688203",
+    "10.1038/s44433-026-00004-x"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "REVISED A Digital Twin Framework for Nuclear Power Equipment Maintenance: Design",
+    "REVISED A Digital Twin Framework for Nuclear Power Equipment Maintenance: Design"
+   ],
+   "dois": [
+    "10.1080/27525783.2023.12519281",
+    "10.1080/27525783.2023.12519279"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "Digital twin",
+    "Digital Twin"
+   ],
+   "dois": [
+    "10.1016/b978-0-12-820717-8.00007-5",
+    "10.1007/978-3-031-67778-6"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "AI-Driven Digital Twin Architecture for Multimodal Prediction and Adaptive Inter",
+    "AI-Driven Digital Twin Architecture for Multimodal Prediction and Adaptive Inter"
+   ],
+   "dois": [
+    "10.2196/preprints.87768",
+    "10.2196/87768"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "WITHDRAWN: Theoretical Analyses and Performance Comparison of Physics-Based, Dat",
+    "WITHDRAWN: Theoretical Analyses and Performance Comparison of Physics-Based, Dat"
+   ],
+   "dois": [
+    "10.21203/rs.3.rs-7807793/v2",
+    "10.21203/rs.3.rs-7807793/v1"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "AI-Driven Digital Twin Architecture for Multimodal Prediction and Adaptive Inter",
+   "b": "AI-Driven Digital Twin Architecture for Multimodal Prediction and Adaptive Inter",
+   "jaccard": "0.929",
+   "lev": "0.921",
+   "aDoi": "10.2196/preprints.87768",
+   "bDoi": "10.2196/87768"
+  },
+  {
+   "a": "Application of Virtual Assembly for Complex Mechanical Structures Based on Digit",
+   "b": "Application of virtual assembly for complex mechanical structures based on digit",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.21203/rs.3.rs-6019506/v1",
+   "bDoi": "10.1038/s41598-025-16439-x"
+  },
+  {
+   "a": "A novel digital twin strategy to examine the implications of randomized clinical",
+   "b": "A Novel Digital Twin Strategy to Examine the Implications of Randomized Clinical",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1038/s41746-026-02464-1",
+   "bDoi": "10.1101/2024.03.25.24304868"
+  },
+  {
+   "a": "Advancing Health Care With Digital Twins: Meta-Review of Applications and Implem",
+   "b": "Advancing Health Care With Digital Twins: Meta-Review of Applications and Implem",
+   "jaccard": "0.923",
+   "lev": "0.915",
+   "aDoi": "https://doi.org/10.2196/preprints.69544",
+   "bDoi": "10.2196/69544"
+  },
+  {
+   "a": "Introduction",
+   "b": "Introduction",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781003281184-2",
+   "bDoi": "10.1007/978-3-658-44453-2_1"
+  },
+  {
+   "a": "Intelligent Robotic Systems in Industry 4.0, A Review",
+   "b": "Intelligent robotic systems in Industry 4.0: A review",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.6084/m9.figshare.25054154.v1",
+   "bDoi": "https://doi.org/10.51393/j.jamst.2024007"
+  },
+  {
+   "a": "Shaping Smart Supply Chains with AI, IoT & Beyond (FCIII 2026)",
+   "b": "Shaping Smart Supply Chains with AI, IoT & Beyond (FCIII 2026)",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.5281/zenodo.20566092",
+   "bDoi": "https://doi.org/10.5281/zenodo.21237421"
+  },
+  {
+   "a": "Digital twin",
+   "b": "Digital Twin",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/b978-0-12-820717-8.00007-5",
+   "bDoi": "10.1007/978-3-031-67778-6"
+  },
+  {
+   "a": "Digital Twin-Assisted Graph Matching Multi-Task Object Detection Method in Compl",
+   "b": "Digital twin-assisted graph matching multi-task object detection method in compl",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.21203/rs.3.rs-5237898/v1",
+   "bDoi": "10.1038/s41598-025-87914-8"
+  },
+  {
+   "a": "Digital-Twins-Based Internet of Robotic Things for Remote Health Monitoring of C",
+   "b": "Digital-Twins-Based Internet of Robotic Things for Remote Health Monitoring of C",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.1109/jiot.2023.3267171",
+   "bDoi": "10.60692/qvz46-s6786"
+  },
+  {
+   "a": "Digital Twins in Neonatology: Current Applications and Future Directions: A Narr",
+   "b": "Digital Twins in Neonatology: Current Applications and Future Directions. A Narr",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.3390/app16052198",
+   "bDoi": "https://doi.org/10.20944/preprints202601.2008.v1"
+  },
+  {
+   "a": "Emerging Technologies as Enablers of Sustainable Management: A Comprehensive Fra",
+   "b": "Emerging Technologies as Enablers of Sustainable Management: A Comprehensive Fra",
+   "jaccard": "0.824",
+   "lev": "0.992",
+   "aDoi": "https://doi.org/10.20944/preprints202602.0741.v1",
+   "bDoi": "https://doi.org/10.3390/su18073168"
+  },
+  {
+   "a": "From Digital Twin Readiness to Realized Operational Value in Egyptian Logistics ",
+   "b": "From Digital Twin Readiness to Realized Operational Value in Egyptian Logistics ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2139/ssrn.7269983",
+   "bDoi": "10.5281/zenodo.21812865"
+  },
+  {
+   "a": "REVISED A Digital Twin Framework for Nuclear Power Equipment Maintenance: Design",
+   "b": "REVISED A Digital Twin Framework for Nuclear Power Equipment Maintenance: Design",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/27525783.2023.12519281",
+   "bDoi": "10.1080/27525783.2023.12519279"
+  },
+  {
+   "a": "Twin Prime Conjecture Proof",
+   "b": "Twin Prime Conjecture Proof",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.21203/rs.3.rs-2619857/v3",
+   "bDoi": "10.21203/rs.3.rs-2619857/v2"
+  },
+  {
+   "a": "Composite Microservice Architecture of the Digital Twin",
+   "b": "Composite Microservice Architecture of the Digital Twin",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.20944/preprints202606.1372.v1",
+   "bDoi": "10.3390/info17080760"
+  },
+  {
+   "a": "Comparative Study of Digital Twin Developed in Unity and Gazebo",
+   "b": "Comparative Study of Digital Twin Developed in Unity and Gazebo",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2139/ssrn.4952242",
+   "bDoi": "https://doi.org/10.3390/electronics14020276"
+  },
+  {
+   "a": "Principles and Operation of Virtual Brain Twins",
+   "b": "Principles and Operation of Virtual Brain Twins",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1101/2024.10.25.620245",
+   "bDoi": "https://doi.org/10.1109/rbme.2025.3562951"
+  },
+  {
+   "a": "WITHDRAWN: Theoretical Analyses and Performance Comparison of Physics-Based, Dat",
+   "b": "WITHDRAWN: Theoretical Analyses and Performance Comparison of Physics-Based, Dat",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.21203/rs.3.rs-7807793/v2",
+   "bDoi": "10.21203/rs.3.rs-7807793/v1"
+  },
+  {
+   "a": "Video-Based Cattle Behavior Detection for Digital Twin Development in Precision ",
+   "b": "Video-Based Cattle Behavior Detection for Digital Twin Development in Precision ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.21203/rs.3.rs-8032374/v1",
+   "bDoi": "10.1101/2025.11.13.688203"
+  }
+ ],
+ "elapsedSec": 0.8,
+ "site": "digital-twin",
+ "generatedAt": "2026-10-11T14:43:55.165Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.9
+}

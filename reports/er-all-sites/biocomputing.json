@@ -1,0 +1,244 @@
+{
+ "entities": 2000,
+ "buckets": 39,
+ "candidatePairs": 131,
+ "matchedPairs": 131,
+ "doiConfirmed": 0,
+ "clusterCount": 27,
+ "entitiesInClusters": 73,
+ "sampleClusters": [
+  {
+   "size": 12,
+   "names": [
+    "MBEC news",
+    "MBEC news",
+    "MBEC news"
+   ],
+   "dois": [
+    "10.1007/bf02442440",
+    "10.1007/bf02443839",
+    "10.1007/bf02447052"
+   ]
+  },
+  {
+   "size": 9,
+   "names": [
+    "Guide for Authors",
+    "Guide for Authors",
+    "Guide for Authors"
+   ],
+   "dois": [
+    "10.1016/s0006-3223(24)01203-4",
+    "10.1016/s0006-3223(24)01441-0",
+    "10.1016/s0006-3223(24)01372-6"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "The Fractal Correction Engine: A Complete Knowledge Base Across 92 Publications ",
+    "The Fractal Correction Engine: A Complete Knowledge Base Across 92 Publications ",
+    "The Fractal Correction Engine: A Complete Knowledge Base Across 67 Publications "
+   ],
+   "dois": [
+    "10.5281/zenodo.21348349",
+    "10.5281/zenodo.19219686",
+    "10.5281/zenodo.19102862"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "African Journal of Biological Sciences",
+    "African Journal of Biological Sciences",
+    "African Journal of Biological Sciences"
+   ],
+   "dois": [
+    "10.48047/afjbs.6.12.2024.5785-5795",
+    "10.48047/afjbs.6.12.2024.5778-5784",
+    "10.48047/afjbs.6.12.2024.3954-3968"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "DNA Computing",
+    "DNA Computing."
+   ],
+   "dois": [
+    "10.1007/springerreference_60303",
+    "10.21236/ada301695"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Contextual dependencies expand the re-usability of genetic inverters",
+   "b": "Contextual dependencies expand the re-usability of genetic inverters",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1038/s41467-020-20656-5",
+   "bDoi": "10.1101/2020.07.15.204651"
+  },
+  {
+   "a": "DNA Computing",
+   "b": "DNA Computing.",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/springerreference_60303",
+   "bDoi": "10.21236/ada301695"
+  },
+  {
+   "a": "Design, Fabrication, and Device Chemistry of a 3-Input-3-Output Synthetic Geneti",
+   "b": "Design, Fabrication, and Device Chemistry of a 3Input-3-Output Synthetic Genetic",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/acs.bioconjchem.9b00517",
+   "bDoi": "10.1021/acs.bioconjchem.9b00517.s001"
+  },
+  {
+   "a": "DNA-MGC+: A versatile codec for reliable and resource-efficient data storage on ",
+   "b": "DNA-MGC+: A versatile codec for reliable and resource-efficient data storage on ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.64898/2026.03.11.711016"
+  },
+  {
+   "a": "Biosensor-based early diagnosis of gastric cancer",
+   "b": "Biosensor-based early diagnosis of hepatic cancer",
+   "jaccard": "0.714",
+   "lev": "0.896",
+   "aDoi": "10.1016/b978-0-12-823424-2.00023-5",
+   "bDoi": "10.1016/b978-0-12-823424-2.00009-0"
+  },
+  {
+   "a": "Advancing synthetic biology with engineered chemically inducible gene regulatory",
+   "b": "Advancing synthetic biology with engineered chemically inducible gene regulatory",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/j.biotechadv.2026.108963",
+   "bDoi": null
+  },
+  {
+   "a": "Algorithm for Describing Neuronal Electric Operation",
+   "b": "Algorithm for Describing Neuronal Electric Operation",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.20944/preprints202506.1290.v2",
+   "bDoi": "10.20944/preprints202506.1290.v1"
+  },
+  {
+   "a": "A Course-Undergraduate Research Experience (CURE) to explore the effect of struc",
+   "b": "A course-undergraduate research experience (CURE) to explore the effect of struc",
+   "jaccard": "0.810",
+   "lev": "0.985",
+   "aDoi": "10.64898/2026.01.21.700799",
+   "bDoi": "10.1371/journal.pone.0342806"
+  },
+  {
+   "a": "A practical DNA data storage using expanded alphabet introducing 5-methylcytosin",
+   "b": "A practical DNA data storage using an expanded alphabet introducing 5-methylcyto",
+   "jaccard": "0.909",
+   "lev": "0.964",
+   "aDoi": "10.6019/s-bsst1791",
+   "bDoi": "10.46471/gigabyte.147"
+  },
+  {
+   "a": "African Journal of Biological Sciences",
+   "b": "African Journal of Biological Sciences",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.48047/afjbs.6.12.2024.5785-5795",
+   "bDoi": "10.48047/afjbs.6.12.2024.5778-5784"
+  },
+  {
+   "a": "African Journal of Biological Sciences",
+   "b": "African Journal of Biological Sciences",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.48047/afjbs.6.12.2024.5785-5795",
+   "bDoi": "10.48047/afjbs.6.12.2024.3954-3968"
+  },
+  {
+   "a": "African Journal of Biological Sciences",
+   "b": "African Journal of Biological Sciences",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.48047/afjbs.6.12.2024.5778-5784",
+   "bDoi": "10.48047/afjbs.6.12.2024.3954-3968"
+  },
+  {
+   "a": "An artificial immune system approach to automated program verification: Towards ",
+   "b": "An artificial immune system approach to automated program verification: Towards ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.7287/peerj.preprints.2690v1",
+   "bDoi": "10.7287/peerj.preprints.2690v2"
+  },
+  {
+   "a": "Molecular Electronic Computing Architectures",
+   "b": "Molecular Electronic Computing Architectures",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/9781315221670-2",
+   "bDoi": "10.1201/9781420007848-13"
+  },
+  {
+   "a": "MANUAL OF SYMMETRY-GATED, LATTICE-BASED & PHYSICAL ARCHITECTURES",
+   "b": "MANUAL OF SYMMETRY-GATED, LATTICE-BASED & PHYSICAL ARCHITECTURES",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.22013639",
+   "bDoi": "10.5281/zenodo.22007848"
+  },
+  {
+   "a": "MBEC news",
+   "b": "MBEC news",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/bf02442440",
+   "bDoi": "10.1007/bf02443839"
+  },
+  {
+   "a": "MBEC news",
+   "b": "MBEC news",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/bf02442440",
+   "bDoi": "10.1007/bf02447052"
+  },
+  {
+   "a": "MBEC news",
+   "b": "MBEC news",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/bf02442440",
+   "bDoi": "10.1007/bf02446399"
+  },
+  {
+   "a": "MBEC news",
+   "b": "MBEC news",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/bf02442440",
+   "bDoi": "10.1007/bf02442274"
+  },
+  {
+   "a": "MBEC news",
+   "b": "MBEC news",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/bf02442440",
+   "bDoi": "10.1007/bf02442470"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "biocomputing",
+ "generatedAt": "2026-10-11T14:43:50.156Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

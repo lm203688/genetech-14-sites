@@ -1,0 +1,93 @@
+{
+  "generatedAt": "2026-10-11T14:42:20.372Z",
+  "thresholdDays": 14,
+  "stateDir": "C:\\Users\\xing\\Desktop\\知识引擎14站\\state",
+  "items": [
+    {
+      "name": "backfill-cursor.json",
+      "status": "stale",
+      "mtime": "2026-09-02T07:43:30.451Z",
+      "mtimeMs": 1788335010451.4978,
+      "size": 22952,
+      "days": 39.3,
+      "thresholdDays": 14,
+      "effectiveStatus": "STALE"
+    },
+    {
+      "name": "growth-baseline.json",
+      "status": "stale",
+      "mtime": "2026-08-22T01:56:07.896Z",
+      "mtimeMs": 1787363767896.4468,
+      "size": 306,
+      "days": 50.5,
+      "thresholdDays": 14,
+      "effectiveStatus": "STALE"
+    },
+    {
+      "name": "openalex-citation-cursor.json",
+      "status": "fresh",
+      "mtime": "2026-10-02T03:31:31.684Z",
+      "mtimeMs": 1790911891684.1782,
+      "size": 335738,
+      "days": 9.5,
+      "thresholdDays": 14,
+      "effectiveStatus": "FRESH"
+    },
+    {
+      "name": "cited-backfill-state.json",
+      "status": "fresh",
+      "mtime": "2026-10-04T07:17:08.563Z",
+      "mtimeMs": 1791098228563.6194,
+      "size": 1980531,
+      "days": 7.3,
+      "thresholdDays": 14,
+      "effectiveStatus": "FRESH"
+    },
+    {
+      "name": "pipeline-domain-expansion-state.json",
+      "status": "stale",
+      "mtime": "2026-09-26T22:02:09.279Z",
+      "mtimeMs": 1790460129279.9385,
+      "size": 250,
+      "days": 14.7,
+      "thresholdDays": 14,
+      "effectiveStatus": "STALE"
+    },
+    {
+      "name": "pipeline-intelligence-state.json",
+      "status": "stale",
+      "mtime": "2026-09-26T22:02:10.043Z",
+      "mtimeMs": 1790460130043.0955,
+      "size": 224,
+      "days": 14.7,
+      "thresholdDays": 14,
+      "effectiveStatus": "STALE"
+    },
+    {
+      "name": "academic-datasets-cursor.json",
+      "status": "fresh",
+      "mtime": "2026-10-02T02:48:21.550Z",
+      "mtimeMs": 1790909301550.9646,
+      "size": 22603,
+      "days": 9.5,
+      "thresholdDays": 21,
+      "effectiveStatus": "FRESH"
+    },
+    {
+      "name": "academic-refs-cache.json",
+      "status": "fresh",
+      "mtime": "2026-10-03T22:42:45.991Z",
+      "mtimeMs": 1791067365991.4336,
+      "size": 1678627,
+      "days": 7.7,
+      "thresholdDays": 30,
+      "effectiveStatus": "FRESH"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "fresh": 4,
+    "stale": 4,
+    "missing": 0
+  }
+}

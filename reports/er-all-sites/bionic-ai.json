@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 38,
+ "candidatePairs": 123,
+ "matchedPairs": 123,
+ "doiConfirmed": 0,
+ "clusterCount": 44,
+ "entitiesInClusters": 110,
+ "sampleClusters": [
+  {
+   "size": 10,
+   "names": [
+    "Mainsah et al. 2025 — bigP3BCI: An Open, Diverse and Machine Learning Ready P300",
+    "Mainsah et al. 2025 — bigP3BCI: An Open, Diverse and Machine Learning Ready P300",
+    "Mainsah et al. 2025 — bigP3BCI: An Open, Diverse and Machine Learning Ready P300"
+   ],
+   "dois": [
+    "10.82901/nemar.nm000321",
+    "10.82901/nemar.nm000340",
+    "10.82901/nemar.nm000326"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "SAHIN´NETH6 SERAH´NETH was genau ist mit Portalen und Intrusionen Parasiten und ",
+    "SAHIN´NETH6 SERAH´NETH was genau ist mit Portalen und Intrusionen Parasiten und ",
+    "SAHIN´NETH6 SERAH´NETH was genau ist mit Portalen und Intrusionen Parasiten und "
+   ],
+   "dois": [
+    "10.5281/zenodo.19070087",
+    "10.5281/zenodo.19064822",
+    "10.5281/zenodo.19049962"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Brain–computer interfaces",
+    "Brain–Computer Interfaces",
+    "Brain–Computer Interfaces"
+   ],
+   "dois": [
+    "https://doi.org/10.1016/b978-0-444-52901-5.00006-x",
+    "https://doi.org/10.1007/978-1-4614-5227-0_2",
+    "https://doi.org/10.1007/978-1-84996-092-2_1"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Brain-computer interface",
+    "Brain-Computer Interface",
+    "Brain-Computer Interface"
+   ],
+   "dois": [
+    "10.1016/b978-0-323-95730-4.00003-2",
+    "10.2139/ssrn.2344571",
+    "10.4018/979-8-3693-7427-6.ch030"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Welcome Message from the General Chairs",
+    "Welcome message from the general chairs",
+    "Welcome Message from the General Chairs"
+   ],
+   "dois": [
+    "10.1109/bci65088.2025.10931454",
+    "10.1109/iww-bci.2018.8311483",
+    "10.1109/bci57258.2023.10078719"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Brain–computer interfaces for communication and control",
+   "b": "Brain-computer interfaces for communication and control",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s1388-2457(02",
+   "bDoi": "10.1145/1941487.1941506"
+  },
+  {
+   "a": "Brain Computer Interface",
+   "b": "Brain computer interface",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.4016/17526.01",
+   "bDoi": "10.1109/hsi.2016.7529655"
+  },
+  {
+   "a": "Brain Computer Interface",
+   "b": "Brain - computer interface",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.4016/17526.01",
+   "bDoi": "10.1109/carpathiancc.2012.6228699"
+  },
+  {
+   "a": "Brain-Computer Interface Research: A State-of-the-Art Summary 5",
+   "b": "Brain-Computer Interface Research: A State-of-the-Art Summary 10",
+   "jaccard": "0.750",
+   "lev": "0.966",
+   "aDoi": "10.1007/978-3-319-57132-4_1",
+   "bDoi": "10.1007/978-3-030-79287-9_1"
+  },
+  {
+   "a": "Brain-Computer Interface Research: A State-of-the-Art Summary 5",
+   "b": "Brain-Computer Interface Research: A State-of-the-Art Summary 12",
+   "jaccard": "0.750",
+   "lev": "0.966",
+   "aDoi": "10.1007/978-3-319-57132-4_1",
+   "bDoi": "10.1007/978-3-031-80497-7_1"
+  },
+  {
+   "a": "Brain-Computer Interface Training Fosters Perceptual Skills to Detect Errors.",
+   "b": "Brain-computer interface training fosters perceptual skills to detect errors",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/advs.76153",
+   "bDoi": "10.1101/2025.04.26.650792"
+  },
+  {
+   "a": "Brain–computer interfaces",
+   "b": "Brain–Computer Interfaces",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.1016/b978-0-444-52901-5.00006-x",
+   "bDoi": "https://doi.org/10.1007/978-1-4614-5227-0_2"
+  },
+  {
+   "a": "Brain–computer interfaces",
+   "b": "Brain–Computer Interfaces",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.1016/b978-0-444-52901-5.00006-x",
+   "bDoi": "https://doi.org/10.1007/978-1-84996-092-2_1"
+  },
+  {
+   "a": "Brain–computer interfaces",
+   "b": "Brain-Computer Interfaces",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.1016/b978-0-444-52901-5.00006-x",
+   "bDoi": "https://doi.org/10.1007/978-1-4020-8705-9"
+  },
+  {
+   "a": "Brain-Computer Interface Research: A State-of-the-Art Summary 10",
+   "b": "Brain-Computer Interface Research: A State-of-the-Art Summary 12",
+   "jaccard": "0.750",
+   "lev": "0.983",
+   "aDoi": "10.1007/978-3-030-79287-9_1",
+   "bDoi": "10.1007/978-3-031-80497-7_1"
+  },
+  {
+   "a": "Brain-computer interface",
+   "b": "Brain-Computer Interface",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/b978-0-323-95730-4.00003-2",
+   "bDoi": "10.2139/ssrn.2344571"
+  },
+  {
+   "a": "Brain-computer interface",
+   "b": "Brain-Computer Interface",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/b978-0-323-95730-4.00003-2",
+   "bDoi": "10.4018/979-8-3693-7427-6.ch030"
+  },
+  {
+   "a": "Brain-computer interface",
+   "b": "Brain-Computer Interface",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/b978-0-323-95730-4.00003-2",
+   "bDoi": "10.1007/978-3-031-20784-6_10"
+  },
+  {
+   "a": "Brain-Computer Interface",
+   "b": "Brain-Computer Interface",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2139/ssrn.2344571",
+   "bDoi": "10.4018/979-8-3693-7427-6.ch030"
+  },
+  {
+   "a": "Brain-Computer Interface",
+   "b": "Brain-Computer Interface",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2139/ssrn.2344571",
+   "bDoi": "10.1007/978-3-031-20784-6_10"
+  },
+  {
+   "a": "Brain computer interface",
+   "b": "Brain - computer interface",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/hsi.2016.7529655",
+   "bDoi": "10.1109/carpathiancc.2012.6228699"
+  },
+  {
+   "a": "Brain–Computer Interfaces",
+   "b": "Brain–Computer Interfaces",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.1007/978-1-4614-5227-0_2",
+   "bDoi": "https://doi.org/10.1007/978-1-84996-092-2_1"
+  },
+  {
+   "a": "Brain–Computer Interfaces",
+   "b": "Brain-Computer Interfaces",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.1007/978-1-4614-5227-0_2",
+   "bDoi": "https://doi.org/10.1007/978-1-4020-8705-9"
+  },
+  {
+   "a": "Brain–Computer Interfaces",
+   "b": "Brain-Computer Interfaces",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "https://doi.org/10.1007/978-1-84996-092-2_1",
+   "bDoi": "https://doi.org/10.1007/978-1-4020-8705-9"
+  },
+  {
+   "a": "Brain-Computer Interface",
+   "b": "Brain-Computer Interface",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.4018/979-8-3693-7427-6.ch030",
+   "bDoi": "10.1007/978-3-031-20784-6_10"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "bionic-ai",
+ "generatedAt": "2026-10-11T14:43:51.839Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.6
+}

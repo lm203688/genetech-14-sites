@@ -1,0 +1,240 @@
+{
+ "entities": 2000,
+ "buckets": 49,
+ "candidatePairs": 44,
+ "matchedPairs": 44,
+ "doiConfirmed": 0,
+ "clusterCount": 40,
+ "entitiesInClusters": 82,
+ "sampleClusters": [
+  {
+   "size": 3,
+   "names": [
+    "Magnetic Printing of Liquid Metal for Perceptive Soft Actuators with Embodied In",
+    "Magnetic Printing of Liquid Metal for Perceptive Soft Actuators with Embodied In",
+    "Magnetic Printing of Liquid Metal for Perceptive Soft Actuators with Embodied In"
+   ],
+   "dois": [
+    "10.1021/acsami.0c20418.s005",
+    "10.1021/acsami.0c20418.s007",
+    "10.1021/acsami.0c20418.s001"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Review for \"Sustained facilitation of embodied fake hand movement on voluntary m",
+    "Review for \"Sustained facilitation of embodied fake hand movement on voluntary m",
+    "Review for \"Sustained facilitation of embodied fake hand movement on voluntary m"
+   ],
+   "dois": [
+    "10.1111/ejn.70416/v1/review1",
+    "10.1111/ejn.70416/v2/review2",
+    "10.1111/ejn.70416/v2/review3"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot",
+    "Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot"
+   ],
+   "dois": [
+    null,
+    "10.48550/arxiv.2505.16478"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "Momentum Control of an Underactuated Flying Humanoid Robot",
+    "Momentum Control of an Underactuated Flying Humanoid Robot"
+   ],
+   "dois": [
+    null,
+    "10.1109/LRA.2017.2734245"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "Importance of Humanoid Robot Detection",
+    "Importance of Humanoid Robot Detection"
+   ],
+   "dois": [
+    "10.1007/978-94-007-7194-9_141-1",
+    "10.1007/978-94-007-6046-2_141"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Therapeutic use of the humanoid robot, Telenoid, with older adults: A critical i",
+   "b": "Therapeutic use of the humanoid robot, Telenoid, with older adults: A critical i",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/10400435.2022.2060375",
+   "bDoi": "10.6084/m9.figshare.19674435"
+  },
+  {
+   "a": "HR-ACT (Human-Robot Action) Database: Communicative and noncommunicative action ",
+   "b": "HR-ACT (Human-Robot Action) Database: Communicative and Noncommunicative Action ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.3758/s13428-025-02910-0",
+   "bDoi": "10.31234/osf.io/jxy9w_v2"
+  },
+  {
+   "a": "Homecare workers' experiences of providing transpersonal palliative care: A qual",
+   "b": "Homecare workers' experiences of providing transpersonal palliative care: A qual",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1080/07481187.2026.2649289",
+   "bDoi": null
+  },
+  {
+   "a": "Human intelligence and artificial intelligence: a comparative study of societal ",
+   "b": "Human intelligence and artificial intelligence: a comparative study of societal ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19188544",
+   "bDoi": "10.5281/zenodo.19150780"
+  },
+  {
+   "a": "Constrained Human-AI Cooperation: An Inclusive Embodied Social Intelligence Chal",
+   "b": "Constrained Human-AI Cooperation: An Inclusive Embodied Social Intelligence Chal",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.48550/arxiv.2411.01796"
+  },
+  {
+   "a": "CoNav: Collaborative Cross-Modal Reasoning for Embodied Navigation.",
+   "b": "CoNav: Collaborative Cross-Modal Reasoning for Embodied Navigation",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/tpami.2026.3711981",
+   "bDoi": null
+  },
+  {
+   "a": "CausalNav: A Long-term Embodied Navigation System for Autonomous Mobile Robots i",
+   "b": "CAUSALNAV: A Long-term Embodied Navigation System for Autonomous Mobile Robots i",
+   "jaccard": "0.867",
+   "lev": "0.868",
+   "aDoi": null,
+   "bDoi": "10.1109/lra.2026.3653283/mm1"
+  },
+  {
+   "a": "Clinical-AI-Demos: Humanoid and LLM Demos for Physical AI Oncology Clinical Tria",
+   "b": "Clinical-AI-Demos: Humanoid and LLM Demos for Physical AI Oncology Clinical Tria",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20265712",
+   "bDoi": "10.5281/zenodo.20262962"
+  },
+  {
+   "a": "Reviewer #1 (Public review): Coordinated beak–tongue mechanics enable dexterous ",
+   "b": "Reviewer #2 (Public review): Coordinated beak–tongue mechanics enable dexterous ",
+   "jaccard": "0.857",
+   "lev": "0.990",
+   "aDoi": "10.7554/elife.111607.1.sa2",
+   "bDoi": "10.7554/elife.111607.1.sa1"
+  },
+  {
+   "a": "Robot-assisted Parotidectomy: Improved Clinical and Patient-Reported Outcomes.",
+   "b": "Robot-assisted Parotidectomy: Improved Clinical and Patient-Reported Outcomes.",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/ohn.70361",
+   "bDoi": null
+  },
+  {
+   "a": "Review for \"Embodied greenhouse gas assessment of railway infrastructure: the ca",
+   "b": "Review for \"Embodied greenhouse gas assessment of railway infrastructure: the ca",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1088/2634-4505/ac1242/v3/review1",
+   "bDoi": "10.1088/2634-4505/ac1242/v1/review1"
+  },
+  {
+   "a": "Review for \"A new experimental paradigm to investigate how imagery-based suggest",
+   "b": "Review for \"A new experimental paradigm to investigate how imagery-based suggest",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1177/17470218241310227/v1/review1",
+   "bDoi": "10.1177/17470218241310227/v2/review1"
+  },
+  {
+   "a": "Review for \"Sustained facilitation of embodied fake hand movement on voluntary m",
+   "b": "Review for \"Sustained facilitation of embodied fake hand movement on voluntary m",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1111/ejn.70416/v1/review1",
+   "bDoi": "10.1111/ejn.70416/v2/review2"
+  },
+  {
+   "a": "Review for \"Sustained facilitation of embodied fake hand movement on voluntary m",
+   "b": "Review for \"Sustained facilitation of embodied fake hand movement on voluntary m",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1111/ejn.70416/v1/review1",
+   "bDoi": "10.1111/ejn.70416/v2/review3"
+  },
+  {
+   "a": "Review for \"Sustained facilitation of embodied fake hand movement on voluntary m",
+   "b": "Review for \"Sustained facilitation of embodied fake hand movement on voluntary m",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1111/ejn.70416/v2/review2",
+   "bDoi": "10.1111/ejn.70416/v2/review3"
+  },
+  {
+   "a": "Review of: \"Brain Patterns Shaping Embodied Activities of Their Bodily Limbs in ",
+   "b": "Review of: \"Brain Patterns Shaping Embodied Activities of Their Bodily Limbs in ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.32388/zub237",
+   "bDoi": "10.32388/9jx3mo"
+  },
+  {
+   "a": "Artificial Intelligence Embedding and Enterprise Competitiveness in the Embodied",
+   "b": "Artificial Intelligence Embedding and Enterprise Competitiveness in the Embodied",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.20944/preprints202607.0172.v1",
+   "bDoi": "10.3390/admsci16070352"
+  },
+  {
+   "a": "AeroVerse: UAV-Agent Benchmark Suite for Simulating, Pre-training, Finetuning, a",
+   "b": "AeroVerse: UAV-Agent Benchmark Suite for Simulating, Pre-training, Finetuning, a",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/tpami.2026.3697634",
+   "bDoi": null
+  },
+  {
+   "a": "Application of Large Language Models in Embodied Artificial Intelligence",
+   "b": "Application of Pretrained Large Language Models in Embodied Artificial Intellige",
+   "jaccard": "0.900",
+   "lev": "0.867",
+   "aDoi": "10.62051/05k91t81",
+   "bDoi": "10.1134/s1064562422060138"
+  },
+  {
+   "a": "Attention-based map encoding for learning generalized legged locomotion.",
+   "b": "Attention-Based Map Encoding for Learning Generalized Legged Locomotion",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1126/scirobotics.adv3604",
+   "bDoi": "10.48550/arxiv.2506.09588"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "embodied-ai",
+ "generatedAt": "2026-10-11T14:43:56.762Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

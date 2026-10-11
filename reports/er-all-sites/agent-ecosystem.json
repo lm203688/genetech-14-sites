@@ -1,0 +1,244 @@
+{
+ "entities": 2000,
+ "buckets": 43,
+ "candidatePairs": 52,
+ "matchedPairs": 52,
+ "doiConfirmed": 0,
+ "clusterCount": 41,
+ "entitiesInClusters": 87,
+ "sampleClusters": [
+  {
+   "size": 4,
+   "names": [
+    "Capability-Mediated Perimeters for Secure AI Agent Tool Execution: Formal Non-Es",
+    "Capability-Mediated Perimeters for Secure AI Agent Tool Execution: Formal Non-Es",
+    "Capability-Mediated Perimeters for Secure AI Agent Tool Execution: Formal Non-Es"
+   ],
+   "dois": [
+    "10.5281/zenodo.22179415",
+    "10.5281/zenodo.22182326",
+    "10.5281/zenodo.22181828"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Multi-Agent System",
+    "Multi-agent System",
+    "Multi-agent System"
+   ],
+   "dois": [
+    "10.1201/9781003499466-5",
+    "10.1007/978-3-662-53120-4_300465",
+    "10.1007/978-3-642-20617-7_100322"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems",
+    "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems",
+    "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems"
+   ],
+   "dois": [
+    "10.5281/zenodo.22164754",
+    "10.5281/zenodo.22132942",
+    "10.5281/zenodo.22123737"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "The Secondary Signature of Immune System  - [ Molecular Blueprint] -The Architec",
+    "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+    "The Secondary Signature of Immune System  - The Architecture of Secondary Stage "
+   ],
+   "dois": [
+    "10.5281/zenodo.21505162",
+    "10.5281/zenodo.21505279",
+    "10.5281/zenodo.21505201"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "A Survey of Multi-Agent Deep Reinforcement Learning with Communication",
+    "A survey of multi-agent deep reinforcement learning with communication"
+   ],
+   "dois": [
+    null,
+    "10.1007/s10458-023-09633-6"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Embodied AI Agent for Co-creation Ecosystem: Elevating Human-AI Co-creation thro",
+   "b": "Embodied AI Agent for Co-creation Ecosystem: Elevating Human-AI Co-creation thro",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.20944/preprints202501.0946.v1",
+   "bDoi": "10.31237/osf.io/b2yu5"
+  },
+  {
+   "a": "Experience-based integral reinforcement learning consensus for unknown multi-age",
+   "b": "Experience-based Integral Reinforcement Learning Consensus for Nonlinear Multi-a",
+   "jaccard": "0.800",
+   "lev": "0.922",
+   "aDoi": "10.1038/s41598-025-15573-w",
+   "bDoi": "10.21203/rs.3.rs-5811620/v1"
+  },
+  {
+   "a": "SWOT: Enabling Communication-Reconfiguration Overlap for Collective Communicatio",
+   "b": "SWOT: Enabling Communication-Reconfiguration Overlap for Collective Communicatio",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20806120",
+   "bDoi": "10.5281/zenodo.20805610"
+  },
+  {
+   "a": "Solving multi-agent games on networks",
+   "b": "Solving Multi-Agent Games on Networks",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/s10458-025-09696-7",
+   "bDoi": "10.21203/rs.3.rs-3992095/v1"
+  },
+  {
+   "a": "A Survey of Multi-Agent Deep Reinforcement Learning with Communication",
+   "b": "A survey of multi-agent deep reinforcement learning with communication",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.1007/s10458-023-09633-6"
+  },
+  {
+   "a": "Augmenting the action space with conventions to improve multi-agent cooperation ",
+   "b": "Augmenting the action space with conventions to improve multi-agent cooperation ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.1007/s10458-025-09709-5"
+  },
+  {
+   "a": "Adaptive Multi-Agent Role Reassignment over Model Context Protocol for Resilient",
+   "b": "Adaptive Multi-Agent Role Reassignment over Model Context Protocol for Resilient",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.21203/rs.3.rs-7367614/v1",
+   "bDoi": "10.2139/ssrn.5402052"
+  },
+  {
+   "a": "Autonomous radiotherapy planning via agentic orchestration using a multimodal TP",
+   "b": "Autonomous radiotherapy planning via agentic orchestration using a multimodal TP",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1088/3049-477x/ae7978",
+   "bDoi": null
+  },
+  {
+   "a": "Autonomous AI and Agentic Testing Agents: A Multi-Agent Architecture for Self-Di",
+   "b": "Autonomous AI and Agentic Testing Agents: A Multi-Agent Architecture for SelfDir",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.21203/rs.3.rs-10220882/v1",
+   "bDoi": "10.5281/zenodo.21349994"
+  },
+  {
+   "a": "Agentic and LLM-Based Multimodal Anomaly Detection: Architectures, Challenges, a",
+   "b": "Agentic and LLM-Based Multimodal Anomaly Detection: Architectures, Challenges, a",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.3390/s26082330",
+   "bDoi": "10.20944/preprints202602.1368.v1"
+  },
+  {
+   "a": "AI-simulated clinical consultations: Assessing the potential of ChatGPT to suppo",
+   "b": "AI-Simulated Clinical Consultations: Assessing the Potential of ChatGPT to Suppo",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1136/archdischild-2025-329846",
+   "bDoi": "10.1101/2025.10.07.25337156"
+  },
+  {
+   "a": "AI-HOPE: An AI-Driven conversational agent for enhanced clinical and genomic dat",
+   "b": "AI-HOPE: an AI-driven conversational agent for enhanced clinical and genomic dat",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1101/2024.11.27.24318113",
+   "bDoi": "10.1093/bioinformatics/btaf359"
+  },
+  {
+   "a": "AI-Run Modern LaTeX Manuscript Workflow and Replication Packet",
+   "b": "AI-Run Modern LaTeX Manuscript Workflow and Replication Packet",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20836364",
+   "bDoi": "10.5281/zenodo.21762799"
+  },
+  {
+   "a": "Bound Ownership: A Fiscal Asset-Lock Without Legal Form Conversion",
+   "b": "Bound Ownership: A Fiscal Asset-Lock Without Legal Form Conversion",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21102467",
+   "bDoi": "10.5281/zenodo.20292541"
+  },
+  {
+   "a": "Design of Multi Agent Autonomous Workflow Systems using Agentic AI Frameworks",
+   "b": "Design of Multi Agent Autonomous Workflow Systems using Agentic AI Frameworks",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2139/ssrn.6515481",
+   "bDoi": "10.1109/icauc68182.2026.11441280"
+  },
+  {
+   "a": "DriftBench: Behavioral Regression Benchmark for AI-Generated Code",
+   "b": "DriftBench: Behavioral Regression Benchmark for AI-Generated Code",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20520315",
+   "bDoi": "10.5281/zenodo.20522811"
+  },
+  {
+   "a": "Discrete-Time Sliding Mode Protocols for Leader-Following Consensus of Discrete ",
+   "b": "Discrete-Time Sliding Mode Protocols for Leader-Following Consensus of Homogeneo",
+   "jaccard": "0.824",
+   "lev": "0.850",
+   "aDoi": "10.1007/978-981-15-6311-9_4",
+   "bDoi": "10.1007/978-981-15-6311-9_3"
+  },
+  {
+   "a": "Clinical Artificial Intelligence Agents in Nephrology: From Prediction to Action",
+   "b": "Clinical Artificial Intelligence Agents in Nephrology: From Prediction to Action",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.3390/jcm15072576",
+   "bDoi": null
+  },
+  {
+   "a": "Capability-Mediated Perimeters for Secure AI Agent Tool Execution: Formal Non-Es",
+   "b": "Capability-Mediated Perimeters for Secure AI Agent Tool Execution: Formal Non-Es",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.22179415",
+   "bDoi": "10.5281/zenodo.22182326"
+  },
+  {
+   "a": "Capability-Mediated Perimeters for Secure AI Agent Tool Execution: Formal Non-Es",
+   "b": "Capability-Mediated Perimeters for Secure AI Agent Tool Execution: Formal Non-Es",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.22179415",
+   "bDoi": "10.5281/zenodo.22181828"
+  }
+ ],
+ "elapsedSec": 0.6,
+ "site": "agent-ecosystem",
+ "generatedAt": "2026-10-11T14:43:46.095Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.8
+}

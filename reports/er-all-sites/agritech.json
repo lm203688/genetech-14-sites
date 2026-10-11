@@ -1,0 +1,242 @@
+{
+ "entities": 2000,
+ "buckets": 38,
+ "candidatePairs": 36,
+ "matchedPairs": 36,
+ "doiConfirmed": 0,
+ "clusterCount": 20,
+ "entitiesInClusters": 46,
+ "sampleClusters": [
+  {
+   "size": 5,
+   "names": [
+    "Calendar",
+    "Calendar",
+    "Calendar"
+   ],
+   "dois": [
+    "10.1016/0921-8890(91)90055-p",
+    "10.1016/s0921-8890(03)00121-0",
+    "10.1016/0921-8890(94)90049-3"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Issue Editorial Masthead",
+    "Issue Editorial Masthead",
+    "Issue Editorial Masthead"
+   ],
+   "dois": [
+    "10.1021/pcv003i003_1914671",
+    "10.1021/pcv003i004_1928532",
+    "10.1021/pcv003i008_1975650"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Issue Publication Information",
+    "Issue Publication Information",
+    "Issue Publication Information"
+   ],
+   "dois": [
+    "10.1021/pcv003i011_2009781",
+    "10.1021/pcv003i002_1903728",
+    "10.1021/pcv003i003_1914670"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "Review of: \"Revolutionizing Precision Agriculture with Drone-Based Imaging and F",
+    "Review of: \"Revolutionizing Precision Agriculture with Drone-Based Imaging and F"
+   ],
+   "dois": [
+    "10.32388/o49m1j",
+    "10.32388/92r1er"
+   ]
+  },
+  {
+   "size": 2,
+   "names": [
+    "Artificial Intelligence in Sustainable Fruit Growing: Innovations, Applications,",
+    "Artificial Intelligence in Sustainable Fruit Growing: Innovations, Applications,"
+   ],
+   "dois": [
+    "10.20944/preprints202504.1813.v2",
+    "10.20944/preprints202504.1813.v1"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Precision agriculture for sustainability",
+   "b": "Precision Agriculture for Sustainability",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.19103/as.2017.0032",
+   "bDoi": "10.1201/9781003435228"
+  },
+  {
+   "a": "Economics of Precision Farming",
+   "b": "Economics of Precision Farming",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-3-030-89123-7_218-1",
+   "bDoi": "10.2134/precisionagbasics.2016.0098"
+  },
+  {
+   "a": "State of the alternative protein research and innovation ecosystem in Denmark, 2",
+   "b": "State of the alternative protein research and innovation ecosystem in Spain, 202",
+   "jaccard": "0.846",
+   "lev": "0.930",
+   "aDoi": "10.5281/zenodo.20140862",
+   "bDoi": "10.5281/zenodo.20146495"
+  },
+  {
+   "a": "Smart Farming using IoT",
+   "b": "Smart Farming Using IoT",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/iccmc53470.2022.9753808",
+   "bDoi": "10.47392/irjash.2021.065"
+  },
+  {
+   "a": "Artificial Intelligence in Sustainable Fruit Growing: Innovations, Applications,",
+   "b": "Artificial Intelligence in Sustainable Fruit Growing: Innovations, Applications,",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.20944/preprints202504.1813.v2",
+   "bDoi": "10.20944/preprints202504.1813.v1"
+  },
+  {
+   "a": "Modified oversampling based borderline SMOTE with noise reduction techniques for",
+   "b": "Modified oversampling based Borderline Smote with Noise Reduction Techniques for",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1504/ijsse.2026.152423",
+   "bDoi": "10.1504/ijsse.2026.10061579"
+  },
+  {
+   "a": "Design of LoRaWAN Network Applying in Organic Greenhouse Farming",
+   "b": "Design of LoRaWAN Network Applying in Organic Greenhouse Farming",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.71026/ls.2026.030104",
+   "bDoi": "10.71026/ls.2025.03004"
+  },
+  {
+   "a": "Issue Editorial Masthead",
+   "b": "Issue Editorial Masthead",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/pcv003i003_1914671",
+   "bDoi": "10.1021/pcv003i004_1928532"
+  },
+  {
+   "a": "Issue Editorial Masthead",
+   "b": "Issue Editorial Masthead",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/pcv003i003_1914671",
+   "bDoi": "10.1021/pcv003i008_1975650"
+  },
+  {
+   "a": "Issue Editorial Masthead",
+   "b": "Issue Editorial Masthead",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/pcv003i003_1914671",
+   "bDoi": "10.1021/pcv003i011_2009782"
+  },
+  {
+   "a": "Issue Editorial Masthead",
+   "b": "Issue Editorial Masthead",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/pcv003i004_1928532",
+   "bDoi": "10.1021/pcv003i008_1975650"
+  },
+  {
+   "a": "Issue Editorial Masthead",
+   "b": "Issue Editorial Masthead",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/pcv003i004_1928532",
+   "bDoi": "10.1021/pcv003i011_2009782"
+  },
+  {
+   "a": "Issue Editorial Masthead",
+   "b": "Issue Editorial Masthead",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/pcv003i008_1975650",
+   "bDoi": "10.1021/pcv003i011_2009782"
+  },
+  {
+   "a": "Issue Publication Information",
+   "b": "Issue Publication Information",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/pcv003i011_2009781",
+   "bDoi": "10.1021/pcv003i002_1903728"
+  },
+  {
+   "a": "Issue Publication Information",
+   "b": "Issue Publication Information",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/pcv003i011_2009781",
+   "bDoi": "10.1021/pcv003i003_1914670"
+  },
+  {
+   "a": "Issue Publication Information",
+   "b": "Issue Publication Information",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1021/pcv003i002_1903728",
+   "bDoi": "10.1021/pcv003i003_1914670"
+  },
+  {
+   "a": "Internet of Things and Smart Farming",
+   "b": "Internet of Things based Smart Farming",
+   "jaccard": "0.714",
+   "lev": "0.921",
+   "aDoi": "10.1007/978-3-030-77528-5_15",
+   "bDoi": "10.1109/i-smac49090.2020.9243364"
+  },
+  {
+   "a": "Correction to: Cropping practices manipulate abundance patterns of root and soil",
+   "b": "Correction to: Cropping practices manipulate abundance patterns of root and soil",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1186/s40168-020-00855-4",
+   "bDoi": "10.1186/s40168-018-0456-x"
+  },
+  {
+   "a": "Calendar",
+   "b": "Calendar",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/0921-8890(91)90055-p",
+   "bDoi": "10.1016/s0921-8890(03)00121-0"
+  },
+  {
+   "a": "Calendar",
+   "b": "Calendar",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/0921-8890(91)90055-p",
+   "bDoi": "10.1016/0921-8890(94)90049-3"
+  }
+ ],
+ "elapsedSec": 0.5,
+ "site": "agritech",
+ "generatedAt": "2026-10-11T14:43:47.046Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.7
+}

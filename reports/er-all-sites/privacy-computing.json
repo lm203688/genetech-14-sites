@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 35,
+ "candidatePairs": 542,
+ "matchedPairs": 542,
+ "doiConfirmed": 0,
+ "clusterCount": 34,
+ "entitiesInClusters": 104,
+ "sampleClusters": [
+  {
+   "size": 32,
+   "names": [
+    "vantage6",
+    "vantage6",
+    "vantage6"
+   ],
+   "dois": [
+    "10.5281/zenodo.20134134",
+    "10.5281/zenodo.20021611",
+    "10.5281/zenodo.20810243"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+    "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+    "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc"
+   ],
+   "dois": [
+    "10.5281/zenodo.20183482",
+    "10.5281/zenodo.20220247",
+    "10.5281/zenodo.20182015"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Homomorphic Encryption",
+    "Homomorphic Encryption",
+    "Homomorphic Encryption"
+   ],
+   "dois": [
+    "10.1007/springerreference_64323",
+    "10.1007/978-1-4899-7993-3_1486-3",
+    "10.1561/978-1-63828-345-420251004"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Introduction",
+    "Introduction",
+    "Introduction"
+   ],
+   "dois": [
+    "10.1017/cbo9781107337756.002",
+    "10.1016/b978-0-44-323641-9.00021-2",
+    "10.1007/978-3-031-43214-9_1"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Secure Multiparty Computation",
+    "Secure Multiparty Computation (SMC)",
+    "Secure Multiparty Computation"
+   ],
+   "dois": [
+    "10.1007/978-1-4419-5906-5_1332",
+    "10.1007/978-1-4419-5906-5_766",
+    "10.1201/9781584888215-c14"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Homomorphic Encryption",
+   "b": "Homomorphic Encryption",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/springerreference_64323",
+   "bDoi": "10.1007/978-1-4899-7993-3_1486-3"
+  },
+  {
+   "a": "Homomorphic Encryption",
+   "b": "Homomorphic Encryption",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/springerreference_64323",
+   "bDoi": "10.1561/978-1-63828-345-420251004"
+  },
+  {
+   "a": "Homomorphic Encryption",
+   "b": "Homomorphic Encryption",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-1-4899-7993-3_1486-3",
+   "bDoi": "10.1561/978-1-63828-345-420251004"
+  },
+  {
+   "a": "FedscGen: privacy-preserving federated batch effect correction of single-cell RN",
+   "b": "FedscGen: privacy-preserving federated batch effect correction of single-cell RN",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1186/s13059-025-03684-6",
+   "bDoi": "10.6084/m9.figshare.c.7942699"
+  },
+  {
+   "a": "FedND: Federated Newton Direction for Federated Learning Environment",
+   "b": "FEDND: FEDERATED NEWTON DIRECTION FOR FEDERATED LEARNING ENVIRONMENT",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.30546/macosep2025.1118",
+   "bDoi": "10.32743/unitech.2026.147.6.22912"
+  },
+  {
+   "a": "Federated Learning in the Age of Foundation Models",
+   "b": "Federated Learning in The Age of Foundation Models ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/flta63145.2024.10840123",
+   "bDoi": "10.17023/8jbd-gt91"
+  },
+  {
+   "a": "Federated Learning",
+   "b": "Federated learning",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1017/9781009072205.019",
+   "bDoi": "10.53347/rid-81590"
+  },
+  {
+   "a": "Federated Learning in Smart Agriculture",
+   "b": "Federated Learning in Agriculture",
+   "jaccard": "0.800",
+   "lev": "0.846",
+   "aDoi": "10.1002/9781394338726.ch10",
+   "bDoi": "10.1002/9781394461295.ch7"
+  },
+  {
+   "a": "From Challenges and Pitfalls to Recommendations and Opportunities: Implementing ",
+   "b": "From challenges and pitfalls to recommendations and opportunities: Implementing ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.48550/arxiv.2409.09727",
+   "bDoi": "10.1016/j.media.2025.103497"
+  },
+  {
+   "a": "Exact and Linear Convergence for Federated Learning under Arbitrary Client Parti",
+   "b": "Exact and Linear Convergence for Federated Learning under Arbitrary Client Parti",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": null
+  },
+  {
+   "a": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "b": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20183482",
+   "bDoi": "10.5281/zenodo.20220247"
+  },
+  {
+   "a": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "b": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20183482",
+   "bDoi": "10.5281/zenodo.20182015"
+  },
+  {
+   "a": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "b": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20183482",
+   "bDoi": "10.5281/zenodo.20147486"
+  },
+  {
+   "a": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "b": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20220247",
+   "bDoi": "10.5281/zenodo.20182015"
+  },
+  {
+   "a": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "b": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20220247",
+   "bDoi": "10.5281/zenodo.20147486"
+  },
+  {
+   "a": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "b": "ECG-GenoNet: A Universal Multimodal Deep Learning System for Portable Cardiovasc",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20182015",
+   "bDoi": "10.5281/zenodo.20147486"
+  },
+  {
+   "a": "EndoDecay-Sim: A Hybrid In-Silico Digital Twin Platform for Cardiorenal Multimor",
+   "b": "EndoDecay-Sim: A Hybrid In-Silico Digital Twin Platform for Cardiorenal Multimor",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20691794",
+   "bDoi": "10.5281/zenodo.20618406"
+  },
+  {
+   "a": "Artificial Intelligence and Big Data Integration: A Systematic Literature Review",
+   "b": "Artificial Intelligence and Big Data Integration: A Systematic Literature Review",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19697019",
+   "bDoi": "10.5281/zenodo.20769289"
+  },
+  {
+   "a": "A Hybrid Machine Learning And XAI Architecture For Intelligent Career Guidance S",
+   "b": "A Hybrid Machine Learning And XAI Architecture For Intelligent Career Guidance S",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.18033052",
+   "bDoi": "10.5281/zenodo.18032584"
+  },
+  {
+   "a": "A Novel Approach to Cloud Data Encryption using Homomorphic Encryption",
+   "b": "A Novel Approach to Cloud Data Encryption using Homomorphic Encryption (2024)",
+   "jaccard": "0.900",
+   "lev": "0.933",
+   "aDoi": "10.54660/.ijfmr.2024.5.6.19-27",
+   "bDoi": "10.54660/.ijfmr.2025.6.1.48-56"
+  }
+ ],
+ "elapsedSec": 0.5,
+ "site": "privacy-computing",
+ "generatedAt": "2026-10-11T14:44:02.751Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.6
+}
