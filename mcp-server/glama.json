@@ -4,7 +4,7 @@
   "displayName": "GeneTech 数据引擎 — 30 站前沿科技知识库 MCP",
   "description": "Real-time knowledge-base MCP server for the GeneTech 14-site science engine. Lets external AI agents query, search, filter and cite curated entities across 30 vertical domains (genetics, quantum computing, brain science, AI agents, new energy, nuclear energy, TCM tools, and more). Data is continuously collected from PubMed, arXiv, OpenAlex, Crossref, GitHub and HuggingFace and refreshed by an automated ops pipeline.",
   "shortDescription": "Query, search, cite and map research gaps across 30 vertical science knowledge bases from any AI agent.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "license": "MIT",
   "homepage": "https://lm203688.github.io/genetech-14-sites",
   "repository": {
@@ -68,7 +68,7 @@
       },
       {
         "name": "citation_gaps",
-        "description": "Cross-domain citation gap matrix: which site pairs have ZERO citations between them (research-gap candidates), which pairs bridge strongest, and per-site in/out degree. Derived from 25,635 cross-site citation edges; currently 140 gap pairs out of 870 directed pairs (16.1%). Always read gaps together with siteScale to distinguish a genuine research gap from insufficient corpus coverage."
+        "description": "Cross-domain citation gap matrix: which site pairs have ZERO citations between them (research-gap candidates), which pairs bridge strongest, and per-site in/out degree. Derived from 25,682 cross-site citation edges (13x the 1,961 baseline); currently 140 gap pairs out of 870 directed pairs (16.1%). Always read gaps together with siteScale to distinguish a genuine research gap from insufficient corpus coverage."
       },
       {
         "name": "ask",
@@ -85,6 +85,18 @@
       {
         "name": "intake_health",
         "description": "Check the health of the data-request intake queue."
+      },
+      {
+        "name": "verify_entity",
+        "description": "Trace a DOI or entity ID across the full corpus and return the complete provenance chain (source -> DOI -> publication -> ingestion -> last update) plus real quality score. Useful for third-party verification of data lineage."
+      },
+      {
+        "name": "snapshot_at",
+        "description": "Time-machine: replay a site's data state as it was visible on a given date, using addedAt timestamps. Useful for auditing growth curves and verifying replay/provenance consistency."
+      },
+      {
+        "name": "domain_relatedness",
+        "description": "Quantify relatedness between two sites (domains) using the knowledge graph's four edge types (citation / shared_tag / cross_site / co_topic) plus the citation gap matrix."
       }
     ]
   },
@@ -107,9 +119,9 @@
         "limits": {
           "rateLimit": "local",
           "features": [
-            "All 11 tools available",
+            "All 14 tools available",
             "Self-hosted on your infrastructure",
-            "Full 30-site knowledge base (300,000 entities) + cross-domain citation gap matrix"
+            "Full 30-site knowledge base (300,000 entities) + cross-domain citation gap matrix (25,682 edges / 140 zero-citation pairs)"
           ]
         }
       },
