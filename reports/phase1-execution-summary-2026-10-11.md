@@ -96,8 +96,12 @@ Top 悲观: tcm-tools -0.004（最平衡）
 | 01b495c | feat(stance): 立场分析 pipeline + 30 站分布 + KG 图谱可视化 | 5 |
 | 712f595 | docs(consumer-sdk): 补 README 使用手册 | 1 |
 | 4f0048b | chore(ci): ops-extra 接入 stance 立场分析任务 | 1 |
+| 0c3f2c6 | docs(reports): 本执行总结报告 | 1 |
+| 6981400 | fix(mcp): glama.json 版本号对齐 package.json 2.0.0 | 1 |
+| df45820 | fix(mcp): 移除不存在的 http.mjs / smoke-remote 脚本引用 | 1 |
+| feada26 | feat(ci): MCP 冒烟测试接入 ops-extra.yml（防 14 工具静默损坏） | 1 |
 
-**总计**：44 文件推送到 main（master），累计约 8 分钟执行时间。
+**总计**：9 次提交共 48 文件推送到 main（master），MCP 冒烟测试全 14 工具通过（.workbuddy/probe/mcp-smoke.mjs → status=200，含 verify_entity / snapshot_at / domain_relatedness 三个 v2 新工具）。
 
 ---
 
