@@ -52,7 +52,12 @@ on:
         #                   背景：2026-10-05 发现 backfill-cursor 39 天陈旧才察觉，
         #                   「静默冻结」是本项目最贵的故障模式，此门禁把它从"月度回顾"提前到"每日早会"。
         #                   独立任务（不阻断发布，但每日 all 也会跑，让陈旧一出现当天就被看到）。
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate]
+        # stance    —— 2026-10-11 补入（立场/情绪分析，报告 P1-立场）：
+        #                   跑 pipeline-stance-analysis.js 用词典打分分析 30 站摘要的立场分布，
+        #                   产物 reports/stance-analysis-<date>.json + data/stance-entities.json。
+        #                   方法局限（词典非模型）已在产物里明写，用于跨站相对比较不做绝对判断。
+        #                   独立任务（不阻断），每日 all 也会跑一次保证分布持续更新。
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance]
   schedule:
     # 每日 13:00 UTC(21:00 CST) 一次全量运行，错峰在 ops.yml(12:30 UTC) 之后 30 分钟，
     # 避免与 ops.yml 同时触发导致推送冲突。
@@ -278,6 +283,13 @@ jobs:
           # 保证陈旧一出现当天就被告警而不是月度回顾才看到。
           if [[ "$TASK" == "all" || "$TASK" == "flywheelstate" ]]; then
             node "$SCRIPTS_DIR/monitor-flywheel-state.js" || true
+          fi
+          # ===== 立场/情绪分析（2026-10-11 补入 · 报告 P1-立场）=====
+          # 词典打分方法（POS/NEG/UNCERTAIN 三分 + 加权），纯 stdlib 零依赖。
+          # 关键限制：不是模型情感分析，只用于跨站相对比较不做绝对判断。
+          # 独立任务（不阻断），all 每日跑一次让分布持续刷新。
+          if [[ "$TASK" == "all" || "$TASK" == "stance" ]]; then
+            node "$SCRIPTS_DIR/pipeline-stance-analysis.js" || true
           fi
 
       - name: Commit generated outputs
