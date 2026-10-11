@@ -1,0 +1,658 @@
+{
+  "generatedAt": "2026-10-11T14:52:49.672Z",
+  "method": "dictionary-scoring (POS/NEG/UNCERTAIN lexicons, weighted)",
+  "thresholds": {
+    "optimistic": "> +0.15",
+    "neutral": "[-0.15, +0.15]",
+    "pessimistic": "< -0.15"
+  },
+  "totalEntities": 14803,
+  "siteCount": 30,
+  "perSite": [
+    {
+      "site": "agritech",
+      "processed": 476,
+      "dist": {
+        "optimistic": 247,
+        "neutral": 172,
+        "pessimistic": 57,
+        "no_abstract": 0
+      },
+      "avgScore": 0.223,
+      "withTokens": 360,
+      "pctOptimistic": 51.9,
+      "pctNeutral": 36.1,
+      "pctPessimistic": 12,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "carbon-neutral",
+      "processed": 495,
+      "dist": {
+        "optimistic": 248,
+        "neutral": 200,
+        "pessimistic": 47,
+        "no_abstract": 0
+      },
+      "avgScore": 0.211,
+      "withTokens": 355,
+      "pctOptimistic": 50.1,
+      "pctNeutral": 40.4,
+      "pctPessimistic": 9.5,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "bionic-ai",
+      "processed": 499,
+      "dist": {
+        "optimistic": 264,
+        "neutral": 164,
+        "pessimistic": 71,
+        "no_abstract": 0
+      },
+      "avgScore": 0.193,
+      "withTokens": 392,
+      "pctOptimistic": 52.9,
+      "pctNeutral": 32.9,
+      "pctPessimistic": 14.2,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "low-altitude",
+      "processed": 499,
+      "dist": {
+        "optimistic": 256,
+        "neutral": 168,
+        "pessimistic": 75,
+        "no_abstract": 0
+      },
+      "avgScore": 0.175,
+      "withTokens": 399,
+      "pctOptimistic": 51.3,
+      "pctNeutral": 33.7,
+      "pctPessimistic": 15,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "quantum-materials",
+      "processed": 498,
+      "dist": {
+        "optimistic": 187,
+        "neutral": 268,
+        "pessimistic": 43,
+        "no_abstract": 0
+      },
+      "avgScore": 0.164,
+      "withTokens": 273,
+      "pctOptimistic": 37.6,
+      "pctNeutral": 53.8,
+      "pctPessimistic": 8.6,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "ai4science",
+      "processed": 499,
+      "dist": {
+        "optimistic": 240,
+        "neutral": 181,
+        "pessimistic": 78,
+        "no_abstract": 0
+      },
+      "avgScore": 0.161,
+      "withTokens": 392,
+      "pctOptimistic": 48.1,
+      "pctNeutral": 36.3,
+      "pctPessimistic": 15.6,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "semiconductor",
+      "processed": 498,
+      "dist": {
+        "optimistic": 179,
+        "neutral": 290,
+        "pessimistic": 29,
+        "no_abstract": 0
+      },
+      "avgScore": 0.161,
+      "withTokens": 244,
+      "pctOptimistic": 35.9,
+      "pctNeutral": 58.2,
+      "pctPessimistic": 5.8,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "new-energy",
+      "processed": 489,
+      "dist": {
+        "optimistic": 184,
+        "neutral": 266,
+        "pessimistic": 39,
+        "no_abstract": 0
+      },
+      "avgScore": 0.159,
+      "withTokens": 256,
+      "pctOptimistic": 37.6,
+      "pctNeutral": 54.4,
+      "pctPessimistic": 8,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "edge-ai",
+      "processed": 480,
+      "dist": {
+        "optimistic": 213,
+        "neutral": 204,
+        "pessimistic": 63,
+        "no_abstract": 0
+      },
+      "avgScore": 0.157,
+      "withTokens": 328,
+      "pctOptimistic": 44.4,
+      "pctNeutral": 42.5,
+      "pctPessimistic": 13.1,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "biocomputing",
+      "processed": 496,
+      "dist": {
+        "optimistic": 218,
+        "neutral": 208,
+        "pessimistic": 70,
+        "no_abstract": 0
+      },
+      "avgScore": 0.149,
+      "withTokens": 376,
+      "pctOptimistic": 44,
+      "pctNeutral": 41.9,
+      "pctPessimistic": 14.1,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "deep-sea-tech",
+      "processed": 484,
+      "dist": {
+        "optimistic": 209,
+        "neutral": 210,
+        "pessimistic": 65,
+        "no_abstract": 0
+      },
+      "avgScore": 0.148,
+      "withTokens": 329,
+      "pctOptimistic": 43.2,
+      "pctNeutral": 43.4,
+      "pctPessimistic": 13.4,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "neuromorphic",
+      "processed": 498,
+      "dist": {
+        "optimistic": 176,
+        "neutral": 288,
+        "pessimistic": 34,
+        "no_abstract": 0
+      },
+      "avgScore": 0.148,
+      "withTokens": 251,
+      "pctOptimistic": 35.3,
+      "pctNeutral": 57.8,
+      "pctPessimistic": 6.8,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "exo-science",
+      "processed": 496,
+      "dist": {
+        "optimistic": 204,
+        "neutral": 239,
+        "pessimistic": 53,
+        "no_abstract": 0
+      },
+      "avgScore": 0.147,
+      "withTokens": 321,
+      "pctOptimistic": 41.1,
+      "pctNeutral": 48.2,
+      "pctPessimistic": 10.7,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "digital-twin",
+      "processed": 498,
+      "dist": {
+        "optimistic": 222,
+        "neutral": 186,
+        "pessimistic": 90,
+        "no_abstract": 0
+      },
+      "avgScore": 0.132,
+      "withTokens": 386,
+      "pctOptimistic": 44.6,
+      "pctNeutral": 37.3,
+      "pctPessimistic": 18.1,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "embodied-ai",
+      "processed": 499,
+      "dist": {
+        "optimistic": 214,
+        "neutral": 196,
+        "pessimistic": 89,
+        "no_abstract": 0
+      },
+      "avgScore": 0.129,
+      "withTokens": 388,
+      "pctOptimistic": 42.9,
+      "pctNeutral": 39.3,
+      "pctPessimistic": 17.8,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "alien-minerals",
+      "processed": 493,
+      "dist": {
+        "optimistic": 177,
+        "neutral": 262,
+        "pessimistic": 54,
+        "no_abstract": 0
+      },
+      "avgScore": 0.128,
+      "withTokens": 272,
+      "pctOptimistic": 35.9,
+      "pctNeutral": 53.1,
+      "pctPessimistic": 11,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "robot-parts",
+      "processed": 500,
+      "dist": {
+        "optimistic": 163,
+        "neutral": 298,
+        "pessimistic": 39,
+        "no_abstract": 0
+      },
+      "avgScore": 0.125,
+      "withTokens": 247,
+      "pctOptimistic": 32.6,
+      "pctNeutral": 59.6,
+      "pctPessimistic": 7.8,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "quantum-computing",
+      "processed": 496,
+      "dist": {
+        "optimistic": 179,
+        "neutral": 264,
+        "pessimistic": 53,
+        "no_abstract": 0
+      },
+      "avgScore": 0.123,
+      "withTokens": 281,
+      "pctOptimistic": 36.1,
+      "pctNeutral": 53.2,
+      "pctPessimistic": 10.7,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "synbio-manufacturing",
+      "processed": 491,
+      "dist": {
+        "optimistic": 176,
+        "neutral": 259,
+        "pessimistic": 56,
+        "no_abstract": 0
+      },
+      "avgScore": 0.123,
+      "withTokens": 273,
+      "pctOptimistic": 35.8,
+      "pctNeutral": 52.7,
+      "pctPessimistic": 11.4,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "biomed-ai",
+      "processed": 484,
+      "dist": {
+        "optimistic": 210,
+        "neutral": 186,
+        "pessimistic": 88,
+        "no_abstract": 0
+      },
+      "avgScore": 0.122,
+      "withTokens": 379,
+      "pctOptimistic": 43.4,
+      "pctNeutral": 38.4,
+      "pctPessimistic": 18.2,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "sat-6g",
+      "processed": 497,
+      "dist": {
+        "optimistic": 156,
+        "neutral": 298,
+        "pessimistic": 43,
+        "no_abstract": 0
+      },
+      "avgScore": 0.119,
+      "withTokens": 233,
+      "pctOptimistic": 31.4,
+      "pctNeutral": 60,
+      "pctPessimistic": 8.7,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "agent-ecosystem",
+      "processed": 499,
+      "dist": {
+        "optimistic": 203,
+        "neutral": 196,
+        "pessimistic": 100,
+        "no_abstract": 0
+      },
+      "avgScore": 0.103,
+      "withTokens": 393,
+      "pctOptimistic": 40.7,
+      "pctNeutral": 39.3,
+      "pctPessimistic": 20,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "genetech-tools",
+      "processed": 480,
+      "dist": {
+        "optimistic": 178,
+        "neutral": 228,
+        "pessimistic": 74,
+        "no_abstract": 0
+      },
+      "avgScore": 0.103,
+      "withTokens": 334,
+      "pctOptimistic": 37.1,
+      "pctNeutral": 47.5,
+      "pctPessimistic": 15.4,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "ai-safety",
+      "processed": 498,
+      "dist": {
+        "optimistic": 212,
+        "neutral": 183,
+        "pessimistic": 103,
+        "no_abstract": 0
+      },
+      "avgScore": 0.094,
+      "withTokens": 400,
+      "pctOptimistic": 42.6,
+      "pctNeutral": 36.7,
+      "pctPessimistic": 20.7,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "nuclear-energy",
+      "processed": 491,
+      "dist": {
+        "optimistic": 143,
+        "neutral": 289,
+        "pessimistic": 59,
+        "no_abstract": 0
+      },
+      "avgScore": 0.086,
+      "withTokens": 229,
+      "pctOptimistic": 29.1,
+      "pctNeutral": 58.9,
+      "pctPessimistic": 12,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "life-science",
+      "processed": 495,
+      "dist": {
+        "optimistic": 171,
+        "neutral": 241,
+        "pessimistic": 83,
+        "no_abstract": 0
+      },
+      "avgScore": 0.083,
+      "withTokens": 334,
+      "pctOptimistic": 34.5,
+      "pctNeutral": 48.7,
+      "pctPessimistic": 16.8,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "brain-science",
+      "processed": 483,
+      "dist": {
+        "optimistic": 165,
+        "neutral": 235,
+        "pessimistic": 83,
+        "no_abstract": 0
+      },
+      "avgScore": 0.082,
+      "withTokens": 305,
+      "pctOptimistic": 34.2,
+      "pctNeutral": 48.7,
+      "pctPessimistic": 17.2,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "privacy-computing",
+      "processed": 498,
+      "dist": {
+        "optimistic": 148,
+        "neutral": 283,
+        "pessimistic": 67,
+        "no_abstract": 0
+      },
+      "avgScore": 0.071,
+      "withTokens": 266,
+      "pctOptimistic": 29.7,
+      "pctNeutral": 56.8,
+      "pctPessimistic": 13.5,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "spatial-computing",
+      "processed": 497,
+      "dist": {
+        "optimistic": 138,
+        "neutral": 290,
+        "pessimistic": 69,
+        "no_abstract": 0
+      },
+      "avgScore": 0.056,
+      "withTokens": 235,
+      "pctOptimistic": 27.8,
+      "pctNeutral": 58.4,
+      "pctPessimistic": 13.9,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "tcm-tools",
+      "processed": 497,
+      "dist": {
+        "optimistic": 103,
+        "neutral": 308,
+        "pessimistic": 86,
+        "no_abstract": 0
+      },
+      "avgScore": -0.004,
+      "withTokens": 228,
+      "pctOptimistic": 20.7,
+      "pctNeutral": 62,
+      "pctPessimistic": 17.3,
+      "verdict": "balanced"
+    }
+  ],
+  "topOptimistic": [
+    {
+      "site": "agritech",
+      "processed": 476,
+      "dist": {
+        "optimistic": 247,
+        "neutral": 172,
+        "pessimistic": 57,
+        "no_abstract": 0
+      },
+      "avgScore": 0.223,
+      "withTokens": 360,
+      "pctOptimistic": 51.9,
+      "pctNeutral": 36.1,
+      "pctPessimistic": 12,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "carbon-neutral",
+      "processed": 495,
+      "dist": {
+        "optimistic": 248,
+        "neutral": 200,
+        "pessimistic": 47,
+        "no_abstract": 0
+      },
+      "avgScore": 0.211,
+      "withTokens": 355,
+      "pctOptimistic": 50.1,
+      "pctNeutral": 40.4,
+      "pctPessimistic": 9.5,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "bionic-ai",
+      "processed": 499,
+      "dist": {
+        "optimistic": 264,
+        "neutral": 164,
+        "pessimistic": 71,
+        "no_abstract": 0
+      },
+      "avgScore": 0.193,
+      "withTokens": 392,
+      "pctOptimistic": 52.9,
+      "pctNeutral": 32.9,
+      "pctPessimistic": 14.2,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "low-altitude",
+      "processed": 499,
+      "dist": {
+        "optimistic": 256,
+        "neutral": 168,
+        "pessimistic": 75,
+        "no_abstract": 0
+      },
+      "avgScore": 0.175,
+      "withTokens": 399,
+      "pctOptimistic": 51.3,
+      "pctNeutral": 33.7,
+      "pctPessimistic": 15,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "quantum-materials",
+      "processed": 498,
+      "dist": {
+        "optimistic": 187,
+        "neutral": 268,
+        "pessimistic": 43,
+        "no_abstract": 0
+      },
+      "avgScore": 0.164,
+      "withTokens": 273,
+      "pctOptimistic": 37.6,
+      "pctNeutral": 53.8,
+      "pctPessimistic": 8.6,
+      "verdict": "leaning optimistic"
+    }
+  ],
+  "topPessimistic": [
+    {
+      "site": "tcm-tools",
+      "processed": 497,
+      "dist": {
+        "optimistic": 103,
+        "neutral": 308,
+        "pessimistic": 86,
+        "no_abstract": 0
+      },
+      "avgScore": -0.004,
+      "withTokens": 228,
+      "pctOptimistic": 20.7,
+      "pctNeutral": 62,
+      "pctPessimistic": 17.3,
+      "verdict": "balanced"
+    },
+    {
+      "site": "spatial-computing",
+      "processed": 497,
+      "dist": {
+        "optimistic": 138,
+        "neutral": 290,
+        "pessimistic": 69,
+        "no_abstract": 0
+      },
+      "avgScore": 0.056,
+      "withTokens": 235,
+      "pctOptimistic": 27.8,
+      "pctNeutral": 58.4,
+      "pctPessimistic": 13.9,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "privacy-computing",
+      "processed": 498,
+      "dist": {
+        "optimistic": 148,
+        "neutral": 283,
+        "pessimistic": 67,
+        "no_abstract": 0
+      },
+      "avgScore": 0.071,
+      "withTokens": 266,
+      "pctOptimistic": 29.7,
+      "pctNeutral": 56.8,
+      "pctPessimistic": 13.5,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "brain-science",
+      "processed": 483,
+      "dist": {
+        "optimistic": 165,
+        "neutral": 235,
+        "pessimistic": 83,
+        "no_abstract": 0
+      },
+      "avgScore": 0.082,
+      "withTokens": 305,
+      "pctOptimistic": 34.2,
+      "pctNeutral": 48.7,
+      "pctPessimistic": 17.2,
+      "verdict": "leaning optimistic"
+    },
+    {
+      "site": "life-science",
+      "processed": 495,
+      "dist": {
+        "optimistic": 171,
+        "neutral": 241,
+        "pessimistic": 83,
+        "no_abstract": 0
+      },
+      "avgScore": 0.083,
+      "withTokens": 334,
+      "pctOptimistic": 34.5,
+      "pctNeutral": 48.7,
+      "pctPessimistic": 16.8,
+      "verdict": "leaning optimistic"
+    }
+  ],
+  "note": "词典打分在抽象/关键词层面，不是模型情感分析；用于跨站相对比较，不做绝对判断。"
+}
