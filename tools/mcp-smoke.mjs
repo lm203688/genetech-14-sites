@@ -104,9 +104,17 @@ function fail(msg) {
   }).catch((e) => fail(`semantic_search 失败: ${e.message}`));
   if (s.result?.isError) fail(`semantic_search isError: ${s.result.content?.[0]?.text?.slice(0, 150)}`);
   const sBody = JSON.parse(s.result.content[0].text);
-  console.log(`✓ semantic_search: mode=${sBody.mode} results=${(sBody.results || []).length}`);
+  const sResults = sBody.results || [];
+  // C3 验收：100% 命中带 evidence 字段
+  const withEvidence = sResults.filter(r => r.evidence);
+  if (sResults.length && withEvidence.length !== sResults.length) {
+    fail(`C3 未达标：${sResults.length - withEvidence.length}/${sResults.length} 条命中缺 evidence`);
+  }
+  const sample = withEvidence[0];
+  const sampleFields = sample?.evidence?.matchedFields?.map(f => f.field).join(',') || '(vector-only)';
+  console.log(`✓ semantic_search: mode=${sBody.mode} results=${sResults.length} evidence=${withEvidence.length}/${sResults.length} 首条命中字段=[${sampleFields}]`);
 
-  console.log('[mcp-smoke] 全部通过：stdio 握手 / 6 工具 / 数据读取 / 过滤 / 混合检索均正常');
+  console.log('[mcp-smoke] 全部通过：stdio 握手 / 6 工具 / 数据读取 / 过滤 / 混合检索 + evidence 均正常');
   child.kill();
   process.exit(0);
 })().catch((e) => fail(`未预期异常: ${e.stack || e.message}`));
