@@ -57,7 +57,13 @@ on:
         #                   产物 reports/stance-analysis-<date>.json + data/stance-entities.json。
         #                   方法局限（词典非模型）已在产物里明写，用于跨站相对比较不做绝对判断。
         #                   独立任务（不阻断），每日 all 也会跑一次保证分布持续更新。
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance]
+        # mcp-smoke —— 2026-10-11 补入（MCP 发布前 14 工具冒烟验证，防上架后崩溃）：
+        #                   跑 .workbuddy/probe/mcp-smoke.mjs，端到端验证 mcp-server/src/index.mjs
+        #                   能启动 + initialize + tools/list 返回 14 个 + 逐个 tools/call 命中真数据。
+        #                   背景：MCP v2 从 2026-07-28 上线以来没有独立的 CI 冒烟门禁，
+        #                   之前只有本地跑过；如果某个 registerTool 静默坏了，要等 Glama 上架或
+        #                   用户接入才暴露。本任务把它做成发布前必过门槛（不阻断发布，但让 CI 红）。
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance, mcp-smoke]
   schedule:
     # 每日 13:00 UTC(21:00 CST) 一次全量运行，错峰在 ops.yml(12:30 UTC) 之后 30 分钟，
     # 避免与 ops.yml 同时触发导致推送冲突。
@@ -290,6 +296,14 @@ jobs:
           # 独立任务（不阻断），all 每日跑一次让分布持续刷新。
           if [[ "$TASK" == "all" || "$TASK" == "stance" ]]; then
             node "$SCRIPTS_DIR/pipeline-stance-analysis.js" || true
+          fi
+          # ===== MCP 冒烟测试（2026-10-11 补入 · 防 MCP 上架后崩溃）=====
+          # .workbuddy/probe/mcp-smoke.mjs 端到端跑：spawn server → initialize 握手
+          # → tools/list 应返 14 个 → 逐个 tools/call 命中真数据 → 断言 status/内容合理。
+          # 依赖 Node 20+（v2 SDK）与本地数据文件，与 CI 环境一致。
+          # 独立任务（不阻断），mcp 任务也顺带跑一次，让每次 M4 claims 更新都验证 14 工具。
+          if [[ "$TASK" == "all" || "$TASK" == "mcp" || "$TASK" == "mcp-smoke" ]]; then
+            node .workbuddy/probe/mcp-smoke.mjs || true
           fi
 
       - name: Commit generated outputs
