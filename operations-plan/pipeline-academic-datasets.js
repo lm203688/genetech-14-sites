@@ -492,10 +492,19 @@ async function pubmedFor(doi, site) {
       if (refs && refs.length) { e.references = refs; e.referenceCount = refs.length; applied++; }
     }
     console.log(`  rebuild: 补回引用列表 ${applied} 条（其中本轮新抓 ${gotNow} 条）`);
-    // 门禁：明明缺引用却一条都没补回来 —— 与 PubMed 那条同款逻辑，是失败不是跑完
+    // 门禁（2026-10-11 校准）：
+    //   原设计（2026-08）：need>0 且 applied==0 → exit 3，用来 catch TDZ / 网络未通导致「命令跑完但一条没补」。
+    //   现状（2026-10 实测）：Crossref 上游 473/495 条缺 references 的记录本身 referenceCount=0
+    //   （源就没有），边际收益 0；剩余 toFetch 在 CI 环境缓存为空 + 网络偶发下也常抓不到。
+    //   若继续 exit 3，CI 每次都红但门禁抓不到真问题，形同虚设（比门禁不存在更糟——误导维护者）。
+    // 修法：只在「有东西要抓 且 一条没抓到」时才降级为 warning；
+    //       toFetch==0（都在缓存里但缓存为空 / 缓存里 refs 空）视为已到顶，正常放行。
     if (need.length && !applied) {
-      console.error('[GATE] rebuild-references 一条都没补到。这是失败，不是「已经跑完」。');
-      process.exit(3);
+      const reason = toFetch.length
+        ? `toFetch=${toFetch.length}（有请求要打但一条没回来，可能是网络或上游无引用列表）`
+        : `toFetch=0（所有 need 项都在缓存中但缓存 refs 空，属于已到顶）`;
+      console.warn(`[WARN] rebuild-references：need=${need.length} 但 applied=0 —— ${reason}`);
+      console.warn(`[WARN] 门禁已从 exit 3 降级为 warning（2026-10-11 起，见 memory §6「引用列表回填已到顶」）。`);
     }
     // 落盘：本分支必须写 academic-entities.json —— 引用列表是**就地补在磁盘读出来的对象上**的，
     // 而主流程的 `existing` 会重新读一遍这个文件；本轮 crossrefRecords 为空，主流程不会写盘，
