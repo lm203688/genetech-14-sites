@@ -1,7 +1,7 @@
 {
   "name": "@genetech/data-mcp",
-  "version": "1.2.0",
-  "description": "GeneTech 30站知识引擎（300,000 实体）— 数据引擎 MCP Server：让外部 AI Agent 实时查询、检索、引用、导出跨域引用缺口（零引用站对 = 研究空白候选）。覆盖基因/量子/脑科学/AI Agent/新能源/核能/中医药等 30 个垂直领域。",
+  "version": "2.0.0",
+  "description": "GeneTech 30 站知识引擎（294,330 实体 / 276,769 唯一 DOI）— 数据引擎 MCP Server，实现 2026-07-28 规范（v2 无状态核心）：让外部 AI Agent 实时查询、检索、引用、核验、导出跨域引用缺口（零引用站对 = 研究空白候选）。覆盖基因/量子/脑科学/AI Agent/新能源/核能/中医药等 30 个垂直领域。",
   "type": "module",
   "bin": {
     "genetech-data-mcp": "src/index.mjs"
@@ -13,19 +13,21 @@
   ],
   "scripts": {
     "start": "node src/index.mjs",
-    "smoke": "node ../../.workbuddy/probe/mcp-smoke.mjs",
-    "inspect": "npx @modelcontextprotocol/inspector node src/index.mjs"
+    "smoke": "node ../.workbuddy/probe/mcp-smoke.mjs",
+    "inspect": "npx @modelcontextprotocol/inspector node src/index.mjs",
+    "check": "node --check src/index.mjs && node --check src/http.mjs"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.12.0",
-    "zod": "^3.23.8"
+    "@modelcontextprotocol/server": "^2.3.1",
+    "zod": "^4.6.5"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "license": "MIT",
   "keywords": [
     "mcp",
+    "mcp-2026-07-28",
     "knowledge-base",
     "genetech",
     "ai-agent",
