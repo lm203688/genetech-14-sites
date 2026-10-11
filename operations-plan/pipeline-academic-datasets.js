@@ -463,18 +463,34 @@ async function pubmedFor(doi, site) {
     console.log(`\n--- rebuild-references：磁盘 ${list.length} 条，缺 references ${need.length} 条` +
       `（缓存可直接用 ${fromCache.length} 条，需打上游 ${toFetch.length} 条）---`);
 
+    // 2026-10-11 加：批量阈值跳过上游 fetch。
+    // 现象：降级门禁后脚本继续 fetch，CI 环境跑 30+ 分钟不结束（网络慢/上游限流/偶发超时叠加）。
+    // 根因：rebuild 是「回填」语义，不是「大批量抓取」—— 大批量应该走主流程的冷启动，
+    //       rebuild 只补「缓存里有、磁盘没同步」的零头。toFetch 一大就退化成抓取，跑不完。
+    // 阈值：<=30 条正常抓（CI 30 秒内可完成）；>30 视为「待回填积压太多」，跳过上游，
+    //       只做本地缓存应用，让 CI 保真度门禁拿得到「能拿到的最好结果」。
+    const FETCH_THRESHOLD = 30;
+    let fetchSkipped = false;
+    if (toFetch.length > FETCH_THRESHOLD) {
+      console.warn(`[WARN] rebuild-references: toFetch=${toFetch.length} > ${FETCH_THRESHOLD}，`
+        + `跳过上游 fetch（属「待回填积压」，应在本地冷启动跑，非 CI 场景）。仅应用本地缓存。`);
+      fetchSkipped = true;
+    }
+
     const fetched = {};
-    await mapLimit(toFetch, CONCURRENCY, async (item) => {
-      const r = await getJson(`https://api.crossref.org/works/${encodeURIComponent(item.doi)}?mailto=${MAILTO}`);
-      if (r.ok && r.json && r.json.message) {
-        const refs = (r.json.message.reference || [])
-          .map((x) => normDoi(x && (x.DOI || (x.id ? String(x.id) : ''))))
-          .filter(Boolean)
-          .slice(0, 300);
-        if (refs.length) fetched[normDoi(item.doi)] = refs;
-      }
-      return null;
-    });
+    if (!fetchSkipped) {
+      await mapLimit(toFetch, CONCURRENCY, async (item) => {
+        const r = await getJson(`https://api.crossref.org/works/${encodeURIComponent(item.doi)}?mailto=${MAILTO}`);
+        if (r.ok && r.json && r.json.message) {
+          const refs = (r.json.message.reference || [])
+            .map((x) => normDoi(x && (x.DOI || (x.id ? String(x.id) : ''))))
+            .filter(Boolean)
+            .slice(0, 300);
+          if (refs.length) fetched[normDoi(item.doi)] = refs;
+        }
+        return null;
+      });
+    }
     const gotNow = Object.keys(fetched).length;
     for (const k of Object.keys(fetched)) cache[k] = fetched[k];
     if (gotNow) {
