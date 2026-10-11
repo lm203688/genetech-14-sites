@@ -1,0 +1,30 @@
+# GeneTech MCP Remote — Cloudflare Worker 配置
+# 部署：wrangler deploy
+# 密钥（不要写进文件）：
+#   wrangler secret put LICENSE_VALIDATE_URL
+#   wrangler secret put LICENSE_API_SECRET
+#   wrangler secret put API_KEY  (可选，本 Worker 访问 API_BASE_URL 时的上游 Bearer)
+
+name = "genetech-mcp-remote"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# 子域名：将 mcp.genetech.tools 或 mcp.swarmlabs.tools 绑定到此 Worker
+# 生产建议域名：mcp.swarmlabs.tools
+# 免费子域：genetech-mcp-remote.<your-worker-subdomain>.workers.dev
+
+# 上游 API 数据源（Pages 部署的 api.swarmlabs.tools）
+[vars]
+API_BASE_URL = "https://api.swarmlabs.tools"
+RATE_LIMIT = "60"  # Free tier 每 IP 每分钟上限
+
+# 限流 KV（在 Cloudflare 控制台创建 KV 命名空间后填入 id）
+# 未创建时 Worker 仍能运行（限流降级为不生效），建议部署前创建
+# wrangler kv namespace create RATE_KV
+[[kv_namespaces]]
+binding = "RATE_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+# 观察性：开启日志
+[observability]
+enabled = true
