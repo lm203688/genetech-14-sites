@@ -43,6 +43,10 @@ function normalizeEntity(e, site) {
     sites: Array.isArray(e.sites) && e.sites.length ? e.sites : [site],
     publishedDate: e.publishedDate || e.published || e.pubDate || e.updatedAt || '',
     addedAt: e.addedAt || e.fetchedAt || new Date().toISOString(),
+    // 2026-10-11 修复：normalizeEntity 此前丢了 doi 字段，
+    // 导致 CI 里 sync-live 覆盖 entities.json 后 verify-shard-fidelity 报「30 文件 / 300000 实体 / 0 DOI」
+    // 并 exit 3「无法判定」—— 门禁形同虚设。真实 DOI 覆盖 ~98%（agritech 9309/9509 实测）。
+    doi: e.doi || '',
   };
 }
 
