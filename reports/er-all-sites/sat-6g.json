@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 36,
+ "candidatePairs": 63,
+ "matchedPairs": 63,
+ "doiConfirmed": 0,
+ "clusterCount": 43,
+ "entitiesInClusters": 94,
+ "sampleClusters": [
+  {
+   "size": 5,
+   "names": [
+    "Mind City",
+    "Mind City",
+    "Mind City"
+   ],
+   "dois": [
+    "10.5281/zenodo.21310419",
+    "10.5281/zenodo.21194735",
+    "10.5281/zenodo.21498583"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+    "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+    "The Secondary Signature of Immune System  - The Architecture of Secondary Stage "
+   ],
+   "dois": [
+    "10.5281/zenodo.21505279",
+    "10.5281/zenodo.21505200",
+    "10.5281/zenodo.21505044"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Review for \"Design and Implementation of Intelligent Construction Automation Sys",
+    "Review for \"Design and Implementation of Intelligent Construction Automation Sys",
+    "Review for \"Design and Implementation of Intelligent Construction Automation Sys"
+   ],
+   "dois": [
+    "10.1002/itl2.70045/v2/review2",
+    "10.1002/itl2.70045/v3/review1",
+    "10.1002/itl2.70045/v1/review1"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "mnemorphics",
+    "mnemorphics",
+    "mnemorphics"
+   ],
+   "dois": [
+    "10.5281/zenodo.21462176",
+    "10.5281/zenodo.19860527",
+    "10.5281/zenodo.20378948"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Data-driven Integrated Sensing and Communication: Recent Advances, Challenges, a",
+    "Data-driven Integrated Sensing and Communication: Recent Advances, Challenges, a",
+    "Data-Driven Integrated Sensing and Communication: Recent Advances, Challenges, a"
+   ],
+   "dois": [
+    "10.36227/techrxiv.23653341.v1",
+    "10.36227/techrxiv.23653341",
+    "10.2139/ssrn.5186125"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Optimizing Spectrum Efficiency in 6G  Multi-UAV Networks Through Source Correlat",
+   "b": "Optimizing spectrum efficiency in 6G multi-UAV networks through source correlati",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.21203/rs.3.rs-3103774/v1",
+   "bDoi": "10.1186/s13638-023-02332-6"
+  },
+  {
+   "a": "AI-driven dynamic resource allocation for ISAC systems in 6G networks: intellige",
+   "b": "AI-driven dynamic resource allocation for ISAC systems in 6G networks: intellige",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1038/s41598-026-42247-y",
+   "bDoi": null
+  },
+  {
+   "a": "A Nomadic Infrastructure with Hierarchical Block Tracking and Surveillance Resol",
+   "b": "A Nomadic Infrastructure with Hierarchical Block Tracking and Surveillance Resol",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.3390/s26010180",
+   "bDoi": null
+  },
+  {
+   "a": "At the Dawn of Generative AI Era: A Tutorial-cum-Survey on New Frontiers in 6G W",
+   "b": "At the Dawn of Generative AI Era: A Tutorial-cum-Survey on New Frontiers in 6G W",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.36227/techrxiv.170775280.04186102/v2",
+   "bDoi": "10.36227/techrxiv.170775280.04186102/v1"
+  },
+  {
+   "a": "A RIS-Aided OFDM-Based Integrated Sensing and Communication System for Communica",
+   "b": "A RIS-Aided OFDM-Based Integrated Sensing and Communication System for Communica",
+   "jaccard": "0.833",
+   "lev": "0.992",
+   "aDoi": "10.1109/tvt.2025.3567106/mm2",
+   "bDoi": "10.1109/tvt.2025.3567106/mm3"
+  },
+  {
+   "a": "QoS-Driven Satellite Constellation Design for LEO Satellite Internet of Things",
+   "b": "QoS-Driven Satellite Constellation Design for LEO Satellite Internet of Things",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/twc.2025.3605220",
+   "bDoi": "10.48550/arxiv.2509.00345"
+  },
+  {
+   "a": "Split Federated Learning for 6G Enabled-Networks: Requirements, Challenges and F",
+   "b": "Split Federated Learning for 6G Enabled-Networks: Requirements, Challenges and F",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.34726/8800",
+   "bDoi": "10.48550/arxiv.2309.09086"
+  },
+  {
+   "a": "Short Course: RF Sensing for Wireless AI Perception: Theories, Algorithms, and A",
+   "b": "Short Course: RF Sensing for Wireless AI Perception: Theories, Algorithms, and A",
+   "jaccard": "0.882",
+   "lev": "0.990",
+   "aDoi": "10.17023/anmn-p196",
+   "bDoi": "10.17023/09df-7349"
+  },
+  {
+   "a": "Byzantine-Resilient Distributed Consensus for Autonomous Satellite Constellation",
+   "b": "Byzantine-resilient distributed consensus for autonomous satellite constellation",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.2139/ssrn.6149475",
+   "bDoi": "10.1016/j.rineng.2026.110111"
+  },
+  {
+   "a": "BS Coordination Optimization in Integrated Sensing and Communication: A Stochast",
+   "b": "BS Coordination Optimization in Integrated Sensing and Communication: A Stochast",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/wcnc57260.2024.10570805",
+   "bDoi": "10.48550/arxiv.2401.04918"
+  },
+  {
+   "a": "High-performance quatrefoil-slotted THz MIMO antenna for 6G applications with re",
+   "b": "High-Performance Quatrefoil-Slotted THz MIMO Antenna for 6G Applications with Re",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1038/s41598-025-28657-4",
+   "bDoi": "10.21203/rs.3.rs-7386824/v1"
+  },
+  {
+   "a": "Edge-Cloud Architectures for Urban Mobility and Safety",
+   "b": "Edge-Cloud Architectures for Urban Mobility and Safety",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.12688/openreseurope.22191.2",
+   "bDoi": "10.12688/openreseurope.22191.1"
+  },
+  {
+   "a": "Low Earth orbit satellite switching and recovery method based on generic congest",
+   "b": "Low Earth orbit satellite switching and recovery method based on generic congest",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1038/s41598-025-10649-z",
+   "bDoi": null
+  },
+  {
+   "a": "Little Pilot is Needed for Channel Estimation with Integrated Super-Resolution S",
+   "b": "Little Pilot is Needed for Channel Estimation with Integrated Super-Resolution S",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/wcnc57260.2024.10570698",
+   "bDoi": "10.48550/arxiv.2404.10233"
+  },
+  {
+   "a": "Trajectory Optimization of UAV-IRS Assisted 6G THz Network Using Deep Reinforcem",
+   "b": "Trajectory optimization of UAV-IRS assisted 6G THz network using deep reinforcem",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.21203/rs.3.rs-4022303/v1",
+   "bDoi": "10.1038/s41598-024-68459-8"
+  },
+  {
+   "a": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21505279",
+   "bDoi": "10.5281/zenodo.21505200"
+  },
+  {
+   "a": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21505279",
+   "bDoi": "10.5281/zenodo.21505044"
+  },
+  {
+   "a": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21505279",
+   "bDoi": "10.5281/zenodo.21505264"
+  },
+  {
+   "a": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21505200",
+   "bDoi": "10.5281/zenodo.21505044"
+  },
+  {
+   "a": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "b": "The Secondary Signature of Immune System  - The Architecture of Secondary Stage ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21505200",
+   "bDoi": "10.5281/zenodo.21505264"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "sat-6g",
+ "generatedAt": "2026-10-11T14:44:05.775Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

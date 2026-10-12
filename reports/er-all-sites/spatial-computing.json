@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 43,
+ "candidatePairs": 56,
+ "matchedPairs": 56,
+ "doiConfirmed": 0,
+ "clusterCount": 22,
+ "entitiesInClusters": 57,
+ "sampleClusters": [
+  {
+   "size": 5,
+   "names": [
+    "Lean 4 Confirmation and Approval Proof for Hamzah Equation. (12)",
+    "Lean 4 Confirmation and Approval Proof for Hamzah Equation. (8)",
+    "Lean 4 Confirmation and Approval Proof for Hamzah Equation. (7)"
+   ],
+   "dois": [
+    "10.5281/zenodo.22168067",
+    "10.5281/zenodo.22166226",
+    "10.5281/zenodo.22155496"
+   ]
+  },
+  {
+   "size": 5,
+   "names": [
+    "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+    "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+    "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent"
+   ],
+   "dois": [
+    "10.5281/zenodo.19041562",
+    "10.5281/zenodo.20583762",
+    "10.5281/zenodo.19457744"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "MH370: Mathematical Proof of the Survival of All Passengers Within a Tensorial C",
+    "MH370: Mathematical Proof of the Survival of All Passengers Within a Tensorial C",
+    "MH370: Mathematical Proof of the Survival of All Passengers Within a Tensorial C"
+   ],
+   "dois": [
+    "10.5281/zenodo.18203365",
+    "10.5281/zenodo.18237334",
+    "10.5281/zenodo.18215664"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Review for \"Spatial confounding in Bayesian species distribution modeling\"",
+    "Review for \"Spatial confounding in Bayesian species distribution modeling\"",
+    "Review for \"Spatial confounding in Bayesian species distribution modeling\""
+   ],
+   "dois": [
+    "10.1111/ecog.06183/v2/review2",
+    "10.1111/ecog.06183/v3/review1",
+    "10.1111/ecog.06183/v3/review2"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Spatial Computing",
+    "Spatial Computing",
+    "Spatial Computing"
+   ],
+   "dois": [
+    "10.1002/9781394308538",
+    "10.1002/9781394310302.ch4",
+    "10.1007/978-3-642-34359-9_2"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "AU HD TYPE FREEDOM-1: Acta Universi (AU): A Unified Informational-Entropic Cosmo",
+   "b": "AU HD TYPE FREEDOM-1: Acta Universi (AU): A Unified Informational-Entropic Cosmo",
+   "jaccard": "0.875",
+   "lev": "0.859",
+   "aDoi": "10.5281/zenodo.21882439",
+   "bDoi": "10.5281/zenodo.21882440"
+  },
+  {
+   "a": "A Vision for Virtual Multimodal Surgical Education Simulation",
+   "b": "A Vision for Virtual Multimodal Surgical Education Simulation",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.21876214",
+   "bDoi": "10.5281/zenodo.21843730"
+  },
+  {
+   "a": "Augmented reality",
+   "b": "Augmented Reality",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1145/354666.354695",
+   "bDoi": "10.1016/c2011-0-04606-9"
+  },
+  {
+   "a": "Augmented reality",
+   "b": "Augmented Reality",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1145/354666.354695",
+   "bDoi": "10.4018/979-8-3693-7287-6.ch011"
+  },
+  {
+   "a": "Augmented Reality",
+   "b": "Augmented Reality",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/c2011-0-04606-9",
+   "bDoi": "10.4018/979-8-3693-7287-6.ch011"
+  },
+  {
+   "a": "Additional file 1 of Application of head-mounted display-based augmented and mix",
+   "b": "Additional file 3 of Application of head-mounted display-based augmented and mix",
+   "jaccard": "0.889",
+   "lev": "0.992",
+   "aDoi": "10.6084/m9.figshare.30039252.v1",
+   "bDoi": "10.6084/m9.figshare.30039258"
+  },
+  {
+   "a": "Additional file 1 of Application of head-mounted display-based augmented and mix",
+   "b": "Application of head-mounted display-based augmented and mixed reality in nursing",
+   "jaccard": "0.824",
+   "lev": "0.833",
+   "aDoi": "10.6084/m9.figshare.30039252.v1",
+   "bDoi": "10.6084/m9.figshare.c.8013843"
+  },
+  {
+   "a": "Additional file 3 of Application of head-mounted display-based augmented and mix",
+   "b": "Application of head-mounted display-based augmented and mixed reality in nursing",
+   "jaccard": "0.824",
+   "lev": "0.833",
+   "aDoi": "10.6084/m9.figshare.30039258",
+   "bDoi": "10.6084/m9.figshare.c.8013843"
+  },
+  {
+   "a": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "b": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19041562",
+   "bDoi": "10.5281/zenodo.20583762"
+  },
+  {
+   "a": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "b": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19041562",
+   "bDoi": "10.5281/zenodo.19457744"
+  },
+  {
+   "a": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "b": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19041562",
+   "bDoi": "10.5281/zenodo.19437965"
+  },
+  {
+   "a": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "b": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19041562",
+   "bDoi": "10.5281/zenodo.19365647"
+  },
+  {
+   "a": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "b": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20583762",
+   "bDoi": "10.5281/zenodo.19457744"
+  },
+  {
+   "a": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "b": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20583762",
+   "bDoi": "10.5281/zenodo.19437965"
+  },
+  {
+   "a": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "b": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20583762",
+   "bDoi": "10.5281/zenodo.19365647"
+  },
+  {
+   "a": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "b": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19457744",
+   "bDoi": "10.5281/zenodo.19437965"
+  },
+  {
+   "a": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "b": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19457744",
+   "bDoi": "10.5281/zenodo.19365647"
+  },
+  {
+   "a": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "b": "The De Giuseppe Multi-Sheet Topological Qubit: A Rigorous Framework for Emergent",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.19437965",
+   "bDoi": "10.5281/zenodo.19365647"
+  },
+  {
+   "a": "Postmodern Physics of Hamzah Information.(281)",
+   "b": "Postmodern Physics of Hamzah Information.(281)",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.22135449",
+   "bDoi": "10.5281/zenodo.22121217"
+  },
+  {
+   "a": "Copyright Page",
+   "b": "Copyright Page",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/ismar-adjunct64951.2024.00003",
+   "bDoi": "10.1109/svr67689.2025.00003"
+  }
+ ],
+ "elapsedSec": 0.4,
+ "site": "spatial-computing",
+ "generatedAt": "2026-10-11T14:44:07.189Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.6
+}

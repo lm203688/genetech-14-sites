@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 44,
+ "candidatePairs": 65,
+ "matchedPairs": 65,
+ "doiConfirmed": 0,
+ "clusterCount": 24,
+ "entitiesInClusters": 60,
+ "sampleClusters": [
+  {
+   "size": 8,
+   "names": [
+    "Review of: \"The Application and Pathway Regulation of Traditional Chinese Medici",
+    "Review of: \"The Application and Pathway Regulation of Traditional Chinese Medici",
+    "Review of: \"The Application and Pathway Regulation of Traditional Chinese Medici"
+   ],
+   "dois": [
+    "10.32388/5z48n1",
+    "10.32388/m52xgj",
+    "10.32388/tebvgu"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Traditional Chinese medicine",
+    "Traditional Chinese herbal medicine",
+    "Traditional Chinese Medicine"
+   ],
+   "dois": [
+    "10.1016/s0140-6736(08",
+    "10.1007/bf01872386",
+    "10.3109/9781841848433"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Introduction",
+    "Introduction",
+    "Introduction"
+   ],
+   "dois": [
+    "10.1201/9781420006452-19",
+    "10.1201/9781420006452-18",
+    "10.1201/9781420006452-27"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "GMP Herbal Medicine for Rare Infectious Diseases",
+    "GMP Herbal Medicine for Rare Renal Diseases",
+    "GMP Herbal Medicine for Rare Cardiac Diseases"
+   ],
+   "dois": [
+    "10.1201/9781032726625-11",
+    "10.1201/9781032726625-16",
+    "10.1201/9781032726625-14"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "TCM-Meridian (杏林經緯): A multi-agent, safety-oriented AI clinical assistant for Tr",
+    "TCM-Meridian (杏林經緯): A multi-agent, safety-oriented AI clinical assistant for Tr",
+    "TCM-Meridian (杏林經緯): A multi-agent, safety-oriented AI clinical assistant for Tr"
+   ],
+   "dois": [
+    "10.5281/zenodo.20822337",
+    "10.5281/zenodo.20816144",
+    "10.5281/zenodo.20776955"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Traditional Chinese medicine",
+   "b": "Traditional Chinese herbal medicine",
+   "jaccard": "0.750",
+   "lev": "0.800",
+   "aDoi": "10.1016/s0140-6736(08",
+   "bDoi": "10.1007/bf01872386"
+  },
+  {
+   "a": "Traditional Chinese medicine",
+   "b": "Traditional Chinese Medicine",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0140-6736(08",
+   "bDoi": "10.3109/9781841848433"
+  },
+  {
+   "a": "Traditional Chinese medicine",
+   "b": "Traditional Chinese medicine",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/s0140-6736(08",
+   "bDoi": "10.4324/9781315378350-27"
+  },
+  {
+   "a": "Traditional Chinese herbal medicine",
+   "b": "Traditional Chinese Medicine",
+   "jaccard": "0.750",
+   "lev": "0.800",
+   "aDoi": "10.1007/bf01872386",
+   "bDoi": "10.3109/9781841848433"
+  },
+  {
+   "a": "Traditional Chinese herbal medicine",
+   "b": "Traditional Chinese medicine",
+   "jaccard": "0.750",
+   "lev": "0.800",
+   "aDoi": "10.1007/bf01872386",
+   "bDoi": "10.4324/9781315378350-27"
+  },
+  {
+   "a": "TCM-Meridian (杏林經緯): A multi-agent, safety-oriented AI clinical assistant for Tr",
+   "b": "TCM-Meridian (杏林經緯): A multi-agent, safety-oriented AI clinical assistant for Tr",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20822337",
+   "bDoi": "10.5281/zenodo.20816144"
+  },
+  {
+   "a": "TCM-Meridian (杏林經緯): A multi-agent, safety-oriented AI clinical assistant for Tr",
+   "b": "TCM-Meridian (杏林經緯): A multi-agent, safety-oriented AI clinical assistant for Tr",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20822337",
+   "bDoi": "10.5281/zenodo.20776955"
+  },
+  {
+   "a": "TCMNP: a data processing and visualization database and R package for traditiona",
+   "b": "TCMNP: A data processing and visualization database and R package for traditiona",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1101/2024.07.13.601094",
+   "bDoi": "10.1016/j.prmcm.2024.100562"
+  },
+  {
+   "a": "Traditional Chinese Medicine",
+   "b": "Traditional Chinese medicine",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.3109/9781841848433",
+   "bDoi": "10.4324/9781315378350-27"
+  },
+  {
+   "a": "TCM-Meridian (杏林經緯): A multi-agent, safety-oriented AI clinical assistant for Tr",
+   "b": "TCM-Meridian (杏林經緯): A multi-agent, safety-oriented AI clinical assistant for Tr",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.20816144",
+   "bDoi": "10.5281/zenodo.20776955"
+  },
+  {
+   "a": "Additional file 4 of The bibliometric analysis of research on traditional Chines",
+   "b": "Additional file 3 of The bibliometric analysis of research on traditional Chines",
+   "jaccard": "0.913",
+   "lev": "0.994",
+   "aDoi": "10.6084/m9.figshare.29231925.v1",
+   "bDoi": "10.6084/m9.figshare.29231922"
+  },
+  {
+   "a": "Acquiring Herbal Knowledge",
+   "b": "Acquiring Herbal Knowledge:",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1215/9780822379683-006",
+   "bDoi": "10.2307/j.ctv1198v8g.10"
+  },
+  {
+   "a": "Derivation, Steady-State Analysis and Mathematical Self-Consistency of the Essen",
+   "b": "Derivation, Steady-State Analysis and Mathematical Self-Consistency of the Essen",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.5281/zenodo.22029041",
+   "bDoi": "10.5281/zenodo.21766999"
+  },
+  {
+   "a": "Evaluating the hepatotoxicity and nephrotoxicity of herbal medicine on swiss alb",
+   "b": "Evaluating The Hepatotoxicity and Nephrotoxicity of Herbal Medicine on Swiss Alb",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/s40203-026-00658-9",
+   "bDoi": "10.21203/rs.3.rs-4719074/v1"
+  },
+  {
+   "a": "Efficacy of intradermal acupuncture for ocular surface diseases secondary to ref",
+   "b": "Efficacy of intradermal acupuncture for ocular surface diseases secondary to ref",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.3389/fmed.2026.1873689",
+   "bDoi": null
+  },
+  {
+   "a": "Electroacupuncture for acute gastrointestinal symptoms during chemotherapy for c",
+   "b": "Electroacupuncture for acute gastrointestinal symptoms during chemotherapy for c",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1093/jnci/djag265",
+   "bDoi": null
+  },
+  {
+   "a": "Effects of the traditional nine steaming and nine sun-drying on the bioactivity ",
+   "b": "Effects of the traditional nine steaming and nine sun-drying on the bioactivity ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1016/j.jep.2026.122041",
+   "bDoi": null
+  },
+  {
+   "a": "Health informatics � Classification of traditional Chinese medicine data sets",
+   "b": "Health informatics � Classification of traditional Chinese medicine data sets",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.3403/30371853u",
+   "bDoi": "10.3403/30371853"
+  },
+  {
+   "a": "Herbal Products for the Chemotherapy of Human Immunodeficiency Virus Infection",
+   "b": "Herbal Products for the Chemotherapy of Human Immunodeficiency Virus (HIV) Infec",
+   "jaccard": "0.909",
+   "lev": "0.951",
+   "aDoi": "10.1201/9781420006452-46",
+   "bDoi": "10.1201/9781420041781.ch8"
+  },
+  {
+   "a": "Herbal Medicine",
+   "b": "Herbal Medicine",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1515/cclm-2014-4030",
+   "bDoi": "10.4135/9781412963855.n570"
+  }
+ ],
+ "elapsedSec": 0.5,
+ "site": "tcm-tools",
+ "generatedAt": "2026-10-11T14:44:08.726Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.6
+}

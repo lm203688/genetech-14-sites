@@ -1,0 +1,246 @@
+{
+ "entities": 2000,
+ "buckets": 42,
+ "candidatePairs": 129,
+ "matchedPairs": 129,
+ "doiConfirmed": 0,
+ "clusterCount": 37,
+ "entitiesInClusters": 95,
+ "sampleClusters": [
+  {
+   "size": 10,
+   "names": [
+    "IEEE Components, Packaging, and Manufacturing Technology Society Information for",
+    "IEEE Components, Packaging, and Manufacturing Technology Society Information for",
+    "IEEE Components, Packaging, and Manufacturing Technology Society Information for"
+   ],
+   "dois": [
+    "10.1109/tadvp.2007.911242",
+    "10.1109/tadvp.2005.860876",
+    "10.1109/tadvp.2010.2049454"
+   ]
+  },
+  {
+   "size": 9,
+   "names": [
+    "IEEE Transactions on Advanced Packaging publication information",
+    "IEEE Transactions on Advanced Packaging publication information",
+    "IEEE Transactions on Advanced Packaging publication information"
+   ],
+   "dois": [
+    "10.1109/tadvp.2004.839296",
+    "10.1109/tadvp.2004.836045",
+    "10.1109/tadvp.2004.837693"
+   ]
+  },
+  {
+   "size": 4,
+   "names": [
+    "Mechanical standardization of semiconductor devices. General rules for the prepa",
+    "Mechanical standardization of semiconductor devices. General rules for the prepa",
+    "Mechanical standardization of semiconductor devices. General rules for the prepa"
+   ],
+   "dois": [
+    "10.3403/bsiec60191-6",
+    "10.3403/02535361u",
+    "10.3403/02351085u"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "Mechanical standardization of semiconductor devices",
+    "Mechanical standardization of semiconductor devices",
+    "Mechanical standardization of semiconductor devices"
+   ],
+   "dois": [
+    "10.3403/00261428",
+    "10.3403/03220622u",
+    "10.3403/03016123u"
+   ]
+  },
+  {
+   "size": 3,
+   "names": [
+    "THE 24th INTERNATIONAL SYMPOSIUM ON SEMICONDUCTOR MANUFACTURING",
+    "The 24th International Symposium on Semiconductor Manufacturing CFP",
+    "The 24th International Symposium on Semiconductor Manufacturing CFP"
+   ],
+   "dois": [
+    "10.1109/led.2018.2835439",
+    "10.1109/led.2016.2579445",
+    "10.1109/led.2016.2564538"
+   ]
+  }
+ ],
+ "samples": [
+  {
+   "a": "Revitalizing Advanced Packaging in America",
+   "b": "Revitalizing Advanced Packaging in America",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.23919/panpacific65826.2025.10908952",
+   "bDoi": "10.37665/ppjqdrq14311"
+  },
+  {
+   "a": "Rashba Spin Splitting in III-Nitride Heterostructures and Quantum Wells",
+   "b": "Rashba Spin Splitting in III-Nitride Heterostructures and Quantum Wells",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1201/b20038-6",
+   "bDoi": "10.1201/9781003480228-3"
+  },
+  {
+   "a": "Review for \"One-Dimensional Wide-Bandgap Semiconductor β-Ga&lt;sub&gt;2&lt;/sub&",
+   "b": "Review for \"One-Dimensional Wide-Bandgap Semiconductor β-Ga&lt;sub&gt;2&lt;/sub&",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d6nr00942e/v2/review1",
+   "bDoi": "10.1039/d6nr00942e/v1/review2"
+  },
+  {
+   "a": "Review for \"One-Dimensional Wide-Bandgap Semiconductor β-Ga&lt;sub&gt;2&lt;/sub&",
+   "b": "Review for \"One-Dimensional Wide-Bandgap Semiconductor β-Ga&lt;sub&gt;2&lt;/sub&",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d6nr00942e/v2/review1",
+   "bDoi": "10.1039/d6nr00942e/v1/review1"
+  },
+  {
+   "a": "Review for \"One-Dimensional Wide-Bandgap Semiconductor β-Ga&lt;sub&gt;2&lt;/sub&",
+   "b": "Review for \"One-Dimensional Wide-Bandgap Semiconductor β-Ga&lt;sub&gt;2&lt;/sub&",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d6nr00942e/v1/review2",
+   "bDoi": "10.1039/d6nr00942e/v1/review1"
+  },
+  {
+   "a": "Review for \"Unveiling the impact of photoinduced halide segregation on performan",
+   "b": "Review for \"Unveiling the impact of photoinduced halide segregation on performan",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d4ee05604c/v1/review2",
+   "bDoi": "10.1039/d4ee05604c/v2/review2"
+  },
+  {
+   "a": "Review for \"Advancing 1.84 eV Wide-Bandgap Perovskite Solar Cells via Multidenta",
+   "b": "Review for \"Advancing 1.84 eV Wide-Bandgap Perovskite Solar Cells via Multidenta",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d5nr05029d/v1/review2",
+   "bDoi": "10.1039/d5nr05029d/v2/review1"
+  },
+  {
+   "a": "Call for Nominations for Editor-in-Chief IEEE Transactions on Semiconductor Manu",
+   "b": "Call for Nominations for Editor-in-Chief IEEE Transactions on Semiconductor Manu",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/led.2025.3562416",
+   "bDoi": "10.1109/tdmr.2025.3535976"
+  },
+  {
+   "a": "Decision letter for \"Point-to-Volume Engineering Enables Enhanced Birefringence ",
+   "b": "Decision letter for \"Point-to-Volume Engineering Enables Enhanced Birefringence ",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1039/d6sc00466k/v3/decision1",
+   "bDoi": "10.1039/d6sc00466k/v1/decision1"
+  },
+  {
+   "a": "THE 24th INTERNATIONAL SYMPOSIUM ON SEMICONDUCTOR MANUFACTURING",
+   "b": "The 24th International Symposium on Semiconductor Manufacturing CFP",
+   "jaccard": "0.875",
+   "lev": "0.940",
+   "aDoi": "10.1109/led.2018.2835439",
+   "bDoi": "10.1109/led.2016.2579445"
+  },
+  {
+   "a": "THE 24th INTERNATIONAL SYMPOSIUM ON SEMICONDUCTOR MANUFACTURING",
+   "b": "The 24th International Symposium on Semiconductor Manufacturing CFP",
+   "jaccard": "0.875",
+   "lev": "0.940",
+   "aDoi": "10.1109/led.2018.2835439",
+   "bDoi": "10.1109/led.2016.2564538"
+  },
+  {
+   "a": "The 24th International Symposium on Semiconductor Manufacturing CFP",
+   "b": "The 24th International Symposium on Semiconductor Manufacturing CFP",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1109/led.2016.2579445",
+   "bDoi": "10.1109/led.2016.2564538"
+  },
+  {
+   "a": "Entanglement of a nuclear spin qubit register in silicon photonics",
+   "b": "Entanglement of a nuclear spin qubit register in silicon photonics.",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": null,
+   "bDoi": "10.1038/s41565-025-02066-0"
+  },
+  {
+   "a": "Axially Chiral Cross-Shaped Bianthracene Architectures With Chiroptical Activity",
+   "b": "Axially Chiral Cross-Shaped Bianthracene Architectures With Chiroptical Activity",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1002/asia.70866",
+   "bDoi": null
+  },
+  {
+   "a": "A review of nanoimprint lithography for high-volume semiconductor device manufac",
+   "b": "A review of nanoimprint lithography for high-volume semiconductor device manufac",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1515/nano.0069.00006",
+   "bDoi": "10.1515/aot-2017-0020"
+  },
+  {
+   "a": "A Neuroevolution Potential for Gallium Oxide: Accurate and Efficient Modeling of",
+   "b": "A Neuroevolution Potential for Gallium Oxide: Accurate and Efficient Modeling of",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.60893/figshare.apr.c.8561582",
+   "bDoi": "10.48550/arxiv.2601.10174"
+  },
+  {
+   "a": "Semiconductor Device Technology",
+   "b": "Semiconductor Device Technology",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1007/978-1-349-17084-5",
+   "bDoi": "10.1007/978-1-4419-1056-1_2"
+  },
+  {
+   "a": "Semiconductor Device Physics",
+   "b": "Semiconductor Device Physics",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.1142/14974-vol2",
+   "bDoi": "10.1142/14974-vol1"
+  },
+  {
+   "a": "Substrate-Neutral Structural Foundation Laws (SNSFL) PNBA Identity Physics: Si-S",
+   "b": "Substrate-Neutral Structural Foundation Laws (SNSFL) PNBA Identity Physics: F-Fl",
+   "jaccard": "0.867",
+   "lev": "0.926",
+   "aDoi": "10.5281/zenodo.20277365",
+   "bDoi": "10.5281/zenodo.20278067"
+  },
+  {
+   "a": "Mechanical standardization of semiconductor devices. General rules for the prepa",
+   "b": "Mechanical standardization of semiconductor devices. General rules for the prepa",
+   "jaccard": "1.000",
+   "lev": "1.000",
+   "aDoi": "10.3403/bsiec60191-6",
+   "bDoi": "10.3403/02535361u"
+  }
+ ],
+ "elapsedSec": 0.3,
+ "site": "semiconductor",
+ "generatedAt": "2026-10-11T14:44:06.442Z",
+ "thresholds": {
+  "jaccard": 0.7,
+  "lev": 0.8
+ },
+ "totalElapsedSec": 0.5
+}

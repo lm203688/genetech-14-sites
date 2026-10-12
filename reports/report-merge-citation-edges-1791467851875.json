@@ -1,0 +1,23 @@
+{
+  "pipeline": "merge-citation-edges",
+  "timestamp": "2026-10-08T13:57:31.809Z",
+  "dryRun": true,
+  "mode": "link",
+  "limitEdges": null,
+  "inputCitationEdges": 28001,
+  "addedCitationEdges": 41,
+  "skippedAlreadyPresent": 4,
+  "skippedSelfEdge": 0,
+  "skippedMalformed": 0,
+  "skippedLimit": 0,
+  "nodesBefore": 14356,
+  "stubNodesAdded": 0,
+  "resolvableOnly": 0.0014642334202349917,
+  "citationEdgeShare": 0.0005702523018720966,
+  "nodesAfter": 14356,
+  "totalEdgesAfter": 71898,
+  "bytesBefore": 12300997,
+  "bytesAfter": 12305853,
+  "bytesDelta": 4856,
+  "bytesDeltaBothFiles": 9712
+}
