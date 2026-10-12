@@ -63,7 +63,13 @@ on:
         #                   背景：MCP v2 从 2026-07-28 上线以来没有独立的 CI 冒烟门禁，
         #                   之前只有本地跑过；如果某个 registerTool 静默坏了，要等 Glama 上架或
         #                   用户接入才暴露。本任务把它做成发布前必过门槛（不阻断发布，但让 CI 红）。
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance, mcp-smoke]
+        # eval      —— 2026-10-12 补入（检索评测回归，报告 T1-4）：
+        #                   跑 eval/run-eval.mjs --sites=3 --k=10（3 站 30 query 快跑，15s 出结论），
+        #                   度量 Recall@10 / MRR / NDCG@10，产物 eval/results-<date>.json + leaderboard HTML。
+        #                   背景：10-12 已把评测集从 148 条扩容到 296 条（perSite=10，seed 固定），
+        #                   构造性基准用于防检索回归（BM25 换成向量/RAG 后仍跑同一评测，对比基线）。
+        #                   全量 30 站约 15 分钟，快跑 3 站约 15 秒——CI 走快跑；用户按需本地跑全量。
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance, mcp-smoke, eval]
   schedule:
     # 每日 13:00 UTC(21:00 CST) 一次全量运行，错峰在 ops.yml(12:30 UTC) 之后 30 分钟，
     # 避免与 ops.yml 同时触发导致推送冲突。
@@ -304,6 +310,15 @@ jobs:
           # 独立任务（不阻断），mcp 任务也顺带跑一次，让每次 M4 claims 更新都验证 14 工具。
           if [[ "$TASK" == "all" || "$TASK" == "mcp" || "$TASK" == "mcp-smoke" ]]; then
             node .workbuddy/probe/mcp-smoke.mjs || true
+          fi
+          # ===== 检索评测回归（2026-10-12 补入 · 报告 T1-4）=====
+          # eval/run-eval.mjs --sites=3 --k=10：快跑 3 站 30 query，15s 出结论。
+          # 度量 Recall@10 / MRR / NDCG@10，产物 eval/results-<date>.json + leaderboard HTML。
+          # 构造性基准（query 从实体自身字段截断生成），用于防检索回归——
+          # 换 BM25→向量/RAG 后跑同一评测集直接对比。全量 30 站约 15 分钟，CI 走快跑。
+          # 独立任务（不阻断），all 每日跑一次保证回归门禁持续刷新。
+          if [[ "$TASK" == "all" || "$TASK" == "eval" ]]; then
+            node eval/run-eval.mjs --sites=3 --k=10 || true
           fi
 
       - name: Commit generated outputs
