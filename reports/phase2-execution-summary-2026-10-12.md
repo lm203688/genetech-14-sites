@@ -55,6 +55,11 @@
 |---|---|
 | 32e1121 | feat(mcp): 补 http.mjs + http-api.mjs（v2 streamable-HTTP，health/init/tools/call 端到端验证） |
 | 653a7b1 | feat(eval): 评测扩容到 296 条 + metrics.mjs（Recall@K/MRR/NDCG@K）+ leaderboard HTML |
+| 0187087 | docs(readme): 战略定位再收敛为 Verifiable Scientific Evidence Graph + 10-12 执行总结 |
+| 9d909e6 | fix(ci): security-scan.yml 降为 workflow_dispatch（gitleaks-action@v2 自 10-11 每次失败，不阻断 push） |
+| 780db40 | feat(ci): ops-extra 接入 eval 任务（T1-4 检索评测回归门禁，快跑 3 站 30 query 15s） |
+
+**总计**：5 次提交共 15 文件推送到 main（master），CI eval 任务已 dispatch 通过（run 38188931139 success）。
 
 ## 5. 遗留
 
