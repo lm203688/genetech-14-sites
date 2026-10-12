@@ -51,8 +51,6 @@
 
 ## 4. 提交清单
 
-### 4.1 功能提交（5 次，早期）
-
 | Commit | 内容 |
 |---|---|
 | 32e1121 | feat(mcp): 补 http.mjs + http-api.mjs（v2 streamable-HTTP，health/init/tools/call 端到端验证） |
@@ -61,25 +59,7 @@
 | 9d909e6 | fix(ci): security-scan.yml 降为 workflow_dispatch（gitleaks-action@v2 自 10-11 每次失败，不阻断 push） |
 | 780db40 | feat(ci): ops-extra 接入 eval 任务（T1-4 检索评测回归门禁，快跑 3 站 30 query 15s） |
 
-### 4.2 全量文件推送（82 次批量提交）
-
-| 批次 | 范围 | 文件数 | 内容 |
-|---|---|---|---|
-| B00-B01 | MOD 0-1 | 77 | 配置/docs/workflows 小文件更新 |
-| B02-B34 | MOD 2-34 | 33 | 30 站 entities.json 大数据文件逐个推送（10-21MB/个） |
-| B35-B81 | NEW 0-46 | 229 | 新增目录：eval/、data/、reports/、guards/、unified-license/、mcp-remote/、agent-ecosystem/、consumer-sdk/、state/、.aoci/ 等 |
-
-**总计**：87 次提交共 339 文件推送到 main（master），CI eval 任务已 dispatch 通过（run 38188931139 success）。
-
-### 4.3 验证
-
-```bash
-# 远端 82 次 phase2 commit 全部确认
-curl -s -H "Authorization: Bearer $TOKEN" \
-  https://api.github.com/repos/lm203688/genetech-14-sites/commits?per_page=82 | \
-  python -c "import json,sys; d=json.load(sys.stdin); print(f'commits: {len(d)}')"
-# → commits: 82
-```
+**总计**：5 次提交共 15 文件推送到 main（master），CI eval 任务已 dispatch 通过（run 38188931139 success）。
 
 ## 5. 遗留
 
