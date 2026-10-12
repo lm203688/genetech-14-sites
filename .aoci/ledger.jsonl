@@ -1,0 +1,7 @@
+{"schema_version":8,"event_id":"d79f8535a6a853302fcf92e4","ts":"2026-10-07T01:25:04.4052823Z","op":"scan","paths_count":595,"duration_ms":8337,"source":"human","result":"ok"}
+{"schema_version":8,"event_id":"326613bcfcb1a2d8e69f1a1a","ts":"2026-10-07T01:26:25.7867827Z","op":"verify","duration_ms":3843,"source":"human","result":"ok","exit_code":1}
+{"schema_version":8,"event_id":"67e004e29773784d9a9ef8c3","ts":"2026-10-07T01:26:29.9060969Z","op":"check","paths_count":591,"duration_ms":3621,"drift_warned":true,"source":"human","result":"ok","exit_code":1,"warnings_count":592}
+{"schema_version":8,"event_id":"5720c89265a45ce59ac7fdc5","ts":"2026-10-07T08:45:47.994419Z","op":"verify","duration_ms":7146,"source":"human","result":"ok","exit_code":1}
+{"schema_version":8,"event_id":"c67fa761fc14a8333ad55e94","ts":"2026-10-07T08:45:51.4979769Z","op":"check","paths_count":590,"duration_ms":2965,"drift_warned":true,"source":"human","result":"ok","exit_code":1,"warnings_count":626}
+{"schema_version":8,"event_id":"0cb108a9ec2dc5c8e726bb56","ts":"2026-10-07T13:28:25.94571Z","op":"verify","duration_ms":4230,"source":"human","result":"ok","exit_code":1}
+{"schema_version":8,"event_id":"02e15d1a9e2aa607a68958e7","ts":"2026-10-09T04:45:47.4607246Z","op":"overview","duration_ms":15699,"source":"agent","result":"ok","delivery_mode":"full","full_text_included":true,"index_sha256":"36baf891b882d525d76a02394480a17ba2e326db1c68db7c4e74d4afdd1c6f4c","index_bytes":2316,"output_bytes":6139,"estimated_tokens":772,"aoci_tool_calls":1,"overview_reads":1,"semantic_files":557}

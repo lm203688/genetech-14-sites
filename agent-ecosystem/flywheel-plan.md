@@ -1,6 +1,6 @@
 # 飞轮扩域自主决策（编排层输出）
 
-生成时间: 2026/10/8 08:19:32
+生成时间: 2026/10/10 21:28:50
 
 ## 生态位串联
 
@@ -8,7 +8,7 @@
 |----|------|------|
 | 认知 Cognition | AOCI (知识引擎14站, meta=true, code=true) | 就绪 |
 | 工具/数据 Tools | data/citation-gaps.json (30站/101零引用对) | 就绪 |
-| 治理 Governance | publish-guard v2 (default=deny) | 就绪 |
+| 治理 Governance | publish-guard v5 (default=deny) | 就绪 |
 | 编排 Orchestration | 本文件 = 串联以上三层的决策管线 | 本次补全 |
 
 ## 决策摘要

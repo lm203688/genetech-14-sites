@@ -1,0 +1,205 @@
+{
+  "artifact": "sample-10k.jsonl",
+  "generatedAt": "2026-10-08T14:23:37.606Z",
+  "generatedBy": "operations-plan/pipeline-sample-pack.js",
+  "seed": 20261008,
+  "limit": 10000,
+  "abstractCap": 500,
+  "reproducibility": "固定 seed + mulberry32 部分洗牌；同一仓库状态下重跑得同一文件",
+  "records": 10020,
+  "stations": 30,
+  "bytes": 8374605,
+  "sourceDist": {
+    "crossref": 3501,
+    "datacite": 1324,
+    "openalex": 1405,
+    "pubmed": 1264,
+    "preprints": 669,
+    "europepmc": 1286,
+    "arxiv": 549,
+    "semanticscholar": 22
+  },
+  "perStation": [
+    {
+      "site": "agent-ecosystem",
+      "totalInStation": 9974,
+      "sampled": 334
+    },
+    {
+      "site": "agritech",
+      "totalInStation": 9509,
+      "sampled": 334
+    },
+    {
+      "site": "ai-safety",
+      "totalInStation": 9950,
+      "sampled": 334
+    },
+    {
+      "site": "ai4science",
+      "totalInStation": 9965,
+      "sampled": 334
+    },
+    {
+      "site": "alien-minerals",
+      "totalInStation": 9855,
+      "sampled": 334
+    },
+    {
+      "site": "biocomputing",
+      "totalInStation": 9416,
+      "sampled": 334
+    },
+    {
+      "site": "biomed-ai",
+      "totalInStation": 9674,
+      "sampled": 334
+    },
+    {
+      "site": "bionic-ai",
+      "totalInStation": 9978,
+      "sampled": 334
+    },
+    {
+      "site": "brain-science",
+      "totalInStation": 9173,
+      "sampled": 334
+    },
+    {
+      "site": "carbon-neutral",
+      "totalInStation": 9884,
+      "sampled": 334
+    },
+    {
+      "site": "deep-sea-tech",
+      "totalInStation": 9669,
+      "sampled": 334
+    },
+    {
+      "site": "digital-twin",
+      "totalInStation": 9958,
+      "sampled": 334
+    },
+    {
+      "site": "edge-ai",
+      "totalInStation": 9595,
+      "sampled": 334
+    },
+    {
+      "site": "embodied-ai",
+      "totalInStation": 9964,
+      "sampled": 334
+    },
+    {
+      "site": "exo-science",
+      "totalInStation": 9917,
+      "sampled": 334
+    },
+    {
+      "site": "genetech-tools",
+      "totalInStation": 9598,
+      "sampled": 334
+    },
+    {
+      "site": "life-science",
+      "totalInStation": 9405,
+      "sampled": 334
+    },
+    {
+      "site": "low-altitude",
+      "totalInStation": 9968,
+      "sampled": 334
+    },
+    {
+      "site": "neuromorphic",
+      "totalInStation": 9956,
+      "sampled": 334
+    },
+    {
+      "site": "new-energy",
+      "totalInStation": 9766,
+      "sampled": 334
+    },
+    {
+      "site": "nuclear-energy",
+      "totalInStation": 9804,
+      "sampled": 334
+    },
+    {
+      "site": "privacy-computing",
+      "totalInStation": 9951,
+      "sampled": 334
+    },
+    {
+      "site": "quantum-computing",
+      "totalInStation": 9912,
+      "sampled": 334
+    },
+    {
+      "site": "quantum-materials",
+      "totalInStation": 9947,
+      "sampled": 334
+    },
+    {
+      "site": "robot-parts",
+      "totalInStation": 9987,
+      "sampled": 334
+    },
+    {
+      "site": "sat-6g",
+      "totalInStation": 9940,
+      "sampled": 334
+    },
+    {
+      "site": "semiconductor",
+      "totalInStation": 9943,
+      "sampled": 334
+    },
+    {
+      "site": "spatial-computing",
+      "totalInStation": 9940,
+      "sampled": 334
+    },
+    {
+      "site": "synbio-manufacturing",
+      "totalInStation": 9808,
+      "sampled": 334
+    },
+    {
+      "site": "tcm-tools",
+      "totalInStation": 9924,
+      "sampled": 334
+    }
+  ],
+  "fieldCompleteness": {
+    "withAbstract": {
+      "count": 6895,
+      "rate": 0.6881
+    },
+    "withTags": {
+      "count": 6448,
+      "rate": 0.6435
+    },
+    "withConfidence": {
+      "count": 10020,
+      "rate": 1
+    },
+    "withQualityTier": {
+      "count": 10020,
+      "rate": 1
+    },
+    "withPublishedDate": {
+      "count": 10020,
+      "rate": 1
+    },
+    "abstractTruncated": {
+      "count": 6363,
+      "rate": 0.635
+    }
+  },
+  "notes": [
+    "abstract 超过 500 字符的会截断，原长保留在 abstract_chars",
+    "全量与全文请走 API（https://api.swarmlabs.tools）或按域切片的全量包",
+    "字段含义见 consumer-sdk/docs/DATA-DICTIONARY.md"
+  ]
+}
