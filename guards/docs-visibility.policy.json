@@ -1,0 +1,59 @@
+{
+  "id": "docs-visibility-guard",
+  "version": 1,
+  "description": "对外文档可见性策略（2026-10-08 落地）。此前护栏矩阵覆盖 publish/ingest/evolve/quality 四类——都是「内容质量」与「流程」，没有一条管「什么东西可以被公开」。实测后果：docs/ 下 ALERT-2026-08-*.md ×6、competitor-models.md、growth-strategy.md、profitable-model-alignment.md、strategy-weekly.md、x-algorithm-promo-playbook.md 等内部战略文档全在公开仓（.gitignore 只挡了 docs/audit-*.md 这一类模式，其余裸奔）。本策略把「公开/私有」写成可执行分类判据，与 quality/publish 同引擎（tools/guard-eval.mjs）、同语义（默认拒绝、显式放行）。判定由 operations-plan/pipeline-docs-guard.js 预先扫描后作为上下文传入——JSON-logic 引擎无文件读取能力，与 OPA/Rego 的「计算在外、判定在内」分工一致。",
+  "default": "deny",
+  "thresholds": {
+    "private_leak_max": 0
+  },
+  "classification": {
+    "internal_patterns": [
+      "^ALERT-",
+      "^competitor-",
+      "^growth-",
+      "^strategy-",
+      "^profitable-",
+      "^x-algorithm",
+      "^geo-promotion-",
+      "^db-health-",
+      "^audit-",
+      "^project-comprehensive-review(\\.|$)",
+      "^planning/",
+      "^competition-2026/"
+    ],
+    "public_allowlist": [
+      "README.md",
+      "consumer-onboarding.md",
+      "enterprise-data-license-kit.md",
+      "ops-runbook.md",
+      "citation-probe-questions.md",
+      "domain-graph.html",
+      "frontier-discoveries.md",
+      "attribution.md"
+    ]
+  },
+  "rules": [
+    {
+      "id": "deny-public-private-leak",
+      "description": "公开树里存在被分类为 private 且内容未替换成占位 stub 的文档即阻断。占位 stub 是允许的（它只留标题与迁移说明，不含内部内容）；真内容在公开树里就是泄露。本规则 2026-10-08 落地前命中 14 处。",
+      "allow": false,
+      "when": {
+        "all": [
+          {"==": [{"var": "action"}, "docs_visibility_check"]},
+          {">": [{"var": "private_leaks"}, 0]}
+        ]
+      }
+    },
+    {
+      "id": "deny-classification-gap",
+      "description": "docs/ 下一份文档既不在 public 白名单、也不命中任何 internal 模式，即处于「未分类」状态。未分类默认按 private 处理并在报告里点名单，防止新增内部文档时忘记归类。这条是告警级而非阻断级——阻断会让 CI 天天红，而新增一份文档是常态。",
+      "allow": false,
+      "when": {
+        "all": [
+          {"==": [{"var": "action"}, "docs_visibility_check"]},
+          {">": [{"var": "unclassified_count"}, 0]}
+        ]
+      }
+    }
+  ]
+}

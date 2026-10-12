@@ -23,80 +23,14 @@
 
 import http from 'node:http';
 import { createMcpHandler } from '@modelcontextprotocol/server';
-import { McpServer } from '@modelcontextprotocol/server';
-import { z } from 'zod/v4';
+import { server as existingServer } from './index.mjs';
 
-// createMcpHandler 要求工厂（每次请求/每次 session 一个独立 server 实例），
-// 不能传单例。因此这里内联定义工具（复用 index.mjs 里的 handler 逻辑不方便，
-// 因为 index.mjs 是 CLI 单例；HTTP 服务需要无状态、可多 session 并发）。
-//
-// 这里刻意做一个精简但完整的工具集：list_sites / query_entities / semantic_search /
-// citation_gaps 四个最常用的工具。其余 10 个工具通过 mcp-remote/worker.js 提供（完整集）。
-// 这样本地 `node src/http.mjs` 就能立即启动 streamable HTTP 端点，且与 mcp-remote 兼容。
-
-const factory = (ctx) => {
-  const srv = new McpServer({ name: 'genetech-data-http', version: '2.0.0' });
-
-  // 延迟加载 index.mjs 的数据访问函数（避免重复初始化搜索索引）
-  let _api = null;
-  const api = async () => {
-    if (_api) return _api;
-    _api = await import('./http-api.mjs');
-    return _api;
-  };
-
-  srv.registerTool(
-    'list_sites',
-    { description: '列出全部站点及其实体数量、最后更新时间。', inputSchema: {} },
-    async () => {
-      const { listSites } = await api();
-      return { content: [{ type: 'text', text: JSON.stringify(listSites(), null, 2) }] };
-    }
-  );
-
-  srv.registerTool(
-    'query_entities',
-    {
-      description: '按站点/数据源/标签/关键词过滤实体。',
-      inputSchema: {
-        site: z.string().optional().describe('站点 ID，如 "biomed-ai"'),
-        keyword: z.string().optional().describe('全文关键词'),
-        source: z.string().optional().describe('数据源，如 "crossref"'),
-        limit: z.number().int().min(1).max(100).optional().describe('最多返回条数'),
-      },
-    },
-    async ({ site, keyword, source, limit }) => {
-      const { queryEntities } = await api();
-      return { content: [{ type: 'text', text: JSON.stringify(queryEntities({ site, keyword, source, limit }) , null, 2) }] };
-    }
-  );
-
-  srv.registerTool(
-    'semantic_search',
-    {
-      description: '混合检索（BM25+RRF，可选向量）实体，返回带证据链的排序结果。',
-      inputSchema: {
-        query: z.string().describe('自然语言查询'),
-        k: z.number().int().min(1).max(50).optional().describe('返回条数，默认 10'),
-      },
-    },
-    async ({ query, k }) => {
-      const { semanticSearch } = await api();
-      return { content: [{ type: 'text', text: JSON.stringify(await semanticSearch({ query, k }), null, 2) }] };
-    }
-  );
-
-  srv.registerTool(
-    'citation_gaps',
-    { description: '跨域引用缺口矩阵：零引用站对（研究空白候选）+ 站级 in/out 度。', inputSchema: {} },
-    async () => {
-      const { citationGaps } = await api();
-      return { content: [{ type: 'text', text: JSON.stringify(citationGaps(), null, 2) }] };
-    }
-  );
-
-  return srv;
-};
+// createMcpHandler 要求工厂函数返回 server 实例。
+// 这里复用 index.mjs 里已注册 14 个工具的 server，避免重复注册。
+// 注意：createMcpHandler 每次请求会调用 factory，返回同一个 server 实例。
+// MCP 协议是无状态的（JSON-RPC），server 不维护跨请求的会话状态，
+// 因此复用同一实例是安全的。会话管理由 createMcpHandler 内部处理。
+const factory = (ctx) => existingServer;
 
 const handler = createMcpHandler(factory);
 
@@ -178,6 +112,7 @@ const serverHttp = http.createServer(async (req, res) => {
 serverHttp.listen(PORT, HOST, () => {
   console.error(`[GeneTech Data MCP HTTP] listening on http://${HOST}:${PORT}`);
   console.error(`[GeneTech Data MCP HTTP] auth=${API_KEY ? 'required' : 'disabled (set GENETECH_API_KEY to enable)'}`);
+  console.error(`[GeneTech Data MCP HTTP] tools=${existingServer._registeredTools?.size || '?'} (reused from index.mjs)`);
 });
 
 process.on('SIGINT', () => {
