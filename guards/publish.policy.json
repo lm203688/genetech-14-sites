@@ -1,7 +1,7 @@
 {
   "id": "publish-guard",
-  "version": 2,
-  "description": "发布策略：默认拒绝，显式放行。每个 agent 发布动作必须过此策略引擎。v2（2026-08-29）修复：v1 把「批次新增数」与「发布后总量」混用同一字段 entity_count，且容量上限停留在旧的 3000/5000，与引擎 --max-entities=10000 漂移，导致每条 allow 规则都无法命中、全部站点落 default:deny，数据入库自 2026-08-17 起完全冻结（单轮丢弃 26 万+ 候选）。v2 拆分为 added_count（本轮新增）与 total_after（发布后总量）两个独立字段，容量表对齐引擎目标 10000，并恢复「防超容」的真实作用。",
+  "version": 5,
+  "description": "发布策略：默认拒绝，显式放行。每个 agent 发布动作必须过此策略引擎。v2（2026-08-29）修复：v1 把「批次新增数」与「发布后总量」混用同一字段 entity_count，且容量上限停留在旧的 3000/5000，与引擎 --max-entities=10000 漂移，导致每条 allow 规则都无法命中、全部站点落 default:deny，数据入库自 2026-08-17 起完全冻结（单轮丢弃 26 万+ 候选）。v2 拆分为 added_count（本轮新增）与 total_after（发布后总量）两个独立字段，容量表对齐引擎目标 10000，并恢复「防超容」的真实作用。 v3（2026-10-08）：site_capacity 由全局硬上限改为按质量分层的 tiered 容量，详见 capacity_note。",
   "default": "deny",
   "rules": [
     {
@@ -10,13 +10,54 @@
       "allow": true,
       "when": {
         "all": [
-          {"==": [{"var": "action"}, "publish"]},
-          {"in": [{"var": "target_site"}, {
-            "ref": "allowed_sites"
-          }]},
-          {">": [{"var": "added_count"}, 0]},
-          {"<=": [{"var": "total_after"}, {"var": "site_capacity"}]},
-          {"==": [{"var": "guards_passed"}, ["SourceGuard", "KnowledgeGuard", "PublishGuard"]]}
+          {
+            "==": [
+              {
+                "var": "action"
+              },
+              "publish"
+            ]
+          },
+          {
+            "in": [
+              {
+                "var": "target_site"
+              },
+              {
+                "ref": "allowed_sites"
+              }
+            ]
+          },
+          {
+            ">": [
+              {
+                "var": "added_count"
+              },
+              0
+            ]
+          },
+          {
+            "<=": [
+              {
+                "var": "total_after"
+              },
+              {
+                "var": "site_capacity"
+              }
+            ]
+          },
+          {
+            "==": [
+              {
+                "var": "guards_passed"
+              },
+              [
+                "SourceGuard",
+                "KnowledgeGuard",
+                "PublishGuard"
+              ]
+            ]
+          }
         ]
       }
     },
@@ -26,10 +67,40 @@
       "allow": true,
       "when": {
         "all": [
-          {"==": [{"var": "action"}, "publish"]},
-          {">": [{"var": "added_count"}, 0]},
-          {"<=": [{"var": "added_count"}, 100]},
-          {"in": [{"var": "target_site"}, {"ref": "allowed_sites"}]}
+          {
+            "==": [
+              {
+                "var": "action"
+              },
+              "publish"
+            ]
+          },
+          {
+            ">": [
+              {
+                "var": "added_count"
+              },
+              0
+            ]
+          },
+          {
+            "<=": [
+              {
+                "var": "added_count"
+              },
+              100
+            ]
+          },
+          {
+            "in": [
+              {
+                "var": "target_site"
+              },
+              {
+                "ref": "allowed_sites"
+              }
+            ]
+          }
         ]
       }
     },
@@ -38,31 +109,81 @@
       "description": "空批次直接拒绝（本轮零新增）",
       "allow": false,
       "when": {
-        "==": [{"var": "added_count"}, 0]
+        "==": [
+          {
+            "var": "added_count"
+          },
+          0
+        ]
       }
     }
   ],
   "allowed_sites": [
-    "agent-ecosystem", "ai4science", "alien-minerals", "biocomputing",
-    "bionic-ai", "brain-science", "deep-sea-tech", "embodied-ai",
-    "exo-science", "genetech-tools", "life-science", "low-altitude",
-    "new-energy", "nuclear-energy", "privacy-computing", "quantum-computing",
-    "robot-parts", "sat-6g", "semiconductor", "spatial-computing",
-    "synbio-manufacturing", "tcm-tools", "swarmlabs",
-    "ai-safety", "quantum-materials", "carbon-neutral", "digital-twin",
-    "biomed-ai", "edge-ai", "neuromorphic", "agritech"
+    "agent-ecosystem",
+    "ai4science",
+    "alien-minerals",
+    "biocomputing",
+    "bionic-ai",
+    "brain-science",
+    "deep-sea-tech",
+    "embodied-ai",
+    "exo-science",
+    "genetech-tools",
+    "life-science",
+    "low-altitude",
+    "new-energy",
+    "nuclear-energy",
+    "privacy-computing",
+    "quantum-computing",
+    "robot-parts",
+    "sat-6g",
+    "semiconductor",
+    "spatial-computing",
+    "synbio-manufacturing",
+    "tcm-tools",
+    "swarmlabs",
+    "ai-safety",
+    "quantum-materials",
+    "carbon-neutral",
+    "digital-twin",
+    "biomed-ai",
+    "edge-ai",
+    "neuromorphic",
+    "agritech"
   ],
   "site_capacity": {
-    "agent-ecosystem": 10000, "ai4science": 10000, "alien-minerals": 10000,
-    "biocomputing": 10000, "bionic-ai": 10000, "brain-science": 10000,
-    "deep-sea-tech": 10000, "embodied-ai": 10000, "exo-science": 10000,
-    "genetech-tools": 10000, "life-science": 10000, "low-altitude": 10000,
-    "new-energy": 10000, "nuclear-energy": 10000, "privacy-computing": 10000,
-    "quantum-computing": 10000, "robot-parts": 10000, "sat-6g": 10000,
-    "semiconductor": 10000, "spatial-computing": 10000,
-    "synbio-manufacturing": 10000, "tcm-tools": 10000, "swarmlabs": 10000,
-    "ai-safety": 10000, "quantum-materials": 10000, "carbon-neutral": 10000,
-    "digital-twin": 10000, "biomed-ai": 10000, "edge-ai": 10000,
-    "neuromorphic": 10000, "agritech": 10000
-  }
+    "agent-ecosystem": 15000,
+    "ai4science": 15000,
+    "alien-minerals": 10000,
+    "biocomputing": 15000,
+    "bionic-ai": 15000,
+    "brain-science": 15000,
+    "deep-sea-tech": 15000,
+    "embodied-ai": 15000,
+    "exo-science": 15000,
+    "genetech-tools": 15000,
+    "life-science": 10000,
+    "low-altitude": 10000,
+    "new-energy": 10000,
+    "nuclear-energy": 10000,
+    "privacy-computing": 10000,
+    "quantum-computing": 10000,
+    "robot-parts": 10000,
+    "sat-6g": 10000,
+    "semiconductor": 10000,
+    "spatial-computing": 10000,
+    "synbio-manufacturing": 10000,
+    "tcm-tools": 10000,
+    "swarmlabs": 10000,
+    "ai-safety": 10000,
+    "quantum-materials": 15000,
+    "carbon-neutral": 15000,
+    "digital-twin": 15000,
+    "biomed-ai": 15000,
+    "edge-ai": 15000,
+    "neuromorphic": 10000,
+    "agritech": 15000
+  },
+  "capacity_model": "tiered",
+  "capacity_note": "分层容量（2026-10-08 v5，与 quality-guard v2 + 前置页清理后实测对齐）。达标站 15000、未达标站 10000，单一真源是本表，生效值由 pipeline-data-backfill.js 的 capacityFor(site) 逐站读取。判定依据 reports/quality-metrics-2026-10-08.json 的实际放行结果。v4→v5 三处上调到 15000：biocomputing（前置页噪声 5.84%→0.00%，删 584 条）、brain-science（8.27%→0.00%，删 827 条）、genetech-tools（标签率随噪声移除从 49.4% 升到 50% 以上越过红线）。本轮达标 15/30 站（基线 11 → v4 修正重复度量为 12 → v5 清理噪声为 15）。未达标 15 站的瓶颈分布：摘要率<60% 10 站（最严重 tcm-tools 41%、new-energy 42%、neuromorphic 42%、sat-6g 43%）、标签率<50% 2 站（life-science 40%、low-altitude 49%）、DOI<85% 2 站（alien-minerals 75%、ai-safety 76%）。这三类都不是抬阈值能解决的，需要 A5（补摘要/标签/DOI 抓取）。体积约束：30 站满容 entities.json 约 513MB，全站放到 30000 会冲到约 1.5GB、突破 GitHub Pages 1GB 上限，故 30000 方案被推翻。当前目标总量 385,000 实体，体积红线 750MB，超过必须先迁 CDN/R2。"
 }

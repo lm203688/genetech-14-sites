@@ -116,7 +116,8 @@ function dataQualityCheck(entities, site) {
   const failures = [];
 
   if (total === 0) { failures.push({rule:'entity_count', msg:'empty batch'}); }
-  else if (total > 10000) { failures.push({rule:'entity_count', msg:`exceeds 10k cap (${total})`}); }
+  // 容量按站取值（分层容量，单一真源 guards/publish.policy.json），不再硬编码 10000
+  else if (total > capacityFor(site)) { failures.push({rule:'entity_count', msg:`exceeds capacity (${total} > ${capacityFor(site)})`}); }
 
   // ⚠️ 2026-08-29 关键修复（入库冻结第五重根因）：本门禁原先检查 e.title 与 e.provenance，
   // 但 normalize() 产出的实体 schema 是 { name, source, url, doi, abstract, ... } ——
@@ -243,6 +244,20 @@ function _evalOp(operands, context, fn) {
 function _loadPolicy(name) {
   return JSON.parse(require('fs').readFileSync(path.join(PROJECT_ROOT, 'guards', name + '.policy.json'), 'utf-8'));
 }
+// 分层容量（2026-10-08）：容量不再是全局硬上限，而是按 quality-guard 判定逐站取值。
+// 达标站 15000、未达标站 10000，单一真源是 guards/publish.policy.json 的 site_capacity。
+// 此前 cap 与 site_capacity 都取全局 maxEntities，导致「达标站被同一根低水位线卡住」。
+// 容量与体积关系：30 站满容 514MB（每条约 1.71KB），全站 15000 约 633MB，仍低于 GitHub Pages 1GB；
+// 体积红线 750MB，超过必须先迁 CDN/R2，禁止继续抬容量。
+const DEFAULT_MAX_ENTITIES = 15000;
+function capacityFor(site) {
+  try {
+    const caps = _loadPolicy('publish').site_capacity;
+    const v = Number(caps && caps[site]);
+    if (v > 0) return v;
+  } catch (_) { /* policy 读取失败时回退全局上限 */ }
+  return DEFAULT_MAX_ENTITIES;
+}
 function evalPublishGuard(actionCtx) {
   const policy = _loadPolicy('publish');
   const ctx = {...actionCtx, __policy__: policy};
@@ -254,6 +269,75 @@ function evalPublishGuard(actionCtx) {
     }
   }
   return {decision: defaultDecision, reason: 'no rule matched, default: ' + policy.default};
+}
+
+// ============================================================
+// 质量红线门禁（Policy-as-code）— 与 guards/quality.policy.json 对齐
+//
+// 为何要在采集管线内再挂一道：publish.policy.json 只管「能不能写」，
+// 质量门禁管「值不值得写」。2026-10-08 实测此前二者都没管质量，
+// 结果 30 站摘要率 42%~88%、重名率 4.8%~16.6% 全部畅通写入。
+//
+// 口径必须与 operations-plan/pipeline-quality-gate.js 保持完全一致，两处同步修改：
+//   title   → e.title ?? e.name   （normalize 产出 name，早期误用 e.title 导致重名检测恒为 0，
+//                                   这正是「实测重名 0.0%」与 v1 报告 10.9% 分歧的根因）
+//   summary → e.summary ?? e.abstract
+//
+// fail-open 取舍：策略「评估结果」为 deny 时阻断（正常路径）；策略「不可用」
+// （文件缺失/JSON 损坏）时 fail-open 并显式告警。后者若 fail-closed，
+// 会重演 2026-08-17 全站冻结的故障——一次配置事故不该让整条数据飞轮停摆。
+// ============================================================
+function evalQualityGuard(entities, site) {
+  try {
+    const policy = _loadPolicy('quality');
+    const n = entities.length || 1;
+    const terms = String(SITE_QUERIES[site] || '').toLowerCase().split(/[^a-z0-9+#]+/).filter(w => w.length > 2);
+    let sumOk = 0, tagOk = 0, doiOk = 0, urlOk = 0, offDom = 0;
+    const titles = new Map(), confBySrc = new Map(), confVals = new Set();
+    for (const e of entities) {
+      if (!e) continue;
+      const t = String(e.title ?? e.name ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
+      const s = String(e.summary ?? e.abstract ?? '').trim();
+      if (t) titles.set(t, (titles.get(t) || 0) + 1);
+      if (s.length > 30) sumOk++;
+      const tg = e.tags ?? e.keywords ?? [];
+      if (Array.isArray(tg) ? tg.length > 0 : (typeof tg === 'string' && tg.trim())) tagOk++;
+      if (e.doi && String(e.doi).trim()) doiOk++;
+      if (e.url && String(e.url).trim()) urlOk++;
+      if (terms.length) {
+        const hay = (t + ' ' + s.toLowerCase());
+        if (!terms.some(w => hay.includes(w))) offDom++;
+      }
+      const src = e.source || 'unknown';
+      if (typeof e.confidence === 'number') {
+        confVals.add(e.confidence);
+        if (!confBySrc.has(src)) confBySrc.set(src, new Set());
+        confBySrc.get(src).add(e.confidence);
+      }
+    }
+    const dups = [...titles.values()].reduce((a, v) => a + Math.max(0, v - 1), 0);
+    const det = confBySrc.size > 0 && [...confBySrc.values()].every(v => v.size <= 1) ? 1 : 0;
+    const ctx = {
+      action: 'quality_check',
+      summary_rate: sumOk / n,
+      tag_rate: tagOk / n,
+      doi_rate: doiOk / n,
+      url_rate: urlOk / n,
+      duplicate_rate: dups / n,
+      off_domain_rate: offDom / n,
+      confidence_source_deterministic: det,
+      confidence_distinct_values: confVals.size,
+      __policy__: policy,
+    };
+    for (const rule of policy.rules || []) {
+      if (rule.when && _evalExpr(rule.when, ctx)) {
+        return {decision: rule.allow ? 'allow' : 'deny', reason: rule.id, metrics: ctx};
+      }
+    }
+    return {decision: policy.default === 'deny' ? 'deny' : 'allow', reason: 'default:' + policy.default, metrics: ctx};
+  } catch (err) {
+    return {decision: 'allow', reason: 'quality-guard 不可用, fail-open: ' + err.message.slice(0, 60), degraded: true};
+  }
 }
 
 // 每个站点抓取的领域检索词（科学语义）
@@ -839,10 +923,10 @@ async function main() {
   const perPage = Math.min(perPageArg ? parseInt(perPageArg.split('=')[1], 10) || 100 : 100, 200);
   const pagesArg = args.find(a => a.startsWith('--pages='));
   const PAGES_PER_QUERY = pagesArg ? Math.min(parseInt(pagesArg.split('=')[1], 10) || 3, 8) : 3;
-  // 每站目标容量：单条约 1.1KB，4000 条 ≈ 4.4MB；30 站全满 ≈ 132MB（entities.json 合计），
-  // 加结构化索引后总产物仍安全低于 GitHub Pages 1GB 上限（实测 22 站/3k 时为 184MB）
+  // 全局容量兜底值：真正的生效值来自 capacityFor(site)（按站读 guards/publish.policy.json 的
+  // site_capacity，达标站 15000 / 未达标站 10000）。--max-entities 仅在需要临时全局覆盖时使用。
   const maxArg = args.find(a => a.startsWith('--max-entities='));
-  const maxEntities = maxArg ? parseInt(maxArg.split('=')[1], 10) || 10000 : 10000;
+  const maxEntities = maxArg ? parseInt(maxArg.split('=')[1], 10) || DEFAULT_MAX_ENTITIES : DEFAULT_MAX_ENTITIES;
   // 时间预算：CI 的 job timeout-minutes 是硬杀，一旦触发，末尾的「提交数据」步骤不会执行，
   // 整轮抓取全部作废。这里主动在预算内收尾，保证已抓数据必被提交。默认 35 分钟（CI 上限 50）。
   const minutesArg = args.find(a => a.startsWith('--max-minutes='));
@@ -937,7 +1021,7 @@ async function main() {
       let f = 0, a = 0;
       for (let p = 0; p < PAGES_PER_QUERY; p++) {
         if (map.size >= maxEntities) break;
-        const r = await backfillQuery(site, q, off, perPage, limit, map, maxEntities);
+        const r = await backfillQuery(site, q, off, perPage, limit, map, capacityFor(site));
         f += r.fetched; a += r.added;
         off = r.nextOffset;
         cursor[site][q] = off; // 逐页落盘（站点循环结束后统一写文件）
@@ -994,7 +1078,7 @@ async function main() {
       entity_count: siteAdded,
       added_count: siteAdded,
       total_after: all.length,
-      site_capacity: maxEntities,
+      site_capacity: capacityFor(site),
       guards_passed: ['SourceGuard', 'KnowledgeGuard', 'PublishGuard']
     });
     if (guardDecision.decision !== 'allow') {
@@ -1016,6 +1100,21 @@ async function main() {
       continue;
     }
     console.log(`[Backfill][QUALITY] ${site}: ✅ 质量通过 (title=${quality.metrics.title_rate}, prov=${quality.metrics.provenance_rate}, abs=${quality.metrics.abstract_rate})`);
+
+    // 质量红线（Policy-as-code）：dataQualityCheck 是硬编码字段级检查，本门禁是可配置红线
+    // （摘要率/标签率/DOI率/重名率/confidence 伪信号），二者互补。口径见 evalQualityGuard 注释。
+    const qg = evalQualityGuard(all, site);
+    if (qg.decision !== 'allow') {
+      const m = qg.metrics || {};
+      console.log(`[Backfill][QGATE] ${site}: ❌ 质量红线拒绝 (rule=${qg.reason})`);
+      console.log(`    摘要${Math.round((m.summary_rate || 0) * 100)}% 标签${Math.round((m.tag_rate || 0) * 100)}% DOI${Math.round((m.doi_rate || 0) * 100)}% 重名${((m.duplicate_rate || 0) * 100).toFixed(1)}% conf档数${m.confidence_distinct_values}`);
+      results.push({ site, fetched: siteFetched, added: siteAdded, total: all.length, quality_gate_deny: true, quality_rule: qg.reason, metrics: m, dryRun: false });
+      await sleep(200);
+      continue;
+    }
+    if (qg.degraded) console.log(`[Backfill][QGATE] ${site}: ⚠️ ${qg.reason}`);
+    const qm = qg.metrics || {};
+    console.log(`[Backfill][QGATE] ${site}: ✅ 质量红线通过 摘要${Math.round(qm.summary_rate * 100)}% 标签${Math.round(qm.tag_rate * 100)}% DOI${Math.round(qm.doi_rate * 100)}% 重名${(qm.duplicate_rate * 100).toFixed(1)}%`);
 
     await fs.writeFile(livePath, JSON.stringify(all, null, 2), 'utf-8');
     await fs.writeFile(indexPath, JSON.stringify({ site, totalEntities: all.length, lastUpdated: getISOTime(), categories: cats }, null, 2), 'utf-8');

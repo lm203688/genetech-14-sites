@@ -163,6 +163,14 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     {name:'空批次 added_count=0', ctx:{action:'publish', target_site:'quantum-computing', added_count:0, total_after:9000, site_capacity:10000, guards_passed:ALL}, expect:'deny'},
     {name:'非白名单站点', ctx:{action:'publish', target_site:'unknown', added_count:10, total_after:10, site_capacity:10000, guards_passed:ALL}, expect:'deny'},
     {name:'守卫缺失（仅两道）', ctx:{action:'publish', target_site:'quantum-computing', added_count:500, total_after:9800, site_capacity:10000, guards_passed:['SourceGuard','KnowledgeGuard']}, expect:'deny'},
+    {name:'小批量 +12 缺守卫仍放行（allow-small-batch 宽松规则）', ctx:{action:'publish', target_site:'swarmlabs', added_count:12, total_after:2600, site_capacity:10000, guards_passed:['SourceGuard']}, expect:'allow'},
+    {name:'批量 500 缺守卫阻断（宽松规则不适用于大批量）', ctx:{action:'publish', target_site:'swarmlabs', added_count:500, total_after:9800, site_capacity:10000, guards_passed:['SourceGuard']}, expect:'deny'},
+    // ── policy v3 分层容量（tiered）用例 ────────────────────────────────
+    // 达标站 site_capacity=15000，未达标站 10000。容量值由 pipeline-data-backfill.js
+    // 的 capacityFor(site) 逐站从 site_capacity 读取；这里直接注入以测试策略本身。
+    {name:'[v3] 达标站 ai4science 14500/15000 放行', ctx:{action:'publish', target_site:'ai4science', added_count:500, total_after:14500, site_capacity:15000, guards_passed:ALL}, expect:'allow'},
+    {name:'[v3] 达标站 12000 放行（旧全局上限 10000 会误拦，分层在此生效）', ctx:{action:'publish', target_site:'ai4science', added_count:200, total_after:12000, site_capacity:15000, guards_passed:ALL}, expect:'allow'},
+    {name:'[v3] 达标站超容 15001 > 15000 阻断', ctx:{action:'publish', target_site:'ai4science', added_count:501, total_after:15001, site_capacity:15000, guards_passed:ALL}, expect:'deny'},
   ];
 
   console.log('=== Guard Eval Smoke Test (policy v' + publishPolicy.version + ') ===');
@@ -173,5 +181,36 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     console.log(`${ok ? '✅' : '❌'} ${t.name} -> ${d.decision} (${d.reason})`);
     if (ok) pass++;
   }
-  console.log(`\n${pass}/${tests.length} passed`);
+
+  // ── 质量护栏冒烟（quality-guard v2）─────────────────────────────────────
+  // 与 publish 分开的策略对象：evalGuard(policy, ctx) 对 policy 参数是位置依赖的。
+  // v2 口径：duplicate_rate 是真重复率（有 DOI 用 DOI、无 DOI 用标题+作者），实测恒为 0；
+  // boilerplate_rate 是前置页噪声；title_collision_rate 是同名碰撞，纯诊断、不参与判定。
+  const qualityPolicy = loadPolicy('quality');
+  const GOOD = {action:'quality_check', summary_rate:0.74, tag_rate:0.68, doi_rate:0.91, url_rate:1.0, duplicate_rate:0.0, boilerplate_rate:0.02, title_collision_rate:0.107, off_domain_rate:0.03, confidence_distinct_values:62, confidence_source_deterministic:0};
+  const qtests = [
+    {name:'[quality] 全指标达标 → 放行', ctx:{...GOOD}, expect:'allow'},
+    {name:'[quality] 摘要率 0.599 < 0.60 → 阻断', ctx:{...GOOD, summary_rate:0.599}, expect:'deny'},
+    {name:'[quality] 摘要率 0.60 边界 → 放行', ctx:{...GOOD, summary_rate:0.60}, expect:'allow'},
+    {name:'[quality] 标签率 0.49 < 0.50 → 阻断', ctx:{...GOOD, tag_rate:0.49}, expect:'deny'},
+    {name:'[quality] DOI 0.84 < 0.85 → 阻断', ctx:{...GOOD, doi_rate:0.84}, expect:'deny'},
+    {name:'[quality] URL 0.98 < 0.99 → 阻断', ctx:{...GOOD, url_rate:0.98}, expect:'deny'},
+    {name:'[quality] 真重复 0.02 > 0.01 → 阻断（非零即入库缺陷）', ctx:{...GOOD, duplicate_rate:0.02}, expect:'deny'},
+    {name:'[quality] 真重复 0.01 边界 → 放行', ctx:{...GOOD, duplicate_rate:0.01}, expect:'allow'},
+    {name:'[quality] 同名碰撞 0.107（实测加权）不拦——纯诊断指标', ctx:{...GOOD, title_collision_rate:0.107}, expect:'allow'},
+    {name:'[quality] 前置页噪声 0.0827（brain-science 实测最高）→ 阻断', ctx:{...GOOD, boilerplate_rate:0.0827}, expect:'deny'},
+    {name:'[quality] 前置页噪声 0.0189（实测加权）→ 放行', ctx:{...GOOD, boilerplate_rate:0.0189}, expect:'allow'},
+    {name:'[quality] confidence=f(source) 确定性映射 → 阻断', ctx:{...GOOD, confidence_source_deterministic:1}, expect:'deny'},
+    {name:'[quality] confidence 仅 11 档（<20）→ 阻断', ctx:{...GOOD, confidence_distinct_values:11}, expect:'deny'},
+    {name:'[quality] off_domain=0.63 不拦（观察指标，防假阳性误拦）', ctx:{...GOOD, off_domain_rate:0.63}, expect:'allow'},
+    {name:'[quality] off_domain=0.90 极端 → 阻断（配置错误）', ctx:{...GOOD, off_domain_rate:0.90}, expect:'deny'},
+  ];
+  console.log('=== Quality Guard Smoke Test (policy v' + qualityPolicy.version + ') ===');
+  for (const t of qtests) {
+    const d = evalGuard(qualityPolicy, t.ctx);
+    const ok = d.decision === t.expect;
+    console.log(`${ok ? '✅' : '❌'} ${t.name} -> ${d.decision} (${d.reason})`);
+    if (ok) pass++;
+  }
+  console.log(`\n${pass}/${tests.length + qtests.length} passed`);
 }

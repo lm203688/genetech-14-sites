@@ -13,6 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { mergeCitationEdges } from './lib/merge-citation-edges.mjs';
 
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, 'data');
@@ -42,6 +43,16 @@ const MAX_BYTES = 12 * 1024 * 1024;
 // 共享 ≥2 标签。全量展开会远超 9MB 产物上限，故硬限幅并让枢纽边优先占预算。
 const LIMIT_CO_TOPIC_EDGES = argNum('--limit-cotopic=', 3000);
 const CO_TOPIC_TAG_MEMBER_CAP = 60;
+// 引用边合并（B1，2026-10-08）。原图谱 71,857 条边 100% 是标签共现类，
+// 0 条引用边——而引用关系才是科研知识图谱的核心资产。合并逻辑抽在
+// tools/lib/merge-citation-edges.mjs，本脚本与 pipeline-merge-citation-edges.js 共用。
+//   link   —— 只加两端节点都已存在的引用边。实测当前图谱只能落地 41 条（0.06%），
+//             零膨胀但几乎无价值。
+//   extend —— 为引用边里尚未入库的 DOI 补占位节点（kind:"doi-stub"，带真实 sites 溯源），
+//             再加全部引用边。实测落地 27,868 条、引用边占比 27.94%（验收判据 ≥20%）。
+// 默认 extend，因为 link 模式产出的引用边占比 0.06%，等于没做。
+const CITATION_MODE = (process.argv.slice(2).find((a) => a.startsWith('--citation-mode=')) || '--citation-mode=extend').split('=')[1];
+const CITATION_LIMIT = argNum('--citation-limit-edges=', Infinity);
 
 const isStation = (name) => !name.startsWith('.') && !name.startsWith('_');
 
@@ -225,6 +236,30 @@ function main() {
     nodes,
     edges,
   };
+
+  // ---- 引用边合并（B1，2026-10-08）----
+  // 必须在 JSON.stringify 之前做，否则 stats 与产物不一致。
+  // 也必须在退化护栏之前做：合并只增不减，护栏（新图谱 < 基线 50% 即拒）不受影响。
+  // 注意：合并发生在边限幅（LIMIT_EDGES）之后，引用边不受标签共现预算约束——
+  // 它们是图谱里价值最高的一类边，不该为给 shared_tag 让位而被截断。
+  // 代价是最终边数会超过 LIMIT_EDGES、体积会超过 MAX_BYTES 的 WARN 阈值，
+  // 二者都只是告警不是阻断；实测 extend 模式产物 18.39 MB / 99,725 边。
+  const cePath = path.join(DATA_DIR, 'citation-edges.json');
+  const ce = readJsonSafe(cePath);
+  if (ce && Array.isArray(ce.edges) && ce.edges.length && CITATION_MODE !== 'off') {
+    const merged = mergeCitationEdges(graph, ce, { mode: CITATION_MODE, limitEdges: CITATION_LIMIT });
+    const g = merged.graph;
+    graph.stats = g.stats;
+    graph.nodes = g.nodes;
+    graph.edges = g.edges;
+    console.log(
+      `[kg] 引用边合并 mode=${CITATION_MODE} | 输入 ${merged.report.inputCitationEdges} | ` +
+      `落地 ${merged.report.addedCitationEdges} | 占位节点 +${merged.report.stubNodesAdded} | ` +
+      `引用边占比 ${(merged.report.citationEdgeShare * 100).toFixed(2)}%`
+    );
+  } else {
+    console.log(`[kg] 引用边合并跳过（--citation-mode=${CITATION_MODE} 或 citation-edges.json 无数据）`);
+  }
 
   const json = JSON.stringify(graph);
   console.log(`[kg] 产物体积: ${(json.length / 1024 / 1024).toFixed(2)} MB`);
