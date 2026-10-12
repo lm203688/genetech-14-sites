@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>GeneTech Eval Leaderboard 2026-10-12</title>
+<style>
+body{font-family:-apple-system,"Segoe UI",sans-serif;max-width:1000px;margin:2em auto;padding:0 1em;color:#222;line-height:1.5}
+h1{border-bottom:2px solid #333;padding-bottom:.3em}
+h2{margin-top:1.5em;color:#0a6}
+table{border-collapse:collapse;width:100%;margin:.5em 0}
+th,td{border:1px solid #ccc;padding:6px 10px;text-align:left}
+th{background:#f4f4f4}
+.metric{text-align:right;font-variant-numeric:tabular-nums}
+.card{border:1px solid #ddd;border-radius:6px;padding:1em;margin:1em 0;background:#fafafa}
+.pill{display:inline-block;background:#e5f5e5;border:1px solid #b7e0b7;border-radius:12px;padding:2px 8px;margin-right:6px;font-size:.85em}
+.miss{color:#b00;font-weight:600}
+.perfect{color:#066;font-weight:600}
+footer{margin-top:2em;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<h1>GeneTech 检索评测 Leaderboard · 2026-10-12</h1>
+<p>评测基座：BM25（k1=1.5,b=0.75）+ 字段加权 + RRF(K=60)；查询来自 <code>eval/queries.jsonl</code>（seed=20261012，perSite=10，共 296 条）。</p>
+
+<div class="card">
+<h2>本次运行</h2>
+<table>
+<tr><th>范围</th><td>3 站 · 30 query</td></tr>
+<tr><th>方法</th><td>hybridSearch（BM25+字段加权+RRF，向量未启用）</td></tr>
+<tr><th>K</th><td>10</td></tr>
+<tr><th>耗时</th><td>0s (见终端)</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>总体指标</h2>
+<table>
+<tr><th>指标</th><th class="metric">值</th></tr>
+<tr><td>avg Recall@10</td><td class="metric perfect">100.0%</td></tr>
+<tr><td>avg MRR</td><td class="metric">92.6%</td></tr>
+<tr><td>avg NDCG@10</td><td class="metric">94.3%</td></tr>
+<tr><td>Recall@10 P50</td><td class="metric">100.0%</td></tr>
+<tr><td>Recall@10 P10</td><td class="metric">100.0%</td></tr>
+<tr><td>完美召回 Query 数</td><td class="metric perfect">30 / 30</td></tr>
+<tr><td>未召回 Query 数</td><td class="metric miss">0 / 30</td></tr>
+</table>
+</div>
+
+<h2>分站点</h2>
+<table>
+<tr><th>站点</th><th class="metric">Query</th><th class="metric">Recall@10</th><th class="metric">MRR</th><th class="metric">NDCG@10</th></tr>
+<tr><td>agent-ecosystem</td><td>10</td><td>100.0%</td><td>86.4%</td><td>89.6%</td></tr><tr><td>agritech</td><td>10</td><td>100.0%</td><td>91.4%</td><td>93.3%</td></tr><tr><td>ai-safety</td><td>10</td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+</table>
+
+<div class="card">
+<h2>方法论与局限</h2>
+<ul>
+<li>Query 由实体自身字段（name+tags+abstract）截断生成——<b>是「字面匹配应命中」的构造性基准</b>，不是人工语义标注。用于<b>防止检索回归</b>，不用于跨系统绝对对比。</li>
+<li>当前检索栈未启用向量（<code>GENETECH_EMBED_URL</code> 未设置），故分数只反映 BM25+RRF 表现。</li>
+<li>单文档相关集（每条 query 的 relevantIds 只有 1 条），Recall@10 与 MRR 高度相关；一旦引入多文档相关集，NDCG 区分度会更高。</li>
+<li>评测只在内存里跑，未做并发/延迟测量。</li>
+</ul>
+</div>
+
+<footer>
+生成于 2026-10-12T00:34:23.775Z · GeneTech 30 站知识引擎 · 评测代码 <code>eval/run-eval.mjs</code> · 生成器 <code>eval/generate-queries.mjs</code>
+</footer>
+</body>
+</html>

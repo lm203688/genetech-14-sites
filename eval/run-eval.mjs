@@ -1,0 +1,318 @@
+#!/usr/bin/env node
+/**
+ * eval/run-eval.mjs
+ *
+ * 报告 §8 T1-4「可复现评测 + 公开 leaderboard」的度量引擎。
+ *
+ * 输入：
+ *   - eval/queries.jsonl         （queries.manifest.json 记录 seed 与来源）
+ *   - 各站点 website/api/entities.json  （构造检索索引）
+ *
+ * 度量：
+ *   Recall@K  = |relevant ∩ topK| / |relevant|
+ *   MRR       = 1 / rank(first relevant hit)  （0 if never hit）
+ *   NDCG@K    = DCG@K / IDCG@K                （0/1 gain：relevant 得 1，其余 0）
+ *
+ * 输出：
+ *   eval/results-<date>.json     （逐 query 结果 + 聚合）
+ *   eval/leaderboard-<date>.html （人类可读）
+ *
+ * 用法：
+ *   node eval/run-eval.mjs                     # 跑 3 站（快速）
+ *   node eval/run-eval.mjs --sites=all         # 全 30 站（慢）
+ *   node eval/run-eval.mjs --k=10              # 默认 Recall@10/MRR/NDCG@10
+ *
+ * 说明：
+ *   - 单进程内存索引：每站独立，避免"跨站串味"，也贴近真实场景（MCP 检索多带 site 过滤）
+ *   - 若实体量过大触发 Node 默认堆限制，用 --max-old-space-size=4096
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import { SearchIndex } from '../mcp-server/src/search.mjs';
+
+const ROOT = process.cwd();
+const EVAL_DIR = path.join(ROOT, 'eval');
+const NOW = new Date().toISOString().slice(0, 10);
+
+// ---------------------------------------------------------------------------
+// CLI
+// ---------------------------------------------------------------------------
+function parseArgs() {
+  const a = process.argv.slice(2);
+  const args = { sites: 'sample-3', k: 10 };
+  for (const s of a) {
+    if (s === '--sites=all') args.sites = 'all';
+    else if (s.startsWith('--k=')) args.k = parseInt(s.slice(4), 10);
+    else if (s.startsWith('--sites=')) args.sites = s.slice(8);
+  }
+  return args;
+}
+
+// ---------------------------------------------------------------------------
+// 度量
+// ---------------------------------------------------------------------------
+function recallAtK(topIds, relevantSet, K) {
+  const top = new Set(topIds.slice(0, K));
+  let hits = 0;
+  for (const id of relevantSet) if (top.has(id)) hits++;
+  return hits / Math.max(1, relevantSet.size);
+}
+
+function mrr(topIds, relevantSet) {
+  for (let i = 0; i < topIds.length; i++) {
+    if (relevantSet.has(topIds[i])) return 1 / (i + 1);
+  }
+  return 0;
+}
+
+function ndcgAtK(topIds, relevantSet, K) {
+  let dcg = 0;
+  for (let i = 0; i < Math.min(K, topIds.length); i++) {
+    if (relevantSet.has(topIds[i])) dcg += 1 / Math.log2(i + 2); // i+1 rank, +1 for log base
+  }
+  const idealCount = Math.min(K, relevantSet.size);
+  let idcg = 0;
+  for (let i = 0; i < idealCount; i++) idcg += 1 / Math.log2(i + 2);
+  return idcg > 0 ? dcg / idcg : 0;
+}
+
+// ---------------------------------------------------------------------------
+// 站点扫描
+// ---------------------------------------------------------------------------
+function listSites() {
+  const out = [];
+  for (const d of fs.readdirSync(ROOT)) {
+    if (!fs.statSync(path.join(ROOT, d)).isDirectory()) continue;
+    const p = path.join(ROOT, d, 'website/api/entities.json');
+    if (fs.existsSync(p)) out.push(d);
+  }
+  return out.sort();
+}
+
+function loadEntities(site) {
+  const p = path.join(ROOT, site, 'website/api/entities.json');
+  const raw = JSON.parse(fs.readFileSync(p, 'utf8'));
+  const list = Array.isArray(raw) ? raw : (raw.entities || []);
+  for (const e of list) {
+    if (!e._site) e._site = site;
+  }
+  return list;
+}
+
+// ---------------------------------------------------------------------------
+// 加载 queries
+// ---------------------------------------------------------------------------
+function loadQueries() {
+  const p = path.join(EVAL_DIR, 'queries.jsonl');
+  if (!fs.existsSync(p)) {
+    console.error('[eval] 未找到 queries.jsonl，请先运行 node eval/generate-queries.mjs');
+    process.exit(1);
+  }
+  const lines = fs.readFileSync(p, 'utf8').split('\n').filter(Boolean);
+  return lines.map((l, i) => {
+    try { return { idx: i, ...JSON.parse(l) }; }
+    catch { return null; }
+  }).filter(Boolean);
+}
+
+// ---------------------------------------------------------------------------
+// 主流程
+// ---------------------------------------------------------------------------
+const args = parseArgs();
+const allSites = listSites();
+const targetSites = args.sites === 'all' ? allSites : allSites.slice(0, 3);
+const queries = loadQueries();
+const manifest = JSON.parse(fs.readFileSync(path.join(EVAL_DIR, 'queries.manifest.json'), 'utf8'));
+
+console.log(`[eval] seed=${manifest.seed} | perSite=${manifest.perSite} | totalQueries=${manifest.totalQueries}`);
+const scopeLabel = args.sites === 'all' ? '全量' : ('前 ' + targetSites.length + ' 站');
+console.log(`[eval] 目标站点: ${targetSites.length}（${scopeLabel}） | K=${args.k}`);
+
+// 按站缓存索引，避免重复构建
+const indexBySite = new Map();
+function getIdx(site) {
+  if (!indexBySite.has(site)) {
+    const ents = loadEntities(site);
+    indexBySite.set(site, new SearchIndex(ents));
+  }
+  return indexBySite.get(site);
+}
+
+const results = [];
+let nRecall, nMrr, nNdcg;
+const t0 = Date.now();
+
+for (const q of queries) {
+  // 只跑本次目标站点的 query
+  if (!targetSites.includes(q.site)) continue;
+
+  const idx = getIdx(q.site);
+  const relevantSet = new Set(q.relevantIds || []);
+  // 检索时不传 site 过滤（评测的是检索器本身），只按站隔离建索引
+  const hits = await idx.hybridSearch(q.query, { limit: Math.max(args.k, 20), site: null });
+  const topIds = hits.map(h => h.entity.id || `${h.entity._site}:${h.entity.name}`);
+
+  results.push({
+    idx: q.idx,
+    site: q.site,
+    query: q.query.slice(0, 200),
+    relevantCount: relevantSet.size,
+    relevantIds: [...relevantSet],
+    top10: topIds.slice(0, 10),
+    hitInTop10: topIds.slice(0, 10).filter(id => relevantSet.has(id)).length,
+    'recall@10': recallAtK(topIds, relevantSet, 10),
+    'recall@k': recallAtK(topIds, relevantSet, args.k),
+    mrr: mrr(topIds, relevantSet),
+    'ndcg@10': ndcgAtK(topIds, relevantSet, 10),
+  });
+}
+
+const elapsed = ((Date.now() - t0) / 1000).toFixed(2);
+
+// 聚合
+function mean(xs) { return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0; }
+function quantile(xs, q) {
+  if (!xs.length) return 0;
+  const s = [...xs].sort((a, b) => a - b);
+  return s[Math.min(s.length - 1, Math.floor(q * s.length))];
+}
+
+const aggregate = {
+  queryCount: results.length,
+  'avgRecall@10': mean(results.map(r => r['recall@10'])),
+  'avgRecall@k': mean(results.map(r => r['recall@' + args.k])),
+  avgMrr: mean(results.map(r => r.mrr)),
+  'avgNdcg@10': mean(results.map(r => r['ndcg@10'])),
+  'recall@10_p50': quantile(results.map(r => r['recall@10']), 0.5),
+  'recall@10_p25': quantile(results.map(r => r['recall@10']), 0.25),
+  'recall@10_p10': quantile(results.map(r => r['recall@10']), 0.1),
+  missCount: results.filter(r => r['recall@10'] === 0).length,
+  perfectCount: results.filter(r => r['recall@10'] === 1).length,
+  perSite: (function () {
+    const bySite = {};
+    for (const r of results) {
+      if (!bySite[r.site]) bySite[r.site] = [];
+      bySite[r.site].push(r);
+    }
+    const out = {};
+    for (const [site, arr] of Object.entries(bySite)) {
+      out[site] = {
+        queries: arr.length,
+        'avgRecall@10': mean(arr.map(r => r['recall@10'])),
+        avgMrr: mean(arr.map(r => r.mrr)),
+        'avgNdcg@10': mean(arr.map(r => r['ndcg@10'])),
+      };
+    }
+    return out;
+  })(),
+};
+
+// 写入 results
+const outDir = EVAL_DIR;
+const resultsPath = path.join(outDir, `results-${NOW}.json`);
+fs.writeFileSync(resultsPath, JSON.stringify({
+  generatedAt: new Date().toISOString(),
+  k: args.k,
+  sites: targetSites,
+  manifestSeed: manifest.seed,
+  manifestPerSite: manifest.perSite,
+  aggregate,
+  results,
+}, null, 2));
+console.log(`[eval] 结果写入 ${path.relative(ROOT, resultsPath)}`);
+
+// 汇总人类可读摘要
+console.log('\n================ 评测摘要 ================');
+console.log(`站点数: ${Object.keys(aggregate.perSite).length} | Query 数: ${aggregate.queryCount}`);
+console.log(`avg Recall@10   = ${aggregate['avgRecall@10'].toFixed(4)}`);
+console.log(`avg Recall@${args.k}    = ${aggregate[`avgRecall@${args.k}`].toFixed(4)}`);
+console.log(`avg MRR         = ${aggregate.avgMrr.toFixed(4)}`);
+console.log(`avg NDCG@10     = ${aggregate['avgNdcg@10'].toFixed(4)}`);
+console.log(`完美召回(Recall@10=1): ${aggregate.perfectCount}`);
+console.log(`完全未召回     : ${aggregate.missCount}`);
+console.log(`耗时            : ${elapsed}s`);
+
+// 生成 leaderboard HTML
+const lbPath = path.join(outDir, `leaderboard-${NOW}.html`);
+const html = buildLeaderboardHtml(aggregate, targetSites, manifest, results);
+fs.writeFileSync(lbPath, html);
+console.log(`[eval] leaderboard 写入 ${path.relative(ROOT, lbPath)}`);
+
+// ---------------------------------------------------------------------------
+function buildLeaderboardHtml(agg, sites, man, results) {
+  const perSiteRows = Object.entries(agg.perSite)
+    .map(([s, m]) => `<tr><td>${s}</td><td>${m.queries}</td><td>${(m['avgRecall@10']*100).toFixed(1)}%</td><td>${(m.avgMrr*100).toFixed(1)}%</td><td>${(m['avgNdcg@10']*100).toFixed(1)}%</td></tr>`)
+    .join('');
+  const totalRecall = (agg['avgRecall@10']*100).toFixed(1);
+  const totalMrr = (agg.avgMrr*100).toFixed(1);
+  const totalNdcg = (agg['avgNdcg@10']*100).toFixed(1);
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>GeneTech Eval Leaderboard ${NOW}</title>
+<style>
+body{font-family:-apple-system,"Segoe UI",sans-serif;max-width:1000px;margin:2em auto;padding:0 1em;color:#222;line-height:1.5}
+h1{border-bottom:2px solid #333;padding-bottom:.3em}
+h2{margin-top:1.5em;color:#0a6}
+table{border-collapse:collapse;width:100%;margin:.5em 0}
+th,td{border:1px solid #ccc;padding:6px 10px;text-align:left}
+th{background:#f4f4f4}
+.metric{text-align:right;font-variant-numeric:tabular-nums}
+.card{border:1px solid #ddd;border-radius:6px;padding:1em;margin:1em 0;background:#fafafa}
+.pill{display:inline-block;background:#e5f5e5;border:1px solid #b7e0b7;border-radius:12px;padding:2px 8px;margin-right:6px;font-size:.85em}
+.miss{color:#b00;font-weight:600}
+.perfect{color:#066;font-weight:600}
+footer{margin-top:2em;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<h1>GeneTech 检索评测 Leaderboard · ${NOW}</h1>
+<p>评测基座：BM25（k1=1.5,b=0.75）+ 字段加权 + RRF(K=60)；查询来自 <code>eval/queries.jsonl</code>（seed=${man.seed}，perSite=${man.perSite}，共 ${man.totalQueries} 条）。</p>
+
+<div class="card">
+<h2>本次运行</h2>
+<table>
+<tr><th>范围</th><td>${sites.length} 站 · ${agg.queryCount} query</td></tr>
+<tr><th>方法</th><td>hybridSearch（BM25+字段加权+RRF，向量未启用）</td></tr>
+<tr><th>K</th><td>${args.k}</td></tr>
+<tr><th>耗时</th><td>${((Date.now()-Date.now())+0)}s (见终端)</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>总体指标</h2>
+<table>
+<tr><th>指标</th><th class="metric">值</th></tr>
+<tr><td>avg Recall@10</td><td class="metric perfect">${totalRecall}%</td></tr>
+<tr><td>avg MRR</td><td class="metric">${totalMrr}%</td></tr>
+<tr><td>avg NDCG@10</td><td class="metric">${totalNdcg}%</td></tr>
+<tr><td>Recall@10 P50</td><td class="metric">${(agg['recall@10_p50']*100).toFixed(1)}%</td></tr>
+<tr><td>Recall@10 P10</td><td class="metric">${(agg['recall@10_p10']*100).toFixed(1)}%</td></tr>
+<tr><td>完美召回 Query 数</td><td class="metric perfect">${agg.perfectCount} / ${agg.queryCount}</td></tr>
+<tr><td>未召回 Query 数</td><td class="metric miss">${agg.missCount} / ${agg.queryCount}</td></tr>
+</table>
+</div>
+
+<h2>分站点</h2>
+<table>
+<tr><th>站点</th><th class="metric">Query</th><th class="metric">Recall@10</th><th class="metric">MRR</th><th class="metric">NDCG@10</th></tr>
+${perSiteRows}
+</table>
+
+<div class="card">
+<h2>方法论与局限</h2>
+<ul>
+<li>Query 由实体自身字段（name+tags+abstract）截断生成——<b>是「字面匹配应命中」的构造性基准</b>，不是人工语义标注。用于<b>防止检索回归</b>，不用于跨系统绝对对比。</li>
+<li>当前检索栈未启用向量（<code>GENETECH_EMBED_URL</code> 未设置），故分数只反映 BM25+RRF 表现。</li>
+<li>单文档相关集（每条 query 的 relevantIds 只有 1 条），Recall@10 与 MRR 高度相关；一旦引入多文档相关集，NDCG 区分度会更高。</li>
+<li>评测只在内存里跑，未做并发/延迟测量。</li>
+</ul>
+</div>
+
+<footer>
+生成于 ${new Date().toISOString()} · GeneTech 30 站知识引擎 · 评测代码 <code>eval/run-eval.mjs</code> · 生成器 <code>eval/generate-queries.mjs</code>
+</footer>
+</body>
+</html>`;
+}

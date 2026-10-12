@@ -1,0 +1,825 @@
+{
+  "generatedAt": "2026-10-12T00:34:23.773Z",
+  "k": 10,
+  "sites": [
+    "agent-ecosystem",
+    "agritech",
+    "ai-safety"
+  ],
+  "manifestSeed": 20261012,
+  "manifestPerSite": 10,
+  "aggregate": {
+    "queryCount": 30,
+    "avgRecall@10": 1,
+    "avgRecall@k": 1,
+    "avgMrr": 0.9261904761904761,
+    "avgNdcg@10": 0.9432532140079374,
+    "recall@10_p50": 1,
+    "recall@10_p25": 1,
+    "recall@10_p10": 1,
+    "missCount": 0,
+    "perfectCount": 30,
+    "perSite": {
+      "agent-ecosystem": {
+        "queries": 10,
+        "avgRecall@10": 1,
+        "avgMrr": 0.8642857142857142,
+        "avgNdcg@10": 0.896426308690479
+      },
+      "agritech": {
+        "queries": 10,
+        "avgRecall@10": 1,
+        "avgMrr": 0.9142857142857143,
+        "avgNdcg@10": 0.9333333333333332
+      },
+      "ai-safety": {
+        "queries": 10,
+        "avgRecall@10": 1,
+        "avgMrr": 1,
+        "avgNdcg@10": 1
+      }
+    }
+  },
+  "results": [
+    {
+      "idx": 5,
+      "site": "agent-ecosystem",
+      "query": "Principal and Agent: Purchase of Principal's Property by Agent",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.2307/1274937"
+      ],
+      "top10": [
+        "doi:10.2307/1275934",
+        "doi:10.2307/1274937",
+        "doi:10.2139/ssrn.6696138",
+        "doi:10.2139/ssrn.5510221",
+        "doi:10.2139/ssrn.7321300",
+        "doi:10.2307/1280872",
+        "doi:10.5281/zenodo.19653804",
+        "doi:10.2139/ssrn.6119728",
+        "doi:10.5281/zenodo.19653805",
+        "doi:10.2307/1274159"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 0.5,
+      "ndcg@10": 0.6309297535714575
+    },
+    {
+      "idx": 27,
+      "site": "agritech",
+      "query": "Variable rate technologies",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.1016/b978-0-443-18953-1.00010-6"
+      ],
+      "top10": [
+        "doi:10.5281/zenodo.19365904",
+        "doi:10.5281/zenodo.19365905",
+        "doi:10.1007/978-3-031-24861-0_34",
+        "doi:10.3920/9789086867783_096",
+        "doi:10.1002/cft2.70108",
+        "doi:10.19103/as.2017.0032.08",
+        "doi:10.1016/b978-0-443-18953-1.00010-6",
+        "pmid:40871760",
+        "doi:10.36253/978-88-5518-044-3.20",
+        "doi:10.3920/9789086867783_097"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 0.14285714285714285,
+      "ndcg@10": 0.3333333333333333
+    },
+    {
+      "idx": 36,
+      "site": "agent-ecosystem",
+      "query": "Strategic Learning Under Linguistic and Contextual Constraints: A Theoretical Framework for LLM-Based Multi-Agent Coordination cs.ai computer science computer and information sciences Modern AI system",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.1109/access.2025.3628927"
+      ],
+      "top10": [
+        "doi:10.1109/access.2025.3628927",
+        "doi:10.32388/ws0vim",
+        "doi:10.36227/techrxiv.174918314.46057664/v1",
+        "doi:10.1109/ica67499.2025.00021",
+        "doi:10.2139/ssrn.6964978",
+        "doi:10.37547/ajast/volume06issue08-10",
+        "doi:10.21203/rs.3.rs-9431109/v1",
+        "doi:10.38124/ijisrt/26mar061",
+        "doi:10.20944/preprints202601.1877.v1",
+        "doi:10.3390/fi18060326"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 46,
+      "site": "ai-safety",
+      "query": "Automated Safety Testing and Reporting Application for Conversational Safety Monitoring of Generative AI Tools for Mental Health: Development and Validation Study Mental health Computer science Artifi",
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W7154901408"
+      ],
+      "top10": [
+        "oa:W7154901408",
+        "oa:W4409780538",
+        "pmid:41696091",
+        "doi:10.2147/jmdh.s581251",
+        "doi:10.2147/jmdh.s622655",
+        "doi:10.2196/92817",
+        "doi:10.31234/osf.io/f9asr_v2",
+        "oa:W4415610797",
+        "doi:10.2196/71219",
+        "doi:10.31234/osf.io/f9asr_v1"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 48,
+      "site": "ai-safety",
+      "query": "A dataset of text prompts, videos and video quality metrics from generative text-to-video AI models Naturalness Computer science Similarity (geometry) Evaluating the quality of videos which have been ",
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4396835080"
+      ],
+      "top10": [
+        "oa:W4396835080",
+        "oa:W4413108355",
+        "oa:W4406017731",
+        "doi:10.48550/arxiv.2404.11589",
+        "doi:10.36227/techrxiv.173198336.68543189/v1",
+        "oa:W4412699133",
+        "arxiv:2503.20491v2",
+        "arxiv:2404.16205v1",
+        "oa:W7131074078",
+        "oa:W4415016763"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 49,
+      "site": "ai-safety",
+      "query": "Pengaruh Kepemimpinan Transformasional  Kepala Sekolah terhadap Kinerja Guru SMP Negeri di Kota Banjarbaru Dimediasi oleh Iklim Kerja dan Komitmen Kerja social and behavioral sciences psychology mathe",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.31539/alignment.v7i2.11679"
+      ],
+      "top10": [
+        "doi:10.31539/alignment.v7i2.11679",
+        "doi:10.31539/alignment.v7i2.12765",
+        "doi:10.31539/alignment.v7i1.8908",
+        "doi:10.31539/alignment.v7i1.8562",
+        "doi:10.31539/alignment.v7i2.11288",
+        "doi:10.31539/vjtbj934",
+        "doi:10.31539/alignment.v8i3.15601",
+        "doi:10.31539/alignment.v5i2.4158",
+        "doi:10.31539/j09mgh36",
+        "doi:10.31539/alignment.v7i2.11762"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 51,
+      "site": "agent-ecosystem",
+      "query": "Contract-Bound Cognitive Routing: A Control Architecture for Agentic AI Integrity, Delegation, and Prompt-Injection Containment prompt injection; agentic AI; AI security; LLM security; information flo",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.5281/zenodo.20584943"
+      ],
+      "top10": [
+        "doi:10.5281/zenodo.20584943",
+        "doi:10.5281/zenodo.20590723",
+        "doi:10.21203/rs.3.rs-10196595/v1",
+        "doi:10.1109/acai68217.2025.11406667",
+        "doi:10.5281/zenodo.22028067",
+        "doi:10.5281/zenodo.22028416",
+        "doi:10.5281/zenodo.22028417",
+        "doi:10.5281/zenodo.22179415",
+        "doi:10.5281/zenodo.22182355",
+        "doi:10.5281/zenodo.21008339"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 61,
+      "site": "agritech",
+      "query": "Soil sensors wearable computer remote sensing biomass Sensors for estimation of soil properties will be explained in this topic. Principles about soil sensors based on different technologies",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.36253/978-88-5518-044-3.15"
+      ],
+      "top10": [
+        "doi:10.36253/978-88-5518-044-3.15",
+        "doi:10.5281/zenodo.18891489",
+        "doi:10.5281/zenodo.18891490",
+        "doi:10.1007/s11119-005-6789-z",
+        "doi:10.3920/9789086866649_054",
+        "doi:10.1007/s11119-023-10062-4",
+        "doi:10.1002/gch2.70117",
+        "doi:10.1007/s11119-024-10144-x",
+        "pmid:40942965",
+        "doi:10.1007/s11119-022-09985-1"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 62,
+      "site": "agent-ecosystem",
+      "query": "Introduction to the special issue on the Fourth German Conference on Multiagent System Technologies (MATES)",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.1007/s10458-008-9049-6"
+      ],
+      "top10": [
+        "doi:10.1007/s10458-008-9049-6",
+        "oa:W2058296799",
+        "oa:W3147079603",
+        "oa:W2471883051",
+        "oa:W2912100673",
+        "oa:W2911825241",
+        "oa:W2913756371",
+        "oa:W2340985688",
+        "oa:W3032916997",
+        "oa:W2539402368"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 64,
+      "site": "agritech",
+      "query": "Evaluations of internet of things-based personal smart farming system for residential apartments internet of things computer science mechanical engineering Urban farming is popularly accepted by commu",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.11591/eei.v9i6.2496"
+      ],
+      "top10": [
+        "doi:10.11591/eei.v9i6.2496",
+        "doi:10.1109/icoris56080.2022.10031470",
+        "doi:10.1109/icpei61831.2024.10748606",
+        "doi:10.33395/sinkron.v9i1.14255",
+        "doi:10.1109/iccsea49143.2020.9132933",
+        "doi:10.1109/icict57646.2023.10134066",
+        "doi:10.1007/s10586-026-06177-8",
+        "doi:10.25130/tjas.24.3.18",
+        "doi:10.31893/multiscience.2025418",
+        "doi:10.31316/astro.v4i2.9323"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 69,
+      "site": "agritech",
+      "query": "Mobile Application for Smart Farming Using IOT and Machine Learning Techniques",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.1109/cicn70047.2026.11594246"
+      ],
+      "top10": [
+        "doi:10.1109/cicn70047.2026.11594246",
+        "doi:10.5281/zenodo.21550606",
+        "doi:10.5281/zenodo.21550607",
+        "doi:10.33564/ijeast.2020.v04i12.004",
+        "doi:10.14445/23488549/ijece-v13i4p122",
+        "doi:10.1371/journal.pone.0330488",
+        "doi:10.70882/josrar.2025.v2i3.57",
+        "doi:10.1515/9783110691276-001",
+        "doi:10.52711/2231-3915.2021.00001",
+        "doi:10.1038/s41598-026-36106-z"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 70,
+      "site": "ai-safety",
+      "query": "Problems with a one-size-fits-all approach: a systematic literature review on solutions to AI bias in healthcare and implications for engineering biology Systematic review Scopus Health care Much of t",
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W7156085968"
+      ],
+      "top10": [
+        "oa:W7156085968",
+        "oa:W4403358933",
+        "doi:10.1186/s12913-026-14960-x",
+        "pmid:41696091",
+        "oa:W7125497973",
+        "doi:10.12688/openreseurope.21109.1",
+        "doi:10.3390/jintelligence14060109",
+        "oa:W2115147380",
+        "oa:W4410056279",
+        "pmid:41501703"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 76,
+      "site": "agent-ecosystem",
+      "query": "Consensus Tracking of Multi-Agent Systems With Lipschitz-Type Node Dynamics and Switching Topologies Network topology Topology (electrical circuits) Consensus Distributed consensus tracking is address",
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W2055953081"
+      ],
+      "top10": [
+        "oa:W2055953081",
+        "oa:W1976907074",
+        "oa:W2171153629",
+        "oa:W2099586295",
+        "oa:W2145554346",
+        "pmid:40807925",
+        "oa:W2171731824",
+        "pmid:39668088",
+        "doi:10.1109/fasta70174.2026.11549012",
+        "pmid:41571498"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 84,
+      "site": "ai-safety",
+      "query": "MAMM: Motion Control via Metric-Aligning Motion Matching cs.GR We introduce a novel method for controlling a motion sequence using an arbitrary temporal control sequence using temporal alignment. Temp",
+      "relevantCount": 1,
+      "relevantIds": [
+        "arxiv:2505.19976v2"
+      ],
+      "top10": [
+        "arxiv:2505.19976v2",
+        "arxiv:2405.04309v3",
+        "doi:10.26434/chemrxiv-2025-1hpn3",
+        "oa:W7160151553",
+        "doi:10.1109/tpami.2013.95",
+        "arxiv:2407.18946v1",
+        "oa:W4396813613",
+        "arxiv:2510.11112v1",
+        "oa:W2902349279",
+        "arxiv:2504.05956v1"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 89,
+      "site": "agritech",
+      "query": "Tilapia Farming in Indonesia: Pathways to Sustainable Development",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.22271/ed.book.3448"
+      ],
+      "top10": [
+        "doi:10.22271/ed.book.3448",
+        "doi:10.56578/of120102",
+        "doi:10.32832/jurma.v9i1.2446",
+        "doi:10.1109/iciteed.2017.8250513",
+        "doi:10.5713/ab.25.0307",
+        "doi:10.1109/icocsim65098.2024.00017",
+        "doi:10.5281/zenodo.19364680",
+        "doi:10.59267/ekopolj2602567a",
+        "doi:10.5281/zenodo.19364681",
+        "doi:10.5281/zenodo.18194203"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 93,
+      "site": "agritech",
+      "query": "Precision Agriculture: Spotting and Spraying Yellow Defected Plant electrical engineering, electronic engineering, information engineering agriculture engineering The agricultural sector plays an impo",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.5281/zenodo.20910822"
+      ],
+      "top10": [
+        "doi:10.5281/zenodo.20910822",
+        "doi:10.5281/zenodo.20910823",
+        "doi:10.13031/ja.15128",
+        "doi:10.1007/s11119-017-9543-4",
+        "doi:10.1201/9781003485179-14",
+        "doi:10.1163/9789004725232_076",
+        "doi:10.51470/plantarchives.2025.sp.ictpairs-111",
+        "doi:10.3390/agriculture15111146",
+        "doi:10.22271/27084477.2025.v6.i1a.75",
+        "doi:10.2139/ssrn.4885970"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 132,
+      "site": "agent-ecosystem",
+      "query": "Fast and Accurate LSTM Meta-modeling of TNF-induced Tumor Resistance In Vitro computer science cs.lg computer and information sciences Multi-level, hybrid models and simulations, among other methods, ",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.1101/2024.08.12.607535"
+      ],
+      "top10": [
+        "doi:10.1101/2024.08.12.607535",
+        "doi:10.2118/223828-ms",
+        "doi:10.3390/e28020211",
+        "doi:10.36227/techrxiv.176461967.73957076/v1",
+        "pmid:39688464",
+        "doi:10.1109/iccids69108.2026.11407639",
+        "doi:10.26907/1562-5419-2026-29-1-368-384",
+        "pmid:40309719",
+        "doi:10.1038/s41598-026-47145-x",
+        "doi:10.59461/ijdiic.v5i1.260"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 133,
+      "site": "agent-ecosystem",
+      "query": "Energy Management of On-Grid and Off-Grid Hybrid Microgrids Using Jade Based Multi-Agent System",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.2139/ssrn.5251908"
+      ],
+      "top10": [
+        "doi:10.2139/ssrn.5251908",
+        "doi:10.1109/icetci62771.2024.10704112",
+        "doi:10.14445/23488379/ijeee-v11i9p120",
+        "doi:10.1109/access.2026.3672618",
+        "doi:10.1109/nigercon62786.2024.10927236",
+        "doi:10.33915/etd.5363",
+        "doi:10.1038/s41598-026-44179-z",
+        "doi:10.1109/sgai64825.2025.11009853",
+        "doi:10.2139/ssrn.6427226",
+        "doi:10.1016/j.ijepes.2026.112117"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 138,
+      "site": "agritech",
+      "query": "Rational management decisions from uncertain spatial data environmental science biology ecosystem Irrigation can be fundamentally characterized as a temporal adaptation to seasonal and annual variatio",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.4324/9780203128329-13"
+      ],
+      "top10": [
+        "doi:10.4324/9780203128329-13",
+        "doi:10.1002/9780470515419.ch9",
+        "doi:10.1007/s11119-024-10120-5",
+        "pmid:40896121",
+        "doi:10.1101/2024.06.25.600633",
+        "doi:10.1007/s11119-018-9620-3",
+        "doi:10.1007/s11119-017-9526-5",
+        "doi:10.1007/s11119-024-10216-y",
+        "doi:10.1007/s11119-010-9159-4",
+        "doi:10.1007/s11119-008-9099-4"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 142,
+      "site": "agent-ecosystem",
+      "query": "Isnād–Rijāl Framework: Claim-Level Provenance in Multi-Agent Knowledge Systems provenance multi-agent-systems knowledge-bases Reference implementation of the Isnād–Rijāl framework for claim-level prov",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.5281/zenodo.22153747"
+      ],
+      "top10": [
+        "doi:10.5281/zenodo.22177825",
+        "doi:10.5281/zenodo.21216872",
+        "doi:10.5281/zenodo.22164754",
+        "doi:10.5281/zenodo.22163971",
+        "doi:10.5281/zenodo.22163099",
+        "doi:10.5281/zenodo.22161595",
+        "doi:10.5281/zenodo.22153747",
+        "doi:10.5281/zenodo.22135446",
+        "doi:10.5281/zenodo.22135320",
+        "doi:10.5281/zenodo.22132942"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 0.14285714285714285,
+      "ndcg@10": 0.3333333333333333
+    },
+    {
+      "idx": 165,
+      "site": "ai-safety",
+      "query": "Topology-Enhanced Alignment for Large Language Models: Trajectory Topology Loss and Topological Preference Optimization cs.CL Alignment of large language models (LLMs) via SFT and RLHF/DPO typically i",
+      "relevantCount": 1,
+      "relevantIds": [
+        "arxiv:2605.07172v1"
+      ],
+      "top10": [
+        "arxiv:2605.07172v1",
+        "oa:W7168426575",
+        "oa:W7168340467",
+        "doi:10.21203/rs.3.rs-9939472/v1",
+        "doi:10.18653/v1/2024.findings-emnlp.823",
+        "doi:10.21203/rs.3.rs-9494873/v1",
+        "doi:10.1101/2024.09.27.24314486",
+        "arxiv:2504.12083v2",
+        "arxiv:2510.12116v1",
+        "doi:10.48550/arxiv.2402.02896"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 166,
+      "site": "ai-safety",
+      "query": "How do we assess the trustworthiness of AI? Introducing the trustworthiness assessment model (TrAM) Trustworthiness Computer science Artificial intelligence Designing trustworthy AI-based systems and ",
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4409423957"
+      ],
+      "top10": [
+        "oa:W4409423957",
+        "oa:W4376864642",
+        "oa:W7128797970",
+        "oa:W4412202257",
+        "doi:10.48550/arxiv.2311.09447",
+        "doi:10.5281/zenodo.20019654",
+        "doi:10.5281/zenodo.20019655",
+        "doi:10.21203/rs.3.rs-10582034/v1",
+        "oa:W3176723948",
+        "oa:W4387573556"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 176,
+      "site": "agritech",
+      "query": "AI-Enabled Next-Generation Dairy Systems: From Sensors to Smart Processing. computer science medicine artificial intelligence The rapid integration of artificial intelligence (AI) into dairy systems h",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.1002/fsn3.71953"
+      ],
+      "top10": [
+        "doi:10.1002/fsn3.71953",
+        "doi:10.1093/af/vfaf054",
+        "doi:10.3389/fnut.2026.1922164",
+        "pmid:40846069",
+        "doi:10.17676/hae.2020.38.49",
+        "pmid:39338635",
+        "doi:10.1051/e3sconf/202454802023",
+        "doi:10.35845/kmuj.2024.23729",
+        "doi:10.1186/s12919-026-00377-1",
+        "doi:10.3390/agriengineering8080312"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 197,
+      "site": "agent-ecosystem",
+      "query": "FRONTIER TOPICS MINING METHOD VIA AI-AGENT computer science artificial intelligence cs.ai Identifying high-quality frontier topics from massive scientific research data to assist researchers in accura",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.5121/csit.2026.160805"
+      ],
+      "top10": [
+        "doi:10.5121/csit.2026.160805",
+        "doi:10.20944/preprints202511.2014.v1",
+        "doi:10.20517/aiagent.2025.04",
+        "doi:10.1101/2025.03.06.641840",
+        "doi:10.5281/zenodo.17968294",
+        "doi:10.5281/zenodo.17639160",
+        "doi:10.1111/dar.70057",
+        "doi:10.1097/ms9.0000000000004925",
+        "doi:10.2139/ssrn.6111886",
+        "doi:10.1101/2024.05.19.594895"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 215,
+      "site": "agent-ecosystem",
+      "query": "Collaborative multi-agent conversational artificial intelligence for clinical support in Parkinson disease. medicine computer science health care Parkinson disease (PD) is a progressive neurodegenerat",
+      "relevantCount": 1,
+      "relevantIds": [
+        "pmid:41925479"
+      ],
+      "top10": [
+        "pmid:41925479",
+        "doi:10.21203/rs.3.rs-5418435/v1",
+        "pmid:41558387",
+        "pmid:42533108",
+        "pmid:40849361",
+        "pmid:41566181",
+        "oa:W4393169119",
+        "doi:10.1109/ictbig68706.2025.11323744",
+        "doi:10.1101/2025.04.15.25325911",
+        "doi:10.3389/fnagi.2025.1735892"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 218,
+      "site": "ai-safety",
+      "query": "The Comparison of Methods Artificial Neural Network with Linear Regression Using Specific Variables for Prediction Stock Price in Tehran Stock Exchange cs.NE In this paper, researchers estimated the s",
+      "relevantCount": 1,
+      "relevantIds": [
+        "arxiv:1003.1457v2"
+      ],
+      "top10": [
+        "arxiv:1003.1457v2",
+        "doi:10.5281/zenodo.20442144",
+        "doi:10.5281/zenodo.20442145",
+        "doi:10.15368/theses.2020.21",
+        "oa:W4392651503",
+        "oa:W2897654901",
+        "oa:W2926822960",
+        "doi:10.1109/icit.2008.4608579",
+        "doi:10.58837/chula.the.2022.196",
+        "oa:W4409794856"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 226,
+      "site": "agritech",
+      "query": "Social Robotics and Large Language Models for Disability: A Scoping Review psychology business human-computer interaction Abstract This paper examines the intersection of social robotics and large lan",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.21203/rs.3.rs-7260703/v1"
+      ],
+      "top10": [
+        "doi:10.21203/rs.3.rs-7260703/v1",
+        "doi:10.1109/lars/sbr/wre59448.2023.10332925",
+        "doi:10.1016/j.rcim.2025.103113",
+        "doi:10.3390/robotics13090137",
+        "doi:10.1007/978-3-031-81688-8_15",
+        "doi:10.1109/eecr60807.2024.10607324",
+        "doi:10.3390/s25226903",
+        "doi:10.20944/preprints202601.0646.v1",
+        "doi:10.21275/sr241021044213",
+        "doi:10.1007/s12369-026-01387-x"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 258,
+      "site": "ai-safety",
+      "query": "Coloring the Noise: Adversarial Sobolev Alignment for Faithful Image Super Resolution cs.CV cs.AI Generative priors in Image Super-Resolution (SR) often compromise faithful restoration, we attribute t",
+      "relevantCount": 1,
+      "relevantIds": [
+        "arxiv:2605.23264v2"
+      ],
+      "top10": [
+        "arxiv:2605.23264v2",
+        "arxiv:2404.14533v1",
+        "arxiv:2410.05410v1",
+        "arxiv:2603.24240v1",
+        "arxiv:2011.02519v2",
+        "doi:10.21203/rs.3.rs-10279879/v1",
+        "doi:10.5281/zenodo.20019654",
+        "arxiv:2603.00483v1",
+        "doi:10.5281/zenodo.20019655",
+        "arxiv:2404.16484v1"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 259,
+      "site": "agritech",
+      "query": "Financial Time Series Prediction Under COVID-19 Pandemic Crisis with Long Short-Term Memory (LSTM) Network cs.lg stat.ml cs.ne In this paper, we design and apply the Long Short-Term Memory (LSTM) neur",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.2139/ssrn.4242252"
+      ],
+      "top10": [
+        "doi:10.2139/ssrn.4242252",
+        "doi:10.20944/preprints202407.1718.v1",
+        "doi:10.1109/ies55876.2022.9888486",
+        "doi:10.1017/s0022029925101775",
+        "doi:10.1371/journal.pone.0353268",
+        "doi:10.3390/s26134287",
+        "doi:10.48550/arxiv.2605.02524",
+        "doi:10.20944/preprints202506.2180.v1",
+        "doi:10.1109/r10-htc.2018.8629843",
+        "doi:10.2139/ssrn.4575349"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 285,
+      "site": "ai-safety",
+      "query": "Review of Autonomous and Collaborative Agentic AI and Multi-Agent Systems for Enterprise Applications Blockchain Scalability Payment Artificial Intelligence (AI) landscape is fast developing such that",
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4412047812"
+      ],
+      "top10": [
+        "oa:W4412047812",
+        "doi:10.48165/iitmjit.2026.12.1.14",
+        "doi:10.21203/rs.3.rs-10582034/v1",
+        "arxiv:2502.17443v1",
+        "oa:W4410479913",
+        "doi:10.5281/zenodo.20019654",
+        "doi:10.5281/zenodo.20019655",
+        "doi:10.1109/wacvw65960.2025.00114",
+        "doi:10.6084/m9.figshare.31015972",
+        "arxiv:2506.01463v1"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    }
+  ]
+}
