@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10",
+  "generatedAt": "2026-10-12",
   "generator": "operations-plan/pipeline-docs-claims.js",
   "sourceFiles": [
     "data/citation-edges.json",
@@ -13,23 +13,23 @@
     "totalEntities": 294330,
     "entitiesWithDoiOrPmid": 271099,
     "academicSeedCount": 1634,
-    "citationDeclarations": 59623,
-    "citationResolvedEdges": 1961,
-    "citationTotalEdges": 28001,
+    "citationDeclarations": 0,
+    "citationResolvedEdges": 25682,
+    "citationTotalEdges": 51726,
     "citationMergedFromLegacy": 26044,
-    "citationResolvedRate": 0.07,
+    "citationResolvedRate": 0.4965,
     "knowledgeGraphNodes": 36107,
     "knowledgeGraphEdges": 99725,
     "knowledgeGraphCitationEdges": 27868,
     "knowledgeGraphCitationShare": 0.2794,
-    "zeroCitationGapPairs": 101,
+    "zeroCitationGapPairs": 140,
     "directedSitePairs": 870
   },
   "prose": {
     "entitiesShort": "294,330 实体",
     "sitesShort": "30 站 / 30 域",
-    "citationShort": "1,961 / 28,001 边（真实解析率 7%）",
-    "gapsShort": "101 / 870 站对零引用",
+    "citationShort": "25,682 / 51,726 边（真实解析率 50%）",
+    "gapsShort": "140 / 870 站对零引用",
     "seedShort": "引用网络基座仅 1,634 条学术种子"
   },
   "perSite": [
@@ -185,15 +185,15 @@
     }
   ],
   "citations": {
-    "sourceRecords": 1634,
-    "withReferences": 1139,
-    "declarations": 59623,
-    "resolvedEdges": 1961,
+    "sourceRecords": 42866,
+    "withReferences": 0,
+    "declarations": 0,
+    "resolvedEdges": 25682,
     "mergedFromOldEdges": 26044,
-    "totalEdges": 28001,
-    "unresolvedRefDoi": 7171,
-    "selfSiteEdgesSkipped": 50686,
-    "selfSiteEdgesSkippedRate": 0.8501
+    "totalEdges": 51726,
+    "unresolvedRefDoi": 0,
+    "selfSiteEdgesSkipped": 0,
+    "selfSiteEdgesSkippedRate": 0
   },
   "knowledgeGraph": {
     "nodeCount": 36107,

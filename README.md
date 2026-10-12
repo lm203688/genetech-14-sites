@@ -1,25 +1,25 @@
-# GeneTech Knowledge Engine · 30 域科研知识引擎
+# GeneTech · Verifiable Scientific Evidence Graph（可验证的科学证据图谱）
 
-> **30 个垂直科研域 · 300,000 条结构化实体 · 每条带 DOI 可独立复核**
+> **30 个垂直科研域 · 294,330 条结构化实体 · 每条带 DOI 可独立复核**
 > 线上 API：`https://api.swarmlabs.tools` · 数据分发：`https://data.swarmlabs.tools` · 规范：[`openapi.yaml`](openapi.yaml)
 
 ```bash
 curl https://api.swarmlabs.tools/health
 curl https://api.swarmlabs.tools/v1/oss/registry        # 30 域注册表
-curl https://api.swarmlabs.tools/v1/citation/edges      # 跨域引用边
-curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩阵
+curl https://api.swarmlabs.tools/v1/citation/edges      # 跨域引用边（25,682）
+curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩阵（140/870）
 ```
 
 | 一句话定位 | 一句话价值 |
 |---|---|
-| 用一组职责分离的智能体，把学术/产业/政策多源数据持续转化为**可审计、可溯源、可复现**的结构化知识资产 | 别人拿到的是「一堆爬来的数据」，你拿到的是**「每一条都能被第三方独立复核」** |
+| 把学术/产业/政策多源数据转化为**每条带 provenance、可被第三方独立复核**的结构化科学证据图谱 | 别人拿到的是「一堆爬来的数据」，你拿到的是**「每一条都能被解释、被反驳、被替换」** |
 
-> **范式锚定（2026-10-02）**：我们卖的不是「数据多少条」，而是**「这些数据能被第三方独立复核」这件事本身**。
-> 每条实体都带 DOI / URL / 来源站 / `publishedDate` / `confidence`，任何一条都能引着 DOI 回到源头对上号。
-> 因此本项目的验收标准从来不是「抓得更多」，而是「**每一条都能被解释、被反驳、被替换**」——
-> 上游源挂了要能换源续跑，门禁红了必须阻断发布，而不是让错误数据悄悄上线。
+> **战略再收敛（2026-10-12）**：与国际同类（OpenAlex/S2/Scite/Dimensions）坐标对标后，
+> 本项目定位收敛为 **"Verifiable Scientific Evidence Graph"**——不与 OpenAlex 比规模（0.06%），
+> 不与 Scite 比立场规模（封闭对手），而做 **"可验证 + 机器原生 + 跨域空白"** 三个真空象限的独占位。
+> 详见 [`reports/项目全面评估与国际化竞品对标提升报告-2026-10-12.md`](reports/项目全面评估与国际化竞品对标提升报告-2026-10-12.md)。
 
-**当前规模（实测，非宣称；每个数字都带来源，2026-10-08 复核）**
+**当前规模（实测，非宣称；每个数字都带来源，2026-10-12 复核）**
 
 | 资产 | 规模 | 来源 / 门禁 |
 |---|---|---|
@@ -27,10 +27,12 @@ curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩�
 | 唯一 DOI | 276,769 | `verify-shard-fidelity.mjs` |
 | 知识图谱 | 36,107 节点 / 99,725 边 | `build-knowledge-graph.mjs` |
 | └ 其中引用边 | **27,868 条（占边总数 27.94%）** | 本次并入，验收判据 ≥20% |
-| 跨域引用边（原始） | 28,001 | `GET /v1/citation/edges` 线上实测 |
-| 零引用域缺口 | 101 / 870 有向域对 | `GET /v1/citation/gaps` 线上实测 |
+| 跨域引用边（resolvedEdges） | **25,682**（较 10-10 的 1,961 扩展 13×） | `data/citation-edges.json` |
+| 零引用域缺口 | **140 / 870** 有向域对 | `GET /v1/citation/gaps` |
 | 语义检索 | 30 个 gzip 分片 / 覆盖率 100% | `verify-shard-live.mjs`（exit 2/3） |
-| 扩库候选池 | 48,643 个被引DOI / 7,762 个期刊 | `pipeline-cited-gap-ranked.js` |
+| MCP 工具 | 14 个（stdio + streamable-HTTP 双模式） | `mcp-smoke.mjs` |
+| 检索评测集 | **296 条**（perSite=10，seed=20261012） | `eval/queries.jsonl` + `eval/leaderboard-2026-10-12.html` |
+| 扩库候选池 | 48,643 个被引 DOI / 7,762 个期刊 | `pipeline-cited-gap-ranked.js` |
 
 > **为什么每个数字都带来源**：v1/v2 两轮全量扫描的三个 P0（飞轮冻结、支付未部署、对外宣称偏离）
 > 根因是同一个——**对外数字没有可复现的来源**。今后任何对外数字都必须写明"由哪个端点或哪个脚本产出"。
@@ -181,7 +183,7 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 > 引擎目录（`operations-plan/`、`shared/`、`unified-license/`、`api-guard/`、`tools/build-site.mjs`）按 2026-08-21「混合回退模式」**保留入库作为 CI 公开兜底引擎**；私有仓 `genetech-14-engine` 可用时优先，不可用时回退本仓副本，确保 Secrets 未配时不致全线停摆。
 
 <!-- GENETECH:CLAIMS:BEGIN -->
-<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-10 自动生成，请勿手工编辑此锚注之间的内容。 -->
+<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-12 自动生成，请勿手工编辑此锚注之间的内容。 -->
 
 ### 当前规模（机器生成，锚注自动刷新）
 
@@ -193,9 +195,9 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 | 知识图谱节点 / 边 | **36,107 / 99,725** | data/knowledge-graph.json |
 | 图谱中引用边 | **27,868（28%）** | KG 中 relation=citation |
 | 学术种子（引用网络基座） | **1,634** | data/academic-entities.json，是缺口矩阵的真实基座 |
-| 引用声明总数 | **59,623** | 59,623 类 |
-| 引用边（真实解析 + legacy merge） | **1,961 / 28,001** | resolved 7% + legacy 26,044 |
-| 零引用站对 | **101 / 870** | citation-gaps.json |
+| 引用声明总数 | **0** | 59,623 类 |
+| 引用边（真实解析 + legacy merge） | **25,682 / 51,726** | resolved 50% + legacy 26,044 |
+| 零引用站对 | **140 / 870** | citation-gaps.json |
 
 > 以上数字由脚本从 data/ 单一真源实时计算。与本报告 §2.2 数字若不一致，**以本锚注为准**（脚本口径永远新）。
 
