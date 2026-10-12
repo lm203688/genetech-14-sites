@@ -1128,7 +1128,14 @@ server.registerTool(
   }
 );
 
-// 启动
-const transport = new StdioServerTransport();
-await server.connect(transport);
-console.error('[GeneTech Data MCP] server running on stdio');
+// 导出给 http.mjs 等二次调用者复用同一个 server 实例（避免重复注册 14 个工具）
+export { server };
+
+// CLI 入口判定：仅当直接运行此文件时启动 stdio
+import { argv } from 'node:process';
+const isMain = argv[1] && import.meta.url === new URL(argv[1], 'file://').href;
+if (isMain) {
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+  console.error('[GeneTech Data MCP] server running on stdio');
+}
