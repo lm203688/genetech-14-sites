@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GeneTech 30站知识引擎 · 第五轮评估执行摘要 (2026-10-12)</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --panel:#ffffff; --ink:#1a1f2b; --muted:#5b6472;
+    --line:#e4e7ec; --accent:#2f6fed; --accent2:#7a5cf0;
+    --red:#d92d20; --amber:#e08a00; --green:#0f9d58; --slate:#334155;
+    --shadow:0 1px 3px rgba(16,24,40,.06),0 8px 24px rgba(16,24,40,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.55;font-size:14px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 22px 60px}
+  header.top{border-bottom:2px solid var(--line);padding-bottom:18px;margin-bottom:22px}
+  header.top h1{margin:0 0 6px;font-size:24px;letter-spacing:.2px}
+  header.top .sub{color:var(--muted);font-size:13px}
+  .verdict{background:linear-gradient(135deg,#1a2233,#243049);color:#eef2ff;border-radius:14px;
+    padding:18px 20px;margin:18px 0 24px;box-shadow:var(--shadow)}
+  .verdict b{color:#9db8ff}
+  .verdict .big{font-size:15px;line-height:1.7}
+  h2{font-size:16px;margin:30px 0 12px;padding-left:10px;border-left:4px solid var(--accent)}
+  h2 .en{color:var(--muted);font-weight:400;font-size:12px;margin-left:6px}
+  .grid{display:grid;gap:14px}
+  .g5{grid-template-columns:repeat(5,1fr)}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+  .score{text-align:center}
+  .score .num{font-size:34px;font-weight:700;line-height:1.1}
+  .score .lbl{font-size:12px;color:var(--muted);margin-top:4px}
+  .score .w{font-size:11px;color:#9aa4b2}
+  .bar{height:8px;border-radius:6px;background:#eef1f5;overflow:hidden;margin-top:8px}
+  .bar > i{display:block;height:100%;border-radius:6px}
+  .r{background:var(--red)} .a{background:var(--amber)} .g{background:var(--green)} .b{background:var(--accent)}
+  .total{display:flex;align-items:center;justify-content:space-between;background:var(--panel);
+    border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:14px;box-shadow:var(--shadow)}
+  .total .tnum{font-size:30px;font-weight:700;color:var(--red)}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:12px;overflow:hidden;
+    box-shadow:var(--shadow);font-size:13px}
+  th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#f0f3f8;font-weight:600;color:var(--slate);font-size:12px;letter-spacing:.3px}
+  tr:last-child td{border-bottom:none}
+  .tag{display:inline-block;padding:1px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+  .t-red{background:#fee4e2;color:#b42318}
+  .t-amber{background:#fef0c7;color:#b54708}
+  .t-green{background:#d1fadf;color:#027a48}
+  .t-blue{background:#e0eaff;color:#1d4ed8}
+  .t-gray{background:#eef1f5;color:#475467}
+  .quad{position:relative;height:360px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;box-shadow:var(--shadow);margin-top:6px}
+  .quad .ax{position:absolute;background:#cfd6e0}
+  .quad .h{left:6%;right:6%;top:50%;height:1px}
+  .quad .v{top:6%;bottom:6%;left:50%;width:1px}
+  .quad .lab{position:absolute;font-size:11px;color:var(--muted)}
+  .pt{position:absolute;transform:translate(-50%,-50%);font-size:12px;text-align:center;line-height:1.25}
+  .dot{width:14px;height:14px;border-radius:50%;margin:0 auto 2px;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:10px}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:middle}
+  .radar-row{display:grid;grid-template-columns:170px 1fr 60px;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line)}
+  .radar-row:last-child{border-bottom:none}
+  .radar-row .name{font-size:12.5px}
+  .pill{font-size:11px;padding:1px 7px;border-radius:6px;background:#eef1f5;color:#475467}
+  ul.tight{margin:6px 0 0;padding-left:18px} ul.tight li{margin:4px 0}
+  .muted{color:var(--muted)}
+  .foot{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+  @media(max-width:900px){.g5{grid-template-columns:repeat(2,1fr)}.g2,.g3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>GeneTech 30 站知识引擎 · 第五轮全面评估</h1>
+    <div class="sub">科学先进性 × 国际化定位 × 技术壁垒深挖 与提升方案 · 2026-10-12 · 内部决策用</div>
+  </header>
+
+  <div class="verdict">
+    <div class="big">
+      一句话结论：这是一套 <b>工程完成度中上（≈60%）、科学先进性明显滞后（≈35%）、国际化定位清晰但尚未占位（≈40%）</b> 的系统。<br>
+      最值钱的"可验证"目前只是 <b>元数据级</b>（DOI/来源/时间齐全），还不是 <b>知识级</b>（实体归一、引用立场、证据抽取均无真实产出）。<br>
+      与国际同类差距 <b>不在工程量，而在"加工层方法落后 1–2 代"</b>：ER 用 Jaccard+编辑距离、立场用词典打分、检索用 BM25+RRF。<br>
+      → <b>方向对、地基稳、故事好，但塔尖是空的，而塔尖才是国际竞争的战场。</b>
+    </div>
+  </div>
+
+  <h2>一、五维评分 <span class="en">Five-Dimension Score</span></h2>
+  <div class="grid g5">
+    <div class="card score"><div class="num a">60</div><div class="lbl">完整性</div><div class="w">权重 25</div>
+      <div class="bar"><i class="a" style="width:60%"></i></div></div>
+    <div class="card score"><div class="num r">35</div><div class="lbl">科学先进性</div><div class="w">权重 20</div>
+      <div class="bar"><i class="r" style="width:35%"></i></div></div>
+    <div class="card score"><div class="num r">40</div><div class="lbl">国际化定位</div><div class="w">权重 15</div>
+      <div class="bar"><i class="r" style="width:40%"></i></div></div>
+    <div class="card score"><div class="num r">30</div><div class="lbl">技术壁垒</div><div class="w">权重 25</div>
+      <div class="bar"><i class="r" style="width:30%"></i></div></div>
+    <div class="card score"><div class="num a">62</div><div class="lbl">融合前瞻</div><div class="w">权重 15</div>
+      <div class="bar"><i class="a" style="width:62%"></i></div></div>
+  </div>
+  <div class="total">
+    <div><b style="font-size:15px">加权总分</b>
+      <div class="muted" style="font-size:12px;margin-top:2px">口径：本轮新增"科学先进性"20 分权重，与 10-10 的 50/100 不可直接比较（尺子更严）</div></div>
+    <div class="tnum">≈45<span style="font-size:16px;color:var(--muted)">/100</span></div>
+  </div>
+
+  <h2>二、核心目标对标 <span class="en">vs Core Goals</span></h2>
+  <table>
+    <thead><tr><th style="width:90px">代号</th><th>目标</th><th style="width:150px">判定</th><th>本轮证据</th></tr></thead>
+    <tbody>
+      <tr><td>硬线①</td><td>数据飞轮跑通 + 守住</td><td><span class="tag t-red">停转</span></td><td>线上 totalEntities 300000，lastUpdated 2026-08-31（冻结约 41 天）</td></tr>
+      <tr><td>硬线②</td><td>付款不重复</td><td><span class="tag t-red">未闭环</span></td><td>license.../order 仍返回 {"status":"not_found"}</td></tr>
+      <tr><td>硬线③</td><td>对外可达</td><td><span class="tag t-red">降级</span></td><td>站点域无 DNS；MCP stdio-only 未发布</td></tr>
+      <tr><td>硬线④</td><td>护栏防回归</td><td><span class="tag t-green">成型</span></td><td>5 策略 + 双向回归（但只管流程不管质量）</td></tr>
+      <tr><td>P3</td><td>不自租模型</td><td><span class="tag t-amber">坚持但误伤</span></td><td>无模型托管；也因此错过自托管向量检索</td></tr>
+      <tr><td>P4</td><td>可溯源 + 垂直做深</td><td><span class="tag t-red">只做一半</span></td><td>溯源 ✅；"做深"无指标，加工层为空</td></tr>
+      <tr><td>P8(新)</td><td>标准与话语权</td><td><span class="tag t-red">仅雏形</span></td><td>148 条可复现评测集（唯一好起点）</td></tr>
+    </tbody>
+  </table>
+
+  <h2>三、科学先进性：方法代差 <span class="en">Method Generational Gap</span></h2>
+  <div class="card">
+    <div class="radar-row"><div class="name">实体解析 ER</div>
+      <div class="bar"><i class="r" style="width:25%"></i></div><span class="pill">落后 1–2 代</span></div>
+    <div class="muted" style="font-size:12px;margin:-2px 0 8px 180px">Jaccard≥0.7 + Levenshtein≥0.8 + union-find　→　SOTA：Splink 概率链接 + LLM-ER</div>
+
+    <div class="radar-row"><div class="name">引用立场</div>
+      <div class="bar"><i class="r" style="width:15%"></i></div><span class="pill">落后 2 代</span></div>
+    <div class="muted" style="font-size:12px;margin:-2px 0 8px 180px">词典打分（W_POS=1.0 / W_NEG=1.15 / W_UNC=0.4）　→　SOTA：Scite 模型三分类（16 亿条）/ DSPy-LLM</div>
+
+    <div class="radar-row"><div class="name">语义检索</div>
+      <div class="bar"><i class="r" style="width:30%"></i></div><span class="pill">落后 1 代</span></div>
+    <div class="muted" style="font-size:12px;margin:-2px 0 8px 180px">BM25(k1=1.5,b=0.75) + 字段加权 + RRF(K=60)　→　SOTA：GraphRAG + Agentic RAG + 向量混合 + reranker</div>
+
+    <div class="radar-row"><div class="name">图推理</div>
+      <div class="bar"><i class="a" style="width:30%"></i></div><span class="pill">落后 1 代</span></div>
+    <div class="muted" style="font-size:12px;margin:-2px 0 8px 180px">沿 4 类边 BFS 多跳　→　SOTA：GraphRAG 社区摘要 / HGNet 科学 KG 基础模型（ICLR 2026）</div>
+
+    <div class="radar-row"><div class="name">缺口发现</div>
+      <div class="bar"><i class="a" style="width:35%"></i></div><span class="pill">方向对</span></div>
+    <div class="muted" style="font-size:12px;margin:-2px 0 8px 180px">引用边矩阵（870 站对）　→　SOTA：Swanson LBD + LLM+KG 假设生成</div>
+
+    <div class="radar-row"><div class="name">溯源 / 可验证</div>
+      <div class="bar"><i class="g" style="width:65%"></i></div><span class="pill">≈同代</span></div>
+    <div class="muted" style="font-size:12px;margin:-2px 0 0 180px">provenance 字段（DOI/来源/时间/confidence）—— 唯一接近前沿的亮点</div>
+  </div>
+
+  <h2>四、国际化定位象限 <span class="en">International Positioning</span></h2>
+  <div class="quad">
+    <div class="ax h"></div><div class="ax v"></div>
+    <div class="lab" style="top:8px;left:50%;transform:translateX(-50%)">高加工深度</div>
+    <div class="lab" style="bottom:8px;left:50%;transform:translateX(-50%)">低加工深度</div>
+    <div class="lab" style="left:10px;top:50%;transform:translateY(-50%)">低开放</div>
+    <div class="lab" style="right:10px;top:50%;transform:translateY(-50%)">高开放</div>
+
+    <div class="pt" style="left:30%;top:24%"><div class="dot" style="background:#d92d20"></div>Scite<br><span class="muted">立场·付费</span></div>
+    <div class="pt" style="left:72%;top:20%"><div class="dot" style="background:#7a5cf0"></div>本项目<span class="muted">(目标位)</span></div>
+    <div class="pt" style="left:72%;top:40%"><div class="dot" style="background:#94a3b8"></div>本项目<span class="muted">(实际位)</span></div>
+    <div class="pt" style="left:74%;top:74%"><div class="dot" style="background:#0f9d58"></div>OpenAlex / S2<br><span class="muted">底座·免费</span></div>
+    <div class="pt" style="left:26%;top:76%"><div class="dot" style="background:#e08a00"></div>Elicit / Consensus<br><span class="muted">应用·付费</span></div>
+    <div class="pt" style="left:30%;top:52%"><div class="dot" style="background:#334155"></div>Dimensions<br><span class="muted">多源·订阅</span></div>
+  </div>
+  <div class="legend">
+    <span><i style="background:#d92d20"></i>加工层竞品</span>
+    <span><i style="background:#0f9d58"></i>元数据底座</span>
+    <span><i style="background:#e08a00"></i>应用层</span>
+    <span><i style="background:#7a5cf0"></i>本项目</span>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <b>判读：</b>"高加工深度 × 高开放性"象限目前是<b>真空</b>（Scite 深但封闭，OpenAlex 开放但浅）。
+    这是项目的战略生态位——<b>但真空 ≠ 已占位</b>：加工深度尚未做出来，所以实际仍停在右下角。
+    两个真实差异化是 <b>可溯源</b> 与 <b>治理/审计</b>，不是"数据量"。
+  </div>
+
+  <h2>五、国际竞品矩阵 <span class="en">Competitor Matrix (2026)</span></h2>
+  <table>
+    <thead><tr><th>竞品</th><th>层级</th><th>规模</th><th>价格</th><th>MCP/API</th><th>威胁</th></tr></thead>
+    <tbody>
+      <tr><td>OpenAlex</td><td>底座</td><td>~5 亿作品</td><td>免费</td><td>API</td><td><span class="tag t-amber">中</span></td></tr>
+      <tr><td>Semantic Scholar</td><td>底座</td><td>~2.14 亿篇</td><td>免费</td><td>API</td><td><span class="tag t-amber">中</span></td></tr>
+      <tr><td>Crossref</td><td>底座</td><td>DOI 中枢</td><td>免费</td><td>API</td><td><span class="tag t-gray">上游源</span></td></tr>
+      <tr><td><b>Scite</b></td><td>加工</td><td>16 亿引用陈述 / 2.8 亿全文</td><td>$20/月</td><td>✅ 官方 MCP</td><td><span class="tag t-red">最高</span></td></tr>
+      <tr><td>Dimensions</td><td>加工</td><td>论文-基金-专利-试验-政策</td><td>机构订阅</td><td>API</td><td><span class="tag t-amber">中高</span></td></tr>
+      <tr><td>OpenCitations</td><td>底座</td><td>开放引用</td><td>免费</td><td>API/SPARQL</td><td><span class="tag t-amber">中</span></td></tr>
+      <tr><td>Elicit</td><td>应用</td><td>综述助手</td><td>$0–169/用户/月</td><td>无</td><td><span class="tag t-green">低</span></td></tr>
+      <tr><td>Consensus</td><td>应用</td><td>证据综合</td><td>$11–49/月</td><td>无</td><td><span class="tag t-green">低</span></td></tr>
+      <tr><td>Undermind</td><td>应用</td><td>深度发现</td><td>$16/月</td><td>无</td><td><span class="tag t-amber">中</span></td></tr>
+      <tr><td><b>Google Co-Scientist</b></td><td>加工/应用</td><td>多 Agent 科研（Nature 2026-05）</td><td>未定价</td><td>无</td><td><span class="tag t-red">新进入者</span></td></tr>
+      <tr><td>skg-foundation / HGNet</td><td>标准/加工</td><td>科学 KG 互联 / KG 生成</td><td>社区/开源</td><td>—</td><td><span class="tag t-amber">中高</span></td></tr>
+    </tbody>
+  </table>
+  <div class="card" style="margin-top:12px">
+    <b>最紧迫对标：Scite</b> —— 它把"引用立场"做成了 16 亿条产品并已进主流客户端 MCP，<b>这正是项目"该做但没做"的加工层</b>。
+    <b>新威胁：Co-Scientist</b> —— 可能从上游吃掉"缺口发现"，项目应做它的<b>下游可复核证据底座</b>。
+  </div>
+
+  <h2>六、六层技术壁垒 <span class="en">Six-Layer Moat</span></h2>
+  <table>
+    <thead><tr><th>层</th><th>壁垒类型</th><th style="width:130px">项目现状</th><th style="width:120px">得分</th><th>证据</th></tr></thead>
+    <tbody>
+      <tr><td>0</td><td>流程 / 工程</td><td><span class="tag t-green">扎实</span></td><td><b>75</b></td><td>5 策略 + 双向回归 + 编排 + 审计（是地基，不是壁垒）</td></tr>
+      <tr><td>1</td><td>切换成本</td><td><span class="tag t-red">无</span></td><td><b>15</b></td><td>API 可替换，无客户集成</td></tr>
+      <tr><td>2</td><td>算法 / 加工</td><td><span class="tag t-red">弱</span></td><td><b>25</b></td><td>ER=Jaccard、立场=词典、检索=BM25</td></tr>
+      <tr><td>3</td><td>数据飞轮</td><td><span class="tag t-amber">有设想未转</span></td><td><b>30</b></td><td>飞轮冻结 41 天；缺口矩阵薄</td></tr>
+      <tr><td>4</td><td>合规 / 授权</td><td><span class="tag t-red">无</span></td><td><b>15</b></td><td>无独家授权；再分发边界未定</td></tr>
+      <tr><td>5</td><td>生态 / 标准</td><td><span class="tag t-red">仅雏形</span></td><td><b>20</b></td><td>148 条评测集是唯一起点</td></tr>
+    </tbody>
+  </table>
+  <div class="card" style="margin-top:12px">
+    <b>三个"可挖深"的真壁垒方向：</b>
+    <ul class="tight">
+      <li><b>① 可验证证据图谱</b>（唯一已接近前沿）——把"可验证"从元数据级做到知识级，全部挂 W3C PROV-O。</li>
+      <li><b>② 跨域空白发现</b>（最具原创性）——OpenAlex/Scite 都不做；先把引用网络扩容到 ≥50,000 边。</li>
+      <li><b>③ 机器原生 + 标准话语权</b>（最低成本高杠杆）——MCP 发布 + 开源加工引擎 + 公开 leaderboard。</li>
+    </ul>
+  </div>
+
+  <h2>七、技术融合雷达 <span class="en">Tech-Fusion Radar</span></h2>
+  <table>
+    <thead><tr><th>2026 前沿技术</th><th>项目现状</th><th style="width:90px">该融合</th><th>融合路径</th></tr></thead>
+    <tbody>
+      <tr><td>MCP 2026-07-28（Tasks/MCP Apps）</td><td>stdio-only 未发布</td><td><span class="tag t-red">必须</span></td><td>迁官方 v2 SDK + remote + registry</td></tr>
+      <tr><td>GraphRAG / Agentic RAG</td><td>BM25+RRF+BFS</td><td><span class="tag t-red">必须</span></td><td>向量召回 + 图扩展 + cross-encoder 重排</td></tr>
+      <tr><td>自托管 embedding（Qwen3/bge-m3+TEI）</td><td>无（env-gated）</td><td><span class="tag t-red">必须</span></td><td>TEI + HNSW（Qdrant/LanceDB）——符合 P3</td></tr>
+      <tr><td>LLM 实体解析</td><td>Jaccard+Levenshtein</td><td><span class="tag t-red">应该</span></td><td>Splink 概率链接 + LLM 兜底</td></tr>
+      <tr><td>引用立场模型（SciCite/DSPy）</td><td>词典打分</td><td><span class="tag t-red">必须</span></td><td>OA 全文 + 微调分类器 + span</td></tr>
+      <tr><td>科学 KG 基础模型（HGNet/skg）</td><td>平铺 30 域</td><td><span class="tag t-amber">关注</span></td><td>先做本体分层，再评估 KG-FM</td></tr>
+      <tr><td>文献驱动发现 LBD</td><td>引用边矩阵</td><td><span class="tag t-amber">应该</span></td><td>引用扩容 + LLM 假设生成</td></tr>
+      <tr><td>W3C PROV-O / RO-Crate</td><td>provenance 字段</td><td><span class="tag t-amber">应该</span></td><td>形式化 + 数据卡打包</td></tr>
+      <tr><td>RAG 评测（RAGAS/BEIR/MTEB）</td><td>148 条评测集</td><td><span class="tag t-amber">应该</span></td><td>扩展 + 公开 leaderboard</td></tr>
+      <tr><td>双时态 KG（Graphiti/KùzuDB）</td><td>provenance 字段</td><td><span class="tag t-amber">应该</span></td><td>双时态存储 + snapshot 端点</td></tr>
+      <tr><td>中文 embedding</td><td>无中文源</td><td><span class="tag t-amber">应该</span></td><td>CNKI/万方元数据 + 中文向量</td></tr>
+    </tbody>
+  </table>
+
+  <h2>八、提升路线图 <span class="en">Roadmap</span></h2>
+  <div class="grid g2">
+    <div class="card">
+      <b>Tier 0 · 止血（0–30 天）</b>
+      <ul class="tight">
+        <li>部署支付 Worker → order 返回 202</li>
+        <li>解封飞轮 → 7 天出现 +&gt;5000 entities</li>
+        <li>数据一致性 → 线上 = 294,330</li>
+        <li>MCP 迁 v2 + 发布（修 http.mjs 缺失）</li>
+        <li>站点域决策（配 DNS 或改口径）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <b>Tier 1 · 建真壁垒（30–90 天）</b>
+      <ul class="tight">
+        <li>跨源 ER → precision ≥95%</li>
+        <li>引用立场 → 三分类 F1 ≥0.8（带 span）</li>
+        <li>向量混合检索 → Recall@10 +≥30%</li>
+        <li>公开评测 + leaderboard</li>
+        <li>引用网络 → resolvedEdges ≥50,000</li>
+      </ul>
+    </div>
+    <div class="card">
+      <b>Tier 2 · 加深护城河（90–180 天）</b>
+      <ul class="tight">
+        <li>双时态图 + snapshot 端点</li>
+        <li>撤稿传播 → 24h 标记</li>
+        <li>四层本体 + RO-Crate 数据卡</li>
+        <li>中文源接入 → 中文实体 ≥15%</li>
+        <li>企业授权首单 ≥1</li>
+      </ul>
+    </div>
+    <div class="card">
+      <b>Tier 3 · 前沿深水（180–365 天）</b>
+      <ul class="tight">
+        <li>证据级抽取（claim + span）</li>
+        <li>领域推理器（materials/synbio）</li>
+        <li>科学 KG 基础模型评估</li>
+        <li>开源加工引擎 + 公开 benchmark</li>
+        <li>"可验证科学证据"标准提案</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>九、关键风险 <span class="en">Key Risks</span></h2>
+  <table>
+    <thead><tr><th>风险</th><th style="width:80px">等级</th><th>缓解</th></tr></thead>
+    <tbody>
+      <tr><td>加工层持续为空 → 定位无法兑现</td><td><span class="tag t-red">高</span></td><td>Tier 1 四项立即启动</td></tr>
+      <tr><td>科学先进性差距被竞品拉大</td><td><span class="tag t-red">高</span></td><td>主线 A 追平（向量/ER/立场）</td></tr>
+      <tr><td>引用网络过薄 → 缺口结论被证伪</td><td><span class="tag t-red">高</span></td><td>扩容至 ≥50,000 边，扩容前不对外发缺口报告</td></tr>
+      <tr><td>MCP 窗口关闭（Scite 已进 registry）</td><td><span class="tag t-amber">中高</span></td><td>先迁 v2 再发布</td></tr>
+      <tr><td>需求未验证 → 继续自娱自乐</td><td><span class="tag t-red">高</span></td><td>先拿 LOI 再投入深度</td></tr>
+      <tr><td>对外口径偏离（模式化）</td><td><span class="tag t-amber">中高</span></td><td>数字自动化 + CI 门禁</td></tr>
+    </tbody>
+  </table>
+
+  <div class="foot">
+    数据来源：全仓扫描 + 线上 HTTP 实测（2026-10-11/12）+ 2026 国际竞品/前沿技术公开检索。
+    完整论证见 <b>reports/项目全面评估与国际化竞品对标提升报告-2026-10-12.md</b>。
+    · 本报告为第五次独立复核，与历史文档冲突处以本报告实测为准。
+  </div>
+
+</div>
+</body>
+</html>

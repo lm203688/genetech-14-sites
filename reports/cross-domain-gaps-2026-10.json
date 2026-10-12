@@ -1,0 +1,484 @@
+{
+  "generatedAt": "2026-10-09T06:40:04.351Z",
+  "period": "2026-10",
+  "source": "c:\\Users\\xing\\Desktop\\知识引擎14站\\data\\citation-gaps.json",
+  "stats": {
+    "sites": 30,
+    "directedPairs": 870,
+    "pairsWithEdges": 769,
+    "gapPairs": 101,
+    "gapRatio": 0.1161,
+    "badRowsSkipped": 0,
+    "inferred": null
+  },
+  "topPairs": [
+    {
+      "from": "biomed-ai",
+      "to": "exo-science",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "生物医学 AI 与地外环境医学尚未打通",
+      "keywords": [
+        "space medicine AI",
+        "martian biology machine learning",
+        "space radiation cancer AI"
+      ],
+      "refuteThreshold": 100
+    },
+    {
+      "from": "bionic-ai",
+      "to": "exo-science",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "生物启发 AI 与地外生命探测尚未打通",
+      "keywords": [
+        "astrobiology bio-inspired search",
+        "exo-life detection AI"
+      ],
+      "refuteThreshold": 50
+    },
+    {
+      "from": "carbon-neutral",
+      "to": "sat-6g",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "carbon-neutral 与 sat-6g 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "carbon neutral sat 6g",
+        "sat 6g carbon neutral"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "embodied-ai",
+      "to": "carbon-neutral",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "carbon-neutral 与 embodied-ai 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "carbon neutral embodied ai",
+        "embodied ai carbon neutral"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "exo-science",
+      "to": "edge-ai",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "edge-ai 与 exo-science 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "edge ai exo science",
+        "exo science edge ai"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "exo-science",
+      "to": "sat-6g",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "exo-science 与 sat-6g 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "exo science sat 6g",
+        "sat 6g exo science"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "genetech-tools",
+      "to": "embodied-ai",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "embodied-ai 与 genetech-tools 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "embodied ai genetech tools",
+        "genetech tools embodied ai"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "genetech-tools",
+      "to": "neuromorphic",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "genetech-tools 与 neuromorphic 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "genetech tools neuromorphic",
+        "neuromorphic genetech tools"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "genetech-tools",
+      "to": "robot-parts",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "genetech-tools 与 robot-parts 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "genetech tools robot parts",
+        "robot parts genetech tools"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "genetech-tools",
+      "to": "sat-6g",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "genetech-tools 与 sat-6g 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "genetech tools sat 6g",
+        "sat 6g genetech tools"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "neuromorphic",
+      "to": "alien-minerals",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "alien-minerals 与 neuromorphic 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "alien minerals neuromorphic",
+        "neuromorphic alien minerals"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "neuromorphic",
+      "to": "synbio-manufacturing",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "neuromorphic 与 synbio-manufacturing 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "neuromorphic synbio manufacturing",
+        "synbio manufacturing neuromorphic"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "privacy-computing",
+      "to": "synbio-manufacturing",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "privacy-computing 与 synbio-manufacturing 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "privacy computing synbio manufacturing",
+        "synbio manufacturing privacy computing"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "quantum-computing",
+      "to": "alien-minerals",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "alien-minerals 与 quantum-computing 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "alien minerals quantum computing",
+        "quantum computing alien minerals"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "quantum-computing",
+      "to": "robot-parts",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "quantum-computing 与 robot-parts 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "quantum computing robot parts",
+        "robot parts quantum computing"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "quantum-computing",
+      "to": "synbio-manufacturing",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "quantum-computing 与 synbio-manufacturing 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "quantum computing synbio manufacturing",
+        "synbio manufacturing quantum computing"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "quantum-materials",
+      "to": "edge-ai",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "edge-ai 与 quantum-materials 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "edge ai quantum materials",
+        "quantum materials edge ai"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "quantum-materials",
+      "to": "exo-science",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "exo-science 与 quantum-materials 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "exo science quantum materials",
+        "quantum materials exo science"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "robot-parts",
+      "to": "alien-minerals",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "alien-minerals 与 robot-parts 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "alien minerals robot parts",
+        "robot parts alien minerals"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "robot-parts",
+      "to": "exo-science",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "exo-science 与 robot-parts 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "exo science robot parts",
+        "robot parts exo science"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "robot-parts",
+      "to": "genetech-tools",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "genetech-tools 与 robot-parts 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "genetech tools robot parts",
+        "robot parts genetech tools"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "robot-parts",
+      "to": "quantum-computing",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "quantum-computing 与 robot-parts 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "quantum computing robot parts",
+        "robot parts quantum computing"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "sat-6g",
+      "to": "genetech-tools",
+      "combinedSize": 20000,
+      "priority": "high",
+      "hypothesis": "genetech-tools 与 sat-6g 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "genetech tools sat 6g",
+        "sat 6g genetech tools"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "agent-ecosystem",
+      "to": "low-altitude",
+      "combinedSize": 20000,
+      "priority": "medium",
+      "hypothesis": "agent-ecosystem 与 low-altitude 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "agent ecosystem low altitude",
+        "low altitude agent ecosystem"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "agent-ecosystem",
+      "to": "neuromorphic",
+      "combinedSize": 20000,
+      "priority": "medium",
+      "hypothesis": "神经形态硬件上的多智能体系统尚无系统工作",
+      "keywords": [
+        "neuromorphic multi-agent",
+        "spiking neural swarm"
+      ],
+      "refuteThreshold": 50
+    },
+    {
+      "from": "agent-ecosystem",
+      "to": "semiconductor",
+      "combinedSize": 20000,
+      "priority": "medium",
+      "hypothesis": "面向智能体的定制半导体在两个域内几乎无引用",
+      "keywords": [
+        "chiplet LLM accelerator agent",
+        "agent-specific accelerator"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "bionic-ai",
+      "to": "low-altitude",
+      "combinedSize": 20000,
+      "priority": "medium",
+      "hypothesis": "bionic-ai 与 low-altitude 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "bionic ai low altitude",
+        "low altitude bionic ai"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "bionic-ai",
+      "to": "nuclear-energy",
+      "combinedSize": 20000,
+      "priority": "medium",
+      "hypothesis": "bionic-ai 与 nuclear-energy 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "bionic ai nuclear energy",
+        "nuclear energy bionic ai"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "brain-science",
+      "to": "low-altitude",
+      "combinedSize": 20000,
+      "priority": "medium",
+      "hypothesis": "brain-science 与 low-altitude 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "brain science low altitude",
+        "low altitude brain science"
+      ],
+      "refuteThreshold": 30
+    },
+    {
+      "from": "brain-science",
+      "to": "new-energy",
+      "combinedSize": 20000,
+      "priority": "medium",
+      "hypothesis": "brain-science 与 new-energy 之间尚未形成跨域引用工作尚未打通",
+      "keywords": [
+        "brain science new energy",
+        "new energy brain science"
+      ],
+      "refuteThreshold": 30
+    }
+  ],
+  "diff": {
+    "newCount": 30,
+    "disappearedCount": 0,
+    "new": [
+      {
+        "from": "biomed-ai",
+        "to": "exo-science",
+        "combinedSize": 20000
+      },
+      {
+        "from": "bionic-ai",
+        "to": "exo-science",
+        "combinedSize": 20000
+      },
+      {
+        "from": "carbon-neutral",
+        "to": "sat-6g",
+        "combinedSize": 20000
+      },
+      {
+        "from": "embodied-ai",
+        "to": "carbon-neutral",
+        "combinedSize": 20000
+      },
+      {
+        "from": "exo-science",
+        "to": "edge-ai",
+        "combinedSize": 20000
+      },
+      {
+        "from": "exo-science",
+        "to": "sat-6g",
+        "combinedSize": 20000
+      },
+      {
+        "from": "genetech-tools",
+        "to": "embodied-ai",
+        "combinedSize": 20000
+      },
+      {
+        "from": "genetech-tools",
+        "to": "neuromorphic",
+        "combinedSize": 20000
+      },
+      {
+        "from": "genetech-tools",
+        "to": "robot-parts",
+        "combinedSize": 20000
+      },
+      {
+        "from": "genetech-tools",
+        "to": "sat-6g",
+        "combinedSize": 20000
+      },
+      {
+        "from": "neuromorphic",
+        "to": "alien-minerals",
+        "combinedSize": 20000
+      },
+      {
+        "from": "neuromorphic",
+        "to": "synbio-manufacturing",
+        "combinedSize": 20000
+      },
+      {
+        "from": "privacy-computing",
+        "to": "synbio-manufacturing",
+        "combinedSize": 20000
+      },
+      {
+        "from": "quantum-computing",
+        "to": "alien-minerals",
+        "combinedSize": 20000
+      },
+      {
+        "from": "quantum-computing",
+        "to": "robot-parts",
+        "combinedSize": 20000
+      },
+      {
+        "from": "quantum-computing",
+        "to": "synbio-manufacturing",
+        "combinedSize": 20000
+      },
+      {
+        "from": "quantum-materials",
+        "to": "edge-ai",
+        "combinedSize": 20000
+      },
+      {
+        "from": "quantum-materials",
+        "to": "exo-science",
+        "combinedSize": 20000
+      },
+      {
+        "from": "robot-parts",
+        "to": "alien-minerals",
+        "combinedSize": 20000
+      },
+      {
+        "from": "robot-parts",
+        "to": "exo-science",
+        "combinedSize": 20000
+      }
+    ],
+    "disappeared": []
+  }
+}
