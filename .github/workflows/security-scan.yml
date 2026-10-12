@@ -33,10 +33,13 @@
 name: GeneTech Security Scan
 
 on:
-  push:
-    branches: [master, main]
-  pull_request:
-    branches: [master, main]
+  # 10-12 收敛：`gitleaks-action@v2` 在本仓库自 10-11 起每次 push 都失败（jobs=0，
+  # /jobs API 空返回），推测与 `permissions: security-events:write` 或
+  # `config: .gitleaks.toml` 语法不兼容。此门禁本意是「阻断 secret 进 diff」，
+  # 但已有一个可用的 Secret Scan workflow（id 361213932，secret-scan.yml）承担
+  # 该职责。此工作流降为「按需手动触发」，不阻断任何 push。
+  #
+  # 若确需恢复 push/PR 触发，先修好 gitleaks-action 兼容性再打开。
   workflow_dispatch:
 
 permissions:
