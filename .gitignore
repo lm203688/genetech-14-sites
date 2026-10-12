@@ -44,6 +44,9 @@ temp/
 # Large data files (use Git LFS if needed)
 *.zip
 *.tar.gz
+# 本地回滚备份（不可逆操作的安全网，绝不入仓；历史上只有 *.tar.gz 这一条挡住了
+# .backups/entities-before-purge-*.tar.gz，纯文件拷贝备份会漏出去污染仓库）
+.backups/
 *.7z
 
 # Command center reports (generated daily)
@@ -134,3 +137,7 @@ __pycache__/
 #   进仓库 = 每次 push 多搬 200 MB + Pages 配额被吃，所以跳过。
 #   想重建：node operations-plan/pipeline-cited-backfill.js（从 state 续跑，零重打）。
 data/cited-entities.json
+
+# AOCI agent host integration (machine-bound; do not commit)
+.mcp.json
+.mcp.json.backup.*

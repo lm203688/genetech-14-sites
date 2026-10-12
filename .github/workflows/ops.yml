@@ -308,6 +308,69 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CORE_API_KEY: ${{ secrets.CORE_API_KEY }}
 
+      # ==================== 质量门禁：双向回归 ====================
+      # 为什么这一步必须是「双向回归」而不只是「跑一遍门禁」
+      #   只跑一遍并打绿灯的门禁不算门禁——它可以因为策略读不到、JSON 损坏、
+      #   引擎误判而恒为绿灯，团队三个月后才发现没有任何东西被拦过。
+      #   所以这里先注入已知故障，断言「必须被拦」；再断言「达标必须放行」。
+      #   任一侧失败 => 门禁本身是坏的 => 红灯阻断提交。
+      - name: Guard regression self-tests (must block injected faults)
+        if: needs.prepare.outputs.dry_run != 'true'
+        run: |
+          set -eu
+          echo "=== [1/2] publish/quality 策略冒烟（含分层容量与红线边界）==="
+          node tools/guard-eval.mjs
+          echo
+          echo "=== [2/2] 质量门禁双向回归（注入故障必须拦截 / 达标必须放行）==="
+          node ${{ env.SCRIPTS_DIR }}/pipeline-quality-gate.js --self-test
+          echo
+          echo "✅ 门禁自身通过回归验证：确实会拦截注入的故障"
+
+      # ==================== 质量门禁：本轮判定 + 存量回退守门 ====================
+      # 严重性分级（关键设计，不要图省事合并成一步）
+      #   ├─ 硬阻断：本轮回退——达标站点数比上一次记录减少 => 红灯
+      #   └─ 仅告警：存量不达标（当前 19/30 站摘要率不足）=> 不阻断
+      # 为什么存量不达标不能阻断：分层容量模型的意图就是让未达标站以 10000 容量
+      # 继续积累数据、边补边达 tier，阻断提交会让 19 站永久冻结在 2026-08-17 的老状态。
+      # 而 backfill 的 evalQualityGuard 已在写盘前拦下被拒站的数据，不会落盘。
+      - name: Quality gate verdict (regression blocks, legacy warns)
+        if: needs.prepare.outputs.dry_run != 'true'
+        continue-on-error: false
+        run: |
+          set -u
+          node ${{ env.SCRIPTS_DIR }}/pipeline-quality-gate.js --ci > /tmp/quality-gate.log 2>&1 || true
+          cat /tmp/quality-gate.log
+
+          # 本次判定
+          CUR_ALLOWED=$(grep -oP '放行 \K[0-9]+' /tmp/quality-gate.log | head -1)
+          CUR_DENIED=$(grep -oP '拒绝 \K[0-9]+' /tmp/quality-gate.log | head -1)
+          CUR_ALLOWED=${CUR_ALLOWED:-0}; CUR_DENIED=${CUR_DENIED:-0}
+          echo "本轮判定：放行 ${CUR_ALLOWED} 站 / 拒绝 ${CUR_DENIED} 站"
+
+          # 上次判定基线（上一轮本步骤产出，已被 commit data updates 提交进 reports/）
+          PREV=$(ls -t ${{ env.REPORTS_DIR }}/quality-metrics-*.json 2>/dev/null | head -1 || true)
+          if [[ -n "$PREV" ]]; then
+            PREV_ALLOWED=$(grep -oP '"sites_allowed":\s*\K[0-9]+' "$PREV" | head -1)
+            PREV_ALLOWED=${PREV_ALLOWED:-0}
+            echo "基线文件：$PREV（放行 ${PREV_ALLOWED} 站）"
+            if [[ "$CUR_ALLOWED" -lt "$PREV_ALLOWED" ]]; then
+              echo ""
+              echo "🔴 质量回退：达标站点 ${PREV_ALLOWED} -> ${CUR_ALLOWED}，减少 $((PREV_ALLOWED - CUR_ALLOWED)) 站"
+              echo "   这通常意味着本轮写入降低了摘要率/标签率/DOI 覆盖或抬高了重名率。"
+              echo "   回退不允许静默入库。若确认为有意的批量降级，请先更新基线并提交策略变更说明。"
+              exit 1
+            fi
+            echo "✅ 无质量回退（${PREV_ALLOWED} -> ${CUR_ALLOWED}）"
+          else
+            echo "ℹ️ 未找到历史基线（reports/quality-metrics-*.json），本轮判定作为首次基线记录，仅告警不阻断"
+          fi
+
+          if [[ "$CUR_DENIED" -gt 0 ]]; then
+            echo "⚠️ 存量 ${CUR_DENIED} 站未达质量红线（容量已按 tiered 模型降至 10000，边补边升 tier）"
+            echo "   瓶颈分布与处置顺序见 reports/项目全面提升报告-v2-2026-10-08.md 的 A5/A6 项"
+          fi
+          echo "✅ 质量门禁判定完成，未被拒站的数据已放行入库"
+
       - name: Upload reports and logs
         if: always()
         uses: actions/upload-artifact@v4

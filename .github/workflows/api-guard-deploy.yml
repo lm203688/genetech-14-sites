@@ -27,9 +27,10 @@ on:
       - 'api-guard/**'
       - '.github/workflows/api-guard-deploy.yml'
   schedule:
-    # ===== 临时提升期（2026-08-05 ~ 2026-08-30）：每日 20:30 CST(12:30 UTC) 一次 =====
-    # 恢复原始配置时改回： - cron: '30 3 * * *'
-    - cron: '30 12 * * *'
+    # 每日 03:30 UTC 错峰重部署（离峰安全网）：push 到 api-guard/ 已会自动部署，
+    # 此处兜底避免某次 push 部署异常后 worker 长期失活。
+    # 不与其它工作流撞车：ops.yml 12:30 UTC、ops-extra 13:00 UTC、本部署 03:30 UTC。
+    - cron: '30 3 * * *'
   workflow_dispatch:
 
 permissions:
