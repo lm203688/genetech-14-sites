@@ -81,7 +81,7 @@ Auth: Bearer <your GUX_ token>  (可选)
 
 ### 通用 MCP 客户端
 
-Streamable-HTTP 是 2026-07-28 spec 新增的传输方式，几乎所有主流 MCP 客户端（Cursor / Windsurf / Cline / MCP Inspector）都已支持。
+Streamable-HTTP 是 MCP v2（2025-11-25 spec）的传输方式，几乎所有主流 MCP 客户端（Cursor / Windsurf / Cline / MCP Inspector）都已支持。
 
 ## 四、鉴权模型
 

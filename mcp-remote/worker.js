@@ -3,7 +3,7 @@
  *
  * 作用：让付费用户不用装本地 SDK，直接远程接入 MCP 端点。
  *
- * 传输：MCP v2 2026-07-28 spec 的 streamable-HTTP（JSON-RPC over POST）
+ * 传输：MCP v2 2025-11-25 spec 的 streamable-HTTP（JSON-RPC over POST）
  *   POST /mcp        → JSON-RPC 请求（initialize / tools/list / tools/call）
  *   GET  /mcp        → GET 端点预留 SSE（当前返回 200 empty，兼容客户端探测）
  *   GET  /health     → 健康检查（不需鉴权）
@@ -31,8 +31,8 @@
  *   - API_BASE_URL 需要指向已部署的 api.swarmlabs.tools（当前是 Pages 直出）
  */
 
-// 2026-07-28 MCP v2 spec 的 streamable-HTTP 版本
-const MCP_VERSION = '2026-07-28';
+// 2025-11-25 MCP v2 spec 的 streamable-HTTP 版本（与 SDK v2.3.1 实际协商一致）
+const MCP_VERSION = '2025-11-25';
 const SERVER_NAME = 'genetech-data';
 const SERVER_VERSION = '2.0.0';
 

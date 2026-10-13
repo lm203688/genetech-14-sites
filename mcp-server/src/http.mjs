@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /**
- * GeneTech 数据引擎 MCP Server — HTTP 模式（MCP 2026-07-28 streamable HTTP）
+ * GeneTech 数据引擎 MCP Server — HTTP 模式（MCP 2025-11-25 streamable HTTP）
  * ----------------------------------------------------------------------------
- * 让外部 MCP 客户端通过 HTTP 直接连入本 server（vs. `index.mjs` 的 stdio 模式）。
- * 实现基于 SDK 官方 `createMcpHandler`，符合 2026-07-28 规范（无状态核心 + JSON-RPC over HTTP）。
+ * 让外部 MCP 客户端通过 HTTP 直接连入 server（vs. `index.mjs` 的 stdio 模式）。
+ * 实现基于 SDK 官方 `createMcpHandler`，协商协议版本为 **2025-11-25**（SDK v2.3.1 默认支持的最高修订版）。
+ * 注意：2026-07-28 修订版要求的 per-request `_meta` envelope 未实现，因此**不宣称**支持 2026-07-28
+ * （10-13 报告 N1：对外协议版本必须与实测一致，防可证伪虚假宣称）。
  *
  * 运行：
  *   node src/http.mjs
@@ -23,7 +25,7 @@
 
 import http from 'node:http';
 import { createMcpHandler } from '@modelcontextprotocol/server';
-import { server as existingServer } from './index.mjs';
+import { server as existingServer, warmupServer } from './index.mjs';
 
 // createMcpHandler 要求工厂函数返回 server 实例。
 // 这里复用 index.mjs 里已注册 14 个工具的 server，避免重复注册。
@@ -83,6 +85,18 @@ const serverHttp = http.createServer(async (req, res) => {
       return res.end(JSON.stringify({ ok: true, service: 'genetech-data-mcp-http', version: '2.0.0' }));
     }
 
+    // warmup 端点（非 MCP 协议）：后台预热实体分片，消除首个 tools/call 的冷加载
+    if (req.method === 'POST' && req.url === '/warmup') {
+      try {
+        const r = await warmupServer();
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ ok: true, ...r }));
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ ok: false, error: err.message }));
+      }
+    }
+
     // 鉴权
     if (API_KEY) {
       const hdr = req.headers.authorization || '';
@@ -113,6 +127,11 @@ serverHttp.listen(PORT, HOST, () => {
   console.error(`[GeneTech Data MCP HTTP] listening on http://${HOST}:${PORT}`);
   console.error(`[GeneTech Data MCP HTTP] auth=${API_KEY ? 'required' : 'disabled (set GENETECH_API_KEY to enable)'}`);
   console.error(`[GeneTech Data MCP HTTP] tools=${existingServer._registeredTools?.size || '?'} (reused from index.mjs)`);
+  // 启动即后台预热（10-13 N2：首调冷加载 23s → 预热后 P95 <2s）。
+  // 不阻塞 listen；失败不影响服务，首个请求仍会惰性加载。
+  warmupServer()
+    .then((r) => console.error(`[warmup] done in ${r.warmedInMs}ms, sites=${r.sites}, searchIndex=${r.searchIndexReady}, graphRag=${r.graphRagReady}`))
+    .catch((e) => console.error(`[warmup] failed: ${e.message}`));
 });
 
 process.on('SIGINT', () => {

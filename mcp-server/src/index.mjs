@@ -23,6 +23,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import zlib from 'node:zlib';
 import { fileURLToPath } from 'node:url';
 import { McpServer } from '@modelcontextprotocol/server';
 import { StdioServerTransport } from '@modelcontextprotocol/server/stdio';
@@ -65,25 +66,60 @@ async function loadSites(force = false) {
   if (_cache && !force && now - _cacheTs < CACHE_TTL_MS) return _cache;
 
   const sites = {};
-  const entries = fs.readdirSync(DATA_DIR, { withFileTypes: true });
-  for (const e of entries) {
-    if (!e.isDirectory()) continue;
-    const siteId = e.name;
-    const apiDir = path.join(DATA_DIR, siteId, 'website', 'api');
-    const indexLocal = path.join(apiDir, 'index.json');
-    const entLocal = path.join(apiDir, 'entities.json');
-    if (!fs.existsSync(indexLocal) || !fs.existsSync(entLocal)) continue;
-    try {
-      const indexUrl = API_BASE ? `${API_BASE}/${siteId}/website/api/index.json` : indexLocal;
-      const entUrl = API_BASE ? `${API_BASE}/${siteId}/website/api/entities.json` : entLocal;
-      const index = await fetchJson(indexUrl, indexLocal);
-      const entities = await fetchJson(entUrl, entLocal);
+
+  // 快路径（10-13 报告 N2）：优先读 data/search-index/site-*.json.gz 分片。
+  // 实测 30 站并行读+parse 仅 ~1.4s（旧串行 entities.json ~23s，快 16×）。
+  // 站点元信息（index.json）仍逐站读——每站 ~1KB，成本可忽略。
+  const shardDir = path.join(DATA_DIR, 'data', 'search-index');
+  const hasShards = !API_BASE && fs.existsSync(shardDir) &&
+    fs.readdirSync(shardDir).some((f) => f.startsWith('site-') && f.endsWith('.json.gz'));
+
+  if (hasShards) {
+    const shardFiles = fs.readdirSync(shardDir).filter((f) => f.startsWith('site-') && f.endsWith('.json.gz'));
+    const arrays = await Promise.all(shardFiles.map((f) => new Promise((resolve, reject) => {
+      zlib.gunzip(fs.readFileSync(path.join(shardDir, f)), (err, buf) => {
+        if (err) return reject(err);
+        try { resolve(JSON.parse(buf.toString('utf-8'))); } catch (e) { reject(e); }
+      });
+    })));
+    const entries = fs.readdirSync(DATA_DIR, { withFileTypes: true });
+    const metaBySite = {};
+    for (const e of entries) {
+      if (!e.isDirectory()) continue;
+      const indexLocal = path.join(DATA_DIR, e.name, 'website', 'api', 'index.json');
+      if (!fs.existsSync(indexLocal)) continue;
+      try { metaBySite[e.name] = JSON.parse(fs.readFileSync(indexLocal, 'utf-8')); } catch { /* 忽略 */ }
+    }
+    for (const arr of arrays) {
+      if (!Array.isArray(arr) || arr.length === 0) continue;
+      const siteId = arr[0].site || 'unknown';
       sites[siteId] = {
-        index,
-        entities: Array.isArray(entities) ? entities : (entities.entities || []),
+        index: metaBySite[siteId] || { site: siteId, totalEntities: arr.length, lastUpdated: null, categories: [] },
+        entities: arr,
       };
-    } catch (err) {
-      console.error(`[load] 跳过站点 ${siteId}: ${err.message}`);
+    }
+  } else {
+    // 慢路径（回退）：串行读各站 entities.json —— 仅在无分片或 API_BASE 模式时触发
+    const entries = fs.readdirSync(DATA_DIR, { withFileTypes: true });
+    for (const e of entries) {
+      if (!e.isDirectory()) continue;
+      const siteId = e.name;
+      const apiDir = path.join(DATA_DIR, siteId, 'website', 'api');
+      const indexLocal = path.join(apiDir, 'index.json');
+      const entLocal = path.join(apiDir, 'entities.json');
+      if (!fs.existsSync(indexLocal) || !fs.existsSync(entLocal)) continue;
+      try {
+        const indexUrl = API_BASE ? `${API_BASE}/${siteId}/website/api/index.json` : indexLocal;
+        const entUrl = API_BASE ? `${API_BASE}/${siteId}/website/api/entities.json` : entLocal;
+        const index = await fetchJson(indexUrl, indexLocal);
+        const entities = await fetchJson(entUrl, entLocal);
+        sites[siteId] = {
+          index,
+          entities: Array.isArray(entities) ? entities : (entities.entities || []),
+        };
+      } catch (err) {
+        console.error(`[load] 跳过站点 ${siteId}: ${err.message}`);
+      }
     }
   }
 
@@ -124,6 +160,22 @@ async function loadSites(force = false) {
   globalThis.__geneTechSearchIndex = idx;
   globalThis.__geneTechGraphRAG = _rag;
   return sites;
+}
+
+/**
+ * 预热（10-13 N2）：HTTP 模式启动时后台调用，把 loadSites()（分片加载 +
+ * SearchIndex 构建 + GraphRAG 初始化）的全部成本移到服务就绪前，
+ * 使首个 tools/call 命中已就绪缓存。返回耗时与站点数供 /health 观测。
+ */
+async function warmupServer(force = true) {
+  const t0 = Date.now();
+  await loadSites(force);
+  return {
+    warmedInMs: Date.now() - t0,
+    sites: Object.keys(_cache || {}).length,
+    searchIndexReady: !!_searchIndex,
+    graphRagReady: !!_rag,
+  };
 }
 
 function ensureGraphRAG() {
@@ -252,13 +304,25 @@ server.registerTool(
     inputSchema: {},
   },
   async () => {
-    const sites = await loadSites();
-    const rows = Object.entries(sites).map(([id, s]) => ({
-      site: id,
-      totalEntities: s.index.totalEntities ?? s.entities.length,
-      lastUpdated: s.index.lastUpdated || null,
-      categories: s.index.categories || [],
-    }));
+    // 轻量路径（10-13 N2）：只读各站 index.json（~1KB/站），不触发实体加载与
+    // SearchIndex 构建。旧实现经 loadSites() 拉全量实体再建索引，首调 ~23s。
+    const rows = [];
+    let entries = [];
+    try { entries = fs.readdirSync(DATA_DIR, { withFileTypes: true }); } catch { entries = []; }
+    for (const e of entries) {
+      if (!e.isDirectory()) continue;
+      const indexLocal = path.join(DATA_DIR, e.name, 'website', 'api', 'index.json');
+      if (!fs.existsSync(indexLocal)) continue;
+      try {
+        const idx = JSON.parse(fs.readFileSync(indexLocal, 'utf-8'));
+        rows.push({
+          site: e.name,
+          totalEntities: idx.totalEntities ?? null,
+          lastUpdated: idx.lastUpdated || null,
+          categories: idx.categories || [],
+        });
+      } catch { /* 跳过坏站点 */ }
+    }
     return { content: [{ type: 'text', text: JSON.stringify({ count: rows.length, sites: rows }, null, 2) }] };
   }
 );
@@ -1129,11 +1193,23 @@ server.registerTool(
 );
 
 // 导出给 http.mjs 等二次调用者复用同一个 server 实例（避免重复注册 14 个工具）
-export { server };
+// warmupServer：HTTP 模式启动时后台预热（10-13 N2）。它调的 loadSites() 是
+// **本模块的缓存**（_cache/_searchIndex），正是 tool handler 用的那份——
+// 早前版本 http.mjs 错导了 http-api.mjs 的 warmup（独立缓存，白预热）。
+export { server, warmupServer };
 
 // CLI 入口判定：仅当直接运行此文件时启动 stdio
+// ★ 10-13 修复（重大隐性 bug）：旧写法
+//   `import.meta.url === new URL(argv[1], 'file://').href`
+//   在 argv[1] 为**相对路径**（spawn('node', ['src/index.mjs'])）时，
+//   new URL() 会把它解析成 `file:///src/index.mjs`（相对 file:// 根），
+//   与 import.meta.url（file:///C:/...）**永不匹配** → stdio 永不启动 →
+//   任何 spawn 起 server 的客户端（含 mcp-smoke.mjs / Claude Desktop /
+//   Cursor / npx bin）拿到的是一个"连上却不说话"的死进程。
+//   改用 path.resolve 两边都转成绝对路径再比，且兼容大小写（Windows）。
 import { argv } from 'node:process';
-const isMain = argv[1] && import.meta.url === new URL(argv[1], 'file://').href;
+const __self = fileURLToPath(import.meta.url);
+const isMain = argv[1] && path.resolve(argv[1]).toLowerCase() === path.resolve(__self).toLowerCase();
 if (isMain) {
   const transport = new StdioServerTransport();
   await server.connect(transport);
