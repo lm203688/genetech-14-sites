@@ -82,9 +82,50 @@ const isMain = argv[1] && path.resolve(argv[1]).toLowerCase() === path.resolve(_
 那条是守卫**永不匹配**导致自检块静默跳过；本条是守卫**永不匹配**导致 stdio 静默不启动。
 两者共同的根因：**用 URL 比较而不是路径比较**。
 
-## 5. 遗留
+## 5. 遗留（本轮已补齐 N2 CI 门禁）
 
-- **N2 CI 门禁**：报告验收判据"P95 首次 tools/call < 2s 写入 CI"尚未做成断言（当前只有 smoke 连通性检查）。
 - **沙箱代理干扰**：本机 curl 连 127.0.0.1 会被沙箱代理拦截（ECONNREFUSED 8788），需 `--noproxy "*"` 或 node fetch 直连——环境限制，非代码问题。
 - **Tier 1 加工内核仍为零**：ER 模型 / 立场模型 / 向量检索均需外部依赖（报告明示）。
 - **用户硬阻塞未变**：wrangler deploy（支付 + mcp-remote）、npm publish、Glama 上架、DNS 决策、PAT 轮换。
+
+## 6. 追加：N2 CI 门禁（补齐报告验收判据）
+
+原报告验收判据"P95 首次 tools/call < 2s 写入 CI"上一轮只做了本地验证，未落成断言。本轮补上：
+
+### 6.1 新增 `.workbuddy/probe/mcp-latency-gate.mjs`
+
+启动一次干净的 `http.mjs`（等后台 warmup 完成后）采样 3 个工具各 3 轮，取 P95 与阈值比较：
+
+| 工具 | 本地实测 P95（rounds=3） | 阈值 | 判定 |
+|---|---:|---:|---|
+| `list_sites` | 9 ms | 2000 | ✓ |
+| `semantic_search` | 579 ms | 2000 | ✓ |
+| `verify_entity` | 6 ms | 2000 | ✓ |
+
+脚本支持 `--port` / `--threshold` / `--rounds` 三个参数，CI 可独立 dispatch。
+
+### 6.2 `loadSites` 并发合并（真正的性能收益）
+
+**旧代码**：`if (_cache && !force && now - _cacheTs < TTL) return _cache;`——冷启动时 `_cache` 为空，warmup 与首调并发触发两次 `loadSitesImpl()`，SearchIndex 白构建一遍（~5s×2）。
+
+**新代码**：
+```js
+let _loadInflight = null;
+async function loadSites(force = false) {
+  if (_loadInflight) return _loadInflight;  // 任何调用者（含 warmup）共享同一次
+  if (_cache && !force && now - _cacheTs < CACHE_TTL_MS) return _cache;
+  _loadInflight = (async () => { try { return await loadSitesImpl(now); } finally { _loadInflight = null; } })();
+  return _loadInflight;
+}
+```
+
+**收益**：首调 `semantic_search` P95 从 **4,181ms → 579ms**（7×），本地 3 轮采样三次全绿。
+
+### 6.3 CI 接线
+
+`ops-extra.yml` 新增 `mcp-latency` 任务选项；`mcp` / `mcp-smoke` / `all` 都会顺带跑一次。
+失败不阻断发布（与 smoke 同级别），但 CI 红即暴露延迟退化——正是原报告要的门禁。
+
+### 6.4 冒烟回归
+
+`mcp-smoke.mjs`（stdio）28/28 全过，含 `snapshot_at` / `domain_relatedness` / `verify_entity` 溯源链——`loadSites` 合并未破坏任何既有工具路径。

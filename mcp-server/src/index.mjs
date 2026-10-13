@@ -52,6 +52,10 @@ let _searchTs = 0;
 let _graph = null;
 let _rag = null;
 
+// N2 冷启动竞态：并发 loadSites() 会重复构建 SearchIndex（~5s×N），把首调顶到 13s+。
+// 用一个 in-flight promise 把并发调用合并到同一次加载。
+let _loadInflight = null;
+
 async function fetchJson(url, tryLocalPath) {
   if (API_BASE && url.startsWith('http')) {
     const res = await fetch(url, { headers: API_KEY ? { Authorization: `Bearer ${API_KEY}` } : {} });
@@ -63,8 +67,24 @@ async function fetchJson(url, tryLocalPath) {
 
 async function loadSites(force = false) {
   const now = Date.now();
+  // 冷启动合并：任何调用者（含 force=true 的 warmup）共享同一次 in-flight 加载。
+  // force 只影响"缓存过期重跑"，不影响"当前加载去重"——否则 warmup 会把
+  // 已经在跑的首调再触发一次全量加载，SearchIndex 白构建一遍。
+  if (_loadInflight) return _loadInflight;
   if (_cache && !force && now - _cacheTs < CACHE_TTL_MS) return _cache;
 
+  const doLoad = async () => {
+    try {
+      return await loadSitesImpl(now);
+    } finally {
+      _loadInflight = null;
+    }
+  };
+  _loadInflight = doLoad();
+  return _loadInflight;
+}
+
+async function loadSitesImpl(now) {
   const sites = {};
 
   // 快路径（10-13 报告 N2）：优先读 data/search-index/site-*.json.gz 分片。

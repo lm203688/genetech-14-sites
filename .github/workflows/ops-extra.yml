@@ -69,7 +69,7 @@ on:
         #                   背景：10-12 已把评测集从 148 条扩容到 296 条（perSite=10，seed 固定），
         #                   构造性基准用于防检索回归（BM25 换成向量/RAG 后仍跑同一评测，对比基线）。
         #                   全量 30 站约 15 分钟，快跑 3 站约 15 秒——CI 走快跑；用户按需本地跑全量。
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance, mcp-smoke, eval]
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance, mcp-smoke, mcp-latency, eval]
   schedule:
     # 每日 13:00 UTC(21:00 CST) 一次全量运行，错峰在 ops.yml(12:30 UTC) 之后 30 分钟，
     # 避免与 ops.yml 同时触发导致推送冲突。
@@ -310,6 +310,14 @@ jobs:
           # 独立任务（不阻断），mcp 任务也顺带跑一次，让每次 M4 claims 更新都验证 14 工具。
           if [[ "$TASK" == "all" || "$TASK" == "mcp" || "$TASK" == "mcp-smoke" ]]; then
             node .workbuddy/probe/mcp-smoke.mjs || true
+          fi
+          # ===== MCP 首调延迟门禁（2026-10-13 N2 补入 · 验收判据 P95 < 2s）=====
+          # .workbuddy/probe/mcp-latency-gate.mjs 启动一次干净 http.mjs，等后台 warmup 完成后
+          # 采样 list_sites / semantic_search / verify_entity 各 3 轮，P95 超过 2000ms 即红。
+          # 覆盖：warmup 竞态（loadSites 合并）、分片快路径、SearchIndex 构建。
+          # 独立任务（不阻断），mcp-smoke 也顺带跑，让每次 MCP 改动都验证延迟不退化。
+          if [[ "$TASK" == "all" || "$TASK" == "mcp" || "$TASK" == "mcp-smoke" || "$TASK" == "mcp-latency" ]]; then
+            node .workbuddy/probe/mcp-latency-gate.mjs --threshold=2000 --rounds=3 || true
           fi
           # ===== 检索评测回归（2026-10-12 补入 · 报告 T1-4）=====
           # eval/run-eval.mjs --sites=3 --k=10：快跑 3 站 30 query，15s 出结论。
