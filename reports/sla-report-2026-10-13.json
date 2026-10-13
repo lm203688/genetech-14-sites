@@ -1,0 +1,305 @@
+{
+  "status": "BREACH",
+  "breaches": [
+    {
+      "metric": "freshness",
+      "site": "swarmlabs",
+      "value": "file_missing",
+      "slo": "<7d"
+    },
+    {
+      "metric": "entities",
+      "site": "swarmlabs",
+      "value": "file_missing",
+      "slo": "≥500"
+    }
+  ],
+  "degraded": [],
+  "checks": [
+    {
+      "metric": "freshness",
+      "site": "agent-ecosystem",
+      "value": 0.006684488638418692,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "ai4science",
+      "value": 0.0066827409475821034,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "alien-minerals",
+      "value": 0.006681768725359882,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "biocomputing",
+      "value": 0.0066806344632749206,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "bionic-ai",
+      "value": 0.006679396034523293,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "brain-science",
+      "value": 0.006678898349338108,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "deep-sea-tech",
+      "value": 0.006675784914935077,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "embodied-ai",
+      "value": 0.006674060375072338,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "exo-science",
+      "value": 0.006673284912109375,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "genetech-tools",
+      "value": 0.006672775650024414,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "life-science",
+      "value": 0.006672277964839229,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "low-altitude",
+      "value": 0.0066717224092836735,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "new-energy",
+      "value": 0.006671051110161676,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "nuclear-energy",
+      "value": 0.006670611295346861,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "privacy-computing",
+      "value": 0.0066700673110396775,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "quantum-computing",
+      "value": 0.006669673792521159,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "robot-parts",
+      "value": 0.00666863212302879,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "sat-6g",
+      "value": 0.00666826175265842,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "semiconductor",
+      "value": 0.0066678682341399014,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "spatial-computing",
+      "value": 0.006667428416499385,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "synbio-manufacturing",
+      "value": 0.006666803416499385,
+      "slo": 7
+    },
+    {
+      "metric": "freshness",
+      "site": "tcm-tools",
+      "value": 0.006666456194277163,
+      "slo": 7
+    },
+    {
+      "metric": "entities",
+      "site": "agent-ecosystem",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "ai4science",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "alien-minerals",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "biocomputing",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "bionic-ai",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "brain-science",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "deep-sea-tech",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "embodied-ai",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "exo-science",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "genetech-tools",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "life-science",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "low-altitude",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "new-energy",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "nuclear-energy",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "privacy-computing",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "quantum-computing",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "robot-parts",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "sat-6g",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "semiconductor",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "spatial-computing",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "synbio-manufacturing",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "entities",
+      "site": "tcm-tools",
+      "value": 10000,
+      "slo": 500
+    },
+    {
+      "metric": "source_avail",
+      "value": 97
+    },
+    {
+      "metric": "api_p95",
+      "value": 380
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "修复数据飞轮停摆站点：swarmlabs",
+      "method": "检查 CI workflow / 源可用性 / 磁盘空间"
+    },
+    {
+      "priority": "P0",
+      "action": "站点实体数严重不足，检查 backfill 是否被 quality gate 拒绝",
+      "method": "查看 audit/ 日志中的 quality 拒绝记录"
+    }
+  ],
+  "timestamp": "2026-10-13T01:13:42.425Z"
+}
