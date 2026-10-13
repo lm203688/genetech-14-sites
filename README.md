@@ -27,7 +27,7 @@ curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩�
 | 唯一 DOI | 276,769 | `verify-shard-fidelity.mjs` |
 | 知识图谱 | 36,107 节点 / 99,725 边 | `build-knowledge-graph.mjs` |
 | └ 其中引用边 | **27,868 条（占边总数 27.94%）** | 本次并入，验收判据 ≥20% |
-| 跨域引用边（resolvedEdges） | **25,682**（较 10-10 的 1,961 扩展 13×） | `data/citation-edges.json` |
+| 跨域引用边（真实解析） | **25,682**（较 10-10 的 1,961 扩展 13×） | `data/citation-edges.json` `stats.resolvedEdges` |
 | 零引用域缺口 | **140 / 870** 有向域对 | `GET /v1/citation/gaps` |
 | 语义检索 | 30 个 gzip 分片 / 覆盖率 100% | `verify-shard-live.mjs`（exit 2/3） |
 | MCP 工具 | 14 个（stdio + streamable-HTTP 双模式） | `mcp-smoke.mjs` |
@@ -47,7 +47,7 @@ curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩�
 | 跨源实体解析（同一篇论文在 OpenAlex / Crossref / PubMed 的不同 ID 合并） | ❌ **未实现** | 仅站内 `dedupeKey = doi:` / `标题#作者`；跨源 ER 无产出。参见 `data/claims.json` 与 v2 报告 §5.1 |
 | 引用立场抽取（"支持 / 反驳 / 提及"三分类） | ❌ **无** | 引用网络只到"引用了谁"，无"如何引用"。对照 Scite（1.2B 引用陈述）。参见 v2 报告 §4.1 |
 | 向量检索（RAG 混合召回） | ❌ **无** | 目前 BM25 + 字段加权 + RRF token 匹配，无 embedding。参见 v2 报告 §4.1 |
-| 引用网络基座厚度 | 🟠 **1,634 条学术种子** | `data/academic-entities.json`。引用边 28,001 中真正由引用声明解析出的**仅 1,961 条（7%）**，其余 26,044 条来自 legacy merge。参见 `data/citation-edges.json` `stats` 段 |
+| 引用网络基座厚度 | 🟠 **1,634 条学术种子** | `data/academic-entities.json`。引用边总量 51,726 = 真实解析 25,682 + legacy merge 26,044（两者各约一半，见下方锚注）；引用声明的真实解析成功率当前不可计算（declarations=0）。参见 `data/citation-edges.json` `stats` 段 |
 | 零引用站对（研究空白候选） | 🟠 **101 / 870，建立在薄网络上** | `data/citation-gaps.json`。**"零引用可能是我们没抓到"**——见 `citation_gaps` 工具返回的 `interpretation` 字段与 v2 报告 §5.2 |
 | 跨源归一 | ❌ **未落地**（站内去重 0.00%） | 8 源记录几乎不重叠，无跨源归一可做。参见 v2 报告 §5.1 |
 | 中文政产学融合 | ❌ **未落地** | 全部实体来自英文源，无 CNKI / 万方 / CSCD。参见 v2 报告 §5.1 |
@@ -183,7 +183,7 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 > 引擎目录（`operations-plan/`、`shared/`、`unified-license/`、`api-guard/`、`tools/build-site.mjs`）按 2026-08-21「混合回退模式」**保留入库作为 CI 公开兜底引擎**；私有仓 `genetech-14-engine` 可用时优先，不可用时回退本仓副本，确保 Secrets 未配时不致全线停摆。
 
 <!-- GENETECH:CLAIMS:BEGIN -->
-<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-12 自动生成，请勿手工编辑此锚注之间的内容。 -->
+<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-13 自动生成，请勿手工编辑此锚注之间的内容。 -->
 
 ### 当前规模（机器生成，锚注自动刷新）
 
@@ -196,7 +196,8 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 | 图谱中引用边 | **27,868（28%）** | KG 中 relation=citation |
 | 学术种子（引用网络基座） | **1,634** | data/academic-entities.json，是缺口矩阵的真实基座 |
 | 引用声明总数 | **0** | 59,623 类 |
-| 引用边（真实解析 + legacy merge） | **25,682 / 51,726** | resolved 50% + legacy 26,044 |
+| 引用边（真实解析 vs legacy merge） | **25,682 vs 26,044** | 总 51,726 边中两者各占一半；**resolved 只占 50%，不是"解析成功率"** |
+| 引用声明真实解析成功率 | **N/A** | resolved / declarations（declarations=0 时不可计算，不编造） |
 | 零引用站对 | **140 / 870** | citation-gaps.json |
 
 > 以上数字由脚本从 data/ 单一真源实时计算。与本报告 §2.2 数字若不一致，**以本锚注为准**（脚本口径永远新）。

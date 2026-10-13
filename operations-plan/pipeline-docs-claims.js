@@ -131,6 +131,15 @@ function computeClaims() {
   const citationResolvedRate = cit.totalEdges
     ? +((cit.resolvedEdges) / cit.totalEdges).toFixed(4)
     : 0;
+  // 10-13 报告 §3：旧口径把「resolved / (resolved+legacy merge)」叫"解析率"，
+  // 是两组不同来源的比值（分母里一半是历史合并产物），有误导性。
+  // 新口径分离两个数：
+  //   ① resolvedOfAll = resolved / total —— resolved 占总边比例（结构占比）
+  //   ② resolvedVsDeclarations = resolved / declarations —— 引用声明的真实解析成功率
+  // 只有 ② 才是"解析率"。declarations=0 时不可计算，置 null（不编造）。
+  const resolvedOfDeclarations = cit.declarations
+    ? +((cit.resolvedEdges) / cit.declarations).toFixed(4)
+    : null;
   return {
     generatedAt: new Date().toISOString().slice(0, 10),
     generator: 'operations-plan/pipeline-docs-claims.js',
@@ -151,6 +160,7 @@ function computeClaims() {
       citationTotalEdges: cit.totalEdges,
       citationMergedFromLegacy: cit.mergedFromOldEdges,
       citationResolvedRate,
+      citationResolvedOfDeclarations: resolvedOfDeclarations,
       knowledgeGraphNodes: kg.nodeCount,
       knowledgeGraphEdges: kg.edgeCount,
       knowledgeGraphCitationEdges: kg.byRelation.citation || 0,
@@ -162,7 +172,7 @@ function computeClaims() {
     prose: {
       entitiesShort: `${ent.totalEntities.toLocaleString('en-US')} 实体`,
       sitesShort: `${ent.siteCount} 站 / ${ent.siteCount} 域`,
-      citationShort: `${cit.resolvedEdges.toLocaleString('en-US')} / ${cit.totalEdges.toLocaleString('en-US')} 边（真实解析率 ${Math.round(citationResolvedRate * 100)}%）`,
+      citationShort: `${cit.resolvedEdges.toLocaleString('en-US')} / ${cit.totalEdges.toLocaleString('en-US')} 边（其中真实解析 ${cit.resolvedEdges.toLocaleString('en-US')}、legacy merge ${cit.mergedFromOldEdges.toLocaleString('en-US')}；解析成功率 ${resolvedOfDeclarations == null ? 'N/A（无声明计数）' : Math.round(resolvedOfDeclarations * 100) + '%'}）`,
       gapsShort: `${gaps.gapPairs} / ${gaps.directedPairs} 站对零引用`,
       seedShort: `引用网络基座仅 ${seed.seedCount.toLocaleString('en-US')} 条学术种子`,
     },
@@ -202,7 +212,11 @@ function renderAnchor(claims) {
     `| 图谱中引用边 | **${c.knowledgeGraphCitationEdges.toLocaleString('en-US')}（${Math.round(c.knowledgeGraphCitationShare * 100)}%）** | KG 中 relation=citation |`,
     `| 学术种子（引用网络基座） | **${c.academicSeedCount.toLocaleString('en-US')}** | data/academic-entities.json，是缺口矩阵的真实基座 |`,
     `| 引用声明总数 | **${c.citationDeclarations.toLocaleString('en-US')}** | 59,623 类 |`,
-    `| 引用边（真实解析 + legacy merge） | **${c.citationResolvedEdges.toLocaleString('en-US')} / ${c.citationTotalEdges.toLocaleString('en-US')}** | resolved ${Math.round(c.citationResolvedRate * 100)}% + legacy ${c.citationMergedFromLegacy.toLocaleString('en-US')} |`,
+    // 10-13 报告 §3 口径分离：旧行把 resolved/(resolved+legacy) 叫"解析率"，
+    // 是两组不同来源的比值（分母一半是历史合并产物），误导。现拆成两行：
+    // ① 结构占比：resolved 占总边比例；② 真实解析成功率：resolved/declarations。
+    `| 引用边（真实解析 vs legacy merge） | **${c.citationResolvedEdges.toLocaleString('en-US')} vs ${c.citationMergedFromLegacy.toLocaleString('en-US')}** | 总 ${c.citationTotalEdges.toLocaleString('en-US')} 边中两者各占一半；**resolved 只占 ${Math.round(c.citationResolvedRate * 100)}%，不是"解析成功率"** |`,
+    `| 引用声明真实解析成功率 | **${c.citationResolvedOfDeclarations == null ? 'N/A' : Math.round(c.citationResolvedOfDeclarations * 100) + '%'}** | resolved / declarations（declarations=0 时不可计算，不编造） |`,
     `| 零引用站对 | **${c.zeroCitationGapPairs} / ${c.directedSitePairs}** | citation-gaps.json |`,
     '',
     '> 以上数字由脚本从 data/ 单一真源实时计算。与本报告 §2.2 数字若不一致，**以本锚注为准**（脚本口径永远新）。',

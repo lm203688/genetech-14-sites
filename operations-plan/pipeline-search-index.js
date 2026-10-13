@@ -102,6 +102,19 @@ function toRecord(e, site) {
     source: e.source || '',
     publishedDate: e.publishedDate || '',
     confidence: Number.isFinite(e.confidence) ? e.confidence : 0,
+    // addedAt：snapshot_at（时间机器）按它重建回放。10-13 起 MCP 改读分片，
+    // entities.json 100% 带 addedAt 而分片不带 → visibleRatio 恒 0、
+    // 全部计入 undatedEntities，"回放单调性"冒烟必红。
+    addedAt: e.addedAt || '',
+    // quality_tier：provenanceChain() 读 ent.quality_tier 填 provenance.qualityTier，
+    // 10-13 起是 verify_entity 冒烟断言项。entities.json 100% 带该字段，
+    // 分片不带 → provenance.qualityTier 恒为 null → 溯源链缺质量分档一环。
+    quality_tier: e.quality_tier || '',
+    // 10-13 修复（N2 连带）：MCP http.mjs / index.mjs 改读分片后，
+    // verify_entity 按 DOI 反查全部落空（分片无 doi 字段）→ smoke 3 项失败。
+    // doi 是溯源链第一环（provenanceChain 读 entity.doi），必须进分片。
+    // 兼容两种源：entities.json 显式 doi 字段 / id 前缀 "doi:"。
+    doi: e.doi || (typeof e.id === 'string' && e.id.startsWith('doi:') ? e.id.slice(4) : ''),
   };
 }
 
