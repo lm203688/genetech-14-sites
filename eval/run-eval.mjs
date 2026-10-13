@@ -155,6 +155,7 @@ for (const q of queries) {
   results.push({
     idx: q.idx,
     site: q.site,
+    type: q.type || null, // 10-13 N3：按构造类型分解，暴露哪类查询是检索器短板
     query: q.query.slice(0, 200),
     relevantCount: relevantSet.size,
     relevantIds: [...relevantSet],
@@ -188,6 +189,27 @@ const aggregate = {
   'recall@10_p10': quantile(results.map(r => r['recall@10']), 0.1),
   missCount: results.filter(r => r['recall@10'] === 0).length,
   perfectCount: results.filter(r => r['recall@10'] === 1).length,
+  // 10-13 N3：按构造类型分解。v1 循环构造下此项无意义（全部 100%）；
+  // v2 非同源构造下，它直接指出检索器在哪类查询上塌方。
+  byType: (function () {
+    const by = {};
+    for (const r of results) {
+      const t = r.type || 'unknown';
+      if (!by[t]) by[t] = [];
+      by[t].push(r);
+    }
+    const out = {};
+    for (const [t, arr] of Object.entries(by)) {
+      out[t] = {
+        queries: arr.length,
+        'avgRecall@10': mean(arr.map(r => r['recall@10'])),
+        avgMrr: mean(arr.map(r => r.mrr)),
+        'avgNdcg@10': mean(arr.map(r => r['ndcg@10'])),
+        missCount: arr.filter(r => r['recall@10'] === 0).length,
+      };
+    }
+    return out;
+  })(),
   perSite: (function () {
     const bySite = {};
     for (const r of results) {
@@ -243,9 +265,13 @@ function buildLeaderboardHtml(agg, sites, man, results) {
   const perSiteRows = Object.entries(agg.perSite)
     .map(([s, m]) => `<tr><td>${s}</td><td>${m.queries}</td><td>${(m['avgRecall@10']*100).toFixed(1)}%</td><td>${(m.avgMrr*100).toFixed(1)}%</td><td>${(m['avgNdcg@10']*100).toFixed(1)}%</td></tr>`)
     .join('');
+  const typeRows = Object.entries(agg.byType || {})
+    .map(([t, m]) => `<tr><td><code>${t}</code></td><td>${m.queries}</td><td>${(m['avgRecall@10']*100).toFixed(1)}%</td><td>${(m.avgMrr*100).toFixed(1)}%</td><td>${(m['avgNdcg@10']*100).toFixed(1)}%</td><td class="${m.missCount ? 'miss' : ''}">${m.missCount}</td></tr>`)
+    .join('');
   const totalRecall = (agg['avgRecall@10']*100).toFixed(1);
   const totalMrr = (agg.avgMrr*100).toFixed(1);
   const totalNdcg = (agg['avgNdcg@10']*100).toFixed(1);
+  const genVersion = man.version || 1;
   return `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -268,7 +294,7 @@ footer{margin-top:2em;color:#888;font-size:.85em}
 </head>
 <body>
 <h1>GeneTech 检索评测 Leaderboard · ${NOW}</h1>
-<p>评测基座：BM25（k1=1.5,b=0.75）+ 字段加权 + RRF(K=60)；查询来自 <code>eval/queries.jsonl</code>（seed=${man.seed}，perSite=${man.perSite}，共 ${man.totalQueries} 条）。</p>
+<p>评测基座：BM25（k1=1.5,b=0.75）+ 字段加权 + RRF(K=60)；查询来自 <code>eval/queries.jsonl</code>（seed=${man.seed}，perSite=${man.perSite}，共 ${man.totalQueries} 条，<b>benchmark 版本 v${genVersion}</b>）。</p>
 
 <div class="card">
 <h2>本次运行</h2>
@@ -276,7 +302,6 @@ footer{margin-top:2em;color:#888;font-size:.85em}
 <tr><th>范围</th><td>${sites.length} 站 · ${agg.queryCount} query</td></tr>
 <tr><th>方法</th><td>hybridSearch（BM25+字段加权+RRF，向量未启用）</td></tr>
 <tr><th>K</th><td>${args.k}</td></tr>
-<tr><th>耗时</th><td>${((Date.now()-Date.now())+0)}s (见终端)</td></tr>
 </table>
 </div>
 
@@ -284,15 +309,22 @@ footer{margin-top:2em;color:#888;font-size:.85em}
 <h2>总体指标</h2>
 <table>
 <tr><th>指标</th><th class="metric">值</th></tr>
-<tr><td>avg Recall@10</td><td class="metric perfect">${totalRecall}%</td></tr>
+<tr><td>avg Recall@10</td><td class="metric">${totalRecall}%</td></tr>
 <tr><td>avg MRR</td><td class="metric">${totalMrr}%</td></tr>
 <tr><td>avg NDCG@10</td><td class="metric">${totalNdcg}%</td></tr>
 <tr><td>Recall@10 P50</td><td class="metric">${(agg['recall@10_p50']*100).toFixed(1)}%</td></tr>
 <tr><td>Recall@10 P10</td><td class="metric">${(agg['recall@10_p10']*100).toFixed(1)}%</td></tr>
-<tr><td>完美召回 Query 数</td><td class="metric perfect">${agg.perfectCount} / ${agg.queryCount}</td></tr>
+<tr><td>完美召回 Query 数</td><td class="metric">${agg.perfectCount} / ${agg.queryCount}</td></tr>
 <tr><td>未召回 Query 数</td><td class="metric miss">${agg.missCount} / ${agg.queryCount}</td></tr>
 </table>
 </div>
+
+<h2>按查询构造类型分解</h2>
+<table>
+<tr><th>类型</th><th class="metric">Query</th><th class="metric">Recall@10</th><th class="metric">MRR</th><th class="metric">NDCG@10</th><th class="metric">miss</th></tr>
+${typeRows}
+</table>
+<p><small>类型说明：<code>tags-inverse</code>=仅用 tags 反查实体；<code>abstract-mid</code>=摘要中段短语；<code>cross-entity</code>=跨实体 tag 混合；<code>site-topic</code>=单 tag 主题浏览。Recall 低说明检索器在该类查询上依赖字面重合。</small></p>
 
 <h2>分站点</h2>
 <table>
@@ -303,15 +335,18 @@ ${perSiteRows}
 <div class="card">
 <h2>方法论与局限</h2>
 <ul>
-<li>Query 由实体自身字段（name+tags+abstract）截断生成——<b>是「字面匹配应命中」的构造性基准</b>，不是人工语义标注。用于<b>防止检索回归</b>，不用于跨系统绝对对比。</li>
+${genVersion >= 2
+  ? '<li><b>benchmark v2（2026-10-13）</b>：查询与答案<b>不同源</b>——tags 反查 / 摘要中段 / 跨实体交叉 / 站点主题四类构造；v1 的"100% Recall"是 query 抄答案的恒等式，无信息量，已废弃。</li>'
+  : '<li><b>benchmark v1（已废弃）</b>：query 由目标实体自身字段拼成，Recall@10=100% 是构造保证的恒等式，不反映检索质量。</li>'}
+<li>multi-relevant 相关集（同 tag/共现实体），Recall/MRR 不再有构造性上限 1；NDCG 有真实区分度。</li>
 <li>当前检索栈未启用向量（<code>GENETECH_EMBED_URL</code> 未设置），故分数只反映 BM25+RRF 表现。</li>
-<li>单文档相关集（每条 query 的 relevantIds 只有 1 条），Recall@10 与 MRR 高度相关；一旦引入多文档相关集，NDCG 区分度会更高。</li>
 <li>评测只在内存里跑，未做并发/延迟测量。</li>
+<li>用于<b>防止检索回归</b>与定位短板类型；跨系统绝对对比需人工标注子集（规划中）。</li>
 </ul>
 </div>
 
 <footer>
-生成于 ${new Date().toISOString()} · GeneTech 30 站知识引擎 · 评测代码 <code>eval/run-eval.mjs</code> · 生成器 <code>eval/generate-queries.mjs</code>
+生成于 ${new Date().toISOString()} · GeneTech 30 站知识引擎 · 评测代码 <code>eval/run-eval.mjs</code> · 生成器 <code>eval/generate-queries.mjs</code> · benchmark v${genVersion} · 指纹 ${man.fingerprint || 'n/a'}
 </footer>
 </body>
 </html>`;

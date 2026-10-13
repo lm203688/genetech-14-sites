@@ -1,9 +1,18 @@
 {
-  "generatedAt": "2026-10-12T00:31:51.216Z",
+  "generatedAt": "2026-10-13T03:51:03.189Z",
   "generator": "eval/generate-queries.mjs",
-  "seed": 20261012,
+  "version": 2,
+  "seed": 20261013,
   "perSite": 10,
-  "totalQueries": 296,
+  "totalQueries": 300,
+  "multiRelevantCount": 184,
+  "constructionTypes": {
+    "tags-inverse": 115,
+    "abstract-mid": 116,
+    "cross-entity": 39,
+    "site-topic": 30
+  },
+  "constructionNote": "v2 查询与答案不同源：A=tags反查(40%) B=摘要中段(30%) C=跨实体交叉(20%) D=站点主题(10%)。relevant 为 multi-relevant（同 tag/共现实体），Recall/MRR 不再有构造性上限 1。v1 指纹不同，两版 benchmark 不可直接比分。",
   "perStation": {
     "agent-ecosystem": 10,
     "agritech": 10,
@@ -68,5 +77,5 @@
     "synbio-manufacturing/website/api/entities.json",
     "tcm-tools/website/api/entities.json"
   ],
-  "fingerprint": "9efc001e2b4e6fd5"
+  "fingerprint": "8063bf3591ca2699"
 }
