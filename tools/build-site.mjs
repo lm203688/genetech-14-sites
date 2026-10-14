@@ -1980,6 +1980,9 @@ async function main() {
   const archivePaths = []; // 归档分页相对路径，用于写入 sitemap
   for (const s of sites) {
     totalEntities += s.entities.length;
+    // 2026-10-14 修复：index.json 的 totalEntities 历史写死 10000，与实际 9,173–9,987 系统性漂移。
+    // 现按 s.entities.length 实算覆盖，与 entities.json 行数、api/catalog.json totalEntities 三者一致。
+    s.index.totalEntities = s.entities.length;
     // 保持原始 API 路径契约
     writeFile(`${s.slug}/website/api/index.json`, JSON.stringify(s.index));
     writeFile(`${s.slug}/website/api/entities.json`, JSON.stringify(s.entities));

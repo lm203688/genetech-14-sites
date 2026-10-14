@@ -173,14 +173,46 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ error: 'unknown_product', message: `未知产品 ID: ${productId}` }, 400);
   }
 
-  // 6. 生成 License Key
-  const licenseKey = generateLicenseKey(productId);
-  const licenseHash = await sha256(licenseKey);
+  // 6. 幂等：同一 orderId 只发一张 license。
+  //    2026-10-14 修复：Creem 会因网络/超时重试 webhook；旧实现每次都生成新 key，
+  //    一个订单能产出多张 license，被买家反复兑换 → 双倍积分。
+  //    此处以 orderId 为 dedupe 键，命中直接返回已生成的 key，不重新写入。
+  const dedupeKey = `dedupe:order:${orderId}`;
+  let licenseKey = '';
+  let idempotent = false;
+  if (env.API_KEYS) {
+    const prev = await env.API_KEYS.get(dedupeKey);
+    if (prev) {
+      try {
+        const parsed = JSON.parse(prev);
+        if (parsed && parsed.license_key) {
+          licenseKey = parsed.license_key;
+          idempotent = true;
+          console.log(`[webhook] 幂等命中: order=${orderId} 复用既有 license`);
+        }
+      } catch {
+        // 记录损坏则继续走生成路径
+      }
+    }
+  }
+
   const now = new Date().toISOString();
+
+  if (!idempotent) {
+    licenseKey = generateLicenseKey(productId);
+    if (env.API_KEYS) {
+      await env.API_KEYS.put(dedupeKey, JSON.stringify({ license_key: licenseKey, order_id: orderId, product_id: productId }));
+    }
+  }
+
+  const licenseHash = idempotent
+    ? await sha256(licenseKey)
+    : await sha256(licenseKey);
 
   // 7. 存入 KV —— 供用户在 balance.js 中兑换
   //    - pending:<licenseHash> -> productId（兑换时查找产品信息）
   //    - license_info:<licenseHash> -> 完整信息（审计用）
+  //    幂等路径下再次写入 pending/license_info 是幂等操作（同值覆盖），保证一致
   if (env.API_KEYS) {
     await env.API_KEYS.put(`pending:${licenseHash}`, productId);
 
@@ -198,6 +230,19 @@ export async function onRequestPost({ request, env }) {
       site: CONFIG.SITE_NAME,
     };
     await env.API_KEYS.put(`license_info:${licenseHash}`, JSON.stringify(licenseInfo));
+
+    // 反查索引：email → 该用户最近 20 张未兑换 license。
+    // 供 success.html 的"输入邮箱查 license"兜底路径使用（webhook 生成的 key 到不了 URL 参数）
+    if (customerEmail) {
+      const emailHash = await sha256(customerEmail.toLowerCase());
+      const listKey = `user_licenses:${emailHash}`;
+      let list = [];
+      try { list = JSON.parse((await env.API_KEYS.get(listKey)) || '[]'); } catch { list = []; }
+      list = list.filter((x) => x.license_key !== licenseKey);
+      list.unshift({ license_key: licenseKey, product_id: productId, created: now });
+      list = list.slice(0, 20);
+      await env.API_KEYS.put(listKey, JSON.stringify(list));
+    }
   }
 
   // 8. 记录交易历史（全局流水）

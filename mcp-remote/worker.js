@@ -5,7 +5,7 @@
  *
  * 传输：MCP v2 2025-11-25 spec 的 streamable-HTTP（JSON-RPC over POST）
  *   POST /mcp        → JSON-RPC 请求（initialize / tools/list / tools/call）
- *   GET  /mcp        → GET 端点预留 SSE（当前返回 200 empty，兼容客户端探测）
+ *   GET  /mcp        → 405（不实现 SSE，客户端走纯 POST 即可；2026-10-14 修复：避免客户端 hang）
  *   GET  /health     → 健康检查（不需鉴权）
  *   GET  /manifest   → glama.json（MCP registry 元数据，不需鉴权）
  *
@@ -273,6 +273,48 @@ async function handleJSONRPC(req, env) {
 }
 
 /**
+ * 渲染引用字符串（BibTeX/APA/RIS）。
+ * 上游 /v1/entities/<id>/citation 未部署，此处基于实体字段就地渲染。
+ */
+function renderCitation(e, format) {
+  const authors = Array.isArray(e.authors) ? e.authors : (typeof e.authors === 'string' ? e.authors.split(/;|,/).map((s) => s.trim()) : ['Unknown']);
+  const title = e.name || e.title || e.id || 'Untitled';
+  const year = (e.publishedDate || e.addedAt || 'n.d.').slice(0, 4);
+  const doi = e.doi || '';
+  const url = e.url || '';
+  const key = authors.map((a) => (a.split(/[\s,]+/).pop() || 'n').toLowerCase().replace(/[^a-z0-9]/g, '')).slice(0, 3).join('') + year;
+
+  if (format === 'apa') {
+    const authorsStr = authors.map((a) => {
+      const [last, ...firsts] = a.split(/\s+/);
+      return firsts.length ? `${last}, ${firsts.map((f) => f[0] + '.').join('')}` : last;
+    }).join(', ');
+    return `${authorsStr} (${year}). *${title}*. ${doi ? `https://doi.org/${doi}. ` : ''}${url}`.trim();
+  }
+  if (format === 'ris') {
+    return [
+      'TY  - JOUR',
+      `TI  - ${title}`,
+      `AU  - ${authors.join(' AU  - ')}`,
+      `PY  - ${year}`,
+      doi ? `DO  - ${doi}` : '',
+      `UR  - ${url}`,
+      'ER  -',
+    ].filter(Boolean).join('\n');
+  }
+  // default: bibtex
+  return [
+    `@misc{${key},`,
+    `  title = {${title}},`,
+    `  author = {${authors.join(' and ')}},`,
+    `  year = {${year}},`,
+    doi ? `  doi = {${doi}},` : '',
+    url ? `  url = {${url}},` : '',
+    '}',
+  ].filter(Boolean).join('\n');
+}
+
+/**
  * 分发到具体工具实现。当前实现走 API_BASE 转发，避免数据重复维护。
  */
 async function dispatchTool(name, args, env) {
@@ -309,36 +351,62 @@ async function dispatchTool(name, args, env) {
       }
 
       case 'get_entity': {
-        const url = `${apiBase}/v1/entities/${encodeURIComponent(args.id)}`;
-        const r = await fetch(url, { headers });
-        if (r.status === 404) return textResult(`404: 未找到实体 ${args.id}`, true);
-        const e = await r.json();
-        return jsonResult(e);
+        // 2026-10-14 修复：api-guard /v1/entities 无实体单条查询端点（旧路径必 404）
+        // 回落到 query_entities 分页搜索，若上游彻底未命中则给清晰错误
+        const q = new URLSearchParams();
+        if (args.site) q.set('site', args.site);
+        q.set('q', args.id);
+        q.set('limit', '20');
+        const r = await fetch(`${apiBase}/v1/entities?${q}`, { headers });
+        if (!r.ok) return textResult(`上游 /v1/entities 返回 ${r.status}`, true);
+        const body = await r.json();
+        const list = Array.isArray(body) ? body : (body.results || body.entities || []);
+        const hit = list.find((e) => (e.id || '') === args.id || (e.doi || '') === args.id);
+        if (!hit) return textResult(`404: 未找到实体 ${args.id}（已搜索 catalog，未匹配）`, true);
+        return jsonResult(hit);
       }
 
       case 'semantic_search': {
-        const q = new URLSearchParams();
-        q.set('q', args.query);
-        if (args.site) q.set('site', args.site);
-        q.set('topK', String(args.topK || 10));
-        if (args.graphHop) q.set('graphHop', '1');
-        return jsonResult(await fetchJson(`/v1/search/semantic?${q}`));
+        // 2026-10-14 修复：/v1/search/semantic 在 api-guard 必须走 POST，GET 返回 405
+        const payload = { query: args.query, topK: args.topK || 10 };
+        if (args.site) payload.sites = [args.site];
+        if (args.graphHop) payload.graphHop = 1;
+        return jsonResult(await fetchJson('/v1/search/semantic', {
+          method: 'POST',
+          body: JSON.stringify(payload),
+          headers: { 'Content-Type': 'application/json' },
+        }));
       }
 
       case 'graph_search': {
-        const q = new URLSearchParams();
-        q.set('q', args.query);
-        q.set('hops', String(args.hops || 2));
-        if (args.site) q.set('site', args.site);
-        return jsonResult(await fetchJson(`/v1/search/graph?${q}`));
+        // 2026-10-14：上游未部署 /v1/search/graph（会 404），先走 hybridSearch 做 anchor 检索
+        const payload = { query: args.query, topK: Math.min(args.hops || 2, 20) };
+        if (args.site) payload.sites = [args.site];
+        const anchor = await fetchJson('/v1/search/semantic', {
+          method: 'POST',
+          body: JSON.stringify(payload),
+          headers: { 'Content-Type': 'application/json' },
+        });
+        return jsonResult({
+          mode: 'anchor-only',
+          note: '上游 /v1/search/graph 未部署，返回 anchor 命中；完整图遍历请用本地 MCP server 或走 knowledge-graph.json',
+          anchor: anchor,
+        });
       }
 
       case 'export_citation': {
-        const url = `${apiBase}/v1/entities/${encodeURIComponent(args.id)}/citation?format=${args.format || 'bibtex'}`;
-        const r = await fetch(url, { headers });
-        if (!r.ok) return textResult(`Error: ${r.status}`, true);
-        const text = await r.text();
-        return textResult(text);
+        // 2026-10-14：/v1/entities/<id>/citation 上游未实现，先在 remote 侧渲染
+        const q = new URLSearchParams();
+        if (args.site) q.set('site', args.site);
+        q.set('q', args.id);
+        q.set('limit', '20');
+        const r = await fetch(`${apiBase}/v1/entities?${q}`, { headers });
+        if (!r.ok) return textResult(`上游 /v1/entities 返回 ${r.status}`, true);
+        const body = await r.json();
+        const list = Array.isArray(body) ? body : (body.results || body.entities || []);
+        const e = list.find((x) => (x.id || '') === args.id || (x.doi || '') === args.id);
+        if (!e) return textResult(`404: 未找到实体 ${args.id}`, true);
+        return textResult(renderCitation(e, args.format || 'bibtex'));
       }
 
       case 'citation_gaps': {
@@ -347,16 +415,24 @@ async function dispatchTool(name, args, env) {
       }
 
       case 'ask': {
-        // Ask 走 LLM 桥接：先内部检索 + 桥接生成
-        const url = `${apiBase}/v1/ask?${new URLSearchParams({ q: args.question, site: args.site || '' })}`;
-        const r = await fetch(url, { headers });
-        if (!r.ok) return textResult(`Error: ${r.status}`, true);
-        const j = await r.json();
-        return textResult(j.answer || JSON.stringify(j, null, 2));
+        // 2026-10-14：/v1/ask 上游未部署。改在 remote 侧走 hybridSearch + 结构化回答（不再返回 LLM 生成答案）
+        const payload = { query: args.question, topK: 6 };
+        if (args.site) payload.sites = [args.site];
+        const s = await fetchJson('/v1/search/semantic', {
+          method: 'POST',
+          body: JSON.stringify(payload),
+          headers: { 'Content-Type': 'application/json' },
+        });
+        return textResult(JSON.stringify({
+          note: '上游 /v1/ask 未部署，此处返回 top-K 参考实体供调用方自行综合；如需 LLM 生成请用 mcp-server 本地 ask。',
+          question: args.question,
+          references: s.results || s,
+        }, null, 2));
       }
 
       case 'submit_request': {
-        return jsonResult(await fetchJson('/v1/intel/request', {
+        // 2026-10-14：上游真实端点是 /v1/intel/demand，不是 /v1/intel/request
+        return jsonResult(await fetchJson('/v1/intel/demand', {
           method: 'POST',
           headers: { ...headers, 'Content-Type': 'application/json' },
           body: JSON.stringify(args),
@@ -376,24 +452,55 @@ async function dispatchTool(name, args, env) {
         return jsonResult(await fetchJson('/v1/intel/health'));
 
       case 'verify_entity': {
-        const url = `${apiBase}/v1/entities/${encodeURIComponent(args.id)}/verify`;
-        const r = await fetch(url, { headers });
-        if (!r.ok) return textResult(`Error: ${r.status}`, true);
-        return jsonResult(await r.json());
+        // 2026-10-14：/v1/entities/<id>/verify 上游未实现，用 entities 搜索 + 溯源字段合成
+        const q = new URLSearchParams();
+        if (args.site) q.set('site', args.site);
+        q.set('q', args.id);
+        q.set('limit', '20');
+        const r = await fetch(`${apiBase}/v1/entities?${q}`, { headers });
+        if (!r.ok) return textResult(`上游 /v1/entities 返回 ${r.status}`, true);
+        const body = await r.json();
+        const list = Array.isArray(body) ? body : (body.results || body.entities || []);
+        const e = list.find((x) => (x.id || '') === args.id || (x.doi || '') === args.id);
+        if (!e) return textResult(`404: 未找到实体 ${args.id}`, true);
+        return jsonResult({
+          id: e.id,
+          source: e.source,
+          url: e.url,
+          addedAt: e.addedAt,
+          lineageNote: 'verify 端点未部署，此处返回 catalog 里的溯源字段（source/url/addedAt）',
+        });
       }
 
       case 'snapshot_at': {
-        const url = `${apiBase}/v1/domains/${encodeURIComponent(args.site)}/snapshot?date=${args.date}`;
-        const r = await fetch(url, { headers });
-        if (!r.ok) return textResult(`Error: ${r.status}`, true);
-        return jsonResult(await r.json());
+        // 2026-10-14：/v1/domains/<site>/snapshot 未实现，返回清晰错误而非 404
+        return textResult(
+          `snapshot_at 暂未上线：TIME-MACHINE 索引尚未暴露 HTTP 端点。请用本地 mcp-server 或查阅 data/time-machin/*.json。请求 site=${args.site} date=${args.date}`,
+          true,
+        );
       }
 
       case 'domain_relatedness': {
-        const url = `${apiBase}/v1/citation/relatedness?siteA=${encodeURIComponent(args.siteA)}&siteB=${encodeURIComponent(args.siteB)}`;
-        const r = await fetch(url, { headers });
-        if (!r.ok) return textResult(`Error: ${r.status}`, true);
-        return jsonResult(await r.json());
+        // 2026-10-14：/v1/citation/relatedness 未部署，从 citation-gaps 派生
+        try {
+          const gaps = await fetchJson('/v1/citation/gaps');
+          const edges = await fetchJson('/v1/citation/edges');
+          const siteA = args.siteA, siteB = args.siteB;
+          const edgeList = edges.edges || edges;
+          let forward = 0, backward = 0;
+          for (const e of edgeList) {
+            if (Array.isArray(e) && e.length >= 4) {
+              if (e[2] === siteA && e[3] === siteB) forward++;
+              else if (e[2] === siteB && e[3] === siteA) backward++;
+            }
+          }
+          return jsonResult({
+            siteA, siteB, forward, backward,
+            note: 'citation/relatedness 端点未部署，此处用 citation-edges 派生双向计数',
+          });
+        } catch {
+          return textResult('citation/relatedness 端点未部署，且 citation-edges 不可用', true);
+        }
       }
 
       default:
@@ -429,8 +536,8 @@ async function authenticate(req, env) {
   if (!token) return { ok: true, tier: 'free' };
 
   if (!env.LICENSE_VALIDATE_URL || !env.LICENSE_API_SECRET) {
-    // 未配验证端点：Pro tier 直接放行（部署前需配 secret）
-    return { ok: true, tier: 'pro-unverified' };
+    // 2026-10-14 修复：未配验证端点时 fail-closed，避免静默降级为 pro
+    return { ok: false, tier: 'config-missing' };
   }
 
   try {
@@ -541,13 +648,17 @@ export default {
       });
     }
 
-    // GET /mcp 预留 SSE（当前返回 200 empty）
+    // GET /mcp 返回 405 Method Not Allowed（避免客户端 hang）
+    // 2026-10-14 修复：原实现返回 empty SSE，导致客户端死等
     if (req.method === 'GET') {
-      return new Response('', {
-        status: 200,
+      return new Response(JSON.stringify({
+        error: 'method_not_allowed',
+        message: 'MCP 端点仅支持 POST。GET 方法未实现。',
+      }), {
+        status: 405,
         headers: addCORS({
-          'Content-Type': 'text/event-stream',
-          'Cache-Control': 'no-cache',
+          'Content-Type': 'application/json',
+          'Allow': 'POST',
         }, req),
       });
     }

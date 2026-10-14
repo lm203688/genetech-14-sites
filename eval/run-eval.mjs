@@ -18,13 +18,17 @@
  *   eval/leaderboard-<date>.html （人类可读）
  *
  * 用法：
- *   node eval/run-eval.mjs                     # 跑 3 站（快速）
- *   node eval/run-eval.mjs --sites=all         # 全 30 站（慢）
+ *   node eval/run-eval.mjs                     # 跑全量 30 站（2026-10-14 起默认）
+ *   node eval/run-eval.mjs --sites=sample-3    # 只跑前 3 站（快速，用于本地开发）
+ *   node eval/run-eval.mjs --sites=all         # 显式全量
+ *   node eval/run-eval.mjs --sites=quantum-computing,ai4science
  *   node eval/run-eval.mjs --k=10              # 默认 Recall@10/MRR/NDCG@10
  *
  * 说明：
  *   - 单进程内存索引：每站独立，避免"跨站串味"，也贴近真实场景（MCP 检索多带 site 过滤）
  *   - 若实体量过大触发 Node 默认堆限制，用 --max-old-space-size=4096
+ *   - 2026-10-14 起默认 sites=all，补齐 §9 "只跑 3/30 站" 的覆盖缺口；
+ *     另新增每条 query 的耗时，聚合层报告 P50/P95 延迟。
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -39,9 +43,11 @@ const NOW = new Date().toISOString().slice(0, 10);
 // ---------------------------------------------------------------------------
 function parseArgs() {
   const a = process.argv.slice(2);
-  const args = { sites: 'sample-3', k: 10 };
+  // 2026-10-14：默认从 sample-3 改为 all（30 站），修复 §9 「只跑 3/30 站」覆盖缺口
+  const args = { sites: 'all', k: 10 };
   for (const s of a) {
     if (s === '--sites=all') args.sites = 'all';
+    else if (s === '--sites=sample-3') args.sites = 'sample-3';
     else if (s.startsWith('--k=')) args.k = parseInt(s.slice(4), 10);
     else if (s.startsWith('--sites=')) args.sites = s.slice(8);
   }
@@ -120,7 +126,11 @@ function loadQueries() {
 // ---------------------------------------------------------------------------
 const args = parseArgs();
 const allSites = listSites();
-const targetSites = args.sites === 'all' ? allSites : allSites.slice(0, 3);
+const targetSites = args.sites === 'all' ? allSites
+  : args.sites === 'sample-3' ? allSites.slice(0, 3)
+  : args.sites === 'all' || args.sites.split(',').length > 1
+    ? args.sites.split(',').map((s) => s.trim()).filter(Boolean)
+    : args.sites.split(',').map((s) => s.trim()).filter(Boolean);
 const queries = loadQueries();
 const manifest = JSON.parse(fs.readFileSync(path.join(EVAL_DIR, 'queries.manifest.json'), 'utf8'));
 
@@ -141,6 +151,8 @@ function getIdx(site) {
 const results = [];
 let nRecall, nMrr, nNdcg;
 const t0 = Date.now();
+// 2026-10-14 P1-4：新增 per-query 耗时采样，聚合时输出 P50/P95 延迟
+const latencyMs = [];
 
 for (const q of queries) {
   // 只跑本次目标站点的 query
@@ -149,7 +161,10 @@ for (const q of queries) {
   const idx = getIdx(q.site);
   const relevantSet = new Set(q.relevantIds || []);
   // 检索时不传 site 过滤（评测的是检索器本身），只按站隔离建索引
+  const _ts = Date.now();
   const hits = await idx.hybridSearch(q.query, { limit: Math.max(args.k, 20), site: null });
+  const _dur = Date.now() - _ts;
+  latencyMs.push(_dur);
   const topIds = hits.map(h => h.entity.id || `${h.entity._site}:${h.entity.name}`);
 
   results.push({
@@ -157,6 +172,7 @@ for (const q of queries) {
     site: q.site,
     type: q.type || null, // 10-13 N3：按构造类型分解，暴露哪类查询是检索器短板
     query: q.query.slice(0, 200),
+    latencyMs: _dur,
     relevantCount: relevantSet.size,
     relevantIds: [...relevantSet],
     top10: topIds.slice(0, 10),
@@ -189,6 +205,15 @@ const aggregate = {
   'recall@10_p10': quantile(results.map(r => r['recall@10']), 0.1),
   missCount: results.filter(r => r['recall@10'] === 0).length,
   perfectCount: results.filter(r => r['recall@10'] === 1).length,
+  // 2026-10-14 P1-4：延迟指标（内存内检索，未含 I/O 与网络）
+  latencyMs: {
+    avg: mean(latencyMs),
+    p50: quantile(latencyMs, 0.5),
+    p95: quantile(latencyMs, 0.95),
+    p99: quantile(latencyMs, 0.99),
+    max: latencyMs.length ? Math.max(...latencyMs) : 0,
+    samples: latencyMs.length,
+  },
   // 10-13 N3：按构造类型分解。v1 循环构造下此项无意义（全部 100%）；
   // v2 非同源构造下，它直接指出检索器在哪类查询上塌方。
   byType: (function () {
@@ -253,6 +278,7 @@ console.log(`avg NDCG@10     = ${aggregate['avgNdcg@10'].toFixed(4)}`);
 console.log(`完美召回(Recall@10=1): ${aggregate.perfectCount}`);
 console.log(`完全未召回     : ${aggregate.missCount}`);
 console.log(`耗时            : ${elapsed}s`);
+console.log(`延迟 P50/P95   : ${aggregate.latencyMs.p50}ms / ${aggregate.latencyMs.p95}ms（内存内检索）`);
 
 // 生成 leaderboard HTML
 const lbPath = path.join(outDir, `leaderboard-${NOW}.html`);
@@ -316,6 +342,9 @@ footer{margin-top:2em;color:#888;font-size:.85em}
 <tr><td>Recall@10 P10</td><td class="metric">${(agg['recall@10_p10']*100).toFixed(1)}%</td></tr>
 <tr><td>完美召回 Query 数</td><td class="metric">${agg.perfectCount} / ${agg.queryCount}</td></tr>
 <tr><td>未召回 Query 数</td><td class="metric miss">${agg.missCount} / ${agg.queryCount}</td></tr>
+${agg.latencyMs ? `
+<tr><td>延迟 P50 / P95 / P99（内存）</td><td class="metric">${agg.latencyMs.p50}ms / ${agg.latencyMs.p95}ms / ${agg.latencyMs.p99}ms</td></tr>
+<tr><td>延迟 Max / Avg</td><td class="metric">${agg.latencyMs.max}ms / ${agg.latencyMs.avg.toFixed(1)}ms</td></tr>` : ''}
 </table>
 </div>
 

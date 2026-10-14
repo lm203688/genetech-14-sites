@@ -106,6 +106,37 @@ node src/index.mjs
 |------|------|
 | `citation_gaps` | 跨域引用缺口矩阵：零引用站对（研究空白候选）/ 最强桥接 / 各站入出度 |
 
+## 新增工具（v2.0.0，2026-10-13 补齐 3 个高价值工具）
+
+以下 3 个工具已实装到 `src/index.mjs`，是 10-14 报告 §1 里点名"README 只列 11 个"要补的缺口。
+
+| 工具 | 作用 | 上游依赖 |
+|------|------|---------|
+| `verify_entity` | 校验单个实体的溯源字段（`source` / `url` / `addedAt` / `confidence`），返回可审计报告。用于外部 Agent 判断某条引用的证据链是否可信。 | 本地图谱 + `data/knowledge-graph.json` 溯源边 |
+| `snapshot_at` | 按日期取站点当时的实体快照，用于"复现某天的检索结果"、审计与论文复现场景。 | `data/time-machin/` 快照层（尚未部署 HTTP 端点；此处直读本地 JSON） |
+| `domain_relatedness` | 计算两个域之间的双向引用计数与相对权重（`citation-edges.json` 派生），用于判断"两个域值不值得建联合索引"。 | `data/citation-edges.json` + `data/citation-gaps.json` |
+
+**分页 / 结果规模**：所有返回 `results[]` 的工具（`query_entities` / `semantic_search` / `graph_search` / `snapshot_at`）均支持 `limit` + `offset`。`limit` 默认 20，硬上限 100；`offset` 默认 0。返回体带 `total` 与 `hasMore`，客户端可据此翻页。跨页聚合建议每次 `limit=100` 顺序推进，不要并发拉多片。
+
+```typescript
+// 校验某实体是否可信
+const v = await verify_entity({ id: 'pmid-31234567', site: 'biomed-ai' });
+// → { id, source, url, addedAt, confidence, evidence: [...], verdict: 'verifiable' }
+
+// 取 2025-06-01 那天 quantum-computing 站的实体快照
+const snap = await snapshot_at({ site: 'quantum-computing', date: '2025-06-01' });
+
+// 判断两域相关度
+const rel = await domain_relatedness({ siteA: 'alien-minerals', siteB: 'exo-science' });
+// → { siteA, siteB, forward: 2125, backward: 180, weight: 1.18, verdict: 'strong_bridge' }
+```
+
+⚠️ 上述 3 个工具在本 MCP 侧是**读本地数据**，不走 `api-guard` 网关；上游 HTTP 版尚未部署，10-14 报告 §2 已经指出 mcp-remote 里对应 4 个工具会返 404，2026-10-14 已在 `mcp-remote/worker.js` 里改为 fail-closed + 就地渲染兜底。
+
+### `verify_entity` 使用范式
+
+外部 Agent 常见用法：先 `semantic_search` 拿到候选 → 对 top-K 调 `verify_entity` 打分 → 只把 `verdict=verifiable` 的写入最终答案。**不要**直接把 `get_entity` 结果当"已核实"，因为 `addedAt` 老于 2025-09-01 的实体在 10-14 报告里被标记为"内容陈旧"风险区。
+
 ### 为什么需要 `citation_gaps`
 
 `graph_search` 回答的是「**已存在**的引用路径是什么」，但科研场景里更值钱的问题是
@@ -169,7 +200,7 @@ console.log(requests.summary); // { byStatus, byPriority, byProject }
 数据落点：`state/data-requests.json`（与 Gateway Worker 共享）
 
 <!-- GENETECH:CLAIMS:BEGIN -->
-<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-12 自动生成，请勿手工编辑此锚注之间的内容。 -->
+<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-13 自动生成，请勿手工编辑此锚注之间的内容。 -->
 
 ### 当前规模（机器生成，锚注自动刷新）
 
@@ -182,7 +213,8 @@ console.log(requests.summary); // { byStatus, byPriority, byProject }
 | 图谱中引用边 | **27,868（28%）** | KG 中 relation=citation |
 | 学术种子（引用网络基座） | **1,634** | data/academic-entities.json，是缺口矩阵的真实基座 |
 | 引用声明总数 | **0** | 59,623 类 |
-| 引用边（真实解析 + legacy merge） | **25,682 / 51,726** | resolved 50% + legacy 26,044 |
+| 引用边（真实解析 vs legacy merge） | **25,682 vs 26,044** | 总 51,726 边中两者各占一半；**resolved 只占 50%，不是"解析成功率"** |
+| 引用声明真实解析成功率 | **N/A** | resolved / declarations（declarations=0 时不可计算，不编造） |
 | 零引用站对 | **140 / 870** | citation-gaps.json |
 
 > 以上数字由脚本从 data/ 单一真源实时计算。与本报告 §2.2 数字若不一致，**以本锚注为准**（脚本口径永远新）。

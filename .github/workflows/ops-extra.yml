@@ -69,7 +69,12 @@ on:
         #                   背景：10-12 已把评测集从 148 条扩容到 296 条（perSite=10，seed 固定），
         #                   构造性基准用于防检索回归（BM25 换成向量/RAG 后仍跑同一评测，对比基线）。
         #                   全量 30 站约 15 分钟，快跑 3 站约 15 秒——CI 走快跑；用户按需本地跑全量。
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance, mcp-smoke, mcp-latency, eval]
+        # mcp-contract —— 2026-10-14 补入（mcp-remote 契约测试，报告 §2 P0-3 提升方案①）：
+        #                   跑 mcp-remote/_test_contract.mjs，14 工具逐一 tools/call + fail-closed +
+        #                   GET /mcp 405 + schema 对齐本地版，共 46 条断言，2 秒内出结论。
+        #                   背景：10-14 报告实测 mcp-remote 有 11/14 工具返 404，且 fail-open 静默放行。
+        #                   之前只靠手工 curl 探测；契约测试把它变成 CI 必过门槛（阻断，不 continue-on-error）。
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance, mcp-smoke, mcp-latency, mcp-contract, eval]
   schedule:
     # 每日 13:00 UTC(21:00 CST) 一次全量运行，错峰在 ops.yml(12:30 UTC) 之后 30 分钟，
     # 避免与 ops.yml 同时触发导致推送冲突。
@@ -327,6 +332,15 @@ jobs:
           # 独立任务（不阻断），all 每日跑一次保证回归门禁持续刷新。
           if [[ "$TASK" == "all" || "$TASK" == "eval" ]]; then
             node eval/run-eval.mjs --sites=3 --k=10 || true
+          fi
+          # ===== MCP remote 契约测试（2026-10-14 补入 · 报告 §2 P0-3）=====
+          # mcp-remote/_test_contract.mjs：14 工具逐一 tools/call + fail-closed 鉴权 +
+          # GET /mcp 405 + schema 对齐本地版，共 46 条断言，2 秒内出结论。
+          # 桩：fetch 全量替换为本地路由表，命中真实数据；未命中给结构化错误。
+          # 阻断策略：本任务 exit 1 直接失败，因为契约破坏会导致线上 MCP 客户端崩溃
+          # （与 mcp-smoke 的"不阻断只提示"不同——契约是硬承诺）。
+          if [[ "$TASK" == "all" || "$TASK" == "mcp" || "$TASK" == "mcp-contract" ]]; then
+            node mcp-remote/_test_contract.mjs
           fi
 
       - name: Commit generated outputs

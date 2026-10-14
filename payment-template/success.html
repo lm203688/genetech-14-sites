@@ -185,7 +185,7 @@
       </div>
     </div>
 
-    <!-- License Key 显示（从 URL 参数读取） -->
+    <!-- License Key 显示（从 URL 参数读取，或按邮箱查询兜底） -->
     <div id="licenseSection">
       <div class="activation-form">
         <label>您的 License Key</label>
@@ -193,9 +193,25 @@
           （等待加载...）
         </div>
         <p style="font-size:0.88em; color:#888; margin-bottom:12px;">
-          如果上方未自动显示，请从您的支付确认邮件中复制 License Key 并粘贴到下方
+          如果上方未自动显示，请从支付确认邮件复制 License Key，或按下方邮箱自助查询。
         </p>
         <input type="text" id="licenseKeyInput" placeholder="或手动输入 License Key" />
+
+        <details style="margin-top:14px;">
+          <summary style="cursor:pointer;color:#667eea;font-size:0.92em;">
+            🔑 未收到 Key？输入购买邮箱自助查询
+          </summary>
+          <p style="font-size:0.82em;color:#888;margin:8px 0;">
+            输入付款时使用的邮箱地址，系统会列出您名下未兑换的 License Key。
+          </p>
+          <div style="display:flex;gap:8px;margin-top:6px;">
+            <input type="email" id="emailInput" placeholder="you@example.com"
+                   style="flex:1;padding:10px;border:1px solid #ddd;border-radius:8px;font-size:14px;" />
+            <button class="btn btn-secondary" style="padding:10px 16px;font-size:0.92em;"
+                    onclick="lookupByEmail()">查询</button>
+          </div>
+          <div id="emailLookupResult" style="margin-top:10px;font-size:0.88em;color:#555;"></div>
+        </details>
       </div>
     </div>
 
@@ -251,6 +267,60 @@
         el.classList.add('copied');
         setTimeout(function() { el.classList.remove('copied'); }, 1500);
       });
+    }
+
+    // === 按邮箱查询未兑换 License Key（webhook 生成的 key 兜底）===
+    // 后端点：POST /api/credits/licenses?email=<email>
+    // 返回：{ success, licenses: [{license_key, product_id, created}] }
+    async function lookupByEmail() {
+      var email = document.getElementById('emailInput').value.trim().toLowerCase();
+      var box = document.getElementById('emailLookupResult');
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        box.innerHTML = '<span style="color:#c0392b;">请输入有效邮箱地址</span>';
+        return;
+      }
+      box.innerHTML = '<span class="spinner"></span>查询中...';
+      try {
+        var res = await fetch('/api/credits/licenses', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email })
+        });
+        var data = await res.json();
+        if (!data.success) {
+          box.innerHTML = '<span style="color:#c0392b;">' + (data.message || '查询失败') + '</span>';
+          return;
+        }
+        var list = data.licenses || [];
+        if (list.length === 0) {
+          box.innerHTML = '未找到未兑换的 License Key。若已付款超过 5 分钟，请刷新或联系支持。';
+          return;
+        }
+        var html = '<div style="color:#2e7d32;font-weight:600;margin-bottom:6px;">找到 ' + list.length + ' 张待兑换：</div>';
+        list.forEach(function(it, i) {
+          html += '<div style="margin:8px 0;padding:10px;background:#f8f9fa;border-radius:8px;">';
+          html += '<div style="font-family:monospace;font-size:0.9em;word-break:break-all;">' + escapeHtml(it.license_key) + '</div>';
+          html += '<div style="font-size:0.78em;color:#888;margin-top:4px;">产品 ' + escapeHtml(it.product_id || '') + ' · ' + escapeHtml(it.created || '') + '</div>';
+          html += '<button class="btn btn-secondary" style="margin-top:6px;padding:6px 12px;font-size:0.82em;" ' +
+                  'onclick="useLookupKey(\'' + escapeHtml(it.license_key).replace(/'/g, "\\\'") + '\')">填入下方激活</button>';
+          html += '</div>';
+        });
+        box.innerHTML = html;
+      } catch (e) {
+        box.innerHTML = '<span style="color:#c0392b;">网络错误：' + escapeHtml(e.message) + '</span>';
+      }
+    }
+
+    function useLookupKey(k) {
+      document.getElementById('licenseKeyInput').value = k;
+      document.getElementById('licenseKeyDisplay').textContent = k;
+      window.scrollTo({ top: document.getElementById('licenseKeyDisplay').offsetTop - 80, behavior: 'smooth' });
+    }
+
+    function escapeHtml(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
     }
 
     // === 激活 License ===

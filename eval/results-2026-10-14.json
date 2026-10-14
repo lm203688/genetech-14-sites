@@ -1,0 +1,1012 @@
+{
+  "generatedAt": "2026-10-14T06:37:00.382Z",
+  "k": 10,
+  "sites": [
+    "agent-ecosystem",
+    "agritech",
+    "ai-safety"
+  ],
+  "manifestSeed": 20261013,
+  "manifestPerSite": 10,
+  "aggregate": {
+    "queryCount": 30,
+    "avgRecall@10": 0.41259259259259257,
+    "avgRecall@k": 0.41259259259259257,
+    "avgMrr": 0.3723821548821549,
+    "avgNdcg@10": 0.3645628452591801,
+    "recall@10_p50": 0.1111111111111111,
+    "recall@10_p25": 0,
+    "recall@10_p10": 0,
+    "missCount": 15,
+    "perfectCount": 11,
+    "byType": {
+      "abstract-mid": {
+        "queries": 11,
+        "avgRecall@10": 1,
+        "avgMrr": 0.8333333333333333,
+        "avgNdcg@10": 0.8755390685064962,
+        "missCount": 0
+      },
+      "site-topic": {
+        "queries": 3,
+        "avgRecall@10": 0,
+        "avgMrr": 0,
+        "avgNdcg@10": 0,
+        "missCount": 3
+      },
+      "tags-inverse": {
+        "queries": 12,
+        "avgRecall@10": 0.06481481481481481,
+        "avgMrr": 0.08373316498316498,
+        "avgNdcg@10": 0.05381800015237814,
+        "missCount": 9
+      },
+      "cross-entity": {
+        "queries": 4,
+        "avgRecall@10": 0.15,
+        "avgMrr": 0.25,
+        "avgNdcg@10": 0.16503490059385187,
+        "missCount": 3
+      }
+    },
+    "perSite": {
+      "ai-safety": {
+        "queries": 10,
+        "avgRecall@10": 0.6044444444444445,
+        "avgMrr": 0.509090909090909,
+        "avgNdcg@10": 0.5030559300212435
+      },
+      "agent-ecosystem": {
+        "queries": 10,
+        "avgRecall@10": 0.4222222222222222,
+        "avgMrr": 0.39,
+        "avgNdcg@10": 0.3832177442277894
+      },
+      "agritech": {
+        "queries": 10,
+        "avgRecall@10": 0.2111111111111111,
+        "avgMrr": 0.21805555555555553,
+        "avgNdcg@10": 0.20741486152850747
+      }
+    }
+  },
+  "results": [
+    {
+      "idx": 5,
+      "site": "ai-safety",
+      "type": "abstract-mid",
+      "query": "transistor liquid crystal display tft-lcd panel also described find root cause image-sticking phenomena.",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.1049/pbcs068g_ch6"
+      ],
+      "top10": [
+        "doi:10.1080/02678292.2022.2055182",
+        "oa:W2044647183",
+        "doi:10.1049/pbcs068g_ch6",
+        "doi:10.14711/thesis-b1584831",
+        "oa:W2094581470",
+        "doi:10.1109/icmech.2005.1529386",
+        "oa:W4411234918",
+        "doi:10.1201/9781420023015.ch5",
+        "doi:10.1039/c2sm26501j",
+        "arxiv:2408.10893v1"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 0.3333333333333333,
+      "ndcg@10": 0.5
+    },
+    {
+      "idx": 13,
+      "site": "ai-safety",
+      "type": "abstract-mid",
+      "query": "published between 2013 2024 focusing contexts characteristics inclusive curricula instructional strategies promote broader participation learning outcomes associated these",
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4414121533"
+      ],
+      "top10": [
+        "oa:W4414121533",
+        "doi:10.3389/fpsyg.2026.1717440",
+        "doi:10.17605/osf.io/nmtc6",
+        "oa:W4414267512",
+        "doi:10.1002/jac5.70257",
+        "pmid:41520452",
+        "doi:10.22541/au.175091776.68106123/v1",
+        "oa:W4410622542",
+        "oa:W7108331747",
+        "oa:W7135042531"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 18,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "minimally anthropomorphic chatbots influence perceived self-efficacy technology acceptance social perception work-related writing context. online experiment employees 310 were",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.31234/osf.io/cpz4b_v2"
+      ],
+      "top10": [
+        "doi:10.31234/osf.io/cpz4b_v2",
+        "doi:10.3389/fpsyg.2024.1461881",
+        "oa:W4414127319",
+        "oa:W3083392701",
+        "doi:10.3390/bs16010124",
+        "arxiv:2202.01077v2",
+        "doi:10.31234/osf.io/6azxy_v3",
+        "doi:10.31234/osf.io/6azxy_v2",
+        "pmid:31455318",
+        "oa:W4391903450"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 53,
+      "site": "agritech",
+      "type": "abstract-mid",
+      "query": "essential both environmental conservation sustainable agriculture production ensuring soil productivity functional aspects associated ecosystem. soil health management one",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.20944/preprints202409.0605.v1"
+      ],
+      "top10": [
+        "doi:10.20944/preprints202409.0605.v1",
+        "doi:10.20944/preprints202506.2355.v1",
+        "doi:10.5281/zenodo.19680490",
+        "doi:10.5281/zenodo.19680491",
+        "pmid:39584089",
+        "doi:10.3389/fmicb.2026.1861333",
+        "doi:10.21203/rs.3.rs-10657882/v1",
+        "doi:10.3390/microorganisms14081648",
+        "doi:10.47278/book.tl/2026.097",
+        "doi:10.1155/2024/2126734"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 56,
+      "site": "ai-safety",
+      "type": "site-topic",
+      "query": "medicine",
+      "relevantCount": 6,
+      "relevantIds": [
+        "doi:10.18553/jmcp.2026.32.9.1090",
+        "doi:10.31539/6tnjv239",
+        "doi:10.1111/jan.70689",
+        "doi:10.3390/healthcare14060820",
+        "doi:10.21203/rs.3.rs-10582034/v1",
+        "doi:10.1080/10872981.2026.2713347"
+      ],
+      "top10": [
+        "doi:10.15537/1658-3175.8801",
+        "oa:W2912320302",
+        "oa:W4386407716",
+        "doi:10.2196/90848",
+        "pmid:41657538",
+        "doi:10.1101/2024.05.27.24307991",
+        "oa:W2885591122",
+        "oa:W7104271089",
+        "doi:10.1016/b978-0-323-95068-8.00010-8",
+        "oa:W4366580365"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 58,
+      "site": "agent-ecosystem",
+      "type": "tags-inverse",
+      "query": "natural language processing cs.ai",
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.46916/24042026-3-978-5-00276-065-7",
+        "doi:10.64898/2026.01.31.702995",
+        "doi:10.2196/76848",
+        "doi:10.1038/s41746-025-01647-6",
+        "doi:10.3389/frai.2026.1748735",
+        "pmid:42407032",
+        "doi:10.3724/zrht.1674-5825.2025095",
+        "doi:10.15441/ceem.26.136",
+        "arxiv-2607.29677v1"
+      ],
+      "top10": [
+        "oa:W4391280675",
+        "doi:10.1109/iccect60629.2024.10545805",
+        "doi:10.64898/2026.01.31.702995",
+        "doi:10.1109/icmsci62561.2025.10894448",
+        "doi:10.64898/2026.06.02.26354704",
+        "pmid:42407032",
+        "pmid:42282168",
+        "doi:10.1145/3675888.3676146",
+        "pmid:42542374",
+        "pmid:41109093"
+      ],
+      "hitInTop10": 2,
+      "recall@10": 0.2222222222222222,
+      "recall@k": 0.2222222222222222,
+      "mrr": 0.3333333333333333,
+      "ndcg@10": 0.20124768870643614
+    },
+    {
+      "idx": 77,
+      "site": "agent-ecosystem",
+      "type": "cross-entity",
+      "query": "Natural Language Processing medicine psychology",
+      "relevantCount": 5,
+      "relevantIds": [
+        "doi:10.5281/zenodo.18225343",
+        "doi:10.2196/92817",
+        "doi:10.5281/zenodo.21420179",
+        "doi:10.5281/zenodo.16789481",
+        "doi:10.5281/zenodo.20775495"
+      ],
+      "top10": [
+        "doi:10.15441/ceem.26.136",
+        "pmid:41952479",
+        "pmid:42542374",
+        "doi:10.21203/rs.3.rs-8990521/v1",
+        "oa:W4391280675",
+        "doi:10.1002/cpp.70242",
+        "doi:10.21203/rs.3.rs-10313775/v1",
+        "doi:10.1007/978-3-031-94687-5_4",
+        "doi:10.2196/79302",
+        "pmid:42549111"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 83,
+      "site": "agent-ecosystem",
+      "type": "cross-entity",
+      "query": "cs.SE Computer science Political science",
+      "relevantCount": 5,
+      "relevantIds": [
+        "arxiv:2602.11114v1",
+        "oa:W2622408375",
+        "arxiv:2311.18252v3",
+        "arxiv:2512.09543v2",
+        "arxiv:2606.21877v1"
+      ],
+      "top10": [
+        "doi:10.2139/ssrn.6887758",
+        "doi:10.21203/rs.3.rs-10491399/v1",
+        "doi:10.25136/2409-8698.2024.11.72197",
+        "doi:10.1002/sta4.70126",
+        "doi:10.26434/chemrxiv.15005228/v1",
+        "pmid:42160764",
+        "doi:10.31234/osf.io/ukmzp_v1",
+        "doi:10.31234/osf.io/g3rc8_v1",
+        "doi:10.21203/rs.3.rs-7472642/v1",
+        "doi:10.21203/rs.3.rs-10090979/v1"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 106,
+      "site": "agritech",
+      "type": "tags-inverse",
+      "query": "edge computing sustainability",
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.71026/ls.2025.02005",
+        "doi:10.3390/bios16050241",
+        "doi:10.20944/preprints202406.1327.v2",
+        "doi:10.21203/rs.3.rs-9992515/v1",
+        "doi:10.21203/rs.3.rs-5225708/v1",
+        "doi:10.21203/rs.3.rs-4535390/v1",
+        "doi:10.20944/preprints202401.1148.v1",
+        "doi:10.37394/232017.2024.15.5",
+        "doi:10.26832/24566632.2020.0503023"
+      ],
+      "top10": [
+        "doi:10.1051/shsconf/202521601022",
+        "doi:10.1002/9781394336326.ch3",
+        "doi:10.55627/agribiol.003.01.1067",
+        "pmid:40942729",
+        "doi:10.1109/fmec57183.2022.10062622",
+        "doi:10.1007/978-981-95-1365-9_8",
+        "doi:10.1002/9781394277599.ch6",
+        "doi:10.21203/rs.3.rs-9992515/v1",
+        "doi:10.1109/africon46755.2019.9134049",
+        "doi:10.21474/jncs01/133"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 0.1111111111111111,
+      "recall@k": 0.1111111111111111,
+      "mrr": 0.125,
+      "ndcg@10": 0.07414861528507455
+    },
+    {
+      "idx": 107,
+      "site": "ai-safety",
+      "type": "tags-inverse",
+      "query": "Robustness (evolution) Chemistry",
+      "relevantCount": 9,
+      "relevantIds": [
+        "oa:W4399455340",
+        "oa:W4412202257",
+        "oa:W4390503136",
+        "oa:W4408839383",
+        "oa:W4414167319",
+        "oa:W7113895301",
+        "oa:W2963097316",
+        "oa:W4402112155",
+        "oa:W4411568663"
+      ],
+      "top10": [
+        "oa:W7159763738",
+        "oa:W4411802553",
+        "oa:W4402112155",
+        "oa:W4408839383",
+        "oa:W7130614908",
+        "oa:W4399455340",
+        "pmid:41740392",
+        "doi:10.17605/osf.io/qz42t",
+        "oa:W7119470452",
+        "oa:W4412202257"
+      ],
+      "hitInTop10": 4,
+      "recall@10": 0.4444444444444444,
+      "recall@k": 0.4444444444444444,
+      "mrr": 0.3333333333333333,
+      "ndcg@10": 0.37041969783702705
+    },
+    {
+      "idx": 112,
+      "site": "agent-ecosystem",
+      "type": "tags-inverse",
+      "query": "computer science cs.ai",
+      "relevantCount": 9,
+      "relevantIds": [
+        "arxiv-2607.29626v1",
+        "arxiv-2607.29559v1",
+        "doi:10.20517/aiagent.2026.03",
+        "doi:10.20517/aiagent.2026.04",
+        "doi:10.20517/aiagent.2025.06",
+        "doi:10.20517/aiagent.2025.07",
+        "doi:10.5772/intechopen.90297",
+        "doi:10.2139/ssrn.6427226",
+        "arxiv-2607.29677v1"
+      ],
+      "top10": [
+        "doi:10.1093/nsr/nwag140",
+        "doi:10.1002/sta4.70126",
+        "doi:10.1109/iccids69108.2026.11407639",
+        "doi:10.1117/12.3065753",
+        "pmid:39568478",
+        "doi:10.21203/rs.3.rs-9366108/v1",
+        "doi:10.20535/srit.2308-8893.2025.1.08",
+        "doi:10.64898/2026.08.03.742514",
+        "doi:10.1101/2025.09.11.675660",
+        "doi:10.1109/iat.2006.95"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 119,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "design objectives. such operations violate customary creative design practices thus hinder agents ability complete creative design tasks. explore",
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4396832811"
+      ],
+      "top10": [
+        "oa:W4396832811",
+        "doi:10.3389/fpsyg.2026.1847432",
+        "oa:W4387192549",
+        "doi:10.3389/fbioe.2026.1777944",
+        "doi:10.20944/preprints202607.0905.v1",
+        "doi:10.31234/osf.io/4b8gy_v2",
+        "doi:10.1145/3701571.3701608",
+        "doi:10.1063/5.0318770",
+        "doi:10.5281/zenodo.19104900",
+        "oa:W4404385440"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 132,
+      "site": "agritech",
+      "type": "tags-inverse",
+      "query": "business sustainability",
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.26832/24566632.2020.0503023",
+        "doi:10.36713/epra26106",
+        "doi:10.3920/9789086866649_048",
+        "doi:10.33545/26179210.2025.v8.i2.728",
+        "doi:10.33545/2664844x.2025.v7.i6c.453",
+        "doi:10.1016/j.procs.2025.12.041",
+        "doi:10.71443/9789349552364-10",
+        "doi:10.1088/1755-1315/1558/1/012057",
+        "doi:10.17697/ibmrd/2023/v12i1/172867"
+      ],
+      "top10": [
+        "doi:10.1109/icetas62372.2024.11120188",
+        "doi:10.3389/frai.2025.1568210",
+        "doi:10.1016/j.jenvman.2025.128190",
+        "doi:10.20944/preprints202404.1725.v1",
+        "doi:10.20944/preprints202009.0431.v1",
+        "doi:10.32473/aimlrb.1.1.138290",
+        "doi:10.2139/ssrn.4170538",
+        "doi:10.2139/ssrn.3969464",
+        "doi:10.20944/preprints202403.0981.v1",
+        "doi:10.5281/zenodo.19016688"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 160,
+      "site": "ai-safety",
+      "type": "tags-inverse",
+      "query": "Business Structural equation modeling",
+      "relevantCount": 9,
+      "relevantIds": [
+        "oa:W2954217333",
+        "oa:W4410094447",
+        "oa:W4404326319",
+        "oa:W4361027215",
+        "oa:W4407139934",
+        "oa:W4360882499",
+        "oa:W4407615570",
+        "oa:W4410186101",
+        "oa:W4396918692"
+      ],
+      "top10": [
+        "oa:W4409337529",
+        "doi:10.5281/zenodo.21717786",
+        "oa:W7162648928",
+        "doi:10.5281/zenodo.21717785",
+        "oa:W4417236727",
+        "pmid:41602317",
+        "oa:W7123352208",
+        "oa:W4415696870",
+        "oa:W4390094974",
+        "oa:W7128484601"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0.09090909090909091,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 185,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "cases specified requirements iteratively improving test cases via agent-to-agent communication system improves accuracy effectiveness. our implementation which uses",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.71097/ijsat.v16.i1.2232"
+      ],
+      "top10": [
+        "doi:10.71097/ijsat.v16.i1.2232",
+        "doi:10.20944/preprints202605.0387.v1",
+        "oa:W2059529072",
+        "doi:10.1201/9780429070655-100",
+        "doi:10.1109/sose67019.2025.00013",
+        "doi:10.21203/rs.3.rs-9596459/v1",
+        "oa:W7125983183",
+        "doi:10.1109/aiware69974.2025.00031",
+        "doi:10.52710/cfs.1067",
+        "doi:10.5281/zenodo.19696409"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 206,
+      "site": "ai-safety",
+      "type": "cross-entity",
+      "query": "Stakeholder Desalination Process engineering",
+      "relevantCount": 5,
+      "relevantIds": [
+        "oa:W4417049055",
+        "oa:W2074672863",
+        "oa:W4413257288",
+        "oa:W4411550272",
+        "oa:W4415499644"
+      ],
+      "top10": [
+        "oa:W2074672863",
+        "oa:W4411550272",
+        "doi:10.21203/rs.3.rs-10066924/v1",
+        "doi:10.1201/9788743809128-25",
+        "oa:W4400859104",
+        "pmid:41667904",
+        "oa:W7151324749",
+        "oa:W4415499644",
+        "oa:W4391972445",
+        "oa:W4406406921"
+      ],
+      "hitInTop10": 3,
+      "recall@10": 0.6,
+      "recall@k": 0.6,
+      "mrr": 1,
+      "ndcg@10": 0.6601396023754075
+    },
+    {
+      "idx": 216,
+      "site": "agritech",
+      "type": "site-topic",
+      "query": "agriculture",
+      "relevantCount": 6,
+      "relevantIds": [
+        "doi:10.1201/9781003773801-83",
+        "doi:10.1111/j.1740-9713.2013.00646.x",
+        "doi:10.26832/24566632.2020.0503023",
+        "doi:10.36713/epra26106",
+        "doi:10.2499/p15738coll2.133152",
+        "doi:10.3920/9789086866649_048"
+      ],
+      "top10": [
+        "pmid:39553695",
+        "pmid:39113949",
+        "doi:10.21203/rs.3.rs-10510553/v1",
+        "doi:10.1016/j.jenvman.2022.116258",
+        "doi:10.21203/rs.3.rs-4948484/v2",
+        "doi:10.1016/j.xplc.2025.101377",
+        "doi:10.61784/wjit240177",
+        "doi:10.1186/s12859-024-05970-9",
+        "pmid:40808040",
+        "doi:10.1002/cbdv.202503096"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 222,
+      "site": "agritech",
+      "type": "tags-inverse",
+      "query": "cs.lg artificial intelligence",
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.1201/9781003596707-33",
+        "doi:10.1007/s11119-024-10217-x",
+        "doi:10.1109/icinvents64613.2025.11402591",
+        "doi:10.1109/icaitech66481.2025.11387542",
+        "doi:10.1109/ictest64710.2025.11042416",
+        "doi:10.1002/ird.3095",
+        "doi:10.1109/stcr62650.2025.11019514",
+        "doi:10.1109/icpeev67897.2025.11291281",
+        "doi:10.5772/intechopen.1014679"
+      ],
+      "top10": [
+        "doi:10.1109/iccpct61902.2024.10673170",
+        "doi:10.1039/d6fo02990f",
+        "pmid:39338635",
+        "doi:10.3390/genes17060604",
+        "pmid:39409251",
+        "doi:10.62110/sciencein.jist.2026.v14.1606",
+        "doi:10.20944/preprints202301.0122.v1",
+        "doi:10.3920/9789086866649_039",
+        "doi:10.20944/preprints202404.1002.v1",
+        "doi:10.71443/9789349552050-01"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 225,
+      "site": "agent-ecosystem",
+      "type": "site-topic",
+      "query": "computer science",
+      "relevantCount": 6,
+      "relevantIds": [
+        "doi:10.1201/9781003641537-112",
+        "arxiv-2607.29626v1",
+        "arxiv-2607.29559v1",
+        "doi:10.20517/aiagent.2026.03",
+        "doi:10.20517/aiagent.2026.04",
+        "doi:10.20517/aiagent.2025.06"
+      ],
+      "top10": [
+        "doi:10.1117/12.3065753",
+        "pmid:42656973",
+        "pmid:40469663",
+        "doi:10.1002/sta4.70126",
+        "doi:10.1093/9780197633489.003.0025",
+        "pmid:40721607",
+        "doi:10.1109/iat.2006.95",
+        "oa:W1494976167",
+        "doi:10.31234/osf.io/w7qrt_v1",
+        "oa:W2799899844"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 228,
+      "site": "agritech",
+      "type": "tags-inverse",
+      "query": "q-bio.qm biology",
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.1007/s11119-022-09902-6",
+        "doi:10.3920/9789086865147_085",
+        "doi:10.1101/2025.10.02.680127",
+        "doi:10.1007/s11119-019-09702-5",
+        "doi:10.3920/9789086866038_051",
+        "doi:10.3920/9789086866649_085",
+        "doi:10.5958/0976-4615.2024.00030.3",
+        "doi:10.1002/9780470515419.ch14",
+        "doi:10.3920/978-90-8686-888-9_46"
+      ],
+      "top10": [
+        "doi:10.1101/2025.11.26.690448",
+        "doi:10.1080/01691864.2015.1052848",
+        "doi:10.64898/2026.03.16.712149",
+        "pmid:40913183",
+        "doi:10.1201/9781420069273-18",
+        "pmid:40874084",
+        "doi:10.1099/acmi.0.001021.v2",
+        "doi:10.1099/acmi.0.001021.v1",
+        "doi:10.1101/2025.10.29.685472",
+        "doi:10.1201/b14908-3"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0.05555555555555555,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 230,
+      "site": "agritech",
+      "type": "abstract-mid",
+      "query": "transport led emergence nanofluidics. but surface roughness particular makes challenging produce capillaries precisely controlled dimensions spatial scale. here",
+      "relevantCount": 1,
+      "relevantIds": [
+        "arxiv:1606.09051v2"
+      ],
+      "top10": [
+        "arxiv:1606.09051v2",
+        "doi:10.55529/ijaap.51.170.182",
+        "doi:10.4238/wkfmfn65",
+        "doi:10.1016/j.agwat.2024.108719",
+        "doi:10.1093/pcp/pcag076",
+        "doi:10.25819/ubsi/1308",
+        "doi:10.53555/jaz.v45i2.5008",
+        "doi:10.3920/978-90-8686-814-8_26",
+        "pmid:39535829",
+        "doi:10.5281/zenodo.20437937"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 235,
+      "site": "ai-safety",
+      "type": "tags-inverse",
+      "query": "cs.lg computer science",
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.1117/12.798224",
+        "doi:10.53846/goediss-7916",
+        "doi:10.1016/s0748-3007(03)00049-5",
+        "doi:10.18653/v1/2021.emnlp-main.226",
+        "doi:10.1109/slt.2008.4777831",
+        "doi:10.1007/978-1-0716-1036-7_3",
+        "doi:10.22541/au.168534397.72964200/v1",
+        "doi:10.1007/978-1-62703-646-7_15",
+        "doi:10.1016/j.patrec.2024.10.004"
+      ],
+      "top10": [
+        "doi:10.11591/ijeecs.v9.i1.pp234-242",
+        "doi:10.22541/au.175269777.74130102/v1",
+        "doi:10.1109/icicr65456.2025.00121",
+        "doi:10.48550/arxiv.2510.03998",
+        "doi:10.22541/au.173161615.52531242/v1",
+        "doi:10.1145/3712256.3726343",
+        "doi:10.1016/j.isci.2026.116447",
+        "doi:10.1109/icicr65456.2025.00068",
+        "doi:10.1016/j.watres.2026.126716",
+        "doi:10.1109/icece.2008.4769258"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 242,
+      "site": "agritech",
+      "type": "tags-inverse",
+      "query": "computer science cs.lg",
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.5772/intechopen.1014679",
+        "doi:10.1201/9781003596707-33",
+        "doi:10.2499/p15738coll2.133152",
+        "doi:10.1007/s11119-026-10377-y",
+        "doi:10.71026/ls.2025.02005",
+        "doi:10.1016/j.aiia.2024.06.004",
+        "doi:10.1109/icaiss61471.2025.11041903",
+        "doi:10.1109/smartagrisusy68475.2025.11466880",
+        "doi:10.5281/zenodo.18818391"
+      ],
+      "top10": [
+        "doi:10.3390/s26165076",
+        "doi:10.1109/robot.2009.5152577",
+        "doi:10.1109/icra55743.2025.11128743",
+        "doi:10.1080/01691864.2025.2532606",
+        "doi:10.1504/ijbic.2026.151785",
+        "doi:10.3390/s24227332",
+        "doi:10.1038/s41598-026-65128-w",
+        "doi:10.20944/preprints202510.1684.v1",
+        "doi:10.1109/icra48891.2023.10160624",
+        "doi:10.4108/airo.3462"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 249,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "autoscaler vpa cluster autoscaler these mechanisms remain largely reactive threshold-based. they usually respond only after resource metrics exceed",
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.20944/preprints202606.1718.v1"
+      ],
+      "top10": [
+        "doi:10.20944/preprints202607.0944.v1",
+        "doi:10.20944/preprints202606.1718.v1",
+        "doi:10.5281/zenodo.21704414",
+        "doi:10.5281/zenodo.21704415",
+        "doi:10.2139/ssrn.7170774",
+        "doi:10.5281/zenodo.19152305",
+        "doi:10.5281/zenodo.19152306",
+        "doi:10.1145/3686081.3686096",
+        "doi:10.64898/2026.06.24.734302",
+        "doi:10.3390/s26041168"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 0.5,
+      "ndcg@10": 0.6309297535714575
+    },
+    {
+      "idx": 261,
+      "site": "ai-safety",
+      "type": "abstract-mid",
+      "query": "challenges requires intelligent data-driven approaches integrate sustainability into every stage production. investigates how artificial intelligence can drive resource",
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4415378815"
+      ],
+      "top10": [
+        "oa:W4415378815",
+        "doi:10.5281/zenodo.21717786",
+        "doi:10.5281/zenodo.21717785",
+        "oa:W3156012754",
+        "pmid:41661333",
+        "oa:W4401891838",
+        "doi:10.5281/zenodo.20019654",
+        "oa:W4416955387",
+        "oa:W4413104445",
+        "doi:10.5281/zenodo.20019655"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 268,
+      "site": "ai-safety",
+      "type": "abstract-mid",
+      "query": "operational efficiency perspective participants share. however there are also apprehensions regarding job displacement necessity strategic upskilling. participants generally",
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4404038819"
+      ],
+      "top10": [
+        "oa:W4408248854",
+        "oa:W4394886140",
+        "oa:W4404038819",
+        "doi:10.71480/nmj.v66i6.1151",
+        "oa:W4405625896",
+        "doi:10.5281/zenodo.21588448",
+        "doi:10.5281/zenodo.21588449",
+        "doi:10.5281/zenodo.20019654",
+        "doi:10.5281/zenodo.20019655",
+        "arxiv:2603.00598v1"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 0.3333333333333333,
+      "ndcg@10": 0.5
+    },
+    {
+      "idx": 270,
+      "site": "agritech",
+      "type": "cross-entity",
+      "query": "Internet of Things robot computer science",
+      "relevantCount": 5,
+      "relevantIds": [
+        "doi:10.5281/zenodo.19615214",
+        "doi:10.1109/isesd.2016.7886712",
+        "doi:10.5281/zenodo.21302538",
+        "doi:10.5281/zenodo.21302539",
+        "doi:10.5281/zenodo.21567362"
+      ],
+      "top10": [
+        "doi:10.1109/iccsea49143.2020.9132933",
+        "doi:10.23919/incit.2018.8584881",
+        "doi:10.55674/snrujst.v14i3.245673",
+        "doi:10.1088/1742-6596/1834/1/012005",
+        "doi:10.34151/jurtek.v18i1.5229",
+        "doi:10.1109/access.2023.3298215",
+        "doi:10.2139/ssrn.3832727",
+        "doi:10.2139/ssrn.4031983",
+        "doi:10.58532/nbennursafpb1p1c3",
+        "doi:10.3390/agriculture12101745"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 275,
+      "site": "agent-ecosystem",
+      "type": "tags-inverse",
+      "query": "Dialog system Computer science",
+      "relevantCount": 9,
+      "relevantIds": [
+        "oa:W4391280675",
+        "oa:W4404452151",
+        "oa:W2049934619",
+        "oa:W4304195432",
+        "oa:W2896457183",
+        "oa:W4413427262",
+        "oa:W4292779060",
+        "oa:W4409737900",
+        "oa:W3094257456"
+      ],
+      "top10": [
+        "doi:10.1002/sta4.70126",
+        "oa:W1598022263",
+        "doi:10.1109/icmas.1998.699296",
+        "doi:10.5772/14455",
+        "doi:10.1109/ist.2005.1594532",
+        "doi:10.31234/osf.io/pc3ht_v1",
+        "doi:10.26434/chemrxiv.15005228/v1",
+        "doi:10.5281/zenodo.22144990",
+        "doi:10.31142/ijtsrd23036",
+        "doi:10.2139/ssrn.7264680"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0.06666666666666667,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 292,
+      "site": "agritech",
+      "type": "tags-inverse",
+      "query": "nanotechnology materials science",
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.1016/j.tplants.2026.04.009",
+        "doi:10.3390/plants15142180",
+        "doi:10.3390/bios16050241",
+        "doi:10.3390/bios16080417",
+        "doi:10.1016/j.pestbp.2026.107163",
+        "doi:10.1016/j.bios.2026.118624",
+        "doi:10.1016/j.scitotenv.2025.181068",
+        "doi:10.3390/gels12060501",
+        "doi:10.3390/pathogens15080791"
+      ],
+      "top10": [
+        "pmid:40864160",
+        "pmid:39522917",
+        "doi:10.1079/9781800623095.0009",
+        "doi:10.20944/preprints202608.1030.v1",
+        "pmid:39335892",
+        "doi:10.1016/b978-0-443-31478-0.00010-7",
+        "doi:10.1002/advs.202510320",
+        "pmid:39319478",
+        "doi:10.1002/adma.74575",
+        "doi:10.47278/book.hh/2025.101"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 299,
+      "site": "ai-safety",
+      "type": "abstract-mid",
+      "query": "consistent structural pattern analyzed. systems introduce metrics evaluate performance begin optimizing toward those metrics eventually substitute them underlying",
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W7138928124"
+      ],
+      "top10": [
+        "oa:W7138928124",
+        "arxiv:2608.28508v1",
+        "arxiv:2409.16756v3",
+        "oa:W7161761904",
+        "oa:W4402699337",
+        "arxiv:2504.05007v1",
+        "arxiv:2501.08613v3",
+        "oa:W4410396922",
+        "pmid:41623735",
+        "oa:W4396835080"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    }
+  ]
+}

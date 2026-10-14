@@ -269,14 +269,15 @@ export class GeneTech {
   }
 
   private get(path: string, requireKey = false): Promise<unknown> {
-    return this.request(path, { method: 'GET' }).then(() => {
-      // requireKey 的语义：无 key 时也要报错，而不是让 401 走到 ApiError 分支
-      if (requireKey && !this.apiKey) throw new KeyRequired(path, 'GENETECH_API_KEY not set');
-      return this.request(path, { method: 'GET' });
-    });
+    // requireKey 的语义：无 key 时立即抛 KeyRequired，而不是让 401 走到 ApiError 分支。
+    // 修复 2026-10-14：原实现先发一次请求再校验 key，导致每个受保护 GET 都会多打一发到服务端。
+    if (requireKey && !this.apiKey) throw new KeyRequired(path, 'GENETECH_API_KEY not set');
+    return this.request(path, { method: 'GET' });
   }
 
   private post(path: string, payload: Record<string, unknown>, requireKey = false): Promise<unknown> {
+    // requireKey 时 headers() 会主动抛 KeyRequired，不需要先打一发。
+    if (requireKey && !this.apiKey) throw new KeyRequired(path, 'GENETECH_API_KEY not set');
     return this.request(path, {
       method: 'POST',
       headers: { ...this.headers(requireKey), 'Content-Type': 'application/json' },
