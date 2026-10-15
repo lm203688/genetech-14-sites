@@ -119,7 +119,7 @@ curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩�
 | 知识库只追加不审计 | 全链路审计日志 + 时间机器溯源 + 受控演化策略 |
 | 付费墙即安全 | Guard 矩阵（Knowledge/Source/Publish/Compliance）分层守卫 |
 
-## 6 个 Agent 角色（详见 [`docs/competition-2026/AGENTS.md`](docs/competition-2026/AGENTS.md)）
+## 6 个 Agent 角色（[设计全文已归档到私有目录](docs/competition-2026/INDEX.md)，公开树仅保留占位索引）
 
 ```
 Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   KnowledgeGuard（常驻审计）
@@ -132,7 +132,7 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 - **Repair Agent**：CI 看门狗触发的数据修复与漂移回滚
 - **KnowledgeGuard Agent**：常驻审计、合规、secret 扫描
 
-## Guard 矩阵（详见 [`docs/competition-2026/GUARD-MATRIX.md`](docs/competition-2026/GUARD-MATRIX.md)）
+## Guard 矩阵（[设计全文已归档到私有目录](docs/competition-2026/INDEX.md)，公开树仅保留占位索引）
 
 | Guard | 职责 | 现状 |
 |-------|------|------|
@@ -144,13 +144,13 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 ## 闭环与知识累积
 
 - **数据飞轮**：6 源 backfill → 300k+ 结构化实体（30 站 × 1 万/站，去重后 28.4 万，摘要完整度 66.2%）→ 双端点 License 故障转移
-- **时间机器**：每个实体带 `provenance`，支持任意时间点知识重放（[`docs/competition-2026/TIME-MACHINE.md`](docs/competition-2026/TIME-MACHINE.md)）
-- **受控演化**：明确的准入 / 降级 / 淘汰策略（[`docs/competition-2026/EVOLUTION-POLICY.md`](docs/competition-2026/EVOLUTION-POLICY.md)）
-- **串行 PR 闭环**：新数据源 / 新 Agent / 新内容先入 `.proposals/`，由 Validator Agent 审计后流转（[`docs/competition-2026/PROPOSALS.md`](docs/competition-2026/PROPOSALS.md)）
+- **时间机器**：每个实体带 `provenance`，支持任意时间点知识重放（[设计全文已归档到私有目录](docs/competition-2026/INDEX.md)）
+- **受控演化**：明确的准入 / 降级 / 淘汰策略（[设计全文已归档到私有目录](docs/competition-2026/INDEX.md)）
+- **串行 PR 闭环**：新数据源 / 新 Agent / 新内容先入 `.proposals/`，由 Validator Agent 审计后流转（[设计全文已归档到私有目录](docs/competition-2026/INDEX.md)）
 
 ## 借鉴了哪些开源项目（赛道扫描）
 
-对赛道一 30 个项目扫描 → 归纳 **7 大母题**（多 Agent 团队 / 串行 PR 闭环 / Guard 矩阵 / 时间机器 / 受控演化 / 企业垂直落地 / 可信交付），已逐项映射到本项目（[`docs/competition-2026/BORROW-PATTERNS.md`](docs/competition-2026/BORROW-PATTERNS.md)）。
+对赛道一 30 个项目扫描 → 归纳 **7 大母题**（多 Agent 团队 / 串行 PR 闭环 / Guard 矩阵 / 时间机器 / 受控演化 / 企业垂直落地 / 可信交付），已逐项映射到本项目（[完整映射已归档到私有目录](docs/competition-2026/INDEX.md)）。
 
 ## 自评估（9 维度，不加权，详见各文档）
 
@@ -161,15 +161,19 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 | 文件 | 阶段 | 作用 |
 |------|------|------|
 | `README.md`（本文件） | P0 | 多智能体平台定位 |
-| `docs/competition-2026/AGENTS.md` | P0 | 6 Agent 设计与协作流 |
-| `docs/competition-2026/GUARD-MATRIX.md` | P0 | Guard 矩阵整合方案 |
-| `docs/competition-2026/BORROW-PATTERNS.md` | P0 | 赛道 30 项目 → 7 母题 → 映射 |
-| `docs/competition-2026/EVOLUTION-POLICY.md` | P1 | 受控演化（准入/降级/淘汰） |
-| `docs/competition-2026/AUDIT-LOG.md` | P1 | 审计日志设计 + 参考实现 |
-| `docs/competition-2026/TIME-MACHINE.md` | P1 | 时间机器 / 溯源 |
-| `docs/competition-2026/PROPOSALS.md` + `.proposals/` | P0/P1 | 串行 PR 闭环 demo |
-| `docs/competition-2026/REVIEWER-ONEPAGER.html` | P1 | 评审一页纸 |
-| `docs/competition-2026/demo-walkthrough.html` | P1 | 交互式 Demo（录屏替代） |
+> **本批交付物原文已归档到私有目录**（2026-10-08 由 `docs-guard` 执行），公开树仅保留占位 stub 与 [`INDEX.md`](docs/competition-2026/INDEX.md) 索引。以下为清单：
+
+| 文件 | 阶段 | 作用 |
+|------|------|------|
+| `AGENTS.md` | P0 | 6 Agent 设计与协作流 |
+| `GUARD-MATRIX.md` | P0 | Guard 矩阵整合方案 |
+| `BORROW-PATTERNS.md` | P0 | 赛道 30 项目 → 7 母题 → 映射 |
+| `EVOLUTION-POLICY.md` | P1 | 受控演化（准入/降级/淘汰） |
+| `AUDIT-LOG.md` | P1 | 审计日志设计 + 参考实现 |
+| `TIME-MACHINE.md` | P1 | 时间机器 / 溯源 |
+| `PROPOSALS.md` + `.proposals/` | P0/P1 | 串行 PR 闭环 demo |
+| `REVIEWER-ONEPAGER.html` | P1 | 评审一页纸 |
+| `demo-walkthrough.html` | P1 | 交互式 Demo（录屏替代） |
 
 ## 当前真实状态（诚实标注）
 

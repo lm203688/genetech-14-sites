@@ -14,14 +14,15 @@
 | pipeline-quality-gate 实测（CI） | `node operations-plan/pipeline-quality-gate.js --ci` | 15/30 放行 · **15 站被拒** | **1** ✅ 阻断生效 |
 | pipeline-quality-gate 实测（非 CI） | `node operations-plan/pipeline-quality-gate.js` | 报告已生成 | 0 |
 | pipeline-docs-guard 检查 | `node operations-plan/pipeline-docs-guard.js --check` | 50 文档 · 8 白名单 · 42 内部已 stub · **0 泄露** | 0 |
-| mcp-smoke | `node tools/mcp-smoke.mjs` | initialize ✓ · tools/list 14 ✓ · query ✓ · semantic_search ✓ | 0 |
+| mcp-smoke（含 C3 evidence 断言） | `node tools/mcp-smoke.mjs` | initialize ✓ · tools/list 14 ✓ · query ✓ · semantic_search ✓ · **evidence 3/3 命中** | 0 |
 | orchestrator | `node agent-ecosystem/orchestrator.mjs` | 30 站 · 870 有向对 · 101 零引用对 · 可放行 101 / 拦截 0 | 0 |
 | frontier-briefing | `node operations-plan/pipeline-frontier-briefing.js --dry-run` | 30 站扫描完成 · 26 站近 30 天有内容 | 0 |
+| gaps-briefing（B4） | `node operations-plan/pipeline-citation-gaps-briefing.js` | Top 30 / 101 空白假设 · 优先级 high=23 medium=62 low=16 | 0 |
 | verify-shard-live | `node operations-plan/verify-shard-live.mjs` | 单站 91s（30 站约 45 分钟），单站 entities=10000 / withDoiOrUrl=10000 | 0 |
 | verify-shard-fidelity | `node operations-plan/verify-shard-fidelity.mjs --lib-miss=0.30` | 库 255,345 DOI / 分片 198,114 DOI · **混入 2.70% > 1%** | **1** ⚠️ 阈值触发（见 §3） |
 | gate-alert 本地模式 | `node tools/gate-alert.mjs --local` | 正确识别 15 站被拒并生成失败明细 | 0 |
 
-**判定**：8 项全绿 · 1 项按预期红（quality-gate --ci 阻断生效）· 1 项按预期红（shard-fidelity 阈值触发）。
+**判定**：9 项全绿 · 1 项按预期红（quality-gate --ci 阻断生效）· 1 项按预期红（shard-fidelity 阈值触发）。
 
 ---
 
@@ -66,6 +67,10 @@ v2 报告写：
 | `.github/workflows/ops-extra.yml`（新增 3 task） | F3 / F1 / F2 | 加 `orchestrator` / `quality` / `gate-alert` 三个 workflow_dispatch 入口 |
 | `tools/gate-alert.mjs` | F2 | 门禁失败时用 gh CLI 建/更新 GitHub Issue |
 | `operations-plan/pipeline-frontier-briefing.js` | G3 | 每站 Top-N 月度简报（26/30 站近 30 天有内容） |
+| `operations-plan/pipeline-citation-gaps-briefing.js` | B4 | 跨域空白月度简报（101 → Top 30 假设 + 反驳关键词） |
+| `mcp-server/src/index.mjs`（semantic_search 增强） | C3 | 每条命中带 evidence 字段（100% 覆盖，smoke test 断言） |
+| `tools/mcp-smoke.mjs`（增强） | C3 | 断言 semantic_search 100% 命中带 evidence |
+| `reports/cross-domain-gaps-2026-10.md/.json` | B4 | 首期跨域空白报告（30 假设，其中 10 🟢 高优先级） |
 | `reports/quality-metrics-2026-10-08.md` | A8 | 人类可读的质量指标报告 |
 | `reports/knowledge-graph-evidence-2026-10-09.md` | B1 | 引用边并入的验收证据（27.94% ≥ 20%） |
 | `shared/components/provenance-badge.md` | G1 | 溯源徽章组件（可嵌入任意 HTML） |
@@ -89,6 +94,8 @@ v2 报告写：
 | F5 CI secret 扫描 | 🟢 已上线 | 需仓库 owner 首次手动 approve workflow |
 | F3 编排层接 CI | 🟢 已上线 | 每日 13:00 UTC 自动跑，可 `workflow_dispatch task=orchestrator` 手动 |
 | F1 门禁 CI 模式 | 🟢 已上线 | 每日 13:00 UTC 跑 `--ci`，15 站被拒会让 CI 红——这是**真实状态** |
+| C3 检索证据 | 🟢 已上线 | semantic_search 每条命中带 evidence（字段+词），100% 覆盖 |
+| B4 跨域空白报告 | 🟢 已上线 | 月度自动 diff 上月，输出 Top 30 假设+反驳关键词 |
 
 ---
 

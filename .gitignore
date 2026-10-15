@@ -98,8 +98,9 @@ unified-license/_test_verify.mjs
 # CI 运行时从私有仓克隆的引擎（防御：勿被机器人提交步骤写回公开仓）
 engine/
 
-# 审计日志目录（运行时生成，.gitignore 防泄漏；demo 数据在 .proposals/ .active/）
-audit/
+# 审计日志目录（运行时生成的 .jsonl 不入库；文档文件 LOGPUSH-SETUP.md / README.md 入库）
+audit/*.jsonl
+audit/*.log
 # 本地安全/运营审计文档（含历史明文密钥引用，脱敏后仍不入库，避免误提交）
 docs/audit-*.md
 
@@ -141,3 +142,12 @@ data/cited-entities.json
 # AOCI agent host integration (machine-bound; do not commit)
 .mcp.json
 .mcp.json.backup.*
+
+# Pagefind 搜索索引（构建产物，不入库；由 tools/build-pagefind.mjs 生成，见 docs/PAGEFIND-INTEGRATION.md）
+**/website/pagefind/
+
+# Pagefind 中间产物（entities.json→HTML 转换的临时目录）
+**/.pagefind-src/
+
+# Windows 误创建的空文件
+nul
