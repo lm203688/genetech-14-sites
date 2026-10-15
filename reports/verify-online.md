@@ -1,22 +1,8 @@
 # 线上实测台账（verify-online）
 
-> 本轮生成时间：**2026-10-14T13:58:18Z（GMT+8 21:58）—— Phase 4 交付后**
-> 上一轮：2026-10-08T13:51:07Z（GMT+8 21:51）
+> 生成时间：2026-10-08T13:51:07Z（GMT+8 21:51）
 > 复现：`bash scripts/verify-online.sh`（本文所有数字由该脚本一次跑出）
 > 目的：把"完成"的判据从**描述**改成**可实测的返回值**。v2 全面提升报告的三个 P0（飞轮冻结 / 支付未部署 / 对外宣称偏离）全都是同一个病的复发——**完成度靠叙述支撑，而不是靠返回值支撑**。本台账是 F4 的落地形态。
-
-## 0. Phase 4（10-14）相对上一轮（10-08）的变化
-
-| 端点 | 10-08 实测 | 10-14 实测 | 变化 | 判定 |
-|---|---|---|---|---|
-| `/v1/citation/edges` | 2,394,278 B | **2,191,275 B** | −202,973 B (−8.5%) | ⚠️ 内容变更（数据回滚 or 版本重跑），200 OK |
-| `/v1/citation/gaps` | 42,549 B | **45,098 B** | +2,549 B (+6.0%) | ✅ 内容变更，200 OK |
-| `/v1/domains` | 8,258 B | **8,228 B** | −30 B | ✅ 微差（元数据刷新） |
-| `/license/health` | 76 B | **102 B** | +26 B | ✅ 响应结构小改 |
-| `/api/hupijiao/order` | **404** | **404** | 未变 | 🔴 **仍是 P0**（等 §5-A 用户部署） |
-| 其余端点 | — | — | 未变 | ✅ |
-
-**Phase 4 本轮交付未影响线上运行态**：11 个端点全绿（含 by-design 401），唯一红灯仍是支付路由 404，与上一轮完全一致——**这一致性本身就是证据**：Phase 4 只改代码不改线上，符合预期。
 
 ---
 
@@ -24,11 +10,11 @@
 
 | 端点 | HTTP | 字节 | 实测返回值（截断） | 判定 |
 |---|---:|---:|---|---|
-| `GET https://api.swarmlabs.tools/health` | 200 | 76 | — | ✅ 活 |
-| `GET https://api.swarmlabs.tools/v1/oss/registry` | 200 | 134,493 | — | ✅ 活 |
-| `GET https://api.swarmlabs.tools/v1/domains` | 200 | 8,228 | — | ✅ 活 |
-| `GET https://api.swarmlabs.tools/v1/citation/edges` | 200 | 2,191,275 | — | ✅ 活（vs 10-08: −202,973 B / −8.5%） |
-| `GET https://api.swarmlabs.tools/v1/citation/gaps` | 200 | 45,098 | — | ✅ 活（vs 10-08: +2,549 B / +6.0%） |
+| `GET https://api.swarmlabs.tools/health` | 200 | 76 | `{"ok":true,"service":"genetech-api-guard","time":"2026-10-08T13:51:05.926Z"}` | ✅ 活 |
+| `GET https://api.swarmlabs.tools/v1/oss/registry` | 200 | 134,493 | `[{ "id": "gh:ATaC-team/ATaC", "source": "github", …` | ✅ 活 |
+| `GET https://api.swarmlabs.tools/v1/domains` | 200 | 8,258 | — | ✅ 活 |
+| `GET https://api.swarmlabs.tools/v1/citation/edges` | 200 | 2,394,278 | `{"generatedAt":"2026-10-05T13:42:27.382Z", "stats":{"sourceRecords":1634,…}` | ✅ 活 |
+| `GET https://api.swarmlabs.tools/v1/citation/gaps` | 200 | 42,549 | `{"version":1,"builtAt":"2026-10-05T13:43:23.219Z","derivedFrom":{"edgeCount":28001},…}` | ✅ 活 |
 | `POST https://api.swarmlabs.tools/v1/search/semantic` | **401** | 85 | — | ✅ **by design**（Pro key 未配 → 拒绝，不是故障） |
 
 **api-guard 层结论：5/6 活，1/6 按设计拒绝。无降级。**
@@ -38,14 +24,14 @@
 | 路径 | HTTP | 字节 | 判定 |
 |---|---:|---:|---|
 | `https://data.swarmlabs.tools/openapi.yaml` | 200 | 14,296 | ✅ 活 |
-| `https://data.swarmlabs.tools/data/citation-gaps.json` | 200 | 45,098 | ✅ 活（vs 10-08: +2,549 B / +6.0%） |
+| `https://data.swarmlabs.tools/data/citation-gaps.json` | 200 | 42,549 | ✅ 活 |
 
 ## 3. 支付 / 许可层 —— 🔴 仍是 P0
 
 | 端点 | HTTP | 实测返回值 | 判定 |
 |---|---:|---|---|
-| `GET https://license.swarmlabs.tools/health` | 200 | 102 B（vs 10-08: +26 B，响应结构小改） | ✅ 服务在 |
-| `GET https://license.swarmlabs.tools/api/hupijao/order?trade_order_id=probe-f4-1014` | **404** | 38 B（`{"success":false,"status":"not_found"}`） | 🔴 **修复仍未上线（Phase 4 只改代码未部署）** |
+| `GET https://license.swarmlabs.tools/health` | 200 | `{"service":"genetech-unified-license","status":"ok","version":"2.0","time":"2026-10-08T13:51:36.406Z"}` | ✅ 服务在 |
+| `GET https://license.swarmlabs.tools/api/hupijiao/order?trade_order_id=probe-f4` | **404** | `{"success":false,"status":"not_found"}` | 🔴 **修复未上线** |
 
 **这条台账同时证明了两件事**：
 
