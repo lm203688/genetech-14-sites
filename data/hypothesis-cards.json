@@ -35,13 +35,14 @@
       "crossref_topic_bridge": 180
     },
     "byEvidenceStatus": {
-      "supported": 24,
-      "insufficient_evidence": 886,
-      "hypothesis_only": 30
+      "supported": 81,
+      "insufficient_evidence": 858,
+      "contradicted": 1
     },
     "byStatus": {
-      "verified": 24,
-      "new": 916
+      "verified": 81,
+      "new": 858,
+      "falsified": 1
     },
     "newByType": {
       "litellbridge": 135,
@@ -63,9 +64,10 @@
     },
     "avgConfidence": 0.375,
     "newAvgConfidence": 0.357,
-    "lastVerifiedAt": "2026-10-16T02:29:03.452Z",
-    "verificationRunPath": "data/verification-runs/2026-10-16-all.json",
-    "verified": 24
+    "lastVerifiedAt": "2026-10-16T05:08:22.665Z",
+    "verificationRunPath": "data\\verification-runs\\2026-10-16-v2-run.json",
+    "verified": 81,
+    "falsified": 1
   },
   "hypothesisCards": [
     {
@@ -20864,8 +20866,8 @@
       "id": "HYP-20261016-0326",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -20881,7 +20883,7 @@
       ],
       "statement": "The bridge agent-ecosystem↔ai-safety has 39 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agent-ecosystem 与 ai-safety 之间有 39 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -20917,14 +20919,23 @@
         "data_versions": [
           "a8bdec8d"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 39 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0327",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -20940,7 +20951,7 @@
       ],
       "statement": "The bridge agent-ecosystem↔ai4science has 9 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agent-ecosystem 与 ai4science 之间有 9 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -20976,7 +20987,16 @@
         "data_versions": [
           "fc355f91"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.077Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 9 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0328",
@@ -21039,8 +21059,8 @@
       "id": "HYP-20261016-0329",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -21056,7 +21076,7 @@
       ],
       "statement": "The bridge agent-ecosystem↔biomed-ai has 33 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agent-ecosystem 与 biomed-ai 之间有 33 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -21092,14 +21112,23 @@
         "data_versions": [
           "b64a4c3f"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.084Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 33 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0330",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -21115,7 +21144,7 @@
       ],
       "statement": "The bridge agent-ecosystem↔bionic-ai has 21 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agent-ecosystem 与 bionic-ai 之间有 21 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -21151,7 +21180,16 @@
         "data_versions": [
           "028f90ae"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.091Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 21 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0331",
@@ -21271,8 +21309,8 @@
       "id": "HYP-20261016-0333",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -21288,7 +21326,7 @@
       ],
       "statement": "The bridge agent-ecosystem↔edge-ai has 10 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agent-ecosystem 与 edge-ai 之间有 10 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -21324,14 +21362,23 @@
         "data_versions": [
           "25ecf6b5"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.102Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 10 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0334",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -21347,7 +21394,7 @@
       ],
       "statement": "The bridge agent-ecosystem↔embodied-ai has 42 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agent-ecosystem 与 embodied-ai 之间有 42 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -21383,7 +21430,16 @@
         "data_versions": [
           "2446eb44"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.109Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 42 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0335",
@@ -21674,8 +21730,8 @@
       "id": "HYP-20261016-0340",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -21691,7 +21747,7 @@
       ],
       "statement": "The bridge agritech↔biocomputing has 290 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agritech 与 biocomputing 之间有 290 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -21727,7 +21783,16 @@
         "data_versions": [
           "3fbf66eb"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.117Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 290 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0341",
@@ -21790,8 +21855,8 @@
       "id": "HYP-20261016-0342",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -21807,7 +21872,7 @@
       ],
       "statement": "The bridge agritech↔bionic-ai has 333 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agritech 与 bionic-ai 之间有 333 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -21843,7 +21908,16 @@
         "data_versions": [
           "9619f5ba"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.126Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 333 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0343",
@@ -21906,8 +21980,8 @@
       "id": "HYP-20261016-0344",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -21923,7 +21997,7 @@
       ],
       "statement": "The bridge agritech↔carbon-neutral has 87 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agritech 与 carbon-neutral 之间有 87 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -21959,14 +22033,23 @@
         "data_versions": [
           "80274801"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.133Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 87 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0345",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -21982,7 +22065,7 @@
       ],
       "statement": "The bridge agritech↔deep-sea-tech has 301 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agritech 与 deep-sea-tech 之间有 301 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -22019,14 +22102,23 @@
         "data_versions": [
           "b79c2b7c"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.058Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 301 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0346",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -22042,7 +22134,7 @@
       ],
       "statement": "The bridge agritech↔digital-twin has 195 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agritech 与 digital-twin 之间有 195 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -22078,7 +22170,16 @@
         "data_versions": [
           "5cc689f6"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.140Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 195 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0347",
@@ -22255,8 +22356,8 @@
       "id": "HYP-20261016-0350",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -22272,7 +22373,7 @@
       ],
       "statement": "The bridge agritech↔life-science has 80 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agritech 与 life-science 之间有 80 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -22308,7 +22409,16 @@
         "data_versions": [
           "8edff6f2"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.150Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 80 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0351",
@@ -22428,8 +22538,8 @@
       "id": "HYP-20261016-0353",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -22445,7 +22555,7 @@
       ],
       "statement": "The bridge agritech↔new-energy has 37 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 agritech 与 new-energy 之间有 37 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -22481,7 +22591,16 @@
         "data_versions": [
           "c96bee79"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.157Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 37 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0354",
@@ -25074,8 +25193,8 @@
       "id": "HYP-20261016-0399",
       "hypothesis_type": "moderate_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -25091,7 +25210,7 @@
       ],
       "statement": "The bridge ai4science↔edge-ai has 111 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
       "statement_zh": "站点 ai4science 与 edge-ai 之间有 111 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
-      "confidence": 0.45,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
         "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
@@ -25128,7 +25247,16 @@
         "data_versions": [
           "ded2226d"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.064Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 111 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0400",
@@ -36483,8 +36611,8 @@
       "id": "HYP-20261016-0596",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -36500,7 +36628,7 @@
       ],
       "statement": "The shared topic(s) \"robotics\" appear in both robot-parts and low-altitude corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"robotics\" 同时出现在 robot-parts 和 low-altitude 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -36534,14 +36662,23 @@
         "data_versions": [
           "b4bb7525"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.752Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair robot-parts↔low-altitude with 1 shared tags (robotics)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0603",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -36557,7 +36694,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both neuromorphic and low-altitude corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 neuromorphic 和 low-altitude 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -36591,14 +36728,23 @@
         "data_versions": [
           "3243db1d"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.760Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair neuromorphic↔low-altitude with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0608",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -36614,7 +36760,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both quantum-materials and low-altitude corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 quantum-materials 和 low-altitude 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -36648,14 +36794,23 @@
         "data_versions": [
           "5e408cc9"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.768Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair quantum-materials↔low-altitude with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0612",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -36671,7 +36826,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both semiconductor and low-altitude corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 semiconductor 和 low-altitude 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -36705,14 +36860,23 @@
         "data_versions": [
           "ecfbba7d"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.775Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair semiconductor↔low-altitude with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0620",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -36728,7 +36892,7 @@
       ],
       "statement": "The shared topic(s) \"biology\" appear in both bionic-ai and exo-science corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"biology\" 同时出现在 bionic-ai 和 exo-science 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -36762,14 +36926,23 @@
         "data_versions": [
           "ff73bcfe"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.781Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair bionic-ai↔exo-science with 1 shared tags (biology)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0621",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -36785,7 +36958,7 @@
       ],
       "statement": "The shared topic(s) \"cs\" appear in both privacy-computing and semiconductor corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"cs\" 同时出现在 privacy-computing 和 semiconductor 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -36819,14 +36992,23 @@
         "data_versions": [
           "0c86b6e1"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.788Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair privacy-computing↔semiconductor with 1 shared tags (cs)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0622",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -36842,7 +37024,7 @@
       ],
       "statement": "The shared topic(s) \"cs\" appear in both semiconductor and privacy-computing corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"cs\" 同时出现在 semiconductor 和 privacy-computing 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -36876,14 +37058,23 @@
         "data_versions": [
           "f6fd0d7d"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.794Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair semiconductor↔privacy-computing with 1 shared tags (cs)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0645",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -36899,7 +37090,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both carbon-neutral and neuromorphic corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 carbon-neutral 和 neuromorphic 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -36933,14 +37124,23 @@
         "data_versions": [
           "20ad4561"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.800Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair carbon-neutral↔neuromorphic with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0650",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -36956,7 +37156,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both neuromorphic and alien-minerals corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 neuromorphic 和 alien-minerals 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -36990,14 +37190,23 @@
         "data_versions": [
           "8d41326b"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.807Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair neuromorphic↔alien-minerals with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0652",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37013,7 +37222,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both semiconductor and alien-minerals corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 semiconductor 和 alien-minerals 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37047,14 +37256,23 @@
         "data_versions": [
           "c1696c26"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.813Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair semiconductor↔alien-minerals with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0656",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37070,7 +37288,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both low-altitude and nuclear-energy corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 low-altitude 和 nuclear-energy 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37104,14 +37322,23 @@
         "data_versions": [
           "06eeeb71"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.820Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair low-altitude↔nuclear-energy with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0657",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37127,7 +37354,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both nuclear-energy and low-altitude corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 nuclear-energy 和 low-altitude 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37161,14 +37388,23 @@
         "data_versions": [
           "d4913730"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.826Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair nuclear-energy↔low-altitude with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0661",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37184,7 +37420,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both neuromorphic and nuclear-energy corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 neuromorphic 和 nuclear-energy 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37218,14 +37454,23 @@
         "data_versions": [
           "c2bd7aec"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.833Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair neuromorphic↔nuclear-energy with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0662",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37241,7 +37486,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both nuclear-energy and neuromorphic corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 nuclear-energy 和 neuromorphic 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37275,14 +37520,23 @@
         "data_versions": [
           "c4acc70c"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.841Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair nuclear-energy↔neuromorphic with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0663",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37298,7 +37552,7 @@
       ],
       "statement": "The shared topic(s) \"cs\" appear in both privacy-computing and synbio-manufacturing corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"cs\" 同时出现在 privacy-computing 和 synbio-manufacturing 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37332,14 +37586,23 @@
         "data_versions": [
           "f7be5228"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.847Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair privacy-computing↔synbio-manufacturing with 1 shared tags (cs)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0665",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37355,7 +37618,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both quantum-materials and nuclear-energy corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 quantum-materials 和 nuclear-energy 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37389,14 +37652,23 @@
         "data_versions": [
           "ddad6d8d"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.856Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair quantum-materials↔nuclear-energy with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0666",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37412,7 +37684,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both semiconductor and nuclear-energy corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 semiconductor 和 nuclear-energy 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37446,14 +37718,23 @@
         "data_versions": [
           "ddfb4944"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.864Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair semiconductor↔nuclear-energy with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0673",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37469,7 +37750,7 @@
       ],
       "statement": "The shared topic(s) \"materials\" appear in both new-energy and neuromorphic corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"materials\" 同时出现在 new-energy 和 neuromorphic 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37503,14 +37784,23 @@
         "data_versions": [
           "36e4cab0"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.871Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair new-energy↔neuromorphic with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0674",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37526,7 +37816,7 @@
       ],
       "statement": "The shared topic(s) \"env\" appear in both exo-science and nuclear-energy corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"env\" 同时出现在 exo-science 和 nuclear-energy 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37560,14 +37850,23 @@
         "data_versions": [
           "27959e54"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.879Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair exo-science↔nuclear-energy with 1 shared tags (env)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0691",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37583,7 +37882,7 @@
       ],
       "statement": "The shared topic(s) \"ai\" appear in both embodied-ai and genetech-tools corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"ai\" 同时出现在 embodied-ai 和 genetech-tools 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37617,14 +37916,23 @@
         "data_versions": [
           "2e273f64"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.887Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair embodied-ai↔genetech-tools with 1 shared tags (ai)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0692",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37640,7 +37948,7 @@
       ],
       "statement": "The shared topic(s) \"ai\" appear in both genetech-tools and embodied-ai corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"ai\" 同时出现在 genetech-tools 和 embodied-ai 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37674,14 +37982,23 @@
         "data_versions": [
           "72399e57"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.893Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair genetech-tools↔embodied-ai with 1 shared tags (ai)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0696",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37697,7 +38014,7 @@
       ],
       "statement": "The shared topic(s) \"cs\" appear in both genetech-tools and sat-6g corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"cs\" 同时出现在 genetech-tools 和 sat-6g 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37731,14 +38048,23 @@
         "data_versions": [
           "afb5edb1"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.901Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair genetech-tools↔sat-6g with 1 shared tags (cs)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0697",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37754,7 +38080,7 @@
       ],
       "statement": "The shared topic(s) \"cs\" appear in both sat-6g and genetech-tools corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"cs\" 同时出现在 sat-6g 和 genetech-tools 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37788,14 +38114,23 @@
         "data_versions": [
           "1f5fa5d7"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.909Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair sat-6g↔genetech-tools with 1 shared tags (cs)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0704",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37811,7 +38146,7 @@
       ],
       "statement": "The shared topic(s) \"biology\", \"env\" appear in both exo-science and agritech corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"biology\", \"env\" 同时出现在 exo-science 和 agritech 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.54,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37846,14 +38181,23 @@
         "data_versions": [
           "0054cffc"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.740Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair exo-science↔agritech with 2 shared tags (biology,env)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0718",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37869,7 +38213,7 @@
       ],
       "statement": "The shared topic(s) \"env\" appear in both nuclear-energy and agritech corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"env\" 同时出现在 nuclear-energy 和 agritech 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37903,14 +38247,23 @@
         "data_versions": [
           "9520d7d6"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.919Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair nuclear-energy↔agritech with 1 shared tags (env)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0720",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37926,7 +38279,7 @@
       ],
       "statement": "The shared topic(s) \"ai\" appear in both edge-ai and genetech-tools corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"ai\" 同时出现在 edge-ai 和 genetech-tools 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -37960,14 +38313,23 @@
         "data_versions": [
           "4b89c631"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.927Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair edge-ai↔genetech-tools with 1 shared tags (ai)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0721",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -37983,7 +38345,7 @@
       ],
       "statement": "The shared topic(s) \"ai\" appear in both genetech-tools and edge-ai corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"ai\" 同时出现在 genetech-tools 和 edge-ai 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -38017,14 +38379,23 @@
         "data_versions": [
           "98d1f774"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.934Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair genetech-tools↔edge-ai with 1 shared tags (ai)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0727",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -38040,7 +38411,7 @@
       ],
       "statement": "The shared topic(s) \"psych\" appear in both brain-science and tcm-tools corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"psych\" 同时出现在 brain-science 和 tcm-tools 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -38074,14 +38445,23 @@
         "data_versions": [
           "48030a30"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.941Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair brain-science↔tcm-tools with 1 shared tags (psych)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0729",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -38097,7 +38477,7 @@
       ],
       "statement": "The shared topic(s) \"biology\" appear in both life-science and deep-sea-tech corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"biology\" 同时出现在 life-science 和 deep-sea-tech 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -38131,14 +38511,23 @@
         "data_versions": [
           "7924cd3d"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.947Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair life-science↔deep-sea-tech with 1 shared tags (biology)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0735",
       "hypothesis_type": "emerging_topic",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "hypothesis_only",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -38154,7 +38543,7 @@
       ],
       "statement": "The shared topic(s) \"biology\" appear in both life-science and agritech corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
       "statement_zh": "共同主题 \"biology\" 同时出现在 life-science 和 agritech 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
-      "confidence": 0.42,
+      "confidence": 0.6,
       "falsifiability": {
         "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
         "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
@@ -38188,7 +38577,16 @@
         "data_versions": [
           "c7dde2a5"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.954Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair life-science↔agritech with 1 shared tags (biology)",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0736",
@@ -44180,8 +44578,8 @@
       "id": "HYP-20261016-0844",
       "hypothesis_type": "bidirectional_gap",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "contradicted",
+      "status": "falsified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -44232,7 +44630,16 @@
         "data_versions": [
           "c5fa8290"
         ]
-      }
+      },
+      "falsified_at": "2026-10-16T05:07:05.962Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "bidirectional-gap-contradicted",
+          "detail": "reverse pair agritech→exo-science has 3 edges — reverse flow exists",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0845",
@@ -45678,8 +46085,8 @@
       "id": "HYP-20261016-0871",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -45695,7 +46102,7 @@
       ],
       "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
@@ -45729,7 +46136,16 @@
         "data_versions": [
           "8418a4d6"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.969Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0872",
@@ -46127,8 +46543,8 @@
       "id": "HYP-20261016-0884",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -46144,7 +46560,7 @@
       ],
       "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
@@ -46178,14 +46594,23 @@
         "data_versions": [
           "97945334"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.975Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0885",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -46201,7 +46626,7 @@
       ],
       "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
@@ -46235,14 +46660,23 @@
         "data_versions": [
           "d4fbd013"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.981Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0886",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -46258,7 +46692,7 @@
       ],
       "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
@@ -46292,14 +46726,23 @@
         "data_versions": [
           "6a606e89"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.989Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0887",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -46315,7 +46758,7 @@
       ],
       "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
@@ -46349,7 +46792,16 @@
         "data_versions": [
           "6433657b"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:05.997Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0888",
@@ -46803,8 +47255,8 @@
       "id": "HYP-20261016-0901",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -46820,7 +47272,7 @@
       ],
       "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
@@ -46854,7 +47306,16 @@
         "data_versions": [
           "9fd99ec8"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.003Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0902",
@@ -46972,8 +47433,8 @@
       "id": "HYP-20261016-0904",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -46989,7 +47450,7 @@
       ],
       "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
@@ -47023,7 +47484,16 @@
         "data_versions": [
           "7f70fdb7"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.009Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0910",
@@ -47085,8 +47555,8 @@
       "id": "HYP-20261016-0911",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -47102,7 +47572,7 @@
       ],
       "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
@@ -47136,14 +47606,23 @@
         "data_versions": [
           "992654a1"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.016Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0912",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -47159,7 +47638,7 @@
       ],
       "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
@@ -47193,7 +47672,16 @@
         "data_versions": [
           "7abfa763"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.023Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-0914",
@@ -53079,8 +53567,8 @@
       "id": "HYP-20261016-1099",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -53096,7 +53584,7 @@
       ],
       "statement": "Observed at least one entity in ai4science citing a work in edge-ai, establishing a shared topic surface (ai, ml). Hypothesis: other entities in ai4science should also cite edge-ai, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 ai4science 中至少有 1 个实体引用 edge-ai 作品，建立共享主题面（ai, ml）。假设：ai4science 中其他实体也应引用 edge-ai，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other ai4science entities also cite edge-ai entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=ai4science AND targetSite=edge-ai; 2. If count >= 50, falsified.",
@@ -53130,7 +53618,16 @@
         "data_versions": [
           "8021758a"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.031Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "ai4science→edge-ai has 111 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-1100",
@@ -53696,8 +54193,8 @@
       "id": "HYP-20261016-1117",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -53713,7 +54210,7 @@
       ],
       "statement": "Observed at least one entity in ai4science citing a work in edge-ai, establishing a shared topic surface (ai, ml). Hypothesis: other entities in ai4science should also cite edge-ai, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 ai4science 中至少有 1 个实体引用 edge-ai 作品，建立共享主题面（ai, ml）。假设：ai4science 中其他实体也应引用 edge-ai，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other ai4science entities also cite edge-ai entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=ai4science AND targetSite=edge-ai; 2. If count >= 50, falsified.",
@@ -53747,7 +54244,16 @@
         "data_versions": [
           "989569da"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.038Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "ai4science→edge-ai has 111 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-1125",
@@ -55601,8 +56107,8 @@
       "id": "HYP-20261016-1251",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -55618,7 +56124,7 @@
       ],
       "statement": "Observed at least one entity in carbon-neutral citing a work in new-energy, establishing a shared topic surface (env, materials). Hypothesis: other entities in carbon-neutral should also cite new-energy, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 carbon-neutral 中至少有 1 个实体引用 new-energy 作品，建立共享主题面（env, materials）。假设：carbon-neutral 中其他实体也应引用 new-energy，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other carbon-neutral entities also cite new-energy entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=carbon-neutral AND targetSite=new-energy; 2. If count >= 50, falsified.",
@@ -55652,14 +56158,23 @@
         "data_versions": [
           "0e6a8b41"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.045Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "carbon-neutral→new-energy has 135 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-1252",
       "hypothesis_type": "crossref_topic_bridge",
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
-      "status": "new",
+      "evidence_status": "supported",
+      "status": "verified",
       "generated_at": "2026-10-16T04:11:16.576Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards-v2.mjs",
@@ -55675,7 +56190,7 @@
       ],
       "statement": "Observed at least one entity in carbon-neutral citing a work in new-energy, establishing a shared topic surface (env, materials). Hypothesis: other entities in carbon-neutral should also cite new-energy, but current edge density suggests most do not — indicating potential citation gap at scale.",
       "statement_zh": "已观察到 carbon-neutral 中至少有 1 个实体引用 new-energy 作品，建立共享主题面（env, materials）。假设：carbon-neutral 中其他实体也应引用 new-energy，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
-      "confidence": 0.38,
+      "confidence": 0.65,
       "falsifiability": {
         "falsification_condition": "If >= 50 other carbon-neutral entities also cite new-energy entities, the \"citation gap at scale\" claim is falsified.",
         "falsification_test": "1. Query citation-edges.json for edges where sourceSite=carbon-neutral AND targetSite=new-energy; 2. If count >= 50, falsified.",
@@ -55709,7 +56224,16 @@
         "data_versions": [
           "967504d3"
         ]
-      }
+      },
+      "verified_at": "2026-10-16T05:07:06.051Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "carbon-neutral→new-energy has 135 edges total",
+          "strength": "medium"
+        }
+      ]
     },
     {
       "id": "HYP-20261016-1253",

@@ -1,0 +1,2483 @@
+{
+  "runAt": "2026-10-16T05:07:06.172Z",
+  "nRequested": 100,
+  "seed": 0,
+  "targetsProcessed": 100,
+  "byDecision": {
+    "verified": 57,
+    "inconclusive": 42,
+    "falsified": 1
+  },
+  "byType": {
+    "emerging_topic": 30,
+    "litellbridge": 42,
+    "bidirectional_gap": 1,
+    "crossref_topic_bridge": 13,
+    "moderate_bridge": 14
+  },
+  "avgConfidence": 0.522,
+  "results": [
+    {
+      "id": "HYP-20261016-0704",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair exo-science↔agritech with 2 shared tags (biology,env)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "exo-science↔agritech",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.740Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0209",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 2 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "exo-science→agritech",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "combined_size": 19426,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.752Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0596",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair robot-parts↔low-altitude with 1 shared tags (robotics)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "robot-parts↔low-altitude",
+        "shared_tags": [
+          "robotics"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.752Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0603",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair neuromorphic↔low-altitude with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "neuromorphic↔low-altitude",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.760Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0608",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair quantum-materials↔low-altitude with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "quantum-materials↔low-altitude",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.768Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0612",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair semiconductor↔low-altitude with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "semiconductor↔low-altitude",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.775Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0620",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair bionic-ai↔exo-science with 1 shared tags (biology)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "bionic-ai↔exo-science",
+        "shared_tags": [
+          "biology"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.781Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0621",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair privacy-computing↔semiconductor with 1 shared tags (cs)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "privacy-computing↔semiconductor",
+        "shared_tags": [
+          "cs"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.788Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0622",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair semiconductor↔privacy-computing with 1 shared tags (cs)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "semiconductor↔privacy-computing",
+        "shared_tags": [
+          "cs"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.794Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0645",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair carbon-neutral↔neuromorphic with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "carbon-neutral↔neuromorphic",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.800Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0650",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair neuromorphic↔alien-minerals with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "neuromorphic↔alien-minerals",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.807Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0652",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair semiconductor↔alien-minerals with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "semiconductor↔alien-minerals",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.813Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0656",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair low-altitude↔nuclear-energy with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "low-altitude↔nuclear-energy",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.820Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0657",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair nuclear-energy↔low-altitude with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "nuclear-energy↔low-altitude",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.826Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0661",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair neuromorphic↔nuclear-energy with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "neuromorphic↔nuclear-energy",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.833Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0662",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair nuclear-energy↔neuromorphic with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "nuclear-energy↔neuromorphic",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.841Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0663",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair privacy-computing↔synbio-manufacturing with 1 shared tags (cs)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "privacy-computing↔synbio-manufacturing",
+        "shared_tags": [
+          "cs"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.847Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0665",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair quantum-materials↔nuclear-energy with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "quantum-materials↔nuclear-energy",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.856Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0666",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair semiconductor↔nuclear-energy with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "semiconductor↔nuclear-energy",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.864Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0673",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair new-energy↔neuromorphic with 1 shared tags (materials)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "new-energy↔neuromorphic",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.871Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0674",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair exo-science↔nuclear-energy with 1 shared tags (env)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "exo-science↔nuclear-energy",
+        "shared_tags": [
+          "env"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.879Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0691",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair embodied-ai↔genetech-tools with 1 shared tags (ai)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "embodied-ai↔genetech-tools",
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.887Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0692",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair genetech-tools↔embodied-ai with 1 shared tags (ai)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "genetech-tools↔embodied-ai",
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.893Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0696",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair genetech-tools↔sat-6g with 1 shared tags (cs)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "genetech-tools↔sat-6g",
+        "shared_tags": [
+          "cs"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.901Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0697",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair sat-6g↔genetech-tools with 1 shared tags (cs)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "sat-6g↔genetech-tools",
+        "shared_tags": [
+          "cs"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.909Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0718",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair nuclear-energy↔agritech with 1 shared tags (env)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "nuclear-energy↔agritech",
+        "shared_tags": [
+          "env"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.919Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0720",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair edge-ai↔genetech-tools with 1 shared tags (ai)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "edge-ai↔genetech-tools",
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.927Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0721",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair genetech-tools↔edge-ai with 1 shared tags (ai)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "genetech-tools↔edge-ai",
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.934Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0727",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair brain-science↔tcm-tools with 1 shared tags (psych)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "brain-science↔tcm-tools",
+        "shared_tags": [
+          "psych"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.941Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0729",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair life-science↔deep-sea-tech with 1 shared tags (biology)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "life-science↔deep-sea-tech",
+        "shared_tags": [
+          "biology"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.947Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0735",
+      "hypothesis_type": "emerging_topic",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "emerging-topic-confirmed",
+          "detail": "gap pair life-science↔agritech with 1 shared tags (biology)",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "life-science↔agritech",
+        "shared_tags": [
+          "biology"
+        ],
+        "signal_type": "keyword_emergence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.954Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0844",
+      "hypothesis_type": "bidirectional_gap",
+      "decision": "falsified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "bidirectional-gap-contradicted",
+          "detail": "reverse pair agritech→exo-science has 3 edges — reverse flow exists",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "agritech→exo-science",
+        "direction": "reverse",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "reverse_citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.962Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0013",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "quantum-materials→low-altitude",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.968Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0025",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "bionic-ai→exo-science",
+        "shared_tags": [
+          "biology"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.968Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0026",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "privacy-computing→semiconductor",
+        "shared_tags": [
+          "cs"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.968Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0027",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "semiconductor→privacy-computing",
+        "shared_tags": [
+          "cs"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.968Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0050",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "carbon-neutral→neuromorphic",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.968Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0055",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "neuromorphic→alien-minerals",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.969Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0057",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "semiconductor→alien-minerals",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.969Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0068",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "privacy-computing→synbio-manufacturing",
+        "shared_tags": [
+          "cs"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.969Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0070",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "quantum-materials→nuclear-energy",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.969Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0078",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "new-energy→neuromorphic",
+        "shared_tags": [
+          "materials"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.969Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0079",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "exo-science→nuclear-energy",
+        "shared_tags": [
+          "env"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.969Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0096",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "embodied-ai→genetech-tools",
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.969Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0097",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "genetech-tools→embodied-ai",
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.969Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0871",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "agritech→deep-sea-tech",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.969Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0884",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "agritech→deep-sea-tech",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.975Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0885",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "agritech→deep-sea-tech",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.981Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0886",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "agritech→deep-sea-tech",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.989Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0887",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "agritech→deep-sea-tech",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:05.997Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0901",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "agritech→deep-sea-tech",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.003Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0904",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "agritech→deep-sea-tech",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.009Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0911",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "agritech→deep-sea-tech",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.016Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0912",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "agritech→deep-sea-tech has 301 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "agritech→deep-sea-tech",
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.023Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-1099",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "ai4science→edge-ai has 111 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "ai4science→edge-ai",
+        "shared_tags": [
+          "ai",
+          "ml"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.031Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-1117",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "ai4science→edge-ai has 111 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "ai4science→edge-ai",
+        "shared_tags": [
+          "ai",
+          "ml"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.038Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-1251",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "carbon-neutral→new-energy has 135 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "carbon-neutral→new-energy",
+        "shared_tags": [
+          "env",
+          "materials"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.045Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-1252",
+      "hypothesis_type": "crossref_topic_bridge",
+      "decision": "verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "crossref-bridge-confirmed",
+          "detail": "carbon-neutral→new-energy has 135 edges total",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "observed_edge": "carbon-neutral→new-energy",
+        "shared_tags": [
+          "env",
+          "materials"
+        ],
+        "signal_type": "observed_edge_extrapolation"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.051Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0345",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 301 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agritech↔deep-sea-tech",
+        "current_edges": 301,
+        "shared_tags": [
+          "biology",
+          "env"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.058Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0399",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 111 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "ai4science↔edge-ai",
+        "current_edges": 111,
+        "shared_tags": [
+          "ai",
+          "ml"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.064Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0101",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "robot-parts→low-altitude",
+        "shared_tags": [
+          "robotics"
+        ],
+        "combined_size": 19955,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0108",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "neuromorphic→low-altitude",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19924,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0113",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "quantum-materials→low-altitude",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19915,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0117",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "semiconductor→low-altitude",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19911,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0125",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "bionic-ai→exo-science",
+        "shared_tags": [
+          "biology"
+        ],
+        "combined_size": 19895,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0126",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "privacy-computing→semiconductor",
+        "shared_tags": [
+          "cs"
+        ],
+        "combined_size": 19894,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0127",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "semiconductor→privacy-computing",
+        "shared_tags": [
+          "cs"
+        ],
+        "combined_size": 19894,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0150",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "carbon-neutral→neuromorphic",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19840,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0155",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "neuromorphic→alien-minerals",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19811,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0157",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "semiconductor→alien-minerals",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19798,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0161",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "low-altitude→nuclear-energy",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19772,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0162",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "nuclear-energy→low-altitude",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19772,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0166",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "neuromorphic→nuclear-energy",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19760,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0167",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "nuclear-energy→neuromorphic",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19760,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0168",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "privacy-computing→synbio-manufacturing",
+        "shared_tags": [
+          "cs"
+        ],
+        "combined_size": 19759,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0170",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "quantum-materials→nuclear-energy",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19751,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0171",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "semiconductor→nuclear-energy",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19747,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0178",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "new-energy→neuromorphic",
+        "shared_tags": [
+          "materials"
+        ],
+        "combined_size": 19722,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0179",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "exo-science→nuclear-energy",
+        "shared_tags": [
+          "env"
+        ],
+        "combined_size": 19721,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0196",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "embodied-ai→genetech-tools",
+        "shared_tags": [
+          "ai"
+        ],
+        "combined_size": 19562,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0197",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "genetech-tools→embodied-ai",
+        "shared_tags": [
+          "ai"
+        ],
+        "combined_size": 19562,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0201",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "genetech-tools→sat-6g",
+        "shared_tags": [
+          "cs"
+        ],
+        "combined_size": 19538,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0202",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "sat-6g→genetech-tools",
+        "shared_tags": [
+          "cs"
+        ],
+        "combined_size": 19538,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0223",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "nuclear-energy→agritech",
+        "shared_tags": [
+          "env"
+        ],
+        "combined_size": 19313,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0225",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "edge-ai→genetech-tools",
+        "shared_tags": [
+          "ai"
+        ],
+        "combined_size": 19193,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0226",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "genetech-tools→edge-ai",
+        "shared_tags": [
+          "ai"
+        ],
+        "combined_size": 19193,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0232",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "brain-science→tcm-tools",
+        "shared_tags": [
+          "psych"
+        ],
+        "combined_size": 19097,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0234",
+      "hypothesis_type": "litellbridge",
+      "decision": "inconclusive",
+      "confidence": 0.4,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "gap-pair-no-edges-with-tags",
+          "detail": "0 edges but 1 shared tags — keep abstaining",
+          "strength": "weak"
+        }
+      ],
+      "source_signals": {
+        "citation_gap_pair": "life-science→deep-sea-tech",
+        "shared_tags": [
+          "biology"
+        ],
+        "combined_size": 19074,
+        "signal_type": "citation_absence"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0326",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 39 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agent-ecosystem↔ai-safety",
+        "current_edges": 39,
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.071Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0327",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 9 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agent-ecosystem↔ai4science",
+        "current_edges": 9,
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.077Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0329",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 33 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agent-ecosystem↔biomed-ai",
+        "current_edges": 33,
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.084Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0330",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 21 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agent-ecosystem↔bionic-ai",
+        "current_edges": 21,
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.091Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0333",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 10 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agent-ecosystem↔edge-ai",
+        "current_edges": 10,
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.102Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0334",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 42 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agent-ecosystem↔embodied-ai",
+        "current_edges": 42,
+        "shared_tags": [
+          "ai"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.109Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0340",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 290 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agritech↔biocomputing",
+        "current_edges": 290,
+        "shared_tags": [
+          "biology"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.117Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0342",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 333 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agritech↔bionic-ai",
+        "current_edges": 333,
+        "shared_tags": [
+          "biology"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.126Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0344",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 87 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agritech↔carbon-neutral",
+        "current_edges": 87,
+        "shared_tags": [
+          "env"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.133Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0346",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 195 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agritech↔digital-twin",
+        "current_edges": 195,
+        "shared_tags": [
+          "env"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.140Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0350",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 80 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agritech↔life-science",
+        "current_edges": 80,
+        "shared_tags": [
+          "biology"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.150Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    },
+    {
+      "id": "HYP-20261016-0353",
+      "hypothesis_type": "moderate_bridge",
+      "decision": "verified",
+      "confidence": 0.6,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "moderate-bridge-data-fact",
+          "detail": "edge count 37 confirmed from pairMatrix",
+          "strength": "medium"
+        }
+      ],
+      "source_signals": {
+        "citation_pair": "agritech↔new-energy",
+        "current_edges": 37,
+        "shared_tags": [
+          "env"
+        ],
+        "signal_type": "moderate_sparse_bridge"
+      },
+      "verifiedAt": "2026-10-16T05:07:06.157Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v2.mjs",
+      "version": "2.0.0"
+    }
+  ]
+}

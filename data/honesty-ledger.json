@@ -16,21 +16,21 @@
     "last_triggered_at": null
   },
   "discovery_credit": {
-    "total_discoveries": 865,
+    "total_discoveries": 946,
     "by_type": {
       "general": 1,
-      "litellbridge": 159,
+      "litellbridge": 183,
       "sparse_bridge_v2": 90,
-      "moderate_bridge": 135,
+      "moderate_bridge": 149,
       "degree_imbalance": 135,
-      "emerging_topic": 30,
+      "emerging_topic": 60,
       "bidirectional_gap": 135,
-      "crossref_topic_bridge": 180
+      "crossref_topic_bridge": 193
     },
-    "verified_discoveries": 24
+    "verified_discoveries": 105
   },
   "claims_generated": 841,
-  "claims_verified": 24,
+  "claims_verified": 105,
   "events": [
     {
       "ts": "2026-10-16T01:36:35.772Z",
@@ -6964,14 +6964,668 @@
       "detail": "hypothesis-proposed-not-verified id=HYP-20261016-1253 conf=0.33 type=crossref_topic_bridge status=insufficient_evidence",
       "entity_id": null,
       "claim_id": "HYP-20261016-1253"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0001 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0001"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0002 conf=0.8 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0002"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0003 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0003"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0004 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0004"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0006 conf=0.8 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0006"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0007 conf=0.8 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0007"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0008 conf=0.75 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0008"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0011 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0011"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0012 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0012"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0017 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0017"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0023 conf=0.75 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0023"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0024 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0024"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0033 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0033"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0058 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0058"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0059 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0059"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0061 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0061"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0062 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0062"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0066 conf=0.75 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0066"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0067 conf=0.75 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0067"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0071 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0071"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0082 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0082"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0087 conf=0.8 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0087"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0088 conf=0.7 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0088"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0095 conf=0.75 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0095"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0326 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0326"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0327 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0327"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0329 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0329"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0330 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0330"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0333 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0333"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0334 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0334"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0340 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0340"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0342 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0342"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0344 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0344"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0345 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0345"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0346 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0346"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0350 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0350"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0353 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0353"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0399 conf=0.6 type=moderate_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0399"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0596 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0596"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0603 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0603"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0608 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0608"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0612 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0612"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0620 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0620"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0621 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0621"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0622 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0622"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0645 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0645"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0650 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0650"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0652 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0652"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0656 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0656"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0657 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0657"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0661 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0661"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0662 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0662"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0663 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0663"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0665 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0665"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0666 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0666"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0673 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0673"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0674 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0674"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0691 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0691"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0692 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0692"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0696 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0696"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0697 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0697"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0704 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0704"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0718 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0718"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0720 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0720"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0721 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0721"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0727 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0727"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0729 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0729"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0735 conf=0.6 type=emerging_topic",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0735"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0871 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0871"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0884 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0884"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0885 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0885"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0886 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0886"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0887 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0887"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0901 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0901"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0904 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0904"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0911 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0911"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0912 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0912"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-1099 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-1099"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-1117 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-1117"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-1251 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-1251"
+    },
+    {
+      "ts": "2026-10-16T05:08:30.366Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-1252 conf=0.65 type=crossref_topic_bridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-1252"
     }
   ],
-  "honesty_score": 0.805,
+  "honesty_score": 0.822,
   "honesty_breakdown": {
     "abstentionRate": 0.999,
     "budgetConsumption": 0,
-    "verificationRate": 0.028,
-    "honesty_score": 0.805
+    "verificationRate": 0.111,
+    "honesty_score": 0.822
   },
-  "last_updated_at": "2026-10-16T04:12:26.104Z"
+  "last_updated_at": "2026-10-16T05:08:51.848Z",
+  "notes": {
+    "p10_a": {
+      "verified_added": 57,
+      "at": "2026-10-16T05:08:51.848Z"
+    }
+  }
 }
