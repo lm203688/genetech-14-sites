@@ -24,9 +24,16 @@
       "litellbridge": 100
     },
     "byEvidenceStatus": {
-      "insufficient_evidence": 100
+      "supported": 24,
+      "insufficient_evidence": 76
     },
-    "avgConfidence": 0.431
+    "avgConfidence": 0.526,
+    "byStatus": {
+      "verified": 24,
+      "new": 76
+    },
+    "lastVerifiedAt": "2026-10-16T02:29:03.452Z",
+    "verificationRunPath": "data/verification-runs/2026-10-16-all.json"
   },
   "hypothesisCards": [
     {
@@ -34,9 +41,9 @@
       "statement": "There may be unrecorded research connections between robot-parts and low-altitude: 1 shared topic(s) (robotics) but zero citations between these 19955 entities suggest missed references.",
       "statement_zh": "站点 robot-parts 与 low-altitude 之间存在未被记录的引用关系：两站共 19955 实体、1 个共享主题（robotics），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.55,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on robot-parts entities (top 100 by citationCount) and find ZERO citing papers from low-altitude domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 robot-parts entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching low-altitude's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -66,7 +73,7 @@
         ],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -78,6 +85,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from robot-parts/low-altitude gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.279Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 10,
+              "sampleStance": {
+                "entityA": "arxiv-2607.29617v1",
+                "entityB": "arxiv:2405.03290v2",
+                "stance": "supports",
+                "confidence": 0.94,
+                "signals": {
+                  "posStrong": 2,
+                  "posWeak": 2,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 2,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -92,9 +135,9 @@
       "statement": "There may be unrecorded research connections between robot-parts and ai4science: 0 shared topic(s) () but zero citations between these 19952 entities suggest missed references.",
       "statement_zh": "站点 robot-parts 与 ai4science 之间存在未被记录的引用关系：两站共 19952 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.8,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on robot-parts entities (top 100 by citationCount) and find ZERO citing papers from ai4science domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 robot-parts entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching ai4science's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -122,7 +165,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -134,6 +177,50 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from robot-parts/ai4science gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.299Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.8 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.8,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 5,
+              "sampleStance": {
+                "entityA": "arxiv-2607.29617v1",
+                "entityB": "arxiv:2207.07410v1",
+                "stance": "supports",
+                "confidence": 0.72,
+                "signals": {
+                  "posStrong": 1,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 0,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": true,
+                  "hasNumEvidence": true,
+                  "evNums": [
+                    7,
+                    1,
+                    6,
+                    5,
+                    1
+                  ],
+                  "clNums": [
+                    4
+                  ]
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -148,9 +235,9 @@
       "statement": "There may be unrecorded research connections between bionic-ai and low-altitude: 0 shared topic(s) () but zero citations between these 19946 entities suggest missed references.",
       "statement_zh": "站点 bionic-ai 与 low-altitude 之间存在未被记录的引用关系：两站共 19946 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on bionic-ai entities (top 100 by citationCount) and find ZERO citing papers from low-altitude domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 bionic-ai entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching low-altitude's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -178,7 +265,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -190,6 +277,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from bionic-ai/low-altitude gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.312Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 8,
+              "sampleStance": {
+                "entityA": "oa:W2559463885",
+                "entityB": "arxiv:2405.03290v2",
+                "stance": "supports",
+                "confidence": 0.94,
+                "signals": {
+                  "posStrong": 2,
+                  "posWeak": 2,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 2,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -204,9 +327,9 @@
       "statement": "There may be unrecorded research connections between agent-ecosystem and low-altitude: 0 shared topic(s) () but zero citations between these 19942 entities suggest missed references.",
       "statement_zh": "站点 agent-ecosystem 与 low-altitude 之间存在未被记录的引用关系：两站共 19942 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on agent-ecosystem entities (top 100 by citationCount) and find ZERO citing papers from low-altitude domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 agent-ecosystem entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching low-altitude's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -234,7 +357,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -246,6 +369,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from agent-ecosystem/low-altitude gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.328Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 10,
+              "sampleStance": {
+                "entityA": "arxiv-2607.29677v1",
+                "entityB": "arxiv:2405.03290v2",
+                "stance": "supports",
+                "confidence": 0.94,
+                "signals": {
+                  "posStrong": 2,
+                  "posWeak": 2,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 2,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -302,6 +461,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from robot-parts/privacy-computing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.331Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -316,9 +491,9 @@
       "statement": "There may be unrecorded research connections between low-altitude and ai4science: 0 shared topic(s) () but zero citations between these 19933 entities suggest missed references.",
       "statement_zh": "站点 low-altitude 与 ai4science 之间存在未被记录的引用关系：两站共 19933 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.8,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on low-altitude entities (top 100 by citationCount) and find ZERO citing papers from ai4science domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 low-altitude entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching ai4science's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -346,7 +521,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -358,6 +533,50 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from low-altitude/ai4science gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.344Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.8 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.8,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 5,
+              "sampleStance": {
+                "entityA": "arxiv:2211.00355v1",
+                "entityB": "arxiv:2207.07410v1",
+                "stance": "supports",
+                "confidence": 0.72,
+                "signals": {
+                  "posStrong": 1,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 0,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": true,
+                  "hasNumEvidence": true,
+                  "evNums": [
+                    7,
+                    1,
+                    6,
+                    5,
+                    1
+                  ],
+                  "clNums": [
+                    4
+                  ]
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -372,9 +591,9 @@
       "statement": "There may be unrecorded research connections between agent-ecosystem and neuromorphic: 0 shared topic(s) () but zero citations between these 19930 entities suggest missed references.",
       "statement_zh": "站点 agent-ecosystem 与 neuromorphic 之间存在未被记录的引用关系：两站共 19930 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.8,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on agent-ecosystem entities (top 100 by citationCount) and find ZERO citing papers from neuromorphic domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 agent-ecosystem entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching neuromorphic's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -402,7 +621,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -414,6 +633,44 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from agent-ecosystem/neuromorphic gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.350Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.8 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.8,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 5,
+              "sampleStance": {
+                "entityA": "arxiv-2607.29677v1",
+                "entityB": "doi:10.1002/sstr.202570004",
+                "stance": "supports",
+                "confidence": 0.89,
+                "signals": {
+                  "posStrong": 2,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 2,
+                  "claimCoverage": "0.333",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": true,
+                  "evNums": [
+                    2400319
+                  ],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -428,9 +685,9 @@
       "statement": "There may be unrecorded research connections between neuromorphic and low-altitude: 1 shared topic(s) (materials) but zero citations between these 19924 entities suggest missed references.",
       "statement_zh": "站点 neuromorphic 与 low-altitude 之间存在未被记录的引用关系：两站共 19924 实体、1 个共享主题（materials），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.55,
+      "confidence": 0.75,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on neuromorphic entities (top 100 by citationCount) and find ZERO citing papers from low-altitude domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 neuromorphic entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching low-altitude's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -460,7 +717,7 @@
         ],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -472,6 +729,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from neuromorphic/low-altitude gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.370Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.75 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.75,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 4,
+              "sampleStance": {
+                "entityA": "doi:10.1063/5.0257074",
+                "entityB": "arxiv:2405.03290v2",
+                "stance": "supports",
+                "confidence": 0.94,
+                "signals": {
+                  "posStrong": 2,
+                  "posWeak": 2,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 2,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -528,6 +821,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-materials/agent-ecosystem gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.375Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -584,6 +893,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from privacy-computing/low-altitude gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.375Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -598,9 +923,9 @@
       "statement": "There may be unrecorded research connections between agent-ecosystem and semiconductor: 0 shared topic(s) () but zero citations between these 19917 entities suggest missed references.",
       "statement_zh": "站点 agent-ecosystem 与 semiconductor 之间存在未被记录的引用关系：两站共 19917 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on agent-ecosystem entities (top 100 by citationCount) and find ZERO citing papers from semiconductor domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 agent-ecosystem entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching semiconductor's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -628,7 +953,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -640,6 +965,48 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from agent-ecosystem/semiconductor gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.385Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 10,
+              "sampleStance": {
+                "entityA": "arxiv-2607.29677v1",
+                "entityB": "oa:W4206364646",
+                "stance": "supports",
+                "confidence": 0.95,
+                "signals": {
+                  "posStrong": 5,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 6,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": true,
+                  "evNums": [
+                    2,
+                    2.1,
+                    2.3,
+                    2.5,
+                    3
+                  ],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -654,9 +1021,9 @@
       "statement": "There may be unrecorded research connections between semiconductor and agent-ecosystem: 0 shared topic(s) () but zero citations between these 19917 entities suggest missed references.",
       "statement_zh": "站点 semiconductor 与 agent-ecosystem 之间存在未被记录的引用关系：两站共 19917 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on semiconductor entities (top 100 by citationCount) and find ZERO citing papers from agent-ecosystem domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 semiconductor entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching agent-ecosystem's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -684,7 +1051,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -696,6 +1063,48 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from semiconductor/agent-ecosystem gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.399Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 12,
+              "sampleStance": {
+                "entityA": "oa:W4206364646",
+                "entityB": "arxiv-2607.29677v1",
+                "stance": "supports",
+                "confidence": 0.7628571428571428,
+                "signals": {
+                  "posStrong": 1,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 1,
+                  "claimCoverage": "0.286",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": true,
+                  "evNums": [
+                    4,
+                    869,
+                    370,
+                    8,
+                    67
+                  ],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -754,6 +1163,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-materials/low-altitude gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.403Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -810,6 +1235,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from spatial-computing/agent-ecosystem gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.403Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -866,6 +1307,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from embodied-ai/quantum-materials gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.403Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -922,6 +1379,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from robot-parts/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.403Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -936,9 +1409,9 @@
       "statement": "There may be unrecorded research connections between semiconductor and low-altitude: 1 shared topic(s) (materials) but zero citations between these 19911 entities suggest missed references.",
       "statement_zh": "站点 semiconductor 与 low-altitude 之间存在未被记录的引用关系：两站共 19911 实体、1 个共享主题（materials），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.55,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on semiconductor entities (top 100 by citationCount) and find ZERO citing papers from low-altitude domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 semiconductor entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching low-altitude's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -968,7 +1441,7 @@
         ],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -980,6 +1453,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from semiconductor/low-altitude gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.411Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 8,
+              "sampleStance": {
+                "entityA": "oa:W4206364646",
+                "entityB": "arxiv:2405.03290v2",
+                "stance": "supports",
+                "confidence": 0.94,
+                "signals": {
+                  "posStrong": 2,
+                  "posWeak": 2,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 2,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -1036,6 +1545,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from embodied-ai/semiconductor gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.413Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1092,6 +1617,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from neuromorphic/privacy-computing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.413Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1148,6 +1689,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from semiconductor/embodied-ai gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.413Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1204,6 +1761,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from spatial-computing/ai4science gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.413Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1260,6 +1833,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from robot-parts/exo-science gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.413Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1274,9 +1863,9 @@
       "statement": "There may be unrecorded research connections between quantum-computing and robot-parts: 0 shared topic(s) () but zero citations between these 19899 entities suggest missed references.",
       "statement_zh": "站点 quantum-computing 与 robot-parts 之间存在未被记录的引用关系：两站共 19899 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.75,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on quantum-computing entities (top 100 by citationCount) and find ZERO citing papers from robot-parts domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 quantum-computing entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching robot-parts's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -1304,7 +1893,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -1316,6 +1905,45 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-computing/robot-parts gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.424Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.75 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.75,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 4,
+              "sampleStance": {
+                "entityA": "oa:W2781738013",
+                "entityB": "arxiv-2607.29622v1",
+                "stance": "supports",
+                "confidence": 0.95,
+                "signals": {
+                  "posStrong": 5,
+                  "posWeak": 2,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 0,
+                  "claimCoverage": "0.167",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": true,
+                  "evNums": [
+                    13,
+                    1.78
+                  ],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -1330,9 +1958,9 @@
       "statement": "There may be unrecorded research connections between robot-parts and quantum-computing: 0 shared topic(s) () but zero citations between these 19899 entities suggest missed references.",
       "statement_zh": "站点 robot-parts 与 quantum-computing 之间存在未被记录的引用关系：两站共 19899 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on robot-parts entities (top 100 by citationCount) and find ZERO citing papers from quantum-computing domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 robot-parts entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching quantum-computing's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -1360,7 +1988,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -1372,6 +2000,46 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from robot-parts/quantum-computing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.440Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 10,
+              "sampleStance": {
+                "entityA": "arxiv-2607.29617v1",
+                "entityB": "oa:W1514675880",
+                "stance": "supports",
+                "confidence": 0.95,
+                "signals": {
+                  "posStrong": 3,
+                  "posWeak": 1,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 1,
+                  "claimCoverage": "0.500",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": true,
+                  "evNums": [
+                    2001,
+                    409,
+                    46
+                  ],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -1430,6 +2098,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from bionic-ai/exo-science gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.443Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1488,6 +2172,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from privacy-computing/semiconductor gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.443Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1546,6 +2246,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from semiconductor/privacy-computing gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.443Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1602,6 +2318,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from low-altitude/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.443Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1658,6 +2390,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from tcm-tools/low-altitude gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.443Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1714,6 +2462,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from tcm-tools/embodied-ai gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.443Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1770,6 +2534,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from exo-science/low-altitude gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.443Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1826,6 +2606,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from digital-twin/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.443Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1840,9 +2636,9 @@
       "statement": "There may be unrecorded research connections between low-altitude and quantum-computing: 0 shared topic(s) () but zero citations between these 19880 entities suggest missed references.",
       "statement_zh": "站点 low-altitude 与 quantum-computing 之间存在未被记录的引用关系：两站共 19880 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on low-altitude entities (top 100 by citationCount) and find ZERO citing papers from quantum-computing domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 low-altitude entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching quantum-computing's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -1870,7 +2666,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -1882,6 +2678,46 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from low-altitude/quantum-computing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.455Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 10,
+              "sampleStance": {
+                "entityA": "arxiv:2211.00355v1",
+                "entityB": "oa:W1514675880",
+                "stance": "supports",
+                "confidence": 0.95,
+                "signals": {
+                  "posStrong": 3,
+                  "posWeak": 1,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 1,
+                  "claimCoverage": "0.333",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": true,
+                  "evNums": [
+                    2001,
+                    409,
+                    46
+                  ],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -1938,6 +2774,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from neuromorphic/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -1994,6 +2846,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-computing/embodied-ai gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2050,6 +2918,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from privacy-computing/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2106,6 +2990,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from semiconductor/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2162,6 +3062,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from tcm-tools/semiconductor gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2218,6 +3134,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-materials/exo-science gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2274,6 +3206,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from sat-6g/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2330,6 +3278,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from spatial-computing/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2386,6 +3350,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from tcm-tools/spatial-computing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2442,6 +3422,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from exo-science/sat-6g gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2498,6 +3494,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from exo-science/spatial-computing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2554,6 +3566,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from spatial-computing/exo-science gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2610,6 +3638,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from embodied-ai/carbon-neutral gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2666,6 +3710,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from robot-parts/alien-minerals gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2722,6 +3782,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from exo-science/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2778,6 +3854,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from tcm-tools/exo-science gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2836,6 +3928,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from carbon-neutral/neuromorphic gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2892,6 +4000,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-computing/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -2948,6 +4072,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from tcm-tools/quantum-computing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3004,6 +4144,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from carbon-neutral/privacy-computing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3060,6 +4216,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from carbon-neutral/sat-6g gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3118,6 +4290,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from neuromorphic/alien-minerals gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3174,6 +4362,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from alien-minerals/privacy-computing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3232,6 +4436,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from semiconductor/alien-minerals gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.457Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3246,9 +4466,9 @@
       "statement": "There may be unrecorded research connections between robot-parts and nuclear-energy: 0 shared topic(s) () but zero citations between these 19791 entities suggest missed references.",
       "statement_zh": "站点 robot-parts 与 nuclear-energy 之间存在未被记录的引用关系：两站共 19791 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on robot-parts entities (top 100 by citationCount) and find ZERO citing papers from nuclear-energy domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 robot-parts entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching nuclear-energy's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -3276,7 +4496,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -3288,6 +4508,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from robot-parts/nuclear-energy gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.464Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 10,
+              "sampleStance": {
+                "entityA": "arxiv-2607.29617v1",
+                "entityB": "arxiv-2607.29679v1",
+                "stance": "supports",
+                "confidence": 0.95,
+                "signals": {
+                  "posStrong": 3,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 1,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -3302,9 +4558,9 @@
       "statement": "There may be unrecorded research connections between bionic-ai and nuclear-energy: 0 shared topic(s) () but zero citations between these 19782 entities suggest missed references.",
       "statement_zh": "站点 bionic-ai 与 nuclear-energy 之间存在未被记录的引用关系：两站共 19782 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on bionic-ai entities (top 100 by citationCount) and find ZERO citing papers from nuclear-energy domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 bionic-ai entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching nuclear-energy's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -3332,7 +4588,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -3344,6 +4600,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from bionic-ai/nuclear-energy gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.474Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 8,
+              "sampleStance": {
+                "entityA": "oa:W2559463885",
+                "entityB": "arxiv-2607.29679v1",
+                "stance": "supports",
+                "confidence": 0.95,
+                "signals": {
+                  "posStrong": 3,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 1,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -3400,6 +4692,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from low-altitude/synbio-manufacturing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.480Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3414,9 +4722,9 @@
       "statement": "There may be unrecorded research connections between low-altitude and nuclear-energy: 1 shared topic(s) (materials) but zero citations between these 19772 entities suggest missed references.",
       "statement_zh": "站点 low-altitude 与 nuclear-energy 之间存在未被记录的引用关系：两站共 19772 实体、1 个共享主题（materials），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.55,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on low-altitude entities (top 100 by citationCount) and find ZERO citing papers from nuclear-energy domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 low-altitude entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching nuclear-energy's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -3446,7 +4754,7 @@
         ],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -3458,6 +4766,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from low-altitude/nuclear-energy gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.489Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 10,
+              "sampleStance": {
+                "entityA": "arxiv:2211.00355v1",
+                "entityB": "arxiv-2607.29679v1",
+                "stance": "supports",
+                "confidence": 0.95,
+                "signals": {
+                  "posStrong": 3,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 1,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -3472,9 +4816,9 @@
       "statement": "There may be unrecorded research connections between nuclear-energy and low-altitude: 1 shared topic(s) (materials) but zero citations between these 19772 entities suggest missed references.",
       "statement_zh": "站点 nuclear-energy 与 low-altitude 之间存在未被记录的引用关系：两站共 19772 实体、1 个共享主题（materials），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.55,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on nuclear-energy entities (top 100 by citationCount) and find ZERO citing papers from low-altitude domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 nuclear-energy entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching low-altitude's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -3504,7 +4848,7 @@
         ],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -3516,6 +4860,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from nuclear-energy/low-altitude gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.499Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 8,
+              "sampleStance": {
+                "entityA": "arxiv-2607.29684v1",
+                "entityB": "arxiv:2405.03290v2",
+                "stance": "supports",
+                "confidence": 0.94,
+                "signals": {
+                  "posStrong": 2,
+                  "posWeak": 2,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 2,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -3572,6 +4952,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from embodied-ai/nuclear-energy gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.503Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3628,6 +5024,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-computing/alien-minerals gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.503Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3684,6 +5096,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from neuromorphic/synbio-manufacturing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.503Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3698,9 +5126,9 @@
       "statement": "There may be unrecorded research connections between neuromorphic and nuclear-energy: 1 shared topic(s) (materials) but zero citations between these 19760 entities suggest missed references.",
       "statement_zh": "站点 neuromorphic 与 nuclear-energy 之间存在未被记录的引用关系：两站共 19760 实体、1 个共享主题（materials），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.55,
+      "confidence": 0.75,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on neuromorphic entities (top 100 by citationCount) and find ZERO citing papers from nuclear-energy domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 neuromorphic entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching nuclear-energy's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -3730,7 +5158,7 @@
         ],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -3742,6 +5170,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from neuromorphic/nuclear-energy gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.505Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.75 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.75,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 4,
+              "sampleStance": {
+                "entityA": "doi:10.1063/5.0257074",
+                "entityB": "arxiv-2607.29679v1",
+                "stance": "supports",
+                "confidence": 0.95,
+                "signals": {
+                  "posStrong": 3,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 1,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -3756,9 +5220,9 @@
       "statement": "There may be unrecorded research connections between nuclear-energy and neuromorphic: 1 shared topic(s) (materials) but zero citations between these 19760 entities suggest missed references.",
       "statement_zh": "站点 nuclear-energy 与 neuromorphic 之间存在未被记录的引用关系：两站共 19760 实体、1 个共享主题（materials），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.55,
+      "confidence": 0.75,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on nuclear-energy entities (top 100 by citationCount) and find ZERO citing papers from neuromorphic domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 nuclear-energy entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching neuromorphic's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -3788,7 +5252,7 @@
         ],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -3800,6 +5264,44 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from nuclear-energy/neuromorphic gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.515Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.75 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.75,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 4,
+              "sampleStance": {
+                "entityA": "arxiv-2607.29684v1",
+                "entityB": "doi:10.1002/sstr.202570004",
+                "stance": "supports",
+                "confidence": 0.89,
+                "signals": {
+                  "posStrong": 2,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 2,
+                  "claimCoverage": "0.333",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": true,
+                  "evNums": [
+                    2400319
+                  ],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -3858,6 +5360,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from privacy-computing/synbio-manufacturing gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.524Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3914,6 +5432,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from new-energy/robot-parts gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.524Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3972,6 +5506,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-materials/nuclear-energy gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.524Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -3986,9 +5536,9 @@
       "statement": "There may be unrecorded research connections between semiconductor and nuclear-energy: 1 shared topic(s) (materials) but zero citations between these 19747 entities suggest missed references.",
       "statement_zh": "站点 semiconductor 与 nuclear-energy 之间存在未被记录的引用关系：两站共 19747 实体、1 个共享主题（materials），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.55,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on semiconductor entities (top 100 by citationCount) and find ZERO citing papers from nuclear-energy domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 semiconductor entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching nuclear-energy's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -4018,7 +5568,7 @@
         ],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -4030,6 +5580,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from semiconductor/nuclear-energy gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.530Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 8,
+              "sampleStance": {
+                "entityA": "oa:W4206364646",
+                "entityB": "arxiv-2607.29679v1",
+                "stance": "supports",
+                "confidence": 0.95,
+                "signals": {
+                  "posStrong": 3,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 1,
+                  "claimCoverage": "0.143",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -4086,6 +5672,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from nuclear-energy/sat-6g gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.533Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4142,6 +5744,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from spatial-computing/nuclear-energy gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.533Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4198,6 +5816,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from new-energy/ai4science gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.533Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4254,6 +5888,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from embodied-ai/new-energy gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.533Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4310,6 +5960,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from new-energy/embodied-ai gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.533Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4366,6 +6032,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from nuclear-energy/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.533Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4424,6 +6106,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from new-energy/neuromorphic gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.533Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4482,6 +6180,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from exo-science/nuclear-energy gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.533Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4538,6 +6252,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-computing/synbio-manufacturing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.533Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4594,6 +6324,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from new-energy/ai-safety gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.533Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4608,9 +6354,9 @@
       "statement": "There may be unrecorded research connections between quantum-computing and nuclear-energy: 0 shared topic(s) () but zero citations between these 19716 entities suggest missed references.",
       "statement_zh": "站点 quantum-computing 与 nuclear-energy 之间存在未被记录的引用关系：两站共 19716 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.9,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on quantum-computing entities (top 100 by citationCount) and find ZERO citing papers from nuclear-energy domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 quantum-computing entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching nuclear-energy's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -4638,7 +6384,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -4650,6 +6396,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-computing/nuclear-energy gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.539Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.9 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.9,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 8,
+              "sampleStance": {
+                "entityA": "oa:W2781738013",
+                "entityB": "arxiv-2607.29679v1",
+                "stance": "supports",
+                "confidence": 0.95,
+                "signals": {
+                  "posStrong": 3,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 1,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -4706,6 +6488,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from new-energy/sat-6g gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.544Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4762,6 +6560,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from new-energy/spatial-computing gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.544Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4818,6 +6632,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from new-energy/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.544Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4874,6 +6704,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from tcm-tools/new-energy gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.544Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -4888,9 +6734,9 @@
       "statement": "There may be unrecorded research connections between low-altitude and biomed-ai: 0 shared topic(s) () but zero citations between these 19642 entities suggest missed references.",
       "statement_zh": "站点 low-altitude 与 biomed-ai 之间存在未被记录的引用关系：两站共 19642 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.8,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on low-altitude entities (top 100 by citationCount) and find ZERO citing papers from biomed-ai domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 low-altitude entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching biomed-ai's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -4918,7 +6764,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -4930,6 +6776,46 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from low-altitude/biomed-ai gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.561Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.8 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.8,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 5,
+              "sampleStance": {
+                "entityA": "arxiv:2211.00355v1",
+                "entityB": "oa:W4414989528",
+                "stance": "supports",
+                "confidence": 0.94,
+                "signals": {
+                  "posStrong": 2,
+                  "posWeak": 2,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 6,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": true,
+                  "evNums": [
+                    2019,
+                    2024,
+                    -12
+                  ],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -4944,9 +6830,9 @@
       "statement": "There may be unrecorded research connections between deep-sea-tech and ai4science: 0 shared topic(s) () but zero citations between these 19634 entities suggest missed references.",
       "statement_zh": "站点 deep-sea-tech 与 ai4science 之间存在未被记录的引用关系：两站共 19634 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.7,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on deep-sea-tech entities (top 100 by citationCount) and find ZERO citing papers from ai4science domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 deep-sea-tech entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching ai4science's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -4974,7 +6860,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -4986,6 +6872,50 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from deep-sea-tech/ai4science gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.570Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.7 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.7,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 3,
+              "sampleStance": {
+                "entityA": "oa:W3206344899",
+                "entityB": "arxiv:2207.07410v1",
+                "stance": "supports",
+                "confidence": 0.72,
+                "signals": {
+                  "posStrong": 1,
+                  "posWeak": 0,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 0,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": true,
+                  "hasNumEvidence": true,
+                  "evNums": [
+                    7,
+                    1,
+                    6,
+                    5,
+                    1
+                  ],
+                  "clNums": [
+                    4
+                  ]
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -5042,6 +6972,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-materials/biomed-ai gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.575Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -5098,6 +7044,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from deep-sea-tech/tcm-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.575Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -5154,6 +7116,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from biomed-ai/exo-science gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.575Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -5210,6 +7188,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from genetech-tools/robot-parts gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.575Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -5266,6 +7260,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from robot-parts/genetech-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.575Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -5322,6 +7332,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from low-altitude/genetech-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.575Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -5336,9 +7362,9 @@
       "statement": "There may be unrecorded research connections between edge-ai and low-altitude: 0 shared topic(s) () but zero citations between these 19563 entities suggest missed references.",
       "statement_zh": "站点 edge-ai 与 low-altitude 之间存在未被记录的引用关系：两站共 19563 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
       "hypothesis_type": "litellbridge",
-      "confidence": 0.4,
+      "confidence": 0.75,
       "confidence_calibration": "statistical-signal",
-      "evidence_status": "insufficient_evidence",
+      "evidence_status": "supported",
       "falsifiability": {
         "falsification_condition": "If we perform OpenAlex reverse-citation queries on edge-ai entities (top 100 by citationCount) and find ZERO citing papers from low-altitude domain within the past 5 years, the hypothesis is falsified.",
         "falsification_test": "1. Take top 100 edge-ai entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching low-altitude's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
@@ -5366,7 +7392,7 @@
         "shared_tags": [],
         "signal_type": "citation_absence"
       },
-      "status": "new",
+      "status": "verified",
       "generated_at": "2026-10-16T01:29:46.496Z",
       "generator": {
         "tool": "tools/gen/generate-hypothesis-cards.mjs",
@@ -5378,6 +7404,42 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from edge-ai/low-altitude gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.580Z",
+          "event": "verified",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=verified conf=0.75 evidence=cross-site-stance-support",
+          "verification_result": {
+            "decision": "verified",
+            "confidence": 0.75,
+            "calibration": "statistical-signal",
+            "evidence_types": [
+              "cross-site-stance-support"
+            ],
+            "signals": {
+              "crossSiteSupportCount": 4,
+              "sampleStance": {
+                "entityA": "doi:10.24963/ijcai.2018/679",
+                "entityB": "arxiv:2405.03290v2",
+                "stance": "supports",
+                "confidence": 0.94,
+                "signals": {
+                  "posStrong": 2,
+                  "posWeak": 2,
+                  "negStrong": 0,
+                  "negWeak": 0,
+                  "neutral": 2,
+                  "claimCoverage": "0.000",
+                  "hasNumClaim": false,
+                  "hasNumEvidence": false,
+                  "evNums": [],
+                  "clNums": []
+                },
+                "calibration": "statistical-signal"
+              }
+            }
+          }
         }
       ],
       "provenance": {
@@ -5436,6 +7498,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from embodied-ai/genetech-tools gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.587Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -5494,6 +7572,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from genetech-tools/embodied-ai gap pair with 1 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.587Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -5550,6 +7644,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from genetech-tools/neuromorphic gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.587Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -5606,6 +7716,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from neuromorphic/genetech-tools gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.587Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {
@@ -5662,6 +7788,22 @@
           "event": "created",
           "actor": "hypothesis-generator-v1",
           "note": "Generated from quantum-materials/edge-ai gap pair with 0 shared tags"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.587Z",
+          "event": "verification_inconclusive",
+          "actor": "agent-ecosystem/hypothesis-verifier.mjs",
+          "note": "decision=inconclusive conf=0.35 evidence=",
+          "verification_result": {
+            "decision": "inconclusive",
+            "confidence": 0.35,
+            "calibration": "statistical-signal",
+            "evidence_types": [],
+            "signals": {
+              "crossSiteSupportCount": 0,
+              "reason": "insufficient-evidence-within-local-corpus"
+            }
+          }
         }
       ],
       "provenance": {

@@ -1,0 +1,2041 @@
+{
+  "runAt": "2026-10-16T02:27:56.587Z",
+  "targetsProcessed": 100,
+  "byDecision": {
+    "verified": 24,
+    "inconclusive": 76
+  },
+  "results": [
+    {
+      "id": "HYP-20261016-0001",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "10 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 10,
+        "sampleStance": {
+          "entityA": "arxiv-2607.29617v1",
+          "entityB": "arxiv:2405.03290v2",
+          "stance": "supports",
+          "confidence": 0.94,
+          "signals": {
+            "posStrong": 2,
+            "posWeak": 2,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 2,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.279Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0002",
+      "decision": "verified",
+      "confidence": 0.8,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "5 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 5,
+        "sampleStance": {
+          "entityA": "arxiv-2607.29617v1",
+          "entityB": "arxiv:2207.07410v1",
+          "stance": "supports",
+          "confidence": 0.72,
+          "signals": {
+            "posStrong": 1,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 0,
+            "claimCoverage": "0.000",
+            "hasNumClaim": true,
+            "hasNumEvidence": true,
+            "evNums": [
+              7,
+              1,
+              6,
+              5,
+              1
+            ],
+            "clNums": [
+              4
+            ]
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.299Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0003",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "8 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 8,
+        "sampleStance": {
+          "entityA": "oa:W2559463885",
+          "entityB": "arxiv:2405.03290v2",
+          "stance": "supports",
+          "confidence": 0.94,
+          "signals": {
+            "posStrong": 2,
+            "posWeak": 2,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 2,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.312Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0004",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "10 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 10,
+        "sampleStance": {
+          "entityA": "arxiv-2607.29677v1",
+          "entityB": "arxiv:2405.03290v2",
+          "stance": "supports",
+          "confidence": 0.94,
+          "signals": {
+            "posStrong": 2,
+            "posWeak": 2,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 2,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.328Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0005",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.331Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0006",
+      "decision": "verified",
+      "confidence": 0.8,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "5 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 5,
+        "sampleStance": {
+          "entityA": "arxiv:2211.00355v1",
+          "entityB": "arxiv:2207.07410v1",
+          "stance": "supports",
+          "confidence": 0.72,
+          "signals": {
+            "posStrong": 1,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 0,
+            "claimCoverage": "0.000",
+            "hasNumClaim": true,
+            "hasNumEvidence": true,
+            "evNums": [
+              7,
+              1,
+              6,
+              5,
+              1
+            ],
+            "clNums": [
+              4
+            ]
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.344Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0007",
+      "decision": "verified",
+      "confidence": 0.8,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "5 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 5,
+        "sampleStance": {
+          "entityA": "arxiv-2607.29677v1",
+          "entityB": "doi:10.1002/sstr.202570004",
+          "stance": "supports",
+          "confidence": 0.89,
+          "signals": {
+            "posStrong": 2,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 2,
+            "claimCoverage": "0.333",
+            "hasNumClaim": false,
+            "hasNumEvidence": true,
+            "evNums": [
+              2400319
+            ],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.350Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0008",
+      "decision": "verified",
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "4 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 4,
+        "sampleStance": {
+          "entityA": "doi:10.1063/5.0257074",
+          "entityB": "arxiv:2405.03290v2",
+          "stance": "supports",
+          "confidence": 0.94,
+          "signals": {
+            "posStrong": 2,
+            "posWeak": 2,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 2,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.370Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0009",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.375Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0010",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.375Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0011",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "10 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 10,
+        "sampleStance": {
+          "entityA": "arxiv-2607.29677v1",
+          "entityB": "oa:W4206364646",
+          "stance": "supports",
+          "confidence": 0.95,
+          "signals": {
+            "posStrong": 5,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 6,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": true,
+            "evNums": [
+              2,
+              2.1,
+              2.3,
+              2.5,
+              3
+            ],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.385Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0012",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "12 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 12,
+        "sampleStance": {
+          "entityA": "oa:W4206364646",
+          "entityB": "arxiv-2607.29677v1",
+          "stance": "supports",
+          "confidence": 0.7628571428571428,
+          "signals": {
+            "posStrong": 1,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 1,
+            "claimCoverage": "0.286",
+            "hasNumClaim": false,
+            "hasNumEvidence": true,
+            "evNums": [
+              4,
+              869,
+              370,
+              8,
+              67
+            ],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.399Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0013",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.403Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0014",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.403Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0015",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.403Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0016",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.403Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0017",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "8 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 8,
+        "sampleStance": {
+          "entityA": "oa:W4206364646",
+          "entityB": "arxiv:2405.03290v2",
+          "stance": "supports",
+          "confidence": 0.94,
+          "signals": {
+            "posStrong": 2,
+            "posWeak": 2,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 2,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.411Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0018",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.413Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0019",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.413Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0020",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.413Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0021",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.413Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0022",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.413Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0023",
+      "decision": "verified",
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "4 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 4,
+        "sampleStance": {
+          "entityA": "oa:W2781738013",
+          "entityB": "arxiv-2607.29622v1",
+          "stance": "supports",
+          "confidence": 0.95,
+          "signals": {
+            "posStrong": 5,
+            "posWeak": 2,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 0,
+            "claimCoverage": "0.167",
+            "hasNumClaim": false,
+            "hasNumEvidence": true,
+            "evNums": [
+              13,
+              1.78
+            ],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.424Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0024",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "10 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 10,
+        "sampleStance": {
+          "entityA": "arxiv-2607.29617v1",
+          "entityB": "oa:W1514675880",
+          "stance": "supports",
+          "confidence": 0.95,
+          "signals": {
+            "posStrong": 3,
+            "posWeak": 1,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 1,
+            "claimCoverage": "0.500",
+            "hasNumClaim": false,
+            "hasNumEvidence": true,
+            "evNums": [
+              2001,
+              409,
+              46
+            ],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.440Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0025",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.443Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0026",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.443Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0027",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.443Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0028",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.443Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0029",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.443Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0030",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.443Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0031",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.443Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0032",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.443Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0033",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "10 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 10,
+        "sampleStance": {
+          "entityA": "arxiv:2211.00355v1",
+          "entityB": "oa:W1514675880",
+          "stance": "supports",
+          "confidence": 0.95,
+          "signals": {
+            "posStrong": 3,
+            "posWeak": 1,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 1,
+            "claimCoverage": "0.333",
+            "hasNumClaim": false,
+            "hasNumEvidence": true,
+            "evNums": [
+              2001,
+              409,
+              46
+            ],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.455Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0034",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0035",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0036",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0037",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0038",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0039",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0040",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0041",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0042",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0043",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0044",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0045",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0046",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0047",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0048",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0049",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0050",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0051",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0052",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0053",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0054",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0055",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0056",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0057",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.457Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0058",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "10 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 10,
+        "sampleStance": {
+          "entityA": "arxiv-2607.29617v1",
+          "entityB": "arxiv-2607.29679v1",
+          "stance": "supports",
+          "confidence": 0.95,
+          "signals": {
+            "posStrong": 3,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 1,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.464Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0059",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "8 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 8,
+        "sampleStance": {
+          "entityA": "oa:W2559463885",
+          "entityB": "arxiv-2607.29679v1",
+          "stance": "supports",
+          "confidence": 0.95,
+          "signals": {
+            "posStrong": 3,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 1,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.474Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0060",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.480Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0061",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "10 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 10,
+        "sampleStance": {
+          "entityA": "arxiv:2211.00355v1",
+          "entityB": "arxiv-2607.29679v1",
+          "stance": "supports",
+          "confidence": 0.95,
+          "signals": {
+            "posStrong": 3,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 1,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.489Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0062",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "8 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 8,
+        "sampleStance": {
+          "entityA": "arxiv-2607.29684v1",
+          "entityB": "arxiv:2405.03290v2",
+          "stance": "supports",
+          "confidence": 0.94,
+          "signals": {
+            "posStrong": 2,
+            "posWeak": 2,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 2,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.499Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0063",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.503Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0064",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.503Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0065",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.503Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0066",
+      "decision": "verified",
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "4 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 4,
+        "sampleStance": {
+          "entityA": "doi:10.1063/5.0257074",
+          "entityB": "arxiv-2607.29679v1",
+          "stance": "supports",
+          "confidence": 0.95,
+          "signals": {
+            "posStrong": 3,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 1,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.505Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0067",
+      "decision": "verified",
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "4 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 4,
+        "sampleStance": {
+          "entityA": "arxiv-2607.29684v1",
+          "entityB": "doi:10.1002/sstr.202570004",
+          "stance": "supports",
+          "confidence": 0.89,
+          "signals": {
+            "posStrong": 2,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 2,
+            "claimCoverage": "0.333",
+            "hasNumClaim": false,
+            "hasNumEvidence": true,
+            "evNums": [
+              2400319
+            ],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.515Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0068",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.524Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0069",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.524Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0070",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.524Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0071",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "8 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 8,
+        "sampleStance": {
+          "entityA": "oa:W4206364646",
+          "entityB": "arxiv-2607.29679v1",
+          "stance": "supports",
+          "confidence": 0.95,
+          "signals": {
+            "posStrong": 3,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 1,
+            "claimCoverage": "0.143",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.530Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0072",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.533Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0073",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.533Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0074",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.533Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0075",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.533Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0076",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.533Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0077",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.533Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0078",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.533Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0079",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.533Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0080",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.533Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0081",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.533Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0082",
+      "decision": "verified",
+      "confidence": 0.9,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "8 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 8,
+        "sampleStance": {
+          "entityA": "oa:W2781738013",
+          "entityB": "arxiv-2607.29679v1",
+          "stance": "supports",
+          "confidence": 0.95,
+          "signals": {
+            "posStrong": 3,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 1,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.539Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0083",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.544Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0084",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.544Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0085",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.544Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0086",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.544Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0087",
+      "decision": "verified",
+      "confidence": 0.8,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "5 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 5,
+        "sampleStance": {
+          "entityA": "arxiv:2211.00355v1",
+          "entityB": "oa:W4414989528",
+          "stance": "supports",
+          "confidence": 0.94,
+          "signals": {
+            "posStrong": 2,
+            "posWeak": 2,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 6,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": true,
+            "evNums": [
+              2019,
+              2024,
+              -12
+            ],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.561Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0088",
+      "decision": "verified",
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "3 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 3,
+        "sampleStance": {
+          "entityA": "oa:W3206344899",
+          "entityB": "arxiv:2207.07410v1",
+          "stance": "supports",
+          "confidence": 0.72,
+          "signals": {
+            "posStrong": 1,
+            "posWeak": 0,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 0,
+            "claimCoverage": "0.000",
+            "hasNumClaim": true,
+            "hasNumEvidence": true,
+            "evNums": [
+              7,
+              1,
+              6,
+              5,
+              1
+            ],
+            "clNums": [
+              4
+            ]
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.570Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0089",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.575Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0090",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.575Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0091",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.575Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0092",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.575Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0093",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.575Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0094",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.575Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0095",
+      "decision": "verified",
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [
+        {
+          "type": "cross-site-stance-support",
+          "detail": "4 cross-site abstracts stance-support the connection",
+          "strength": "weak-medium"
+        }
+      ],
+      "signals": {
+        "crossSiteSupportCount": 4,
+        "sampleStance": {
+          "entityA": "doi:10.24963/ijcai.2018/679",
+          "entityB": "arxiv:2405.03290v2",
+          "stance": "supports",
+          "confidence": 0.94,
+          "signals": {
+            "posStrong": 2,
+            "posWeak": 2,
+            "negStrong": 0,
+            "negWeak": 0,
+            "neutral": 2,
+            "claimCoverage": "0.000",
+            "hasNumClaim": false,
+            "hasNumEvidence": false,
+            "evNums": [],
+            "clNums": []
+          },
+          "calibration": "statistical-signal"
+        }
+      },
+      "verifiedAt": "2026-10-16T02:27:56.580Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0096",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.587Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0097",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.587Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0098",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.587Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0099",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.587Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    },
+    {
+      "id": "HYP-20261016-0100",
+      "decision": "inconclusive",
+      "confidence": 0.35,
+      "confidence_calibration": "statistical-signal",
+      "evidence": [],
+      "signals": {
+        "crossSiteSupportCount": 0,
+        "reason": "insufficient-evidence-within-local-corpus"
+      },
+      "verifiedAt": "2026-10-16T02:27:56.587Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier.mjs",
+      "version": "1.0.0"
+    }
+  ]
+}

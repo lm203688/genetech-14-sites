@@ -1,0 +1,1853 @@
+{
+  "version": "1.0.0",
+  "createdAt": "2026-10-16T02:25:17.444Z",
+  "entries": {
+    "HYP-20261016-0001": {
+      "id": "HYP-20261016-0001",
+      "status": "verified",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55,
+      "transitionedAt": "2026-10-16T02:27:56.282Z",
+      "endedAt": "2026-10-16T02:27:56.282Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:26:51.672Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=1.05"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.282Z",
+          "from": "verified",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0002": {
+      "id": "HYP-20261016-0002",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.299Z",
+      "endedAt": "2026-10-16T02:27:56.299Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.299Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.8"
+        }
+      ]
+    },
+    "HYP-20261016-0003": {
+      "id": "HYP-20261016-0003",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.312Z",
+      "endedAt": "2026-10-16T02:27:56.312Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.312Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0004": {
+      "id": "HYP-20261016-0004",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.328Z",
+      "endedAt": "2026-10-16T02:27:56.328Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.328Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0005": {
+      "id": "HYP-20261016-0005",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0006": {
+      "id": "HYP-20261016-0006",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.344Z",
+      "endedAt": "2026-10-16T02:27:56.344Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.344Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.8"
+        }
+      ]
+    },
+    "HYP-20261016-0007": {
+      "id": "HYP-20261016-0007",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.350Z",
+      "endedAt": "2026-10-16T02:27:56.350Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.350Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.8"
+        }
+      ]
+    },
+    "HYP-20261016-0008": {
+      "id": "HYP-20261016-0008",
+      "status": "verified",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55,
+      "transitionedAt": "2026-10-16T02:27:56.370Z",
+      "endedAt": "2026-10-16T02:27:56.370Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:26:51.676Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.75"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.370Z",
+          "from": "verified",
+          "to": "verified",
+          "note": "confidence=0.75"
+        }
+      ]
+    },
+    "HYP-20261016-0009": {
+      "id": "HYP-20261016-0009",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0010": {
+      "id": "HYP-20261016-0010",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0011": {
+      "id": "HYP-20261016-0011",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.385Z",
+      "endedAt": "2026-10-16T02:27:56.385Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.385Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0012": {
+      "id": "HYP-20261016-0012",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.399Z",
+      "endedAt": "2026-10-16T02:27:56.399Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.399Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0013": {
+      "id": "HYP-20261016-0013",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0014": {
+      "id": "HYP-20261016-0014",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0015": {
+      "id": "HYP-20261016-0015",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0016": {
+      "id": "HYP-20261016-0016",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0017": {
+      "id": "HYP-20261016-0017",
+      "status": "verified",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55,
+      "transitionedAt": "2026-10-16T02:27:56.411Z",
+      "endedAt": "2026-10-16T02:27:56.411Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:26:51.689Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.95"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.411Z",
+          "from": "verified",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0018": {
+      "id": "HYP-20261016-0018",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0019": {
+      "id": "HYP-20261016-0019",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0020": {
+      "id": "HYP-20261016-0020",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0021": {
+      "id": "HYP-20261016-0021",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0022": {
+      "id": "HYP-20261016-0022",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0023": {
+      "id": "HYP-20261016-0023",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.424Z",
+      "endedAt": "2026-10-16T02:27:56.424Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.424Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.75"
+        }
+      ]
+    },
+    "HYP-20261016-0024": {
+      "id": "HYP-20261016-0024",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.440Z",
+      "endedAt": "2026-10-16T02:27:56.440Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.440Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0025": {
+      "id": "HYP-20261016-0025",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0026": {
+      "id": "HYP-20261016-0026",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0027": {
+      "id": "HYP-20261016-0027",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0028": {
+      "id": "HYP-20261016-0028",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0029": {
+      "id": "HYP-20261016-0029",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0030": {
+      "id": "HYP-20261016-0030",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0031": {
+      "id": "HYP-20261016-0031",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0032": {
+      "id": "HYP-20261016-0032",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0033": {
+      "id": "HYP-20261016-0033",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.455Z",
+      "endedAt": "2026-10-16T02:27:56.455Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.455Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0034": {
+      "id": "HYP-20261016-0034",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0035": {
+      "id": "HYP-20261016-0035",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0036": {
+      "id": "HYP-20261016-0036",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0037": {
+      "id": "HYP-20261016-0037",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0038": {
+      "id": "HYP-20261016-0038",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0039": {
+      "id": "HYP-20261016-0039",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0040": {
+      "id": "HYP-20261016-0040",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0041": {
+      "id": "HYP-20261016-0041",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0042": {
+      "id": "HYP-20261016-0042",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0043": {
+      "id": "HYP-20261016-0043",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0044": {
+      "id": "HYP-20261016-0044",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0045": {
+      "id": "HYP-20261016-0045",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0046": {
+      "id": "HYP-20261016-0046",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0047": {
+      "id": "HYP-20261016-0047",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0048": {
+      "id": "HYP-20261016-0048",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0049": {
+      "id": "HYP-20261016-0049",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0050": {
+      "id": "HYP-20261016-0050",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0051": {
+      "id": "HYP-20261016-0051",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0052": {
+      "id": "HYP-20261016-0052",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0053": {
+      "id": "HYP-20261016-0053",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0054": {
+      "id": "HYP-20261016-0054",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0055": {
+      "id": "HYP-20261016-0055",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0056": {
+      "id": "HYP-20261016-0056",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0057": {
+      "id": "HYP-20261016-0057",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0058": {
+      "id": "HYP-20261016-0058",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.464Z",
+      "endedAt": "2026-10-16T02:27:56.464Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.464Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0059": {
+      "id": "HYP-20261016-0059",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.474Z",
+      "endedAt": "2026-10-16T02:27:56.474Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.474Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0060": {
+      "id": "HYP-20261016-0060",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0061": {
+      "id": "HYP-20261016-0061",
+      "status": "verified",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55,
+      "transitionedAt": "2026-10-16T02:27:56.489Z",
+      "endedAt": "2026-10-16T02:27:56.489Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:34.196Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.489Z",
+          "from": "verified",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0062": {
+      "id": "HYP-20261016-0062",
+      "status": "verified",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55,
+      "transitionedAt": "2026-10-16T02:27:56.499Z",
+      "endedAt": "2026-10-16T02:27:56.499Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:34.209Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.499Z",
+          "from": "verified",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0063": {
+      "id": "HYP-20261016-0063",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0064": {
+      "id": "HYP-20261016-0064",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0065": {
+      "id": "HYP-20261016-0065",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0066": {
+      "id": "HYP-20261016-0066",
+      "status": "verified",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55,
+      "transitionedAt": "2026-10-16T02:27:56.506Z",
+      "endedAt": "2026-10-16T02:27:56.506Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:34.214Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.75"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.506Z",
+          "from": "verified",
+          "to": "verified",
+          "note": "confidence=0.75"
+        }
+      ]
+    },
+    "HYP-20261016-0067": {
+      "id": "HYP-20261016-0067",
+      "status": "verified",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55,
+      "transitionedAt": "2026-10-16T02:27:56.515Z",
+      "endedAt": "2026-10-16T02:27:56.515Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:34.225Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.75"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.515Z",
+          "from": "verified",
+          "to": "verified",
+          "note": "confidence=0.75"
+        }
+      ]
+    },
+    "HYP-20261016-0068": {
+      "id": "HYP-20261016-0068",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0069": {
+      "id": "HYP-20261016-0069",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0070": {
+      "id": "HYP-20261016-0070",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0071": {
+      "id": "HYP-20261016-0071",
+      "status": "verified",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55,
+      "transitionedAt": "2026-10-16T02:27:56.530Z",
+      "endedAt": "2026-10-16T02:27:56.530Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:34.236Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        },
+        {
+          "ts": "2026-10-16T02:27:56.530Z",
+          "from": "verified",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0072": {
+      "id": "HYP-20261016-0072",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0073": {
+      "id": "HYP-20261016-0073",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0074": {
+      "id": "HYP-20261016-0074",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0075": {
+      "id": "HYP-20261016-0075",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0076": {
+      "id": "HYP-20261016-0076",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0077": {
+      "id": "HYP-20261016-0077",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0078": {
+      "id": "HYP-20261016-0078",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0079": {
+      "id": "HYP-20261016-0079",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0080": {
+      "id": "HYP-20261016-0080",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0081": {
+      "id": "HYP-20261016-0081",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0082": {
+      "id": "HYP-20261016-0082",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.539Z",
+      "endedAt": "2026-10-16T02:27:56.539Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.539Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.9"
+        }
+      ]
+    },
+    "HYP-20261016-0083": {
+      "id": "HYP-20261016-0083",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0084": {
+      "id": "HYP-20261016-0084",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0085": {
+      "id": "HYP-20261016-0085",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0086": {
+      "id": "HYP-20261016-0086",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0087": {
+      "id": "HYP-20261016-0087",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.561Z",
+      "endedAt": "2026-10-16T02:27:56.561Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.561Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.8"
+        }
+      ]
+    },
+    "HYP-20261016-0088": {
+      "id": "HYP-20261016-0088",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.570Z",
+      "endedAt": "2026-10-16T02:27:56.570Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.570Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.7"
+        }
+      ]
+    },
+    "HYP-20261016-0089": {
+      "id": "HYP-20261016-0089",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0090": {
+      "id": "HYP-20261016-0090",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0091": {
+      "id": "HYP-20261016-0091",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0092": {
+      "id": "HYP-20261016-0092",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0093": {
+      "id": "HYP-20261016-0093",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0094": {
+      "id": "HYP-20261016-0094",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0095": {
+      "id": "HYP-20261016-0095",
+      "status": "verified",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4,
+      "transitionedAt": "2026-10-16T02:27:56.580Z",
+      "endedAt": "2026-10-16T02:27:56.580Z",
+      "history": [
+        {
+          "ts": "2026-10-16T02:27:56.580Z",
+          "from": "queued",
+          "to": "verified",
+          "note": "confidence=0.75"
+        }
+      ]
+    },
+    "HYP-20261016-0096": {
+      "id": "HYP-20261016-0096",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0097": {
+      "id": "HYP-20261016-0097",
+      "status": "queued",
+      "priority": 0.405,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.55
+    },
+    "HYP-20261016-0098": {
+      "id": "HYP-20261016-0098",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0099": {
+      "id": "HYP-20261016-0099",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    },
+    "HYP-20261016-0100": {
+      "id": "HYP-20261016-0100",
+      "status": "queued",
+      "priority": 0.3,
+      "enqueuedAt": "2026-10-16T02:25:17.445Z",
+      "type": "litellbridge",
+      "confidence": 0.4
+    }
+  },
+  "history": [
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0001"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0002"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0003"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0004"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0005"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0006"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0007"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0008"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0009"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0010"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0011"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0012"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0013"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0014"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0015"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0016"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0017"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0018"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0019"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0020"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0021"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0022"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0023"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0024"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0025"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0026"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0027"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0028"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0029"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0030"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0031"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0032"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0033"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0034"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0035"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0036"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0037"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0038"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0039"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0040"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0041"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0042"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0043"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0044"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0045"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0046"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0047"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0048"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0049"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0050"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0051"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0052"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0053"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0054"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0055"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0056"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0057"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0058"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0059"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0060"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0061"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0062"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0063"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0064"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0065"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0066"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0067"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0068"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0069"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0070"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0071"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0072"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0073"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0074"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0075"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0076"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0077"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0078"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0079"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0080"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0081"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0082"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0083"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0084"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0085"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0086"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0087"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0088"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0089"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0090"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0091"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0092"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0093"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0094"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0095"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0096"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0097"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0098"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0099"
+    },
+    {
+      "ts": "2026-10-16T02:25:17.445Z",
+      "event": "enqueued",
+      "id": "HYP-20261016-0100"
+    },
+    {
+      "ts": "2026-10-16T02:26:51.672Z",
+      "event": "transition",
+      "id": "HYP-20261016-0001",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=1.05"
+    },
+    {
+      "ts": "2026-10-16T02:26:51.676Z",
+      "event": "transition",
+      "id": "HYP-20261016-0008",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.75"
+    },
+    {
+      "ts": "2026-10-16T02:26:51.689Z",
+      "event": "transition",
+      "id": "HYP-20261016-0017",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.95"
+    },
+    {
+      "ts": "2026-10-16T02:27:34.196Z",
+      "event": "transition",
+      "id": "HYP-20261016-0061",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:34.209Z",
+      "event": "transition",
+      "id": "HYP-20261016-0062",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:34.214Z",
+      "event": "transition",
+      "id": "HYP-20261016-0066",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.75"
+    },
+    {
+      "ts": "2026-10-16T02:27:34.225Z",
+      "event": "transition",
+      "id": "HYP-20261016-0067",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.75"
+    },
+    {
+      "ts": "2026-10-16T02:27:34.236Z",
+      "event": "transition",
+      "id": "HYP-20261016-0071",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.282Z",
+      "event": "transition",
+      "id": "HYP-20261016-0001",
+      "from": "verified",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.299Z",
+      "event": "transition",
+      "id": "HYP-20261016-0002",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.8"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.312Z",
+      "event": "transition",
+      "id": "HYP-20261016-0003",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.328Z",
+      "event": "transition",
+      "id": "HYP-20261016-0004",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.344Z",
+      "event": "transition",
+      "id": "HYP-20261016-0006",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.8"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.350Z",
+      "event": "transition",
+      "id": "HYP-20261016-0007",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.8"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.370Z",
+      "event": "transition",
+      "id": "HYP-20261016-0008",
+      "from": "verified",
+      "to": "verified",
+      "note": "confidence=0.75"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.385Z",
+      "event": "transition",
+      "id": "HYP-20261016-0011",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.399Z",
+      "event": "transition",
+      "id": "HYP-20261016-0012",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.411Z",
+      "event": "transition",
+      "id": "HYP-20261016-0017",
+      "from": "verified",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.424Z",
+      "event": "transition",
+      "id": "HYP-20261016-0023",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.75"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.440Z",
+      "event": "transition",
+      "id": "HYP-20261016-0024",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.455Z",
+      "event": "transition",
+      "id": "HYP-20261016-0033",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.464Z",
+      "event": "transition",
+      "id": "HYP-20261016-0058",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.474Z",
+      "event": "transition",
+      "id": "HYP-20261016-0059",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.489Z",
+      "event": "transition",
+      "id": "HYP-20261016-0061",
+      "from": "verified",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.499Z",
+      "event": "transition",
+      "id": "HYP-20261016-0062",
+      "from": "verified",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.506Z",
+      "event": "transition",
+      "id": "HYP-20261016-0066",
+      "from": "verified",
+      "to": "verified",
+      "note": "confidence=0.75"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.515Z",
+      "event": "transition",
+      "id": "HYP-20261016-0067",
+      "from": "verified",
+      "to": "verified",
+      "note": "confidence=0.75"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.530Z",
+      "event": "transition",
+      "id": "HYP-20261016-0071",
+      "from": "verified",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.539Z",
+      "event": "transition",
+      "id": "HYP-20261016-0082",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.9"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.561Z",
+      "event": "transition",
+      "id": "HYP-20261016-0087",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.8"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.570Z",
+      "event": "transition",
+      "id": "HYP-20261016-0088",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.7"
+    },
+    {
+      "ts": "2026-10-16T02:27:56.580Z",
+      "event": "transition",
+      "id": "HYP-20261016-0095",
+      "from": "queued",
+      "to": "verified",
+      "note": "confidence=0.75"
+    }
+  ],
+  "updatedAt": "2026-10-16T02:27:56.581Z"
+}

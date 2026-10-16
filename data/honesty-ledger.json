@@ -3,9 +3,9 @@
   "session_id": "ef39aff4",
   "session_started_at": "2026-10-16T01:36:35.770Z",
   "abstention_stats": {
-    "total_queries": 0,
+    "total_queries": 1,
     "abstained": 0,
-    "answered": 0,
+    "answered": 1,
     "abstention_rate": 0
   },
   "hallucination_budget": {
@@ -22,13 +22,29 @@
     },
     "verified_discoveries": 0
   },
-  "claims_generated": 0,
+  "claims_generated": 1,
   "claims_verified": 0,
   "events": [
     {
       "ts": "2026-10-16T01:36:35.772Z",
       "event_type": "discovery",
       "detail": {}
+    },
+    {
+      "ts": "2026-10-16T02:31:53.971Z",
+      "event_type": "query",
+      "tool": null,
+      "detail": null,
+      "entity_id": null,
+      "claim_id": null
+    },
+    {
+      "ts": "2026-10-16T02:31:54.378Z",
+      "event_type": "answer",
+      "tool": null,
+      "detail": null,
+      "entity_id": null,
+      "claim_id": null
     }
   ],
   "honesty_score": 0.3
