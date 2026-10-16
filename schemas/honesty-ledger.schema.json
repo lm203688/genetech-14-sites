@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://genetech.tools/schemas/honesty-ledger.schema.json",
+  "title": "GeneTech Honesty Ledger",
+  "version": "1.0.0",
+  "description": "诚实性账本：记录每次 AI 生成/回答的幻觉预算消耗、发现信用、弃权次数。三条硬原则：(1) 弃权优先 (2) 幻觉预算硬顶 (3) 每次发现都记信用。",
+  "type": "object",
+  "required": ["version", "session_id", "session_started_at", "abstention_stats", "hallucination_budget", "discovery_credit"],
+  "properties": {
+    "version": { "type": "string", "const": "1.0.0" },
+    "session_id": { "type": "string" },
+    "session_started_at": { "type": "string", "format": "date-time" },
+    "session_ended_at": { "type": "string", "format": "date-time" },
+    "abstention_stats": {
+      "type": "object",
+      "description": "弃权统计",
+      "required": ["total_queries", "abstained", "answered"],
+      "properties": {
+        "total_queries": { "type": "integer", "minimum": 0 },
+        "abstained": { "type": "integer", "minimum": 0 },
+        "answered": { "type": "integer", "minimum": 0 },
+        "abstention_rate": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "hallucination_budget": {
+      "type": "object",
+      "description": "幻觉预算账本",
+      "required": ["budget", "used", "remaining", "hard_cap"],
+      "properties": {
+        "budget": { "type": "integer", "minimum": 0, description": "初始预算（允许出现的幻觉数上限）" },
+        "used": { "type": "integer", "minimum": 0 },
+        "remaining": { "type": "integer", "minimum": 0 },
+        "hard_cap": { "type": "boolean", description": "是否硬顶（超预算即拒答）" },
+        "last_triggered_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "discovery_credit": {
+      "type": "object",
+      "description": "发现信用账本：每次真实发现记 +1",
+      "required": ["total_discoveries", "by_type"],
+      "properties": {
+        "total_discoveries": { "type": "integer", "minimum": 0 },
+        "by_type": {
+          "type": "object",
+          "additionalProperties": { "type": "integer" },
+          "description": "按类型分组计数"
+        },
+        "verified_discoveries": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "claims_generated": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "本会话生成的 claim 总数"
+    },
+    "claims_verified": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "本会话经验证的 claim 数"
+    },
+    "honesty_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "综合诚实度分：0.5*abstention_rate + 0.3*(1-used/budget) + 0.2*(verified/total)"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ts", "event_type"],
+        "properties": {
+          "ts": { "type": "string", "format": "date-time" },
+          "event_type": {
+            "type": "string",
+            "enum": ["query", "answer", "abstain", "hallucination_detected", "discovery", "verification_passed", "verification_failed", "budget_reset"]
+          },
+          "entity_id": { "type": "string" },
+          "claim_id": { "type": "string" },
+          "detail": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "@context": "https://a2a-protocol.org/v0.3/card.json",
+  "name": "GeneTech Knowledge Engine",
+  "description": "Autonomous Cross-Domain Discovery Network — 30 站点学术知识图谱，27.6 万唯一 DOI，28,001 引用边，36,107 KG 节点。提供混合检索、引用分析、跨域连接发现、可证伪假设生成。",
+  "url": "https://genetech.tools",
+  "documentationUrl": "https://genetech.tools/docs/consumer-onboarding.md",
+  "version": "1.0.0",
+  "protocolVersion": "0.3",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": true
+  },
+  "auth": {
+    "schemes": ["bearer", "apiKeyHeader"],
+    "credentials": "GENETECH_API_KEY=<key>"
+  },
+  "provider": {
+    "organization": "GeneTech",
+    "url": "https://genetech.tools"
+  },
+  "skills": [
+    {
+      "id": "hybrid-search",
+      "name": "Hybrid Search (BM25 + Vector)",
+      "description": "混合检索 294,330 学术实体，返回带证据的 top-K 结果",
+      "tags": ["search", "retrieval", "hybrid"],
+      "examples": ["find papers on neuromorphic computing in low-altitude robotics"]
+    },
+    {
+      "id": "cross-domain-bridge",
+      "name": "Cross-Domain Bridge Discovery",
+      "description": "发现 140 个跨站引用缺口对，Swanson LBD 式连接生成",
+      "tags": ["discovery", "hypothesis", "cross-domain"],
+      "examples": ["what bridges exist between quantum-materials and brain-science"]
+    },
+    {
+      "id": "hypothesis-generation",
+      "name": "Falsifiable Hypothesis Generation",
+      "description": "生成带证伪条件/证据要求/验证计划的可证伪假设卡",
+      "tags": ["hypothesis", "litellbridge", "science"],
+      "examples": ["generate 5 testable hypotheses about exo-science and tcm-tools"]
+    },
+    {
+      "id": "evidence-extraction",
+      "name": "Claim-Level Evidence Extraction",
+      "description": "从论文摘要抽取带立场标记的原子命题与证据链",
+      "tags": ["evidence", "claim", "stance"],
+      "examples": ["extract claims and evidence from entity HYP-20261016-0001"]
+    },
+    {
+      "id": "citation-gap-analysis",
+      "name": "Citation Gap Analysis",
+      "description": "分析 870 个站对中 140 个零引用对，定位研究空白",
+      "tags": ["citation", "gaps", "analysis"],
+      "examples": ["show zero-citation pairs between agritech and life-science"]
+    },
+    {
+      "id": "verification-loop",
+      "name": "Verification Loop",
+      "description": "假设→证据→验证→更新的闭环工作流",
+      "tags": ["verification", "loop", "pipeline"],
+      "examples": ["run verification loop on hypothesis HYP-20261016-0001"]
+    }
+  ],
+  "securitySchemes": {
+    "bearer": {"type": "http", "scheme": "bearer", "bearerFormat": "JWT"},
+    "apiKeyHeader": {"type": "apiKey", "in": "header", "name": "X-API-Key"}
+  },
+  "security": [{"apiKeyHeader": []}, {"bearer": []}]
+}

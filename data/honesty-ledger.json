@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "session_id": "ef39aff4",
+  "session_started_at": "2026-10-16T01:36:35.770Z",
+  "abstention_stats": {
+    "total_queries": 0,
+    "abstained": 0,
+    "answered": 0,
+    "abstention_rate": 0
+  },
+  "hallucination_budget": {
+    "budget": 5,
+    "used": 0,
+    "remaining": 5,
+    "hard_cap": true,
+    "last_triggered_at": null
+  },
+  "discovery_credit": {
+    "total_discoveries": 1,
+    "by_type": {
+      "general": 1
+    },
+    "verified_discoveries": 0
+  },
+  "claims_generated": 0,
+  "claims_verified": 0,
+  "events": [
+    {
+      "ts": "2026-10-16T01:36:35.772Z",
+      "event_type": "discovery",
+      "detail": {}
+    }
+  ],
+  "honesty_score": 0.3
+}

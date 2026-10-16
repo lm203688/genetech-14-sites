@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://genetech.tools/schemas/claim.schema.json",
+  "title": "GeneTech Claim Schema",
+  "version": "1.0.0",
+  "description": "Claim = 一个可被证据支持或反驳的原子命题。每条 Claim 必须携带证据列表和置信度，evidence 不足时显式弃权（evidence_status=insufficient）。核心设计：claim 与 evidence 分层，evidence 不隐含 claim 有效。",
+  "type": "object",
+  "required": ["claim_id", "statement", "subject", "predicate", "object", "evidence", "confidence", "evidence_status"],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "pattern": "^CLM-\\d{8}-[a-f0-9]{8}$"
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 2000,
+      "description": "claim 的自然语言形式"
+    },
+    "statement_zh": { "type": "string" },
+    "subject": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["paper", "author", "dataset", "method", "entity", "site", "concept"] },
+        "label": { "type": "string" }
+      }
+    },
+    "predicate": {
+      "type": "string",
+      "description": "关系名，如 'cites'/'shares_author_with'/'is_similar_to'/'contradicts'/'extends'",
+      "pattern": "^[a-z_]+$"
+    },
+    "object": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "label": { "type": "string" }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "description": "支持或反驳 claim 的证据列表",
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "type", "text", "source", "weight", "stance"],
+        "properties": {
+          "evidence_id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["abstract-lead", "abstract-conclusion", "abstract-numeric", "metadata-date", "metadata-doi", "metadata-citation", "metadata-authors", "metadata-tag", "peer-review", "external-verification"]
+          },
+          "text": { "type": "string" },
+          "source": { "type": "string", "description": "证据来源（DOI / URL / dataset id）" },
+          "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+          "stance": { "type": "string", "enum": ["supports", "contradicts", "neutral", "weakens"] }
+        }
+      }
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "confidence_derivation": {
+      "type": "string",
+      "enum": ["rule-weighted", "statistical", "llm-assessed", "human-reviewed"],
+      "description": "置信度生成方式"
+    },
+    "evidence_status": {
+      "type": "string",
+      "enum": ["no_evidence", "insufficient_evidence", "partially_supported", "supported", "contradicted", "verified"],
+      "description": "证据状态；no_evidence 或 insufficient_evidence 时必须显式弃权"
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["with_evidence_id", "conflict_type"],
+        "properties": {
+          "with_evidence_id": { "type": "string" },
+          "conflict_type": { "type": "string", "enum": ["numeric-conflict", "temporal-conflict", "semantic-conflict"] },
+          "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+          "resolution": { "type": "string" }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "generator": { "type": "string" },
+        "data_versions": { "type": "array", "items": { "type": "string" } },
+        "pipeline_run_id": { "type": "string" }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "review_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ts", "event"],
+        "properties": {
+          "ts": { "type": "string", "format": "date-time" },
+          "event": { "type": "string" },
+          "actor": { "type": "string" },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

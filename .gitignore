@@ -149,5 +149,17 @@ data/cited-entities.json
 # Pagefind 中间产物（entities.json→HTML 转换的临时目录）
 **/.pagefind-src/
 
+# Per-entity 详情页构建产物（由 tools/build-entity-pages.mjs 生成，见 docs/ENTITY-PAGES-INTEGRATION.md）
+# 单站全量 ~58MB × 30 站 = 1.7GB，超过 GitHub Pages 1GB 限制；按需生成后部署。
+**/website/entities/
+
 # Windows 误创建的空文件
 nul
+
+# Phase 8 证据/假设图谱构建产物（体积大，不入 git）
+**/evidence-graph/
+**/hypotheses/
+**/phase8-output/
+
+# ed25519 私钥（tools/keys/）
+tools/keys/genetech-private.pem

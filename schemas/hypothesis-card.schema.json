@@ -1,0 +1,162 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://genetech.tools/schemas/hypothesis-card.schema.json",
+  "title": "GeneTech Hypothesis Card",
+  "version": "1.0.0",
+  "description": "可证伪假设卡：每张卡片必须携带证伪条件、证据要求和验证计划。核心字段：falsifiability（可被什么证伪）、confidence（0-1）、evidence_requirement（需要多少证据才能确认）、verification_plan（验证步骤）。insufficient_evidence 分支在证据不足时显式弃权。",
+  "type": "object",
+  "required": ["id", "statement", "hypothesis_type", "confidence", "falsifiability", "evidence_requirement", "status", "generated_at"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^HYP-\\d{8}-\\d{4}$",
+      "description": "假设卡 ID，格式 HYP-YYYYMMDD-NNNN"
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 1000,
+      "description": "假设的自然语言陈述"
+    },
+    "hypothesis_type": {
+      "type": "string",
+      "enum": ["litellbridge", "cross_domain_bridge", "temporal_successor", "co_author_network", "conflict_detector", "emerging_topic"],
+      "description": "假设类型：Swanson 式 LBD 连接 / 跨域桥接 / 时序承接 / 共著网络 / 冲突检测 / 新兴主题"
+    },
+    "statement_zh": {
+      "type": "string",
+      "description": "中文假设陈述（可选）"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "生成置信度（非确证概率，见 confidence_calibration 字段）"
+    },
+    "confidence_calibration": {
+      "type": "string",
+      "enum": ["rule-based-heuristic", "statistical-signal", "llm-generated"],
+      "description": "置信度校准方式——必须是启发式/统计/LLM 三选一，便于下游区分"
+    },
+    "evidence_status": {
+      "type": "string",
+      "enum": ["hypothesis_only", "insufficient_evidence", "partially_supported", "supported", "falsified"],
+      "description": "当前证据状态：insufficient_evidence 表示显式弃权（Abstinence-First）"
+    },
+    "falsifiability": {
+      "type": "object",
+      "description": "证伪条件——如果某事发生，本假设将被推翻",
+      "required": ["falsification_condition", "falsification_test"],
+      "properties": {
+        "falsification_condition": {
+          "type": "string",
+          "description": "证伪条件的自然语言描述"
+        },
+        "falsification_test": {
+          "type": "string",
+          "description": "具体的验证方法/查询/实验"
+        },
+        "falsification_time_horizon_days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3650,
+          "description": "预计多少天内可以完成证伪测试"
+        }
+      }
+    },
+    "evidence_requirement": {
+      "type": "object",
+      "description": "验证本假设需要的证据数量/类型",
+      "required": ["min_evidence_count", "evidence_types"],
+      "properties": {
+        "min_evidence_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "evidence_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["citation", "co_author", "topic_overlap", "numeric_agreement", "peer_review", "reproducibility_check"]
+          },
+          "minItems": 1
+        },
+        "evidence_sources": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "建议的证据来源站/数据源"
+        }
+      }
+    },
+    "verification_plan": {
+      "type": "object",
+      "description": "验证执行计划",
+      "properties": {
+        "step1_search": { "type": "string", "description": "第一步检索步骤" },
+        "step2_analyze": { "type": "string", "description": "第二步分析步骤" },
+        "step3_report": { "type": "string", "description": "第三步汇报步骤" },
+        "estimated_effort": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        }
+      }
+    },
+    "source_signals": {
+      "type": "object",
+      "description": "生成假设的信号来源",
+      "properties": {
+        "citation_gap_pair": { "type": "string", "description": "引用缺口对，如 'site-a→site-b'" },
+        "related_entity_ids": { "type": "array", "items": { "type": "string" } },
+        "shared_tags": { "type": "array", "items": { "type": "string" } },
+        "shared_authors": { "type": "array", "items": { "type": "string" } },
+        "signal_type": {
+          "type": "string",
+          "enum": ["topic_overlap", "citation_absence", "temporal_pattern", "author_network", "keyword_emergence"]
+        }
+      }
+    },
+    "related_hypotheses": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^HYP-\\d{8}-\\d{4}$" },
+      "description": "相关假设卡 ID"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["new", "under_review", "accepted", "rejected", "verified", "falsified", "superseded"],
+      "description": "假设生命周期状态"
+    },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "generator": {
+      "type": "object",
+      "required": ["tool", "version"],
+      "properties": {
+        "tool": { "type": "string" },
+        "version": { "type": "string" },
+        "params": { "type": "object" }
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ts", "event"],
+        "properties": {
+          "ts": { "type": "string", "format": "date-time" },
+          "event": { "type": "string", "enum": ["created", "reviewed", "evidence_added", "confidence_updated", "status_changed", "falsified", "accepted"] },
+          "actor": { "type": "string" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "description": "来源溯源",
+      "properties": {
+        "generated_by": { "type": "string" },
+        "data_versions": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "additionalProperties": false
+}
