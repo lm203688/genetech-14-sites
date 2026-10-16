@@ -1687,6 +1687,31 @@ async function handleRequest(request) {
     });
   }
 
+  // ---- Agent Card (P8-D M4 治理)：A2A 0.3 规范端点 ----
+  // 治「Agent Card 只放本地 JSON，无 HTTP 端点，A2A client 拉不到」的历史欠账。
+  // 两个端点：
+  //   GET /agent-card          返回 agent-card.json 原文（Content-Type: application/json）
+  //   GET /agent-card.sig.json 返回签名（可独立分发、抗量子）
+  // 免鉴权：Agent Card 是「自证身份」的公开元数据（Google A2A 0.3 规范要求）。
+  // 部署前提：wrangler deploy（用户阻塞项）；未部署前本地可通过 tools/mcp-remote/a2a-smoke.mjs 干跑。
+  if (path === '/agent-card' || path === '/agent-card.sig.json') {
+    const file = path === '/agent-card' ? 'agent-ecosystem/agent-card.json' : 'agent-ecosystem/agent-card.json.sig.json';
+    const upstreamUrl = new URL('/' + file, UPSTREAM_BASE);
+    const res = await fetch(upstreamUrl);
+    if (!res.ok) {
+      return json({ error: 'upstream_not_found', file, status: res.status }, 404);
+    }
+    const text = await res.text();
+    return new Response(text, {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Cache-Control': 'public, max-age=3600',
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
+  }
+
   // 其他路径：转发到上游（避免自指循环）
   const upstreamUrl = new URL(path + url.search, UPSTREAM_BASE);
   return fetch(new Request(upstreamUrl, { method: request.method, headers: request.headers }));

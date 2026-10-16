@@ -16,14 +16,15 @@
     "last_triggered_at": null
   },
   "discovery_credit": {
-    "total_discoveries": 1,
+    "total_discoveries": 25,
     "by_type": {
-      "general": 1
+      "general": 1,
+      "litellbridge": 24
     },
-    "verified_discoveries": 0
+    "verified_discoveries": 24
   },
   "claims_generated": 1,
-  "claims_verified": 0,
+  "claims_verified": 24,
   "events": [
     {
       "ts": "2026-10-16T01:36:35.772Z",
@@ -45,6 +46,198 @@
       "detail": null,
       "entity_id": null,
       "claim_id": null
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0001 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0001"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0002 conf=0.8 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0002"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0003 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0003"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0004 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0004"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0006 conf=0.8 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0006"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0007 conf=0.8 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0007"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0008 conf=0.75 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0008"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0011 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0011"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0012 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0012"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0017 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0017"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0023 conf=0.75 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0023"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0024 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0024"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0033 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0033"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0058 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0058"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0059 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0059"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0061 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0061"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0062 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0062"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0066 conf=0.75 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0066"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0067 conf=0.75 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0067"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0071 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0071"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0082 conf=0.9 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0082"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0087 conf=0.8 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0087"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0088 conf=0.7 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0088"
+    },
+    {
+      "ts": "2026-10-16T02:45:34.430Z",
+      "event_type": "discovery",
+      "tool": "batch-discovery-credit",
+      "detail": "hypothesis-verified id=HYP-20261016-0095 conf=0.75 type=litellbridge",
+      "entity_id": null,
+      "claim_id": "HYP-20261016-0095"
     }
   ],
   "honesty_score": 0.3

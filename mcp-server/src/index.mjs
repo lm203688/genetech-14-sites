@@ -32,6 +32,7 @@ import { SearchIndex } from './search.mjs';
 import { KnowledgeGraph, GraphRAG } from './graphrag.mjs';
 import { runAsk } from '../../tools/lib/ask.mjs';
 import { submitRequest, retrieveRequests, healthCheck as requestHealth } from './mcp-request.mjs';
+import { withLedger } from './honesty.mjs'; // P8-D 幻觉预算接入（装饰器，非侵入式）
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
@@ -316,6 +317,13 @@ const server = new McpServer({
   name: 'genetech-data',
   version: '2.0.0',
 });
+
+// P8-D 幻觉预算自动接入（2026-10-16）：包装 registerTool，所有工具自动记 honesty-ledger
+// 不侵入下方 13 处 registerTool 调用点，也不改任何 handler 签名。
+// 预算耗尽时（default 5 次）withLedger 会返回结构化 abstention_response 而非抛错。
+const _registerToolRaw = server.registerTool.bind(server);
+server.registerTool = (name, opts, handler) =>
+  _registerToolRaw(name, opts, withLedger(name, handler));
 
 server.registerTool(
   'list_sites',

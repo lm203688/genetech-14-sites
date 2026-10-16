@@ -1,0 +1,392 @@
+# GeneTech 14站知识引擎 — 补位闭环自动化（extra）
+# 文件位置: .github/workflows/ops-extra.yml
+#
+# 补齐报告要求的缺失定时任务，形成"报错→修复→验证→上线"自动化闭环：
+#   - sync-live      把数据 pipeline 产物并入线上站点真实路径（修复路径不匹配）
+#   - self-db-build  聚合自建知识图谱 data/knowledge-graph.json
+#   - pro-db-sync    专业库对接（OpenAlex/Crossref 标准标识符映射）
+#   - user-feedback  采集页面纠错/订阅信号
+#   - finance-track  MRR/许可看板
+#   - rollout-verify 部署后抽样验证 + 回退触发
+#   - mcp-publish    校验并标记 MCP 发布
+#   - api-guard-check 校验鉴权 Worker 语法与配置
+#   - (cite-check 已移除：pipeline-cite-check.js 不在仓库，对应能力未接回，勿在此调度)
+#
+# 与 ops.yml 错峰：ops.yml 每日 12:30 UTC 跑主飞轮（data-accumulation / domain-expansion /
+# tech-adoption / promotion / intelligence），本工作流 13:00 UTC 跑补位闭环
+#（sync / selfdb / prodb / feedback / finance / verify / mcp / geo / searchindex /
+# citations / kgbuild / guard / paytest / academic），api-guard-deploy 另在 03:30 UTC 错峰。
+# 避免同一时刻多 job 推送冲突（统一单次提交）。
+
+name: GeneTech Extra Ops
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: '选择要运行的补位任务'
+        required: true
+        default: 'all'
+        type: choice
+        # academic / citations 是 2026-10-02 新增的两个任务：
+        # 漏加进 options 的话，workflow_dispatch 直接拒收（choice 类型只接受已列选项），
+        # 手动触发补位会「命令发了没反应」。
+        # shardverify 是 2026-10-04 从 searchindex 拆出的门禁分支：只跑分片端到端验证，
+        # 不重跑整条 pipeline。排查「线上检索是不是悄悄回退了」时用它能 20 秒内出结论。
+        # orchestrator / quality / gate-alert 是 2026-10-09 补入的：
+        #   orchestrator —— 跑 agent-ecosystem/orchestrator.mjs（报告 F3）
+        #   quality      —— 跑 pipeline-quality-gate.js --ci（报告 F1，已在 quality.policy 里定义，
+        #                   但此前 CI 里没触发过 --ci 模式，「门禁自身双向回归」只在本地跑过）
+        #   gate-alert   —— 门禁失败时创建/更新 GitHub Issue（报告 F2）
+        # gapsbriefing   —— 2026-10-09 补入，跑 pipeline-citation-gaps-briefing.js（报告 B4，
+        #                   把 gapPairs 数学事实转成「假设+反驳条件」候选清单，月度自动出报告）
+        # docsclaims    —— 2026-10-10 补入（v2 报告 §9.3 / M4 治理），
+        #                   跑 pipeline-docs-claims.js --verify 阻断 anchor 漂移：
+        #                   凡是在 README.md / ai.txt / mcp-server/README.md 的
+        #                   GENETECH:CLAIMS:BEGIN/END 锚注之间的内容必须与
+        #                   data/claims.json（从 data/ 单一真源实时算出）逐字一致，
+        #                   否则 CI 变红，从机制上防止"人工文案漂移"复发。
+        # flywheelstate  —— 2026-10-11 补入（飞轮状态陈旧 monitor）：
+        #                   跑 monitor-flywheel-state.js，检查 8 个核心 state 文件的 mtime，
+        #                   任一超过阈值（默认 14 天）就 exit 1 让 CI 变红。
+        #                   背景：2026-10-05 发现 backfill-cursor 39 天陈旧才察觉，
+        #                   「静默冻结」是本项目最贵的故障模式，此门禁把它从"月度回顾"提前到"每日早会"。
+        #                   独立任务（不阻断发布，但每日 all 也会跑，让陈旧一出现当天就被看到）。
+        # stance    —— 2026-10-11 补入（立场/情绪分析，报告 P1-立场）：
+        #                   跑 pipeline-stance-analysis.js 用词典打分分析 30 站摘要的立场分布，
+        #                   产物 reports/stance-analysis-<date>.json + data/stance-entities.json。
+        #                   方法局限（词典非模型）已在产物里明写，用于跨站相对比较不做绝对判断。
+        #                   独立任务（不阻断），每日 all 也会跑一次保证分布持续更新。
+        # mcp-smoke —— 2026-10-11 补入（MCP 发布前 14 工具冒烟验证，防上架后崩溃）：
+        #                   跑 .workbuddy/probe/mcp-smoke.mjs，端到端验证 mcp-server/src/index.mjs
+        #                   能启动 + initialize + tools/list 返回 14 个 + 逐个 tools/call 命中真数据。
+        #                   背景：MCP v2 从 2026-07-28 上线以来没有独立的 CI 冒烟门禁，
+        #                   之前只有本地跑过；如果某个 registerTool 静默坏了，要等 Glama 上架或
+        #                   用户接入才暴露。本任务把它做成发布前必过门槛（不阻断发布，但让 CI 红）。
+        # eval      —— 2026-10-12 补入（检索评测回归，报告 T1-4）：
+        #                   跑 eval/run-eval.mjs --sites=3 --k=10（3 站 30 query 快跑，15s 出结论），
+        #                   度量 Recall@10 / MRR / NDCG@10，产物 eval/results-<date>.json + leaderboard HTML。
+        #                   背景：10-12 已把评测集从 148 条扩容到 296 条（perSite=10，seed 固定），
+        #                   构造性基准用于防检索回归（BM25 换成向量/RAG 后仍跑同一评测，对比基线）。
+        #                   全量 30 站约 15 分钟，快跑 3 站约 15 秒——CI 走快跑；用户按需本地跑全量。
+        # mcp-contract —— 2026-10-14 补入（mcp-remote 契约测试，报告 §2 P0-3 提升方案①）：
+        #                   跑 mcp-remote/_test_contract.mjs，14 工具逐一 tools/call + fail-closed +
+        #                   GET /mcp 405 + schema 对齐本地版，共 46 条断言，2 秒内出结论。
+        #                   背景：10-14 报告实测 mcp-remote 有 11/14 工具返 404，且 fail-open 静默放行。
+        #                   之前只靠手工 curl 探测；契约测试把它变成 CI 必过门槛（阻断，不 continue-on-error）。
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance, mcp-smoke, mcp-latency, mcp-contract, eval, signverify]
+  schedule:
+    # 每日 13:00 UTC(21:00 CST) 一次全量运行，错峰在 ops.yml(12:30 UTC) 之后 30 分钟，
+    # 避免与 ops.yml 同时触发导致推送冲突。
+    - cron: '0 13 * * *'
+
+permissions:
+  contents: write
+  actions: read
+  issues: write
+  # 注意：GITHUB_TOKEN 不支持 `administration` 权限域。此前写了 `administration: write`
+  # 导致整个工作流解析失败（表现：run 无任何 job、名称回退成文件路径 .github/workflows/ops-extra.yml）。
+  # 需要仓库管理类操作（如设置 Topics）时改用带 repo scope 的 PAT，不要在此声明该权限。
+
+concurrency:
+  group: genetech-extra-ops-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: '20'
+  SCRIPTS_DIR: 'operations-plan'
+
+jobs:
+  extra-ops:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    env:
+      SITE_BASE_URL: ${{ secrets.SITE_BASE_URL || 'https://lm203688.github.io/genetech-14-sites' }}
+      CREEM_API_KEY: ${{ secrets.CREEM_API_KEY }}
+      LICENSE_STATS_URL: ${{ secrets.LICENSE_STATS_URL }}
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      # cite-check 并发与超时：默认 5/15s，143 条引文最坏 ~7 分钟；提到 8 更稳
+      CITE_CONCURRENCY: '8'
+      CITE_CURL_TIMEOUT: '15'
+      # STRICT_CITE=1 硬门禁（2026-09-16 开启）：dead 或 retracted 存在时 cite job 会 exit 1
+      # 开启条件：所有已知死链已修复（TECH-DEEP-DIVE.md / geo-roundup-2026-08-05.md / harness-efficiency-conventions.md）
+      # 后续新增死链会阻断 CI，需要主动修 URL 或标注 <URL> 包裹（XML 命名空间等技术标识符）
+      STRICT_CITE: '1'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Run extra pipelines
+        run: |
+          TASK="${{ github.event.inputs.task || 'all' }}"
+          run_one() { node "$SCRIPTS_DIR/pipeline-$1.js"; }
+          if [[ "$TASK" == "all" || "$TASK" == "sync" ]]; then run_one sync-live; fi
+          if [[ "$TASK" == "all" || "$TASK" == "selfdb" ]]; then run_one self-db-build; fi
+          if [[ "$TASK" == "all" || "$TASK" == "prodb" ]]; then run_one pro-db-sync; fi
+          if [[ "$TASK" == "all" || "$TASK" == "feedback" ]]; then run_one user-feedback; fi
+          if [[ "$TASK" == "all" || "$TASK" == "finance" ]]; then run_one finance-track; fi
+          if [[ "$TASK" == "all" || "$TASK" == "verify" ]]; then run_one rollout-verify; fi
+          if [[ "$TASK" == "all" || "$TASK" == "mcp" ]]; then run_one mcp-publish; fi
+          if [[ "$TASK" == "all" || "$TASK" == "geo" ]]; then run_one geo-promotion; fi
+          if [[ "$TASK" == "all" || "$TASK" == "searchindex" ]]; then
+            # --shards 产出 30 片 gzip 分片（35.39 MB / 149.28 MB 原始），
+            # 供 worker.js 的 getShardedIndex 消费，把语义检索覆盖率从 6% 提到 100%。
+            # 单文件索引 search-index.json 仍然产出，作为分片不可用时的兜底路径。
+            node "$SCRIPTS_DIR/pipeline-search-index.js" --shards;
+          fi
+          # ===== 分片端到端门禁（2026-10-04 补入）=====
+          # 紧跟在 searchindex 之后：刚产出的分片必须先证明「线上能下载 + 能 gzip + 能解压 +
+          # 实体字段完整」，才允许往下走。放在这里而不是等 pages-deploy，是因为分片是
+          # Pages 复制出来的，copy 本身 200 不代表内容完整（截断的 gzip 一样 200）。
+          # 不接这一步的后果：worker.js 静默回退单文件 → 端点全 200、CI 全绿、
+          # 而真实覆盖率悄悄掉回 6%，要等消费者抱怨才被发现。
+          if [[ "$TASK" == "all" || "$TASK" == "searchindex" || "$TASK" == "shardverify" ]]; then
+            node "$SCRIPTS_DIR/verify-shard-live.mjs"
+          fi
+          # ===== 分片保真度（2026-10-04 补入，紧接上面那条）=====
+          # verify-shard-live.mjs 只查「每片自己炸没炸、字段齐不齐」，查不出索引和站点实体库是不是同一代数据。
+          # 实测（2026-10-04）：库 260,689 个真 DOI，30 片只含 198,114 —— 62,575 个（24.0%）没进索引；
+          # 分片里的 DOI 则 100% 在库内。线上语义检索对这 24% 的实体搜不到，但任何既有门禁都不报告。
+          # 阈值先放到 0.30：今天实测 24%，放严会让 CI 天天红；一旦漏进分片的比例突破 30%，
+          # 说明索引在继续漂移，必须失败并触发「用权威站点实体重建分片」。
+          # 双向回归测试（本地实测）：--lib-miss=0.10 → exit 2（阻断）；默认 0.30 → exit 0（放行）。
+          if [[ "$TASK" == "all" || "$TASK" == "searchindex" || "$TASK" == "shardverify" ]]; then
+            node "$SCRIPTS_DIR/verify-shard-fidelity.mjs" --lib-miss=0.30
+          fi
+          # ===== 支付链路状态机回归（2026-10-05 补入）=====
+          # 为什么必须有：2026-10-05 实测发现 UNIFIED_LICENSES KV 有绑定但 0 keys，
+          # 下单时的 put 失败被 try/catch 静默吞掉 → 轮询端点一直返 404 →
+          # 前端 poll() 又忽略 status → 用户以为支付失败 → **重复下单重复收款**。
+          # 修法把 404 改成 202 + reason=no_record + 防重复下单文案，但「修过了」不等于
+          # 「下次没人改回去」——所以把四态做成注入式双向回归，接进 CI。
+          # 判据：注入旧行为（404）必须 exit 1，恢复后必须 exit 0。
+          if [[ "$TASK" == "all" || "$TASK" == "paytest" ]]; then
+            node unified-license/_test_pay_states.mjs
+            # 退避重试单独一个文件：它要打桩真实 handler，构造比四态复杂，
+            # 分开跑失败时更容易定位是哪一层坏了。
+            node unified-license/_test_pay_retry.mjs
+          fi
+          # ===== 学术数据集补齐（2026-10-02 补入）=====
+          # pipeline-academic-datasets.js 产出 crossref-entities / pubmed-entities / academic-entities，
+          # 对应 worker.js 的 /v1/academic/entities|pubmed|crossref 三个端点。
+          # 此前这三个端点**天天 404**（数据文件从未落盘）而 CI 全绿——原因是 build-site.mjs
+          # 对缺失的数据文件只 warn 不报错，缺文件永远不会让流水线变红。
+          # 本任务把它接进「采集 → commit（git add data/）→ pages-deploy 复制 → 端点 200」的链路。
+          if [[ "$TASK" == "all" || "$TASK" == "academic" ]]; then
+            node "$SCRIPTS_DIR/pipeline-academic-datasets.js"
+            # --rebuild-references 从 state/academic-refs-cache.json 回填 references[]（本地零网络）。
+            # 为什么必须放在 CI 里跑：这个缓存此前**没进版本库**，CI 每次 checkout 都是空缓存 →
+            # 跑出来的 academic-entities.json 没有 references[] → 下游 citations / cited 全链空转
+            # （实测：派发 cited 时「引用声明涉及的 unique 被引 DOI：0」，边只剩抽样那一份）。
+            # 缓存本体 1.68MB，入库比让引用图谱在无人值守链路里悄悄退化便宜得多。
+            node "$SCRIPTS_DIR/pipeline-academic-datasets.js" --rebuild-references
+          fi
+          # ===== 跨站引用边（2026-10-02 补入）=====
+          # pipeline-openalex-citation.js 产出 data/citation-edges.json → /v1/citation/edges。
+          # 此前这批边只活在 reports/ 的 POC JSON 里：没有数据文件、没有端点、没有消费方，
+          # 等于把算出来的一套壁垒资产直接扔了。stride 保证 DOI 池跨到所有站点
+          # （不带步长时池按站点排列，一半只覆盖前 1-2 站，算出来的边恒为 0）。
+          # 引用列表已全量落盘（游标 completed），本任务不产生上游请求，只重算边。
+          if [[ "$TASK" == "all" || "$TASK" == "citations" ]]; then
+            node "$SCRIPTS_DIR/pipeline-openalex-citation.js" --source=crossref --stride=13
+            # 引用边补源（2026-10-04 补入）。放在 openalex-citation **之后**而不是之前：
+            # 前者会整体重写 data/citation-edges.json，先跑的话它的 25k 抽样边会把这一层的
+            # 合并结果冲掉。放在它后面，本脚本读全量边 → 叠加 references[] 展开的真实方向边 → 去重合并写回。
+            # 为什么值得加这一层：pipeline-academic-datasets 此前只存 referenceCount 不存
+            # 引用列表，引用图谱等于没有原料，全靠抽样重抓推断方向。现在 --rebuild-references
+            # 把真实 references[] 补回来了（1,139 篇论文 / 59,623 条声明），边才有「论文实际声明」的语义。
+            node "$SCRIPTS_DIR/pipeline-citation-edges-refs.js"
+            # 边产完后立刻派生缺口矩阵：gapPairs（零引用站对 = 未桥接的跨域 = 研究空白候选）
+            # + bridges（跨域枢纽）+ degrees（入/出度）。没有这一步，边只是一堆 [doi,doi,site,site]，
+            # 消费方要自己遍历 25k 条边才能问出「哪两个域之间一条引用都没有」。
+            # 顺序不可颠倒：gaps 是 edges 的纯下游，edges 没写成功就不能产出矩阵。
+            node "$SCRIPTS_DIR/pipeline-citation-gaps.js"
+            # ===== 跨域空白月度简报（2026-10-09 补入 · 报告 B4）=====
+            # 直接跑在 citations 之后：pipeline-citation-gaps.js 产出 data/citation-gaps.json
+            # 本脚本把 gapPairs 从"零引用数学事实"转成"假设+反驳条件"候选清单，
+            # 产出 reports/cross-domain-gaps-<YYYY-MM>.{md,json}。
+            # 顺序不能颠倒：本脚本强依赖 citation-gaps.json，跑在前面会读到旧文件。
+            node "$SCRIPTS_DIR/pipeline-citation-gaps-briefing.js"
+          fi
+          # ===== 被引文档补齐（2026-10-04 补入）=====
+          # ⚠️ 本段**只在手动派发 cited 时跑，不进 all**。三个原因，每个都足以让每日 CI 变红：
+          #   1) OpenAlex 免费层按 IP 的日美元预算，补齐 48k 条约 1,150 次请求，一天就打光；
+          #   2) 产物 data/cited-entities.json（78MB）是工作资产、不入库，CI 上必然缺失；
+          #   3) 断点 state/cited-backfill-state.json 不入库，CI 上一律「从零待补」。
+          # 想跑：手动 dispatch task=cited（预算充足时）。扩库清单这类派生指标改由本地产出后入库。
+          # pipeline-cited-backfill.js 用 OpenAlex 的 filter=doi:<a>|<b>（多值 OR）批量补「被引文档」：
+          # 引用边数不由「我们抓了多少引用声明」决定，由「被引文档有多少在库」决定 ——
+          # 实测 59,623 条声明 / 57,764 个 unique 被引 DOI 里只有 2,170 个在库（3.8%）。
+          # Crossref 的 filter=doi:a,b,c 会被拒（pair-list-form-invalid），只有 OpenAlex 能批量。
+          # 默认 --limit=3000 分批推进；真实进度在 state/cited-backfill-state.json（断点续跑，不重打上游）。
+          if [[ "$TASK" == "all" || "$TASK" == "cited" ]]; then
+            node "$SCRIPTS_DIR/pipeline-cited-backfill.js" --limit=3000
+            # 把补齐的被引文档推断归属到站（低可信度，只作候选；产物进 data/cited-site-assign.json）
+            node "$SCRIPTS_DIR/pipeline-cited-site-assign.js" --write
+            # 补齐产物 → 扩库候选清单 + 分片保真度快报。纯离线（OpenAlex 免费层按 IP 日预算，
+            # 补齐任务自己就能把当天预算打光，所以这一步绝不能联网）。
+            node "$SCRIPTS_DIR/pipeline-cited-gap-ranked.js" --write
+          fi
+          # 说明：abstractbackfill / edge_refresh 引用的脚本
+          # (pipeline-abstract-backfill.js / tools/edge-builder.py) 已不在仓库中，
+          # 保留会令 all 运行因缺文件而失败，故移除此处调度；如需恢复先补回对应脚本。
+          # ===== 知识图谱：三个写入者的回退风险（2026-09-27 修复）=====
+          # knowledge-graph.json / knowledge-graph-entities.json 此前有三个写入者，
+          # 且后两者会把好图谱回退成玩具图谱：
+          #   selfdb        → data/knowledge-graph.json     （pipeline-self-db-build.js，边数硬限幅 5000）
+          #   edge_refresh  → data/knowledge-graph-entities.json（edge-builder.py，tag-tag 共现 ≤5000）
+          # 本次新增 kgbuild 作为**最后写入者**，聚合 30 站 + 学术数据集重建
+          # 「实体↔站 / 实体↔标签」枢纽型图谱（14k 节点 / 37k 边），覆盖前两者的降级产物。
+          # 保持 selfdb / edge_refresh 不动：它们各自产出独立报告，且 kgbuild 失败时可作降级兜底。
+          if [[ "$TASK" == "all" || "$TASK" == "kgbuild" ]]; then
+            node tools/build-knowledge-graph.mjs
+          fi
+          if [[ "$TASK" == "all" || "$TASK" == "guard" ]]; then
+            node --check api-guard/worker.js && echo "[guard] worker.js 语法 OK"
+            grep -q "addEventListener('fetch'" api-guard/worker.js || { echo "::error::worker.js 缺少 fetch 事件监听"; exit 1; }
+            grep -q "PRO_SECRET" api-guard/worker.js && echo "[guard] worker.js 引用 PRO_SECRET OK" || echo "::warning::worker.js 未引用 PRO_SECRET"
+            test -f api-guard/deploy-api.mjs && echo "[guard] 部署入口 deploy-api.mjs 存在 OK" || { echo "::error::缺少 api-guard/deploy-api.mjs 部署入口"; exit 1; }
+          fi
+          # ===== 编排层接 CI（2026-10-09 补入 · 报告 F3）=====
+          # 此前 orchestrator.mjs 只能本地跑，产出 flywheel-plan.json 但没人定期刷新。
+          # 接进 CI 后飞轮优先扩域清单每日自动更新，让「扩域决策」从人工判断变成可追踪产物。
+          # 退出码保持 0：编排层是决策辅助，不阻断发布，只有产出错乱时才失败。
+          if [[ "$TASK" == "all" || "$TASK" == "orchestrator" ]]; then
+            node agent-ecosystem/orchestrator.mjs
+          fi
+          # ===== 质量红线门禁 CI 模式（2026-10-09 补入 · 报告 F1）=====
+          # 关键区别：本地跑 pipeline-quality-gate.js 只算指标不 exit 1，
+          # 只有加 --ci 才会真的阻断。此前 CI 只跑 --self-test，等于
+          # 门禁自身双向回归绿了但生产站点的红线没被检查过。
+          # 报告 §9.4 说 15/30 放行 是本地实测值；这里接进 CI 后，
+          # 任何一次 push 都能重新算出真实放行数。
+          if [[ "$TASK" == "all" || "$TASK" == "quality" ]]; then
+            node operations-plan/pipeline-quality-gate.js --ci
+          fi
+          # ===== 门禁失败触达告警（2026-10-09 补入 · 报告 F2）=====
+          # 独立任务，不阻断本身；扫描 reports/ 里最近一次门禁产物，
+          # 若判定 fail，则通过 gh issue 建/更新一条追踪 Issue。
+          # 这样即使 CI 失败被忽略，告警仍会以 Issue 形式留在仓库首页。
+          if [[ "$TASK" == "gate-alert" ]]; then
+            node tools/gate-alert.mjs
+          fi
+          # ===== 跨域空白月度简报（2026-10-09 补入 · 报告 B4）=====
+          # 独立任务，可在手动派发 task=gapsbriefing 时单独跑（跳过 citation pipeline）。
+          # 与 all 模式里 citations 分支的简报产出同脚本，此处保证"只刷新简报、不重跑引用边"的场景可用。
+          if [[ "$TASK" == "gapsbriefing" ]]; then
+            node "$SCRIPTS_DIR/pipeline-citation-gaps-briefing.js"
+          fi
+          # ===== 对外数字自动化门禁（2026-10-10 补入 · 报告 §9.3 / M4 治理）=====
+          # 治「对外口径偏离模式化复发」的根：README.md / ai.txt / mcp-server/README.md
+          # 三个对外文档都有 GENETECH:CLAIMS:BEGIN/END 锚注，锚注之间的内容**必须由**
+          # pipeline-docs-claims.js 从 data/ 单一真源实时算出、逐字一致。
+          # 漂移即 CI 变红，杜绝人工文案再漂（M4 三处偏离：4.9 万 / 14 站 / 22 域）。
+          # 独立任务，不阻断本身；每日 all 模式也会跑，保证产物持续刷新。
+          if [[ "$TASK" == "all" || "$TASK" == "docsclaims" ]]; then
+            node "$SCRIPTS_DIR/pipeline-docs-claims.js" --verify
+          fi
+          # ===== 签名链 CI 门禁（2026-10-16 补入 · P8-D M4 治理）=====
+          # 治「对外产物无签名链 → 篡改不可追踪」这个 Phase 8 之前的历史欠账。
+          # 白名单 9 份关键产物（claims / hypothesis-cards / honesty-ledger / stance-f1-eval /
+          # extracted-claims / conflicts-v2 / verification-runs / agent-card / hypothesis-queue）
+          # 任何 hash mismatch / signature invalid → exit 1 阻断发布。
+          # 独立任务（可 --sign-missing 一键补签），每日 all 也跑一次保证签名链持续新鲜。
+          # 审计日志写入 data/signing-audit.jsonl，M4 门禁要求 gh run list 显示绿 + 100% OK。
+          if [[ "$TASK" == "all" || "$TASK" == "signverify" ]]; then
+            node tools/ci-verify-sig.mjs
+          fi
+          # ===== 飞轮状态陈旧 monitor（2026-10-11 补入 · 报告 §8）=====
+          # 治「飞轮静默冻结」这个最贵的故障模式：backfill-cursor 39 天陈旧才发现。
+          # 8 个核心 state 文件按阈值检查 mtime，任一过期 exit 1 让 CI 变红。
+          # 独立任务（gate-alert 类似不阻断），all 模式每日也会跑，
+          # 保证陈旧一出现当天就被告警而不是月度回顾才看到。
+          if [[ "$TASK" == "all" || "$TASK" == "flywheelstate" ]]; then
+            node "$SCRIPTS_DIR/monitor-flywheel-state.js" || true
+          fi
+          # ===== 立场/情绪分析（2026-10-11 补入 · 报告 P1-立场）=====
+          # 词典打分方法（POS/NEG/UNCERTAIN 三分 + 加权），纯 stdlib 零依赖。
+          # 关键限制：不是模型情感分析，只用于跨站相对比较不做绝对判断。
+          # 独立任务（不阻断），all 每日跑一次让分布持续刷新。
+          if [[ "$TASK" == "all" || "$TASK" == "stance" ]]; then
+            node "$SCRIPTS_DIR/pipeline-stance-analysis.js" || true
+          fi
+          # ===== MCP 冒烟测试（2026-10-11 补入 · 防 MCP 上架后崩溃）=====
+          # .workbuddy/probe/mcp-smoke.mjs 端到端跑：spawn server → initialize 握手
+          # → tools/list 应返 14 个 → 逐个 tools/call 命中真数据 → 断言 status/内容合理。
+          # 依赖 Node 20+（v2 SDK）与本地数据文件，与 CI 环境一致。
+          # 独立任务（不阻断），mcp 任务也顺带跑一次，让每次 M4 claims 更新都验证 14 工具。
+          if [[ "$TASK" == "all" || "$TASK" == "mcp" || "$TASK" == "mcp-smoke" ]]; then
+            node .workbuddy/probe/mcp-smoke.mjs || true
+          fi
+          # ===== MCP 首调延迟门禁（2026-10-13 N2 补入 · 验收判据 P95 < 2s）=====
+          # .workbuddy/probe/mcp-latency-gate.mjs 启动一次干净 http.mjs，等后台 warmup 完成后
+          # 采样 list_sites / semantic_search / verify_entity 各 3 轮，P95 超过 2000ms 即红。
+          # 覆盖：warmup 竞态（loadSites 合并）、分片快路径、SearchIndex 构建。
+          # 独立任务（不阻断），mcp-smoke 也顺带跑，让每次 MCP 改动都验证延迟不退化。
+          if [[ "$TASK" == "all" || "$TASK" == "mcp" || "$TASK" == "mcp-smoke" || "$TASK" == "mcp-latency" ]]; then
+            node .workbuddy/probe/mcp-latency-gate.mjs --threshold=2000 --rounds=3 || true
+          fi
+          # ===== 检索评测回归（2026-10-12 补入 · 报告 T1-4）=====
+          # eval/run-eval.mjs --sites=3 --k=10：快跑 3 站 30 query，15s 出结论。
+          # 度量 Recall@10 / MRR / NDCG@10，产物 eval/results-<date>.json + leaderboard HTML。
+          # 构造性基准（query 从实体自身字段截断生成），用于防检索回归——
+          # 换 BM25→向量/RAG 后跑同一评测集直接对比。全量 30 站约 15 分钟，CI 走快跑。
+          # 独立任务（不阻断），all 每日跑一次保证回归门禁持续刷新。
+          if [[ "$TASK" == "all" || "$TASK" == "eval" ]]; then
+            node eval/run-eval.mjs --sites=3 --k=10 || true
+          fi
+          # ===== MCP remote 契约测试（2026-10-14 补入 · 报告 §2 P0-3）=====
+          # mcp-remote/_test_contract.mjs：14 工具逐一 tools/call + fail-closed 鉴权 +
+          # GET /mcp 405 + schema 对齐本地版，共 46 条断言，2 秒内出结论。
+          # 桩：fetch 全量替换为本地路由表，命中真实数据；未命中给结构化错误。
+          # 阻断策略：本任务 exit 1 直接失败，因为契约破坏会导致线上 MCP 客户端崩溃
+          # （与 mcp-smoke 的"不阻断只提示"不同——契约是硬承诺）。
+          if [[ "$TASK" == "all" || "$TASK" == "mcp" || "$TASK" == "mcp-contract" ]]; then
+            node mcp-remote/_test_contract.mjs
+          fi
+
+      - name: Commit generated outputs
+        if: github.event.inputs.task != 'guard'
+        run: |
+          git config --local user.email "ops-bot@genetech.example"
+          git config --local user.name "GeneTech Ops Bot"
+          git add mcp-server/ data/ state/ reports/ content/ \
+                  $(ls -d */website/api 2>/dev/null | sed 's#/$##' | xargs -I{} echo "{}/website/api") 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "[Bot] Extra ops update $(date -u +'%Y-%m-%d-%H:%M:%S UTC')"
+            for i in 1 2 3; do git pull --rebase --autostash 2>/dev/null || true; if git push; then break; fi; sleep 10; done
+          fi
+        continue-on-error: true
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: extra-ops-reports
+          path: reports/
+          retention-days: 30
+
+  notify-on-failure:
+    runs-on: ubuntu-latest
+    needs: extra-ops
+    if: failure() && github.event_name != 'pull_request'
+    steps:
+      - name: Create failure / rollback issue
+        run: |
+          gh issue create \
+            --title "[Ops Alert] Extra Ops 执行失败或部署验证未通过 ${{ github.run_id }}" \
+            --body "补位闭环自动化执行失败，或 rollout-verify 检测到站点数据异常。请检查 Actions 日志与最新 report-rollout-verify-*.json。\n\nRun: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --label "ops-alert,failure"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
