@@ -121,3 +121,12 @@
 - **血泪教训新增**：(1) **循环论证要主动暴露**——v2 没意识到用 pairMatrix 验 pairMatrix，教训：每个验证器都要问"验证源和被验证数据是不是同一个"；(2) **多源交叉的独立性要诚实标注**——V2/V3/V1 独立性 1.0/0.6/0.5，≥2 源通过要求至少 1 源独立，否则同源 2 源也算通过就失去意义；(3) **在线 API rate limit 本地镜像是可靠回退**——Crossref/OpenAlex 免费层 IP 429，本地已抓 48760+1634 是等价外部源且更稳定；(4) **cross_verified 是补充指标不是替代**——honesty_score 保持 0.822 不动，cross_verification_rate 0.926 是补充记录。
 - Phase 12 入口：P12-A 真在线外部验证（等预算恢复或换 Europe PMC）/ P12-B concepts 抽取补 emerging_topic 池 / P12-C hypothesis-queue 状态机重构 / P12-D wrangler 后 A2A HTTP 集成测试（用户阻塞）。
 
+## 13. Phase 12 深化收官（2026-10-16 傍晚续）
+- **P12-A**：`agent-ecosystem/hypothesis-queue-transitions.mjs`（280 行）—— 1,062 张卡全量补齐 transition_history（回填 1,226 事件），980 张 queued 分类 abstention_class：inconclusive_retryable 105 / priority_low_pending 489 / proposed_not_delivered 171 / data_source_blocked 215。幂等设计检测既有 history 事件避免重复。
+- **P12-B**：`tools/gen/generate-hypothesis-cards-v3-concepts.mjs`（430 行，4 策略概念派生）—— 940→**1,062** 张。S1 concept_bridge 51 / S2 concept_emergence 30 / S3 concept_gap_fill 0 / S4 single_site_hotspot 41。4 新假设类型（原 7 + 4 概念派生 = 11 类）。数据源：cited-entities × cited-site-assign（117 条归属）→ 445 站点-概念对，16/30 站点有效。
+- **P12-C**：v3 再跑 30 张 seed=100 —— 27 cross_verified / 3 cross_weak（90.0%）；v2↔v3 交集 19 张一致性 19/19 verified-ish（100%），1 张细粒度分歧 HYP-0718（v2 verified vs v3 cross_weak）。
+- **诚实性账本**：total 946→1,068 / abstained 840→962 / verification_rate 0.111→0.098 / **honesty_score 0.822→0.819**（122 张未验证稀释的诚实代价）。
+- 签名链 9/9 OK；无新增白名单条目。
+- **血泪教训新增**：(1) S3 生成 0 张是真实数据天花板不是 bug；(2) 跨验证器一致性对比要在**同一 pool** 上跑才有意义（v3 从 Phase 10 verified 抽、v2 从全池抽 → 交集只有 19）；(3) 字段命名 `decision` vs `conclusion` 历史分歧，长期需统一；(4) 单站假设是首次（S4 hotspot 打破"所有假设都是跨站 pair"的隐含假设）。
+- Phase 13 入口：P13-A 122 张新概念卡跑 v3 / P13-B 站点归属扩容 / P13-C 全池三验证器一致性 / P13-D wrangler 后 A2A 集成。
+
