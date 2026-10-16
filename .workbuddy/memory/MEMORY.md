@@ -104,3 +104,11 @@
 - Phase 10 入口：P10-A 从 840 abstained 抽 50-100 验证（verification_rate 0.028→0.05-0.10）/ P10-B 突破新兴主题池子（引入 concepts 抽取）/ P10-C abstention 分布入 hypothesis-queue 状态机 / P10-D wrangler 部署后 A2A HTTP 集成测试。
 - **P9-D 跳过**（依赖 wrangler 部署，用户阻塞未解）。
 
+## 12.5 Phase 10 抽样验证 + 状态机扩容（2026-10-16 傍晚）
+- **P10-A**：`agent-ecosystem/hypothesis-verifier-v2.mjs` (340 行) — 7 策略验证器（每类型独立规则：litellbridge/sparse_bridge_v2/moderate_bridge/degree_imbalance/emerging_topic/bidirectional_gap/crossref_topic_bridge），抽样 100 张跑验证。**57 verified / 42 inconclusive / 1 falsified**，avgConf 0.522。
+- **P10-C**：hypothesis-queue 全量扩容到 940 张（24 verified / 916 queued），24 → 81 verified / 1 falsified / 858 queued（P10-A 后）。
+- **入账链路**：verifier-v2 → sync-verification-to-cards → discovery-credit-batch。新增 `sync-verification-to-cards.mjs` (125 行) 做 cards 状态回写。
+- **关键数字跃迁**：verified_discoveries 24→105 / verification_rate 0.028→**0.111** / **honesty_score 0.805→0.822**（超目标 0.06）。
+- **血泪教训新增**：(1) v1 验证器只认真正的 litellbridge，非 litellbridge 全 inconclusive 是诚实弃权但也让扩产没被验证——v2 引入类型专用策略才解决；(2) **循环论证风险**：emerging_topic/moderate_bridge/crossref_topic_bridge 用生成数据验证生成断言 = 数据事实验证而非跨数据源验证，confidence 0.60 保守但仍是"用 X 验 X"；(3) sync-back 是必要环节，verifier 只更新 queue、discovery-credit-batch 读 cards，两源需显式同步点。
+- Phase 11 入口：P11-A 引入外部数据源（OpenAlex/Crossref）打破循环论证 / P11-B concepts 抽取补 emerging_topic 池 / P11-C abstention 入 hypothesis-queue 状态机 / P11-D wrangler 后 A2A HTTP 集成测试。
+
