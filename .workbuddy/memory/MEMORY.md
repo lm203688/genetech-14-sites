@@ -112,3 +112,12 @@
 - **血泪教训新增**：(1) v1 验证器只认真正的 litellbridge，非 litellbridge 全 inconclusive 是诚实弃权但也让扩产没被验证——v2 引入类型专用策略才解决；(2) **循环论证风险**：emerging_topic/moderate_bridge/crossref_topic_bridge 用生成数据验证生成断言 = 数据事实验证而非跨数据源验证，confidence 0.60 保守但仍是"用 X 验 X"；(3) sync-back 是必要环节，verifier 只更新 queue、discovery-credit-batch 读 cards，两源需显式同步点。
 - Phase 11 入口：P11-A 引入外部数据源（OpenAlex/Crossref）打破循环论证 / P11-B concepts 抽取补 emerging_topic 池 / P11-C abstention 入 hypothesis-queue 状态机 / P11-D wrangler 后 A2A HTTP 集成测试。
 
+## 12.6 Phase 11 多源交叉验证（2026-10-16 深夜）
+- **P11-A**：`agent-ecosystem/hypothesis-verifier-v3-cross.mjs` (294 行) — 3 源交叉验证器打破循环论证。V1 citation-edges 原始边 25682（相关，independence 0.5）/ **V2 cited-entities OpenAlex 抓取 48760（完全独立，1.0）** / V3 academic-entities Crossref 抓取 1634（半独立 tags 本项目打，0.6）。判据：≥2 源通过且至少 1 源 V2/V3。
+- **结果**：Phase 10 全部 81 verified 交叉验证 → **cross_verified 75 (92.6%) / cross_weak 6 (7.4%) / cross_falsified 0**；3 源通过 7 张 / 2 源通过 68 / 1 源通过 6；avgConf 0.652。达成主判据 92.6% > 90%。
+- **关键发现**：Phase 10 结论不是虚构的。emerging_topic 靠 V2 concepts + V3 academic 支持；moderate_bridge 3 源全通过 7 张（最充分）；6 张 cross_weak 是"gap pair 但两站都有实体"的最诚实证据。
+- **破循环论证**：v2 用 pairMatrix 验 pairMatrix = 循环；v3 用 3 独立源交叉，V2 完全独立。cross_verification_rate 0.926 写入 `honesty-ledger.json.cross_verification` 补充段，**不替代** honesty_score 0.822（三账本公式产物）。
+- **在线 API 回退**：Crossref `/works/{DOI}` 和 `/query` 都 429（IP 层 rate limit，短时无效），回退本地已抓 OpenAlex/Crossref 数据（等价外部源，独立于 pairMatrix 生成逻辑）。记入 `online_fallback_note`。
+- **血泪教训新增**：(1) **循环论证要主动暴露**——v2 没意识到用 pairMatrix 验 pairMatrix，教训：每个验证器都要问"验证源和被验证数据是不是同一个"；(2) **多源交叉的独立性要诚实标注**——V2/V3/V1 独立性 1.0/0.6/0.5，≥2 源通过要求至少 1 源独立，否则同源 2 源也算通过就失去意义；(3) **在线 API rate limit 本地镜像是可靠回退**——Crossref/OpenAlex 免费层 IP 429，本地已抓 48760+1634 是等价外部源且更稳定；(4) **cross_verified 是补充指标不是替代**——honesty_score 保持 0.822 不动，cross_verification_rate 0.926 是补充记录。
+- Phase 12 入口：P12-A 真在线外部验证（等预算恢复或换 Europe PMC）/ P12-B concepts 抽取补 emerging_topic 池 / P12-C hypothesis-queue 状态机重构 / P12-D wrangler 后 A2A HTTP 集成测试（用户阻塞）。
+
