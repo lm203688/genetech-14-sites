@@ -1,0 +1,56 @@
+{
+  "phase": "P12-A",
+  "runAt": "2026-10-16T05:44:51.466Z",
+  "totalEntries": 1062,
+  "backfilledEvents": 1226,
+  "abstentionClassified": 980,
+  "abstentionByClass": {
+    "inconclusive_retryable": 105,
+    "priority_low_pending": 489,
+    "proposed_not_delivered": 171,
+    "data_source_blocked": 215
+  },
+  "cardsBackfilled": 1062,
+  "sampleBackfilled": [
+    {
+      "id": "HYP-20261016-0001",
+      "backfilled": 3
+    },
+    {
+      "id": "HYP-20261016-0002",
+      "backfilled": 3
+    },
+    {
+      "id": "HYP-20261016-0003",
+      "backfilled": 3
+    },
+    {
+      "id": "HYP-20261016-0004",
+      "backfilled": 3
+    },
+    {
+      "id": "HYP-20261016-0005",
+      "backfilled": 1
+    },
+    {
+      "id": "HYP-20261016-0006",
+      "backfilled": 3
+    },
+    {
+      "id": "HYP-20261016-0007",
+      "backfilled": 3
+    },
+    {
+      "id": "HYP-20261016-0008",
+      "backfilled": 3
+    },
+    {
+      "id": "HYP-20261016-0009",
+      "backfilled": 1
+    },
+    {
+      "id": "HYP-20261016-0010",
+      "backfilled": 1
+    }
+  ]
+}

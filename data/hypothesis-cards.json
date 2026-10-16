@@ -32,7 +32,10 @@
       "degree_imbalance": 135,
       "emerging_topic": 30,
       "bidirectional_gap": 135,
-      "crossref_topic_bridge": 180
+      "crossref_topic_bridge": 180,
+      "concept_bridge": 51,
+      "concept_emergence": 30,
+      "single_site_hotspot": 41
     },
     "byEvidenceStatus": {
       "supported": 81,
@@ -67,7 +70,14 @@
     "lastVerifiedAt": "2026-10-16T05:08:22.665Z",
     "verificationRunPath": "data\\verification-runs\\2026-10-16-v2-run.json",
     "verified": 81,
-    "falsified": 1
+    "falsified": 1,
+    "lastGenerated": {
+      "at": "2026-10-16T05:42:48.990Z",
+      "batch": "P12-B concepts v3",
+      "tool": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "added": 122,
+      "total": 1062
+    }
   },
   "hypothesisCards": [
     {
@@ -56290,6 +56300,3331 @@
           "c9ad1c5d"
         ]
       }
+    },
+    {
+      "id": "HYP-20261016-V3-1001",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "genetech-tools",
+      "site_b": "privacy-computing",
+      "statement": "站点 genetech-tools 与 privacy-computing 共享主题域「Adversarial system、Computer science、Automation」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Adversarial system",
+            "score_sum": 1.483
+          },
+          {
+            "name": "Computer science",
+            "score_sum": 1.293
+          },
+          {
+            "name": "Automation",
+            "score_sum": 1.249
+          }
+        ],
+        "concept_count_a": 3
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.959Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1002",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "genetech-tools",
+      "site_b": "biomed-ai",
+      "statement": "站点 genetech-tools 与 biomed-ai 共享主题域「Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.236
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.962Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1003",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "genetech-tools",
+      "site_b": "biocomputing",
+      "statement": "站点 genetech-tools 与 biocomputing 共享主题域「Python (programming language)、Computer science、Algorithm」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Python (programming language)",
+            "score_sum": 1.62
+          },
+          {
+            "name": "Computer science",
+            "score_sum": 1.319
+          },
+          {
+            "name": "Algorithm",
+            "score_sum": 1.19
+          }
+        ],
+        "concept_count_a": 3
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.962Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1004",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "genetech-tools",
+      "site_b": "quantum-computing",
+      "statement": "站点 genetech-tools 与 quantum-computing 共享主题域「Computer science、Space (punctuation)」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.395
+          },
+          {
+            "name": "Space (punctuation)",
+            "score_sum": 1.125
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.962Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1005",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "genetech-tools",
+      "site_b": "sat-6g",
+      "statement": "站点 genetech-tools 与 sat-6g 共享主题域「Computer science、Process (computing)」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.269
+          },
+          {
+            "name": "Process (computing)",
+            "score_sum": 1.04
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1006",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "genetech-tools",
+      "site_b": "tcm-tools",
+      "statement": "站点 genetech-tools 与 tcm-tools 共享主题域「Context (archaeology)、Process (computing)」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Context (archaeology)",
+            "score_sum": 1.08
+          },
+          {
+            "name": "Process (computing)",
+            "score_sum": 1.048
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1007",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "genetech-tools",
+      "site_b": "bionic-ai",
+      "statement": "站点 genetech-tools 与 bionic-ai 共享主题域「Automation」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Automation",
+            "score_sum": 1.377
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1008",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "genetech-tools",
+      "site_b": "semiconductor",
+      "statement": "站点 genetech-tools 与 semiconductor 共享主题域「Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.168
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1009",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "privacy-computing",
+      "site_b": "biomed-ai",
+      "statement": "站点 privacy-computing 与 biomed-ai 共享主题域「Wearable computer、Computer science、Machine learning」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Wearable computer",
+            "score_sum": 1.239
+          },
+          {
+            "name": "Computer science",
+            "score_sum": 1.228
+          },
+          {
+            "name": "Machine learning",
+            "score_sum": 1.071
+          }
+        ],
+        "concept_count_a": 3
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1010",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "privacy-computing",
+      "site_b": "quantum-materials",
+      "statement": "站点 privacy-computing 与 quantum-materials 共享主题域「Materials science、Optoelectronics」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Materials science",
+            "score_sum": 1.328
+          },
+          {
+            "name": "Optoelectronics",
+            "score_sum": 1.135
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1011",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "privacy-computing",
+      "site_b": "neuromorphic",
+      "statement": "站点 privacy-computing 与 neuromorphic 共享主题域「Materials science、Electrode」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Materials science",
+            "score_sum": 1.416
+          },
+          {
+            "name": "Electrode",
+            "score_sum": 1.4
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1012",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "privacy-computing",
+      "site_b": "life-science",
+      "statement": "站点 privacy-computing 与 life-science 共享主题域「Substrate (aquarium)」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Substrate (aquarium)",
+            "score_sum": 1.121
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1013",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "privacy-computing",
+      "site_b": "biocomputing",
+      "statement": "站点 privacy-computing 与 biocomputing 共享主题域「Workflow、Scalability、Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Workflow",
+            "score_sum": 1.544
+          },
+          {
+            "name": "Scalability",
+            "score_sum": 1.413
+          },
+          {
+            "name": "Computer science",
+            "score_sum": 1.311
+          }
+        ],
+        "concept_count_a": 4
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1014",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "privacy-computing",
+      "site_b": "quantum-computing",
+      "statement": "站点 privacy-computing 与 quantum-computing 共享主题域「Computer science、Artificial intelligence、Machine learning」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.387
+          },
+          {
+            "name": "Artificial intelligence",
+            "score_sum": 1.131
+          },
+          {
+            "name": "Machine learning",
+            "score_sum": 1.045
+          }
+        ],
+        "concept_count_a": 3
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1015",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "privacy-computing",
+      "site_b": "brain-science",
+      "statement": "站点 privacy-computing 与 brain-science 共享主题域「Electroencephalography、Materials science、Machine learning」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Electroencephalography",
+            "score_sum": 1.423
+          },
+          {
+            "name": "Materials science",
+            "score_sum": 1.227
+          },
+          {
+            "name": "Machine learning",
+            "score_sum": 1.062
+          }
+        ],
+        "concept_count_a": 3
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1016",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "privacy-computing",
+      "site_b": "sat-6g",
+      "statement": "站点 privacy-computing 与 sat-6g 共享主题域「Computer science、Human–computer interaction」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.261
+          },
+          {
+            "name": "Human–computer interaction",
+            "score_sum": 1.096
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1017",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "privacy-computing",
+      "site_b": "bionic-ai",
+      "statement": "站点 privacy-computing 与 bionic-ai 共享主题域「Automation」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Automation",
+            "score_sum": 1.209
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1018",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "privacy-computing",
+      "site_b": "semiconductor",
+      "statement": "站点 privacy-computing 与 semiconductor 共享主题域「Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.16
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1019",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biomed-ai",
+      "site_b": "biocomputing",
+      "statement": "站点 biomed-ai 与 biocomputing 共享主题域「Computer science、Data science、Point (geometry)」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.75,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.254
+          },
+          {
+            "name": "Data science",
+            "score_sum": 1.029
+          },
+          {
+            "name": "Point (geometry)",
+            "score_sum": 1.008
+          }
+        ],
+        "concept_count_a": 3
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1020",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biomed-ai",
+      "site_b": "quantum-computing",
+      "statement": "站点 biomed-ai 与 quantum-computing 共享主题域「Computer science、Machine learning」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.33
+          },
+          {
+            "name": "Machine learning",
+            "score_sum": 0.96
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1021",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biomed-ai",
+      "site_b": "brain-science",
+      "statement": "站点 biomed-ai 与 brain-science 共享主题域「Psychology、Machine learning」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Psychology",
+            "score_sum": 1.182
+          },
+          {
+            "name": "Machine learning",
+            "score_sum": 0.977
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1022",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biomed-ai",
+      "site_b": "sat-6g",
+      "statement": "站点 biomed-ai 与 sat-6g 共享主题域「Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.204
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1023",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biomed-ai",
+      "site_b": "tcm-tools",
+      "statement": "站点 biomed-ai 与 tcm-tools 共享主题域「Medicine」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Medicine",
+            "score_sum": 1.446
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1024",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biomed-ai",
+      "site_b": "semiconductor",
+      "statement": "站点 biomed-ai 与 semiconductor 共享主题域「Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.103
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1025",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "quantum-materials",
+      "site_b": "neuromorphic",
+      "statement": "站点 quantum-materials 与 neuromorphic 共享主题域「Materials science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Materials science",
+            "score_sum": 1.542
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1026",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "quantum-materials",
+      "site_b": "quantum-computing",
+      "statement": "站点 quantum-materials 与 quantum-computing 共享主题域「Physics、Quantum dot」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Physics",
+            "score_sum": 1.453
+          },
+          {
+            "name": "Quantum dot",
+            "score_sum": 1.425
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1027",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "quantum-materials",
+      "site_b": "brain-science",
+      "statement": "站点 quantum-materials 与 brain-science 共享主题域「Chemistry、Materials science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Chemistry",
+            "score_sum": 1.599
+          },
+          {
+            "name": "Materials science",
+            "score_sum": 1.353
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1028",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "quantum-materials",
+      "site_b": "bionic-ai",
+      "statement": "站点 quantum-materials 与 bionic-ai 共享主题域「Chemistry」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Chemistry",
+            "score_sum": 1.423
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1029",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "neuromorphic",
+      "site_b": "brain-science",
+      "statement": "站点 neuromorphic 与 brain-science 共享主题域「Materials science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Materials science",
+            "score_sum": 1.441
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1030",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "life-science",
+      "site_b": "biocomputing",
+      "statement": "站点 life-science 与 biocomputing 共享主题域「Biology」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Biology",
+            "score_sum": 1.257
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1031",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "life-science",
+      "site_b": "brain-science",
+      "statement": "站点 life-science 与 brain-science 共享主题域「Biology」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Biology",
+            "score_sum": 1.273
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1032",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "life-science",
+      "site_b": "agent-ecosystem",
+      "statement": "站点 life-science 与 agent-ecosystem 共享主题域「Biology、Computational biology」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Biology",
+            "score_sum": 1.283
+          },
+          {
+            "name": "Computational biology",
+            "score_sum": 1.097
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1033",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "life-science",
+      "site_b": "bionic-ai",
+      "statement": "站点 life-science 与 bionic-ai 共享主题域「Biology」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Biology",
+            "score_sum": 1.191
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1034",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biocomputing",
+      "site_b": "quantum-computing",
+      "statement": "站点 biocomputing 与 quantum-computing 共享主题域「Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.413
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1035",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biocomputing",
+      "site_b": "brain-science",
+      "statement": "站点 biocomputing 与 brain-science 共享主题域「Decoding methods、Biology」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Decoding methods",
+            "score_sum": 1.562
+          },
+          {
+            "name": "Biology",
+            "score_sum": 1.149
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1036",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biocomputing",
+      "site_b": "sat-6g",
+      "statement": "站点 biocomputing 与 sat-6g 共享主题域「Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.286
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1037",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biocomputing",
+      "site_b": "agent-ecosystem",
+      "statement": "站点 biocomputing 与 agent-ecosystem 共享主题域「Biology」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Biology",
+            "score_sum": 1.159
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1038",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biocomputing",
+      "site_b": "bionic-ai",
+      "statement": "站点 biocomputing 与 bionic-ai 共享主题域「Biology」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Biology",
+            "score_sum": 1.067
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1039",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biocomputing",
+      "site_b": "digital-twin",
+      "statement": "站点 biocomputing 与 digital-twin 共享主题域「Benchmark (surveying)」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Benchmark (surveying)",
+            "score_sum": 1.152
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1040",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "biocomputing",
+      "site_b": "semiconductor",
+      "statement": "站点 biocomputing 与 semiconductor 共享主题域「Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.186
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1041",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "quantum-computing",
+      "site_b": "brain-science",
+      "statement": "站点 quantum-computing 与 brain-science 共享主题域「Machine learning」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.643,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Machine learning",
+            "score_sum": 0.951
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1042",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "quantum-computing",
+      "site_b": "sat-6g",
+      "statement": "站点 quantum-computing 与 sat-6g 共享主题域「Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.362
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1043",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "quantum-computing",
+      "site_b": "bionic-ai",
+      "statement": "站点 quantum-computing 与 bionic-ai 共享主题域「Identification (biology)」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Identification (biology)",
+            "score_sum": 1.254
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1044",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "quantum-computing",
+      "site_b": "semiconductor",
+      "statement": "站点 quantum-computing 与 semiconductor 共享主题域「Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.262
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1045",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "brain-science",
+      "site_b": "agent-ecosystem",
+      "statement": "站点 brain-science 与 agent-ecosystem 共享主题域「Biology」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Biology",
+            "score_sum": 1.175
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1046",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "brain-science",
+      "site_b": "bionic-ai",
+      "statement": "站点 brain-science 与 bionic-ai 共享主题域「Chemistry、Biology」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Chemistry",
+            "score_sum": 1.534
+          },
+          {
+            "name": "Biology",
+            "score_sum": 1.084
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1047",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "sat-6g",
+      "site_b": "tcm-tools",
+      "statement": "站点 sat-6g 与 tcm-tools 共享主题域「Process (computing)」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Process (computing)",
+            "score_sum": 1.07
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1048",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "sat-6g",
+      "site_b": "semiconductor",
+      "statement": "站点 sat-6g 与 semiconductor 共享主题域「Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Computer science",
+            "score_sum": 1.136
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1049",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "sat-6g",
+      "site_b": "embodied-ai",
+      "statement": "站点 sat-6g 与 embodied-ai 共享主题域「Robot」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Robot",
+            "score_sum": 1.188
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1050",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "agent-ecosystem",
+      "site_b": "bionic-ai",
+      "statement": "站点 agent-ecosystem 与 bionic-ai 共享主题域「Biology」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Biology",
+            "score_sum": 1.093
+          }
+        ],
+        "concept_count_a": 1
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1051",
+      "hypothesis_type": "concept_bridge",
+      "site_a": "tcm-tools",
+      "site_b": "embodied-ai",
+      "statement": "站点 tcm-tools 与 embodied-ai 共享主题域「Perspective (graphical)、Health care」，虽无直接引用，但概念层面已形成跨站连接",
+      "expected_evidence": "两站点在 openalex/crossref 抓取的实体 concepts 交集非空",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.7,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_bridge",
+        "strategy_description": "Phase 12-B 新策略：概念层面交叉",
+        "shared_concepts": [
+          {
+            "name": "Perspective (graphical)",
+            "score_sum": 1.394
+          },
+          {
+            "name": "Health care",
+            "score_sum": 1.185
+          }
+        ],
+        "concept_count_a": 2
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.963Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1052",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "genetech-tools",
+      "site_b": "privacy-computing",
+      "statement": "主题「Adversarial system」在 genetech-tools 与 privacy-computing 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Adversarial system",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1053",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "genetech-tools",
+      "site_b": "biomed-ai",
+      "statement": "主题「Computer science」在 genetech-tools 与 biomed-ai 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Computer science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1054",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "genetech-tools",
+      "site_b": "biocomputing",
+      "statement": "主题「Python (programming language)」在 genetech-tools 与 biocomputing 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Python (programming language)",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1055",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "genetech-tools",
+      "site_b": "quantum-computing",
+      "statement": "主题「Computer science」在 genetech-tools 与 quantum-computing 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Computer science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1056",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "genetech-tools",
+      "site_b": "sat-6g",
+      "statement": "主题「Computer science」在 genetech-tools 与 sat-6g 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Computer science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1057",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "genetech-tools",
+      "site_b": "tcm-tools",
+      "statement": "主题「Context (archaeology)」在 genetech-tools 与 tcm-tools 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Context (archaeology)",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1058",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "genetech-tools",
+      "site_b": "bionic-ai",
+      "statement": "主题「Automation」在 genetech-tools 与 bionic-ai 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Automation",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1059",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "genetech-tools",
+      "site_b": "semiconductor",
+      "statement": "主题「Computer science」在 genetech-tools 与 semiconductor 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Computer science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1060",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "privacy-computing",
+      "site_b": "biomed-ai",
+      "statement": "主题「Wearable computer」在 privacy-computing 与 biomed-ai 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Wearable computer",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1061",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "privacy-computing",
+      "site_b": "quantum-materials",
+      "statement": "主题「Materials science」在 privacy-computing 与 quantum-materials 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Materials science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1062",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "privacy-computing",
+      "site_b": "neuromorphic",
+      "statement": "主题「Materials science」在 privacy-computing 与 neuromorphic 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Materials science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1063",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "privacy-computing",
+      "site_b": "life-science",
+      "statement": "主题「Substrate (aquarium)」在 privacy-computing 与 life-science 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Substrate (aquarium)",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1064",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "privacy-computing",
+      "site_b": "biocomputing",
+      "statement": "主题「Workflow」在 privacy-computing 与 biocomputing 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Workflow",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1065",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "privacy-computing",
+      "site_b": "quantum-computing",
+      "statement": "主题「Computer science」在 privacy-computing 与 quantum-computing 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Computer science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1066",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "privacy-computing",
+      "site_b": "brain-science",
+      "statement": "主题「Electroencephalography」在 privacy-computing 与 brain-science 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Electroencephalography",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1067",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "privacy-computing",
+      "site_b": "sat-6g",
+      "statement": "主题「Computer science」在 privacy-computing 与 sat-6g 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Computer science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1068",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "privacy-computing",
+      "site_b": "bionic-ai",
+      "statement": "主题「Automation」在 privacy-computing 与 bionic-ai 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Automation",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1069",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "privacy-computing",
+      "site_b": "semiconductor",
+      "statement": "主题「Computer science」在 privacy-computing 与 semiconductor 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Computer science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1070",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "biomed-ai",
+      "site_b": "biocomputing",
+      "statement": "主题「Computer science」在 biomed-ai 与 biocomputing 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Computer science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1071",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "biomed-ai",
+      "site_b": "quantum-computing",
+      "statement": "主题「Computer science」在 biomed-ai 与 quantum-computing 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Computer science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1072",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "biomed-ai",
+      "site_b": "brain-science",
+      "statement": "主题「Psychology」在 biomed-ai 与 brain-science 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Psychology",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1073",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "biomed-ai",
+      "site_b": "sat-6g",
+      "statement": "主题「Computer science」在 biomed-ai 与 sat-6g 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Computer science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1074",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "biomed-ai",
+      "site_b": "tcm-tools",
+      "statement": "主题「Medicine」在 biomed-ai 与 tcm-tools 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Medicine",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1075",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "biomed-ai",
+      "site_b": "semiconductor",
+      "statement": "主题「Computer science」在 biomed-ai 与 semiconductor 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Computer science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1076",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "quantum-materials",
+      "site_b": "neuromorphic",
+      "statement": "主题「Materials science」在 quantum-materials 与 neuromorphic 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Materials science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1077",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "quantum-materials",
+      "site_b": "quantum-computing",
+      "statement": "主题「Physics」在 quantum-materials 与 quantum-computing 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Physics",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1078",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "quantum-materials",
+      "site_b": "brain-science",
+      "statement": "主题「Chemistry」在 quantum-materials 与 brain-science 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Chemistry",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1079",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "quantum-materials",
+      "site_b": "bionic-ai",
+      "statement": "主题「Chemistry」在 quantum-materials 与 bionic-ai 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Chemistry",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1080",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "neuromorphic",
+      "site_b": "brain-science",
+      "statement": "主题「Materials science」在 neuromorphic 与 brain-science 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Materials science",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1081",
+      "hypothesis_type": "concept_emergence",
+      "site_a": "life-science",
+      "site_b": "biocomputing",
+      "statement": "主题「Biology」在 life-science 与 biocomputing 间呈潜在传播链，可验证时序先后",
+      "expected_evidence": "两站点该概念实体的发表年份差异 ≥1 年",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      },
+      "confidence": 0.545,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "concept_emergence",
+        "strategy_description": "Phase 12-B 新策略：概念跨站传播链",
+        "primary_concept": "Biology",
+        "a_score": 0.6,
+        "b_score": 0.55
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1082",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "genetech-tools",
+      "statement": "站点 genetech-tools 在「Computer science」主题下形成研究热点（6 篇实体、平均 score 0.651）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Computer science",
+        "concept_count": 6,
+        "concept_avg_score": 0.651
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1083",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "genetech-tools",
+      "statement": "站点 genetech-tools 在「Work (physics)」主题下形成研究热点（2 篇实体、平均 score 0.565）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.553,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Work (physics)",
+        "concept_count": 2,
+        "concept_avg_score": 0.565
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1084",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "genetech-tools",
+      "statement": "站点 genetech-tools 在「Routing (electronic design automation)」主题下形成研究热点（2 篇实体、平均 score 0.564）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.553,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Routing (electronic design automation)",
+        "concept_count": 2,
+        "concept_avg_score": 0.564
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1085",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "genetech-tools",
+      "statement": "站点 genetech-tools 在「Knowledge management」主题下形成研究热点（2 篇实体、平均 score 0.458）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.532,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Knowledge management",
+        "concept_count": 2,
+        "concept_avg_score": 0.458
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.964Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1086",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "privacy-computing",
+      "statement": "站点 privacy-computing 在「Computer science」主题下形成研究热点（19 篇实体、平均 score 0.643）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.679,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Computer science",
+        "concept_count": 19,
+        "concept_avg_score": 0.643
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1087",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "privacy-computing",
+      "statement": "站点 privacy-computing 在「Materials science」主题下形成研究热点（11 篇实体、平均 score 0.601）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.67,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Materials science",
+        "concept_count": 11,
+        "concept_avg_score": 0.601
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1088",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "privacy-computing",
+      "statement": "站点 privacy-computing 在「Neuromorphic engineering」主题下形成研究热点（5 篇实体、平均 score 0.821）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.664,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Neuromorphic engineering",
+        "concept_count": 5,
+        "concept_avg_score": 0.821
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1089",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "privacy-computing",
+      "statement": "站点 privacy-computing 在「Artificial intelligence」主题下形成研究热点（4 篇实体、平均 score 0.605）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.601,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Artificial intelligence",
+        "concept_count": 4,
+        "concept_avg_score": 0.605
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1090",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "privacy-computing",
+      "statement": "站点 privacy-computing 在「Brain–computer interface」主题下形成研究热点（3 篇实体、平均 score 0.745）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.609,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Brain–computer interface",
+        "concept_count": 3,
+        "concept_avg_score": 0.745
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1091",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "privacy-computing",
+      "statement": "站点 privacy-computing 在「Nanotechnology」主题下形成研究热点（4 篇实体、平均 score 0.524）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.585,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Nanotechnology",
+        "concept_count": 4,
+        "concept_avg_score": 0.524
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1092",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "privacy-computing",
+      "statement": "站点 privacy-computing 在「Spiking neural network」主题下形成研究热点（3 篇实体、平均 score 0.672）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.594,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Spiking neural network",
+        "concept_count": 3,
+        "concept_avg_score": 0.672
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1093",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "privacy-computing",
+      "statement": "站点 privacy-computing 在「Interface (matter)」主题下形成研究热点（2 篇实体、平均 score 0.722）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.584,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Interface (matter)",
+        "concept_count": 2,
+        "concept_avg_score": 0.722
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1094",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "biomed-ai",
+      "statement": "站点 biomed-ai 在「Medicine」主题下形成研究热点（3 篇实体、平均 score 0.520）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.564,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Medicine",
+        "concept_count": 3,
+        "concept_avg_score": 0.52
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1095",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "quantum-materials",
+      "statement": "站点 quantum-materials 在「Materials science」主题下形成研究热点（5 篇实体、平均 score 0.727）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.645,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Materials science",
+        "concept_count": 5,
+        "concept_avg_score": 0.727
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1096",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "quantum-materials",
+      "statement": "站点 quantum-materials 在「Perovskite (structure)」主题下形成研究热点（4 篇实体、平均 score 0.657）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.611,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Perovskite (structure)",
+        "concept_count": 4,
+        "concept_avg_score": 0.657
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1097",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "quantum-materials",
+      "statement": "站点 quantum-materials 在「Photoluminescence」主题下形成研究热点（3 篇实体、平均 score 0.754）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.611,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Photoluminescence",
+        "concept_count": 3,
+        "concept_avg_score": 0.754
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1098",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "quantum-materials",
+      "statement": "站点 quantum-materials 在「Quantum dot」主题下形成研究热点（2 篇实体、平均 score 0.730）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.586,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Quantum dot",
+        "concept_count": 2,
+        "concept_avg_score": 0.73
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1099",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "quantum-materials",
+      "statement": "站点 quantum-materials 在「Physics」主题下形成研究热点（2 篇实体、平均 score 0.683）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.577,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Physics",
+        "concept_count": 2,
+        "concept_avg_score": 0.683
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1100",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "quantum-materials",
+      "statement": "站点 quantum-materials 在「Quantum yield」主题下形成研究热点（2 篇实体、平均 score 0.656）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.571,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Quantum yield",
+        "concept_count": 2,
+        "concept_avg_score": 0.656
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1101",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "life-science",
+      "statement": "站点 life-science 在「Biology」主题下形成研究热点（12 篇实体、平均 score 0.690）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.688,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Biology",
+        "concept_count": 12,
+        "concept_avg_score": 0.69
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1102",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "life-science",
+      "statement": "站点 life-science 在「Synthetic biology」主题下形成研究热点（3 篇实体、平均 score 0.826）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.625,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Synthetic biology",
+        "concept_count": 3,
+        "concept_avg_score": 0.826
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1103",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "life-science",
+      "statement": "站点 life-science 在「Gene」主题下形成研究热点（3 篇实体、平均 score 0.677）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.595,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Gene",
+        "concept_count": 3,
+        "concept_avg_score": 0.677
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1104",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "life-science",
+      "statement": "站点 life-science 在「Genetics」主题下形成研究热点（3 篇实体、平均 score 0.616）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.583,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Genetics",
+        "concept_count": 3,
+        "concept_avg_score": 0.616
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1105",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "life-science",
+      "statement": "站点 life-science 在「Bacteria」主题下形成研究热点（3 篇实体、平均 score 0.591）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.578,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Bacteria",
+        "concept_count": 3,
+        "concept_avg_score": 0.591
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1106",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "life-science",
+      "statement": "站点 life-science 在「Bacillus subtilis」主题下形成研究热点（2 篇实体、平均 score 0.792）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.598,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Bacillus subtilis",
+        "concept_count": 2,
+        "concept_avg_score": 0.792
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1107",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "life-science",
+      "statement": "站点 life-science 在「Plasmid」主题下形成研究热点（2 篇实体、平均 score 0.755）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.591,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Plasmid",
+        "concept_count": 2,
+        "concept_avg_score": 0.755
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1108",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "life-science",
+      "statement": "站点 life-science 在「RNA」主题下形成研究热点（2 篇实体、平均 score 0.624）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.565,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "RNA",
+        "concept_count": 2,
+        "concept_avg_score": 0.624
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1109",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "biocomputing",
+      "statement": "站点 biocomputing 在「Computer science」主题下形成研究热点（5 篇实体、平均 score 0.668）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.634,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Computer science",
+        "concept_count": 5,
+        "concept_avg_score": 0.668
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1110",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "biocomputing",
+      "statement": "站点 biocomputing 在「Workflow」主题下形成研究热点（2 篇实体、平均 score 0.884）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.617,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Workflow",
+        "concept_count": 2,
+        "concept_avg_score": 0.884
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1111",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "biocomputing",
+      "statement": "站点 biocomputing 在「Biology」主题下形成研究热点（2 篇实体、平均 score 0.566）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.553,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Biology",
+        "concept_count": 2,
+        "concept_avg_score": 0.566
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1112",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "brain-science",
+      "statement": "站点 brain-science 在「Psychology」主题下形成研究热点（14 篇实体、平均 score 0.681）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.686,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Psychology",
+        "concept_count": 14,
+        "concept_avg_score": 0.681
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1113",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "brain-science",
+      "statement": "站点 brain-science 在「Neuroscience」主题下形成研究热点（7 篇实体、平均 score 0.583）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.657,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Neuroscience",
+        "concept_count": 7,
+        "concept_avg_score": 0.583
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1114",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "brain-science",
+      "statement": "站点 brain-science 在「Neuroimaging」主题下形成研究热点（3 篇实体、平均 score 0.667）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.593,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Neuroimaging",
+        "concept_count": 3,
+        "concept_avg_score": 0.667
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1115",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "brain-science",
+      "statement": "站点 brain-science 在「Serotonin transporter」主题下形成研究热点（2 篇实体、平均 score 0.747）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.589,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Serotonin transporter",
+        "concept_count": 2,
+        "concept_avg_score": 0.747
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1116",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "brain-science",
+      "statement": "站点 brain-science 在「Functional magnetic resonance imaging」主题下形成研究热点（2 篇实体、平均 score 0.738）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.588,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Functional magnetic resonance imaging",
+        "concept_count": 2,
+        "concept_avg_score": 0.738
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1117",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "brain-science",
+      "statement": "站点 brain-science 在「Perception」主题下形成研究热点（2 篇实体、平均 score 0.703）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.581,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Perception",
+        "concept_count": 2,
+        "concept_avg_score": 0.703
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1118",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "brain-science",
+      "statement": "站点 brain-science 在「Dopamine」主题下形成研究热点（2 篇实体、平均 score 0.681）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.576,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Dopamine",
+        "concept_count": 2,
+        "concept_avg_score": 0.681
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1119",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "brain-science",
+      "statement": "站点 brain-science 在「Cognitive psychology」主题下形成研究热点（3 篇实体、平均 score 0.448）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.55,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Cognitive psychology",
+        "concept_count": 3,
+        "concept_avg_score": 0.448
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1120",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "sat-6g",
+      "statement": "站点 sat-6g 在「Computer science」主题下形成研究热点（2 篇实体、平均 score 0.618）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.564,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Computer science",
+        "concept_count": 2,
+        "concept_avg_score": 0.618
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1121",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "bionic-ai",
+      "statement": "站点 bionic-ai 在「Chemistry」主题下形成研究热点（2 篇实体、平均 score 0.679）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.576,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Chemistry",
+        "concept_count": 2,
+        "concept_avg_score": 0.679
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
+    },
+    {
+      "id": "HYP-20261016-V3-1122",
+      "hypothesis_type": "single_site_hotspot",
+      "site_a": "semiconductor",
+      "statement": "站点 semiconductor 在「Computer science」主题下形成研究热点（2 篇实体、平均 score 0.518）",
+      "expected_evidence": "该站点该主题实体数 ≥ 该主题在库实体总数 5%",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      },
+      "confidence": 0.544,
+      "confidence_calibration": "statistical-signal",
+      "source_signals": {
+        "strategy": "single_site_hotspot",
+        "strategy_description": "Phase 12-B 新策略：站点内主题热点",
+        "primary_concept": "Computer science",
+        "concept_count": 2,
+        "concept_avg_score": 0.518
+      },
+      "generated_by": "tools/gen/generate-hypothesis-cards-v3-concepts.mjs",
+      "generated_at": "2026-10-16T05:42:48.965Z",
+      "verification_status": "hypothesis-only"
     }
   ]
 }
