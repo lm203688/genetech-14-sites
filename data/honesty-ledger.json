@@ -7621,11 +7621,56 @@
     "verificationRate": 0.111,
     "honesty_score": 0.822
   },
-  "last_updated_at": "2026-10-16T05:08:51.848Z",
+  "last_updated_at": "2026-10-16T05:20:22.624Z",
   "notes": {
     "p10_a": {
       "verified_added": 57,
       "at": "2026-10-16T05:08:51.848Z"
     }
-  }
+  },
+  "cross_verification": {
+    "tool": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+    "runAt": "2026-10-16T05:20:22.623Z",
+    "phase": "P11-A",
+    "total_verified_examined": 81,
+    "cross_verified": 75,
+    "cross_weak": 6,
+    "cross_falsified": 0,
+    "cross_verification_rate": 0.926,
+    "avgConfidence": 0.652,
+    "byPassCount": {
+      "3_sources": 7,
+      "2_sources": 68,
+      "1_source": 6
+    },
+    "byType": {
+      "litellbridge": 24,
+      "moderate_bridge": 14,
+      "emerging_topic": 30,
+      "crossref_topic_bridge": 13
+    },
+    "dataSources": {
+      "V1": {
+        "name": "citation-edges.json",
+        "count": 25682,
+        "independence": "related (pairMatrix 的原始边)",
+        "independence_score": 0.5
+      },
+      "V2": {
+        "name": "cited-entities.json",
+        "count": 48760,
+        "independence": "independent (OpenAlex 抓取)",
+        "independence_score": 1
+      },
+      "V3": {
+        "name": "academic-entities.json",
+        "count": 1634,
+        "independence": "partial (Crossref 数据 + 本项目 tags)",
+        "independence_score": 0.6
+      }
+    },
+    "independence_note": "V2 完全独立 / V3 半独立（tags 是本项目打的）/ V1 相关（与 pairMatrix 同源）——只有 ≥2 源通过才 cross_verified，其中至少 1 源必须是 V2 或 V3",
+    "online_fallback_note": "原计划用 Crossref/OpenAlex 在线 API 做真外部验证，但会话期间遇 IP 层 429 rate limit，改用本地抓取的 OpenAlex/Crossref 数据（本质相同的外部源，独立于 pairMatrix 生成逻辑）"
+  },
+  "cross_verification_bonus": 0.139
 }

@@ -1,0 +1,2724 @@
+{
+  "runAt": "2026-10-16T05:19:17.896Z",
+  "nRequested": 81,
+  "seed": 42,
+  "onlyVerified": true,
+  "targetsProcessed": 81,
+  "byDecision": {
+    "cross_verified": 75,
+    "cross_weak": 6
+  },
+  "byPassCount": {
+    "0": 0,
+    "1": 6,
+    "2": 68,
+    "3": 7
+  },
+  "byType": {
+    "litellbridge": 24,
+    "moderate_bridge": 14,
+    "emerging_topic": 30,
+    "crossref_topic_bridge": 13
+  },
+  "avgConfidence": 0.652,
+  "dataSources": {
+    "V1_edges": 25682,
+    "V2_cited": 48760,
+    "V3_academic": 1634
+  },
+  "results": [
+    {
+      "id": "HYP-20261016-0001",
+      "hypothesis_type": "litellbridge",
+      "siteA": "robot-parts",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Robot",
+            "Motion planning",
+            "Materials science",
+            "Path (computing)",
+            "Engineering",
+            "Field (mathematics)",
+            "Computer vision",
+            "Biology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 59,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.894Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0002",
+      "hypothesis_type": "litellbridge",
+      "siteA": "robot-parts",
+      "siteB": "ai4science",
+      "passes": 1,
+      "decision": "cross_weak",
+      "confidence": 0.5,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 100,
+          "sampleB": 0
+        },
+        "V3_academic": {
+          "aCount": 59,
+          "bCount": 56
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw",
+        "V2: 0 shared concepts between robot-parts and ai4science"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0003",
+      "hypothesis_type": "litellbridge",
+      "siteA": "bionic-ai",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Robot",
+            "Engineering",
+            "Artificial intelligence",
+            "Control theory (sociology)",
+            "Biology",
+            "Computer vision"
+          ],
+          "sampleA": 27,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 56,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0004",
+      "hypothesis_type": "litellbridge",
+      "siteA": "agent-ecosystem",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Distortion (music)",
+            "Chemistry",
+            "Mathematics",
+            "Biology",
+            "Metric (unit)",
+            "Artificial intelligence",
+            "Psychology",
+            "Engineering",
+            "Materials science"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 45,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0006",
+      "hypothesis_type": "litellbridge",
+      "siteA": "low-altitude",
+      "siteB": "ai4science",
+      "passes": 1,
+      "decision": "cross_weak",
+      "confidence": 0.5,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 100,
+          "sampleB": 0
+        },
+        "V3_academic": {
+          "aCount": 52,
+          "bCount": 56
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw",
+        "V2: 0 shared concepts between low-altitude and ai4science"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0007",
+      "hypothesis_type": "litellbridge",
+      "siteA": "agent-ecosystem",
+      "siteB": "neuromorphic",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Nanotechnology",
+            "Materials science"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 45,
+          "bCount": 55
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0008",
+      "hypothesis_type": "litellbridge",
+      "siteA": "neuromorphic",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Materials science",
+            "Artificial intelligence"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 55,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0011",
+      "hypothesis_type": "litellbridge",
+      "siteA": "agent-ecosystem",
+      "siteB": "semiconductor",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Chemistry",
+            "Engineering",
+            "Nanotechnology",
+            "Materials science"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 45,
+          "bCount": 58
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0012",
+      "hypothesis_type": "litellbridge",
+      "siteA": "semiconductor",
+      "siteB": "agent-ecosystem",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Nanotechnology",
+            "Computer science",
+            "Chemistry",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 58,
+          "bCount": 45
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0017",
+      "hypothesis_type": "litellbridge",
+      "siteA": "semiconductor",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Chemistry",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 58,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0023",
+      "hypothesis_type": "litellbridge",
+      "siteA": "quantum-computing",
+      "siteB": "robot-parts",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Materials science",
+            "Algorithm",
+            "Biology",
+            "Nanotechnology",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 54,
+          "bCount": 59
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0024",
+      "hypothesis_type": "litellbridge",
+      "siteA": "robot-parts",
+      "siteB": "quantum-computing",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Materials science",
+            "Nanotechnology",
+            "Engineering",
+            "Biology",
+            "Algorithm"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 59,
+          "bCount": 54
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0033",
+      "hypothesis_type": "litellbridge",
+      "siteA": "low-altitude",
+      "siteB": "quantum-computing",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Mathematics",
+            "Engineering",
+            "Materials science",
+            "Data science",
+            "Biology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 52,
+          "bCount": 54
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0058",
+      "hypothesis_type": "litellbridge",
+      "siteA": "robot-parts",
+      "siteB": "nuclear-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Materials science",
+            "Nanotechnology",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 59,
+          "bCount": 50
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0059",
+      "hypothesis_type": "litellbridge",
+      "siteA": "bionic-ai",
+      "siteB": "nuclear-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Nanotechnology",
+            "Engineering",
+            "Artificial intelligence",
+            "Artificial neural network"
+          ],
+          "sampleA": 27,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 56,
+          "bCount": 50
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0061",
+      "hypothesis_type": "litellbridge",
+      "siteA": "low-altitude",
+      "siteB": "nuclear-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Engineering",
+            "Materials science",
+            "Chemistry",
+            "Psychology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 52,
+          "bCount": 50
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0062",
+      "hypothesis_type": "litellbridge",
+      "siteA": "nuclear-energy",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Chemistry",
+            "Artificial intelligence",
+            "Psychology",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 50,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0066",
+      "hypothesis_type": "litellbridge",
+      "siteA": "neuromorphic",
+      "siteB": "nuclear-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Materials science",
+            "Nanotechnology",
+            "Artificial neural network",
+            "Artificial intelligence",
+            "Neuroscience",
+            "Physics"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 55,
+          "bCount": 50
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0067",
+      "hypothesis_type": "litellbridge",
+      "siteA": "nuclear-energy",
+      "siteB": "neuromorphic",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Artificial neural network",
+            "Nanotechnology",
+            "Physics",
+            "Artificial intelligence",
+            "Neuroscience"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 50,
+          "bCount": 55
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0071",
+      "hypothesis_type": "litellbridge",
+      "siteA": "semiconductor",
+      "siteB": "nuclear-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Nanotechnology",
+            "Computer science",
+            "Chemistry",
+            "Physics",
+            "Perovskite (structure)",
+            "Chemical physics",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 58,
+          "bCount": 50
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0082",
+      "hypothesis_type": "litellbridge",
+      "siteA": "quantum-computing",
+      "siteB": "nuclear-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Physics",
+            "Materials science",
+            "Artificial neural network",
+            "Nanotechnology",
+            "Molecular dynamics",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 54,
+          "bCount": 50
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0087",
+      "hypothesis_type": "litellbridge",
+      "siteA": "low-altitude",
+      "siteB": "biomed-ai",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Engineering",
+            "Materials science",
+            "Data science",
+            "Chemistry",
+            "Biology",
+            "Medicine",
+            "Psychology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 52,
+          "bCount": 59
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0088",
+      "hypothesis_type": "litellbridge",
+      "siteA": "deep-sea-tech",
+      "siteB": "ai4science",
+      "passes": 1,
+      "decision": "cross_weak",
+      "confidence": 0.5,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 100,
+          "sampleB": 0
+        },
+        "V3_academic": {
+          "aCount": 60,
+          "bCount": 56
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw",
+        "V2: 0 shared concepts between deep-sea-tech and ai4science"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0095",
+      "hypothesis_type": "litellbridge",
+      "siteA": "edge-ai",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Biology",
+            "Engineering",
+            "Medicine",
+            "Data science",
+            "Psychology",
+            "Process (computing)",
+            "Chemistry"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 58,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0326",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agent-ecosystem",
+      "siteB": "ai-safety",
+      "passes": 3,
+      "decision": "cross_verified",
+      "confidence": 0.8,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 39,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Chemistry",
+            "Biology",
+            "Artificial intelligence",
+            "Psychology",
+            "Engineering",
+            "Nanotechnology",
+            "Materials science"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 45,
+          "bCount": 55
+        }
+      },
+      "failures": [],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0327",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agent-ecosystem",
+      "siteB": "ai4science",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 9,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 100,
+          "sampleB": 0
+        },
+        "V3_academic": {
+          "aCount": 45,
+          "bCount": 56
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agent-ecosystem and ai4science"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0329",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agent-ecosystem",
+      "siteB": "biomed-ai",
+      "passes": 3,
+      "decision": "cross_verified",
+      "confidence": 0.8,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 33,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Chemistry",
+            "Biofilm",
+            "Biology",
+            "Bacteria",
+            "Artificial intelligence",
+            "Psychology",
+            "Engineering",
+            "Nanotechnology",
+            "Materials science"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 45,
+          "bCount": 59
+        }
+      },
+      "failures": [],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0330",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agent-ecosystem",
+      "siteB": "bionic-ai",
+      "passes": 3,
+      "decision": "cross_verified",
+      "confidence": 0.8,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 21,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Biology",
+            "Artificial intelligence",
+            "Engineering",
+            "Nanotechnology",
+            "Materials science"
+          ],
+          "sampleA": 100,
+          "sampleB": 27
+        },
+        "V3_academic": {
+          "aCount": 45,
+          "bCount": 56
+        }
+      },
+      "failures": [],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0333",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agent-ecosystem",
+      "siteB": "edge-ai",
+      "passes": 3,
+      "decision": "cross_verified",
+      "confidence": 0.8,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 10,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Chemistry",
+            "Biology",
+            "Artificial intelligence",
+            "Psychology",
+            "Engineering",
+            "Nanotechnology",
+            "Key (lock)"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 45,
+          "bCount": 58
+        }
+      },
+      "failures": [],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0334",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agent-ecosystem",
+      "siteB": "embodied-ai",
+      "passes": 3,
+      "decision": "cross_verified",
+      "confidence": 0.8,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 42,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Psychology",
+            "Nanotechnology",
+            "Materials science"
+          ],
+          "sampleA": 100,
+          "sampleB": 64
+        },
+        "V3_academic": {
+          "aCount": 45,
+          "bCount": 46
+        }
+      },
+      "failures": [],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0340",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agritech",
+      "siteB": "biocomputing",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 290,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 2
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 59
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and biocomputing"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0342",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agritech",
+      "siteB": "bionic-ai",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 333,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 27
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 56
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and bionic-ai"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0344",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agritech",
+      "siteB": "carbon-neutral",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 87,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 63
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and carbon-neutral"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0345",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agritech",
+      "siteB": "deep-sea-tech",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 301,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 60
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and deep-sea-tech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0346",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agritech",
+      "siteB": "digital-twin",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 195,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 59
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and digital-twin"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0350",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agritech",
+      "siteB": "life-science",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 80,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 49
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and life-science"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0353",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "agritech",
+      "siteB": "new-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 37,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 47
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and new-energy"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0399",
+      "hypothesis_type": "moderate_bridge",
+      "siteA": "ai4science",
+      "siteB": "edge-ai",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 111,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 56,
+          "bCount": 58
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between ai4science and edge-ai"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0596",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "robot-parts",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Robot",
+            "Motion planning",
+            "Materials science",
+            "Path (computing)",
+            "Engineering",
+            "Field (mathematics)",
+            "Computer vision",
+            "Biology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 59,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0603",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "neuromorphic",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Materials science",
+            "Artificial intelligence"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 55,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0608",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "quantum-materials",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Artificial intelligence",
+            "Medicine",
+            "Chemistry",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 56,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0612",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "semiconductor",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Chemistry",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 58,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0620",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "bionic-ai",
+      "siteB": "exo-science",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Nanotechnology",
+            "Engineering",
+            "Artificial intelligence",
+            "Control theory (sociology)",
+            "Biology"
+          ],
+          "sampleA": 27,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 56,
+          "bCount": 47
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0621",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "privacy-computing",
+      "siteB": "semiconductor",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Engineering",
+            "Nanotechnology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 56,
+          "bCount": 58
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0622",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "semiconductor",
+      "siteB": "privacy-computing",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Nanotechnology",
+            "Computer science",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 58,
+          "bCount": 56
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0645",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "carbon-neutral",
+      "siteB": "neuromorphic",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Physics",
+            "Materials science",
+            "Computer science",
+            "Nanotechnology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 63,
+          "bCount": 55
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0650",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "neuromorphic",
+      "siteB": "alien-minerals",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Materials science",
+            "Physics"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 55,
+          "bCount": 61
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0652",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "semiconductor",
+      "siteB": "alien-minerals",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Chemistry",
+            "Physics"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 58,
+          "bCount": 61
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0656",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "low-altitude",
+      "siteB": "nuclear-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Engineering",
+            "Materials science",
+            "Chemistry",
+            "Psychology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 52,
+          "bCount": 50
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0657",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "nuclear-energy",
+      "siteB": "low-altitude",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Chemistry",
+            "Artificial intelligence",
+            "Psychology",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 50,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0661",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "neuromorphic",
+      "siteB": "nuclear-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Materials science",
+            "Nanotechnology",
+            "Artificial neural network",
+            "Artificial intelligence",
+            "Neuroscience",
+            "Physics"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 55,
+          "bCount": 50
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0662",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "nuclear-energy",
+      "siteB": "neuromorphic",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Artificial neural network",
+            "Nanotechnology",
+            "Physics",
+            "Artificial intelligence",
+            "Neuroscience"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 50,
+          "bCount": 55
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0663",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "privacy-computing",
+      "siteB": "synbio-manufacturing",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Cloud computing",
+            "Artificial intelligence",
+            "Data science",
+            "Engineering",
+            "Context (archaeology)",
+            "Business",
+            "Nanotechnology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 56,
+          "bCount": 55
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0665",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "quantum-materials",
+      "siteB": "nuclear-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Computer science",
+            "Nanotechnology",
+            "Metamaterial",
+            "Composite material",
+            "Artificial intelligence",
+            "Physics",
+            "Chemistry",
+            "Finite element method",
+            "Nonlinear system"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 56,
+          "bCount": 50
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0666",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "semiconductor",
+      "siteB": "nuclear-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Materials science",
+            "Nanotechnology",
+            "Computer science",
+            "Chemistry",
+            "Physics",
+            "Perovskite (structure)",
+            "Chemical physics",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 58,
+          "bCount": 50
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0673",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "new-energy",
+      "siteB": "neuromorphic",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Nanotechnology",
+            "Materials science",
+            "Artificial neural network"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 47,
+          "bCount": 55
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0674",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "exo-science",
+      "siteB": "nuclear-energy",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Physics",
+            "Materials science",
+            "Artificial intelligence",
+            "Chemistry",
+            "Nanotechnology",
+            "Psychology",
+            "Statistical physics",
+            "Nonlinear system",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 47,
+          "bCount": 50
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0691",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "embodied-ai",
+      "siteB": "genetech-tools",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Psychology",
+            "Artificial intelligence",
+            "Materials science",
+            "Field (mathematics)",
+            "Process (computing)",
+            "Context (archaeology)"
+          ],
+          "sampleA": 64,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 46,
+          "bCount": 54
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.895Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0692",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "genetech-tools",
+      "siteB": "embodied-ai",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Psychology",
+            "Process (computing)",
+            "Context (archaeology)",
+            "Field (mathematics)",
+            "Materials science"
+          ],
+          "sampleA": 100,
+          "sampleB": 64
+        },
+        "V3_academic": {
+          "aCount": 54,
+          "bCount": 46
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0696",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "genetech-tools",
+      "siteB": "sat-6g",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Biology",
+            "Psychology",
+            "Data science",
+            "Engineering",
+            "Engineering ethics",
+            "Medicine",
+            "Field (mathematics)",
+            "Political science"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 54,
+          "bCount": 56
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0697",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "sat-6g",
+      "siteB": "genetech-tools",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Biology",
+            "Engineering",
+            "Business",
+            "Medicine",
+            "Materials science",
+            "Psychology",
+            "Field (mathematics)",
+            "Data science"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 56,
+          "bCount": 54
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0704",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "exo-science",
+      "siteB": "agritech",
+      "passes": 1,
+      "decision": "cross_weak",
+      "confidence": 0.5,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 100,
+          "sampleB": 0
+        },
+        "V3_academic": {
+          "aCount": 47,
+          "bCount": 57
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw",
+        "V2: 0 shared concepts between exo-science and agritech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0718",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "nuclear-energy",
+      "siteB": "agritech",
+      "passes": 1,
+      "decision": "cross_weak",
+      "confidence": 0.5,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 100,
+          "sampleB": 0
+        },
+        "V3_academic": {
+          "aCount": 50,
+          "bCount": 57
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw",
+        "V2: 0 shared concepts between nuclear-energy and agritech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0720",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "edge-ai",
+      "siteB": "genetech-tools",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Biology",
+            "Engineering",
+            "Computational biology",
+            "Medicine",
+            "Data science",
+            "Knowledge management",
+            "Political science",
+            "Psychology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 58,
+          "bCount": 54
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0721",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "genetech-tools",
+      "siteB": "edge-ai",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Biology",
+            "Psychology",
+            "Knowledge management",
+            "Computational biology",
+            "Process (computing)",
+            "Data science",
+            "Engineering",
+            "Context (archaeology)"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 54,
+          "bCount": 58
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0727",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "brain-science",
+      "siteB": "tcm-tools",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Medicine",
+            "Psychology",
+            "Artificial intelligence",
+            "Data science",
+            "Materials science",
+            "Engineering ethics",
+            "Artificial neural network",
+            "Field (mathematics)",
+            "Engineering"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 54,
+          "bCount": 52
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0729",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "life-science",
+      "siteB": "deep-sea-tech",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [
+            "Computer science",
+            "Artificial intelligence",
+            "Data science",
+            "Engineering",
+            "Chemistry",
+            "Medicine",
+            "Health care",
+            "Process (computing)",
+            "Biology",
+            "Field (mathematics)"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 49,
+          "bCount": 60
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0735",
+      "hypothesis_type": "emerging_topic",
+      "siteA": "life-science",
+      "siteB": "agritech",
+      "passes": 1,
+      "decision": "cross_weak",
+      "confidence": 0.5,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 0,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 100,
+          "sampleB": 0
+        },
+        "V3_academic": {
+          "aCount": 49,
+          "bCount": 57
+        }
+      },
+      "failures": [
+        "V1: no edges in citation-edges raw",
+        "V2: 0 shared concepts between life-science and agritech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0871",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "agritech",
+      "siteB": "deep-sea-tech",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 301,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 60
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and deep-sea-tech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0884",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "agritech",
+      "siteB": "deep-sea-tech",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 301,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 60
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and deep-sea-tech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0885",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "agritech",
+      "siteB": "deep-sea-tech",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 301,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 60
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and deep-sea-tech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0886",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "agritech",
+      "siteB": "deep-sea-tech",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 301,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 60
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and deep-sea-tech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0887",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "agritech",
+      "siteB": "deep-sea-tech",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 301,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 60
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and deep-sea-tech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0901",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "agritech",
+      "siteB": "deep-sea-tech",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 301,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 60
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and deep-sea-tech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0904",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "agritech",
+      "siteB": "deep-sea-tech",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 301,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 60
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and deep-sea-tech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0911",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "agritech",
+      "siteB": "deep-sea-tech",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 301,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 60
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and deep-sea-tech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-0912",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "agritech",
+      "siteB": "deep-sea-tech",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 301,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 57,
+          "bCount": 60
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between agritech and deep-sea-tech"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-1099",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "ai4science",
+      "siteB": "edge-ai",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 111,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 56,
+          "bCount": 58
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between ai4science and edge-ai"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-1117",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "ai4science",
+      "siteB": "edge-ai",
+      "passes": 2,
+      "decision": "cross_verified",
+      "confidence": 0.65,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 111,
+        "V2_concepts": {
+          "shared": [],
+          "sampleA": 0,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 56,
+          "bCount": 58
+        }
+      },
+      "failures": [
+        "V2: 0 shared concepts between ai4science and edge-ai"
+      ],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-1251",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "carbon-neutral",
+      "siteB": "new-energy",
+      "passes": 3,
+      "decision": "cross_verified",
+      "confidence": 0.8,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 135,
+        "V2_concepts": {
+          "shared": [
+            "Chemistry",
+            "Biology",
+            "Materials science",
+            "Environmental science",
+            "Computer science",
+            "Nanotechnology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 63,
+          "bCount": 47
+        }
+      },
+      "failures": [],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    },
+    {
+      "id": "HYP-20261016-1252",
+      "hypothesis_type": "crossref_topic_bridge",
+      "siteA": "carbon-neutral",
+      "siteB": "new-energy",
+      "passes": 3,
+      "decision": "cross_verified",
+      "confidence": 0.8,
+      "confidence_calibration": "statistical-signal-cross-validated",
+      "evidence": {
+        "V1_edges": 135,
+        "V2_concepts": {
+          "shared": [
+            "Chemistry",
+            "Biology",
+            "Materials science",
+            "Environmental science",
+            "Computer science",
+            "Nanotechnology"
+          ],
+          "sampleA": 100,
+          "sampleB": 100
+        },
+        "V3_academic": {
+          "aCount": 63,
+          "bCount": 47
+        }
+      },
+      "failures": [],
+      "verifiedAt": "2026-10-16T05:19:17.896Z",
+      "verifier": "agent-ecosystem/hypothesis-verifier-v3-cross.mjs",
+      "version": "3.0.0"
+    }
+  ]
+}
