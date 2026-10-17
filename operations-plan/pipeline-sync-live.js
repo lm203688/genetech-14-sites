@@ -18,6 +18,13 @@
 
 const fs = require('fs').promises;
 const path = require('path');
+// F3 改造（2026-10-16 · 报告 §5 F3）：原子写盘，写一半崩溃不留半截文件。
+// 该脚本输出线上 API 与 MCP 消费的数据源，任何半截 JSON 都会导致
+// 整个 30 站 API 静默返错——报告 §3 点名"无 tmp+rename"是最贵的可靠性风险。
+const { atomicWriteJson } = require('../lib/atomic-write.cjs');
+// F4 改造（2026-10-16 · 报告 §5 F4）：数据 schema 校验，三处强制校验之一。
+// sync-live 入口校验：归一化后的实体必须符合 schema，缺字段拒绝写入。
+const { validateEntities } = require('../lib/schema-validator.cjs');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const REPORTS_DIR = path.join(PROJECT_ROOT, 'reports');
@@ -84,21 +91,33 @@ async function main() {
     }
 
     const all = Array.from(map.values());
+
+    // F4: 入口校验——归一化后的实体必须符合 schema，缺字段拒绝写入
+    // 报告 §2 血泪：30 站同构只是约定，不是约束；现在 schema 强制校验。
+    const valResult = validateEntities(all);
+    if (!valResult.valid) {
+      console.error(`[sync-live] [F4 FAIL] site=${site} schema 校验失败：${valResult.stats.invalid}/${valResult.stats.total} 无效`);
+      for (const err of valResult.errors.slice(0, 3)) console.error(`  ${err}`);
+      report.sites.push({ site, total: all.length, mergedFromPipe: merged, schemaFailed: true });
+      continue;  // 拒绝写入，让 CI 变红
+    }
+
     const now = new Date().toISOString();
     const cats = [...new Set(all.flatMap((x) => x.tags || []))].slice(0, 20);
 
     if (!dryRun) {
       await fs.mkdir(apiDir, { recursive: true });
-      await fs.writeFile(livePath, JSON.stringify(all, null, 2), 'utf-8');
-      await fs.writeFile(indexPath, JSON.stringify({
+      // F3: 原子写——先写 tmp+fsync+rename，保证任何时候读到 entities.json 都是完整 JSON
+      await atomicWriteJson(livePath, all, { pretty: 2 });
+      await atomicWriteJson(indexPath, {
         site, totalEntities: all.length, lastUpdated: now, categories: cats,
-      }, null, 2), 'utf-8');
+      }, { pretty: 2 });
     }
     report.sites.push({ site, total: all.length, mergedFromPipe: merged });
   }
 
   const reportPath = path.join(REPORTS_DIR, `report-sync-live-${Date.now()}.json`);
-  if (!dryRun) await fs.writeFile(reportPath, JSON.stringify(report, null, 2), 'utf-8');
+  if (!dryRun) await atomicWriteJson(reportPath, report, { pretty: 2 });
   console.log(`[sync-live] 处理 ${report.sites.length} 个部署站点` + (dryRun ? ' (dry-run)' : ''));
   for (const s of report.sites) console.log(`  ${s.site}: ${s.total} 实体 (合并 +${s.mergedFromPipe})`);
 }

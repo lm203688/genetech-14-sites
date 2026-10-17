@@ -31,6 +31,10 @@ const PROJECT_ROOT = path.resolve(__dirname, '..');
 const REPORTS_DIR = path.join(PROJECT_ROOT, 'reports');
 const STATE_DIR = path.join(PROJECT_ROOT, 'state');
 
+// F4 改造（2026-10-16 · 报告 §5 F4）：ingest 出口 schema 校验，三处强制校验之一。
+// 扩充管线写盘前，实体必须符合 entity.schema.json，缺字段拒绝写入。
+const { validateEntities } = require('../lib/schema-validator.cjs');
+
 // ============================================================
 // 自适应熔断器 (Circuit Breaker) — P0 自愈
 // 三态: CLOSED(正常) → OPEN(熔断,快速失败) → HALF_OPEN(试探恢复)
@@ -1115,6 +1119,18 @@ async function main() {
     if (qg.degraded) console.log(`[Backfill][QGATE] ${site}: ⚠️ ${qg.reason}`);
     const qm = qg.metrics || {};
     console.log(`[Backfill][QGATE] ${site}: ✅ 质量红线通过 摘要${Math.round(qm.summary_rate * 100)}% 标签${Math.round(qm.tag_rate * 100)}% DOI${Math.round(qm.doi_rate * 100)}% 重名${(qm.duplicate_rate * 100).toFixed(1)}%`);
+
+    // F4: ingest 出口校验——写入前必须符合 schema，缺字段拒绝写入
+    // 报告 §2 血泪：pipeline 内部格式与线上 API 不同构，sync-live 做桥接，
+    // 但 ingest 出口也应校验，早失败比 sync-live 发现错误便宜 10 倍。
+    const valResult = validateEntities(all);
+    if (!valResult.valid) {
+      console.error(`[F4 FAIL] ${site} schema 校验失败：${valResult.stats.invalid}/${valResult.stats.total} 无效`);
+      for (const err of valResult.errors.slice(0, 3)) console.error(`  ${err}`);
+      results.push({ site, fetched: siteFetched, added: siteAdded, total: all.length, schema_failed: true, errors: valResult.errors.length, dryRun: false });
+      await sleep(200);
+      continue;
+    }
 
     await fs.writeFile(livePath, JSON.stringify(all, null, 2), 'utf-8');
     await fs.writeFile(indexPath, JSON.stringify({ site, totalEntities: all.length, lastUpdated: getISOTime(), categories: cats }, null, 2), 'utf-8');

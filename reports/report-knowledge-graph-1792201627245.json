@@ -1,0 +1,28 @@
+{
+  "pipeline": "build-knowledge-graph",
+  "timestamp": "2026-10-17T01:47:03.989Z",
+  "dryRun": false,
+  "stations": 30,
+  "uniqueEntities": 278729,
+  "crossSiteEntities": 12537,
+  "tagKinds": 50065,
+  "nodes": 14330,
+  "edges": 73113,
+  "crossSiteEdges": 29601,
+  "sharedTagEdges": 40512,
+  "coTopicEdges": 3000,
+  "entityEntityEdges": 3000,
+  "pairCandidates": 308313,
+  "dualTimestamp": true,
+  "tierEnabled": true,
+  "tierDistribution": {
+    "3": 70113,
+    "4": 3000
+  },
+  "excludedInfra": 32,
+  "schemaVersion": 5,
+  "citationEdges": 0,
+  "citationEdgeShare": 0,
+  "stubNodes": 0,
+  "bytes": 19064660
+}

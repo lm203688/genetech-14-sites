@@ -74,7 +74,7 @@ on:
         #                   GET /mcp 405 + schema 对齐本地版，共 46 条断言，2 秒内出结论。
         #                   背景：10-14 报告实测 mcp-remote 有 11/14 工具返 404，且 fail-open 静默放行。
         #                   之前只靠手工 curl 探测；契约测试把它变成 CI 必过门槛（阻断，不 continue-on-error）。
-        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance, mcp-smoke, mcp-latency, mcp-contract, eval, signverify]
+        options: [all, sync, selfdb, prodb, feedback, finance, verify, mcp, geo, guard, searchindex, shardverify, paytest, kgbuild, academic, citations, cited, orchestrator, quality, gate-alert, gapsbriefing, docsclaims, flywheelstate, stance, mcp-smoke, mcp-latency, mcp-contract, eval, signverify, invariants]
   schedule:
     # 每日 13:00 UTC(21:00 CST) 一次全量运行，错峰在 ops.yml(12:30 UTC) 之后 30 分钟，
     # 避免与 ops.yml 同时触发导致推送冲突。
@@ -303,13 +303,24 @@ jobs:
           if [[ "$TASK" == "all" || "$TASK" == "signverify" ]]; then
             node tools/ci-verify-sig.mjs
           fi
-          # ===== 飞轮状态陈旧 monitor（2026-10-11 补入 · 报告 §8）=====
+          # ===== 飞轮状态陈旧 monitor + 告警通道（2026-10-11 补入 · 2026-10-16 F1 升级）=====
           # 治「飞轮静默冻结」这个最贵的故障模式：backfill-cursor 39 天陈旧才发现。
           # 8 个核心 state 文件按阈值检查 mtime，任一过期 exit 1 让 CI 变红。
           # 独立任务（gate-alert 类似不阻断），all 模式每日也会跑，
           # 保证陈旧一出现当天就被告警而不是月度回顾才看到。
+          # F1 升级（2026-10-16 · 报告 §5）：接 GitHub Issues 告警通道。
+          #   SLO：72h 无新增实体 = 自动开 Issue（--warn-days 从 14 降到 3）。
+          #   --alert 让陈旧/恢复都落到一条 label=flywheel-stale 的 Issue 上：
+          #     - 检测到 stale 且无既有 Issue → gh issue create
+          #     - 检测到 stale 且已有 Issue   → gh issue edit 更新 body
+          #     - 全部 fresh 且已有 Issue     → gh issue close（带恢复注释）
+          #   背景：2026-10-05 血泪教训 45 天陈旧是被人读报告发现的，
+          #        不是被系统喊出来的——这是报告 §3 点名的最刺眼一条。
+          #   幂等：label=flywheel-stale 是唯一锁，同一时间最多 1 条。
+          #   与 tools/gate-alert.mjs 关系：gate-alert 管"门禁级"告警，
+          #        本脚本管"飞轮陈旧"告警，label 不同互不覆盖。
           if [[ "$TASK" == "all" || "$TASK" == "flywheelstate" ]]; then
-            node "$SCRIPTS_DIR/monitor-flywheel-state.js" || true
+            node "$SCRIPTS_DIR/monitor-flywheel-state.js" --warn-days=3 --alert || true
           fi
           # ===== 立场/情绪分析（2026-10-11 补入 · 报告 P1-立场）=====
           # 词典打分方法（POS/NEG/UNCERTAIN 三分 + 加权），纯 stdlib 零依赖。
@@ -351,6 +362,25 @@ jobs:
           # （与 mcp-smoke 的"不阻断只提示"不同——契约是硬承诺）。
           if [[ "$TASK" == "all" || "$TASK" == "mcp" || "$TASK" == "mcp-contract" ]]; then
             node mcp-remote/_test_contract.mjs
+          fi
+          # ===== 数据不变量断言（2026-10-16 补入 · 报告 §5 F2 · Phase 13 地基加固）=====
+          # 背景：报告 §2 点名"根 package.json 无 scripts.test"——44 个 test 文件里
+          #       绝大多数是 .workbuddy/probe 临时探针与日报 JSON，真正带断言的
+          #       只有 mcp-remote/_test_contract.mjs（46 断言）。这是"声明完成 vs
+          #       实测可用"落差的根因——没有任何东西在自动阻止它。
+          #       此步把"数据地基不变量"做成 CI 门禁：
+          #         INV1 每站 index.json.totalEntities === entities.length（0 漂移）
+          #         INV2 全局 ID 唯一（同站重复 = 硬门禁，跨站重复 F5 前置）
+          #         INV3 KG 边不指向不存在的节点（悬空边 = 0）
+          #         INV4 search-index.totalEntities 与 30 站实体总数不漂移（容差 5%）
+          #         INV5 实体 url / publishedDate 可解析率 ≥99.9%
+          # 用 node:test 内置（零依赖，Node 20+），与 gate-alert / signverify 独立。
+          # 阻断策略：破坏任一硬门禁即 exit 1 阻断发布——计数漂移、同站 ID 重复、
+          #       KG 悬空边、索引漂移、字段质量都属"地基塌了"，不能继续盖楼。
+          # 独立任务（invariants）+ 每日 all 都跑一次，保证回归门禁持续刷新。
+          # 双向回归（本地实测通过）：注入 totalEntities+1 → INV1 not ok → 恢复 → 5/5 绿。
+          if [[ "$TASK" == "all" || "$TASK" == "invariants" ]]; then
+            node --test "tests/**/*.test.mjs"
           fi
 
       - name: Commit generated outputs

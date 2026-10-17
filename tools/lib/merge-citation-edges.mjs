@@ -95,12 +95,41 @@ export function mergeCitationEdges(graph, ce, opts = {}) {
   report.inputCitationEdges = src.length;
   let added = 0;
 
+  // F8+F10 兼容（2026-10-17）：citation-edges 现在有两种格式
+  //   数组格式（legacy v1）: [doiFrom, doiTo, siteFrom, siteTo]
+  //   对象格式（v4/v5）: {citing, cited, fromSite, toSite, resolvedAt, method, validFrom, validTo, tier}
+  // 两种格式都要能合并，否则 F8 迁移后引用边会全部被 skip 掉。
   for (const raw of src) {
-    if (!Array.isArray(raw) || raw.length < 4) { report.skippedMalformed++; continue; }
-    const doiFrom = normDoi(raw[0]);
-    const doiTo = normDoi(raw[1]);
-    const siteFrom = raw[2];
-    const siteTo = raw[3];
+    let doiFrom, doiTo, siteFrom, siteTo, edgeMeta = {};
+
+    if (Array.isArray(raw)) {
+      // Legacy 数组格式
+      if (raw.length < 4) { report.skippedMalformed++; continue; }
+      doiFrom = normDoi(raw[0]);
+      doiTo = normDoi(raw[1]);
+      siteFrom = raw[2];
+      siteTo = raw[3];
+      edgeMeta = { method: 'v1-migration', tier: 4, validFrom: null, validTo: null };
+    } else if (typeof raw === 'object' && raw !== null) {
+      // F8 对象格式（v4+）
+      const citingRaw = raw.citing;
+      const citedRaw = raw.cited;
+      doiFrom = normDoi(citingRaw);
+      doiTo = normDoi(citedRaw);
+      siteFrom = raw.fromSite;
+      siteTo = raw.toSite;
+      edgeMeta = {
+        resolvedAt: raw.resolvedAt || null,
+        method: raw.method || 'v4-migration',
+        tier: Number.isInteger(raw.tier) ? raw.tier : 4,
+        validFrom: raw.validFrom || raw.resolvedAt || null,
+        validTo: ('validTo' in raw) ? raw.validTo : null,
+      };
+    } else {
+      report.skippedMalformed++;
+      continue;
+    }
+
     if (!doiFrom || !doiTo) { report.skippedMalformed++; continue; }
     if (doiFrom === doiTo) { report.skippedSelfEdge++; continue; }
     if (added >= limitEdges) { report.skippedLimit++; continue; }
@@ -113,13 +142,13 @@ export function mergeCitationEdges(graph, ce, opts = {}) {
     } else {
       // extend 模式：为缺失端点补占位节点（带真实 sites 溯源）
       if (!s) {
-        s = stubNodeForDoi(raw[0], [siteFrom]);
+        s = stubNodeForDoi(doiFrom, [siteFrom]);
         outNodes.push(s);
         nodesById.set(s.id, s);
         report.stubNodesAdded++;
       }
       if (!t) {
-        t = stubNodeForDoi(raw[1], [siteTo]);
+        t = stubNodeForDoi(doiTo, [siteTo]);
         outNodes.push(t);
         nodesById.set(t.id, t);
         report.stubNodesAdded++;
@@ -130,7 +159,21 @@ export function mergeCitationEdges(graph, ce, opts = {}) {
     if (srcEdgeIds.has(key)) { report.skippedAlreadyPresent++; continue; }
     srcEdgeIds.add(key);
 
-    edges.push({ source: s.id, target: t.id, relation: RELATION, weight: 1 });
+    // F7 双戳 + F10 tier：引用边也带生命周期和来源分级
+    const now = new Date().toISOString();
+    edges.push({
+      source: s.id,
+      target: t.id,
+      relation: RELATION,
+      weight: 1,
+      firstSeenAt: now,
+      lastSeenAt: now,
+      tier: edgeMeta.tier, // F10 来源分级透传
+      validFrom: edgeMeta.validFrom || now,
+      validTo: edgeMeta.validTo,
+      method: edgeMeta.method,
+      resolvedAt: edgeMeta.resolvedAt || now,
+    });
     added++;
   }
 

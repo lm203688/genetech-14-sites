@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Citation Edges Schema",
+  "description": "Valid citation edges structure for Genetech",
+  "type": "object",
+  "required": [
+    "edges"
+  ],
+  "properties": {
+    "edges": {
+      "type": "array",
+      "description": "Citation edges - can be either object format (new) or array format (legacy)",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "New object format for citation edges (v5 with tier + validity window)",
+            "required": ["citing", "cited", "fromSite", "toSite", "resolvedAt", "method", "validFrom", "tier"],
+            "properties": {
+              "citing": {
+                "type": "string",
+                "description": "DOI of the citing paper"
+              },
+              "cited": {
+                "type": "string",
+                "description": "DOI of the cited paper"
+              },
+              "fromSite": {
+                "type": "string",
+                "description": "Site name where citing paper is located"
+              },
+              "toSite": {
+                "type": "string",
+                "description": "Site name where cited paper is located"
+              },
+              "resolvedAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Timestamp when this edge was resolved"
+              },
+              "method": {
+                "type": "string",
+                "description": "Method used to resolve this edge (v1-migration / v4-enrichment / v2-verifier / v3-cross)"
+              },
+              "validFrom": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Timestamp when this edge became valid (F10 time dimension)"
+              },
+              "validTo": {
+                "description": "Timestamp when this edge was invalidated, or null if currently valid",
+                "oneOf": [
+                  { "type": "string", "format": "date-time" },
+                  { "type": "null" }
+                ]
+              },
+              "tier": {
+                "type": "integer",
+                "enum": [1, 2, 3, 4, 5],
+                "description": "Source credibility tier (F10): 1=authoritative-manual, 2=peer-reviewed, 3=high-confidence-derived, 4=medium-confidence-migration, 5=low-confidence-speculative"
+              }
+            }
+          },
+          {
+            "type": "array",
+            "description": "Legacy array format [doi, doi, siteA, siteB]",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 4,
+            "maxItems": 4
+          }
+        ]
+      }
+    },
+    "stats": {
+      "type": "object",
+      "description": "Statistics about the citation edges",
+      "additionalProperties": true
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "string"
+    }
+  }
+}

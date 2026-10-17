@@ -34,6 +34,13 @@ import { runAsk } from '../../tools/lib/ask.mjs';
 import { submitRequest, retrieveRequests, healthCheck as requestHealth } from './mcp-request.mjs';
 import { withLedger } from './honesty.mjs'; // P8-D 幻觉预算接入（装饰器，非侵入式）
 
+// F4 改造（2026-10-16 · 报告 §5 F4）：MCP 出口 schema 校验，三处强制校验之一。
+// MCP 工具返回实体前，必须符合 entity.schema.json，缺字段拒绝返回。
+// 注意：schema-validator.cjs 是 CJS 模块，ESM 需通过 createRequire 桥接。
+import { createRequire } from 'node:module';
+const _require = createRequire(import.meta.url);
+const { validateEntities } = _require('../../lib/schema-validator.cjs');
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
 const DATA_DIR = process.env.GENETECH_DATA_DIR || REPO_ROOT;
@@ -384,11 +391,24 @@ server.registerTool(
     if (args.minConfidence != null) ents = ents.filter((e) => (e.confidence || 0) >= args.minConfidence);
     const total = ents.length;
     const page = ents.slice(args.offset, args.offset + args.limit);
+
+    // F4: MCP 出口校验——返回前必须符合 schema，缺字段返回 warning 而非拒绝
+    // 报告 §2 血泪：MCP 是对外 API，拒绝返回会让 Agent 崩溃，
+    // 但校验失败应记录 warning，让运维可观测（而非静默返回坏数据）。
+    const valResult = validateEntities(page);
+    let warning = null;
+    if (!valResult.valid) {
+      warning = { schemaValidation: 'failed', invalid: valResult.stats.invalid, total: valResult.stats.total, sampleErrors: valResult.errors.slice(0, 3) };
+      console.error(`[MCP][F4] query_entities schema 校验警告：${valResult.stats.invalid}/${valResult.stats.total} 无效`);
+    }
+
+    const payload = { total, returned: page.length, entities: page };
+    if (warning) payload._warning = warning;
     return {
       content: [
         {
           type: 'text',
-          text: JSON.stringify({ total, returned: page.length, entities: page }, null, 2),
+          text: JSON.stringify(payload, null, 2),
         },
       ],
     };

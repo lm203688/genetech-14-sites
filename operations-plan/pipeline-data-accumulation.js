@@ -21,6 +21,9 @@ const http = require('http');
 
 // UA 单一真源：对同一上游（OpenAlex/Crossref/GitHub）身份不一致会切碎对方的按-UA 限流配额
 const UA = require('./lib/user-agent.cjs').USER_AGENT;
+// F4 改造（2026-10-16 · 报告 §5 F4）：ingest 出口 schema 校验，三处强制校验之一。
+// 采集管线写盘前，实体必须符合 entity.schema.json，缺字段拒绝写入。
+const { validateEntities } = require('../lib/schema-validator.cjs');
 
 // ==================== 配置区 ====================
 
@@ -824,6 +827,17 @@ async function persistToSites(distribution, dryRun) {
       }
     }
     const merged = Array.from(existingMap.values());
+
+    // F4: ingest 出口校验——合并后的实体必须符合 schema，缺字段拒绝写入
+    // 报告 §2 血泪：pipeline 内部格式与线上 API 不同构，sync-live 做桥接，
+    // 但 ingest 出口也应校验，早失败比 sync-live 发现错误便宜 10 倍。
+    const valResult = validateEntities(merged);
+    if (!valResult.valid) {
+      console.error(`[F4 FAIL] 站点 ${site} schema 校验失败：${valResult.stats.invalid}/${valResult.stats.total} 无效`);
+      for (const err of valResult.errors.slice(0, 3)) console.error(`  ${err}`);
+      persisted[site] = { filePath, count: merged.length, schemaFailed: true, errors: valResult.errors.length };
+      continue;  // 拒绝写入
+    }
 
     await ensureDir(siteDir);
     await writeJson(filePath, merged);

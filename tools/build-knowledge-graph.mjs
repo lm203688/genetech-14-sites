@@ -56,6 +56,21 @@ const CITATION_LIMIT = argNum('--citation-limit-edges=', Infinity);
 
 const isStation = (name) => !name.startsWith('.') && !name.startsWith('_');
 
+// F7 改造（2026-10-16 · 报告 §5 F7）：ALLOWED_SITES 白名单，剔除 infra 目录。
+// 旧实现用 isStation() 仅排除 . 和 _ 前缀，导致 api-guard/audit/command-center 等
+// 26 个基础设施目录被误纳入图谱，污染站点枢纽节点和边关系。
+// 白名单与 operations-plan/lib/site-domain-tags.mjs 的单一真源保持一致。
+const ALLOWED_SITES = new Set([
+  'quantum-computing','alien-minerals','biocomputing','bionic-ai','deep-sea-tech',
+  'brain-science','life-science','new-energy','nuclear-energy','robot-parts',
+  'tcm-tools','genetech-tools','exo-science','agent-ecosystem','embodied-ai',
+  'synbio-manufacturing','semiconductor','ai4science','low-altitude','sat-6g',
+  'spatial-computing','privacy-computing','ai-safety','quantum-materials','carbon-neutral',
+  'digital-twin','biomed-ai','edge-ai','neuromorphic','agritech',
+]);
+// 双戳时间（F7）：图谱级 builtAt + 边级 firstSeenAt/lastSeenAt
+const BUILD_TIMESTAMP = new Date().toISOString();
+
 function readJsonSafe(p) {
   try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return null; }
 }
@@ -63,9 +78,15 @@ function readJsonSafe(p) {
 function main() {
   const t0 = Date.now();
   console.log('[kg] 扫描站点实体…');
-  const stations = fs.readdirSync(ROOT, { withFileTypes: true })
+  // F7: 白名单过滤，只保留 30 个真实站点
+  const allDirs = fs.readdirSync(ROOT, { withFileTypes: true })
     .filter(e => e.isDirectory() && isStation(e.name))
     .map(e => e.name);
+  const stations = allDirs.filter(s => ALLOWED_SITES.has(s));
+  const excluded = allDirs.filter(s => !ALLOWED_SITES.has(s));
+  if (excluded.length) {
+    console.log(`[kg] F7: 剔除 infra 目录 ${excluded.length} 个: ${excluded.join(', ')}`);
+  }
 
   // id -> 所属站集合
   const entitySites = new Map();
@@ -151,14 +172,35 @@ function main() {
   console.log(`[kg] 总节点: ${nodes.length} (站 ${stations.length} + 标签 ${topTags.length} + 实体 ${nodeIds.size})`);
 
   // 边：跨站桥接（实体→站枢纽）+ 主题共现（实体→标签枢纽）
+  // F7 改造（2026-10-16 · 报告 §5 F7）：边级双戳 firstSeenAt/lastSeenAt
+  // F10 改造（2026-10-17 · 报告 §5 F10）：边级来源分级 tier
+  //   tier 1: 权威一手（人工核实）— 当前无此层
+  //   tier 2: 高可信（同行评审/DOI 验证）— 当前无此层
+  //   tier 3: 高可信派生（cross_site/shared_tag 均由实体元数据直接派生）
+  //   tier 4: 中等可信（co_topic 由标签共现推断，需要更多证据才能升到 tier 3）
+  //   tier 5: 低可信（未验证、推测）— 当前无此层
+  // 旧实现边只有 {source, target, relation, weight}，无法追踪边的生命周期和可信度。
+  // 双戳 + tier 让每条边有明确的首次出现时间、最后确认时间和来源等级。
   const edges = [];
   const seen = new Set();
+  // 边默认 tier：cross_site 和 shared_tag 由实体元数据直接派生（tier 3）
+  // co_topic 由标签共现推断，保守给 tier 4
+  const RELATION_TIER = {
+    cross_site: 3,
+    shared_tag: 3,
+    co_topic: 4,
+    citation: 4, // 引用边合并时按 citation-edges.json 的 tier 覆盖
+  };
   const pushEdge = (s, t, relation, weight) => {
     if (edges.length >= LIMIT_EDGES) return false;
     const sk = `${s}|${t}`;
     if (seen.has(sk)) return true;
     seen.add(sk);
-    edges.push({ source: s, target: t, relation, weight: weight || 1 });
+    edges.push({
+      source: s, target: t, relation, weight: weight || 1,
+      firstSeenAt: BUILD_TIMESTAMP, lastSeenAt: BUILD_TIMESTAMP,
+      tier: RELATION_TIER[relation] || 4, // 未知 relation 保守给 tier 4
+    });
     return true;
   };
   for (const id of nodeIds) {
@@ -210,16 +252,26 @@ function main() {
     const sk = `${a}|${b}`;
     if (seen.has(sk)) continue;
     seen.add(sk);
-    edges.push({ source: a, target: b, relation: 'co_topic', weight: score });
+    // F10: co_topic 由标签共现推断，保守给 tier 4
+    edges.push({
+      source: a, target: b, relation: 'co_topic', weight: score,
+      firstSeenAt: BUILD_TIMESTAMP, lastSeenAt: BUILD_TIMESTAMP,
+      tier: 4,
+    });
     coTopic++;
   }
   console.log(`[kg] co_topic 候选对 ${pairCandidates} | 共享≥2标签 ${pairScore.size} | 产出直接边 ${coTopic}`);
   console.log(`[kg] 边数合计: ${edges.length}`);
 
+  // F7 改造（2026-10-16 · 报告 §5 F7）：schema v3 → v4，新增双戳字段
+  // F10 改造（2026-10-17 · 报告 §5 F10）：schema v4 → v5，新增边级 tier 分级
+  // v5 变更：1) 边级 tier 字段（1-5 来源分级）
+  // 2) stats 新增 tierEnabled 标记
+  // 3) 兼容 v4 双戳字段
   const graph = {
-    builtAt: new Date().toISOString(),
-    version: 3,
-    schema: 'genetech-knowledge-graph/v3',
+    builtAt: BUILD_TIMESTAMP,
+    version: 5,
+    schema: 'genetech-knowledge-graph/v5',
     stats: {
       stations: stations.length,
       uniqueEntities: meta.size,
@@ -232,6 +284,15 @@ function main() {
       coTopicEdges: coTopic,
       entityEntityEdges: coTopic,
       pairCandidates,
+      dualTimestamp: true,
+      tierEnabled: true,
+      tierDistribution: edges.reduce((acc, e) => {
+        const t = e.tier || 4;
+        acc[t] = (acc[t] || 0) + 1;
+        return acc;
+      }, {}),
+      excludedInfra: excluded.length,
+      schemaVersion: 5,
     },
     nodes,
     edges,
@@ -252,6 +313,12 @@ function main() {
     graph.stats = g.stats;
     graph.nodes = g.nodes;
     graph.edges = g.edges;
+    // F10: 合并引用边后重算 tier 分布（引用边也带 tier，必须计入全图分布）
+    graph.stats.tierDistribution = graph.edges.reduce((acc, e) => {
+      const t = e.tier || 4;
+      acc[t] = (acc[t] || 0) + 1;
+      return acc;
+    }, {});
     console.log(
       `[kg] 引用边合并 mode=${CITATION_MODE} | 输入 ${merged.report.inputCitationEdges} | ` +
       `落地 ${merged.report.addedCitationEdges} | 占位节点 +${merged.report.stubNodesAdded} | ` +
@@ -299,9 +366,9 @@ function main() {
       `[kg][GUARD] 无同 schema 基线（${sameSchema ? 'schema 不匹配' : '基线文件缺失/损坏'}），跳过退化比对，允许写入。` +
       (sameSchema ? '' : ' 若这是首次运行属正常；否则检查 data/knowledge-graph-baseline.json 是否被误删。')
     );
-  } else if (!DRY && oldNodes >= 1000 && (nodes.length < oldNodes * 0.5 || edges.length < oldEdges * 0.5)) {
+  } else if (!DRY && oldNodes >= 1000 && (graph.stats.nodes < oldNodes * 0.5 || graph.stats.edges < oldEdges * 0.5)) {
     console.error(
-      `[kg][ABORT] 新图谱 ${nodes.length} 节点 / ${edges.length} 边，低于基线 ${oldNodes} 节点 / ${oldEdges} 边的 50%。\n` +
+      `[kg][ABORT] 新图谱 ${graph.stats.nodes} 节点 / ${graph.stats.edges} 边，低于基线 ${oldNodes} 节点 / ${oldEdges} 边的 50%。\n` +
       `[kg][ABORT] 基线来自 data/knowledge-graph-baseline.json（仅本脚本写入）。\n` +
       `[kg][ABORT] 判定为站点数据不全导致的退化图谱，拒绝写入 data/knowledge-graph.json。请检查 runner 上 */website/api/entities.json 的完整性后重跑。`
     );

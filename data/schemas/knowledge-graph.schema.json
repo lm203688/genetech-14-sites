@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Knowledge Graph Schema",
+  "description": "Valid knowledge graph structure for Genetech",
+  "type": "object",
+  "required": [
+    "version",
+    "builtAt",
+    "schema",
+    "stats",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "version": {
+      "type": "number",
+      "description": "Knowledge graph version number"
+    },
+    "builtAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Built timestamp"
+    },
+    "schema": {
+      "type": "string",
+      "description": "Schema identifier (e.g., genetech-knowledge-graph/v3)"
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "stations": { "type": "number" },
+        "uniqueEntities": { "type": "number" },
+        "crossSiteEntities": { "type": "number" },
+        "tagKinds": { "type": "number" },
+        "nodes": { "type": "number" },
+        "edges": { "type": "number" },
+        "crossSiteEdges": { "type": "number" },
+        "sharedTagEdges": { "type": "number" },
+        "coTopicEdges": { "type": "number" },
+        "entityEntityEdges": { "type": "number" },
+        "pairCandidates": { "type": "number" },
+        "citationEdges": { "type": "number" },
+        "citationEdgeShare": { "type": "number" },
+        "stubNodes": { "type": "number" }
+      },
+      "additionalProperties": true
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "station": { "type": "string" },
+          "abstract": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "metadata": { "type": "object" },
+          "first_seen_at": { "type": "string", "format": "date-time" },
+          "last_updated_at": { "type": "string", "format": "date-time" },
+          "version": { "type": "number" }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "target", "relation", "tier"],
+        "properties": {
+          "source": { "type": "string" },
+          "target": { "type": "string" },
+          "relation": { "type": "string" },
+          "weight": { "type": "number" },
+          "tier": {
+            "type": "integer",
+            "enum": [1, 2, 3, 4, 5],
+            "description": "Source credibility tier (F10): 1=authoritative-manual, 2=peer-reviewed, 3=high-confidence-derived, 4=medium-confidence-inferred, 5=low-confidence-speculative"
+          },
+          "first_seen_at": { "type": "string", "format": "date-time" },
+          "firstSeenAt": { "type": "string", "format": "date-time" },
+          "last_seen_at": { "type": "string", "format": "date-time" },
+          "lastSeenAt": { "type": "string", "format": "date-time" },
+          "valid_from": { "type": "string", "format": "date-time" },
+          "valid_to": {
+            "description": "Null if currently valid",
+            "oneOf": [
+              { "type": "string", "format": "date-time" },
+              { "type": "null" }
+            ]
+          }
+        }
+      }
+    },
+    "stations": {
+      "type": "array",
+      "description": "Optional stations list for F7 station filtering",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "slug": { "type": "string" },
+          "domain": { "type": "string" },
+          "description": { "type": "string" },
+          "isActive": { "type": "boolean" },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

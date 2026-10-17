@@ -1,0 +1,10 @@
+{
+  "pipeline": "migrate-citation-edges-v4",
+  "timestamp": "2026-10-16T17:18:43.489Z",
+  "dryRun": false,
+  "backup": true,
+  "migrated": 25682,
+  "schemaVersion": "genetech-citation-edges/v4",
+  "originalFormat": "[s, t, ss, ts]",
+  "newFormat": "object {citing, cited, fromSite, toSite, resolvedAt, method}"
+}
