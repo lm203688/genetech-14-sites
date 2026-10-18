@@ -1,7 +1,8 @@
 # GeneTech-30: A Provenance-Tracked, Cross-Domain Scholarly Knowledge Graph of 294,330 Entities across 30 Scientific Domains
 
-> **Data Descriptor manuscript** (target venue: *Scientific Data*, Nature; fallback: JCDL / ISWC resource paper)
-> Draft v1 · 2026-10-18 · companion to `reports/SCI达标提升方案-2026-10-18.md`
+> **Data Descriptor manuscript** (target venue: **Research Square** preprint → optional follow-up journal; free-APC path, DOI via 10.21203/...)
+> Draft v1.1 · 2026-10-18 · companion to `reports/SCI达标提升方案-2026-10-18.md`
+> **Venue selection note (2026-10-18).** Original target was *Scientific Data* (APC ≈ USD 2,750, plus endorsement/review cycle). Given the zero-APC constraint and the absence of arXiv endorsement resources, the paper is published as a Research Square preprint (free, DOI-registered, no endorsement required). Research Square preprints are commonly accepted as the version of record for subsequent journal submission to Scientific Data or similar venues when/if APC funding becomes available later.
 >
 > **Honesty note (read first).** This is a *data descriptor* and *resource* paper, not a "we discovered new science" paper. Every quantitative claim below is backed by a reproducible script in `eval/`, `tools/`, or `reports/`. Where a metric is weak or a method produced a null/negative result, it is reported as such. We do not inflate.
 
@@ -202,7 +203,29 @@ A signed reproducibility package (snapshots + scripts) is prepared for Zenodo de
 
 1. Swanson, D. R. (1986). Fish oil, Raynaud's syndrome, and undiscovered public knowledge. *Perspectives in Biology and Medicine*.
 2. Priem, J. et al. (2022). OpenAlex: A fully open source scholarly graph. *arXiv:2204.03144*.
-3. Scientific Data editorial. (2019). Towards the "data descriptor". *Scientific Data*.
+3. Research Square. (2025). Editorial Policies. https://www.researchsquare.com/legal/editorial
+4. Crossref. (2025). REST API documentation. https://api.crossref.org/
+
+---
+
+## Author Contributions
+
+All work described in this manuscript was carried out by the sole author of this preprint (GeneTech Research). The dataset, all evaluation scripts, all reported figures, and all limitations were generated and audited by a single research pipeline with no co-investigators, industry sponsors, or external consultants. As a consequence, no author contribution split is meaningful here; the "single-author attribution" is itself reported as a limitation (see Limitations §6, "Single-curator provenance").
+
+---
+
+## Data Availability
+
+The complete GeneTech-30 dataset, evaluation artifacts, and reproducibility scripts are deposited in a public repository and referenced with a persistent DOI (see Data Records §Access). Aggregate metrics are pinned in `data/metrics.json` (single source of truth). The signed reproducibility package is hosted at `repro-package/` in the same repository and contains the manifest, SHA-256 checksums, and deposition instructions.
+
+---
+
+## Declarations
+
+- **Competing interests**: none.
+- **Funding**: none. This work was not funded by any external grant.
+- **Ethics approval**: not applicable. This is a data descriptor of publicly accessible scholarly metadata.
+- **Peer review status**: This is a preprint submitted to Research Square; it has undergone editorial prescreening for scope/format but has not undergone peer review.
 
 ---
 
@@ -221,4 +244,4 @@ A signed reproducibility package (snapshots + scripts) is prepared for Zenodo de
 | OpenAlex/Crossref false-negative rate | ✅ T3.3 (OpenAlex, no key required; 10/10 zero-citation pairs confirmed by OpenAlex as having 0 cross-domain citations among 50 citing DOIs with 58% ref-list coverage; false-negative rate 0.0% lower bound — see `reports/gap-baseline-openalex-2026-10-18.json`) |
 | OpenAlex true-negative rate (T4.1) | ✅ T4.1 (same probe; 10/10 = 100.0% upper bound with same 58% coverage caveat — see `reports/gap-baseline-openalex-2026-10-18.json`) |
 | Stance / entity-resolution minimal-usable + P/R | ✅ T5.1 / T5.2 |
-| Zenodo deposition + DOI | ⚠️ T6.2 (needs account) |
+| Zenodo / Figshare / Research Square deposition + DOI | ⚠️ T6.2 (needs free account registration; researchsquare.com + figshare.com both reachable, HTTP 301/202 verified 2026-10-18) |

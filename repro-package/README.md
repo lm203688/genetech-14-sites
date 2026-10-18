@@ -6,15 +6,27 @@
 
 ## What this is
 
-This package is the local staging area for the Zenodo deposition referenced in the Data Descriptor draft. It collects every artefact needed to reproduce the reported numbers:
+This package is the local staging area for the Research Square preprint + Figshare/Zenodo data deposition referenced in the Data Descriptor draft. It collects every artefact needed to reproduce the reported numbers:
 
 - **Data core**: metrics, knowledge graph, citation edges, hypothesis cards.
 - **Data gold**: sampled annotation subsets (stance, entity-resolution, gold retrieval, known discoveries).
 - **Evaluation**: full 30-site leaderboard, per-type breakdowns.
-- **Validation**: retrospective LBD cuts (3 cut-points), known-discovery benchmark, Crossref false-negative baseline.
+- **Validation**: retrospective LBD cuts (3 cut-points), known-discovery benchmark, Crossref false-negative baseline, OpenAlex zero-citation-pair true/false-negative baseline.
 - **Tooling**: every script that produced the artefacts above.
 - **Review package**: hypothesis-card sampling + annotation template.
 - **Governance**: signing-audit log.
+
+## Deposition path (2026-10-18 update)
+
+Zero-APC path selected (no funded APC budget, no arXiv endorsement resources available):
+
+| Purpose | Platform | Status | Docs |
+|---|---|---|---|
+| Paper DOI | **Research Square** (free, no endorsement) | pending user registration | `RESEARCH-SQUARE-SUBMIT.md` |
+| Data DOI (optional) | **Figshare** (free 20 GB, no endorsement) | pending user registration | `FIGSHARE-DATA-SUBMIT.md` |
+| Data DOI (fallback) | **Zenodo** (free, requires 5-min registration) | not started | `ZENODO-SUBMIT.md` |
+
+Full user-action checklist: `USER-CHECKLIST.md`. Submission metadata template: `SUBMISSION-METADATA.md`.
 
 ## Key numbers (single source of truth)
 
