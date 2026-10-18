@@ -195,6 +195,6 @@ A signed reproducibility package (snapshots + scripts) is prepared for Zenodo de
 | Vector-stack comparison | ⚠️ T2.3 (needs embedding endpoint) |
 | Retrospective 3-cutpoint + random baseline + limitations | ✅ T3.1 |
 | Known-discovery recall report | ✅ T3.2 |
-| OpenAlex/Crossref false-negative rate | ⚠️ T3.3 / T4.1 (needs key; T3.1+T3.2 deemed sufficient for data paper) |
+| OpenAlex/Crossref false-negative rate | ✅ T3.3 (executed on Crossref, no key required; honest negative result: 80% of citing DOIs known to Crossref but 0% have reference lists indexed — external corpus coverage insufficient for a stable estimate, reported as a method limitation rather than a positive result; see `reports/gap-baseline-crossref-2026-10-18.json`). T4.1 remains open pending an OpenAlex key. |
 | Stance / entity-resolution minimal-usable + P/R | ✅ T5.1 / T5.2 |
 | Zenodo deposition + DOI | ⚠️ T6.2 (needs account) |

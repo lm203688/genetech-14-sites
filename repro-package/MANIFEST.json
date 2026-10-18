@@ -1,0 +1,418 @@
+{
+  "package": "GeneTech-30-sites-knowledge-graph-repro",
+  "version": "1.0.0",
+  "generatedAt": "2026-10-18T03:26:37.309Z",
+  "description": "Reproduction package for the Scientific Data Data Descriptor draft on the GeneTech 30-site cross-domain knowledge graph. Contains all data snapshots, evaluation artefacts, validation reports and tooling needed to reproduce the reported numbers.",
+  "repository": "https://github.com/lm203688/genetech-14-sites",
+  "repositoryBranch": "master",
+  "metricsSingleSource": "data/metrics.json",
+  "keyNumbers": {
+    "siteCount": 30,
+    "totalEntities": 294330,
+    "entitiesWithDoiOrPmid": 271099,
+    "doiCoverageRate": 0.9211,
+    "uniqueDoi": 255392,
+    "identityEntries": 276960,
+    "source": "data/metrics.json"
+  },
+  "totalFiles": 38,
+  "totalBytes": 195828267,
+  "files": [
+    {
+      "role": "metrics",
+      "category": "data-core",
+      "path": "data/metrics.json",
+      "status": "present",
+      "size": 6818,
+      "sha256": "c98ebd9075d7799dc47e0f0c54012457a6a164b026dcb06799809a61ae438466",
+      "modified": "2026-10-18T01:33:46.869Z",
+      "large": false
+    },
+    {
+      "role": "identity-map",
+      "category": "data-core-large",
+      "path": "data/identity-map.json",
+      "status": "present",
+      "size": 108137259,
+      "sha256": "950b85377f1cd79a62e4ca85796b66be5ebb78a0321663bbf73dcd3dadaa55e2",
+      "modified": "2026-10-17T14:26:39.621Z",
+      "large": true
+    },
+    {
+      "role": "knowledge-graph",
+      "category": "data-core-large",
+      "path": "data/knowledge-graph.json",
+      "status": "present",
+      "size": 31203295,
+      "sha256": "e15d7b945f769ec891931914aba0cd9504d606d8b5adeed085c4435bffa469ba",
+      "modified": "2026-10-17T02:03:14.066Z",
+      "large": true
+    },
+    {
+      "role": "kg-entities",
+      "category": "data-core-large",
+      "path": "data/knowledge-graph-entities.json",
+      "status": "present",
+      "size": 31203295,
+      "sha256": "e15d7b945f769ec891931914aba0cd9504d606d8b5adeed085c4435bffa469ba",
+      "modified": "2026-10-17T02:03:14.107Z",
+      "large": true
+    },
+    {
+      "role": "citation-edges",
+      "category": "data-core",
+      "path": "data/citation-edges.json",
+      "status": "present",
+      "size": 8509537,
+      "sha256": "08a1b2f7bec706b8271e7624ae8dcc236dccad865e39415c222bfc4070bd7bdd",
+      "modified": "2026-10-17T01:45:12.198Z",
+      "large": true
+    },
+    {
+      "role": "citation-gaps",
+      "category": "data-core",
+      "path": "data/citation-gaps.json",
+      "status": "present",
+      "size": 45098,
+      "sha256": "7ef60521a5b5d862700df0df55ff86b32e334ae442d8fee311c1b9da104eceaa",
+      "modified": "2026-10-11T07:55:34.275Z",
+      "large": false
+    },
+    {
+      "role": "search-index",
+      "category": "data-core-large",
+      "path": "data/search-index.json",
+      "status": "present",
+      "size": 13045853,
+      "sha256": "5d5db07bdd9307fc9164e19ffe6ab89d980005cfdd1ce1b9a26271422aecd99f",
+      "modified": "2026-10-13T07:51:07.795Z",
+      "large": true
+    },
+    {
+      "role": "hypothesis-cards",
+      "category": "data-core",
+      "path": "data/hypothesis-cards.json",
+      "status": "present",
+      "size": 2592875,
+      "sha256": "fe7dfd775b2693601fc85b61970dfa5597967b2968ad9d5a067aa2edb35bb249",
+      "modified": "2026-10-16T05:42:49.024Z",
+      "large": true
+    },
+    {
+      "role": "known-discoveries",
+      "category": "data-gold",
+      "path": "data/known-discoveries.json",
+      "status": "present",
+      "size": 4976,
+      "sha256": "7805fe1e063ce747b0f9f0253fc1ea2706a4cd89e8f62cc59cf41655fc78bf85",
+      "modified": "2026-10-18T01:47:46.966Z",
+      "large": false
+    },
+    {
+      "role": "gold-sample",
+      "category": "data-gold",
+      "path": "data/gold.jsonl",
+      "status": "present",
+      "size": 142972,
+      "sha256": "8003182245a5cf17a48afa95f4b4ad24fea3c247f712e8a99b21464063434e56",
+      "modified": "2026-10-18T01:59:48.940Z",
+      "large": false
+    },
+    {
+      "role": "stance-sample",
+      "category": "data-gold",
+      "path": "data/stance-sample.json",
+      "status": "present",
+      "size": 189319,
+      "sha256": "840e8a732e4eb90c6a3d98889fb82ca79dad7ae3ff1e01d0583d934d73a7246e",
+      "modified": "2026-10-18T01:56:13.368Z",
+      "large": false
+    },
+    {
+      "role": "entity-resolution-sample",
+      "category": "data-gold",
+      "path": "data/entity-resolution-sample.json",
+      "status": "present",
+      "size": 34405,
+      "sha256": "e51dac780f92b9500a9ab8c465563b46bc4e829d6ed668029377342622b0274e",
+      "modified": "2026-10-18T01:53:42.882Z",
+      "large": false
+    },
+    {
+      "role": "signing-audit",
+      "category": "data-governance",
+      "path": "data/signing-audit.jsonl",
+      "status": "present",
+      "size": 620,
+      "sha256": "440feeca276748aab2e124f68d609da580bd0fe843987edd3c99a5f8064bbbcf",
+      "modified": "2026-10-16T05:44:42.204Z",
+      "large": false
+    },
+    {
+      "role": "eval-results",
+      "category": "eval",
+      "path": "eval/results-2026-10-18.json",
+      "status": "present",
+      "size": 287039,
+      "sha256": "c0ea923076d44f6a94b3048693497d92a5b4e415ba3ddbdc951975fd95ced30d",
+      "modified": "2026-10-18T01:51:10.299Z",
+      "large": false
+    },
+    {
+      "role": "eval-leaderboard",
+      "category": "eval",
+      "path": "eval/leaderboard-2026-10-18.html",
+      "status": "present",
+      "size": 6821,
+      "sha256": "9d50d00c099883af3306c2e8384bb38277f35daf23a01781961ad1e646eb0ffe",
+      "modified": "2026-10-18T01:51:10.302Z",
+      "large": false
+    },
+    {
+      "role": "retro-2021",
+      "category": "validation",
+      "path": "reports/retro-validation-2021-01-01.json",
+      "status": "present",
+      "size": 6002,
+      "sha256": "136a745ecf2d258eebe83a91edcefcb12cf225d46bf21a48f4dd3b638218218f",
+      "modified": "2026-10-18T01:46:37.788Z",
+      "large": false
+    },
+    {
+      "role": "retro-2022",
+      "category": "validation",
+      "path": "reports/retro-validation-2022-01-01.json",
+      "status": "present",
+      "size": 5933,
+      "sha256": "a20e9445d15b0b3efc2055b35c18cd42e8b5907dcd5c95e55e89bd8e9eb44018",
+      "modified": "2026-10-18T01:46:41.852Z",
+      "large": false
+    },
+    {
+      "role": "retro-2023",
+      "category": "validation",
+      "path": "reports/retro-validation-2023-01-01.json",
+      "status": "present",
+      "size": 5980,
+      "sha256": "1b07ee57be53b1a82e813641ada23c2b480d1535165dbb32c2fcc0c00f6e5b92",
+      "modified": "2026-10-18T01:46:46.122Z",
+      "large": false
+    },
+    {
+      "role": "known-disc-2021",
+      "category": "validation",
+      "path": "reports/known-discovery-benchmark-2021-01-01.json",
+      "status": "present",
+      "size": 10939,
+      "sha256": "8241284ee9188e18c27005160eee91491b5a9255ac82bea951cefa490135aa82",
+      "modified": "2026-10-18T01:47:57.972Z",
+      "large": false
+    },
+    {
+      "role": "known-disc-2022",
+      "category": "validation",
+      "path": "reports/known-discovery-benchmark-2022-01-01.json",
+      "status": "present",
+      "size": 10961,
+      "sha256": "7c710e058e02e73f49271cae6f2fb10bc8498d9294592ae8070de37846a58935",
+      "modified": "2026-10-18T01:48:01.456Z",
+      "large": false
+    },
+    {
+      "role": "known-disc-2023",
+      "category": "validation",
+      "path": "reports/known-discovery-benchmark-2023-01-01.json",
+      "status": "present",
+      "size": 10980,
+      "sha256": "ba9020772a0990a90075385465d5c871f1fefb8879fcdf3841750b2f13453429",
+      "modified": "2026-10-18T01:48:04.621Z",
+      "large": false
+    },
+    {
+      "role": "stance-extract-report",
+      "category": "validation",
+      "path": "reports/stance-extraction-report.md",
+      "status": "present",
+      "size": 3228,
+      "sha256": "21d5e64e9c81006fad4ff1ed0c70075842f74391242e748554dc100c3568d656",
+      "modified": "2026-10-18T01:57:08.768Z",
+      "large": false
+    },
+    {
+      "role": "entity-resolution-report",
+      "category": "validation",
+      "path": "reports/entity-resolution-report.md",
+      "status": "present",
+      "size": 3918,
+      "sha256": "98534546bff04a2512ce347dbca8e4372670405c5bd9e060bef438ffe8ba83fc",
+      "modified": "2026-10-18T01:54:22.585Z",
+      "large": false
+    },
+    {
+      "role": "crossref-gap-baseline",
+      "category": "validation",
+      "path": "reports/gap-baseline-crossref-2026-10-18.json",
+      "status": "present",
+      "size": 35321,
+      "sha256": "96e4fef7cddb364af04218d1f157d1134ecf216fb8bf78e0538d30ab2a088864",
+      "modified": "2026-10-18T03:23:53.979Z",
+      "large": false
+    },
+    {
+      "role": "manuscript-draft",
+      "category": "manuscript",
+      "path": "reports/manuscript-data-descriptor.md",
+      "status": "present",
+      "size": 18096,
+      "sha256": "d0f90abbfbfc094046e13fcfe90ebc5042f271b616f10847b9dcd9e2f2862b13",
+      "modified": "2026-10-18T03:26:28.122Z",
+      "large": false
+    },
+    {
+      "role": "sci-improvement-plan",
+      "category": "plan",
+      "path": "reports/SCI达标提升方案-2026-10-18.md",
+      "status": "present",
+      "size": 12337,
+      "sha256": "7b1ccba01a7f43b0eba9f05e41f9200b54c289088d453920e49e23b1acddac51",
+      "modified": "2026-10-18T01:13:33.484Z",
+      "large": false
+    },
+    {
+      "role": "tool-recompute-metrics",
+      "category": "tool",
+      "path": "tools/recompute-metrics.mjs",
+      "status": "present",
+      "size": 8331,
+      "sha256": "4bd11f52c374798b48c2fa5097ede542fa45f1b2d6b86ddf2d5cf95667fa3c7b",
+      "modified": "2026-10-18T01:33:35.460Z",
+      "large": false
+    },
+    {
+      "role": "tool-validate-hypotheses-retro",
+      "category": "tool",
+      "path": "tools/validate-hypotheses-retro.mjs",
+      "status": "present",
+      "size": 6184,
+      "sha256": "30f47970c9e7110cf17bfe66108eaed46baf903fb5c01cfc829062c483a28921",
+      "modified": "2026-10-18T01:46:23.677Z",
+      "large": false
+    },
+    {
+      "role": "tool-benchmark-known-discoveries",
+      "category": "tool",
+      "path": "tools/benchmark-known-discoveries.mjs",
+      "status": "present",
+      "size": 3542,
+      "sha256": "1caa425cbd36dde5ed7e9151afc2559f5737e158b4d4b5733d1f4746bff6dedd",
+      "modified": "2026-10-18T01:11:11.748Z",
+      "large": false
+    },
+    {
+      "role": "tool-stance-extract",
+      "category": "tool",
+      "path": "tools/stance-extract.mjs",
+      "status": "present",
+      "size": 10697,
+      "sha256": "4ac18c530ea27dd0dbd87922567d87b23d01500ce802f1551660986e757aafeb",
+      "modified": "2026-10-18T01:55:57.054Z",
+      "large": false
+    },
+    {
+      "role": "tool-analyze-entity-resolution",
+      "category": "tool",
+      "path": "tools/analyze-entity-resolution.mjs",
+      "status": "present",
+      "size": 6956,
+      "sha256": "de1fd51c70ba859ef8933635eba47b02f938c3e303ae9e0328d2ede44db74cba",
+      "modified": "2026-10-18T01:53:34.779Z",
+      "large": false
+    },
+    {
+      "role": "tool-build-gold-sample",
+      "category": "tool",
+      "path": "tools/build-gold-sample.mjs",
+      "status": "present",
+      "size": 3929,
+      "sha256": "f5919f81128a349f69c4610078b758c155c178d6e85a23aac27aee51648dbed1",
+      "modified": "2026-10-18T01:58:52.025Z",
+      "large": false
+    },
+    {
+      "role": "tool-gold-kappa",
+      "category": "tool",
+      "path": "tools/gold-kappa.mjs",
+      "status": "present",
+      "size": 3773,
+      "sha256": "7f5ffdad5a8cc4586549d6f92c64632acb702edd739fa729372ec4f4ddef520c",
+      "modified": "2026-10-18T01:58:25.118Z",
+      "large": false
+    },
+    {
+      "role": "tool-gap-baseline-crossref",
+      "category": "tool",
+      "path": "tools/gap-baseline-crossref.mjs",
+      "status": "present",
+      "size": 12374,
+      "sha256": "b67549fe86e014629a61bbc22100f4810e44c80c1e3f210b80fe8e981b4bb479",
+      "modified": "2026-10-18T03:22:43.578Z",
+      "large": false
+    },
+    {
+      "role": "tool-build-repro-package",
+      "category": "tool",
+      "path": "tools/build-repro-package.mjs",
+      "status": "present",
+      "size": 19026,
+      "sha256": "4f7cdcb5ad8c02927cf5e5127cd3ac5471148d17472909e9f431364de4c4db9f",
+      "modified": "2026-10-18T03:18:03.527Z",
+      "large": false
+    },
+    {
+      "role": "review-package",
+      "category": "review",
+      "path": "review-pkg/review-package.json",
+      "status": "present",
+      "size": 137582,
+      "sha256": "a20b1b817d7b928e2a8dc4427bc097ff07d8a48cfe29560e1944fca4e12b59a0",
+      "modified": "2026-10-18T01:03:35.564Z",
+      "large": false
+    },
+    {
+      "role": "review-sheet",
+      "category": "review",
+      "path": "review-pkg/review-sheet.csv",
+      "status": "present",
+      "size": 58783,
+      "sha256": "c8b3115a5f2c1490af80ab01de5057ba36a7159711d441463a14dfb3c0a3bb41",
+      "modified": "2026-10-18T01:03:35.560Z",
+      "large": false
+    },
+    {
+      "role": "review-template",
+      "category": "review",
+      "path": "review-pkg/reviews/_TEMPLATE.json",
+      "status": "present",
+      "size": 23213,
+      "sha256": "c0c1c72d75a04c7f7cd7df437d50084070409e89a8d1770d6a54ec26b33a7b5f",
+      "modified": "2026-10-18T01:03:35.567Z",
+      "large": false
+    }
+  ],
+  "categories": [
+    "data-core",
+    "data-core-large",
+    "data-gold",
+    "data-governance",
+    "eval",
+    "validation",
+    "manuscript",
+    "plan",
+    "tool",
+    "review"
+  ],
+  "largeFileCount": 6,
+  "largeFileTotalBytes": 194692114,
+  "presentCount": 38,
+  "missingCount": 0
+}
