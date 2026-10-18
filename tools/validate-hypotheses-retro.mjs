@@ -24,11 +24,12 @@ const ROOT = process.cwd();
 const T0 = process.argv.find(a => a.startsWith('--t0='))?.slice(5) || '2023-01-01';
 const T0Y = parseInt(T0.slice(0, 4), 10);
 
-// 1) 站点标签集 + id->年份
+// 1) 站点标签集 + id->年份 + doi->标签（用于"特定主题涌现"收紧）
 const sites = fs.readdirSync(ROOT).filter(d =>
   fs.existsSync(path.join(ROOT, d, 'website/api/entities.json')));
 const siteTags = new Map();
 const idYear = new Map();
+const doiTags = new Map();
 for (const s of sites) {
   const raw = JSON.parse(fs.readFileSync(path.join(ROOT, s, 'website/api/entities.json'), 'utf8'));
   const arr = Array.isArray(raw) ? raw : (raw.entities || []);
@@ -42,6 +43,10 @@ for (const s of sites) {
       }
     }
     for (const t of (e.tags || [])) tags.add(t);
+    if (e.doi) {
+      if (!doiTags.has(e.doi)) doiTags.set(e.doi, new Set());
+      for (const t of (e.tags || [])) doiTags.get(e.doi).add(t);
+    }
   }
   siteTags.set(s, tags);
 }
@@ -75,12 +80,32 @@ for (let i = 0; i < sites.length; i++) {
   }
 }
 
+// 3b) "特定主题涌现"收紧：从 post-T0 边中找出端点（citing/cited DOI）标签命中共享主题的边
+//     → 只有"在共享主题上"真出现引用的域对，才算方法真正预测的涌现（而非泛泛互引）。
+const sharedSetByPair = new Map();
+for (const p of pairs) sharedSetByPair.set(p.A + '|' + p.B, new Set(p.sharedSample));
+const topicSpecificHit = new Set();
+for (const e of edges) {
+  const y = idYear.get(e.citing);
+  if (y === undefined || y < T0Y) continue;
+  const k = e.fromSite + '|' + e.toSite;
+  const ss = sharedSetByPair.get(k);
+  if (!ss || !ss.size) continue;
+  const tagsCiting = doiTags.get(e.citing), tagsCited = doiTags.get(e.cited);
+  const hit = (tagsCiting && [...tagsCiting].some(t => ss.has(t))) ||
+              (tagsCited && [...tagsCited].some(t => ss.has(t)));
+  if (hit) topicSpecificHit.add(k);
+}
+
 // 4) 统计 + 随机基线
 const emerged = pairs.filter(p => p.post > 0);
+const emergedTopicSpecific = emerged.filter(p => topicSpecificHit.has(p.A + '|' + p.B));
+const nonObvious = pairs.filter(p => p.sharedCount <= 2); // 仅 1-2 个共享主题 = 更具体的桥
 const allPairs = [];
 for (let i = 0; i < sites.length; i++) for (let j = 0; j < sites.length; j++) if (i !== j) allPairs.push(sites[i] + '|' + sites[j]);
 const randEmergence = allPairs.reduce((a, k) => a + ((post.get(k) || 0) > 0 ? 1 : 0), 0) / allPairs.length;
 const emergenceRate = pairs.length ? emerged.length / pairs.length : 0;
+const topicSpecificRate = pairs.length ? emergedTopicSpecific.length / pairs.length : 0;
 
 const report = {
   method: 'retrospective-validation (Swanson-style)',
@@ -90,16 +115,20 @@ const report = {
   candidateBridges: pairs.length,
   emergedBridges: emerged.length,
   emergenceRate,
+  emergedTopicSpecific: emergedTopicSpecific.length,
+  topicSpecificRate,
+  nonObviousBridges: nonObvious.length,
   randomPairEmergenceRate: randEmergence,
   lift: randEmergence ? emergenceRate / randEmergence : null,
+  liftTopicSpecific: randEmergence ? topicSpecificRate / randEmergence : null,
   edgesTotal: edges.length,
   edgesSkippedNoYear: skip,
   topExamples: emerged.sort((a, b) => b.post - a.post).slice(0, 20)
-    .map(p => ({ pair: `${p.A}→${p.B}`, sharedTags: p.sharedSample, postCitations: p.post })),
+    .map(p => ({ pair: `${p.A}→${p.B}`, sharedTags: p.sharedSample, postCitations: p.post, topicSpecific: topicSpecificHit.has(p.A + '|' + p.B) })),
 };
 fs.mkdirSync('reports', { recursive: true });
 const out = `reports/retro-validation-${T0}.json`;
 fs.writeFileSync(out, JSON.stringify(report, null, 2));
-console.log(`[retro] 站点 ${sites.length} | 候选桥 ${pairs.length} | 涌现 ${emerged.length} | 涌现率 ${(emergenceRate * 100).toFixed(1)}%`);
-console.log(`[retro] 随机对涌现率 ${(randEmergence * 100).toFixed(1)}% | lift ${report.lift?.toFixed(2)} | 跳过无年份边 ${skip}`);
+console.log(`[retro] 站点 ${sites.length} | 候选桥 ${pairs.length} | 涌现 ${emerged.length} (${(emergenceRate * 100).toFixed(1)}%) | 主题特定涌现 ${emergedTopicSpecific.length} (${(topicSpecificRate * 100).toFixed(1)}%)`);
+console.log(`[retro] 随机对涌现率 ${(randEmergence * 100).toFixed(1)}% | lift(泛) ${report.lift?.toFixed(2)} | lift(主题) ${report.liftTopicSpecific?.toFixed(2)} | 跳过无年份边 ${skip}`);
 console.log(`[retro] → ${out}`);
