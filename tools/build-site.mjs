@@ -1907,7 +1907,7 @@ function writeGzip(rel, content) {
  */
 const AGGREGATED_DATA_FILES = [
   'knowledge-graph.json',
-  'knowledge-graph-entities.json',
+  // knowledge-graph-entities.json 已删除（2026-10-19）：与 knowledge-graph.json 字节完全相同（各 31.2MB = 62.4MB 冗余）。
   'search-index.json',
   'oss-registry.json',
   'data-requests.json',
@@ -2094,7 +2094,7 @@ async function main() {
   }
   // 对外数据 JSON（供 api.swarmlabs.tools/v1/oss/registry 与 /v1/search/semantic 使用）：
   // 原样复制到 _site/data/，与 /api/catalog.json 同域
-  for (const rel of ['data/oss-registry.json', 'data/search-index.json', 'data/knowledge-graph.json', 'data/knowledge-graph-entities.json', 'data/intel_state.json', 'data/arxiv-hot.json', 'data/academic-entities.json', 'data/pubmed-entities.json', 'data/crossref-entities.json', 'data/s2-entities.json', 'data/citation-edges.json', 'data/citation-gaps.json', 'state/data-requests.json', 'data/data-requests.json']) {
+  for (const rel of ['data/oss-registry.json', 'data/search-index.json', 'data/knowledge-graph.json', 'data/intel_state.json', 'data/arxiv-hot.json', 'data/academic-entities.json', 'data/pubmed-entities.json', 'data/crossref-entities.json', 'data/s2-entities.json', 'data/citation-edges.json', 'data/citation-gaps.json', 'state/data-requests.json', 'data/data-requests.json']) {
     try {
       const src = path.join(ROOT, rel);
       if (fs.existsSync(src)) writeFile(rel, fs.readFileSync(src, 'utf8'));
@@ -2367,11 +2367,12 @@ capabilities: search, entity-lookup, graph, citation, mcp
   // 避免人工维护漂移；schema_version 1.1 相对旧版 1.0 新增 license / quality / per-site 计数。
   let entityGraphSeed = null;
   try {
+    // knowledge-graph-entities.json 已删除（2026-10-19），改读 knowledge-graph.json
     entityGraphSeed = JSON.parse(
-      fs.readFileSync(path.join(ROOT, 'data/knowledge-graph-entities.json'), 'utf8'),
+      fs.readFileSync(path.join(ROOT, 'data/knowledge-graph.json'), 'utf8'),
     );
   } catch {
-    /* 旧版实体图可选，缺失不影响构建 */
+    /* 实体图可选，缺失不影响构建 */
   }
   const crossDomainLinks = Array.isArray(entityGraphSeed?.edges) ? entityGraphSeed.edges.slice(0, 50) : [];
   const agentDiscovery = {
@@ -2411,7 +2412,7 @@ capabilities: search, entity-lookup, graph, citation, mcp
     cross_domain_links: crossDomainLinks,
     cross_domain_links_note:
       crossDomainLinks.length
-        ? `来自 data/knowledge-graph-entities.json（旧版 12 站实体图，${crossDomainLinks.length} 条跨域桥接关系）。` +
+        ? `来自 data/knowledge-graph.json（${crossDomainLinks.length} 条跨域桥接关系）。` +
           '注意：该图的节点 URL 指向旧架构页面，在现行 v3 站点上不可达；请只把 relation/label 当作跨域桥接设计参考，实体定位改用 api/topics.json。'
         : '暂无。',
   };

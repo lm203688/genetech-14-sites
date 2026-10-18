@@ -14,6 +14,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mergeCitationEdges } from './lib/merge-citation-edges.mjs';
+// G8 收敛（2026-10-17 · 报告 §3.1 G8）：ALLOWED_SITES 单一真源，
+// 防 build-kg / deploy-workers 两处硬编码漂移。
+import { ALLOWED_SITES } from '../operations-plan/lib/site-domain-tags.mjs';
 
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, 'data');
@@ -57,17 +60,6 @@ const CITATION_LIMIT = argNum('--citation-limit-edges=', Infinity);
 const isStation = (name) => !name.startsWith('.') && !name.startsWith('_');
 
 // F7 改造（2026-10-16 · 报告 §5 F7）：ALLOWED_SITES 白名单，剔除 infra 目录。
-// 旧实现用 isStation() 仅排除 . 和 _ 前缀，导致 api-guard/audit/command-center 等
-// 26 个基础设施目录被误纳入图谱，污染站点枢纽节点和边关系。
-// 白名单与 operations-plan/lib/site-domain-tags.mjs 的单一真源保持一致。
-const ALLOWED_SITES = new Set([
-  'quantum-computing','alien-minerals','biocomputing','bionic-ai','deep-sea-tech',
-  'brain-science','life-science','new-energy','nuclear-energy','robot-parts',
-  'tcm-tools','genetech-tools','exo-science','agent-ecosystem','embodied-ai',
-  'synbio-manufacturing','semiconductor','ai4science','low-altitude','sat-6g',
-  'spatial-computing','privacy-computing','ai-safety','quantum-materials','carbon-neutral',
-  'digital-twin','biomed-ai','edge-ai','neuromorphic','agritech',
-]);
 // 双戳时间（F7）：图谱级 builtAt + 边级 firstSeenAt/lastSeenAt
 const BUILD_TIMESTAMP = new Date().toISOString();
 
@@ -379,8 +371,10 @@ function main() {
     fs.mkdirSync(DATA_DIR, { recursive: true });
     fs.mkdirSync(REPORTS_DIR, { recursive: true });
     fs.writeFileSync(path.join(DATA_DIR, 'knowledge-graph.json'), json);
-    // 部署副本（与旧文件名保持一致，供下游消费）
-    fs.writeFileSync(path.join(DATA_DIR, 'knowledge-graph-entities.json'), json);
+    // knowledge-graph-entities.json 已删除（2026-10-19）：
+    // 此前写两个字节完全相同的副本（各 31.2MB = 62.4MB 冗余），
+    // 唯一消费方 build-site.mjs 的读取有 try/catch 降级（"旧版实体图可选"）。
+    // 所有其他消费方只读 knowledge-graph.json。
     // 退化护栏基线（本脚本独占写入者）：只记录同 schema 的规模，
     // 让下一轮拿得到「昨天本脚本自己产出的量」，而非 selfdb 的玩具图。
     fs.writeFileSync(BASELINE_FILE, JSON.stringify({
@@ -404,7 +398,7 @@ function main() {
       try { fs.unlinkSync(path.join(REPORTS_DIR, f)); } catch { /* 删除失败不影响主流程 */ }
     }
     if (stale.length) console.log(`[kg] 已清理过期报告 ${stale.length} 份（保留最近 ${KEEP_REPORTS} 份）`);
-    console.log(`[kg] 已写入 data/knowledge-graph.json + data/knowledge-graph-entities.json`);
+    console.log(`[kg] 已写入 data/knowledge-graph.json（已删除 -entities 副本，省 31.2MB）`);
   } else {
     console.log('[kg] dry-run，未写入');
   }

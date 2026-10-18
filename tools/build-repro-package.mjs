@@ -34,7 +34,8 @@ const CATALOG = [
   { role: 'metrics',           path: 'data/metrics.json',                          category: 'data-core' },
   { role: 'identity-map',      path: 'data/identity-map.json',                     category: 'data-core-large' },
   { role: 'knowledge-graph',   path: 'data/knowledge-graph.json',                  category: 'data-core-large' },
-  { role: 'kg-entities',       path: 'data/knowledge-graph-entities.json',         category: 'data-core-large' },
+  // knowledge-graph-entities.json 已删除（2026-10-19）：与 knowledge-graph.json 字节完全相同（各 31.2MB = 62.4MB 冗余），
+  // 唯一消费方 build-site.mjs 有 try/catch 降级。
   { role: 'citation-edges',    path: 'data/citation-edges.json',                   category: 'data-core' },
   { role: 'citation-gaps',     path: 'data/citation-gaps.json',                    category: 'data-core' },
   { role: 'search-index',      path: 'data/search-index.json',                     category: 'data-core-large' },
