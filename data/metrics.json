@@ -1,0 +1,254 @@
+{
+  "$schema": "genetech-metrics-v1",
+  "generatedAt": "2026-10-18T01:33:46.862Z",
+  "generator": "tools/recompute-metrics.mjs",
+  "sourceFiles": [
+    "<site>/website/api/entities.json (×30)",
+    "data/identity-map.json"
+  ],
+  "definitions": {
+    "totalEntities": "30 站 entities.json 逐站实体数求和（含无外部 ID 的实体）。",
+    "entitiesWithDoiOrPmid": "30 站实体中 e.doi 或 e.pmid 非空的实体数（\"覆盖率\"口径，不是唯一数）。",
+    "identityEntries": "data/identity-map.json 的 canonical entry 总数（跨源/cross-site 去重后的实体键数，含 arxiv/oa/pmid 等无 DOI 的条目）。",
+    "entriesWithDoi": "identity-map 中 doi 字段非空的 entry 数（按 entry 计，会重复计数同一 DOI 跨多源的情况）。",
+    "uniqueDoi": "identity-map 中不同 DOI 字符串的去重计数 —— 这才是严谨的\"唯一 DOI\"。",
+    "uniquePmid": "identity-map 中不同 pmid 字符串的去重计数（辅助口径，当前源无 pmid 字段故为 0）。",
+    "stubCount": "30 站实体中 abstract 为空/纯空白的\"存根\"实体数。",
+    "stubRate": "stubCount / totalEntities。"
+  },
+  "metrics": {
+    "siteCount": 30,
+    "totalEntities": 294330,
+    "entitiesWithDoiOrPmid": 271099,
+    "doiCoverageRate": 0.9211,
+    "identityEntries": 276960,
+    "entriesWithDoi": 255392,
+    "uniqueDoi": 255392,
+    "uniquePmid": 0,
+    "stubCount": 90926,
+    "stubRate": 0.3089
+  },
+  "perSite": [
+    {
+      "site": "robot-parts",
+      "entities": 9987,
+      "withDoiOrPmid": 9485,
+      "stub": 4897,
+      "stubRate": 0.4903
+    },
+    {
+      "site": "bionic-ai",
+      "entities": 9978,
+      "withDoiOrPmid": 9328,
+      "stub": 1368,
+      "stubRate": 0.1371
+    },
+    {
+      "site": "agent-ecosystem",
+      "entities": 9974,
+      "withDoiOrPmid": 9136,
+      "stub": 1344,
+      "stubRate": 0.1348
+    },
+    {
+      "site": "low-altitude",
+      "entities": 9968,
+      "withDoiOrPmid": 9298,
+      "stub": 1215,
+      "stubRate": 0.1219
+    },
+    {
+      "site": "ai4science",
+      "entities": 9965,
+      "withDoiOrPmid": 9005,
+      "stub": 1411,
+      "stubRate": 0.1416
+    },
+    {
+      "site": "embodied-ai",
+      "entities": 9964,
+      "withDoiOrPmid": 8961,
+      "stub": 1296,
+      "stubRate": 0.1301
+    },
+    {
+      "site": "digital-twin",
+      "entities": 9958,
+      "withDoiOrPmid": 9721,
+      "stub": 1557,
+      "stubRate": 0.1564
+    },
+    {
+      "site": "neuromorphic",
+      "entities": 9956,
+      "withDoiOrPmid": 9952,
+      "stub": 5709,
+      "stubRate": 0.5734
+    },
+    {
+      "site": "privacy-computing",
+      "entities": 9951,
+      "withDoiOrPmid": 9810,
+      "stub": 5036,
+      "stubRate": 0.5061
+    },
+    {
+      "site": "ai-safety",
+      "entities": 9950,
+      "withDoiOrPmid": 7562,
+      "stub": 1102,
+      "stubRate": 0.1108
+    },
+    {
+      "site": "quantum-materials",
+      "entities": 9947,
+      "withDoiOrPmid": 9075,
+      "stub": 3681,
+      "stubRate": 0.3701
+    },
+    {
+      "site": "semiconductor",
+      "entities": 9943,
+      "withDoiOrPmid": 9166,
+      "stub": 5340,
+      "stubRate": 0.5371
+    },
+    {
+      "site": "sat-6g",
+      "entities": 9940,
+      "withDoiOrPmid": 9650,
+      "stub": 5623,
+      "stubRate": 0.5657
+    },
+    {
+      "site": "spatial-computing",
+      "entities": 9940,
+      "withDoiOrPmid": 9820,
+      "stub": 5170,
+      "stubRate": 0.5201
+    },
+    {
+      "site": "tcm-tools",
+      "entities": 9924,
+      "withDoiOrPmid": 9368,
+      "stub": 5823,
+      "stubRate": 0.5868
+    },
+    {
+      "site": "exo-science",
+      "entities": 9917,
+      "withDoiOrPmid": 9208,
+      "stub": 1992,
+      "stubRate": 0.2009
+    },
+    {
+      "site": "quantum-computing",
+      "entities": 9912,
+      "withDoiOrPmid": 8157,
+      "stub": 4054,
+      "stubRate": 0.409
+    },
+    {
+      "site": "carbon-neutral",
+      "entities": 9884,
+      "withDoiOrPmid": 9139,
+      "stub": 1860,
+      "stubRate": 0.1882
+    },
+    {
+      "site": "alien-minerals",
+      "entities": 9855,
+      "withDoiOrPmid": 7402,
+      "stub": 2101,
+      "stubRate": 0.2132
+    },
+    {
+      "site": "synbio-manufacturing",
+      "entities": 9808,
+      "withDoiOrPmid": 9073,
+      "stub": 4662,
+      "stubRate": 0.4753
+    },
+    {
+      "site": "nuclear-energy",
+      "entities": 9804,
+      "withDoiOrPmid": 8930,
+      "stub": 4534,
+      "stubRate": 0.4625
+    },
+    {
+      "site": "new-energy",
+      "entities": 9766,
+      "withDoiOrPmid": 8762,
+      "stub": 5609,
+      "stubRate": 0.5743
+    },
+    {
+      "site": "biomed-ai",
+      "entities": 9674,
+      "withDoiOrPmid": 9529,
+      "stub": 1591,
+      "stubRate": 0.1645
+    },
+    {
+      "site": "deep-sea-tech",
+      "entities": 9669,
+      "withDoiOrPmid": 9076,
+      "stub": 1877,
+      "stubRate": 0.1941
+    },
+    {
+      "site": "genetech-tools",
+      "entities": 9598,
+      "withDoiOrPmid": 9094,
+      "stub": 1699,
+      "stubRate": 0.177
+    },
+    {
+      "site": "edge-ai",
+      "entities": 9595,
+      "withDoiOrPmid": 9405,
+      "stub": 2790,
+      "stubRate": 0.2908
+    },
+    {
+      "site": "agritech",
+      "entities": 9509,
+      "withDoiOrPmid": 9309,
+      "stub": 1893,
+      "stubRate": 0.1991
+    },
+    {
+      "site": "biocomputing",
+      "entities": 9416,
+      "withDoiOrPmid": 8281,
+      "stub": 1378,
+      "stubRate": 0.1463
+    },
+    {
+      "site": "life-science",
+      "entities": 9405,
+      "withDoiOrPmid": 8469,
+      "stub": 2242,
+      "stubRate": 0.2384
+    },
+    {
+      "site": "brain-science",
+      "entities": 9173,
+      "withDoiOrPmid": 7928,
+      "stub": 2072,
+      "stubRate": 0.2259
+    }
+  ],
+  "selfCheck": {
+    "entitiesWithDoiOrPmid_le_totalEntities": true,
+    "note": "uniqueDoi 与 entitiesWithDoiOrPmid 是不同定义：前者为跨源去重后的唯一 DOI 数，后者为 30 站带外部 ID 的实体数。切勿在对外文档中混用或互相替代。"
+  },
+  "legacyConfusion": {
+    "reported_276769": "旧文档称\"唯一 DOI 276,769\"。实测 identityEntries=276,960（≈276,769），说明旧口径把\"identity-map 全部条目数\"误当作\"唯一 DOI\"——但其中大量条目是 arxiv/oa 等无 DOI 实体。",
+    "reported_256086": "旧 round9 管线称\"唯一 DOI 256,086\"，接近本脚本的 distinct uniqueDoi（见 metrics.uniqueDoi），是三者中最接近真值的口径。",
+    "reported_271099": "旧文档把\"实体带 DOI/PMID 数 271,099\"与\"唯一 DOI\"混用。两者定义不同：271,099 是 30 站覆盖口径，uniqueDoi 是跨源去重口径。",
+    "resolved_uniqueDoi": 255392,
+    "resolution": "以本 metrics.json 的 metrics.uniqueDoi（去重后的不同 DOI 字符串数）作为\"唯一 DOI\"的唯一权威口径。"
+  }
+}

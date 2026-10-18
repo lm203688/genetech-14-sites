@@ -200,7 +200,7 @@ console.log(requests.summary); // { byStatus, byPriority, byProject }
 数据落点：`state/data-requests.json`（与 Gateway Worker 共享）
 
 <!-- GENETECH:CLAIMS:BEGIN -->
-<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-13 自动生成，请勿手工编辑此锚注之间的内容。 -->
+<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-18 自动生成，请勿手工编辑此锚注之间的内容。 -->
 
 ### 当前规模（机器生成，锚注自动刷新）
 
@@ -208,9 +208,10 @@ console.log(requests.summary); // { byStatus, byPriority, byProject }
 |---|---:|---|
 | 站点 / 域数 | **30** | 有 `website/api/entities.json` 的顶层目录 |
 | 结构化实体总数 | **294,330** | 逐站实体文件求和 |
-| 带 DOI/PMID 的实体 | **271,099** | 同上，仅计有外部可解析 ID 的记录 |
-| 知识图谱节点 / 边 | **36,107 / 99,725** | data/knowledge-graph.json |
-| 图谱中引用边 | **27,868（28%）** | KG 中 relation=citation |
+| 带 DOI/PMID 的实体（30 站覆盖率） | **271,099** | 同上，仅计有外部可解析 ID 的记录；**不是**"唯一 DOI" |
+| 唯一 DOI（跨源去重） | **255,392** | data/identity-map.json 去重计数（data/metrics.json:uniqueDoi）；与上一行是不同口径 |
+| 知识图谱节点 / 边 | **34,139 / 98,795** | data/knowledge-graph.json |
+| 图谱中引用边 | **25,682（26%）** | KG 中 relation=citation |
 | 学术种子（引用网络基座） | **1,634** | data/academic-entities.json，是缺口矩阵的真实基座 |
 | 引用声明总数 | **0** | 59,623 类 |
 | 引用边（真实解析 vs legacy merge） | **25,682 vs 26,044** | 总 51,726 边中两者各占一半；**resolved 只占 50%，不是"解析成功率"** |

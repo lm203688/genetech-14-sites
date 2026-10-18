@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13",
+  "generatedAt": "2026-10-18",
   "generator": "operations-plan/pipeline-docs-claims.js",
   "sourceFiles": [
     "data/citation-edges.json",
@@ -12,6 +12,7 @@
     "siteCount": 30,
     "totalEntities": 294330,
     "entitiesWithDoiOrPmid": 271099,
+    "uniqueDoi": 255392,
     "academicSeedCount": 1634,
     "citationDeclarations": 0,
     "citationResolvedEdges": 25682,
@@ -19,10 +20,10 @@
     "citationMergedFromLegacy": 26044,
     "citationResolvedRate": 0.4965,
     "citationResolvedOfDeclarations": null,
-    "knowledgeGraphNodes": 36107,
-    "knowledgeGraphEdges": 99725,
-    "knowledgeGraphCitationEdges": 27868,
-    "knowledgeGraphCitationShare": 0.2794,
+    "knowledgeGraphNodes": 34139,
+    "knowledgeGraphEdges": 98795,
+    "knowledgeGraphCitationEdges": 25682,
+    "knowledgeGraphCitationShare": 0.26,
     "zeroCitationGapPairs": 140,
     "directedSitePairs": 870
   },
@@ -197,14 +198,14 @@
     "selfSiteEdgesSkippedRate": 0
   },
   "knowledgeGraph": {
-    "nodeCount": 36107,
-    "edgeCount": 99725,
+    "nodeCount": 34139,
+    "edgeCount": 98795,
     "byRelation": {
-      "cross_site": 29927,
-      "shared_tag": 38930,
+      "cross_site": 29601,
+      "shared_tag": 40512,
       "co_topic": 3000,
-      "citation": 27868
+      "citation": 25682
     },
-    "citationShare": 0.2794
+    "citationShare": 0.26
   }
 }

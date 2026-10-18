@@ -1,0 +1,176 @@
+{
+  "generatedAt": "2026-10-18T01:11:30.414Z",
+  "T0": "2023-01-01",
+  "T0Y": 2023,
+  "total": 15,
+  "evaluable": 15,
+  "hits": 5,
+  "recall": 0.3333333333333333,
+  "details": [
+    {
+      "A": "quantum-materials",
+      "B": "semiconductor",
+      "topic": "topological insulator",
+      "topicShared": true,
+      "histCitations": 2,
+      "postCitations": 19,
+      "predicted": false,
+      "realized": true,
+      "status": "REALIZED_NOT_PREDICTED"
+    },
+    {
+      "A": "biomed-ai",
+      "B": "brain-science",
+      "topic": "neural decoding",
+      "topicShared": true,
+      "histCitations": 0,
+      "postCitations": 10,
+      "predicted": true,
+      "realized": true,
+      "status": "HIT"
+    },
+    {
+      "A": "synbio-manufacturing",
+      "B": "carbon-neutral",
+      "topic": "microbial carbon capture",
+      "topicShared": true,
+      "histCitations": 1,
+      "postCitations": 23,
+      "predicted": false,
+      "realized": true,
+      "status": "REALIZED_NOT_PREDICTED"
+    },
+    {
+      "A": "robot-parts",
+      "B": "embodied-ai",
+      "topic": "vision-language-action",
+      "topicShared": true,
+      "histCitations": 30,
+      "postCitations": 45,
+      "predicted": false,
+      "realized": true,
+      "status": "REALIZED_NOT_PREDICTED"
+    },
+    {
+      "A": "low-altitude",
+      "B": "sat-6g",
+      "topic": "non-terrestrial networks",
+      "topicShared": false,
+      "histCitations": 0,
+      "postCitations": 9,
+      "predicted": false,
+      "realized": true,
+      "status": "REALIZED_NOT_PREDICTED"
+    },
+    {
+      "A": "quantum-computing",
+      "B": "ai4science",
+      "topic": "quantum machine learning",
+      "topicShared": true,
+      "histCitations": 0,
+      "postCitations": 5,
+      "predicted": true,
+      "realized": true,
+      "status": "HIT"
+    },
+    {
+      "A": "neuromorphic",
+      "B": "edge-ai",
+      "topic": "spiking neural network",
+      "topicShared": false,
+      "histCitations": 0,
+      "postCitations": 5,
+      "predicted": false,
+      "realized": true,
+      "status": "REALIZED_NOT_PREDICTED"
+    },
+    {
+      "A": "digital-twin",
+      "B": "new-energy",
+      "topic": "digital twin grid",
+      "topicShared": true,
+      "histCitations": 0,
+      "postCitations": 4,
+      "predicted": true,
+      "realized": true,
+      "status": "HIT"
+    },
+    {
+      "A": "tcm-tools",
+      "B": "life-science",
+      "topic": "network pharmacology",
+      "topicShared": true,
+      "histCitations": 1,
+      "postCitations": 5,
+      "predicted": false,
+      "realized": true,
+      "status": "REALIZED_NOT_PREDICTED"
+    },
+    {
+      "A": "exo-science",
+      "B": "ai4science",
+      "topic": "biosignature detection",
+      "topicShared": true,
+      "histCitations": 0,
+      "postCitations": 1,
+      "predicted": true,
+      "realized": true,
+      "status": "HIT"
+    },
+    {
+      "A": "bionic-ai",
+      "B": "biocomputing",
+      "topic": "organoid intelligence",
+      "topicShared": true,
+      "histCitations": 13,
+      "postCitations": 38,
+      "predicted": false,
+      "realized": true,
+      "status": "REALIZED_NOT_PREDICTED"
+    },
+    {
+      "A": "privacy-computing",
+      "B": "edge-ai",
+      "topic": "federated learning",
+      "topicShared": true,
+      "histCitations": 1,
+      "postCitations": 10,
+      "predicted": false,
+      "realized": true,
+      "status": "REALIZED_NOT_PREDICTED"
+    },
+    {
+      "A": "agent-ecosystem",
+      "B": "ai4science",
+      "topic": "agentic scientific discovery",
+      "topicShared": true,
+      "histCitations": 0,
+      "postCitations": 9,
+      "predicted": true,
+      "realized": true,
+      "status": "HIT"
+    },
+    {
+      "A": "spatial-computing",
+      "B": "robot-parts",
+      "topic": "spatial intelligence",
+      "topicShared": false,
+      "histCitations": 0,
+      "postCitations": 4,
+      "predicted": false,
+      "realized": true,
+      "status": "REALIZED_NOT_PREDICTED"
+    },
+    {
+      "A": "genetech-tools",
+      "B": "life-science",
+      "topic": "gene editing delivery",
+      "topicShared": true,
+      "histCitations": 9,
+      "postCitations": 53,
+      "predicted": false,
+      "realized": true,
+      "status": "REALIZED_NOT_PREDICTED"
+    }
+  ]
+}

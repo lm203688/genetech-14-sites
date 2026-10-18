@@ -442,10 +442,13 @@ function identifyMarketGaps(matrix, rawIntel) {
   for (const kw of communityKeywords) {
     // 简单规则：如果社区热度高且 GeneTech 功能覆盖度未达 0.9，则视为空白
     if (self.scores['功能覆盖度'] < 0.90) {
+      // 确定性 confidence：覆盖度缺口越大，越可能是真实空白（避免随机 confidence 破坏科学可复现性，见 SCI 评估 W7）
+      const covGap = Math.max(0, 0.90 - (self.scores['功能覆盖度'] || 0));
       gaps.push({
         domain: kw,
         description: `社区讨论热度高，建议加强 ${kw} 相关内容聚合`,
-        confidence: round2(0.6 + Math.random() * 0.3),
+        confidence: round2(0.6 + 0.3 * Math.min(1, covGap / 0.90)),
+        confidence_basis: `coverage_gap=${(covGap).toFixed(3)}`,
         source: 'community-intelligence',
       });
     }

@@ -121,6 +121,18 @@ function readKnowledgeGraph() {
   };
 }
 
+/** 读取 data/metrics.json（T1.1 唯一真源）中的跨源唯一 DOI / 覆盖率，避免与 30 站覆盖率口径混淆 */
+function readMetrics() {
+  const p = path.join(ROOT, 'data', 'metrics.json');
+  if (!fs.existsSync(p)) return { error: 'missing data/metrics.json' };
+  try {
+    const m = JSON.parse(fs.readFileSync(p, 'utf8'));
+    return { metrics: m.metrics || {}, definitions: m.definitions || {} };
+  } catch (e) {
+    return { error: 'metrics.json 解析失败: ' + e.message };
+  }
+}
+
 /** 汇总 claims */
 function computeClaims() {
   const ent = countEntities();
@@ -128,6 +140,8 @@ function computeClaims() {
   const seed = readAcademicSeed();
   const gaps = readCitationGaps();
   const kg = readKnowledgeGraph();
+  const met = readMetrics();
+  const metricsMetrics = met.metrics || {};
   const citationResolvedRate = cit.totalEdges
     ? +((cit.resolvedEdges) / cit.totalEdges).toFixed(4)
     : 0;
@@ -154,6 +168,7 @@ function computeClaims() {
       siteCount: ent.siteCount,
       totalEntities: ent.totalEntities,
       entitiesWithDoiOrPmid: ent.entitiesWithDoiOrPmid,
+      uniqueDoi: metricsMetrics.uniqueDoi ?? null,
       academicSeedCount: seed.seedCount,
       citationDeclarations: cit.declarations,
       citationResolvedEdges: cit.resolvedEdges,
@@ -207,7 +222,8 @@ function renderAnchor(claims) {
     '|---|---:|---|',
     `| 站点 / 域数 | **${c.siteCount}** | 有 \`website/api/entities.json\` 的顶层目录 |`,
     `| 结构化实体总数 | **${c.totalEntities.toLocaleString('en-US')}** | 逐站实体文件求和 |`,
-    `| 带 DOI/PMID 的实体 | **${c.entitiesWithDoiOrPmid.toLocaleString('en-US')}** | 同上，仅计有外部可解析 ID 的记录 |`,
+    `| 带 DOI/PMID 的实体（30 站覆盖率） | **${c.entitiesWithDoiOrPmid.toLocaleString('en-US')}** | 同上，仅计有外部可解析 ID 的记录；**不是**"唯一 DOI" |`,
+    `| 唯一 DOI（跨源去重） | **${(c.uniqueDoi ?? 0).toLocaleString('en-US')}** | data/identity-map.json 去重计数（data/metrics.json:uniqueDoi）；与上一行是不同口径 |`,
     `| 知识图谱节点 / 边 | **${c.knowledgeGraphNodes.toLocaleString('en-US')} / ${c.knowledgeGraphEdges.toLocaleString('en-US')}** | data/knowledge-graph.json |`,
     `| 图谱中引用边 | **${c.knowledgeGraphCitationEdges.toLocaleString('en-US')}（${Math.round(c.knowledgeGraphCitationShare * 100)}%）** | KG 中 relation=citation |`,
     `| 学术种子（引用网络基座） | **${c.academicSeedCount.toLocaleString('en-US')}** | data/academic-entities.json，是缺口矩阵的真实基座 |`,

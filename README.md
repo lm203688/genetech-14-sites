@@ -19,13 +19,16 @@ curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩�
 > 不与 Scite 比立场规模（封闭对手），而做 **"可验证 + 机器原生 + 跨域空白"** 三个真空象限的独占位。
 > 详见 [`reports/项目全面评估与国际化竞品对标提升报告-2026-10-12.md`](reports/项目全面评估与国际化竞品对标提升报告-2026-10-12.md)。
 
-**当前规模（实测，非宣称；每个数字都带来源，2026-10-12 复核）**
+**当前规模（实测，非宣称；每个数字都带来源）**
+
+> 单一真源：**`data/metrics.json`**（由 `tools/recompute-metrics.mjs` 实算）。下列 DOI 类数字一律以它为准，不再各自硬编码。旧文档曾把"identity-map 全部条目数 276,769"误标为"唯一 DOI"，真实跨源去重唯一 DOI = 255,392。
 
 | 资产 | 规模 | 来源 / 门禁 |
 |---|---|---|
 | 结构化实体 | 294,330（清理前置页噪声后） | `pipeline-quality-gate.js` |
-| 唯一 DOI | 276,769 | `verify-shard-fidelity.mjs` |
-| 知识图谱 | 36,107 节点 / 99,725 边 | `build-knowledge-graph.mjs` |
+| 唯一 DOI（跨源去重） | 255,392 | `data/metrics.json:uniqueDoi`（T1.1 纠正旧误标 276,769） |
+| 带 DOI/PMID 实体（30 站覆盖率） | 271,099 | `data/metrics.json:entitiesWithDoiOrPmid`（与"唯一 DOI"是不同口径） |
+| 知识图谱 | 36,107 节点 / 99,725 边 | `scripts/build-knowledge-graph.mjs` |
 | └ 其中引用边 | **27,868 条（占边总数 27.94%）** | 本次并入，验收判据 ≥20% |
 | 跨域引用边（真实解析） | **25,682**（较 10-10 的 1,961 扩展 13×） | `data/citation-edges.json` `stats.resolvedEdges` |
 | 零引用域缺口 | **140 / 870** 有向域对 | `GET /v1/citation/gaps` |
@@ -88,9 +91,9 @@ curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩�
 
 - **OpenAPI 3.1**：[`openapi.yaml`](openapi.yaml)（9 端点 + 5 schema，三档 API key）
 - **消费者上手**：[`docs/consumer-onboarding.md`](docs/consumer-onboarding.md)（快速开始 / 端点 / 错误码）
-- **战略定位**：[`docs/strategy-infrastructure.md`](docs/strategy-infrastructure.md)（信息收集 + 结构化基础设施）
+- **战略定位**：见 [`docs/competitor-models.md`](docs/competitor-models.md) 与 [`docs/growth-strategy.md`](docs/growth-strategy.md)（战略定位文档已合并入通用文档，不再单独立档）
 - **语义搜索端点**：`POST /v1/search/semantic`（Pro only，13k 高置信实体 token 匹配）
-- **OSS 扫描管道**：`operations-plan/pipeline-oss-scan.js`（GitHub/HF/PWC 每日快照）
+- **OSS 生态扫描**：数据落在 `data/oss-registry.json`（GitHub / HF / PWC 每日快照），扫描器脚本已归档，历史版本见 `archive/`
 - **搜索索引管道**：`operations-plan/pipeline-search-index.js`（每日构建 6.58MB 索引）
 - **学术数据集管道**：`operations-plan/pipeline-academic-datasets.js`（Crossref + NCBI 免密钥，产出 3 份学术数据文件）
 - **MCP 数据引擎**：`@genetech/data-mcp`（10 个工具，含 `graph_search` 图遍历检索）
@@ -111,6 +114,11 @@ curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩�
 > 每个门禁都要求「注入故障 → 必须阻断 → 恢复 → 必须放行」双向回归测试；只跑一遍就打绿灯的门禁不算门禁。
 
 ## 为什么不是「又一个爬虫 / 又一个 RAG」
+
+**范式锚定**：如果把学术开源生态类比 PyTorch，那么 OpenAlex / Crossref / PubMed 是底层**数据集**，
+Scite / Semantic Scholar 是**上层应用**，而本项目对标的是中间层的 **`torch.nn.Module`** ——
+一份**可组合、可继承、可挂载到任意上层应用**的构件化知识引擎。上层不管是 AutoGen / CrewAI / 自研 Agent，
+都能"import"本图谱而不必重造。这一层目前在中国开源生态里是真空。
 
 | 常见做法 | 我们的差异 |
 |----------|-----------|
@@ -187,7 +195,7 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 > 引擎目录（`operations-plan/`、`shared/`、`unified-license/`、`api-guard/`、`tools/build-site.mjs`）按 2026-08-21「混合回退模式」**保留入库作为 CI 公开兜底引擎**；私有仓 `genetech-14-engine` 可用时优先，不可用时回退本仓副本，确保 Secrets 未配时不致全线停摆。
 
 <!-- GENETECH:CLAIMS:BEGIN -->
-<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-13 自动生成，请勿手工编辑此锚注之间的内容。 -->
+<!-- 由 operations-plan/pipeline-docs-claims.js 于 2026-10-18 自动生成，请勿手工编辑此锚注之间的内容。 -->
 
 ### 当前规模（机器生成，锚注自动刷新）
 
@@ -195,9 +203,10 @@ Collector → Normalizer → Validator → Publisher → (Repair) ↺   +   Know
 |---|---:|---|
 | 站点 / 域数 | **30** | 有 `website/api/entities.json` 的顶层目录 |
 | 结构化实体总数 | **294,330** | 逐站实体文件求和 |
-| 带 DOI/PMID 的实体 | **271,099** | 同上，仅计有外部可解析 ID 的记录 |
-| 知识图谱节点 / 边 | **36,107 / 99,725** | data/knowledge-graph.json |
-| 图谱中引用边 | **27,868（28%）** | KG 中 relation=citation |
+| 带 DOI/PMID 的实体（30 站覆盖率） | **271,099** | 同上，仅计有外部可解析 ID 的记录；**不是**"唯一 DOI" |
+| 唯一 DOI（跨源去重） | **255,392** | data/identity-map.json 去重计数（data/metrics.json:uniqueDoi）；与上一行是不同口径 |
+| 知识图谱节点 / 边 | **34,139 / 98,795** | data/knowledge-graph.json |
+| 图谱中引用边 | **25,682（26%）** | KG 中 relation=citation |
 | 学术种子（引用网络基座） | **1,634** | data/academic-entities.json，是缺口矩阵的真实基座 |
 | 引用声明总数 | **0** | 59,623 类 |
 | 引用边（真实解析 vs legacy merge） | **25,682 vs 26,044** | 总 51,726 边中两者各占一半；**resolved 只占 50%，不是"解析成功率"** |

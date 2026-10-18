@@ -1,0 +1,2777 @@
+{
+  "generatedAt": "2026-10-18T01:03:35.560Z",
+  "sampling": {
+    "perType": 10,
+    "strategy": "stratified-by-type, desc-by-confidence",
+    "targetTypes": [
+      "litellbridge",
+      "sparse_bridge_v2",
+      "moderate_bridge",
+      "degree_imbalance",
+      "emerging_topic",
+      "bidirectional_gap",
+      "crossref_topic_bridge",
+      "concept_bridge",
+      "concept_emergence",
+      "single_site_hotspot"
+    ]
+  },
+  "totalCards": 1062,
+  "sampled": 100,
+  "cardsByType": {
+    "litellbridge": 235,
+    "sparse_bridge_v2": 90,
+    "moderate_bridge": 135,
+    "degree_imbalance": 135,
+    "emerging_topic": 30,
+    "bidirectional_gap": 135,
+    "crossref_topic_bridge": 180,
+    "concept_bridge": 51,
+    "concept_emergence": 30,
+    "single_site_hotspot": 41
+  },
+  "sampledByType": {
+    "litellbridge": 10,
+    "sparse_bridge_v2": 10,
+    "moderate_bridge": 10,
+    "degree_imbalance": 10,
+    "emerging_topic": 10,
+    "bidirectional_gap": 10,
+    "crossref_topic_bridge": 10,
+    "concept_bridge": 10,
+    "concept_emergence": 10,
+    "single_site_hotspot": 10
+  },
+  "cards": [
+    {
+      "id": "HYP-20261016-0001",
+      "type": "litellbridge",
+      "confidence": 0.9,
+      "statement": "There may be unrecorded research connections between robot-parts and low-altitude: 1 shared topic(s) (robotics) but zero citations between these 19955 entities suggest missed references.",
+      "statement_zh": "站点 robot-parts 与 low-altitude 之间存在未被记录的引用关系：两站共 19955 实体、1 个共享主题（robotics），但引用边为 0，提示存在被遗漏的学术连接。",
+      "falsifiability": {
+        "falsification_condition": "If we perform OpenAlex reverse-citation queries on robot-parts entities (top 100 by citationCount) and find ZERO citing papers from low-altitude domain within the past 5 years, the hypothesis is falsified.",
+        "falsification_test": "1. Take top 100 robot-parts entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching low-altitude's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "robot-parts/website/api/entities.json",
+          "low-altitude/website/api/entities.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for reverse-citation from top 100 robot-parts entities",
+        "step2_analyze": "Cross-reference cited-works' primary_topic with low-altitude's topic tags",
+        "step3_report": "Report discovered citation edges; if >= 3 found, escalate to hypothesis engine",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json",
+        "data_versions": [
+          "2c1cee91"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0003",
+      "type": "litellbridge",
+      "confidence": 0.9,
+      "statement": "There may be unrecorded research connections between bionic-ai and low-altitude: 0 shared topic(s) () but zero citations between these 19946 entities suggest missed references.",
+      "statement_zh": "站点 bionic-ai 与 low-altitude 之间存在未被记录的引用关系：两站共 19946 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
+      "falsifiability": {
+        "falsification_condition": "If we perform OpenAlex reverse-citation queries on bionic-ai entities (top 100 by citationCount) and find ZERO citing papers from low-altitude domain within the past 5 years, the hypothesis is falsified.",
+        "falsification_test": "1. Take top 100 bionic-ai entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching low-altitude's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "bionic-ai/website/api/entities.json",
+          "low-altitude/website/api/entities.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for reverse-citation from top 100 bionic-ai entities",
+        "step2_analyze": "Cross-reference cited-works' primary_topic with low-altitude's topic tags",
+        "step3_report": "Report discovered citation edges; if >= 3 found, escalate to hypothesis engine",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json",
+        "data_versions": [
+          "da7e7356"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0004",
+      "type": "litellbridge",
+      "confidence": 0.9,
+      "statement": "There may be unrecorded research connections between agent-ecosystem and low-altitude: 0 shared topic(s) () but zero citations between these 19942 entities suggest missed references.",
+      "statement_zh": "站点 agent-ecosystem 与 low-altitude 之间存在未被记录的引用关系：两站共 19942 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
+      "falsifiability": {
+        "falsification_condition": "If we perform OpenAlex reverse-citation queries on agent-ecosystem entities (top 100 by citationCount) and find ZERO citing papers from low-altitude domain within the past 5 years, the hypothesis is falsified.",
+        "falsification_test": "1. Take top 100 agent-ecosystem entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching low-altitude's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "agent-ecosystem/website/api/entities.json",
+          "low-altitude/website/api/entities.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for reverse-citation from top 100 agent-ecosystem entities",
+        "step2_analyze": "Cross-reference cited-works' primary_topic with low-altitude's topic tags",
+        "step3_report": "Report discovered citation edges; if >= 3 found, escalate to hypothesis engine",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json",
+        "data_versions": [
+          "1f166a2a"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0011",
+      "type": "litellbridge",
+      "confidence": 0.9,
+      "statement": "There may be unrecorded research connections between agent-ecosystem and semiconductor: 0 shared topic(s) () but zero citations between these 19917 entities suggest missed references.",
+      "statement_zh": "站点 agent-ecosystem 与 semiconductor 之间存在未被记录的引用关系：两站共 19917 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
+      "falsifiability": {
+        "falsification_condition": "If we perform OpenAlex reverse-citation queries on agent-ecosystem entities (top 100 by citationCount) and find ZERO citing papers from semiconductor domain within the past 5 years, the hypothesis is falsified.",
+        "falsification_test": "1. Take top 100 agent-ecosystem entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching semiconductor's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "agent-ecosystem/website/api/entities.json",
+          "semiconductor/website/api/entities.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for reverse-citation from top 100 agent-ecosystem entities",
+        "step2_analyze": "Cross-reference cited-works' primary_topic with semiconductor's topic tags",
+        "step3_report": "Report discovered citation edges; if >= 3 found, escalate to hypothesis engine",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json",
+        "data_versions": [
+          "daf00f9e"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0012",
+      "type": "litellbridge",
+      "confidence": 0.9,
+      "statement": "There may be unrecorded research connections between semiconductor and agent-ecosystem: 0 shared topic(s) () but zero citations between these 19917 entities suggest missed references.",
+      "statement_zh": "站点 semiconductor 与 agent-ecosystem 之间存在未被记录的引用关系：两站共 19917 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
+      "falsifiability": {
+        "falsification_condition": "If we perform OpenAlex reverse-citation queries on semiconductor entities (top 100 by citationCount) and find ZERO citing papers from agent-ecosystem domain within the past 5 years, the hypothesis is falsified.",
+        "falsification_test": "1. Take top 100 semiconductor entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching agent-ecosystem's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "semiconductor/website/api/entities.json",
+          "agent-ecosystem/website/api/entities.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for reverse-citation from top 100 semiconductor entities",
+        "step2_analyze": "Cross-reference cited-works' primary_topic with agent-ecosystem's topic tags",
+        "step3_report": "Report discovered citation edges; if >= 3 found, escalate to hypothesis engine",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json",
+        "data_versions": [
+          "f457bd62"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0017",
+      "type": "litellbridge",
+      "confidence": 0.9,
+      "statement": "There may be unrecorded research connections between semiconductor and low-altitude: 1 shared topic(s) (materials) but zero citations between these 19911 entities suggest missed references.",
+      "statement_zh": "站点 semiconductor 与 low-altitude 之间存在未被记录的引用关系：两站共 19911 实体、1 个共享主题（materials），但引用边为 0，提示存在被遗漏的学术连接。",
+      "falsifiability": {
+        "falsification_condition": "If we perform OpenAlex reverse-citation queries on semiconductor entities (top 100 by citationCount) and find ZERO citing papers from low-altitude domain within the past 5 years, the hypothesis is falsified.",
+        "falsification_test": "1. Take top 100 semiconductor entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching low-altitude's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "semiconductor/website/api/entities.json",
+          "low-altitude/website/api/entities.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for reverse-citation from top 100 semiconductor entities",
+        "step2_analyze": "Cross-reference cited-works' primary_topic with low-altitude's topic tags",
+        "step3_report": "Report discovered citation edges; if >= 3 found, escalate to hypothesis engine",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json",
+        "data_versions": [
+          "40c0853d"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0024",
+      "type": "litellbridge",
+      "confidence": 0.9,
+      "statement": "There may be unrecorded research connections between robot-parts and quantum-computing: 0 shared topic(s) () but zero citations between these 19899 entities suggest missed references.",
+      "statement_zh": "站点 robot-parts 与 quantum-computing 之间存在未被记录的引用关系：两站共 19899 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
+      "falsifiability": {
+        "falsification_condition": "If we perform OpenAlex reverse-citation queries on robot-parts entities (top 100 by citationCount) and find ZERO citing papers from quantum-computing domain within the past 5 years, the hypothesis is falsified.",
+        "falsification_test": "1. Take top 100 robot-parts entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching quantum-computing's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "robot-parts/website/api/entities.json",
+          "quantum-computing/website/api/entities.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for reverse-citation from top 100 robot-parts entities",
+        "step2_analyze": "Cross-reference cited-works' primary_topic with quantum-computing's topic tags",
+        "step3_report": "Report discovered citation edges; if >= 3 found, escalate to hypothesis engine",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json",
+        "data_versions": [
+          "eef77627"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0033",
+      "type": "litellbridge",
+      "confidence": 0.9,
+      "statement": "There may be unrecorded research connections between low-altitude and quantum-computing: 0 shared topic(s) () but zero citations between these 19880 entities suggest missed references.",
+      "statement_zh": "站点 low-altitude 与 quantum-computing 之间存在未被记录的引用关系：两站共 19880 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
+      "falsifiability": {
+        "falsification_condition": "If we perform OpenAlex reverse-citation queries on low-altitude entities (top 100 by citationCount) and find ZERO citing papers from quantum-computing domain within the past 5 years, the hypothesis is falsified.",
+        "falsification_test": "1. Take top 100 low-altitude entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching quantum-computing's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "low-altitude/website/api/entities.json",
+          "quantum-computing/website/api/entities.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for reverse-citation from top 100 low-altitude entities",
+        "step2_analyze": "Cross-reference cited-works' primary_topic with quantum-computing's topic tags",
+        "step3_report": "Report discovered citation edges; if >= 3 found, escalate to hypothesis engine",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json",
+        "data_versions": [
+          "aafc26f8"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0058",
+      "type": "litellbridge",
+      "confidence": 0.9,
+      "statement": "There may be unrecorded research connections between robot-parts and nuclear-energy: 0 shared topic(s) () but zero citations between these 19791 entities suggest missed references.",
+      "statement_zh": "站点 robot-parts 与 nuclear-energy 之间存在未被记录的引用关系：两站共 19791 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
+      "falsifiability": {
+        "falsification_condition": "If we perform OpenAlex reverse-citation queries on robot-parts entities (top 100 by citationCount) and find ZERO citing papers from nuclear-energy domain within the past 5 years, the hypothesis is falsified.",
+        "falsification_test": "1. Take top 100 robot-parts entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching nuclear-energy's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "robot-parts/website/api/entities.json",
+          "nuclear-energy/website/api/entities.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for reverse-citation from top 100 robot-parts entities",
+        "step2_analyze": "Cross-reference cited-works' primary_topic with nuclear-energy's topic tags",
+        "step3_report": "Report discovered citation edges; if >= 3 found, escalate to hypothesis engine",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json",
+        "data_versions": [
+          "6954d0e2"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0059",
+      "type": "litellbridge",
+      "confidence": 0.9,
+      "statement": "There may be unrecorded research connections between bionic-ai and nuclear-energy: 0 shared topic(s) () but zero citations between these 19782 entities suggest missed references.",
+      "statement_zh": "站点 bionic-ai 与 nuclear-energy 之间存在未被记录的引用关系：两站共 19782 实体、0 个共享主题（），但引用边为 0，提示存在被遗漏的学术连接。",
+      "falsifiability": {
+        "falsification_condition": "If we perform OpenAlex reverse-citation queries on bionic-ai entities (top 100 by citationCount) and find ZERO citing papers from nuclear-energy domain within the past 5 years, the hypothesis is falsified.",
+        "falsification_test": "1. Take top 100 bionic-ai entities by citationCount\n2. Query OpenAlex for each entity's cited-works\n3. Filter cited-works by subject area matching nuclear-energy's tags\n4. If citation count = 0 across all 100, falsified; if >= 3, hypothesis strengthened.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "bionic-ai/website/api/entities.json",
+          "nuclear-energy/website/api/entities.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for reverse-citation from top 100 bionic-ai entities",
+        "step2_analyze": "Cross-reference cited-works' primary_topic with nuclear-energy's topic tags",
+        "step3_report": "Report discovered citation edges; if >= 3 found, escalate to hypothesis engine",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json",
+        "data_versions": [
+          "e3e8d16f"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0236",
+      "type": "sparse_bridge_v2",
+      "confidence": 0.46,
+      "statement": "The bridge between agent-ecosystem and agritech has only 1 citation edge(s). Given 0 shared topic(s), the current connection is ultra-sparse and likely underestimates cross-domain influence.",
+      "statement_zh": "站点 agent-ecosystem 与 agritech 之间仅有 1 条引用边。基于 0 个共享主题，当前连接极度稀疏，很可能低估了跨域影响。",
+      "falsifiability": {
+        "falsification_condition": "If a full-text scan of both corpora shows co-citation rate < 0.05% in both directions, the \"under-represented\" hypothesis is falsified.",
+        "falsification_test": "1. Sample 500 papers from each site; 2. Extract reference lists; 3. Compute co-citation rate; 4. If rate < 0.05%, falsified.",
+        "falsification_time_horizon_days": 21
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 5,
+        "evidence_types": [
+          "citation",
+          "topic_overlap",
+          "co_author"
+        ],
+        "evidence_sources": [
+          "OpenAlex",
+          "Crossref"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Sample papers from both sites, extract reference lists",
+        "step2_analyze": "Compute co-citation rate between sites",
+        "step3_report": "Compare to current edge count; report delta",
+        "estimated_effort": "high"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "3cf5689b"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0238",
+      "type": "sparse_bridge_v2",
+      "confidence": 0.46,
+      "statement": "The bridge between agent-ecosystem and carbon-neutral has only 1 citation edge(s). Given 0 shared topic(s), the current connection is ultra-sparse and likely underestimates cross-domain influence.",
+      "statement_zh": "站点 agent-ecosystem 与 carbon-neutral 之间仅有 1 条引用边。基于 0 个共享主题，当前连接极度稀疏，很可能低估了跨域影响。",
+      "falsifiability": {
+        "falsification_condition": "If a full-text scan of both corpora shows co-citation rate < 0.05% in both directions, the \"under-represented\" hypothesis is falsified.",
+        "falsification_test": "1. Sample 500 papers from each site; 2. Extract reference lists; 3. Compute co-citation rate; 4. If rate < 0.05%, falsified.",
+        "falsification_time_horizon_days": 21
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 5,
+        "evidence_types": [
+          "citation",
+          "topic_overlap",
+          "co_author"
+        ],
+        "evidence_sources": [
+          "OpenAlex",
+          "Crossref"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Sample papers from both sites, extract reference lists",
+        "step2_analyze": "Compute co-citation rate between sites",
+        "step3_report": "Compare to current edge count; report delta",
+        "estimated_effort": "high"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "7b2b3fd9"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0240",
+      "type": "sparse_bridge_v2",
+      "confidence": 0.46,
+      "statement": "The bridge between agent-ecosystem and exo-science has only 1 citation edge(s). Given 0 shared topic(s), the current connection is ultra-sparse and likely underestimates cross-domain influence.",
+      "statement_zh": "站点 agent-ecosystem 与 exo-science 之间仅有 1 条引用边。基于 0 个共享主题，当前连接极度稀疏，很可能低估了跨域影响。",
+      "falsifiability": {
+        "falsification_condition": "If a full-text scan of both corpora shows co-citation rate < 0.05% in both directions, the \"under-represented\" hypothesis is falsified.",
+        "falsification_test": "1. Sample 500 papers from each site; 2. Extract reference lists; 3. Compute co-citation rate; 4. If rate < 0.05%, falsified.",
+        "falsification_time_horizon_days": 21
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 5,
+        "evidence_types": [
+          "citation",
+          "topic_overlap",
+          "co_author"
+        ],
+        "evidence_sources": [
+          "OpenAlex",
+          "Crossref"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Sample papers from both sites, extract reference lists",
+        "step2_analyze": "Compute co-citation rate between sites",
+        "step3_report": "Compare to current edge count; report delta",
+        "estimated_effort": "high"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "a42e795a"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0244",
+      "type": "sparse_bridge_v2",
+      "confidence": 0.46,
+      "statement": "The bridge between agent-ecosystem and nuclear-energy has only 1 citation edge(s). Given 0 shared topic(s), the current connection is ultra-sparse and likely underestimates cross-domain influence.",
+      "statement_zh": "站点 agent-ecosystem 与 nuclear-energy 之间仅有 1 条引用边。基于 0 个共享主题，当前连接极度稀疏，很可能低估了跨域影响。",
+      "falsifiability": {
+        "falsification_condition": "If a full-text scan of both corpora shows co-citation rate < 0.05% in both directions, the \"under-represented\" hypothesis is falsified.",
+        "falsification_test": "1. Sample 500 papers from each site; 2. Extract reference lists; 3. Compute co-citation rate; 4. If rate < 0.05%, falsified.",
+        "falsification_time_horizon_days": 21
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 5,
+        "evidence_types": [
+          "citation",
+          "topic_overlap",
+          "co_author"
+        ],
+        "evidence_sources": [
+          "OpenAlex",
+          "Crossref"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Sample papers from both sites, extract reference lists",
+        "step2_analyze": "Compute co-citation rate between sites",
+        "step3_report": "Compare to current edge count; report delta",
+        "estimated_effort": "high"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "5ec5d3a0"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0247",
+      "type": "sparse_bridge_v2",
+      "confidence": 0.46,
+      "statement": "The bridge between agent-ecosystem and quantum-materials has only 1 citation edge(s). Given 0 shared topic(s), the current connection is ultra-sparse and likely underestimates cross-domain influence.",
+      "statement_zh": "站点 agent-ecosystem 与 quantum-materials 之间仅有 1 条引用边。基于 0 个共享主题，当前连接极度稀疏，很可能低估了跨域影响。",
+      "falsifiability": {
+        "falsification_condition": "If a full-text scan of both corpora shows co-citation rate < 0.05% in both directions, the \"under-represented\" hypothesis is falsified.",
+        "falsification_test": "1. Sample 500 papers from each site; 2. Extract reference lists; 3. Compute co-citation rate; 4. If rate < 0.05%, falsified.",
+        "falsification_time_horizon_days": 21
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 5,
+        "evidence_types": [
+          "citation",
+          "topic_overlap",
+          "co_author"
+        ],
+        "evidence_sources": [
+          "OpenAlex",
+          "Crossref"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Sample papers from both sites, extract reference lists",
+        "step2_analyze": "Compute co-citation rate between sites",
+        "step3_report": "Compare to current edge count; report delta",
+        "estimated_effort": "high"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "6109cb07"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0270",
+      "type": "sparse_bridge_v2",
+      "confidence": 0.46,
+      "statement": "The bridge between biomed-ai and agritech has only 1 citation edge(s). Given 0 shared topic(s), the current connection is ultra-sparse and likely underestimates cross-domain influence.",
+      "statement_zh": "站点 biomed-ai 与 agritech 之间仅有 1 条引用边。基于 0 个共享主题，当前连接极度稀疏，很可能低估了跨域影响。",
+      "falsifiability": {
+        "falsification_condition": "If a full-text scan of both corpora shows co-citation rate < 0.05% in both directions, the \"under-represented\" hypothesis is falsified.",
+        "falsification_test": "1. Sample 500 papers from each site; 2. Extract reference lists; 3. Compute co-citation rate; 4. If rate < 0.05%, falsified.",
+        "falsification_time_horizon_days": 21
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 5,
+        "evidence_types": [
+          "citation",
+          "topic_overlap",
+          "co_author"
+        ],
+        "evidence_sources": [
+          "OpenAlex",
+          "Crossref"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Sample papers from both sites, extract reference lists",
+        "step2_analyze": "Compute co-citation rate between sites",
+        "step3_report": "Compare to current edge count; report delta",
+        "estimated_effort": "high"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "ae0c77ee"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0272",
+      "type": "sparse_bridge_v2",
+      "confidence": 0.46,
+      "statement": "The bridge between biomed-ai and low-altitude has only 1 citation edge(s). Given 0 shared topic(s), the current connection is ultra-sparse and likely underestimates cross-domain influence.",
+      "statement_zh": "站点 biomed-ai 与 low-altitude 之间仅有 1 条引用边。基于 0 个共享主题，当前连接极度稀疏，很可能低估了跨域影响。",
+      "falsifiability": {
+        "falsification_condition": "If a full-text scan of both corpora shows co-citation rate < 0.05% in both directions, the \"under-represented\" hypothesis is falsified.",
+        "falsification_test": "1. Sample 500 papers from each site; 2. Extract reference lists; 3. Compute co-citation rate; 4. If rate < 0.05%, falsified.",
+        "falsification_time_horizon_days": 21
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 5,
+        "evidence_types": [
+          "citation",
+          "topic_overlap",
+          "co_author"
+        ],
+        "evidence_sources": [
+          "OpenAlex",
+          "Crossref"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Sample papers from both sites, extract reference lists",
+        "step2_analyze": "Compute co-citation rate between sites",
+        "step3_report": "Compare to current edge count; report delta",
+        "estimated_effort": "high"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "45215f59"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0274",
+      "type": "sparse_bridge_v2",
+      "confidence": 0.46,
+      "statement": "The bridge between biomed-ai and new-energy has only 1 citation edge(s). Given 0 shared topic(s), the current connection is ultra-sparse and likely underestimates cross-domain influence.",
+      "statement_zh": "站点 biomed-ai 与 new-energy 之间仅有 1 条引用边。基于 0 个共享主题，当前连接极度稀疏，很可能低估了跨域影响。",
+      "falsifiability": {
+        "falsification_condition": "If a full-text scan of both corpora shows co-citation rate < 0.05% in both directions, the \"under-represented\" hypothesis is falsified.",
+        "falsification_test": "1. Sample 500 papers from each site; 2. Extract reference lists; 3. Compute co-citation rate; 4. If rate < 0.05%, falsified.",
+        "falsification_time_horizon_days": 21
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 5,
+        "evidence_types": [
+          "citation",
+          "topic_overlap",
+          "co_author"
+        ],
+        "evidence_sources": [
+          "OpenAlex",
+          "Crossref"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Sample papers from both sites, extract reference lists",
+        "step2_analyze": "Compute co-citation rate between sites",
+        "step3_report": "Compare to current edge count; report delta",
+        "estimated_effort": "high"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "d2ba5897"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0275",
+      "type": "sparse_bridge_v2",
+      "confidence": 0.46,
+      "statement": "The bridge between biomed-ai and nuclear-energy has only 1 citation edge(s). Given 0 shared topic(s), the current connection is ultra-sparse and likely underestimates cross-domain influence.",
+      "statement_zh": "站点 biomed-ai 与 nuclear-energy 之间仅有 1 条引用边。基于 0 个共享主题，当前连接极度稀疏，很可能低估了跨域影响。",
+      "falsifiability": {
+        "falsification_condition": "If a full-text scan of both corpora shows co-citation rate < 0.05% in both directions, the \"under-represented\" hypothesis is falsified.",
+        "falsification_test": "1. Sample 500 papers from each site; 2. Extract reference lists; 3. Compute co-citation rate; 4. If rate < 0.05%, falsified.",
+        "falsification_time_horizon_days": 21
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 5,
+        "evidence_types": [
+          "citation",
+          "topic_overlap",
+          "co_author"
+        ],
+        "evidence_sources": [
+          "OpenAlex",
+          "Crossref"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Sample papers from both sites, extract reference lists",
+        "step2_analyze": "Compute co-citation rate between sites",
+        "step3_report": "Compare to current edge count; report delta",
+        "estimated_effort": "high"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "e4db6c4a"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0278",
+      "type": "sparse_bridge_v2",
+      "confidence": 0.46,
+      "statement": "The bridge between biomed-ai and semiconductor has only 1 citation edge(s). Given 0 shared topic(s), the current connection is ultra-sparse and likely underestimates cross-domain influence.",
+      "statement_zh": "站点 biomed-ai 与 semiconductor 之间仅有 1 条引用边。基于 0 个共享主题，当前连接极度稀疏，很可能低估了跨域影响。",
+      "falsifiability": {
+        "falsification_condition": "If a full-text scan of both corpora shows co-citation rate < 0.05% in both directions, the \"under-represented\" hypothesis is falsified.",
+        "falsification_test": "1. Sample 500 papers from each site; 2. Extract reference lists; 3. Compute co-citation rate; 4. If rate < 0.05%, falsified.",
+        "falsification_time_horizon_days": 21
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 5,
+        "evidence_types": [
+          "citation",
+          "topic_overlap",
+          "co_author"
+        ],
+        "evidence_sources": [
+          "OpenAlex",
+          "Crossref"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Sample papers from both sites, extract reference lists",
+        "step2_analyze": "Compute co-citation rate between sites",
+        "step3_report": "Compare to current edge count; report delta",
+        "estimated_effort": "high"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "87a16f9c"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0326",
+      "type": "moderate_bridge",
+      "confidence": 0.6,
+      "statement": "The bridge agent-ecosystem↔ai-safety has 39 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
+      "statement_zh": "站点 agent-ecosystem 与 ai-safety 之间有 39 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
+      "falsifiability": {
+        "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
+        "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "citation-edges.json",
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Compute total entity pairs between agent-ecosystem and ai-safety",
+        "step2_analyze": "Calculate edge density ratio",
+        "step3_report": "Compare to median; if density ratio > 1%, connection is adequate",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "a8bdec8d"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0327",
+      "type": "moderate_bridge",
+      "confidence": 0.6,
+      "statement": "The bridge agent-ecosystem↔ai4science has 9 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
+      "statement_zh": "站点 agent-ecosystem 与 ai4science 之间有 9 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
+      "falsifiability": {
+        "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
+        "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "citation-edges.json",
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Compute total entity pairs between agent-ecosystem and ai4science",
+        "step2_analyze": "Calculate edge density ratio",
+        "step3_report": "Compare to median; if density ratio > 1%, connection is adequate",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "fc355f91"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0329",
+      "type": "moderate_bridge",
+      "confidence": 0.6,
+      "statement": "The bridge agent-ecosystem↔biomed-ai has 33 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
+      "statement_zh": "站点 agent-ecosystem 与 biomed-ai 之间有 33 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
+      "falsifiability": {
+        "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
+        "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "citation-edges.json",
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Compute total entity pairs between agent-ecosystem and biomed-ai",
+        "step2_analyze": "Calculate edge density ratio",
+        "step3_report": "Compare to median; if density ratio > 1%, connection is adequate",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "b64a4c3f"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0330",
+      "type": "moderate_bridge",
+      "confidence": 0.6,
+      "statement": "The bridge agent-ecosystem↔bionic-ai has 21 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
+      "statement_zh": "站点 agent-ecosystem 与 bionic-ai 之间有 21 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
+      "falsifiability": {
+        "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
+        "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "citation-edges.json",
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Compute total entity pairs between agent-ecosystem and bionic-ai",
+        "step2_analyze": "Calculate edge density ratio",
+        "step3_report": "Compare to median; if density ratio > 1%, connection is adequate",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "028f90ae"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0333",
+      "type": "moderate_bridge",
+      "confidence": 0.6,
+      "statement": "The bridge agent-ecosystem↔edge-ai has 10 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
+      "statement_zh": "站点 agent-ecosystem 与 edge-ai 之间有 10 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
+      "falsifiability": {
+        "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
+        "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "citation-edges.json",
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Compute total entity pairs between agent-ecosystem and edge-ai",
+        "step2_analyze": "Calculate edge density ratio",
+        "step3_report": "Compare to median; if density ratio > 1%, connection is adequate",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "25ecf6b5"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0334",
+      "type": "moderate_bridge",
+      "confidence": 0.6,
+      "statement": "The bridge agent-ecosystem↔embodied-ai has 42 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
+      "statement_zh": "站点 agent-ecosystem 与 embodied-ai 之间有 42 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
+      "falsifiability": {
+        "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
+        "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "citation-edges.json",
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Compute total entity pairs between agent-ecosystem and embodied-ai",
+        "step2_analyze": "Calculate edge density ratio",
+        "step3_report": "Compare to median; if density ratio > 1%, connection is adequate",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "2446eb44"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0340",
+      "type": "moderate_bridge",
+      "confidence": 0.6,
+      "statement": "The bridge agritech↔biocomputing has 290 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
+      "statement_zh": "站点 agritech 与 biocomputing 之间有 290 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
+      "falsifiability": {
+        "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
+        "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "citation-edges.json",
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Compute total entity pairs between agritech and biocomputing",
+        "step2_analyze": "Calculate edge density ratio",
+        "step3_report": "Compare to median; if density ratio > 1%, connection is adequate",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "3fbf66eb"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0342",
+      "type": "moderate_bridge",
+      "confidence": 0.6,
+      "statement": "The bridge agritech↔bionic-ai has 333 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
+      "statement_zh": "站点 agritech 与 bionic-ai 之间有 333 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
+      "falsifiability": {
+        "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
+        "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "citation-edges.json",
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Compute total entity pairs between agritech and bionic-ai",
+        "step2_analyze": "Calculate edge density ratio",
+        "step3_report": "Compare to median; if density ratio > 1%, connection is adequate",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "9619f5ba"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0344",
+      "type": "moderate_bridge",
+      "confidence": 0.6,
+      "statement": "The bridge agritech↔carbon-neutral has 87 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
+      "statement_zh": "站点 agritech 与 carbon-neutral 之间有 87 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
+      "falsifiability": {
+        "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
+        "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "citation-edges.json",
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Compute total entity pairs between agritech and carbon-neutral",
+        "step2_analyze": "Calculate edge density ratio",
+        "step3_report": "Compare to median; if density ratio > 1%, connection is adequate",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "80274801"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0345",
+      "type": "moderate_bridge",
+      "confidence": 0.6,
+      "statement": "The bridge agritech↔deep-sea-tech has 301 edges — non-zero but far below the pairMatrix median. The edge density likely underestimates the actual interdisciplinary connection.",
+      "statement_zh": "站点 agritech 与 deep-sea-tech 之间有 301 条边——非零但远低于 pairMatrix 中位数。边密度可能低估了实际跨学科连接。",
+      "falsifiability": {
+        "falsification_condition": "If co-citation rate between the two sites is > 1% (well above typical cross-domain baseline), the \"under-represented\" claim is falsified — the connection is already well-represented.",
+        "falsification_test": "1. Compute total pairs between sites; 2. Divide current edges by total; 3. If ratio > 1%, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "citation-edges.json",
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Compute total entity pairs between agritech and deep-sea-tech",
+        "step2_analyze": "Calculate edge density ratio",
+        "step3_report": "Compare to median; if density ratio > 1%, connection is adequate",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#pairMatrix",
+        "data_versions": [
+          "b79c2b7c"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0461",
+      "type": "degree_imbalance",
+      "confidence": 0.25,
+      "statement": "Site agritech outputs far more than it receives (ratio 15.28). A plausible hypothesis: cross-domain influence from agritech to agent-ecosystem is systematically under-cited — agent-ecosystem likely benefits from agritech's input but does not cite it back.",
+      "statement_zh": "站点 agritech 输出远多于接收（比值 15.28）。可能假设：agritech 到 agent-ecosystem 的跨域影响被系统性低估——agent-ecosystem 很可能受益于 agritech 但并未引用回报。",
+      "falsifiability": {
+        "falsification_condition": "If OpenAlex returns >= 20 citing papers from agent-ecosystem back to agritech within 5 years, the \"systematic under-citation\" hypothesis is falsified.",
+        "falsification_test": "1. Query OpenAlex for agent-ecosystem-domain papers citing agritech-domain works in past 5 years; 2. If count >= 20, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for agent-ecosystem→agritech citations",
+        "step2_analyze": "Count returned citing papers within 5 years",
+        "step3_report": "If >= 20, hypothesis falsified; if < 5, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#degrees",
+        "data_versions": [
+          "5d9b6cfe"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0462",
+      "type": "degree_imbalance",
+      "confidence": 0.25,
+      "statement": "Site agritech outputs far more than it receives (ratio 15.28). A plausible hypothesis: cross-domain influence from agritech to ai-safety is systematically under-cited — ai-safety likely benefits from agritech's input but does not cite it back.",
+      "statement_zh": "站点 agritech 输出远多于接收（比值 15.28）。可能假设：agritech 到 ai-safety 的跨域影响被系统性低估——ai-safety 很可能受益于 agritech 但并未引用回报。",
+      "falsifiability": {
+        "falsification_condition": "If OpenAlex returns >= 20 citing papers from ai-safety back to agritech within 5 years, the \"systematic under-citation\" hypothesis is falsified.",
+        "falsification_test": "1. Query OpenAlex for ai-safety-domain papers citing agritech-domain works in past 5 years; 2. If count >= 20, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for ai-safety→agritech citations",
+        "step2_analyze": "Count returned citing papers within 5 years",
+        "step3_report": "If >= 20, hypothesis falsified; if < 5, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#degrees",
+        "data_versions": [
+          "f6be6372"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0463",
+      "type": "degree_imbalance",
+      "confidence": 0.25,
+      "statement": "Site agritech outputs far more than it receives (ratio 15.28). A plausible hypothesis: cross-domain influence from agritech to ai4science is systematically under-cited — ai4science likely benefits from agritech's input but does not cite it back.",
+      "statement_zh": "站点 agritech 输出远多于接收（比值 15.28）。可能假设：agritech 到 ai4science 的跨域影响被系统性低估——ai4science 很可能受益于 agritech 但并未引用回报。",
+      "falsifiability": {
+        "falsification_condition": "If OpenAlex returns >= 20 citing papers from ai4science back to agritech within 5 years, the \"systematic under-citation\" hypothesis is falsified.",
+        "falsification_test": "1. Query OpenAlex for ai4science-domain papers citing agritech-domain works in past 5 years; 2. If count >= 20, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for ai4science→agritech citations",
+        "step2_analyze": "Count returned citing papers within 5 years",
+        "step3_report": "If >= 20, hypothesis falsified; if < 5, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#degrees",
+        "data_versions": [
+          "02c14bc4"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0464",
+      "type": "degree_imbalance",
+      "confidence": 0.25,
+      "statement": "Site agritech outputs far more than it receives (ratio 15.28). A plausible hypothesis: cross-domain influence from agritech to alien-minerals is systematically under-cited — alien-minerals likely benefits from agritech's input but does not cite it back.",
+      "statement_zh": "站点 agritech 输出远多于接收（比值 15.28）。可能假设：agritech 到 alien-minerals 的跨域影响被系统性低估——alien-minerals 很可能受益于 agritech 但并未引用回报。",
+      "falsifiability": {
+        "falsification_condition": "If OpenAlex returns >= 20 citing papers from alien-minerals back to agritech within 5 years, the \"systematic under-citation\" hypothesis is falsified.",
+        "falsification_test": "1. Query OpenAlex for alien-minerals-domain papers citing agritech-domain works in past 5 years; 2. If count >= 20, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for alien-minerals→agritech citations",
+        "step2_analyze": "Count returned citing papers within 5 years",
+        "step3_report": "If >= 20, hypothesis falsified; if < 5, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#degrees",
+        "data_versions": [
+          "1bcba1ce"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0465",
+      "type": "degree_imbalance",
+      "confidence": 0.25,
+      "statement": "Site agritech outputs far more than it receives (ratio 15.28). A plausible hypothesis: cross-domain influence from agritech to biocomputing is systematically under-cited — biocomputing likely benefits from agritech's input but does not cite it back.",
+      "statement_zh": "站点 agritech 输出远多于接收（比值 15.28）。可能假设：agritech 到 biocomputing 的跨域影响被系统性低估——biocomputing 很可能受益于 agritech 但并未引用回报。",
+      "falsifiability": {
+        "falsification_condition": "If OpenAlex returns >= 20 citing papers from biocomputing back to agritech within 5 years, the \"systematic under-citation\" hypothesis is falsified.",
+        "falsification_test": "1. Query OpenAlex for biocomputing-domain papers citing agritech-domain works in past 5 years; 2. If count >= 20, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for biocomputing→agritech citations",
+        "step2_analyze": "Count returned citing papers within 5 years",
+        "step3_report": "If >= 20, hypothesis falsified; if < 5, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#degrees",
+        "data_versions": [
+          "9460ef29"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0466",
+      "type": "degree_imbalance",
+      "confidence": 0.25,
+      "statement": "Site agritech outputs far more than it receives (ratio 15.28). A plausible hypothesis: cross-domain influence from agritech to biomed-ai is systematically under-cited — biomed-ai likely benefits from agritech's input but does not cite it back.",
+      "statement_zh": "站点 agritech 输出远多于接收（比值 15.28）。可能假设：agritech 到 biomed-ai 的跨域影响被系统性低估——biomed-ai 很可能受益于 agritech 但并未引用回报。",
+      "falsifiability": {
+        "falsification_condition": "If OpenAlex returns >= 20 citing papers from biomed-ai back to agritech within 5 years, the \"systematic under-citation\" hypothesis is falsified.",
+        "falsification_test": "1. Query OpenAlex for biomed-ai-domain papers citing agritech-domain works in past 5 years; 2. If count >= 20, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for biomed-ai→agritech citations",
+        "step2_analyze": "Count returned citing papers within 5 years",
+        "step3_report": "If >= 20, hypothesis falsified; if < 5, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#degrees",
+        "data_versions": [
+          "90d0484a"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0467",
+      "type": "degree_imbalance",
+      "confidence": 0.25,
+      "statement": "Site agritech outputs far more than it receives (ratio 15.28). A plausible hypothesis: cross-domain influence from agritech to bionic-ai is systematically under-cited — bionic-ai likely benefits from agritech's input but does not cite it back.",
+      "statement_zh": "站点 agritech 输出远多于接收（比值 15.28）。可能假设：agritech 到 bionic-ai 的跨域影响被系统性低估——bionic-ai 很可能受益于 agritech 但并未引用回报。",
+      "falsifiability": {
+        "falsification_condition": "If OpenAlex returns >= 20 citing papers from bionic-ai back to agritech within 5 years, the \"systematic under-citation\" hypothesis is falsified.",
+        "falsification_test": "1. Query OpenAlex for bionic-ai-domain papers citing agritech-domain works in past 5 years; 2. If count >= 20, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for bionic-ai→agritech citations",
+        "step2_analyze": "Count returned citing papers within 5 years",
+        "step3_report": "If >= 20, hypothesis falsified; if < 5, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#degrees",
+        "data_versions": [
+          "bf503b53"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0468",
+      "type": "degree_imbalance",
+      "confidence": 0.25,
+      "statement": "Site agritech outputs far more than it receives (ratio 15.28). A plausible hypothesis: cross-domain influence from agritech to brain-science is systematically under-cited — brain-science likely benefits from agritech's input but does not cite it back.",
+      "statement_zh": "站点 agritech 输出远多于接收（比值 15.28）。可能假设：agritech 到 brain-science 的跨域影响被系统性低估——brain-science 很可能受益于 agritech 但并未引用回报。",
+      "falsifiability": {
+        "falsification_condition": "If OpenAlex returns >= 20 citing papers from brain-science back to agritech within 5 years, the \"systematic under-citation\" hypothesis is falsified.",
+        "falsification_test": "1. Query OpenAlex for brain-science-domain papers citing agritech-domain works in past 5 years; 2. If count >= 20, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for brain-science→agritech citations",
+        "step2_analyze": "Count returned citing papers within 5 years",
+        "step3_report": "If >= 20, hypothesis falsified; if < 5, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#degrees",
+        "data_versions": [
+          "77cb6036"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0469",
+      "type": "degree_imbalance",
+      "confidence": 0.25,
+      "statement": "Site agritech outputs far more than it receives (ratio 15.28). A plausible hypothesis: cross-domain influence from agritech to carbon-neutral is systematically under-cited — carbon-neutral likely benefits from agritech's input but does not cite it back.",
+      "statement_zh": "站点 agritech 输出远多于接收（比值 15.28）。可能假设：agritech 到 carbon-neutral 的跨域影响被系统性低估——carbon-neutral 很可能受益于 agritech 但并未引用回报。",
+      "falsifiability": {
+        "falsification_condition": "If OpenAlex returns >= 20 citing papers from carbon-neutral back to agritech within 5 years, the \"systematic under-citation\" hypothesis is falsified.",
+        "falsification_test": "1. Query OpenAlex for carbon-neutral-domain papers citing agritech-domain works in past 5 years; 2. If count >= 20, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for carbon-neutral→agritech citations",
+        "step2_analyze": "Count returned citing papers within 5 years",
+        "step3_report": "If >= 20, hypothesis falsified; if < 5, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#degrees",
+        "data_versions": [
+          "ad3672e2"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0470",
+      "type": "degree_imbalance",
+      "confidence": 0.25,
+      "statement": "Site agritech outputs far more than it receives (ratio 15.28). A plausible hypothesis: cross-domain influence from agritech to deep-sea-tech is systematically under-cited — deep-sea-tech likely benefits from agritech's input but does not cite it back.",
+      "statement_zh": "站点 agritech 输出远多于接收（比值 15.28）。可能假设：agritech 到 deep-sea-tech 的跨域影响被系统性低估——deep-sea-tech 很可能受益于 agritech 但并未引用回报。",
+      "falsifiability": {
+        "falsification_condition": "If OpenAlex returns >= 20 citing papers from deep-sea-tech back to agritech within 5 years, the \"systematic under-citation\" hypothesis is falsified.",
+        "falsification_test": "1. Query OpenAlex for deep-sea-tech-domain papers citing agritech-domain works in past 5 years; 2. If count >= 20, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation",
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for deep-sea-tech→agritech citations",
+        "step2_analyze": "Count returned citing papers within 5 years",
+        "step3_report": "If >= 20, hypothesis falsified; if < 5, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#degrees",
+        "data_versions": [
+          "e0b64f29"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0596",
+      "type": "emerging_topic",
+      "confidence": 0.6,
+      "statement": "The shared topic(s) \"robotics\" appear in both robot-parts and low-altitude corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
+      "statement_zh": "共同主题 \"robotics\" 同时出现在 robot-parts 和 low-altitude 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
+      "falsifiability": {
+        "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
+        "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
+        "falsification_time_horizon_days": 7
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "entity tags",
+          "keyword extraction"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count primary-tag coverage for each shared topic in both sites",
+        "step2_analyze": "Filter out low-coverage (<1%) topics",
+        "step3_report": "Remaining topics are candidate emerging frontiers",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "shared-tag-analysis",
+        "data_versions": [
+          "b4bb7525"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0603",
+      "type": "emerging_topic",
+      "confidence": 0.6,
+      "statement": "The shared topic(s) \"materials\" appear in both neuromorphic and low-altitude corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
+      "statement_zh": "共同主题 \"materials\" 同时出现在 neuromorphic 和 low-altitude 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
+      "falsifiability": {
+        "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
+        "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
+        "falsification_time_horizon_days": 7
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "entity tags",
+          "keyword extraction"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count primary-tag coverage for each shared topic in both sites",
+        "step2_analyze": "Filter out low-coverage (<1%) topics",
+        "step3_report": "Remaining topics are candidate emerging frontiers",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "shared-tag-analysis",
+        "data_versions": [
+          "3243db1d"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0608",
+      "type": "emerging_topic",
+      "confidence": 0.6,
+      "statement": "The shared topic(s) \"materials\" appear in both quantum-materials and low-altitude corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
+      "statement_zh": "共同主题 \"materials\" 同时出现在 quantum-materials 和 low-altitude 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
+      "falsifiability": {
+        "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
+        "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
+        "falsification_time_horizon_days": 7
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "entity tags",
+          "keyword extraction"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count primary-tag coverage for each shared topic in both sites",
+        "step2_analyze": "Filter out low-coverage (<1%) topics",
+        "step3_report": "Remaining topics are candidate emerging frontiers",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "shared-tag-analysis",
+        "data_versions": [
+          "5e408cc9"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0612",
+      "type": "emerging_topic",
+      "confidence": 0.6,
+      "statement": "The shared topic(s) \"materials\" appear in both semiconductor and low-altitude corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
+      "statement_zh": "共同主题 \"materials\" 同时出现在 semiconductor 和 low-altitude 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
+      "falsifiability": {
+        "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
+        "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
+        "falsification_time_horizon_days": 7
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "entity tags",
+          "keyword extraction"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count primary-tag coverage for each shared topic in both sites",
+        "step2_analyze": "Filter out low-coverage (<1%) topics",
+        "step3_report": "Remaining topics are candidate emerging frontiers",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "shared-tag-analysis",
+        "data_versions": [
+          "ecfbba7d"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0620",
+      "type": "emerging_topic",
+      "confidence": 0.6,
+      "statement": "The shared topic(s) \"biology\" appear in both bionic-ai and exo-science corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
+      "statement_zh": "共同主题 \"biology\" 同时出现在 bionic-ai 和 exo-science 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
+      "falsifiability": {
+        "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
+        "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
+        "falsification_time_horizon_days": 7
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "entity tags",
+          "keyword extraction"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count primary-tag coverage for each shared topic in both sites",
+        "step2_analyze": "Filter out low-coverage (<1%) topics",
+        "step3_report": "Remaining topics are candidate emerging frontiers",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "shared-tag-analysis",
+        "data_versions": [
+          "ff73bcfe"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0621",
+      "type": "emerging_topic",
+      "confidence": 0.6,
+      "statement": "The shared topic(s) \"cs\" appear in both privacy-computing and semiconductor corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
+      "statement_zh": "共同主题 \"cs\" 同时出现在 privacy-computing 和 semiconductor 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
+      "falsifiability": {
+        "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
+        "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
+        "falsification_time_horizon_days": 7
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "entity tags",
+          "keyword extraction"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count primary-tag coverage for each shared topic in both sites",
+        "step2_analyze": "Filter out low-coverage (<1%) topics",
+        "step3_report": "Remaining topics are candidate emerging frontiers",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "shared-tag-analysis",
+        "data_versions": [
+          "0c86b6e1"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0622",
+      "type": "emerging_topic",
+      "confidence": 0.6,
+      "statement": "The shared topic(s) \"cs\" appear in both semiconductor and privacy-computing corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
+      "statement_zh": "共同主题 \"cs\" 同时出现在 semiconductor 和 privacy-computing 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
+      "falsifiability": {
+        "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
+        "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
+        "falsification_time_horizon_days": 7
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "entity tags",
+          "keyword extraction"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count primary-tag coverage for each shared topic in both sites",
+        "step2_analyze": "Filter out low-coverage (<1%) topics",
+        "step3_report": "Remaining topics are candidate emerging frontiers",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "shared-tag-analysis",
+        "data_versions": [
+          "f6fd0d7d"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0645",
+      "type": "emerging_topic",
+      "confidence": 0.6,
+      "statement": "The shared topic(s) \"materials\" appear in both carbon-neutral and neuromorphic corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
+      "statement_zh": "共同主题 \"materials\" 同时出现在 carbon-neutral 和 neuromorphic 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
+      "falsifiability": {
+        "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
+        "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
+        "falsification_time_horizon_days": 7
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "entity tags",
+          "keyword extraction"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count primary-tag coverage for each shared topic in both sites",
+        "step2_analyze": "Filter out low-coverage (<1%) topics",
+        "step3_report": "Remaining topics are candidate emerging frontiers",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "shared-tag-analysis",
+        "data_versions": [
+          "20ad4561"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0650",
+      "type": "emerging_topic",
+      "confidence": 0.6,
+      "statement": "The shared topic(s) \"materials\" appear in both neuromorphic and alien-minerals corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
+      "statement_zh": "共同主题 \"materials\" 同时出现在 neuromorphic 和 alien-minerals 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
+      "falsifiability": {
+        "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
+        "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
+        "falsification_time_horizon_days": 7
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "entity tags",
+          "keyword extraction"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count primary-tag coverage for each shared topic in both sites",
+        "step2_analyze": "Filter out low-coverage (<1%) topics",
+        "step3_report": "Remaining topics are candidate emerging frontiers",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "shared-tag-analysis",
+        "data_versions": [
+          "8d41326b"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0652",
+      "type": "emerging_topic",
+      "confidence": 0.6,
+      "statement": "The shared topic(s) \"materials\" appear in both semiconductor and alien-minerals corpora but with no cross-citations, suggesting an emerging interdisciplinary frontier not yet formally acknowledged.",
+      "statement_zh": "共同主题 \"materials\" 同时出现在 semiconductor 和 alien-minerals 语料中但无交叉引用，提示存在未被正式承认的新兴跨学科前沿。",
+      "falsifiability": {
+        "falsification_condition": "If the shared topics appear only as peripheral keywords (< 1% entity coverage in each site), this is not an emerging frontier but tagging noise.",
+        "falsification_test": "1. For each site, count entities with each shared topic in primary tags; 2. If < 1% coverage, falsified.",
+        "falsification_time_horizon_days": 7
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "topic_overlap"
+        ],
+        "evidence_sources": [
+          "entity tags",
+          "keyword extraction"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count primary-tag coverage for each shared topic in both sites",
+        "step2_analyze": "Filter out low-coverage (<1%) topics",
+        "step3_report": "Remaining topics are candidate emerging frontiers",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "shared-tag-analysis",
+        "data_versions": [
+          "c1696c26"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0844",
+      "type": "bidirectional_gap",
+      "confidence": 0.52,
+      "statement": "Reverse-direction hypothesis: if exo-science does not cite agritech, the reverse citation flow (agritech→exo-science) is also likely underrepresented — 19426 combined entities with 2 shared topic(s) should show at least some reverse flow, but likely don't.",
+      "statement_zh": "反向假设：如果 exo-science 不引用 agritech，那么反向引用流（agritech→exo-science）同样可能未充分记录——19426 个实体、2 个共享主题应有至少一些反向流，但很可能没有。",
+      "falsifiability": {
+        "falsification_condition": "If reverse OpenAlex query on top-100 agritech entities returns >= 3 citing papers from exo-science domain, the \"under-represented reverse flow\" hypothesis is falsified.",
+        "falsification_test": "1. Take top-100 agritech entities; 2. Query OpenAlex for cited-works in exo-science domain; 3. If >= 3, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for top-100 agritech entities' cited-works",
+        "step2_analyze": "Count citing papers from exo-science domain",
+        "step3_report": "If >= 3, hypothesis falsified; if 0, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#gapPairs-reverse",
+        "data_versions": [
+          "c5fa8290"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0736",
+      "type": "bidirectional_gap",
+      "confidence": 0.42,
+      "statement": "Reverse-direction hypothesis: if robot-parts does not cite low-altitude, the reverse citation flow (low-altitude→robot-parts) is also likely underrepresented — 19955 combined entities with 1 shared topic(s) should show at least some reverse flow, but likely don't.",
+      "statement_zh": "反向假设：如果 robot-parts 不引用 low-altitude，那么反向引用流（low-altitude→robot-parts）同样可能未充分记录——19955 个实体、1 个共享主题应有至少一些反向流，但很可能没有。",
+      "falsifiability": {
+        "falsification_condition": "If reverse OpenAlex query on top-100 low-altitude entities returns >= 3 citing papers from robot-parts domain, the \"under-represented reverse flow\" hypothesis is falsified.",
+        "falsification_test": "1. Take top-100 low-altitude entities; 2. Query OpenAlex for cited-works in robot-parts domain; 3. If >= 3, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for top-100 low-altitude entities' cited-works",
+        "step2_analyze": "Count citing papers from robot-parts domain",
+        "step3_report": "If >= 3, hypothesis falsified; if 0, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#gapPairs-reverse",
+        "data_versions": [
+          "22fd5468"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0743",
+      "type": "bidirectional_gap",
+      "confidence": 0.42,
+      "statement": "Reverse-direction hypothesis: if neuromorphic does not cite low-altitude, the reverse citation flow (low-altitude→neuromorphic) is also likely underrepresented — 19924 combined entities with 1 shared topic(s) should show at least some reverse flow, but likely don't.",
+      "statement_zh": "反向假设：如果 neuromorphic 不引用 low-altitude，那么反向引用流（low-altitude→neuromorphic）同样可能未充分记录——19924 个实体、1 个共享主题应有至少一些反向流，但很可能没有。",
+      "falsifiability": {
+        "falsification_condition": "If reverse OpenAlex query on top-100 low-altitude entities returns >= 3 citing papers from neuromorphic domain, the \"under-represented reverse flow\" hypothesis is falsified.",
+        "falsification_test": "1. Take top-100 low-altitude entities; 2. Query OpenAlex for cited-works in neuromorphic domain; 3. If >= 3, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for top-100 low-altitude entities' cited-works",
+        "step2_analyze": "Count citing papers from neuromorphic domain",
+        "step3_report": "If >= 3, hypothesis falsified; if 0, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#gapPairs-reverse",
+        "data_versions": [
+          "b621d896"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0748",
+      "type": "bidirectional_gap",
+      "confidence": 0.42,
+      "statement": "Reverse-direction hypothesis: if quantum-materials does not cite low-altitude, the reverse citation flow (low-altitude→quantum-materials) is also likely underrepresented — 19915 combined entities with 1 shared topic(s) should show at least some reverse flow, but likely don't.",
+      "statement_zh": "反向假设：如果 quantum-materials 不引用 low-altitude，那么反向引用流（low-altitude→quantum-materials）同样可能未充分记录——19915 个实体、1 个共享主题应有至少一些反向流，但很可能没有。",
+      "falsifiability": {
+        "falsification_condition": "If reverse OpenAlex query on top-100 low-altitude entities returns >= 3 citing papers from quantum-materials domain, the \"under-represented reverse flow\" hypothesis is falsified.",
+        "falsification_test": "1. Take top-100 low-altitude entities; 2. Query OpenAlex for cited-works in quantum-materials domain; 3. If >= 3, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for top-100 low-altitude entities' cited-works",
+        "step2_analyze": "Count citing papers from quantum-materials domain",
+        "step3_report": "If >= 3, hypothesis falsified; if 0, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#gapPairs-reverse",
+        "data_versions": [
+          "d40c5d0e"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0752",
+      "type": "bidirectional_gap",
+      "confidence": 0.42,
+      "statement": "Reverse-direction hypothesis: if semiconductor does not cite low-altitude, the reverse citation flow (low-altitude→semiconductor) is also likely underrepresented — 19911 combined entities with 1 shared topic(s) should show at least some reverse flow, but likely don't.",
+      "statement_zh": "反向假设：如果 semiconductor 不引用 low-altitude，那么反向引用流（low-altitude→semiconductor）同样可能未充分记录——19911 个实体、1 个共享主题应有至少一些反向流，但很可能没有。",
+      "falsifiability": {
+        "falsification_condition": "If reverse OpenAlex query on top-100 low-altitude entities returns >= 3 citing papers from semiconductor domain, the \"under-represented reverse flow\" hypothesis is falsified.",
+        "falsification_test": "1. Take top-100 low-altitude entities; 2. Query OpenAlex for cited-works in semiconductor domain; 3. If >= 3, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for top-100 low-altitude entities' cited-works",
+        "step2_analyze": "Count citing papers from semiconductor domain",
+        "step3_report": "If >= 3, hypothesis falsified; if 0, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#gapPairs-reverse",
+        "data_versions": [
+          "7574c9ab"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0760",
+      "type": "bidirectional_gap",
+      "confidence": 0.42,
+      "statement": "Reverse-direction hypothesis: if bionic-ai does not cite exo-science, the reverse citation flow (exo-science→bionic-ai) is also likely underrepresented — 19895 combined entities with 1 shared topic(s) should show at least some reverse flow, but likely don't.",
+      "statement_zh": "反向假设：如果 bionic-ai 不引用 exo-science，那么反向引用流（exo-science→bionic-ai）同样可能未充分记录——19895 个实体、1 个共享主题应有至少一些反向流，但很可能没有。",
+      "falsifiability": {
+        "falsification_condition": "If reverse OpenAlex query on top-100 exo-science entities returns >= 3 citing papers from bionic-ai domain, the \"under-represented reverse flow\" hypothesis is falsified.",
+        "falsification_test": "1. Take top-100 exo-science entities; 2. Query OpenAlex for cited-works in bionic-ai domain; 3. If >= 3, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for top-100 exo-science entities' cited-works",
+        "step2_analyze": "Count citing papers from bionic-ai domain",
+        "step3_report": "If >= 3, hypothesis falsified; if 0, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#gapPairs-reverse",
+        "data_versions": [
+          "c95b9569"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0761",
+      "type": "bidirectional_gap",
+      "confidence": 0.42,
+      "statement": "Reverse-direction hypothesis: if privacy-computing does not cite semiconductor, the reverse citation flow (semiconductor→privacy-computing) is also likely underrepresented — 19894 combined entities with 1 shared topic(s) should show at least some reverse flow, but likely don't.",
+      "statement_zh": "反向假设：如果 privacy-computing 不引用 semiconductor，那么反向引用流（semiconductor→privacy-computing）同样可能未充分记录——19894 个实体、1 个共享主题应有至少一些反向流，但很可能没有。",
+      "falsifiability": {
+        "falsification_condition": "If reverse OpenAlex query on top-100 semiconductor entities returns >= 3 citing papers from privacy-computing domain, the \"under-represented reverse flow\" hypothesis is falsified.",
+        "falsification_test": "1. Take top-100 semiconductor entities; 2. Query OpenAlex for cited-works in privacy-computing domain; 3. If >= 3, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for top-100 semiconductor entities' cited-works",
+        "step2_analyze": "Count citing papers from privacy-computing domain",
+        "step3_report": "If >= 3, hypothesis falsified; if 0, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#gapPairs-reverse",
+        "data_versions": [
+          "1a824546"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0762",
+      "type": "bidirectional_gap",
+      "confidence": 0.42,
+      "statement": "Reverse-direction hypothesis: if semiconductor does not cite privacy-computing, the reverse citation flow (privacy-computing→semiconductor) is also likely underrepresented — 19894 combined entities with 1 shared topic(s) should show at least some reverse flow, but likely don't.",
+      "statement_zh": "反向假设：如果 semiconductor 不引用 privacy-computing，那么反向引用流（privacy-computing→semiconductor）同样可能未充分记录——19894 个实体、1 个共享主题应有至少一些反向流，但很可能没有。",
+      "falsifiability": {
+        "falsification_condition": "If reverse OpenAlex query on top-100 privacy-computing entities returns >= 3 citing papers from semiconductor domain, the \"under-represented reverse flow\" hypothesis is falsified.",
+        "falsification_test": "1. Take top-100 privacy-computing entities; 2. Query OpenAlex for cited-works in semiconductor domain; 3. If >= 3, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for top-100 privacy-computing entities' cited-works",
+        "step2_analyze": "Count citing papers from semiconductor domain",
+        "step3_report": "If >= 3, hypothesis falsified; if 0, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#gapPairs-reverse",
+        "data_versions": [
+          "df3fad94"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0785",
+      "type": "bidirectional_gap",
+      "confidence": 0.42,
+      "statement": "Reverse-direction hypothesis: if carbon-neutral does not cite neuromorphic, the reverse citation flow (neuromorphic→carbon-neutral) is also likely underrepresented — 19840 combined entities with 1 shared topic(s) should show at least some reverse flow, but likely don't.",
+      "statement_zh": "反向假设：如果 carbon-neutral 不引用 neuromorphic，那么反向引用流（neuromorphic→carbon-neutral）同样可能未充分记录——19840 个实体、1 个共享主题应有至少一些反向流，但很可能没有。",
+      "falsifiability": {
+        "falsification_condition": "If reverse OpenAlex query on top-100 neuromorphic entities returns >= 3 citing papers from carbon-neutral domain, the \"under-represented reverse flow\" hypothesis is falsified.",
+        "falsification_test": "1. Take top-100 neuromorphic entities; 2. Query OpenAlex for cited-works in carbon-neutral domain; 3. If >= 3, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for top-100 neuromorphic entities' cited-works",
+        "step2_analyze": "Count citing papers from carbon-neutral domain",
+        "step3_report": "If >= 3, hypothesis falsified; if 0, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#gapPairs-reverse",
+        "data_versions": [
+          "f8cbd10a"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0790",
+      "type": "bidirectional_gap",
+      "confidence": 0.42,
+      "statement": "Reverse-direction hypothesis: if neuromorphic does not cite alien-minerals, the reverse citation flow (alien-minerals→neuromorphic) is also likely underrepresented — 19811 combined entities with 1 shared topic(s) should show at least some reverse flow, but likely don't.",
+      "statement_zh": "反向假设：如果 neuromorphic 不引用 alien-minerals，那么反向引用流（alien-minerals→neuromorphic）同样可能未充分记录——19811 个实体、1 个共享主题应有至少一些反向流，但很可能没有。",
+      "falsifiability": {
+        "falsification_condition": "If reverse OpenAlex query on top-100 alien-minerals entities returns >= 3 citing papers from neuromorphic domain, the \"under-represented reverse flow\" hypothesis is falsified.",
+        "falsification_test": "1. Take top-100 alien-minerals entities; 2. Query OpenAlex for cited-works in neuromorphic domain; 3. If >= 3, falsified.",
+        "falsification_time_horizon_days": 14
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "OpenAlex"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Query OpenAlex for top-100 alien-minerals entities' cited-works",
+        "step2_analyze": "Count citing papers from neuromorphic domain",
+        "step3_report": "If >= 3, hypothesis falsified; if 0, hypothesis strengthened",
+        "estimated_effort": "medium"
+      },
+      "provenance": {
+        "generated_by": "citation-gaps.json#gapPairs-reverse",
+        "data_versions": [
+          "eb3d3471"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0871",
+      "type": "crossref_topic_bridge",
+      "confidence": 0.65,
+      "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
+      "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
+      "falsifiability": {
+        "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
+        "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
+        "falsification_time_horizon_days": 3
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "citation-edges.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count existing agritech→deep-sea-tech edges in citation-edges.json",
+        "step2_analyze": "Compute ratio to total agritech entity count",
+        "step3_report": "If ratio < 0.5%, hypothesis strengthened",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-edges.json#observedEdge",
+        "data_versions": [
+          "8418a4d6"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0884",
+      "type": "crossref_topic_bridge",
+      "confidence": 0.65,
+      "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
+      "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
+      "falsifiability": {
+        "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
+        "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
+        "falsification_time_horizon_days": 3
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "citation-edges.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count existing agritech→deep-sea-tech edges in citation-edges.json",
+        "step2_analyze": "Compute ratio to total agritech entity count",
+        "step3_report": "If ratio < 0.5%, hypothesis strengthened",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-edges.json#observedEdge",
+        "data_versions": [
+          "97945334"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0885",
+      "type": "crossref_topic_bridge",
+      "confidence": 0.65,
+      "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
+      "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
+      "falsifiability": {
+        "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
+        "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
+        "falsification_time_horizon_days": 3
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "citation-edges.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count existing agritech→deep-sea-tech edges in citation-edges.json",
+        "step2_analyze": "Compute ratio to total agritech entity count",
+        "step3_report": "If ratio < 0.5%, hypothesis strengthened",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-edges.json#observedEdge",
+        "data_versions": [
+          "d4fbd013"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0886",
+      "type": "crossref_topic_bridge",
+      "confidence": 0.65,
+      "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
+      "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
+      "falsifiability": {
+        "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
+        "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
+        "falsification_time_horizon_days": 3
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "citation-edges.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count existing agritech→deep-sea-tech edges in citation-edges.json",
+        "step2_analyze": "Compute ratio to total agritech entity count",
+        "step3_report": "If ratio < 0.5%, hypothesis strengthened",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-edges.json#observedEdge",
+        "data_versions": [
+          "6a606e89"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0887",
+      "type": "crossref_topic_bridge",
+      "confidence": 0.65,
+      "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
+      "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
+      "falsifiability": {
+        "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
+        "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
+        "falsification_time_horizon_days": 3
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "citation-edges.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count existing agritech→deep-sea-tech edges in citation-edges.json",
+        "step2_analyze": "Compute ratio to total agritech entity count",
+        "step3_report": "If ratio < 0.5%, hypothesis strengthened",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-edges.json#observedEdge",
+        "data_versions": [
+          "6433657b"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0901",
+      "type": "crossref_topic_bridge",
+      "confidence": 0.65,
+      "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
+      "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
+      "falsifiability": {
+        "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
+        "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
+        "falsification_time_horizon_days": 3
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "citation-edges.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count existing agritech→deep-sea-tech edges in citation-edges.json",
+        "step2_analyze": "Compute ratio to total agritech entity count",
+        "step3_report": "If ratio < 0.5%, hypothesis strengthened",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-edges.json#observedEdge",
+        "data_versions": [
+          "9fd99ec8"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0904",
+      "type": "crossref_topic_bridge",
+      "confidence": 0.65,
+      "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
+      "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
+      "falsifiability": {
+        "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
+        "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
+        "falsification_time_horizon_days": 3
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "citation-edges.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count existing agritech→deep-sea-tech edges in citation-edges.json",
+        "step2_analyze": "Compute ratio to total agritech entity count",
+        "step3_report": "If ratio < 0.5%, hypothesis strengthened",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-edges.json#observedEdge",
+        "data_versions": [
+          "7f70fdb7"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0911",
+      "type": "crossref_topic_bridge",
+      "confidence": 0.65,
+      "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
+      "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
+      "falsifiability": {
+        "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
+        "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
+        "falsification_time_horizon_days": 3
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "citation-edges.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count existing agritech→deep-sea-tech edges in citation-edges.json",
+        "step2_analyze": "Compute ratio to total agritech entity count",
+        "step3_report": "If ratio < 0.5%, hypothesis strengthened",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-edges.json#observedEdge",
+        "data_versions": [
+          "992654a1"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-0912",
+      "type": "crossref_topic_bridge",
+      "confidence": 0.65,
+      "statement": "Observed at least one entity in agritech citing a work in deep-sea-tech, establishing a shared topic surface (biology, env). Hypothesis: other entities in agritech should also cite deep-sea-tech, but current edge density suggests most do not — indicating potential citation gap at scale.",
+      "statement_zh": "已观察到 agritech 中至少有 1 个实体引用 deep-sea-tech 作品，建立共享主题面（biology, env）。假设：agritech 中其他实体也应引用 deep-sea-tech，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
+      "falsifiability": {
+        "falsification_condition": "If >= 50 other agritech entities also cite deep-sea-tech entities, the \"citation gap at scale\" claim is falsified.",
+        "falsification_test": "1. Query citation-edges.json for edges where sourceSite=agritech AND targetSite=deep-sea-tech; 2. If count >= 50, falsified.",
+        "falsification_time_horizon_days": 3
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "citation-edges.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count existing agritech→deep-sea-tech edges in citation-edges.json",
+        "step2_analyze": "Compute ratio to total agritech entity count",
+        "step3_report": "If ratio < 0.5%, hypothesis strengthened",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-edges.json#observedEdge",
+        "data_versions": [
+          "7abfa763"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-1099",
+      "type": "crossref_topic_bridge",
+      "confidence": 0.65,
+      "statement": "Observed at least one entity in ai4science citing a work in edge-ai, establishing a shared topic surface (ai, ml). Hypothesis: other entities in ai4science should also cite edge-ai, but current edge density suggests most do not — indicating potential citation gap at scale.",
+      "statement_zh": "已观察到 ai4science 中至少有 1 个实体引用 edge-ai 作品，建立共享主题面（ai, ml）。假设：ai4science 中其他实体也应引用 edge-ai，但当前边密度显示大多数没有——提示存在规模化引用缺口。",
+      "falsifiability": {
+        "falsification_condition": "If >= 50 other ai4science entities also cite edge-ai entities, the \"citation gap at scale\" claim is falsified.",
+        "falsification_test": "1. Query citation-edges.json for edges where sourceSite=ai4science AND targetSite=edge-ai; 2. If count >= 50, falsified.",
+        "falsification_time_horizon_days": 3
+      },
+      "evidence_requirement": {
+        "min_evidence_count": 3,
+        "evidence_types": [
+          "citation"
+        ],
+        "evidence_sources": [
+          "citation-edges.json"
+        ]
+      },
+      "verification_plan": {
+        "step1_search": "Count existing ai4science→edge-ai edges in citation-edges.json",
+        "step2_analyze": "Compute ratio to total ai4science entity count",
+        "step3_report": "If ratio < 0.5%, hypothesis strengthened",
+        "estimated_effort": "low"
+      },
+      "provenance": {
+        "generated_by": "citation-edges.json#observedEdge",
+        "data_versions": [
+          "8021758a"
+        ]
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1001",
+      "type": "concept_bridge",
+      "confidence": 0.75,
+      "statement": "站点 genetech-tools 与 privacy-computing 共享主题域「Adversarial system、Computer science、Automation」，虽无直接引用，但概念层面已形成跨站连接",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1003",
+      "type": "concept_bridge",
+      "confidence": 0.75,
+      "statement": "站点 genetech-tools 与 biocomputing 共享主题域「Python (programming language)、Computer science、Algorithm」，虽无直接引用，但概念层面已形成跨站连接",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1009",
+      "type": "concept_bridge",
+      "confidence": 0.75,
+      "statement": "站点 privacy-computing 与 biomed-ai 共享主题域「Wearable computer、Computer science、Machine learning」，虽无直接引用，但概念层面已形成跨站连接",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1013",
+      "type": "concept_bridge",
+      "confidence": 0.75,
+      "statement": "站点 privacy-computing 与 biocomputing 共享主题域「Workflow、Scalability、Computer science」，虽无直接引用，但概念层面已形成跨站连接",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1014",
+      "type": "concept_bridge",
+      "confidence": 0.75,
+      "statement": "站点 privacy-computing 与 quantum-computing 共享主题域「Computer science、Artificial intelligence、Machine learning」，虽无直接引用，但概念层面已形成跨站连接",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1015",
+      "type": "concept_bridge",
+      "confidence": 0.75,
+      "statement": "站点 privacy-computing 与 brain-science 共享主题域「Electroencephalography、Materials science、Machine learning」，虽无直接引用，但概念层面已形成跨站连接",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1019",
+      "type": "concept_bridge",
+      "confidence": 0.75,
+      "statement": "站点 biomed-ai 与 biocomputing 共享主题域「Computer science、Data science、Point (geometry)」，虽无直接引用，但概念层面已形成跨站连接",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1004",
+      "type": "concept_bridge",
+      "confidence": 0.7,
+      "statement": "站点 genetech-tools 与 quantum-computing 共享主题域「Computer science、Space (punctuation)」，虽无直接引用，但概念层面已形成跨站连接",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1005",
+      "type": "concept_bridge",
+      "confidence": 0.7,
+      "statement": "站点 genetech-tools 与 sat-6g 共享主题域「Computer science、Process (computing)」，虽无直接引用，但概念层面已形成跨站连接",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1006",
+      "type": "concept_bridge",
+      "confidence": 0.7,
+      "statement": "站点 genetech-tools 与 tcm-tools 共享主题域「Context (archaeology)、Process (computing)」，虽无直接引用，但概念层面已形成跨站连接",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的 concepts 集与共享概念无交集（<0.5 score）",
+        "data_source": "cited-entities.json / academic-entities.json (OpenAlex concepts)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1052",
+      "type": "concept_emergence",
+      "confidence": 0.545,
+      "statement": "主题「Adversarial system」在 genetech-tools 与 privacy-computing 间呈潜在传播链，可验证时序先后",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1053",
+      "type": "concept_emergence",
+      "confidence": 0.545,
+      "statement": "主题「Computer science」在 genetech-tools 与 biomed-ai 间呈潜在传播链，可验证时序先后",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1054",
+      "type": "concept_emergence",
+      "confidence": 0.545,
+      "statement": "主题「Python (programming language)」在 genetech-tools 与 biocomputing 间呈潜在传播链，可验证时序先后",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1055",
+      "type": "concept_emergence",
+      "confidence": 0.545,
+      "statement": "主题「Computer science」在 genetech-tools 与 quantum-computing 间呈潜在传播链，可验证时序先后",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1056",
+      "type": "concept_emergence",
+      "confidence": 0.545,
+      "statement": "主题「Computer science」在 genetech-tools 与 sat-6g 间呈潜在传播链，可验证时序先后",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1057",
+      "type": "concept_emergence",
+      "confidence": 0.545,
+      "statement": "主题「Context (archaeology)」在 genetech-tools 与 tcm-tools 间呈潜在传播链，可验证时序先后",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1058",
+      "type": "concept_emergence",
+      "confidence": 0.545,
+      "statement": "主题「Automation」在 genetech-tools 与 bionic-ai 间呈潜在传播链，可验证时序先后",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1059",
+      "type": "concept_emergence",
+      "confidence": 0.545,
+      "statement": "主题「Computer science」在 genetech-tools 与 semiconductor 间呈潜在传播链，可验证时序先后",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1060",
+      "type": "concept_emergence",
+      "confidence": 0.545,
+      "statement": "主题「Wearable computer」在 privacy-computing 与 biomed-ai 间呈潜在传播链，可验证时序先后",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1061",
+      "type": "concept_emergence",
+      "confidence": 0.545,
+      "statement": "主题「Materials science」在 privacy-computing 与 quantum-materials 间呈潜在传播链，可验证时序先后",
+      "falsifiability": {
+        "what_would_falsify": "任一站点的该概念实体发表年份分布无差异或差异 <1 年",
+        "data_source": "cited-entities.json (year_published 字段)",
+        "time_horizon_days": 60
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1101",
+      "type": "single_site_hotspot",
+      "confidence": 0.688,
+      "statement": "站点 life-science 在「Biology」主题下形成研究热点（12 篇实体、平均 score 0.690）",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1112",
+      "type": "single_site_hotspot",
+      "confidence": 0.686,
+      "statement": "站点 brain-science 在「Psychology」主题下形成研究热点（14 篇实体、平均 score 0.681）",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1086",
+      "type": "single_site_hotspot",
+      "confidence": 0.679,
+      "statement": "站点 privacy-computing 在「Computer science」主题下形成研究热点（19 篇实体、平均 score 0.643）",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1087",
+      "type": "single_site_hotspot",
+      "confidence": 0.67,
+      "statement": "站点 privacy-computing 在「Materials science」主题下形成研究热点（11 篇实体、平均 score 0.601）",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1088",
+      "type": "single_site_hotspot",
+      "confidence": 0.664,
+      "statement": "站点 privacy-computing 在「Neuromorphic engineering」主题下形成研究热点（5 篇实体、平均 score 0.821）",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1113",
+      "type": "single_site_hotspot",
+      "confidence": 0.657,
+      "statement": "站点 brain-science 在「Neuroscience」主题下形成研究热点（7 篇实体、平均 score 0.583）",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1082",
+      "type": "single_site_hotspot",
+      "confidence": 0.65,
+      "statement": "站点 genetech-tools 在「Computer science」主题下形成研究热点（6 篇实体、平均 score 0.651）",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1095",
+      "type": "single_site_hotspot",
+      "confidence": 0.645,
+      "statement": "站点 quantum-materials 在「Materials science」主题下形成研究热点（5 篇实体、平均 score 0.727）",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1109",
+      "type": "single_site_hotspot",
+      "confidence": 0.634,
+      "statement": "站点 biocomputing 在「Computer science」主题下形成研究热点（5 篇实体、平均 score 0.668）",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      }
+    },
+    {
+      "id": "HYP-20261016-V3-1102",
+      "type": "single_site_hotspot",
+      "confidence": 0.625,
+      "statement": "站点 life-science 在「Synthetic biology」主题下形成研究热点（3 篇实体、平均 score 0.826）",
+      "falsifiability": {
+        "what_would_falsify": "该主题在库实体数超过站点实体数 50%（说明该主题普遍，不特化本站）",
+        "data_source": "cited-entities.json (OpenAlex concepts + cited-site-assign)",
+        "time_horizon_days": 30
+      }
+    }
+  ]
+}

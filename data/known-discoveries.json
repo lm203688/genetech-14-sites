@@ -1,0 +1,20 @@
+{
+  "description": "已知跨域/跨学科发现的金标准清单（用于方法复现基准，无需人类专家）。每条记录：两个域 + 一个真实涌现的主题/技术。验证时检查本方法在历史切分点是否会把该 (域对, 主题) 判为低引用桥接候选，且随后真涌现。",
+  "discoveries": [
+    { "A": "quantum-materials", "B": "semiconductor", "topic": "topological insulator", "note": "拓扑绝缘体→自旋电子/芯片" },
+    { "A": "biomed-ai", "B": "brain-science", "topic": "neural decoding", "note": "AI 解码神经活动" },
+    { "A": "synbio-manufacturing", "B": "carbon-neutral", "topic": "microbial carbon capture", "note": "微生物固碳" },
+    { "A": "robot-parts", "B": "embodied-ai", "topic": "vision-language-action", "note": "VLA 模型用于操作" },
+    { "A": "low-altitude", "B": "sat-6g", "topic": "non-terrestrial networks", "note": "无人机+卫星通信" },
+    { "A": "quantum-computing", "B": "ai4science", "topic": "quantum machine learning", "note": "量子机器学习" },
+    { "A": "neuromorphic", "B": "edge-ai", "topic": "spiking neural network", "note": "脉冲网络边缘部署" },
+    { "A": "digital-twin", "B": "new-energy", "topic": "digital twin grid", "note": "电网数字孪生" },
+    { "A": "tcm-tools", "B": "life-science", "topic": "network pharmacology", "note": "网络药理学" },
+    { "A": "exo-science", "B": "ai4science", "topic": "biosignature detection", "note": "生命信号探测" },
+    { "A": "bionic-ai", "B": "biocomputing", "topic": "organoid intelligence", "note": "类器官智能" },
+    { "A": "privacy-computing", "B": "edge-ai", "topic": "federated learning", "note": "联邦学习" },
+    { "A": "agent-ecosystem", "B": "ai4science", "topic": "agentic scientific discovery", "note": "智能体科学发现" },
+    { "A": "spatial-computing", "B": "robot-parts", "topic": "spatial intelligence", "note": "空间智能+机器人" },
+    { "A": "genetech-tools", "B": "life-science", "topic": "gene editing delivery", "note": "基因编辑递送" }
+  ]
+}

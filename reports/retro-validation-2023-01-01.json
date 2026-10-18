@@ -1,0 +1,236 @@
+{
+  "method": "retrospective-validation (Swanson-style)",
+  "generatedAt": "2026-10-18T01:11:21.504Z",
+  "T0": "2023-01-01",
+  "T0Y": 2023,
+  "sites": 30,
+  "candidateBridges": 592,
+  "emergedBridges": 419,
+  "emergenceRate": 0.7077702702702703,
+  "randomPairEmergenceRate": 0.7931034482758621,
+  "lift": 0.8924059929494712,
+  "edgesTotal": 25682,
+  "edgesSkippedNoYear": 5758,
+  "topExamples": [
+    {
+      "pair": "ai-safety→agent-ecosystem",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 160
+    },
+    {
+      "pair": "ai-safety→embodied-ai",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 156
+    },
+    {
+      "pair": "ai4science→digital-twin",
+      "sharedTags": [
+        "cs.LG",
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "cs.CE",
+        "cond-mat.stat-mech"
+      ],
+      "postCitations": 147
+    },
+    {
+      "pair": "ai4science→privacy-computing",
+      "sharedTags": [
+        "cond-mat.stat-mech",
+        "quant-ph",
+        "hep-th",
+        "q-bio.bm",
+        "biology"
+      ],
+      "postCitations": 132
+    },
+    {
+      "pair": "agritech→genetech-tools",
+      "sharedTags": [
+        "remote sensing",
+        "ecology",
+        "biological sciences not elsewhere classified",
+        "deep learning",
+        "computer science"
+      ],
+      "postCitations": 128
+    },
+    {
+      "pair": "ai-safety→digital-twin",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Cross-sectional study"
+      ],
+      "postCitations": 119
+    },
+    {
+      "pair": "ai-safety→privacy-computing",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Business"
+      ],
+      "postCitations": 101
+    },
+    {
+      "pair": "ai4science→edge-ai",
+      "sharedTags": [
+        "cs.LG",
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "q-bio.QM",
+        "cs.CE"
+      ],
+      "postCitations": 98
+    },
+    {
+      "pair": "ai4science→carbon-neutral",
+      "sharedTags": [
+        "cs.LG",
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "q-bio.QM",
+        "cs.CE"
+      ],
+      "postCitations": 78
+    },
+    {
+      "pair": "ai-safety→alien-minerals",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 45
+    },
+    {
+      "pair": "ai-safety→carbon-neutral",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Cross-sectional study"
+      ],
+      "postCitations": 43
+    },
+    {
+      "pair": "ai4science→robot-parts",
+      "sharedTags": [
+        "physics.bio-ph",
+        "cond-mat.stat-mech",
+        "cond-mat.mtrl-sci",
+        "physics.comp-ph",
+        "physics.chem-ph"
+      ],
+      "postCitations": 43
+    },
+    {
+      "pair": "semiconductor→biocomputing",
+      "sharedTags": [
+        "Computer science",
+        "Business",
+        "Systems engineering",
+        "Engineering",
+        "Bandwidth (computing)"
+      ],
+      "postCitations": 42
+    },
+    {
+      "pair": "ai4science→neuromorphic",
+      "sharedTags": [
+        "physics.bio-ph",
+        "cond-mat.stat-mech",
+        "cond-mat.mtrl-sci",
+        "physics.comp-ph",
+        "physics.chem-ph"
+      ],
+      "postCitations": 39
+    },
+    {
+      "pair": "agent-ecosystem→ai-safety",
+      "sharedTags": [
+        "cs.ai",
+        "cs.cl",
+        "cs.lg",
+        "benchmark",
+        "computer and information sciences"
+      ],
+      "postCitations": 38
+    },
+    {
+      "pair": "ai4science→sat-6g",
+      "sharedTags": [
+        "physics.bio-ph",
+        "cond-mat.stat-mech",
+        "cond-mat.mtrl-sci",
+        "physics.comp-ph",
+        "physics.chem-ph"
+      ],
+      "postCitations": 38
+    },
+    {
+      "pair": "ai-safety→genetech-tools",
+      "sharedTags": [
+        "Computer science",
+        "Medicine",
+        "Psychology",
+        "Population",
+        "Business"
+      ],
+      "postCitations": 37
+    },
+    {
+      "pair": "ai-safety→quantum-computing",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 35
+    },
+    {
+      "pair": "biomed-ai→bionic-ai",
+      "sharedTags": [
+        "Workforce",
+        "Literacy",
+        "Applications of artificial intelligence",
+        "Engineering ethics",
+        "Scope (computer science)"
+      ],
+      "postCitations": 35
+    },
+    {
+      "pair": "semiconductor→bionic-ai",
+      "sharedTags": [
+        "Computer science",
+        "Business",
+        "Systems engineering",
+        "Engineering",
+        "Bandwidth (computing)"
+      ],
+      "postCitations": 35
+    }
+  ]
+}

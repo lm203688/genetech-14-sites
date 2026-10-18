@@ -1,7 +1,7 @@
 {
   "name": "@genetech/data-mcp",
   "version": "2.0.0",
-  "description": "GeneTech 30 站知识引擎（294,330 实体 / 276,769 唯一 DOI）— 数据引擎 MCP Server，实现 MCP 2025-11-25 规范（v2 无状态核心，stdio + streamable HTTP 双模式）：让外部 AI Agent 实时查询、检索、引用、核验、导出跨域引用缺口（零引用站对 = 研究空白候选）。覆盖基因/量子/脑科学/AI Agent/新能源/核能/中医药等 30 个垂直领域。",
+  "description": "GeneTech 30 站知识引擎（294,330 实体；唯一 DOI 与覆盖率以 data/metrics.json 为唯一真源：跨源去重唯一 DOI 255,392 / 带 DOI/PMID 实体 271,099）— 数据引擎 MCP Server，实现 MCP 2025-11-25 规范（v2 无状态核心，stdio + streamable HTTP 双模式）：让外部 AI Agent 实时查询、检索、引用、核验、导出跨域引用缺口（零引用站对 = 研究空白候选）。覆盖基因/量子/脑科学/AI Agent/新能源/核能/中医药等 30 个垂直领域。",
   "type": "module",
   "bin": {
     "genetech-data-mcp": "src/index.mjs"

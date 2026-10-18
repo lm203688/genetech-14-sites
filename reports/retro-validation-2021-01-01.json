@@ -1,0 +1,236 @@
+{
+  "method": "retrospective-validation (Swanson-style)",
+  "generatedAt": "2026-10-18T01:11:26.370Z",
+  "T0": "2021-01-01",
+  "T0Y": 2021,
+  "sites": 30,
+  "candidateBridges": 668,
+  "emergedBridges": 495,
+  "emergenceRate": 0.7410179640718563,
+  "randomPairEmergenceRate": 0.7977011494252874,
+  "lift": 0.9289418281592434,
+  "edgesTotal": 25682,
+  "edgesSkippedNoYear": 5758,
+  "topExamples": [
+    {
+      "pair": "ai4science→agent-ecosystem",
+      "sharedTags": [
+        "cs.LG",
+        "physics.bio-ph",
+        "q-bio.QM",
+        "cs.CE",
+        "cond-mat.stat-mech"
+      ],
+      "postCitations": 243
+    },
+    {
+      "pair": "ai-safety→agent-ecosystem",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 160
+    },
+    {
+      "pair": "ai-safety→embodied-ai",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 156
+    },
+    {
+      "pair": "ai4science→digital-twin",
+      "sharedTags": [
+        "cs.LG",
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "cs.CE",
+        "cond-mat.stat-mech"
+      ],
+      "postCitations": 147
+    },
+    {
+      "pair": "ai4science→privacy-computing",
+      "sharedTags": [
+        "cond-mat.stat-mech",
+        "quant-ph",
+        "hep-th",
+        "q-bio.bm",
+        "biology"
+      ],
+      "postCitations": 132
+    },
+    {
+      "pair": "agritech→genetech-tools",
+      "sharedTags": [
+        "remote sensing",
+        "ecology",
+        "biological sciences not elsewhere classified",
+        "deep learning",
+        "computer science"
+      ],
+      "postCitations": 128
+    },
+    {
+      "pair": "ai4science→deep-sea-tech",
+      "sharedTags": [
+        "cs.LG",
+        "physics.bio-ph",
+        "q-bio.QM",
+        "cs.CE",
+        "cond-mat.stat-mech"
+      ],
+      "postCitations": 124
+    },
+    {
+      "pair": "ai-safety→digital-twin",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Cross-sectional study"
+      ],
+      "postCitations": 119
+    },
+    {
+      "pair": "ai4science→synbio-manufacturing",
+      "sharedTags": [
+        "cs.LG",
+        "q-bio.BM",
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "q-bio.QM"
+      ],
+      "postCitations": 115
+    },
+    {
+      "pair": "agritech→biomed-ai",
+      "sharedTags": [
+        "remote sensing",
+        "ecology",
+        "biological sciences not elsewhere classified",
+        "deep learning",
+        "underwater"
+      ],
+      "postCitations": 102
+    },
+    {
+      "pair": "ai-safety→privacy-computing",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Business"
+      ],
+      "postCitations": 101
+    },
+    {
+      "pair": "ai4science→edge-ai",
+      "sharedTags": [
+        "cs.LG",
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "q-bio.QM",
+        "cs.CE"
+      ],
+      "postCitations": 98
+    },
+    {
+      "pair": "agritech→edge-ai",
+      "sharedTags": [
+        "remote sensing",
+        "ecology",
+        "biological sciences not elsewhere classified",
+        "deep learning",
+        "underwater"
+      ],
+      "postCitations": 96
+    },
+    {
+      "pair": "ai4science→alien-minerals",
+      "sharedTags": [
+        "cs.LG",
+        "q-bio.BM",
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "q-bio.QM"
+      ],
+      "postCitations": 78
+    },
+    {
+      "pair": "ai4science→carbon-neutral",
+      "sharedTags": [
+        "cs.LG",
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "q-bio.QM",
+        "cs.CE"
+      ],
+      "postCitations": 78
+    },
+    {
+      "pair": "ai-safety→edge-ai",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 62
+    },
+    {
+      "pair": "agritech→low-altitude",
+      "sharedTags": [
+        "remote sensing",
+        "ecology",
+        "biological sciences not elsewhere classified",
+        "deep learning",
+        "underwater"
+      ],
+      "postCitations": 56
+    },
+    {
+      "pair": "agritech→sat-6g",
+      "sharedTags": [
+        "remote sensing",
+        "ecology",
+        "biological sciences not elsewhere classified",
+        "deep learning",
+        "underwater"
+      ],
+      "postCitations": 56
+    },
+    {
+      "pair": "privacy-computing→biomed-ai",
+      "sharedTags": [
+        "cryptography and security",
+        "computer and information sciences",
+        "electrical engineering, electronic engineering, information engineering",
+        "blockchain",
+        "computer security"
+      ],
+      "postCitations": 50
+    },
+    {
+      "pair": "ai-safety→alien-minerals",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 45
+    }
+  ]
+}
