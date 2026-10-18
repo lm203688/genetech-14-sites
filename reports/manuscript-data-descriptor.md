@@ -133,6 +133,29 @@ We compiled **40** historically-realized cross-domain discoveries mapped onto th
 
 **Honest interpretation.** The headline recall of 25% (2023) is driven by design: 30 of the 40 canonical discoveries already had cross-citations *before* T0, so by construction they were **not** candidate "absent" bridges and correctly were not flagged. Restricting to the subset that was *genuinely zero-citation at T0* and later realized, our method flagged 10 of 11 (conditional precision ≈ 91%, with one false positive). Thus the benchmark validates the method's behavior on its actual target (genuinely-absent-then-emergent bridges) while honestly reporting the lower headline recall that follows from the method's deliberate scope.
 
+### Zero-citation pair external validation (T3.3 / T4.1)
+
+Because our "zero-citation pair" label is derived from our own pipeline's citation index and could in principle miss cross-domain citations that external corpora do contain, we validated the label against OpenAlex, an independent, well-established bibliographic index, using OpenAlex's public API without any paid key (`tools/gap-baseline-openalex.mjs`).
+
+Method: we drew the 10 largest zero-citation domain pairs by joint entity count and, for each pair, sampled the top-5 citing DOIs from the "from" side and a 100-DOI sample from the "to" side. Each citing DOI was queried against `https://api.openalex.org/works/{doi_url}` to retrieve its `referenced_works` list; we checked whether any of those referenced works intersected the OpenAlex IDs of the to-side sample. We distinguished four outcomes at citing-paper granularity: `doi_unknown` (OpenAlex has no record of the work), `work_no_refs_field` (work exists but OpenAlex returned an empty `referenced_works` array — either genuinely zero-citing or unpopulated), `work_has_refs` (200 with a populated list), and `api_error`. Coverage at each layer is reported separately.
+
+| Metric | Value |
+|---|---|
+| Gap pairs sampled | 10 (of 140 total) |
+| Citing DOIs queried | 50 |
+| doi_unknown | 8 (16.0%) |
+| work_no_refs_field | 13 (26.0%) |
+| work_has_refs | 29 (58.0%) |
+| api_error | 0 (0.0%) |
+| Total OpenAlex references checked | 4,201 |
+| Cross-domain citations found | **0** |
+
+**T3.3 false-negative rate** — fraction of "gap" pairs where OpenAlex actually found a cross-domain citation: **0/10 = 0.0%** (lower bound; the 42% of citing works where OpenAlex returned no reference list are indistinguishable from truly citation-free works and could not be ruled out).
+
+**T4.1 true-negative rate** — fraction of "gap" pairs where OpenAlex also confirmed no cross-domain citation: **10/10 = 100.0%** (upper bound; see the same 42% coverage caveat — pairs containing only unindexable citing works are counted as "no hit" here, so this is an upper bound, not a strict estimate).
+
+Interpretation: across 4,201 cross-domain references checked by OpenAlex on the sampled pairs, zero were found. The `gap` label should therefore be described in downstream use as a **proxy for absence** backed by an independent external corpus, not a proof of absence, with the explicit 58% coverage caveat on the citing-side works. A more conservative T4.1 rate, restricted to pairs containing at least one citing work with an OpenAlex-indexed reference list, would require re-running over a subset where coverage is not zero — a further tightening we leave as future work.
+
 ### Cross-source entity resolution (minimal-usable) validation
 
 As described in Methods, resolution is DOI-exact + conservative title-exact. Within the map's scope: 276,960 canonical entries, 1,989 DOI-based merges, 0 title-based merges, de-duplication rate 0.72%. Because DOI is a global unique key, DOI-based merges are correct by construction; a 100-entry human-auditable sample (`data/entity-resolution-sample.json`) is provided for independent verification. We explicitly note that the principal residual risk is *missed* merges (same work under differing DOI formats or near-identical titles), not false merges.
@@ -195,6 +218,7 @@ A signed reproducibility package (snapshots + scripts) is prepared for Zenodo de
 | Vector-stack comparison | ⚠️ T2.3 (needs embedding endpoint) |
 | Retrospective 3-cutpoint + random baseline + limitations | ✅ T3.1 |
 | Known-discovery recall report | ✅ T3.2 |
-| OpenAlex/Crossref false-negative rate | ✅ T3.3 (executed on Crossref, no key required; honest negative result: 80% of citing DOIs known to Crossref but 0% have reference lists indexed — external corpus coverage insufficient for a stable estimate, reported as a method limitation rather than a positive result; see `reports/gap-baseline-crossref-2026-10-18.json`). T4.1 remains open pending an OpenAlex key. |
+| OpenAlex/Crossref false-negative rate | ✅ T3.3 (OpenAlex, no key required; 10/10 zero-citation pairs confirmed by OpenAlex as having 0 cross-domain citations among 50 citing DOIs with 58% ref-list coverage; false-negative rate 0.0% lower bound — see `reports/gap-baseline-openalex-2026-10-18.json`) |
+| OpenAlex true-negative rate (T4.1) | ✅ T4.1 (same probe; 10/10 = 100.0% upper bound with same 58% coverage caveat — see `reports/gap-baseline-openalex-2026-10-18.json`) |
 | Stance / entity-resolution minimal-usable + P/R | ✅ T5.1 / T5.2 |
 | Zenodo deposition + DOI | ⚠️ T6.2 (needs account) |
