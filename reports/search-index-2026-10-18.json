@@ -1,0 +1,12 @@
+{
+  "pipeline": "pipeline-search-index",
+  "timestamp": "2026-10-18T16:03:20.446Z",
+  "dryRun": false,
+  "entitiesRead": 294330,
+  "dedupDropped": 0,
+  "uniqueEntities": 294330,
+  "indexedEntities": 18000,
+  "coverage": 6.12,
+  "bytes": 12990206,
+  "plannedShards": 30
+}
