@@ -1,0 +1,735 @@
+{
+  "generatedAt": "2026-10-18T15:00:00Z",
+  "description": "T2.3 Vector retrieval comparison: BM25 vs TF-IDF cosine",
+  "methods": {
+    "bm25": "BM25 + field weighting + RRF fusion (eval/run-eval.mjs, mcp-server/src/search.mjs)",
+    "tfidf": "TF-IDF cosine similarity (sklearn TfidfVectorizer, sublinear_tf=True, max_features=50000)"
+  },
+  "k": 10,
+  "aggregate": {
+    "bm25": {
+      "queryCount": 300,
+      "avgRecall@10": 0.44418253968254,
+      "avgRecall@k": 0.44418253968254,
+      "avgMrr": 0.42452197767832434,
+      "avgNdcg@10": 0.3911518548949249,
+      "recall@10_p50": 0.2,
+      "recall@10_p25": 0,
+      "recall@10_p10": 0,
+      "missCount": 128,
+      "perfectCount": 119,
+      "latencyMs": {
+        "avg": 140.83666666666667,
+        "p50": 109,
+        "p95": 301,
+        "p99": 350,
+        "max": 405,
+        "samples": 300
+      },
+      "byType": {
+        "abstract-mid": {
+          "queries": 116,
+          "avgRecall@10": 0.9741379310344828,
+          "avgMrr": 0.7934358983927948,
+          "avgNdcg@10": 0.8359707514099173,
+          "missCount": 3
+        },
+        "tags-inverse": {
+          "queries": 115,
+          "avgRecall@10": 0.1267080745341614,
+          "avgMrr": 0.22750808280724819,
+          "avgNdcg@10": 0.13104614070785675,
+          "missCount": 73
+        },
+        "cross-entity": {
+          "queries": 39,
+          "avgRecall@10": 0.09230769230769231,
+          "avgMrr": 0.17924297924297924,
+          "avgNdcg@10": 0.09247957826752114,
+          "missCount": 28
+        },
+        "site-topic": {
+          "queries": 30,
+          "avgRecall@10": 0.06944444444444443,
+          "avgMrr": 0.07213744588744589,
+          "avgNdcg@10": 0.056531319036341336,
+          "missCount": 24
+        }
+      },
+      "perSite": {
+        "low-altitude": {
+          "queries": 10,
+          "avgRecall@10": 0.5277777777777777,
+          "avgMrr": 0.34611111111111115,
+          "avgNdcg@10": 0.3778115201836193
+        },
+        "biomed-ai": {
+          "queries": 10,
+          "avgRecall@10": 0.13111111111111112,
+          "avgMrr": 0.11666666666666667,
+          "avgNdcg@10": 0.09286409323051785
+        },
+        "embodied-ai": {
+          "queries": 10,
+          "avgRecall@10": 0.6,
+          "avgMrr": 0.3767857142857143,
+          "avgNdcg@10": 0.4199448752838707
+        },
+        "edge-ai": {
+          "queries": 10,
+          "avgRecall@10": 0.05555555555555556,
+          "avgMrr": 0.08249999999999999,
+          "avgNdcg@10": 0.044708991530644615
+        },
+        "robot-parts": {
+          "queries": 10,
+          "avgRecall@10": 0.4333333333333334,
+          "avgMrr": 0.3816468253968254,
+          "avgNdcg@10": 0.3362876589828662
+        },
+        "ai-safety": {
+          "queries": 10,
+          "avgRecall@10": 0.6044444444444445,
+          "avgMrr": 0.509090909090909,
+          "avgNdcg@10": 0.5030559300212435
+        },
+        "spatial-computing": {
+          "queries": 10,
+          "avgRecall@10": 0.72,
+          "avgMrr": 0.6709523809523809,
+          "avgNdcg@10": 0.674398315532933
+        },
+        "tcm-tools": {
+          "queries": 10,
+          "avgRecall@10": 0.5111111111111111,
+          "avgMrr": 0.4111111111111111,
+          "avgNdcg@10": 0.43326152678639956
+        },
+        "biocomputing": {
+          "queries": 10,
+          "avgRecall@10": 0.36,
+          "avgMrr": 0.44102564102564107,
+          "avgNdcg@10": 0.36108377030333355
+        },
+        "alien-minerals": {
+          "queries": 10,
+          "avgRecall@10": 0.26222222222222225,
+          "avgMrr": 0.35547619047619045,
+          "avgNdcg@10": 0.21907046218835996
+        },
+        "brain-science": {
+          "queries": 10,
+          "avgRecall@10": 0.32,
+          "avgMrr": 0.33921568627450976,
+          "avgNdcg@10": 0.3169580102636808
+        },
+        "digital-twin": {
+          "queries": 10,
+          "avgRecall@10": 0.4033333333333333,
+          "avgMrr": 0.641025641025641,
+          "avgNdcg@10": 0.43437464248502167
+        },
+        "ai4science": {
+          "queries": 10,
+          "avgRecall@10": 0.36,
+          "avgMrr": 0.40555555555555556,
+          "avgNdcg@10": 0.3673957772707638
+        },
+        "carbon-neutral": {
+          "queries": 10,
+          "avgRecall@10": 0.72,
+          "avgMrr": 0.8333333333333333,
+          "avgNdcg@10": 0.7254805952309876
+        },
+        "agent-ecosystem": {
+          "queries": 10,
+          "avgRecall@10": 0.4222222222222222,
+          "avgMrr": 0.39,
+          "avgNdcg@10": 0.3832177442277894
+        },
+        "neuromorphic": {
+          "queries": 10,
+          "avgRecall@10": 0.5111111111111111,
+          "avgMrr": 0.43575757575757573,
+          "avgNdcg@10": 0.4372789740317081
+        },
+        "genetech-tools": {
+          "queries": 10,
+          "avgRecall@10": 0.3166666666666667,
+          "avgMrr": 0.3166666666666667,
+          "avgNdcg@10": 0.23055213228724858
+        },
+        "exo-science": {
+          "queries": 10,
+          "avgRecall@10": 0.3888888888888889,
+          "avgMrr": 0.34805555555555556,
+          "avgNdcg@10": 0.319762593865344
+        },
+        "quantum-computing": {
+          "queries": 10,
+          "avgRecall@10": 0.5111111111111111,
+          "avgMrr": 0.4642857142857143,
+          "avgNdcg@10": 0.47092782700429525
+        },
+        "synbio-manufacturing": {
+          "queries": 10,
+          "avgRecall@10": 0.7,
+          "avgMrr": 0.6,
+          "avgNdcg@10": 0.6261859507142915
+        },
+        "deep-sea-tech": {
+          "queries": 10,
+          "avgRecall@10": 0.7222222222222222,
+          "avgMrr": 0.6166666666666666,
+          "avgNdcg@10": 0.5904199047196192
+        },
+        "life-science": {
+          "queries": 10,
+          "avgRecall@10": 0.7571428571428571,
+          "avgMrr": 0.6666666666666666,
+          "avgNdcg@10": 0.664135449942688
+        },
+        "quantum-materials": {
+          "queries": 10,
+          "avgRecall@10": 0.6066666666666667,
+          "avgMrr": 0.6219780219780219,
+          "avgNdcg@10": 0.5917749289118058
+        },
+        "semiconductor": {
+          "queries": 10,
+          "avgRecall@10": 0.27222222222222225,
+          "avgMrr": 0.24067982456140352,
+          "avgNdcg@10": 0.1984915717502856
+        },
+        "new-energy": {
+          "queries": 10,
+          "avgRecall@10": 0.32222222222222224,
+          "avgMrr": 0.35909090909090907,
+          "avgNdcg@10": 0.29339187039042336
+        },
+        "privacy-computing": {
+          "queries": 10,
+          "avgRecall@10": 0.3888888888888889,
+          "avgMrr": 0.4033333333333333,
+          "avgNdcg@10": 0.3536602653607256
+        },
+        "sat-6g": {
+          "queries": 10,
+          "avgRecall@10": 0.41666666666666663,
+          "avgMrr": 0.3142857142857143,
+          "avgNdcg@10": 0.3362726978309186
+        },
+        "agritech": {
+          "queries": 10,
+          "avgRecall@10": 0.2111111111111111,
+          "avgMrr": 0.21805555555555553,
+          "avgNdcg@10": 0.20741486152850747
+        },
+        "nuclear-energy": {
+          "queries": 10,
+          "avgRecall@10": 0.4111111111111111,
+          "avgMrr": 0.43106893106893107,
+          "avgNdcg@10": 0.4078348516471495
+        },
+        "bionic-ai": {
+          "queries": 10,
+          "avgRecall@10": 0.35833333333333334,
+          "avgMrr": 0.3985714285714285,
+          "avgNdcg@10": 0.3165378533407118
+        }
+      }
+    },
+    "tfidf": {
+      "queryCount": 300,
+      "avgRecall@10": 0.4545,
+      "avgMrr": 0.4657,
+      "avgNdcg@10": 0.433,
+      "perSite": [
+        {
+          "site": "agent-ecosystem",
+          "queries": 10,
+          "avgRecall@10": 0.4533,
+          "avgMrr": 0.5333,
+          "avgNdcg@10": 0.4579
+        },
+        {
+          "site": "agritech",
+          "queries": 10,
+          "avgRecall@10": 0.2222,
+          "avgMrr": 0.225,
+          "avgNdcg@10": 0.2185
+        },
+        {
+          "site": "ai-safety",
+          "queries": 10,
+          "avgRecall@10": 0.56,
+          "avgMrr": 0.6,
+          "avgNdcg@10": 0.5592
+        },
+        {
+          "site": "ai4science",
+          "queries": 10,
+          "avgRecall@10": 0.38,
+          "avgMrr": 0.42,
+          "avgNdcg@10": 0.3854
+        },
+        {
+          "site": "alien-minerals",
+          "queries": 10,
+          "avgRecall@10": 0.3533,
+          "avgMrr": 0.4476,
+          "avgNdcg@10": 0.343
+        },
+        {
+          "site": "biocomputing",
+          "queries": 10,
+          "avgRecall@10": 0.3622,
+          "avgMrr": 0.3754,
+          "avgNdcg@10": 0.3221
+        },
+        {
+          "site": "biomed-ai",
+          "queries": 10,
+          "avgRecall@10": 0.1311,
+          "avgMrr": 0.2111,
+          "avgNdcg@10": 0.141
+        },
+        {
+          "site": "bionic-ai",
+          "queries": 10,
+          "avgRecall@10": 0.3444,
+          "avgMrr": 0.3633,
+          "avgNdcg@10": 0.3355
+        },
+        {
+          "site": "brain-science",
+          "queries": 10,
+          "avgRecall@10": 0.32,
+          "avgMrr": 0.325,
+          "avgNdcg@10": 0.3146
+        },
+        {
+          "site": "carbon-neutral",
+          "queries": 10,
+          "avgRecall@10": 0.7311,
+          "avgMrr": 0.8143,
+          "avgNdcg@10": 0.7418
+        },
+        {
+          "site": "deep-sea-tech",
+          "queries": 10,
+          "avgRecall@10": 0.7444,
+          "avgMrr": 0.6476,
+          "avgNdcg@10": 0.6418
+        },
+        {
+          "site": "digital-twin",
+          "queries": 10,
+          "avgRecall@10": 0.4867,
+          "avgMrr": 0.5833,
+          "avgNdcg@10": 0.4738
+        },
+        {
+          "site": "edge-ai",
+          "queries": 10,
+          "avgRecall@10": 0.0444,
+          "avgMrr": 0.045,
+          "avgNdcg@10": 0.0319
+        },
+        {
+          "site": "embodied-ai",
+          "queries": 10,
+          "avgRecall@10": 0.52,
+          "avgMrr": 0.5143,
+          "avgNdcg@10": 0.5113
+        },
+        {
+          "site": "exo-science",
+          "queries": 10,
+          "avgRecall@10": 0.4111,
+          "avgMrr": 0.4167,
+          "avgNdcg@10": 0.4081
+        },
+        {
+          "site": "genetech-tools",
+          "queries": 10,
+          "avgRecall@10": 0.3611,
+          "avgMrr": 0.5,
+          "avgNdcg@10": 0.3539
+        },
+        {
+          "site": "life-science",
+          "queries": 10,
+          "avgRecall@10": 0.7714,
+          "avgMrr": 0.75,
+          "avgNdcg@10": 0.7402
+        },
+        {
+          "site": "low-altitude",
+          "queries": 10,
+          "avgRecall@10": 0.5,
+          "avgMrr": 0.5,
+          "avgNdcg@10": 0.5
+        },
+        {
+          "site": "neuromorphic",
+          "queries": 10,
+          "avgRecall@10": 0.6,
+          "avgMrr": 0.6,
+          "avgNdcg@10": 0.6
+        },
+        {
+          "site": "new-energy",
+          "queries": 10,
+          "avgRecall@10": 0.4422,
+          "avgMrr": 0.3167,
+          "avgNdcg@10": 0.3218
+        },
+        {
+          "site": "nuclear-energy",
+          "queries": 10,
+          "avgRecall@10": 0.4,
+          "avgMrr": 0.4,
+          "avgNdcg@10": 0.4
+        },
+        {
+          "site": "privacy-computing",
+          "queries": 10,
+          "avgRecall@10": 0.3778,
+          "avgMrr": 0.3867,
+          "avgNdcg@10": 0.3647
+        },
+        {
+          "site": "quantum-computing",
+          "queries": 10,
+          "avgRecall@10": 0.5,
+          "avgMrr": 0.45,
+          "avgNdcg@10": 0.4631
+        },
+        {
+          "site": "quantum-materials",
+          "queries": 10,
+          "avgRecall@10": 0.5533,
+          "avgMrr": 0.625,
+          "avgNdcg@10": 0.5553
+        },
+        {
+          "site": "robot-parts",
+          "queries": 10,
+          "avgRecall@10": 0.4556,
+          "avgMrr": 0.51,
+          "avgNdcg@10": 0.427
+        },
+        {
+          "site": "sat-6g",
+          "queries": 10,
+          "avgRecall@10": 0.4311,
+          "avgMrr": 0.45,
+          "avgNdcg@10": 0.3749
+        },
+        {
+          "site": "semiconductor",
+          "queries": 10,
+          "avgRecall@10": 0.2444,
+          "avgMrr": 0.2536,
+          "avgNdcg@10": 0.2329
+        },
+        {
+          "site": "spatial-computing",
+          "queries": 10,
+          "avgRecall@10": 0.7,
+          "avgMrr": 0.7,
+          "avgNdcg@10": 0.7
+        },
+        {
+          "site": "synbio-manufacturing",
+          "queries": 10,
+          "avgRecall@10": 0.7,
+          "avgMrr": 0.575,
+          "avgNdcg@10": 0.6132
+        },
+        {
+          "site": "tcm-tools",
+          "queries": 10,
+          "avgRecall@10": 0.5333,
+          "avgMrr": 0.4333,
+          "avgNdcg@10": 0.4564
+        }
+      ]
+    }
+  },
+  "byType": {
+    "bm25": {
+      "abstract-mid": {
+        "queries": 116,
+        "avgRecall@10": 0.9741379310344828,
+        "avgMrr": 0.7934358983927948,
+        "avgNdcg@10": 0.8359707514099173,
+        "missCount": 3
+      },
+      "tags-inverse": {
+        "queries": 115,
+        "avgRecall@10": 0.1267080745341614,
+        "avgMrr": 0.22750808280724819,
+        "avgNdcg@10": 0.13104614070785675,
+        "missCount": 73
+      },
+      "cross-entity": {
+        "queries": 39,
+        "avgRecall@10": 0.09230769230769231,
+        "avgMrr": 0.17924297924297924,
+        "avgNdcg@10": 0.09247957826752114,
+        "missCount": 28
+      },
+      "site-topic": {
+        "queries": 30,
+        "avgRecall@10": 0.06944444444444443,
+        "avgMrr": 0.07213744588744589,
+        "avgNdcg@10": 0.056531319036341336,
+        "missCount": 24
+      }
+    },
+    "tfidf": {
+      "abstract-mid": {
+        "queries": 116,
+        "avgRecall@10": 1.0,
+        "avgMrr": 0.9351,
+        "avgNdcg@10": 0.9518
+      },
+      "tags-inverse": {
+        "queries": 115,
+        "avgRecall@10": 0.1236,
+        "avgMrr": 0.1812,
+        "avgNdcg@10": 0.12
+      },
+      "cross-entity": {
+        "queries": 39,
+        "avgRecall@10": 0.1231,
+        "avgMrr": 0.2552,
+        "avgNdcg@10": 0.1276
+      },
+      "site-topic": {
+        "queries": 30,
+        "avgRecall@10": 0.0444,
+        "avgMrr": 0.015,
+        "avgNdcg@10": 0.024
+      }
+    }
+  },
+  "perSite": {
+    "bm25": null,
+    "tfidf": [
+      {
+        "site": "agent-ecosystem",
+        "queries": 10,
+        "avgRecall@10": 0.4533,
+        "avgMrr": 0.5333,
+        "avgNdcg@10": 0.4579
+      },
+      {
+        "site": "agritech",
+        "queries": 10,
+        "avgRecall@10": 0.2222,
+        "avgMrr": 0.225,
+        "avgNdcg@10": 0.2185
+      },
+      {
+        "site": "ai-safety",
+        "queries": 10,
+        "avgRecall@10": 0.56,
+        "avgMrr": 0.6,
+        "avgNdcg@10": 0.5592
+      },
+      {
+        "site": "ai4science",
+        "queries": 10,
+        "avgRecall@10": 0.38,
+        "avgMrr": 0.42,
+        "avgNdcg@10": 0.3854
+      },
+      {
+        "site": "alien-minerals",
+        "queries": 10,
+        "avgRecall@10": 0.3533,
+        "avgMrr": 0.4476,
+        "avgNdcg@10": 0.343
+      },
+      {
+        "site": "biocomputing",
+        "queries": 10,
+        "avgRecall@10": 0.3622,
+        "avgMrr": 0.3754,
+        "avgNdcg@10": 0.3221
+      },
+      {
+        "site": "biomed-ai",
+        "queries": 10,
+        "avgRecall@10": 0.1311,
+        "avgMrr": 0.2111,
+        "avgNdcg@10": 0.141
+      },
+      {
+        "site": "bionic-ai",
+        "queries": 10,
+        "avgRecall@10": 0.3444,
+        "avgMrr": 0.3633,
+        "avgNdcg@10": 0.3355
+      },
+      {
+        "site": "brain-science",
+        "queries": 10,
+        "avgRecall@10": 0.32,
+        "avgMrr": 0.325,
+        "avgNdcg@10": 0.3146
+      },
+      {
+        "site": "carbon-neutral",
+        "queries": 10,
+        "avgRecall@10": 0.7311,
+        "avgMrr": 0.8143,
+        "avgNdcg@10": 0.7418
+      },
+      {
+        "site": "deep-sea-tech",
+        "queries": 10,
+        "avgRecall@10": 0.7444,
+        "avgMrr": 0.6476,
+        "avgNdcg@10": 0.6418
+      },
+      {
+        "site": "digital-twin",
+        "queries": 10,
+        "avgRecall@10": 0.4867,
+        "avgMrr": 0.5833,
+        "avgNdcg@10": 0.4738
+      },
+      {
+        "site": "edge-ai",
+        "queries": 10,
+        "avgRecall@10": 0.0444,
+        "avgMrr": 0.045,
+        "avgNdcg@10": 0.0319
+      },
+      {
+        "site": "embodied-ai",
+        "queries": 10,
+        "avgRecall@10": 0.52,
+        "avgMrr": 0.5143,
+        "avgNdcg@10": 0.5113
+      },
+      {
+        "site": "exo-science",
+        "queries": 10,
+        "avgRecall@10": 0.4111,
+        "avgMrr": 0.4167,
+        "avgNdcg@10": 0.4081
+      },
+      {
+        "site": "genetech-tools",
+        "queries": 10,
+        "avgRecall@10": 0.3611,
+        "avgMrr": 0.5,
+        "avgNdcg@10": 0.3539
+      },
+      {
+        "site": "life-science",
+        "queries": 10,
+        "avgRecall@10": 0.7714,
+        "avgMrr": 0.75,
+        "avgNdcg@10": 0.7402
+      },
+      {
+        "site": "low-altitude",
+        "queries": 10,
+        "avgRecall@10": 0.5,
+        "avgMrr": 0.5,
+        "avgNdcg@10": 0.5
+      },
+      {
+        "site": "neuromorphic",
+        "queries": 10,
+        "avgRecall@10": 0.6,
+        "avgMrr": 0.6,
+        "avgNdcg@10": 0.6
+      },
+      {
+        "site": "new-energy",
+        "queries": 10,
+        "avgRecall@10": 0.4422,
+        "avgMrr": 0.3167,
+        "avgNdcg@10": 0.3218
+      },
+      {
+        "site": "nuclear-energy",
+        "queries": 10,
+        "avgRecall@10": 0.4,
+        "avgMrr": 0.4,
+        "avgNdcg@10": 0.4
+      },
+      {
+        "site": "privacy-computing",
+        "queries": 10,
+        "avgRecall@10": 0.3778,
+        "avgMrr": 0.3867,
+        "avgNdcg@10": 0.3647
+      },
+      {
+        "site": "quantum-computing",
+        "queries": 10,
+        "avgRecall@10": 0.5,
+        "avgMrr": 0.45,
+        "avgNdcg@10": 0.4631
+      },
+      {
+        "site": "quantum-materials",
+        "queries": 10,
+        "avgRecall@10": 0.5533,
+        "avgMrr": 0.625,
+        "avgNdcg@10": 0.5553
+      },
+      {
+        "site": "robot-parts",
+        "queries": 10,
+        "avgRecall@10": 0.4556,
+        "avgMrr": 0.51,
+        "avgNdcg@10": 0.427
+      },
+      {
+        "site": "sat-6g",
+        "queries": 10,
+        "avgRecall@10": 0.4311,
+        "avgMrr": 0.45,
+        "avgNdcg@10": 0.3749
+      },
+      {
+        "site": "semiconductor",
+        "queries": 10,
+        "avgRecall@10": 0.2444,
+        "avgMrr": 0.2536,
+        "avgNdcg@10": 0.2329
+      },
+      {
+        "site": "spatial-computing",
+        "queries": 10,
+        "avgRecall@10": 0.7,
+        "avgMrr": 0.7,
+        "avgNdcg@10": 0.7
+      },
+      {
+        "site": "synbio-manufacturing",
+        "queries": 10,
+        "avgRecall@10": 0.7,
+        "avgMrr": 0.575,
+        "avgNdcg@10": 0.6132
+      },
+      {
+        "site": "tcm-tools",
+        "queries": 10,
+        "avgRecall@10": 0.5333,
+        "avgMrr": 0.4333,
+        "avgNdcg@10": 0.4564
+      }
+    ]
+  },
+  "interpretation": "TF-IDF cosine is a lexical vector method (bag-of-words + cosine), not a neural dense embedding. It provides a baseline vector comparison. When a neural embedding endpoint becomes available (env GENETECH_EMBED_URL), the same harness can be extended to compare against dense neural embeddings for a fuller semantic retrieval comparison."
+}

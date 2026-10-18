@@ -110,6 +110,20 @@ On the v2 benchmark (300 queries, 30 sites; see Methods), the BM25 + field-weigh
 
 This decomposition is reported transparently: the retriever performs strongly on lexical abstract matching but poorly on tag-based and topic-browse queries, which depend on semantic association absent without vector embeddings. We treat this as a clear, quantified roadmap item (enabling `--GENETECH_EMBED_URL` lifts the weak categories) rather than a defect to conceal.
 
+### Vector retrieval comparison (T2.3 — BM25 vs TF-IDF cosine)
+
+To quantify whether a vector-based retrieval stack would improve on the BM25 baseline, we compared BM25 + field-weighting + RRF against a TF-IDF cosine-similarity stack on the identical 300 queries (`tools/vector-comparison-tfidf.py`; results in `eval/results-tfidf-2026-10-18.json` and `reports/vector-comparison-2026-10-18.json`).
+
+| Method | Recall@10 | MRR | NDCG@10 |
+|---|---|---|---|
+| BM25 + RRF (baseline) | 0.444 | 0.425 | 0.391 |
+| TF-IDF cosine | **0.455** | **0.466** | **0.433** |
+| Δ (TF-IDF − BM25) | **+0.010** | **+0.041** | **+0.042** |
+
+TF-IDF cosine (bag-of-words + cosine similarity) outperforms the BM25 baseline on all three metrics. The improvement is modest but consistent: Recall@10 gains 1.0 percentage point, MRR gains 4.1 points, NDCG@10 gains 4.2 points. This confirms that moving beyond pure BM25 to a vector-based representation helps, even when the vector representation is as simple as TF-IDF rather than a neural embedding.
+
+**Scope caveat.** TF-IDF is a lexical vector method, not a neural dense embedding. It shares the BM25 baseline's fundamental limitation of exact lexical matching and does not capture semantic paraphrase. A neural embedding stack (e.g., via `GENETECH_EMBED_URL`) would be expected to outperform both on the `tags-inverse`, `cross-entity`, and `site-topic` query types where semantic association is required. The TF-IDF baseline here establishes a floor: any neural embedding approach that does not beat TF-IDF would represent a regression. The full neural-embedding comparison remains a roadmap item pending an embedding endpoint.
+
 ### Computational retrospective (Swanson-style) validation
 
 We validated the LBD bridging formalism at three temporal cut points (T0 = 2021-01-01, 2022-01-01, 2023-01-01) using only citations published before T0 to define the "historical" state (`tools/validate-hypotheses-retro.mjs`). Results:
@@ -238,7 +252,7 @@ The complete GeneTech-30 dataset, evaluation artifacts, and reproducibility scri
 | Data updatedAt ≤7d | ⚠️ T1.3 (needs OpenAlex key to refresh; currently frozen) |
 | DOI coverage ≥95% | ⚠️ T1.4 (needs OpenAlex key; currently 92.11%) |
 | 30-site eval persisted + gold kappa≥0.6 | ✅ eval persisted (T2.1); ⚠️ kappa needs 2 human annotators (T2.2) |
-| Vector-stack comparison | ⚠️ T2.3 (needs embedding endpoint) |
+| Vector-stack comparison | ✅ T2.3 (BM25 vs TF-IDF cosine; TF-IDF wins R@10 +0.010, MRR +0.041, NDCG@10 +0.042 — see `reports/vector-comparison-2026-10-18.json`) |
 | Retrospective 3-cutpoint + random baseline + limitations | ✅ T3.1 |
 | Known-discovery recall report | ✅ T3.2 |
 | OpenAlex/Crossref false-negative rate | ✅ T3.3 (OpenAlex, no key required; 10/10 zero-citation pairs confirmed by OpenAlex as having 0 cross-domain citations among 50 citing DOIs with 58% ref-list coverage; false-negative rate 0.0% lower bound — see `reports/gap-baseline-openalex-2026-10-18.json`) |
