@@ -1,14 +1,18 @@
 {
   "method": "retrospective-validation (Swanson-style)",
-  "generatedAt": "2026-10-18T01:11:26.370Z",
+  "generatedAt": "2026-10-18T01:46:37.780Z",
   "T0": "2021-01-01",
   "T0Y": 2021,
   "sites": 30,
   "candidateBridges": 668,
   "emergedBridges": 495,
   "emergenceRate": 0.7410179640718563,
+  "emergedTopicSpecific": 189,
+  "topicSpecificRate": 0.28293413173652693,
+  "nonObviousBridges": 0,
   "randomPairEmergenceRate": 0.7977011494252874,
   "lift": 0.9289418281592434,
+  "liftTopicSpecific": 0.3546868798426202,
   "edgesTotal": 25682,
   "edgesSkippedNoYear": 5758,
   "topExamples": [
@@ -21,7 +25,8 @@
         "cs.CE",
         "cond-mat.stat-mech"
       ],
-      "postCitations": 243
+      "postCitations": 243,
+      "topicSpecific": true
     },
     {
       "pair": "ai-safety→agent-ecosystem",
@@ -32,7 +37,8 @@
         "Psychology",
         "Population"
       ],
-      "postCitations": 160
+      "postCitations": 160,
+      "topicSpecific": true
     },
     {
       "pair": "ai-safety→embodied-ai",
@@ -43,7 +49,8 @@
         "Psychology",
         "Population"
       ],
-      "postCitations": 156
+      "postCitations": 156,
+      "topicSpecific": true
     },
     {
       "pair": "ai4science→digital-twin",
@@ -54,7 +61,8 @@
         "cs.CE",
         "cond-mat.stat-mech"
       ],
-      "postCitations": 147
+      "postCitations": 147,
+      "topicSpecific": false
     },
     {
       "pair": "ai4science→privacy-computing",
@@ -65,7 +73,8 @@
         "q-bio.bm",
         "biology"
       ],
-      "postCitations": 132
+      "postCitations": 132,
+      "topicSpecific": true
     },
     {
       "pair": "agritech→genetech-tools",
@@ -76,7 +85,8 @@
         "deep learning",
         "computer science"
       ],
-      "postCitations": 128
+      "postCitations": 128,
+      "topicSpecific": true
     },
     {
       "pair": "ai4science→deep-sea-tech",
@@ -87,7 +97,8 @@
         "cs.CE",
         "cond-mat.stat-mech"
       ],
-      "postCitations": 124
+      "postCitations": 124,
+      "topicSpecific": false
     },
     {
       "pair": "ai-safety→digital-twin",
@@ -98,7 +109,8 @@
         "Psychology",
         "Cross-sectional study"
       ],
-      "postCitations": 119
+      "postCitations": 119,
+      "topicSpecific": true
     },
     {
       "pair": "ai4science→synbio-manufacturing",
@@ -109,7 +121,8 @@
         "physics.bio-ph",
         "q-bio.QM"
       ],
-      "postCitations": 115
+      "postCitations": 115,
+      "topicSpecific": false
     },
     {
       "pair": "agritech→biomed-ai",
@@ -120,7 +133,8 @@
         "deep learning",
         "underwater"
       ],
-      "postCitations": 102
+      "postCitations": 102,
+      "topicSpecific": true
     },
     {
       "pair": "ai-safety→privacy-computing",
@@ -131,7 +145,8 @@
         "Psychology",
         "Business"
       ],
-      "postCitations": 101
+      "postCitations": 101,
+      "topicSpecific": true
     },
     {
       "pair": "ai4science→edge-ai",
@@ -142,7 +157,8 @@
         "q-bio.QM",
         "cs.CE"
       ],
-      "postCitations": 98
+      "postCitations": 98,
+      "topicSpecific": false
     },
     {
       "pair": "agritech→edge-ai",
@@ -153,7 +169,8 @@
         "deep learning",
         "underwater"
       ],
-      "postCitations": 96
+      "postCitations": 96,
+      "topicSpecific": true
     },
     {
       "pair": "ai4science→alien-minerals",
@@ -164,7 +181,8 @@
         "physics.bio-ph",
         "q-bio.QM"
       ],
-      "postCitations": 78
+      "postCitations": 78,
+      "topicSpecific": true
     },
     {
       "pair": "ai4science→carbon-neutral",
@@ -175,7 +193,8 @@
         "q-bio.QM",
         "cs.CE"
       ],
-      "postCitations": 78
+      "postCitations": 78,
+      "topicSpecific": false
     },
     {
       "pair": "ai-safety→edge-ai",
@@ -186,7 +205,8 @@
         "Psychology",
         "Population"
       ],
-      "postCitations": 62
+      "postCitations": 62,
+      "topicSpecific": true
     },
     {
       "pair": "agritech→low-altitude",
@@ -197,7 +217,8 @@
         "deep learning",
         "underwater"
       ],
-      "postCitations": 56
+      "postCitations": 56,
+      "topicSpecific": true
     },
     {
       "pair": "agritech→sat-6g",
@@ -208,7 +229,8 @@
         "deep learning",
         "underwater"
       ],
-      "postCitations": 56
+      "postCitations": 56,
+      "topicSpecific": true
     },
     {
       "pair": "privacy-computing→biomed-ai",
@@ -219,7 +241,8 @@
         "blockchain",
         "computer security"
       ],
-      "postCitations": 50
+      "postCitations": 50,
+      "topicSpecific": true
     },
     {
       "pair": "ai-safety→alien-minerals",
@@ -230,7 +253,8 @@
         "Psychology",
         "Population"
       ],
-      "postCitations": 45
+      "postCitations": 45,
+      "topicSpecific": true
     }
   ]
 }

@@ -1,14 +1,18 @@
 {
   "method": "retrospective-validation (Swanson-style)",
-  "generatedAt": "2026-10-18T01:11:21.504Z",
+  "generatedAt": "2026-10-18T01:46:46.114Z",
   "T0": "2023-01-01",
   "T0Y": 2023,
   "sites": 30,
   "candidateBridges": 592,
   "emergedBridges": 419,
   "emergenceRate": 0.7077702702702703,
+  "emergedTopicSpecific": 141,
+  "topicSpecificRate": 0.23817567567567569,
+  "nonObviousBridges": 0,
   "randomPairEmergenceRate": 0.7931034482758621,
   "lift": 0.8924059929494712,
+  "liftTopicSpecific": 0.3003084606345476,
   "edgesTotal": 25682,
   "edgesSkippedNoYear": 5758,
   "topExamples": [
@@ -21,7 +25,8 @@
         "Psychology",
         "Population"
       ],
-      "postCitations": 160
+      "postCitations": 160,
+      "topicSpecific": true
     },
     {
       "pair": "ai-safety→embodied-ai",
@@ -32,7 +37,8 @@
         "Psychology",
         "Population"
       ],
-      "postCitations": 156
+      "postCitations": 156,
+      "topicSpecific": true
     },
     {
       "pair": "ai4science→digital-twin",
@@ -43,7 +49,8 @@
         "cs.CE",
         "cond-mat.stat-mech"
       ],
-      "postCitations": 147
+      "postCitations": 147,
+      "topicSpecific": false
     },
     {
       "pair": "ai4science→privacy-computing",
@@ -54,7 +61,8 @@
         "q-bio.bm",
         "biology"
       ],
-      "postCitations": 132
+      "postCitations": 132,
+      "topicSpecific": true
     },
     {
       "pair": "agritech→genetech-tools",
@@ -65,7 +73,8 @@
         "deep learning",
         "computer science"
       ],
-      "postCitations": 128
+      "postCitations": 128,
+      "topicSpecific": true
     },
     {
       "pair": "ai-safety→digital-twin",
@@ -76,7 +85,8 @@
         "Psychology",
         "Cross-sectional study"
       ],
-      "postCitations": 119
+      "postCitations": 119,
+      "topicSpecific": true
     },
     {
       "pair": "ai-safety→privacy-computing",
@@ -87,7 +97,8 @@
         "Psychology",
         "Business"
       ],
-      "postCitations": 101
+      "postCitations": 101,
+      "topicSpecific": true
     },
     {
       "pair": "ai4science→edge-ai",
@@ -98,7 +109,8 @@
         "q-bio.QM",
         "cs.CE"
       ],
-      "postCitations": 98
+      "postCitations": 98,
+      "topicSpecific": false
     },
     {
       "pair": "ai4science→carbon-neutral",
@@ -109,7 +121,8 @@
         "q-bio.QM",
         "cs.CE"
       ],
-      "postCitations": 78
+      "postCitations": 78,
+      "topicSpecific": false
     },
     {
       "pair": "ai-safety→alien-minerals",
@@ -120,7 +133,8 @@
         "Psychology",
         "Population"
       ],
-      "postCitations": 45
+      "postCitations": 45,
+      "topicSpecific": true
     },
     {
       "pair": "ai-safety→carbon-neutral",
@@ -131,7 +145,8 @@
         "Psychology",
         "Cross-sectional study"
       ],
-      "postCitations": 43
+      "postCitations": 43,
+      "topicSpecific": true
     },
     {
       "pair": "ai4science→robot-parts",
@@ -142,7 +157,8 @@
         "physics.comp-ph",
         "physics.chem-ph"
       ],
-      "postCitations": 43
+      "postCitations": 43,
+      "topicSpecific": true
     },
     {
       "pair": "semiconductor→biocomputing",
@@ -153,7 +169,8 @@
         "Engineering",
         "Bandwidth (computing)"
       ],
-      "postCitations": 42
+      "postCitations": 42,
+      "topicSpecific": true
     },
     {
       "pair": "ai4science→neuromorphic",
@@ -164,7 +181,8 @@
         "physics.comp-ph",
         "physics.chem-ph"
       ],
-      "postCitations": 39
+      "postCitations": 39,
+      "topicSpecific": true
     },
     {
       "pair": "agent-ecosystem→ai-safety",
@@ -175,7 +193,8 @@
         "benchmark",
         "computer and information sciences"
       ],
-      "postCitations": 38
+      "postCitations": 38,
+      "topicSpecific": true
     },
     {
       "pair": "ai4science→sat-6g",
@@ -186,7 +205,8 @@
         "physics.comp-ph",
         "physics.chem-ph"
       ],
-      "postCitations": 38
+      "postCitations": 38,
+      "topicSpecific": false
     },
     {
       "pair": "ai-safety→genetech-tools",
@@ -197,7 +217,8 @@
         "Population",
         "Business"
       ],
-      "postCitations": 37
+      "postCitations": 37,
+      "topicSpecific": true
     },
     {
       "pair": "ai-safety→quantum-computing",
@@ -208,7 +229,8 @@
         "Psychology",
         "Population"
       ],
-      "postCitations": 35
+      "postCitations": 35,
+      "topicSpecific": true
     },
     {
       "pair": "biomed-ai→bionic-ai",
@@ -219,7 +241,8 @@
         "Engineering ethics",
         "Scope (computer science)"
       ],
-      "postCitations": 35
+      "postCitations": 35,
+      "topicSpecific": false
     },
     {
       "pair": "semiconductor→bionic-ai",
@@ -230,7 +253,8 @@
         "Engineering",
         "Bandwidth (computing)"
       ],
-      "postCitations": 35
+      "postCitations": 35,
+      "topicSpecific": true
     }
   ]
 }

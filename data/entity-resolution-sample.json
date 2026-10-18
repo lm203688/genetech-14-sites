@@ -1,0 +1,1452 @@
+{
+  "stats": {
+    "generatedAt": "2026-10-18T01:53:42.877Z",
+    "method": "DOI exact-match canonicalization + normalized-title blocking + exact-match dedup",
+    "totalCanonicalEntries": 276960,
+    "totalRawRecords_beforeDedup": 278963,
+    "duplicateRecords_merged": 2003,
+    "dedupRate": 0.0072,
+    "mergedEntries_withAliasesGt1": 1989,
+    "mergedEntriesShare": 0.0072,
+    "doiConfidentMerges": 1989,
+    "titleBasedMerges": 0,
+    "titleBasedMergeShare_ofMerged": 0,
+    "entriesWithoutDoi": 21568,
+    "entriesWithoutDoiShare": 0.0779,
+    "sampleFile": "data/entity-resolution-sample.json",
+    "note": "真实误合并率(false-merge rate)需人工抽查 sample 文件；本统计仅量化合并覆盖率与按依据置信分层。"
+  },
+  "sample": [
+    {
+      "canonical": "genetech:doi:10.1080/21505594.2026.2712031",
+      "doi": "10.1080/21505594.2026.2712031",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "tcm-tools"
+      ],
+      "aliases": [
+        "pmid:42548046",
+        "doi:10.1080/21505594.2026.2712031"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1002/adma.202405163",
+      "doi": "10.1002/adma.202405163",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "semiconductor"
+      ],
+      "aliases": [
+        "oa:W4399249866",
+        "doi:10.1002/adma.202405163"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1101/2024.11.11.623004",
+      "doi": "10.1101/2024.11.11.623004",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science"
+      ],
+      "aliases": [
+        "oa:W4404283941",
+        "doi:10.1101/2024.11.11.623004"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.20517/aiagent.2025.08",
+      "doi": "10.20517/aiagent.2025.08",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.20517/aiagent.2025.08",
+        "oa:W7118837590"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1038/s41746-026-02612-7",
+      "doi": "10.1038/s41746-026-02612-7",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "embodied-ai"
+      ],
+      "aliases": [
+        "doi:10.1038/s41746-026-02612-7",
+        "pmid:41951898"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1186/s40359-026-04994-5",
+      "doi": "10.1186/s40359-026-04994-5",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "spatial-computing"
+      ],
+      "aliases": [
+        "doi:10.1186/s40359-026-04994-5",
+        "pmid:42337767"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.64898/2026.01.16.696667",
+      "doi": "10.64898/2026.01.16.696667",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.64898/2026.01.16.696667",
+        "oa:W7125151103"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1101/2025.09.11.675660",
+      "doi": "10.1101/2025.09.11.675660",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "bionic-ai"
+      ],
+      "aliases": [
+        "doi:10.1101/2025.09.11.675660",
+        "oa:W4414276013"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/j.nepr.2026.104710",
+      "doi": "10.1016/j.nepr.2026.104710",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.1016/j.nepr.2026.104710",
+        "pmid:41520587"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1038/s41746-025-01647-6",
+      "doi": "10.1038/s41746-025-01647-6",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.1038/s41746-025-01647-6",
+        "oa:W4410050779"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/s0140-6736(05",
+      "doi": "10.1016/s0140-6736(05",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "tcm-tools"
+      ],
+      "aliases": [
+        "oa:W2120472250",
+        "oa:W2111260853"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1371/journal.pone.0353610",
+      "doi": "10.1371/journal.pone.0353610",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "digital-twin"
+      ],
+      "aliases": [
+        "doi:10.1371/journal.pone.0353610",
+        "oa:W7169556595"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/j.cmpb.2026.109539",
+      "doi": "10.1016/j.cmpb.2026.109539",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.1016/j.cmpb.2026.109539",
+        "pmid:42475855"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/fdgth.2026.1824480",
+      "doi": "10.3389/fdgth.2026.1824480",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "privacy-computing"
+      ],
+      "aliases": [
+        "doi:10.3389/fdgth.2026.1824480",
+        "pmid:42403432"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1038/s41746-025-02304-8",
+      "doi": "10.1038/s41746-025-02304-8",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.1038/s41746-025-02304-8",
+        "pmid:41501128"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.2196/92584",
+      "doi": "10.2196/92584",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.2196/92584",
+        "pmid:42478913"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1097/ebct.0000000000000054",
+      "doi": "10.1097/ebct.0000000000000054",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.1097/ebct.0000000000000054",
+        "pmid:42524120"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/s26061958",
+      "doi": "10.3390/s26061958",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "embodied-ai",
+        "robot-parts"
+      ],
+      "aliases": [
+        "doi:10.3390/s26061958",
+        "pmid:41902128"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/j.ajpath.2026.07.002",
+      "doi": "10.1016/j.ajpath.2026.07.002",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.1016/j.ajpath.2026.07.002",
+        "pmid:42508637"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/0921-8890(95",
+      "doi": "10.1016/0921-8890(95",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "embodied-ai"
+      ],
+      "aliases": [
+        "oa:W2064516966",
+        "oa:W1991564165"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1093/eurjcn/zvag029",
+      "doi": "10.1093/eurjcn/zvag029",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.1093/eurjcn/zvag029",
+        "pmid:41629753"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/bioengineering13060686",
+      "doi": "10.3390/bioengineering13060686",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "digital-twin"
+      ],
+      "aliases": [
+        "doi:10.3390/bioengineering13060686",
+        "oa:W7164886111"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.2196/87288",
+      "doi": "10.2196/87288",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.2196/87288",
+        "pmid:42520136"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/s26154992",
+      "doi": "10.3390/s26154992",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "digital-twin",
+        "spatial-computing"
+      ],
+      "aliases": [
+        "doi:10.3390/s26154992",
+        "pmid:42590770"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/s26165298",
+      "doi": "10.3390/s26165298",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science"
+      ],
+      "aliases": [
+        "doi:10.3390/s26165298",
+        "pmid:42655606"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.2196/96002",
+      "doi": "10.2196/96002",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science"
+      ],
+      "aliases": [
+        "doi:10.2196/96002",
+        "pmid:42647856"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/fmicb.2026.1899413",
+      "doi": "10.3389/fmicb.2026.1899413",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "genetech-tools",
+        "life-science",
+        "synbio-manufacturing"
+      ],
+      "aliases": [
+        "doi:10.3389/fmicb.2026.1899413",
+        "pmid:42666342"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1371/journal.pone.0342182",
+      "doi": "10.1371/journal.pone.0342182",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.1371/journal.pone.0342182",
+        "pmid:41666194"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1093/jamiaopen/ooag131",
+      "doi": "10.1093/jamiaopen/ooag131",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science"
+      ],
+      "aliases": [
+        "doi:10.1093/jamiaopen/ooag131",
+        "pmid:42428529"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/biomedicines14071552",
+      "doi": "10.3390/biomedicines14071552",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science",
+        "new-energy"
+      ],
+      "aliases": [
+        "doi:10.3390/biomedicines14071552",
+        "pmid:42512025"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.2196/88549",
+      "doi": "10.2196/88549",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science"
+      ],
+      "aliases": [
+        "doi:10.2196/88549",
+        "pmid:42536886"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1371/journal.pone.0340829",
+      "doi": "10.1371/journal.pone.0340829",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "embodied-ai"
+      ],
+      "aliases": [
+        "doi:10.1371/journal.pone.0340829",
+        "pmid:41926447"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1039/d5sc09229a",
+      "doi": "10.1039/d5sc09229a",
+      "aliasCount": 3,
+      "sites": [
+        "agent-ecosystem",
+        "digital-twin",
+        "embodied-ai",
+        "quantum-materials"
+      ],
+      "aliases": [
+        "doi:10.1039/d5sc09229a",
+        "oa:W7131071926",
+        "pmid:41783269"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1007/s10278-025-01839-2",
+      "doi": "10.1007/s10278-025-01839-2",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.1007/s10278-025-01839-2",
+        "pmid:41629669"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/healthcare14060783",
+      "doi": "10.3390/healthcare14060783",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai",
+        "embodied-ai"
+      ],
+      "aliases": [
+        "doi:10.3390/healthcare14060783",
+        "oa:W7138916174"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.20944/preprints202509.0042.v1",
+      "doi": "10.20944/preprints202509.0042.v1",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.20944/preprints202509.0042.v1",
+        "oa:W4413899309"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.20944/preprints202509.1268.v1",
+      "doi": "10.20944/preprints202509.1268.v1",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety",
+        "edge-ai",
+        "privacy-computing"
+      ],
+      "aliases": [
+        "doi:10.20944/preprints202509.1268.v1",
+        "oa:W4414192168"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1101/2025.07.05.663295",
+      "doi": "10.1101/2025.07.05.663295",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.1101/2025.07.05.663295",
+        "oa:W4412143524"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1609/aies.v7i1.31728",
+      "doi": "10.1609/aies.v7i1.31728",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.1609/aies.v7i1.31728",
+        "oa:W4404518491"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.21037/mhealth-23-55",
+      "doi": "10.21037/mhealth-23-55",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science"
+      ],
+      "aliases": [
+        "doi:10.21037/mhealth-23-55",
+        "oa:W4400566869"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1002/advs.75947",
+      "doi": "10.1002/advs.75947",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science",
+        "biocomputing",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.1002/advs.75947",
+        "pmid:42272450"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1128/mra.00244-26",
+      "doi": "10.1128/mra.00244-26",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science"
+      ],
+      "aliases": [
+        "doi:10.1128/mra.00244-26",
+        "pmid:42370854"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1002/cam4.71859",
+      "doi": "10.1002/cam4.71859",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biocomputing"
+      ],
+      "aliases": [
+        "doi:10.1002/cam4.71859",
+        "pmid:42333005"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/fimmu.2026.1777580",
+      "doi": "10.3389/fimmu.2026.1777580",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.3389/fimmu.2026.1777580",
+        "pmid:42292410"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/frobt.2026.1776097",
+      "doi": "10.3389/frobt.2026.1776097",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety",
+        "embodied-ai"
+      ],
+      "aliases": [
+        "doi:10.3389/frobt.2026.1776097",
+        "oa:W7130654451"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3340/jkns.2026.0030",
+      "doi": "10.3340/jkns.2026.0030",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biocomputing",
+        "bionic-ai",
+        "spatial-computing"
+      ],
+      "aliases": [
+        "doi:10.3340/jkns.2026.0030",
+        "pmid:42036142"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/fmicb.2026.1817535",
+      "doi": "10.3389/fmicb.2026.1817535",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.3389/fmicb.2026.1817535",
+        "oa:W7147694749"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/frobt.2026.1758391",
+      "doi": "10.3389/frobt.2026.1758391",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "embodied-ai"
+      ],
+      "aliases": [
+        "doi:10.3389/frobt.2026.1758391",
+        "pmid:41969732"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1002/hsr2.73042",
+      "doi": "10.1002/hsr2.73042",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "pmid:42597935",
+        "doi:10.1002/hsr2.73042"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/s26154969",
+      "doi": "10.3390/s26154969",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "edge-ai"
+      ],
+      "aliases": [
+        "pmid:42590744",
+        "doi:10.3390/s26154969"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/j.cptl.2026.102752",
+      "doi": "10.1016/j.cptl.2026.102752",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "pmid:42574942",
+        "doi:10.1016/j.cptl.2026.102752"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/j.micpath.2026.108757",
+      "doi": "10.1016/j.micpath.2026.108757",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "life-science"
+      ],
+      "aliases": [
+        "pmid:42570681",
+        "doi:10.1016/j.micpath.2026.108757"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/j.phymed.2026.158608",
+      "doi": "10.1016/j.phymed.2026.158608",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "tcm-tools"
+      ],
+      "aliases": [
+        "pmid:42551229",
+        "doi:10.1016/j.phymed.2026.158608"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1101/2025.09.30.25336749",
+      "doi": "10.1101/2025.09.30.25336749",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "pmid:41256168",
+        "doi:10.1101/2025.09.30.25336749"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/fpsyg.2025.1715306",
+      "doi": "10.3389/fpsyg.2025.1715306",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "pmid:41836276",
+        "doi:10.3389/fpsyg.2025.1715306"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/fcimb.2026.1754465",
+      "doi": "10.3389/fcimb.2026.1754465",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "nuclear-energy"
+      ],
+      "aliases": [
+        "pmid:41716461",
+        "doi:10.3389/fcimb.2026.1754465"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1007/s13347-025-00978-2",
+      "doi": "10.1007/s13347-025-00978-2",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "pmid:41640575",
+        "oa:W4415310904"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/fpls.2025.1706428",
+      "doi": "10.3389/fpls.2025.1706428",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "agritech",
+        "privacy-computing",
+        "sat-6g"
+      ],
+      "aliases": [
+        "pmid:41613404",
+        "doi:10.3389/fpls.2025.1706428"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/jimaging12080393",
+      "doi": "10.3390/jimaging12080393",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science"
+      ],
+      "aliases": [
+        "doi:10.3390/jimaging12080393",
+        "pmid:42645991"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/fbioe.2026.1898243",
+      "doi": "10.3389/fbioe.2026.1898243",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science",
+        "biocomputing",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.3389/fbioe.2026.1898243",
+        "pmid:42639022"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/j.modpat.2026.101049",
+      "doi": "10.1016/j.modpat.2026.101049",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.1016/j.modpat.2026.101049",
+        "pmid:42526601"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1007/s12560-026-09707-0",
+      "doi": "10.1007/s12560-026-09707-0",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "genetech-tools"
+      ],
+      "aliases": [
+        "doi:10.1007/s12560-026-09707-0",
+        "pmid:42667507"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1038/s44277-026-00064-1",
+      "doi": "10.1038/s44277-026-00064-1",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai",
+        "spatial-computing"
+      ],
+      "aliases": [
+        "doi:10.1038/s44277-026-00064-1",
+        "pmid:42270954"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1093/ntr/ntaf268",
+      "doi": "10.1093/ntr/ntaf268",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.1093/ntr/ntaf268",
+        "pmid:41543124"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1038/s44286-026-00392-1",
+      "doi": "10.1038/s44286-026-00392-1",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "digital-twin",
+        "nuclear-energy"
+      ],
+      "aliases": [
+        "doi:10.1038/s44286-026-00392-1",
+        "oa:W7161161234"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.55524/ijirem.2025.12.3.9",
+      "doi": "10.55524/ijirem.2025.12.3.9",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.55524/ijirem.2025.12.3.9",
+        "oa:W4412047812"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1371/journal.pone.0356505",
+      "doi": "10.1371/journal.pone.0356505",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biocomputing",
+        "robot-parts"
+      ],
+      "aliases": [
+        "doi:10.1371/journal.pone.0356505",
+        "pmid:42640926"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/j.virusres.2026.199782",
+      "doi": "10.1016/j.virusres.2026.199782",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "genetech-tools"
+      ],
+      "aliases": [
+        "pmid:42551559",
+        "doi:10.1016/j.virusres.2026.199782"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1126/science.ael0463",
+      "doi": "10.1126/science.ael0463",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science"
+      ],
+      "aliases": [
+        "pmid:42561069",
+        "doi:10.1126/science.ael0463"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1177/29941520261469342",
+      "doi": "10.1177/29941520261469342",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "embodied-ai"
+      ],
+      "aliases": [
+        "pmid:42558094",
+        "doi:10.1177/29941520261469342"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/j.compbiolchem.2026.109280",
+      "doi": "10.1016/j.compbiolchem.2026.109280",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "pmid:42556018",
+        "doi:10.1016/j.compbiolchem.2026.109280"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1017/dmp.2026.10420",
+      "doi": "10.1017/dmp.2026.10420",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "pmid:42553006",
+        "doi:10.1017/dmp.2026.10420"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1002/psc.70119",
+      "doi": "10.1002/psc.70119",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai4science"
+      ],
+      "aliases": [
+        "pmid:42552640",
+        "doi:10.1002/psc.70119"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.5281/zenodo.18764561",
+      "doi": "10.5281/zenodo.18764561",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.5281/zenodo.18764561",
+        "oa:W7131435730"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1038/s41598-025-17928-9",
+      "doi": "10.1038/s41598-025-17928-9",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "digital-twin"
+      ],
+      "aliases": [
+        "pmid:41044319",
+        "oa:W4414778735"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/s25185877",
+      "doi": "10.3390/s25185877",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "low-altitude"
+      ],
+      "aliases": [
+        "pmid:41013114",
+        "doi:10.3390/s25185877"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1007/s11081-024-09953-w",
+      "doi": "10.1007/s11081-024-09953-w",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "deep-sea-tech"
+      ],
+      "aliases": [
+        "pmid:40949162",
+        "doi:10.1007/s11081-024-09953-w"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/foods14173004",
+      "doi": "10.3390/foods14173004",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "pmid:40941120",
+        "oa:W4413795948"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1371/journal.pone.0331515",
+      "doi": "10.1371/journal.pone.0331515",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "digital-twin"
+      ],
+      "aliases": [
+        "pmid:40906683",
+        "doi:10.1371/journal.pone.0331515"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/frobt.2025.1605405",
+      "doi": "10.3389/frobt.2025.1605405",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "embodied-ai"
+      ],
+      "aliases": [
+        "pmid:40904652",
+        "doi:10.3389/frobt.2025.1605405"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/e27080803",
+      "doi": "10.3390/e27080803",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "low-altitude",
+        "sat-6g"
+      ],
+      "aliases": [
+        "pmid:40870275",
+        "doi:10.3390/e27080803"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/s25154878",
+      "doi": "10.3390/s25154878",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "sat-6g"
+      ],
+      "aliases": [
+        "pmid:40808042",
+        "doi:10.3390/s25154878"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/frobt.2025.1566623",
+      "doi": "10.3389/frobt.2025.1566623",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "nuclear-energy"
+      ],
+      "aliases": [
+        "pmid:40747444",
+        "doi:10.3389/frobt.2025.1566623"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1038/s41467-025-60779-1",
+      "doi": "10.1038/s41467-025-60779-1",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "robot-parts"
+      ],
+      "aliases": [
+        "pmid:40721607",
+        "doi:10.1038/s41467-025-60779-1"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1038/s41467-025-61985-7",
+      "doi": "10.1038/s41467-025-61985-7",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "deep-sea-tech"
+      ],
+      "aliases": [
+        "pmid:40670391",
+        "doi:10.1038/s41467-025-61985-7"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/s25134025",
+      "doi": "10.3390/s25134025",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "low-altitude"
+      ],
+      "aliases": [
+        "pmid:40648280",
+        "doi:10.3390/s25134025"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/s25133886",
+      "doi": "10.3390/s25133886",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "robot-parts"
+      ],
+      "aliases": [
+        "pmid:40648144",
+        "doi:10.3390/s25133886"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/j.neunet.2025.107725",
+      "doi": "10.1016/j.neunet.2025.107725",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "neuromorphic"
+      ],
+      "aliases": [
+        "pmid:40570797",
+        "doi:10.1016/j.neunet.2025.107725"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1016/j.neunet.2025.107691",
+      "doi": "10.1016/j.neunet.2025.107691",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "neuromorphic"
+      ],
+      "aliases": [
+        "pmid:40532522",
+        "doi:10.1016/j.neunet.2025.107691"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/fpubh.2025.1588270",
+      "doi": "10.3389/fpubh.2025.1588270",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "pmid:40443926",
+        "oa:W4410417117"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/frobt.2025.1568402",
+      "doi": "10.3389/frobt.2025.1568402",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "robot-parts"
+      ],
+      "aliases": [
+        "pmid:40395364",
+        "doi:10.3389/frobt.2025.1568402"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1038/s41598-025-00463-y",
+      "doi": "10.1038/s41598-025-00463-y",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "low-altitude"
+      ],
+      "aliases": [
+        "pmid:40346134",
+        "doi:10.1038/s41598-025-00463-y"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/fnbot.2025.1553623",
+      "doi": "10.3389/fnbot.2025.1553623",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "bionic-ai"
+      ],
+      "aliases": [
+        "pmid:40166732",
+        "doi:10.3389/fnbot.2025.1553623"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/s25051541",
+      "doi": "10.3390/s25051541",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "low-altitude",
+        "sat-6g"
+      ],
+      "aliases": [
+        "pmid:40096383",
+        "doi:10.3390/s25051541"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3390/s25051353",
+      "doi": "10.3390/s25051353",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "robot-parts"
+      ],
+      "aliases": [
+        "pmid:40096190",
+        "doi:10.3390/s25051353"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.20944/preprints202507.1784.v1",
+      "doi": "10.20944/preprints202507.1784.v1",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "digital-twin"
+      ],
+      "aliases": [
+        "doi:10.20944/preprints202507.1784.v1",
+        "oa:W4412649291"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.20944/preprints202507.0803.v1",
+      "doi": "10.20944/preprints202507.0803.v1",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "carbon-neutral",
+        "edge-ai"
+      ],
+      "aliases": [
+        "doi:10.20944/preprints202507.0803.v1",
+        "oa:W4412147700"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.3389/fonc.2025.1623394",
+      "doi": "10.3389/fonc.2025.1623394",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "biomed-ai"
+      ],
+      "aliases": [
+        "doi:10.3389/fonc.2025.1623394",
+        "pmid:41635408"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1002/trc2.70251",
+      "doi": "10.1002/trc2.70251",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "brain-science"
+      ],
+      "aliases": [
+        "doi:10.1002/trc2.70251",
+        "oa:W7160306843"
+      ],
+      "mergeBasis": "doi"
+    },
+    {
+      "canonical": "genetech:doi:10.1038/s41746-025-02005-2",
+      "doi": "10.1038/s41746-025-02005-2",
+      "aliasCount": 2,
+      "sites": [
+        "agent-ecosystem",
+        "ai-safety"
+      ],
+      "aliases": [
+        "doi:10.1038/s41746-025-02005-2",
+        "oa:W4415930269"
+      ],
+      "mergeBasis": "doi"
+    }
+  ]
+}

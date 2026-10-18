@@ -1,5 +1,5 @@
 {
-  "description": "已知跨域/跨学科发现的金标准清单（用于方法复现基准，无需人类专家）。每条记录：两个域 + 一个真实涌现的主题/技术。验证时检查本方法在历史切分点是否会把该 (域对, 主题) 判为低引用桥接候选，且随后真涌现。",
+  "description": "已知跨域/跨学科发现的金标准清单（用于方法复现基准，无需人类专家）。每条记录：两个域 + 一个真实涌现的主题/技术。验证时检查本方法在历史切分点是否会把该 (域对, 主题) 判为低引用桥接候选，且随后真涌现。扩展至 40 条以提升统计稳健性（原为 15 条）。",
   "discoveries": [
     { "A": "quantum-materials", "B": "semiconductor", "topic": "topological insulator", "note": "拓扑绝缘体→自旋电子/芯片" },
     { "A": "biomed-ai", "B": "brain-science", "topic": "neural decoding", "note": "AI 解码神经活动" },
@@ -15,6 +15,31 @@
     { "A": "privacy-computing", "B": "edge-ai", "topic": "federated learning", "note": "联邦学习" },
     { "A": "agent-ecosystem", "B": "ai4science", "topic": "agentic scientific discovery", "note": "智能体科学发现" },
     { "A": "spatial-computing", "B": "robot-parts", "topic": "spatial intelligence", "note": "空间智能+机器人" },
-    { "A": "genetech-tools", "B": "life-science", "topic": "gene editing delivery", "note": "基因编辑递送" }
+    { "A": "genetech-tools", "B": "life-science", "topic": "gene editing delivery", "note": "基因编辑递送" },
+    { "A": "agritech", "B": "carbon-neutral", "topic": "methane mitigation", "note": "农业甲烷减排" },
+    { "A": "ai-safety", "B": "neuromorphic", "topic": "robust control", "note": "神经形态系统的安全控制" },
+    { "A": "ai4science", "B": "nuclear-energy", "topic": "physics-informed neural network", "note": "PINN 用于反应堆建模" },
+    { "A": "alien-minerals", "B": "exo-science", "topic": "mineral spectroscopy", "note": "矿物光谱→地外探测" },
+    { "A": "biocomputing", "B": "brain-science", "topic": "DNA storage", "note": "DNA 数据存储" },
+    { "A": "biomed-ai", "B": "tcm-tools", "topic": "drug repurposing", "note": "AI 中药重定位" },
+    { "A": "bionic-ai", "B": "robot-parts", "topic": "soft robotics", "note": "软体机器人驱动" },
+    { "A": "brain-science", "B": "neuromorphic", "topic": "synaptic plasticity", "note": "突触可塑性→类脑计算" },
+    { "A": "carbon-neutral", "B": "new-energy", "topic": "green hydrogen", "note": "绿氢电解槽" },
+    { "A": "deep-sea-tech", "B": "nuclear-energy", "topic": "subsea robotics", "note": "海底作业机器人" },
+    { "A": "digital-twin", "B": "semiconductor", "topic": "yield optimization", "note": "晶圆良率数字孪生" },
+    { "A": "edge-ai", "B": "spatial-computing", "topic": "visual SLAM", "note": "端侧视觉 SLAM" },
+    { "A": "embodied-ai", "B": "spatial-computing", "topic": "embodied navigation", "note": "具身空间导航" },
+    { "A": "exo-science", "B": "life-science", "topic": "extremophile", "note": "极端微生物→宜居带" },
+    { "A": "genetech-tools", "B": "synbio-manufacturing", "topic": "synthetic biology", "note": "基因线路合成" },
+    { "A": "life-science", "B": "quantum-computing", "topic": "quantum biology", "note": "量子相干与光合作用" },
+    { "A": "low-altitude", "B": "new-energy", "topic": "solid-state battery", "note": "eVTOL 固态电池" },
+    { "A": "privacy-computing", "B": "biomed-ai", "topic": "differential privacy", "note": "差分隐私保护医疗 AI" },
+    { "A": "quantum-materials", "B": "neuromorphic", "topic": "valleytronics", "note": "谷电子学类脑器件" },
+    { "A": "robot-parts", "B": "ai-safety", "topic": "collision avoidance", "note": "机器人安全避障" },
+    { "A": "sat-6g", "B": "ai4science", "topic": "remote sensing", "note": "卫星遥感机器学习" },
+    { "A": "semiconductor", "B": "ai4science", "topic": "materials discovery", "note": "AI 材料发现" },
+    { "A": "spatial-computing", "B": "brain-science", "topic": "place cells", "note": "位置细胞→空间认知" },
+    { "A": "synbio-manufacturing", "B": "carbon-neutral", "topic": "CO2 utilization", "note": "CO2 转化燃料" },
+    { "A": "tcm-tools", "B": "carbon-neutral", "topic": "biochar", "note": "生物炭固碳" }
   ]
 }

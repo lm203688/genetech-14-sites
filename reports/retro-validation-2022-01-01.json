@@ -1,0 +1,260 @@
+{
+  "method": "retrospective-validation (Swanson-style)",
+  "generatedAt": "2026-10-18T01:46:41.847Z",
+  "T0": "2022-01-01",
+  "T0Y": 2022,
+  "sites": 30,
+  "candidateBridges": 633,
+  "emergedBridges": 460,
+  "emergenceRate": 0.7266982622432859,
+  "emergedTopicSpecific": 167,
+  "topicSpecificRate": 0.2638230647709321,
+  "nonObviousBridges": 0,
+  "randomPairEmergenceRate": 0.7942528735632184,
+  "lift": 0.9149457136782326,
+  "liftTopicSpecific": 0.3321650743136193,
+  "edgesTotal": 25682,
+  "edgesSkippedNoYear": 5758,
+  "topExamples": [
+    {
+      "pair": "ai4science→agent-ecosystem",
+      "sharedTags": [
+        "cs.LG",
+        "physics.bio-ph",
+        "q-bio.QM",
+        "cs.CE",
+        "cond-mat.stat-mech"
+      ],
+      "postCitations": 243,
+      "topicSpecific": true
+    },
+    {
+      "pair": "ai-safety→agent-ecosystem",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 160,
+      "topicSpecific": true
+    },
+    {
+      "pair": "ai-safety→embodied-ai",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 156,
+      "topicSpecific": true
+    },
+    {
+      "pair": "ai4science→digital-twin",
+      "sharedTags": [
+        "cs.LG",
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "cs.CE",
+        "cond-mat.stat-mech"
+      ],
+      "postCitations": 147,
+      "topicSpecific": false
+    },
+    {
+      "pair": "ai4science→privacy-computing",
+      "sharedTags": [
+        "cond-mat.stat-mech",
+        "quant-ph",
+        "hep-th",
+        "q-bio.bm",
+        "biology"
+      ],
+      "postCitations": 132,
+      "topicSpecific": true
+    },
+    {
+      "pair": "agritech→genetech-tools",
+      "sharedTags": [
+        "remote sensing",
+        "ecology",
+        "biological sciences not elsewhere classified",
+        "deep learning",
+        "computer science"
+      ],
+      "postCitations": 128,
+      "topicSpecific": true
+    },
+    {
+      "pair": "ai4science→deep-sea-tech",
+      "sharedTags": [
+        "cs.LG",
+        "physics.bio-ph",
+        "q-bio.QM",
+        "cs.CE",
+        "cond-mat.stat-mech"
+      ],
+      "postCitations": 124,
+      "topicSpecific": false
+    },
+    {
+      "pair": "ai-safety→digital-twin",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Cross-sectional study"
+      ],
+      "postCitations": 119,
+      "topicSpecific": true
+    },
+    {
+      "pair": "ai-safety→privacy-computing",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Business"
+      ],
+      "postCitations": 101,
+      "topicSpecific": true
+    },
+    {
+      "pair": "ai4science→edge-ai",
+      "sharedTags": [
+        "cs.LG",
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "q-bio.QM",
+        "cs.CE"
+      ],
+      "postCitations": 98,
+      "topicSpecific": false
+    },
+    {
+      "pair": "ai4science→carbon-neutral",
+      "sharedTags": [
+        "cs.LG",
+        "cond-mat.soft",
+        "physics.bio-ph",
+        "q-bio.QM",
+        "cs.CE"
+      ],
+      "postCitations": 78,
+      "topicSpecific": false
+    },
+    {
+      "pair": "ai-safety→edge-ai",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 62,
+      "topicSpecific": true
+    },
+    {
+      "pair": "agritech→sat-6g",
+      "sharedTags": [
+        "remote sensing",
+        "ecology",
+        "biological sciences not elsewhere classified",
+        "deep learning",
+        "underwater"
+      ],
+      "postCitations": 56,
+      "topicSpecific": true
+    },
+    {
+      "pair": "ai-safety→alien-minerals",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Population"
+      ],
+      "postCitations": 45,
+      "topicSpecific": true
+    },
+    {
+      "pair": "ai-safety→carbon-neutral",
+      "sharedTags": [
+        "Computer science",
+        "Risk analysis (engineering)",
+        "Medicine",
+        "Psychology",
+        "Cross-sectional study"
+      ],
+      "postCitations": 43,
+      "topicSpecific": true
+    },
+    {
+      "pair": "ai4science→robot-parts",
+      "sharedTags": [
+        "physics.bio-ph",
+        "cond-mat.stat-mech",
+        "cond-mat.mtrl-sci",
+        "physics.comp-ph",
+        "physics.chem-ph"
+      ],
+      "postCitations": 43,
+      "topicSpecific": true
+    },
+    {
+      "pair": "semiconductor→biocomputing",
+      "sharedTags": [
+        "Computer science",
+        "Business",
+        "Systems engineering",
+        "Engineering",
+        "Bandwidth (computing)"
+      ],
+      "postCitations": 42,
+      "topicSpecific": true
+    },
+    {
+      "pair": "ai4science→neuromorphic",
+      "sharedTags": [
+        "physics.bio-ph",
+        "cond-mat.stat-mech",
+        "cond-mat.mtrl-sci",
+        "physics.comp-ph",
+        "physics.chem-ph"
+      ],
+      "postCitations": 39,
+      "topicSpecific": true
+    },
+    {
+      "pair": "agent-ecosystem→ai-safety",
+      "sharedTags": [
+        "cs.ai",
+        "cs.cl",
+        "cs.lg",
+        "benchmark",
+        "computer and information sciences"
+      ],
+      "postCitations": 38,
+      "topicSpecific": true
+    },
+    {
+      "pair": "ai4science→sat-6g",
+      "sharedTags": [
+        "physics.bio-ph",
+        "cond-mat.stat-mech",
+        "cond-mat.mtrl-sci",
+        "physics.comp-ph",
+        "physics.chem-ph"
+      ],
+      "postCitations": 38,
+      "topicSpecific": false
+    }
+  ]
+}

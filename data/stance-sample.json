@@ -1,0 +1,4240 @@
+{
+  "generatedAt": "2026-10-18T01:56:13.363Z",
+  "method": "abstract-level proxy + lexicon (support/contrast/mention); NOT sentence-level context",
+  "sampleSize": 200,
+  "note": "goldStance 字段留空，需人工标注；标注后运行 --eval 计算 P/R。",
+  "sample": [
+    {
+      "citingDoi": "10.1101/2025.04.17.649421",
+      "citedDoi": "10.1038/nn.4135",
+      "fromSite": "bionic-ai",
+      "toSite": "brain-science",
+      "citingAbstractSnippet": "Developing individualized spatial models that capture the complex dynamics of multi-electrode EEG data is essential for accurately decoding global neural activity. A widely used approach is network modeling, where electrodes are represented as nodes. A key challenge lies in defining the network edges and weights, as precise connectivity estimation is critical for enhancing neural characterization ",
+      "citedTitle": "",
+      "citedTags": [
+        "Connectome",
+        "Human Connectome Project",
+        "Functional magnetic resonance imaging",
+        "Neuroscience",
+        "Functional connectivity"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "challenge",
+        "fail to"
+      ],
+      "topicHit": [
+        "Neuroscience"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/ani16121874",
+      "citedDoi": "10.1038/nature17946",
+      "fromSite": "agritech",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "Fish represent the most species-rich group within the phylum Chordata, possessing exceptional nutritional and ornamental value. Global aquaculture, particularly finfish farming, is experiencing rapid expansion worldwide, and fish serve as crucial model organisms for vertebrate developmental biology and functional genomics research. However, traditional breeding methods are plagued by limitations s",
+      "citedTitle": "",
+      "citedTags": [
+        "Genome editing",
+        "Indel",
+        "CRISPR",
+        "Cytidine deaminase",
+        "Cas9"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "however",
+        "limitation"
+      ],
+      "topicHit": [
+        "CRISPR"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/smtd.202401558",
+      "citedDoi": "10.1039/c2nr32554c",
+      "fromSite": "agritech",
+      "toSite": "agent-ecosystem",
+      "citingAbstractSnippet": "Mass production of biomedical microrobots demands expensive and complex preparation techniques and versatile biocompatible materials. Learning from natural bacteria flagella, the study demonstrates a magnetic polymer multilayer cylindrical microrobot that bestows the controllable propulsion upon an external rotating magnetic field with uniform intensity. The magnetic microrobots are constructed by",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "robot",
+        "soft robotics",
+        "artificial intelligence",
+        "biochemical engineering"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.9,
+      "matchedCues": [
+        "demonstrate",
+        "demonstrates",
+        "reveal",
+        "reveals"
+      ],
+      "topicHit": [
+        "robot"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1088/3050-287x/adfee5",
+      "citedDoi": "10.1038/s41586-023-06792-0",
+      "fromSite": "ai4science",
+      "toSite": "embodied-ai",
+      "citingAbstractSnippet": "Controlling risks of AI in chemical science with agents, He, Jiyan, Guan, Haoxiang, Feng, Weitao, Min, Yaosen, Yi, Jingwei, Tang, Kunsheng, Li, Shuai, Zhang, Jie, Chen, Kejiang, Zhou, Wenbo, Xie, Xing, Zhang, Weiming, Yu, Nenghai, Zheng, Shuxin",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Documentation",
+        "Automation",
+        "Transformer",
+        "Artificial intelligence"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/prot.26551",
+      "citedDoi": "10.1093/bioinformatics/bts565",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "The human predictor team PEZYFoldings got first place with the assessor's formulae (3rd place with Global Distance Test Total Score [GDT-TS]) in the single-domain category and 10th place in the multimer category in Critical Assessment of Structure Prediction 15. In this paper, I describe the exact method used by PEZYFoldings in the competition. As AlphaFold2 and AlphaFold-Multimer, developed by De",
+      "citedTitle": "",
+      "citedTags": [
+        "Speedup",
+        "Computer science",
+        "Cluster analysis",
+        "Redundancy (engineering)",
+        "Data mining"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1177/02783649231225811",
+      "citedDoi": "10.3390/s17122762",
+      "fromSite": "agritech",
+      "toSite": "robot-parts",
+      "citingAbstractSnippet": "Tactile servoing is an important technique because it enables robots to manipulate objects with precision and accuracy while adapting to changes in their environments in real-time. One approach for tactile servo control with high-resolution soft tactile sensors is to estimate the contact pose relative to an object surface using a convolutional neural network (CNN) for use as a feedback signal. In ",
+      "citedTitle": "",
+      "citedTags": [
+        "Tactile sensor",
+        "Robot",
+        "Slip (aerodynamics)",
+        "Focus (optics)",
+        "Contact force"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "Tactile sensor",
+        "Robot"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/s26155007",
+      "citedDoi": "10.1016/j.inffus.2019.12.012",
+      "fromSite": "ai-safety",
+      "toSite": "agent-ecosystem",
+      "citingAbstractSnippet": "Power transformers are critical components of modern power grids, and their operational reliability directly affects power system security, stability, and continuity. With the increasing intelligence and complexity of power systems, condition monitoring and fault diagnosis of transformers have received growing attention. However, conventional diagnostic methods often face limitations such as compl",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Artificial intelligence",
+        "Taxonomy (biology)",
+        "Field (mathematics)",
+        "Software deployment"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.heliyon.2024.e38137",
+      "citedDoi": "10.1561/2200000083",
+      "fromSite": "privacy-computing",
+      "toSite": "agent-ecosystem",
+      "citingAbstractSnippet": "Federated learning (FL) is a distributed machine learning process, which allows multiple nodes to work together to train a shared model without exchanging raw data. It offers several key advantages, such as data privacy, security, efficiency, and scalability, by keeping data local and only exchanging model updates through the communication network. This review paper provides a comprehensive overvi",
+      "citedTitle": "",
+      "citedTags": [
+        "Orchestration",
+        "Computer science",
+        "Data collection",
+        "Federated learning",
+        "Open research"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "but",
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "Federated learning"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1089/soro.2022.0211",
+      "citedDoi": "10.1038/nature14543",
+      "fromSite": "agritech",
+      "toSite": "robot-parts",
+      "citingAbstractSnippet": "Artificial skins with functions such as sensing, variable stiffness, actuation, self-healing, display, adhesion, and camouflage have been developed and widely used, but artificial skins with escape function are still a research gap. In nature, every species of animal can use its innate skills and functions to escape capture. Inspired by the behavior of fish-scale geckoes escaping predation by shed",
+      "citedTitle": "",
+      "citedTags": [
+        "Soft robotics",
+        "Soft materials",
+        "Robot",
+        "Robotics",
+        "Computer science"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41467-026-68923-1",
+      "citedDoi": "10.1038/s43588-021-00184-y",
+      "fromSite": "digital-twin",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Neuromorphic engineering, originally focused on replicating the biophysics of neurons and synapses in hardware, has progressively expanded to explore novel computational principles, materials, and applications. With their unique ability to emulate brain functions, neuromorphic devices are emerging as prime candidates to advance the treatment of brain disorders, addressing the current limitations o",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1089/ast.2021.0104",
+      "citedDoi": "10.1007/978-3-319-96175-0",
+      "fromSite": "exo-science",
+      "toSite": "alien-minerals",
+      "citingAbstractSnippet": "The search for life beyond Earth necessitates a rigorous and comprehensive examination of biosignatures, the types of observable imprints that life produces. These imprints and our ability to detect them with advanced instrumentation hold the key to our understanding of the presence and abundance of life in the universe. Biosignatures are the chemical or physical features associated with past or p",
+      "citedTitle": "",
+      "citedTags": [
+        "Astrobiology",
+        "Extraterrestrial life",
+        "Extant taxon",
+        "Physics",
+        "Biology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1109/tfr.2024.3485037",
+      "citedDoi": "10.1016/j.robot.2013.09.004",
+      "fromSite": "agritech",
+      "toSite": "deep-sea-tech",
+      "citingAbstractSnippet": "Excavation plans are essential in construction projects, dictating the dirt disposal strategy and excavation sequence based on the final geometry and machinery available. While most construction processes rely heavily on coarse sequence planning and local execution planning driven by human expertise and intuition, fully automated planning tools are notably absent from the industry. This article in",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Robotics",
+        "Task (project management)",
+        "Robot",
+        "Field (mathematics)"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.2478/ijanmc-2025-0023",
+      "citedDoi": "10.22331/q-2018-08-06-79",
+      "fromSite": "alien-minerals",
+      "toSite": "quantum-computing",
+      "citingAbstractSnippet": "Abstract This research investigates the development of a custom hybrid operating system (OS) for a Mars rover experimental prototype using the Raspberry Pi platform. Focusing on operating system optimization, the work enhances computational efficiency, real-time responsiveness, and AI integration. Key innovations include overclocking (boosting CPU performance by 28%), custom threading (reducing ta",
+      "citedTitle": "",
+      "citedTags": [
+        "Quantum computer",
+        "Computer science",
+        "Qubit",
+        "Quantum gate",
+        "Computer engineering"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.ctim.2026.103319",
+      "citedDoi": "10.2174/1381612821666150710145753",
+      "fromSite": "tcm-tools",
+      "toSite": "agent-ecosystem",
+      "citingAbstractSnippet": "Herbal medicines (HM) use among type 2 diabetes mellitus (T2DM) patients has grown tremendously despite the existence of conventional treatments. However, evidence on their safety, potential side effects, and interactions remains scarce. This systematic review and meta-analysis aim to determine the global prevalence of HM use among T2DM patients and assess the safety and potential interactions.",
+      "citedTitle": "",
+      "citedTags": [
+        "medicine",
+        "biology",
+        "traditional medicine",
+        "nanotechnology",
+        "pharmacology"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "evidence"
+      ],
+      "topicHit": [
+        "medicine"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1074/mcp.m113.031591",
+      "citedDoi": "10.1021/ac026117i",
+      "fromSite": "biocomputing",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "Protein quantification without isotopic labels has been a long-standing interest in the proteomics field. However, accurate and robust proteome-wide quantification with label-free approaches remains a challenge. We developed a new intensity determination and normalization procedure called MaxLFQ that is fully compatible with any peptide or protein separation prior to LC-MS analysis. Protein abunda",
+      "citedTitle": "",
+      "citedTags": [
+        "Chemistry",
+        "Chromatography",
+        "Sample preparation",
+        "Pipette",
+        "Elution"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/molecules31132225",
+      "citedDoi": "10.3390/bios15100696",
+      "fromSite": "agritech",
+      "toSite": "quantum-materials",
+      "citingAbstractSnippet": "Surface-enhanced Raman spectroscopy (SERS) has emerged as a transformative tool in biomedical diagnostics, offering a highly sensitive and non-invasive method for detecting molecular biomarkers at exceptionally low concentrations. This approach takes advantage of the plasmonic characteristics of customized metallic nanostructures that produce intense localized electromagnetic fields via localized ",
+      "citedTitle": "",
+      "citedTags": [
+        "nanotechnology",
+        "materials science",
+        "computer science",
+        "engineering",
+        "business"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1111/jre.70060",
+      "citedDoi": "10.1038/s41392-024-01852-x",
+      "fromSite": "ai-safety",
+      "toSite": "synbio-manufacturing",
+      "citingAbstractSnippet": "Periodontitis is a chronic, host-mediated inflammatory disease in which microbial dysbiosis and dysregulated immune responses drive the destruction of tooth-supporting tissues. Although conventional therapy remains centered on mechanical biofilm control, persistent inflammation and alveolar bone loss in susceptible individuals underscore the need for adjunctive strategies. Translating preclinical ",
+      "citedTitle": "",
+      "citedTags": [
+        "medicine",
+        "nanotechnology",
+        "data science",
+        "neuroscience",
+        "biotechnology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41570-024-00627-w",
+      "citedDoi": "10.1021/acs.chemrev.9b00474",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Compartmentalization is crucial for the evolution of life. Present-day phospholipid membranes exhibit a high level of complexity and species-dependent homochirality, the so-called lipid divide. It is possible that less stable, yet more dynamic systems, promoting out-of-equilibrium environments, facilitated the evolution of life at its early stages. The composition of the preceding primitive membra",
+      "citedTitle": "",
+      "citedTags": [
+        "Homochirality",
+        "Abiogenesis",
+        "Meteorite",
+        "Extraterrestrial life",
+        "Astrobiology"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "evidence"
+      ],
+      "topicHit": [
+        "Homochirality"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/s26165023",
+      "citedDoi": "10.3390/s26051540",
+      "fromSite": "agritech",
+      "toSite": "low-altitude",
+      "citingAbstractSnippet": "Accurate assessment of crop water status is critical for precision irrigation and sustainable water management in agriculture. This study develops a UAV-based thermal infrared inversion framework for high-resolution canopy temperature retrieval and irrigation decision support in tea plantations. The proposed approach integrates multi-frame image mosaicking, threshold-based canopy extraction, and a",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1177/15311074261477497",
+      "citedDoi": "10.1089/ast.2020.2418",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Searching for signs of life is a primary goal of the Habitable Worlds Observatory (HWO). However, merely detecting oxygen, methane, or other widely discussed biosignatures is insufficient evidence for a biosphere. In parallel with biosignature detection, exoplanet life detection additionally requires characterization of the broader physicochemical context to evaluate planetary habitability and the",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "geology",
+        "mars exploration program",
+        "astro-ph.ep",
+        "biology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.64898/2026.08.03.742168",
+      "citedDoi": "10.1101/2025.11.20.689494",
+      "fromSite": "synbio-manufacturing",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Antibody complementarity-determining regions (CDRs), especially CDR-H3, are a dominant source of binding specificity but remain difficult to design due to coupled sequence-structure constraints and local geometric variability. Here we present Kukulu , a structure-aware Joint Embedding Predictive Architecture (JEPA) combined with conditional diffusion for CDR loop reconstruction in antibody-antigen",
+      "citedTitle": "",
+      "citedTags": [
+        "cs.ai",
+        "computer and information sciences",
+        "cs.lg",
+        "q-bio.bm",
+        "robotics"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1101/2024.07.23.604860",
+      "citedDoi": "10.1093/bioinformatics/btp163",
+      "fromSite": "ai-safety",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "ABSTRACT Protein-protein interactions are often mediated by a modular peptide recognition domain binding to a short linear motif (SLiM) in the disordered region of another protein. The ability to predict domain-SLiM interactions would allow researchers to map protein interaction networks, predict the effects of perturbations to those networks, and develop biologically meaningful hypotheses. Unfort",
+      "citedTitle": "",
+      "citedTags": [
+        "Python (programming language)",
+        "MIT License",
+        "Computer science",
+        "Documentation",
+        "Source code"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "however"
+      ],
+      "topicHit": [
+        "Source code"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1089/ast.2021.0158",
+      "citedDoi": "10.1089/ast.2017.1708",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "We measured the N concentrations and isotopic compositions of 44 samples of terrestrial potassic and micro- and meso-porous minerals and a small number of whole-rocks to determine the extent to which N is incorporated and stored during weathering and low-temperature hydrothermal alteration in Mars surface/near-surface environments. The selection of these minerals and other materials was partly gui",
+      "citedTitle": "",
+      "citedTags": [
+        "geology",
+        "astrobiology",
+        "meteorite",
+        "mars exploration program",
+        "geochemistry"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1089/soro.2022.0238",
+      "citedDoi": "10.1126/science.aat8414",
+      "fromSite": "agritech",
+      "toSite": "embodied-ai",
+      "citingAbstractSnippet": "Replication of the human sense of touch would be highly advantageous for robots or prostheses as it would allow an agile and dexterous interaction with the environment. The article presents an approach for the integration of a micro-electromechanical system sensing skin with 144 tactile sensors on a soft, human-sized artificial fingertip. The sensing technology consists of thin, 1D sensing strips ",
+      "citedTitle": "",
+      "citedTags": [
+        "Grippers",
+        "Robot",
+        "Robotics",
+        "Artificial intelligence",
+        "Computer science"
+      ],
+      "predictedStance": "mention",
+      "predictedConfidence": 0.5,
+      "matchedCues": [],
+      "topicHit": [
+        "Robot"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.mmr.2026.100050",
+      "citedDoi": "10.1038/s41586-023-05881-4",
+      "fromSite": "ai-safety",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "Medical large language models (Med-LLMs) have shown considerable promise across a broad range of clinical tasks, including decision support, medical documentation, patient communication, multimodal analysis, and telemedicine. Their rapid development has generated growing interest in how large language models (LLMs) may support healthcare practice, while also raising important questions about relia",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "artificial intelligence",
+        "cs.ai",
+        "workflow",
+        "health care"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 1,
+      "matchedCues": [
+        "support",
+        "consistent with",
+        "consistent",
+        "shows that",
+        "evidence"
+      ],
+      "topicHit": [
+        "workflow"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1159/000552969",
+      "citedDoi": "10.1145/2939672.2939785",
+      "fromSite": "ai4science",
+      "toSite": "alien-minerals",
+      "citingAbstractSnippet": "Accurate prediction of blood product demand is essential for maintaining adequate supply while minimizing wastage. Artificial intelligence (AI) and machine learning (ML) approaches have emerged as promising tools for transfusion demand forecasting across multiple scales, ranging from individual patients to regional supply chains. This review provides a structured overview of AI applications in blo",
+      "citedTitle": "",
+      "citedTags": [
+        "Boosting (machine learning)",
+        "Computer science",
+        "Scalability",
+        "Machine learning",
+        "Sketch"
+      ],
+      "predictedStance": "mention",
+      "predictedConfidence": 0.5,
+      "matchedCues": [],
+      "topicHit": [
+        "Machine learning"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acsmaterialslett.6c00134",
+      "citedDoi": "10.1021/acs.chemrev.0c00101",
+      "fromSite": "ai4science",
+      "toSite": "new-energy",
+      "citingAbstractSnippet": "Abstract Accelerating alkali-ion battery discovery requires accurate modeling of atomic-scale kinetics, yet the reliability of universal machine learning interatomic potentials (uMLIPs) in capturing these high-energy landscapes remains uncertain. Here, we systematically benchmark state-of-the-art uMLIPs, including M3GNet, CHGNet, MatterSim, MACE, SevenNet, GRACE, and Orb, against DFT baselines for",
+      "citedTitle": "",
+      "citedTags": [
+        "Chemistry",
+        "Electrolyte",
+        "Fast ion conductor",
+        "Solid-state",
+        "Chemical engineering"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "demonstrate",
+        "demonstrates",
+        "reveal"
+      ],
+      "topicHit": [
+        "Electrolyte"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acs.jproteome.6c00295",
+      "citedDoi": "10.1038/nmeth1113",
+      "fromSite": "ai4science",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "Mass spectrometry-based proteomics has advanced through parallel improvements in instrumentation (mass spectrometers) and software (data analysis), yet whether these improvements interact synergistically or provide diminishing returns remains unclear. Here, we systematically evaluate instrument-software coevolution across eight mass spectrometry platforms, three generations of search engines, and ",
+      "citedTitle": "",
+      "citedTags": [
+        "Shotgun proteomics",
+        "Shotgun",
+        "Proteomics",
+        "Tandem mass spectrometry",
+        "Identification (biology)"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "consistent",
+        "reveal"
+      ],
+      "topicHit": [
+        "Proteomics"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41524-024-01333-3",
+      "citedDoi": "10.1016/j.commatsci.2012.10.028",
+      "fromSite": "ai4science",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "Abstract Machine learning interatomic potential (MLIP) has been widely adopted for atomistic simulations. While errors and discrepancies for MLIPs have been reported, a comprehensive examination of the MLIPs’ performance over a broad spectrum of material properties has been lacking. This study introduces an analysis process comprising model sampling, benchmarking, error evaluations, and multi-dime",
+      "citedTitle": "",
+      "citedTags": [
+        "Python (programming language)",
+        "Computer science",
+        "Computational science",
+        "Software",
+        "Application programming interface"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s42003-025-08973-1",
+      "citedDoi": "10.1089/ast.2021.0012",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Terraforming Mars toward sustainable life-supporting ecosystems poses unprecedented challenges. Extremophilic microbes, which thrive in Earth's most extreme environments, offer promising biological strategies for initial Mars colonization providing tools for resource mobilization and atmospheric engineering. This review synthesizes experimental evidence on microbial survival Mars-simulated conditi",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "mars exploration program",
+        "environmental science",
+        "geology",
+        "martian"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.21203/rs.3.rs-8078734/v1",
+      "citedDoi": "10.1016/j.ese.2023.100330",
+      "fromSite": "ai4science",
+      "toSite": "carbon-neutral",
+      "citingAbstractSnippet": "Abstract This study explores how the integration of Artificial Intelligence (AI) into a digital platform can foster sustainability within the floating community of Lake Catalão, Amazonas. The research encompasses a socio-environmental diagnosis, technological development, and social inclusion. The methodology combines bibliographic review, surveys, interviews, participant observation, and data ana",
+      "citedTitle": "",
+      "citedTags": [
+        "sustainability",
+        "transformative learning",
+        "knowledge management",
+        "business",
+        "engineering"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "however",
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "sustainability"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1109/ijcnn64981.2025.11229386",
+      "citedDoi": "10.1038/s41467-024-45670-9",
+      "fromSite": "neuromorphic",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "In recent years, the field of neuromorphic systems has gained significant traction as the demand for AI applications in energy-constrained autonomous systems, such as unmanned aerial vehicles (UAVs) and robotics, continues to grow. The advent of Dynamic Vision Sensor (DVS) and other event-based sensors, which generate sparse spatio-temporal signals, has propelled the field of neuromorphic engineer",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.21203/rs.3.rs-9069373/v1",
+      "citedDoi": "10.1016/j.artmed.2024.102934",
+      "fromSite": "ai4science",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "Abstract Background AI algorithms for skin cancer detection have shown performance comparable to clinicians in controlled settings, yet their real-world reliability, performance across diverse populations, and readiness for clinical deployment remain uncertain. This umbrella review synthesizes evidence across the screening pathway to characterize AI performance, identify equity gaps, and assess im",
+      "citedTitle": "",
+      "citedTags": [
+        "medicine",
+        "medline",
+        "cancer",
+        "systematic review",
+        "medical physics"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "demonstrate",
+        "demonstrated",
+        "evidence"
+      ],
+      "topicHit": [
+        "cancer",
+        "systematic review"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1128/aem.02461-25",
+      "citedDoi": "10.1038/s41467-023-36172-1",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Returning surface samples from Mars to Earth has been a major planetary science objective, with the potential for the detection of microbiological life and the possibility of improving our understanding of the origins of life. The National Aeronautics and Space Administration and the European Space Agency assembled a team to assess the level of risk that returned samples could contain potential bi",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "mars exploration program",
+        "martian",
+        "meteorite",
+        "extraterrestrial life"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1177/00469580261478793",
+      "citedDoi": "10.1038/s41586-023-05881-4",
+      "fromSite": "ai4science",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "IntroductionArtificial intelligence (AI) is reshaping healthcare, enabled by advances in computing, affordable data storage, and the widespread adoption of electronic health records (EHRs). Machine learning (ML), deep learning (DL), and natural language processing (NLP) are increasingly used for disease diagnosis, risk prediction, and treatment planning.ObjectiveThis systematic review aimed to exa",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "artificial intelligence",
+        "cs.ai",
+        "workflow",
+        "health care"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.9,
+      "matchedCues": [
+        "however",
+        "challenge",
+        "challenges",
+        "limitation"
+      ],
+      "topicHit": [
+        "artificial intelligence",
+        "workflow"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/plants15142177",
+      "citedDoi": "10.1039/d5na00535c",
+      "fromSite": "agritech",
+      "toSite": "genetech-tools",
+      "citingAbstractSnippet": "Genome editing is one of the key technologies in contemporary plant biotechnology, which has been revolutionized using CRISPR/Cas systems that offer rapid, flexible, and precise options to improve agricultural characteristics, enhance stress tolerance, and accelerate breeding of crops and trees. Despite the significant benefits of CRISPR/Cas systems, their use is restricted by difficulties in geno",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.artmed.2025.103088",
+      "citedDoi": "10.1016/j.artmed.2023.102698",
+      "fromSite": "edge-ai",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "Neonatal jaundice is a common and potentially fatal health condition in neonates, especially in low and middle income countries, where it contributes considerably to neonatal morbidity and death. Traditional diagnostic approaches, such as Total Serum Bilirubin (TSB) testing, are invasive and could lead to discomfort, infection risk, and diagnostic delays. As a result, there is a rising interest in",
+      "citedTitle": "",
+      "citedTags": [
+        "medicine",
+        "health care",
+        "psychology",
+        "computer science",
+        "business"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3389/fmicb.2026.1770908",
+      "citedDoi": "10.1093/nar/gks808",
+      "fromSite": "agritech",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Organic farming enhances soil carbon sequestration, which is a critical strategy for climate change mitigation and sustainable agriculture. However, the microbial mechanisms driving carbon accumulation in the soil, particularly the role of metabolic efficiency in long-term organic systems, remain poorly understood. We investigated microbial succession, metabolic efficiency, and carbon stabilizatio",
+      "citedTitle": "",
+      "citedTags": [
+        "Biology",
+        "Amplicon",
+        "16S ribosomal RNA",
+        "Primer (cosmetics)",
+        "Genetics"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1109/icra48891.2023.10160384",
+      "citedDoi": "10.1089/soro.2017.0007",
+      "fromSite": "embodied-ai",
+      "toSite": "robot-parts",
+      "citingAbstractSnippet": "Pneumatic soft robots present many advantages in manipulation tasks. Notably, their inherent compliance makes them safe and reliable in unstructured and fragile environments. However, full-body shape sensing for pneumatic soft robots is challenging because of their high degrees of freedom and complex deformation behaviors. Vision-based proprioception sensing methods relying on embedded cameras and",
+      "citedTitle": "",
+      "citedTags": [
+        "robot",
+        "soft robotics",
+        "robotics",
+        "nanotechnology",
+        "computer science"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "demonstrate",
+        "demonstrated",
+        "show that"
+      ],
+      "topicHit": [
+        "robot"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1039/d4cs01250j",
+      "citedDoi": "10.1038/s41560-019-0338-x",
+      "fromSite": "ai4science",
+      "toSite": "new-energy",
+      "citingAbstractSnippet": "As lithium batteries advance toward higher energy densities, developing electrolytes that remain stable under high-voltage conditions has become a critical bottleneck. However, electrolytes encompass a vast structural design space, complex descriptor systems, and multidimensional performance evaluation metrics, making traditional research and development both time-consuming and costly. Machine lea",
+      "citedTitle": "",
+      "citedTags": [
+        "Anode",
+        "Electrolyte",
+        "Cathode",
+        "Energy storage",
+        "Materials science"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "however"
+      ],
+      "topicHit": [
+        "Electrolyte",
+        "Energy storage"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1007/s11214-017-0369-1",
+      "citedDoi": "10.1016/j.icarus.2007.10.010",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Scientists use the Earth as a tool for astrobiology by analyzing planetary field analogues (i.e. terrestrial samples and field sites that resemble planetary bodies in our Solar System). In addition, they expose the selected planetary field analogues in simulation chambers to conditions that mimic the ones of planets, moons and Low Earth Orbit (LEO) space conditions, as well as the chemistry occurr",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/jacs.6c12217",
+      "citedDoi": "10.1021/jacsau.4c00318",
+      "fromSite": "ai4science",
+      "toSite": "nuclear-energy",
+      "citingAbstractSnippet": "Head-to-tail macrocyclization is a cornerstone transformation in cyclic peptide synthesis, yet its practical implementation remains constrained by extensive oligomerization under concentrated conditions. Here we report a SuFEx-enabled acyl fluoride activation strategy that intrinsically biases peptide macrocyclization toward intramolecular amide bond formation, enabling highly selective head-to-ta",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/mi13010110",
+      "citedDoi": "10.1109/37.833638",
+      "fromSite": "alien-minerals",
+      "toSite": "robot-parts",
+      "citingAbstractSnippet": "Nature and biological creatures are some of the main sources of inspiration for humans. Engineers have aspired to emulate these natural systems. As rigid systems become increasingly limited in their capabilities to perform complex tasks and adapt to their environment like living creatures, the need for soft systems has become more prominent due to the similar complex, compliant, and flexible chara",
+      "citedTitle": "",
+      "citedTags": [
+        "Artificial muscle",
+        "Isometric exercise",
+        "Actuator",
+        "Robotics",
+        "Muscle contraction"
+      ],
+      "predictedStance": "mention",
+      "predictedConfidence": 0.5,
+      "matchedCues": [],
+      "topicHit": [
+        "Robotics"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/jacs.4c01897",
+      "citedDoi": "10.1038/s41586-018-0337-2",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "An important yet challenging aspect of atomistic materials modeling is reconciling experimental and computational results. Conventional approaches involve generating numerous configurations through molecular dynamics or Monte Carlo structure optimization and selecting the one with the closest match to experiment. However, this inefficient process is not guaranteed to succeed. We introduce a genera",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Field (mathematics)",
+        "Data science",
+        "Characterization (materials science)",
+        "Domain (mathematical analysis)"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/jimaging12080341",
+      "citedDoi": "10.1109/tmi.2014.2377694",
+      "fromSite": "ai4science",
+      "toSite": "bionic-ai",
+      "citingAbstractSnippet": "Uncertainty quantification (UQ) in medical image segmentation is essential for ensuring the reliability and interpretability of deep learning models in clinical decision-making. While convolutional neural networks (CNNs) and transformer-based architectures have achieved remarkable segmentation performance, they often provide deterministic outputs without accounting for uncertainty, which can lead ",
+      "citedTitle": "",
+      "citedTags": [
+        "Artificial intelligence",
+        "Image segmentation",
+        "Benchmark (surveying)",
+        "Computer science",
+        "Computer vision"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "challenge",
+        "challenges",
+        "limitation"
+      ],
+      "topicHit": [
+        "Image segmentation"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41746-026-02777-1",
+      "citedDoi": "10.1038/s41586-025-09442-9",
+      "fromSite": "ai-safety",
+      "toSite": "agent-ecosystem",
+      "citingAbstractSnippet": "Artificial intelligence (AI) is often framed as replacing scientific expertise, especially in bioinformatics. We argue instead that AI is a powerful accelerant whose value depends on expert guidance in design, data curation, interpretation, and governance. Because AI cannot judge biological meaning or verify scientific validity, bioinformaticians remain essential. Their role is shifting from workf",
+      "citedTitle": "",
+      "citedTags": [
+        "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+        "Coronavirus disease 2019 (COVID-19)",
+        "2019-20 coronavirus outbreak",
+        "Computational biology",
+        "Sars virus"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1101/2024.07.19.604304",
+      "citedDoi": "10.1107/s0907444904019158",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "The accuracy of the information in the Protein Data Bank (PDB) is of great importance for the myriad downstream applications that make use of protein structural information. Despite best efforts, the occasional introduction of errors is inevitable, especially where the experimental data are of limited resolution. We have previously established a novel protein structure validation approach based on",
+      "citedTitle": "",
+      "citedTags": [
+        "Graphics",
+        "R package",
+        "Computer science",
+        "Computer graphics (images)",
+        "Molecular graphics"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/life13051103",
+      "citedDoi": "10.1126/sciadv.abi9743",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Life most likely started during the Hadean Eon; however, the environmental conditions which contributed to the complexity of its chemistry are poorly known. A better understanding of various environmental conditions, including global (heliospheric) and local (atmospheric, surface, and oceanic), along with the internal dynamic conditions of the early Earth, are required to understand the onset of a",
+      "citedTitle": "",
+      "citedTags": [
+        "physics",
+        "exoplanet",
+        "astro-ph.sr",
+        "planet",
+        "earth and planetary astrophysics"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1007/s11571-026-10496-2",
+      "citedDoi": "10.1111/nyas.13948",
+      "fromSite": "ai-safety",
+      "toSite": "brain-science",
+      "citingAbstractSnippet": "Elucidating the language-brain relationship requires bridging the methodological gap between linguistics' abstract theoretical frameworks and neuroscience's empirical neural data. As an interdisciplinary cornerstone, computational neuroscience formalizes language's hierarchical and dynamic structures into testable neural representation models through modeling, simulation, and data analysis, enabli",
+      "citedTitle": "",
+      "citedTags": [
+        "Functional near-infrared spectroscopy",
+        "Neuroimaging",
+        "Modalities",
+        "Cognitive neuroscience",
+        "Neuroscience"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "challenge",
+        "challenges",
+        "limitation"
+      ],
+      "topicHit": [
+        "Neuroscience"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/imt2.70152",
+      "citedDoi": "10.1038/s41592-023-01940-w",
+      "fromSite": "agritech",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Plants are best understood as evolutionary holobionts, in which the host and its associated microbiomes operate as an integrated unit to influence growth, health, and stress resilience. This comprehensive review synthesizes the most current knowledge of plant-associated microbiomes across key ecological compartments, including the rhizosphere, endosphere, phyllosphere, and seeds, highlighting thei",
+      "citedTitle": "",
+      "citedTags": [
+        "Genome",
+        "Metagenomics",
+        "Computational biology",
+        "Scalability",
+        "Bacterial genome size"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.64898/2026.06.28.734076",
+      "citedDoi": "10.1093/bioinformatics/btq033",
+      "fromSite": "biomed-ai",
+      "toSite": "genetech-tools",
+      "citingAbstractSnippet": "Motivation Antimicrobial resistance (AMR) has been identified as a top global public health threat. Accurate AMR phenotype prediction from whole-genome sequencing data is an essential tool for accelerating clinical decision-making and mitigating resistance spread. Although many previous works have explored the use of tree-based machine learning (ML) models to predict resistance, the field lacks a ",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Suite",
+        "Annotation",
+        "Unix",
+        "Source code"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1039/d4np00037d",
+      "citedDoi": "10.1089/ast.2010.0506",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Covering: 1961 to 2024Discovering and identifying unique natural products/biosignatures (signatures that can be used as evidence for past or present life) that are abundant, and complex enough that they indicate robust evidence of life is a multifaceted process. One distinct category of biosignatures being explored is organic compounds. A subdivision of these compounds not yet readily investigated",
+      "citedTitle": "",
+      "citedTags": [
+        "Mars Exploration Program",
+        "Martian",
+        "Astrobiology",
+        "Geologic record",
+        "Extraterrestrial life"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "but",
+        "yet"
+      ],
+      "topicHit": [
+        "Astrobiology"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1007/s11571-025-10357-4",
+      "citedDoi": "10.3389/fnhum.2022.908050",
+      "fromSite": "bionic-ai",
+      "toSite": "embodied-ai",
+      "citingAbstractSnippet": "Steady-state visual evoked potential (SSVEP)-based brain-computer interfaces (BCIs) have been widely explored due to their high information transfer rate (ITR) and minimal training requirements. Traditional SSVEP-based BCIs typically use low- and medium-frequency visual stimuli from the central visual field to induce SSVEPs, but these can easily lead to visual fatigue. In order to improve system's",
+      "citedTitle": "",
+      "citedTags": [
+        "brain-computer interface",
+        "robot",
+        "interface",
+        "human-computer interaction",
+        "electroencephalography"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "however",
+        "but"
+      ],
+      "topicHit": [
+        "brain-computer interface",
+        "interface"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1109/ijcnn64981.2025.11228305",
+      "citedDoi": "10.1093/mind/lix.236.433",
+      "fromSite": "ai-safety",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "The issues of AI risk and AI safety are becoming critical as the prospect of artificial general intelligence (AGI) looms larger. The emergence of extremely large and capable generative models has led to alarming predictions and created a stir from boardrooms to legislatures. As a result, AI alignment has emerged as one of the most important areas in AI research. The goal of this position paper is ",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Cognitive science",
+        "Psychology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acssynbio.5c00521",
+      "citedDoi": "10.1016/j.copbio.2022.102793",
+      "fromSite": "agritech",
+      "toSite": "synbio-manufacturing",
+      "citingAbstractSnippet": "Precision fermentation is emerging as an innovative platform for manufacturing high-value food proteins, relocating food production from agricultural fields to controlled bioreactors. Importantly, these proteins must preserve the precise amino acid composition and structural properties that underpin the functionality, texture, and nutritional value of their animal-derived counterparts. However, bu",
+      "citedTitle": "",
+      "citedTags": [
+        "Biomanufacturing",
+        "Biochemical engineering",
+        "Biotechnology",
+        "Engineering",
+        "Computer science"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "however",
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "Engineering"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1073/pnas.2415663122",
+      "citedDoi": "10.1006/jcph.1995.1039",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "A first-principles machine-learning model has been developed aimed at studying the formation of calcium carbonate from aqueous solution using molecular dynamics simulations. The model, dubbed strongly constrained and appropriately normed-machine learning (SCAN-ML), reproduces accurately the potential energy surface derived from ab initio density-functional theory within the SCAN approximation for ",
+      "citedTitle": "",
+      "citedTags": [
+        "Parallel computing",
+        "Computer science",
+        "Benchmark (surveying)",
+        "Parallel algorithm",
+        "Intel iPSC"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41587-023-01704-z",
+      "citedDoi": "10.1038/nbt.2377",
+      "fromSite": "ai4science",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "While AlphaFold2 can predict accurate protein structures from the primary sequence, challenges remain for proteins that undergo conformational changes or for which few homologous sequences are known. Here we introduce AlphaLink, a modified version of the AlphaFold2 algorithm that incorporates experimental distance restraint information into its network architecture. By employing sparse experimenta",
+      "citedTitle": "",
+      "citedTags": [
+        "Proteomics",
+        "Computer science",
+        "Vendor",
+        "Application programming interface",
+        "Interface (matter)"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1177/13678779221144762",
+      "citedDoi": "10.1073/pnas.1810141115",
+      "fromSite": "agritech",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "This article presents the new theoretical concept of environing media, which is developed to offer critical insight into how processes of mediation affect how we perceive of, manage and use the environment. Building on the insight that the environment has been in a continuous slow process of change that is now escalating due to human impacts, the article sketches a history of how environmental cha",
+      "citedTitle": "",
+      "citedTags": [
+        "Anthropocene",
+        "Earth (classical element)",
+        "Astrobiology",
+        "Earth system science",
+        "Earth science"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/s25226901",
+      "citedDoi": "10.3390/s25051424",
+      "fromSite": "agritech",
+      "toSite": "digital-twin",
+      "citingAbstractSnippet": "Plastic greenhouses, which account for the majority of protected horticulture facilities in East Asia, are highly susceptible to wind-induced uplift failures that can lead to severe structural and economic damage. To address this issue, this study developed a low-power and low-cost wireless monitoring system applying the concept of structural health monitoring (SHM) to greenhouse foundations. Each",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "data science",
+        "computer and information sciences",
+        "engineering",
+        "business"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/bkcs.70105",
+      "citedDoi": "10.1038/s41578-019-0165-5",
+      "fromSite": "ai4science",
+      "toSite": "new-energy",
+      "citingAbstractSnippet": "Abstract Lithium‐ion batteries have dominated the energy storage landscape for decades, driven by their high energy density and operating voltage. However, increasing demands for wide operating temperature ranges and fast charging push current technologies to their limits, requiring next‐generation lithium batteries with superior safety and extended cycle life. In this context, the rational design",
+      "citedTitle": "",
+      "citedTags": [
+        "Electrolyte",
+        "Materials science",
+        "Nanotechnology",
+        "Energy storage",
+        "Organic radical battery"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "however",
+        "challenge"
+      ],
+      "topicHit": [
+        "Electrolyte",
+        "Energy storage"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1093/jxb/eraf433",
+      "citedDoi": "10.1105/tpc.16.00922",
+      "fromSite": "synbio-manufacturing",
+      "toSite": "genetech-tools",
+      "citingAbstractSnippet": "Abstract The liverwort Marchantia polymorpha is a widely used model organism for studying land-plant biology, and it has also proven to be a promising testbed for bioengineering. CRISPR/Cas9 technology has become a transformative tool for precise genome modifications in M. polymorpha; however, a robust method for the simultaneous expression of multiple gRNAs, which is crucial for enhancing the ver",
+      "citedTitle": "",
+      "citedTags": [
+        "The Plant Cell"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.12968/hmed.2024.0312",
+      "citedDoi": "10.1038/s43856-024-00492-0",
+      "fromSite": "privacy-computing",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "Artificial intelligence has the potential to transform medical imaging. The effective integration of artificial intelligence into clinical practice requires a robust understanding of its capabilities and limitations. This paper begins with an overview of key clinical use cases such as detection, classification, segmentation and radiomics. It highlights foundational concepts in machine learning suc",
+      "citedTitle": "",
+      "citedTags": [
+        "medicine",
+        "data science",
+        "health care",
+        "medline",
+        "psychology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.lfs.2026.124434",
+      "citedDoi": "10.1016/j.tibtech.2013.04.004",
+      "fromSite": "life-science",
+      "toSite": "genetech-tools",
+      "citingAbstractSnippet": "Cancer is a significant therapeutic problem as tumors are heterogeneous, multidrug-resistant, and oncogenic drivers are undruggable. Genome editing and targeted protein degradation are emerging approaches that are transforming precision oncology by allowing genetic and proteomic interventions. Such technologies as CRISPR-based systems and proteolysis-targeting chimeras (PROTACs) are alternative me",
+      "citedTitle": "",
+      "citedTags": [
+        "Trends in Biotechnology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1039/d6nh00013d",
+      "citedDoi": "10.1002/aelm.202400121",
+      "fromSite": "neuromorphic",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "The increasing demand for future digital technologies and high-temperature neuromorphic hardware will rely on non-volatile behavior and power efficiency. High-temperature devices are crucial for space exploration and function in severe environments, such as industrial units. Two-dimensional transition metal dichalcogenides (TMDs) are known for their strong mechanical properties, which make them fr",
+      "citedTitle": "",
+      "citedTags": [
+        "materials science",
+        "nanotechnology",
+        "neuromorphic engineering",
+        "computer science",
+        "field"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1089/ast.2022.0091",
+      "citedDoi": "10.1089/ast.2021.0078",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Barkol Lake, situated northeast of the Tianshan Mountains, Xinjiang, is a hypersaline lake with abundant sulfate and chloride minerals, which can be a potential analog for microbial saline paleolakes on Mars. The lake water, sediments, and surrounding soils of Barkol Lake were sampled for geochemical analysis and 16S rRNA gene sequencing to investigate the prokaryotic community structure, abundanc",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "geology",
+        "mars exploration program",
+        "habitability",
+        "astro-ph.ep"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1093/nar/gkae999",
+      "citedDoi": "10.1093/bioinformatics/btt656",
+      "fromSite": "agritech",
+      "toSite": "genetech-tools",
+      "citingAbstractSnippet": "The three-dimensional (3D) organization of the human genome plays a crucial role in gene regulation. EXPloration of Regulatory Epigenome with Spatial and Sequence Observations (EXPRESSO) is a novel multi-omics database for exploration and visualization of multi-layered 3D genomic features across 46 different human tissues. Integrating 1360 3D genomic datasets (Hi-C, HiChIP, ChIA-PET) and 842 1D ge",
+      "citedTitle": "",
+      "citedTags": [
+        "Automatic summarization",
+        "Computer science",
+        "Bioconductor",
+        "MIT License",
+        "Software"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.2196/87969",
+      "citedDoi": "10.1038/s41591-018-0316-z",
+      "fromSite": "ai-safety",
+      "toSite": "embodied-ai",
+      "citingAbstractSnippet": "Health care artificial intelligence (AI) systems are increasingly integrated into clinical workflows, yet remain vulnerable to data-poisoning attacks. A small number of manipulated training samples can compromise AI models used for diagnosis, documentation, and resource allocation. Existing privacy regulations, including the Health Insurance Portability and Accountability Act and the General Data ",
+      "citedTitle": "",
+      "citedTags": [
+        "Deep learning",
+        "Computer science",
+        "Artificial intelligence",
+        "Context (archaeology)",
+        "Reinforcement learning"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "yet"
+      ],
+      "topicHit": [
+        "Artificial intelligence"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/9781394238651.ch2",
+      "citedDoi": "10.1093/mind/lix.236.433",
+      "fromSite": "ai-safety",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "This chapter presents the main topics, arguments, and positions in the philosophy of AI at present (excluding ethics). Apart from the basic concepts of intelligence and computation , we suggest that the main topics of artificial cognition are perception , action , meaning , rational choice , free will , consciousness , and normativity . Through a better understanding of these topics, the philosoph",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Cognitive science",
+        "Psychology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.2196/97240",
+      "citedDoi": "10.1038/s41586-023-06291-2",
+      "fromSite": "ai4science",
+      "toSite": "embodied-ai",
+      "citingAbstractSnippet": "Large language models (LLMs) are rapidly emerging in health care, offering opportunities in decision support, education, and research, but raising critical concerns about safety, reliability, and ethics. Although several guidelines for trustworthy AI exist in business and technology, few systematic reviews have applied them to medical contexts.",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Benchmark (surveying)",
+        "Language model",
+        "Comprehension",
+        "Artificial intelligence"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "support"
+      ],
+      "topicHit": [
+        "Language model"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1007/978-981-96-3870-3_11",
+      "citedDoi": "10.1038/227561a0",
+      "fromSite": "biocomputing",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "Abstract The emergence of DNA computing models naturally gave rise to the development of RNA computing. However, over the past three decades, DNA computing has advanced rapidly, while RNA computing has progressed more slowly, primarily due to the structural characteristics of RNA molecules. This chapter focuses on the computational properties of RNA molecules, RNA computing models for solving NP -",
+      "citedTitle": "",
+      "citedTags": [
+        "Nucleic acid",
+        "Computational biology",
+        "Residue (chemistry)",
+        "Structural biology",
+        "Biology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1063/5.0143891",
+      "citedDoi": "10.1006/jcph.1995.1039",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "A Gaussian approximation machine learning interatomic potential for platinum is presented. It has been trained on density-functional theory (DFT) data computed for bulk, surfaces, and nanostructured platinum, in particular nanoparticles. Across the range of tested properties, which include bulk elasticity, surface energetics, and nanoparticle stability, this potential shows excellent transferabili",
+      "citedTitle": "",
+      "citedTags": [
+        "Parallel computing",
+        "Computer science",
+        "Benchmark (surveying)",
+        "Parallel algorithm",
+        "Intel iPSC"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1039/d6cs00520a",
+      "citedDoi": "10.1364/ol.564405",
+      "fromSite": "ai4science",
+      "toSite": "semiconductor",
+      "citingAbstractSnippet": "Green printing has emerged as a powerful additive manufacturing strategy for fabricating functional materials and devices over large areas, while reducing material consumption, processing steps, production costs and chemical waste. By precisely controlling droplet movement, fluid transport, and interfacial assembly, printing enables the direct patterning of highly integrated structures on various ",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.critrevonc.2026.105461",
+      "citedDoi": "10.1148/ryai.240637",
+      "fromSite": "ai4science",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "Artificial intelligence (AI) is transforming drug discovery and development, fields historically constrained by long timelines, high costs, and substantial attrition. Recent advances, particularly in generative modeling, enable an accelerated and increasingly systematic exploration of vast chemical and biological spaces, improving molecular interaction modeling and streamlining the identification ",
+      "citedTitle": "",
+      "citedTags": [
+        "transformative learning",
+        "data science",
+        "drug discovery",
+        "engineering ethics",
+        "key"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 1,
+      "matchedCues": [
+        "however",
+        "yet",
+        "challenge",
+        "challenges",
+        "limitation"
+      ],
+      "topicHit": [
+        "drug discovery",
+        "key"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1109/robio64047.2024.10907753",
+      "citedDoi": "10.1016/j.robot.2008.10.024",
+      "fromSite": "agritech",
+      "toSite": "embodied-ai",
+      "citingAbstractSnippet": "This study presents a comprehensive system integrating expert-built simulations with human-guided real-world control for robotic tasks. Due to potential spatial constraints in actual factory environments, errors during workspace assembly, and the challenges in measuring anisotropic parameters of deformable fabrics, we aim to adapt robotic arms to real-world conditions through direct human guidance",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Categorization",
+        "Teleoperation",
+        "Robot",
+        "Matching (statistics)"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "but",
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "Robot"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1089/ast.2024.0068",
+      "citedDoi": "10.1007/s00216-012-5829-6",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "A primary aim of current and future space exploration missions is the detection and identification of chemical and biological indicators of life, namely biomarkers, on Mars. The Mars Sample Return NASA-ESA program will bring to Earth samples of martian soil, acquired from up to 7 cm depth. The ESA Rosalind Franklin rover will search for signs of life in the subsurface (down to a depth of 2 meters)",
+      "citedTitle": "",
+      "citedTags": [
+        "Deinococcus radiodurans",
+        "Raman spectroscopy",
+        "Martian",
+        "Ionizing radiation",
+        "Mars Exploration Program"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "show that"
+      ],
+      "topicHit": [
+        "Martian"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1089/ast.2010.0528",
+      "citedDoi": "10.1029/2006gl027494",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Ionizing radiation is a ubiquitous feature of the Cosmos, from exogenous cosmic rays (CR) to the intrinsic mineral radioactivity of a habitable world, and its influences on the emergence and persistence of life are wide-ranging and profound. Much attention has already been focused on the deleterious effects of ionizing radiation on organisms and the complex molecules of life, but ionizing radiatio",
+      "citedTitle": "",
+      "citedTags": [
+        "Regolith",
+        "Astrobiology",
+        "Martian",
+        "Permafrost",
+        "Cosmic ray"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "support"
+      ],
+      "topicHit": [
+        "Astrobiology",
+        "Cosmic ray"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acsami.6c08121",
+      "citedDoi": "10.1021/acs.analchem.5c00099",
+      "fromSite": "ai4science",
+      "toSite": "digital-twin",
+      "citingAbstractSnippet": "Metal electrodeposition is a widely used materials synthesis technique; however, industrial applications often require the optimization of complex precursor formulations and electrodeposition parameters, which is typically performed in a slow, inefficient, and empirical manner. Self-driving laboratories (SDLs) that combine automated electrodeposition with machine-learning-guided decision-making co",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "computer and information sciences",
+        "cs.lg",
+        "artificial intelligence",
+        "cs.ro"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.34133/cbsystems.0546",
+      "citedDoi": "10.1002/adma.202311462",
+      "fromSite": "embodied-ai",
+      "toSite": "robot-parts",
+      "citingAbstractSnippet": "Microrobots are emerging as transformative tools for biomedical applications, including minimally invasive diagnostics, targeted therapy, and microsurgical intervention. However, achieving reliable performance and adaptation to diverse tasks and environments requires capabilities that exceed any single form of intelligence. Here, we introduce embodied cross-domain intelligence, a framework for syn",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "medical physics",
+        "data science",
+        "health care",
+        "disease"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/agriengineering8010008",
+      "citedDoi": "10.1109/cvpr52688.2022.01042",
+      "fromSite": "agritech",
+      "toSite": "alien-minerals",
+      "citingAbstractSnippet": "Artificial intelligence (AI) shows great promise for transforming the agriculture sector and can enable the development of many modern farming practices over conventional methods. Nowadays, AI agents and agentic AI have attained popularity due to their autonomous structure and working mechanism. This research work proposes an agentic AI framework that integrates multiple agents developed for farmi",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Artificial intelligence",
+        "Pixel",
+        "Inference",
+        "Inpainting"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "support",
+        "demonstrate",
+        "demonstrates"
+      ],
+      "topicHit": [
+        "Artificial intelligence"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41587-026-03266-2",
+      "citedDoi": "10.1101/cshperspect.a023812",
+      "fromSite": "genetech-tools",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "The limitations of DNA synthesis technologies are a fundamental bottleneck in synthetic biology. Here we present a high-throughput gene synthesis method driven by hybridization, called Molecular Self-Assembly Induced Cloning. Molecular Self-Assembly Induced Cloning overcomes molecular crosstalk and oligo misalignment across genes by coupling orthogonal self-assembly of overlapping DNA segments in ",
+      "citedTitle": "",
+      "citedTags": [
+        "Synthetic biology",
+        "Biology",
+        "Oligonucleotide",
+        "DNA synthesis",
+        "Computational biology"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "but",
+        "limitation"
+      ],
+      "topicHit": [
+        "Synthetic biology",
+        "Biology",
+        "Oligonucleotide",
+        "DNA synthesis"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/imt2.70152",
+      "citedDoi": "10.1371/journal.pone.0061217",
+      "fromSite": "agritech",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Plants are best understood as evolutionary holobionts, in which the host and its associated microbiomes operate as an integrated unit to influence growth, health, and stress resilience. This comprehensive review synthesizes the most current knowledge of plant-associated microbiomes across key ecological compartments, including the rhizosphere, endosphere, phyllosphere, and seeds, highlighting thei",
+      "citedTitle": "",
+      "citedTags": [
+        "UniFrac",
+        "Computer science",
+        "Data science",
+        "Data mining",
+        "Visualization"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acs.chemrev.5c00361",
+      "citedDoi": "10.1021/jacsau.4c00527",
+      "fromSite": "carbon-neutral",
+      "toSite": "quantum-materials",
+      "citingAbstractSnippet": "For much of the past century, carbon dioxide (CO 2 ) has received little attention scientifically outside of its role as a byproduct in the industrialization of the global economy. This trend has recently been upended where, due to mounting environmental concerns, CO 2 has been brought squarely into the public consciousness. This surge in activity has contributed to a once unimaginable idea now pe",
+      "citedTitle": "",
+      "citedTags": [
+        "business",
+        "computer science",
+        "sustainability",
+        "data science",
+        "psychology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.jafr.2026.103051",
+      "citedDoi": "10.12688/digitaltwin.17615.1",
+      "fromSite": "agritech",
+      "toSite": "digital-twin",
+      "citingAbstractSnippet": "Digital twin (DT) technology is progressively employed to facilitate autonomous field operations, predictive maintenance, and adaptive control in precision agriculture. This review analyzes 443 sources published from 2015 to 2026. The literature was categorized into 322 peer-reviewed studies, 32 scholarly preprints, and 89 non-peer-reviewed sources, comprising trade articles, commercial reports, a",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "engineering",
+        "process",
+        "agriculture",
+        "manufacturing engineering"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 1,
+      "matchedCues": [
+        "demonstrate",
+        "demonstrates",
+        "consistent",
+        "validate",
+        "evidence"
+      ],
+      "topicHit": [
+        "agriculture"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acsami.3c18448",
+      "citedDoi": "10.1016/j.commatsci.2012.10.028",
+      "fromSite": "ai4science",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "The Na super ionic conductor (NASICON), which has outstanding structural stability and a high operating voltage, is an appealing material for overcoming the limits of low specific energy and larger volume distortion of sodium-ion batteries. In this study, to discover ideal NASICON cathode materials, a screening platform based on density functional theory (DFT) calculations and machine learning (ML",
+      "citedTitle": "",
+      "citedTags": [
+        "Python (programming language)",
+        "Computer science",
+        "Computational science",
+        "Software",
+        "Application programming interface"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3389/fpls.2026.1879612",
+      "citedDoi": "10.1109/jiot.2026.3679508",
+      "fromSite": "agritech",
+      "toSite": "edge-ai",
+      "citingAbstractSnippet": "Precise identification of chili flowers and buds is essential for enabling intelligent robotic pollination, continuous crop monitoring, and early yield prediction in protected horticulture. Reliable visual sensing remains challenging because chili targets are extremely small, densely distributed, and frequently occluded by foliage, while greenhouse environments introduce strong illumination variat",
+      "citedTitle": "",
+      "citedTags": [
+        "computer and information sciences",
+        "computer science",
+        "cs.lg",
+        "electrical engineering, electronic engineering, information engineering",
+        "artificial intelligence"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.atech.2026.102232",
+      "citedDoi": "10.1109/cvpr52734.2025.00395",
+      "fromSite": "agritech",
+      "toSite": "embodied-ai",
+      "citingAbstractSnippet": "• Fills a critical gap with the first comprehensive survey of PLF multi-modal fusion. • Primary sensing modalities and their standalone limitations are analyzed. • A novel taxonomy categorizes fusion by data homogeneity and integration strategies. • Delivers a curated benchmark of open-access multi-modal PLF datasets. • Pioneers actionable solutions for navigating key challenges in multi-modal PLF",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "cs.ai",
+        "cs.lg",
+        "cs.cv",
+        "computer and information sciences"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.21203/rs.3.rs-8230657/v1",
+      "citedDoi": "10.1186/s41239-019-0171-0",
+      "fromSite": "ai4science",
+      "toSite": "brain-science",
+      "citingAbstractSnippet": "Abstract Purpose: To bridge the persistent gap between AI ethics principles and educational practice by proposing a Pedagogically-Centered AI Governance (PCAG) model that situates pedagogy as the generative core of ethical and inclusive artificial intelligence. Design/methodology/approach: A systematic literature review was conducted following PRISMA 2020 guidelines across seven databases (Scopus,",
+      "citedTitle": "",
+      "citedTags": [
+        "Personalization",
+        "Profiling (computer programming)",
+        "Higher education",
+        "Scale (ratio)",
+        "Inclusion (mineral)"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.xplc.2025.101386",
+      "citedDoi": "10.1126/science.1231143",
+      "fromSite": "agritech",
+      "toSite": "genetech-tools",
+      "citingAbstractSnippet": "Celebrated for boosting agricultural productivity and enhancing food security worldwide, the Green Revolution comprised some of the most significant advances in crop production in the 20th century. However, many recent studies have reported crop yield stagnation in certain regions of the world, raising concerns that yield gains are no longer sufficient to feed the exponentially growing global popu",
+      "citedTitle": "",
+      "citedTags": [
+        "CRISPR",
+        "Cas9",
+        "Genome editing",
+        "Guide RNA",
+        "Biology"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "however",
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "Genome editing"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1109/icrai62391.2024.10894254",
+      "citedDoi": "10.3389/fnins.2016.00209",
+      "fromSite": "agritech",
+      "toSite": "bionic-ai",
+      "citingAbstractSnippet": "The development of soft robotics hand has progressed significantly, evolving from a pneumatically actuated solution for industrial applications to a lightweight and easy-to-manufacture solution for 3d printed prosthetic hands. However, existing soft prosthetic hands often lack anthropomorphic appearances, intrinsic structural integrity, and sufficient feedback to the amputees, leading to a high ra",
+      "citedTitle": "",
+      "citedTags": [
+        "Autonomy",
+        "Computer science",
+        "Prosthesis",
+        "GRASP",
+        "Abandonment (legal)"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "however"
+      ],
+      "topicHit": [
+        "GRASP"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.vas.2026.100588",
+      "citedDoi": "10.1021/acssynbio.4c00006",
+      "fromSite": "agritech",
+      "toSite": "synbio-manufacturing",
+      "citingAbstractSnippet": "Livestock production significantly contributes to global greenhouse gas (GHG) emissions, particularly methane (CH₄), nitrous oxide (N₂O), and carbon dioxide (CO₂), posing challenges to climate change mitigation and environmental sustainability. This review explores advanced, system-wide approaches to reduce emissions from livestock systems while enhancing productivity, resilience, and resource eff",
+      "citedTitle": "",
+      "citedTags": [
+        "synthetic biology",
+        "q-bio.mn",
+        "q-bio.gn",
+        "biochemical engineering",
+        "computational biology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1089/ast.2021.0013",
+      "citedDoi": "10.1007/978-1-4020-9212-1_36",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Life is known to adapt in accordance with its surrounding environment and sustainable resources available to it. Since harsh conditions would have precluded any possible aerobic evolution of life at the martian surface, it is plausible that martian life, should it exist, would have evolved in such a way as to derive energy from more optimum resources. Iron is one of the most abundant elements pres",
+      "citedTitle": "",
+      "citedTags": [
+        "Geology",
+        "Geochemistry",
+        "Astrobiology",
+        "Physics"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acsami.5c23951",
+      "citedDoi": "10.1006/jcph.1995.1039",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Graphene functionalized with catalytic transition metals offers high-performance chemiresistive gas sensing by coupling graphene's exceptional electronic transport with the metal's catalytic activity; yet the atomistic relationships connecting synthesis parameters, morphological outcomes, and sensor gas-surface reaction kinetics remain elusive. We developed an equivariant machine-learning interato",
+      "citedTitle": "",
+      "citedTags": [
+        "Parallel computing",
+        "Computer science",
+        "Benchmark (surveying)",
+        "Parallel algorithm",
+        "Intel iPSC"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acs.jctc.4c00998",
+      "citedDoi": "10.1016/j.commatsci.2012.10.028",
+      "fromSite": "ai4science",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "Diffusion models have recently emerged as powerful tools for the generation of new molecular and material structures. The key insight is that the noise in these models is related to the response of the atoms to displacement, and the denoising step is thus analogous to the geometry relaxation of atomistic systems starting from a random structure. Building on this, we present a generative method cal",
+      "citedTitle": "",
+      "citedTags": [
+        "Python (programming language)",
+        "Computer science",
+        "Computational science",
+        "Software",
+        "Application programming interface"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.12688/f1000research.181969.1",
+      "citedDoi": "10.1111/aphw.70067",
+      "fromSite": "ai4science",
+      "toSite": "agent-ecosystem",
+      "citingAbstractSnippet": "Introduction: Depression and anxiety remain major global mental health challenges that continue to increase across populations. Conventional treatments are often limited by cost, accessibility, stigma, and the availability of professionals. Artificial intelligence (AI)-based interventions have emerged as a potential approach to address these gaps. However, the growing body of evidence across diver",
+      "citedTitle": "",
+      "citedTags": [
+        "Anxiety",
+        "Randomized controlled trial",
+        "Intervention (counseling)",
+        "Dialog box",
+        "Psychological intervention"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.9,
+      "matchedCues": [
+        "however",
+        "challenge",
+        "challenges",
+        "limitation"
+      ],
+      "topicHit": [
+        "Anxiety"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/ca.70156",
+      "citedDoi": "10.7759/cureus.97969",
+      "fromSite": "biomed-ai",
+      "toSite": "spatial-computing",
+      "citingAbstractSnippet": "In recent years, artificial intelligence in medicine has evolved from single recognition tasks toward structural understanding, spatial reasoning, and clinical interpretability. High-quality anatomical data have become a key factor in further development. Driven by digital tomography, three-dimensional reconstruction, and multimodal technologies, body-donor-derived specimens and digital anatomical",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1371/journal.pcbi.1013588",
+      "citedDoi": "10.2196/54345",
+      "fromSite": "ai-safety",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "Modern AI technologies leverage natural language processing (NLP), a subfield of AI dedicated to understanding, interpreting, and generating human language for developing large language models (LLMs), which have significantly advanced the capabilities of AI systems. These models can perform complex language tasks such as text generation, summarization, translation, and sentiment analysis, with unp",
+      "citedTitle": "",
+      "citedTags": [
+        "medicine",
+        "medical education",
+        "psychology",
+        "mathematics education",
+        "medical physics"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.neunet.2026.109409",
+      "citedDoi": "10.1146/annurev.neuro.29.051605.112819",
+      "fromSite": "ai-safety",
+      "toSite": "brain-science",
+      "citingAbstractSnippet": "High-dimensional neuroimaging analyses for clinical diagnosis are often constrained by compromises in spatiotemporal fidelity and the limited adaptability of large-scale, general-purpose models. To address these challenges, we introduce Dynamic Curriculum Learning for Spatiotemporal Encoding (DCL-SE), an end-to-end framework centered on data-driven spatiotemporal encoding (DaSE). We leverage Appro",
+      "citedTitle": "",
+      "citedTags": [
+        "Neuroscience",
+        "Neuroimaging",
+        "Functional magnetic resonance imaging",
+        "Brain activity and meditation",
+        "Positron emission tomography"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "Neuroimaging"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1017/s1473550423000253",
+      "citedDoi": "10.1089/ast.2017.1741",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Abstract Of all species on Earth, only one – Homo sapiens – has developed a technological civilization. As a consequence, estimates of the number of similar civilizations beyond Earth often treat the emergence of human-like intelligence or ‘sophonce’ as an evolutionary unicum: a contingent event unlikely to repeat itself even in biospheres harbouring complex brains, tool use, socially transmitted ",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "extraterrestrial life",
+        "astro-ph.ep",
+        "physics.pop-ph",
+        "astro-ph.im"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/antibiotics14101054",
+      "citedDoi": "10.1016/j.lfs.2024.123291",
+      "fromSite": "agritech",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "The growing prevalence of antimicrobial resistance has significantly compromised the efficacy of conventional antibiotic-based interventions in controlling Salmonella infections across human and veterinary settings. This growing challenge necessitates a strategic rethinking of pathogen control, prompting the integration of next-generation therapeutics capable of disrupting Salmonella pathogenesis ",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/s25165045",
+      "citedDoi": "10.1145/2939672.2939785",
+      "fromSite": "agritech",
+      "toSite": "alien-minerals",
+      "citingAbstractSnippet": "Stable crop yields require an appropriate supply of essential soil nutrients such as nitrogen (N), phosphorus (P), and potassium (K) based on the accurate diagnosis of soil nutrient status. Traditional laboratory analysis of soil nutrients is often complicated and time-consuming and does not provide real-time nutrient status. Visible-near-infrared (Vis-NIR) spectroscopy has emerged as a non-destru",
+      "citedTitle": "",
+      "citedTags": [
+        "Boosting (machine learning)",
+        "Computer science",
+        "Scalability",
+        "Machine learning",
+        "Sketch"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "however",
+        "but"
+      ],
+      "topicHit": [
+        "Machine learning"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/jacs.6c08549",
+      "citedDoi": "10.1021/acsnano.5c12595",
+      "fromSite": "ai4science",
+      "toSite": "quantum-computing",
+      "citingAbstractSnippet": "Aqueous zinc batteries (AZBs) lack a stable anion-derived solid electrolyte interphase (SEI) on the Zn anode, resulting in severe competition between Zn deposition and the hydrogen evolution reaction (HER). A conventional in-shell co-solvent coordinates strongly with Zn2+, displacing coordinated water and weakening Zn2+-anion interactions. This introduces a critical trade-off between HER suppressi",
+      "citedTitle": "",
+      "citedTags": [
+        "materials science",
+        "chemistry",
+        "cond-mat.mtrl-sci",
+        "adsorption",
+        "nanotechnology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.xinn.2025.101091",
+      "citedDoi": "10.1038/s41586-023-06792-0",
+      "fromSite": "ai-safety",
+      "toSite": "embodied-ai",
+      "citingAbstractSnippet": "Rechargeable batteries are pivotal for achieving carbon neutrality and enabling the renewable energy transition. Their advancement requires innovations at micro (materials), device (manufacturing), and system (control and optimization) levels. However, traditional trial-and-error approaches are inadequate for modern scientific demands. As a transformative artificial intelligence (AI) technology, l",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Documentation",
+        "Automation",
+        "Transformer",
+        "Artificial intelligence"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.9,
+      "matchedCues": [
+        "however",
+        "nevertheless",
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "Artificial intelligence"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3389/fmicb.2025.1694997",
+      "citedDoi": "10.3389/fmicb.2023.1198786",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Sources and sinks of methane within an advanced serpentinization-influenced system were investigated at the Coast Range Ophiolite Microbial Observatory (CROMO) in Lower Lake, California. Subsurface water-rock reactions at CROMO contribute to unique, high pH groundwaters and substantial methane emissions. We performed lipid analysis on biomass and measured radiocarbon and stable carbon isotopic com",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "biology",
+        "environmental science",
+        "chemistry",
+        "ecology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1109/icarm62033.2024.10715845",
+      "citedDoi": "10.1038/s41467-023-42882-3",
+      "fromSite": "agritech",
+      "toSite": "deep-sea-tech",
+      "citingAbstractSnippet": "addressing the challenge of diagnosing pulmonary nodules, this study delves into the development of an intervention robotic system that base on bronchoscope technology. To ensure the precision of the system’s operation, a comprehensive mathematical framework is formulated first. The system is primarily actuated by a set of four cables, which enable the manipulation of the flexible tube to achieve ",
+      "citedTitle": "",
+      "citedTags": [
+        "Robot",
+        "Deep sea",
+        "Resilience (materials science)",
+        "Computer science",
+        "Propulsion"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "confirm"
+      ],
+      "topicHit": [
+        "Robot"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1089/ast.2024.0068",
+      "citedDoi": "10.3389/fmicb.2022.749396",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "A primary aim of current and future space exploration missions is the detection and identification of chemical and biological indicators of life, namely biomarkers, on Mars. The Mars Sample Return NASA-ESA program will bring to Earth samples of martian soil, acquired from up to 7 cm depth. The ESA Rosalind Franklin rover will search for signs of life in the subsurface (down to a depth of 2 meters)",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "mars exploration program",
+        "martian",
+        "extraterrestrial life",
+        "astro-ph.ep"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "show that"
+      ],
+      "topicHit": [
+        "martian"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/nano15030225",
+      "citedDoi": "10.1038/s41560-020-0565-1",
+      "fromSite": "ai4science",
+      "toSite": "new-energy",
+      "citingAbstractSnippet": "Solid-state electrolytes (SSEs), as key materials for all-solid-state batteries (ASSBs), face challenges such as low ionic conductivity and poor interfacial stability. With the rapid advancement of computational science and artificial intelligence (AI) technologies, theoretical calculations and AI methods are emerging as efficient and important virtual tools for predicting and screening high-perfo",
+      "citedTitle": "",
+      "citedTags": [
+        "Benchmark (surveying)",
+        "Solid-state",
+        "Benchmarking",
+        "Energy storage",
+        "Computer science"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "challenge",
+        "challenges",
+        "limitation"
+      ],
+      "topicHit": [
+        "Solid-state"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1111/mec.17340",
+      "citedDoi": "10.1093/genetics/131.2.479",
+      "fromSite": "deep-sea-tech",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Copepoda is the most abundant taxon in deep-sea hydrothermal vents, where hard substrate is available. Despite the increasing interest in seafloor massive sulphides exploitation, there have been no population genomic studies conducted on vent meiofauna, which are known to contribute over 50% to metazoan biodiversity at vents. To bridge this knowledge gap, restriction-site-associated DNA sequencing",
+      "citedTitle": "",
+      "citedTags": [
+        "Biology",
+        "Analysis of molecular variance",
+        "Haplotype",
+        "Population",
+        "Genetics"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "but",
+        "differ from"
+      ],
+      "topicHit": [
+        "Population"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/anie.202508098",
+      "citedDoi": "10.1089/153110703769016442",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Abstract Form is a common and intuitive criterion to distinguish between the realm of living species and the inanimate nature. However, there are in fact no strict boundaries in terms of morphology, as exemplified by so‐called chemical gardens, which form by self‐assembly in purely inorganic systems and yet closely mimic the appearance of trees and other plants. While such structures have been rep",
+      "citedTitle": "",
+      "citedTags": [
+        "Astrobiology",
+        "Extraterrestrial life",
+        "Life on Mars",
+        "Mars Exploration Program",
+        "Geologic record"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "consistent with",
+        "consistent"
+      ],
+      "topicHit": [
+        "Life on Mars"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1080/17410541.2026.2715349",
+      "citedDoi": "10.1016/j.landig.2025.02.004",
+      "fromSite": "ai4science",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "This review examines the integration of causal artificial intelligence (AI) and data-driven decision intelligence within healthcare informatics systems to advance personalized medicine and clinical decision-making. A narrative review methodology was employed, synthesizing interdisciplinary literature from major databases, including PubMed, Scopus, Web of Science, IEEE Xplore, and ScienceDirect. St",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "data science",
+        "context",
+        "field",
+        "health care"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3389/frobt.2022.1059026",
+      "citedDoi": "10.1089/soro.2013.0004",
+      "fromSite": "ai4science",
+      "toSite": "robot-parts",
+      "citingAbstractSnippet": "Novel technologies, fabrication methods, controllers and computational methods are rapidly advancing the capabilities of soft robotics. This is creating the need for design techniques and methodologies that are suited for the multi-disciplinary nature of soft robotics. These are needed to provide a formalized and scientific approach to design. In this paper, we formalize the scientific questions d",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "robot",
+        "soft robotics",
+        "robotics",
+        "synthetic biology"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.9,
+      "matchedCues": [
+        "challenge",
+        "challenges",
+        "question",
+        "questions"
+      ],
+      "topicHit": [
+        "robot",
+        "soft robotics",
+        "robotics"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.64898/2026.07.13.737239",
+      "citedDoi": "10.20944/preprints202501.1140.v1",
+      "fromSite": "ai4science",
+      "toSite": "agritech",
+      "citingAbstractSnippet": "Space biology literature is growing exponentially. Existing infrastructure has not kept pace with organizing, synthesizing, and disseminating this knowledge. We present SpaceBio SpaceBio Knowledge Hub ( www.spacebio.space ), an integrated digital ecosystem that combines artificial intelligence, real-time data integration, and open-access infrastructure to advance research, education, and collabora",
+      "citedTitle": "",
+      "citedTags": [
+        "sustainability",
+        "business",
+        "agriculture",
+        "environmental science",
+        "biotechnology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.chom.2025.12.004",
+      "citedDoi": "10.1038/nature08821",
+      "fromSite": "ai-safety",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "In this issue of Cell Host &amp; Microbe, Liu et al. provide a roadmap for decoding the gut microbiome's functional dark matter through a structural atlas of gut phage and bacterial proteins, validating structure-guided functions from endolysins to microbial-host isozymes, and developing an alignment-free method for detecting bacteria-human remote homologs.",
+      "citedTitle": "",
+      "citedTags": [
+        "Metagenomics",
+        "Microbiome",
+        "Biology",
+        "Gene",
+        "Human Microbiome Project"
+      ],
+      "predictedStance": "mention",
+      "predictedConfidence": 0.5,
+      "matchedCues": [],
+      "topicHit": [
+        "Microbiome"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.ijbiomac.2026.154163",
+      "citedDoi": "10.3390/molecules31010045",
+      "fromSite": "ai4science",
+      "toSite": "ai-safety",
+      "citingAbstractSnippet": "Lignocellulosic biomass is a heterogeneous solid matrix whose biological deconstruction is limited by cellulose accessibility, lignin exposure, pore-scale transport, and enzyme stability at solid-liquid interfaces. Although bacterial cellulosomes provide a natural strategy for organizing multiple enzymes through scaffoldin-mediated cohesin-dockerin interactions, their engineering value depends on ",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s44335-025-00036-2",
+      "citedDoi": "10.1109/tnnls.2021.3084827",
+      "fromSite": "neuromorphic",
+      "toSite": "bionic-ai",
+      "citingAbstractSnippet": "This paper investigates the combined potential of neuromorphic and edge computing to develop a flexible machine learning (ML) system designed for processing data from dynamic vision sensors. We build and train hybrid models that integrate spiking neural networks (SNNs) and artificial neural networks (ANNs) using the PyTorch and Lava frameworks. We explore the effects of quantization on ANN models ",
+      "citedTitle": "",
+      "citedTags": [
+        "Convolutional neural network",
+        "Computer science",
+        "Data science",
+        "Artificial intelligence"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3389/frai.2025.1627773",
+      "citedDoi": "10.3390/healthcare12171720",
+      "fromSite": "agritech",
+      "toSite": "bionic-ai",
+      "citingAbstractSnippet": "Artificial Intelligence (AI) is transforming humanitarian healthcare by providing innovative solutions to critical challenges in crisis response. This review explores peer-reviewed literature and case reports from 2001 to 2025, retrieved from PubMed, Scopus, and Google Scholar, using targeted keywords. Results indicate that AI enhances disaster prediction, disease surveillance, resource allocation",
+      "citedTitle": "",
+      "citedTags": [
+        "rehabilitation",
+        "physical medicine and rehabilitation",
+        "brain-computer interface",
+        "medicine",
+        "computer science"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "medicine"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1101/2024.10.29.620927",
+      "citedDoi": "10.1039/d4dd00220b",
+      "fromSite": "synbio-manufacturing",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "S ummary Plasmids are the workhorse of biotechnology. These small DNA molecules are used to produce recombinant proteins and to engineer living organisms. They can be regarded as the blueprints of many biotechnology products. It is, therefore, critical to ensure that the sequences of these DNA molecules match their intended designs. Yet, plasmid verification remains challenging. To secure the exch",
+      "citedTitle": "",
+      "citedTags": [
+        "DNA",
+        "Coding (social sciences)",
+        "Error detection and correction",
+        "Computer science",
+        "Computational biology"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "yet"
+      ],
+      "topicHit": [
+        "DNA"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1039/d6cp01027j",
+      "citedDoi": "10.1021/acs.jpclett.4c03193",
+      "fromSite": "ai4science",
+      "toSite": "quantum-computing",
+      "citingAbstractSnippet": "Accurate prediction of structure-property relationships in organic light-emitting diode (OLED) materials requires computational approaches that can efficiently capture conformational flexibility, dynamic disorder, and chemically diverse bonding environments. In this work, we demonstrate the application of machine-learning force fields (MLFFs) based on a message passing network with iterative charg",
+      "citedTitle": "",
+      "citedTags": [
+        "physics",
+        "quantum",
+        "statistical physics",
+        "meteorite",
+        "astronomy"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "demonstrate",
+        "validate",
+        "show that"
+      ],
+      "topicHit": [
+        "quantum"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.21203/rs.3.rs-8432904/v1",
+      "citedDoi": "10.1038/s41598-025-12143-y",
+      "fromSite": "embodied-ai",
+      "toSite": "spatial-computing",
+      "citingAbstractSnippet": "Abstract Spatial navigation is a relevant target for assessment and training that relies on the interplay between egocentric route execution and allocentric, map-like representations. Virtual Reality (VR) enables ecologically plausible navigation tasks under experimental control, yet outcomes can strongly depend on immersion and locomotion interfaces that determine the availability of self-motion ",
+      "citedTitle": "",
+      "citedTags": [
+        "computer and information sciences",
+        "human-computer interaction",
+        "environmental science",
+        "cs.cv",
+        "medicine"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41467-026-72133-0",
+      "citedDoi": "10.1111/gbi.12419",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "The biological significance of the transition metal molybdenum (Mo) lies in its function at the catalytic center of several enzymes that drive a wide spectrum of redox reactions underlying global biogeochemical cycles, yet a paradox persists. While modern life ubiquitously relies on Mo, geochemical evidence suggests that its availability in early Earth's anoxic oceans was extremely limited. Modern",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "biology",
+        "geology",
+        "earth science",
+        "computational biology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/bs16040514",
+      "citedDoi": "10.1186/s41239-019-0171-0",
+      "fromSite": "ai-safety",
+      "toSite": "brain-science",
+      "citingAbstractSnippet": "This quasi-experimental study compared GenAI-supported flipped learning (AI-FL) with reading-based flipped learning (R-FL) in an 11-week preservice chemistry course. Two intact classes completed the same topics and identical in-class activities, differing only in pre-class preparation through guided GenAI-based interactive learning or assigned readings. The study examined lesson-design performance",
+      "citedTitle": "",
+      "citedTags": [
+        "Personalization",
+        "Profiling (computer programming)",
+        "Higher education",
+        "Scale (ratio)",
+        "Inclusion (mineral)"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1007/s00261-026-05672-1",
+      "citedDoi": "10.1148/radiol.241629",
+      "fromSite": "ai4science",
+      "toSite": "spatial-computing",
+      "citingAbstractSnippet": "This study aimed to develop a deep learning model based on magnetic resonance imaging (MRI) and clinical features for predicting PSM risk after radical prostatectomy (RP).",
+      "citedTitle": "",
+      "citedTags": [
+        "medicine",
+        "artificial intelligence",
+        "cs.ai",
+        "computer science",
+        "interpretability"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1098/rstb.2024.0288",
+      "citedDoi": "10.1126/sciadv.aax1420",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Multiple bio-essential elements such as nitrogen and phosphorus are found in all forms of life discovered thus far. In addition to these major elements, many transition metals have been proposed as crucial components for prebiotic and early cellular processes. These elements must, therefore, have been available during the origin of life; however, the processes that mobilized them on the prebiotic ",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "geology",
+        "astro-ph.ep",
+        "planet",
+        "environmental science"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "however"
+      ],
+      "topicHit": [
+        "planet"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1039/d5np00059a",
+      "citedDoi": "10.1038/s41467-025-61209-y",
+      "fromSite": "ai4science",
+      "toSite": "synbio-manufacturing",
+      "citingAbstractSnippet": "Covering: 2020 to 2025Natural products are a major source of bioactive compounds, yet elucidating their biosynthetic pathways remains a major challenge due to complex genotype-phenotype relationships. Recent advances in computational approaches, particularly artificial intelligence (AI) and mechanistic modeling, are transforming this field. This highlight examines key databases that underpin compu",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/s26030906",
+      "citedDoi": "10.1109/lwc.2025.3599727",
+      "fromSite": "ai-safety",
+      "toSite": "sat-6g",
+      "citingAbstractSnippet": "Rail transport is central to achieving sustainable and energy-efficient mobility, and its digitalization is accelerating the adoption of condition-based maintenance (CBM) strategies. However, existing maintenance practices remain largely reactive or rely on limited rule-based diagnostics, which constrain safety, interoperability, and lifecycle optimization. This survey provides a comprehensive and",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41467-025-67151-3",
+      "citedDoi": "10.1089/ast.2016.1578",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Many of the outer Solar System's icy satellites feature known or suspected subsurface oceans, at least some of which are likely situated atop rocky interiors. Water-rock interactions at and beneath these seafloors might support active chemoautotrophic habitats, with subseafloor fluid flow facilitated by active faulting and hydrothermal systems. Absent such phenomena, however, any attainment of che",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "exoplanet",
+        "planet",
+        "astro-ph.ep",
+        "earth and planetary astrophysics"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1007/s11084-015-9467-9",
+      "citedDoi": "10.1029/2006gl027494",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "The space mission EXPOSE-R2 launched on the 24th of July 2014 to the International Space Station is carrying the BIOMEX (BIOlogy and Mars EXperiment) experiment aimed at investigating the endurance of extremophiles and stability of biomolecules under space and Mars-like conditions. In order to prepare the analyses of the returned samples, ground-based simulations were carried out in Planetary and ",
+      "citedTitle": "",
+      "citedTags": [
+        "Regolith",
+        "Astrobiology",
+        "Martian",
+        "Permafrost",
+        "Cosmic ray"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "however",
+        "but"
+      ],
+      "topicHit": [
+        "Regolith",
+        "Martian"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1371/journal.pone.0355187",
+      "citedDoi": "10.3390/s26092641",
+      "fromSite": "ai4science",
+      "toSite": "deep-sea-tech",
+      "citingAbstractSnippet": "Accurate prediction of corrosion depth in buried pipelines is essential for integrity assessment, reducing inspection and maintenance costs, and managing risk in pipeline transportation systems. Although machine learning (ML) and deep learning (DL) techniques have been widely applied to corrosion prediction, their reliability depends strongly on the quality, representativeness, and balance of the ",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "engineering",
+        "data science",
+        "artificial intelligence",
+        "software deployment"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/ma19091758",
+      "citedDoi": "10.1038/s41586-022-04940-6",
+      "fromSite": "ai4science",
+      "toSite": "quantum-computing",
+      "citingAbstractSnippet": "Programmable quantum simulators based on Rydberg atom arrays provide a versatile platform for data-driven quantum simulation of strongly correlated systems, combinatorial optimization problems, and artificial quantum materials. In this review, we present a unified perspective on how materials-inspired effective Hamiltonians can be engineered and probed in Rydberg arrays, highlighting representativ",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Quantum computer",
+        "Flexibility (engineering)",
+        "Quantum",
+        "Quantum technology"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "but"
+      ],
+      "topicHit": [
+        "Quantum"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/ani16091333",
+      "citedDoi": "10.20944/preprints202507.1070.v1",
+      "fromSite": "agritech",
+      "toSite": "embodied-ai",
+      "citingAbstractSnippet": "Despite the productivity and economic limitations imposed by environmental and climatic conditions, livestock systems play a fundamental role in preserving habitats and high-conservation-value species, while delivering a broad spectrum of ecosystem services to rural populations. Breeders need timely information to produce safe, inexpensive, environmentally, and welfare-friendly food products. Info",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "sustainability",
+        "computer and information sciences",
+        "business",
+        "environmental science"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1101/630715",
+      "citedDoi": "10.1021/ja9621760",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "ABSTRACT Protein design is a powerful tool for elucidating mechanisms of function and engineering new therapeutics and nanotechnologies. While soluble protein design has advanced, membrane protein design remains challenging due to difficulties in modeling the lipid bilayer. In this work, we developed an implicit approach that captures the anisotropic structure, shape of water-filled pores, and nan",
+      "citedTitle": "",
+      "citedTags": [
+        "Chemistry",
+        "Force field (fiction)",
+        "OPLS",
+        "Ab initio",
+        "Molecule"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1007/s10142-023-01280-0",
+      "citedDoi": "10.1093/nar/gks1111",
+      "fromSite": "genetech-tools",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "Multiple myeloma (MM) is a common type of blood cancer affecting plasma cells originating from the lymphoid B-cell lineage. It accounts for about 10% of all hematological malignancies and can cause significant end-organ damage. The emergence of genomic technologies such as next-generation sequencing and gene expression analysis has opened new possibilities for early detection of multiple myeloma a",
+      "citedTitle": "",
+      "citedTags": [
+        "Biology",
+        "Drug discovery",
+        "Genomics",
+        "Computational biology",
+        "Cancer"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "however",
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "Cancer"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/marc.202500281",
+      "citedDoi": "10.1038/nature14133",
+      "fromSite": "semiconductor",
+      "toSite": "new-energy",
+      "citingAbstractSnippet": "Cross-conjugated polymer semiconductors represent an unconventional yet promising class of materials with distinct structural and electronic characteristics compared to their linear conjugated counterparts. These systems introduce branched &#x3c0;-electron delocalization, enabling unique optical, electronic, and redox behaviors not accessible through traditional conjugated frameworks. In this revi",
+      "citedTitle": "",
+      "citedTags": [
+        "Perovskite (structure)",
+        "Formamidinium",
+        "Halide",
+        "Energy conversion efficiency",
+        "Photovoltaic system"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acs.jafc.6c04349",
+      "citedDoi": "10.1038/s41586-021-03819-2",
+      "fromSite": "synbio-manufacturing",
+      "toSite": "ai4science",
+      "citingAbstractSnippet": "Food enzymology is entering a new era driven by the convergence of metagenomics, artificial intelligence, and synthetic biology. While traditional food processes rely on a limited repertoire of established biocatalysts, metagenomic and multiomics approaches now provide access to vast reservoirs of unexplored enzymatic diversity. Simultaneously, advances in protein structure prediction, functional ",
+      "citedTitle": "",
+      "citedTags": [
+        "cs.lg",
+        "q-bio.bm",
+        "computer science",
+        "computational biology",
+        "q-bio.qm"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41467-026-71380-5",
+      "citedDoi": "10.1063/1.456153",
+      "fromSite": "ai4science",
+      "toSite": "new-energy",
+      "citingAbstractSnippet": "Photo-active molecular systems play an essential role in modern science and technology, finding applications in solar cells, organic light-emitting diodes, reaction catalysis, photodynamic therapy, and beyond. The rational design of photo-responsive molecules requires an understanding of the photophysical and photochemical processes underlying their operation, which can be gained via the first-pri",
+      "citedTitle": "",
+      "citedTags": [
+        "Neon",
+        "Basis set",
+        "Basis (linear algebra)",
+        "STO-nG basis sets",
+        "Gaussian"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1111/1755-0998.70116",
+      "citedDoi": "10.1093/molbev/msaa015",
+      "fromSite": "deep-sea-tech",
+      "toSite": "genetech-tools",
+      "citingAbstractSnippet": "Phylogenomics is a transformative approach in systematics, conservation biology, and biomedical research, enabling the inference of evolutionary relationships by leveraging hundreds to thousands of genes from genomic or transcriptomic data. However, acquiring high-quality genomes and transcriptomes necessitates samples with intact DNA and RNA, substantial sequencing investments, and extensive bioi",
+      "citedTitle": "",
+      "citedTags": [
+        "Phylogenetic tree",
+        "Inference",
+        "Biology",
+        "Tree (set theory)",
+        "Tree rearrangement"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "however",
+        "challenge",
+        "limitation"
+      ],
+      "topicHit": [
+        "Phylogenetic tree",
+        "Inference",
+        "Biology"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1017/s1473550425100050",
+      "citedDoi": "10.4236/jmp.2024.153015",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Abstract In recent years, evidence for extraterrestrial life has focused mainly on the following sections, meteorites, space probes, radio telescopes, and extraterrestrial intelligence and civilization. Biochemical studies on meteorites have tried to trace fossilized microorganisms or organic molecules in living structures. Images and atmospheric information obtained from various planets by space ",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "geology",
+        "biology",
+        "meteorite",
+        "physics"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "confirm",
+        "confirming",
+        "evidence"
+      ],
+      "topicHit": [
+        "meteorite"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41467-021-23258-x",
+      "citedDoi": "10.1098/rsta.2016.0342",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "The search for alien life is hard because we do not know what signatures are unique to life. We show why complex molecules found in high abundance are universal biosignatures and demonstrate the first intrinsic experimentally tractable measure of molecular complexity, called the molecular assembly index (MA). To do this we calculate the complexity of several million molecules and validate that the",
+      "citedTitle": "",
+      "citedTags": [
+        "Multicellular organism",
+        "Living systems",
+        "Organism",
+        "Computer science",
+        "Probabilistic logic"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acs.jpcb.4c06450",
+      "citedDoi": "10.1063/5.0007045",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Molten salts are promising candidates in numerous clean energy applications, where knowledge of thermophysical properties and vapor pressure across their operating temperature ranges is critical for safe operations. Due to challenges in evaluating these properties using experimental methods, fast and scalable molecular simulations are essential to complement the experimental data. In this study, w",
+      "citedTitle": "",
+      "citedTags": [
+        "Electronic structure",
+        "Molecular dynamics",
+        "Computer science",
+        "Massively parallel",
+        "Linear scale"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "demonstrate",
+        "demonstrated",
+        "validate"
+      ],
+      "topicHit": [
+        "Molecular dynamics"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/nano16120771",
+      "citedDoi": "10.3390/polym16233397",
+      "fromSite": "robot-parts",
+      "toSite": "semiconductor",
+      "citingAbstractSnippet": "Triboelectric nanogenerators (TENG) show significant potential in pressure sensing by converting mechanical disturbances into electrical signals positively correlated with the magnitude of the applied force, yet their development as practical pressure sensors is severely hindered by the major drawback of only detecting transient mechanical inputs. Additionally, traditional dual-mode pressure senso",
+      "citedTitle": "",
+      "citedTags": [
+        "materials science",
+        "physics.app-ph",
+        "optoelectronics",
+        "cond-mat.mtrl-sci",
+        "renewable energy"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1109/tmi.2026.3701886",
+      "citedDoi": "10.1038/s41592-020-01008-z",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Lymph node (LN) assessment is an essential task in the routine radiology workflow, providing valuable insights for cancer staging and treatment planning. Identifying scatteredly-distributed and low-contrast LNs in 3D CT scans is highly challenging, even for experienced clinicians. Previous lesion and LN detection methods demonstrate the effectiveness of 2.5D approaches (i.e., using 2D backbone wit",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Segmentation",
+        "Artificial intelligence",
+        "Rendering (computer graphics)",
+        "Image segmentation"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1089/ast.2013.0974",
+      "citedDoi": "10.1089/153110703769016442",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Iron (oxyhydr)oxide microbial mats in modern to &#x223c;100&#x2009;ka tufa terraces are present in a cold spring system along Ten Mile Graben, southeastern Utah, USA. Mats exhibit morphological, chemical, and textural biosignatures and show diagenetic changes that occur over millennial scales. The Jurassic Brushy Basin Member of the Morrison Formation in the Four Corners region of the USA also exh",
+      "citedTitle": "",
+      "citedTags": [
+        "Astrobiology",
+        "Extraterrestrial life",
+        "Life on Mars",
+        "Mars Exploration Program",
+        "Geologic record"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.atech.2026.102351",
+      "citedDoi": "10.1016/j.rser.2016.10.069",
+      "fromSite": "agritech",
+      "toSite": "new-energy",
+      "citingAbstractSnippet": "Heat stress significantly constrains broiler productivity and increases cooling-energy demand, while conventional poultry-house cooling systems rely heavily on fossil-based electricity. This review synthesizes recent advances in phase change material (PCM)-based cold thermal energy storage (CTES) systems for sustainable broiler-house cooling, with emphasis on energy efficiency, thermal stability, ",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41392-026-02631-6",
+      "citedDoi": "10.1186/s13040-025-00442-z",
+      "fromSite": "ai-safety",
+      "toSite": "spatial-computing",
+      "citingAbstractSnippet": "The integration of multiomics technologies with artificial intelligence (AI) has become a transformative force in modern precision medicine, particularly within drug discovery. Multiomics approaches, including genome-wide association studies, transcriptomic profiling, proteomic interaction mapping, and metabolomic sequencing, provide unparalleled insights into the molecular dynamics of disease pat",
+      "citedTitle": "",
+      "citedTags": [
+        "drug discovery",
+        "computer science",
+        "data science",
+        "artificial intelligence",
+        "pharmacology"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.9,
+      "matchedCues": [
+        "however",
+        "but",
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "drug discovery",
+        "artificial intelligence"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/adma.202505420",
+      "citedDoi": "10.1038/s41467-024-47630-9",
+      "fromSite": "sat-6g",
+      "toSite": "neuromorphic",
+      "citingAbstractSnippet": "The human perception system features many dynamic functional mechanisms that efficiently process the large amount of sensory information available in the surrounding environment. In this system, sensory adaptation operates as a core mechanism that seamlessly filters familiar and inconsequential external stimuli at sensory endpoints. Such adaptive filtering minimizes redundant data movement between",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.idm.2026.03.006",
+      "citedDoi": "10.1561/0400000042",
+      "fromSite": "low-altitude",
+      "toSite": "privacy-computing",
+      "citingAbstractSnippet": "Understanding the spatial dynamics of infectious disease spread is essential for modeling population health. A key component in such modeling is human mobility data, which informs how infections propagate across time and space. This review provides a comprehensive survey of both real-world and synthetic mobility datasets that have been used in the context of infectious disease modeling. Through th",
+      "citedTitle": "",
+      "citedTags": [
+        "Foundations and Trends® in Theoretical Computer Science"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41598-025-33639-7",
+      "citedDoi": "10.1201/9781003132981-11",
+      "fromSite": "ai4science",
+      "toSite": "edge-ai",
+      "citingAbstractSnippet": "This work proposes the BEmXRD-Nets framework, a novel machine learning framework that integrates fundamental atomic properties with learned embeddings from experimental X-ray diffraction (XRD) patterns to accurately predict the crystal energy in diverse and complex material structures. This framework is implemented to predict both formation and total energy for structures ranging from binary ([For",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "nanotechnology",
+        "biochemical engineering",
+        "materials science",
+        "field"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/jsfa.71016",
+      "citedDoi": "10.1186/s12934-026-03022-w",
+      "fromSite": "agritech",
+      "toSite": "synbio-manufacturing",
+      "citingAbstractSnippet": "Hyperuricemia (HUA) and gout are increasingly prevalent metabolic disorders, imposing a substantial global health burden. Although conventional urate-lowering therapies remain the clinical cornerstone, their long-term effectiveness is frequently constrained by adverse effects, variable patient responses, and limited capacity to address underlying metabolic and inflammatory disturbances. Emerging e",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/brv.70201",
+      "citedDoi": "10.1073/pnas.2514534122",
+      "fromSite": "synbio-manufacturing",
+      "toSite": "alien-minerals",
+      "citingAbstractSnippet": "The emergence of eukaryotes marks a monumental juncture in the 4.6-billion-year evolutionary odyssey of our planet. Despite decades of research, the origin of eukaryotic life remains unresolved, with many of its nuances still veiled in the mists of time. While the progenitors of modern eukaryotes have roots that extend deep into the ancient past, the age of the last common ancestor to all modern e",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "biology",
+        "geology",
+        "meteorite",
+        "chemistry"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "extend",
+        "evidence"
+      ],
+      "topicHit": [
+        "biology",
+        "chemistry"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1128/aem.02528-24",
+      "citedDoi": "10.1144/jgs2021-050",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Microbes from terrestrial extreme environments enable testing of biosignature production in conditions relevant to astrobiological targets. Mars, which was likely more conducive to life during early warmer and wetter epochs, has inspired missions that search for signs of early life in the surficial rock record, including mineral or organic biosignatures. Microbial iron reduction is a common and an",
+      "citedTitle": "",
+      "citedTags": [
+        "Astrobiology",
+        "Mars Exploration Program",
+        "Life on Mars",
+        "Solar System",
+        "Extraterrestrial life"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/9781119636489.ch39",
+      "citedDoi": "10.1007/978-1-4020-9212-1_36",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "This chapter reviews the application of miniaturized Raman spectroscopic instrumentation for terrestrial geological field applications, which has demonstrated the feasibility of analyzing materials in situ and without the need for removal of specimens to study using laboratory fixed-base instrumentation. A particular feature of the use of Raman spectroscopic instrumentation in these environments i",
+      "citedTitle": "",
+      "citedTags": [
+        "Geology",
+        "Geochemistry",
+        "Astrobiology",
+        "Physics"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "demonstrate",
+        "demonstrated"
+      ],
+      "topicHit": [
+        "Astrobiology"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1101/2025.03.28.646019",
+      "citedDoi": "10.1101/2023.05.22.541722",
+      "fromSite": "biocomputing",
+      "toSite": "neuromorphic",
+      "citingAbstractSnippet": "Cortical microcircuits play a fundamental role in natural intelligence. While they inspired a wide range neural computation models and artificial intelligence algorithms, few attempts have been made to directly emulate them with an electronic computational substrate that uses the same physics of computation. Here we present a heterogeneous canonical microcircuit architecture compatible with analog",
+      "citedTitle": "",
+      "citedTags": [
+        "cs.lg",
+        "computer science",
+        "artificial intelligence",
+        "stat.ml",
+        "artificial neural network"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "demonstrate",
+        "validate"
+      ],
+      "topicHit": [
+        "artificial intelligence"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1007/978-3-032-07511-6_1",
+      "citedDoi": "10.1007/s10462-022-10350-x",
+      "fromSite": "ai4science",
+      "toSite": "edge-ai",
+      "citingAbstractSnippet": "Protein structure prediction, a fundamental challenge emerging from the protein folding problem, forms the basis of modern computational biology. This field addresses the critical question of how the amino acids sequence determines its three-dimensional structure, a relationship critical to understanding biological function. Over the last four decades, methodologies have evolved from template-base",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.tips.2026.04.008",
+      "citedDoi": "10.1016/j.apsb.2026.02.010",
+      "fromSite": "ai4science",
+      "toSite": "synbio-manufacturing",
+      "citingAbstractSnippet": "The component specification problem-the mismatch between bioactivity observed in chemically unresolved extracts and the constituent-level chemical definition required for reliable artificial intelligence (AI) inference-remains a key bottleneck in computational natural product (NP) discovery. Without operational standards linking analytical evidence to AI strategy, even sophisticated models risk ov",
+      "citedTitle": "",
+      "citedTags": [
+        "computational biology",
+        "biology",
+        "computer science",
+        "drug discovery",
+        "biotechnology"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/jcph.70249",
+      "citedDoi": "10.1002/cpt.70224",
+      "fromSite": "ai4science",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "Long-acting (LA) antiretroviral (ARV) medications represent a significant advancement in the HIV treatment and prevention field. LA ARVs help reduce daily pill burden and thus optimize adherence, which has translated into sustained virologic suppression in persons with HIV, prevention of HIV transmission among those at risk, and improved patient satisfaction. This review examines the clinical phar",
+      "citedTitle": "",
+      "citedTags": [
+        "medicine",
+        "biotechnology",
+        "pharmacology",
+        "science policy",
+        "mental health"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "but"
+      ],
+      "topicHit": [
+        "pharmacology"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1007/s12010-026-05825-4",
+      "citedDoi": "10.1016/j.biortech.2026.134066",
+      "fromSite": "ai4science",
+      "toSite": "deep-sea-tech",
+      "citingAbstractSnippet": "Environmental and human health applications of seaweeds (SWs) have received attention in recent years. However, previous reviews lack of covering SWs from cultivation to their various applications, along with the integration of artificial intelligence (AI). Thus, this review introduces SWs identification and aquaculture techniques, including onshore, nearshore, offshore, and integrated multi-troph",
+      "citedTitle": "",
+      "citedTags": [
+        "environmental science",
+        "business",
+        "sustainability",
+        "biochemical engineering",
+        "renewable energy"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s43247-026-03359-5",
+      "citedDoi": "10.1089/ast.2006.0122",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Ichnofossils in basaltic glass are putative microscopic trace fossils occurring on modern seafloor and throughout Earth history. While their biological origin remains debated, it is unknown why microorganisms thrive in volcanic glass. Here we show ichnofossils associated with biosignatures from sedimentary interbeds of pillow basalt in the ~ 1870 million years old Flaherty Formation, Belcher Group",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/advs.77267",
+      "citedDoi": "10.1016/j.tibtech.2025.09.017",
+      "fromSite": "agritech",
+      "toSite": "synbio-manufacturing",
+      "citingAbstractSnippet": "Gut microbial cross-feeding links the production, release, and reutilization of resources across community members, but its ecological consequences are shaped by competition, antagonism, host selection, and recipient identity. Despite rapid advances, major gaps remain between predicting metabolic complementarity, demonstrating causal donor-resource-recipient transfer, establishing ecological robus",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1109/access.2024.3487497",
+      "citedDoi": "10.1109/itnac55475.2022.9998338",
+      "fromSite": "agritech",
+      "toSite": "edge-ai",
+      "citingAbstractSnippet": "This paper presents a comprehensive examination of smart farming solutions through a systematic review of literature available in various digital repositories. Methodologically, we categorize the devices and technologies utilized in these solutions into sensors, actuators, gateways, power supplies, networking, data storage, data processing, and information delivery. Through this analysis, we ident",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "internet of things",
+        "cloud computing",
+        "computer and information sciences",
+        "artificial intelligence"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.biomaterials.2026.124431",
+      "citedDoi": "10.1038/s41467-025-61209-y",
+      "fromSite": "ai4science",
+      "toSite": "synbio-manufacturing",
+      "citingAbstractSnippet": "The integration of artificial intelligence (AI) into biomolecular and materials science is reshaping the design, optimization, and translation of functional biomaterials. Although empirical screening and iterative experimentation remain indispensable, they are increasingly insufficient for exploring the high-dimensional sequence and structural spaces of biomolecular modalities. Peptides, antibodie",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/ijms27167120",
+      "citedDoi": "10.1038/nprot.2013.143",
+      "fromSite": "ai4science",
+      "toSite": "genetech-tools",
+      "citingAbstractSnippet": "Heme oxygenase-1 (HO-1), encoded by HMOX1 , catalyzes the rate-limiting step of heme degradation and generates biliverdin, carbon monoxide, and ferrous iron, thereby linking heme turnover with redox regulation and stress-associated signaling. In birds, biliverdin is retained as a major heme-derived product, but the cellular consequences of HMOX1 perturbation remain insufficiently defined. Here, CR",
+      "citedTitle": "",
+      "citedTags": [
+        "Nature Protocols"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1093/nsr/nwag128",
+      "citedDoi": "10.1063/1.447334",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Copper (Cu) undergoes significant surface reconstruction during CO 2 electroreduction, which is strongly modulated and accelerated by reaction intermediates, yet the atomic-scale mechanism remains far behind the experimental observations. By integrating machine-learning interatomic potentials with large-scale grand canonical Monte Carlo simulations, we systematically investigated *CO- and *H-induc",
+      "citedTitle": "",
+      "citedTags": [
+        "Canonical ensemble",
+        "Constant (computer programming)",
+        "Molecular dynamics",
+        "Momentum (technical analysis)",
+        "Distribution (mathematics)"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1101/2023.05.05.539526",
+      "citedDoi": "10.1093/nar/gkg563",
+      "fromSite": "ai4science",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "Abstract Protein structure determination is a critical aspect of biological research, enabling us to understand protein function and potential applications. Recent advances in deep learning and artificial intelligence have led to the development of several protein structure prediction tools, such as AlphaFold2 and ColabFold. However, their performance has primarily been evaluated on well-character",
+      "citedTitle": "",
+      "citedTags": [
+        "UniProt",
+        "Proteomics",
+        "Biology",
+        "Web server",
+        "Service (business)"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1063/5.0143891",
+      "citedDoi": "10.1016/j.commatsci.2012.10.028",
+      "fromSite": "ai4science",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "A Gaussian approximation machine learning interatomic potential for platinum is presented. It has been trained on density-functional theory (DFT) data computed for bulk, surfaces, and nanostructured platinum, in particular nanoparticles. Across the range of tested properties, which include bulk elasticity, surface energetics, and nanoparticle stability, this potential shows excellent transferabili",
+      "citedTitle": "",
+      "citedTags": [
+        "Python (programming language)",
+        "Computer science",
+        "Computational science",
+        "Software",
+        "Application programming interface"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.4018/979-8-3693-6303-4.ch017",
+      "citedDoi": "10.1080/14686996.2023.2188878",
+      "fromSite": "neuromorphic",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "The exponential growth of data and information has stimulated technological progress in computing systems that utilize them to effectively discover patterns and produce important insights. Neural network algorithms have been applied to conventional silicon transistor-based hardware to do highly parallel computations, drawing inspiration from the structure and functions of biological synapses and n",
+      "citedTitle": "",
+      "citedTags": [
+        "Science and Technology of Advanced Materials"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1088/2632-959x/ae83d3",
+      "citedDoi": "10.1038/s41586-024-07723-3",
+      "fromSite": "agritech",
+      "toSite": "new-energy",
+      "citingAbstractSnippet": "Abstract Perovskite solar cells (PSCs) have emerged as a transformative photovoltaic (PV) technology due to their rapid efficiency improvements and low-cost fabrication potential, attracting significant academic and industrial interest. In particular, semitransparent PSCs (ST-PSCs) introduce a paradigm shift by enabling simultaneous electricity generation and light transmission, thereby expanding ",
+      "citedTitle": "",
+      "citedTags": [
+        "Perovskite (structure)",
+        "Interface (matter)",
+        "Materials science",
+        "Chemistry",
+        "Crystallography"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1016/j.neunet.2024.106734",
+      "citedDoi": "10.1109/tnsre.2016.2627556",
+      "fromSite": "agritech",
+      "toSite": "bionic-ai",
+      "citingAbstractSnippet": "It is extremely challenging to classify steady-state visual evoked potentials (SSVEPs) in scenarios characterized by a huge scarcity of calibration data where only one calibration trial is available for each stimulus target. To address this challenge, we introduce a novel approach named OS-SSVEP, which combines a dual domain cross-subject fusion network (CSDuDoFN) with the task-related and task-di",
+      "citedTitle": "",
+      "citedTags": [
+        "Brain–computer interface",
+        "Computer science",
+        "Electroencephalography",
+        "Benchmark (surveying)",
+        "Speech recognition"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1177/15311074251392173",
+      "citedDoi": "10.1089/ast.2007.0153",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Our investigation in Mars-relevant terrestrial environments where biological material is entombed within rapidly precipitated evaporite crystals has given us the ability to evaluate the preservation potential of a hypersaline brine system in advance of interrogating similar environments on Mars. These evaporite minerals, halite (NaCl) and gypsum (CaSO 4 ), have been found to host authigenic fluid ",
+      "citedTitle": "",
+      "citedTags": [
+        "Astrobiology",
+        "Mars Exploration Program",
+        "Field (mathematics)",
+        "Habitability",
+        "Exploration of Mars"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/open.70283",
+      "citedDoi": "10.1201/b10787",
+      "fromSite": "biocomputing",
+      "toSite": "tcm-tools",
+      "citingAbstractSnippet": "The growing interest in natural product research as a safer and sustainable alternative to synthetic drugs has triggered this study, which evaluates the chemical profile and biological activity of Orobanche racemosa extracts. In the current study, extraction was performed from O. racemosa using the maceration method with several extraction solvents. The extracts were examined for their antioxidant",
+      "citedTitle": "",
+      "citedTags": [
+        "Traditional medicine",
+        "Medicine"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.7554/elife.98637",
+      "citedDoi": "10.1089/ast.2023.0042",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Microfossils from the Paleoarchean Eon are the oldest known evidence of life. Despite their significance in understanding the history of life on Earth, any interpretation of the nature of these microfossils has been a point of contention among researchers. Decades of back-and-forth arguments led to the consensus that reconstructing the lifecycles of Archaean Eon organisms is the most promising way",
+      "citedTitle": "",
+      "citedTags": [
+        "CLARITY",
+        "Context (archaeology)",
+        "Worry",
+        "Habitability",
+        "Computer science"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1017/qrd.2025.10012",
+      "citedDoi": "10.1089/ast.2023.0082",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "This work poses and partially explores an astrobiological hypothesis: might polymeric sulfur and phosphorus-based oxides form heteropolymers in the acidic cloud decks of Venus' atmosphere? Following an introduction to the emerging field of computational astrobiology, we demonstrate the use of quantum chemical methods to evaluate basic properties of a hypothetical carbon-free heteropolymer that mig",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "astro-ph.ep",
+        "chemistry",
+        "meteorite",
+        "mars exploration program"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.9,
+      "matchedCues": [
+        "but",
+        "challenge",
+        "challenges",
+        "unlike"
+      ],
+      "topicHit": [
+        "astrobiology",
+        "chemistry"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3389/frai.2025.1583459",
+      "citedDoi": "10.21037/jmai-23-152",
+      "fromSite": "privacy-computing",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "This review provides a thorough and organized overview of machine learning (ML) applications in predicting heart disease, covering technological advancements, challenges, and future prospects. As cardiovascular diseases (CVDs) are the leading cause of global mortality, there is an urgent demand for early and precise diagnostic tools. ML models hold considerable potential by utilizing large-scale h",
+      "citedTitle": "",
+      "citedTags": [
+        "medicine",
+        "disease",
+        "intensive care medicine",
+        "internal medicine",
+        "psychological intervention"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "challenge",
+        "challenges",
+        "limitation"
+      ],
+      "topicHit": [
+        "disease"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.64898/2025.12.16.694706",
+      "citedDoi": "10.34133/cbsystems.0001",
+      "fromSite": "brain-science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "A bstract The investigation of cultured biological neural networks is a critical frontier in neuroscience with profound implications for the advancement of brain-machine interfaces, treatments of neurological diseases, and fundamental insights into neural computation and cognition. Advances in induced pluripotent stem cell (iPSC) technology and machine learning are converging to enable novel appro",
+      "citedTitle": "",
+      "citedTags": [
+        "Cyborg and Bionic Systems"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3389/frai.2026.1816692",
+      "citedDoi": "10.1038/s41586-023-06291-2",
+      "fromSite": "ai-safety",
+      "toSite": "embodied-ai",
+      "citingAbstractSnippet": "Large language models (LLMs) are increasingly adopted across healthcare applications, including clinical decision support and medical documentation systems. However, their deployment in medical settings raises significant privacy and security concerns due to the sensitivity of protected health information and stringent regulatory requirements. Recent studies have shown that LLM-based medical appli",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Benchmark (surveying)",
+        "Language model",
+        "Comprehension",
+        "Artificial intelligence"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "however",
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "Language model"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41467-026-68923-1",
+      "citedDoi": "10.1038/s41467-022-28487-2",
+      "fromSite": "digital-twin",
+      "toSite": "bionic-ai",
+      "citingAbstractSnippet": "Neuromorphic engineering, originally focused on replicating the biophysics of neurons and synapses in hardware, has progressively expanded to explore novel computational principles, materials, and applications. With their unique ability to emulate brain functions, neuromorphic devices are emerging as prime candidates to advance the treatment of brain disorders, addressing the current limitations o",
+      "citedTitle": "",
+      "citedTags": [
+        "Neuromorphic engineering",
+        "Computer science",
+        "Robot",
+        "Human–computer interaction",
+        "Artificial intelligence"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "challenge",
+        "challenges",
+        "limitation"
+      ],
+      "topicHit": [
+        "Neuromorphic engineering"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/life13071448",
+      "citedDoi": "10.1126/science.abn9033",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "The Hayabusa2 mission was tasked with returning samples from the C-complex asteroid Ryugu (1999 JU3), in order to shed light on the formation, evolution and composition of such asteroids. One of the main science objectives was to understand whether such bodies could have supplied the organic matter required for the origin of life on Earth. Here, a review of the studies concerning the organic matte",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "meteorite",
+        "asteroid",
+        "geology",
+        "chemistry"
+      ],
+      "predictedStance": "mention",
+      "predictedConfidence": 0.5,
+      "matchedCues": [],
+      "topicHit": [
+        "astrobiology",
+        "asteroid"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acssynbio.6c00199",
+      "citedDoi": "10.1016/j.ymben.2020.11.012",
+      "fromSite": "ai4science",
+      "toSite": "synbio-manufacturing",
+      "citingAbstractSnippet": "Microbial cell factories represent sustainable platforms for the production of fuels, chemicals, and therapeutics, but their development is limited by challenges in pathway discovery, enzyme optimization, and metabolic regulation. Recent advances in artificial intelligence and machine learning are reshaping this field by enabling predictive pathway design, enhanced protein engineering, and dynamic",
+      "citedTitle": "",
+      "citedTags": [
+        "Biomanufacturing",
+        "Metabolic engineering",
+        "Synthetic biology",
+        "Biochemical engineering",
+        "Computer science"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.8,
+      "matchedCues": [
+        "but",
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "Biomanufacturing"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3389/fopht.2025.1660483",
+      "citedDoi": "10.1016/j.jtumed.2023.12.007",
+      "fromSite": "ai-safety",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "Consanguineous marriages are common, particularly in Saudi Arabia, where approximately half of all marriages are consanguineous. The likelihood of autosomal recessive (AR) genetic abnormalities, especially rare diseases (RDs) that present long-term health issues, is significantly increased by this trend, making Inherited Ocular Diseases (IODs) a public health concern in Saudi Arabia. The common IO",
+      "citedTitle": "",
+      "citedTags": [
+        "medicine",
+        "systematic review",
+        "medline",
+        "computer science",
+        "artificial intelligence"
+      ],
+      "predictedStance": "mention",
+      "predictedConfidence": 0.5,
+      "matchedCues": [],
+      "topicHit": [
+        "medicine"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s41598-026-53829-1",
+      "citedDoi": "10.1109/tmi.2016.2538465",
+      "fromSite": "privacy-computing",
+      "toSite": "brain-science",
+      "citingAbstractSnippet": "Data privacy considerations and data fragmentation between healthcare institutions is causing segmentation of ischemic stroke lesions from neuroimaging to be hindered. The centralized approach may conflict with HIPAA and GDPR, and the federated learning approach does not have proper privacy guarantees nor is it able to capture lesion detail. This work prposes Fed-AttUNet-DP,a three major contribut",
+      "citedTitle": "",
+      "citedTags": [
+        "Segmentation",
+        "Computer science",
+        "Artificial intelligence",
+        "Convolutional neural network",
+        "Pattern recognition (psychology)"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "but"
+      ],
+      "topicHit": [
+        "Segmentation"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1039/d6mh00221h",
+      "citedDoi": "10.1038/nmat2317",
+      "fromSite": "quantum-materials",
+      "toSite": "new-energy",
+      "citingAbstractSnippet": "Metal-free room temperature phosphorescence (RTP) materials in aqueous environments offer promising applications due to their long lifetimes and large Stokes shifts but face challenges in maintaining stability against water and oxygen. To address this issue, we developed a trinity strategy that integrates efficient emissive units, excited-state stabilization, and protection from quenching agents w",
+      "citedTitle": "",
+      "citedTags": [
+        "Photocatalysis",
+        "Materials science",
+        "Artificial photosynthesis",
+        "Hydrogen production",
+        "Water splitting"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1148/ryai.250982",
+      "citedDoi": "10.1016/j.acra.2025.11.018",
+      "fromSite": "ai-safety",
+      "toSite": "neuromorphic",
+      "citingAbstractSnippet": "Artificial intelligence (AI) has progressed from technical research to routine clinical use, reaching an inflection point where technological capabilities may exceed current regulatory and oversight frameworks. These systems are becoming more complex, progressing from narrow, task-specific algorithms to foundation models and early agentic prototypes. This progression has redistributed risk, respon",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.66261/bdngz055",
+      "citedDoi": "10.3390/jpm15110503",
+      "fromSite": "ai4science",
+      "toSite": "digital-twin",
+      "citingAbstractSnippet": "The rapid advancement of Artificial Intelligence (AI), Machine Learning (ML), and Digital Twin technologies has transformed modern healthcare systems toward precision and personalized medicine. Traditional treatment approaches often fail to account for patient-specific biological variations, resulting in inconsistent drug responses and ineffective treatment outcomes. Digital Twin modeling provides",
+      "citedTitle": "",
+      "citedTags": [
+        "Cognitive reframing",
+        "Bridging (networking)",
+        "Data science",
+        "Precision medicine",
+        "Translational research"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "inconsistent",
+        "fail to"
+      ],
+      "topicHit": [
+        "Precision medicine"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1101/2025.09.11.675485",
+      "citedDoi": "10.1093/bioadv/vbaf019",
+      "fromSite": "ai-safety",
+      "toSite": "genetech-tools",
+      "citingAbstractSnippet": "ABSTRACT Conversational agents for bioinformatics data analysis and interpretation remain largely inaccessible to the broader biological research community. This gap is especially pronounced in the current Generative AI era, which demands a paradigm shift in how researchers interact with computational tools. There is a pressing need to bridge well-established biological infrastructures and databas",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "cs.ai",
+        "artificial intelligence",
+        "cs.cl",
+        "cs.lg"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "demonstrate"
+      ],
+      "topicHit": [
+        "artificial intelligence"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acs.jpclett.4c01942",
+      "citedDoi": "10.1063/1.447334",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Ionic liquids (ILs) are an exciting class of electrolytes finding applications in many areas from energy storage to solvents, where they have been touted as \"designer solvents\" as they can be mixed to precisely tailor the physiochemical properties. As using machine learning interatomic potentials (MLIPs) to simulate ILs is still relatively unexplored, several questions need to be answered to see i",
+      "citedTitle": "",
+      "citedTags": [
+        "Canonical ensemble",
+        "Constant (computer programming)",
+        "Molecular dynamics",
+        "Momentum (technical analysis)",
+        "Distribution (mathematics)"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1089/soro.2022.0077",
+      "citedDoi": "10.1109/lra.2020.3007411",
+      "fromSite": "robot-parts",
+      "toSite": "embodied-ai",
+      "citingAbstractSnippet": "Fluidic soft robots have the advantages of inherent compliance and adaptability, but they are significantly restricted by complex control systems and bulky power devices, including fluidic valves, fluidic pumps, electrical motors, as well as batteries, which make it challenging to operate in narrow space, energy shortage, or electromagnetic sensitive situations. To overcome the shortcomings, we de",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Artificial intelligence",
+        "Computer vision",
+        "Object (grammar)",
+        "Robotic hand"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1101/2023.05.05.539526",
+      "citedDoi": "10.1093/bioinformatics/btp163",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Abstract Protein structure determination is a critical aspect of biological research, enabling us to understand protein function and potential applications. Recent advances in deep learning and artificial intelligence have led to the development of several protein structure prediction tools, such as AlphaFold2 and ColabFold. However, their performance has primarily been evaluated on well-character",
+      "citedTitle": "",
+      "citedTags": [
+        "Python (programming language)",
+        "MIT License",
+        "Computer science",
+        "Documentation",
+        "Source code"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1093/ajrccm/aamag082",
+      "citedDoi": "10.1016/j.landig.2025.02.004",
+      "fromSite": "digital-twin",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "The management of pulmonary arterial hypertension (PAH), like so many diseases, currently relies on episodic data from clinic visits, which offers limited insight into a patient's disease trajectory and dynamic clinical decisions. Patient digital twins present a technological solution that combines hospital and community data into a single dynamic and predictive virtual representation of the patie",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "data science",
+        "context",
+        "field",
+        "health care"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/molecules31132225",
+      "citedDoi": "10.3390/diagnostics15151914",
+      "fromSite": "agritech",
+      "toSite": "privacy-computing",
+      "citingAbstractSnippet": "Surface-enhanced Raman spectroscopy (SERS) has emerged as a transformative tool in biomedical diagnostics, offering a highly sensitive and non-invasive method for detecting molecular biomarkers at exceptionally low concentrations. This approach takes advantage of the plasmonic characteristics of customized metallic nanostructures that produce intense localized electromagnetic fields via localized ",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "data science",
+        "health care",
+        "artificial intelligence",
+        "big data"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.4102/ajlm.v15i1.3130",
+      "citedDoi": "10.1038/s44222-025-00363-w",
+      "fromSite": "ai4science",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "Background Artificial intelligence (AI) is transforming haematology diagnostics by improving accuracy, efficiency, and reproducibility in workflows traditionally reliant on manual microscopy and expert interpretation. Integrating AI into laboratory medicine presents opportunities to enhance diagnostic precision and reduce variability, particularly in resource-limited settings. Aim This narrative r",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "health care",
+        "transparency",
+        "data science",
+        "engineering ethics"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3389/fpls.2025.1579355",
+      "citedDoi": "10.1145/3065386",
+      "fromSite": "agritech",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Introduction Agriculture is a cornerstone of human society but faces significant challenges, including pests, diseases, and the need for increased production efficiency. Large models, encompassing large language models, large vision models, and multimodal large language models, have shown transformative potential in various domains. This review aims to explore the potential applications of these m",
+      "citedTitle": "",
+      "citedTags": [
+        "Softmax function",
+        "Convolutional neural network",
+        "Computer science",
+        "Pooling",
+        "Dropout (neural networks)"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1021/acs.jpcc.5c03589",
+      "citedDoi": "10.1038/s41578-019-0157-5",
+      "fromSite": "ai4science",
+      "toSite": "new-energy",
+      "citingAbstractSnippet": "Lithium metal batteries offer superior volumetric and gravimetric specific capacities compared to those based on traditional graphite anodes. Although advancements in solid-state electrolytes address safety concerns, challenges remain, particularly regarding interphase formation in lithium metal anodes. This work presents a computational framework based on high-throughput first-principles density ",
+      "citedTitle": "",
+      "citedTags": [
+        "Electrolyte",
+        "Fast ion conductor",
+        "Materials science",
+        "Ionic conductivity",
+        "Ionic bonding"
+      ],
+      "predictedStance": "contrast",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "challenge",
+        "challenges"
+      ],
+      "topicHit": [
+        "Electrolyte"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1093/bioinformatics/btag401",
+      "citedDoi": "10.1371/journal.pbio.3000599",
+      "fromSite": "ai4science",
+      "toSite": "life-science",
+      "citingAbstractSnippet": "Motivation Current epigenetic clocks face a trade-off between predictive accuracy and biological interpretability, often relying on dataset-specific correction to generalize across cohorts. We propose GT-Mamba, a novel architecture that integrates a Structure-Aware Graph Transformer with the Mamba state space model. This design captures CpG topological correlations and genome-wide long-range depen",
+      "citedTitle": "",
+      "citedTags": [
+        "Biology",
+        "Senescence",
+        "Phenotype",
+        "Neurodegeneration",
+        "Biomarker"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3389/fdgth.2025.1693060",
+      "citedDoi": "10.1016/s2589-7500(24)00095-5",
+      "fromSite": "ai-safety",
+      "toSite": "biomed-ai",
+      "citingAbstractSnippet": "The triage process in emergency departments (EDs) is complex, and AI-based solutions have begun to target it. At this pivotal stage, the challenge lies less in designing smarter algorithms than in fostering trust and alignment among medical and technical stakeholders. We explored professional attitudes towards AI in ED triage, focusing on alignments and misalignments across backgrounds.",
+      "citedTitle": "",
+      "citedTags": [
+        "computer science",
+        "psychology",
+        "data science",
+        "cs.ai",
+        "health care"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1002/cphc.70385",
+      "citedDoi": "10.1063/5.0007045",
+      "fromSite": "ai4science",
+      "toSite": "biocomputing",
+      "citingAbstractSnippet": "Machine-learning potentials (MLPs) extend the time and length scales of atomistic simulations, enabling the study of complex systems, such as electrolyte solutions. Yet most models face a tradeoff between accuracy, computational cost, and the ability to capture long-range interactions. Large foundation models promise generality but often come with substantial overhead and energy demands. In contra",
+      "citedTitle": "",
+      "citedTags": [
+        "Electronic structure",
+        "Molecular dynamics",
+        "Computer science",
+        "Massively parallel",
+        "Linear scale"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/jimaging12060274",
+      "citedDoi": "10.1007/s11547-025-02001-2",
+      "fromSite": "ai-safety",
+      "toSite": "spatial-computing",
+      "citingAbstractSnippet": "Traditional evaluations of artificial intelligence (AI) systems in the dynamic, operator-dependent, and time-sensitive field of interventional radiology (IR), focusing solely on algorithmic performance, often fail to capture their real-world clinical impact. This narrative review aims to provide an overview of the current state of the art of AI integration in IR through human-AI interaction (HAI),",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1186/s12864-026-13030-0",
+      "citedDoi": "10.1186/s13742-015-0047-8",
+      "fromSite": "genetech-tools",
+      "toSite": "alien-minerals",
+      "citingAbstractSnippet": "Background The nested association mapping (NAM) population, first developed in maize, have been widely adopted across diverse crop species including barley, sorghum, rice, and soybean. These populations enable high-resolution mapping of complex traits and have been extensively utilized worldwide to dissect the genetic architecture of agronomically important traits such as yield, disease resistance",
+      "citedTitle": "",
+      "citedTags": [
+        "Computer science",
+        "Codebase",
+        "Scalability",
+        "Genome-wide association study",
+        "Population"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.7,
+      "matchedCues": [
+        "demonstrate",
+        "demonstrated"
+      ],
+      "topicHit": [
+        "Genome-wide association study",
+        "Population"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3390/biomimetics10120813",
+      "citedDoi": "10.1002/advs.202104382",
+      "fromSite": "deep-sea-tech",
+      "toSite": "robot-parts",
+      "citingAbstractSnippet": "Soft robotics provides compliance, safe interaction, and adaptability that rigid systems cannot easily achieve. The octopus offers a powerful biological model, combining reversible suction adhesion, continuum arm motion, and reliable performance in wet environments. This review examines recent octopus-inspired soft grippers through three functional dimensions: structural and sensing devices, contr",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.3389/frobt.2026.1800762",
+      "citedDoi": "10.1145/3610977.3634993",
+      "fromSite": "agritech",
+      "toSite": "robot-parts",
+      "citingAbstractSnippet": "Socially aware robot navigation requires robots to move among people in ways that respect human social norms, comfort, and perceived safety. Proxemics, the regulation of interpersonal space, plays a central role in this process. Applied HRI work often relies on simplified, static representations of personal space, overlooking the dynamic, asymmetric, and context-dependent nature of proxemic behavi",
+      "citedTitle": "",
+      "citedTags": [],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1017/s1473550413000396",
+      "citedDoi": "10.1089/ast.2006.0012",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Abstract Terrestrial analogue studies underpin almost all planetary missions and their use is essential in the exploration of our Solar system and in assessing the habitability of other worlds. Their value relies on the similarity of the analogue to its target, either in terms of their mineralogical or geochemical context, or current physical or chemical environmental conditions. Such analogue sit",
+      "citedTitle": "",
+      "citedTags": [
+        "Permafrost",
+        "Astrobiology",
+        "Earth science",
+        "Biodiversity",
+        "Martian"
+      ],
+      "predictedStance": "support",
+      "predictedConfidence": 0.6,
+      "matchedCues": [
+        "demonstrate"
+      ],
+      "topicHit": [
+        "Martian"
+      ],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/nnano.2017.127",
+      "citedDoi": "10.1038/nchembio.975",
+      "fromSite": "biocomputing",
+      "toSite": "synbio-manufacturing",
+      "citingAbstractSnippet": "Cells use spatial constraints to control and accelerate the flow of information in enzyme cascades and signalling networks. Synthetic silicon-based circuitry similarly relies on spatial constraints to process information. Here, we show that spatial organization can be a similarly powerful design principle for overcoming limitations of speed and modularity in engineered molecular circuits. We creat",
+      "citedTitle": "",
+      "citedTags": [
+        "Metabolic engineering",
+        "Synthetic biology",
+        "Systems biology",
+        "Metabolic network",
+        "Metabolic flux analysis"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    },
+    {
+      "citingDoi": "10.1038/s42004-026-01969-w",
+      "citedDoi": "10.1089/ast.2024.0004",
+      "fromSite": "alien-minerals",
+      "toSite": "exo-science",
+      "citingAbstractSnippet": "Multiple controversial scenarios have been proposed explaining the emergence of life, both from environmental and chemical perspectives. These scenarios discuss environmental settings including deep-ocean hydrothermal vents, volcanic lakes, hot springs, and geysers, which could have served as the cradle for life. Environmental conditions varied by energy, chemical elements, minerals, transition me",
+      "citedTitle": "",
+      "citedTags": [
+        "astrobiology",
+        "astro-ph.ep",
+        "extraterrestrial life",
+        "mars exploration program",
+        "planet"
+      ],
+      "predictedStance": "unknown",
+      "predictedConfidence": 0.2,
+      "matchedCues": [],
+      "topicHit": [],
+      "goldStance": null
+    }
+  ]
+}

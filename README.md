@@ -57,6 +57,18 @@ curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩�
 
 > **判定**：本项目的"平台侧"接近完整（API / 治理 / 编排 / 可观测），"知识侧"（ER / 立场 / 向量 / 证据抽取）**尚未开工**。详见 [`reports/项目全面评估与硬科技深度提升综合报告-2026-10-10.md`](reports/项目全面评估与硬科技深度提升综合报告-2026-10-10.md) §5（技术壁垒的真相）与 §8（Tier 1 硬科技路线图）。
 
+### SCI 达标提升进度（2026-10-18 更新 · 不影响上方 2026-10-10 硬锚定）
+
+按 [`reports/SCI达标提升方案-2026-10-18.md`](reports/SCI达标提升方案-2026-10-18.md) 推进，以下能力在**本 SCI 数据集语境**下达到「最小可用」（minimal usable），均附复算脚本与诚实边界报告：
+
+| 能力 | 2026-10-10 状态 | 2026-10-18 状态 | 交付物 / 诚实边界 |
+|---|---|---|---|
+| 跨源实体解析 | ❌ 未实现 | ✅ 最小可用（DOI / 标题级） | `tools/analyze-entity-resolution.mjs` + [`reports/entity-resolution-report.md`](reports/entity-resolution-report.md)；去重率 0.72%（30 域近正交故低），DOI 合并按构造无误并，标题合并保守关闭。 |
+| 引用立场抽取 | ❌ 无 | ✅ 最小可用（摘要级代理 + 词典法） | `tools/stance-extract.mjs` + [`reports/stance-extraction-report.md`](reports/stance-extraction-report.md)；引用图未保留引用句 → 仅摘要级代理，覆盖 37.5%，真值 P/R 待人工标注 `data/stance-sample.json`。 |
+| 30 站全量评测 | （3 站假象） | ✅ 全量 30 站持久化 | `eval/run-eval.mjs` → `eval/results-2026-10-18.json` + `eval/leaderboard-2026-10-18.html`；mean R@10=0.444，按类型分解诚实披露短板。 |
+
+> 仍 ❌ 未落地：向量检索（T2.3，需 `GENETECH_EMBED_URL`）、中文政产学融合、DOI 覆盖 ≥95%（T1.4，需 OpenAlex key）。标「最小可用」**仅指本数据集已具备可复算的最小实现**，不代表达到生产级或对标 Scite / OpenAlex——与上表硬锚定不冲突。
+
 **可达性事实（哪些地址真的存在，别写错）**
 
 | 地址 | 状态 |
