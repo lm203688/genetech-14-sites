@@ -1,0 +1,135 @@
+{
+  "conflictCount": 4,
+  "conflicts": [
+    {
+      "type": "numeric-conflict",
+      "evidenceA": {
+        "text": "At a low redundancy threshold, SimpleFold-Turbo (SF-T) skips ≈ 93 % of forward passes while preserving near-baseline template modeling (TM)-scores across 300 structurally diverse CATH domains and all six SimpleFold model sizes (100 million to 3 billion parameters), at compute budgets where log-uniform step-skipping collapses.",
+        "type": "abstract-numeric"
+      },
+      "evidenceB": {
+        "text": "The AlphaFold Database now hosts approximately 214 million structures for various model organisms, covering nearly the entire genome.",
+        "type": "abstract-numeric"
+      },
+      "numbersA": [
+        93,
+        300,
+        100,
+        3
+      ],
+      "numbersB": [
+        214
+      ],
+      "sharedContext": [
+        "model",
+        "million"
+      ],
+      "severity": "medium"
+    },
+    {
+      "type": "numeric-conflict",
+      "evidenceA": {
+        "text": "At a low redundancy threshold, SimpleFold-Turbo (SF-T) skips ≈ 93 % of forward passes while preserving near-baseline template modeling (TM)-scores across 300 structurally diverse CATH domains and all six SimpleFold model sizes (100 million to 3 billion parameters), at compute budgets where log-uniform step-skipping collapses.",
+        "type": "abstract-numeric"
+      },
+      "evidenceB": {
+        "text": "This yields a 5.91× speedup and reduces false positives by up to 37.7× while producing smaller yet higher-quality MSAs and preserving or improving structure prediction accuracy, particularly in low-homology regimes.",
+        "type": "abstract-numeric"
+      },
+      "numbersA": [
+        93,
+        300,
+        100,
+        3
+      ],
+      "numbersB": [
+        5.91,
+        37.7
+      ],
+      "sharedContext": [
+        "while",
+        "preserving"
+      ],
+      "severity": "medium"
+    },
+    {
+      "type": "numeric-conflict",
+      "evidenceA": {
+        "text": "These three mechanisms significantly enhance Authentic Knowledge Construction, with the overall model explaining 63% of its variance (R 2 = 0.63).",
+        "type": "abstract-numeric"
+      },
+      "evidenceB": {
+        "text": "We validated the pipeline using three complementary benchmarks: (1) VaaS-RIKER2, a 640-run prospective ablation study (4 conditions × 4 temperatures × 40 genes) plus 117 open-weight model runs on dedicated GPU hardware — unguided LLM output produced 95.9% Type II hallucination (wrong-topic citations that exist as real papers but carry a correct claim context yet do not support the cited claim); the full VaaS protocol achieved 0.0% Type I and 6.5% Type II, a > 14-fold reduction; live PMID verification alone (C3) eliminated both error types entirely (0.0%/0.0%); (2) an independent L3 citation audit of Wave 3 (179 PMIDs, 99.4% valid, 0 Type I errors); and (3) the MedHallu clinical hallucination benchmark, on which the VaaS protocol achieved F1 = 0.9853 on the hard tier (cases where all benchmark ensemble models were fooled), compared to the published GPT-4o baseline of F1 = 0.811 (Pandit et al., 2025).",
+        "type": "abstract-numeric"
+      },
+      "numbersA": [
+        63,
+        2,
+        0.63
+      ],
+      "numbersB": [
+        1,
+        2,
+        640,
+        4,
+        4,
+        40,
+        117,
+        95.9,
+        0,
+        6.5,
+        14,
+        3,
+        0,
+        0,
+        2,
+        3,
+        3,
+        179,
+        99.4,
+        0,
+        3,
+        1,
+        0.9853,
+        -4,
+        1,
+        0.811,
+        2025
+      ],
+      "sharedContext": [
+        "three",
+        "model"
+      ],
+      "severity": "medium"
+    },
+    {
+      "type": "numeric-conflict",
+      "evidenceA": {
+        "text": "These three mechanisms significantly enhance Authentic Knowledge Construction, with the overall model explaining 63% of its variance (R 2 = 0.63).",
+        "type": "abstract-numeric"
+      },
+      "evidenceB": {
+        "text": "Three independent open-weight models ( llama3.2 , qwen2.5:14b , mistral:7b ) showed 81–87% Type II rates under unguided conditions, confirming that wrong-topic citation hallucination is structural and model-agnostic.",
+        "type": "abstract-numeric"
+      },
+      "numbersA": [
+        63,
+        2,
+        0.63
+      ],
+      "numbersB": [
+        3.2,
+        2.5,
+        14,
+        7,
+        81,
+        87
+      ],
+      "sharedContext": [
+        "three",
+        "model"
+      ],
+      "severity": "medium"
+    }
+  ]
+}

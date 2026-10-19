@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ai Safety 搜索 — GeneTech 知识引擎</title>
+<meta name="description" content="Ai Safety 领域 9,950 条实体的静态搜索（Pagefind 索引，零后端）。">
+<link rel="canonical" href="https://lm203688.github.io/ai-safety//search.html">
+<meta name="theme-color" content="#0b62d6">
+<link rel="stylesheet" href="pagefind/pagefind-ui.css">
+<style>
+:root{--bg:#fff;--fg:#16181d;--muted:#5c6370;--line:#e3e6ea;--accent:#0b62d6;--chip:#f2f5f9;--card:#fbfcfd}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:32px 20px 64px}
+header.top{border-bottom:1px solid var(--line);background:var(--card)}
+header.top .wrap{padding:18px 20px}
+.brand{font-weight:700;font-size:16px;color:var(--fg)}
+.brand span{color:var(--muted);font-weight:400;margin-left:8px;font-size:13px}
+h1{font-size:26px;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:14px;margin:0 0 26px}
+#search-input{width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;margin:0 0 24px}
+#search-input:focus{border-color:var(--accent)}
+#search-results{min-height:200px}
+pf-result{margin:0 0 12px;border:1px solid var(--line);border-radius:8px;padding:12px 16px;background:var(--card);cursor:pointer}
+pf-result:hover{border-color:var(--accent)}
+pf-result h3{margin:0 0 4px;font-size:15px}
+pf-result p{margin:0;color:var(--muted);font-size:13px}
+pf-result .meta{margin:6px 0 0;color:var(--muted);font-size:12px}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="https://lm203688.github.io/ai-safety//">Ai Safety<span>GeneTech 知识引擎</span></a></div></header>
+<div class="wrap">
+<nav style="display:flex;gap:10px;margin:0 0 18px;flex-wrap:wrap">
+  <a href="https://lm203688.github.io/ai-safety//" style="padding:5px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px">首页</a>
+  <a href="https://lm203688.github.io/ai-safety//search.html" style="padding:5px 12px;border:1px solid var(--accent);border-radius:999px;color:var(--accent);font-size:13px">搜索</a>
+  <a href="https://lm203688.github.io/ai-safety//entities.html" style="padding:5px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px">实体列表</a>
+  <a href="https://api.swarmlabs.tools/v1/oss/registry" style="padding:5px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px">API</a>
+</nav>
+
+<h1>Ai Safety 搜索</h1>
+<p class="sub">9,950 条实体即时检索（Pagefind 静态索引，零后端依赖）</p>
+
+<input id="search-input" type="search" placeholder="输入关键词，搜索论文/工具/数据集…" autofocus>
+<div id="search-results"></div>
+
+<footer>
+  <p>Ai Safety · 9,950 条实体 · 数据更新：2026-10-15 · CC-BY 4.0</p>
+  <p>API: <a href="https://api.swarmlabs.tools/v1/oss/registry">Registry</a> · <a href="https://data.swarmlabs.tools/">Data</a> · <a href="https://github.com/lm203688/genetech-14-sites">GitHub</a></p>
+</footer>
+</div>
+
+<script src="pagefind/pagefind-ui.js" type="module"></script>
+<script type="module">
+// 等待 Pagefind 组件加载完成
+window.addEventListener('DOMContentLoaded', async function(){
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  const query = new URLSearchParams(window.location.search).get('q');
+  if(query) input.value = query;
+
+  function renderResults(responses){
+    if(!responses || responses.length === 0){
+      results.innerHTML = '<p style="color:var(--muted)">无匹配结果</p>';
+      return;
+    }
+    results.innerHTML = responses.map(r => {
+      const url = r.data && r.data[0] ? r.data[0].url : '#';
+      const title = r.data && r.data[0] ? r.data[0].title : '';
+      const excerpt = r.data && r.data[0] ? (r.data[0].excerpt || '').slice(0, 200) : '';
+      return `<pf-result data-url="${url}">
+        <h3>${title}</h3>
+        <p>${excerpt}</p>
+      </pf-result>`;
+    }).join('');
+
+    // 点击跳转
+    results.querySelectorAll('pf-result').forEach(el => {
+      el.addEventListener('click', () => {
+        window.location.href = el.dataset.url;
+      });
+    });
+  }
+
+  // 初始化 Pagefind
+  const app = await PagefindUI.create({
+    element: '#search-results',
+    showSubResults: true,
+    showImages: false,
+    searchBar: false, // 使用自定义输入框
+    placeholder: '搜索实体…',
+  });
+
+  // 监听输入
+  input.addEventListener('input', () => {
+    const q = input.value.trim();
+    if(!q){
+      results.innerHTML = '';
+      return;
+    }
+    const results = await app.search(q);
+    renderResults(results);
+  });
+
+  // 初始搜索（如果有 URL 参数）
+  if(query){
+    const results = await app.search(query);
+    renderResults(results);
+  }
+});
+</script>
+</body>
+</html>
