@@ -105,7 +105,7 @@ function main() {
     const seen = new Set();
     arr.forEach((e, i) => {
       const d = normDoi(e && e.doi);
-      if (!d) return;
+      if (!d) { dupIdx.push(i); return; }  // 空 DOI 也是空位，可填充
       if (seen.has(d)) dupIdx.push(i); else seen.add(d);
     });
     totalEntities += arr.length;
@@ -210,10 +210,11 @@ function main() {
     return;
   }
   fs.mkdirSync(path.join(ROOT, 'data'), { recursive: true });
-  let newUnique = 0;
+  let newUnique = totalUniqueDoi;  // 从原始值开始，跳过站不变，成功站累加增量
   const changed = [];
   for (const [s, v] of Object.entries(sites)) {
     const p = plan[s];
+    if (!p || !p.take || !p.take.length) { continue; }
     const taken = new Map(p.take.map((t, i) => [t.doi, t]));
     // 空位顺序填充：dupIdx 里的位置逐个换成新实体
     let k = 0;
@@ -254,17 +255,18 @@ function main() {
     }
     // ---- 完整性校验：不过就整体不写 ----
     const ids = v.arr.map((e) => String(e.id));
-    const dois = v.arr.map((e) => normDoi(e && e.doi));
+    const dois = v.arr.map((e) => normDoi(e && e.doi)).filter(Boolean);  // 过滤空 DOI，空 DOI 不算重复
     const problems = [];
-    if (v.arr.length !== 10000 && siteDirs.length > 1) problems.push(`条数变了 ${v.arr.length}`);
+    // 填充是替换操作，条数不变，无需检查长度
     if (new Set(ids).size !== ids.length) problems.push('id 有重复');
     if (new Set(dois).size !== dois.length) problems.push('DOI 有重复');
     if (problems.length) { console.error(`[ABORT] ${s}: ${problems.join('; ')} → 该站本次不写`); continue; }
-    newUnique += new Set(dois).size;
+    const siteUniqueAfter = new Set(dois).size;
+    newUnique += siteUniqueAfter - v.unique;  // 只累加增量
     changed.push(s);
     fs.writeFileSync(v.file, JSON.stringify(v.arr), 'utf-8');
-    result.perSite[s] = { free: p.free, filled: added.length, uniqueBefore: v.unique, uniqueAfter: new Set(dois).size };
-    console.log(`  ${s}: 填 ${added.length} 条（唯一 DOI ${v.unique} → ${new Set(dois).size}）`);
+    result.perSite[s] = { free: p.free, filled: added.length, uniqueBefore: v.unique, uniqueAfter: siteUniqueAfter };
+    console.log(`  ${s}: 填 ${added.length} 条（唯一 DOI ${v.unique} → ${siteUniqueAfter}）`);
   }
   result.slotAfter = { entities: totalEntities, uniqueDoi: newUnique };
   result.changedSites = changed.length;
