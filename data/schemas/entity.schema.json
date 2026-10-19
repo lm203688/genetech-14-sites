@@ -74,6 +74,10 @@
     "doi": {
       "type": "string",
       "description": "DOI if available"
+    },
+    "zone_note": {
+      "type": "string",
+      "description": "Optional geographic / agronomic zone note (crop-adapt-db E2). Reserved for agritech + life-science domains. Optional to avoid blocking existing 152 station data; populated as data grows."
     }
   }
 }

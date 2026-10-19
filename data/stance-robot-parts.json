@@ -1,0 +1,120 @@
+{
+  "site": "robot-parts",
+  "entityCount": 20,
+  "totalJudgments": 64,
+  "stanceDistribution": {
+    "supports": 64,
+    "contradicts": 0,
+    "weakens": 0,
+    "neutral": 0
+  },
+  "stanceRates": {
+    "supports": "1.000",
+    "contradicts": "0.000",
+    "weakens": "0.000",
+    "neutral": "0.000"
+  },
+  "avgConfidence": "0.917",
+  "samples": [
+    {
+      "entity": "arxiv-2607.29617v1",
+      "claim": "cs.ai improves performance",
+      "stance": "supports",
+      "confidence": 0.95,
+      "signals": {
+        "posStrong": 4,
+        "posWeak": 3,
+        "negStrong": 0,
+        "negWeak": 1,
+        "neutral": 1,
+        "claimCoverage": "0.500",
+        "hasNumClaim": false,
+        "hasNumEvidence": false,
+        "evNums": [],
+        "clNums": []
+      },
+      "calibration": "statistical-signal"
+    },
+    {
+      "entity": "arxiv-2607.29617v1",
+      "claim": "cs.ai is effective",
+      "stance": "supports",
+      "confidence": 0.95,
+      "signals": {
+        "posStrong": 4,
+        "posWeak": 3,
+        "negStrong": 0,
+        "negWeak": 1,
+        "neutral": 1,
+        "claimCoverage": "0.000",
+        "hasNumClaim": false,
+        "hasNumEvidence": false,
+        "evNums": [],
+        "clNums": []
+      },
+      "calibration": "statistical-signal"
+    },
+    {
+      "entity": "arxiv-2607.29617v1",
+      "claim": "cs.ai reduces errors",
+      "stance": "supports",
+      "confidence": 0.95,
+      "signals": {
+        "posStrong": 4,
+        "posWeak": 3,
+        "negStrong": 0,
+        "negWeak": 1,
+        "neutral": 1,
+        "claimCoverage": "0.500",
+        "hasNumClaim": false,
+        "hasNumEvidence": false,
+        "evNums": [],
+        "clNums": []
+      },
+      "calibration": "statistical-signal"
+    },
+    {
+      "entity": "arxiv-2607.29617v1",
+      "claim": "The paper presents cs.ai",
+      "stance": "supports",
+      "confidence": 0.95,
+      "signals": {
+        "posStrong": 4,
+        "posWeak": 3,
+        "negStrong": 0,
+        "negWeak": 1,
+        "neutral": 1,
+        "claimCoverage": "0.000",
+        "hasNumClaim": false,
+        "hasNumEvidence": false,
+        "evNums": [],
+        "clNums": []
+      },
+      "calibration": "statistical-signal"
+    },
+    {
+      "entity": "arxiv-2607.29613v1",
+      "claim": "computer and information sciences improves performance",
+      "stance": "supports",
+      "confidence": 0.95,
+      "signals": {
+        "posStrong": 5,
+        "posWeak": 0,
+        "negStrong": 1,
+        "negWeak": 2,
+        "neutral": 0,
+        "claimCoverage": "0.200",
+        "hasNumClaim": false,
+        "hasNumEvidence": true,
+        "evNums": [
+          0,
+          0.5,
+          149,
+          0.5
+        ],
+        "clNums": []
+      },
+      "calibration": "statistical-signal"
+    }
+  ]
+}

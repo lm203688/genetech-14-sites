@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Crop Adaptation Database Schema",
+  "description": "Valid structure for crop adaptation DB (crop × variety × region × climate × agronomy). Populates the `crop_adapt_db` and `knowledge_graph` payload fields referenced by entity.schema.json and by reports/GAP_AUDIT_2026-10-17.md E2.",
+  "type": "object",
+  "required": ["version", "builtAt", "crop", "records"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Schema version string (e.g., genetech-crop-adapt-db/v1)"
+    },
+    "builtAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Built timestamp (ISO 8601)"
+    },
+    "schema": {
+      "type": "string",
+      "description": "Schema identifier (e.g., genetech-crop-adapt-db/v1)"
+    },
+    "crop": {
+      "type": "string",
+      "description": "Crop family (rice / wheat / maize / soybean / cotton / sorghum / cassava / potato)"
+    },
+    "stats": {
+      "type": "object",
+      "description": "Aggregate counts",
+      "properties": {
+        "records": { "type": "integer", "minimum": 0 },
+        "varieties": { "type": "integer", "minimum": 0 },
+        "regions": { "type": "integer", "minimum": 0 },
+        "zonalClasses": { "type": "array", "items": { "type": "string" } },
+        "sourceStations": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    },
+    "records": {
+      "type": "array",
+      "description": "One row per (variety × region × year × treatment) observation",
+      "items": {
+        "type": "object",
+        "required": ["variety", "region", "yield_tHa"],
+        "properties": {
+          "variety": { "type": "string" },
+          "region": { "type": "string" },
+          "year": { "type": "integer" },
+          "yield_tHa": { "type": "number" },
+          "rainfall_mm": { "type": "number" },
+          "temperature_c": { "type": "number" },
+          "soil_type": { "type": "string" },
+          "treatment": { "type": "string" },
+          "sourceUrl": { "type": "string", "format": "uri" },
+          "firstSeenAt": { "type": "string", "format": "date-time" },
+          "lastSeenAt": { "type": "string", "format": "date-time" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
