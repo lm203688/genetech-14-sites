@@ -1,0 +1,37 @@
+# Core LangChain/LangGraph
+langgraph>=0.2.57
+langchain>=0.3.13
+langchain-core>=0.3.13
+langchain-google-genai>=2.0.8
+langchain-ollama>=0.2.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.13
+
+# LangGraph Checkpointing
+langgraph-checkpoint-sqlite>=2.0.0
+
+# Search
+ddgs>=1.0.0
+tavily-python>=0.5.0
+
+# HTTP Client (async-first with HTTP/2 support)
+httpx[http2]>=0.27.0
+
+# HTML Parsing
+beautifulsoup4>=4.12.3
+
+# Configuration
+python-dotenv>=1.0.1
+pydantic>=2.10.6
+
+# Markdown Processing
+markdown>=3.7
+
+# Web Interface
+chainlit>=1.0.0
+
+# Async Support
+aiohttp>=3.11.11
+
+# Structured Logging (optional but recommended)
+structlog>=24.0.0
