@@ -1,0 +1,17 @@
+# deep-sea-tech · 前沿简报（近 30 天 Top 5）
+
+> 生成时间：2026-10-09T06:01:22.928Z
+> 数据源：`deep-sea-tech/website/api/entities.json`
+> 筛选：publishedDate（缺失时 addedAt）≥ 2026-09-09
+> 复现：`node operations-plan/pipeline-frontier-briefing.js --site=deep-sea-tech --days=30 --top=5`
+
+**近 30 天无新增实体。** 可能原因：
+
+- 该域近期无新论文入库（数据采集端未捕获）
+- 该域实体的 `publishedDate` 字段普遍缺失，回退到 `addedAt` 也在阈值外
+
+可尝试放宽阈值：`--days=90` 或 `--days=180`。
+
+---
+
+_本简报由 `operations-plan/pipeline-frontier-briefing.js` 自动生成。_
