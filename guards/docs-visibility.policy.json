@@ -24,12 +24,18 @@
     "public_allowlist": [
       "README.md",
       "consumer-onboarding.md",
+      "whitepaper.md",
+      "tech-decisions.md",
       "enterprise-data-license-kit.md",
       "ops-runbook.md",
       "citation-probe-questions.md",
       "domain-graph.html",
       "frontier-discoveries.md",
-      "attribution.md"
+      "attribution.md",
+      "counterfactual_trajectory.md",
+      "DUCKDB-PARQUET.md",
+      "ENTITY-PAGES-INTEGRATION.md",
+      "PAGEFIND-INTEGRATION.md"
     ]
   },
   "rules": [
