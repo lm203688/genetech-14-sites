@@ -1,0 +1,31 @@
+# === 敏感文件 ===
+.env
+.env.local
+.env.*.local
+CREDENTIALS.md
+credentials/
+*.pem
+*.key
+secrets.json
+
+# === 运行时 ===
+node_modules/
+.wrangler/
+dist/
+build/
+tmp/
+
+# === 日志与缓存 ===
+*.log
+logs/
+.cache/
+
+# === 系统 ===
+.DS_Store
+Thumbs.db
+*.swp
+
+# === 编辑器 ===
+.vscode/
+.idea/
+*.code-workspace
