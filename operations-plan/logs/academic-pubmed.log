@@ -1,0 +1,24 @@
+[args] {"perSite":25,"concurrency":3,"sources":["pubmed"],"dryRun":false,"mailto":"ops@genetech.tools"}
+=== 学术数据集补齐（Crossref + PubMed）===
+语料：30 站，每站抽样 ≤25 个 DOI → 池 750 条
+已完成 crossref 750 条 / pubmed 0 条，crossref 待抓 0 条
+  [derive] 从磁盘 crossref-entities.json 的 621 条记录推导 PubMed 待查 DOI
+  pubmed 待查 621 个 DOI（Europe PMC，并发 3）
+  [0%] 0/621 有PMID 0 / 空 0 / 失败 0
+  [8%] 50/621 有PMID 10 / 空 38 / 失败 0
+  [16%] 100/621 有PMID 24 / 空 74 / 失败 0
+  [24%] 150/621 有PMID 51 / 空 97 / 失败 0
+  [32%] 200/621 有PMID 89 / 空 109 / 失败 0
+  [40%] 250/621 有PMID 104 / 空 144 / 失败 0
+  [48%] 300/621 有PMID 113 / 空 185 / 失败 0
+  [56%] 350/621 有PMID 138 / 空 210 / 失败 0
+  [64%] 400/621 有PMID 148 / 空 250 / 失败 0
+  [72%] 450/621 有PMID 165 / 空 283 / 失败 0
+  [80%] 500/621 有PMID 179 / 空 319 / 失败 0
+  [88%] 550/621 有PMID 197 / 空 351 / 失败 0
+  [96%] 600/621 有PMID 215 / 空 383 / 失败 0
+  [guard] 本轮 crossref 记录 0 条，保留磁盘上已有的 658 条，不覆盖
+  [guard] 本轮未执行 crossref 轮，保留磁盘上的 crossref-entities.json 不动
+
+[academic-datasets] total=658 (+0) crossref=0 pubmed=222 76s
+EXIT=0

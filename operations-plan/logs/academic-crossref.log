@@ -1,0 +1,19 @@
+[args] {"perSite":25,"concurrency":3,"sources":["crossref"],"dryRun":false,"mailto":"ops@genetech.tools"}
+=== 学术数据集补齐（Crossref + PubMed）===
+语料：30 站，每站抽样 ≤25 个 DOI → 池 750 条
+已完成 crossref 0 条 / pubmed 0 条，crossref 待抓 750 条
+
+--- Crossref 单 DOI 直查 ---
+  [0%] 0/750 命中 0 / 404 0
+  [26%] 200/750 命中 0 / 404 0
+  [40%] 300/750 命中 0 / 404 0
+4 22
+  [40%] 300/750 命中 251 / 404 26
+  [53%] 400/750 命中 332 / 404 38
+  [66%] 500/750 命中 415 / 404 52
+  [80%] 600/750 命中 496 / 404 66
+  [93%] 700/750 命中 580 / 404 77
+  crossref 命中 621 / 池 750（404 84，失败 45）
+
+[academic-datasets] total=658 (+35) crossref=621 pubmed=0 82s
+EXIT=0

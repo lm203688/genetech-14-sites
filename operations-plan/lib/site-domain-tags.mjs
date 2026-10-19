@@ -31,6 +31,7 @@ export const SITE_DOMAIN = {
   'alien-minerals': ['materials'], 'sat-6g': ['cs', 'robotics'],
   'exo-science': ['biology', 'env'], 'tcm-tools': ['medicine', 'psych'],
   'nuclear-energy': ['env', 'materials'],
+  'spatial-computing': ['cs', 'ai'],
 };
 
 /** 学科标签 → 同义词。必须有这张表：`cs` 永远匹配不到 "Computer science"，
@@ -53,6 +54,24 @@ export const TAG_SYN = {
 };
 
 export const SYN_OF = (tag) => TAG_SYN[tag] || [tag];
+
+/**
+ * ALLOWED_SITES —— 30 站的单一真源（2026-10-17 G8 抽出）
+ *
+ * 之前 build-knowledge-graph.mjs 和 deploy-independent-workers.mjs 各自硬编码
+ * 一份 30 站白名单，改一处忘一处就会漂移（G8 报告 §3.1）。
+ *
+ * 从 SITE_DOMAIN 派生（去掉 'biotechnology'——它是学科标签，不是站点目录名；
+ * 站点目录实际叫 'biocomputing'），保证顶层 30 个站点的
+ * website/api/entities.json 都有对应白名单项。
+ *
+ * 用法：
+ *   import { ALLOWED_SITES } from '../operations-plan/lib/site-domain-tags.mjs';
+ *   ALLOWED_SITES.has('robot-parts') // true
+ */
+export const ALLOWED_SITES = new Set(
+  Object.keys(SITE_DOMAIN).filter(s => s !== 'biotechnology')
+);
 
 // 权重：标题是最高信号；概念按 OpenAlex 自己的 score 加权；topic 次之。
 export const W_TITLE = 3;
