@@ -163,3 +163,7 @@ nul
 
 # ed25519 私钥（tools/keys/）
 tools/keys/genetech-private.pem
+
+# 冗余子目录（内容已在根目录）
+genetech-14-sites/
+.dev.vars
