@@ -18,6 +18,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import crypto from 'node:crypto';
+// G8 收敛（2026-10-17 · 报告 §3.1 G8）：ALLOWED_SITES 单一真源
+// 防 build-kg / deploy-workers 两处硬编码漂移。
+import { ALLOWED_SITES as ALLOWED_SITES_SET } from '../operations-plan/lib/site-domain-tags.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -28,14 +31,8 @@ const ACCT = '8162aa3b2241c132e43a81f526d7f758';
 const KV_ID = 'a24af3fc198b443a8a615d27516d6156';
 const SUB = '61960005'; // 账户级 workers.dev 子域
 
-const ALLOWED_SITES = [
-  'quantum-computing','alien-minerals','biocomputing','bionic-ai','deep-sea-tech',
-  'brain-science','life-science','new-energy','nuclear-energy','robot-parts',
-  'tcm-tools','genetech-tools','exo-science','agent-ecosystem','embodied-ai',
-  'synbio-manufacturing','semiconductor','ai4science','low-altitude','sat-6g',
-  'spatial-computing','privacy-computing','ai-safety','quantum-materials','carbon-neutral',
-  'digital-twin','biomed-ai','edge-ai','neuromorphic','agritech',
-].join(',');
+// Cloudflare KV 需要逗号分隔字符串；从单一真源派生。
+const ALLOWED_SITES = [...ALLOWED_SITES_SET].sort().join(',');
 
 const ADMIN_SECRET = crypto.randomBytes(24).toString('hex');
 
