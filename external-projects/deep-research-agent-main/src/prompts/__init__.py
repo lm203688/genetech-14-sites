@@ -1,0 +1,17 @@
+"""Prompt templates for research agents."""
+
+from src.prompts.planner import PLANNER_SYSTEM_PROMPT, PLANNER_USER_TEMPLATE
+from src.prompts.searcher import SEARCHER_SYSTEM_PROMPT, SEARCHER_USER_TEMPLATE
+from src.prompts.synthesizer import SYNTHESIZER_SYSTEM_PROMPT, SYNTHESIZER_USER_TEMPLATE
+from src.prompts.writer import WRITER_SYSTEM_PROMPT, WRITER_USER_TEMPLATE
+
+__all__ = [
+    'PLANNER_SYSTEM_PROMPT',
+    'PLANNER_USER_TEMPLATE',
+    'SEARCHER_SYSTEM_PROMPT',
+    'SEARCHER_USER_TEMPLATE',
+    'SYNTHESIZER_SYSTEM_PROMPT',
+    'SYNTHESIZER_USER_TEMPLATE',
+    'WRITER_SYSTEM_PROMPT',
+    'WRITER_USER_TEMPLATE',
+]
