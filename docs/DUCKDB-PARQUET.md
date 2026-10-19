@@ -1,5 +1,8 @@
 # DuckDB + Parquet 集成方案
 
+> ⚠️ 本文档最后更新于 2026-10-17，可能已过期。权威口径见 docs/CORE_OBJECTIVE.md
+
+
 > Phase 6 P2-3：30 站 entities.json → Parquet 列式格式，支持跨站查询
 
 ## 一、背景与目标
