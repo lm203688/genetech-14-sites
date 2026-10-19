@@ -1,0 +1,12 @@
+{
+  "base": "https://token.sensenova.cn/v1",
+  "apiKey": "sk-FrtMNsn32FnyRpjogrGStEoKk9W9cD3o",
+  "model": "sensenova-6.8-flash-lite",
+  "embedModel": "",
+  "_comment": [
+    "SenseNova (商汤) OpenAI 兼容网关，密钥来自用户提供的 tokenplan key。",
+    "本文件已被 .gitignore 忽略（config/llm-bridge.local.json），切勿提交。",
+    "可用 model 见 config/models.json：sensenova-6.8-flash-lite / sensenova-6.7-flash-lite / glm-5.2 / deepseek-v4-flash",
+    "激活方式：部署/运行时将 LLM_BRIDGE_BASE / LLM_BRIDGE_KEY / LLM_BRIDGE_MODEL 指向此处，或直接用本文件作为本地桥接配置。"
+  ]
+}
