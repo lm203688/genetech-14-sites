@@ -1,0 +1,8 @@
+[args] source=openalex limit=20000 stride=1 sites=(all)
+=== OpenAlex 引用+摘要抓取 ===
+语料：30 站 / 294,330 实体
+DOI 池：255,345 个唯一 DOI（去重后）
+无 DOI 实体：23,231 条
+已完成：0 个 DOI（0 批）
+待抓：255,345 个 DOI
+本次抓取：20,000 个 DOI（400 批）
