@@ -1,5 +1,8 @@
 # GeneTech Data API — 消费者接入指南
 
+> ⚠️ 本文档最后更新于 2026-10-17，可能已过期。权威口径见 docs/CORE_OBJECTIVE.md
+
+
 > 面向把本 API 接进 RAG / Agent / 内容管线的工程方。
 > 规范以 [`openapi.yaml`](../openapi.yaml) 为准（逐端点 curl 实测，2026-10-02）。
 > 对外展示一律英文，本文件为中文内部版。

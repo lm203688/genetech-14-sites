@@ -1,5 +1,8 @@
 # GeneTech 30 站知识引擎 · 运维手册（Ops Runbook）
 
+> ⚠️ 本文档最后更新于 2026-10-17，可能已过期。权威口径见 docs/CORE_OBJECTIVE.md
+
+
 > 配套 `project-comprehensive-review.md` §4。目的：把"哪些 AI 自动做、哪些你本机做"钉死，定义告警阈值与升级路径，降低单人 ops 依赖。
 
 ---
