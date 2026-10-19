@@ -107,6 +107,58 @@ const randEmergence = allPairs.reduce((a, k) => a + ((post.get(k) || 0) > 0 ? 1 
 const emergenceRate = pairs.length ? emerged.length / pairs.length : 0;
 const topicSpecificRate = pairs.length ? emergedTopicSpecific.length / pairs.length : 0;
 
+// 4b) 反事实对照：**标签随机化 null 模型（permutation test）**
+//     关键发现：30 站两两都至少共享 1 个 tag（不共享对数为 0），"不共享主题对"
+//     这个反事实集在本数据上为空，无法直接对比。
+//     正确做法：随机打乱各站标签集（保持每站标签数不变），重算"共享主题候选桥"
+//     涌现率作为 null 基线。等价于置换检验的 H0：站点标签分配与涌现独立。
+//     若"共享主题"是涌现的有效信号，则真实 lift 应显著 > 1。
+const K = 100; // 采样次数
+const rng = (n) => Math.floor(Math.random() * n);
+let nullEmergenceSum = 0;
+let nullPairCountTotal = 0;
+for (let iter = 0; iter < K; iter++) {
+  // 1) 收集所有站标签并 Fisher-Yates 洗牌（保持每站标签数不变）
+  const allTags = [];
+  const tagCounts = [];
+  for (const s of sites) {
+    const tags = [...siteTags.get(s)];
+    tagCounts.push(tags.length);
+    for (const t of tags) allTags.push(t);
+  }
+  for (let i = allTags.length - 1; i > 0; i--) {
+    const j = rng(i + 1);
+    [allTags[i], allTags[j]] = [allTags[j], allTags[i]];
+  }
+  // 2) 按原每站标签数重新切分（打乱后的"假站点标签"）
+  const shuffledSiteTags = new Map();
+  let idx = 0;
+  for (let si = 0; si < sites.length; si++) {
+    shuffledSiteTags.set(sites[si], new Set(allTags.slice(idx, idx + tagCounts[si])));
+    idx += tagCounts[si];
+  }
+  // 3) 用打乱后的标签重算候选桥（共享主题 + 历史零引用）
+  let nullPairs = 0, nullEmerged = 0;
+  for (let i = 0; i < sites.length; i++) {
+    for (let j = 0; j < sites.length; j++) {
+      if (i === j) continue;
+      const A = sites[i], B = sites[j];
+      const shared = [...shuffledSiteTags.get(A)].filter(t => shuffledSiteTags.get(B).has(t));
+      if (!shared.length) continue;
+      const k = A + '|' + B;
+      if ((hist.get(k) || 0) === 0) {
+        nullPairs++;
+        if ((post.get(k) || 0) > 0) nullEmerged++;
+      }
+    }
+  }
+  if (nullPairs > 0) {
+    nullEmergenceSum += nullEmerged / nullPairs;
+    nullPairCountTotal += nullPairs;
+  }
+}
+const nullEmergenceRate = K ? nullEmergenceSum / K : 0;
+
 const report = {
   method: 'retrospective-validation (Swanson-style)',
   generatedAt: new Date().toISOString(),
@@ -118,9 +170,25 @@ const report = {
   emergedTopicSpecific: emergedTopicSpecific.length,
   topicSpecificRate,
   nonObviousBridges: nonObvious.length,
-  randomPairEmergenceRate: randEmergence,
-  lift: randEmergence ? emergenceRate / randEmergence : null,
-  liftTopicSpecific: randEmergence ? topicSpecificRate / randEmergence : null,
+  // 随机基线 1：任意域对的涌现率（弱对照，含"共享主题"贡献，偏乐观）
+  randomPairEmerenceRate: randEmergence,
+  // 随机基线 2：标签随机化 null 模型（permutation test，K=100）
+  //   H0：站点标签分配与涌现独立；若"共享主题"是涌现的有效信号，则真实 lift > 1
+  nullPermutationTrials: K,
+  nullEmergenceRate,
+  // lift_vs_randomPairs = 候选桥涌现率 / 任意对涌现率（原定义，保留以便对照）
+  lift_vs_randomPairs: randEmergence ? emergenceRate / randEmergence : null,
+  // lift = 候选桥涌现率 / null 涌现率（标签随机化对照，正确的 lift 定义）
+  lift: nullEmergenceRate ? emergenceRate / nullEmergenceRate : null,
+  // liftTopicSpecific_deprecated：原实现有 bug，分母用 randEmergence（含共享主题贡献），
+  // 与分子"主题特定涌现"语义不对齐。此字段保留但标记为 deprecated。
+  liftTopicSpecific_deprecated: randEmergence ? topicSpecificRate / randEmergence : null,
+  // 正确的主题特定 lift：分子分母语义对齐——
+  //   分子 = 真实共享主题候选桥的主题特定涌现率
+  //   分母 = 标签随机化后的候选桥涌现率（null 基线）
+  liftTopicSpecific: nullEmergenceRate ? topicSpecificRate / nullEmergenceRate : null,
+  // 已涌现候选桥中"主题特定涌现"的占比（0-1，值越高说明方法预测越聚焦）
+  topicSpecificShareOfEmerged: emerged.length ? emergedTopicSpecific.length / emerged.length : 0,
   edgesTotal: edges.length,
   edgesSkippedNoYear: skip,
   topExamples: emerged.sort((a, b) => b.post - a.post).slice(0, 20)
@@ -130,5 +198,6 @@ fs.mkdirSync('reports', { recursive: true });
 const out = `reports/retro-validation-${T0}.json`;
 fs.writeFileSync(out, JSON.stringify(report, null, 2));
 console.log(`[retro] 站点 ${sites.length} | 候选桥 ${pairs.length} | 涌现 ${emerged.length} (${(emergenceRate * 100).toFixed(1)}%) | 主题特定涌现 ${emergedTopicSpecific.length} (${(topicSpecificRate * 100).toFixed(1)}%)`);
-console.log(`[retro] 随机对涌现率 ${(randEmergence * 100).toFixed(1)}% | lift(泛) ${report.lift?.toFixed(2)} | lift(主题) ${report.liftTopicSpecific?.toFixed(2)} | 跳过无年份边 ${skip}`);
+console.log(`[retro] 任意对涌现率 ${(randEmergence * 100).toFixed(1)}% | 标签随机化 null 涌现率(${K}次) ${(nullEmergenceRate * 100).toFixed(1)}%`);
+console.log(`[retro] lift(vs 任意对) ${report.lift_vs_randomPairs?.toFixed(3)} | lift(vs null 随机化) ${report.lift?.toFixed(3)} | lift(主题,vs null) ${report.liftTopicSpecific?.toFixed(3)} | 主题特定占已涌现 ${(report.topicSpecificShareOfEmerged * 100).toFixed(1)}%`);
 console.log(`[retro] → ${out}`);
