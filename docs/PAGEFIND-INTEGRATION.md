@@ -1,5 +1,8 @@
 # Pagefind 搜索集成指南
 
+> ⚠️ 本文档最后更新于 2026-10-17，可能已过期。权威口径见 docs/CORE_OBJECTIVE.md
+
+
 > **P1-1 硬伤修复**：把站点内 / 全局搜索从「客户端 fetch 整站 entities.json 做 indexOf 子串匹配」换成
 > **Pagefind 静态 Rust 索引**。索引 = 每站 ~20-50KB（原方案 9-14MB），全局搜索不再拉数百 MB。
 > 来源：10-14 报告 §11。

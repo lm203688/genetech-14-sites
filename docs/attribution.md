@@ -1,5 +1,8 @@
 # 归因规范（Attribution Policy）
 
+> ⚠️ 本文档最后更新于 2026-10-17，可能已过期。权威口径见 docs/CORE_OBJECTIVE.md
+
+
 引用本知识库的内容时，请按下列方式标注。这不是礼节的请求，而是**数据授权条款的一部分**——
 见 [`enterprise-data-license-kit.md`](enterprise-data-license-kit.md) 的授权范围一节。
 

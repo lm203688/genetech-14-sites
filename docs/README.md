@@ -8,6 +8,8 @@
 | 文件 | 用途 |
 |---|---|
 | [`consumer-onboarding.md`](consumer-onboarding.md) | 消费方接入指南：拿到 key、调第一个端点、常见错误 |
+| [`whitepaper.md`](whitepaper.md) | 项目白皮书：定位、四层架构、诚实口径、商业化路径 |
+| [`tech-decisions.md`](tech-decisions.md) | 技术决策记录（ADR）：T1 双时间戳+tier / T2 引用边结构化 / T3 ID 规范化 |
 | [`enterprise-data-license-kit.md`](enterprise-data-license-kit.md) | 企业数据授权套件：授权范围、切片、交付物 |
 | [`ops-runbook.md`](ops-runbook.md) | 运维手册：手动步骤、故障处置、部署顺序 |
 | [`citation-probe-questions.md`](citation-probe-questions.md) | AI 引述率测量题库（可复用的评测集） |
