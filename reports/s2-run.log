@@ -1,0 +1,202 @@
+[S2 1/35] "biomedical artificial intelligence clinical" (站=biomed-ai) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][biomed-ai] 跳过: HTTP 429
+[S2 2/35] "neuroscience brain imaging cognition" (站=brain-science) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][brain-science] 跳过: HTTP 429
+[S2 3/35] "synthetic biology genetic circuit" (站=synthetic-biology) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][synthetic-biology] 跳过: HTTP 429
+  [save] 增量落盘 total=0
+[S2 4/35] "CRISPR gene editing genome" (站=crispr) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  → 累计 100 条 (本轮 +100/100)
+[S2 5/35] "protein structure prediction design" (站=protein-design) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][protein-design] 跳过: HTTP 429
+[S2 6/35] "DNA computing molecular storage" (站=biocomputing) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  → 累计 200 条 (本轮 +100/100)
+  [save] 增量落盘 total=200
+[S2 7/35] "neural interface prosthesis bionic" (站=bionic-ai) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][bionic-ai] 跳过: HTTP 429
+[S2 8/35] "nanomedicine drug delivery nanoparticle" (站=nanomedicine) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][nanomedicine] 跳过: HTTP 429
+[S2 9/35] "machine learning drug discovery" (站=ai-drug) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][ai-drug] 跳过: HTTP 429
+  [save] 增量落盘 total=200
+[S2 10/35] "automated laboratory self-driving lab" (站=autonomous-lab) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][autonomous-lab] 跳过: HTTP 429
+[S2 11/35] "single cell transcriptomics genomics" (站=life-science) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][life-science] 跳过: HTTP 429
+[S2 12/35] "crop phenotyping agricultural AI" (站=agritech) ...
+  → 累计 300 条 (本轮 +100/100)
+  [save] 增量落盘 total=300
+[S2 13/35] "carbon capture climate biotechnology" (站=carbon-neutral) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][carbon-neutral] 跳过: HTTP 429
+[S2 14/35] "deep sea marine biology" (站=deep-sea-tech) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  → 累计 398 条 (本轮 +98/100)
+[S2 15/35] "neuromorphic computing spiking neural" (站=neuromorphic) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][neuromorphic] 跳过: HTTP 429
+  [save] 增量落盘 total=398
+[S2 16/35] "astrobiology exoplanet habitability" (站=exo-science) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][exo-science] 跳过: HTTP 429
+[S2 17/35] "AI alignment safety robustness" (站=ai-safety) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][ai-safety] 跳过: HTTP 429
+[S2 18/35] "scientific machine learning discovery" (站=ai4science) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][ai4science] 跳过: HTTP 429
+  [save] 增量落盘 total=398
+[S2 19/35] "federated learning differential privacy" (站=privacy-computing) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][privacy-computing] 跳过: HTTP 429
+[S2 20/35] "edge computing on-device machine learning" (站=edge-ai) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  → 累计 498 条 (本轮 +100/100)
+[S2 21/35] "robot manipulation learning policy" (站=embodied-ai) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][embodied-ai] 跳过: HTTP 429
+  [save] 增量落盘 total=498
+[S2 22/35] "digital twin simulation industry" (站=digital-twin) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][digital-twin] 跳过: HTTP 429
+[S2 23/35] "augmented reality spatial interface" (站=spatial-computing) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][spatial-computing] 跳过: HTTP 429
+[S2 24/35] "unmanned aerial vehicle autonomous navigation" (站=low-altitude) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  → 累计 598 条 (本轮 +100/100)
+  [save] 增量落盘 total=598
+[S2 25/35] "lithium battery solar cell perovskite" (站=new-energy) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][new-energy] 跳过: HTTP 429
+[S2 26/35] "nuclear fusion reactor plasma" (站=nuclear-energy) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][nuclear-energy] 跳过: HTTP 429
+[S2 27/35] "quantum computing qubit algorithm" (站=quantum-computing) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][quantum-computing] 跳过: HTTP 429
+  [save] 增量落盘 total=598
+[S2 28/35] "quantum material superconductor topological" (站=quantum-materials) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][quantum-materials] 跳过: HTTP 429
+[S2 29/35] "semiconductor transistor lithography" (站=semiconductor) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][semiconductor] 跳过: HTTP 429
+[S2 30/35] "satellite communication 6G network" (站=sat-6g) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][sat-6g] 跳过: HTTP 429
+  [save] 增量落盘 total=598
+[S2 31/35] "soft robotics actuator gripper" (站=robot-parts) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][robot-parts] 跳过: HTTP 429
+[S2 32/35] "meteorite mineralogy geology" (站=alien-minerals) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][alien-minerals] 跳过: HTTP 429
+[S2 33/35] "metabolic engineering biomanufacturing" (站=synbio-manufacturing) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  [retry HTTP 429] 退避 6000ms (3/4)
+  [retry HTTP 429] 退避 12000ms (4/4)
+[S2][synbio-manufacturing] 跳过: HTTP 429
+  [save] 增量落盘 total=598
+[S2 34/35] "traditional chinese medicine herbal pharmacology" (站=tcm-tools) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  → 累计 698 条 (本轮 +100/100)
+[S2 35/35] "multi-agent large language model autonomous" (站=agent-ecosystem) ...
+  [retry HTTP 429] 退避 1500ms (1/4)
+  [retry HTTP 429] 退避 3000ms (2/4)
+  → 累计 798 条 (本轮 +100/100)
+[s2-expand] total=798 (start=0) added=798 updated=2
