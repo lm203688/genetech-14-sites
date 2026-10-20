@@ -1,6 +1,6 @@
 {
   "$schema": "genetech-metrics-v1",
-  "generatedAt": "2026-10-20T14:09:09.685Z",
+  "generatedAt": "2026-10-20T16:32:26.924Z",
   "generator": "tools/recompute-metrics.mjs",
   "sourceFiles": [
     "<site>/website/api/entities.json (×30)",
@@ -19,8 +19,8 @@
   "metrics": {
     "siteCount": 30,
     "totalEntities": 294330,
-    "entitiesWithDoiOrPmid": 288580,
-    "doiCoverageRate": 0.9805,
+    "entitiesWithDoiOrPmid": 290244,
+    "doiCoverageRate": 0.9861,
     "identityEntries": 276960,
     "entriesWithDoi": 255392,
     "uniqueDoi": 255392,
@@ -95,7 +95,7 @@
     {
       "site": "ai-safety",
       "entities": 9950,
-      "withDoiOrPmid": 8896,
+      "withDoiOrPmid": 9922,
       "stub": 1153,
       "stubRate": 0.1159
     },
@@ -158,7 +158,7 @@
     {
       "site": "alien-minerals",
       "entities": 9855,
-      "withDoiOrPmid": 9032,
+      "withDoiOrPmid": 9670,
       "stub": 2101,
       "stubRate": 0.2132
     },
