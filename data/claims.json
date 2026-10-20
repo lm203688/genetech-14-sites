@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18",
+  "generatedAt": "2026-10-20",
   "generator": "operations-plan/pipeline-docs-claims.js",
   "sourceFiles": [
     "data/citation-edges.json",
@@ -11,9 +11,9 @@
   "claims": {
     "siteCount": 30,
     "totalEntities": 294330,
-    "entitiesWithDoiOrPmid": 271099,
+    "entitiesWithDoiOrPmid": 288580,
     "uniqueDoi": 255392,
-    "academicSeedCount": 1634,
+    "academicSeedCount": 8127,
     "citationDeclarations": 0,
     "citationResolvedEdges": 25682,
     "citationTotalEdges": 51726,
@@ -32,158 +32,158 @@
     "sitesShort": "30 站 / 30 域",
     "citationShort": "25,682 / 51,726 边（其中真实解析 25,682、legacy merge 26,044；解析成功率 N/A（无声明计数））",
     "gapsShort": "140 / 870 站对零引用",
-    "seedShort": "引用网络基座仅 1,634 条学术种子"
+    "seedShort": "引用网络基座仅 8,127 条学术种子"
   },
   "perSite": [
     {
       "site": "robot-parts",
       "entities": 9987,
-      "withDoiOrPmid": 9485
+      "withDoiOrPmid": 9937
     },
     {
       "site": "bionic-ai",
       "entities": 9978,
-      "withDoiOrPmid": 9328
+      "withDoiOrPmid": 9822
     },
     {
       "site": "agent-ecosystem",
       "entities": 9974,
-      "withDoiOrPmid": 9136
+      "withDoiOrPmid": 9646
     },
     {
       "site": "low-altitude",
       "entities": 9968,
-      "withDoiOrPmid": 9298
+      "withDoiOrPmid": 9810
     },
     {
       "site": "ai4science",
       "entities": 9965,
-      "withDoiOrPmid": 9005
+      "withDoiOrPmid": 9674
     },
     {
       "site": "embodied-ai",
       "entities": 9964,
-      "withDoiOrPmid": 8961
+      "withDoiOrPmid": 9641
     },
     {
       "site": "digital-twin",
       "entities": 9958,
-      "withDoiOrPmid": 9721
+      "withDoiOrPmid": 9876
     },
     {
       "site": "neuromorphic",
       "entities": 9956,
-      "withDoiOrPmid": 9952
+      "withDoiOrPmid": 9956
     },
     {
       "site": "privacy-computing",
       "entities": 9951,
-      "withDoiOrPmid": 9810
+      "withDoiOrPmid": 9951
     },
     {
       "site": "ai-safety",
       "entities": 9950,
-      "withDoiOrPmid": 7562
+      "withDoiOrPmid": 8896
     },
     {
       "site": "quantum-materials",
       "entities": 9947,
-      "withDoiOrPmid": 9075
+      "withDoiOrPmid": 9850
     },
     {
       "site": "semiconductor",
       "entities": 9943,
-      "withDoiOrPmid": 9166
+      "withDoiOrPmid": 9773
     },
     {
       "site": "sat-6g",
       "entities": 9940,
-      "withDoiOrPmid": 9650
+      "withDoiOrPmid": 9933
     },
     {
       "site": "spatial-computing",
       "entities": 9940,
-      "withDoiOrPmid": 9820
+      "withDoiOrPmid": 9923
     },
     {
       "site": "tcm-tools",
       "entities": 9924,
-      "withDoiOrPmid": 9368
+      "withDoiOrPmid": 9804
     },
     {
       "site": "exo-science",
       "entities": 9917,
-      "withDoiOrPmid": 9208
+      "withDoiOrPmid": 9704
     },
     {
       "site": "quantum-computing",
       "entities": 9912,
-      "withDoiOrPmid": 8157
+      "withDoiOrPmid": 9563
     },
     {
       "site": "carbon-neutral",
       "entities": 9884,
-      "withDoiOrPmid": 9139
+      "withDoiOrPmid": 9619
     },
     {
       "site": "alien-minerals",
       "entities": 9855,
-      "withDoiOrPmid": 7402
+      "withDoiOrPmid": 9032
     },
     {
       "site": "synbio-manufacturing",
       "entities": 9808,
-      "withDoiOrPmid": 9073
+      "withDoiOrPmid": 9672
     },
     {
       "site": "nuclear-energy",
       "entities": 9804,
-      "withDoiOrPmid": 8930
+      "withDoiOrPmid": 9718
     },
     {
       "site": "new-energy",
       "entities": 9766,
-      "withDoiOrPmid": 8762
+      "withDoiOrPmid": 9628
     },
     {
       "site": "biomed-ai",
       "entities": 9674,
-      "withDoiOrPmid": 9529
+      "withDoiOrPmid": 9674
     },
     {
       "site": "deep-sea-tech",
       "entities": 9669,
-      "withDoiOrPmid": 9076
+      "withDoiOrPmid": 9488
     },
     {
       "site": "genetech-tools",
       "entities": 9598,
-      "withDoiOrPmid": 9094
+      "withDoiOrPmid": 9510
     },
     {
       "site": "edge-ai",
       "entities": 9595,
-      "withDoiOrPmid": 9405
+      "withDoiOrPmid": 9526
     },
     {
       "site": "agritech",
       "entities": 9509,
-      "withDoiOrPmid": 9309
+      "withDoiOrPmid": 9429
     },
     {
       "site": "biocomputing",
       "entities": 9416,
-      "withDoiOrPmid": 8281
+      "withDoiOrPmid": 9254
     },
     {
       "site": "life-science",
       "entities": 9405,
-      "withDoiOrPmid": 8469
+      "withDoiOrPmid": 9260
     },
     {
       "site": "brain-science",
       "entities": 9173,
-      "withDoiOrPmid": 7928
+      "withDoiOrPmid": 9011
     }
   ],
   "citations": {

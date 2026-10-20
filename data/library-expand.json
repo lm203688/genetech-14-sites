@@ -1,131 +1,293 @@
 {
-  "generatedAt": "2026-10-19T06:31:17.426Z",
-  "mode": "WRITE",
+  "generatedAt": "2026-10-20T09:38:44.636Z",
+  "mode": "DRY",
   "method": "data/cited-entities.json（已补齐的被引文档）→ lib/site-domain-tags.mjs 打分 → 替换每站重复 DOI 占位实体；实体总数不变，唯一 DOI 增加",
   "thresholds": {
     "conf": "medium",
-    "minScore": 2,
+    "minScore": 1,
     "minMargin": 1
   },
   "candidates": 48760,
   "confidence": {
     "high": 1034,
-    "medium": 2870,
-    "none": 44856
+    "medium": 2880,
+    "none": 44846
   },
   "slotBefore": {
     "entities": 294330,
-    "uniqueDoi": 271099,
-    "freeSlots": 23231
+    "uniqueDoi": 273883,
+    "freeSlots": 20447
   },
-  "slotAfter": {
-    "entities": 294330,
-    "uniqueDoi": 273883
-  },
-  "perSite": {
-    "agent-ecosystem": {
-      "free": 838,
-      "filled": 54,
-      "uniqueBefore": 9136,
-      "uniqueAfter": 9190
-    },
-    "ai-safety": {
-      "free": 2388,
-      "filled": 51,
-      "uniqueBefore": 7562,
-      "uniqueAfter": 7613
-    },
-    "biocomputing": {
-      "free": 1135,
-      "filled": 285,
-      "uniqueBefore": 8281,
-      "uniqueAfter": 8566
-    },
-    "biomed-ai": {
-      "free": 145,
-      "filled": 145,
-      "uniqueBefore": 9529,
-      "uniqueAfter": 9674
-    },
-    "bionic-ai": {
-      "free": 650,
-      "filled": 51,
-      "uniqueBefore": 9328,
-      "uniqueAfter": 9379
-    },
-    "brain-science": {
-      "free": 1245,
-      "filled": 701,
-      "uniqueBefore": 7928,
-      "uniqueAfter": 8629
-    },
-    "digital-twin": {
-      "free": 237,
-      "filled": 56,
-      "uniqueBefore": 9721,
-      "uniqueAfter": 9777
-    },
-    "embodied-ai": {
-      "free": 1003,
-      "filled": 40,
-      "uniqueBefore": 8961,
-      "uniqueAfter": 9001
-    },
-    "life-science": {
-      "free": 936,
-      "filled": 403,
-      "uniqueBefore": 8469,
-      "uniqueAfter": 8872
-    },
-    "low-altitude": {
-      "free": 670,
-      "filled": 13,
-      "uniqueBefore": 9298,
-      "uniqueAfter": 9311
-    },
-    "neuromorphic": {
-      "free": 4,
-      "filled": 4,
-      "uniqueBefore": 9952,
-      "uniqueAfter": 9956
-    },
-    "privacy-computing": {
-      "free": 141,
-      "filled": 141,
-      "uniqueBefore": 9810,
-      "uniqueAfter": 9951
-    },
-    "quantum-computing": {
-      "free": 1755,
-      "filled": 127,
-      "uniqueBefore": 8157,
-      "uniqueAfter": 8284
-    },
-    "quantum-materials": {
-      "free": 872,
-      "filled": 364,
-      "uniqueBefore": 9075,
-      "uniqueAfter": 9439
-    },
-    "sat-6g": {
-      "free": 290,
-      "filled": 236,
-      "uniqueBefore": 9650,
-      "uniqueAfter": 9886
-    },
-    "semiconductor": {
-      "free": 777,
-      "filled": 38,
-      "uniqueBefore": 9166,
-      "uniqueAfter": 9204
-    },
-    "tcm-tools": {
-      "free": 556,
-      "filled": 75,
-      "uniqueBefore": 9368,
-      "uniqueAfter": 9443
-    }
-  },
+  "slotAfter": null,
+  "perSite": {},
   "auditSampleSize": 25,
-  "changedSites": 17
+  "fills": {
+    "agent-ecosystem": [
+      {
+        "doi": "10.1037/0033-295x.104.2.211",
+        "confidence": "medium",
+        "margin": 1.03,
+        "title": "A solution to Plato's problem: The latent semantic analysis theory of acquisitio",
+        "ev": [
+          "ai@Artificial intelligence",
+          "nlp@Natural language processing",
+          "nlp@topic"
+        ]
+      },
+      {
+        "doi": "10.2307/748013",
+        "confidence": "medium",
+        "margin": 1.02,
+        "title": "Context Availability and the Processing of Abstract and Concrete Words in Senten",
+        "ev": [
+          "nlp@Natural language processing",
+          "nlp@topic"
+        ]
+      },
+      {
+        "doi": "10.1016/j.nlp.2025.100168",
+        "confidence": "medium",
+        "margin": 1,
+        "title": "The evolution of language models: From N-Grams to LLMs, and beyond",
+        "ev": [
+          "nlp@topic"
+        ]
+      },
+      {
+        "doi": "10.1075/scl.69.02flo",
+        "confidence": "medium",
+        "margin": 1,
+        "title": "Data-driven learning and language learning theories",
+        "ev": [
+          "nlp@topic"
+        ]
+      },
+      {
+        "doi": "10.1017/9781108685153.001",
+        "confidence": "medium",
+        "margin": 1,
+        "title": "Approaching Ontologies of English",
+        "ev": [
+          "nlp@topic"
+        ]
+      }
+    ],
+    "biocomputing": [
+      {
+        "doi": "10.1186/1471-2105-11-538",
+        "confidence": "medium",
+        "margin": 1,
+        "title": "pplacer: linear time maximum-likelihood and Bayesian phylogenetic placement of s",
+        "ev": [
+          "biology@topic",
+          "cs@Computer science",
+          "cs@Algorithm"
+        ]
+      }
+    ],
+    "sat-6g": [
+      {
+        "doi": "10.3390/s151229831",
+        "confidence": "medium",
+        "margin": 1,
+        "title": "Calibration Techniques for Accurate Measurements by Underwater Camera Systems",
+        "ev": [
+          "cs@Computer science",
+          "cs@Computer vision",
+          "robotics@topic"
+        ]
+      }
+    ],
+    "tcm-tools": [
+      {
+        "doi": "10.1016/0031-9384(94)00343-4",
+        "confidence": "medium",
+        "margin": 1,
+        "title": "Restraint, but not frustration, induces prostaglandin-mediated hyperthermia in p",
+        "ev": [
+          "medicine@Medicine",
+          "medicine@Internal medicine",
+          "psych@topic"
+        ]
+      }
+    ]
+  },
+  "fillsTotal": 8,
+  "audit": [
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1016/j.nlp.2025.100168",
+      "title": "The evolution of language models: From N-Grams to LLMs, and beyond",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.2307/748013",
+      "title": "Context Availability and the Processing of Abstract and Concrete Words",
+      "confidence": "medium",
+      "margin": 1.02
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1017/9781108685153.001",
+      "title": "Approaching Ontologies of English",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.2307/748013",
+      "title": "Context Availability and the Processing of Abstract and Concrete Words",
+      "confidence": "medium",
+      "margin": 1.02
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1016/j.nlp.2025.100168",
+      "title": "The evolution of language models: From N-Grams to LLMs, and beyond",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1016/j.nlp.2025.100168",
+      "title": "The evolution of language models: From N-Grams to LLMs, and beyond",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1016/j.nlp.2025.100168",
+      "title": "The evolution of language models: From N-Grams to LLMs, and beyond",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.2307/748013",
+      "title": "Context Availability and the Processing of Abstract and Concrete Words",
+      "confidence": "medium",
+      "margin": 1.02
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1037/0033-295x.104.2.211",
+      "title": "A solution to Plato's problem: The latent semantic analysis theory of ",
+      "confidence": "medium",
+      "margin": 1.03
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1017/9781108685153.001",
+      "title": "Approaching Ontologies of English",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.2307/748013",
+      "title": "Context Availability and the Processing of Abstract and Concrete Words",
+      "confidence": "medium",
+      "margin": 1.02
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1075/scl.69.02flo",
+      "title": "Data-driven learning and language learning theories",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1016/j.nlp.2025.100168",
+      "title": "The evolution of language models: From N-Grams to LLMs, and beyond",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1037/0033-295x.104.2.211",
+      "title": "A solution to Plato's problem: The latent semantic analysis theory of ",
+      "confidence": "medium",
+      "margin": 1.03
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1037/0033-295x.104.2.211",
+      "title": "A solution to Plato's problem: The latent semantic analysis theory of ",
+      "confidence": "medium",
+      "margin": 1.03
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1016/j.nlp.2025.100168",
+      "title": "The evolution of language models: From N-Grams to LLMs, and beyond",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1017/9781108685153.001",
+      "title": "Approaching Ontologies of English",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1016/j.nlp.2025.100168",
+      "title": "The evolution of language models: From N-Grams to LLMs, and beyond",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1075/scl.69.02flo",
+      "title": "Data-driven learning and language learning theories",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1016/j.nlp.2025.100168",
+      "title": "The evolution of language models: From N-Grams to LLMs, and beyond",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1017/9781108685153.001",
+      "title": "Approaching Ontologies of English",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1037/0033-295x.104.2.211",
+      "title": "A solution to Plato's problem: The latent semantic analysis theory of ",
+      "confidence": "medium",
+      "margin": 1.03
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1016/j.nlp.2025.100168",
+      "title": "The evolution of language models: From N-Grams to LLMs, and beyond",
+      "confidence": "medium",
+      "margin": 1
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.2307/748013",
+      "title": "Context Availability and the Processing of Abstract and Concrete Words",
+      "confidence": "medium",
+      "margin": 1.02
+    },
+    {
+      "site": "agent-ecosystem",
+      "doi": "10.1075/scl.69.02flo",
+      "title": "Data-driven learning and language learning theories",
+      "confidence": "medium",
+      "margin": 1
+    }
+  ]
 }
