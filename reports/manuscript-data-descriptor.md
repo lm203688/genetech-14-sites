@@ -249,13 +249,13 @@ The complete GeneTech-30 dataset, evaluation artifacts, and reproducibility scri
 |---|---|
 | metrics.json single source; 3-conflict resolved | ✅ T1.1 |
 | No random confidence | ✅ T1.2 |
-| Data updatedAt ≤7d | ⚠️ T1.3 (needs OpenAlex key to refresh; currently frozen) |
-| DOI coverage ≥95% | ⚠️ T1.4 (needs OpenAlex key; currently 92.11%) |
-| 30-site eval persisted + gold kappa≥0.6 | ✅ eval persisted (T2.1); ⚠️ kappa needs 2 human annotators (T2.2) |
+| Data updatedAt ≤7d | ✅ T1.3 (metrics.json regenerated 2026-10-20T16:32:26.924Z) |
+| DOI coverage ≥95% | ✅ T1.4 (98.61% — 294,330 entities, 255,392 unique DOIs; arxiv→OpenAlex batch resolved ai-safety + alien-minerals) |
+| 30-site eval persisted + gold kappa | ✅ T2.1 (eval persisted); ⚠️ T2.2 — no 2-human annotators available. Substituted with **auto-annotator self-consistency kappa** (`reports/kappa-self-consistency-2026-10-21.json`): BM25 vs TF-IDF vs rank-fusion agreement on 200 gold queries; mean κ_auto = 0.1023 (A–B −0.495, A–C 0.400, B–C 0.402). Reported honestly as inter-method agreement, not inter-rater agreement; **fails the ≥0.6 threshold** and is disclosed as a limitation, not a claim. |
 | Vector-stack comparison | ✅ T2.3 (BM25 vs TF-IDF cosine; TF-IDF wins R@10 +0.010, MRR +0.041, NDCG@10 +0.042 — see `reports/vector-comparison-2026-10-18.json`) |
 | Retrospective 3-cutpoint + random baseline + limitations | ✅ T3.1 |
 | Known-discovery recall report | ✅ T3.2 |
 | OpenAlex/Crossref false-negative rate | ✅ T3.3 (OpenAlex, no key required; 10/10 zero-citation pairs confirmed by OpenAlex as having 0 cross-domain citations among 50 citing DOIs with 58% ref-list coverage; false-negative rate 0.0% lower bound — see `reports/gap-baseline-openalex-2026-10-18.json`) |
 | OpenAlex true-negative rate (T4.1) | ✅ T4.1 (same probe; 10/10 = 100.0% upper bound with same 58% coverage caveat — see `reports/gap-baseline-openalex-2026-10-18.json`) |
 | Stance / entity-resolution minimal-usable + P/R | ✅ T5.1 / T5.2 |
-| Zenodo / Figshare / Research Square deposition + DOI | ⚠️ T6.2 (needs free account registration; researchsquare.com + figshare.com both reachable, HTTP 301/202 verified 2026-10-18) |
+| Zenodo / Figshare / Research Square deposition + DOI | ⚠️ T6.2 (Zenodo deposition 23527675 prepared via REST API, 9 files uploaded, DOI reserved 10.5281/zenodo.23527675; publish step blocked by Zenodo API 500 error 2026-10-21T14:XXZ — will retry and record final DOI in this file; Research Square submission package at `repro-package/RESEARCH-SQUARE-SUBMIT.md`) |

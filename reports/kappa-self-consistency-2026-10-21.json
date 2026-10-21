@@ -1,0 +1,241 @@
+{
+  "generatedAt": "2026-10-21T07:31:18.194Z",
+  "method": "self-consistency kappa (auto-annotator agreement)",
+  "annotators": {
+    "annotatorA": "BM25 top-10",
+    "annotatorB": "TF-IDF cosine top-10",
+    "annotatorC": "BM25+TF-IDF rank-fusion top-10"
+  },
+  "topK": 10,
+  "queriesEvaluated": 200,
+  "candidatePoolSize": {
+    "min": 22,
+    "max": 30
+  },
+  "pairwise": {
+    "A_vs_B_bm25_vs_tfidf": {
+      "kappa": -0.4951,
+      "po": 0.3346,
+      "pe": 0.5549,
+      "n": 5987
+    },
+    "A_vs_C_bm25_vs_fusion": {
+      "kappa": 0.4003,
+      "po": 0.6669,
+      "pe": 0.4446,
+      "n": 5987
+    },
+    "B_vs_C_tfidf_vs_fusion": {
+      "kappa": 0.4018,
+      "po": 0.6676,
+      "pe": 0.4444,
+      "n": 5987
+    }
+  },
+  "meanKappa": 0.1023,
+  "threshold": 0.6,
+  "pass": false,
+  "interpretation": {
+    "A_B": "两种独立检索算法在\"相关候选\"上的一致程度",
+    "A_C": "BM25 与 rank-fusion 的一致程度",
+    "B_C": "TF-IDF 与 rank-fusion 的一致程度",
+    "mean": "三条边的平均 kappa，作为跨方法稳定性代理指标"
+  },
+  "limitations": [
+    "这不是人类标注者之间的一致性，是自动标注策略之间的一致性。",
+    "Cohen's kappa_auto 高只说明两种检索器对\"相关\"判定稳定，不代表判定本身正确。",
+    "真正的 inter-rater kappa 需要 2 位人类独立标注。",
+    "本报告诚实披露这一点，不冒充人工 kappa。"
+  ],
+  "sample": [
+    {
+      "idx": 249,
+      "site": "agent-ecosystem",
+      "queryType": "abstract-mid",
+      "annotatorA": [
+        "doi:10.20944/preprints202607.0944.v1",
+        "doi:10.20944/preprints202606.1718.v1",
+        "doi:10.5281/zenodo.21704414",
+        "doi:10.5281/zenodo.21704415",
+        "doi:10.2139/ssrn.7170774",
+        "doi:10.5281/zenodo.19152305",
+        "doi:10.5281/zenodo.19152306",
+        "doi:10.1145/3686081.3686096",
+        "doi:10.64898/2026.06.24.734302",
+        "doi:10.3390/s26041168"
+      ],
+      "annotatorB": [
+        "doi:10.5281/zenodo.21947869",
+        "doi:10.5281/zenodo.21947870",
+        "doi:10.21203/rs.3.rs-2713610/v1",
+        "doi:10.1002/tee.23779",
+        "pmid:29443949",
+        "doi:10.5937/vojtehg61-2017",
+        "doi:10.5281/zenodo.10802364",
+        "doi:10.5281/zenodo.10802365",
+        "doi:10.4028/www.scientific.net/amm.390.429",
+        "doi:10.1051/e3sconf/202568000132"
+      ],
+      "annotatorC": [
+        "doi:10.20944/preprints202607.0944.v1",
+        "doi:10.5281/zenodo.21947869",
+        "doi:10.20944/preprints202606.1718.v1",
+        "doi:10.5281/zenodo.21947870",
+        "doi:10.5281/zenodo.21704414",
+        "doi:10.21203/rs.3.rs-2713610/v1",
+        "doi:10.5281/zenodo.21704415",
+        "doi:10.1002/tee.23779",
+        "doi:10.2139/ssrn.7170774",
+        "pmid:29443949"
+      ],
+      "candidateIds": [
+        "doi:10.20944/preprints202607.0944.v1",
+        "doi:10.20944/preprints202606.1718.v1",
+        "doi:10.5281/zenodo.21704414",
+        "doi:10.5281/zenodo.21704415",
+        "doi:10.2139/ssrn.7170774",
+        "doi:10.5281/zenodo.19152305",
+        "doi:10.5281/zenodo.19152306",
+        "doi:10.1145/3686081.3686096",
+        "doi:10.64898/2026.06.24.734302",
+        "doi:10.3390/s26041168",
+        "oa:W4417417941",
+        "pmid:40846743",
+        "doi:10.1016/j.isatra.2024.11.057",
+        "oa:W2985956327",
+        "oa:W2117010998",
+        "doi:10.1016/j.ijrobp.2021.07.479",
+        "doi:10.21203/rs.3.rs-9684219/v1",
+        "doi:10.5281/zenodo.21387799",
+        "doi:10.5281/zenodo.21387800",
+        "doi:10.1101/2024.02.06.24302176"
+      ]
+    },
+    {
+      "idx": 254,
+      "site": "synbio-manufacturing",
+      "queryType": "abstract-mid",
+      "annotatorA": [
+        "doi:10.5281/zenodo.22008016",
+        "doi:10.5281/zenodo.22008017",
+        "doi:10.5281/zenodo.21519643",
+        "doi:10.5281/zenodo.21519642",
+        "doi:10.5281/zenodo.21426287",
+        "doi:10.5281/zenodo.22066914",
+        "doi:10.5281/zenodo.22066915",
+        "doi:10.5281/zenodo.21426288",
+        "doi:10.5281/zenodo.21516360",
+        "doi:10.5281/zenodo.21516361"
+      ],
+      "annotatorB": [
+        "pmid:41073387",
+        "doi:10.1007/s40820-026-02265-x",
+        "pmid:38004973",
+        "pmid:40701966",
+        "pmid:40214928",
+        "pmid:35208409",
+        "doi:10.54254/2755-2721/2026.ad35008",
+        "doi:10.1002/advs.202523234",
+        "doi:10.1021/acsapm.6c01662",
+        "pmid:38544218"
+      ],
+      "annotatorC": [
+        "doi:10.5281/zenodo.22008016",
+        "pmid:41073387",
+        "doi:10.5281/zenodo.22008017",
+        "doi:10.1007/s40820-026-02265-x",
+        "doi:10.5281/zenodo.21519643",
+        "pmid:38004973",
+        "doi:10.5281/zenodo.21519642",
+        "pmid:40701966",
+        "doi:10.5281/zenodo.21426287",
+        "pmid:40214928"
+      ],
+      "candidateIds": [
+        "doi:10.5281/zenodo.22008016",
+        "doi:10.5281/zenodo.22008017",
+        "doi:10.5281/zenodo.21519643",
+        "doi:10.5281/zenodo.21519642",
+        "doi:10.5281/zenodo.21426287",
+        "doi:10.5281/zenodo.22066914",
+        "doi:10.5281/zenodo.22066915",
+        "doi:10.5281/zenodo.21426288",
+        "doi:10.5281/zenodo.21516360",
+        "doi:10.5281/zenodo.21516361",
+        "doi:10.5281/zenodo.21505278",
+        "doi:10.5281/zenodo.21505162",
+        "doi:10.5281/zenodo.21505279",
+        "doi:10.5281/zenodo.21505161",
+        "doi:10.5281/zenodo.21505200",
+        "doi:10.5281/zenodo.21505201",
+        "doi:10.5281/zenodo.15172194",
+        "doi:10.5281/zenodo.20822941",
+        "doi:10.5281/zenodo.21402379",
+        "doi:10.5281/zenodo.21402378"
+      ]
+    },
+    {
+      "idx": 34,
+      "site": "tcm-tools",
+      "queryType": "abstract-mid",
+      "annotatorA": [
+        "doi:10.5281/zenodo.20111082",
+        "doi:10.5281/zenodo.20382160",
+        "doi:10.48550/arxiv.2605.07507",
+        "doi:10.5281/zenodo.20094239",
+        "doi:10.5281/zenodo.20929033",
+        "doi:10.5281/zenodo.20094238",
+        "oa:W2567556171",
+        "doi:10.5281/zenodo.20929034",
+        "doi:10.17605/osf.io/tya6x",
+        "doi:10.5281/zenodo.20098037"
+      ],
+      "annotatorB": [
+        "doi:10.5281/zenodo.22182364",
+        "doi:10.5281/zenodo.19019620",
+        "doi:10.1093/nsr/nwag104",
+        "pmid:42599701",
+        "doi:10.70445/avjcs.2.1.2025.26-36",
+        "doi:10.21203/rs.3.rs-9963688/v1",
+        "pmid:42603822",
+        "doi:10.1155/2016/1050293",
+        "arxiv:0808.3545v1",
+        "doi:10.21203/rs.3.rs-10371123/v1"
+      ],
+      "annotatorC": [
+        "doi:10.5281/zenodo.20111082",
+        "doi:10.5281/zenodo.22182364",
+        "doi:10.5281/zenodo.20382160",
+        "doi:10.5281/zenodo.19019620",
+        "doi:10.48550/arxiv.2605.07507",
+        "doi:10.1093/nsr/nwag104",
+        "doi:10.5281/zenodo.20094239",
+        "pmid:42599701",
+        "doi:10.5281/zenodo.20929033",
+        "doi:10.70445/avjcs.2.1.2025.26-36"
+      ],
+      "candidateIds": [
+        "doi:10.5281/zenodo.20111082",
+        "doi:10.5281/zenodo.20382160",
+        "doi:10.48550/arxiv.2605.07507",
+        "doi:10.5281/zenodo.20094239",
+        "doi:10.5281/zenodo.20929033",
+        "doi:10.5281/zenodo.20094238",
+        "oa:W2567556171",
+        "doi:10.5281/zenodo.20929034",
+        "doi:10.17605/osf.io/tya6x",
+        "doi:10.5281/zenodo.20098037",
+        "oa:W2087759475",
+        "doi:10.3390/molecules30010148",
+        "oa:W3004273376",
+        "oa:W2516886717",
+        "doi:10.1097/st9.0000000000000124",
+        "doi:10.5281/zenodo.21827514",
+        "oa:W2571053339",
+        "doi:10.5281/zenodo.21827515",
+        "arxiv:2003.00810v1",
+        "pmid:42041017"
+      ]
+    }
+  ]
+}
