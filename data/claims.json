@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20",
+  "generatedAt": "2026-10-24",
   "generator": "operations-plan/pipeline-docs-claims.js",
   "sourceFiles": [
     "data/citation-edges.json",
@@ -11,7 +11,7 @@
   "claims": {
     "siteCount": 30,
     "totalEntities": 294330,
-    "entitiesWithDoiOrPmid": 288580,
+    "entitiesWithDoiOrPmid": 290244,
     "uniqueDoi": 255392,
     "academicSeedCount": 8127,
     "citationDeclarations": 0,
@@ -83,7 +83,7 @@
     {
       "site": "ai-safety",
       "entities": 9950,
-      "withDoiOrPmid": 8896
+      "withDoiOrPmid": 9922
     },
     {
       "site": "quantum-materials",
@@ -128,7 +128,7 @@
     {
       "site": "alien-minerals",
       "entities": 9855,
-      "withDoiOrPmid": 9032
+      "withDoiOrPmid": 9670
     },
     {
       "site": "synbio-manufacturing",

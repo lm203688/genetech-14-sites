@@ -288,16 +288,12 @@ function main() {
   if (EMIT_JSON_ONLY) return;
 
   const anchor = renderAnchor(claims);
-  const results = [];
-  for (const t of ANCHOR_TARGETS) {
-    results.push(applyAnchor(t, anchor));
-  }
-  for (const r of results) {
-    if (r.skipped) continue;
-    console.log(`[claims] ${r.target}: ${r.addedAt || (r.changed ? 'updated' : 'unchanged')}`);
-  }
 
-  // --verify：如果 anchor 内容与最新生成不一致 → 报错退出（CI 应阻断）
+  // BUGFIX (2026-10-24, T7 回归测试 T7-2 揭露)：
+  // 旧代码在 --verify 模式下仍会先跑 applyAnchor，把注入的错误数字重写覆盖，
+  // 然后 verify 阶段读到的是覆盖后的正确内容，永远绿灯。等于门禁完全失效。
+  // 修复：--verify 模式**只做校验，不写盘**。这与文件头 usage 注释一致
+  // ("--verify 只校验，不改文件")。
   if (VERIFY_ONLY) {
     let drift = 0;
     for (const t of ANCHOR_TARGETS) {
@@ -322,7 +318,18 @@ function main() {
       process.exit(1);
     }
     console.log('\n[claims] --verify 通过，anchor 全部与真源一致');
+    return;
   }
+
+  const results = [];
+  for (const t of ANCHOR_TARGETS) {
+    results.push(applyAnchor(t, anchor));
+  }
+  for (const r of results) {
+    if (r.skipped) continue;
+    console.log(`[claims] ${r.target}: ${r.addedAt || (r.changed ? 'updated' : 'unchanged')}`);
+  }
+
 }
 
 main();
