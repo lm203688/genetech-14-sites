@@ -43,7 +43,7 @@ Europe PMC、GitHub、HuggingFace、arXiv 等 11 个开放源里的科研实体�
 - **L0**：11 个开放源每日定时抓取
 - **L1**：结构化到 `entity.schema.json`（`id/name/source/abstract/url/authors/tags/confidence/sites/publishedDate/addedAt/doi`）
 - **L2**：知识图谱，节点含 `station/entity/tag` 三类，边含 `cross_site/shared_tag/citation/co_topic` 四类，全部带 `firstSeenAt/lastSeenAt/tier`
-- **L3**：`/v1/search/semantic` 检索 + MCP Server 对外分发。**当前为 BM25 + 字段加权 + RRF 的基线词典检索**（非向量检索），avgRecall@10=0.444（略低于 TF-IDF 基线 0.455）。按类型分解：abstract-mid 97.4% / tags-inverse 12.7% / cross-entity 9.2% / site-topic 6.9%——本质仍是词典/BM25 法。向量检索（Embedding）需配置 `GENETECH_EMBED_URL`，当前未启用，为未来工作。
+- **L3**：`/v1/search/semantic` 检索 + MCP Server 对外分发。**当前为 BM25 + BGE-M3 稠密向量 + RRF 混合栈**，30 站 avgRecall@10=**0.468** / MRR=**0.481**（`eval/results-2026-10-22.json`），**首次超过 TF-IDF 词法向量基线 0.455 / 0.466**（+0.013 / +0.015），但 NDCG@10=0.418 仍略低于 TF-IDF 0.433（−0.015，需精排进一步调优）。按类型分解：abstract-mid 0.957 / tags-inverse 0.183 / cross-entity 0.113 / site-topic 0.131——弱类仍受限于词典匹配主导。对比见 [`reports/retrieval-comparison-2026-10-24.md`](../reports/retrieval-comparison-2026-10-24.md)。精排（BGE-Reranker-v2-m3）与多 seed 显著性检验为路线图下一步。
 
 ---
 
@@ -331,7 +331,7 @@ TF-IDF 余弦在三项指标上均优于 BM25 基线。提升幅度适中但一�
 
 ### 已知限制
 
-1. **检索未超基线**：BM25 + RRF 基线词典检索，avgRecall@10=0.444，略低于 TF-IDF 0.455。向量检索需配置 `GENETECH_EMBED_URL`。
+1. **检索首次超基线**：BM25 + BGE-M3 稠密向量 + RRF 混合栈，30 站 avgRecall@10=**0.468**（> TF-IDF 0.455），MRR=**0.481**（> TF-IDF 0.466）；但 NDCG@10=0.418 仍略低于 TF-IDF 0.433（−0.015），且 tags-inverse 0.183 / cross-entity 0.113 / site-topic 0.131 弱类仍受限于词典匹配主导。精排 + 多 seed 显著性检验为路线图下一步。
 2. **回溯验证 null result**：共享主题信号不优于随机标签分配（lift vs null = 1.00），topic-specific lift = 0.34–0.38（低于随机）。方法定位为探索性资源。
 3. **KG stub 率 58%**：19,809 / 34,139 节点无摘要或标签。
 4. **DOI 覆盖 76%**：30 个 Parquet 分片未覆盖剩余 24%，扩库需 OpenAlex API key。

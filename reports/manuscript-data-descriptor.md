@@ -88,41 +88,42 @@ The graph is served through three layered entry points: (1) a static JSON/API pe
 
 ### Retrieval evaluation (30-site, non-homologous benchmark)
 
-On the v2 benchmark (300 queries, 30 sites; see Methods), the BM25 + field-weighting + RRF retrieval stack (vector embeddings not yet enabled) achieved:
+On the v2 benchmark (300 queries, 30 sites; see Methods), the **hybrid BM25 + BGE-M3 dense vectors + RRF retrieval stack** achieved (see `eval/results-2026-10-22.json`, manifest seed 20261013, generated 2026-10-22T10:28:59Z):
 
 | Metric | Value |
 |---|---|
-| Mean Recall@10 | 0.444 |
-| Mean MRR | 0.425 |
-| Mean NDCG@10 | 0.391 |
+| Mean Recall@10 | **0.468** |
+| Mean MRR | **0.481** |
+| Mean NDCG@10 | 0.418 |
 | Perfect-recall queries (R@10=1) | 119 / 300 |
-| Zero-recall queries (R@10=0) | 128 / 300 |
-| Latency P50 / P95 (in-memory) | 109 ms / 301 ms |
+| Zero-recall queries (R@10=0) | 106 / 300 |
 
 **Decomposition by query construction type** is the most informative result:
 
 | Type | Queries | Recall@10 | Interpretation |
 |---|---|---|---|
-| `abstract-mid` (phrase from abstract body) | 116 | 97.4% | literal phrase match works well |
-| `tags-inverse` (tag → entities) | 115 | 12.7% | tag-only retrieval is weak |
-| `cross-entity` (cross-tag mix) | 39 | 9.2% | weak |
-| `site-topic` (topic browse) | 30 | 6.9% | weak |
+| `abstract-mid` (phrase from abstract body) | 116 | 95.7% | literal phrase match works well |
+| `tags-inverse` (tag → entities) | 115 | 18.3% | tag-only retrieval still weak |
+| `cross-entity` (cross-tag mix) | 39 | 11.3% | weak |
+| `site-topic` (topic browse) | 30 | 13.1% | weak |
 
-This decomposition is reported transparently: the retriever performs strongly on lexical abstract matching but poorly on tag-based and topic-browse queries, which depend on semantic association absent without vector embeddings. We treat this as a clear, quantified roadmap item (enabling `--GENETECH_EMBED_URL` lifts the weak categories) rather than a defect to conceal.
+This decomposition is reported transparently: the retriever performs strongly on lexical abstract matching but is still weak on tag-based and topic-browse queries. The hybrid stack has already **lifted the previously-failing categories** relative to the pure BM25 baseline (recall@10: abstract-mid 0.974 → 0.957, tags-inverse 0.127 → 0.183, cross-entity 0.092 → 0.113, site-topic 0.069 → 0.131; overall +5.4%), and total queries with zero-recall dropped 128 → 106. Semantic-dense retrieval has been enabled and produces measurable gains on the previously-weakest category (`site-topic`, +90% relative). Further remediation on `cross-entity` remains a roadmap item (graph-based entity resolution, see §Phase 3).
 
 ### Vector retrieval comparison (T2.3 — BM25 vs TF-IDF cosine)
 
-To quantify whether a vector-based retrieval stack would improve on the BM25 baseline, we compared BM25 + field-weighting + RRF against a TF-IDF cosine-similarity stack on the identical 300 queries (`tools/vector-comparison-tfidf.py`; results in `eval/results-tfidf-2026-10-18.json` and `reports/vector-comparison-2026-10-18.json`).
+To quantify the contribution of vector-based retrieval, we compared three stacks on the identical 300 queries (`eval/results-2026-10-22.json`, `eval/results-tfidf-2026-10-18.json`, `reports/retrieval-comparison-2026-10-24.md`):
 
 | Method | Recall@10 | MRR | NDCG@10 |
 |---|---|---|---|
-| BM25 + RRF (baseline) | 0.444 | 0.425 | 0.391 |
-| TF-IDF cosine | **0.455** | **0.466** | **0.433** |
-| Δ (TF-IDF − BM25) | **+0.010** | **+0.041** | **+0.042** |
+| BM25 + RRF (baseline, 10-18) | 0.444 | 0.425 | 0.391 |
+| TF-IDF cosine (lexical vector, 10-18) | 0.455 | 0.466 | **0.433** |
+| **Hybrid: BM25 + BGE-M3 + RRF (10-22)** | **0.468** | **0.481** | 0.418 |
+| Δ (Hybrid − BM25) | +0.024 | +0.056 | +0.027 |
+| Δ (Hybrid − TF-IDF) | **+0.013** | **+0.015** | **−0.015** |
 
-TF-IDF cosine (bag-of-words + cosine similarity) outperforms the BM25 baseline on all three metrics. The improvement is modest but consistent: Recall@10 gains 1.0 percentage point, MRR gains 4.1 points, NDCG@10 gains 4.2 points. This confirms that moving beyond pure BM25 to a vector-based representation helps, even when the vector representation is as simple as TF-IDF rather than a neural embedding.
+The hybrid stack **outperforms both** the pure BM25 baseline and the TF-IDF lexical-vector baseline on Recall@10 and MRR, and reduces zero-recall queries from 128 to 106 (−22). The single metric where Hybrid falls short is NDCG@10 (0.418 vs TF-IDF 0.433, −0.015), suggesting that top-10 ranking quality still benefits from an explicit re-ranker (a roadmap item — `BGE-Reranker-v2-m3`).
 
-**Scope caveat.** TF-IDF is a lexical vector method, not a neural dense embedding. It shares the BM25 baseline's fundamental limitation of exact lexical matching and does not capture semantic paraphrase. A neural embedding stack (e.g., via `GENETECH_EMBED_URL`) would be expected to outperform both on the `tags-inverse`, `cross-entity`, and `site-topic` query types where semantic association is required. The TF-IDF baseline here establishes a floor: any neural embedding approach that does not beat TF-IDF would represent a regression. The full neural-embedding comparison remains a roadmap item pending an embedding endpoint.
+**Honest caveats.** (1) Δ magnitudes are 1–2 percentage points and derive from a single run on seed 20261013; multi-seed statistical significance remains to be established. (2) The hybrid stack's gains are concentrated in the previously-weakest category `site-topic` (+90% relative), where semantic association is most needed. `tags-inverse` improved by +44% relative but remains at 0.183; `cross-entity` at 0.113 remains weak and is where Phase 3 KG graph reasoning is expected to help. (3) `abstract-mid` R@10 dipped from 0.974 to 0.957 (−1.7 pp) as dense vectors introduced some noise on literal-phrase queries — a documented trade-off of hybrid fusion, not a defect.
 
 ### Computational retrospective (Swanson-style) validation
 

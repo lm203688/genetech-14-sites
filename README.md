@@ -32,7 +32,7 @@ curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩�
 | └ 其中引用边 | **27,868 条（占边总数 27.94%）** | 本次并入，验收判据 ≥20% |
 | 跨域引用边（真实解析） | **25,682**（较 10-10 的 1,961 扩展 13×） | `data/citation-edges.json` `stats.resolvedEdges` |
 | 零引用域缺口 | **140 / 870** 有向域对 | `GET /v1/citation/gaps` |
-| 语义检索 | 30 个 gzip 分片 / 覆盖率 100%（**基线词典检索**，非向量） | `verify-shard-live.mjs`（exit 2/3）；评测 avgRecall@10=0.444（见 `eval/results-2026-10-18.json`），**未超过 TF-IDF 基线 0.455**——诚实定位为"数据集+基线词典检索，语义层为未来工作" |
+| 语义检索 | 30 站 gzip 分片 + BGE-M3 向量缓存（BM25+Dense+RRF 混合） | `verify-shard-live.mjs`（exit 2/3）；30 站评测 avgRecall@10=**0.468** / MRR=**0.481**（`eval/results-2026-10-22.json`），**首次超过 TF-IDF 词法向量基线 0.455 / 0.466**；按类型分解：abstract-mid 0.957 / tags-inverse 0.183 / cross-entity 0.113 / site-topic 0.131（弱类仍是短板）。对比见 [`reports/retrieval-comparison-2026-10-24.md`](reports/retrieval-comparison-2026-10-24.md) |
 | MCP 工具 | 14 个（stdio + streamable-HTTP 双模式） | `mcp-smoke.mjs` |
 | 检索评测集 | **296 条**（perSite=10，seed=20261012） | `eval/queries.jsonl` + `eval/leaderboard-2026-10-12.html` |
 | 扩库候选池 | 48,643 个被引 DOI / 7,762 个期刊 | `pipeline-cited-gap-ranked.js` |
@@ -65,7 +65,7 @@ curl https://api.swarmlabs.tools/v1/citation/gaps       # 零引用域缺口矩�
 |---|---|---|---|
 | 跨源实体解析 | ❌ 未实现 | ✅ 最小可用（DOI / 标题级） | `tools/analyze-entity-resolution.mjs` + [`reports/entity-resolution-report.md`](reports/entity-resolution-report.md)；去重率 0.72%（30 域近正交故低），DOI 合并按构造无误并，标题合并保守关闭。 |
 | 引用立场抽取 | ❌ 无 | ✅ 最小可用（摘要级代理 + 词典法） | `tools/stance-extract.mjs` + [`reports/stance-extraction-report.md`](reports/stance-extraction-report.md)；引用图未保留引用句 → 仅摘要级代理，覆盖 37.5%，真值 P/R 待人工标注 `data/stance-sample.json`。 |
-| 30 站全量评测 | （3 站假象） | ✅ 全量 30 站持久化 | `eval/run-eval.mjs` → `eval/results-2026-10-18.json` + `eval/leaderboard-2026-10-18.html`；mean R@10=0.444，按类型分解诚实披露短板。 |
+| 30 站全量评测 | （3 站假象） | ✅ 全量 30 站持久化 + Hybrid 超越 TF-IDF 基线 | `eval/run-eval.mjs` → `eval/results-2026-10-22.json` + `eval/leaderboard-2026-10-22.html`；mean R@10=**0.468**（Hybrid，> TF-IDF 0.455），按类型分解诚实披露弱类短板。 |
 
 > 仍 ❌ 未落地：向量检索（T2.3，需 `GENETECH_EMBED_URL`）、中文政产学融合、DOI 覆盖 ≥95%（T1.4，需 OpenAlex key）。标「最小可用」**仅指本数据集已具备可复算的最小实现**，不代表达到生产级或对标 Scite / OpenAlex——与上表硬锚定不冲突。
 >
