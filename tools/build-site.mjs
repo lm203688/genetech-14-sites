@@ -1154,6 +1154,9 @@ const ASK_PAGE_JS = `/* GeneTech AI 问答页前端（自包含，无依赖） *
   var form = $('ask-form'), input = $('ask-input'), clearBtn = $('ask-clear');
   var ans = $('ask-answer'), ansBody = $('ask-answer-body'), srcs = $('ask-sources'), meta = $('ask-meta');
   var hint = $('ask-hint');
+  // P1-4 反馈闭环（2026-10-24）
+  var fbBox = $('ask-feedback'), fbThanks = $('ask-feedback-thanks');
+  var lastQuestion = null, lastAnswerPayload = null, fbVoted = false;
 
   // 端点：优先读 <meta name="llm-api-base">，否则默认 api-guard 公开子域。
   // 这样 ask.html 无论部署在 GitHub Pages 还是任意域名，都能调到 AI 推理后端，
@@ -1161,7 +1164,7 @@ const ASK_PAGE_JS = `/* GeneTech AI 问答页前端（自包含，无依赖） *
   var metaBase = document.querySelector('meta[name="llm-api-base"]');
   var FALLBACK_ENDPOINTS = ${JSON.stringify(ENDPOINTS_API)};
   var ENDPOINTS = (metaBase && metaBase.content && metaBase.content.trim())
-    ? [metaBase.content.trim().replace(/\/+$/, '')].concat(FALLBACK_ENDPOINTS)
+    ? [metaBase.content.trim().replace(/\\/+$/, '')].concat(FALLBACK_ENDPOINTS)
     : FALLBACK_ENDPOINTS;
   async function fetchAny(path, opts) {
     var lastErr;
@@ -1240,7 +1243,15 @@ const ASK_PAGE_JS = `/* GeneTech AI 问答页前端（自包含，无依赖） *
         throw new Error('上游错误 ' + errCode + (errMsg ? ' — ' + errMsg : ''));
       }
       var msg = j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content;
-      renderAnswer({ answer: msg, sources: j.sources || [], citations: j.citations || [], model: j.model, ms: null });
+      var payload = { answer: msg, sources: j.sources || [], citations: j.citations || [], model: j.model, ms: null };
+      renderAnswer(payload);
+      // P1-4：记录本次问答上下文，供反馈按钮携带
+      lastQuestion = question;
+      lastAnswerPayload = payload;
+      fbVoted = false;
+      if (fbBox) fbBox.style.display = '';
+      if (fbThanks) fbThanks.hidden = true;
+      document.querySelectorAll('.fb-btn').forEach(function (b) { b.classList.remove('active'); b.disabled = false; });
       setHint('完成 · 免费层每分钟 20 次');
     } catch (e) {
       showError(e && e.message ? e.message : String(e));
@@ -1253,12 +1264,67 @@ const ASK_PAGE_JS = `/* GeneTech AI 问答页前端（自包含，无依赖） *
       ev.preventDefault();
       var q = (input && input.value || '').trim();
       if (!q) return;
+      // 新提问：隐藏上一次反馈按钮组，避免对旧回答投新票
+      if (fbThanks) fbThanks.hidden = true;
       ask(q);
     });
   }
-  if (clearBtn) clearBtn.addEventListener('click', function () { input.value = ''; ans.hidden = true; });
+  if (clearBtn) clearBtn.addEventListener('click', function () { input.value = ''; ans.hidden = true; lastQuestion = null; lastAnswerPayload = null; });
   document.querySelectorAll('button.sample').forEach(function (b) {
     b.addEventListener('click', function () { var q = b.getAttribute('data-q'); if (q) { input.value = q; ask(q); } });
+  });
+
+  // ---- P1-4 反馈闭环 ----
+  // 三条通道：helpful / unhelpful / need_more
+  // 提交到 POST /api/feedback（走 api-guard 免费层），失败静默降级
+  // （反馈不能因为网络抖动阻塞用户）。ledger 是 append-only JSONL。
+  function submitFeedback(vote) {
+    if (fbVoted) return;
+    if (!lastQuestion) return;
+    var btn = document.querySelector('.fb-btn[data-vote="' + vote + '"]');
+    if (btn) btn.disabled = true;
+    var body = JSON.stringify({
+      kind: 'ask_feedback',
+      vote: vote,
+      question: lastQuestion,
+      answerPreview: (lastAnswerPayload && lastAnswerPayload.answer || '').slice(0, 200),
+      model: lastAnswerPayload && lastAnswerPayload.model || null,
+      sourceCount: (lastAnswerPayload && (lastAnswerPayload.sources || lastAnswerPayload.citations || []) || []).length,
+      userAgent: navigator.userAgent || '',
+      referrer: document.referrer || '',
+      at: new Date().toISOString(),
+    });
+    var i = 0;
+    function tryNext() {
+      if (i >= ENDPOINTS.length) {
+        if (btn) btn.disabled = false;
+        return;
+      }
+      var endpoint = ENDPOINTS[i++];
+      fetch(endpoint + '/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: body,
+        keepalive: true,
+      }).then(function (r) {
+        if (r.ok) onSuccess();
+        else tryNext();
+      }).catch(function () { tryNext(); });
+    }
+    function onSuccess() {
+      fbVoted = true;
+      document.querySelectorAll('.fb-btn').forEach(function (b) {
+        b.disabled = true;
+        if (b.getAttribute('data-vote') === vote) b.classList.add('active');
+      });
+      if (fbThanks) fbThanks.hidden = false;
+    }
+    tryNext();
+  }
+  document.querySelectorAll('.fb-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      submitFeedback(b.getAttribute('data-vote'));
+    });
   });
 })();`;
 function renderAskPage() {
@@ -1316,6 +1382,24 @@ ${samples.map((q) => `<button type="button" class="card sample" data-q="${esc(q)
 <h3>参考来源</h3>
 <ol class="sources" id="ask-sources"></ol>
 <p class="meta" id="ask-meta"></p>
+<!-- P1-4 反馈闭环（2026-10-24）：三按钮 + 反馈 ledger -->
+<div class="feedback" id="ask-feedback">
+  <span class="flabel">这条回答对你有帮助吗？</span>
+  <button type="button" class="fb-btn fb-up" data-vote="helpful">👍 有用</button>
+  <button type="button" class="fb-btn fb-down" data-vote="unhelpful">👎 不准</button>
+  <button type="button" class="fb-btn fb-more" data-vote="need_more">🔍 需要更多</button>
+</div>
+<p class="feedback-thanks" id="ask-feedback-thanks" hidden>感谢反馈，已记录到 <code>data/feedback-ledger.jsonl</code>，我们会用来改进。</p>
+</div>
+<style>
+.feedback{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+.flabel{color:var(--muted);font-size:13px;margin-right:4px}
+.fb-btn{padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:13px;cursor:pointer;transition:all .15s}
+.fb-btn:hover{border-color:var(--accent);color:var(--accent)}
+.fb-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.fb-btn:disabled{opacity:.6;cursor:not-allowed}
+.feedback-thanks{color:#1a9e57;font-size:13px;margin:8px 0 0}
+</style>
 </div>
 <meta name="llm-api-base" content="${process.env.ASK_LLM_BASE || 'https://api.genetech.tools'}">
 

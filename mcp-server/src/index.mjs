@@ -323,14 +323,79 @@ function checkAuth(ctx) {
 const server = new McpServer({
   name: 'genetech-data',
   version: '2.0.0',
+  // P0-4 MCP 2026-07-28 无状态化（2026-10-24 落地）
+  // CacheHint 是「结果级别」的（作用在 tools/list 整个响应的 ttlMs/cacheScope），
+  // 不是 per-tool 字段。这里配置全局默认：
+  //   - tools/list 5 分钟缓存 + public（元信息变化缓慢）
+  //   - server/discover 5 分钟缓存 + public
+  // 单个工具的实际 TTL 差异（LLM 桥接 60s / submit_request 0s）目前 SDK 只支持
+  // 「整个 tools/list 结果」一个值，未来 handler 层若支持 per-call ttlMs 再细分。
+  // 详见 ./index.mjs 下方 TOOL_META 表（作为文档记录，SDK 不消费）。
+  cacheHints: {
+    'tools/list':     { ttlMs: 300_000, cacheScope: 'public' },
+    'server/discover':{ ttlMs: 300_000, cacheScope: 'public' },
+    'prompts/list':   { ttlMs: 300_000, cacheScope: 'public' },
+    'resources/list': { ttlMs: 300_000, cacheScope: 'public' },
+  },
 });
 
 // P8-D 幻觉预算自动接入（2026-10-16）：包装 registerTool，所有工具自动记 honesty-ledger
 // 不侵入下方 13 处 registerTool 调用点，也不改任何 handler 签名。
 // 预算耗尽时（default 5 次）withLedger 会返回结构化 abstention_response 而非抛错。
 const _registerToolRaw = server.registerTool.bind(server);
-server.registerTool = (name, opts, handler) =>
-  _registerToolRaw(name, opts, withLedger(name, handler));
+
+// ---------------------------------------------------------------------------
+// P0-4 MCP 2026-07-28 无状态化（2026-10-24 落地）
+//
+// 无状态化由上方 `new McpServer({ cacheHints })` 完成——CacheHint 作用在
+// 「整个 tools/list 结果」上（SDK v2.3.1 只支持结果级 cache hint，不支持
+// per-tool ttlMs/cacheScope）。per-tool 的 TTL 差异在这里作为文档记录，
+// 未来 SDK 支持 per-tool cache hint 后再回来接入。
+//
+// 三个字段的目标值（未来接入点）：
+//   ttlMs:      数据快照新鲜度缓存上限
+//     元信息/实体（list_sites/get_entity/export_citation/...）= 300s
+//     LLM/图桥接（ask/semantic_search/graph_search）= 60s
+//     变更型（submit_request）= 0（禁缓存）
+//   cacheScope: 全部 'public'（无身份相关数据）
+//   outputSchema: Standard Schema，需 handler 迁移到 structuredContent
+//     返回模式后接入。当前 14 个 handler 都是老式 content[text] 返回，
+//     注入 outputSchema 会让 SDK 强校验失败（10-24 实测）。
+//
+// 本表目前仅作文档，不喂给 SDK。
+// ---------------------------------------------------------------------------
+const TOOL_META = {
+  // 元信息/实体（稳定缓存 5min）
+  list_sites:        { ttlMs: 300_000, cacheScope: 'public' },
+  query_entities:    { ttlMs: 300_000, cacheScope: 'public' },
+  get_entity:        { ttlMs: 300_000, cacheScope: 'public' },
+  export_citation:   { ttlMs: 300_000, cacheScope: 'public' },
+  citation_gaps:     { ttlMs: 300_000, cacheScope: 'public' },
+  intake_health:     { ttlMs: 300_000, cacheScope: 'public' },
+  verify_entity:     { ttlMs: 300_000, cacheScope: 'public' },
+  snapshot_at:       { ttlMs: 300_000, cacheScope: 'public' },
+  domain_relatedness:{ ttlMs: 300_000, cacheScope: 'public' },
+  // LLM/图桥接（短缓存 60s）
+  semantic_search:   { ttlMs: 60_000,  cacheScope: 'public' },
+  graph_search:      { ttlMs: 60_000,  cacheScope: 'public' },
+  ask:               { ttlMs: 60_000,  cacheScope: 'public' },
+  retrieve_requests: { ttlMs: 60_000,  cacheScope: 'public' },
+  // 变更型（ttlMs=0 表示禁止缓存）
+  submit_request:    { ttlMs: 0,       cacheScope: 'public' },
+};
+// TOOL_META 目前不喂给 SDK（per-tool cache hint 未支持），保留以便文档检索
+// 和未来 SDK 支持后接入。这里显式引用一次以抑制 lint 的未使用警告。
+void TOOL_META;
+
+server.registerTool = (name, opts, handler) => {
+  // 把 per-tool TTL/cacheScope 记录到 _meta（opaque 透传字段，SDK 不校验）
+  // 客户端可以用它做客户端侧缓存策略（例如 LLM Agent 记住「ask 结果 60s 内复用」）
+  const meta = TOOL_META[name];
+  const enrichedOpts = meta
+    ? { ...opts, _meta: { ...opts._meta, cacheHint: meta } }
+    : opts;
+  return _registerToolRaw(name, enrichedOpts, withLedger(name, handler));
+};
 
 server.registerTool(
   'list_sites',

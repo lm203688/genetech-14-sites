@@ -42,7 +42,109 @@ function getEnv() {
     LLM_FREE_RATE: typeof LLM_FREE_RATE !== 'undefined' ? LLM_FREE_RATE : undefined,
     INTEL_KV: typeof INTEL_KV !== 'undefined' ? INTEL_KV : undefined,
     INTEL_ADMIN_KEY: typeof INTEL_ADMIN_KEY !== 'undefined' ? INTEL_ADMIN_KEY : null,
+    FEEDBACK_KV: typeof FEEDBACK_KV !== 'undefined' ? FEEDBACK_KV : undefined,
   };
+}
+
+// ---- P1-4 反馈闭环（2026-10-24）----
+// 前端三按钮 → POST /api/feedback → 落到 FEEDBACK_KV / INTEL_KV / memory
+// 三档限流 + append-only 语义（不覆盖历史条目）
+
+const FEEDBACK_RATE = 30;              // 每 IP 每分钟上限
+const FEEDBACK_RATE_PREFIX = 'fb:rl:';
+const FEEDBACK_ENTRY_PREFIX = 'fb:e:';
+const FEEDBACK_COUNTER_PREFIX = 'fb:cnt:';
+const FEEDBACK_TTL = 60 * 60 * 24 * 365; // 一年（KV 硬限制）
+
+function _feedbackKV(env) {
+  if (env.FEEDBACK_KV) return { kv: env.FEEDBACK_KV, storage: 'feedback_kv' };
+  if (env.INTEL_KV) return { kv: env.INTEL_KV, storage: 'intel_kv_fallback' };
+  return { kv: null, storage: 'memory_only' };
+}
+
+const _fbMemory = { counter: 0, entries: [] };
+
+async function checkFeedbackRate(env, ip) {
+  const now = Math.floor(Date.now() / 60000);
+  const { kv } = _feedbackKV(env);
+  const key = FEEDBACK_RATE_PREFIX + ip + ':' + now;
+  if (kv) {
+    try {
+      const raw = await kv.get(key);
+      const n = raw ? parseInt(raw, 10) : 0;
+      if (n >= FEEDBACK_RATE) return { allowed: false, count: n, limit: FEEDBACK_RATE };
+      await kv.put(key, String(n + 1), { expirationTtl: 120 });
+      return { allowed: true, count: n + 1, limit: FEEDBACK_RATE };
+    } catch { /* fall through */ }
+  }
+  // memory fallback（单实例、重启丢）
+  const bucket = FEEDBACK_RATE_PREFIX + ip + ':' + now;
+  if (!_fbMemory.rl) _fbMemory.rl = new Map();
+  const n = (_fbMemory.rl.get(bucket) || 0);
+  if (n >= FEEDBACK_RATE) return { allowed: false, count: n, limit: FEEDBACK_RATE };
+  _fbMemory.rl.set(bucket, n + 1);
+  return { allowed: true, count: n + 1, limit: FEEDBACK_RATE };
+}
+
+async function appendFeedback(entry, env) {
+  const { kv, storage } = _feedbackKV(env);
+  entry.seq = Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);
+  entry.storage = storage;
+  const json = JSON.stringify(entry);
+  if (!kv) {
+    _fbMemory.counter += 1;
+    entry.seq = _fbMemory.counter;
+    entry.storage = 'memory_only';
+    _fbMemory.entries.push(entry);
+    // memory 上限保护（防止单实例被灌爆）
+    if (_fbMemory.entries.length > 10000) _fbMemory.entries.shift();
+    return { ok: true, storage, seq: entry.seq };
+  }
+  const eKey = FEEDBACK_ENTRY_PREFIX + entry.seq;
+  // 计数器：按 vote 累加（KV atomics 用 key:total 单条 JSON）
+  try {
+    await kv.put(eKey, json, { expirationTtl: FEEDBACK_TTL });
+  } catch (e) {
+    return { ok: false, storage, seq: entry.seq, error: String(e && e.message || e) };
+  }
+  try {
+    const cKey = FEEDBACK_COUNTER_PREFIX + 'all';
+    const raw = await kv.get(cKey);
+    const c = raw ? JSON.parse(raw) : { total: 0, byVote: { helpful: 0, unhelpful: 0, need_more: 0 }, byDay: {} };
+    c.total += 1;
+    c.byVote[entry.vote] = (c.byVote[entry.vote] || 0) + 1;
+    const day = entry.at.slice(0, 10);
+    c.byDay[day] = (c.byDay[day] || 0) + 1;
+    await kv.put(cKey, JSON.stringify(c), { expirationTtl: FEEDBACK_TTL });
+  } catch { /* counter 失败不影响落盘 */ }
+  return { ok: true, storage, seq: entry.seq };
+}
+
+async function readFeedbackStats(env) {
+  const { kv, storage } = _feedbackKV(env);
+  if (!kv) {
+    const byVote = { helpful: 0, unhelpful: 0, need_more: 0 };
+    for (const e of _fbMemory.entries) if (byVote[e.vote] !== undefined) byVote[e.vote] += 1;
+    return { storage, total: _fbMemory.entries.length, byVote, recent: _fbMemory.entries.slice(-20).reverse() };
+  }
+  try {
+    const cKey = FEEDBACK_COUNTER_PREFIX + 'all';
+    const raw = await kv.get(cKey);
+    if (!raw) return { storage, total: 0, byVote: { helpful: 0, unhelpful: 0, need_more: 0 }, byDay: {}, recent: [] };
+    const c = JSON.parse(raw);
+    // 拉最近 20 条（KV list 按 key 排序，用 list prefix 拿最新一批）
+    const list = await kv.list({ prefix: FEEDBACK_ENTRY_PREFIX, limit: 20 });
+    const recent = [];
+    for (const k of list.keys || []) {
+      const v = await kv.get(k.name);
+      if (v) recent.push(JSON.parse(v));
+    }
+    // seq 里含时间戳 base36，按 receivedAt 降序
+    recent.sort((a, b) => (a.receivedAt || '').localeCompare(b.receivedAt || ''));
+    return { storage, total: c.total || 0, byVote: c.byVote || { helpful: 0, unhelpful: 0, need_more: 0 }, byDay: c.byDay || {}, recent: recent.slice(-20).reverse() };
+  } catch (e) {
+    return { storage, error: String(e && e.message || e) };
+  }
 }
 
 // Admin fallback（仅用于 /v1/intel/consumer/create 和 list）。生产建议通过 CF Secret 覆盖。
@@ -544,6 +646,163 @@ async function handleSemanticSearch(request) {
       shardedMeta,
     },
   });
+}
+
+// ---------------------------------------------------------------------------
+// Citation Verification (P1-2, 2026-10-24)：独立 HTTP 端点
+//
+// 与 /v1/citation/edges（原始边数据集，消费者自己 filter）不同，
+// /v1/citation/verify 是「给我一批 DOI，告诉我每条的在库状态 / 入出引用 / 跨站共现」。
+//
+// 算法与 mcp-server/src/index.mjs 的 verify_entity 一致，同源于
+// lib/citation-verify.mjs（Node 侧）。CF 经典 SW 不能 ESM import 该模块，
+// 这里内联一份同步副本。改算法时两处需同步。
+//
+// 冷启动延迟治理：edges 首次 fetch ~3-8s（8.5MB JSON）。用单例 promise
+// 缓存 5 分钟。第二次调用完全命中缓存，无网络 I/O。
+// ---------------------------------------------------------------------------
+
+const CITATION_EDGES_URL = `${UPSTREAM_BASE}/data/citation-edges.json`;
+const CITATION_VERIFY_CACHE_TTL_MS = 5 * 60 * 1000;
+const CITATION_VERIFY_MAX_DOIS = 50;
+
+let _citVerifyCache = null;
+let _citVerifyPromise = null;
+
+function _normDoi(v) {
+  if (v == null || v === '') return '';
+  let s = String(v).trim();
+  s = s.replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, '');
+  s = s.replace(/^doi:/i, '');
+  s = s.toLowerCase();
+  s = s.replace(/v\d+$/, '');
+  return s;
+}
+
+async function _loadCitationEdgesForVerify() {
+  const now = Date.now();
+  if (_citVerifyCache && now - _citVerifyCache.fetchedAt < CITATION_VERIFY_CACHE_TTL_MS) {
+    return _citVerifyCache;
+  }
+  if (_citVerifyPromise) return _citVerifyPromise;
+  _citVerifyPromise = (async () => {
+    const r = await fetch(CITATION_EDGES_URL, {
+      headers: { 'X-GeneTech-Tier': 'free', 'Cache-Control': 'max-age=300' },
+    });
+    if (!r.ok) throw new Error(`edges fetch failed: ${r.status}`);
+    const j = await r.json();
+    return { edges: j.edges || [], fetchedAt: Date.now(), builtAt: j.builtAt || new Date().toISOString() };
+  })().finally(() => { _citVerifyPromise = null; });
+  const result = await _citVerifyPromise;
+  _citVerifyCache = result;
+  return result;
+}
+
+function _buildCitIndex(edges) {
+  const bySource = new Map();
+  const byTarget = new Map();
+  let total = 0;
+  for (const raw of edges || []) {
+    let citing, cited, fromSite, toSite;
+    if (Array.isArray(raw) && raw.length >= 2) {
+      [citing, cited, fromSite, toSite] = raw;
+    } else if (raw && typeof raw === 'object') {
+      citing = raw.citing || raw.s || raw.source;
+      cited = raw.cited || raw.t || raw.target;
+      fromSite = raw.fromSite || raw.sSite || raw.ss;
+      toSite = raw.toSite || raw.tSite || raw.ts;
+    }
+    if (!citing || !cited) continue;
+    total++;
+    const sk = _normDoi(citing);
+    const tk = _normDoi(cited);
+    const row = { citing, cited, fromSite, toSite, direction: sk === tk ? 'self' : 'cross' };
+    if (!bySource.has(sk)) bySource.set(sk, []);
+    bySource.get(sk).push(row);
+    if (!byTarget.has(tk)) byTarget.set(tk, []);
+    byTarget.get(tk).push(row);
+  }
+  return { bySource, byTarget, total };
+}
+
+function _verifySingleWorker(doiRaw, index) {
+  const key = _normDoi(doiRaw);
+  const out = index.bySource.get(key) || [];
+  const inc = index.byTarget.get(key) || [];
+  const sites = new Set();
+  for (const r of out) { if (r.fromSite) sites.add(r.fromSite); if (r.toSite) sites.add(r.toSite); }
+  for (const r of inc) { if (r.fromSite) sites.add(r.fromSite); if (r.toSite) sites.add(r.toSite); }
+  const hasOut = out.length > 0;
+  const hasIn = inc.length > 0;
+  const status = hasOut && hasIn ? 'resolved'
+    : hasOut ? 'resolved_outgoing_only'
+    : hasIn ? 'resolved_incoming_only'
+    : 'not_in_database';
+  return {
+    doi: doiRaw,
+    status,
+    sites: Array.from(sites).sort(),
+    siteCount: sites.size,
+    citationsInDatabase: { incoming: inc.length, outgoing: out.length, total: inc.length + out.length },
+    duplicateIngestion: sites.size > 1 ? Array.from(sites) : [],
+    sampleEdges: { outgoing: out.slice(0, 5), incoming: inc.slice(0, 5) },
+  };
+}
+
+async function handleCitationVerify(request, url) {
+  // 解析 DOI 列表：POST body 或 GET query (?doi=...&doi=...)
+  let dois = [];
+  try {
+    if (request.method === 'POST') {
+      const body = await request.json();
+      dois = Array.isArray(body.dois) ? body.dois : (body.doi ? [body.doi] : []);
+    } else {
+      dois = url.searchParams.getAll('doi');
+    }
+  } catch {
+    return json({ error: 'bad_json', message: 'POST body must be valid JSON with { "dois": [...] }' }, 400);
+  }
+
+  if (!Array.isArray(dois) || dois.length === 0) {
+    return json({ error: 'empty_input', message: 'at least one doi required (POST {dois:[...]} or GET ?doi=...)' }, 400);
+  }
+  if (dois.length > CITATION_VERIFY_MAX_DOIS) {
+    return json({
+      error: 'too_many',
+      message: `max ${CITATION_VERIFY_MAX_DOIS} DOIs per request, got ${dois.length}`,
+      limit: CITATION_VERIFY_MAX_DOIS,
+    }, 400);
+  }
+
+  try {
+    const src = await _loadCitationEdgesForVerify();
+    const index = _buildCitIndex(src.edges);
+    const results = dois.map((d) => _verifySingleWorker(d, index));
+    const summary = {
+      total: results.length,
+      resolved: results.filter((r) => r.status !== 'not_in_database').length,
+      resolvedStrict: results.filter((r) => r.status === 'resolved').length,
+      notInDatabase: results.filter((r) => r.status === 'not_in_database').length,
+      duplicated: results.filter((r) => r.duplicateIngestion.length > 1).length,
+      totalIncoming: results.reduce((s, r) => s + r.citationsInDatabase.incoming, 0),
+      totalOutgoing: results.reduce((s, r) => s + r.citationsInDatabase.outgoing, 0),
+    };
+    return json({
+      endpoint: '/v1/citation/verify@v1',
+      cacheHint: { ttlMs: CITATION_VERIFY_CACHE_TTL_MS, cacheScope: 'public' },
+      edgeVersion: src.builtAt,
+      edgeCount: index.total,
+      summary,
+      results,
+    }, 200, {
+      'Cache-Control': 'public, max-age=300',
+      'X-GeneTech-Tier': 'free',
+      'X-GeneTech-Endpoint-Version': 'v1',
+      'X-GeneTech-Edge-Version': src.builtAt,
+    });
+  } catch (e) {
+    return json({ error: 'edges_unavailable', message: String(e && e.message || e) }, 503);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -1589,6 +1848,17 @@ async function handleRequest(request) {
       // bridges（跨域枢纽）、degrees（入/出度）、pairMatrix（870 有向站对全矩阵）。
       // 全量 43.8KB，一次 GET 拿完，不做服务端分页（分页会让缓存命中率和调用方复杂度都变差）。
       targetPath = '/data/citation-gaps.json';
+    } else if (path === '/v1/citation/verify') {
+      // P1-2（2026-10-24 落地）：Citation Verification API 独立端点。
+      //   POST /v1/citation/verify   body: { "dois": ["10.xxx/xxx", ...] }   批量验证
+      //   GET  /v1/citation/verify    ?doi=10.xxx/xxx&doi=10.yyy/yyy        便捷单/多查
+      //
+      // 与 /v1/citation/edges 的区别：edges 是原始边数据集（消费者自己 filter），
+      // verify 是「给我这批 DOI，告诉我在库状态 + 入/出引用数 + 跨站共现」。
+      // 逻辑与 mcp-server/src/index.mjs 的 verify_entity 共用同一份算法
+      // （lib/citation-verify.mjs 是 Node 侧同源真源，worker 侧因经典 SW 无法
+      //   ESM import，只能内联一份同步副本——改动两处时需人工保持一致）。
+      return handleCitationVerify(request, url);
     } else if (path === '/v1/entities') {
       targetPath = '/api/catalog.json'; // 聚合视图走 catalog（各站 entities 由 catalog.index/entities 字段指向）
     } else if (path.startsWith('/v1/domains/')) {
@@ -1674,6 +1944,74 @@ async function handleRequest(request) {
     } catch (e) {
       return json({ error: 'upstream_unreachable', message: String(e.message || e) }, 502);
     }
+  }
+
+  // ---- P1-4 反馈闭环：/api/feedback (2026-10-24) ----
+  // POST /api/feedback — 接受三按钮投票，append 到 FEEDBACK_KV 或 INTEL_KV
+  //   body: { kind:'ask_feedback', vote:'helpful'|'unhelpful'|'need_more',
+  //           question, answerPreview, model, sourceCount, userAgent, referrer, at }
+  //
+  // 存储策略：
+  //   - 优先 FEEDBACK_KV（专用 KV）
+  //   - 未绑定时降级 INTEL_KV（用 feedback: 前缀避免冲突）
+  //   - 都没绑定时降级到 memory（单实例、重启丢失；返回 200 但不落盘）
+  //
+  // 隐私承诺：
+  //   - 存 question 前 300 字符 + answerPreview 前 200 字符
+  //   - userAgent / referrer 保留（分析流量来源，不做个人识别）
+  //   - 无 IP / 无 email / 无 cookie 关联
+  //
+  // 限流：每 IP 每分钟 30 次（投票不该被刷，但要允许用户改主意再投）
+  if (path === '/api/feedback' || path === '/api/feedback/') {
+    if (request.method !== 'POST') {
+      return json({ error: 'method_not_allowed', message: '仅支持 POST' }, 405);
+    }
+    if (!ip) ip = getClientIp(request);
+    const fbRl = await checkFeedbackRate(env, ip);
+    if (!fbRl.allowed) {
+      return json({ error: 'rate_limited', message: '反馈限流：每 IP 每分钟 30 次。' }, 429, { 'Retry-After': '60' });
+    }
+    let body;
+    try { body = await request.json(); }
+    catch { return json({ error: 'bad_json', message: 'body 必须是 JSON' }, 400); }
+    const vote = String(body.vote || '').trim();
+    const allowed = ['helpful', 'unhelpful', 'need_more'];
+    if (!allowed.includes(vote)) {
+      return json({ error: 'invalid_vote', message: `vote 必须是 ${allowed.join(' / ')}` }, 400);
+    }
+    // 归一化 + 截断（防止 body 塞爆 KV 单条 256KB 上限）
+    const entry = {
+      kind: 'ask_feedback',
+      vote,
+      question: String(body.question || '').slice(0, 300),
+      answerPreview: String(body.answerPreview || '').slice(0, 200),
+      model: body.model ? String(body.model).slice(0, 60) : null,
+      sourceCount: Number.isFinite(body.sourceCount) ? Number(body.sourceCount) : 0,
+      userAgent: String(body.userAgent || '').slice(0, 200),
+      referrer: String(body.referrer || '').slice(0, 200) || null,
+      at: body.at || new Date().toISOString(),
+      receivedAt: new Date().toISOString(),
+    };
+    const stored = await appendFeedback(entry, env);
+    return json({
+      ok: true,
+      vote: vote,
+      storage: stored.storage,
+      seq: stored.seq,
+      cacheHint: { ttlMs: 0, cacheScope: 'private' },
+      next: { endpoint: '/v1/feedback/stats', description: '查询反馈汇总统计' },
+    }, 200, { 'Cache-Control': 'no-store' });
+  }
+
+  // ---- P1-4 反馈汇总：/v1/feedback/stats (2026-10-24) ----
+  // GET /v1/feedback/stats — 各票数、按天聚合、最近 20 条摘要
+  if (path === '/v1/feedback/stats' || path === '/v1/feedback/stats/') {
+    const s = await readFeedbackStats(env);
+    return json({
+      endpoint: '/v1/feedback/stats@v1',
+      cacheHint: { ttlMs: 60_000, cacheScope: 'public' },
+      ...s,
+    }, 200, { 'Cache-Control': 'public, max-age=60' });
   }
 
   // 根路径：欢迎页

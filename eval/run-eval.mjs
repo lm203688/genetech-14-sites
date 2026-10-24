@@ -139,11 +139,57 @@ const scopeLabel = args.sites === 'all' ? '全量' : ('前 ' + targetSites.lengt
 console.log(`[eval] 目标站点: ${targetSites.length}（${scopeLabel}） | K=${args.k}`);
 
 // 按站缓存索引，避免重复构建
+// 2026-10-22：支持向量检索（BGE-M3 via Ollama），env 门控
+//   GENETECH_EMBED_URL      端点（默认 http://127.0.0.1:11434）
+//   GENETECH_EMBED_MODEL    模型（默认 bge-m3）
+//   GENETECH_EMBED_KEY      API Key（Ollama 本地无需）
+//   GENETECH_USE_VECTOR=1   显式启用（默认关闭，保证 CI 与离线兼容）
+// 缓存文件：data/state/embed-cache-{site}.json（分片，每站独立）
+const EMBED_URL = process.env.GENETECH_EMBED_URL || 'http://127.0.0.1:11434/api/embeddings';
+const EMBED_MODEL = process.env.GENETECH_EMBED_MODEL || 'bge-m3';
+const USE_VECTOR = process.env.GENETECH_USE_VECTOR === '1';
+const DATA_DIR = process.env.GENETECH_DATA_DIR || ROOT;
+// Phase 1: PPR 图推理（默认关闭——当前知识图边与 BM25 文本索引冗余，无法提供独立信号）
+const USE_GRAPH = process.env.GENETECH_USE_GRAPH === '1';
+const GRAPH_ALPHA = parseFloat(process.env.GENETECH_GRAPH_ALPHA || '0.85');
+const GRAPH_WEIGHT = parseFloat(process.env.GENETECH_GRAPH_WEIGHT || '0.6');
+if (USE_VECTOR) {
+  console.log(`[eval] 向量检索启用: model=${EMBED_MODEL} url=${EMBED_URL} cache=data/state/embed-cache-{site}.json`);
+}
+if (USE_GRAPH) {
+  console.log(`[eval] 图推理(PPR)启用: alpha=${GRAPH_ALPHA} weight=${GRAPH_WEIGHT}`);
+}
+
 const indexBySite = new Map();
-function getIdx(site) {
+async function getIdx(site) {
   if (!indexBySite.has(site)) {
     const ents = loadEntities(site);
-    indexBySite.set(site, new SearchIndex(ents));
+    const idx = new SearchIndex(ents);
+    if (USE_GRAPH) {
+      idx.enableGraph({
+        dataDir: DATA_DIR,
+        alpha: GRAPH_ALPHA,
+        maxNodes: 200,
+        weight: GRAPH_WEIGHT,
+      });
+    }
+    if (USE_VECTOR) {
+      const cacheFile = path.join(DATA_DIR, 'data', 'state', `embed-cache-${site}.json`);
+      // 若缓存不存在，仍尝试 enableVector（内部会尝试惰性构建，但 30 站 × 10K 太慢，直接跳过）
+      if (fs.existsSync(cacheFile)) {
+        await idx.enableVector({
+          embedUrl: EMBED_URL,
+          embedModel: EMBED_MODEL,
+          embedKey: process.env.GENETECH_EMBED_KEY || '',
+          dataDir: DATA_DIR,
+          cacheFile,
+        });
+        console.log(`  [${site}] vectors loaded: ${idx.vectors?.size || 0}`);
+      } else {
+        console.warn(`  [${site}] no embed cache (${cacheFile}), 跳过向量检索`);
+      }
+    }
+    indexBySite.set(site, idx);
   }
   return indexBySite.get(site);
 }
@@ -158,7 +204,7 @@ for (const q of queries) {
   // 只跑本次目标站点的 query
   if (!targetSites.includes(q.site)) continue;
 
-  const idx = getIdx(q.site);
+  const idx = await getIdx(q.site);
   const relevantSet = new Set(q.relevantIds || []);
   // 检索时不传 site 过滤（评测的是检索器本身），只按站隔离建索引
   const _ts = Date.now();
