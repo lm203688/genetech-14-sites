@@ -1,0 +1,154 @@
+name: GeneTech Pages Deploy
+
+# 备用发布通道：不依赖任何外部密钥，仅用内置 GITHUB_TOKEN。
+# 触发时机：数据落库后的 push（含 ops 机器人提交）、手动、以及每日兜底。
+on:
+  push:
+    branches: [master]
+    paths:
+      - '*/website/api/*.json'
+      - 'data/*.json'
+      - 'data/search-index/**'
+      - 'docs/consumer-onboarding.md'
+      - 'docs/enterprise-data-license-kit.md'
+      - 'docs/profitable-model-alignment.md'
+      - 'openapi.yaml'
+      - 'tools/build-site.mjs'
+      - 'tools/build-entity-pages.mjs'
+      - 'content/blog/**'
+      - '.github/workflows/pages-deploy.yml'
+  workflow_dispatch:
+  schedule:
+    # 每 4 小时兜底重建（与 ops.yml 的 4h 构建预算门对齐，≤6 次/天≈180/月，在 CF 500/月额度内）。
+    # 原因：数据流水线用 GITHUB_TOKEN push 的提交未能可靠触发本工作流的 push 事件
+    # （08-31 14:49/20:37 两次本应触发构建的 "update" 提交实际未建），仅靠每日 03:20 单次兜底
+    # 在 GitHub schedule 节流下会长期不刷新，导致线上站点陈旧。改为每 4h 兜底，保证站点至多滞后 4h。
+    - cron: '20 */4 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 与自身串行，但不阻塞 ops 数据流水线
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          # 若仓库尚未开启 Pages，自动启用（无需人工进设置页）
+          enablement: true
+
+      # ── 编译期契约校验（2026-09-27 新增）──────────────────────────────
+      # 把「部署期发现问题」前移到「构建开始之前」。直接动因：
+      # insights-narrate.mjs 曾在模块顶层无条件执行 main()，其 process.exit(0)
+      # 在 build-site.mjs 里 import 时杀掉整个构建 —— exit=0、Actions 判
+      # success、[data]/[ok] 日志全缺、_site/data/data-requests.json 从未发布。
+      # 部署期的 Verify data contract 是第一次抓住它的，但那已跑完整个构建。
+      # 纯 AST 静态分析、零执行、不 import 任何 tools 模块，因此 Actions 缺
+      # 任何构建依赖也不会误判。只有 P0/P1 才阻断（exit 2），P2 建议不阻断。
+      - name: Compile-time contract check
+        run: node tools/check-build-contract.mjs
+
+      - name: Build static site
+        env:
+          SITE_BASE: ${{ steps.pages.outputs.base_path }}
+          SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          GSC_VERIFICATION: ${{ secrets.GSC_VERIFICATION }}
+          BING_VERIFICATION: ${{ secrets.BING_VERIFICATION }}
+        run: |
+          # 1) 先为每站生成实体详情页产物（tools/build-site.mjs 的 syncEntityPages 会把
+          #    <site>/website/entities/ 同步到 _site/<site>/website/entities/）。
+          #    limit=300 让每站 300 条实体有独立 URL，覆盖长尾 SEO + AI 引用，全量 30 站≈9k 页。
+          node tools/build-entity-pages.mjs --all --limit 300
+          # 2) 主构建
+          node tools/build-site.mjs --out _site
+          echo "--- 产物概览 ---"
+          find _site -maxdepth 1 -mindepth 1 | sort
+          echo "文件数: $(find _site -type f | wc -l)"
+
+      - name: Verify data contract
+        run: |
+          # 仅校验真正的数据站点（源仓库里确有 website/api/index.json 的目录），
+          # 避免把 blog/ .well-known 等非站点目录误判为缺失
+          missing=0
+          for d in */; do
+            slug=$(basename "$d")
+            [ -f "$slug/website/api/index.json" ] || continue
+            for f in index.json entities.json; do
+              if [ ! -f "_site/$slug/website/api/$f" ]; then
+                echo "::error::缺失数据契约文件 _site/$slug/website/api/$f"
+                missing=1
+              fi
+            done
+          done
+          # 聚合数据产物：Worker（api.swarmlabs.tools）把上游映射到
+          # data.swarmlabs.tools/data/*.json。缺失会让 /v1/oss/registry 与
+          # /v1/search/semantic 全部哑火。build-site.mjs 的 syncAggregatedData()
+          # 负责把 data/*.json 复制到 _site/data/，这里对产物做硬校验防回归。
+          for f in \
+            data/knowledge-graph.json \
+            data/knowledge-graph-entities.json \
+            data/search-index.json \
+            data/search-index/manifest.json \
+            data/oss-registry.json \
+            data/data-requests.json \
+            data/academic-entities.json \
+            data/crossref-entities.json \
+            data/pubmed-entities.json \
+            data/citation-edges.json \
+            data/citation-gaps.json; do
+            if [ ! -s "_site/$f" ]; then
+              echo "::error::缺失聚合数据产物 _site/$f（Worker 上游依赖，会导致对应 /v1 端点 404）"
+              missing=1
+            fi
+          done
+          # 分片目录：manifest 声明多少片就必须有几片 .json.gz，缺一即缺一片覆盖率。
+          # 缺片不会让契约失败（Worker 会 fail-safe 回退单文件索引），但覆盖率会掉——
+          # 所以要单独出声告警而不是硬失败（构建期数据波动是可容忍的）。
+          if [ -s "_site/data/search-index/manifest.json" ]; then
+            expected=$(node -e "const m=require('./_site/data/search-index/manifest.json');console.log(m.shards?m.shards.length:0)")
+            actual=$(ls _site/data/search-index/site-*.json.gz 2>/dev/null | wc -l)
+            if [ "$actual" -ge "$expected" ]; then
+              echo "分片契约通过：$actual/$expected 片"
+            else
+              echo "::error::分片目录不完整：manifest 声明 $expected 片，实际只 $actual 片（/v1/search/semantic 覆盖率将退化）"
+              missing=1
+            fi
+          else
+            echo "::warning::缺失 data/search-index/manifest.json，分片加载不可用（Worker 会回退单文件索引，覆盖率 6%）"
+          fi
+          [ "$missing" = "0" ] || exit 1
+          echo "数据契约校验通过（站点契约 + 聚合产物 + 分片目录）"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          # 数据量增长后 artifact 显著变大（每站 entities.json 可达 3MB+，14 站合计数十 MB），
+          # deploy-pages 默认 10 分钟轮询上限会被击穿（曾报 Timeout reached, aborting!）。
+          # 放宽到 30 分钟并提高容错次数，避免发布侧偶发变慢导致整轮上线失败。
+          timeout: 1800000
+          error_count: 15
+          reporting_interval: 10000

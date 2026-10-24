@@ -1977,6 +1977,56 @@ function writeFile(rel, content) {
 }
 
 /**
+ * 把每站的实体详情页产物（由 tools/build-entity-pages.mjs 生成到 <site>/website/entities/）
+ * 同步到部署目录 <OUT>/<site>/website/entities/。
+ *
+ * 产物目录被 .gitignore 覆盖（不入库），CI 与本地构建期都调 build-entity-pages.mjs 现场生成，
+ * 再由本步骤 copyFileSync 复制进 _site/。build-site 主流程末尾调用本函数，与 syncAggregatedData 并列。
+ *
+ * 为什么独立成函数而不是塞到主 for-loop：
+ * - entities 目录可能有成千上万 HTML 文件（30 站 × 300 = 9000 页），单独走一遍 cpSync 更清晰；
+ * - 若某站缺产物（例如刚删数据未重生），主流程仍能推进，仅在最后告警。
+ */
+function syncEntityPages(sites) {
+  let total = 0;
+  let missing = 0;
+  const t0 = Date.now();
+  for (const s of sites) {
+    const src = path.join(ROOT, s.slug, 'website', 'entities');
+    const dest = path.join(OUT, s.slug, 'website', 'entities');
+    if (!fs.existsSync(src)) { missing++; continue; }
+    try {
+      let n = 0;
+      for (const f of fs.readdirSync(src, { withFileTypes: true })) {
+        const srcP = path.join(src, f.name);
+        const destP = path.join(dest, f.name);
+        if (f.isDirectory()) {
+          fs.mkdirSync(destP, { recursive: true });
+          for (const inner of fs.readdirSync(srcP, { withFileTypes: true })) {
+            if (inner.isFile()) {
+              fs.mkdirSync(path.dirname(destP), { recursive: true });
+              fs.copyFileSync(path.join(srcP, inner.name), path.join(destP, inner.name));
+              n++;
+            }
+          }
+        } else if (f.isFile()) {
+          fs.mkdirSync(dest, { recursive: true });
+          fs.copyFileSync(srcP, destP);
+          n++;
+        }
+      }
+      total += n;
+    } catch (e) {
+      console.warn(`[entities][WARN] 复制 ${s.slug} entities 失败: ${e.message}`);
+      missing++;
+    }
+  }
+  const secs = ((Date.now() - t0) / 1000).toFixed(1);
+  if (total) console.log(`[entities] 已同步 ${sites.length - missing}/${sites.length} 站 / ${total} 文件 → ${OUT}/<site>/website/entities/（${secs}s）`);
+  if (missing) console.warn(`[entities][CONTRACT] ${missing} 站缺产物（未运行 build-entity-pages.mjs？）`);
+}
+
+/**
  * 写 gzip 压缩产物。用于体积大、面向程序消费的批量导出（如 JSONL）。
  * 之所以不靠 HTTP 传输层压缩：GitHub Pages 的 1GB 容量上限按解压后体积计，
  * 且部署时需整体上传为 artifact，明文大文件会直接拖垮部署耗时。
@@ -2518,6 +2568,7 @@ capabilities: search, entity-lookup, graph, citation, mcp
   }
 
   syncAggregatedData();
+  syncEntityPages(sites);
 
   console.log(`[ok] 生成 ${sites.length} 个站点 / ${totalEntities} 条实体 → ${OUT}`);
 }
