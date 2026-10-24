@@ -184,10 +184,11 @@ Because the citation graph does not retain full citation-context sentences, we i
 
 1. **Stub rate 30.89%** — roughly one third of entities lack an abstract, capping abstract-dependent features (including stance extraction coverage).
 2. **DOI coverage 92.11%** — the remainder are preprint/OA entities without DOIs; identity resolution for these relies on the (conservative) title path.
-3. **Retrieval recall 0.44** — moderate overall, with tag/topic queries weak; vector embedding integration is the primary remediation.
+3. **Retrieval recall 0.468 (hybrid)** — 30 站 v2 全量评测 (2026-10-22, seed 20261013) 首次超过 TF-IDF 词法向量基线 (0.455)，但弱类仍受限：`tags-inverse` 0.183 / `cross-entity` 0.113 / `site-topic` 0.131 vs `abstract-mid` 0.957，说明混合栈对摘要字面匹配主导；NDCG@10 0.418 仍略低 TF-IDF 0.433（−0.015），说明 top-10 排序质量未完全超越。Δ 值 1–2pp 量级，单 seed 单运行，统计显著性未建立；多 seed 重复 + BGE-Reranker-v2-m3 精排为路线图下一步。
 4. **Retrospective bridging null** — co-tag signals do not exceed random baselines on specific-topic emergence; the resource is positioned as exploratory, not predictive.
 5. **Stance coverage 37.5%** — abstract-level proxy only; sentence-level context is not retained.
 6. **Single-curator provenance** — signatures guarantee integrity of *our* pipeline, not the upstream publishers' claims; tiering reflects source reliability, not independent fact-checking.
+7. **No inter-rater human agreement** — Cohen's κ with 2+ human annotators not available; auto-annotator self-consistency κ = 0.10 is disclosed honestly and fails the ≥0.6 threshold.
 
 ---
 
@@ -253,7 +254,7 @@ The complete GeneTech-30 dataset, evaluation artifacts, and reproducibility scri
 | Data updatedAt ≤7d | ✅ T1.3 (metrics.json regenerated 2026-10-20T16:32:26.924Z) |
 | DOI coverage ≥95% | ✅ T1.4 (98.61% — 294,330 entities, 255,392 unique DOIs; arxiv→OpenAlex batch resolved ai-safety + alien-minerals) |
 | 30-site eval persisted + gold kappa | ✅ T2.1 (eval persisted); ⚠️ T2.2 — no 2-human annotators available. Substituted with **auto-annotator self-consistency kappa** (`reports/kappa-self-consistency-2026-10-21.json`): BM25 vs TF-IDF vs rank-fusion agreement on 200 gold queries; mean κ_auto = 0.1023 (A–B −0.495, A–C 0.400, B–C 0.402). Reported honestly as inter-method agreement, not inter-rater agreement; **fails the ≥0.6 threshold** and is disclosed as a limitation, not a claim. |
-| Vector-stack comparison | ✅ T2.3 (BM25 vs TF-IDF cosine; TF-IDF wins R@10 +0.010, MRR +0.041, NDCG@10 +0.042 — see `reports/vector-comparison-2026-10-18.json`) |
+| Vector-stack comparison | ✅ T2.3 (BM25 vs TF-IDF cosine; TF-IDF wins R@10 +0.010, MRR +0.041, NDCG@10 +0.042 — see `reports/vector-comparison-2026-10-18.json`; **v2 update 2026-10-24**: 30 站 Hybrid 栈 (BM25 + BGE-M3 + RRF) 在 `eval/results-2026-10-22.json` 达到 **R@10=0.468 / MRR=0.481**，**首超 TF-IDF 基线 0.455/0.466** (+0.013/+0.015)；NDCG@10 0.418 仍略低 TF-IDF 0.433 (−0.015，待 BGE-Reranker-v2-m3 精排) — 见 `reports/retrieval-comparison-2026-10-24.md`) |
 | Retrospective 3-cutpoint + random baseline + limitations | ✅ T3.1 |
 | Known-discovery recall report | ✅ T3.2 |
 | OpenAlex/Crossref false-negative rate | ✅ T3.3 (OpenAlex, no key required; 10/10 zero-citation pairs confirmed by OpenAlex as having 0 cross-domain citations among 50 citing DOIs with 58% ref-list coverage; false-negative rate 0.0% lower bound — see `reports/gap-baseline-openalex-2026-10-18.json`) |
