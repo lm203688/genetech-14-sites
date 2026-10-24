@@ -72,7 +72,10 @@
         "properties": {
           "source": { "type": "string" },
           "target": { "type": "string" },
-          "relation": { "type": "string" },
+          "relation": {
+            "type": "string",
+            "description": "Edge relation type. For PROV-O aligned citation edges: 'prov:wasDerivedFrom' (citing→cited); legacy: 'citation', 'shared_tag', 'co_topic', 'entity_entity', 'reference'"
+          },
           "weight": { "type": "number" },
           "tier": {
             "type": "integer",
@@ -90,6 +93,45 @@
               { "type": "string", "format": "date-time" },
               { "type": "null" }
             ]
+          },
+          "prov": {
+            "type": "object",
+            "description": "Phase 3 PROV-O semantic annotations. Maps the edge to W3C PROV-O primitives (https://www.w3.org/TR/prov-o/). Optional but recommended for citation edges.",
+            "properties": {
+              "entity": {
+                "type": "string",
+                "description": "The activity/entity this edge documents. For citation edges, this is the citing paper (source)."
+              },
+              "activity": {
+                "type": "string",
+                "description": "prov:Activity ID — the publishing event that produced the entity. Convention: `genetech:activity:{doi}:published`."
+              },
+              "agent": {
+                "type": "string",
+                "description": "prov:Agent ID — the curator/agent responsible for the edge. Convention: `genetech:agent:pipeline:{pipelineName}` (e.g. pipeline-citation-edges-refs)."
+              },
+              "wasDerivedFrom": {
+                "type": "string",
+                "description": "prov:wasDerivedFrom — cites the entity that influenced this one. For citation edges, this is the cited paper (target)."
+              },
+              "used": {
+                "type": "string",
+                "description": "prov:used — the entity consumed by the activity (e.g. the cited paper consumed during writing)."
+              },
+              "wasGeneratedAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "prov:wasGeneratedAt — when the edge was derived/created by our pipeline (equals resolvedAt)."
+              },
+              "wasAssociatedWith": {
+                "type": "string",
+                "description": "prov:wasAssociatedWith — the qualifier linking activity to agent. Convention: `genetech:attribution:{tier}:{method}`."
+              },
+              "hadTime": {
+                "type": "string",
+                "description": "prov:TimeInterval qualifier — ISO 8601 interval string covering [validFrom, validTo] or [validFrom, present]."
+              }
+            }
           }
         }
       }

@@ -58,6 +58,20 @@
                 "type": "integer",
                 "enum": [1, 2, 3, 4, 5],
                 "description": "Source credibility tier (F10): 1=authoritative-manual, 2=peer-reviewed, 3=high-confidence-derived, 4=medium-confidence-migration, 5=low-confidence-speculative"
+              },
+              "prov": {
+                "type": "object",
+                "description": "Phase 3 PROV-O semantic annotations (W3C PROV-O). Optional. See docs/PROV-O-INTEGRATION.md.",
+                "properties": {
+                  "entity": { "type": "string", "description": "prov:Entity ID of the citing paper" },
+                  "activity": { "type": "string", "description": "prov:Activity ID — publishing event" },
+                  "agent": { "type": "string", "description": "prov:Agent ID — curator pipeline that produced this edge" },
+                  "wasDerivedFrom": { "type": "string", "description": "prov:wasDerivedFrom — the cited entity" },
+                  "used": { "type": "string", "description": "prov:used — the entity consumed by the activity" },
+                  "wasGeneratedAt": { "type": "string", "format": "date-time", "description": "prov:wasGeneratedAt — pipeline resolution time" },
+                  "wasAssociatedWith": { "type": "string", "description": "prov:wasAssociatedWith — attribution qualifier (tier+method)" },
+                  "hadTime": { "type": "string", "description": "prov:TimeInterval — ISO 8601 interval [validFrom, validTo]" }
+                }
               }
             }
           },
