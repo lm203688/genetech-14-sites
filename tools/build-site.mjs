@@ -2413,7 +2413,12 @@ ${rssItems}
     'rss.xml',
     ...BLOG_POSTS.map((b) => `blog/${b.slug}.html`),
   ];
-  const urls = ['', ...sites.map((s) => `${s.slug}/`), ...extraPages, ...topicPaths, ...archivePaths]
+  // 2026-10-25 修复：根 sitemap 原只列主页 + 30 站首页，实体页 sitemap 是孤岛
+  // （data.swarmlabs.tools/<site>/website/entities/sitemap.xml），搜索引擎从根
+  // sitemap 无法发现 9000 张实体页。把每站 entity sitemap 也列入根 urlset。
+  // 每站 entity sitemap 约 300 URL，30 站合计 9000 URL，全量 <50,000 单 sitemap 上限。
+  const entitySitemaps = sites.map((s) => `${s.slug}/website/entities/sitemap.xml`);
+  const urls = ['', ...sites.map((s) => `${s.slug}/`), ...extraPages, ...topicPaths, ...archivePaths, ...entitySitemaps]
     .map((u) => `  <url><loc>${origin}${BASE}/${u}</loc></url>`)
     .join('\n');
   writeFile(
