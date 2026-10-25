@@ -1,0 +1,45 @@
+{
+  "pipeline": "geo-promotion",
+  "timestamp": "2026-10-25T14:15:17.439Z",
+  "dryRun": false,
+  "siteBaseUrl": "https://lm203688.github.io/genetech-14-sites",
+  "summary": {
+    "entityCount": 294330,
+    "geoPostGenerated": false,
+    "indexNowSubmitted": 35,
+    "searchEnginePings": 2,
+    "gitHubTopicsSet": false,
+    "devtoPublished": false
+  },
+  "geoPost": {
+    "generated": false,
+    "reason": "新增实体 0 条，距上次发文 0 天，未达生成阈值（≥6 条或 ≥5 天）",
+    "cursor": "2026-10-19T06:31:18.620Z"
+  },
+  "indexNow": {
+    "submitted": 35,
+    "statusCode": 200
+  },
+  "pings": [
+    {
+      "engine": "www.google.com",
+      "statusCode": 404
+    },
+    {
+      "engine": "www.bing.com",
+      "statusCode": 410
+    }
+  ],
+  "topics": {
+    "ok": false,
+    "statusCode": 403
+  },
+  "devto": {
+    "ok": false,
+    "skipped": true,
+    "reason": "本次未生成新文章"
+  },
+  "issue": {
+    "ok": true
+  }
+}
