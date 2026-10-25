@@ -1,0 +1,83 @@
+# GeneTech 14站知识引擎 — API 鉴权 Worker 自动部署
+# 文件位置: .github/workflows/api-guard-deploy.yml
+#
+# 设计目标：把"部署付费墙 Worker"从人工步骤变成**密钥门控的自动化流水线**。
+#   - 仅当仓库配置了 Secrets: CLOUDFLARE_API_TOKEN 与 PRO_SECRET 时才执行部署；
+#   - 二者缺失时本作业静默跳过（exit 0），不报错、不建 Issue、不打扰用户。
+#   - 一旦配置好，push（api-guard 变更）或每日定时都会自动重新部署，实现"持续运营"。
+#
+# 部署方式：直接使用 Cloudflare REST API（api-guard/deploy-api.mjs），不依赖 wrangler，
+# 避免 CI 中 wrangler 安装/PATH/模块上传格式等不稳定因素。已实测可成功部署。
+#
+# 用户一次性配置（之后不再需要手动操作）：
+#   1. Cloudflare 控制台 → My Profile → API Tokens → Create Token（Custom token）
+#      权限：Account > Workers Scripts:Edit + Account > KV Storage:Edit
+#      Account Resources: Include > All accounts
+#      存入仓库 Secrets: CLOUDFLARE_API_TOKEN（cf_ 开头）
+#      → Account ID 会自动从 token 反查；若反查失败，可额外配置 Secrets: CLOUDFLARE_ACCOUNT_ID
+#   2. 把 PRO_SECRET（付费墙签名密钥）存入仓库 Secrets: PRO_SECRET
+#      ⚠️ 必须是「签发 14 站 Pro Key 时使用的同一密钥」，否则重部署后所有 Pro Key 验签失败。
+#         不要在此填写与本仓库 Pro Key 不匹配的值；若不确定，核对 .secrets/pro_keys.json 的签发来源。
+
+name: GeneTech API Guard Deploy
+
+on:
+  push:
+    paths:
+      - 'api-guard/**'
+      - '.github/workflows/api-guard-deploy.yml'
+  schedule:
+    # 每日 03:30 UTC 错峰重部署（离峰安全网）：push 到 api-guard/ 已会自动部署，
+    # 此处兜底避免某次 push 部署异常后 worker 长期失活。
+    # 不与其它工作流撞车：ops.yml 12:30 UTC、ops-extra 13:00 UTC、本部署 03:30 UTC。
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: api-guard-deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      PRO_SECRET: ${{ secrets.PRO_SECRET }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 检查密钥是否已配置
+        id: check
+        # 2026-10-02 第 5 轮：原写法是 `if [ -z A ] || [ -z B ]; then echo false; … else echo true; fi`，
+        # 而 CI 日志里 `configured=false` 与 `configured=true` **两条都写进了 $GITHUB_OUTPUT**，
+        # 最终 outputs 取到 true、部署照跑 —— 也就是说这个「密钥是否配置」的门禁一直在靠巧合放行。
+        # 改成正向判断 + 单一出口：条件成立才写 true，否则 false 并说明缺哪个。
+        # 判断顺序还顺带修掉一个可读性坑：`-n` 正向比 `-z` 正向更符合「什么条件下放行」的直觉。
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ] && [ -n "$PRO_SECRET" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "configured=false" >> "$GITHUB_OUTPUT"
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] && [ -z "$PRO_SECRET" ]; then
+            echo "ℹ️ api-guard 自动部署未启用：在仓库 Secrets 配置 CLOUDFLARE_API_TOKEN 与 PRO_SECRET 后自动生效（无需手动运行）。"
+          else
+            echo "⚠️ api-guard 自动部署部分启用：CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN:+已配置} PRO_SECRET=${PRO_SECRET:+已配置}，缺失者见上一条 Secrets 清单。"
+          fi
+
+      - name: Setup Node.js
+        if: steps.check.outputs.configured == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Deploy API Guard Worker (Cloudflare REST API)
+        if: steps.check.outputs.configured == 'true'
+        working-directory: api-guard
+        run: node deploy-api.mjs
