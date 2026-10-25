@@ -1263,12 +1263,19 @@ server.registerTool(
       }
     }
 
-    // 2) 引用边（数组格式 [doiFrom, doiTo, siteFrom, siteTo]）直接按站对计数
+    // 2) 引用边：按站对计数
+    // 2026-10-25 修复：citation-edges.json 格式从数组 [doiA,doiB,siteA,siteB]
+    // 改为对象 {citing,cited,fromSite,toSite,...}，同步适配。
+    // 旧代码用 Array.isArray(e) 检查，对象格式恒 false → citFromTo/citToFrom 恒 0
+    // → domain_relatedness 把所有站对都判为 isZeroCitationGap=true。
     let citFromTo = 0, citToFrom = 0;
     for (const e of loadCitationEdges()) {
-      if (!Array.isArray(e) || e.length < 4) continue;
-      if (e[2] === a && e[3] === b) citFromTo++;
-      else if (e[2] === b && e[3] === a) citToFrom++;
+      // 兼容两种格式：对象格式（当前）和数组格式（历史遗留）
+      const fs = e.fromSite || (Array.isArray(e) && e.length >= 4 ? e[2] : null);
+      const ts = e.toSite || (Array.isArray(e) && e.length >= 4 ? e[3] : null);
+      if (!fs || !ts) continue;
+      if (fs === a && ts === b) citFromTo++;
+      else if (fs === b && ts === a) citToFrom++;
     }
 
     // 3) 缺口矩阵
