@@ -27,7 +27,12 @@
  *   node tools/build-entity-pages.mjs --dry-run             # 只统计不写盘
  *
  * 环境变量：
- *   SITE_BASE_URL  站点域名（默认 https://genetech.tools/）
+ *   SITE_BASE_URL  站点域名（默认 https://data.swarmlabs.tools/）
+ *
+ * 2026-10-25 修复：默认域名从 genetech.tools 改为 data.swarmlabs.tools。
+ * 前者 canonical 曾指向一个 403 域名（未配置 DNS/CF Pages），搜索引擎会因此不收录
+ * 这 9000 张实体页。后者是当前 Pages 实际服务域，返回 200 OK。CI 若显式传入
+ * SITE_BASE_URL 仍以 CI 值为准（pages-deploy.yml 已配 SITE_ORIGIN）。
  */
 
 import fs from 'fs';
@@ -45,7 +50,7 @@ const getFlag = (name, def = null) => {
 };
 const hasFlag = (name) => argv.includes(name);
 
-const SITE_BASE_URL = (process.env.SITE_BASE_URL || 'https://genetech.tools').replace(/\/$/, '');
+const SITE_BASE_URL = (process.env.SITE_BASE_URL || 'https://data.swarmlabs.tools').replace(/\/$/, '');
 const OUT_DIR = path.join(ROOT, '_site');
 const DRY_RUN = hasFlag('--dry-run');
 

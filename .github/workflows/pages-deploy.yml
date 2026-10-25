@@ -70,6 +70,10 @@ jobs:
         env:
           SITE_BASE: ${{ steps.pages.outputs.base_path }}
           SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
+          # 2026-10-25：显式把 Pages 的 origin 传给 build-entity-pages.mjs，
+          # 让它生成的 canonical / og:url / sitemap URL 都指向实际服务域
+          # （data.swarmlabs.tools）而不是旧的 genetech.tools（403 未配 DNS）。
+          SITE_BASE_URL: ${{ steps.pages.outputs.origin }}
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
           GSC_VERIFICATION: ${{ secrets.GSC_VERIFICATION }}
           BING_VERIFICATION: ${{ secrets.BING_VERIFICATION }}
