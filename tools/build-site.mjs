@@ -2228,7 +2228,12 @@ async function main() {
   }
   // 对外数据 JSON（供 api.swarmlabs.tools/v1/oss/registry 与 /v1/search/semantic 使用）：
   // 原样复制到 _site/data/，与 /api/catalog.json 同域
-  for (const rel of ['data/oss-registry.json', 'data/search-index.json', 'data/knowledge-graph.json', 'data/intel_state.json', 'data/arxiv-hot.json', 'data/academic-entities.json', 'data/pubmed-entities.json', 'data/crossref-entities.json', 'data/s2-entities.json', 'data/citation-edges.json', 'data/citation-gaps.json', 'state/data-requests.json', 'data/data-requests.json']) {
+  // 2026-10-25 清理：移除已不存在的僵尸引用 data/arxiv-hot.json 与 data/s2-entities.json。
+  // 这两个文件曾用于学术源聚合，但源管线已下线（无 producer），build-site 里的死引用
+  // 让 check-build-contract.mjs 的 data-producer 检查报 P1 阻断 CI（连续 5 次 Pages Deploy
+  // 全部挂在 Compile-time contract check）。构建侧 fs.existsSync 早已静默跳过它们，
+  // 门禁只是把这个"静默故障"暴露出来——正确做法是从清单里删掉，而不是重新生成它们。
+  for (const rel of ['data/oss-registry.json', 'data/search-index.json', 'data/knowledge-graph.json', 'data/intel_state.json', 'data/academic-entities.json', 'data/pubmed-entities.json', 'data/crossref-entities.json', 'data/citation-edges.json', 'data/citation-gaps.json', 'state/data-requests.json', 'data/data-requests.json']) {
     try {
       const src = path.join(ROOT, rel);
       if (fs.existsSync(src)) writeFile(rel, fs.readFileSync(src, 'utf8'));
