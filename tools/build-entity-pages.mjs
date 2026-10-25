@@ -50,7 +50,11 @@ const getFlag = (name, def = null) => {
 };
 const hasFlag = (name) => argv.includes(name);
 
-const SITE_BASE_URL = (process.env.SITE_BASE_URL || 'https://data.swarmlabs.tools').replace(/\/$/, '');
+// 强制 https（GitHub Pages 官方 origin 是 https，但 steps.pages.outputs.origin 有时
+// 会返回 http 前缀）。同时保留 SITE_BASE_URL 环境变量覆盖能力。
+const SITE_BASE_URL = (process.env.SITE_BASE_URL || 'https://data.swarmlabs.tools')
+  .replace(/\/$/, '')
+  .replace(/^http:/, 'https:');
 const OUT_DIR = path.join(ROOT, '_site');
 const DRY_RUN = hasFlag('--dry-run');
 
@@ -99,7 +103,7 @@ function truncate(s, n) {
 function renderEntityPage(e, site, outBase) {
   const { source, key, hash } = parseId(e.id);
   const slug = slugify(e.name);
-  const canonical = `${SITE_BASE_URL}/${site}/entities/${slug}__${hash}.html`;
+  const canonical = `${SITE_BASE_URL}/${site}/website/entities/${slug}__${hash}.html`;
   const title = `${e.name} — GeneTech ${site}`;
   const desc = truncate(e.snippet || '', 180);
   const tags = Array.isArray(e.tags) ? e.tags : [];
@@ -168,7 +172,7 @@ ${e.url ? `<a href="${escapeHtml(e.url)}" rel="noopener noreferrer" target="_bla
 
 function renderTagsPage(tag, ents, site, outBase) {
   const slug = slugify(tag);
-  const canonical = `${SITE_BASE_URL}/${site}/entities/tags/${slug}.html`;
+  const canonical = `${SITE_BASE_URL}/${site}/website/entities/tags/${slug}.html`;
   const title = `${tag} — GeneTech ${site}`;
   const rows = ents.slice(0, 50).map(e => {
     const { hash } = parseId(e.id);
@@ -205,7 +209,7 @@ ${ents.length > 50 ? `<p><em>已展示前 50 条，剩余 ${ents.length - 50} �
 }
 
 function renderIndexPage(site, total, entsPreview, outBase) {
-  const canonical = `${SITE_BASE_URL}/${site}/entities/`;
+  const canonical = `${SITE_BASE_URL}/${site}/website/entities/`;
   const topTags = collectTopTags(entsPreview, 15);
   const tagsHtml = topTags.map(([tag, count]) => `<a href="${escapeHtml(outBase + 'tags/' + slugify(tag) + '.html')}">${escapeHtml(tag)}</a> (${count})`).join(' · ');
   return `<!DOCTYPE html>
@@ -279,8 +283,13 @@ async function buildSite(site, limit) {
   }
 
   const outEntities = path.join(siteDir, 'website', 'entities');
-  const outBase = `/entities/`;
-  const sitemapUrls = [`${SITE_BASE_URL}/${site}/entities/`];
+  // 2026-10-25 修复：outBase 应为空串（相对链接），因为实体页被 build-site.mjs 的
+  // syncEntityPages() 同步到 _site/<site>/website/entities/，页面内相对跳转
+  // `href="tags/x.html"` 才能正确解析到 <site>/website/entities/tags/x.html。
+  // 旧的 `/entities/` 是绝对路径，会跳到 data.swarmlabs.tools/entities/ 404。
+  const outBase = ``;
+  const siteUrlPrefix = `${SITE_BASE_URL}/${site}/website`;
+  const sitemapUrls = [`${siteUrlPrefix}/entities/`];
 
   if (!DRY_RUN) fs.mkdirSync(outEntities, { recursive: true });
   if (!DRY_RUN) fs.mkdirSync(path.join(outEntities, 'tags'), { recursive: true });
@@ -301,7 +310,7 @@ async function buildSite(site, limit) {
     }
     entityStats.written++;
     entityStats.bytes += html.length;
-    sitemapUrls.push(`${SITE_BASE_URL}/${site}/entities/${filename}`);
+    sitemapUrls.push(`${siteUrlPrefix}/entities/${filename}`);
   }
 
   // 2) 标签页
@@ -313,13 +322,13 @@ async function buildSite(site, limit) {
     }
     tagStats.written++;
     tagStats.bytes += html.length;
-    sitemapUrls.push(`${SITE_BASE_URL}/${site}/entities/tags/${slugify(tag)}.html`);
+    sitemapUrls.push(`${siteUrlPrefix}/entities/tags/${slugify(tag)}.html`);
   }
 
   // 3) 索引页
   const indexHtml = renderIndexPage(site, ents.length, toProcess, outBase);
   if (!DRY_RUN) fs.writeFileSync(path.join(outEntities, 'index.html'), indexHtml, 'utf-8');
-  sitemapUrls.push(`${SITE_BASE_URL}/${site}/entities/`);
+  sitemapUrls.push(`${siteUrlPrefix}/entities/`);
 
   // 4) sitemap
   if (!DRY_RUN) fs.writeFileSync(path.join(outEntities, 'sitemap.xml'), renderSitemap(sitemapUrls), 'utf-8');
