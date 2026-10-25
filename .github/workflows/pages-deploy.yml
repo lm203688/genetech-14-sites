@@ -103,9 +103,11 @@ jobs:
           # data.swarmlabs.tools/data/*.json。缺失会让 /v1/oss/registry 与
           # /v1/search/semantic 全部哑火。build-site.mjs 的 syncAggregatedData()
           # 负责把 data/*.json 复制到 _site/data/，这里对产物做硬校验防回归。
+          # 2026-10-25 清理：data/knowledge-graph-entities.json 已于 2026-10-19 从仓库删除
+          # （与 knowledge-graph.json 字节完全相同，双份各 31.2MB 冗余）；build-site.mjs
+          # 的读取路径也已切到 knowledge-graph.json。此清单条目过期，删掉。
           for f in \
             data/knowledge-graph.json \
-            data/knowledge-graph-entities.json \
             data/search-index.json \
             data/search-index/manifest.json \
             data/oss-registry.json \
