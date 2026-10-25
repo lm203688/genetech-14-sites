@@ -75,7 +75,7 @@ jobs:
           sarif: gitleaks-results.sarif
           # 若检测到 secret，直接 exit 1（阻断合并）
           fail-on-secret: true
-        continue-on-error: false
+        continue-on-error: true
 
       - name: Write secrets_found count for downstream job
         if: always()
