@@ -1,0 +1,1041 @@
+{
+  "generatedAt": "2026-10-22T08:26:00.789Z",
+  "k": 10,
+  "sites": [
+    "agent-ecosystem",
+    "ai-safety",
+    "ai4science"
+  ],
+  "manifestSeed": 20261013,
+  "manifestPerSite": 10,
+  "aggregate": {
+    "queryCount": 30,
+    "avgRecall@10": 0.46592592592592585,
+    "avgRecall@k": 0.46592592592592585,
+    "avgMrr": 0.45748310169362794,
+    "avgNdcg@10": 0.4355461890646373,
+    "recall@10_p50": 0.4444444444444444,
+    "recall@10_p25": 0,
+    "recall@10_p10": 0,
+    "missCount": 13,
+    "perfectCount": 12,
+    "latencyMs": {
+      "avg": 1092.6,
+      "p50": 1101,
+      "p95": 1349,
+      "p99": 1364,
+      "max": 1364,
+      "samples": 30
+    },
+    "byType": {
+      "abstract-mid": {
+        "queries": 12,
+        "avgRecall@10": 1,
+        "avgMrr": 0.9027777777777778,
+        "avgNdcg@10": 0.9275774794642881,
+        "missCount": 0
+      },
+      "tags-inverse": {
+        "queries": 11,
+        "avgRecall@10": 0.0707070707070707,
+        "avgMrr": 0.07452101327699413,
+        "avgNdcg@10": 0.05372406986107004,
+        "missCount": 8
+      },
+      "site-topic": {
+        "queries": 2,
+        "avgRecall@10": 0,
+        "avgMrr": 0,
+        "avgNdcg@10": 0,
+        "missCount": 2
+      },
+      "cross-entity": {
+        "queries": 5,
+        "avgRecall@10": 0.24,
+        "avgMrr": 0.41428571428571426,
+        "avgNdcg@10": 0.2688982299791786,
+        "missCount": 3
+      }
+    },
+    "perSite": {
+      "ai-safety": {
+        "queries": 10,
+        "avgRecall@10": 0.6044444444444445,
+        "avgMrr": 0.5757575757575757,
+        "avgNdcg@10": 0.5513884422838413
+      },
+      "ai4science": {
+        "queries": 10,
+        "avgRecall@10": 0.36,
+        "avgMrr": 0.4052631578947368,
+        "avgNdcg@10": 0.3684351547520485
+      },
+      "agent-ecosystem": {
+        "queries": 10,
+        "avgRecall@10": 0.4333333333333333,
+        "avgMrr": 0.3914285714285714,
+        "avgNdcg@10": 0.38681497015802224
+      }
+    }
+  },
+  "results": [
+    {
+      "idx": 5,
+      "site": "ai-safety",
+      "type": "abstract-mid",
+      "query": "transistor liquid crystal display tft-lcd panel also described find root cause image-sticking phenomena.",
+      "latencyMs": 1088,
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.1049/pbcs068g_ch6"
+      ],
+      "top10": [
+        "doi:10.1049/pbcs068g_ch6",
+        "doi:10.1080/02678292.2022.2055182",
+        "oa:W2044647183",
+        "doi:10.14711/thesis-b1584831",
+        "oa:W2094581470",
+        "doi:10.1109/icmech.2005.1529386",
+        "doi:10.1049/pbcs068g_ch5",
+        "doi:10.1201/9781420023015.ch5",
+        "oa:W4411234918",
+        "doi:10.1039/c2sm26501j"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 12,
+      "site": "ai4science",
+      "type": "tags-inverse",
+      "query": "computer and information sciences artificial intelligence",
+      "latencyMs": 1084,
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.64898/2026.07.02.736085",
+        "doi:10.64898/2026.03.11.711233",
+        "doi:10.1016/j.compbiolchem.2026.109076",
+        "doi:10.64898/2026.04.07.714835",
+        "doi:10.1093/bib/bbag040",
+        "doi:10.21203/rs.3.rs-7153530/v1",
+        "doi:10.1093/bioinformatics/btaf579",
+        "doi:10.1109/tcbbio.2025.3630321",
+        "doi:10.1002/9783527842346.ch03"
+      ],
+      "top10": [
+        "doi:10.5281/zenodo.21273570",
+        "pmid:42630565",
+        "doi:10.5281/zenodo.21273571",
+        "doi:10.1038/s41467-025-59232-0",
+        "doi:10.3389/fpsyg.2026.1843444",
+        "doi:10.5006/c2026-00015",
+        "doi:10.1007/s00253-026-13917-8",
+        "doi:10.1109/tnnls.2026.3656889",
+        "pmid:42657672",
+        "doi:10.20944/preprints202504.1284.v1"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 13,
+      "site": "ai-safety",
+      "type": "abstract-mid",
+      "query": "published between 2013 2024 focusing contexts characteristics inclusive curricula instructional strategies promote broader participation learning outcomes associated these",
+      "latencyMs": 1364,
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4414121533"
+      ],
+      "top10": [
+        "oa:W4414121533",
+        "doi:10.3389/fpsyg.2026.1717440",
+        "doi:10.17605/osf.io/nmtc6",
+        "oa:W4414267512",
+        "doi:10.1002/jac5.70257",
+        "pmid:41520452",
+        "oa:W4410622542",
+        "doi:10.22541/au.175091776.68106123/v1",
+        "oa:W7108331747",
+        "oa:W7135042531"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 18,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "minimally anthropomorphic chatbots influence perceived self-efficacy technology acceptance social perception work-related writing context. online experiment employees 310 were",
+      "latencyMs": 1101,
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.31234/osf.io/cpz4b_v2"
+      ],
+      "top10": [
+        "doi:10.31234/osf.io/cpz4b_v2",
+        "doi:10.3389/fpsyg.2024.1461881",
+        "oa:W3083392701",
+        "oa:W4414127319",
+        "arxiv:2202.01077v2",
+        "doi:10.3390/bs16010124",
+        "doi:10.31234/osf.io/6azxy_v3",
+        "doi:10.31234/osf.io/6azxy_v2",
+        "oa:W4391903450",
+        "doi:10.3389/fpsyg.2026.1886229"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 52,
+      "site": "ai4science",
+      "type": "abstract-mid",
+      "query": "ai-based learning. four interrelated themes were identified ai-driven transformation nursing students learning behaviour patterns emotional-cognitive shifts nursing students",
+      "latencyMs": 986,
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.1111/jep.70547"
+      ],
+      "top10": [
+        "doi:10.1111/jep.70547",
+        "pmid:42607370",
+        "doi:10.4094/chnr.2026.016",
+        "pmid:42646553",
+        "pmid:42561136",
+        "doi:10.2196/92533",
+        "pmid:42648242",
+        "doi:10.12688/f1000research.171885.1",
+        "doi:10.1016/j.actpsy.2026.107581",
+        "pmid:42458392"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 56,
+      "site": "ai-safety",
+      "type": "site-topic",
+      "query": "medicine",
+      "latencyMs": 988,
+      "relevantCount": 6,
+      "relevantIds": [
+        "doi:10.18553/jmcp.2026.32.9.1090",
+        "doi:10.31539/6tnjv239",
+        "doi:10.1111/jan.70689",
+        "doi:10.3390/healthcare14060820",
+        "doi:10.21203/rs.3.rs-10582034/v1",
+        "doi:10.1080/10872981.2026.2713347"
+      ],
+      "top10": [
+        "doi:10.15537/1658-3175.8801",
+        "oa:W2912320302",
+        "doi:10.2196/90848",
+        "oa:W4386407716",
+        "pmid:41657538",
+        "doi:10.1101/2024.05.27.24307991",
+        "doi:10.1016/b978-0-323-95068-8.00010-8",
+        "oa:W2885591122",
+        "oa:W7104271089",
+        "oa:W4366580365"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 58,
+      "site": "agent-ecosystem",
+      "type": "tags-inverse",
+      "query": "natural language processing cs.ai",
+      "latencyMs": 879,
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.46916/24042026-3-978-5-00276-065-7",
+        "doi:10.64898/2026.01.31.702995",
+        "doi:10.2196/76848",
+        "doi:10.1038/s41746-025-01647-6",
+        "doi:10.3389/frai.2026.1748735",
+        "pmid:42407032",
+        "doi:10.3724/zrht.1674-5825.2025095",
+        "doi:10.15441/ceem.26.136",
+        "arxiv-2607.29677v1"
+      ],
+      "top10": [
+        "doi:10.1145/3560815",
+        "oa:W4391280675",
+        "doi:10.1109/iccect60629.2024.10545805",
+        "doi:10.1109/icmsci62561.2025.10894448",
+        "doi:10.64898/2026.01.31.702995",
+        "pmid:41109093",
+        "doi:10.21203/rs.3.rs-8990521/v1",
+        "doi:10.1145/3675888.3676146",
+        "pmid:42542374",
+        "pmid:42407032"
+      ],
+      "hitInTop10": 2,
+      "recall@10": 0.2222222222222222,
+      "recall@k": 0.2222222222222222,
+      "mrr": 0.2,
+      "ndcg@10": 0.15887143153726957
+    },
+    {
+      "idx": 67,
+      "site": "ai4science",
+      "type": "abstract-mid",
+      "query": "just get their lives sticking one head sand does little good. embracing ideas technologies matter how fast they",
+      "latencyMs": 1167,
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.1111/1750-3841.70684"
+      ],
+      "top10": [
+        "doi:10.1111/1750-3841.70684",
+        "doi:10.5281/zenodo.22162505",
+        "doi:10.5281/zenodo.22162506",
+        "doi:10.1093/jcmc/zmae011",
+        "pmid:42471658",
+        "doi:10.5281/zenodo.22180991",
+        "doi:10.5281/zenodo.22180992",
+        "doi:10.5281/zenodo.20845816",
+        "doi:10.1101/2025.11.17.688965",
+        "doi:10.5281/zenodo.20819417"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 74,
+      "site": "ai4science",
+      "type": "tags-inverse",
+      "query": "cs.LG q-bio.OT",
+      "latencyMs": 1266,
+      "relevantCount": 9,
+      "relevantIds": [
+        "arxiv:1206.3509v1",
+        "arxiv:2504.06806v1",
+        "arxiv:1711.10540v2",
+        "arxiv:1605.03004v1",
+        "arxiv:2204.09486v2",
+        "arxiv:1403.5933v1",
+        "arxiv:2310.11466v2",
+        "arxiv:2603.23361v2",
+        "arxiv:1310.2182v1"
+      ],
+      "top10": [
+        "doi:10.1016/bs.apcsb.2024.09.006",
+        "doi:10.1007/978-1-59745-574-9_5",
+        "doi:10.1002/pro.5096",
+        "arxiv:2006.16189v4",
+        "doi:10.21203/rs.3.rs-9901975/v1",
+        "doi:10.1101/2023.04.26.538026",
+        "doi:10.1016/j.pbiomolbio.2022.05.002",
+        "doi:10.5281/zenodo.22153387",
+        "doi:10.5281/zenodo.22153388",
+        "doi:10.1101/2023.04.24.538081"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 75,
+      "site": "ai4science",
+      "type": "cross-entity",
+      "query": "indoor cat care cs.et cs.dc",
+      "latencyMs": 1225,
+      "relevantCount": 5,
+      "relevantIds": [
+        "doi:10.5281/zenodo.19019620",
+        "doi:10.1093/nsr/nwag104",
+        "doi:10.5281/zenodo.22182364",
+        "doi:10.1201/9781003653950-4",
+        "doi:10.1002/9781394310524.ch8"
+      ],
+      "top10": [
+        "doi:10.5281/zenodo.19019620",
+        "doi:10.5281/zenodo.22182364",
+        "doi:10.32687/0869-866x-2026-34-1-113-118",
+        "pmid:42599701",
+        "doi:10.1093/nsr/nwag104",
+        "pmid:42421021",
+        "doi:10.20944/preprints202409.1974.v2",
+        "doi:10.20944/preprints202409.1974.v1",
+        "doi:10.31219/osf.io/n7y2g",
+        "doi:10.1155/2016/1050293"
+      ],
+      "hitInTop10": 3,
+      "recall@10": 0.6,
+      "recall@k": 0.6,
+      "mrr": 1,
+      "ndcg@10": 0.6843515475204855
+    },
+    {
+      "idx": 77,
+      "site": "agent-ecosystem",
+      "type": "cross-entity",
+      "query": "Natural Language Processing medicine psychology",
+      "latencyMs": 1222,
+      "relevantCount": 5,
+      "relevantIds": [
+        "doi:10.5281/zenodo.18225343",
+        "doi:10.2196/92817",
+        "doi:10.5281/zenodo.21420179",
+        "doi:10.5281/zenodo.16789481",
+        "doi:10.5281/zenodo.20775495"
+      ],
+      "top10": [
+        "doi:10.15441/ceem.26.136",
+        "doi:10.1145/3560815",
+        "pmid:41952479",
+        "doi:10.1145/3554727",
+        "doi:10.1145/3571730",
+        "oa:W4391280675",
+        "doi:10.1007/978-3-030-52152-3_16",
+        "pmid:42542374",
+        "doi:10.1016/0004-3702(87)90011-7",
+        "doi:10.18653/v1/2021.eacl-main.20"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 83,
+      "site": "agent-ecosystem",
+      "type": "cross-entity",
+      "query": "cs.SE Computer science Political science",
+      "latencyMs": 861,
+      "relevantCount": 5,
+      "relevantIds": [
+        "arxiv:2602.11114v1",
+        "oa:W2622408375",
+        "arxiv:2311.18252v3",
+        "arxiv:2512.09543v2",
+        "arxiv:2606.21877v1"
+      ],
+      "top10": [
+        "doi:10.2139/ssrn.6887758",
+        "doi:10.21203/rs.3.rs-10491399/v1",
+        "doi:10.25136/2409-8698.2024.11.72197",
+        "doi:10.1002/sta4.70126",
+        "doi:10.26434/chemrxiv.15005228/v1",
+        "pmid:42160764",
+        "doi:10.31234/osf.io/ukmzp_v1",
+        "doi:10.31234/osf.io/g3rc8_v1",
+        "doi:10.21203/rs.3.rs-7472642/v1",
+        "doi:10.21203/rs.3.rs-10090979/v1"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0.07142857142857142,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 107,
+      "site": "ai-safety",
+      "type": "tags-inverse",
+      "query": "Robustness (evolution) Chemistry",
+      "latencyMs": 874,
+      "relevantCount": 9,
+      "relevantIds": [
+        "oa:W4399455340",
+        "oa:W4412202257",
+        "oa:W4390503136",
+        "oa:W4408839383",
+        "oa:W4414167319",
+        "oa:W7113895301",
+        "oa:W2963097316",
+        "oa:W4402112155",
+        "oa:W4411568663"
+      ],
+      "top10": [
+        "oa:W4411802553",
+        "oa:W7159763738",
+        "oa:W4402112155",
+        "pmid:41740392",
+        "oa:W7130614908",
+        "oa:W4408839383",
+        "oa:W4399455340",
+        "oa:W4412202257",
+        "pmid:41552508",
+        "doi:10.17605/osf.io/qz42t"
+      ],
+      "hitInTop10": 4,
+      "recall@10": 0.4444444444444444,
+      "recall@k": 0.4444444444444444,
+      "mrr": 0.3333333333333333,
+      "ndcg@10": 0.3537448204630058
+    },
+    {
+      "idx": 112,
+      "site": "agent-ecosystem",
+      "type": "tags-inverse",
+      "query": "computer science cs.ai",
+      "latencyMs": 896,
+      "relevantCount": 9,
+      "relevantIds": [
+        "arxiv-2607.29626v1",
+        "arxiv-2607.29559v1",
+        "doi:10.20517/aiagent.2026.03",
+        "doi:10.20517/aiagent.2026.04",
+        "doi:10.20517/aiagent.2025.06",
+        "doi:10.20517/aiagent.2025.07",
+        "doi:10.5772/intechopen.90297",
+        "doi:10.2139/ssrn.6427226",
+        "arxiv-2607.29677v1"
+      ],
+      "top10": [
+        "doi:10.1002/sta4.70126",
+        "doi:10.1093/nsr/nwag140",
+        "doi:10.1109/iccids69108.2026.11407639",
+        "doi:10.1117/12.3065753",
+        "pmid:39568478",
+        "doi:10.21203/rs.3.rs-9366108/v1",
+        "doi:10.20535/srit.2308-8893.2025.1.08",
+        "doi:10.64898/2026.08.03.742514",
+        "doi:10.21203/rs.3.rs-9114794/v1",
+        "doi:10.1109/iat.2006.95"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 119,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "design objectives. such operations violate customary creative design practices thus hinder agents ability complete creative design tasks. explore",
+      "latencyMs": 1064,
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4396832811"
+      ],
+      "top10": [
+        "oa:W4396832811",
+        "doi:10.3389/fpsyg.2026.1847432",
+        "oa:W4387192549",
+        "doi:10.3389/fbioe.2026.1777944",
+        "doi:10.20944/preprints202607.0905.v1",
+        "doi:10.1145/3701571.3701608",
+        "doi:10.31234/osf.io/4b8gy_v2",
+        "doi:10.1063/5.0318770",
+        "oa:W4404385440",
+        "doi:10.1145/3687272.3691363"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 139,
+      "site": "ai4science",
+      "type": "tags-inverse",
+      "query": "cs.ai environmental science",
+      "latencyMs": 1054,
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.17918/etd-6775",
+        "doi:10.1101/2020.06.03.131821",
+        "doi:10.32469/10355/57017",
+        "doi:10.1021/acs.jcim.6c01154",
+        "doi:10.64898/2026.07.02.736085",
+        "doi:10.1073/pnas.2609610123",
+        "doi:10.1002/mas.70038",
+        "doi:10.64898/2026.03.11.711144",
+        "doi:10.1007/978-3-030-54173-6_13"
+      ],
+      "top10": [
+        "doi:10.24948/2025.10",
+        "doi:10.1093/9780197852712.003.0078",
+        "doi:10.1201/9781003601562",
+        "doi:10.1101/2025.07.04.663152",
+        "doi:10.1016/j.scitotenv.2023.167705",
+        "doi:10.20944/preprints202504.1284.v1",
+        "doi:10.1177/09636625251393621",
+        "doi:10.31234/osf.io/k362q_v1",
+        "doi:10.21203/rs.3.rs-7138335/v1",
+        "doi:10.5281/zenodo.21097033"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 160,
+      "site": "ai-safety",
+      "type": "tags-inverse",
+      "query": "Business Structural equation modeling",
+      "latencyMs": 1162,
+      "relevantCount": 9,
+      "relevantIds": [
+        "oa:W2954217333",
+        "oa:W4410094447",
+        "oa:W4404326319",
+        "oa:W4361027215",
+        "oa:W4407139934",
+        "oa:W4360882499",
+        "oa:W4407615570",
+        "oa:W4410186101",
+        "oa:W4396918692"
+      ],
+      "top10": [
+        "oa:W4409337529",
+        "oa:W7162648928",
+        "doi:10.5281/zenodo.21717786",
+        "doi:10.5281/zenodo.21717785",
+        "oa:W4417236727",
+        "pmid:41602317",
+        "oa:W7123352208",
+        "oa:W4415696870",
+        "oa:W4390094974",
+        "oa:W7128484601"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0.09090909090909091,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 185,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "cases specified requirements iteratively improving test cases via agent-to-agent communication system improves accuracy effectiveness. our implementation which uses",
+      "latencyMs": 1175,
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.71097/ijsat.v16.i1.2232"
+      ],
+      "top10": [
+        "doi:10.71097/ijsat.v16.i1.2232",
+        "doi:10.20944/preprints202605.0387.v1",
+        "oa:W2059529072",
+        "doi:10.1201/9780429070655-100",
+        "doi:10.1109/sose67019.2025.00013",
+        "doi:10.21203/rs.3.rs-9596459/v1",
+        "oa:W7125983183",
+        "doi:10.5220/0013397200003928",
+        "doi:10.52710/cfs.1067",
+        "doi:10.1109/aiware69974.2025.00031"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 206,
+      "site": "ai-safety",
+      "type": "cross-entity",
+      "query": "Stakeholder Desalination Process engineering",
+      "latencyMs": 1150,
+      "relevantCount": 5,
+      "relevantIds": [
+        "oa:W4417049055",
+        "oa:W2074672863",
+        "oa:W4413257288",
+        "oa:W4411550272",
+        "oa:W4415499644"
+      ],
+      "top10": [
+        "oa:W2074672863",
+        "oa:W4411550272",
+        "doi:10.21203/rs.3.rs-10066924/v1",
+        "doi:10.1201/9788743809128-25",
+        "oa:W4400859104",
+        "oa:W7151324749",
+        "pmid:41667904",
+        "oa:W4415499644",
+        "oa:W4391972445",
+        "oa:W4406406921"
+      ],
+      "hitInTop10": 3,
+      "recall@10": 0.6,
+      "recall@k": 0.6,
+      "mrr": 1,
+      "ndcg@10": 0.6601396023754075
+    },
+    {
+      "idx": 223,
+      "site": "ai4science",
+      "type": "tags-inverse",
+      "query": "cond-mat.mtrl-sci biology",
+      "latencyMs": 834,
+      "relevantCount": 9,
+      "relevantIds": [
+        "arxiv:1007.2003v1",
+        "arxiv:1607.04146v2",
+        "arxiv:2509.02661v3",
+        "arxiv:2603.15712v1",
+        "doi:10.3390/aimater1020006",
+        "doi:10.1002/smll.74508",
+        "arxiv:2602.04861v2",
+        "arxiv:2509.02927v2",
+        "doi:10.1385/1-59259-368-2:131"
+      ],
+      "top10": [
+        "doi:10.1038/s41467-025-67333-z",
+        "doi:10.1021/acs.chemmater.4c01981.s001",
+        "doi:10.61109/cs.202403.129",
+        "doi:10.48550/arxiv.2407.15404",
+        "doi:10.1039/d5nr01565k",
+        "doi:10.48550/arxiv.2203.00393",
+        "doi:10.1088/1361-648x/ae74a2",
+        "arxiv:2210.17484v1",
+        "doi:10.2139/ssrn.3787885",
+        "doi:10.1088/1361-648x/ad6050"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0.05263157894736842,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 225,
+      "site": "agent-ecosystem",
+      "type": "site-topic",
+      "query": "computer science",
+      "latencyMs": 910,
+      "relevantCount": 6,
+      "relevantIds": [
+        "doi:10.1201/9781003641537-112",
+        "arxiv-2607.29626v1",
+        "arxiv-2607.29559v1",
+        "doi:10.20517/aiagent.2026.03",
+        "doi:10.20517/aiagent.2026.04",
+        "doi:10.20517/aiagent.2025.06"
+      ],
+      "top10": [
+        "doi:10.1117/12.3065753",
+        "pmid:42656973",
+        "pmid:40469663",
+        "doi:10.1002/sta4.70126",
+        "doi:10.1093/9780197633489.003.0025",
+        "doi:10.1109/iat.2006.95",
+        "oa:W1494976167",
+        "pmid:40721607",
+        "oa:W2799899844",
+        "doi:10.31234/osf.io/w7qrt_v1"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 233,
+      "site": "ai4science",
+      "type": "cross-entity",
+      "query": "physical sciences astronomy astro-ph.ep",
+      "latencyMs": 929,
+      "relevantCount": 5,
+      "relevantIds": [
+        "doi:10.1039/d6cp00148c",
+        "doi:10.20944/preprints202512.2517.v1",
+        "doi:10.5220/0005251401780182",
+        "doi:10.1101/2025.03.14.643188",
+        "pmid:42559814"
+      ],
+      "top10": [
+        "arxiv:0903.2469v1",
+        "arxiv:0903.4592v1",
+        "arxiv:1911.11816v1",
+        "arxiv:2302.05452v1",
+        "doi:10.65398/wwum1964",
+        "arxiv:2509.02661v3",
+        "arxiv:2502.17993v1",
+        "arxiv:2409.11175v4",
+        "arxiv:1809.11145v2",
+        "arxiv:0803.1210v1"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 235,
+      "site": "ai-safety",
+      "type": "tags-inverse",
+      "query": "cs.lg computer science",
+      "latencyMs": 888,
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.1117/12.798224",
+        "doi:10.53846/goediss-7916",
+        "doi:10.1016/s0748-3007(03)00049-5",
+        "doi:10.18653/v1/2021.emnlp-main.226",
+        "doi:10.1109/slt.2008.4777831",
+        "doi:10.1007/978-1-0716-1036-7_3",
+        "doi:10.22541/au.168534397.72964200/v1",
+        "doi:10.1007/978-1-62703-646-7_15",
+        "doi:10.1016/j.patrec.2024.10.004"
+      ],
+      "top10": [
+        "doi:10.11591/ijeecs.v9.i1.pp234-242",
+        "doi:10.22541/au.175269777.74130102/v1",
+        "doi:10.48550/arxiv.2510.03998",
+        "doi:10.1109/icicr65456.2025.00121",
+        "doi:10.22541/au.173161615.52531242/v1",
+        "doi:10.1109/icicr65456.2025.00068",
+        "doi:10.1145/3712256.3726343",
+        "doi:10.1016/j.isci.2026.116447",
+        "doi:10.1109/icece.2008.4769258",
+        "doi:10.1016/j.watres.2026.126716"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 249,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "autoscaler vpa cluster autoscaler these mechanisms remain largely reactive threshold-based. they usually respond only after resource metrics exceed",
+      "latencyMs": 1123,
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.20944/preprints202606.1718.v1"
+      ],
+      "top10": [
+        "doi:10.20944/preprints202607.0944.v1",
+        "doi:10.20944/preprints202606.1718.v1",
+        "doi:10.5281/zenodo.21704414",
+        "doi:10.2139/ssrn.7170774",
+        "doi:10.5281/zenodo.21704415",
+        "doi:10.5281/zenodo.19152305",
+        "doi:10.5281/zenodo.19152306",
+        "doi:10.1145/3686081.3686096",
+        "doi:10.64898/2026.06.24.734302",
+        "doi:10.3390/s26041168"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 0.5,
+      "ndcg@10": 0.6309297535714575
+    },
+    {
+      "idx": 253,
+      "site": "ai4science",
+      "type": "abstract-mid",
+      "query": "xai can paradoxically induce bias human decision-making process. here present two large-scale experiments involving 623 lay people 153",
+      "latencyMs": 1322,
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.1038/s41591-026-04553-w"
+      ],
+      "top10": [
+        "doi:10.1038/s41591-026-04553-w",
+        "doi:10.1007/s10339-026-01391-z",
+        "doi:10.1111/risa.70254",
+        "doi:10.21203/rs.3.rs-7947674/v1",
+        "doi:10.5281/zenodo.22115615",
+        "pmid:42557856",
+        "doi:10.5281/zenodo.22115614",
+        "doi:10.51219/urforum.2023.dr-juergen-weichenberger",
+        "doi:10.32657/10356/200479",
+        "doi:10.21203/rs.3.rs-10767945/v1"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 260,
+      "site": "ai4science",
+      "type": "tags-inverse",
+      "query": "medicine workflow",
+      "latencyMs": 1255,
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.1016/bs.apcsb.2024.11.007",
+        "doi:10.1371/journal.ppat.1013274",
+        "doi:10.1101/2025.01.13.632885",
+        "doi:10.1007/s13730-025-00985-4",
+        "doi:10.31219/osf.io/7rbds",
+        "doi:10.5455/medscience.2020.09.9186",
+        "doi:10.1201/9781003150886-6",
+        "doi:10.20944/preprints202511.1542.v2",
+        "doi:10.1093/nsr/nwag140"
+      ],
+      "top10": [
+        "pmid:42657380",
+        "pmid:42617946",
+        "doi:10.1016/j.mcpro.2026.101631",
+        "pmid:42547140",
+        "pmid:42620587",
+        "doi:10.1007/s10278-026-02034-7",
+        "pmid:42595799",
+        "doi:10.1039/d4dd00134f",
+        "doi:10.21203/rs.3.rs-9259496/v1",
+        "pmid:42605470"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 261,
+      "site": "ai-safety",
+      "type": "abstract-mid",
+      "query": "challenges requires intelligent data-driven approaches integrate sustainability into every stage production. investigates how artificial intelligence can drive resource",
+      "latencyMs": 1341,
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4415378815"
+      ],
+      "top10": [
+        "oa:W4415378815",
+        "doi:10.5281/zenodo.21717786",
+        "doi:10.5281/zenodo.21717785",
+        "oa:W3156012754",
+        "pmid:41661333",
+        "oa:W4401891838",
+        "oa:W4413104445",
+        "oa:W4416955387",
+        "oa:W4416742281",
+        "doi:10.5281/zenodo.20019654"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 268,
+      "site": "ai-safety",
+      "type": "abstract-mid",
+      "query": "operational efficiency perspective participants share. however there are also apprehensions regarding job displacement necessity strategic upskilling. participants generally",
+      "latencyMs": 1349,
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4404038819"
+      ],
+      "top10": [
+        "oa:W4408248854",
+        "oa:W4394886140",
+        "oa:W4404038819",
+        "doi:10.71480/nmj.v66i6.1151",
+        "oa:W4405625896",
+        "doi:10.5281/zenodo.21588448",
+        "doi:10.5281/zenodo.21588449",
+        "doi:10.5281/zenodo.20019654",
+        "doi:10.5281/zenodo.20019655",
+        "arxiv:2603.00598v1"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 0.3333333333333333,
+      "ndcg@10": 0.5
+    },
+    {
+      "idx": 275,
+      "site": "agent-ecosystem",
+      "type": "tags-inverse",
+      "query": "Dialog system Computer science",
+      "latencyMs": 1249,
+      "relevantCount": 9,
+      "relevantIds": [
+        "oa:W4391280675",
+        "oa:W4404452151",
+        "oa:W2049934619",
+        "oa:W4304195432",
+        "oa:W2896457183",
+        "oa:W4413427262",
+        "oa:W4292779060",
+        "oa:W4409737900",
+        "oa:W3094257456"
+      ],
+      "top10": [
+        "doi:10.1002/sta4.70126",
+        "oa:W1598022263",
+        "doi:10.5772/14455",
+        "doi:10.1109/icmas.1998.699296",
+        "doi:10.1109/ist.2005.1594532",
+        "doi:10.26434/chemrxiv.15005228/v1",
+        "oa:W4404452151",
+        "doi:10.31142/ijtsrd23036",
+        "doi:10.5281/zenodo.22144990",
+        "doi:10.31234/osf.io/pc3ht_v1"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 0.1111111111111111,
+      "recall@k": 0.1111111111111111,
+      "mrr": 0.14285714285714285,
+      "ndcg@10": 0.07834851647149511
+    },
+    {
+      "idx": 299,
+      "site": "ai-safety",
+      "type": "abstract-mid",
+      "query": "consistent structural pattern analyzed. systems introduce metrics evaluate performance begin optimizing toward those metrics eventually substitute them underlying",
+      "latencyMs": 972,
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W7138928124"
+      ],
+      "top10": [
+        "oa:W7138928124",
+        "arxiv:2608.28508v1",
+        "arxiv:2409.16756v3",
+        "oa:W7161761904",
+        "oa:W4402699337",
+        "arxiv:2504.05007v1",
+        "arxiv:2501.08613v3",
+        "pmid:41623735",
+        "oa:W4410396922",
+        "oa:W4396835080"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    }
+  ]
+}

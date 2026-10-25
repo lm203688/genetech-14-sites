@@ -1,0 +1,386 @@
+{
+  "generatedAt": "2026-10-22T08:04:30.897Z",
+  "k": 10,
+  "sites": [
+    "agent-ecosystem"
+  ],
+  "manifestSeed": 20261013,
+  "manifestPerSite": 10,
+  "aggregate": {
+    "queryCount": 10,
+    "avgRecall@10": 0.4222222222222222,
+    "avgRecall@k": 0.4222222222222222,
+    "avgMrr": 0.3816666666666667,
+    "avgNdcg@10": 0.3800101762702049,
+    "recall@10_p50": 0.2222222222222222,
+    "recall@10_p25": 0,
+    "recall@10_p10": 0,
+    "missCount": 5,
+    "perfectCount": 4,
+    "latencyMs": {
+      "avg": 325.2,
+      "p50": 263,
+      "p95": 517,
+      "p99": 517,
+      "max": 517,
+      "samples": 10
+    },
+    "byType": {
+      "abstract-mid": {
+        "queries": 4,
+        "avgRecall@10": 1,
+        "avgMrr": 0.875,
+        "avgNdcg@10": 0.9077324383928644,
+        "missCount": 0
+      },
+      "tags-inverse": {
+        "queries": 3,
+        "avgRecall@10": 0.07407407407407407,
+        "avgMrr": 0.10555555555555556,
+        "avgNdcg@10": 0.05639066971019698,
+        "missCount": 2
+      },
+      "cross-entity": {
+        "queries": 2,
+        "avgRecall@10": 0,
+        "avgMrr": 0,
+        "avgNdcg@10": 0,
+        "missCount": 2
+      },
+      "site-topic": {
+        "queries": 1,
+        "avgRecall@10": 0,
+        "avgMrr": 0,
+        "avgNdcg@10": 0,
+        "missCount": 1
+      }
+    },
+    "perSite": {
+      "agent-ecosystem": {
+        "queries": 10,
+        "avgRecall@10": 0.4222222222222222,
+        "avgMrr": 0.3816666666666667,
+        "avgNdcg@10": 0.3800101762702049
+      }
+    }
+  },
+  "results": [
+    {
+      "idx": 18,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "minimally anthropomorphic chatbots influence perceived self-efficacy technology acceptance social perception work-related writing context. online experiment employees 310 were",
+      "latencyMs": 482,
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.31234/osf.io/cpz4b_v2"
+      ],
+      "top10": [
+        "doi:10.31234/osf.io/cpz4b_v2",
+        "doi:10.3389/fpsyg.2024.1461881",
+        "oa:W4414127319",
+        "oa:W3083392701",
+        "doi:10.3390/bs16010124",
+        "arxiv:2202.01077v2",
+        "doi:10.31234/osf.io/6azxy_v3",
+        "doi:10.31234/osf.io/6azxy_v2",
+        "pmid:31455318",
+        "oa:W4391903450"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 58,
+      "site": "agent-ecosystem",
+      "type": "tags-inverse",
+      "query": "natural language processing cs.ai",
+      "latencyMs": 227,
+      "relevantCount": 9,
+      "relevantIds": [
+        "doi:10.46916/24042026-3-978-5-00276-065-7",
+        "doi:10.64898/2026.01.31.702995",
+        "doi:10.2196/76848",
+        "doi:10.1038/s41746-025-01647-6",
+        "doi:10.3389/frai.2026.1748735",
+        "pmid:42407032",
+        "doi:10.3724/zrht.1674-5825.2025095",
+        "doi:10.15441/ceem.26.136",
+        "arxiv-2607.29677v1"
+      ],
+      "top10": [
+        "doi:10.1145/3560815",
+        "oa:W4391280675",
+        "doi:10.1109/iccect60629.2024.10545805",
+        "doi:10.64898/2026.01.31.702995",
+        "doi:10.1109/icmsci62561.2025.10894448",
+        "pmid:42542374",
+        "pmid:41109093",
+        "doi:10.21203/rs.3.rs-8990521/v1",
+        "doi:10.64898/2026.06.02.26354704",
+        "pmid:42407032"
+      ],
+      "hitInTop10": 2,
+      "recall@10": 0.2222222222222222,
+      "recall@k": 0.2222222222222222,
+      "mrr": 0.25,
+      "ndcg@10": 0.16917200913059094
+    },
+    {
+      "idx": 77,
+      "site": "agent-ecosystem",
+      "type": "cross-entity",
+      "query": "Natural Language Processing medicine psychology",
+      "latencyMs": 262,
+      "relevantCount": 5,
+      "relevantIds": [
+        "doi:10.5281/zenodo.18225343",
+        "doi:10.2196/92817",
+        "doi:10.5281/zenodo.21420179",
+        "doi:10.5281/zenodo.16789481",
+        "doi:10.5281/zenodo.20775495"
+      ],
+      "top10": [
+        "doi:10.15441/ceem.26.136",
+        "doi:10.1145/3560815",
+        "pmid:41952479",
+        "doi:10.1145/3554727",
+        "doi:10.1145/3571730",
+        "doi:10.1007/978-3-030-52152-3_16",
+        "pmid:42542374",
+        "oa:W4391280675",
+        "doi:10.21203/rs.3.rs-8990521/v1",
+        "doi:10.1016/0004-3702(87)90011-7"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 83,
+      "site": "agent-ecosystem",
+      "type": "cross-entity",
+      "query": "cs.SE Computer science Political science",
+      "latencyMs": 255,
+      "relevantCount": 5,
+      "relevantIds": [
+        "arxiv:2602.11114v1",
+        "oa:W2622408375",
+        "arxiv:2311.18252v3",
+        "arxiv:2512.09543v2",
+        "arxiv:2606.21877v1"
+      ],
+      "top10": [
+        "doi:10.2139/ssrn.6887758",
+        "doi:10.21203/rs.3.rs-10491399/v1",
+        "doi:10.25136/2409-8698.2024.11.72197",
+        "doi:10.1002/sta4.70126",
+        "doi:10.26434/chemrxiv.15005228/v1",
+        "pmid:42160764",
+        "doi:10.31234/osf.io/ukmzp_v1",
+        "doi:10.31234/osf.io/g3rc8_v1",
+        "doi:10.21203/rs.3.rs-7472642/v1",
+        "doi:10.21203/rs.3.rs-10090979/v1"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 112,
+      "site": "agent-ecosystem",
+      "type": "tags-inverse",
+      "query": "computer science cs.ai",
+      "latencyMs": 218,
+      "relevantCount": 9,
+      "relevantIds": [
+        "arxiv-2607.29626v1",
+        "arxiv-2607.29559v1",
+        "doi:10.20517/aiagent.2026.03",
+        "doi:10.20517/aiagent.2026.04",
+        "doi:10.20517/aiagent.2025.06",
+        "doi:10.20517/aiagent.2025.07",
+        "doi:10.5772/intechopen.90297",
+        "doi:10.2139/ssrn.6427226",
+        "arxiv-2607.29677v1"
+      ],
+      "top10": [
+        "doi:10.1093/nsr/nwag140",
+        "doi:10.1002/sta4.70126",
+        "doi:10.1109/iccids69108.2026.11407639",
+        "doi:10.1117/12.3065753",
+        "pmid:39568478",
+        "doi:10.21203/rs.3.rs-9366108/v1",
+        "doi:10.20535/srit.2308-8893.2025.1.08",
+        "doi:10.64898/2026.08.03.742514",
+        "doi:10.1101/2025.09.11.675660",
+        "doi:10.21203/rs.3.rs-9114794/v1"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 119,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "design objectives. such operations violate customary creative design practices thus hinder agents ability complete creative design tasks. explore",
+      "latencyMs": 398,
+      "relevantCount": 1,
+      "relevantIds": [
+        "oa:W4396832811"
+      ],
+      "top10": [
+        "oa:W4396832811",
+        "doi:10.3389/fpsyg.2026.1847432",
+        "oa:W4387192549",
+        "doi:10.3389/fbioe.2026.1777944",
+        "doi:10.20944/preprints202607.0905.v1",
+        "doi:10.31234/osf.io/4b8gy_v2",
+        "doi:10.1145/3701571.3701608",
+        "doi:10.1063/5.0318770",
+        "doi:10.5281/zenodo.19104900",
+        "oa:W4404385440"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 185,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "cases specified requirements iteratively improving test cases via agent-to-agent communication system improves accuracy effectiveness. our implementation which uses",
+      "latencyMs": 422,
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.71097/ijsat.v16.i1.2232"
+      ],
+      "top10": [
+        "doi:10.71097/ijsat.v16.i1.2232",
+        "doi:10.20944/preprints202605.0387.v1",
+        "oa:W2059529072",
+        "doi:10.1201/9780429070655-100",
+        "doi:10.1109/sose67019.2025.00013",
+        "doi:10.21203/rs.3.rs-9596459/v1",
+        "oa:W7125983183",
+        "doi:10.1109/aiware69974.2025.00031",
+        "doi:10.52710/cfs.1067",
+        "doi:10.5281/zenodo.19696409"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 1,
+      "ndcg@10": 1
+    },
+    {
+      "idx": 225,
+      "site": "agent-ecosystem",
+      "type": "site-topic",
+      "query": "computer science",
+      "latencyMs": 208,
+      "relevantCount": 6,
+      "relevantIds": [
+        "doi:10.1201/9781003641537-112",
+        "arxiv-2607.29626v1",
+        "arxiv-2607.29559v1",
+        "doi:10.20517/aiagent.2026.03",
+        "doi:10.20517/aiagent.2026.04",
+        "doi:10.20517/aiagent.2025.06"
+      ],
+      "top10": [
+        "doi:10.1117/12.3065753",
+        "pmid:42656973",
+        "pmid:40469663",
+        "doi:10.1002/sta4.70126",
+        "doi:10.1093/9780197633489.003.0025",
+        "pmid:40721607",
+        "doi:10.1109/iat.2006.95",
+        "oa:W1494976167",
+        "doi:10.31234/osf.io/w7qrt_v1",
+        "pmid:42160764"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0,
+      "ndcg@10": 0
+    },
+    {
+      "idx": 249,
+      "site": "agent-ecosystem",
+      "type": "abstract-mid",
+      "query": "autoscaler vpa cluster autoscaler these mechanisms remain largely reactive threshold-based. they usually respond only after resource metrics exceed",
+      "latencyMs": 517,
+      "relevantCount": 1,
+      "relevantIds": [
+        "doi:10.20944/preprints202606.1718.v1"
+      ],
+      "top10": [
+        "doi:10.20944/preprints202607.0944.v1",
+        "doi:10.20944/preprints202606.1718.v1",
+        "doi:10.5281/zenodo.21704414",
+        "doi:10.5281/zenodo.21704415",
+        "doi:10.2139/ssrn.7170774",
+        "doi:10.5281/zenodo.19152305",
+        "doi:10.5281/zenodo.19152306",
+        "doi:10.1145/3686081.3686096",
+        "doi:10.64898/2026.06.24.734302",
+        "doi:10.3390/s26041168"
+      ],
+      "hitInTop10": 1,
+      "recall@10": 1,
+      "recall@k": 1,
+      "mrr": 0.5,
+      "ndcg@10": 0.6309297535714575
+    },
+    {
+      "idx": 275,
+      "site": "agent-ecosystem",
+      "type": "tags-inverse",
+      "query": "Dialog system Computer science",
+      "latencyMs": 263,
+      "relevantCount": 9,
+      "relevantIds": [
+        "oa:W4391280675",
+        "oa:W4404452151",
+        "oa:W2049934619",
+        "oa:W4304195432",
+        "oa:W2896457183",
+        "oa:W4413427262",
+        "oa:W4292779060",
+        "oa:W4409737900",
+        "oa:W3094257456"
+      ],
+      "top10": [
+        "doi:10.1002/sta4.70126",
+        "oa:W1598022263",
+        "doi:10.1109/icmas.1998.699296",
+        "doi:10.5772/14455",
+        "doi:10.1109/ist.2005.1594532",
+        "doi:10.31234/osf.io/pc3ht_v1",
+        "doi:10.26434/chemrxiv.15005228/v1",
+        "doi:10.5281/zenodo.22144990",
+        "doi:10.31142/ijtsrd23036",
+        "doi:10.2139/ssrn.7264680"
+      ],
+      "hitInTop10": 0,
+      "recall@10": 0,
+      "recall@k": 0,
+      "mrr": 0.06666666666666667,
+      "ndcg@10": 0
+    }
+  ]
+}
