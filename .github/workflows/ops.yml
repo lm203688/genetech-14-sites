@@ -128,7 +128,7 @@ jobs:
         run: npm ci
 
       - name: MCP smoke test
-        run: node .workbuddy/probe/mcp-smoke.mjs
+        run: node tools/mcp-smoke.mjs
 
   # ==================== 前置准备 ====================
   prepare:
