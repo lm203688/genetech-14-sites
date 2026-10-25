@@ -1649,6 +1649,18 @@ async function handleRequest(request) {
   const path = url.pathname;
   const ip = getClientIp(request);
 
+  // ---- P1-4 反馈汇总：/v1/feedback/stats (2026-10-25 修复) ----
+  // 必须在 /v1/* 免费层路由之前，否则会被第 1797 行的 path.startsWith('/v1/')
+  // 拦截后转发到上游静态文件（GitHub Pages 返回 404），永远到不了这里。
+  if (path === '/v1/feedback/stats' || path === '/v1/feedback/stats/') {
+    const s = await readFeedbackStats(env);
+    return json({
+      endpoint: '/v1/feedback/stats@v1',
+      cacheHint: { ttlMs: 60_000, cacheScope: 'public' },
+      ...s,
+    }, 200, { 'Cache-Control': 'public, max-age=60' });
+  }
+
   // ---- Intel API (Sprint 1)：共享情报服务，独立路由 ----
   if (path.startsWith('/v1/intel/')) {
     if (path === '/v1/intel/health') {
@@ -2001,17 +2013,6 @@ async function handleRequest(request) {
       cacheHint: { ttlMs: 0, cacheScope: 'private' },
       next: { endpoint: '/v1/feedback/stats', description: '查询反馈汇总统计' },
     }, 200, { 'Cache-Control': 'no-store' });
-  }
-
-  // ---- P1-4 反馈汇总：/v1/feedback/stats (2026-10-24) ----
-  // GET /v1/feedback/stats — 各票数、按天聚合、最近 20 条摘要
-  if (path === '/v1/feedback/stats' || path === '/v1/feedback/stats/') {
-    const s = await readFeedbackStats(env);
-    return json({
-      endpoint: '/v1/feedback/stats@v1',
-      cacheHint: { ttlMs: 60_000, cacheScope: 'public' },
-      ...s,
-    }, 200, { 'Cache-Control': 'public, max-age=60' });
   }
 
   // 根路径：欢迎页
