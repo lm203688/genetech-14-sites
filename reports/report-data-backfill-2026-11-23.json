@@ -1,6 +1,6 @@
 {
   "pipeline": "data-backfill-v2",
-  "timestamp": "2026-11-23T03:37:24.324Z",
+  "timestamp": "2026-11-23T14:00:30.854Z",
   "dryRun": false,
   "limit": 800,
   "perPage": 200,
@@ -14,14 +14,14 @@
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.5828,
-        "tag_rate": 0.6031,
-        "doi_rate": 0.9555,
+        "summary_rate": 0.5835,
+        "tag_rate": 0.6022,
+        "doi_rate": 0.9557,
         "url_rate": 1,
-        "duplicate_rate": 0.0977,
+        "duplicate_rate": 0.0979,
         "off_domain_rate": 0.0302,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 120,
+        "confidence_distinct_values": 121,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -380,19 +380,19 @@
     },
     {
       "site": "alien-minerals",
-      "fetched": 1847,
+      "fetched": 2608,
       "added": 349,
-      "total": 10000,
+      "total": 9801,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.7701,
-        "tag_rate": 0.8221,
-        "doi_rate": 0.9788,
+        "summary_rate": 0.7828792980308131,
+        "tag_rate": 0.8349148046117744,
+        "doi_rate": 0.9797979797979798,
         "url_rate": 1,
-        "duplicate_rate": 0.0602,
-        "off_domain_rate": 0.1667,
+        "duplicate_rate": 0.05397408427711458,
+        "off_domain_rate": 0.15192327313539436,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 174,
         "__policy__": {
@@ -753,19 +753,19 @@
     },
     {
       "site": "biocomputing",
-      "fetched": 4000,
-      "added": 2546,
-      "total": 11799,
+      "fetched": 3200,
+      "added": 2209,
+      "total": 11440,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.779811848461734,
-        "tag_rate": 0.7887956606492076,
-        "doi_rate": 0.9190609373675735,
+        "summary_rate": 0.7977272727272727,
+        "tag_rate": 0.8134615384615385,
+        "doi_rate": 0.9309440559440559,
         "url_rate": 1,
-        "duplicate_rate": 0.06051360284769896,
-        "off_domain_rate": 0.09348249851682346,
+        "duplicate_rate": 0.052185314685314683,
+        "off_domain_rate": 0.07805944055944056,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 164,
         "__policy__": {
@@ -1127,18 +1127,18 @@
     {
       "site": "bionic-ai",
       "fetched": 2900,
-      "added": 1765,
-      "total": 11636,
+      "added": 1815,
+      "total": 11687,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.8301821931935373,
-        "tag_rate": 0.8459951873496047,
-        "doi_rate": 0.9301306290821588,
+        "summary_rate": 0.8230512535295628,
+        "tag_rate": 0.8403354154188415,
+        "doi_rate": 0.9309489176007529,
         "url_rate": 1,
-        "duplicate_rate": 0.06660364386387074,
-        "off_domain_rate": 0.07382261945685803,
+        "duplicate_rate": 0.06990673397792418,
+        "off_domain_rate": 0.07846324976469582,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 164,
         "__policy__": {
@@ -1499,19 +1499,19 @@
     },
     {
       "site": "deep-sea-tech",
-      "fetched": 2806,
-      "added": 1916,
-      "total": 11542,
+      "fetched": 2606,
+      "added": 1780,
+      "total": 11404,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.7730895858603362,
-        "tag_rate": 0.7952694507017848,
-        "doi_rate": 0.9282619996534396,
+        "summary_rate": 0.7808663626797615,
+        "tag_rate": 0.8044545773412838,
+        "doi_rate": 0.9274815854086286,
         "url_rate": 1,
-        "duplicate_rate": 0.0439265291977127,
-        "off_domain_rate": 0.08568705596950268,
+        "duplicate_rate": 0.044896527534198524,
+        "off_domain_rate": 0.0843563661873027,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 170,
         "__policy__": {
@@ -1872,19 +1872,19 @@
     },
     {
       "site": "brain-science",
-      "fetched": 4200,
-      "added": 3006,
-      "total": 12094,
+      "fetched": 4100,
+      "added": 2816,
+      "total": 11893,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.6872829502232513,
-        "tag_rate": 0.751364312882421,
-        "doi_rate": 0.9107822060525881,
+        "summary_rate": 0.677961826284369,
+        "tag_rate": 0.7633902295467923,
+        "doi_rate": 0.9105356091818717,
         "url_rate": 1,
-        "duplicate_rate": 0.08582768314866876,
-        "off_domain_rate": 0.08103191665288573,
+        "duplicate_rate": 0.1017405196333978,
+        "off_domain_rate": 0.0931640460775246,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 161,
         "__policy__": {
@@ -2245,19 +2245,19 @@
     },
     {
       "site": "life-science",
-      "fetched": 3300,
+      "fetched": 2900,
       "added": 602,
-      "total": 10000,
+      "total": 9999,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-tag",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.7186,
-        "tag_rate": 0.4461,
-        "doi_rate": 0.9635,
+        "summary_rate": 0.7087708770877088,
+        "tag_rate": 0.4458445844584458,
+        "doi_rate": 0.9582958295829583,
         "url_rate": 1,
-        "duplicate_rate": 0.0862,
-        "off_domain_rate": 0.1565,
+        "duplicate_rate": 0.0852085208520852,
+        "off_domain_rate": 0.15191519151915192,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 158,
         "__policy__": {
@@ -2618,21 +2618,21 @@
     },
     {
       "site": "new-energy",
-      "fetched": 2900,
+      "fetched": 2700,
       "added": 291,
       "total": 10000,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.4397,
-        "tag_rate": 0.4582,
-        "doi_rate": 0.9737,
+        "summary_rate": 0.4319,
+        "tag_rate": 0.4488,
+        "doi_rate": 0.9662,
         "url_rate": 1,
-        "duplicate_rate": 0.0866,
-        "off_domain_rate": 0.0292,
+        "duplicate_rate": 0.0865,
+        "off_domain_rate": 0.0308,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 104,
+        "confidence_distinct_values": 105,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -2991,19 +2991,19 @@
     },
     {
       "site": "nuclear-energy",
-      "fetched": 3300,
+      "fetched": 2900,
       "added": 442,
-      "total": 9999,
+      "total": 10000,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.5547554755475548,
-        "tag_rate": 0.515051505150515,
-        "doi_rate": 0.9710971097109711,
+        "summary_rate": 0.5494,
+        "tag_rate": 0.5153,
+        "doi_rate": 0.9695,
         "url_rate": 1,
-        "duplicate_rate": 0.10971097109710971,
-        "off_domain_rate": 0.14591459145914593,
+        "duplicate_rate": 0.1098,
+        "off_domain_rate": 0.1459,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 143,
         "__policy__": {
@@ -3364,21 +3364,21 @@
     },
     {
       "site": "robot-parts",
-      "fetched": 2409,
+      "fetched": 1938,
       "added": 162,
       "total": 10000,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.5101,
-        "tag_rate": 0.5001,
-        "doi_rate": 0.9927,
+        "summary_rate": 0.5146,
+        "tag_rate": 0.4991,
+        "doi_rate": 0.9788,
         "url_rate": 1,
         "duplicate_rate": 0.0822,
-        "off_domain_rate": 0.0312,
+        "off_domain_rate": 0.0313,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 144,
+        "confidence_distinct_values": 145,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -3744,14 +3744,14 @@
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.4128,
-        "tag_rate": 0.4364,
-        "doi_rate": 0.9814,
+        "summary_rate": 0.4159,
+        "tag_rate": 0.4359,
+        "doi_rate": 0.9727,
         "url_rate": 1,
         "duplicate_rate": 0.0778,
-        "off_domain_rate": 0.1602,
+        "off_domain_rate": 0.1642,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 149,
+        "confidence_distinct_values": 150,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -4110,19 +4110,19 @@
     },
     {
       "site": "genetech-tools",
-      "fetched": 3100,
-      "added": 2391,
-      "total": 11942,
+      "fetched": 2300,
+      "added": 1709,
+      "total": 11259,
       "quality_gate_deny": true,
-      "quality_rule": "deny-high-duplicate",
+      "quality_rule": "deny-low-tag",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.7744933846926813,
-        "tag_rate": 0.5113883771562552,
-        "doi_rate": 0.9414670909395411,
+        "summary_rate": 0.7733368860467181,
+        "tag_rate": 0.4895639044320099,
+        "doi_rate": 0.9388933297806199,
         "url_rate": 1,
-        "duplicate_rate": 0.10952939206163122,
-        "off_domain_rate": 0.08616647127784291,
+        "duplicate_rate": 0.11759481303845812,
+        "off_domain_rate": 0.08606448174793499,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 136,
         "__policy__": {
@@ -4483,19 +4483,19 @@
     },
     {
       "site": "exo-science",
-      "fetched": 2504,
-      "added": 1589,
-      "total": 11259,
+      "fetched": 1912,
+      "added": 939,
+      "total": 10586,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.7898570032862599,
-        "tag_rate": 0.7619682032152056,
-        "doi_rate": 0.9205080380140332,
+        "summary_rate": 0.8032306820328736,
+        "tag_rate": 0.7833931607783865,
+        "doi_rate": 0.9175325902134895,
         "url_rate": 1,
-        "duplicate_rate": 0.13287148059330314,
-        "off_domain_rate": 0.12478905764277468,
+        "duplicate_rate": 0.1404685433591536,
+        "off_domain_rate": 0.1074060079350085,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 173,
         "__policy__": {
@@ -4856,21 +4856,21 @@
     },
     {
       "site": "agent-ecosystem",
-      "fetched": 3100,
-      "added": 2151,
-      "total": 11996,
+      "fetched": 2900,
+      "added": 1985,
+      "total": 11832,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.815188396132044,
-        "tag_rate": 0.7985161720573525,
-        "doi_rate": 0.922057352450817,
+        "summary_rate": 0.8253042596348884,
+        "tag_rate": 0.7930189317106153,
+        "doi_rate": 0.9230054090601758,
         "url_rate": 1,
-        "duplicate_rate": 0.09669889963321107,
-        "off_domain_rate": 0.04593197732577526,
+        "duplicate_rate": 0.09643340094658553,
+        "off_domain_rate": 0.04454022988505747,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 139,
+        "confidence_distinct_values": 140,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -5229,19 +5229,19 @@
     },
     {
       "site": "embodied-ai",
-      "fetched": 2855,
-      "added": 2096,
-      "total": 11892,
+      "fetched": 2655,
+      "added": 1894,
+      "total": 11687,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.824167507568113,
-        "tag_rate": 0.7979313824419778,
-        "doi_rate": 0.9178439286915574,
+        "summary_rate": 0.8342602892102335,
+        "tag_rate": 0.8117566526910243,
+        "doi_rate": 0.9169162317104476,
         "url_rate": 1,
-        "duplicate_rate": 0.09889001009081735,
-        "off_domain_rate": 0.04221325260679448,
+        "duplicate_rate": 0.0983999315478737,
+        "off_domain_rate": 0.03884658167194319,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 155,
         "__policy__": {
@@ -5604,19 +5604,19 @@
       "site": "synbio-manufacturing",
       "fetched": 2700,
       "added": 282,
-      "total": 9999,
+      "total": 10000,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.5309530953095309,
-        "tag_rate": 0.523052305230523,
-        "doi_rate": 0.9760976097609761,
+        "summary_rate": 0.5338,
+        "tag_rate": 0.5146,
+        "doi_rate": 0.9664,
         "url_rate": 1,
-        "duplicate_rate": 0.10071007100710071,
-        "off_domain_rate": 0.0745074507450745,
+        "duplicate_rate": 0.1008,
+        "off_domain_rate": 0.0765,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 146,
+        "confidence_distinct_values": 147,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -5975,19 +5975,19 @@
     },
     {
       "site": "semiconductor",
-      "fetched": 2070,
+      "fetched": 2670,
       "added": 112,
       "total": 10000,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.4539,
-        "tag_rate": 0.4428,
-        "doi_rate": 0.979,
+        "summary_rate": 0.4593,
+        "tag_rate": 0.4426,
+        "doi_rate": 0.9826,
         "url_rate": 1,
-        "duplicate_rate": 0.1035,
-        "off_domain_rate": 0.0916,
+        "duplicate_rate": 0.1031,
+        "off_domain_rate": 0.0918,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 133,
         "__policy__": {
@@ -6348,21 +6348,21 @@
     },
     {
       "site": "ai4science",
-      "fetched": 2400,
-      "added": 1781,
-      "total": 11654,
+      "fetched": 3000,
+      "added": 2229,
+      "total": 12091,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.8048738630513128,
-        "tag_rate": 0.760597219838682,
-        "doi_rate": 0.9709112750986786,
+        "summary_rate": 0.8149036473409974,
+        "tag_rate": 0.7644528988503846,
+        "doi_rate": 0.9240757588288809,
         "url_rate": 1,
-        "duplicate_rate": 0.10125278874206281,
-        "off_domain_rate": 0.07559636176420113,
+        "duplicate_rate": 0.09684889587296336,
+        "off_domain_rate": 0.07344305681912167,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 121,
+        "confidence_distinct_values": 122,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -6721,19 +6721,19 @@
     },
     {
       "site": "low-altitude",
-      "fetched": 959,
+      "fetched": 1045,
       "added": 112,
-      "total": 9996,
+      "total": 9999,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-tag",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.8667466986794717,
-        "tag_rate": 0.4809923969587835,
-        "doi_rate": 0.9841936774709884,
+        "summary_rate": 0.8657865786578658,
+        "tag_rate": 0.48084808480848085,
+        "doi_rate": 0.9841984198419842,
         "url_rate": 1,
-        "duplicate_rate": 0.10464185674269708,
-        "off_domain_rate": 0.03391356542617047,
+        "duplicate_rate": 0.1043104310431043,
+        "off_domain_rate": 0.034403440344034406,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 158,
         "__policy__": {
@@ -7094,19 +7094,19 @@
     },
     {
       "site": "sat-6g",
-      "fetched": 1972,
+      "fetched": 2172,
       "added": 80,
       "total": 10000,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.4143,
-        "tag_rate": 0.4005,
-        "doi_rate": 0.999,
+        "summary_rate": 0.4142,
+        "tag_rate": 0.4007,
+        "doi_rate": 0.9988,
         "url_rate": 1,
-        "duplicate_rate": 0.0674,
-        "off_domain_rate": 0.0658,
+        "duplicate_rate": 0.0675,
+        "off_domain_rate": 0.0656,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 99,
         "__policy__": {
@@ -7467,21 +7467,21 @@
     },
     {
       "site": "spatial-computing",
-      "fetched": 2300,
+      "fetched": 2700,
       "added": 63,
       "total": 10000,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.4791,
+        "summary_rate": 0.4799,
         "tag_rate": 0.4149,
-        "doi_rate": 0.9978,
+        "doi_rate": 0.992,
         "url_rate": 1,
         "duplicate_rate": 0.0984,
-        "off_domain_rate": 0.1184,
+        "off_domain_rate": 0.1189,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 135,
+        "confidence_distinct_values": 136,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -7840,21 +7840,21 @@
     },
     {
       "site": "privacy-computing",
-      "fetched": 2300,
+      "fetched": 2500,
       "added": 49,
       "total": 10000,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.4833,
-        "tag_rate": 0.4776,
-        "doi_rate": 0.9998,
+        "summary_rate": 0.4836,
+        "tag_rate": 0.4772,
+        "doi_rate": 0.9951,
         "url_rate": 1,
-        "duplicate_rate": 0.1263,
+        "duplicate_rate": 0.1264,
         "off_domain_rate": 0.0549,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 105,
+        "confidence_distinct_values": 106,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -8213,18 +8213,18 @@
     },
     {
       "site": "ai-safety",
-      "fetched": 2700,
+      "fetched": 2900,
       "added": 90,
       "total": 10000,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.8833,
-        "tag_rate": 0.8905,
-        "doi_rate": 0.9964,
+        "summary_rate": 0.883,
+        "tag_rate": 0.8904,
+        "doi_rate": 0.9965,
         "url_rate": 1,
-        "duplicate_rate": 0.0421,
+        "duplicate_rate": 0.0423,
         "off_domain_rate": 0.0946,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 126,
@@ -8586,21 +8586,21 @@
     },
     {
       "site": "quantum-materials",
-      "fetched": 2500,
-      "added": 1518,
-      "total": 11388,
+      "fetched": 2700,
+      "added": 1628,
+      "total": 11505,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.581752722163681,
-        "tag_rate": 0.6138918159466105,
-        "doi_rate": 0.9875307341060766,
+        "summary_rate": 0.5926988265971317,
+        "tag_rate": 0.6144285093437636,
+        "doi_rate": 0.9545415036940461,
         "url_rate": 1,
-        "duplicate_rate": 0.07648401826484018,
-        "off_domain_rate": 0.09808570425008781,
+        "duplicate_rate": 0.0752716210343329,
+        "off_domain_rate": 0.096045197740113,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 127,
+        "confidence_distinct_values": 128,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -8959,21 +8959,21 @@
     },
     {
       "site": "carbon-neutral",
-      "fetched": 1943,
-      "added": 1006,
-      "total": 10851,
+      "fetched": 2143,
+      "added": 1272,
+      "total": 11117,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.7682241268085891,
-        "tag_rate": 0.8182655976407704,
-        "doi_rate": 0.9713390470924339,
+        "summary_rate": 0.789241701897994,
+        "tag_rate": 0.832418818026446,
+        "doi_rate": 0.9280381397859134,
         "url_rate": 1,
-        "duplicate_rate": 0.04377476730255276,
-        "off_domain_rate": 0.20117961478204774,
+        "duplicate_rate": 0.03930916614194477,
+        "off_domain_rate": 0.20760996671763965,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 134,
+        "confidence_distinct_values": 135,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -9332,19 +9332,19 @@
     },
     {
       "site": "digital-twin",
-      "fetched": 2300,
-      "added": 1099,
-      "total": 11011,
+      "fetched": 2900,
+      "added": 1468,
+      "total": 11375,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.8120061756425393,
-        "tag_rate": 0.8436109345200254,
-        "doi_rate": 0.9912814458269004,
+        "summary_rate": 0.8117802197802197,
+        "tag_rate": 0.8307692307692308,
+        "doi_rate": 0.9533186813186814,
         "url_rate": 1,
-        "duplicate_rate": 0.06393606393606394,
-        "off_domain_rate": 0.031332304059576786,
+        "duplicate_rate": 0.06619780219780219,
+        "off_domain_rate": 0.03112087912087912,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 125,
         "__policy__": {
@@ -9705,19 +9705,392 @@
     },
     {
       "site": "biomed-ai",
-      "fetched": 2300,
-      "added": 1336,
-      "total": 10984,
+      "fetched": 3100,
+      "added": 1954,
+      "total": 11599,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.7819555717407137,
-        "tag_rate": 0.7921522214129643,
-        "doi_rate": 0.9974508375819373,
+        "summary_rate": 0.789119751702733,
+        "tag_rate": 0.7761876023795155,
+        "doi_rate": 0.9646521251832054,
         "url_rate": 1,
-        "duplicate_rate": 0.06955571740713766,
-        "off_domain_rate": 0.036689730517115805,
+        "duplicate_rate": 0.06629881886369515,
+        "off_domain_rate": 0.03758944736615225,
+        "confidence_source_deterministic": 0,
+        "confidence_distinct_values": 105,
+        "__policy__": {
+          "id": "quality-guard",
+          "version": 2,
+          "description": "质量红线策略（2026-10-08 落地为 v1，同日修正度量为 v2，KnowledgeGuard 的可执行形态）。此前护栏矩阵只覆盖 publish/ingest/evolve 三类「流程」策略，没有任何一条能拦住「质量」——实测后果：摘要完整度 74.0%（最差站 neuromorphic 42.4%）、标签率 68.4%（最差站 25.9%）、DOI 覆盖 91.4%（最差站 75.5%，而「每条带 DOI」是对外核心卖点）、confidence 完全退化为 f(source) 的确定性映射（crossref=0.70 / openalex=0.72 / europepmc=0.80 / pubmed=0.82 …）信息量为零。本策略把红线写成可执行判据，与 publish/ingest/evolve 同引擎（tools/guard-eval.mjs）、同语义（默认拒绝、显式放行）。指标由 operations-plan/pipeline-quality-gate.js 预先计算后作为上下文传入，策略本身不做计算——JSON-logic 引擎无函数能力，与 OPA/Rego 的「计算在外、判定在内」分工一致。",
+          "default": "deny",
+          "thresholds": {
+            "summary_rate_min": 0.6,
+            "tag_rate_min": 0.5,
+            "doi_rate_min": 0.85,
+            "url_rate_min": 0.99,
+            "duplicate_rate_max": 0.01,
+            "boilerplate_rate_max": 0.05,
+            "off_domain_rate_max": 0.85,
+            "confidence_distinct_values_min": 20,
+            "off_domain_rate_extreme_max": 0.85
+          },
+          "metric_correction": "v2 修正了一个会误拦 3 个站的度量错误（duplicate_rate）。v1 的定义是「站内同名记录数/总数」，它把两种完全不同的现象混为一谈：(a) 同一文献被多次入库（真重复，计数虚高，必须拦截）；(b) 不同文献恰同名（如 brain-science 的「Editorial Board」×394，是 394 篇 DOI 各不相同的期刊社论页；privacy-computing 的「vantage6」×140，140 篇 DOI 各不相同的真实记录）。2026-10-08 实测按 dedupeKey（有 DOI 用 DOI、无 DOI 用标题+作者）重算，30 站真重复加权 0.00%（仅 carbon-neutral 2 条），而 v1 口径报出加权 10.7%。v1 的 0.12 阈值因此把 brain-science / edge-ai / exo-science 三个站错误压到 10000 容量——它们唯一的不达标项是一个不存在的重复问题。v2 把 duplicate_rate 改为真重复语义（阈值 0.01，非零即视为入库缺陷报警），另设 title_collision_rate 作纯诊断指标（不参与任何判定），并把前置页噪声拆成独立指标 boilerplate_rate 单独治理——它是内容质量问题，不是重复问题，混在一起会让阈值失去意义。同类错误此前已出现一次：v2 全面提升报告用 e.title 而非 e.name 计算重名率，得出「重名 0.0%（严格口径）」的错误结论。度量口径与字段口径必须同口径，否则门禁就是在为一个不存在的理由阻断。",
+          "rules": [
+            {
+              "id": "deny-fake-confidence",
+              "description": "confidence 退化为其来源（source）字段的确定性函数：同一来源的所有记录 confidence 完全相同，等于「来源」被复制了一份，不提供任何质量信号，阻断。2026-10-08 实测旧置信度为 crossref=0.70 / openalex=0.72 / europepmc=0.80 / pubmed=0.82 … 的单值映射，30 站全部命中此规则。",
+              "allow": false,
+              "when": {
+                "all": [
+                  {
+                    "==": [
+                      {
+                        "var": "action"
+                      },
+                      "quality_check"
+                    ]
+                  },
+                  {
+                    ">=": [
+                      {
+                        "var": "confidence_source_deterministic"
+                      },
+                      1
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deny-empty-confidence",
+              "description": "confidence 取值集合为空：无法评估质量，阻断",
+              "allow": false,
+              "when": {
+                "all": [
+                  {
+                    "==": [
+                      {
+                        "var": "action"
+                      },
+                      "quality_check"
+                    ]
+                  },
+                  {
+                    "==": [
+                      {
+                        "var": "confidence_distinct_values"
+                      },
+                      0
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deny-low-confidence-entropy",
+              "description": "confidence 取值种类少于 20：分布坍缩为 f(source) 的确定性映射，等于没有质量信号，阻断",
+              "allow": false,
+              "when": {
+                "all": [
+                  {
+                    "==": [
+                      {
+                        "var": "action"
+                      },
+                      "quality_check"
+                    ]
+                  },
+                  {
+                    "<": [
+                      {
+                        "var": "confidence_distinct_values"
+                      },
+                      20
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deny-low-summary",
+              "description": "摘要完整度低于 60%：检索与 RAG 均无法工作，阻断",
+              "allow": false,
+              "when": {
+                "all": [
+                  {
+                    "==": [
+                      {
+                        "var": "action"
+                      },
+                      "quality_check"
+                    ]
+                  },
+                  {
+                    "<": [
+                      {
+                        "var": "summary_rate"
+                      },
+                      0.6
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deny-low-tag",
+              "description": "标签率低于 50%：图谱边密度不足以支撑交叉检索，阻断",
+              "allow": false,
+              "when": {
+                "all": [
+                  {
+                    "==": [
+                      {
+                        "var": "action"
+                      },
+                      "quality_check"
+                    ]
+                  },
+                  {
+                    "<": [
+                      {
+                        "var": "tag_rate"
+                      },
+                      0.5
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deny-low-doi",
+              "description": "DOI 覆盖低于 85%：直接违反对外核心卖点「每条带 DOI 可独立复核」，阻断",
+              "allow": false,
+              "when": {
+                "all": [
+                  {
+                    "==": [
+                      {
+                        "var": "action"
+                      },
+                      "quality_check"
+                    ]
+                  },
+                  {
+                    "<": [
+                      {
+                        "var": "doi_rate"
+                      },
+                      0.85
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deny-low-url",
+              "description": "溯源 URL 覆盖低于 99%：读者无法跳转到原文，阻断",
+              "allow": false,
+              "when": {
+                "all": [
+                  {
+                    "==": [
+                      {
+                        "var": "action"
+                      },
+                      "quality_check"
+                    ]
+                  },
+                  {
+                    "<": [
+                      {
+                        "var": "url_rate"
+                      },
+                      0.99
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deny-high-duplicate",
+              "description": "真重复率高于 1%：同一文献被多次入库，对外计数虚高，阻断。阈值从 v1 的 0.12 收紧到 0.01——v2 修正度量后发现 30 站真重复加权 0.00%（按 dedupeKey：有 DOI 用 DOI、无 DOI 用标题+作者），正常情况下应恒为 0；非零意味着去重逻辑或字段合并逻辑失效，属于入库缺陷而非可容忍的常态。阈值收紧的前提是度量已修正：在 v1 的「同名即重复」口径下 0.01 会让全部 30 站卡死（见 metric_correction）。诊断用 title_collision_rate 不参与任何判定。",
+              "allow": false,
+              "when": {
+                "all": [
+                  {
+                    "==": [
+                      {
+                        "var": "action"
+                      },
+                      "quality_check"
+                    ]
+                  },
+                  {
+                    ">": [
+                      {
+                        "var": "duplicate_rate"
+                      },
+                      0.01
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deny-high-boilerplate",
+              "description": "前置页噪声占比高于 5%：阻断。判据是「标题命中泛化词表 AND 无摘要 AND 无标签」的三重与——三重条件缺一即保留，因此不会误删「vantage6」×140、「mh370: mathematical proof...」×95 这类标题虽短但带摘要的真实出版物。实测 30 站加权 1.89%、最高 brain-science 8.27%（827 条 Editorial Board / Issue Information / Contents 等期刊前置元数据，全部零摘要零标签）。这类记录对检索与统计只有噪声：它们既不参与 RAG 也不构成图谱节点，却占据容量配额并抬高重名计数。这是内容质量问题，与重复问题无关，故单列指标与规则。",
+              "allow": false,
+              "when": {
+                "all": [
+                  {
+                    "==": [
+                      {
+                        "var": "action"
+                      },
+                      "quality_check"
+                    ]
+                  },
+                  {
+                    ">": [
+                      {
+                        "var": "boilerplate_rate"
+                      },
+                      0.05
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deny-off-domain",
+              "description": "领域错配率高于 85%：站点内容整体偏离目标领域（通常是检索配置错误或站点被污染），阻断。注意 0.35~0.85 区间只是观察项、不拦——实测 30 站错配 2.9%~22.5%，绝对水平远低于阈值，该规则实际只覆盖「站点级配置事故」这一极端情形，收紧阈值需要先建立可靠的领域相关性判据（A4）。",
+              "allow": false,
+              "when": {
+                "all": [
+                  {
+                    "==": [
+                      {
+                        "var": "action"
+                      },
+                      "quality_check"
+                    ]
+                  },
+                  {
+                    ">": [
+                      {
+                        "var": "off_domain_rate"
+                      },
+                      0.85
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "allow-quality-release",
+              "description": "全部质量红线达标：放行发布",
+              "allow": true,
+              "when": {
+                "all": [
+                  {
+                    "==": [
+                      {
+                        "var": "action"
+                      },
+                      "quality_check"
+                    ]
+                  },
+                  {
+                    ">=": [
+                      {
+                        "var": "summary_rate"
+                      },
+                      0.6
+                    ]
+                  },
+                  {
+                    ">=": [
+                      {
+                        "var": "tag_rate"
+                      },
+                      0.5
+                    ]
+                  },
+                  {
+                    ">=": [
+                      {
+                        "var": "doi_rate"
+                      },
+                      0.85
+                    ]
+                  },
+                  {
+                    ">=": [
+                      {
+                        "var": "url_rate"
+                      },
+                      0.99
+                    ]
+                  },
+                  {
+                    "<=": [
+                      {
+                        "var": "duplicate_rate"
+                      },
+                      0.01
+                    ]
+                  },
+                  {
+                    "<=": [
+                      {
+                        "var": "boilerplate_rate"
+                      },
+                      0.05
+                    ]
+                  },
+                  {
+                    "<=": [
+                      {
+                        "var": "confidence_source_deterministic"
+                      },
+                      0
+                    ]
+                  },
+                  {
+                    ">=": [
+                      {
+                        "var": "confidence_distinct_values"
+                      },
+                      20
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "rule_order_note": "JSON-logic 顺序匹配、首中即决：所有 deny 红线必须排在 allow 之前，否则一条达标记录会先命中 allow、其后的红线规则永远无法被评估。新增规则时必须追加到 allow-quality-release 之前，并同步更新 operations-plan/pipeline-quality-gate.js 的自测用例。",
+          "thresholds_note": "thresholds 块是给人看的说明性副本，策略判定只读 rules[].when 里的字面量——两者若漂移，以 rules 为准。off_domain_rate 与 title_collision_rate 均为观察指标，不参与放行判定。"
+        }
+      },
+      "dryRun": false
+    },
+    {
+      "site": "edge-ai",
+      "fetched": 3117,
+      "added": 2124,
+      "total": 11675,
+      "quality_gate_deny": true,
+      "quality_rule": "deny-high-duplicate",
+      "metrics": {
+        "action": "quality_check",
+        "summary_rate": 0.6962740899357601,
+        "tag_rate": 0.675203426124197,
+        "doi_rate": 0.9445824411134903,
+        "url_rate": 1,
+        "duplicate_rate": 0.09130620985010707,
+        "off_domain_rate": 0.07417558886509636,
         "confidence_source_deterministic": 0,
         "confidence_distinct_values": 103,
         "__policy__": {
@@ -10077,395 +10450,22 @@
       "dryRun": false
     },
     {
-      "site": "edge-ai",
-      "fetched": 2500,
-      "added": 1531,
-      "total": 11089,
-      "quality_gate_deny": true,
-      "quality_rule": "deny-high-duplicate",
-      "metrics": {
-        "action": "quality_check",
-        "summary_rate": 0.6856344124808369,
-        "tag_rate": 0.6604743439444495,
-        "doi_rate": 0.9908016953737938,
-        "url_rate": 1,
-        "duplicate_rate": 0.09919740283163496,
-        "off_domain_rate": 0.07710343583731626,
-        "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 101,
-        "__policy__": {
-          "id": "quality-guard",
-          "version": 2,
-          "description": "质量红线策略（2026-10-08 落地为 v1，同日修正度量为 v2，KnowledgeGuard 的可执行形态）。此前护栏矩阵只覆盖 publish/ingest/evolve 三类「流程」策略，没有任何一条能拦住「质量」——实测后果：摘要完整度 74.0%（最差站 neuromorphic 42.4%）、标签率 68.4%（最差站 25.9%）、DOI 覆盖 91.4%（最差站 75.5%，而「每条带 DOI」是对外核心卖点）、confidence 完全退化为 f(source) 的确定性映射（crossref=0.70 / openalex=0.72 / europepmc=0.80 / pubmed=0.82 …）信息量为零。本策略把红线写成可执行判据，与 publish/ingest/evolve 同引擎（tools/guard-eval.mjs）、同语义（默认拒绝、显式放行）。指标由 operations-plan/pipeline-quality-gate.js 预先计算后作为上下文传入，策略本身不做计算——JSON-logic 引擎无函数能力，与 OPA/Rego 的「计算在外、判定在内」分工一致。",
-          "default": "deny",
-          "thresholds": {
-            "summary_rate_min": 0.6,
-            "tag_rate_min": 0.5,
-            "doi_rate_min": 0.85,
-            "url_rate_min": 0.99,
-            "duplicate_rate_max": 0.01,
-            "boilerplate_rate_max": 0.05,
-            "off_domain_rate_max": 0.85,
-            "confidence_distinct_values_min": 20,
-            "off_domain_rate_extreme_max": 0.85
-          },
-          "metric_correction": "v2 修正了一个会误拦 3 个站的度量错误（duplicate_rate）。v1 的定义是「站内同名记录数/总数」，它把两种完全不同的现象混为一谈：(a) 同一文献被多次入库（真重复，计数虚高，必须拦截）；(b) 不同文献恰同名（如 brain-science 的「Editorial Board」×394，是 394 篇 DOI 各不相同的期刊社论页；privacy-computing 的「vantage6」×140，140 篇 DOI 各不相同的真实记录）。2026-10-08 实测按 dedupeKey（有 DOI 用 DOI、无 DOI 用标题+作者）重算，30 站真重复加权 0.00%（仅 carbon-neutral 2 条），而 v1 口径报出加权 10.7%。v1 的 0.12 阈值因此把 brain-science / edge-ai / exo-science 三个站错误压到 10000 容量——它们唯一的不达标项是一个不存在的重复问题。v2 把 duplicate_rate 改为真重复语义（阈值 0.01，非零即视为入库缺陷报警），另设 title_collision_rate 作纯诊断指标（不参与任何判定），并把前置页噪声拆成独立指标 boilerplate_rate 单独治理——它是内容质量问题，不是重复问题，混在一起会让阈值失去意义。同类错误此前已出现一次：v2 全面提升报告用 e.title 而非 e.name 计算重名率，得出「重名 0.0%（严格口径）」的错误结论。度量口径与字段口径必须同口径，否则门禁就是在为一个不存在的理由阻断。",
-          "rules": [
-            {
-              "id": "deny-fake-confidence",
-              "description": "confidence 退化为其来源（source）字段的确定性函数：同一来源的所有记录 confidence 完全相同，等于「来源」被复制了一份，不提供任何质量信号，阻断。2026-10-08 实测旧置信度为 crossref=0.70 / openalex=0.72 / europepmc=0.80 / pubmed=0.82 … 的单值映射，30 站全部命中此规则。",
-              "allow": false,
-              "when": {
-                "all": [
-                  {
-                    "==": [
-                      {
-                        "var": "action"
-                      },
-                      "quality_check"
-                    ]
-                  },
-                  {
-                    ">=": [
-                      {
-                        "var": "confidence_source_deterministic"
-                      },
-                      1
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "id": "deny-empty-confidence",
-              "description": "confidence 取值集合为空：无法评估质量，阻断",
-              "allow": false,
-              "when": {
-                "all": [
-                  {
-                    "==": [
-                      {
-                        "var": "action"
-                      },
-                      "quality_check"
-                    ]
-                  },
-                  {
-                    "==": [
-                      {
-                        "var": "confidence_distinct_values"
-                      },
-                      0
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "id": "deny-low-confidence-entropy",
-              "description": "confidence 取值种类少于 20：分布坍缩为 f(source) 的确定性映射，等于没有质量信号，阻断",
-              "allow": false,
-              "when": {
-                "all": [
-                  {
-                    "==": [
-                      {
-                        "var": "action"
-                      },
-                      "quality_check"
-                    ]
-                  },
-                  {
-                    "<": [
-                      {
-                        "var": "confidence_distinct_values"
-                      },
-                      20
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "id": "deny-low-summary",
-              "description": "摘要完整度低于 60%：检索与 RAG 均无法工作，阻断",
-              "allow": false,
-              "when": {
-                "all": [
-                  {
-                    "==": [
-                      {
-                        "var": "action"
-                      },
-                      "quality_check"
-                    ]
-                  },
-                  {
-                    "<": [
-                      {
-                        "var": "summary_rate"
-                      },
-                      0.6
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "id": "deny-low-tag",
-              "description": "标签率低于 50%：图谱边密度不足以支撑交叉检索，阻断",
-              "allow": false,
-              "when": {
-                "all": [
-                  {
-                    "==": [
-                      {
-                        "var": "action"
-                      },
-                      "quality_check"
-                    ]
-                  },
-                  {
-                    "<": [
-                      {
-                        "var": "tag_rate"
-                      },
-                      0.5
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "id": "deny-low-doi",
-              "description": "DOI 覆盖低于 85%：直接违反对外核心卖点「每条带 DOI 可独立复核」，阻断",
-              "allow": false,
-              "when": {
-                "all": [
-                  {
-                    "==": [
-                      {
-                        "var": "action"
-                      },
-                      "quality_check"
-                    ]
-                  },
-                  {
-                    "<": [
-                      {
-                        "var": "doi_rate"
-                      },
-                      0.85
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "id": "deny-low-url",
-              "description": "溯源 URL 覆盖低于 99%：读者无法跳转到原文，阻断",
-              "allow": false,
-              "when": {
-                "all": [
-                  {
-                    "==": [
-                      {
-                        "var": "action"
-                      },
-                      "quality_check"
-                    ]
-                  },
-                  {
-                    "<": [
-                      {
-                        "var": "url_rate"
-                      },
-                      0.99
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "id": "deny-high-duplicate",
-              "description": "真重复率高于 1%：同一文献被多次入库，对外计数虚高，阻断。阈值从 v1 的 0.12 收紧到 0.01——v2 修正度量后发现 30 站真重复加权 0.00%（按 dedupeKey：有 DOI 用 DOI、无 DOI 用标题+作者），正常情况下应恒为 0；非零意味着去重逻辑或字段合并逻辑失效，属于入库缺陷而非可容忍的常态。阈值收紧的前提是度量已修正：在 v1 的「同名即重复」口径下 0.01 会让全部 30 站卡死（见 metric_correction）。诊断用 title_collision_rate 不参与任何判定。",
-              "allow": false,
-              "when": {
-                "all": [
-                  {
-                    "==": [
-                      {
-                        "var": "action"
-                      },
-                      "quality_check"
-                    ]
-                  },
-                  {
-                    ">": [
-                      {
-                        "var": "duplicate_rate"
-                      },
-                      0.01
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "id": "deny-high-boilerplate",
-              "description": "前置页噪声占比高于 5%：阻断。判据是「标题命中泛化词表 AND 无摘要 AND 无标签」的三重与——三重条件缺一即保留，因此不会误删「vantage6」×140、「mh370: mathematical proof...」×95 这类标题虽短但带摘要的真实出版物。实测 30 站加权 1.89%、最高 brain-science 8.27%（827 条 Editorial Board / Issue Information / Contents 等期刊前置元数据，全部零摘要零标签）。这类记录对检索与统计只有噪声：它们既不参与 RAG 也不构成图谱节点，却占据容量配额并抬高重名计数。这是内容质量问题，与重复问题无关，故单列指标与规则。",
-              "allow": false,
-              "when": {
-                "all": [
-                  {
-                    "==": [
-                      {
-                        "var": "action"
-                      },
-                      "quality_check"
-                    ]
-                  },
-                  {
-                    ">": [
-                      {
-                        "var": "boilerplate_rate"
-                      },
-                      0.05
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "id": "deny-off-domain",
-              "description": "领域错配率高于 85%：站点内容整体偏离目标领域（通常是检索配置错误或站点被污染），阻断。注意 0.35~0.85 区间只是观察项、不拦——实测 30 站错配 2.9%~22.5%，绝对水平远低于阈值，该规则实际只覆盖「站点级配置事故」这一极端情形，收紧阈值需要先建立可靠的领域相关性判据（A4）。",
-              "allow": false,
-              "when": {
-                "all": [
-                  {
-                    "==": [
-                      {
-                        "var": "action"
-                      },
-                      "quality_check"
-                    ]
-                  },
-                  {
-                    ">": [
-                      {
-                        "var": "off_domain_rate"
-                      },
-                      0.85
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "id": "allow-quality-release",
-              "description": "全部质量红线达标：放行发布",
-              "allow": true,
-              "when": {
-                "all": [
-                  {
-                    "==": [
-                      {
-                        "var": "action"
-                      },
-                      "quality_check"
-                    ]
-                  },
-                  {
-                    ">=": [
-                      {
-                        "var": "summary_rate"
-                      },
-                      0.6
-                    ]
-                  },
-                  {
-                    ">=": [
-                      {
-                        "var": "tag_rate"
-                      },
-                      0.5
-                    ]
-                  },
-                  {
-                    ">=": [
-                      {
-                        "var": "doi_rate"
-                      },
-                      0.85
-                    ]
-                  },
-                  {
-                    ">=": [
-                      {
-                        "var": "url_rate"
-                      },
-                      0.99
-                    ]
-                  },
-                  {
-                    "<=": [
-                      {
-                        "var": "duplicate_rate"
-                      },
-                      0.01
-                    ]
-                  },
-                  {
-                    "<=": [
-                      {
-                        "var": "boilerplate_rate"
-                      },
-                      0.05
-                    ]
-                  },
-                  {
-                    "<=": [
-                      {
-                        "var": "confidence_source_deterministic"
-                      },
-                      0
-                    ]
-                  },
-                  {
-                    ">=": [
-                      {
-                        "var": "confidence_distinct_values"
-                      },
-                      20
-                    ]
-                  }
-                ]
-              }
-            }
-          ],
-          "rule_order_note": "JSON-logic 顺序匹配、首中即决：所有 deny 红线必须排在 allow 之前，否则一条达标记录会先命中 allow、其后的红线规则永远无法被评估。新增规则时必须追加到 allow-quality-release 之前，并同步更新 operations-plan/pipeline-quality-gate.js 的自测用例。",
-          "thresholds_note": "thresholds 块是给人看的说明性副本，策略判定只读 rules[].when 里的字面量——两者若漂移，以 rules 为准。off_domain_rate 与 title_collision_rate 均为观察指标，不参与放行判定。"
-        }
-      },
-      "dryRun": false
-    },
-    {
       "site": "neuromorphic",
-      "fetched": 2253,
+      "fetched": 2408,
       "added": 44,
       "total": 10000,
       "quality_gate_deny": true,
       "quality_rule": "deny-low-summary",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.4289,
-        "tag_rate": 0.2654,
-        "doi_rate": 0.9999,
+        "summary_rate": 0.4287,
+        "tag_rate": 0.2638,
+        "doi_rate": 0.9956,
         "url_rate": 1,
         "duplicate_rate": 0.0577,
-        "off_domain_rate": 0.109,
+        "off_domain_rate": 0.1095,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 94,
+        "confidence_distinct_values": 95,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
@@ -10824,21 +10824,21 @@
     },
     {
       "site": "agritech",
-      "fetched": 3300,
-      "added": 1379,
-      "total": 10809,
+      "fetched": 3800,
+      "added": 1819,
+      "total": 11187,
       "quality_gate_deny": true,
       "quality_rule": "deny-high-duplicate",
       "metrics": {
         "action": "quality_check",
-        "summary_rate": 0.781293366638912,
-        "tag_rate": 0.7715792395226201,
-        "doi_rate": 0.9853825515773892,
+        "summary_rate": 0.802806829355502,
+        "tag_rate": 0.7787610619469026,
+        "doi_rate": 0.9285778135335657,
         "url_rate": 1,
-        "duplicate_rate": 0.07142196317883245,
-        "off_domain_rate": 0.08992506244796003,
+        "duplicate_rate": 0.07347814427460445,
+        "off_domain_rate": 0.09430589076606775,
         "confidence_source_deterministic": 0,
-        "confidence_distinct_values": 129,
+        "confidence_distinct_values": 132,
         "__policy__": {
           "id": "quality-guard",
           "version": 2,
